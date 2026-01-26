@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Master 16</title>
+    <title>Polish Master 70</title>
     <style>
         :root { --pol-red: #dc143c; --success: #2ecc71; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -11,8 +11,8 @@
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; height: 100vh; color: var(--text); overflow: hidden; }
         .header { background: var(--pol-red); color: white; width: 100%; text-align: center; padding: 6px 0; font-weight: bold; font-size: 0.85rem; flex-shrink: 0; }
         
-        .progress-container { width: 100%; height: 6px; background: #ddd; flex-shrink: 0; }
-        #progress-bar { width: 0%; height: 100%; background: var(--success); transition: width 0.3s; }
+        .progress-container { width: 100%; height: 8px; background: #ddd; flex-shrink: 0; }
+        #progress-bar { width: 0%; height: 100%; background: var(--success); transition: width 0.5s ease-in-out; }
 
         .mode-tabs { display: flex; width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .tab { flex: 1; padding: 8px; text-align: center; font-size: 0.6rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
@@ -24,27 +24,27 @@
         .speak-btn { background: transparent; border: 2px solid var(--pol-red); color: var(--pol-red); width: 40px; height: 40px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; flex-shrink: 0; }
         
         .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex-grow: 1; }
-        .option-btn { background: var(--tile-bg); border: none; padding: 6px; border-radius: 8px; font-size: 0.7rem; font-weight: bold; color: var(--text); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 48px; }
+        .option-btn { background: var(--tile-bg); border: none; padding: 6px; border-radius: 8px; font-size: 0.7rem; font-weight: bold; color: var(--text); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50px; }
         .option-btn span.hint { font-size: 0.5rem; opacity: 0.7; font-weight: normal; text-align: center; }
 
         .map-section { width: 96%; max-width: 450px; margin-top: 8px; flex-grow: 1; overflow-y: auto; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding-bottom: 60px; }
-        .tile { aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 6px; cursor: pointer; padding: 2px; border: 1px solid transparent; }
-        .tile .char { font-size: 0.55rem; font-weight: bold; text-align: center; line-height: 1.1; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding-bottom: 65px; }
+        .tile { aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 6px; cursor: pointer; padding: 2px; }
+        .tile .char { font-size: 0.5rem; font-weight: bold; text-align: center; line-height: 1.1; pointer-events: none; }
         
-        .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 8px; text-align: center; border-top: 1px solid #ddd; z-index: 10; }
-        .reset-btn { background: #666; color: white; border: none; padding: 4px 12px; border-radius: 4px; font-size: 0.65rem; cursor: pointer; }
-        .next-btn { background: #3498db; color: white; width: 100%; padding: 10px; border-radius: 8px; font-size: 0.9rem; border: none; display: none; margin-top: 6px; font-weight: bold; }
+        .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 10px; text-align: center; border-top: 1px solid #ddd; z-index: 20; }
+        .reset-btn { background: #666; color: white; border: none; padding: 6px 14px; border-radius: 4px; font-size: 0.65rem; cursor: pointer; }
+        .next-btn { background: #3498db; color: white; width: 100%; padding: 10px; border-radius: 8px; font-size: 0.9rem; border: none; display: none; margin-top: 6px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
-<div class="header">POLISH SURVIVAL (16 ACTIVE)</div>
+<div class="header">POLISH MASTER: ALL 70 PHRASES</div>
 <div class="progress-container"><div id="progress-bar"></div></div>
 
 <div class="mode-tabs">
-    <div id="tab-guide" class="tab active" onclick="switchMode('survival')">LEARNING</div>
-    <div id="tab-bank" class="tab" onclick="switchMode('banked')">MASTERED</div>
+    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">LEARNING (16)</div>
+    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">MASTERED</div>
 </div>
 
 <div class="quiz-section">
@@ -61,77 +61,91 @@
 </div>
 
 <div class="footer">
-    <button class="reset-btn" onclick="resetProgress()">Reset All Progress</button>
+    <button class="reset-btn" onclick="resetProgress()">Wipe All Progress</button>
 </div>
 
 <script>
-    // Full dataset from your uploaded file
-    const allPhrases = [
-        { "pl": "Cześć", "en": "Hi / Bye" }, { "pl": "Dzień dobry", "en": "Good morning" },
+    const phrasesSource = [
+        { "pl": "Cześć", "en": "Hi / Bye" }, { "pl": "Dzień dobry", "en": "Good morning / afternoon" },
         { "pl": "Dobry wieczór", "en": "Good evening" }, { "pl": "Dobranoc", "en": "Goodnight" },
         { "pl": "Do widzenia", "en": "Goodbye" }, { "pl": "Na razie", "en": "See you later" },
-        { "pl": "Miłego dnia", "en": "Have a nice day" }, { "pl": "Jak leci?", "en": "How's it going?" },
-        { "pl": "Proszę", "en": "Please" }, { "pl": "Dziękuję", "en": "Thank you" },
-        { "pl": "Dzięki", "en": "Thanks" }, { "pl": "Przepraszam", "en": "Excuse me" },
-        { "pl": "Nie ma za co", "en": "No problem" }, { "pl": "Na zdrowie!", "en": "Cheers!" },
-        { "pl": "Smacznego!", "en": "Enjoy!" }, { "pl": "Tak", "en": "Yes" },
-        { "pl": "Nie", "en": "No" }, { "pl": "Może", "en": "Maybe" },
-        { "pl": "Nie wiem", "en": "I don't know" }, { "pl": "Nie rozumiem", "en": "I don't understand" },
-        { "pl": "Ile to kosztuje?", "en": "How much?" }, { "pl": "Poproszę...", "en": "I'll have..." },
-        { "pl": "Rachunek, proszę", "en": "The bill, please" }, { "pl": "Pomocy!", "en": "Help!" },
-        { "pl": "Zgubiłem się", "en": "I am lost" }, { "pl": "Toaleta", "en": "Toilet" },
-        { "pl": "Sklep", "en": "Shop" }, { "pl": "Dworzec", "en": "Station" },
-        { "pl": "Hotel", "en": "Hotel" }, { "pl": "Dzisiaj", "en": "Today" }
+        { "pl": "Cieszę się, że cię widzę", "en": "Glad to see you" }, { "pl": "Miłego dnia", "en": "Have a nice day" },
+        { "pl": "Do zobaczenia", "en": "See you soon" }, { "pl": "Jak leci?", "en": "How's it going?" },
+        { "pl": "Proszę", "en": "Please / You're welcome" }, { "pl": "Dziękuję", "en": "Thank you" },
+        { "pl": "Dzięki", "en": "Thanks" }, { "pl": "Przepraszam", "en": "Sorry / Excuse me" },
+        { "pl": "Nie ma za co", "en": "No problem" }, { "pl": "Bardzo proszę", "en": "You are very welcome" },
+        { "pl": "Przykro mi", "en": "I’m sorry (sympathy)" }, { "pl": "Na zdrowie!", "en": "Cheers! / Bless you" },
+        { "pl": "Smacznego!", "en": "Enjoy your meal!" }, { "pl": "Proszę powtórzyć", "en": "Please repeat" },
+        { "pl": "Tak", "en": "Yes" }, { "pl": "Nie", "en": "No" }, { "pl": "Może", "en": "Maybe" },
+        { "pl": "Nie wiem", "en": "I don’t know" }, { "pl": "Nie rozumiem", "en": "I don’t understand" },
+        { "pl": "Jak się masz?", "en": "How are you?" }, { "pl": "Dobrze, a ty?", "en": "Good, and you?" },
+        { "pl": "Mówię trochę po polsku", "en": "I speak a little Polish" }, { "pl": "Jak to się mówi po polsku?", "en": "How do you say that in Polish?" },
+        { "pl": "Co to jest?", "en": "What is this?" }, { "pl": "Jak masz na imię?", "en": "What is your name?" },
+        { "pl": "Mam na imię...", "en": "My name is..." }, { "pl": "Miło mi cię poznać", "en": "Nice to meet you" },
+        { "pl": "Skąd jesteś?", "en": "Where are you from?" }, { "pl": "Jestem z...", "en": "I am from..." },
+        { "pl": "Gdzie mieszkasz?", "en": "Where do you live?" }, { "pl": "Ile masz lat?", "en": "How old are you?" },
+        { "pl": "Czym się zajmujesz?", "en": "What do you do for work?" }, { "pl": "Co robisz?", "en": "What are you doing?" },
+        { "pl": "Lubię cię", "en": "I like you" }, { "pl": "Gdzie jest...?", "en": "Where is...?" },
+        { "pl": "Szukam...", "en": "I am looking for..." }, { "pl": "Toaleta", "en": "Toilet" },
+        { "pl": "Sklep", "en": "Shop" }, { "pl": "Apteka", "en": "Pharmacy" }, { "pl": "Dworzec", "en": "Station" },
+        { "pl": "Lotnisko", "en": "Airport" }, { "pl": "Hotel", "en": "Hotel" },
+        { "pl": "Prosto / W lewo / W prawo", "en": "Straight / Left / Right" }, { "pl": "Tutaj / Tam", "en": "Here / There" },
+        { "pl": "Ile to kosztuje?", "en": "How much is it?" }, { "pl": "Poproszę...", "en": "I’ll have..." },
+        { "pl": "Rachunek, proszę", "en": "The bill, please" }, { "pl": "Czy mogę płacić kartą?", "en": "Can I pay by card?" },
+        { "pl": "Gotówka", "en": "Cash" }, { "pl": "Woda", "en": "Water" }, { "pl": "Kawa / Herbata", "en": "Coffee / Tea" },
+        { "pl": "Piwo", "en": "Beer" }, { "pl": "Chleb", "en": "Bread" }, { "pl": "Jedzenie", "en": "Food" },
+        { "pl": "Pomocy!", "en": "Help!" }, { "pl": "Zgubiłem się", "en": "I am lost" },
+        { "pl": "Potrzebuję lekarza", "en": "I need a doctor" }, { "pl": "Zadzwoń po policję", "en": "Call the police" },
+        { "pl": "Teraz", "en": "Now" }, { "pl": "Dzisiaj", "en": "Today" }, { "pl": "Jutro", "en": "Tomorrow" },
+        { "pl": "Wczoraj", "en": "Yesterday" }, { "pl": "Szybko", "en": "Quickly" }, { "pl": "Wolno", "en": "Slowly" }
     ];
 
-    let currentMode = 'survival';
-    let stats = JSON.parse(localStorage.getItem('plStats_v16')) || {};
+    let stats = JSON.parse(localStorage.getItem('pl_mastery_70_v1')) || {};
     let activePhrases = [];
     let currentTarget = null;
-    const MASTER_THRESHOLD = 3;
-    const ACTIVE_COUNT = 16; // Now 16 active slots
+    let currentMode = 'learning';
+    const THRESHOLD = 3;
+    const SLOT_COUNT = 16;
 
-    function initPhrases() {
-        const mastered = allPhrases.filter(p => (stats[p.pl]?.correct || 0) >= MASTER_THRESHOLD);
-        const remaining = allPhrases.filter(p => !mastered.find(m => m.pl === p.pl));
-        activePhrases = remaining.slice(0, ACTIVE_COUNT);
-        updateProgress(mastered.length);
-    }
-
-    function updateProgress(masteredCount) {
-        const percent = (masteredCount / allPhrases.length) * 100;
-        document.getElementById('progress-bar').style.width = percent + "%";
+    function refreshLearningPool() {
+        const mastered = phrasesSource.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+        const available = phrasesSource.filter(p => (stats[p.pl] || 0) < THRESHOLD);
+        
+        activePhrases = available.slice(0, SLOT_COUNT);
+        
+        const progress = (mastered.length / phrasesSource.length) * 100;
+        document.getElementById('progress-bar').style.width = progress + "%";
     }
 
     function switchMode(m) {
         currentMode = m;
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + (m === 'survival' ? 'guide' : 'bank')).classList.add('active');
+        document.getElementById('tab-' + m).classList.add('active');
         updateMap();
-        if(m === 'survival') startNewRound();
+        if (m === 'learning') startNewRound();
     }
 
     function speak(text) {
         window.speechSynthesis.cancel();
         const msg = new SpeechSynthesisUtterance(text);
         msg.lang = 'pl-PL';
-        msg.rate = 0.8;
+        msg.rate = 0.85;
         window.speechSynthesis.speak(msg);
     }
 
     function updateMap() {
         const mapDiv = document.getElementById('mastery-map');
         mapDiv.innerHTML = '';
-        const list = currentMode === 'survival' ? activePhrases : allPhrases.filter(p => (stats[p.pl]?.correct || 0) >= MASTER_THRESHOLD);
+        const list = currentMode === 'learning' ? activePhrases : phrasesSource.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
         
         list.forEach(p => {
             const tile = document.createElement('div');
             tile.className = 'tile';
-            const score = stats[p.pl]?.correct || 0;
+            const count = stats[p.pl] || 0;
             tile.innerHTML = `<span class="char">${p.pl}</span>`;
-            if (score > 0) {
-                tile.style.backgroundColor = `rgba(46, 204, 113, ${score / MASTER_THRESHOLD})`;
-                tile.style.borderColor = "#2ecc71";
+            if (count > 0) {
+                tile.style.backgroundColor = `rgba(46, 204, 113, ${Math.min(1, count / THRESHOLD)})`;
+                if (count >= THRESHOLD) tile.style.color = "white";
             }
             tile.onclick = () => speak(p.pl);
             mapDiv.appendChild(tile);
@@ -143,62 +157,60 @@
         document.getElementById('next-btn').style.display = "none";
         const grid = document.getElementById('options-grid');
         grid.innerHTML = "";
-        
+
         if (activePhrases.length === 0) {
-            document.getElementById('feedback').innerText = "All mastered! Use Reset to start over.";
+            document.getElementById('feedback').innerText = "Wszystko opanowane! 🎉";
             return;
         }
 
         currentTarget = activePhrases[Math.floor(Math.random() * activePhrases.length)];
-        // Get 4 random options from the current active pool
-        let choices = [...activePhrases].sort(() => 0.5 - Math.random()).slice(0, 4);
-        if (!choices.find(c => c.pl === currentTarget.pl)) choices[0] = currentTarget;
-        
-        choices.sort(() => 0.5 - Math.random()).forEach(c => {
+        let options = [...activePhrases].sort(() => 0.5 - Math.random()).slice(0, 4);
+        if (!options.find(o => o.pl === currentTarget.pl)) options[0] = currentTarget;
+
+        options.sort(() => 0.5 - Math.random()).forEach(opt => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
-            btn.innerHTML = `${c.pl}<span class="hint">${c.en}</span>`;
-            btn.onclick = () => checkAnswer(c.pl);
+            btn.innerHTML = `${opt.pl}<span class="hint">${opt.en}</span>`;
+            btn.onclick = () => checkAnswer(opt.pl);
             grid.appendChild(btn);
         });
-        setTimeout(() => speak(currentTarget.pl), 400);
+        setTimeout(() => speak(currentTarget.pl), 500);
     }
 
     function checkAnswer(guess) {
         if (document.getElementById('next-btn').style.display === "block") return;
-        if (!stats[currentTarget.pl]) stats[currentTarget.pl] = { correct: 0 };
 
         if (guess === currentTarget.pl) {
-            stats[currentTarget.pl].correct++;
-            document.getElementById('feedback').innerText = "Dobrze! (+1)";
+            stats[currentTarget.pl] = (stats[currentTarget.pl] || 0) + 1;
+            document.getElementById('feedback').innerText = "Dobrze! 🌟";
             document.getElementById('feedback').style.color = "var(--success)";
             document.getElementById('next-btn').style.display = "block";
             
-            if (stats[currentTarget.pl].correct >= MASTER_THRESHOLD) {
-                document.getElementById('feedback').innerText = "Phrase Banked! New one added.";
-                setTimeout(() => { initPhrases(); updateMap(); }, 1000);
+            if (stats[currentTarget.pl] === THRESHOLD) {
+                document.getElementById('feedback').innerText = "Mastered! Banked.";
+                setTimeout(() => { refreshLearningPool(); updateMap(); }, 800);
             }
         } else {
-            stats[currentTarget.pl].correct = Math.max(0, stats[currentTarget.pl].correct - 1);
-            document.getElementById('feedback').innerText = "Spróbuj ponownie!";
+            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
+            document.getElementById('feedback').innerText = "Źle! Spróbuj ponownie.";
             document.getElementById('feedback').style.color = "var(--pol-red)";
         }
-        localStorage.setItem('plStats_v16', JSON.stringify(stats));
+        localStorage.setItem('pl_mastery_70_v1', JSON.stringify(stats));
         updateMap();
     }
 
     function resetProgress() {
-        if (confirm("Clear all data and start over?")) {
-            localStorage.removeItem('plStats_v16');
+        if (confirm("Reset progress for all 70 phrases?")) {
+            localStorage.removeItem('pl_mastery_70_v1');
             stats = {};
-            initPhrases();
+            refreshLearningPool();
             updateMap();
             startNewRound();
         }
     }
 
     function speakTarget() { if (currentTarget) speak(currentTarget.pl); }
-    window.onload = () => { initPhrases(); updateMap(); startNewRound(); };
+    window.onload = () => { refreshLearningPool(); updateMap(); startNewRound(); };
 </script>
 </body>
 </html>
