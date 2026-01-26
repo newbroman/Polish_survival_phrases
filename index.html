@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Master: Level System</title>
+    <title>Polish Master: Dynamic Levels</title>
     <style>
         :root { --pol-red: #dc143c; --success: #2ecc71; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; height: 100vh; color: var(--text); overflow: hidden; }
         .header { background: var(--pol-red); color: white; width: 100%; text-align: center; padding: 6px 0; font-weight: bold; font-size: 0.85rem; flex-shrink: 0; }
+        .level-tag { background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 10px; margin-left: 8px; font-size: 0.7rem; }
         
         .progress-container { width: 100%; height: 8px; background: #ddd; flex-shrink: 0; }
         #progress-bar { width: 0%; height: 100%; background: var(--success); transition: width 0.5s ease-in-out; }
@@ -36,19 +37,21 @@
         .reset-btn { background: #666; color: white; border: none; padding: 6px 14px; border-radius: 4px; font-size: 0.65rem; cursor: pointer; }
         .next-btn { background: #3498db; color: white; width: 100%; padding: 10px; border-radius: 8px; font-size: 0.9rem; border: none; display: none; margin-top: 6px; font-weight: bold; cursor: pointer; }
         
-        #level-up-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); color: white; z-index: 100; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        #level-up-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); color: white; z-index: 100; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
         .level-up-btn { background: var(--success); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.2rem; font-weight: bold; margin-top: 20px; cursor: pointer; }
     </style>
 </head>
 <body>
 
 <div id="level-up-overlay">
-    <h1>POZIOM 0 UKOŃCZONY! 🏆</h1>
-    <p>You have mastered the first 70 phrases.</p>
-    <button class="level-up-btn" onclick="startLevel2()">Unlock Level 1 (Intermediate)</button>
+    <h1 id="overlay-title">POZIOM UKOŃCZONY! 🏆</h1>
+    <p id="overlay-desc">You've mastered this set. Ready for the next level?</p>
+    <button class="level-up-btn" id="overlay-btn" onclick="advanceLevel()">Load Next Phrases</button>
 </div>
 
-<div class="header" id="app-title">POLISH MASTER: LEVEL 0</div>
+<div class="header">
+    POLISH MASTER <span id="level-display" class="level-tag">Level 0</span>
+</div>
 <div class="progress-container"><div id="progress-bar"></div></div>
 
 <div class="mode-tabs">
@@ -70,102 +73,98 @@
 </div>
 
 <div class="footer">
-    <button class="reset-btn" onclick="resetProgress()">Wipe Saved Data</button>
+    <button class="reset-btn" onclick="resetProgress()">Clear All Progress</button>
 </div>
 
 <script>
-    // Level 0 Data from phrases.json
-    const level0Phrases = [
-        { "pl": "Cześć", "en": "Hi / Bye" }, { "pl": "Dzień dobry", "en": "Good morning / afternoon" },
-        { "pl": "Dobry wieczór", "en": "Good evening" }, { "pl": "Dobranoc", "en": "Goodnight" },
-        { "pl": "Do widzenia", "en": "Goodbye" }, { "pl": "Na razie", "en": "See you later" },
-        { "pl": "Cieszę się, że cię widzę", "en": "I'm glad to see you" }, { "pl": "Miłego dnia", "en": "Have a nice day" },
-        { "pl": "Do zobaczenia", "en": "See you (soon)" }, { "pl": "Jak leci?", "en": "How's it going?" },
-        { "pl": "Proszę", "en": "Please / You're welcome" }, { "pl": "Dziękuję", "en": "Thank you" },
-        { "pl": "Dzięki", "en": "Thanks (Casual)" }, { "pl": "Przepraszam", "en": "I'm sorry / Excuse me" },
-        { "pl": "Nie ma za co", "en": "No problem" }, { "pl": "Bardzo proszę", "en": "You are very welcome" },
-        { "pl": "Przykro mi", "en": "I’m sorry (sympathy)" }, { "pl": "Na zdrowie!", "en": "Cheers! / Bless you" },
-        { "pl": "Smacznego!", "en": "Enjoy your meal!" }, { "pl": "Proszę powtórzyć", "en": "Please repeat" },
-        { "pl": "Tak", "en": "Yes" }, { "pl": "Nie", "en": "No" }, { "pl": "Może", "en": "Maybe" },
-        { "pl": "Nie wiem", "en": "I don’t know" }, { "pl": "Nie rozumiem", "en": "I don’t understand" },
-        { "pl": "Jak się masz?", "en": "How are you?" }, { "pl": "Dobrze, a ty?", "en": "Good, and you?" },
-        { "pl": "Mówię trochę po polsku", "en": "I speak a little Polish" }, { "pl": "Jak to się mówi po polsku?", "en": "How do you say that in Polish?" },
-        { "pl": "Co to jest?", "en": "What is this?" }, { "pl": "Jak masz na imię?", "en": "What is your name?" },
-        { "pl": "Mam na imię...", "en": "My name is..." }, { "pl": "Miło mi cię poznać", "en": "Nice to meet you" },
-        { "pl": "Skąd jesteś?", "en": "Where are you from?" }, { "pl": "Jestem z...", "en": "I am from..." },
-        { "pl": "Gdzie mieszkasz?", "en": "Where do you live?" }, { "pl": "Ile masz lat?", "en": "How old are you?" },
-        { "pl": "Czym się zajmujesz?", "en": "What do you do for work?" }, { "pl": "Co robisz?", "en": "What are you doing?" },
-        { "pl": "Lubię cię", "en": "I like you" }, { "pl": "Gdzie jest...?", "en": "Where is...?" },
-        { "pl": "Szukam...", "en": "I am looking for..." }, { "pl": "Toaleta", "en": "Toilet" },
-        { "pl": "Sklep", "en": "Shop" }, { "pl": "Apteka", "en": "Pharmacy" }, { "pl": "Dworzec", "en": "Station" },
-        { "pl": "Lotnisko", "en": "Airport" }, { "pl": "Hotel", "en": "Hotel" },
-        { "pl": "Prosto / W lewo / W prawo", "en": "Straight / Left / Right" }, { "pl": "Tutaj / Tam", "en": "Here / There" },
-        { "pl": "Ile to kosztuje?", "en": "How much is it?" }, { "pl": "Poproszę...", "en": "I’ll have..." },
-        { "pl": "Rachunek, proszę", "en": "The bill, please" }, { "pl": "Czy mogę płacić kartą?", "en": "Can I pay by card?" },
-        { "pl": "Gotówka", "en": "Cash" }, { "pl": "Woda", "en": "Water" }, { "pl": "Kawa / Herbata", "en": "Coffee / Tea" },
-        { "pl": "Piwo", "en": "Beer" }, { "pl": "Chleb", "en": "Bread" }, { "pl": "Jedzenie", "en": "Food" },
-        { "pl": "Pomocy!", "en": "Help!" }, { "pl": "Zgubiłem się", "en": "I am lost" },
-        { "pl": "Potrzebuję lekarza", "en": "I need a doctor" }, { "pl": "Zadzwoń po policję", "en": "Call the police" },
-        { "pl": "Teraz", "en": "Now" }, { "pl": "Dzisiaj", "en": "Today" }, { "pl": "Jutro", "en": "Tomorrow" },
-        { "pl": "Wczoraj", "en": "Yesterday" }, { "pl": "Szybko", "en": "Quickly" }, { "pl": "Wolno", "en": "Slowly" }
-    ];
+    // Configuration for file mapping
+    const levelFiles = {
+        0: 'phrases.json',
+        1: 'phrases_level2.json',
+        2: 'phrases_level3.json'
+    };
 
-    let currentPhrases = level0Phrases;
-    let stats = JSON.parse(localStorage.getItem('pl_mastery_v2')) || {};
+    let stats = JSON.parse(localStorage.getItem('pl_mastery_v4')) || {};
+    let currentLevel = parseInt(localStorage.getItem('pl_current_level')) || 0;
+    let phrasesData = [];
     let activePhrases = [];
     let currentTarget = null;
     let currentMode = 'learning';
-    let currentLevel = localStorage.getItem('pl_level') || 0;
     const THRESHOLD = 3;
     const SLOT_COUNT = 16;
 
-    function refreshLearningPool() {
-        const mastered = currentPhrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-        const available = currentPhrases.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-        
-        activePhrases = available.slice(0, SLOT_COUNT);
-        
-        const progress = (mastered.length / currentPhrases.length) * 100;
-        document.getElementById('progress-bar').style.width = progress + "%";
-        
-        if (progress >= 100 && currentLevel == 0) {
-            document.getElementById('level-up-overlay').style.display = 'flex';
+    async function loadLevelData() {
+        const fileName = levelFiles[currentLevel];
+        if (!fileName) {
+            showGameComplete();
+            return;
+        }
+
+        try {
+            const response = await fetch(fileName);
+            const data = await response.json();
+            phrasesData = data.phrases;
+            document.getElementById('level-display').innerText = `Level ${currentLevel}`;
+            refreshUI();
+        } catch (error) {
+            console.error("Error loading JSON:", error);
+            alert(`Could not find ${fileName}. Please ensure it is in the same folder as this app.`);
         }
     }
 
-    function switchMode(m) {
-        currentMode = m;
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + (m === 'learning' ? 'learning' : 'mastered')).classList.add('active');
+    function refreshUI() {
+        const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+        const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
+        
+        activePhrases = available.slice(0, SLOT_COUNT);
+        const progress = (mastered.length / phrasesData.length) * 100;
+        document.getElementById('progress-bar').style.width = progress + "%";
+
+        if (progress >= 100) {
+            document.getElementById('level-up-overlay').style.display = 'flex';
+        } else {
+            updateMap();
+            startNewRound();
+        }
+    }
+
+    function advanceLevel() {
+        currentLevel++;
+        localStorage.setItem('pl_current_level', currentLevel);
+        document.getElementById('level-up-overlay').style.display = 'none';
+        loadLevelData();
+    }
+
+    function showGameComplete() {
+        document.getElementById('level-up-overlay').style.display = 'flex';
+        document.getElementById('overlay-title').innerText = "POLISH MASTER! 👑";
+        document.getElementById('overlay-desc').innerText = "You have mastered all available phrase files.";
+        document.getElementById('overlay-btn').innerText = "Restart from Level 0";
+        document.getElementById('overlay-btn').onclick = () => {
+            localStorage.clear();
+            location.reload();
+        };
+    }
+
+    // Standard Quiz Logic
+    function checkAnswer(guess) {
+        if (guess === currentTarget.pl) {
+            stats[currentTarget.pl] = (stats[currentTarget.pl] || 0) + 1;
+            document.getElementById('feedback').innerText = "Dobrze! 🌟";
+            document.getElementById('next-btn').style.display = "block";
+        } else {
+            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
+            document.getElementById('feedback').innerText = "Spróbuj ponownie!";
+        }
+        localStorage.setItem('pl_mastery_v4', JSON.stringify(stats));
         updateMap();
-        if (m === 'learning') startNewRound();
     }
 
     function speak(text) {
         window.speechSynthesis.cancel();
         const msg = new SpeechSynthesisUtterance(text);
         msg.lang = 'pl-PL';
-        msg.rate = 0.85;
         window.speechSynthesis.speak(msg);
-    }
-
-    function updateMap() {
-        const mapDiv = document.getElementById('mastery-map');
-        mapDiv.innerHTML = '';
-        const list = currentMode === 'learning' ? activePhrases : currentPhrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-        
-        list.forEach(p => {
-            const tile = document.createElement('div');
-            tile.className = 'tile';
-            const count = stats[p.pl] || 0;
-            tile.innerHTML = `<span class="char">${p.pl}</span>`;
-            if (count > 0) {
-                tile.style.backgroundColor = `rgba(46, 204, 113, ${Math.min(1, count / THRESHOLD)})`;
-                if (count >= THRESHOLD) tile.style.color = "white";
-            }
-            tile.onclick = () => speak(p.pl);
-            mapDiv.appendChild(tile);
-        });
     }
 
     function startNewRound() {
@@ -173,11 +172,6 @@
         document.getElementById('next-btn').style.display = "none";
         const grid = document.getElementById('options-grid');
         grid.innerHTML = "";
-
-        if (activePhrases.length === 0) {
-            document.getElementById('feedback').innerText = "Level Mastered! 🎉";
-            return;
-        }
 
         currentTarget = activePhrases[Math.floor(Math.random() * activePhrases.length)];
         let options = [...activePhrases].sort(() => 0.5 - Math.random()).slice(0, 4);
@@ -193,43 +187,36 @@
         setTimeout(() => speak(currentTarget.pl), 500);
     }
 
-    function checkAnswer(guess) {
-        if (document.getElementById('next-btn').style.display === "block") return;
-
-        if (guess === currentTarget.pl) {
-            stats[currentTarget.pl] = (stats[currentTarget.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Dobrze! 🌟";
-            document.getElementById('feedback').style.color = "var(--success)";
-            document.getElementById('next-btn').style.display = "block";
-            
-            if (stats[currentTarget.pl] === THRESHOLD) {
-                setTimeout(() => { refreshLearningPool(); updateMap(); }, 800);
+    function updateMap() {
+        const mapDiv = document.getElementById('mastery-map');
+        mapDiv.innerHTML = '';
+        const list = currentMode === 'learning' ? activePhrases : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+        
+        list.forEach(p => {
+            const tile = document.createElement('div');
+            tile.className = 'tile';
+            const count = stats[p.pl] || 0;
+            tile.innerHTML = `<span class="char">${p.pl}</span>`;
+            if (count > 0) {
+                tile.style.backgroundColor = `rgba(46, 204, 113, ${Math.min(1, count / THRESHOLD)})`;
+                if (count >= THRESHOLD) tile.style.color = "white";
             }
-        } else {
-            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
-            document.getElementById('feedback').innerText = "Spróbuj ponownie!";
-            document.getElementById('feedback').style.color = "var(--pol-red)";
-        }
-        localStorage.setItem('pl_mastery_v2', JSON.stringify(stats));
+            tile.onclick = () => speak(p.pl);
+            mapDiv.appendChild(tile);
+        });
+    }
+
+    function switchMode(m) {
+        currentMode = m;
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + (m === 'learning' ? 'learning' : 'mastered')).classList.add('active');
         updateMap();
     }
 
-    function resetProgress() {
-        if (confirm("Reset everything?")) {
-            localStorage.clear();
-            location.reload();
-        }
-    }
-
     function speakTarget() { if (currentTarget) speak(currentTarget.pl); }
+    function resetProgress() { if (confirm("Delete everything?")) { localStorage.clear(); location.reload(); } }
 
-    // Placeholder for Level 2 logic
-    function startLevel2() {
-        alert("Please upload phrases_level2.json to proceed!");
-        // Logic to swap currentPhrases with Level 2 data goes here
-    }
-
-    window.onload = () => { refreshLearningPool(); updateMap(); startNewRound(); };
+    window.onload = loadLevelData;
 </script>
 </body>
 </html>
