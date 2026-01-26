@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Survival Guide</title>
+    <title>Polish Master 16</title>
     <style>
         :root { --pol-red: #dc143c; --success: #2ecc71; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -11,36 +11,40 @@
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; height: 100vh; color: var(--text); overflow: hidden; }
         .header { background: var(--pol-red); color: white; width: 100%; text-align: center; padding: 6px 0; font-weight: bold; font-size: 0.85rem; flex-shrink: 0; }
         
+        .progress-container { width: 100%; height: 6px; background: #ddd; flex-shrink: 0; }
+        #progress-bar { width: 0%; height: 100%; background: var(--success); transition: width 0.3s; }
+
         .mode-tabs { display: flex; width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .tab { flex: 1; padding: 8px; text-align: center; font-size: 0.6rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); }
 
         .quiz-section { width: 94%; max-width: 400px; margin-top: 8px; background: var(--card); padding: 10px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-shrink: 0; box-sizing: border-box; }
-        .feedback { height: 18px; font-size: 0.8rem; font-weight: bold; margin-bottom: 4px; text-align: center; }
+        .feedback { height: 18px; font-size: 0.75rem; font-weight: bold; margin-bottom: 4px; text-align: center; }
         .quiz-controls { display: flex; align-items: center; gap: 8px; }
         .speak-btn { background: transparent; border: 2px solid var(--pol-red); color: var(--pol-red); width: 40px; height: 40px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; flex-shrink: 0; }
         
         .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex-grow: 1; }
-        .option-btn { background: var(--tile-bg); border: none; padding: 8px; border-radius: 8px; font-size: 0.8rem; font-weight: bold; color: var(--text); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 45px; }
+        .option-btn { background: var(--tile-bg); border: none; padding: 6px; border-radius: 8px; font-size: 0.7rem; font-weight: bold; color: var(--text); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 48px; }
         .option-btn span.hint { font-size: 0.5rem; opacity: 0.7; font-weight: normal; text-align: center; }
 
-        .map-section { width: 96%; max-width: 450px; margin-top: 8px; flex-grow: 1; overflow-y: auto; padding-bottom: 15px; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
-        .tile { aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 6px; cursor: pointer; transition: 0.1s; padding: 2px; }
-        .tile .char { font-size: 0.7rem; font-weight: bold; text-align: center; line-height: 1; }
-        .tile .sub { font-size: 0.45rem; opacity: 0.7; margin-top: 2px; text-align: center; }
+        .map-section { width: 96%; max-width: 450px; margin-top: 8px; flex-grow: 1; overflow-y: auto; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding-bottom: 60px; }
+        .tile { aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 6px; cursor: pointer; padding: 2px; border: 1px solid transparent; }
+        .tile .char { font-size: 0.55rem; font-weight: bold; text-align: center; line-height: 1.1; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
         
+        .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 8px; text-align: center; border-top: 1px solid #ddd; z-index: 10; }
+        .reset-btn { background: #666; color: white; border: none; padding: 4px 12px; border-radius: 4px; font-size: 0.65rem; cursor: pointer; }
         .next-btn { background: #3498db; color: white; width: 100%; padding: 10px; border-radius: 8px; font-size: 0.9rem; border: none; display: none; margin-top: 6px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="header" id="dynamic-header">POLSKI GUIDE</div>
+<div class="header">POLISH SURVIVAL (16 ACTIVE)</div>
+<div class="progress-container"><div id="progress-bar"></div></div>
 
 <div class="mode-tabs">
-    <div id="tab-alpha" class="tab active" onclick="switchMode('alpha')">ALPHA</div>
-    <div id="tab-extra" class="tab" onclick="switchMode('extra')">SPECIALS</div>
-    <div id="tab-survival" class="tab" onclick="switchMode('survival')">GUIDE</div>
+    <div id="tab-guide" class="tab active" onclick="switchMode('survival')">LEARNING</div>
+    <div id="tab-bank" class="tab" onclick="switchMode('banked')">MASTERED</div>
 </div>
 
 <div class="quiz-section">
@@ -56,111 +60,80 @@
     <div class="grid" id="mastery-map"></div>
 </div>
 
+<div class="footer">
+    <button class="reset-btn" onclick="resetProgress()">Reset All Progress</button>
+</div>
+
 <script>
-    const alphabetData = {
-        'A': {h: 'ah', w: 'Auto', e: '🚗'}, 'B': {h: 'b', w: 'But', e: '👞'}, 'C': {h: 'ts', w: 'Cukier', e: '🍬'}, 
-        'D': {h: 'd', w: 'Dom', e: '🏠'}, 'E': {h: 'eh', w: 'Ekran', e: '📱'}, 'F': {h: 'f', w: 'Farba', e: '🎨'},
-        'G': {h: 'g', w: 'Góra', e: '🏔️'}, 'H': {h: 'h', w: 'Herbata', e: '🍵'}, 'I': {h: 'ee', w: 'Imię', e: '🆔'},
-        'J': {h: 'y', w: 'Jajko', e: '🥚'}, 'K': {h: 'k', w: 'Kot', e: '🐱'}, 'L': {h: 'l', w: 'Lampa', e: '💡'},
-        'M': {h: 'm', w: 'Mama', e: '👩'}, 'N': {h: 'n', w: 'Noc', e: '🌙'}, 'O': {h: 'oh', w: 'Okno', e: '🪟'},
-        'P': {h: 'p', w: 'Pies', e: '🐶'}, 'R': {h: 'r', w: 'Ręka', e: '✋'}, 'S': {h: 's', w: 'Ser', e: '🧀'},
-        'T': {h: 't', w: 'Tak', e: '👍'}, 'U': {h: 'oo', w: 'Ucho', e: '👂'}, 'W': {h: 'v', w: 'Woda', e: '💧'},
-        'Y': {h: 'i', w: 'Syn', e: '👦'}, 'Z': {h: 'z', w: 'Ząb', e: '🦷'}
-    };
-
-    const extraData = {
-        'Ą': {h: 'own', w: 'Mąka', e: '🌾'}, 'Ę': {h: 'en', w: 'Gęś', e: '🦢'}, 'Ł': {h: 'w', w: 'Łódź', e: '⛵'},
-        'Ń': {h: 'ny', w: 'Koń', e: '🐎'}, 'Ó': {h: 'oo', w: 'Ogród', e: '🌳'}, 'Ś': {h: 'sh!', w: 'Śnieg', e: '❄️'},
-        'Ź': {h: 'zh!', w: 'Źle', e: '👎'}, 'Ż': {h: 'zh', w: 'Żaba', e: '🐸'}, 'Ć': {h: 'ch!', w: 'Ćma', e: '🦋'}
-    };
-
-    // Data from your JSON file
-    const phrasesData = [
-        { "pl": "Cześć", "en": "Hi / Bye" },
-        { "pl": "Dzień dobry", "en": "Good morning" },
-        { "pl": "Dobranoc", "en": "Goodnight" },
-        { "pl": "Do widzenia", "en": "Goodbye" },
-        { "pl": "Proszę", "en": "Please / welcome" },
-        { "pl": "Dziękuję", "en": "Thank you" },
-        { "pl": "Dzięki", "en": "Thanks" },
-        { "pl": "Przepraszam", "en": "Sorry / Excuse me" },
-        { "pl": "Nie ma za co", "en": "No problem" },
-        { "pl": "Na zdrowie!", "en": "Cheers!" },
-        { "pl": "Smacznego!", "en": "Enjoy!" },
-        { "pl": "Tak", "en": "Yes" },
-        { "pl": "Nie", "en": "No" },
-        { "pl": "Nie wiem", "en": "I don’t know" },
-        { "pl": "Ile to kosztuje?", "en": "How much?" },
-        { "pl": "Rachunek, proszę", "en": "Bill, please" },
-        { "pl": "Pomocy!", "en": "Help!" },
-        { "pl": "Zgubiłem się", "en": "I am lost" }
+    // Full dataset from your uploaded file
+    const allPhrases = [
+        { "pl": "Cześć", "en": "Hi / Bye" }, { "pl": "Dzień dobry", "en": "Good morning" },
+        { "pl": "Dobry wieczór", "en": "Good evening" }, { "pl": "Dobranoc", "en": "Goodnight" },
+        { "pl": "Do widzenia", "en": "Goodbye" }, { "pl": "Na razie", "en": "See you later" },
+        { "pl": "Miłego dnia", "en": "Have a nice day" }, { "pl": "Jak leci?", "en": "How's it going?" },
+        { "pl": "Proszę", "en": "Please" }, { "pl": "Dziękuję", "en": "Thank you" },
+        { "pl": "Dzięki", "en": "Thanks" }, { "pl": "Przepraszam", "en": "Excuse me" },
+        { "pl": "Nie ma za co", "en": "No problem" }, { "pl": "Na zdrowie!", "en": "Cheers!" },
+        { "pl": "Smacznego!", "en": "Enjoy!" }, { "pl": "Tak", "en": "Yes" },
+        { "pl": "Nie", "en": "No" }, { "pl": "Może", "en": "Maybe" },
+        { "pl": "Nie wiem", "en": "I don't know" }, { "pl": "Nie rozumiem", "en": "I don't understand" },
+        { "pl": "Ile to kosztuje?", "en": "How much?" }, { "pl": "Poproszę...", "en": "I'll have..." },
+        { "pl": "Rachunek, proszę", "en": "The bill, please" }, { "pl": "Pomocy!", "en": "Help!" },
+        { "pl": "Zgubiłem się", "en": "I am lost" }, { "pl": "Toaleta", "en": "Toilet" },
+        { "pl": "Sklep", "en": "Shop" }, { "pl": "Dworzec", "en": "Station" },
+        { "pl": "Hotel", "en": "Hotel" }, { "pl": "Dzisiaj", "en": "Today" }
     ];
 
-    let currentMode = 'alpha'; 
-    let mastery = {};
+    let currentMode = 'survival';
+    let stats = JSON.parse(localStorage.getItem('plStats_v16')) || {};
+    let activePhrases = [];
     let currentTarget = null;
+    const MASTER_THRESHOLD = 3;
+    const ACTIVE_COUNT = 16; // Now 16 active slots
+
+    function initPhrases() {
+        const mastered = allPhrases.filter(p => (stats[p.pl]?.correct || 0) >= MASTER_THRESHOLD);
+        const remaining = allPhrases.filter(p => !mastered.find(m => m.pl === p.pl));
+        activePhrases = remaining.slice(0, ACTIVE_COUNT);
+        updateProgress(mastered.length);
+    }
+
+    function updateProgress(masteredCount) {
+        const percent = (masteredCount / allPhrases.length) * 100;
+        document.getElementById('progress-bar').style.width = percent + "%";
+    }
 
     function switchMode(m) {
         currentMode = m;
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + m).classList.add('active');
-        document.getElementById('dynamic-header').innerText = m === 'survival' ? "SURVIVAL GUIDE" : "POLSKI MASTER";
-        initData(); updateMap(); startNewRound();
+        document.getElementById('tab-' + (m === 'survival' ? 'guide' : 'bank')).classList.add('active');
+        updateMap();
+        if(m === 'survival') startNewRound();
     }
 
-    function initData() {
-        const key = 'pMastery_final_v1_' + currentMode;
-        const saved = localStorage.getItem(key);
-        mastery = saved ? JSON.parse(saved) : {};
-        
-        let keys = [];
-        if (currentMode === 'alpha') keys = Object.keys(alphabetData);
-        else if (currentMode === 'extra') keys = Object.keys(extraData);
-        else keys = phrasesData.map(p => p.pl);
-
-        keys.forEach(k => { if (!mastery[k]) mastery[k] = {correct: 0, total: 0}; });
-    }
-
-    function speak(text, extra = "") {
+    function speak(text) {
         window.speechSynthesis.cancel();
         const msg = new SpeechSynthesisUtterance(text);
         msg.lang = 'pl-PL';
         msg.rate = 0.8;
-        if (extra) {
-            msg.onend = () => {
-                const eMsg = new SpeechSynthesisUtterance(extra);
-                eMsg.lang = 'pl-PL';
-                eMsg.rate = 0.7;
-                window.speechSynthesis.speak(eMsg);
-            };
-        }
         window.speechSynthesis.speak(msg);
     }
 
     function updateMap() {
         const mapDiv = document.getElementById('mastery-map');
         mapDiv.innerHTML = '';
+        const list = currentMode === 'survival' ? activePhrases : allPhrases.filter(p => (stats[p.pl]?.correct || 0) >= MASTER_THRESHOLD);
         
-        Object.keys(mastery).forEach(k => {
-            const item = mastery[k];
+        list.forEach(p => {
             const tile = document.createElement('div');
             tile.className = 'tile';
-            
-            if (currentMode === 'alpha' || currentMode === 'extra') {
-                const src = currentMode === 'alpha' ? alphabetData[k] : extraData[k];
-                tile.innerHTML = `<span class="char">${k}</span><span class="sub">${src.h}</span>`;
-                tile.onclick = () => speak(k, "Jak " + src.w);
-            } else {
-                const src = phrasesData.find(p => p.pl === k);
-                tile.innerHTML = `<span class="char">${k}</span><span class="sub">${src.en}</span>`;
-                tile.onclick = () => speak(k);
+            const score = stats[p.pl]?.correct || 0;
+            tile.innerHTML = `<span class="char">${p.pl}</span>`;
+            if (score > 0) {
+                tile.style.backgroundColor = `rgba(46, 204, 113, ${score / MASTER_THRESHOLD})`;
+                tile.style.borderColor = "#2ecc71";
             }
-
-            if (item.total > 0) {
-                const p = (item.correct / item.total) * 100;
-                tile.style.backgroundColor = `rgb(${Math.min(255, 510 * (1-p/100))}, ${Math.min(255, 510 * (p/100))}, 100)`;
-                tile.style.color = 'white';
-            }
+            tile.onclick = () => speak(p.pl);
             mapDiv.appendChild(tile);
         });
     }
@@ -170,47 +143,62 @@
         document.getElementById('next-btn').style.display = "none";
         const grid = document.getElementById('options-grid');
         grid.innerHTML = "";
+        
+        if (activePhrases.length === 0) {
+            document.getElementById('feedback').innerText = "All mastered! Use Reset to start over.";
+            return;
+        }
 
-        let keys = currentMode === 'alpha' ? Object.keys(alphabetData) : 
-                   (currentMode === 'extra' ? Object.keys(extraData) : phrasesData.map(p => p.pl));
+        currentTarget = activePhrases[Math.floor(Math.random() * activePhrases.length)];
+        // Get 4 random options from the current active pool
+        let choices = [...activePhrases].sort(() => 0.5 - Math.random()).slice(0, 4);
+        if (!choices.find(c => c.pl === currentTarget.pl)) choices[0] = currentTarget;
         
-        currentTarget = keys[Math.floor(Math.random() * keys.length)];
-        let choices = keys.sort(() => 0.5 - Math.random()).slice(0, 4);
-        if (!choices.includes(currentTarget)) choices[0] = currentTarget;
-        
-        choices.sort().forEach(c => {
+        choices.sort(() => 0.5 - Math.random()).forEach(c => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
-            let hint = "";
-            if (currentMode === 'alpha') hint = alphabetData[c].h;
-            else if (currentMode === 'extra') hint = extraData[c].h;
-            else hint = phrasesData.find(p => p.pl === c).en;
-
-            btn.innerHTML = `${c}<span class="hint">${hint}</span>`;
-            btn.onclick = () => checkAnswer(c);
+            btn.innerHTML = `${c.pl}<span class="hint">${c.en}</span>`;
+            btn.onclick = () => checkAnswer(c.pl);
             grid.appendChild(btn);
         });
-        setTimeout(() => speak(currentTarget), 400);
+        setTimeout(() => speak(currentTarget.pl), 400);
     }
 
     function checkAnswer(guess) {
         if (document.getElementById('next-btn').style.display === "block") return;
-        mastery[currentTarget].total++;
-        if (guess === currentTarget) {
-            mastery[currentTarget].correct++;
-            document.getElementById('feedback').innerText = "Świetnie!";
+        if (!stats[currentTarget.pl]) stats[currentTarget.pl] = { correct: 0 };
+
+        if (guess === currentTarget.pl) {
+            stats[currentTarget.pl].correct++;
+            document.getElementById('feedback').innerText = "Dobrze! (+1)";
             document.getElementById('feedback').style.color = "var(--success)";
             document.getElementById('next-btn').style.display = "block";
+            
+            if (stats[currentTarget.pl].correct >= MASTER_THRESHOLD) {
+                document.getElementById('feedback').innerText = "Phrase Banked! New one added.";
+                setTimeout(() => { initPhrases(); updateMap(); }, 1000);
+            }
         } else {
+            stats[currentTarget.pl].correct = Math.max(0, stats[currentTarget.pl].correct - 1);
             document.getElementById('feedback').innerText = "Spróbuj ponownie!";
             document.getElementById('feedback').style.color = "var(--pol-red)";
         }
-        localStorage.setItem('pMastery_final_v1_' + currentMode, JSON.stringify(mastery));
+        localStorage.setItem('plStats_v16', JSON.stringify(stats));
         updateMap();
     }
 
-    function speakTarget() { if (currentTarget) speak(currentTarget); }
-    window.onload = () => { initData(); updateMap(); startNewRound(); };
+    function resetProgress() {
+        if (confirm("Clear all data and start over?")) {
+            localStorage.removeItem('plStats_v16');
+            stats = {};
+            initPhrases();
+            updateMap();
+            startNewRound();
+        }
+    }
+
+    function speakTarget() { if (currentTarget) speak(currentTarget.pl); }
+    window.onload = () => { initPhrases(); updateMap(); startNewRound(); };
 </script>
 </body>
 </html>
