@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish Heat Map Pro</title>
+    <style>
+        :root {
+            --lvl-0: #e3f2fd; --lvl-1: #bbdefb; --lvl-2: #fff9c4;
+            --lvl-3: #ffcc80; --lvl-4: #ff8a65; --lvl-5: #f44336;
+        }
+        body { font-family: sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+        
+        /* Tab Styling */
+        .tabs { display: flex; gap: 10px; overflow-x: auto; margin-bottom: 20px; padding-bottom: 10px; }
+        .tab-btn { padding: 10px 20px; border: none; border-radius: 20px; cursor: pointer; background: white; white-space: nowrap; }
+        .tab-btn.active { background: #007bff; color: white; }
+
+        /* Quiz Section */
+        #quiz-container { background: white; padding: 20px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .opt-btn { padding: 15px; border: 2px solid #ddd; border-radius: 8px; cursor: pointer; background: #fafafa; font-size: 1rem; }
+        .opt-btn:hover { border-color: #007bff; }
+
+        /* Heat Map Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+        .tile { padding: 15px; border-radius: 8px; cursor: pointer; text-align: center; transition: 0.2s; border: 1px solid rgba(0,0,0,0.05); }
+        .tile b { display: block; font-size: 1.1rem; }
+        .tile span { font-size: 0.8rem; opacity: 0.8; }
+        
+        /* Color Classes */
+        .lvl-0 { background: var(--lvl-0); } .lvl-1 { background: var(--lvl-1); }
+        .lvl-2 { background: var(--lvl-2); } .lvl-3 { background: var(--lvl-3); }
+        .lvl-4 { background: var(--lvl-4); } .lvl-5 { background: var(--lvl-5); color: white; }
+    </style>
+</head>
+<body>
+
+    <div id="quiz-container">
+        <h3>Listen & Choose</h3>
+        <button onclick="repeatPhrase()" style="padding: 10px; border-radius: 50%; width: 50px; height: 50px; cursor: pointer;">🔊</button>
+        <div class="options-grid" id="quizOptions"></div>
+    </div>
+
+    <div class="tabs" id="tabBar"></div>
+    <div class="grid" id="phraseGrid"></div>
+
+    <script>
+        let allPhrases = []; // Will be loaded from phrases.json
+        let currentTarget = null;
+        let currentCategory = 'Greetings';
+
+        // 1. Audio Function
+        function speak(text) {
+            const msg = new SpeechSynthesisUtterance(text);
+            msg.lang = 'pl-PL'; 
+            window.speechSynthesis.speak(msg);
+        }
+
+        function repeatPhrase() { if(currentTarget) speak(currentTarget.pl); }
+
+        // 2. Load Data
+        async function loadApp() {
+            const response = await fetch('phrases.json');
+            const data = await response.json();
+            allPhrases = data.phrases;
+            
+            setupTabs();
+            renderGrid();
+            startNewQuiz();
+        }
+
+        // 3. Quiz Logic
+        function startNewQuiz() {
+            const optionsDiv = document.getElementById('quizOptions');
+            optionsDiv.innerHTML = '';
+            
+            // Pick a random phrase
+            currentTarget = allPhrases[Math.floor(Math.random() * allPhrases.length)];
+            
+            // Speak it immediately
+            setTimeout(() => speak(currentTarget.pl), 500);
+
+            // Create 4 choices (1 correct, 3 random decoys)
+            let choices = [currentTarget];
+            while(choices.length < 4) {
+                let decoy = allPhrases[Math.floor(Math.random() * allPhrases.length)];
+                if(!choices.includes(decoy)) choices.push(decoy);
+            }
+            choices.sort(() => Math.random() - 0.5);
+
+            choices.forEach(choice => {
+                const btn = document.createElement('button');
+                btn.className = 'opt-btn';
+                btn.innerText = choice.en;
+                btn.onclick = () => handleAnswer(choice === currentTarget);
+                optionsDiv.appendChild(btn);
+            });
+        }
+
+        function handleAnswer(isCorrect) {
+            let score = parseInt(localStorage.getItem(currentTarget.id) || 0);
+            if(isCorrect) {
+                score = Math.min(5, score + 1);
+                alert("Dobrze! (Correct)");
+            } else {
+                score = Math.max(0, score - 1);
+                alert(`Nie... it was "${currentTarget.en}"`);
+            }
+            localStorage.setItem(currentTarget.id, score);
+            renderGrid();
+            startNewQuiz();
+        }
+
+        // 4. Grid & Tabs
+        function setupTabs() {
+            const categories = [...new Set(allPhrases.map(p => p.category))];
+            const tabBar = document.getElementById('tabBar');
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = `tab-btn ${cat === currentCategory ? 'active' : ''}`;
+                btn.innerText = cat;
+                btn.onclick = () => {
+                    currentCategory = cat;
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderGrid();
+                };
+                tabBar.appendChild(btn);
+            });
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById('phraseGrid');
+            grid.innerHTML = '';
+            const filtered = allPhrases.filter(p => p.category === currentCategory);
+            
+            filtered.forEach(p => {
+                const score = localStorage.getItem(p.id) || 0;
+                const tile = document.createElement('div');
+                tile.className = `tile lvl-${score}`;
+                tile.innerHTML = `<b>${p.pl}</b><span>${p.en}</span>`;
+                tile.onclick = () => speak(p.pl);
+                grid.appendChild(tile);
+            });
+        }
+
+        loadApp();
+    </script>
+</body>
+</html>
