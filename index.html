@@ -10,6 +10,7 @@
         
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; height: 100vh; color: var(--text); overflow: hidden; }
         
+        /* Stacked Header */
         .header { width: 100%; padding: 10px 0; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .title { font-weight: 800; font-size: 1.1rem; color: var(--pol-red); text-align: center; margin: 0 0 8px 0; }
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
@@ -20,6 +21,7 @@
         .progress-container { width: 100%; height: 4px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
+        /* Quiz Area - Speaker on Left */
         .quiz-header { background: var(--card); padding: 12px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 48px; height: 48px; font-size: 1.2rem; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
         .q-content { flex-grow: 1; text-align: center; }
@@ -30,30 +32,32 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
+        /* Content Area */
         .map-section { flex-grow: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; max-width: 420px; }
-        /* Adjusted Banked View */
         .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 8px; }
 
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
             background: var(--tile-bg); border-radius: 10px; cursor: pointer; padding: 6px; 
-            text-align: center; font-size: 0.7rem; font-weight: 700; transition: background 0.2s, transform 0.1s;
+            text-align: center; font-size: 0.7rem; font-weight: 700; transition: background 0.2s;
             line-height: 1.1; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden;
         }
+        .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
+
         .banked-item { 
             display: flex; justify-content: space-between; align-items: center; 
             background: var(--card); padding: 12px; border-radius: 10px; border: 1px solid #ddd; cursor: pointer;
         }
 
-        .footer { padding: 8px; text-align: center; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
+        .footer { padding: 10px; text-align: center; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
     </style>
 </head>
 <body>
 
 <div id="overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center;">
     <h1>LEVEL MASTERED! 🏆</h1>
-    <button onclick="advanceLevel()" style="background:var(--pol-red); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold;">Next Level</button>
+    <button onclick="advanceLevel()" style="background:var(--pol-red); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold; cursor:pointer;">Next Level</button>
 </div>
 
 <div class="header">
@@ -84,11 +88,13 @@
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
 </div>
 
-<div class="map-section" id="scroll-area">
-    <div class="grid" id="mastery-map"></div>
+<div class="map-section">
+    <div id="mastery-map"></div>
 </div>
 
-<div class="footer"><button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.6rem; opacity:0.5;">Reset Progress</button></div>
+<div class="footer">
+    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.65rem; opacity:0.6; cursor:pointer;">Reset Progress</button>
+</div>
 
 <script>
     const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
@@ -189,6 +195,9 @@
         } else {
             area.className = "mastered-list";
             const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+            if (mastered.length === 0) {
+                area.innerHTML = '<div style="padding:20px; opacity:0.5; text-align:center;">No phrases banked yet!</div>';
+            }
             mastered.forEach(p => {
                 const item = document.createElement('div');
                 item.className = 'banked-item';
@@ -241,7 +250,13 @@
     function changeLevel(v) { currentLevel = parseInt(v); localStorage.setItem('pl_current_level_idx', currentLevel); loadLevelData(); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
     function resetEverything() { if(confirm("Clear progress?")) { localStorage.clear(); location.reload(); } }
-    function advanceLevel() { currentLevel++; if(currentLevel > levelNames.length) currentLevel = 1; lvlSelect.value = currentLevel; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
+    function advanceLevel() { 
+        currentLevel++; 
+        if(currentLevel > levelNames.length) currentLevel = 1; 
+        lvlSelect.value = currentLevel; 
+        changeLevel(currentLevel); 
+        document.getElementById('overlay').style.display='none'; 
+    }
 
     window.onload = () => { initSpeech(); loadLevelData(); };
 </script>
