@@ -10,7 +10,6 @@
         
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; height: 100vh; color: var(--text); overflow: hidden; }
         
-        /* New Header Layout */
         .header { width: 100%; padding: 15px 0; display: flex; flex-direction: column; align-items: center; gap: 12px; flex-shrink: 0; background: var(--card); border-bottom: 1px solid #ddd; }
         .title-row { width: 94%; max-width: 400px; text-align: center; }
         .title { font-weight: 800; font-size: 1.4rem; color: var(--pol-red); margin: 0; }
@@ -29,7 +28,6 @@
         .tab { flex: 1; padding: 12px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; transition: opacity 0.2s; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        /* 4 Columns x 3 Rows Grid */
         .map-section { width: 96%; max-width: 450px; margin-top: 15px; flex-grow: 1; overflow-y: auto; padding-bottom: 80px; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 8px; }
         .tile { 
@@ -60,8 +58,8 @@
 <body>
 
 <div id="overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center;">
-    <h1>LEVEL MASTERED! 🏆</h1>
-    <button onclick="advanceLevel()" style="background:var(--success); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold; cursor:pointer;">Next Level</button>
+    <h1 style="margin-bottom:20px;">LEVEL MASTERED! 🏆</h1>
+    <button onclick="advanceLevel()" style="background:var(--success); color:white; border:none; padding:20px 40px; border-radius:12px; font-weight:bold; font-size:1.2rem; cursor:pointer; box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);">Go to Next Level</button>
 </div>
 
 <div class="header">
@@ -77,7 +75,7 @@
 <div class="progress-container"><div id="progress-bar"></div></div>
 
 <div class="quiz-header" id="quiz-header">
-    <div id="q-text" class="english-q">Loading...</div>
+    <div id="q-text" class="english-q">Warming up...</div>
     <div id="feedback" class="feedback"></div>
     <button onclick="speakTarget()" style="background:var(--bg); border:1px solid #ddd; border-radius:50%; width:52px; height:52px; font-size:1.3rem; cursor:pointer;">🔊</button>
 </div>
@@ -92,7 +90,7 @@
 </div>
 
 <div class="footer">
-    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.6rem; opacity:0.5;">Reset Dictionary</button>
+    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.6rem; opacity:0.5;">Clear Progress</button>
 </div>
 
 <script>
@@ -128,7 +126,7 @@
             const data = await response.json();
             phrasesData = data.phrases;
             const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-            activePool = available.slice(0, 12); // 4x3 grid
+            activePool = available.slice(0, 12); 
             updateStats(); updateMap(); startNewRound();
         } catch (err) { console.error(err); }
     }
@@ -214,14 +212,13 @@
     }
 
     function speak(text) {
-        // Sacrificial whisper: Primes the audio hardware
+        // Sacrificial whisper: Primes audio hardware to prevent clipping
         const ghost = new SpeechSynthesisUtterance(text);
         if (plVoice) ghost.voice = plVoice;
         ghost.lang = 'pl-PL';
         ghost.volume = 0.001; 
         ghost.rate = 1.6;
         
-        // The real audio
         const real = new SpeechSynthesisUtterance(text);
         if (plVoice) real.voice = plVoice;
         real.lang = 'pl-PL';
@@ -247,10 +244,26 @@
         });
     }
 
-    function changeLevel(v) { currentLevel = parseInt(v); localStorage.setItem('pl_current_level_idx', currentLevel); loadLevelData(); }
+    function changeLevel(v) { 
+        currentLevel = parseInt(v); 
+        localStorage.setItem('pl_current_level_idx', currentLevel); 
+        loadLevelData(); 
+    }
+
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
-    function resetEverything() { if(confirm("Reset dictionary data?")) { localStorage.clear(); location.reload(); } }
-    function advanceLevel() { currentLevel++; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
+    function resetEverything() { if(confirm("Clear all dictionary progress?")) { localStorage.clear(); location.reload(); } }
+
+    function advanceLevel() { 
+        currentLevel++; 
+        if(currentLevel > levelNames.length) currentLevel = 1;
+        
+        // Update the selector physically
+        lvlSelect.value = currentLevel;
+        
+        localStorage.setItem('pl_current_level_idx', currentLevel);
+        document.getElementById('overlay').style.display = 'none';
+        loadLevelData(); 
+    }
 
     window.onload = () => { initSpeech(); loadLevelData(); };
 </script>
