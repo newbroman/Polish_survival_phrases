@@ -105,21 +105,10 @@
     const THRESHOLD = 3;
     let plVoice = null;
 
-    // --- CONTINUOUS STREAM FIX ---
-    // This keeps the audio channel locked open by playing silence in an infinite loop
-    function startPermanentStream() {
-        const silence = new SpeechSynthesisUtterance(" ");
-        silence.volume = 0;
-        silence.onend = startPermanentStream; // Re-trigger immediately when finished
-        window.speechSynthesis.speak(silence);
-    }
-
     function initSpeech() {
         const voices = window.speechSynthesis.getVoices();
         plVoice = voices.find(v => v.lang.startsWith('pl'));
-        startPermanentStream();
     }
-    
     window.speechSynthesis.onvoiceschanged = initSpeech;
 
     const lvlSelect = document.getElementById('level-select');
@@ -150,8 +139,6 @@
         document.getElementById('feedback').innerText = "";
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = currentTarget.en;
-        
-        // Use a short delay to ensure UI renders before speech
         setTimeout(() => speak(currentTarget.pl), 300);
     }
 
@@ -160,14 +147,12 @@
             speak(phrase.pl);
             return;
         }
-
         if (phrase.pl === currentTarget.pl) {
             canAnswer = false;
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Correct! 🌟";
             document.getElementById('feedback').style.color = "var(--success)";
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
-            
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
                     const poolIdx = activePool.findIndex(p => p.pl === phrase.pl);
@@ -177,8 +162,7 @@
                     if (replacement) activePool[poolIdx] = replacement;
                     else activePool.splice(poolIdx, 1);
                 }
-                updateStats();
-                updateMap();
+                updateStats(); updateMap();
                 if (activePool.length === 0) document.getElementById('overlay').style.display = 'flex';
                 else startNewRound();
             }, 600);
@@ -238,13 +222,25 @@
         updateMap();
     }
 
+    // --- THE "DOUBLE-TAP SHADOW" FIX ---
     function speak(text) {
-        const msg = new SpeechSynthesisUtterance(text);
-        if (plVoice) msg.voice = plVoice;
-        msg.lang = 'pl-PL';
-        msg.rate = 0.9; 
-        msg.volume = 1;
-        window.speechSynthesis.speak(msg);
+        // Utterance 1: The Sacrificial Ghost (Simulates a tap to open hardware)
+        const sacrificial = new SpeechSynthesisUtterance(text);
+        if (plVoice) sacrificial.voice = plVoice;
+        sacrificial.lang = 'pl-PL';
+        sacrificial.volume = 0.01; // Low volume ghost
+        sacrificial.rate = 1.2;    // Fast so it ends quickly
+        
+        // Utterance 2: The Real Sound
+        const real = new SpeechSynthesisUtterance(text);
+        if (plVoice) real.voice = plVoice;
+        real.lang = 'pl-PL';
+        real.volume = 1;
+        real.rate = 0.9;
+
+        // Queue them back to back
+        window.speechSynthesis.speak(sacrificial);
+        window.speechSynthesis.speak(real);
     }
 
     function handleSearch() {
@@ -264,13 +260,10 @@
 
     function changeLevel(v) { currentLevel = parseInt(v); localStorage.setItem('pl_current_level_idx', currentLevel); loadLevelData(); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
-    function resetEverything() { if(confirm("Reset progress?")) { localStorage.clear(); location.reload(); } }
+    function resetEverything() { if(confirm("Reset?")) { localStorage.clear(); location.reload(); } }
     function advanceLevel() { currentLevel++; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
 
-    window.onload = () => {
-        initSpeech();
-        loadLevelData();
-    };
+    window.onload = () => { initSpeech(); loadLevelData(); };
 </script>
 </body>
 </html>
