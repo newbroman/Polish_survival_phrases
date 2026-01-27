@@ -3,264 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polish Phrase Master</title>
+    <title>Polish Phrase Master: Quiz Edition</title>
     <style>
         :root {
             --primary: #dc143c;
             --bg: #f4f4f4;
             --card: #ffffff;
-            --locked: #ddd;
+            --correct: #4caf50;
+            --wrong: #f44336;
         }
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; display: flex; flex-direction: column; align-items: center; }
 
-        /* Search & Header */
-        .header {
-            width: 100%;
-            background: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        /* Header & Search */
+        .header { width: 100%; background: white; padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; text-align: center; }
+        #search-input { width: 85%; max-width: 400px; padding: 12px; border: 2px solid #eee; border-radius: 25px; outline: none; }
 
-        #search-input {
-            width: 85%;
-            max-width: 400px;
-            padding: 12px;
-            border: 2px solid #eee;
-            border-radius: 25px;
-            outline: none;
-        }
+        /* Dashboard Grid */
+        .grid-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 20px; width: 90%; max-width: 500px; }
+        .grid-item { aspect-ratio: 1/1; background: white; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .grid-item span { font-size: 0.65rem; margin-top: 4px; opacity: 0.7; }
 
-        /* 4x5 Heat Map Grid */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            padding: 20px;
-            width: 90%;
-            max-width: 500px;
-        }
-
-        .grid-item {
-            aspect-ratio: 1 / 1;
-            background: white;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: 0.2s;
-            border: 3px solid transparent;
-        }
-
-        .grid-item:active { transform: scale(0.95); }
-        .grid-item span { font-size: 0.7rem; margin-top: 4px; opacity: 0.7; }
-
-        /* Game UI */
-        #game-ui { display: none; width: 90%; max-width: 500px; text-align: center; margin-top: 20px; }
+        /* Quiz UI */
+        #quiz-ui { display: none; width: 95%; max-width: 500px; margin-top: 20px; text-align: center; }
+        .question-card { background: var(--card); padding: 40px 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .phrase-display { font-size: 1.8rem; font-weight: bold; margin-bottom: 10px; }
         
-        .card {
-            background: var(--card);
-            padding: 50px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-        }
+        /* Choice Buttons */
+        .choices-container { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .choice-btn { background: white; border: 2px solid #ddd; padding: 15px; border-radius: 12px; font-size: 1rem; cursor: pointer; transition: 0.2s; font-weight: 500; }
+        .choice-btn:active { transform: scale(0.98); }
+        .choice-btn.correct { background: var(--correct); color: white; border-color: var(--correct); }
+        .choice-btn.wrong { background: var(--wrong); color: white; border-color: var(--wrong); }
 
-        .phrase-text { font-size: 1.8rem; font-weight: bold; }
-        .translation-text { color: var(--primary); margin-top: 20px; font-size: 1.3rem; }
-
-        .btn {
-            padding: 15px;
-            border: none;
-            border-radius: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .btn-main { background: var(--primary); color: white; width: 100%; }
-        .btn-sub { background: #333; color: white; flex: 1; }
-        .btn-back { background: none; color: #666; text-decoration: underline; margin-bottom: 10px; }
+        .btn-back { background: none; border: none; color: #666; text-decoration: underline; margin-bottom: 15px; cursor: pointer; }
+        .btn-speak { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 20px; margin-bottom: 15px; cursor: pointer; font-weight: bold; }
         
-        .row { display: flex; gap: 10px; }
+        .feedback { margin-top: 15px; font-weight: bold; height: 20px; }
 
-        /* Guide Table */
-        .guide-container { width: 90%; max-width: 500px; margin-top: 30px; font-size: 0.9rem; color: #444; }
+        /* Guide */
+        .guide { width: 90%; max-width: 500px; margin: 20px 0; font-size: 0.85rem; }
         table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
-        td, th { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+        td, th { padding: 8px; border-bottom: 1px solid #eee; text-align: left; }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <input type="text" id="search-input" placeholder="Search phrases..." oninput="handleSearch()">
+        <input type="text" id="search-input" placeholder="Quick Search..." oninput="handleSearch()">
     </div>
 
     <div id="dashboard">
         <div class="grid-container" id="heat-map"></div>
-        
-        <div class="guide-container">
-            <h3>Level Guide</h3>
-            <table id="level-table">
-                </table>
+        <div class="guide">
+            <table id="level-table"></table>
         </div>
     </div>
 
-    <div id="game-ui">
-        <button class="btn btn-back" onclick="showDashboard()">← Back to Dashboard</button>
-        <div class="card" onclick="toggleTranslation()">
-            <div id="category" style="font-size: 0.8rem; color: #888; margin-bottom: 10px;"></div>
-            <div id="phrase" class="phrase-text"></div>
-            <div id="translation" class="translation-text" style="display:none;"></div>
+    <div id="quiz-ui">
+        <button class="btn-back" onclick="showDashboard()">← Dashboard</button><br>
+        <button class="btn-speak" onclick="speak()">🔊 Listen</button>
+        
+        <div class="question-card">
+            <div id="category-label" style="font-size: 0.8rem; color: #888; margin-bottom: 10px;"></div>
+            <div id="phrase-display" class="phrase-display"></div>
+            <div id="feedback" class="feedback"></div>
         </div>
-        <div class="controls">
-            <button class="btn btn-main" style="background:#007bff;" onclick="speak()">🔊 Speak Polish</button>
-            <div class="row">
-                <button class="btn btn-sub" onclick="toggleTranslation()">Show/Hide</button>
-                <button class="btn btn-sub" style="background:var(--primary)" onclick="nextPhrase()">Next →</button>
+
+        <div class="choices-container" id="choices">
             </div>
-        </div>
     </div>
 
     <script>
-        const levels = [
-            "Basics", "Greetings", "Numbers", "Food", "Travel", 
-            "Home", "Work", "Nature", "Body", "Shopping", 
-            "Time", "Weather", "Family", "Clothes", "Directions", 
-            "Health", "Government", "Culture", "Abstract", "Glue Words"
-        ];
-
-        let currentPhrases = [];
-        let currentIndex = 0;
-        let activeLevel = 1;
+        const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Government", "Culture", "Abstract", "Glue Words"];
+        
+        let currentLevelPhrases = [];
         let allPhrasesIndex = [];
+        let currentQuestion = null;
+        let activeLevel = 1;
+        let canAnswer = true;
 
-        // --- Mastery & Grid ---
+        // --- Dashboard ---
         function renderDashboard() {
             const grid = document.getElementById('heat-map');
             const table = document.getElementById('level-table');
             grid.innerHTML = '';
             table.innerHTML = '<tr><th>Lvl</th><th>Topic</th></tr>';
-            
-            const mastery = JSON.parse(localStorage.getItem('plMastery') || '{}');
+            const mastery = JSON.parse(localStorage.getItem('plQuizMastery') || '{}');
 
-            levels.forEach((name, i) => {
-                const lvlNum = i + 1;
-                const score = mastery[lvlNum] || 0;
+            levelNames.forEach((name, i) => {
+                const lvl = i + 1;
+                const score = mastery[lvl] || 0;
                 
-                // Create Grid Item
                 const item = document.createElement('div');
                 item.className = 'grid-item';
-                item.style.backgroundColor = getHeatColor(score);
+                item.style.background = getHeatColor(score);
                 item.style.color = score > 10 ? 'white' : 'black';
-                item.innerHTML = `${lvlNum} <span>${score} pts</span>`;
-                item.onclick = () => loadLevel(lvlNum);
+                item.innerHTML = `${lvl}<span>${score} pts</span>`;
+                item.onclick = () => loadLevel(lvl);
                 grid.appendChild(item);
 
-                // Create Table Row
-                const row = `<tr><td>${lvlNum}</td><td>${name}</td></tr>`;
-                table.innerHTML += row;
+                table.innerHTML += `<tr><td>${lvl}</td><td>${name}</td></tr>`;
             });
         }
 
-        function getHeatColor(score) {
-            if (score === 0) return '#eee';
-            if (score < 5) return '#ffcdd2';
-            if (score < 15) return '#ef9a9a';
-            if (score < 30) return '#e57373';
+        function getHeatColor(s) {
+            if (!s) return '#fff';
+            if (s < 5) return '#ffcdd2';
+            if (s < 15) return '#ef9a9a';
             return '#dc143c';
         }
 
-        // --- Core Functions ---
+        // --- Quiz Logic ---
         async function loadLevel(lvl) {
             activeLevel = lvl;
-            const response = await fetch(`./phrases_${lvl}.json`);
-            const data = await response.json();
-            currentPhrases = data.phrases.sort(() => Math.random() - 0.5);
-            currentIndex = 0;
+            const res = await fetch(`./phrases_${lvl}.json`);
+            const data = await res.json();
+            currentLevelPhrases = data.phrases;
             
             document.getElementById('dashboard').style.display = 'none';
-            document.getElementById('game-ui').style.display = 'block';
-            displayPhrase();
+            document.getElementById('quiz-ui').style.display = 'block';
+            generateQuestion();
         }
 
-        function displayPhrase() {
-            const p = currentPhrases[currentIndex];
-            document.getElementById('phrase').innerText = p.pl;
-            document.getElementById('translation').innerText = p.en;
-            document.getElementById('category').innerText = `Level ${activeLevel}: ${p.category}`;
-            document.getElementById('translation').style.display = 'none';
+        function generateQuestion() {
+            canAnswer = true;
+            document.getElementById('feedback').innerText = '';
             
-            // Increment Mastery
-            let mastery = JSON.parse(localStorage.getItem('plMastery') || '{}');
-            mastery[activeLevel] = (mastery[activeLevel] || 0) + 1;
-            localStorage.setItem('plMastery', JSON.stringify(mastery));
+            // Pick a random phrase
+            currentQuestion = currentLevelPhrases[Math.floor(Math.random() * currentLevelPhrases.length)];
+            document.getElementById('phrase-display').innerText = currentQuestion.pl;
+            document.getElementById('category-label').innerText = currentQuestion.category;
+
+            // Generate choices
+            let choices = [currentQuestion.en];
+            while (choices.length < 4) {
+                let randomDistractor = currentLevelPhrases[Math.floor(Math.random() * currentLevelPhrases.length)].en;
+                if (!choices.includes(randomDistractor)) choices.push(randomDistractor);
+            }
+            choices.sort(() => Math.random() - 0.5);
+
+            const container = document.getElementById('choices');
+            container.innerHTML = '';
+            choices.forEach(choice => {
+                const btn = document.createElement('button');
+                btn.className = 'choice-btn';
+                btn.innerText = choice;
+                btn.onclick = () => checkAnswer(choice, btn);
+                container.appendChild(btn);
+            });
         }
 
-        function nextPhrase() {
-            currentIndex = (currentIndex + 1) % currentPhrases.length;
-            displayPhrase();
+        function checkAnswer(selected, btn) {
+            if (!canAnswer) return;
+            canAnswer = false;
+
+            if (selected === currentQuestion.en) {
+                btn.classList.add('correct');
+                document.getElementById('feedback').innerText = "Correct! +1 Point";
+                document.getElementById('feedback').style.color = "var(--correct)";
+                updateMastery();
+            } else {
+                btn.classList.add('wrong');
+                document.getElementById('feedback').innerText = `Wrong! It was: ${currentQuestion.en}`;
+                document.getElementById('feedback').style.color = "var(--wrong)";
+            }
+
+            setTimeout(generateQuestion, 1500);
         }
 
-        function toggleTranslation() {
-            const t = document.getElementById('translation');
-            t.style.display = t.style.display === 'none' ? 'block' : 'none';
+        function updateMastery() {
+            let m = JSON.parse(localStorage.getItem('plQuizMastery') || '{}');
+            m[activeLevel] = (m[activeLevel] || 0) + 1;
+            localStorage.setItem('plQuizMastery', JSON.stringify(m));
         }
 
         function showDashboard() {
             document.getElementById('dashboard').style.display = 'block';
-            document.getElementById('game-ui').style.display = 'none';
+            document.getElementById('quiz-ui').style.display = 'none';
             renderDashboard();
         }
 
         function speak() {
-            const msg = new SpeechSynthesisUtterance(currentPhrases[currentIndex].pl);
-            msg.lang = 'pl-PL';
-            window.speechSynthesis.speak(msg);
+            const m = new SpeechSynthesisUtterance(currentQuestion.pl);
+            m.lang = 'pl-PL';
+            window.speechSynthesis.speak(m);
         }
 
+        // --- Search ---
         async function handleSearch() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            if (query.length < 2) return;
-
+            const q = document.getElementById('search-input').value.toLowerCase();
+            if (q.length < 2) return;
             if (allPhrasesIndex.length === 0) {
                 for (let i = 1; i <= 20; i++) {
                     const res = await fetch(`./phrases_${i}.json`);
-                    const data = await res.json();
-                    allPhrasesIndex.push(...data.phrases);
+                    const d = await res.json();
+                    allPhrasesIndex.push(...d.phrases);
                 }
             }
-
-            currentPhrases = allPhrasesIndex.filter(p => 
-                p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)
-            );
-            
-            if (currentPhrases.length > 0) {
-                currentIndex = 0;
+            // If found in search, we switch to a "Search Quiz" using found results
+            const results = allPhrasesIndex.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q));
+            if (results.length > 0) {
+                currentLevelPhrases = results;
                 activeLevel = "Search";
                 document.getElementById('dashboard').style.display = 'none';
-                document.getElementById('game-ui').style.display = 'block';
-                displayPhrase();
+                document.getElementById('quiz-ui').style.display = 'block';
+                generateQuestion();
             }
         }
 
