@@ -3,55 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Master: Dynamic Levels</title>
+    <title>Polish Master: GitHub Edition</title>
     <style>
         :root { --pol-red: #dc143c; --success: #2ecc71; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; height: 100vh; color: var(--text); overflow: hidden; }
-        .header { background: var(--pol-red); color: white; width: 100%; text-align: center; padding: 6px 0; font-weight: bold; font-size: 0.85rem; flex-shrink: 0; }
-        .level-tag { background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 10px; margin-left: 8px; font-size: 0.7rem; }
+        .header { background: var(--pol-red); color: white; width: 100%; text-align: center; padding: 10px 0; font-weight: bold; flex-shrink: 0; }
+        .level-badge { background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 12px; margin-left: 8px; font-size: 0.8rem; }
         
         .progress-container { width: 100%; height: 8px; background: #ddd; flex-shrink: 0; }
         #progress-bar { width: 0%; height: 100%; background: var(--success); transition: width 0.5s ease-in-out; }
 
         .mode-tabs { display: flex; width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 8px; text-align: center; font-size: 0.6rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
+        .tab { flex: 1; padding: 12px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); }
 
-        .quiz-section { width: 94%; max-width: 400px; margin-top: 8px; background: var(--card); padding: 10px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-shrink: 0; box-sizing: border-box; }
-        .feedback { height: 18px; font-size: 0.75rem; font-weight: bold; margin-bottom: 4px; text-align: center; }
-        .quiz-controls { display: flex; align-items: center; gap: 8px; }
-        .speak-btn { background: transparent; border: 2px solid var(--pol-red); color: var(--pol-red); width: 40px; height: 40px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; flex-shrink: 0; }
+        .quiz-section { width: 94%; max-width: 400px; margin-top: 10px; background: var(--card); padding: 15px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-shrink: 0; box-sizing: border-box; }
+        .feedback { height: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 8px; text-align: center; }
+        .quiz-controls { display: flex; align-items: center; gap: 10px; }
+        .speak-btn { background: transparent; border: 2px solid var(--pol-red); color: var(--pol-red); width: 45px; height: 45px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
         
-        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex-grow: 1; }
-        .option-btn { background: var(--tile-bg); border: none; padding: 6px; border-radius: 8px; font-size: 0.7rem; font-weight: bold; color: var(--text); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50px; }
-        .option-btn span.hint { font-size: 0.5rem; opacity: 0.7; font-weight: normal; text-align: center; }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex-grow: 1; }
+        .option-btn { background: var(--tile-bg); border: none; padding: 8px; border-radius: 8px; font-size: 0.75rem; font-weight: bold; color: var(--text); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 55px; cursor: pointer; }
+        .option-btn span.hint { font-size: 0.6rem; opacity: 0.7; font-weight: normal; margin-top: 2px; }
 
-        .map-section { width: 96%; max-width: 450px; margin-top: 8px; flex-grow: 1; overflow-y: auto; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding-bottom: 65px; }
-        .tile { aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 6px; cursor: pointer; padding: 2px; }
-        .tile .char { font-size: 0.5rem; font-weight: bold; text-align: center; line-height: 1.1; pointer-events: none; }
+        .map-section { width: 96%; max-width: 450px; margin-top: 10px; flex-grow: 1; overflow-y: auto; padding-bottom: 80px; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+        .tile { aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; transition: transform 0.1s; }
+        .tile:active { transform: scale(0.95); }
+        .tile .char { font-size: 0.55rem; font-weight: bold; line-height: 1.2; pointer-events: none; }
         
-        .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 10px; text-align: center; border-top: 1px solid #ddd; z-index: 20; }
-        .reset-btn { background: #666; color: white; border: none; padding: 6px 14px; border-radius: 4px; font-size: 0.65rem; cursor: pointer; }
-        .next-btn { background: #3498db; color: white; width: 100%; padding: 10px; border-radius: 8px; font-size: 0.9rem; border: none; display: none; margin-top: 6px; font-weight: bold; cursor: pointer; }
+        .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 12px; text-align: center; border-top: 1px solid #ddd; z-index: 20; }
+        .next-btn { background: #3498db; color: white; width: 100%; padding: 12px; border-radius: 8px; font-size: 1rem; border: none; display: none; font-weight: bold; cursor: pointer; }
         
-        #level-up-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); color: white; z-index: 100; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
-        .level-up-btn { background: var(--success); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.2rem; font-weight: bold; margin-top: 20px; cursor: pointer; }
+        #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); color: white; z-index: 100; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; box-sizing: border-box; }
+        .lvl-btn { background: var(--success); color: white; border: none; padding: 15px 40px; border-radius: 10px; font-size: 1.2rem; font-weight: bold; margin-top: 25px; cursor: pointer; }
     </style>
 </head>
 <body>
 
-<div id="level-up-overlay">
+<div id="overlay">
     <h1 id="overlay-title">POZIOM UKOŃCZONY! 🏆</h1>
-    <p id="overlay-desc">You've mastered this set. Ready for the next level?</p>
-    <button class="level-up-btn" id="overlay-btn" onclick="advanceLevel()">Load Next Phrases</button>
+    <p id="overlay-desc">Ready to unlock the next set of phrases?</p>
+    <button class="lvl-btn" id="overlay-btn" onclick="advanceLevel()">Load Next Level</button>
 </div>
 
 <div class="header">
-    POLISH MASTER <span id="level-display" class="level-tag">Level 0</span>
+    POLISH MASTER <span id="level-display" class="level-badge">Level 1</span>
 </div>
+
 <div class="progress-container"><div id="progress-bar"></div></div>
 
 <div class="mode-tabs">
@@ -73,150 +74,18 @@
 </div>
 
 <div class="footer">
-    <button class="reset-btn" onclick="resetProgress()">Clear All Progress</button>
+    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.7rem; cursor:pointer;">Reset All Data</button>
 </div>
 
 <script>
-    // Configuration for file mapping
+    // File mapping - make sure these match your GitHub filenames exactly
     const levelFiles = {
-        0: 'phrases.json',
-        1: 'phrases_level2.json',
-        2: 'phrases_level3.json'
+        1: 'phrases_1.json',
+        2: 'phrases_2.json',
+        3: 'phrases_3.json'
     };
 
-    let stats = JSON.parse(localStorage.getItem('pl_mastery_v4')) || {};
-    let currentLevel = parseInt(localStorage.getItem('pl_current_level')) || 0;
+    let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
+    let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
     let phrasesData = [];
     let activePhrases = [];
-    let currentTarget = null;
-    let currentMode = 'learning';
-    const THRESHOLD = 3;
-    const SLOT_COUNT = 16;
-
-    async function loadLevelData() {
-        const fileName = levelFiles[currentLevel];
-        if (!fileName) {
-            showGameComplete();
-            return;
-        }
-
-        try {
-            const response = await fetch(fileName);
-            const data = await response.json();
-            phrasesData = data.phrases;
-            document.getElementById('level-display').innerText = `Level ${currentLevel}`;
-            refreshUI();
-        } catch (error) {
-            console.error("Error loading JSON:", error);
-            alert(`Could not find ${fileName}. Please ensure it is in the same folder as this app.`);
-        }
-    }
-
-    function refreshUI() {
-        const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-        const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-        
-        activePhrases = available.slice(0, SLOT_COUNT);
-        const progress = (mastered.length / phrasesData.length) * 100;
-        document.getElementById('progress-bar').style.width = progress + "%";
-
-        if (progress >= 100) {
-            document.getElementById('level-up-overlay').style.display = 'flex';
-        } else {
-            updateMap();
-            startNewRound();
-        }
-    }
-
-    function advanceLevel() {
-        currentLevel++;
-        localStorage.setItem('pl_current_level', currentLevel);
-        document.getElementById('level-up-overlay').style.display = 'none';
-        loadLevelData();
-    }
-
-    function showGameComplete() {
-        document.getElementById('level-up-overlay').style.display = 'flex';
-        document.getElementById('overlay-title').innerText = "POLISH MASTER! 👑";
-        document.getElementById('overlay-desc').innerText = "You have mastered all available phrase files.";
-        document.getElementById('overlay-btn').innerText = "Restart from Level 0";
-        document.getElementById('overlay-btn').onclick = () => {
-            localStorage.clear();
-            location.reload();
-        };
-    }
-
-    // Standard Quiz Logic
-    function checkAnswer(guess) {
-        if (guess === currentTarget.pl) {
-            stats[currentTarget.pl] = (stats[currentTarget.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Dobrze! 🌟";
-            document.getElementById('next-btn').style.display = "block";
-        } else {
-            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
-            document.getElementById('feedback').innerText = "Spróbuj ponownie!";
-        }
-        localStorage.setItem('pl_mastery_v4', JSON.stringify(stats));
-        updateMap();
-    }
-
-    function speak(text) {
-        window.speechSynthesis.cancel();
-        const msg = new SpeechSynthesisUtterance(text);
-        msg.lang = 'pl-PL';
-        window.speechSynthesis.speak(msg);
-    }
-
-    function startNewRound() {
-        document.getElementById('feedback').innerText = "";
-        document.getElementById('next-btn').style.display = "none";
-        const grid = document.getElementById('options-grid');
-        grid.innerHTML = "";
-
-        currentTarget = activePhrases[Math.floor(Math.random() * activePhrases.length)];
-        let options = [...activePhrases].sort(() => 0.5 - Math.random()).slice(0, 4);
-        if (!options.find(o => o.pl === currentTarget.pl)) options[0] = currentTarget;
-
-        options.sort(() => 0.5 - Math.random()).forEach(opt => {
-            const btn = document.createElement('button');
-            btn.className = 'option-btn';
-            btn.innerHTML = `${opt.pl}<span class="hint">${opt.en}</span>`;
-            btn.onclick = () => checkAnswer(opt.pl);
-            grid.appendChild(btn);
-        });
-        setTimeout(() => speak(currentTarget.pl), 500);
-    }
-
-    function updateMap() {
-        const mapDiv = document.getElementById('mastery-map');
-        mapDiv.innerHTML = '';
-        const list = currentMode === 'learning' ? activePhrases : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-        
-        list.forEach(p => {
-            const tile = document.createElement('div');
-            tile.className = 'tile';
-            const count = stats[p.pl] || 0;
-            tile.innerHTML = `<span class="char">${p.pl}</span>`;
-            if (count > 0) {
-                tile.style.backgroundColor = `rgba(46, 204, 113, ${Math.min(1, count / THRESHOLD)})`;
-                if (count >= THRESHOLD) tile.style.color = "white";
-            }
-            tile.onclick = () => speak(p.pl);
-            mapDiv.appendChild(tile);
-        });
-    }
-
-    function switchMode(m) {
-        currentMode = m;
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + (m === 'learning' ? 'learning' : 'mastered')).classList.add('active');
-        updateMap();
-    }
-
-    function speakTarget() { if (currentTarget) speak(currentTarget.pl); }
-    function resetProgress() { if (confirm("Delete everything?")) { localStorage.clear(); location.reload(); } }
-
-    window.onload = loadLevelData;
-</script>
-</body>
-</html>
