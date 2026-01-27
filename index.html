@@ -105,25 +105,22 @@
     const THRESHOLD = 3;
     let plVoice = null;
 
-    // --- HARDWARE WARMUP ---
+    // --- CONTINUOUS STREAM FIX ---
+    // This keeps the audio channel locked open by playing silence in an infinite loop
+    function startPermanentStream() {
+        const silence = new SpeechSynthesisUtterance(" ");
+        silence.volume = 0;
+        silence.onend = startPermanentStream; // Re-trigger immediately when finished
+        window.speechSynthesis.speak(silence);
+    }
+
     function initSpeech() {
         const voices = window.speechSynthesis.getVoices();
         plVoice = voices.find(v => v.lang.startsWith('pl'));
-        // Fire a silent ping to open the channel immediately on load
-        const ping = new SpeechSynthesisUtterance("");
-        ping.volume = 0;
-        window.speechSynthesis.speak(ping);
+        startPermanentStream();
     }
     
     window.speechSynthesis.onvoiceschanged = initSpeech;
-
-    function keepAlive() {
-        const u = new SpeechSynthesisUtterance("");
-        u.volume = 0;
-        window.speechSynthesis.speak(u);
-        setTimeout(keepAlive, 5000);
-    }
-    keepAlive();
 
     const lvlSelect = document.getElementById('level-select');
     levelNames.forEach((name, i) => {
@@ -154,12 +151,8 @@
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = currentTarget.en;
         
-        // Immediate silence fire to "bridge" to the next phrase
-        const ping = new SpeechSynthesisUtterance("");
-        ping.volume = 0;
-        window.speechSynthesis.speak(ping);
-        
-        setTimeout(() => speak(currentTarget.pl), 400);
+        // Use a short delay to ensure UI renders before speech
+        setTimeout(() => speak(currentTarget.pl), 300);
     }
 
     function checkAnswer(phrase, tileElement) {
@@ -245,17 +238,12 @@
         updateMap();
     }
 
-    // THE FINAL CHROME FIX
     function speak(text) {
-        // Stop using cancel() entirely; it's the #1 cause of clipping in Chrome
         const msg = new SpeechSynthesisUtterance(text);
         if (plVoice) msg.voice = plVoice;
         msg.lang = 'pl-PL';
-        msg.rate = 0.85; 
+        msg.rate = 0.9; 
         msg.volume = 1;
-        
-        // We wrap the speak call in a small buffer to ensure the "ping" from 
-        // startNewRound has finished opening the gate.
         window.speechSynthesis.speak(msg);
     }
 
