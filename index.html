@@ -103,8 +103,20 @@
     let currentMode = 'learning';
     let canAnswer = true;
     const THRESHOLD = 3;
+    let plVoice = null;
 
-    // --- AUDIO HEARTBEAT ---
+    // --- HARDWARE WARMUP ---
+    function initSpeech() {
+        const voices = window.speechSynthesis.getVoices();
+        plVoice = voices.find(v => v.lang.startsWith('pl'));
+        // Fire a silent ping to open the channel immediately on load
+        const ping = new SpeechSynthesisUtterance("");
+        ping.volume = 0;
+        window.speechSynthesis.speak(ping);
+    }
+    
+    window.speechSynthesis.onvoiceschanged = initSpeech;
+
     function keepAlive() {
         const u = new SpeechSynthesisUtterance("");
         u.volume = 0;
@@ -127,27 +139,27 @@
             const response = await fetch(`phrases_${currentLevel}.json`);
             const data = await response.json();
             phrasesData = data.phrases;
-            
-            // Fill 16 slots with non-mastered phrases
             const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
             activePool = available.slice(0, 16);
-            
             updateStats();
             updateMap();
             startNewRound();
-        } catch (err) { console.error("Error loading level:", err); }
+        } catch (err) { console.error(err); }
     }
 
     function startNewRound() {
         if (activePool.length === 0 || currentMode !== 'learning') return;
         canAnswer = true;
         document.getElementById('feedback').innerText = "";
-        
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = currentTarget.en;
         
-        // Wait for grid to settle before speaking
-        setTimeout(() => speak(currentTarget.pl), 300);
+        // Immediate silence fire to "bridge" to the next phrase
+        const ping = new SpeechSynthesisUtterance("");
+        ping.volume = 0;
+        window.speechSynthesis.speak(ping);
+        
+        setTimeout(() => speak(currentTarget.pl), 400);
     }
 
     function checkAnswer(phrase, tileElement) {
@@ -164,7 +176,6 @@
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             
             setTimeout(() => {
-                // If mastered, replace this specific slot
                 if (stats[phrase.pl] >= THRESHOLD) {
                     const poolIdx = activePool.findIndex(p => p.pl === phrase.pl);
                     let replacement = phrasesData.find(candidate => 
@@ -173,23 +184,16 @@
                     if (replacement) activePool[poolIdx] = replacement;
                     else activePool.splice(poolIdx, 1);
                 }
-                
                 updateStats();
                 updateMap();
-                
-                if (activePool.length === 0) {
-                    document.getElementById('overlay').style.display = 'flex';
-                } else {
-                    startNewRound();
-                }
+                if (activePool.length === 0) document.getElementById('overlay').style.display = 'flex';
+                else startNewRound();
             }, 600);
         } else {
-            // Penalty for wrong answer
             stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
             tileElement.classList.add('wrong');
             document.getElementById('feedback').innerText = `Nope! That's "${phrase.en}"`;
             document.getElementById('feedback').style.color = "var(--pol-red)";
-            
             setTimeout(() => {
                 tileElement.classList.remove('wrong');
                 updateMap();
@@ -201,7 +205,6 @@
     function updateMap() {
         const area = document.getElementById('mastery-map');
         area.innerHTML = '';
-        
         if (currentMode === 'learning') {
             area.className = "grid";
             activePool.forEach(p => {
@@ -209,23 +212,16 @@
                 tile.className = 'tile';
                 const count = stats[p.pl] || 0;
                 tile.innerText = p.pl;
-                
                 if (count > 0) {
-                    const alpha = Math.min(1, count / THRESHOLD);
-                    tile.style.backgroundColor = `rgba(46, 204, 113, ${alpha})`;
+                    tile.style.backgroundColor = `rgba(46, 204, 113, ${Math.min(1, count / THRESHOLD)})`;
                     if (count >= THRESHOLD) tile.style.color = "white";
                 }
-                
                 tile.onclick = () => checkAnswer(p, tile);
                 area.appendChild(tile);
             });
         } else {
-            // Banked Mode: Scrollable list
             area.className = "mastered-list";
             const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-            if (mastered.length === 0) {
-                area.innerHTML = "<p style='text-align:center; opacity:0.5; margin-top:20px;'>No phrases banked yet.</p>";
-            }
             mastered.forEach(p => {
                 const item = document.createElement('div');
                 item.className = 'mastered-item';
@@ -238,8 +234,7 @@
 
     function updateStats() {
         const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-        const progress = (mastered.length / phrasesData.length) * 100;
-        document.getElementById('progress-bar').style.width = progress + "%";
+        document.getElementById('progress-bar').style.width = (mastered.length / phrasesData.length) * 100 + "%";
     }
 
     function switchMode(m) {
@@ -250,36 +245,25 @@
         updateMap();
     }
 
-    // --- REFINED AUDIO ENGINE ---
+    // THE FINAL CHROME FIX
     function speak(text) {
-        // Clear queue but dont use .cancel() as it causes Chrome clipping
-        // We use a silent "wake up" utterance to prime the audio channel
-        const wakeUp = new SpeechSynthesisUtterance("");
-        wakeUp.volume = 0;
-        window.speechSynthesis.speak(wakeUp);
-
-        setTimeout(() => {
-            const msg = new SpeechSynthesisUtterance(text);
-            const voices = window.speechSynthesis.getVoices();
-            const plVoice = voices.find(v => v.lang.startsWith('pl'));
-            
-            if (plVoice) msg.voice = plVoice;
-            msg.lang = 'pl-PL';
-            msg.rate = 0.9;
-            msg.volume = 1;
-            
-            window.speechSynthesis.speak(msg);
-        }, 50); 
+        // Stop using cancel() entirely; it's the #1 cause of clipping in Chrome
+        const msg = new SpeechSynthesisUtterance(text);
+        if (plVoice) msg.voice = plVoice;
+        msg.lang = 'pl-PL';
+        msg.rate = 0.85; 
+        msg.volume = 1;
+        
+        // We wrap the speak call in a small buffer to ensure the "ping" from 
+        // startNewRound has finished opening the gate.
+        window.speechSynthesis.speak(msg);
     }
-
-    window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
 
     function handleSearch() {
         const query = document.getElementById('search-bar').value.toLowerCase();
         if (query.length < 1) { updateMap(); return; }
         const area = document.getElementById('mastery-map');
-        area.innerHTML = '';
-        area.className = "mastered-list";
+        area.innerHTML = ''; area.className = "mastered-list";
         phrasesData.filter(p => p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query))
         .forEach(p => {
             const item = document.createElement('div');
@@ -290,30 +274,15 @@
         });
     }
 
-    function changeLevel(v) { 
-        currentLevel = parseInt(v); 
-        localStorage.setItem('pl_current_level_idx', currentLevel); 
-        loadLevelData(); 
-    }
-
+    function changeLevel(v) { currentLevel = parseInt(v); localStorage.setItem('pl_current_level_idx', currentLevel); loadLevelData(); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
+    function resetEverything() { if(confirm("Reset progress?")) { localStorage.clear(); location.reload(); } }
+    function advanceLevel() { currentLevel++; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
 
-    function resetEverything() { 
-        if(confirm("Reset Progress?")) { 
-            localStorage.clear(); 
-            location.reload(); 
-        } 
-    }
-
-    function advanceLevel() { 
-        currentLevel++; 
-        if (currentLevel > 20) currentLevel = 1;
-        lvlSelect.value = currentLevel;
-        changeLevel(currentLevel); 
-        document.getElementById('overlay').style.display = 'none'; 
-    }
-
-    window.onload = loadLevelData;
+    window.onload = () => {
+        initSpeech();
+        loadLevelData();
+    };
 </script>
 </body>
 </html>
