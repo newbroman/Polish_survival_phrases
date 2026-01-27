@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Master: Classic 4x4 Grid</title>
+    <title>Polish Master: Bottom Grid Edition</title>
     <style>
         :root {
             --primary: #dc143c;
@@ -35,12 +35,12 @@
             overflow: hidden;
         }
 
+        /* Top Bar */
         .top-bar {
             padding: 10px;
             background: var(--card);
             border-bottom: 1px solid var(--border);
         }
-
         .toolbar-row { display: flex; gap: 8px; margin-bottom: 5px; }
         input, select {
             padding: 8px;
@@ -51,72 +51,86 @@
             font-size: 14px;
         }
 
-        /* 4x4 Heatmap / Phrase Grid */
+        /* Quiz Area (Top/Middle) */
+        .quiz-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 15px;
+            gap: 15px;
+        }
+
+        .current-q-display {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            min-height: 1.2em;
+            color: var(--text);
+        }
+
+        .choices-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .choice-btn {
+            padding: 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1.1rem;
+            text-align: center;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .choice-btn.correct { background: var(--correct) !important; color: white; border-color: var(--correct); }
+        .choice-btn.wrong { background: var(--wrong) !important; color: white; border-color: var(--wrong); }
+
+        /* Bottom Phrase Grid / Heatmap */
+        .grid-header {
+            font-size: 12px;
+            text-align: center;
+            opacity: 0.7;
+            padding: 5px 0;
+            background: var(--card);
+            border-top: 1px solid var(--border);
+        }
+
         .phrase-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 4px;
-            padding: 10px;
-            background: var(--bg);
+            padding: 8px;
+            background: var(--card);
+            padding-bottom: env(safe-area-inset-bottom); /* iOS support */
         }
 
         .grid-btn {
             aspect-ratio: 1/1;
             border: 1px solid var(--border);
             border-radius: 6px;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 4px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.1s;
-            background: var(--card);
-            color: var(--text);
-        }
-
-        .grid-btn.active { border: 2px solid var(--primary); transform: scale(1.05); z-index: 10; }
-
-        /* Quiz Section */
-        .quiz-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            background: var(--card);
-            border-top: 1px solid var(--border);
-            padding: 10px;
-        }
-
-        .current-q-display {
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            padding: 15px 5px;
-            min-height: 1.5em;
-        }
-
-        .choices-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-        }
-
-        .choice-btn {
-            padding: 14px;
+            padding: 2px;
             background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
             color: var(--text);
-            font-size: 1rem;
-            text-align: left;
+            transition: transform 0.1s, background 0.3s;
         }
 
-        .choice-btn.correct { background: var(--correct) !important; color: white; }
-        .choice-btn.wrong { background: var(--wrong) !important; color: white; }
+        .grid-btn.active { 
+            border: 2px solid var(--primary); 
+            transform: scale(0.95); 
+        }
 
-        .progress-info { font-size: 12px; text-align: center; opacity: 0.7; padding-bottom: 5px; }
+        .progress-info { font-size: 11px; text-align: center; padding: 4px; background: var(--card); }
     </style>
 </head>
 <body>
@@ -129,12 +143,13 @@
         <div class="progress-info" id="stats">Banked: 0/0</div>
     </div>
 
-    <div class="phrase-grid" id="heatmap-grid"></div>
-
     <div class="quiz-container">
-        <div id="q-text" class="current-q-display">Tap a phrase in the grid</div>
+        <div id="q-text" class="current-q-display">Tap a phrase below</div>
         <div class="choices-list" id="choices"></div>
     </div>
+
+    <div class="grid-header">Phrase Heatmap (Tap to hear & solve)</div>
+    <div class="phrase-grid" id="heatmap-grid"></div>
 
     <script>
         const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
@@ -152,10 +167,10 @@
             const d = await res.json();
             allPhrases = d.phrases;
             banked = [];
-            // Load 16 phrases
+            // Load 16 phrases into active pool
             activePool = allPhrases.slice(0, 16).map(p => ({...p, score: 0}));
             renderGrid();
-            document.getElementById('q-text').innerText = "Tap a phrase to start";
+            document.getElementById('q-text').innerText = "Select a phrase";
             document.getElementById('choices').innerHTML = '';
             updateStats();
         }
@@ -168,7 +183,7 @@
                 btn.className = 'grid-btn';
                 if (index === currentIdxInPool) btn.classList.add('active');
                 
-                // Heatmap Color
+                // Heatmap Color (Mastery = 4)
                 const alpha = p.score / 4;
                 btn.style.backgroundColor = `rgba(46, 204, 113, ${alpha})`;
                 
@@ -228,10 +243,9 @@
                 setTimeout(() => {
                     renderGrid();
                     updateStats();
-                    // Auto-pick next logic
                     let next = (currentIdxInPool + 1) % activePool.length;
                     selectPhrase(next);
-                }, 800);
+                }, 600);
             } else {
                 btn.classList.add('wrong');
                 phrase.score = Math.max(0, phrase.score - 1);
