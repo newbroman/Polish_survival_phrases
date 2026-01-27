@@ -103,6 +103,16 @@
     let canAnswer = true;
     const THRESHOLD = 3;
 
+    // --- CHROME HEARTBEAT HACK ---
+    // This keeps the speech engine hardware "warm" by playing silence every 5 seconds
+    function keepAlive() {
+        const u = new SpeechSynthesisUtterance("");
+        u.volume = 0;
+        window.speechSynthesis.speak(u);
+        setTimeout(keepAlive, 5000);
+    }
+    keepAlive();
+
     const lvlSelect = document.getElementById('level-select');
     levelNames.forEach((name, i) => {
         const opt = document.createElement('option');
@@ -129,12 +139,11 @@
         if (activePool.length === 0 || currentMode !== 'learning') return;
         canAnswer = true;
         document.getElementById('feedback').innerText = "";
-        
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = currentTarget.en;
         
-        // Slightly longer delay for safety
-        setTimeout(() => speak(currentTarget.pl), 250);
+        // Use a longer delay for Chrome's buffer handover
+        setTimeout(() => speak(currentTarget.pl), 300);
     }
 
     function checkAnswer(phrase, tileElement) {
@@ -220,28 +229,22 @@
         updateMap();
     }
 
-    // THE IMPROVED SPEECH FUNCTION
     function speak(text) {
-        window.speechSynthesis.cancel();
-        
-        // 1. Add tiny bit of pre-roll silence to the string if the engine is clipping
-        // 2. We use a comma or punctuation at the start to force a "soft start" in some engines
-        const msg = new SpeechSynthesisUtterance(", " + text);
+        // DO NOT use cancel() immediately before speak in Chrome if clipping occurs.
+        // Instead, we just let the new one queue or override.
+        const msg = new SpeechSynthesisUtterance("... " + text); // Triple dots create a natural lead-in
         
         const voices = window.speechSynthesis.getVoices();
-        // Try to find a Polish voice explicitly
         const plVoice = voices.find(v => v.lang.startsWith('pl'));
         if (plVoice) msg.voice = plVoice;
         
         msg.lang = 'pl-PL';
-        msg.rate = 0.9; // Slightly slower can help with clarity on short phrases
-        msg.pitch = 1;
+        msg.rate = 0.85; 
         msg.volume = 1;
         
         window.speechSynthesis.speak(msg);
     }
 
-    // Ensure voices are loaded (needed for some browsers)
     window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
 
     function handleSearch() {
@@ -261,7 +264,7 @@
 
     function changeLevel(v) { currentLevel = parseInt(v); localStorage.setItem('pl_current_level_idx', currentLevel); loadLevelData(); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
-    function resetEverything() { if(confirm("Reset all progress?")) { localStorage.clear(); location.reload(); } }
+    function resetEverything() { if(confirm("Reset progress?")) { localStorage.clear(); location.reload(); } }
     function advanceLevel() { currentLevel++; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
 
     window.onload = loadLevelData;
