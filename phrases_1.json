@@ -75,4 +75,7 @@
     { "id": "e66", "category": "Survival", "pl": "Dzisiaj", "en": "Today", "level": 0 },
     { "id": "e67", "category": "Survival", "pl": "Jutro", "en": "Tomorrow", "level": 0 },
     { "id": "e68", "category": "Survival", "pl": "Wczoraj", "en": "Yesterday", "level": 0 },
-    { "id": "e69", "category":
+    { "id": "e69", "category": "Survival", "pl": "Szybko", "en": "Quickly", "level": 0 },
+    { "id": "e70", "category": "Survival", "pl": "Wolno", "en": "Slowly", "level": 0 }
+  ]
+}
