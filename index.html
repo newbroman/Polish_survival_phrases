@@ -133,8 +133,8 @@
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = currentTarget.en;
         
-        // ADDED: Delay to prevent clipping
-        setTimeout(() => speak(currentTarget.pl), 150);
+        // Slightly longer delay for safety
+        setTimeout(() => speak(currentTarget.pl), 250);
     }
 
     function checkAnswer(phrase, tileElement) {
@@ -220,14 +220,29 @@
         updateMap();
     }
 
+    // THE IMPROVED SPEECH FUNCTION
     function speak(text) {
         window.speechSynthesis.cancel();
-        const msg = new SpeechSynthesisUtterance(text);
+        
+        // 1. Add tiny bit of pre-roll silence to the string if the engine is clipping
+        // 2. We use a comma or punctuation at the start to force a "soft start" in some engines
+        const msg = new SpeechSynthesisUtterance(", " + text);
+        
+        const voices = window.speechSynthesis.getVoices();
+        // Try to find a Polish voice explicitly
+        const plVoice = voices.find(v => v.lang.startsWith('pl'));
+        if (plVoice) msg.voice = plVoice;
+        
         msg.lang = 'pl-PL';
-        // Some browsers clip if volume isn't explicitly set during fast switches
+        msg.rate = 0.9; // Slightly slower can help with clarity on short phrases
+        msg.pitch = 1;
         msg.volume = 1;
+        
         window.speechSynthesis.speak(msg);
     }
+
+    // Ensure voices are loaded (needed for some browsers)
+    window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
 
     function handleSearch() {
         const query = document.getElementById('search-bar').value.toLowerCase();
