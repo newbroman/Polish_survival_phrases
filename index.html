@@ -44,20 +44,17 @@
             border: 2px solid #ddd;
             border-radius: 25px;
             outline: none;
-            font-size: 16px; /* Prevents iOS zoom on focus */
-            transition: 0.3s;
+            font-size: 16px;
         }
-
-        #search-input:focus { border-color: var(--primary); }
 
         .nav-scroll {
             display: flex;
             overflow-x: auto;
             padding: 12px;
             gap: 10px;
-            scrollbar-width: none; /* Hide scrollbar Firefox */
+            scrollbar-width: none;
         }
-        .nav-scroll::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
+        .nav-scroll::-webkit-scrollbar { display: none; }
 
         .nav-item {
             padding: 8px 18px;
@@ -68,9 +65,22 @@
             transition: 0.3s;
             font-weight: bold;
             font-size: 14px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .nav-item.active { background: var(--primary); color: white; }
+
+        /* Heat Map Dot */
+        .heat-dot {
+            width: 100%;
+            height: 4px;
+            background: #ccc;
+            margin-top: 4px;
+            border-radius: 2px;
+        }
 
         #game-container {
             margin-top: 20px;
@@ -90,7 +100,6 @@
             justify-content: center;
             cursor: pointer;
             position: relative;
-            user-select: none;
         }
 
         .category-tag {
@@ -100,18 +109,19 @@
             font-size: 0.75rem;
             color: #aaa;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .phrase-text { font-size: 1.8rem; font-weight: bold; color: #333; line-height: 1.2; }
+        .phrase-text { font-size: 1.8rem; font-weight: bold; color: #333; }
         .translation-text { font-size: 1.3rem; color: #dc143c; margin-top: 20px; font-weight: 500; }
 
         .controls {
             margin-top: 25px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             gap: 12px;
         }
+
+        .row { display: flex; gap: 12px; width: 100%; }
 
         button {
             flex: 1;
@@ -121,11 +131,11 @@
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            active: transform: scale(0.98);
         }
 
         .btn-next { background: var(--primary); color: white; }
         .btn-reveal { background: #333; color: white; }
+        .btn-audio { background: #007bff; color: white; }
         .stats { margin-top: 25px; color: #888; font-size: 0.9rem; }
     </style>
 </head>
@@ -141,16 +151,19 @@
     <div id="game-container">
         <div class="card" id="main-card" onclick="toggleTranslation()">
             <div id="category" class="category-tag">Welcome</div>
-            <div id="phrase" class="phrase-text">Tap Level 1 to Start</div>
+            <div id="phrase" class="phrase-text">Tap a Level</div>
             <div id="translation" class="translation-text" style="display: none;"></div>
         </div>
 
         <div class="controls">
-            <button class="btn-reveal" onclick="toggleTranslation()">Show / Hide</button>
-            <button class="btn-next" onclick="nextPhrase()">Next →</button>
+            <button class="btn-audio" onclick="speakPhrase()">🔊 Speak Polish</button>
+            <div class="row">
+                <button class="btn-reveal" onclick="toggleTranslation()">Show / Hide</button>
+                <button class="btn-next" onclick="nextPhrase()">Next →</button>
+            </div>
         </div>
 
-        <div class="stats" id="stats">Select a level to begin learning</div>
+        <div class="stats" id="stats">Select level</div>
     </div>
 
     <script>
@@ -160,54 +173,71 @@
         let isSearchMode = false;
         let lastLevel = 1;
 
-        // 1. Initialize Nav Bar (20 Levels)
-        const navScroll = document.getElementById('level-nav');
-        for (let i = 1; i <= 20; i++) {
-            const btn = document.createElement('div');
-            btn.className = `nav-item`;
-            btn.id = `nav-${i}`;
-            btn.innerText = `Level ${i}`;
-            btn.onclick = () => loadLevel(i);
-            navScroll.appendChild(btn);
+        // --- 1. Audio Logic ---
+        function speakPhrase() {
+            if (currentPhrases.length === 0) return;
+            const text = currentPhrases[currentIndex].pl;
+            const msg = new SpeechSynthesisUtterance();
+            msg.text = text;
+            msg.lang = 'pl-PL';
+            msg.rate = 0.9; // Slightly slower for learning
+            window.speechSynthesis.speak(msg);
         }
 
-        // 2. Load JSON Level
+        // --- 2. Heat Map Logic ---
+        function updateHeatMap(level) {
+            let progress = JSON.parse(localStorage.getItem('polishProgress') || '{}');
+            progress[level] = (progress[level] || 0) + 1;
+            localStorage.setItem('polishProgress', JSON.stringify(progress));
+            renderNav();
+        }
+
+        function getHeatColor(count) {
+            if (!count) return '#ccc';
+            if (count < 5) return '#ffcdd2'; // Light red
+            if (count < 15) return '#ef9a9a';
+            return '#dc143c'; // Full red
+        }
+
+        function renderNav() {
+            const navScroll = document.getElementById('level-nav');
+            navScroll.innerHTML = '';
+            const progress = JSON.parse(localStorage.getItem('polishProgress') || '{}');
+
+            for (let i = 1; i <= 20; i++) {
+                const btn = document.createElement('div');
+                btn.className = `nav-item ${i === lastLevel && !isSearchMode ? 'active' : ''}`;
+                btn.id = `nav-${i}`;
+                btn.innerHTML = `Level ${i} <div class="heat-dot" style="background: ${getHeatColor(progress[i])}"></div>`;
+                btn.onclick = () => loadLevel(i);
+                navScroll.appendChild(btn);
+            }
+        }
+
+        // --- 3. Core Logic ---
         async function loadLevel(level) {
             isSearchMode = false;
             lastLevel = level;
             document.getElementById('search-input').value = '';
-            
-            // UI Update
-            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-            const activeBtn = document.getElementById(`nav-${level}`);
-            if(activeBtn) activeBtn.classList.add('active');
+            updateHeatMap(level);
 
             try {
-                // Ensure files are named phrases_1.json, phrases_2.json etc.
                 const response = await fetch(`./phrases_${level}.json`);
-                
-                if (!response.ok) throw new Error(`Could not find phrases_${level}.json (Error ${response.status})`);
-
+                if (!response.ok) throw new Error(`Status: ${response.status}`);
                 const data = await response.json();
                 currentPhrases = data.phrases.sort(() => Math.random() - 0.5);
                 currentIndex = 0;
                 displayPhrase();
             } catch (error) {
-                console.error(error);
                 document.getElementById('phrase').innerText = "Load Error";
                 document.getElementById('translation').innerText = error.message;
                 document.getElementById('translation').style.display = 'block';
-                document.getElementById('category').innerText = "Check Files";
             }
         }
 
-        // 3. Search Functionality
         async function handleSearch() {
             const query = document.getElementById('search-input').value.toLowerCase();
-            
-            // Index all files on first search
             if (allPhrasesIndex.length === 0) {
-                document.getElementById('phrase').innerText = "Indexing all levels...";
                 for (let i = 1; i <= 20; i++) {
                     try {
                         const res = await fetch(`./phrases_${i}.json`);
@@ -215,7 +245,7 @@
                             const data = await res.json();
                             allPhrasesIndex.push(...data.phrases);
                         }
-                    } catch(e) { console.warn(`Level ${i} skipped in search.`); }
+                    } catch(e) {}
                 }
             }
 
@@ -225,32 +255,22 @@
             }
 
             isSearchMode = true;
-            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-            
+            renderNav(); 
             currentPhrases = allPhrasesIndex.filter(p => 
-                p.pl.toLowerCase().includes(query) || 
-                p.en.toLowerCase().includes(query)
+                p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)
             );
-
             currentIndex = 0;
-            if (currentPhrases.length > 0) {
-                displayPhrase();
-            } else {
-                document.getElementById('phrase').innerText = "No Results";
-                document.getElementById('translation').innerText = "Try a different word";
-                document.getElementById('translation').style.display = 'block';
-            }
+            displayPhrase();
         }
 
-        // 4. Core Logic
         function displayPhrase() {
             if (currentPhrases.length === 0) return;
             const p = currentPhrases[currentIndex];
             document.getElementById('phrase').innerText = p.pl;
             document.getElementById('translation').innerText = p.en;
-            document.getElementById('category').innerText = isSearchMode ? `Level ${p.level} - ${p.category}` : p.category;
+            document.getElementById('category').innerText = isSearchMode ? `Level ${p.level}` : p.category;
             document.getElementById('translation').style.display = 'none';
-            updateStats();
+            document.getElementById('stats').innerText = `${isSearchMode ? "Found" : "Level " + lastLevel}: ${currentIndex + 1}/${currentPhrases.length}`;
         }
 
         function nextPhrase() {
@@ -265,13 +285,10 @@
             t.style.display = (t.style.display === 'none') ? 'block' : 'none';
         }
 
-        function updateStats() {
-            const label = isSearchMode ? "Found" : `Level ${lastLevel}`;
-            document.getElementById('stats').innerText = `${label}: ${currentIndex + 1} of ${currentPhrases.length}`;
-        }
-
-        // 5. Initial Load
-        window.onload = () => loadLevel(1);
+        window.onload = () => {
+            renderNav();
+            loadLevel(1);
+        };
     </script>
 </body>
 </html>
