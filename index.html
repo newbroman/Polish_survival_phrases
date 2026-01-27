@@ -9,286 +9,262 @@
             --primary: #dc143c;
             --bg: #f4f4f4;
             --card: #ffffff;
+            --locked: #ddd;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             background-color: var(--bg);
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
         }
 
-        .nav-container {
+        /* Search & Header */
+        .header {
             width: 100%;
             background: white;
+            padding: 15px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
-        }
-
-        .search-container {
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        #search-input {
-            width: 90%;
-            max-width: 400px;
-            padding: 12px 20px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            outline: none;
-            font-size: 16px;
-        }
-
-        .nav-scroll {
-            display: flex;
-            overflow-x: auto;
-            padding: 12px;
-            gap: 10px;
-            scrollbar-width: none;
-        }
-        .nav-scroll::-webkit-scrollbar { display: none; }
-
-        .nav-item {
-            padding: 8px 18px;
-            background: #eee;
-            border-radius: 20px;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: 0.3s;
-            font-weight: bold;
-            font-size: 14px;
-            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .nav-item.active { background: var(--primary); color: white; }
-
-        /* Heat Map Dot */
-        .heat-dot {
-            width: 100%;
-            height: 4px;
-            background: #ccc;
-            margin-top: 4px;
-            border-radius: 2px;
+        #search-input {
+            width: 85%;
+            max-width: 400px;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 25px;
+            outline: none;
         }
 
-        #game-container {
-            margin-top: 20px;
-            width: 95%;
+        /* 4x5 Heat Map Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding: 20px;
+            width: 90%;
             max-width: 500px;
-            text-align: center;
         }
 
+        .grid-item {
+            aspect-ratio: 1 / 1;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.2s;
+            border: 3px solid transparent;
+        }
+
+        .grid-item:active { transform: scale(0.95); }
+        .grid-item span { font-size: 0.7rem; margin-top: 4px; opacity: 0.7; }
+
+        /* Game UI */
+        #game-ui { display: none; width: 90%; max-width: 500px; text-align: center; margin-top: 20px; }
+        
         .card {
             background: var(--card);
             padding: 50px 20px;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            min-height: 180px;
+            min-height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            cursor: pointer;
             position: relative;
         }
 
-        .category-tag {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 0.75rem;
-            color: #aaa;
-            text-transform: uppercase;
-        }
+        .phrase-text { font-size: 1.8rem; font-weight: bold; }
+        .translation-text { color: var(--primary); margin-top: 20px; font-size: 1.3rem; }
 
-        .phrase-text { font-size: 1.8rem; font-weight: bold; color: #333; }
-        .translation-text { font-size: 1.3rem; color: #dc143c; margin-top: 20px; font-weight: 500; }
-
-        .controls {
-            margin-top: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .row { display: flex; gap: 12px; width: 100%; }
-
-        button {
-            flex: 1;
-            padding: 18px;
+        .btn {
+            padding: 15px;
             border: none;
             border-radius: 12px;
-            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
+            margin-top: 10px;
         }
+        .btn-main { background: var(--primary); color: white; width: 100%; }
+        .btn-sub { background: #333; color: white; flex: 1; }
+        .btn-back { background: none; color: #666; text-decoration: underline; margin-bottom: 10px; }
+        
+        .row { display: flex; gap: 10px; }
 
-        .btn-next { background: var(--primary); color: white; }
-        .btn-reveal { background: #333; color: white; }
-        .btn-audio { background: #007bff; color: white; }
-        .stats { margin-top: 25px; color: #888; font-size: 0.9rem; }
+        /* Guide Table */
+        .guide-container { width: 90%; max-width: 500px; margin-top: 30px; font-size: 0.9rem; color: #444; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+        td, th { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
     </style>
 </head>
 <body>
 
-    <div class="nav-container">
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search PL or EN..." oninput="handleSearch()">
-        </div>
-        <div class="nav-scroll" id="level-nav"></div>
+    <div class="header">
+        <input type="text" id="search-input" placeholder="Search phrases..." oninput="handleSearch()">
     </div>
 
-    <div id="game-container">
-        <div class="card" id="main-card" onclick="toggleTranslation()">
-            <div id="category" class="category-tag">Welcome</div>
-            <div id="phrase" class="phrase-text">Tap a Level</div>
-            <div id="translation" class="translation-text" style="display: none;"></div>
+    <div id="dashboard">
+        <div class="grid-container" id="heat-map"></div>
+        
+        <div class="guide-container">
+            <h3>Level Guide</h3>
+            <table id="level-table">
+                </table>
         </div>
+    </div>
 
+    <div id="game-ui">
+        <button class="btn btn-back" onclick="showDashboard()">← Back to Dashboard</button>
+        <div class="card" onclick="toggleTranslation()">
+            <div id="category" style="font-size: 0.8rem; color: #888; margin-bottom: 10px;"></div>
+            <div id="phrase" class="phrase-text"></div>
+            <div id="translation" class="translation-text" style="display:none;"></div>
+        </div>
         <div class="controls">
-            <button class="btn-audio" onclick="speakPhrase()">🔊 Speak Polish</button>
+            <button class="btn btn-main" style="background:#007bff;" onclick="speak()">🔊 Speak Polish</button>
             <div class="row">
-                <button class="btn-reveal" onclick="toggleTranslation()">Show / Hide</button>
-                <button class="btn-next" onclick="nextPhrase()">Next →</button>
+                <button class="btn btn-sub" onclick="toggleTranslation()">Show/Hide</button>
+                <button class="btn btn-sub" style="background:var(--primary)" onclick="nextPhrase()">Next →</button>
             </div>
         </div>
-
-        <div class="stats" id="stats">Select level</div>
     </div>
 
     <script>
+        const levels = [
+            "Basics", "Greetings", "Numbers", "Food", "Travel", 
+            "Home", "Work", "Nature", "Body", "Shopping", 
+            "Time", "Weather", "Family", "Clothes", "Directions", 
+            "Health", "Government", "Culture", "Abstract", "Glue Words"
+        ];
+
         let currentPhrases = [];
-        let allPhrasesIndex = []; 
         let currentIndex = 0;
-        let isSearchMode = false;
-        let lastLevel = 1;
+        let activeLevel = 1;
+        let allPhrasesIndex = [];
 
-        // --- 1. Audio Logic ---
-        function speakPhrase() {
-            if (currentPhrases.length === 0) return;
-            const text = currentPhrases[currentIndex].pl;
-            const msg = new SpeechSynthesisUtterance();
-            msg.text = text;
-            msg.lang = 'pl-PL';
-            msg.rate = 0.9; // Slightly slower for learning
-            window.speechSynthesis.speak(msg);
+        // --- Mastery & Grid ---
+        function renderDashboard() {
+            const grid = document.getElementById('heat-map');
+            const table = document.getElementById('level-table');
+            grid.innerHTML = '';
+            table.innerHTML = '<tr><th>Lvl</th><th>Topic</th></tr>';
+            
+            const mastery = JSON.parse(localStorage.getItem('plMastery') || '{}');
+
+            levels.forEach((name, i) => {
+                const lvlNum = i + 1;
+                const score = mastery[lvlNum] || 0;
+                
+                // Create Grid Item
+                const item = document.createElement('div');
+                item.className = 'grid-item';
+                item.style.backgroundColor = getHeatColor(score);
+                item.style.color = score > 10 ? 'white' : 'black';
+                item.innerHTML = `${lvlNum} <span>${score} pts</span>`;
+                item.onclick = () => loadLevel(lvlNum);
+                grid.appendChild(item);
+
+                // Create Table Row
+                const row = `<tr><td>${lvlNum}</td><td>${name}</td></tr>`;
+                table.innerHTML += row;
+            });
         }
 
-        // --- 2. Heat Map Logic ---
-        function updateHeatMap(level) {
-            let progress = JSON.parse(localStorage.getItem('polishProgress') || '{}');
-            progress[level] = (progress[level] || 0) + 1;
-            localStorage.setItem('polishProgress', JSON.stringify(progress));
-            renderNav();
+        function getHeatColor(score) {
+            if (score === 0) return '#eee';
+            if (score < 5) return '#ffcdd2';
+            if (score < 15) return '#ef9a9a';
+            if (score < 30) return '#e57373';
+            return '#dc143c';
         }
 
-        function getHeatColor(count) {
-            if (!count) return '#ccc';
-            if (count < 5) return '#ffcdd2'; // Light red
-            if (count < 15) return '#ef9a9a';
-            return '#dc143c'; // Full red
-        }
-
-        function renderNav() {
-            const navScroll = document.getElementById('level-nav');
-            navScroll.innerHTML = '';
-            const progress = JSON.parse(localStorage.getItem('polishProgress') || '{}');
-
-            for (let i = 1; i <= 20; i++) {
-                const btn = document.createElement('div');
-                btn.className = `nav-item ${i === lastLevel && !isSearchMode ? 'active' : ''}`;
-                btn.id = `nav-${i}`;
-                btn.innerHTML = `Level ${i} <div class="heat-dot" style="background: ${getHeatColor(progress[i])}"></div>`;
-                btn.onclick = () => loadLevel(i);
-                navScroll.appendChild(btn);
-            }
-        }
-
-        // --- 3. Core Logic ---
-        async function loadLevel(level) {
-            isSearchMode = false;
-            lastLevel = level;
-            document.getElementById('search-input').value = '';
-            updateHeatMap(level);
-
-            try {
-                const response = await fetch(`./phrases_${level}.json`);
-                if (!response.ok) throw new Error(`Status: ${response.status}`);
-                const data = await response.json();
-                currentPhrases = data.phrases.sort(() => Math.random() - 0.5);
-                currentIndex = 0;
-                displayPhrase();
-            } catch (error) {
-                document.getElementById('phrase').innerText = "Load Error";
-                document.getElementById('translation').innerText = error.message;
-                document.getElementById('translation').style.display = 'block';
-            }
-        }
-
-        async function handleSearch() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            if (allPhrasesIndex.length === 0) {
-                for (let i = 1; i <= 20; i++) {
-                    try {
-                        const res = await fetch(`./phrases_${i}.json`);
-                        if(res.ok) {
-                            const data = await res.json();
-                            allPhrasesIndex.push(...data.phrases);
-                        }
-                    } catch(e) {}
-                }
-            }
-
-            if (query.length < 2) {
-                if (isSearchMode) loadLevel(lastLevel);
-                return;
-            }
-
-            isSearchMode = true;
-            renderNav(); 
-            currentPhrases = allPhrasesIndex.filter(p => 
-                p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)
-            );
+        // --- Core Functions ---
+        async function loadLevel(lvl) {
+            activeLevel = lvl;
+            const response = await fetch(`./phrases_${lvl}.json`);
+            const data = await response.json();
+            currentPhrases = data.phrases.sort(() => Math.random() - 0.5);
             currentIndex = 0;
+            
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('game-ui').style.display = 'block';
             displayPhrase();
         }
 
         function displayPhrase() {
-            if (currentPhrases.length === 0) return;
             const p = currentPhrases[currentIndex];
             document.getElementById('phrase').innerText = p.pl;
             document.getElementById('translation').innerText = p.en;
-            document.getElementById('category').innerText = isSearchMode ? `Level ${p.level}` : p.category;
+            document.getElementById('category').innerText = `Level ${activeLevel}: ${p.category}`;
             document.getElementById('translation').style.display = 'none';
-            document.getElementById('stats').innerText = `${isSearchMode ? "Found" : "Level " + lastLevel}: ${currentIndex + 1}/${currentPhrases.length}`;
+            
+            // Increment Mastery
+            let mastery = JSON.parse(localStorage.getItem('plMastery') || '{}');
+            mastery[activeLevel] = (mastery[activeLevel] || 0) + 1;
+            localStorage.setItem('plMastery', JSON.stringify(mastery));
         }
 
         function nextPhrase() {
-            if (currentPhrases.length > 0) {
-                currentIndex = (currentIndex + 1) % currentPhrases.length;
-                displayPhrase();
-            }
+            currentIndex = (currentIndex + 1) % currentPhrases.length;
+            displayPhrase();
         }
 
         function toggleTranslation() {
             const t = document.getElementById('translation');
-            t.style.display = (t.style.display === 'none') ? 'block' : 'none';
+            t.style.display = t.style.display === 'none' ? 'block' : 'none';
         }
 
-        window.onload = () => {
-            renderNav();
-            loadLevel(1);
-        };
+        function showDashboard() {
+            document.getElementById('dashboard').style.display = 'block';
+            document.getElementById('game-ui').style.display = 'none';
+            renderDashboard();
+        }
+
+        function speak() {
+            const msg = new SpeechSynthesisUtterance(currentPhrases[currentIndex].pl);
+            msg.lang = 'pl-PL';
+            window.speechSynthesis.speak(msg);
+        }
+
+        async function handleSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            if (query.length < 2) return;
+
+            if (allPhrasesIndex.length === 0) {
+                for (let i = 1; i <= 20; i++) {
+                    const res = await fetch(`./phrases_${i}.json`);
+                    const data = await res.json();
+                    allPhrasesIndex.push(...data.phrases);
+                }
+            }
+
+            currentPhrases = allPhrasesIndex.filter(p => 
+                p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)
+            );
+            
+            if (currentPhrases.length > 0) {
+                currentIndex = 0;
+                activeLevel = "Search";
+                document.getElementById('dashboard').style.display = 'none';
+                document.getElementById('game-ui').style.display = 'block';
+                displayPhrase();
+            }
+        }
+
+        window.onload = renderDashboard;
     </script>
 </body>
 </html>
