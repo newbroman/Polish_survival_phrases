@@ -48,9 +48,8 @@
         }
         .tile.wrong { background: #e74c3c !important; color: white !important; transition: none; }
 
-        /* Scrollable Mastered List */
         .mastered-list { display: flex; flex-direction: column; gap: 8px; padding: 10px; }
-        .mastered-item { background: var(--card); padding: 12px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--border); }
+        .mastered-item { background: var(--card); padding: 12px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; }
 
         .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 10px; text-align: center; border-top: 1px solid #ddd; z-index: 10; }
     </style>
@@ -98,14 +97,12 @@
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
     let phrasesData = [];
-    let activePool = []; // Fixed 16 slots
-    let nextPhraseIndex = 16;
+    let activePool = []; 
     let currentTarget = null;
     let currentMode = 'learning';
     let canAnswer = true;
     const THRESHOLD = 3;
 
-    // UI Init
     const lvlSelect = document.getElementById('level-select');
     levelNames.forEach((name, i) => {
         const opt = document.createElement('option');
@@ -120,15 +117,8 @@
             const response = await fetch(`phrases_${currentLevel}.json`);
             const data = await response.json();
             phrasesData = data.phrases;
-            
-            // Find which phrases are already mastered
             const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-            const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-            
-            // Initialize the static 16-slot pool
             activePool = available.slice(0, 16);
-            nextPhraseIndex = activePool.length;
-            
             updateStats();
             updateMap();
             startNewRound();
@@ -142,7 +132,9 @@
         
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = currentTarget.en;
-        speak(currentTarget.pl);
+        
+        // ADDED: Delay to prevent clipping
+        setTimeout(() => speak(currentTarget.pl), 150);
     }
 
     function checkAnswer(phrase, tileElement) {
@@ -156,41 +148,21 @@
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Correct! 🌟";
             document.getElementById('feedback').style.color = "var(--success)";
-            
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             
             setTimeout(() => {
-                // If the phrase hit threshold, swap it out IN PLACE
                 if (stats[phrase.pl] >= THRESHOLD) {
                     const poolIdx = activePool.findIndex(p => p.pl === phrase.pl);
-                    
-                    // Look for the next available non-mastered phrase not in the pool
-                    let replacement = null;
-                    for (let i = 0; i < phrasesData.length; i++) {
-                        const candidate = phrasesData[i];
-                        const isMastered = (stats[candidate.pl] || 0) >= THRESHOLD;
-                        const inPool = activePool.some(ap => ap.pl === candidate.pl);
-                        if (!isMastered && !inPool) {
-                            replacement = candidate;
-                            break;
-                        }
-                    }
-
-                    if (replacement) {
-                        activePool[poolIdx] = replacement;
-                    } else {
-                        activePool.splice(poolIdx, 1); // Shrink if none left
-                    }
+                    let replacement = phrasesData.find(candidate => 
+                        (stats[candidate.pl] || 0) < THRESHOLD && !activePool.some(ap => ap.pl === candidate.pl)
+                    );
+                    if (replacement) activePool[poolIdx] = replacement;
+                    else activePool.splice(poolIdx, 1);
                 }
-                
                 updateStats();
                 updateMap();
-                
-                if (activePool.length === 0) {
-                    document.getElementById('overlay').style.display = 'flex';
-                } else {
-                    startNewRound();
-                }
+                if (activePool.length === 0) document.getElementById('overlay').style.display = 'flex';
+                else startNewRound();
             }, 600);
         } else {
             stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
@@ -208,7 +180,6 @@
     function updateMap() {
         const area = document.getElementById('mastery-map');
         area.innerHTML = '';
-        
         if (currentMode === 'learning') {
             area.className = "grid";
             activePool.forEach(p => {
@@ -216,21 +187,16 @@
                 tile.className = 'tile';
                 const count = stats[p.pl] || 0;
                 tile.innerText = p.pl;
-                const alpha = Math.min(1, count / THRESHOLD);
                 if (count > 0) {
-                    tile.style.backgroundColor = `rgba(46, 204, 113, ${alpha})`;
+                    tile.style.backgroundColor = `rgba(46, 204, 113, ${Math.min(1, count / THRESHOLD)})`;
                     if (count >= THRESHOLD) tile.style.color = "white";
                 }
                 tile.onclick = () => checkAnswer(p, tile);
                 area.appendChild(tile);
             });
         } else {
-            // Mastered Review Mode (Scrollable list)
             area.className = "mastered-list";
             const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-            if (mastered.length === 0) {
-                area.innerHTML = "<p style='text-align:center; opacity:0.5'>No phrases banked yet.</p>";
-            }
             mastered.forEach(p => {
                 const item = document.createElement('div');
                 item.className = 'mastered-item';
@@ -243,8 +209,7 @@
 
     function updateStats() {
         const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-        const progress = (mastered.length / phrasesData.length) * 100;
-        document.getElementById('progress-bar').style.width = progress + "%";
+        document.getElementById('progress-bar').style.width = (mastered.length / phrasesData.length) * 100 + "%";
     }
 
     function switchMode(m) {
@@ -259,6 +224,8 @@
         window.speechSynthesis.cancel();
         const msg = new SpeechSynthesisUtterance(text);
         msg.lang = 'pl-PL';
+        // Some browsers clip if volume isn't explicitly set during fast switches
+        msg.volume = 1;
         window.speechSynthesis.speak(msg);
     }
 
@@ -266,8 +233,7 @@
         const query = document.getElementById('search-bar').value.toLowerCase();
         if (query.length < 1) { updateMap(); return; }
         const area = document.getElementById('mastery-map');
-        area.innerHTML = '';
-        area.className = "mastered-list";
+        area.innerHTML = ''; area.className = "mastered-list";
         phrasesData.filter(p => p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query))
         .forEach(p => {
             const item = document.createElement('div');
@@ -281,7 +247,7 @@
     function changeLevel(v) { currentLevel = parseInt(v); localStorage.setItem('pl_current_level_idx', currentLevel); loadLevelData(); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
     function resetEverything() { if(confirm("Reset all progress?")) { localStorage.clear(); location.reload(); } }
-    function advanceLevel() { currentLevel++; if(currentLevel > 20) currentLevel = 1; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
+    function advanceLevel() { currentLevel++; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
 
     window.onload = loadLevelData;
 </script>
