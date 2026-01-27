@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Master: Bottom Grid Edition</title>
+    <title>Polish Master: Mastery Grid</title>
     <style>
         :root {
             --primary: #dc143c;
             --bg: #ffffff;
             --text: #333333;
-            --card: #f2f2f2;
+            --card: #f4f4f4;
             --border: #dddddd;
             --correct: #2ecc71;
             --wrong: #e74c3c;
@@ -25,7 +25,7 @@
         }
 
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            font-family: -apple-system, system-ui, sans-serif; 
             background: var(--bg); 
             color: var(--text); 
             margin: 0; 
@@ -35,13 +35,14 @@
             overflow: hidden;
         }
 
-        /* Top Bar */
-        .top-bar {
+        /* Search and Level Bar */
+        .toolbar {
             padding: 10px;
             background: var(--card);
             border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 10px;
         }
-        .toolbar-row { display: flex; gap: 8px; margin-bottom: 5px; }
         input, select {
             padding: 8px;
             border-radius: 8px;
@@ -51,38 +52,39 @@
             font-size: 14px;
         }
 
-        /* Quiz Area (Top/Middle) */
+        /* Quiz Area (Middle) */
         .quiz-container {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 15px;
-            gap: 15px;
+            padding: 20px;
+            text-align: center;
         }
 
-        .current-q-display {
-            text-align: center;
+        .q-display {
             font-size: 1.8rem;
             font-weight: 800;
-            min-height: 1.2em;
-            color: var(--text);
+            margin-bottom: 20px;
+            min-height: 1.5em;
         }
 
-        .choices-list {
+        .choices-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 10px;
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
         }
 
         .choice-btn {
-            padding: 16px;
+            padding: 15px;
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 12px;
             color: var(--text);
             font-size: 1.1rem;
-            text-align: center;
             font-weight: 500;
             cursor: pointer;
         }
@@ -90,122 +92,140 @@
         .choice-btn.correct { background: var(--correct) !important; color: white; border-color: var(--correct); }
         .choice-btn.wrong { background: var(--wrong) !important; color: white; border-color: var(--wrong); }
 
-        /* Bottom Phrase Grid / Heatmap */
+        /* 4x4 Grid (Bottom) */
         .grid-header {
-            font-size: 12px;
+            font-size: 11px;
             text-align: center;
-            opacity: 0.7;
-            padding: 5px 0;
+            padding: 6px;
             background: var(--card);
             border-top: 1px solid var(--border);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
         }
 
-        .phrase-grid {
+        .heatmap-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 4px;
-            padding: 8px;
+            gap: 5px;
+            padding: 10px;
             background: var(--card);
-            padding-bottom: env(safe-area-inset-bottom); /* iOS support */
+            padding-bottom: env(safe-area-inset-bottom);
         }
 
-        .grid-btn {
+        .grid-item {
             aspect-ratio: 1/1;
+            background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 6px;
-            font-size: 0.6rem;
-            font-weight: 600;
+            font-size: 0.65rem;
+            font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2px;
-            background: var(--bg);
-            color: var(--text);
-            transition: transform 0.1s, background 0.3s;
+            padding: 4px;
+            transition: background 0.4s ease, border 0.2s;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        .grid-btn.active { 
+        .grid-item.active { 
             border: 2px solid var(--primary); 
-            transform: scale(0.95); 
+            transform: scale(0.96);
         }
 
-        .progress-info { font-size: 11px; text-align: center; padding: 4px; background: var(--card); }
+        .bank-info { 
+            font-size: 11px; 
+            text-align: center; 
+            padding: 8px; 
+            background: var(--card); 
+            border-top: 1px solid var(--border); 
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <div class="toolbar-row">
-            <input type="text" id="search-input" style="flex:2" placeholder="Search..." oninput="handleSearch()">
-            <select id="level-select" style="flex:1" onchange="loadLevel(this.value)"></select>
-        </div>
-        <div class="progress-info" id="stats">Banked: 0/0</div>
+    <div class="toolbar">
+        <input type="text" id="search-input" style="flex:2" placeholder="Search phrases..." oninput="handleSearch()">
+        <select id="level-select" style="flex:1" onchange="loadLevel(this.value)"></select>
     </div>
 
     <div class="quiz-container">
-        <div id="q-text" class="current-q-display">Tap a phrase below</div>
-        <div class="choices-list" id="choices"></div>
+        <div id="q-text" class="q-display">Tap a phrase below</div>
+        <div id="feedback" style="height:20px; font-weight: bold; margin-bottom: 10px; color: var(--primary);"></div>
+        <div class="choices-grid" id="choices"></div>
     </div>
 
-    <div class="grid-header">Phrase Heatmap (Tap to hear & solve)</div>
-    <div class="phrase-grid" id="heatmap-grid"></div>
+    <div class="grid-header">Phrase Mastery Heatmap</div>
+    <div class="heatmap-grid" id="heatmap"></div>
+    <div class="bank-info" id="stats">Banked: 0 / 0</div>
 
     <script>
         const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
         let allPhrases = [];
         let activePool = []; 
-        let banked = [];
-        let currentIdxInPool = null;
+        let bankedCount = 0;
+        let currentIdx = null;
         let canAnswer = false;
 
         const select = document.getElementById('level-select');
-        select.innerHTML = levelNames.map((n, i) => `<option value="${i+1}">Lvl ${i+1}: ${n}</option>`).join('');
+        select.innerHTML = levelNames.map((n, i) => `<option value="${i+1}">Level ${i+1}</option>`).join('');
 
         async function loadLevel(lvl) {
             const res = await fetch(`phrases_${lvl}.json`);
             const d = await res.json();
             allPhrases = d.phrases;
-            banked = [];
-            // Load 16 phrases into active pool
+            bankedCount = 0;
+            // Load initial 16 phrases
             activePool = allPhrases.slice(0, 16).map(p => ({...p, score: 0}));
-            renderGrid();
-            document.getElementById('q-text').innerText = "Select a phrase";
-            document.getElementById('choices').innerHTML = '';
+            renderHeatmap();
+            resetQuizDisplay();
             updateStats();
         }
 
-        function renderGrid() {
-            const grid = document.getElementById('heatmap-grid');
+        function resetQuizDisplay() {
+            document.getElementById('q-text').innerText = "Select a phrase";
+            document.getElementById('choices').innerHTML = '';
+            document.getElementById('feedback').innerText = '';
+            currentIdx = null;
+        }
+
+        function renderHeatmap() {
+            const grid = document.getElementById('heatmap');
             grid.innerHTML = '';
-            activePool.forEach((p, index) => {
-                const btn = document.createElement('div');
-                btn.className = 'grid-btn';
-                if (index === currentIdxInPool) btn.classList.add('active');
+            activePool.forEach((p, idx) => {
+                const item = document.createElement('div');
+                item.className = `grid-item ${idx === currentIdx ? 'active' : ''}`;
                 
-                // Heatmap Color (Mastery = 4)
-                const alpha = p.score / 4;
-                btn.style.backgroundColor = `rgba(46, 204, 113, ${alpha})`;
+                // Color based on score (0-4)
+                const opacity = p.score / 4;
+                if (p.score > 0) {
+                    item.style.backgroundColor = `rgba(46, 204, 113, ${opacity})`;
+                    item.style.color = p.score >= 3 ? 'white' : 'var(--text)';
+                }
                 
-                btn.innerText = p.pl;
-                btn.onclick = () => selectPhrase(index);
-                grid.appendChild(btn);
+                item.innerText = p.pl;
+                item.onclick = () => selectPhrase(idx);
+                grid.appendChild(item);
             });
         }
 
-        function selectPhrase(index) {
-            currentIdxInPool = index;
-            const phrase = activePool[index];
-            speak(phrase.pl);
-            renderGrid();
-            setupQuiz(phrase);
+        function selectPhrase(idx) {
+            currentIdx = idx;
+            const p = activePool[idx];
+            speak(p.pl);
+            renderHeatmap();
+            setupQuiz(p);
         }
 
-        function setupQuiz(phrase) {
+        function setupQuiz(p) {
             canAnswer = true;
-            document.getElementById('q-text').innerText = phrase.pl;
+            document.getElementById('q-text').innerText = p.pl;
+            document.getElementById('feedback').innerText = "";
             
-            let choices = [phrase.en];
+            let choices = [p.en];
             while (choices.length < 4) {
                 let rand = allPhrases[Math.floor(Math.random() * allPhrases.length)].en;
                 if (!choices.includes(rand)) choices.push(rand);
@@ -225,31 +245,32 @@
 
         function checkAnswer(selected, btn) {
             if (!canAnswer) return;
-            const phrase = activePool[currentIdxInPool];
+            const p = activePool[currentIdx];
 
-            if (selected === phrase.en) {
+            if (selected === p.en) {
                 btn.classList.add('correct');
                 canAnswer = false;
-                phrase.score++;
+                p.score++;
                 
-                if (phrase.score >= 4) {
-                    banked.push(phrase);
-                    const nextIdx = banked.length + 15;
-                    if (allPhrases[nextIdx]) {
-                        activePool[currentIdxInPool] = {...allPhrases[nextIdx], score: 0};
+                if (p.score >= 4) {
+                    bankedCount++;
+                    const nextPhraseIdx = bankedCount + 15;
+                    if (allPhrases[nextPhraseIdx]) {
+                        activePool[currentIdx] = {...allPhrases[nextPhraseIdx], score: 0};
                     }
                 }
                 
                 setTimeout(() => {
-                    renderGrid();
+                    renderHeatmap();
                     updateStats();
-                    let next = (currentIdxInPool + 1) % activePool.length;
-                    selectPhrase(next);
+                    // Move to the next button in the grid automatically
+                    selectPhrase((currentIdx + 1) % activePool.length);
                 }, 600);
             } else {
                 btn.classList.add('wrong');
-                phrase.score = Math.max(0, phrase.score - 1);
-                renderGrid();
+                document.getElementById('feedback').innerText = `Actually: ${p.en}`;
+                p.score = Math.max(0, p.score - 1);
+                renderHeatmap();
             }
         }
 
@@ -260,7 +281,7 @@
         }
 
         function updateStats() {
-            document.getElementById('stats').innerText = `Banked: ${banked.length} / ${allPhrases.length}`;
+            document.getElementById('stats').innerText = `Level Mastery: ${bankedCount} / ${allPhrases.length}`;
         }
 
         window.onload = () => loadLevel(1);
