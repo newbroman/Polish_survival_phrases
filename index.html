@@ -22,7 +22,6 @@
         .progress-container { width: 100%; height: 6px; background: #ddd; flex-shrink: 0; }
         #progress-bar { width: 0%; height: 100%; background: var(--success); transition: width 0.5s ease; }
 
-        /* Compact Quiz Header */
         .quiz-header { width: 100%; background: var(--card); padding: 15px 0; text-align: center; border-bottom: 1px solid #ddd; }
         .english-q { font-size: 1.4rem; font-weight: 800; color: var(--pol-red); margin-bottom: 5px; }
         .feedback { height: 18px; font-size: 0.8rem; font-weight: bold; }
@@ -31,7 +30,6 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.7rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); }
 
-        /* The 16-Tile Interactive Heatmap */
         .map-section { width: 96%; max-width: 450px; margin-top: 10px; flex-grow: 1; overflow-y: auto; padding-bottom: 20px; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
         .tile { 
@@ -47,10 +45,9 @@
             font-size: 0.6rem; 
             font-weight: bold;
             transition: transform 0.1s, background 0.3s;
-            border: 2px solid transparent;
         }
         .tile:active { transform: scale(0.95); }
-        .tile.wrong { background: #e74c3c !important; color: white; }
+        .tile.wrong { background: #e74c3c !important; color: white !important; }
 
         .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 10px; text-align: center; border-top: 1px solid #ddd; }
     </style>
@@ -59,7 +56,7 @@
 
 <div id="overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center;">
     <h1>LEVEL MASTERED! 🏆</h1>
-    <button onclick="advanceLevel()" style="background:var(--success); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold;">Load Next Level</button>
+    <button onclick="advanceLevel()" style="background:var(--success); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold; cursor:pointer;">Load Next Level</button>
 </div>
 
 <div class="header">
@@ -127,7 +124,9 @@
         const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
         
         activePhrases = available.slice(0, 16);
-        document.getElementById('progress-bar').style.width = (mastered.length / phrasesData.length * 100) + "%";
+        
+        const progress = (mastered.length / phrasesData.length) * 100;
+        document.getElementById('progress-bar').style.width = progress + "%";
 
         if (progress >= 100 && available.length === 0) {
             document.getElementById('overlay').style.display = 'flex';
@@ -149,7 +148,7 @@
 
     function checkAnswer(phrase, tileElement) {
         if (!canAnswer || currentMode !== 'learning') {
-            speak(phrase.pl); // Just play audio in banked mode
+            speak(phrase.pl);
             return;
         }
 
@@ -162,11 +161,7 @@
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             
             setTimeout(() => {
-                if (stats[phrase.pl] >= THRESHOLD) refreshLogic();
-                else {
-                    updateMap();
-                    startNewRound();
-                }
+                refreshLogic();
             }, 600);
         } else {
             stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
@@ -176,6 +171,7 @@
             setTimeout(() => {
                 tileElement.classList.remove('wrong');
                 updateMap();
+                startNewRound();
             }, 1000);
         }
     }
@@ -228,11 +224,34 @@
         window.speechSynthesis.speak(msg);
     }
 
-    function changeLevel(v) { currentLevel = v; localStorage.setItem('pl_current_level_idx', v); loadLevelData(); }
-    function switchMode(m) { currentMode = m; document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); updateMap(); }
+    function changeLevel(v) { 
+        currentLevel = parseInt(v); 
+        localStorage.setItem('pl_current_level_idx', currentLevel); 
+        loadLevelData(); 
+    }
+    
+    function switchMode(m) { 
+        currentMode = m; 
+        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); 
+        document.getElementById('tab-'+m).classList.add('active'); 
+        updateMap(); 
+    }
+    
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
-    function resetEverything() { if(confirm("Reset?")) { localStorage.clear(); location.reload(); } }
-    function advanceLevel() { currentLevel++; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
+    
+    function resetEverything() { 
+        if(confirm("Reset Progress?")) { 
+            localStorage.clear(); 
+            location.reload(); 
+        } 
+    }
+    
+    function advanceLevel() { 
+        currentLevel++; 
+        lvlSelect.value = currentLevel;
+        changeLevel(currentLevel); 
+        document.getElementById('overlay').style.display='none'; 
+    }
 
     window.onload = loadLevelData;
 </script>
