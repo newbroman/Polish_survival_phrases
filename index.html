@@ -10,42 +10,42 @@
         
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; height: 100vh; color: var(--text); overflow: hidden; }
         
-        /* Clean Header - Removed Red Background */
-        .header { width: 100%; padding: 15px 0; display: flex; flex-direction: column; align-items: center; gap: 10px; flex-shrink: 0; border-bottom: 1px solid #ddd; background: var(--card); }
-        .header-top { display: flex; align-items: center; justify-content: space-between; width: 94%; max-width: 400px; }
-        .title { font-weight: 800; font-size: 1.2rem; color: var(--pol-red); letter-spacing: -0.5px; }
+        /* New Header Layout */
+        .header { width: 100%; padding: 15px 0; display: flex; flex-direction: column; align-items: center; gap: 12px; flex-shrink: 0; background: var(--card); border-bottom: 1px solid #ddd; }
+        .title-row { width: 94%; max-width: 400px; text-align: center; }
+        .title { font-weight: 800; font-size: 1.4rem; color: var(--pol-red); margin: 0; }
         
-        .nav-controls { width: 94%; max-width: 400px; display: flex; gap: 8px; }
-        select, .search-box { background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 8px; border-radius: 8px; font-size: 0.85rem; outline: none; }
-        .search-box { flex-grow: 1; }
+        .controls-row { width: 94%; max-width: 400px; display: flex; flex-direction: column; gap: 8px; }
+        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 10px; border-radius: 8px; font-size: 0.9rem; outline: none; box-sizing: border-box; }
 
         .progress-container { width: 100%; height: 6px; background: #ddd; flex-shrink: 0; }
         #progress-bar { width: 0%; height: 100%; background: var(--success); transition: width 0.5s ease; }
 
         .quiz-header { width: 100%; background: var(--card); padding: 20px 0; text-align: center; border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .english-q { font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 5px; }
+        .english-q { font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
         .feedback { height: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; }
 
         .mode-tabs { display: flex; width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .tab { flex: 1; padding: 12px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; transition: opacity 0.2s; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        /* 4x3 Grid Layout */
-        .map-section { width: 96%; max-width: 450px; margin-top: 10px; flex-grow: 1; overflow-y: auto; padding-bottom: 80px; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 8px; height: 100%; max-height: 500px; }
+        /* 4 Columns x 3 Rows Grid */
+        .map-section { width: 96%; max-width: 450px; margin-top: 15px; flex-grow: 1; overflow-y: auto; padding-bottom: 80px; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 8px; }
         .tile { 
+            aspect-ratio: 1/1;
             display: flex; 
             align-items: center; 
             justify-content: center; 
             background: var(--tile-bg); 
-            border-radius: 12px; 
+            border-radius: 10px; 
             cursor: pointer; 
-            padding: 10px; 
+            padding: 5px; 
             text-align: center; 
-            font-size: 0.8rem; 
+            font-size: 0.7rem; 
             font-weight: 700;
             transition: transform 0.1s, background 0.3s;
-            line-height: 1.2;
+            line-height: 1.1;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .tile:active { transform: scale(0.95); }
@@ -65,11 +65,11 @@
 </div>
 
 <div class="header">
-    <div class="header-top">
-        <div class="title">Learn Polish Phrases</div>
-        <select id="level-select" onchange="changeLevel(this.value)"></select>
+    <div class="title-row">
+        <h1 class="title">Learn Polish Phrases</h1>
     </div>
-    <div class="nav-controls">
+    <div class="controls-row">
+        <select id="level-select" onchange="changeLevel(this.value)"></select>
         <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary..." oninput="handleSearch()">
     </div>
 </div>
@@ -79,7 +79,7 @@
 <div class="quiz-header" id="quiz-header">
     <div id="q-text" class="english-q">Loading...</div>
     <div id="feedback" class="feedback"></div>
-    <button onclick="speakTarget()" style="background:var(--bg); border:1px solid #ddd; border-radius:50%; width:50px; height:50px; font-size:1.2rem; cursor:pointer;">🔊</button>
+    <button onclick="speakTarget()" style="background:var(--bg); border:1px solid #ddd; border-radius:50%; width:52px; height:52px; font-size:1.3rem; cursor:pointer;">🔊</button>
 </div>
 
 <div class="mode-tabs">
@@ -92,7 +92,7 @@
 </div>
 
 <div class="footer">
-    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.6rem; opacity:0.5;">Reset Data</button>
+    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.6rem; opacity:0.5;">Reset Dictionary</button>
 </div>
 
 <script>
@@ -117,7 +117,7 @@
     levelNames.forEach((name, i) => {
         const opt = document.createElement('option');
         opt.value = i + 1;
-        opt.innerText = `Lvl ${i+1}: ${name}`;
+        opt.innerText = `Level ${i+1}: ${name}`;
         if (i + 1 === currentLevel) opt.selected = true;
         lvlSelect.appendChild(opt);
     });
@@ -127,9 +127,8 @@
             const response = await fetch(`phrases_${currentLevel}.json`);
             const data = await response.json();
             phrasesData = data.phrases;
-            // 4x3 Grid uses 12 tiles
             const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-            activePool = available.slice(0, 12);
+            activePool = available.slice(0, 12); // 4x3 grid
             updateStats(); updateMap(); startNewRound();
         } catch (err) { console.error(err); }
     }
@@ -165,7 +164,7 @@
         } else {
             stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
             tileElement.classList.add('wrong');
-            document.getElementById('feedback').innerText = `That was: ${phrase.en}`;
+            document.getElementById('feedback').innerText = `Actually: ${phrase.en}`;
             document.getElementById('feedback').style.color = "var(--pol-red)";
             setTimeout(() => { tileElement.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
         }
@@ -214,14 +213,13 @@
         updateMap();
     }
 
-    // --- ENHANCED DOUBLE-TAP (QUIETER SACRIFICIAL START) ---
     function speak(text) {
-        // Sacrificial whisper: Ultra-low volume and high speed to "prime" the speaker
+        // Sacrificial whisper: Primes the audio hardware
         const ghost = new SpeechSynthesisUtterance(text);
         if (plVoice) ghost.voice = plVoice;
         ghost.lang = 'pl-PL';
         ghost.volume = 0.001; 
-        ghost.rate = 1.5;
+        ghost.rate = 1.6;
         
         // The real audio
         const real = new SpeechSynthesisUtterance(text);
