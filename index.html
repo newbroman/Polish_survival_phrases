@@ -5,72 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Say some Polish phrases</title>
     <style>
-        :root { --pol-red: #dc143c; --success: #dc143c; /* Changed to red */ --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
+        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
-        body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; height: 100vh; color: var(--text); overflow: hidden; }
+        body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; height: 100vh; color: var(--text); overflow: hidden; }
         
-        .header { width: 100%; padding: 15px 0; display: flex; flex-direction: column; align-items: center; gap: 12px; flex-shrink: 0; background: var(--card); border-bottom: 1px solid #ddd; }
-        .title-row { width: 94%; max-width: 400px; text-align: center; }
-        .title { font-weight: 800; font-size: 1.4rem; color: var(--pol-red); margin: 0; }
+        /* Compact Header */
+        .header { width: 100%; padding: 8px 0; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .title { font-weight: 800; font-size: 1.1rem; color: var(--pol-red); text-align: center; margin: 0 0 5px 0; }
+        .controls-row { width: 94%; max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px; }
         
-        .controls-row { width: 94%; max-width: 400px; display: flex; flex-direction: column; gap: 8px; }
-        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 5px; background: var(--bg); border-radius: 8px; border: 1px solid #ddd; }
-        .toggle-label { font-size: 0.8rem; font-weight: bold; color: var(--text); }
-        
-        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 10px; border-radius: 8px; font-size: 0.9rem; outline: none; box-sizing: border-box; }
+        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.75rem; font-weight: bold; }
+        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 6px; border-radius: 6px; font-size: 0.8rem; outline: none; }
 
-        .progress-container { width: 100%; height: 6px; background: #ddd; flex-shrink: 0; }
-        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s ease; }
+        .progress-container { width: 100%; height: 4px; background: #ddd; }
+        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
-        .quiz-header { width: 100%; background: var(--card); padding: 20px 0; text-align: center; border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .q-text { font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
-        .feedback { height: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; }
+        /* Quiz Area - Speaker on Left */
+        .quiz-header { background: var(--card); padding: 10px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 44px; height: 44px; font-size: 1.1rem; cursor: pointer; flex-shrink: 0; }
+        .q-content { flex-grow: 1; text-align: center; }
+        .q-text { font-size: 1.2rem; font-weight: 800; margin-bottom: 2px; line-height: 1.2; }
+        .feedback { height: 14px; font-size: 0.75rem; font-weight: bold; }
 
-        .mode-tabs { display: flex; width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 12px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; transition: opacity 0.2s; }
-        .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
+        .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .tab { flex: 1; padding: 8px; text-align: center; font-size: 0.7rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
+        .tab.active { opacity: 1; border-bottom: 2px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { width: 96%; max-width: 450px; margin-top: 15px; flex-grow: 1; overflow-y: auto; padding-bottom: 80px; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 8px; }
+        /* Grid - Optimized for No-Scroll */
+        .map-section { flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 6px; width: 100%; max-width: 400px; height: 100%; max-height: 320px; }
         .tile { 
-            aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
-            background: var(--tile-bg); border-radius: 10px; cursor: pointer; padding: 5px; 
-            text-align: center; font-size: 0.7rem; font-weight: 700; transition: transform 0.1s, background 0.3s;
-            line-height: 1.1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex; align-items: center; justify-content: center; 
+            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
+            text-align: center; font-size: 0.65rem; font-weight: 700; transition: background 0.2s;
+            line-height: 1.1; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow: hidden;
         }
-        .tile:active { transform: scale(0.95); }
-        .tile.wrong { background: var(--wrong-blue) !important; color: white !important; transition: none; }
+        .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
-        .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 10px; text-align: center; border-top: 1px solid #ddd; z-index: 10; }
+        .footer { padding: 5px; text-align: center; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
     </style>
 </head>
 <body>
 
 <div id="overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center;">
-    <h1 style="margin-bottom:20px;">LEVEL MASTERED! 🏆</h1>
-    <button onclick="advanceLevel()" style="background:var(--pol-red); color:white; border:none; padding:20px 40px; border-radius:12px; font-weight:bold; font-size:1.2rem; cursor:pointer;">Go to Next Level</button>
+    <h1>LEVEL MASTERED! 🏆</h1>
+    <button onclick="advanceLevel()" style="background:var(--pol-red); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold;">Next Level</button>
 </div>
 
 <div class="header">
-    <div class="title-row"><h1 class="title">Say some Polish phrases</h1></div>
+    <h1 class="title">Say some Polish phrases</h1>
     <div class="controls-row">
         <div class="toggle-container">
-            <span class="toggle-label">English ⮕ Polish</span>
+            <span>EN ⮕ PL</span>
             <input type="checkbox" id="lang-toggle" onchange="toggleLanguageMode()">
-            <span class="toggle-label">Polish ⮕ English</span>
+            <span>PL ⮕ EN</span>
         </div>
-        <select id="level-select" onchange="changeLevel(this.value)"></select>
-        <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary..." oninput="handleSearch()">
+        <div style="display:flex; gap:4px;">
+            <select id="level-select" onchange="changeLevel(this.value)"></select>
+            <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="handleSearch()">
+        </div>
     </div>
 </div>
 
 <div class="progress-container"><div id="progress-bar"></div></div>
 
-<div class="quiz-header" id="quiz-header">
-    <div id="q-text" class="q-text">Ready?</div>
-    <div id="feedback" class="feedback"></div>
-    <button onclick="speakTarget()" style="background:var(--bg); border:1px solid #ddd; border-radius:50%; width:52px; height:52px; font-size:1.3rem; cursor:pointer;">🔊</button>
+<div class="quiz-header">
+    <button class="speaker-btn" onclick="speakTarget()">🔊</button>
+    <div class="q-content">
+        <div id="q-text" class="q-text">Loading...</div>
+        <div id="feedback" class="feedback"></div>
+    </div>
 </div>
 
 <div class="mode-tabs">
@@ -80,7 +85,7 @@
 
 <div class="map-section"><div class="grid" id="mastery-map"></div></div>
 
-<div class="footer"><button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.6rem; opacity:0.5;">Clear Progress</button></div>
+<div class="footer"><button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.5rem; opacity:0.5;">Reset Progress</button></div>
 
 <script>
     const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
@@ -101,7 +106,7 @@
     levelNames.forEach((name, i) => {
         const opt = document.createElement('option');
         opt.value = i + 1;
-        opt.innerText = `Level ${i+1}: ${name}`;
+        opt.innerText = `Lvl ${i+1}: ${name}`;
         if (i + 1 === currentLevel) opt.selected = true;
         lvlSelect.appendChild(opt);
     });
@@ -129,16 +134,15 @@
         document.getElementById('feedback').innerText = "";
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         
-        // If reverse, display Polish, otherwise display English
         document.getElementById('q-text').innerText = reverseMode ? currentTarget.pl : currentTarget.en;
         
-        // Auto-speak ONLY when in standard mode (English to Polish)
+        // Only auto-speak in standard mode (English -> Polish)
         if(!reverseMode) setTimeout(() => speak(currentTarget.pl), 300);
     }
 
     function checkAnswer(phrase, tileElement) {
         if (!canAnswer || currentMode !== 'learning') {
-            if(!reverseMode) speak(phrase.pl);
+            speak(phrase.pl);
             return;
         }
 
@@ -151,7 +155,8 @@
             document.getElementById('feedback').style.color = "var(--pol-red)";
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             
-            if(reverseMode) speak(phrase.pl);
+            // Speak Polish phrase AFTER answer in Reverse Mode
+            speak(phrase.pl);
 
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
@@ -163,13 +168,17 @@
                 updateStats(); updateMap();
                 if (activePool.length === 0) document.getElementById('overlay').style.display = 'flex';
                 else startNewRound();
-            }, 600);
+            }, 800);
         } else {
             stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
             tileElement.classList.add('wrong');
-            document.getElementById('feedback').innerText = reverseMode ? `Nope! That was "${phrase.en}"` : `Nope! That's "${phrase.en}"`;
+            document.getElementById('feedback').innerText = `Nope! "${phrase.en}"`;
             document.getElementById('feedback').style.color = "var(--wrong-blue)";
-            setTimeout(() => { tileElement.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
+            
+            // Still speak the correct Polish phrase to help learning after a mistake
+            speak(currentTarget.pl);
+
+            setTimeout(() => { tileElement.classList.remove('wrong'); updateMap(); startNewRound(); }, 1400);
         }
     }
 
@@ -182,13 +191,11 @@
             const tile = document.createElement('div');
             tile.className = 'tile';
             const count = stats[p.pl] || 0;
-            
-            // If reverse mode, the tiles show English. If normal, they show Polish.
             tile.innerText = reverseMode ? p.en : p.pl;
             
             if (count > 0) {
                 const alpha = Math.min(1, count / THRESHOLD);
-                tile.style.backgroundColor = `rgba(220, 20, 60, ${alpha})`; // Red heatmap
+                tile.style.backgroundColor = `rgba(220, 20, 60, ${alpha})`; 
                 if (count >= THRESHOLD) tile.style.color = "white";
             }
             tile.onclick = () => checkAnswer(p, tile);
@@ -205,20 +212,18 @@
         currentMode = m;
         document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
         document.getElementById('tab-'+m).classList.add('active');
-        document.getElementById('quiz-header').style.display = (m === 'learning') ? 'block' : 'none';
+        document.getElementById('quiz-header').style.display = (m === 'learning') ? 'flex' : 'none';
         updateMap();
     }
 
     function speak(text) {
         const ghost = new SpeechSynthesisUtterance(text);
         if (plVoice) ghost.voice = plVoice;
-        ghost.lang = 'pl-PL';
-        ghost.volume = 0.001; ghost.rate = 1.6;
+        ghost.lang = 'pl-PL'; ghost.volume = 0.001; ghost.rate = 1.6;
         
         const real = new SpeechSynthesisUtterance(text);
         if (plVoice) real.voice = plVoice;
-        real.lang = 'pl-PL';
-        real.volume = 1; real.rate = 0.9;
+        real.lang = 'pl-PL'; real.volume = 1; real.rate = 0.9;
 
         window.speechSynthesis.speak(ghost);
         window.speechSynthesis.speak(real);
@@ -228,7 +233,7 @@
         const query = document.getElementById('search-bar').value.toLowerCase();
         if (query.length < 1) { updateMap(); return; }
         const area = document.getElementById('mastery-map');
-        area.innerHTML = ''; area.className = "grid";
+        area.innerHTML = ''; 
         phrasesData.filter(p => p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query))
         .forEach(p => {
             const item = document.createElement('div');
