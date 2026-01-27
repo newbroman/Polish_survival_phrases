@@ -3,54 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Master</title>
+    <title>Learn Polish Phrases</title>
     <style>
         :root { --pol-red: #dc143c; --success: #2ecc71; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; height: 100vh; color: var(--text); overflow: hidden; }
         
-        .header { background: var(--pol-red); color: white; width: 100%; padding: 10px 0; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
+        /* Clean Header - Removed Red Background */
+        .header { width: 100%; padding: 15px 0; display: flex; flex-direction: column; align-items: center; gap: 10px; flex-shrink: 0; border-bottom: 1px solid #ddd; background: var(--card); }
         .header-top { display: flex; align-items: center; justify-content: space-between; width: 94%; max-width: 400px; }
-        .title { font-weight: bold; font-size: 1.1rem; }
+        .title { font-weight: 800; font-size: 1.2rem; color: var(--pol-red); letter-spacing: -0.5px; }
         
         .nav-controls { width: 94%; max-width: 400px; display: flex; gap: 8px; }
-        select, .search-box { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 6px; border-radius: 6px; font-size: 0.8rem; outline: none; }
-        select option { color: #333; }
+        select, .search-box { background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 8px; border-radius: 8px; font-size: 0.85rem; outline: none; }
         .search-box { flex-grow: 1; }
 
         .progress-container { width: 100%; height: 6px; background: #ddd; flex-shrink: 0; }
         #progress-bar { width: 0%; height: 100%; background: var(--success); transition: width 0.5s ease; }
 
-        .quiz-header { width: 100%; background: var(--card); padding: 15px 0; text-align: center; border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .english-q { font-size: 1.4rem; font-weight: 800; color: var(--pol-red); margin-bottom: 5px; }
-        .feedback { height: 18px; font-size: 0.8rem; font-weight: bold; }
+        .quiz-header { width: 100%; background: var(--card); padding: 20px 0; text-align: center; border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .english-q { font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 5px; }
+        .feedback { height: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; }
 
         .mode-tabs { display: flex; width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.7rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
-        .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); }
+        .tab { flex: 1; padding: 12px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; transition: opacity 0.2s; }
+        .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
+        /* 4x3 Grid Layout */
         .map-section { width: 96%; max-width: 450px; margin-top: 10px; flex-grow: 1; overflow-y: auto; padding-bottom: 80px; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 8px; height: 100%; max-height: 500px; }
         .tile { 
-            aspect-ratio: 1/1; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             background: var(--tile-bg); 
-            border-radius: 8px; 
+            border-radius: 12px; 
             cursor: pointer; 
-            padding: 4px; 
+            padding: 10px; 
             text-align: center; 
-            font-size: 0.65rem; 
-            font-weight: bold;
-            transition: background 0.3s;
-            line-height: 1.1;
+            font-size: 0.8rem; 
+            font-weight: 700;
+            transition: transform 0.1s, background 0.3s;
+            line-height: 1.2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
+        .tile:active { transform: scale(0.95); }
         .tile.wrong { background: #e74c3c !important; color: white !important; transition: none; }
 
         .mastered-list { display: flex; flex-direction: column; gap: 8px; padding: 10px; }
-        .mastered-item { background: var(--card); padding: 12px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; }
+        .mastered-item { background: var(--card); padding: 15px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; }
 
         .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 10px; text-align: center; border-top: 1px solid #ddd; z-index: 10; }
     </style>
@@ -64,24 +66,24 @@
 
 <div class="header">
     <div class="header-top">
-        <div class="title">POLISH MASTER</div>
+        <div class="title">Learn Polish Phrases</div>
         <select id="level-select" onchange="changeLevel(this.value)"></select>
     </div>
     <div class="nav-controls">
-        <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="handleSearch()">
+        <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary..." oninput="handleSearch()">
     </div>
 </div>
 
 <div class="progress-container"><div id="progress-bar"></div></div>
 
 <div class="quiz-header" id="quiz-header">
-    <div id="q-text" class="english-q">Ready?</div>
+    <div id="q-text" class="english-q">Loading...</div>
     <div id="feedback" class="feedback"></div>
-    <button onclick="speakTarget()" style="background:none; border:none; font-size:1.5rem; cursor:pointer; margin-top:5px;">🔊</button>
+    <button onclick="speakTarget()" style="background:var(--bg); border:1px solid #ddd; border-radius:50%; width:50px; height:50px; font-size:1.2rem; cursor:pointer;">🔊</button>
 </div>
 
 <div class="mode-tabs">
-    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">LEARNING GRID</div>
+    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">PRACTICE</div>
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
 </div>
 
@@ -90,7 +92,7 @@
 </div>
 
 <div class="footer">
-    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.6rem;">Reset Progress</button>
+    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.6rem; opacity:0.5;">Reset Data</button>
 </div>
 
 <script>
@@ -125,11 +127,10 @@
             const response = await fetch(`phrases_${currentLevel}.json`);
             const data = await response.json();
             phrasesData = data.phrases;
+            // 4x3 Grid uses 12 tiles
             const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-            activePool = available.slice(0, 16);
-            updateStats();
-            updateMap();
-            startNewRound();
+            activePool = available.slice(0, 12);
+            updateStats(); updateMap(); startNewRound();
         } catch (err) { console.error(err); }
     }
 
@@ -143,22 +144,17 @@
     }
 
     function checkAnswer(phrase, tileElement) {
-        if (!canAnswer || currentMode !== 'learning') {
-            speak(phrase.pl);
-            return;
-        }
+        if (!canAnswer || currentMode !== 'learning') { speak(phrase.pl); return; }
         if (phrase.pl === currentTarget.pl) {
             canAnswer = false;
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Correct! 🌟";
+            document.getElementById('feedback').innerText = "Excellent! ✨";
             document.getElementById('feedback').style.color = "var(--success)";
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
                     const poolIdx = activePool.findIndex(p => p.pl === phrase.pl);
-                    let replacement = phrasesData.find(candidate => 
-                        (stats[candidate.pl] || 0) < THRESHOLD && !activePool.some(ap => ap.pl === candidate.pl)
-                    );
+                    let replacement = phrasesData.find(candidate => (stats[candidate.pl] || 0) < THRESHOLD && !activePool.some(ap => ap.pl === candidate.pl));
                     if (replacement) activePool[poolIdx] = replacement;
                     else activePool.splice(poolIdx, 1);
                 }
@@ -169,13 +165,9 @@
         } else {
             stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
             tileElement.classList.add('wrong');
-            document.getElementById('feedback').innerText = `Nope! That's "${phrase.en}"`;
+            document.getElementById('feedback').innerText = `That was: ${phrase.en}`;
             document.getElementById('feedback').style.color = "var(--pol-red)";
-            setTimeout(() => {
-                tileElement.classList.remove('wrong');
-                updateMap();
-                startNewRound();
-            }, 1200);
+            setTimeout(() => { tileElement.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
         }
     }
 
@@ -202,7 +194,7 @@
             mastered.forEach(p => {
                 const item = document.createElement('div');
                 item.className = 'mastered-item';
-                item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div>🔊</div>`;
+                item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div style="font-size:1.2rem;">🔊</div>`;
                 item.onclick = () => speak(p.pl);
                 area.appendChild(item);
             });
@@ -222,24 +214,23 @@
         updateMap();
     }
 
-    // --- THE "DOUBLE-TAP SHADOW" FIX ---
+    // --- ENHANCED DOUBLE-TAP (QUIETER SACRIFICIAL START) ---
     function speak(text) {
-        // Utterance 1: The Sacrificial Ghost (Simulates a tap to open hardware)
-        const sacrificial = new SpeechSynthesisUtterance(text);
-        if (plVoice) sacrificial.voice = plVoice;
-        sacrificial.lang = 'pl-PL';
-        sacrificial.volume = 0.01; // Low volume ghost
-        sacrificial.rate = 1.2;    // Fast so it ends quickly
+        // Sacrificial whisper: Ultra-low volume and high speed to "prime" the speaker
+        const ghost = new SpeechSynthesisUtterance(text);
+        if (plVoice) ghost.voice = plVoice;
+        ghost.lang = 'pl-PL';
+        ghost.volume = 0.001; 
+        ghost.rate = 1.5;
         
-        // Utterance 2: The Real Sound
+        // The real audio
         const real = new SpeechSynthesisUtterance(text);
         if (plVoice) real.voice = plVoice;
         real.lang = 'pl-PL';
         real.volume = 1;
         real.rate = 0.9;
 
-        // Queue them back to back
-        window.speechSynthesis.speak(sacrificial);
+        window.speechSynthesis.speak(ghost);
         window.speechSynthesis.speak(real);
     }
 
@@ -260,7 +251,7 @@
 
     function changeLevel(v) { currentLevel = parseInt(v); localStorage.setItem('pl_current_level_idx', currentLevel); loadLevelData(); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
-    function resetEverything() { if(confirm("Reset?")) { localStorage.clear(); location.reload(); } }
+    function resetEverything() { if(confirm("Reset dictionary data?")) { localStorage.clear(); location.reload(); } }
     function advanceLevel() { currentLevel++; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
 
     window.onload = () => { initSpeech(); loadLevelData(); };
