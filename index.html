@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polish Master: Classic Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Polish Master: Classic 4x4</title>
     <style>
         :root {
             --primary: #dc143c;
             --bg: #ffffff;
             --text: #333333;
-            --card: #f9f9f9;
+            --card: #f2f2f2;
             --border: #dddddd;
             --correct: #2ecc71;
             --wrong: #e74c3c;
         }
 
-        /* Respect device display mode */
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg: #121212;
@@ -25,122 +24,205 @@
             }
         }
 
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; flex-direction: column; align-items: center; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            margin: 0; 
+            height: 100vh;
+            display: flex; 
+            flex-direction: column; 
+            overflow: hidden;
+        }
 
-        .toolbar { width: 100%; background: var(--card); padding: 10px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        input, select { width: 85%; max-width: 400px; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); outline: none; }
+        /* Top Bar: Search & Level Select */
+        .top-bar {
+            padding: 10px;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-        /* 4x4 Heatmap Grid - Shows the 16 active phrases */
-        .grid-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 15px; width: 95%; max-width: 500px; }
-        .grid-item { aspect-ratio: 1/1; background: var(--card); border-radius: 4px; display: flex; justify-content: center; align-items: center; border: 1px solid var(--border); font-size: 10px; font-weight: bold; transition: background 0.3s; }
+        .search-row { display: flex; gap: 8px; }
+        input, select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 14px;
+            flex: 1;
+        }
 
-        .progress-bar { width: 85%; max-width: 400px; background: var(--border); height: 8px; border-radius: 4px; margin: 10px 0; overflow: hidden; }
-        #progress-fill { width: 0%; height: 100%; background: var(--correct); transition: 0.5s; }
+        /* Question Area */
+        .question-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
 
-        #quiz-area { width: 95%; max-width: 500px; text-align: center; margin-top: 10px; }
-        .question-card { background: var(--card); padding: 30px 15px; border-radius: 15px; border: 1px solid var(--border); margin: 15px 0; }
-        .phrase-pl { font-size: 1.6rem; font-weight: bold; margin-bottom: 10px; }
-        
-        .choices-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
-        .choice-btn { background: var(--card); border: 2px solid var(--border); padding: 14px; border-radius: 10px; font-size: 1rem; color: var(--text); cursor: pointer; }
+        .audio-btn {
+            font-size: 2.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .phrase-pl {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .feedback-text {
+            height: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        /* 4x4 Choice Grid (The Quiz) */
+        .choices-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 4px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            background: var(--card);
+        }
+
+        .choice-btn {
+            aspect-ratio: 1/1;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.6rem; /* Small text for 4x4 mobile grid */
+            word-wrap: break-word;
+            color: var(--text);
+            padding: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
         .choice-btn.correct { background: var(--correct) !important; color: white; border-color: var(--correct); }
         .choice-btn.wrong { background: var(--wrong) !important; color: white; border-color: var(--wrong); }
 
-        .audio-btn { font-size: 2rem; background: none; border: none; cursor: pointer; margin-bottom: 10px; }
-        .stats-text { font-size: 0.8rem; opacity: 0.7; margin-bottom: 5px; }
+        /* Bottom Heatmap */
+        .heatmap-footer {
+            display: grid;
+            grid-template-columns: repeat(16, 1fr);
+            height: 40px;
+            width: 100%;
+            background: var(--border);
+            border-top: 1px solid var(--border);
+        }
+
+        .heat-cell {
+            height: 100%;
+            transition: background 0.3s;
+        }
+
+        .progress-text {
+            font-size: 10px;
+            text-align: center;
+            padding: 2px;
+            background: var(--card);
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
 
-    <div class="toolbar">
-        <input type="text" id="search-input" placeholder="Search phrases..." oninput="handleSearch()">
-        <select id="category-select" onchange="loadLevel(this.value)"></select>
-    </div>
-
-    <div class="grid-container" id="phrase-heatmap"></div>
-
-    <div class="progress-bar">
-        <div id="progress-fill"></div>
-    </div>
-
-    <div id="quiz-area">
-        <div class="stats-text" id="bank-status">Banked: 0 | Remaining: 0</div>
-        <button class="audio-btn" onclick="speak()">🔊</button>
-        <div class="question-card">
-            <div id="q-text" class="phrase-pl">Loading...</div>
-            <div id="feedback" style="height:20px; font-weight:bold;"></div>
+    <div class="top-bar">
+        <div class="search-row">
+            <input type="text" id="search-input" placeholder="Search..." oninput="handleSearch()">
+            <select id="level-select" onchange="loadLevel(this.value)"></select>
         </div>
-        <div class="choices-grid" id="choices"></div>
+        <div class="progress-text" id="bank-status">Banked: 0 | Total: 0</div>
     </div>
+
+    <div class="question-area">
+        <button class="audio-btn" onclick="speak()">🔊</button>
+        <div id="q-text" class="phrase-pl">Select Level</div>
+        <div id="feedback" class="feedback-text"></div>
+    </div>
+
+    <div class="choices-grid" id="choices"></div>
+
+    <div class="heatmap-footer" id="heatmap"></div>
 
     <script>
         const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
-        let allLevelPhrases = []; // Full level content
-        let activePool = [];     // The 16 phrases in the 4x4 grid
-        let masteredBank = [];   // Phrases gotten correct 4 times
+        let allLevelPhrases = [];
+        let activePool = []; 
+        let masteredBank = [];
         let currentQuestion = null;
         let activeLevel = 1;
         let canAnswer = true;
 
-        const select = document.getElementById('category-select');
-        select.innerHTML = levelNames.map((n, i) => `<option value="${i+1}">Level ${i+1}: ${n}</option>`).join('');
+        const select = document.getElementById('level-select');
+        select.innerHTML = levelNames.map((n, i) => `<option value="${i+1}">Level ${i+1}</option>`).join('');
 
         async function loadLevel(lvl) {
             activeLevel = lvl;
             const res = await fetch(`./phrases_${lvl}.json`);
             const d = await res.json();
-            
             allLevelPhrases = d.phrases;
             masteredBank = [];
-            // Load first 16 phrases into the active pool
             activePool = allLevelPhrases.slice(0, 16).map(p => ({...p, score: 0}));
-            
-            renderHeatmap();
+            updateUI();
             generateQuestion();
         }
 
-        function renderHeatmap() {
-            const grid = document.getElementById('phrase-heatmap');
-            grid.innerHTML = '';
-            
-            activePool.forEach(phrase => {
-                const item = document.createElement('div');
-                item.className = 'grid-item';
-                // Evolving color based on phrase score (0 to 4)
-                const opacity = phrase.score / 4;
-                item.style.backgroundColor = `rgba(46, 204, 113, ${opacity})`;
-                item.innerText = phrase.score;
-                grid.appendChild(item);
+        function updateUI() {
+            // Render Heatmap (The 1x16 row at bottom)
+            const heatmap = document.getElementById('heatmap');
+            heatmap.innerHTML = '';
+            activePool.forEach(p => {
+                const cell = document.createElement('div');
+                cell.className = 'heat-cell';
+                const opacity = p.score / 4;
+                cell.style.backgroundColor = `rgba(46, 204, 113, ${opacity})`;
+                heatmap.appendChild(cell);
             });
 
-            const total = allLevelPhrases.length;
-            const progress = (masteredBank.length / total) * 100;
-            document.getElementById('progress-fill').style.width = progress + '%';
-            document.getElementById('bank-status').innerText = `Banked: ${masteredBank.length} / ${total}`;
+            document.getElementById('bank-status').innerText = `Level ${activeLevel} | Banked: ${masteredBank.length}/${allLevelPhrases.length}`;
         }
 
         function generateQuestion() {
             canAnswer = true;
             document.getElementById('feedback').innerText = '';
             
-            // Pick from the 16 active phrases
+            if (activePool.length === 0) {
+                document.getElementById('q-text').innerText = "Level Complete!";
+                return;
+            }
+
             currentQuestion = activePool[Math.floor(Math.random() * activePool.length)];
             document.getElementById('q-text').innerText = currentQuestion.pl;
 
-            let choices = [currentQuestion.en];
-            while (choices.length < 4) {
-                let rand = allLevelPhrases[Math.floor(Math.random() * allLevelPhrases.length)].en;
-                if (!choices.includes(rand)) choices.push(rand);
-            }
-            choices.sort(() => Math.random() - 0.5);
-
+            // The grid always shows the 16 English translations of the current active pool
             const container = document.getElementById('choices');
             container.innerHTML = '';
-            choices.forEach(c => {
+            
+            // Note: If pool has < 16 (end of level), it will just show remaining
+            activePool.forEach(phrase => {
                 const btn = document.createElement('button');
                 btn.className = 'choice-btn';
-                btn.innerText = c;
-                btn.onclick = () => checkAnswer(c, btn);
+                btn.innerText = phrase.en;
+                btn.onclick = () => checkAnswer(phrase.en, btn);
                 container.appendChild(btn);
             });
         }
@@ -153,27 +235,23 @@
                 btn.classList.add('correct');
                 currentQuestion.score++;
                 
-                // If correct 4 times, bank it and load a new phrase
                 if (currentQuestion.score >= 4) {
                     masteredBank.push(currentQuestion);
-                    const index = activePool.indexOf(currentQuestion);
-                    const nextIndex = masteredBank.length + 15;
+                    const idx = activePool.indexOf(currentQuestion);
+                    const nextIdx = masteredBank.length + 15;
                     
-                    if (allLevelPhrases[nextIndex]) {
-                        activePool[index] = {...allLevelPhrases[nextIndex], score: 0};
+                    if (allLevelPhrases[nextIdx]) {
+                        activePool[idx] = {...allLevelPhrases[nextIdx], score: 0};
                     } else {
-                        activePool.splice(index, 1); // No more phrases left in level
+                        activePool.splice(idx, 1);
                     }
                 }
-                
-                renderHeatmap();
-                setTimeout(generateQuestion, 1000);
+                setTimeout(() => { updateUI(); generateQuestion(); }, 600);
             } else {
                 btn.classList.add('wrong');
-                document.getElementById('feedback').innerText = `Correction: ${currentQuestion.en}`;
-                currentQuestion.score = Math.max(0, currentQuestion.score - 1); // Penalty
-                renderHeatmap();
-                setTimeout(generateQuestion, 2000);
+                document.getElementById('feedback').innerText = currentQuestion.en;
+                currentQuestion.score = Math.max(0, currentQuestion.score - 1);
+                setTimeout(() => { updateUI(); generateQuestion(); }, 1500);
             }
         }
 
@@ -183,11 +261,10 @@
             window.speechSynthesis.speak(m);
         }
 
-        // Search logic to jump to a specific phrase
         async function handleSearch() {
             const q = document.getElementById('search-input').value.toLowerCase();
-            if (q.length < 2) return;
-            // Similar logic to load search results into the pool...
+            if (q.length < 3) return;
+            // Search logic can be added here to populate activePool with results
         }
 
         window.onload = () => loadLevel(1);
