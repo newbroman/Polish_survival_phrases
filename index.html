@@ -3,153 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polish Phrase Master: Quiz Edition</title>
+    <title>Polish Master: Pro Edition</title>
     <style>
         :root {
             --primary: #dc143c;
-            --bg: #f4f4f4;
-            --card: #ffffff;
-            --correct: #4caf50;
-            --wrong: #f44336;
+            --bg: #ffffff;
+            --text: #333333;
+            --card: #f9f9f9;
+            --border: #dddddd;
+            --correct: #2ecc71;
+            --wrong: #e74c3c;
         }
 
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; display: flex; flex-direction: column; align-items: center; }
+        /* Dark Mode Respect */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121212;
+                --text: #f0f0f0;
+                --card: #1e1e1e;
+                --border: #333333;
+            }
+        }
 
-        /* Header & Search */
-        .header { width: 100%; background: white; padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; text-align: center; }
-        #search-input { width: 85%; max-width: 400px; padding: 12px; border: 2px solid #eee; border-radius: 25px; outline: none; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; flex-direction: column; align-items: center; transition: 0.3s; }
 
-        /* Dashboard Grid */
-        .grid-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 20px; width: 90%; max-width: 500px; }
-        .grid-item { aspect-ratio: 1/1; background: white; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .grid-item span { font-size: 0.65rem; margin-top: 4px; opacity: 0.7; }
+        /* Navigation & Tools */
+        .toolbar { width: 100%; background: var(--card); padding: 10px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        input, select { width: 85%; max-width: 400px; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); outline: none; }
+
+        /* 4x5 Heatmap Grid */
+        .grid-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 15px; width: 95%; max-width: 500px; }
+        .grid-item { aspect-ratio: 1/1; background: var(--card); border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; cursor: pointer; border: 2px solid var(--border); font-size: 14px; }
+        .grid-item.active { border-color: var(--primary); }
+        .grid-item span { font-size: 10px; opacity: 0.6; }
+
+        /* Progress Bar */
+        .progress-wrapper { width: 85%; max-width: 400px; background: var(--border); height: 10px; border-radius: 5px; margin: 10px 0; overflow: hidden; }
+        #progress-fill { width: 0%; height: 100%; background: var(--correct); transition: 0.5s; }
 
         /* Quiz UI */
-        #quiz-ui { display: none; width: 95%; max-width: 500px; margin-top: 20px; text-align: center; }
-        .question-card { background: var(--card); padding: 40px 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .phrase-display { font-size: 1.8rem; font-weight: bold; margin-bottom: 10px; }
+        #main-app { width: 95%; max-width: 500px; text-align: center; }
+        .question-card { background: var(--card); padding: 30px 15px; border-radius: 15px; border: 1px solid var(--border); margin: 15px 0; }
+        .phrase-pl { font-size: 1.8rem; font-weight: bold; margin-bottom: 10px; }
         
-        /* Choice Buttons */
-        .choices-container { display: grid; grid-template-columns: 1fr; gap: 10px; }
-        .choice-btn { background: white; border: 2px solid #ddd; padding: 15px; border-radius: 12px; font-size: 1rem; cursor: pointer; transition: 0.2s; font-weight: 500; }
-        .choice-btn:active { transform: scale(0.98); }
-        .choice-btn.correct { background: var(--correct); color: white; border-color: var(--correct); }
-        .choice-btn.wrong { background: var(--wrong); color: white; border-color: var(--wrong); }
+        .choices-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .choice-btn { background: var(--card); border: 2px solid var(--border); padding: 15px; border-radius: 12px; font-size: 1rem; color: var(--text); cursor: pointer; font-weight: 500; }
+        .choice-btn.correct { background: var(--correct) !important; color: white; border-color: var(--correct); }
+        .choice-btn.wrong { background: var(--wrong) !important; color: white; border-color: var(--wrong); }
 
-        .btn-back { background: none; border: none; color: #666; text-decoration: underline; margin-bottom: 15px; cursor: pointer; }
-        .btn-speak { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 20px; margin-bottom: 15px; cursor: pointer; font-weight: bold; }
+        .view-toggle { display: flex; gap: 10px; margin-top: 20px; }
+        .tab-btn { flex: 1; padding: 10px; border: none; background: var(--card); color: var(--text); cursor: pointer; border-radius: 8px; }
+        .tab-btn.active { background: var(--primary); color: white; }
         
-        .feedback { margin-top: 15px; font-weight: bold; height: 20px; }
-
-        /* Guide */
-        .guide { width: 90%; max-width: 500px; margin: 20px 0; font-size: 0.85rem; }
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
-        td, th { padding: 8px; border-bottom: 1px solid #eee; text-align: left; }
+        #mastered-list { display: none; text-align: left; padding: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <input type="text" id="search-input" placeholder="Quick Search..." oninput="handleSearch()">
+    <div class="toolbar">
+        <input type="text" id="search-input" placeholder="Search phrases..." oninput="handleSearch()">
+        <select id="category-select" onchange="loadLevel(this.value)">
+            <option value="1">Level 1: Basics</option>
+            </select>
     </div>
 
-    <div id="dashboard">
-        <div class="grid-container" id="heat-map"></div>
-        <div class="guide">
-            <table id="level-table"></table>
-        </div>
+    <div class="grid-container" id="heat-map"></div>
+
+    <div class="progress-wrapper">
+        <div id="progress-fill"></div>
     </div>
 
-    <div id="quiz-ui">
-        <button class="btn-back" onclick="showDashboard()">← Dashboard</button><br>
-        <button class="btn-speak" onclick="speak()">🔊 Listen</button>
-        
-        <div class="question-card">
-            <div id="category-label" style="font-size: 0.8rem; color: #888; margin-bottom: 10px;"></div>
-            <div id="phrase-display" class="phrase-display"></div>
-            <div id="feedback" class="feedback"></div>
+    <div id="main-app">
+        <div class="view-toggle">
+            <button class="tab-btn active" id="learn-tab" onclick="switchView('learn')">Learning</button>
+            <button class="tab-btn" id="master-tab" onclick="switchView('master')">Mastered</button>
         </div>
 
-        <div class="choices-container" id="choices">
+        <div id="quiz-area">
+            <button onclick="speak()" style="background:none; border:none; font-size:2rem; cursor:pointer;">🔊</button>
+            <div class="question-card">
+                <div id="cat-label" style="font-size: 10px; opacity:0.6;">CATEGORY</div>
+                <div id="q-text" class="phrase-pl">Select Level</div>
+                <div id="feedback" style="height:20px; margin-top:10px;"></div>
             </div>
+            <div class="choices-grid" id="choices"></div>
+        </div>
+
+        <div id="mastered-list">
+            <h3>Mastered Phrases</h3>
+            <div id="mastered-items"></div>
+        </div>
     </div>
 
     <script>
-        const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Government", "Culture", "Abstract", "Glue Words"];
-        
-        let currentLevelPhrases = [];
+        const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
+        let currentPhrases = [];
         let allPhrasesIndex = [];
-        let currentQuestion = null;
         let activeLevel = 1;
+        let currentQuestion = null;
         let canAnswer = true;
 
-        // --- Dashboard ---
-        function renderDashboard() {
+        // Initialize Select Menu
+        const select = document.getElementById('category-select');
+        select.innerHTML = levelNames.map((name, i) => `<option value="${i+1}">Level ${i+1}: ${name}</option>`).join('');
+
+        // --- Mastery Logic ---
+        function getMasteryData() {
+            return JSON.parse(localStorage.getItem('plMastery_v2') || '{}');
+        }
+
+        function saveMastery(phraseId, isCorrect) {
+            let data = getMasteryData();
+            if (!data[phraseId]) data[phraseId] = 0;
+            if (isCorrect) data[phraseId]++;
+            localStorage.setItem('plMastery_v2', JSON.stringify(data));
+            updateUI();
+        }
+
+        function updateUI() {
+            renderGrid();
+            const data = getMasteryData();
+            const masteredCount = currentPhrases.filter(p => data[p.id] >= 2).length;
+            const percent = (masteredCount / (currentPhrases.length || 1)) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+        }
+
+        function renderGrid() {
             const grid = document.getElementById('heat-map');
-            const table = document.getElementById('level-table');
             grid.innerHTML = '';
-            table.innerHTML = '<tr><th>Lvl</th><th>Topic</th></tr>';
-            const mastery = JSON.parse(localStorage.getItem('plQuizMastery') || '{}');
+            const data = getMasteryData();
 
-            levelNames.forEach((name, i) => {
-                const lvl = i + 1;
-                const score = mastery[lvl] || 0;
-                
+            for (let i = 1; i <= 20; i++) {
                 const item = document.createElement('div');
-                item.className = 'grid-item';
-                item.style.background = getHeatColor(score);
-                item.style.color = score > 10 ? 'white' : 'black';
-                item.innerHTML = `${lvl}<span>${score} pts</span>`;
-                item.onclick = () => loadLevel(lvl);
+                item.className = `grid-item ${i == activeLevel ? 'active' : ''}`;
+                // Color based on mastery percentage of that level
+                item.innerHTML = `${i}`;
+                item.onclick = () => { select.value = i; loadLevel(i); };
                 grid.appendChild(item);
-
-                table.innerHTML += `<tr><td>${lvl}</td><td>${name}</td></tr>`;
-            });
+            }
         }
 
-        function getHeatColor(s) {
-            if (!s) return '#fff';
-            if (s < 5) return '#ffcdd2';
-            if (s < 15) return '#ef9a9a';
-            return '#dc143c';
-        }
-
-        // --- Quiz Logic ---
+        // --- Core Quiz ---
         async function loadLevel(lvl) {
             activeLevel = lvl;
             const res = await fetch(`./phrases_${lvl}.json`);
-            const data = await res.json();
-            currentLevelPhrases = data.phrases;
-            
-            document.getElementById('dashboard').style.display = 'none';
-            document.getElementById('quiz-ui').style.display = 'block';
+            const d = await res.json();
+            currentPhrases = d.phrases;
+            switchView('learn');
             generateQuestion();
+            updateUI();
         }
 
         function generateQuestion() {
             canAnswer = true;
             document.getElementById('feedback').innerText = '';
+            const data = getMasteryData();
             
-            // Pick a random phrase
-            currentQuestion = currentLevelPhrases[Math.floor(Math.random() * currentLevelPhrases.length)];
-            document.getElementById('phrase-display').innerText = currentQuestion.pl;
-            document.getElementById('category-label').innerText = currentQuestion.category;
+            // Filter out mastered (correct >= 2)
+            const learningPool = currentPhrases.filter(p => (data[p.id] || 0) < 2);
+            
+            if (learningPool.length === 0) {
+                document.getElementById('q-text').innerText = "Level Mastered! 🎉";
+                document.getElementById('choices').innerHTML = '';
+                return;
+            }
 
-            // Generate choices
+            currentQuestion = learningPool[Math.floor(Math.random() * learningPool.length)];
+            document.getElementById('q-text').innerText = currentQuestion.pl;
+            document.getElementById('cat-label').innerText = currentQuestion.category;
+
             let choices = [currentQuestion.en];
             while (choices.length < 4) {
-                let randomDistractor = currentLevelPhrases[Math.floor(Math.random() * currentLevelPhrases.length)].en;
-                if (!choices.includes(randomDistractor)) choices.push(randomDistractor);
+                let rand = currentPhrases[Math.floor(Math.random() * currentPhrases.length)].en;
+                if (!choices.includes(rand)) choices.push(rand);
             }
             choices.sort(() => Math.random() - 0.5);
 
             const container = document.getElementById('choices');
             container.innerHTML = '';
-            choices.forEach(choice => {
+            choices.forEach(c => {
                 const btn = document.createElement('button');
                 btn.className = 'choice-btn';
-                btn.innerText = choice;
-                btn.onclick = () => checkAnswer(choice, btn);
+                btn.innerText = c;
+                btn.onclick = () => checkAnswer(c, btn);
                 container.appendChild(btn);
             });
         }
@@ -157,31 +193,43 @@
         function checkAnswer(selected, btn) {
             if (!canAnswer) return;
             canAnswer = false;
-
             if (selected === currentQuestion.en) {
                 btn.classList.add('correct');
-                document.getElementById('feedback').innerText = "Correct! +1 Point";
-                document.getElementById('feedback').style.color = "var(--correct)";
-                updateMastery();
+                saveMastery(currentQuestion.id, true);
+                setTimeout(generateQuestion, 1200);
             } else {
                 btn.classList.add('wrong');
-                document.getElementById('feedback').innerText = `Wrong! It was: ${currentQuestion.en}`;
-                document.getElementById('feedback').style.color = "var(--wrong)";
+                document.getElementById('feedback').innerText = `Correction: ${currentQuestion.en}`;
+                setTimeout(generateQuestion, 2000);
             }
-
-            setTimeout(generateQuestion, 1500);
         }
 
-        function updateMastery() {
-            let m = JSON.parse(localStorage.getItem('plQuizMastery') || '{}');
-            m[activeLevel] = (m[activeLevel] || 0) + 1;
-            localStorage.setItem('plQuizMastery', JSON.stringify(m));
+        // --- Utilities ---
+        function switchView(view) {
+            const quiz = document.getElementById('quiz-area');
+            const list = document.getElementById('mastered-list');
+            const lTab = document.getElementById('learn-tab');
+            const mTab = document.getElementById('master-tab');
+
+            if (view === 'master') {
+                quiz.style.display = 'none';
+                list.style.display = 'block';
+                lTab.classList.remove('active');
+                mTab.classList.add('active');
+                renderMasteredList();
+            } else {
+                quiz.style.display = 'block';
+                list.style.display = 'none';
+                lTab.classList.add('active');
+                mTab.classList.remove('active');
+            }
         }
 
-        function showDashboard() {
-            document.getElementById('dashboard').style.display = 'block';
-            document.getElementById('quiz-ui').style.display = 'none';
-            renderDashboard();
+        function renderMasteredList() {
+            const container = document.getElementById('mastered-items');
+            const data = getMasteryData();
+            const mastered = currentPhrases.filter(p => data[p.id] >= 2);
+            container.innerHTML = mastered.map(p => `<div style="padding:10px; border-bottom:1px solid var(--border)"><b>${p.pl}</b>: ${p.en}</div>`).join('');
         }
 
         function speak() {
@@ -190,29 +238,25 @@
             window.speechSynthesis.speak(m);
         }
 
-        // --- Search ---
         async function handleSearch() {
             const q = document.getElementById('search-input').value.toLowerCase();
             if (q.length < 2) return;
             if (allPhrasesIndex.length === 0) {
                 for (let i = 1; i <= 20; i++) {
-                    const res = await fetch(`./phrases_${i}.json`);
-                    const d = await res.json();
+                    const r = await fetch(`./phrases_${i}.json`);
+                    const d = await r.json();
                     allPhrasesIndex.push(...d.phrases);
                 }
             }
-            // If found in search, we switch to a "Search Quiz" using found results
             const results = allPhrasesIndex.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q));
             if (results.length > 0) {
-                currentLevelPhrases = results;
-                activeLevel = "Search";
-                document.getElementById('dashboard').style.display = 'none';
-                document.getElementById('quiz-ui').style.display = 'block';
+                currentPhrases = results;
+                activeLevel = 0;
                 generateQuestion();
             }
         }
 
-        window.onload = renderDashboard;
+        window.onload = () => loadLevel(1);
     </script>
 </body>
 </html>
