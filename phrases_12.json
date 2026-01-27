@@ -1,0 +1,20 @@
+{
+  "lastUpdated": "2026-01-27",
+  "phrases": [
+    { "id": "f1", "category": "Family Members", "pl": "Rodzina", "en": "Family", "level": 12 },
+    { "id": "f2", "category": "Family Members", "pl": "Rodzice", "en": "Parents", "level": 12 },
+    { "id": "f3", "category": "Family Members", "pl": "Mama", "en": "Mom", "level": 12 },
+    { "id": "f4", "category": "Family Members", "pl": "Tata", "en": "Dad", "level": 12 },
+    { "id": "f5", "category": "Family Members", "pl": "Rodzeństwo", "en": "Siblings", "level": 12 },
+    { "id": "f6", "category": "Family Members", "pl": "Brat", "en": "Brother", "level": 12 },
+    { "id": "f7", "category": "Family Members", "pl": "Siostra", "en": "Sister", "level": 12 },
+    { "id": "f8", "category": "Family Members", "pl": "Dziecko", "en": "Child", "level": 12 },
+    { "id": "f9", "category": "Family Members", "pl": "Syn", "en": "Son", "level": 12 },
+    { "id": "f10", "category": "Family Members", "pl": "Córka", "en": "Daughter", "level": 12 },
+
+    { "id": "ef11", "category": "Extended Family", "pl": "Dziadkowie", "en": "Grandparents", "level": 12 },
+    { "id": "ef12", "category": "Extended Family", "pl": "Babcia", "en": "Grandmother", "level": 12 },
+    { "id": "ef13", "category": "Extended Family", "pl": "Dziadek", "en": "Grandfather", "level": 12 },
+    { "id": "ef14", "category": "Extended Family", "pl": "Wnuk / Wnuczka", "en": "Grandson / Granddaughter", "level": 12 },
+    { "id": "ef15", "category": "Extended Family", "pl": "Wujek", "en": "Uncle", "level": 12 },
+    { "id": "ef16", "category": "Extended Family", "pl": "Ciocia", "en": "Aunt", "level": 12 },

@@ -1,208 +1,246 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Master Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish Phrase Master</title>
     <style>
-        :root { --pol-red: #dc143c; --success: #2ecc71; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
-        @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
-        
-        body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
-        
-        /* Level Scroll Bar */
-        .level-nav { display: flex; gap: 10px; overflow-x: auto; background: #222; padding: 10px; white-space: nowrap; flex-shrink: 0; scrollbar-width: none; }
-        .level-nav::-webkit-scrollbar { display: none; }
-        .nav-item { padding: 6px 15px; background: #444; color: white; border-radius: 20px; font-size: 0.8rem; cursor: pointer; font-weight: bold; border: 2px solid transparent; }
-        .nav-item.active { background: var(--pol-red); border-color: white; }
+        :root {
+            --primary: #dc143c;
+            --bg: #f4f4f4;
+            --card: #ffffff;
+        }
 
-        .progress-container { width: 100%; height: 6px; background: #ddd; flex-shrink: 0; }
-        #progress-bar { width: 0%; height: 100%; background: var(--success); transition: width 0.5s ease; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-        .mode-tabs { display: flex; width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 12px; text-align: center; font-size: 0.7rem; font-weight: bold; cursor: pointer; opacity: 0.4; transition: 0.2s; }
-        .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); }
+        .nav-container {
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-        /* Content Sections */
-        .content-area { flex-grow: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; align-items: center; }
-        .section { width: 100%; max-width: 500px; display: none; }
-        .section.active { display: block; }
+        .search-container {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #eee;
+        }
 
-        /* Quiz UI */
-        .quiz-card { background: var(--card); padding: 15px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 15px; }
-        .feedback { height: 20px; font-size: 0.8rem; font-weight: bold; text-align: center; margin-bottom: 8px; }
-        .quiz-controls { display: flex; align-items: center; gap: 10px; }
-        .speak-btn { background: transparent; border: 2px solid var(--pol-red); color: var(--pol-red); width: 45px; height: 45px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; }
-        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex-grow: 1; }
-        .option-btn { background: var(--tile-bg); border: none; padding: 10px; border-radius: 8px; font-size: 0.75rem; font-weight: bold; color: var(--text); min-height: 55px; cursor: pointer; }
-        .option-btn span { display: block; font-size: 0.6rem; font-weight: normal; opacity: 0.7; }
+        #search-input {
+            width: 90%;
+            max-width: 400px;
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: 0.3s;
+        }
 
-        /* List View UI */
-        .phrase-row { background: var(--card); padding: 12px; border-radius: 8px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid var(--pol-red); cursor: pointer; }
-        .phrase-row:active { background: #eee; }
-        .phrase-info { display: flex; flex-direction: column; }
-        .phrase-pl { font-weight: bold; font-size: 0.9rem; }
-        .phrase-en { font-size: 0.75rem; opacity: 0.7; }
-        .cat-tag { font-size: 0.6rem; background: #eee; padding: 2px 6px; border-radius: 4px; color: #666; margin-top: 4px; align-self: flex-start; }
+        #search-input:focus { border-color: var(--primary); }
 
-        /* Mastery Map */
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
-        .tile { aspect-ratio: 1/1; background: var(--tile-bg); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 0.55rem; font-weight: bold; padding: 4px; cursor: pointer; }
+        .nav-scroll {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            gap: 10px;
+            scrollbar-width: thin;
+        }
 
-        .footer { padding: 15px; text-align: center; flex-shrink: 0; }
-        .next-btn { background: #3498db; color: white; width: 100%; padding: 12px; border-radius: 8px; border: none; font-weight: bold; display: none; cursor: pointer; }
+        .nav-item {
+            padding: 8px 16px;
+            background: #eee;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .nav-item.active { background: var(--primary); color: white; }
+
+        #game-container {
+            margin-top: 30px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .category-tag {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .phrase-text { font-size: 1.8rem; font-weight: bold; color: #333; }
+        .translation-text { font-size: 1.2rem; color: #666; margin-top: 15px; display: none; }
+
+        .controls {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .btn-next { background: var(--primary); color: white; }
+        .btn-reveal { background: #333; color: white; }
+        .stats { margin-top: 20px; color: #666; }
     </style>
 </head>
 <body>
 
-<div class="level-nav" id="level-nav">
-    <div class="nav-item" onclick="changeLevel(1)" id="nav-1">Level 1</div>
-    <div class="nav-item" onclick="changeLevel(2)" id="nav-2">Level 2</div>
-    <div class="nav-item" onclick="changeLevel(3)" id="nav-3">Level 3</div>
-</div>
-
-<div class="progress-container"><div id="progress-bar"></div></div>
-
-<div class="mode-tabs">
-    <div id="tab-quiz" class="tab active" onclick="switchView('quiz')">QUIZ</div>
-    <div id="tab-list" class="tab" onclick="switchView('list')">PHRASE LIST</div>
-    <div id="tab-bank" class="tab" onclick="switchView('bank')">BANKED</div>
-</div>
-
-<div class="content-area">
-    <div id="sec-quiz" class="section active">
-        <div class="quiz-card">
-            <div class="feedback" id="feedback"></div>
-            <div class="quiz-controls">
-                <button class="speak-btn" onclick="speakTarget()">🔊</button>
-                <div class="options-grid" id="options-grid"></div>
-            </div>
-            <button id="next-btn" class="next-btn" onclick="startNewRound()" style="margin-top:15px;">Next Phrase →</button>
+    <div class="nav-container">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search phrases (PL or EN)..." oninput="handleSearch()">
         </div>
-        <div class="grid" id="learning-grid"></div>
+        <div class="nav-scroll" id="level-nav"></div>
     </div>
 
-    <div id="sec-list" class="section">
-        <div id="full-phrase-list"></div>
+    <div id="game-container">
+        <div class="card" onclick="toggleTranslation()">
+            <div id="category" class="category-tag">Level 1</div>
+            <div id="phrase" class="phrase-text">Loading...</div>
+            <div id="translation" class="translation-text"></div>
+        </div>
+
+        <div class="controls">
+            <button class="btn-reveal" onclick="toggleTranslation()">Show/Hide</button>
+            <button class="btn-next" onclick="nextPhrase()">Next Phrase →</button>
+        </div>
+
+        <div class="stats" id="stats">Phrase: 0/0</div>
     </div>
 
-    <div id="sec-bank" class="section">
-        <div class="grid" id="mastery-grid"></div>
-    </div>
-</div>
+    <script>
+        let currentPhrases = [];
+        let allPhrasesIndex = []; // Master list for searching
+        let currentIndex = 0;
+        let isSearchMode = false;
 
-<script>
-    const levelFiles = { 1: 'phrases_1.json', 2: 'phrases_2.json', 3: 'phrases_3.json' };
-    let stats = JSON.parse(localStorage.getItem('pl_mastery_v5')) || {};
-    let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
-    let phrasesData = [];
-    let currentTarget = null;
-    const THRESHOLD = 3;
+        // Init Nav
+        const navScroll = document.getElementById('level-nav');
+        for (let i = 1; i <= 20; i++) {
+            const btn = document.createElement('div');
+            btn.className = `nav-item`;
+            btn.id = `nav-${i}`;
+            btn.innerText = `Level ${i}`;
+            btn.onclick = () => loadLevel(i);
+            navScroll.appendChild(btn);
+        }
 
-    async function loadLevelData() {
-        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-        document.getElementById(`nav-${currentLevel}`).classList.add('active');
-        
-        try {
-            const response = await fetch(levelFiles[currentLevel]);
+        async function loadLevel(level) {
+            isSearchMode = false;
+            document.getElementById('search-input').value = '';
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            document.getElementById(`nav-${level}`).classList.add('active');
+
+            const response = await fetch(`phrases_${level}.json`);
             const data = await response.json();
-            phrasesData = data.phrases;
-            renderAll();
-        } catch (err) {
-            console.error("Failed to load level", err);
+            currentPhrases = data.phrases.sort(() => Math.random() - 0.5);
+            currentIndex = 0;
+            displayPhrase();
         }
-    }
 
-    function renderAll() {
-        const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-        const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-        
-        // Update Progress
-        document.getElementById('progress-bar').style.width = (mastered.length / phrasesData.length * 100) + "%";
+        async function handleSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            
+            // Lazy-load all levels into index if empty
+            if (allPhrasesIndex.length === 0) {
+                document.getElementById('phrase').innerText = "Indexing all levels...";
+                for (let i = 1; i <= 20; i++) {
+                    try {
+                        const res = await fetch(`phrases_${i}.json`);
+                        const data = await res.json();
+                        allPhrasesIndex.push(...data.phrases);
+                    } catch(e) {}
+                }
+            }
 
-        // Render List View
-        const listContainer = document.getElementById('full-phrase-list');
-        listContainer.innerHTML = phrasesData.map(p => `
-            <div class="phrase-row" onclick="speak('${p.pl}')">
-                <div class="phrase-info">
-                    <span class="phrase-pl">${p.pl}</span>
-                    <span class="phrase-en">${p.en}</span>
-                    <span class="cat-tag">${p.category}</span>
-                </div>
-                <div style="font-size: 0.8rem">${'⭐'.repeat(stats[p.pl] || 0)}</div>
-            </div>
-        `).join('');
+            if (query.length < 2) {
+                if (isSearchMode) loadLevel(1); // Reset if search cleared
+                return;
+            }
 
-        // Render Banked Grid
-        renderGrid('mastery-grid', mastered);
-        renderGrid('learning-grid', available.slice(0, 16));
+            isSearchMode = true;
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            
+            currentPhrases = allPhrasesIndex.filter(p => 
+                p.pl.toLowerCase().includes(query) || 
+                p.en.toLowerCase().includes(query)
+            );
 
-        if (available.length > 0) startNewRound(available.slice(0, 16));
-    }
-
-    function renderGrid(id, list) {
-        const grid = document.getElementById(id);
-        grid.innerHTML = list.map(p => {
-            const count = stats[p.pl] || 0;
-            const alpha = Math.min(1, count / THRESHOLD);
-            return `<div class="tile" onclick="speak('${p.pl}')" style="background: rgba(46, 204, 113, ${alpha})">${p.pl}</div>`;
-        }).join('');
-    }
-
-    function startNewRound(pool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 16)) {
-        document.getElementById('feedback').innerText = "";
-        document.getElementById('next-btn').style.display = "none";
-        if (pool.length === 0) return;
-
-        currentTarget = pool[Math.floor(Math.random() * pool.length)];
-        let options = [...pool].sort(() => 0.5 - Math.random()).slice(0, 4);
-        if (!options.find(o => o.pl === currentTarget.pl)) options[0] = currentTarget;
-
-        document.getElementById('options-grid').innerHTML = options.sort(() => 0.5 - Math.random()).map(opt => `
-            <button class="option-btn" onclick="checkAnswer('${opt.pl}')">
-                ${opt.pl} <span>${opt.en}</span>
-            </button>
-        `).join('');
-        
-        setTimeout(() => speak(currentTarget.pl), 300);
-    }
-
-    function checkAnswer(guess) {
-        if (guess === currentTarget.pl) {
-            stats[currentTarget.pl] = (stats[currentTarget.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Bardzo dobrze! ✨";
-            document.getElementById('next-btn').style.display = "block";
-        } else {
-            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
-            document.getElementById('feedback').innerText = "Spróbuj ponownie!";
+            currentIndex = 0;
+            if (currentPhrases.length > 0) {
+                displayPhrase();
+            } else {
+                document.getElementById('phrase').innerText = "No results found";
+                document.getElementById('translation').innerText = "";
+                document.getElementById('category').innerText = "Search";
+            }
         }
-        localStorage.setItem('pl_mastery_v5', JSON.stringify(stats));
-        renderAll();
-    }
 
-    function changeLevel(lvl) {
-        currentLevel = lvl;
-        localStorage.setItem('pl_current_level_idx', lvl);
-        loadLevelData();
-    }
+        function displayPhrase() {
+            if (currentPhrases.length === 0) return;
+            const p = currentPhrases[currentIndex];
+            document.getElementById('phrase').innerText = p.pl;
+            document.getElementById('translation').innerText = p.en;
+            document.getElementById('category').innerText = isSearchMode ? `Level ${p.level} - ${p.category}` : p.category;
+            document.getElementById('translation').style.display = 'none';
+            updateStats();
+        }
 
-    function switchView(view) {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-        document.getElementById('tab-' + view).classList.add('active');
-        document.getElementById('sec-' + view).classList.add('active');
-    }
+        function nextPhrase() {
+            if (currentPhrases.length > 0) {
+                currentIndex = (currentIndex + 1) % currentPhrases.length;
+                displayPhrase();
+            }
+        }
 
-    function speak(text) {
-        window.speechSynthesis.cancel();
-        const msg = new SpeechSynthesisUtterance(text);
-        msg.lang = 'pl-PL';
-        window.speechSynthesis.speak(msg);
-    }
+        function toggleTranslation() {
+            const t = document.getElementById('translation');
+            t.style.display = (t.style.display === 'none') ? 'block' : 'none';
+        }
 
-    function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
+        function updateStats() {
+            const label = isSearchMode ? "Results" : "Level Total";
+            document.getElementById('stats').innerText = `${label}: ${currentIndex + 1}/${currentPhrases.length}`;
+        }
 
-    window.onload = loadLevelData;
-</script>
+        window.onload = () => loadLevel(1);
+    </script>
 </body>
 </html>
