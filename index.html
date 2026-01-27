@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Master: Mastery Grid</title>
+    <title>Polish Master: Classic 4x4</title>
     <style>
         :root {
             --primary: #dc143c;
             --bg: #ffffff;
             --text: #333333;
-            --card: #f4f4f4;
+            --card: #f2f2f2;
             --border: #dddddd;
             --correct: #2ecc71;
             --wrong: #e74c3c;
@@ -25,7 +25,7 @@
         }
 
         body { 
-            font-family: -apple-system, system-ui, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
             background: var(--bg); 
             color: var(--text); 
             margin: 0; 
@@ -35,253 +35,236 @@
             overflow: hidden;
         }
 
-        /* Search and Level Bar */
-        .toolbar {
+        /* Top Bar: Search & Level Select */
+        .top-bar {
             padding: 10px;
             background: var(--card);
             border-bottom: 1px solid var(--border);
             display: flex;
-            gap: 10px;
+            flex-direction: column;
+            gap: 8px;
         }
+
+        .search-row { display: flex; gap: 8px; }
         input, select {
-            padding: 8px;
+            padding: 10px;
             border-radius: 8px;
             border: 1px solid var(--border);
             background: var(--bg);
             color: var(--text);
             font-size: 14px;
+            flex: 1;
         }
 
-        /* Quiz Area (Middle) */
-        .quiz-container {
+        /* Question Area */
+        .question-area {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             padding: 20px;
             text-align: center;
         }
 
-        .q-display {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            min-height: 1.5em;
+        .audio-btn {
+            font-size: 2.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
         }
 
+        .phrase-pl {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .feedback-text {
+            height: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        /* 4x4 Choice Grid (The Quiz) */
         .choices-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            max-width: 400px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 4px;
+            padding: 10px;
             width: 100%;
-            margin: 0 auto;
+            box-sizing: border-box;
+            background: var(--card);
         }
 
         .choice-btn {
-            padding: 15px;
-            background: var(--card);
+            aspect-ratio: 1/1;
+            background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 4px;
+            font-size: 0.6rem; /* Small text for 4x4 mobile grid */
+            word-wrap: break-word;
             color: var(--text);
-            font-size: 1.1rem;
-            font-weight: 500;
-            cursor: pointer;
+            padding: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         .choice-btn.correct { background: var(--correct) !important; color: white; border-color: var(--correct); }
         .choice-btn.wrong { background: var(--wrong) !important; color: white; border-color: var(--wrong); }
 
-        /* 4x4 Grid (Bottom) */
-        .grid-header {
-            font-size: 11px;
-            text-align: center;
-            padding: 6px;
-            background: var(--card);
-            border-top: 1px solid var(--border);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.7;
-        }
-
-        .heatmap-grid {
+        /* Bottom Heatmap */
+        .heatmap-footer {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
-            padding: 10px;
-            background: var(--card);
-            padding-bottom: env(safe-area-inset-bottom);
+            grid-template-columns: repeat(16, 1fr);
+            height: 40px;
+            width: 100%;
+            background: var(--border);
+            border-top: 1px solid var(--border);
         }
 
-        .grid-item {
-            aspect-ratio: 1/1;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 0.65rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .heat-cell {
+            height: 100%;
+            transition: background 0.3s;
+        }
+
+        .progress-text {
+            font-size: 10px;
             text-align: center;
-            padding: 4px;
-            transition: background 0.4s ease, border 0.2s;
-            cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .grid-item.active { 
-            border: 2px solid var(--primary); 
-            transform: scale(0.96);
-        }
-
-        .bank-info { 
-            font-size: 11px; 
-            text-align: center; 
-            padding: 8px; 
-            background: var(--card); 
-            border-top: 1px solid var(--border); 
-            font-weight: bold;
+            padding: 2px;
+            background: var(--card);
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
 
-    <div class="toolbar">
-        <input type="text" id="search-input" style="flex:2" placeholder="Search phrases..." oninput="handleSearch()">
-        <select id="level-select" style="flex:1" onchange="loadLevel(this.value)"></select>
+    <div class="top-bar">
+        <div class="search-row">
+            <input type="text" id="search-input" placeholder="Search..." oninput="handleSearch()">
+            <select id="level-select" onchange="loadLevel(this.value)"></select>
+        </div>
+        <div class="progress-text" id="bank-status">Banked: 0 | Total: 0</div>
     </div>
 
-    <div class="quiz-container">
-        <div id="q-text" class="q-display">Tap a phrase below</div>
-        <div id="feedback" style="height:20px; font-weight: bold; margin-bottom: 10px; color: var(--primary);"></div>
-        <div class="choices-grid" id="choices"></div>
+    <div class="question-area">
+        <button class="audio-btn" onclick="speak()">🔊</button>
+        <div id="q-text" class="phrase-pl">Select Level</div>
+        <div id="feedback" class="feedback-text"></div>
     </div>
 
-    <div class="grid-header">Phrase Mastery Heatmap</div>
-    <div class="heatmap-grid" id="heatmap"></div>
-    <div class="bank-info" id="stats">Banked: 0 / 0</div>
+    <div class="choices-grid" id="choices"></div>
+
+    <div class="heatmap-footer" id="heatmap"></div>
 
     <script>
         const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
-        let allPhrases = [];
+        let allLevelPhrases = [];
         let activePool = []; 
-        let bankedCount = 0;
-        let currentIdx = null;
-        let canAnswer = false;
+        let masteredBank = [];
+        let currentQuestion = null;
+        let activeLevel = 1;
+        let canAnswer = true;
 
         const select = document.getElementById('level-select');
         select.innerHTML = levelNames.map((n, i) => `<option value="${i+1}">Level ${i+1}</option>`).join('');
 
         async function loadLevel(lvl) {
-            const res = await fetch(`phrases_${lvl}.json`);
+            activeLevel = lvl;
+            const res = await fetch(`./phrases_${lvl}.json`);
             const d = await res.json();
-            allPhrases = d.phrases;
-            bankedCount = 0;
-            // Load initial 16 phrases
-            activePool = allPhrases.slice(0, 16).map(p => ({...p, score: 0}));
-            renderHeatmap();
-            resetQuizDisplay();
-            updateStats();
+            allLevelPhrases = d.phrases;
+            masteredBank = [];
+            activePool = allLevelPhrases.slice(0, 16).map(p => ({...p, score: 0}));
+            updateUI();
+            generateQuestion();
         }
 
-        function resetQuizDisplay() {
-            document.getElementById('q-text').innerText = "Select a phrase";
-            document.getElementById('choices').innerHTML = '';
-            document.getElementById('feedback').innerText = '';
-            currentIdx = null;
-        }
-
-        function renderHeatmap() {
-            const grid = document.getElementById('heatmap');
-            grid.innerHTML = '';
-            activePool.forEach((p, idx) => {
-                const item = document.createElement('div');
-                item.className = `grid-item ${idx === currentIdx ? 'active' : ''}`;
-                
-                // Color based on score (0-4)
+        function updateUI() {
+            // Render Heatmap (The 1x16 row at bottom)
+            const heatmap = document.getElementById('heatmap');
+            heatmap.innerHTML = '';
+            activePool.forEach(p => {
+                const cell = document.createElement('div');
+                cell.className = 'heat-cell';
                 const opacity = p.score / 4;
-                if (p.score > 0) {
-                    item.style.backgroundColor = `rgba(46, 204, 113, ${opacity})`;
-                    item.style.color = p.score >= 3 ? 'white' : 'var(--text)';
-                }
-                
-                item.innerText = p.pl;
-                item.onclick = () => selectPhrase(idx);
-                grid.appendChild(item);
+                cell.style.backgroundColor = `rgba(46, 204, 113, ${opacity})`;
+                heatmap.appendChild(cell);
             });
+
+            document.getElementById('bank-status').innerText = `Level ${activeLevel} | Banked: ${masteredBank.length}/${allLevelPhrases.length}`;
         }
 
-        function selectPhrase(idx) {
-            currentIdx = idx;
-            const p = activePool[idx];
-            speak(p.pl);
-            renderHeatmap();
-            setupQuiz(p);
-        }
-
-        function setupQuiz(p) {
+        function generateQuestion() {
             canAnswer = true;
-            document.getElementById('q-text').innerText = p.pl;
-            document.getElementById('feedback').innerText = "";
+            document.getElementById('feedback').innerText = '';
             
-            let choices = [p.en];
-            while (choices.length < 4) {
-                let rand = allPhrases[Math.floor(Math.random() * allPhrases.length)].en;
-                if (!choices.includes(rand)) choices.push(rand);
+            if (activePool.length === 0) {
+                document.getElementById('q-text').innerText = "Level Complete!";
+                return;
             }
-            choices.sort(() => Math.random() - 0.5);
 
+            currentQuestion = activePool[Math.floor(Math.random() * activePool.length)];
+            document.getElementById('q-text').innerText = currentQuestion.pl;
+
+            // The grid always shows the 16 English translations of the current active pool
             const container = document.getElementById('choices');
             container.innerHTML = '';
-            choices.forEach(c => {
+            
+            // Note: If pool has < 16 (end of level), it will just show remaining
+            activePool.forEach(phrase => {
                 const btn = document.createElement('button');
                 btn.className = 'choice-btn';
-                btn.innerText = c;
-                btn.onclick = () => checkAnswer(c, btn);
+                btn.innerText = phrase.en;
+                btn.onclick = () => checkAnswer(phrase.en, btn);
                 container.appendChild(btn);
             });
         }
 
         function checkAnswer(selected, btn) {
             if (!canAnswer) return;
-            const p = activePool[currentIdx];
+            canAnswer = false;
 
-            if (selected === p.en) {
+            if (selected === currentQuestion.en) {
                 btn.classList.add('correct');
-                canAnswer = false;
-                p.score++;
+                currentQuestion.score++;
                 
-                if (p.score >= 4) {
-                    bankedCount++;
-                    const nextPhraseIdx = bankedCount + 15;
-                    if (allPhrases[nextPhraseIdx]) {
-                        activePool[currentIdx] = {...allPhrases[nextPhraseIdx], score: 0};
+                if (currentQuestion.score >= 4) {
+                    masteredBank.push(currentQuestion);
+                    const idx = activePool.indexOf(currentQuestion);
+                    const nextIdx = masteredBank.length + 15;
+                    
+                    if (allLevelPhrases[nextIdx]) {
+                        activePool[idx] = {...allLevelPhrases[nextIdx], score: 0};
+                    } else {
+                        activePool.splice(idx, 1);
                     }
                 }
-                
-                setTimeout(() => {
-                    renderHeatmap();
-                    updateStats();
-                    // Move to the next button in the grid automatically
-                    selectPhrase((currentIdx + 1) % activePool.length);
-                }, 600);
+                setTimeout(() => { updateUI(); generateQuestion(); }, 600);
             } else {
                 btn.classList.add('wrong');
-                document.getElementById('feedback').innerText = `Actually: ${p.en}`;
-                p.score = Math.max(0, p.score - 1);
-                renderHeatmap();
+                document.getElementById('feedback').innerText = currentQuestion.en;
+                currentQuestion.score = Math.max(0, currentQuestion.score - 1);
+                setTimeout(() => { updateUI(); generateQuestion(); }, 1500);
             }
         }
 
-        function speak(text) {
-            const m = new SpeechSynthesisUtterance(text);
+        function speak() {
+            const m = new SpeechSynthesisUtterance(currentQuestion.pl);
             m.lang = 'pl-PL';
             window.speechSynthesis.speak(m);
         }
 
-        function updateStats() {
-            document.getElementById('stats').innerText = `Level Mastery: ${bankedCount} / ${allPhrases.length}`;
+        async function handleSearch() {
+            const q = document.getElementById('search-input').value.toLowerCase();
+            if (q.length < 3) return;
+            // Search logic can be added here to populate activePool with results
         }
 
         window.onload = () => loadLevel(1);
