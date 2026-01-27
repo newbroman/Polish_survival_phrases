@@ -10,7 +10,6 @@
         
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; height: 100vh; color: var(--text); overflow: hidden; }
         
-        /* New Header Layout with Controls */
         .header { background: var(--pol-red); color: white; width: 100%; padding: 10px 0; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
         .header-top { display: flex; align-items: center; justify-content: space-between; width: 94%; max-width: 400px; }
         .title { font-weight: bold; font-size: 1.1rem; }
@@ -19,68 +18,71 @@
         select, .search-box { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 6px; border-radius: 6px; font-size: 0.8rem; outline: none; }
         select option { color: #333; }
         .search-box { flex-grow: 1; }
-        .search-box::placeholder { color: rgba(255,255,255,0.7); }
 
         .progress-container { width: 100%; height: 6px; background: #ddd; flex-shrink: 0; }
         #progress-bar { width: 0%; height: 100%; background: var(--success); transition: width 0.5s ease; }
 
+        /* Compact Quiz Header */
+        .quiz-header { width: 100%; background: var(--card); padding: 15px 0; text-align: center; border-bottom: 1px solid #ddd; }
+        .english-q { font-size: 1.4rem; font-weight: 800; color: var(--pol-red); margin-bottom: 5px; }
+        .feedback { height: 18px; font-size: 0.8rem; font-weight: bold; }
+
         .mode-tabs { display: flex; width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 12px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
+        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.7rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); }
 
-        .quiz-section { width: 94%; max-width: 400px; margin-top: 10px; background: var(--card); padding: 15px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-shrink: 0; box-sizing: border-box; }
-        .feedback { height: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 8px; text-align: center; }
-        .quiz-controls { display: flex; align-items: center; gap: 10px; }
-        .speak-btn { background: transparent; border: 2px solid var(--pol-red); color: var(--pol-red); width: 45px; height: 45px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-        
-        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex-grow: 1; }
-        .option-btn { background: var(--tile-bg); border: none; padding: 8px; border-radius: 8px; font-size: 0.75rem; font-weight: bold; color: var(--text); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 55px; cursor: pointer; }
-        .option-btn span.hint { font-size: 0.6rem; opacity: 0.7; font-weight: normal; margin-top: 2px; }
+        /* The 16-Tile Interactive Heatmap */
+        .map-section { width: 96%; max-width: 450px; margin-top: 10px; flex-grow: 1; overflow-y: auto; padding-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+        .tile { 
+            aspect-ratio: 1/1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            background: var(--tile-bg); 
+            border-radius: 8px; 
+            cursor: pointer; 
+            padding: 4px; 
+            text-align: center; 
+            font-size: 0.6rem; 
+            font-weight: bold;
+            transition: transform 0.1s, background 0.3s;
+            border: 2px solid transparent;
+        }
+        .tile:active { transform: scale(0.95); }
+        .tile.wrong { background: #e74c3c !important; color: white; }
 
-        .map-section { width: 96%; max-width: 450px; margin-top: 10px; flex-grow: 1; overflow-y: auto; padding-bottom: 80px; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
-        .tile { aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; }
-        .tile .char { font-size: 0.55rem; font-weight: bold; line-height: 1.2; pointer-events: none; }
-        
-        .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 12px; text-align: center; border-top: 1px solid #ddd; z-index: 20; }
-        .next-btn { background: #3498db; color: white; width: 100%; padding: 12px; border-radius: 8px; font-size: 1rem; border: none; display: none; font-weight: bold; cursor: pointer; }
-        
-        #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); color: white; z-index: 100; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
-        .lvl-btn { background: var(--success); color: white; border: none; padding: 15px 40px; border-radius: 10px; font-size: 1.2rem; font-weight: bold; margin-top: 25px; cursor: pointer; }
+        .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 10px; text-align: center; border-top: 1px solid #ddd; }
     </style>
 </head>
 <body>
 
-<div id="overlay">
-    <h1 id="overlay-title">LEVEL COMPLETE! 🏆</h1>
-    <button class="lvl-btn" onclick="advanceLevel()">Load Next Level</button>
+<div id="overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center;">
+    <h1>LEVEL MASTERED! 🏆</h1>
+    <button onclick="advanceLevel()" style="background:var(--success); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold;">Load Next Level</button>
 </div>
 
 <div class="header">
     <div class="header-top">
         <div class="title">POLISH MASTER</div>
-        <select id="level-select" onchange="changeLevel(this.value)">
-            </select>
+        <select id="level-select" onchange="changeLevel(this.value)"></select>
     </div>
     <div class="nav-controls">
-        <input type="text" id="search-bar" class="search-box" placeholder="Search level phrases..." oninput="handleSearch()">
+        <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="handleSearch()">
     </div>
 </div>
 
 <div class="progress-container"><div id="progress-bar"></div></div>
 
-<div class="mode-tabs">
-    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">LEARNING</div>
-    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
+<div class="quiz-header">
+    <div id="q-text" class="english-q">Loading...</div>
+    <div id="feedback" class="feedback"></div>
+    <button onclick="speakTarget()" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">🔊</button>
 </div>
 
-<div class="quiz-section">
-    <div class="feedback" id="feedback"></div>
-    <div class="quiz-controls">
-        <button class="speak-btn" onclick="speakTarget()">🔊</button>
-        <div class="options-grid" id="options-grid"></div>
-    </div>
-    <button id="next-btn" class="next-btn" onclick="startNewRound()">Następny →</button>
+<div class="mode-tabs">
+    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">LEARNING GRID</div>
+    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
 </div>
 
 <div class="map-section">
@@ -88,22 +90,20 @@
 </div>
 
 <div class="footer">
-    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.7rem;">Reset Progress</button>
+    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.6rem;">Reset Progress</button>
 </div>
 
 <script>
     const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
-    
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
     let phrasesData = [];
     let activePhrases = [];
     let currentTarget = null;
     let currentMode = 'learning';
+    let canAnswer = true;
     const THRESHOLD = 3;
-    const SLOT_COUNT = 16;
 
-    // Populate Level Dropdown
     const lvlSelect = document.getElementById('level-select');
     levelNames.forEach((name, i) => {
         const opt = document.createElement('option');
@@ -114,31 +114,20 @@
     });
 
     async function loadLevelData() {
-        const fileName = `phrases_${currentLevel}.json`;
         try {
-            const response = await fetch(fileName);
-            if (!response.ok) throw new Error("File not found");
+            const response = await fetch(`phrases_${currentLevel}.json`);
             const data = await response.json();
             phrasesData = data.phrases;
             refreshLogic();
-        } catch (err) {
-            document.getElementById('feedback').innerText = "Level file missing!";
-        }
-    }
-
-    function changeLevel(val) {
-        currentLevel = parseInt(val);
-        localStorage.setItem('pl_current_level_idx', currentLevel);
-        loadLevelData();
+        } catch (err) { console.error(err); }
     }
 
     function refreshLogic() {
         const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
         const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
         
-        activePhrases = available.slice(0, SLOT_COUNT);
-        const progress = (mastered.length / phrasesData.length) * 100;
-        document.getElementById('progress-bar').style.width = progress + "%";
+        activePhrases = available.slice(0, 16);
+        document.getElementById('progress-bar').style.width = (mastered.length / phrasesData.length * 100) + "%";
 
         if (progress >= 100 && available.length === 0) {
             document.getElementById('overlay').style.display = 'flex';
@@ -148,81 +137,47 @@
         }
     }
 
-    function advanceLevel() {
-        currentLevel++;
-        if (currentLevel > 20) currentLevel = 1;
-        lvlSelect.value = currentLevel;
-        localStorage.setItem('pl_current_level_idx', currentLevel);
-        document.getElementById('overlay').style.display = 'none';
-        loadLevelData();
-    }
-
     function startNewRound() {
-        document.getElementById('feedback').innerText = "";
-        document.getElementById('next-btn').style.display = "none";
-        const grid = document.getElementById('options-grid');
-        grid.innerHTML = "";
-
         if (activePhrases.length === 0) return;
-
+        canAnswer = true;
+        document.getElementById('feedback').innerText = "";
+        
         currentTarget = activePhrases[Math.floor(Math.random() * activePhrases.length)];
-        let options = [...activePhrases].sort(() => 0.5 - Math.random()).slice(0, 4);
-        if (!options.find(o => o.pl === currentTarget.pl)) options[0] = currentTarget;
-
-        options.sort(() => 0.5 - Math.random()).forEach(opt => {
-            const btn = document.createElement('button');
-            btn.className = 'option-btn';
-            btn.innerHTML = `${opt.pl}<span class="hint">${opt.en}</span>`;
-            btn.onclick = () => checkAnswer(opt.pl);
-            grid.appendChild(btn);
-        });
-        setTimeout(() => speak(currentTarget.pl), 300);
+        document.getElementById('q-text').innerText = currentTarget.en;
+        speak(currentTarget.pl);
     }
 
-    function checkAnswer(guess) {
-        if (guess === currentTarget.pl) {
-            stats[currentTarget.pl] = (stats[currentTarget.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Świetnie! 🌟";
-            document.getElementById('feedback').style.color = "var(--success)";
-            document.getElementById('next-btn').style.display = "block";
-            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
-            if (stats[currentTarget.pl] >= THRESHOLD) refreshLogic();
-        } else {
-            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
-            document.getElementById('feedback').innerText = "Spróbuj ponownie!";
-            document.getElementById('feedback').style.color = "var(--pol-red)";
-            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
-        }
-        updateMap();
-    }
-
-    function handleSearch() {
-        const query = document.getElementById('search-bar').value.toLowerCase();
-        if (query.length < 2) {
-            updateMap();
+    function checkAnswer(phrase, tileElement) {
+        if (!canAnswer || currentMode !== 'learning') {
+            speak(phrase.pl); // Just play audio in banked mode
             return;
         }
-        const filtered = phrasesData.filter(p => 
-            p.pl.toLowerCase().includes(query) || 
-            p.en.toLowerCase().includes(query)
-        );
-        renderFilteredMap(filtered);
-    }
 
-    function renderFilteredMap(list) {
-        const mapDiv = document.getElementById('mastery-map');
-        mapDiv.innerHTML = '';
-        list.forEach(p => {
-            const tile = document.createElement('div');
-            tile.className = 'tile';
-            const count = stats[p.pl] || 0;
-            tile.innerHTML = `<span class="char">${p.pl}</span><span style="font-size:0.4rem; opacity:0.6">${p.en}</span>`;
-            if (count > 0) {
-                tile.style.backgroundColor = `rgba(46, 204, 113, ${Math.min(1, count / THRESHOLD)})`;
-            }
-            tile.onclick = () => speak(p.pl);
-            mapDiv.appendChild(tile);
-        });
+        if (phrase.pl === currentTarget.pl) {
+            canAnswer = false;
+            stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
+            document.getElementById('feedback').innerText = "Correct! 🌟";
+            document.getElementById('feedback').style.color = "var(--success)";
+            
+            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+            
+            setTimeout(() => {
+                if (stats[phrase.pl] >= THRESHOLD) refreshLogic();
+                else {
+                    updateMap();
+                    startNewRound();
+                }
+            }, 600);
+        } else {
+            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
+            tileElement.classList.add('wrong');
+            document.getElementById('feedback').innerText = `Nope! That's "${phrase.en}"`;
+            document.getElementById('feedback').style.color = "var(--pol-red)";
+            setTimeout(() => {
+                tileElement.classList.remove('wrong');
+                updateMap();
+            }, 1000);
+        }
     }
 
     function updateMap() {
@@ -234,11 +189,33 @@
             const tile = document.createElement('div');
             tile.className = 'tile';
             const count = stats[p.pl] || 0;
-            tile.innerHTML = `<span class="char">${p.pl}</span>`;
+            tile.innerText = p.pl;
+            
             if (count > 0) {
-                tile.style.backgroundColor = `rgba(46, 204, 113, ${Math.min(1, count / THRESHOLD)})`;
+                const alpha = Math.min(1, count / THRESHOLD);
+                tile.style.backgroundColor = `rgba(46, 204, 113, ${alpha})`;
                 if (count >= THRESHOLD) tile.style.color = "white";
             }
+            
+            tile.onclick = () => checkAnswer(p, tile);
+            mapDiv.appendChild(tile);
+        });
+    }
+
+    function handleSearch() {
+        const query = document.getElementById('search-bar').value.toLowerCase();
+        if (query.length < 1) { updateMap(); return; }
+        const filtered = phrasesData.filter(p => p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query));
+        renderFiltered(filtered);
+    }
+
+    function renderFiltered(list) {
+        const mapDiv = document.getElementById('mastery-map');
+        mapDiv.innerHTML = '';
+        list.forEach(p => {
+            const tile = document.createElement('div');
+            tile.className = 'tile';
+            tile.innerHTML = `${p.pl}<br><span style="font-size:0.4rem;opacity:0.6">${p.en}</span>`;
             tile.onclick = () => speak(p.pl);
             mapDiv.appendChild(tile);
         });
@@ -251,22 +228,11 @@
         window.speechSynthesis.speak(msg);
     }
 
-    function switchMode(m) {
-        currentMode = m;
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + m).classList.add('active');
-        document.getElementById('search-bar').value = "";
-        updateMap();
-    }
-
-    function resetEverything() {
-        if (confirm("Reset everything?")) {
-            localStorage.clear();
-            location.reload();
-        }
-    }
-
-    function speakTarget() { if (currentTarget) speak(currentTarget.pl); }
+    function changeLevel(v) { currentLevel = v; localStorage.setItem('pl_current_level_idx', v); loadLevelData(); }
+    function switchMode(m) { currentMode = m; document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); updateMap(); }
+    function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
+    function resetEverything() { if(confirm("Reset?")) { localStorage.clear(); location.reload(); } }
+    function advanceLevel() { currentLevel++; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
 
     window.onload = loadLevelData;
 </script>
