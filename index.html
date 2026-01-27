@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Master: GitHub Edition</title>
+    <title>Polish Master</title>
     <style>
         :root { --pol-red: #dc143c; --success: #2ecc71; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -30,14 +30,13 @@
 
         .map-section { width: 96%; max-width: 450px; margin-top: 10px; flex-grow: 1; overflow-y: auto; padding-bottom: 80px; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
-        .tile { aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; transition: transform 0.1s; }
-        .tile:active { transform: scale(0.95); }
+        .tile { aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; }
         .tile .char { font-size: 0.55rem; font-weight: bold; line-height: 1.2; pointer-events: none; }
         
         .footer { position: fixed; bottom: 0; width: 100%; background: var(--card); padding: 12px; text-align: center; border-top: 1px solid #ddd; z-index: 20; }
         .next-btn { background: #3498db; color: white; width: 100%; padding: 12px; border-radius: 8px; font-size: 1rem; border: none; display: none; font-weight: bold; cursor: pointer; }
         
-        #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); color: white; z-index: 100; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; box-sizing: border-box; }
+        #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); color: white; z-index: 100; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
         .lvl-btn { background: var(--success); color: white; border: none; padding: 15px 40px; border-radius: 10px; font-size: 1.2rem; font-weight: bold; margin-top: 25px; cursor: pointer; }
     </style>
 </head>
@@ -45,8 +44,8 @@
 
 <div id="overlay">
     <h1 id="overlay-title">POZIOM UKOŃCZONY! 🏆</h1>
-    <p id="overlay-desc">Ready to unlock the next set of phrases?</p>
-    <button class="lvl-btn" id="overlay-btn" onclick="advanceLevel()">Load Next Level</button>
+    <p id="overlay-desc">Ready for the next set?</p>
+    <button class="lvl-btn" onclick="advanceLevel()">Load Next Level</button>
 </div>
 
 <div class="header">
@@ -74,11 +73,10 @@
 </div>
 
 <div class="footer">
-    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.7rem; cursor:pointer;">Reset All Data</button>
+    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.7rem;">Reset Progress</button>
 </div>
 
 <script>
-    // File mapping - make sure these match your GitHub filenames exactly
     const levelFiles = {
         1: 'phrases_1.json',
         2: 'phrases_2.json',
@@ -89,3 +87,139 @@
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
     let phrasesData = [];
     let activePhrases = [];
+    let currentTarget = null;
+    let currentMode = 'learning';
+    const THRESHOLD = 3;
+    const SLOT_COUNT = 16;
+
+    async function loadLevelData() {
+        const fileName = levelFiles[currentLevel];
+        console.log("System: Attempting to load", fileName);
+
+        if (!fileName) {
+            showGameComplete();
+            return;
+        }
+
+        try {
+            const response = await fetch(fileName);
+            if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+            const data = await response.json();
+            
+            phrasesData = data.phrases;
+            document.getElementById('level-display').innerText = `Level ${currentLevel}`;
+            refreshLogic();
+        } catch (err) {
+            console.error("Load Error:", err);
+            document.getElementById('feedback').innerText = "Load Failed: Check Filenames";
+        }
+    }
+
+    function refreshLogic() {
+        const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+        const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
+        
+        activePhrases = available.slice(0, SLOT_COUNT);
+        const progress = (mastered.length / phrasesData.length) * 100;
+        document.getElementById('progress-bar').style.width = progress + "%";
+
+        if (progress >= 100) {
+            document.getElementById('overlay').style.display = 'flex';
+        } else {
+            updateMap();
+            startNewRound();
+        }
+    }
+
+    function advanceLevel() {
+        currentLevel++;
+        localStorage.setItem('pl_current_level_idx', currentLevel);
+        document.getElementById('overlay').style.display = 'none';
+        loadLevelData();
+    }
+
+    function startNewRound() {
+        document.getElementById('feedback').innerText = "";
+        document.getElementById('next-btn').style.display = "none";
+        const grid = document.getElementById('options-grid');
+        grid.innerHTML = "";
+
+        if (activePhrases.length === 0) return;
+
+        currentTarget = activePhrases[Math.floor(Math.random() * activePhrases.length)];
+        let options = [...activePhrases].sort(() => 0.5 - Math.random()).slice(0, 4);
+        if (!options.find(o => o.pl === currentTarget.pl)) options[0] = currentTarget;
+
+        options.sort(() => 0.5 - Math.random()).forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerHTML = `${opt.pl}<span class="hint">${opt.en}</span>`;
+            btn.onclick = () => checkAnswer(opt.pl);
+            grid.appendChild(btn);
+        });
+        setTimeout(() => speak(currentTarget.pl), 300);
+    }
+
+    function checkAnswer(guess) {
+        if (guess === currentTarget.pl) {
+            stats[currentTarget.pl] = (stats[currentTarget.pl] || 0) + 1;
+            document.getElementById('feedback').innerText = "Świetnie! 🌟";
+            document.getElementById('feedback').style.color = "var(--success)";
+            document.getElementById('next-btn').style.display = "block";
+            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+            if (stats[currentTarget.pl] >= THRESHOLD) refreshLogic();
+        } else {
+            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
+            document.getElementById('feedback').innerText = "Spróbuj ponownie!";
+            document.getElementById('feedback').style.color = "var(--pol-red)";
+            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+        }
+        updateMap();
+    }
+
+    function updateMap() {
+        const mapDiv = document.getElementById('mastery-map');
+        mapDiv.innerHTML = '';
+        const list = currentMode === 'learning' ? activePhrases : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+        
+        list.forEach(p => {
+            const tile = document.createElement('div');
+            tile.className = 'tile';
+            const count = stats[p.pl] || 0;
+            tile.innerHTML = `<span class="char">${p.pl}</span>`;
+            if (count > 0) {
+                tile.style.backgroundColor = `rgba(46, 204, 113, ${Math.min(1, count / THRESHOLD)})`;
+                if (count >= THRESHOLD) tile.style.color = "white";
+            }
+            tile.onclick = () => speak(p.pl);
+            mapDiv.appendChild(tile);
+        });
+    }
+
+    function speak(text) {
+        window.speechSynthesis.cancel();
+        const msg = new SpeechSynthesisUtterance(text);
+        msg.lang = 'pl-PL';
+        window.speechSynthesis.speak(msg);
+    }
+
+    function switchMode(m) {
+        currentMode = m;
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + m).classList.add('active');
+        updateMap();
+    }
+
+    function resetEverything() {
+        if (confirm("Reset everything?")) {
+            localStorage.clear();
+            location.reload();
+        }
+    }
+
+    function speakTarget() { if (currentTarget) speak(currentTarget.pl); }
+
+    window.onload = loadLevelData;
+</script>
+</body>
+</html>
