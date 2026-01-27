@@ -10,47 +10,48 @@
         
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; height: 100vh; color: var(--text); overflow: hidden; }
         
-        /* Compact Header */
-        .header { width: 100%; padding: 8px 0; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .title { font-weight: 800; font-size: 1.1rem; color: var(--pol-red); text-align: center; margin: 0 0 5px 0; }
-        .controls-row { width: 94%; max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px; }
+        /* Stacked Header Layout */
+        .header { width: 100%; padding: 10px 0; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .title { font-weight: 800; font-size: 1.1rem; color: var(--pol-red); text-align: center; margin: 0 0 8px 0; }
+        .controls-row { width: 90%; max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
         
-        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.75rem; font-weight: bold; }
-        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 6px; border-radius: 6px; font-size: 0.8rem; outline: none; }
+        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.75rem; font-weight: bold; padding-bottom: 4px; }
+        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 8px; border-radius: 8px; font-size: 0.85rem; outline: none; box-sizing: border-box; }
 
         .progress-container { width: 100%; height: 4px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
-        /* Quiz Area - Speaker on Left */
-        .quiz-header { background: var(--card); padding: 10px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
-        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 44px; height: 44px; font-size: 1.1rem; cursor: pointer; flex-shrink: 0; }
+        /* Quiz Area - Speaker Button on Left */
+        .quiz-header { background: var(--card); padding: 12px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 48px; height: 48px; font-size: 1.2rem; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
         .q-content { flex-grow: 1; text-align: center; }
-        .q-text { font-size: 1.2rem; font-weight: 800; margin-bottom: 2px; line-height: 1.2; }
+        .q-text { font-size: 1.3rem; font-weight: 800; margin-bottom: 2px; line-height: 1.2; }
         .feedback { height: 14px; font-size: 0.75rem; font-weight: bold; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 8px; text-align: center; font-size: 0.7rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
-        .tab.active { opacity: 1; border-bottom: 2px solid var(--pol-red); color: var(--pol-red); }
+        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
+        .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        /* Grid - Optimized for No-Scroll */
+        /* Grid Section */
         .map-section { flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 6px; width: 100%; max-width: 400px; height: 100%; max-height: 320px; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 420px; height: 100%; max-height: 340px; }
         .tile { 
             display: flex; align-items: center; justify-content: center; 
-            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
-            text-align: center; font-size: 0.65rem; font-weight: 700; transition: background 0.2s;
-            line-height: 1.1; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow: hidden;
+            background: var(--tile-bg); border-radius: 10px; cursor: pointer; padding: 6px; 
+            text-align: center; font-size: 0.7rem; font-weight: 700; transition: background 0.2s, transform 0.1s;
+            line-height: 1.1; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden;
         }
+        .tile:active { transform: scale(0.96); }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
-        .footer { padding: 5px; text-align: center; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
+        .footer { padding: 8px; text-align: center; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
     </style>
 </head>
 <body>
 
 <div id="overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center;">
     <h1>LEVEL MASTERED! 🏆</h1>
-    <button onclick="advanceLevel()" style="background:var(--pol-red); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold;">Next Level</button>
+    <button onclick="advanceLevel()" style="background:var(--pol-red); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold; font-size:1rem; cursor:pointer;">Next Level</button>
 </div>
 
 <div class="header">
@@ -61,19 +62,17 @@
             <input type="checkbox" id="lang-toggle" onchange="toggleLanguageMode()">
             <span>PL ⮕ EN</span>
         </div>
-        <div style="display:flex; gap:4px;">
-            <select id="level-select" onchange="changeLevel(this.value)"></select>
-            <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="handleSearch()">
-        </div>
+        <select id="level-select" onchange="changeLevel(this.value)"></select>
+        <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary..." oninput="handleSearch()">
     </div>
 </div>
 
 <div class="progress-container"><div id="progress-bar"></div></div>
 
 <div class="quiz-header">
-    <button class="speaker-btn" onclick="speakTarget()">🔊</button>
+    <button class="speaker-btn" onclick="speakTarget()" aria-label="Play Polish Audio">🔊</button>
     <div class="q-content">
-        <div id="q-text" class="q-text">Loading...</div>
+        <div id="q-text" class="q-text">Ready?</div>
         <div id="feedback" class="feedback"></div>
     </div>
 </div>
@@ -85,7 +84,9 @@
 
 <div class="map-section"><div class="grid" id="mastery-map"></div></div>
 
-<div class="footer"><button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.5rem; opacity:0.5;">Reset Progress</button></div>
+<div class="footer">
+    <button onclick="resetEverything()" style="background:none; border:none; color:#888; font-size:0.6rem; opacity:0.5; cursor:pointer;">Reset Progress</button>
+</div>
 
 <script>
     const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
@@ -106,7 +107,7 @@
     levelNames.forEach((name, i) => {
         const opt = document.createElement('option');
         opt.value = i + 1;
-        opt.innerText = `Lvl ${i+1}: ${name}`;
+        opt.innerText = `Level ${i+1}: ${name}`;
         if (i + 1 === currentLevel) opt.selected = true;
         lvlSelect.appendChild(opt);
     });
@@ -136,8 +137,8 @@
         
         document.getElementById('q-text').innerText = reverseMode ? currentTarget.pl : currentTarget.en;
         
-        // Only auto-speak in standard mode (English -> Polish)
-        if(!reverseMode) setTimeout(() => speak(currentTarget.pl), 300);
+        // Always speak Polish phrase at the START in all modes
+        setTimeout(() => speak(currentTarget.pl), 300);
     }
 
     function checkAnswer(phrase, tileElement) {
@@ -154,9 +155,6 @@
             document.getElementById('feedback').innerText = "Correct! 🌟";
             document.getElementById('feedback').style.color = "var(--pol-red)";
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
-            
-            // Speak Polish phrase AFTER answer in Reverse Mode
-            speak(phrase.pl);
 
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
@@ -175,10 +173,11 @@
             document.getElementById('feedback').innerText = `Nope! "${phrase.en}"`;
             document.getElementById('feedback').style.color = "var(--wrong-blue)";
             
-            // Still speak the correct Polish phrase to help learning after a mistake
-            speak(currentTarget.pl);
-
-            setTimeout(() => { tileElement.classList.remove('wrong'); updateMap(); startNewRound(); }, 1400);
+            setTimeout(() => { 
+                tileElement.classList.remove('wrong'); 
+                updateMap(); 
+                startNewRound(); 
+            }, 1400);
         }
     }
 
@@ -244,10 +243,23 @@
         });
     }
 
-    function changeLevel(v) { currentLevel = parseInt(v); localStorage.setItem('pl_current_level_idx', currentLevel); loadLevelData(); }
+    function changeLevel(v) { 
+        currentLevel = parseInt(v); 
+        localStorage.setItem('pl_current_level_idx', currentLevel); 
+        loadLevelData(); 
+    }
+    
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
-    function resetEverything() { if(confirm("Clear progress?")) { localStorage.clear(); location.reload(); } }
-    function advanceLevel() { currentLevel++; if(currentLevel > levelNames.length) currentLevel = 1; lvlSelect.value = currentLevel; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
+    
+    function resetEverything() { if(confirm("Clear progress and reset?")) { localStorage.clear(); location.reload(); } }
+    
+    function advanceLevel() { 
+        currentLevel++; 
+        if(currentLevel > levelNames.length) currentLevel = 1; 
+        lvlSelect.value = currentLevel; 
+        changeLevel(currentLevel); 
+        document.getElementById('overlay').style.display='none'; 
+    }
 
     window.onload = () => { initSpeech(); loadLevelData(); };
 </script>
