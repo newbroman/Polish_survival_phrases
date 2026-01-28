@@ -17,8 +17,9 @@
 
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 8px 0; display: flex; flex-direction: column; gap: 6px; }
         .toggle-container { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.65rem; font-weight: bold; }
-        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 6px 8px; border-radius: 6px; font-size: 0.4rem; outline: none; box-sizing: border-box; }
-        @media (min-width: 768px) { select, .search-box { font-size: 0.8rem; } }
+        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 6px 8px; border-radius: 6px; font-size: 0.8rem; outline: none; box-sizing: border-box; }
+        select option { font-size: 0.4rem; }
+        @media (min-width: 768px) { select option { font-size: 0.8rem; } }
 
         .progress-container { width: 100%; height: 3px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
@@ -146,6 +147,10 @@
             const data = await resp.json();
             phrasesData = data.phrases;
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
+            // Fallback: if no unlearned phrases, use first 12 anyway
+            if (activePool.length === 0) {
+                activePool = phrasesData.slice(0, 12);
+            }
             updateStats(); 
             updateMap(); 
             startNewRound();
