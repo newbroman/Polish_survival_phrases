@@ -85,7 +85,7 @@
 <div class="quiz-header" id="quiz-ui">
     <button class="speaker-btn" onclick="speakTarget()">🔊</button>
     <div class="q-content">
-        <div id="q-text" class="q-text">Ready?</div>
+        <div id="q-text" class="q-text">Loading...</div>
         <div id="feedback" class="feedback"></div>
     </div>
 </div>
@@ -131,7 +131,8 @@
             if (!resp.ok) throw new Error("File not found");
             const data = await resp.json();
             phrasesData = data.phrases;
-            // Filter and slice specifically to prevent overflow
+            
+            // Clean logic to fill the pool
             const unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
             activePool = unmastered.slice(0, 12);
             
@@ -162,7 +163,10 @@
     function toggleLang() { reverse = document.getElementById('lang-toggle').checked; updateMap(); startNewRound(); }
 
     function startNewRound() {
-        if (!activePool.length || !document.getElementById('tab-learning').classList.contains('active')) return;
+        if (!activePool.length || !document.getElementById('tab-learning').classList.contains('active')) {
+            document.getElementById('q-text').innerText = "Level Complete!";
+            return;
+        }
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = reverse ? currentTarget.pl : currentTarget.en;
         document.getElementById('feedback').innerText = "";
@@ -196,14 +200,18 @@
         area.innerHTML = '';
         if (document.getElementById('tab-learning').classList.contains('active')) {
             area.className = "grid";
-            // Check if activePool actually has data
+            
+            // Safety: if data exists but pool is empty, try one more time to load
             if (activePool.length === 0 && phrasesData.length > 0) {
-                 // Double check for mastered level state
-                 if (phrasesData.every(p => (stats[p.pl]||0) >= THRESHOLD)) {
+                 const unmastered = phrasesData.filter(p => (stats[p.pl]||0) < THRESHOLD);
+                 if (unmastered.length > 0) {
+                     activePool = unmastered.slice(0, 12);
+                 } else {
                      document.getElementById('overlay').style.display = 'flex';
                      return;
                  }
             }
+
             activePool.forEach(p => {
                 const tile = document.createElement('div'); tile.className = 'tile';
                 tile.innerText = reverse ? p.en : p.pl;
@@ -263,7 +271,17 @@
         await changeLevel(currentLevel); 
     }
 
-    window.onload = () => { initSpeech(); loadLevelData(); };
+    // New more aggressive initialization
+    async function initApp() {
+        initSpeech();
+        const success = await loadLevelData();
+        if (!success) {
+            console.warn("Retrying first load...");
+            setTimeout(loadLevelData, 500);
+        }
+    }
+
+    window.onload = initApp;
 </script>
 </body>
 </html>
