@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Say some Polish phrases</title>
+    <title>Polish Phrase Master</title>
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
-        body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; flex-direction: column; height: 100vh; color: var(--text); overflow: hidden; }
+        html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
         .header { width: 100%; padding: 10px 0; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .title { font-weight: 800; font-size: 1.1rem; color: var(--pol-red); text-align: center; margin: 0 0 8px 0; }
@@ -30,7 +31,7 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
+        .map-section { flex-grow: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; -webkit-overflow-scrolling: touch; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; max-width: 420px; }
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
@@ -41,15 +42,10 @@
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
         .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 8px; }
-        .banked-item { 
-            display: flex; justify-content: space-between; align-items: center; 
-            background: var(--card); padding: 12px; border-radius: 10px; border: 1px solid #ddd; cursor: pointer;
-        }
+        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 12px; border-radius: 10px; border: 1px solid #ddd; }
 
-        /* Footer buttons */
-        .footer { padding: 10px; display: flex; justify-content: center; gap: 20px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
-        .footer-btn { background: none; border: 1px solid #ccc; color: #888; font-size: 0.65rem; padding: 4px 8px; border-radius: 4px; cursor: pointer; opacity: 0.8; }
-        .footer-btn:active { background: #eee; }
+        .footer { padding: 10px 10px 30px 10px; display: flex; justify-content: center; gap: 15px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
+        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.7rem; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -92,7 +88,7 @@
 </div>
 
 <div class="footer">
-    <button class="footer-btn" onclick="keepProgress()">Keep Progress</button>
+    <button class="footer-btn" onclick="exportData()">Export/Import</button>
     <button class="footer-btn" onclick="resetEverything()">Clear Progress</button>
 </div>
 
@@ -152,7 +148,7 @@
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Correct! 🌟";
             document.getElementById('feedback').style.color = "var(--pol-red)";
-            saveStats();
+            saveStats(); // Auto-save
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
                     const poolIdx = activePool.findIndex(ap => ap.pl === phrase.pl);
@@ -199,8 +195,7 @@
             mastered.forEach(p => {
                 const item = document.createElement('div');
                 item.className = 'banked-item';
-                item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div>🔊</div>`;
-                item.onclick = () => speak(p.pl);
+                item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="speak('${p.pl}')">🔊</div>`;
                 area.appendChild(item);
             });
         }
@@ -216,19 +211,14 @@
         document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
         document.getElementById('tab-'+m).classList.add('active');
         document.getElementById('quiz-ui').style.display = (m === 'learning') ? 'flex' : 'none';
-        document.getElementById('search-bar').value = '';
         updateMap();
     }
 
     function speak(text) {
-        const ghost = new SpeechSynthesisUtterance(text);
-        if (plVoice) ghost.voice = plVoice;
-        ghost.lang = 'pl-PL'; ghost.volume = 0.001; ghost.rate = 1.6;
-        const real = new SpeechSynthesisUtterance(text);
-        if (plVoice) real.voice = plVoice;
-        real.lang = 'pl-PL'; real.volume = 1; real.rate = 0.9;
-        window.speechSynthesis.speak(ghost);
-        window.speechSynthesis.speak(real);
+        const msg = new SpeechSynthesisUtterance(text);
+        if (plVoice) msg.voice = plVoice;
+        msg.lang = 'pl-PL';
+        window.speechSynthesis.speak(msg);
     }
 
     function handleSearch() {
@@ -240,8 +230,7 @@
         .forEach(p => {
             const item = document.createElement('div');
             item.className = 'banked-item';
-            item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div>🔊</div>`;
-            item.onclick = () => speak(p.pl);
+            item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="speak('${p.pl}')">🔊</div>`;
             area.appendChild(item);
         });
     }
@@ -251,33 +240,22 @@
         localStorage.setItem('pl_current_level_idx', currentLevel);
     }
 
-    function keepProgress() { 
-        saveStats(); 
-        alert("Progress saved to browser storage."); 
+    function exportData() {
+        const dataStr = btoa(JSON.stringify({stats, level: currentLevel}));
+        const input = prompt("Your Export Code (Copy this to save, or paste a code to import):", dataStr);
+        if (input && input !== dataStr) {
+            try {
+                const parsed = JSON.parse(atob(input));
+                stats = parsed.stats; currentLevel = parsed.level;
+                saveStats(); location.reload();
+            } catch(e) { alert("Invalid code!"); }
+        }
     }
 
-    function resetEverything() { 
-        if(confirm("This will wipe all mastery data. Are you sure?")) { 
-            localStorage.clear(); 
-            location.reload(); 
-        } 
-    }
-
-    function changeLevel(v) { 
-        currentLevel = parseInt(v); 
-        saveStats(); 
-        loadLevelData(); 
-    }
-
+    function resetEverything() { if(confirm("Wipe all progress?")) { localStorage.clear(); location.reload(); } }
+    function changeLevel(v) { currentLevel = parseInt(v); saveStats(); loadLevelData(); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
-    
-    function advanceLevel() { 
-        currentLevel++; 
-        if(currentLevel > levelNames.length) currentLevel = 1; 
-        lvlSelect.value = currentLevel; 
-        changeLevel(currentLevel); 
-        document.getElementById('overlay').style.display='none'; 
-    }
+    function advanceLevel() { currentLevel++; if(currentLevel > levelNames.length) currentLevel = 1; lvlSelect.value = currentLevel; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
 
     window.onload = () => { initSpeech(); loadLevelData(); };
 </script>
