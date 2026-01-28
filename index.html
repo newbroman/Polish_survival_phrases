@@ -17,7 +17,7 @@
 
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 8px 0; display: flex; flex-direction: column; gap: 6px; }
         .toggle-container { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.65rem; font-weight: bold; }
-        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ccc; color: #666; padding: 6px 8px; border-radius: 6px; font-size: 0.75rem; outline: none; box-sizing: border-box; font-weight: 600; cursor: pointer; }
+        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ccc; color: #666; padding: 6px 8px; border-radius: 6px; font-size: 0.7rem; outline: none; box-sizing: border-box; font-weight: 600; cursor: pointer; }
         @media (prefers-color-scheme: dark) { select, .search-box { color: var(--text); } }
 
         .progress-container { width: 100%; height: 3px; background: #ddd; }
@@ -105,7 +105,7 @@
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
-    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null, reverse = false;
+    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null, reverse = false, lastTapTime = 0, isSpeaking = false;
     let levelDescriptions = {}; // Will be populated from JSON files
     const THRESHOLD = 3;
     let plVoice = null;
@@ -308,14 +308,17 @@
     }
     
     function speak(t, rate = 1.0) { 
+        if(isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+        }
         const m = new SpeechSynthesisUtterance(t); 
         if(plVoice) m.voice=plVoice; 
         m.lang='pl-PL';
         m.rate = rate;
-        
         m.onstart = () => { isSpeaking = true; };
         m.onend = () => { isSpeaking = false; };
-        m.onerror = () => { isSpeaking = false; }; 
+        m.onerror = () => { isSpeaking = false; };
         window.speechSynthesis.speak(m); 
     }
     
@@ -325,14 +328,8 @@
         loadLevelData(); 
     }
     
-    function speakTarget() {
+    function speakTarget() { 
         if(!currentTarget) return;
-        
-        if(isSpeaking) {
-            window.speechSynthesis.cancel();
-            isSpeaking = false;
-            return;
-        }
         
         const now = Date.now();
         const timeSinceLastTap = now - lastTapTime;
@@ -345,11 +342,6 @@
             speak(currentTarget.pl, 1.0); // Normal speed
             lastTapTime = now;
         }
-        return;
-    }
-    
-    function speakTarget_OLD() { 
-        if(currentTarget) speak(currentTarget.pl); 
     }
     
     function advanceLevel() { 
