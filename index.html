@@ -12,48 +12,54 @@
         body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
         .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 12px 0; border-bottom: 1px solid #ccc; }
-        .title { font-weight: 800; font-size: 1.5rem; color: #333; text-align: center; margin: 0; text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
+        .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; }
+        .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
 
-        .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 10px 0; display: flex; flex-direction: column; gap: 8px; }
-        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.7rem; font-weight: bold; }
-        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 8px; border-radius: 8px; font-size: 0.85rem; outline: none; box-sizing: border-box; }
+        .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 8px 0; display: flex; flex-direction: column; gap: 6px; }
+        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.65rem; font-weight: bold; }
+        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 6px 8px; border-radius: 6px; font-size: 0.8rem; outline: none; box-sizing: border-box; }
 
-        .progress-container { width: 100%; height: 4px; background: #ddd; }
+        .progress-container { width: 100%; height: 3px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
-        .quiz-header { background: var(--card); padding: 12px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
-        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 48px; height: 48px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-        .q-content { flex-grow: 1; text-align: center; }
-        .q-text { font-size: 1.3rem; font-weight: 800; }
-        .feedback { height: 14px; font-size: 0.75rem; font-weight: bold; }
+        .quiz-header { background: var(--card); padding: 10px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .q-content { flex-grow: 1; text-align: center; min-width: 0; }
+        .q-text { font-size: 1.1rem; font-weight: 800; word-wrap: break-word; }
+        .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
+        .tab { flex: 1; padding: 8px; text-align: center; font-size: 0.7rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; -webkit-overflow-scrolling: touch; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; max-width: 420px; }
-        .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 10px; cursor: pointer; padding: 6px; text-align: center; font-size: 0.65rem; font-weight: 700; line-height: 1.1; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden; }
+        .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; -webkit-overflow-scrolling: touch; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
+        .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow: hidden; word-wrap: break-word; }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
-        .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 8px; }
-        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 12px; border-radius: 10px; border: 1px solid #ddd; text-align: left; position: relative; cursor: pointer; }
-        .lvl-tag { font-size: 0.5rem; background: #eee; padding: 2px 4px; border-radius: 4px; position: absolute; right: 45px; top: 12px; color: #888; }
+        .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 6px; }
+        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 10px; border-radius: 8px; border: 1px solid #ddd; text-align: left; position: relative; cursor: pointer; }
+        .banked-item strong { font-size: 0.85rem; }
+        .banked-item small { font-size: 0.7rem; }
+        .lvl-tag { font-size: 0.5rem; background: #eee; padding: 2px 4px; border-radius: 4px; position: absolute; right: 40px; top: 10px; color: #888; }
 
-        .footer { padding: 10px 10px 30px 10px; display: flex; justify-content: center; gap: 8px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
-        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.65rem; padding: 8px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
+        .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
+        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px 8px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
 
-        #save-toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.7rem; display: none; z-index: 1000; pointer-events: none; }
+        #save-toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.65rem; display: none; z-index: 1000; pointer-events: none; }
+        
+        #overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        #overlay h1 { font-size: 1.5rem; margin-bottom: 10px; }
+        #overlay button { background: var(--pol-red); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <div id="save-toast"></div>
 
-<div id="overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+<div id="overlay">
     <h1>LEVEL MASTERED! 🏆</h1>
-    <button onclick="advanceLevel()" style="background:var(--pol-red); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold; margin-top: 20px;">Next Level</button>
+    <button onclick="advanceLevel()">Next Level</button>
 </div>
 
 <div class="header">
@@ -96,10 +102,10 @@
 </div>
 
 <script>
-    const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null, reverse = false;
+    let levelDescriptions = {}; // Will be populated from JSON files
     const THRESHOLD = 3;
     let plVoice = null;
 
@@ -107,12 +113,30 @@
     window.speechSynthesis.onvoiceschanged = initSpeech;
 
     const lvlSelect = document.getElementById('level-select');
-    levelNames.forEach((name, i) => {
-        const opt = document.createElement('option');
-        opt.value = i+1; opt.innerText = `Level ${i+1}: ${name}`;
-        if (i+1 === currentLevel) opt.selected = true;
-        lvlSelect.appendChild(opt);
-    });
+
+    async function populateLevelSelect() {
+        // Load descriptions from actual phrase files
+        for (let i = 1; i <= 20; i++) {
+            try {
+                const resp = await fetch(`phrases_${i}.json?v=${Date.now()}`);
+                if (resp.ok) {
+                    const data = await resp.json();
+                    levelDescriptions[i] = data.description || `Level ${i}`;
+                }
+            } catch(e) {
+                levelDescriptions[i] = `Level ${i}`;
+            }
+        }
+        
+        // Populate dropdown with actual descriptions
+        for (let i = 1; i <= 20; i++) {
+            const opt = document.createElement('option');
+            opt.value = i;
+            opt.innerText = `Level ${i}: ${levelDescriptions[i]}`;
+            if (i === currentLevel) opt.selected = true;
+            lvlSelect.appendChild(opt);
+        }
+    }
 
     async function loadLevelData() {
         try {
@@ -120,7 +144,6 @@
             if (!resp.ok) throw new Error("File not found");
             const data = await resp.json();
             phrasesData = data.phrases;
-            // Clean slate for activePool to prevent 13-square bug
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
             updateStats(); 
             updateMap(); 
@@ -162,7 +185,6 @@
             saveStats();
             
             setTimeout(() => {
-                // If mastered, remove FIRST, then maybe add a new one
                 if (stats[phrase.pl] >= THRESHOLD) {
                     activePool = activePool.filter(p => p.pl !== phrase.pl);
                     let nextCandidate = phrasesData.find(p => (stats[p.pl]||0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
@@ -309,7 +331,11 @@
         changeLevel(currentLevel); 
     }
 
-    window.onload = () => { initSpeech(); loadLevelData(); };
+    window.onload = async () => { 
+        initSpeech(); 
+        await populateLevelSelect(); 
+        loadLevelData(); 
+    };
 </script>
 </body>
 </html>
