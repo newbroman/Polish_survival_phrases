@@ -116,7 +116,7 @@
 
     async function loadLevelData() {
         try {
-            const resp = await fetch(`phrases_${currentLevel}.json`);
+            const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
             if (!resp.ok) throw new Error("File not found");
             const data = await resp.json();
             phrasesData = data.phrases;
@@ -136,7 +136,7 @@
         if (allPhrasesCache.length > 0) return;
         for (let i = 1; i <= 20; i++) {
             try {
-                const r = await fetch(`phrases_${i}.json`);
+                const r = await fetch(`phrases_${i}.json?v=${Date.now()}`);
                 if (r.ok) {
                     const d = await r.json();
                     allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: i})));
