@@ -12,19 +12,19 @@
         body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
         .header { width: 100%; padding: 10px 0; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .title { font-weight: 800; font-size: 1.1rem; color: var(--pol-red); text-align: center; margin: 0 0 8px 0; }
+        .title { font-weight: 800; font-size: 1.2rem; color: var(--pol-red); text-align: center; margin: 0 0 8px 0; }
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
         
-        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.75rem; font-weight: bold; padding-bottom: 4px; }
+        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.7rem; font-weight: bold; padding-bottom: 2px; }
         select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 8px; border-radius: 8px; font-size: 0.85rem; outline: none; box-sizing: border-box; }
 
         .progress-container { width: 100%; height: 4px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
         .quiz-header { background: var(--card); padding: 12px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
-        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 48px; height: 48px; font-size: 1.2rem; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 48px; height: 48px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .q-content { flex-grow: 1; text-align: center; }
-        .q-text { font-size: 1.3rem; font-weight: 800; margin-bottom: 2px; line-height: 1.2; }
+        .q-text { font-size: 1.3rem; font-weight: 800; margin-bottom: 2px; }
         .feedback { height: 14px; font-size: 0.75rem; font-weight: bold; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
@@ -42,13 +42,17 @@
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
         .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 8px; }
-        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 12px; border-radius: 10px; border: 1px solid #ddd; }
+        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 12px; border-radius: 10px; border: 1px solid #ddd; text-align: left; }
 
-        .footer { padding: 10px 10px 30px 10px; display: flex; justify-content: center; gap: 15px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
-        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.7rem; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        .footer { padding: 10px 10px 30px 10px; display: flex; justify-content: center; gap: 8px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
+        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.65rem; padding: 8px 8px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; max-width: 100px; text-align: center; }
+
+        #save-toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.7rem; display: none; z-index: 1000; pointer-events: none; }
     </style>
 </head>
 <body>
+
+<div id="save-toast">✓ Progress Auto-saved</div>
 
 <div id="overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center;">
     <h1>LEVEL MASTERED! 🏆</h1>
@@ -60,7 +64,7 @@
     <div class="controls-row">
         <div class="toggle-container">
             <span>EN ⮕ PL</span>
-            <input type="checkbox" id="lang-toggle" onchange="toggleLanguageMode()">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLang()">
             <span>PL ⮕ EN</span>
         </div>
         <select id="level-select" onchange="changeLevel(this.value)"></select>
@@ -88,171 +92,118 @@
 </div>
 
 <div class="footer">
-    <button class="footer-btn" onclick="exportData()">Export/Import</button>
-    <button class="footer-btn" onclick="resetEverything()">Clear Progress</button>
+    <button class="footer-btn" onclick="downloadProgress()">Save File</button>
+    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load File</button>
+    <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Clear All</button>
+    <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
 </div>
 
 <script>
     const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
-    let phrasesData = [], activePool = [], currentTarget = null;
-    let currentMode = 'learning', canAnswer = true, reverseMode = false;
+    let phrasesData = [], activePool = [], currentTarget = null, reverse = false;
     const THRESHOLD = 3;
     let plVoice = null;
 
-    function initSpeech() {
-        const voices = window.speechSynthesis.getVoices();
-        plVoice = voices.find(v => v.lang.startsWith('pl'));
-    }
+    function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
     window.speechSynthesis.onvoiceschanged = initSpeech;
 
     const lvlSelect = document.getElementById('level-select');
     levelNames.forEach((name, i) => {
         const opt = document.createElement('option');
-        opt.value = i + 1;
-        opt.innerText = `Level ${i+1}: ${name}`;
-        if (i + 1 === currentLevel) opt.selected = true;
+        opt.value = i+1; opt.innerText = `Level ${i+1}: ${name}`;
+        if (i+1 === currentLevel) opt.selected = true;
         lvlSelect.appendChild(opt);
     });
 
     async function loadLevelData() {
         try {
-            const response = await fetch(`phrases_${currentLevel}.json`);
-            const data = await response.json();
+            const resp = await fetch(`phrases_${currentLevel}.json`);
+            const data = await resp.json();
             phrasesData = data.phrases;
-            const available = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-            activePool = available.slice(0, 12);
+            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
             updateStats(); updateMap(); startNewRound();
         } catch (err) { console.error(err); }
     }
 
-    function toggleLanguageMode() {
-        reverseMode = document.getElementById('lang-toggle').checked;
-        updateMap(); startNewRound();
-    }
+    function toggleLang() { reverse = document.getElementById('lang-toggle').checked; updateMap(); startNewRound(); }
 
     function startNewRound() {
-        if (activePool.length === 0 || currentMode !== 'learning') return;
-        canAnswer = true;
-        document.getElementById('feedback').innerText = "";
+        if (!activePool.length || document.getElementById('tab-learning').className.indexOf('active') === -1) return;
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
-        document.getElementById('q-text').innerText = reverseMode ? currentTarget.pl : currentTarget.en;
+        document.getElementById('q-text').innerText = reverse ? currentTarget.pl : currentTarget.en;
+        document.getElementById('feedback').innerText = "";
         setTimeout(() => speak(currentTarget.pl), 300);
     }
 
-    function checkAnswer(phrase, tileElement) {
-        if (!canAnswer || currentMode !== 'learning') { speak(phrase.pl); return; }
+    function checkAnswer(phrase, el) {
         if (phrase.pl === currentTarget.pl) {
-            canAnswer = false;
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Correct! 🌟";
-            document.getElementById('feedback').style.color = "var(--pol-red)";
-            saveStats(); // Auto-save
+            saveStats(); showSaveToast();
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
-                    const poolIdx = activePool.findIndex(ap => ap.pl === phrase.pl);
-                    let replacement = phrasesData.find(candidate => (stats[candidate.pl] || 0) < THRESHOLD && !activePool.some(ap => ap.pl === candidate.pl));
-                    if (replacement) activePool[poolIdx] = replacement;
-                    else activePool.splice(poolIdx, 1);
+                    activePool = activePool.filter(p => p.pl !== phrase.pl);
+                    let next = phrasesData.find(p => (stats[p.pl]||0) < THRESHOLD && !activePool.includes(p));
+                    if (next) activePool.push(next);
                 }
                 updateStats(); updateMap();
-                if (activePool.length === 0) document.getElementById('overlay').style.display = 'flex';
-                else startNewRound();
+                if (!activePool.length) document.getElementById('overlay').style.display='flex'; else startNewRound();
             }, 800);
         } else {
             stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
-            tileElement.classList.add('wrong');
-            document.getElementById('feedback').innerText = `Nope! "${phrase.en}"`;
-            document.getElementById('feedback').style.color = "var(--wrong-blue)";
-            setTimeout(() => { tileElement.classList.remove('wrong'); updateMap(); startNewRound(); }, 1400);
+            el.classList.add('wrong');
+            setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1400);
         }
     }
 
     function updateMap() {
-        const area = document.getElementById('mastery-map');
-        area.innerHTML = '';
-        if (currentMode === 'learning') {
+        const area = document.getElementById('mastery-map'); area.innerHTML = '';
+        if (document.getElementById('tab-learning').className.indexOf('active') !== -1) {
             area.className = "grid";
             activePool.forEach(p => {
-                const tile = document.createElement('div');
-                tile.className = 'tile';
-                const count = stats[p.pl] || 0;
-                tile.innerText = reverseMode ? p.en : p.pl;
-                if (count > 0) {
-                    tile.style.backgroundColor = `rgba(220, 20, 60, ${Math.min(1, count / THRESHOLD)})`;
-                    if (count >= THRESHOLD) tile.style.color = "white";
-                }
+                const tile = document.createElement('div'); tile.className = 'tile';
+                tile.innerText = reverse ? p.en : p.pl;
+                const c = stats[p.pl] || 0;
+                if (c > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${c/THRESHOLD})`;
                 tile.onclick = () => checkAnswer(p, tile);
                 area.appendChild(tile);
             });
         } else {
             area.className = "mastered-list";
-            const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-            if (mastered.length === 0) {
-                area.innerHTML = '<div style="padding:20px; opacity:0.5; text-align:center;">No phrases banked yet!</div>';
-            }
-            mastered.forEach(p => {
-                const item = document.createElement('div');
-                item.className = 'banked-item';
+            phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).forEach(p => {
+                const item = document.createElement('div'); item.className = 'banked-item';
                 item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="speak('${p.pl}')">🔊</div>`;
                 area.appendChild(item);
             });
         }
     }
 
-    function updateStats() {
-        const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-        document.getElementById('progress-bar').style.width = (mastered.length / phrasesData.length) * 100 + "%";
-    }
-
-    function switchMode(m) {
-        currentMode = m;
-        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-        document.getElementById('tab-'+m).classList.add('active');
-        document.getElementById('quiz-ui').style.display = (m === 'learning') ? 'flex' : 'none';
-        updateMap();
-    }
-
-    function speak(text) {
-        const msg = new SpeechSynthesisUtterance(text);
-        if (plVoice) msg.voice = plVoice;
-        msg.lang = 'pl-PL';
-        window.speechSynthesis.speak(msg);
-    }
-
     function handleSearch() {
-        const query = document.getElementById('search-bar').value.toLowerCase();
-        const area = document.getElementById('mastery-map');
-        if (query.length < 1) { updateMap(); return; }
-        area.innerHTML = ''; area.className = "mastered-list";
-        phrasesData.filter(p => p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query))
-        .forEach(p => {
-            const item = document.createElement('div');
-            item.className = 'banked-item';
+        const q = document.getElementById('search-bar').value.toLowerCase();
+        if (!q) return updateMap();
+        const area = document.getElementById('mastery-map'); area.innerHTML = ''; area.className = "mastered-list";
+        phrasesData.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)).forEach(p => {
+            const item = document.createElement('div'); item.className = 'banked-item';
             item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="speak('${p.pl}')">🔊</div>`;
             area.appendChild(item);
         });
     }
 
-    function saveStats() {
-        localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
-        localStorage.setItem('pl_current_level_idx', currentLevel);
+    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
+    function downloadProgress() { 
+        const date = new Date().toLocaleDateString().replace(/\//g, '-');
+        const blob = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); 
+        const a = document.createElement("a"); 
+        a.href = URL.createObjectURL(blob); a.download = `polish_progress_${date}.txt`; a.click(); 
     }
-
-    function exportData() {
-        const dataStr = btoa(JSON.stringify({stats, level: currentLevel}));
-        const input = prompt("Your Export Code (Copy this to save, or paste a code to import):", dataStr);
-        if (input && input !== dataStr) {
-            try {
-                const parsed = JSON.parse(atob(input));
-                stats = parsed.stats; currentLevel = parsed.level;
-                saveStats(); location.reload();
-            } catch(e) { alert("Invalid code!"); }
-        }
-    }
-
-    function resetEverything() { if(confirm("Wipe all progress?")) { localStorage.clear(); location.reload(); } }
+    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
+    function showSaveToast() { const t = document.getElementById('save-toast'); t.style.display='block'; setTimeout(()=>t.style.display='none', 1000); }
+    function resetEverything() { if(confirm("Clear all progress?")) { localStorage.clear(); location.reload(); } }
+    function updateStats() { document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%"; }
+    function switchMode(m) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; document.getElementById('search-bar').value = ''; updateMap(); }
+    function speak(t) { const m = new SpeechSynthesisUtterance(t); if(plVoice) m.voice=plVoice; m.lang='pl-PL'; window.speechSynthesis.speak(m); }
     function changeLevel(v) { currentLevel = parseInt(v); saveStats(); loadLevelData(); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
     function advanceLevel() { currentLevel++; if(currentLevel > levelNames.length) currentLevel = 1; lvlSelect.value = currentLevel; changeLevel(currentLevel); document.getElementById('overlay').style.display='none'; }
