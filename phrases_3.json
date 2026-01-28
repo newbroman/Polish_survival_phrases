@@ -60,4 +60,25 @@
     { "id": "l3_51", "category": "Emergencies", "pl": "To pilne!", "en": "It's urgent!", "level": 2 },
     { "id": "l3_52", "category": "Emergencies", "pl": "Zgubiono bagaż", "en": "Lost luggage", "level": 2 },
     { "id": "l3_53", "category": "Emergencies", "pl": "Ukradli mi portfel", "en": "They stole my wallet", "level": 2 },
-    { "id": "l3_54", "category": "
+    { "id": "l3_54", "category": "Emergencies", "pl": "Potrzebuję lekarza", "en": "I need a doctor", "level": 2 },
+    { "id": "l3_55", "category": "Emergencies", "pl": "Gdzie jest komisariat?", "en": "Where is the police station?", "level": 2 },
+    { "id": "l3_56", "category": "Emergencies", "pl": "Zgubiłem się", "en": "I am lost", "level": 2 },
+    { "id": "l3_57", "category": "Emergencies", "pl": "Proszę wezwać pomoc", "en": "Please call for help", "level": 2 },
+
+    { "id": "l3_58", "category": "Work & Professional", "pl": "Pracuję nad tym", "en": "I am working on it", "level": 2 },
+    { "id": "l3_59", "category": "Work & Professional", "pl": "Potrzebuję feedbacku", "en": "I need feedback", "level": 2 },
+    { "id": "l3_60", "category": "Work & Professional", "pl": "Ustalmy spotkanie", "en": "Let's set a meeting", "level": 2 },
+    { "id": "l3_61", "category": "Work & Professional", "pl": "To jest priorytet", "en": "This is a priority", "level": 2 },
+    { "id": "l3_62", "category": "Work & Professional", "pl": "Prześlij mi to mailem", "en": "Send it to me by email", "level": 2 },
+
+    { "id": "l3_63", "category": "Nuance & Fillers", "pl": "W sumie...", "en": "Actually / All in all...", "level": 2 },
+    { "id": "l3_64", "category": "Nuance & Fillers", "pl": "Prawdę mówiąc...", "en": "To tell the truth...", "level": 2 },
+    { "id": "l3_65", "category": "Nuance & Fillers", "pl": "No wiesz...", "en": "Well you know...", "level": 2 },
+
+    { "id": "l3_66", "category": "Deadlines", "pl": "Na wczoraj", "en": "ASAP (Literally: for yesterday)", "level": 2 },
+    { "id": "l3_67", "category": "Deadlines", "pl": "Jaki jest termin?", "en": "What is the deadline?", "level": 2 },
+    { "id": "l3_68", "category": "Deadlines", "pl": "Spóźnię się", "en": "I will be late", "level": 2 },
+    { "id": "l3_69", "category": "Deadlines", "pl": "Zdążymy na czas", "en": "We will make it on time", "level": 2 },
+    { "id": "l3_70", "category": "Deadlines", "pl": "W ostatniej chwili", "en": "At the last minute", "level": 2 }
+  ]
+}
