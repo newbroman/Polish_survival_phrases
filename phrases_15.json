@@ -1,81 +1,497 @@
 {
-  "lastUpdated": "2026-01-27",
+  "level": 15,
+  "description": "Nature & Environment",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "n1", "category": "Landscapes", "pl": "Przyroda", "en": "Nature", "level": 15 },
-    { "id": "n2", "category": "Landscapes", "pl": "Góry", "en": "Mountains", "level": 15 },
-    { "id": "n3", "category": "Landscapes", "pl": "Las", "en": "Forest", "level": 15 },
-    { "id": "n4", "category": "Landscapes", "pl": "Morze", "en": "Sea", "level": 15 },
-    { "id": "n5", "category": "Landscapes", "pl": "Jezioro", "en": "Lake", "level": 15 },
-    { "id": "n6", "category": "Landscapes", "pl": "Rzeka", "en": "River", "level": 15 },
-    { "id": "n7", "category": "Landscapes", "pl": "Plaża", "en": "Beach", "level": 15 },
-    { "id": "n8", "category": "Landscapes", "pl": "Pole", "en": "Field", "level": 15 },
-    { "id": "n9", "category": "Landscapes", "pl": "Wieś", "en": "Countryside / Village", "level": 15 },
-    { "id": "n10", "category": "Landscapes", "pl": "Wyspa", "en": "Island", "level": 15 },
-
-    { "id": "w11", "category": "Weather & Space", "pl": "Pogoda", "en": "Weather", "level": 15 },
-    { "id": "w12", "category": "Weather & Space", "pl": "Słońce", "en": "Sun", "level": 15 },
-    { "id": "w13", "category": "Weather & Space", "pl": "Księżyc", "en": "Moon", "level": 15 },
-    { "id": "w14", "category": "Weather & Space", "pl": "Gwiazdy", "en": "Stars", "level": 15 },
-    { "id": "w15", "category": "Weather & Space", "pl": "Niebo", "en": "Sky", "level": 15 },
-    { "id": "w16", "category": "Weather & Space", "pl": "Chmura", "en": "Cloud", "level": 15 },
-    { "id": "w17", "category": "Weather & Space", "pl": "Deszcz", "en": "Rain", "level": 15 },
-    { "id": "w18", "category": "Weather & Space", "pl": "Śnieg", "en": "Snow", "level": 15 },
-    { "id": "w19", "category": "Weather & Space", "pl": "Wiatr", "en": "Wind", "level": 15 },
-    { "id": "w20", "category": "Weather & Space", "pl": "Burza", "en": "Storm", "level": 15 },
-
-    { "id": "a21", "category": "Animals", "pl": "Zwierzę", "en": "Animal", "level": 15 },
-    { "id": "a22", "category": "Animals", "pl": "Pies", "en": "Dog", "level": 15 },
-    { "id": "a23", "category": "Animals", "pl": "Kot", "en": "Cat", "level": 15 },
-    { "id": "a24", "category": "Animals", "pl": "Koń", "en": "Horse", "level": 15 },
-    { "id": "a25", "category": "Animals", "pl": "Ptak", "en": "Bird", "level": 15 },
-    { "id": "a26", "category": "Animals", "pl": "Ryba", "en": "Fish", "level": 15 },
-    { "id": "a27", "category": "Animals", "pl": "Krowa", "en": "Cow", "level": 15 },
-    { "id": "a28", "category": "Animals", "pl": "Świnia", "en": "Pig", "level": 15 },
-    { "id": "a29", "category": "Animals", "pl": "Owca", "en": "Sheep", "level": 15 },
-    { "id": "a30", "category": "Animals", "pl": "Niedźwiedź", "en": "Bear", "level": 15 },
-
-    { "id": "p31", "category": "Plants", "pl": "Roślina", "en": "Plant", "level": 15 },
-    { "id": "p32", "category": "Plants", "pl": "Drzewo", "en": "Tree", "level": 15 },
-    { "id": "p33", "category": "Plants", "pl": "Kwiat", "en": "Flower", "level": 15 },
-    { "id": "p34", "category": "Plants", "pl": "Trawa", "en": "Grass", "level": 15 },
-    { "id": "p35", "category": "Plants", "pl": "Liść", "en": "Leaf", "level": 15 },
-    { "id": "p36", "category": "Plants", "pl": "Ogród", "en": "Garden", "level": 15 },
-    { "id": "p37", "category": "Plants", "pl": "Park narodowy", "en": "National park", "level": 15 },
-    { "id": "p38", "category": "Plants", "pl": "Sadzić", "en": "To plant", "level": 15 },
-    { "id": "p39", "category": "Plants", "pl": "Rosnąć", "en": "To grow", "level": 15 },
-    { "id": "p40", "category": "Plants", "pl": "Kwitnąć", "en": "To bloom", "level": 15 },
-
-    { "id": "e41", "category": "Environment", "pl": "Środowisko", "en": "Environment", "level": 15 },
-    { "id": "e42", "category": "Environment", "pl": "Ziemia", "en": "Earth / Ground", "level": 15 },
-    { "id": "e43", "category": "Environment", "pl": "Powietrze", "en": "Air", "level": 15 },
-    { "id": "e44", "category": "Environment", "pl": "Woda pitna", "en": "Drinking water", "level": 15 },
-    { "id": "e45", "category": "Environment", "pl": "Energia słoneczna", "en": "Solar energy", "level": 15 },
-    { "id": "e46", "category": "Environment", "pl": "Recykling", "en": "Recycling", "level": 15 },
-    { "id": "e47", "category": "Environment", "pl": "Plastik", "en": "Plastic", "level": 15 },
-    { "id": "e48", "category": "Environment", "pl": "Zmiana klimatu", "en": "Climate change", "level": 15 },
-    { "id": "e49", "category": "Environment", "pl": "Chronić", "en": "To protect", "level": 15 },
-    { "id": "e50", "category": "Environment", "pl": "Ratować", "en": "To save / rescue", "level": 15 },
-
-    { "id": "d51", "category": "Descriptions", "pl": "Ciepło", "en": "Warm", "level": 15 },
-    { "id": "d52", "category": "Descriptions", "pl": "Zimno", "en": "Cold", "level": 15 },
-    { "id": "d53", "category": "Descriptions", "pl": "Gorąco", "en": "Hot", "level": 15 },
-    { "id": "d54", "category": "Descriptions", "pl": "Mokro", "en": "Wet", "level": 15 },
-    { "id": "d55", "category": "Descriptions", "pl": "Sucho", "en": "Dry", "level": 15 },
-    { "id": "d56", "category": "Descriptions", "pl": "Słonecznie", "en": "Sunny", "level": 15 },
-    { "id": "d57", "category": "Descriptions", "pl": "Pochmurno", "en": "Cloudy", "level": 15 },
-    { "id": "d58", "category": "Descriptions", "pl": "Mgła", "en": "Fog", "level": 15 },
-    { "id": "d59", "category": "Descriptions", "pl": "Piękny widok", "en": "Beautiful view", "level": 15 },
-    { "id": "d60", "category": "Descriptions", "pl": "Świeże powietrze", "en": "Fresh air", "level": 15 },
-
-    { "id": "q61", "category": "Questions & Action", "pl": "Jaka jest dziś pogoda?", "en": "What is the weather like today?", "level": 15 },
-    { "id": "q62", "category": "Questions & Action", "pl": "Będzie padać?", "en": "Is it going to rain?", "level": 15 },
-    { "id": "q63", "category": "Questions & Action", "pl": "Lubisz chodzić po górach?", "en": "Do you like hiking in the mountains?", "level": 15 },
-    { "id": "q64", "category": "Questions & Action", "pl": "Czy w jeziorze można się kąpać?", "en": "Can one swim in the lake?", "level": 15 },
-    { "id": "q65", "category": "Questions & Action", "pl": "Widziałeś to zwierzę?", "en": "Did you see that animal?", "level": 15 },
-    { "id": "q66", "category": "Questions & Action", "pl": "Chodźmy na spacer", "en": "Let's go for a walk", "level": 15 },
-    { "id": "q67", "category": "Questions & Action", "pl": "Uważaj, to jest niebezpieczne", "en": "Watch out, it's dangerous", "level": 15 },
-    { "id": "q68", "category": "Questions & Action", "pl": "Jakie jest twoje ulubione zwierzę?", "en": "What is your favorite animal?", "level": 15 },
-    { "id": "q69", "category": "Questions & Action", "pl": "Woda jest zimna", "en": "The water is cold", "level": 15 },
-    { "id": "q70", "category": "Questions & Action", "pl": "Uwielbiam naturę", "en": "I love nature", "level": 15 }
+    {
+      "id": "a21",
+      "category": "Animals",
+      "pl": "Zwierzę",
+      "en": "Animal",
+      "level": 15
+    },
+    {
+      "id": "a22",
+      "category": "Animals",
+      "pl": "Pies",
+      "en": "Dog",
+      "level": 15
+    },
+    {
+      "id": "a23",
+      "category": "Animals",
+      "pl": "Kot",
+      "en": "Cat",
+      "level": 15
+    },
+    {
+      "id": "a24",
+      "category": "Animals",
+      "pl": "Koń",
+      "en": "Horse",
+      "level": 15
+    },
+    {
+      "id": "a25",
+      "category": "Animals",
+      "pl": "Ptak",
+      "en": "Bird",
+      "level": 15
+    },
+    {
+      "id": "a26",
+      "category": "Animals",
+      "pl": "Ryba",
+      "en": "Fish",
+      "level": 15
+    },
+    {
+      "id": "a27",
+      "category": "Animals",
+      "pl": "Krowa",
+      "en": "Cow",
+      "level": 15
+    },
+    {
+      "id": "a28",
+      "category": "Animals",
+      "pl": "Świnia",
+      "en": "Pig",
+      "level": 15
+    },
+    {
+      "id": "a29",
+      "category": "Animals",
+      "pl": "Owca",
+      "en": "Sheep",
+      "level": 15
+    },
+    {
+      "id": "a30",
+      "category": "Animals",
+      "pl": "Niedźwiedź",
+      "en": "Bear",
+      "level": 15
+    },
+    {
+      "id": "d51",
+      "category": "Descriptions",
+      "pl": "Ciepło",
+      "en": "Warm",
+      "level": 15
+    },
+    {
+      "id": "d52",
+      "category": "Descriptions",
+      "pl": "Zimno",
+      "en": "Cold",
+      "level": 15
+    },
+    {
+      "id": "d53",
+      "category": "Descriptions",
+      "pl": "Gorąco",
+      "en": "Hot",
+      "level": 15
+    },
+    {
+      "id": "d54",
+      "category": "Descriptions",
+      "pl": "Mokro",
+      "en": "Wet",
+      "level": 15
+    },
+    {
+      "id": "d55",
+      "category": "Descriptions",
+      "pl": "Sucho",
+      "en": "Dry",
+      "level": 15
+    },
+    {
+      "id": "d56",
+      "category": "Descriptions",
+      "pl": "Słonecznie",
+      "en": "Sunny",
+      "level": 15
+    },
+    {
+      "id": "d57",
+      "category": "Descriptions",
+      "pl": "Pochmurno",
+      "en": "Cloudy",
+      "level": 15
+    },
+    {
+      "id": "d58",
+      "category": "Descriptions",
+      "pl": "Mgła",
+      "en": "Fog",
+      "level": 15
+    },
+    {
+      "id": "d59",
+      "category": "Descriptions",
+      "pl": "Piękny widok",
+      "en": "Beautiful view",
+      "level": 15
+    },
+    {
+      "id": "d60",
+      "category": "Descriptions",
+      "pl": "Świeże powietrze",
+      "en": "Fresh air",
+      "level": 15
+    },
+    {
+      "id": "e41",
+      "category": "Environment",
+      "pl": "Środowisko",
+      "en": "Environment",
+      "level": 15
+    },
+    {
+      "id": "e42",
+      "category": "Environment",
+      "pl": "Ziemia",
+      "en": "Earth / Ground",
+      "level": 15
+    },
+    {
+      "id": "e43",
+      "category": "Environment",
+      "pl": "Powietrze",
+      "en": "Air",
+      "level": 15
+    },
+    {
+      "id": "e44",
+      "category": "Environment",
+      "pl": "Woda pitna",
+      "en": "Drinking water",
+      "level": 15
+    },
+    {
+      "id": "e45",
+      "category": "Environment",
+      "pl": "Energia słoneczna",
+      "en": "Solar energy",
+      "level": 15
+    },
+    {
+      "id": "e46",
+      "category": "Environment",
+      "pl": "Recykling",
+      "en": "Recycling",
+      "level": 15
+    },
+    {
+      "id": "e47",
+      "category": "Environment",
+      "pl": "Plastik",
+      "en": "Plastic",
+      "level": 15
+    },
+    {
+      "id": "e48",
+      "category": "Environment",
+      "pl": "Zmiana klimatu",
+      "en": "Climate change",
+      "level": 15
+    },
+    {
+      "id": "e49",
+      "category": "Environment",
+      "pl": "Chronić",
+      "en": "To protect",
+      "level": 15
+    },
+    {
+      "id": "e50",
+      "category": "Environment",
+      "pl": "Ratować",
+      "en": "To save / rescue",
+      "level": 15
+    },
+    {
+      "id": "n10",
+      "category": "Landscapes",
+      "pl": "Wyspa",
+      "en": "Island",
+      "level": 15
+    },
+    {
+      "id": "n8",
+      "category": "Landscapes",
+      "pl": "Pole",
+      "en": "Field",
+      "level": 15
+    },
+    {
+      "id": "p31",
+      "category": "Plants",
+      "pl": "Roślina",
+      "en": "Plant",
+      "level": 15
+    },
+    {
+      "id": "p32",
+      "category": "Plants",
+      "pl": "Drzewo",
+      "en": "Tree",
+      "level": 15
+    },
+    {
+      "id": "p33",
+      "category": "Plants",
+      "pl": "Kwiat",
+      "en": "Flower",
+      "level": 15
+    },
+    {
+      "id": "p34",
+      "category": "Plants",
+      "pl": "Trawa",
+      "en": "Grass",
+      "level": 15
+    },
+    {
+      "id": "p35",
+      "category": "Plants",
+      "pl": "Liść",
+      "en": "Leaf",
+      "level": 15
+    },
+    {
+      "id": "p36",
+      "category": "Plants",
+      "pl": "Ogród",
+      "en": "Garden",
+      "level": 15
+    },
+    {
+      "id": "p37",
+      "category": "Plants",
+      "pl": "Park narodowy",
+      "en": "National park",
+      "level": 15
+    },
+    {
+      "id": "p38",
+      "category": "Plants",
+      "pl": "Sadzić",
+      "en": "To plant",
+      "level": 15
+    },
+    {
+      "id": "p39",
+      "category": "Plants",
+      "pl": "Rosnąć",
+      "en": "To grow",
+      "level": 15
+    },
+    {
+      "id": "p40",
+      "category": "Plants",
+      "pl": "Kwitnąć",
+      "en": "To bloom",
+      "level": 15
+    },
+    {
+      "id": "q61",
+      "category": "Questions & Action",
+      "pl": "Jaka jest dziś pogoda?",
+      "en": "What is the weather like today?",
+      "level": 15
+    },
+    {
+      "id": "q62",
+      "category": "Questions & Action",
+      "pl": "Będzie padać?",
+      "en": "Is it going to rain?",
+      "level": 15
+    },
+    {
+      "id": "q63",
+      "category": "Questions & Action",
+      "pl": "Lubisz chodzić po górach?",
+      "en": "Do you like hiking in the mountains?",
+      "level": 15
+    },
+    {
+      "id": "q64",
+      "category": "Questions & Action",
+      "pl": "Czy w jeziorze można się kąpać?",
+      "en": "Can one swim in the lake?",
+      "level": 15
+    },
+    {
+      "id": "q65",
+      "category": "Questions & Action",
+      "pl": "Widziałeś to zwierzę?",
+      "en": "Did you see that animal?",
+      "level": 15
+    },
+    {
+      "id": "q66",
+      "category": "Questions & Action",
+      "pl": "Chodźmy na spacer",
+      "en": "Let's go for a walk",
+      "level": 15
+    },
+    {
+      "id": "q67",
+      "category": "Questions & Action",
+      "pl": "Uważaj, to jest niebezpieczne",
+      "en": "Watch out, it's dangerous",
+      "level": 15
+    },
+    {
+      "id": "q68",
+      "category": "Questions & Action",
+      "pl": "Jakie jest twoje ulubione zwierzę?",
+      "en": "What is your favorite animal?",
+      "level": 15
+    },
+    {
+      "id": "q69",
+      "category": "Questions & Action",
+      "pl": "Woda jest zimna",
+      "en": "The water is cold",
+      "level": 15
+    },
+    {
+      "id": "q70",
+      "category": "Questions & Action",
+      "pl": "Uwielbiam naturę",
+      "en": "I love nature",
+      "level": 15
+    },
+    {
+      "id": "w11",
+      "category": "Weather & Space",
+      "pl": "Pogoda",
+      "en": "Weather",
+      "level": 15
+    },
+    {
+      "id": "w15",
+      "category": "Weather & Space",
+      "pl": "Niebo",
+      "en": "Sky",
+      "level": 15
+    },
+    {
+      "id": "w16",
+      "category": "Weather & Space",
+      "pl": "Chmura",
+      "en": "Cloud",
+      "level": 15
+    },
+    {
+      "id": "w17",
+      "category": "Weather & Space",
+      "pl": "Deszcz",
+      "en": "Rain",
+      "level": 15
+    },
+    {
+      "id": "w18",
+      "category": "Weather & Space",
+      "pl": "Śnieg",
+      "en": "Snow",
+      "level": 15
+    },
+    {
+      "id": "w19",
+      "category": "Weather & Space",
+      "pl": "Wiatr",
+      "en": "Wind",
+      "level": 15
+    },
+    {
+      "id": "w20",
+      "category": "Weather & Space",
+      "pl": "Burza",
+      "en": "Storm",
+      "level": 15
+    },
+    {
+      "id": "l15_72",
+      "category": "Landscapes",
+      "pl": "Wzgórze",
+      "en": "Hill",
+      "level": 15
+    },
+    {
+      "id": "l15_73",
+      "category": "Landscapes",
+      "pl": "Dolina",
+      "en": "Valley",
+      "level": 15
+    },
+    {
+      "id": "l15_75",
+      "category": "Landscapes",
+      "pl": "Pustynia",
+      "en": "Desert",
+      "level": 15
+    },
+    {
+      "id": "l15_76",
+      "category": "Landscapes",
+      "pl": "Dżungla",
+      "en": "Jungle",
+      "level": 15
+    },
+    {
+      "id": "l15_77",
+      "category": "Landscapes",
+      "pl": "Wodospad",
+      "en": "Waterfall",
+      "level": 15
+    },
+    {
+      "id": "l15_78",
+      "category": "Weather & Space",
+      "pl": "Chmury",
+      "en": "Clouds",
+      "level": 15
+    },
+    {
+      "id": "l15_81",
+      "category": "Landscapes",
+      "pl": "Jaskinia",
+      "en": "Cave",
+      "level": 15
+    },
+    {
+      "id": "l15_82",
+      "category": "Landscapes",
+      "pl": "Klif",
+      "en": "Cliff",
+      "level": 15
+    },
+    {
+      "id": "l15_86",
+      "category": "Animals",
+      "pl": "Wąż",
+      "en": "Snake",
+      "level": 15
+    },
+    {
+      "id": "l15_87",
+      "category": "Animals",
+      "pl": "Żaba",
+      "en": "Frog",
+      "level": 15
+    },
+    {
+      "id": "l15_88",
+      "category": "Plants",
+      "pl": "Mech",
+      "en": "Moss",
+      "level": 15
+    }
   ]
 }

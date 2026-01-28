@@ -1,81 +1,497 @@
 {
-  "lastUpdated": "2026-01-27",
+  "level": 4,
+  "description": "Daily Activities & Descriptions",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "t1", "category": "Time & Planning", "pl": "W przyszłym tygodniu", "en": "Next week", "level": 4 },
-    { "id": "t2", "category": "Time & Planning", "pl": "W zeszłym miesiącu", "en": "Last month", "level": 4 },
-    { "id": "t3", "category": "Time & Planning", "pl": "Za dziesięć minut", "en": "In ten minutes", "level": 4 },
-    { "id": "t4", "category": "Time & Planning", "pl": "Nigdy", "en": "Never", "level": 4 },
-    { "id": "t5", "category": "Time & Planning", "pl": "Zawsze", "en": "Always", "level": 4 },
-    { "id": "t6", "category": "Time & Planning", "pl": "Często", "en": "Often", "level": 4 },
-    { "id": "t7", "category": "Time & Planning", "pl": "Rzadko", "en": "Rarely", "level": 4 },
-    { "id": "t8", "category": "Time & Planning", "pl": "Wcześnie", "en": "Early", "level": 4 },
-    { "id": "t9", "category": "Time & Planning", "pl": "Późno", "en": "Late", "level": 4 },
-    { "id": "t10", "category": "Time & Planning", "pl": "Już", "en": "Already", "level": 4 },
-
-    { "id": "d11", "category": "Descriptions", "pl": "Duży / Mały", "en": "Big / Small", "level": 4 },
-    { "id": "d12", "category": "Descriptions", "pl": "Gorący / Zimny", "en": "Hot / Cold", "level": 4 },
-    { "id": "d13", "category": "Descriptions", "pl": "Nowy / Stary", "en": "New / Old", "level": 4 },
-    { "id": "d14", "category": "Descriptions", "pl": "Tani / Drogi", "en": "Cheap / Expensive", "level": 4 },
-    { "id": "d15", "category": "Descriptions", "pl": "Ciężki / Lekki", "en": "Heavy / Light", "level": 4 },
-    { "id": "d16", "category": "Descriptions", "pl": "Łatwy / Trudny", "en": "Easy / Difficult", "level": 4 },
-    { "id": "d17", "category": "Descriptions", "pl": "Piękny / Brzydki", "en": "Beautiful / Ugly", "level": 4 },
-    { "id": "d18", "category": "Descriptions", "pl": "Czysty / Brudny", "en": "Clean / Dirty", "level": 4 },
-    { "id": "d19", "category": "Descriptions", "pl": "Wesoły / Smutny", "en": "Happy / Sad", "level": 4 },
-    { "id": "d20", "category": "Descriptions", "pl": "Zmęczony", "en": "Tired", "level": 4 },
-
-    { "id": "o21", "category": "Opinions", "pl": "Moim zdaniem", "en": "In my opinion", "level": 4 },
-    { "id": "o22", "category": "Opinions", "pl": "Zgadzam się", "en": "I agree", "level": 4 },
-    { "id": "o23", "category": "Opinions", "pl": "Nie zgadzam się", "en": "I don't agree", "level": 4 },
-    { "id": "o24", "category": "Opinions", "pl": "Masz rację", "en": "You are right", "level": 4 },
-    { "id": "o25", "category": "Opinions", "pl": "To prawda", "en": "That is true", "level": 4 },
-    { "id": "o26", "category": "Opinions", "pl": "To nieprawda", "en": "That is not true", "level": 4 },
-    { "id": "o27", "category": "Opinions", "pl": "Świetny pomysł!", "en": "Great idea!", "level": 4 },
-    { "id": "o28", "category": "Opinions", "pl": "Szkoda", "en": "That's a pity / Too bad", "level": 4 },
-    { "id": "o29", "category": "Opinions", "pl": "Oczywiście", "en": "Of course", "level": 4 },
-    { "id": "o30", "category": "Opinions", "pl": "Na pewno", "en": "For sure / Definitely", "level": 4 },
-
-    { "id": "h31", "category": "Home & Life", "pl": "Dom", "en": "House / Home", "level": 4 },
-    { "id": "h32", "category": "Home & Life", "pl": "Mieszkanie", "en": "Apartment", "level": 4 },
-    { "id": "h33", "category": "Home & Life", "pl": "Kuchnia", "en": "Kitchen", "level": 4 },
-    { "id": "h34", "category": "Home & Life", "pl": "Łazienka", "en": "Bathroom", "level": 4 },
-    { "id": "h35", "category": "Home & Life", "pl": "Pokój", "en": "Room", "level": 4 },
-    { "id": "h36", "category": "Home & Life", "pl": "Łóżko", "en": "Bed", "level": 4 },
-    { "id": "h37", "category": "Home & Life", "pl": "Klucze", "en": "Keys", "level": 4 },
-    { "id": "h38", "category": "Home & Life", "pl": "Telefon", "en": "Phone", "level": 4 },
-    { "id": "h39", "category": "Home & Life", "pl": "Pieniądze", "en": "Money", "level": 4 },
-    { "id": "h40", "category": "Home & Life", "pl": "Praca", "en": "Work / Job", "level": 4 },
-
-    { "id": "a41", "category": "Activities", "pl": "Idę do...", "en": "I am going to...", "level": 4 },
-    { "id": "a42", "category": "Activities", "pl": "Robię zakupy", "en": "I am doing shopping", "level": 4 },
-    { "id": "a43", "category": "Activities", "pl": "Czekam na...", "en": "I am waiting for...", "level": 4 },
-    { "id": "a44", "category": "Activities", "pl": "Słucham muzyki", "en": "I am listening to music", "level": 4 },
-    { "id": "a45", "category": "Activities", "pl": "Oglądam film", "en": "I am watching a movie", "level": 4 },
-    { "id": "a46", "category": "Activities", "pl": "Czytam książkę", "en": "I am reading a book", "level": 4 },
-    { "id": "a47", "category": "Activities", "pl": "Uczę się polskiego", "en": "I am learning Polish", "level": 4 },
-    { "id": "a48", "category": "Activities", "pl": "Gotuję obiad", "en": "I am cooking dinner", "level": 4 },
-    { "id": "a49", "category": "Activities", "pl": "Piję kawę", "en": "I am drinking coffee", "level": 4 },
-    { "id": "a50", "category": "Activities", "pl": "Jem śniadanie", "en": "I am eating breakfast", "level": 4 },
-
-    { "id": "s51", "category": "Social", "pl": "Co słychać?", "en": "What's up?", "level": 4 },
-    { "id": "s52", "category": "Social", "pl": "Wszystko w porządku", "en": "Everything is fine", "level": 4 },
-    { "id": "s53", "category": "Social", "pl": "Nic nowego", "en": "Nothing new", "level": 4 },
-    { "id": "s54", "category": "Social", "pl": "Jak się czujesz?", "en": "How are you feeling?", "level": 4 },
-    { "id": "s55", "category": "Social", "pl": "Czuję się dobrze", "en": "I feel good", "level": 4 },
-    { "id": "s56", "category": "Social", "pl": "Jestem chory", "en": "I am sick (male)", "level": 4 },
-    { "id": "s57", "category": "Social", "pl": "Baw się dobrze!", "en": "Have fun!", "level": 4 },
-    { "id": "s58", "category": "Social", "pl": "Powodzenia!", "en": "Good luck!", "level": 4 },
-    { "id": "s59", "category": "Social", "pl": "Gratulacje!", "en": "Congratulations!", "level": 4 },
-    { "id": "s60", "category": "Social", "pl": "Wszystkiego najlepszego!", "en": "All the best / Happy Birthday!", "level": 4 },
-
-    { "id": "u61", "category": "Common Verbs", "pl": "Chcę", "en": "I want", "level": 4 },
-    { "id": "u62", "category": "Common Verbs", "pl": "Muszę", "en": "I must / I have to", "level": 4 },
-    { "id": "u63", "category": "Common Verbs", "pl": "Mogę", "en": "I can / I am able to", "level": 4 },
-    { "id": "u64", "category": "Common Verbs", "pl": "Lubię", "en": "I like", "level": 4 },
-    { "id": "u65", "category": "Common Verbs", "pl": "Potrzebuję", "en": "I need", "level": 4 },
-    { "id": "u66", "category": "Common Verbs", "pl": "Rozumiem", "en": "I understand", "level": 4 },
-    { "id": "u67", "category": "Common Verbs", "pl": "Pamiętam", "en": "I remember", "level": 4 },
-    { "id": "u68", "category": "Common Verbs", "pl": "Zapomniałem", "en": "I forgot (male)", "level": 4 },
-    { "id": "u69", "category": "Common Verbs", "pl": "Wiem", "en": "I know", "level": 4 },
-    { "id": "u70", "category": "Common Verbs", "pl": "Myślę, że...", "en": "I think that...", "level": 4 }
+    {
+      "id": "a41",
+      "category": "Activities",
+      "pl": "Idę do...",
+      "en": "I am going to...",
+      "level": 4
+    },
+    {
+      "id": "a42",
+      "category": "Activities",
+      "pl": "Robię zakupy",
+      "en": "I am doing shopping",
+      "level": 4
+    },
+    {
+      "id": "a43",
+      "category": "Activities",
+      "pl": "Czekam na...",
+      "en": "I am waiting for...",
+      "level": 4
+    },
+    {
+      "id": "a44",
+      "category": "Activities",
+      "pl": "Słucham muzyki",
+      "en": "I am listening to music",
+      "level": 4
+    },
+    {
+      "id": "a45",
+      "category": "Activities",
+      "pl": "Oglądam film",
+      "en": "I am watching a movie",
+      "level": 4
+    },
+    {
+      "id": "a46",
+      "category": "Activities",
+      "pl": "Czytam książkę",
+      "en": "I am reading a book",
+      "level": 4
+    },
+    {
+      "id": "a47",
+      "category": "Activities",
+      "pl": "Uczę się polskiego",
+      "en": "I am learning Polish",
+      "level": 4
+    },
+    {
+      "id": "a48",
+      "category": "Activities",
+      "pl": "Gotuję obiad",
+      "en": "I am cooking dinner",
+      "level": 4
+    },
+    {
+      "id": "a49",
+      "category": "Activities",
+      "pl": "Piję kawę",
+      "en": "I am drinking coffee",
+      "level": 4
+    },
+    {
+      "id": "a50",
+      "category": "Activities",
+      "pl": "Jem śniadanie",
+      "en": "I am eating breakfast",
+      "level": 4
+    },
+    {
+      "id": "d11",
+      "category": "Descriptions",
+      "pl": "Duży / Mały",
+      "en": "Big / Small",
+      "level": 4
+    },
+    {
+      "id": "d12",
+      "category": "Descriptions",
+      "pl": "Gorący / Zimny",
+      "en": "Hot / Cold",
+      "level": 4
+    },
+    {
+      "id": "d13",
+      "category": "Descriptions",
+      "pl": "Nowy / Stary",
+      "en": "New / Old",
+      "level": 4
+    },
+    {
+      "id": "d14",
+      "category": "Descriptions",
+      "pl": "Tani / Drogi",
+      "en": "Cheap / Expensive",
+      "level": 4
+    },
+    {
+      "id": "d15",
+      "category": "Descriptions",
+      "pl": "Ciężki / Lekki",
+      "en": "Heavy / Light",
+      "level": 4
+    },
+    {
+      "id": "d16",
+      "category": "Descriptions",
+      "pl": "Łatwy / Trudny",
+      "en": "Easy / Difficult",
+      "level": 4
+    },
+    {
+      "id": "d17",
+      "category": "Descriptions",
+      "pl": "Piękny / Brzydki",
+      "en": "Beautiful / Ugly",
+      "level": 4
+    },
+    {
+      "id": "d18",
+      "category": "Descriptions",
+      "pl": "Czysty / Brudny",
+      "en": "Clean / Dirty",
+      "level": 4
+    },
+    {
+      "id": "d19",
+      "category": "Descriptions",
+      "pl": "Wesoły / Smutny",
+      "en": "Happy / Sad",
+      "level": 4
+    },
+    {
+      "id": "d20",
+      "category": "Descriptions",
+      "pl": "Zmęczony",
+      "en": "Tired",
+      "level": 4
+    },
+    {
+      "id": "h31",
+      "category": "Home & Life",
+      "pl": "Dom",
+      "en": "House / Home",
+      "level": 4
+    },
+    {
+      "id": "h32",
+      "category": "Home & Life",
+      "pl": "Mieszkanie",
+      "en": "Apartment",
+      "level": 4
+    },
+    {
+      "id": "h33",
+      "category": "Home & Life",
+      "pl": "Kuchnia",
+      "en": "Kitchen",
+      "level": 4
+    },
+    {
+      "id": "h34",
+      "category": "Home & Life",
+      "pl": "Łazienka",
+      "en": "Bathroom",
+      "level": 4
+    },
+    {
+      "id": "h35",
+      "category": "Home & Life",
+      "pl": "Pokój",
+      "en": "Room",
+      "level": 4
+    },
+    {
+      "id": "h36",
+      "category": "Home & Life",
+      "pl": "Łóżko",
+      "en": "Bed",
+      "level": 4
+    },
+    {
+      "id": "h37",
+      "category": "Home & Life",
+      "pl": "Klucze",
+      "en": "Keys",
+      "level": 4
+    },
+    {
+      "id": "h38",
+      "category": "Home & Life",
+      "pl": "Telefon",
+      "en": "Phone",
+      "level": 4
+    },
+    {
+      "id": "h39",
+      "category": "Home & Life",
+      "pl": "Pieniądze",
+      "en": "Money",
+      "level": 4
+    },
+    {
+      "id": "h40",
+      "category": "Home & Life",
+      "pl": "Praca",
+      "en": "Work / Job",
+      "level": 4
+    },
+    {
+      "id": "o21",
+      "category": "Opinions",
+      "pl": "Moim zdaniem",
+      "en": "In my opinion",
+      "level": 4
+    },
+    {
+      "id": "o22",
+      "category": "Opinions",
+      "pl": "Zgadzam się",
+      "en": "I agree",
+      "level": 4
+    },
+    {
+      "id": "o25",
+      "category": "Opinions",
+      "pl": "To prawda",
+      "en": "That is true",
+      "level": 4
+    },
+    {
+      "id": "o26",
+      "category": "Opinions",
+      "pl": "To nieprawda",
+      "en": "That is not true",
+      "level": 4
+    },
+    {
+      "id": "o27",
+      "category": "Opinions",
+      "pl": "Świetny pomysł!",
+      "en": "Great idea!",
+      "level": 4
+    },
+    {
+      "id": "o28",
+      "category": "Opinions",
+      "pl": "Szkoda",
+      "en": "That's a pity / Too bad",
+      "level": 4
+    },
+    {
+      "id": "s52",
+      "category": "Social",
+      "pl": "Wszystko w porządku",
+      "en": "Everything is fine",
+      "level": 4
+    },
+    {
+      "id": "s54",
+      "category": "Social",
+      "pl": "Jak się czujesz?",
+      "en": "How are you feeling?",
+      "level": 4
+    },
+    {
+      "id": "s55",
+      "category": "Social",
+      "pl": "Czuję się dobrze",
+      "en": "I feel good",
+      "level": 4
+    },
+    {
+      "id": "s57",
+      "category": "Social",
+      "pl": "Baw się dobrze!",
+      "en": "Have fun!",
+      "level": 4
+    },
+    {
+      "id": "s58",
+      "category": "Social",
+      "pl": "Powodzenia!",
+      "en": "Good luck!",
+      "level": 4
+    },
+    {
+      "id": "s60",
+      "category": "Social",
+      "pl": "Wszystkiego najlepszego!",
+      "en": "All the best / Happy Birthday!",
+      "level": 4
+    },
+    {
+      "id": "t10",
+      "category": "Time & Planning",
+      "pl": "Już",
+      "en": "Already",
+      "level": 4
+    },
+    {
+      "id": "t2",
+      "category": "Time & Planning",
+      "pl": "W zeszłym miesiącu",
+      "en": "Last month",
+      "level": 4
+    },
+    {
+      "id": "t6",
+      "category": "Time & Planning",
+      "pl": "Często",
+      "en": "Often",
+      "level": 4
+    },
+    {
+      "id": "t7",
+      "category": "Time & Planning",
+      "pl": "Rzadko",
+      "en": "Rarely",
+      "level": 4
+    },
+    {
+      "id": "t8",
+      "category": "Time & Planning",
+      "pl": "Wcześnie",
+      "en": "Early",
+      "level": 4
+    },
+    {
+      "id": "t9",
+      "category": "Time & Planning",
+      "pl": "Późno",
+      "en": "Late",
+      "level": 4
+    },
+    {
+      "id": "u61",
+      "category": "Common Verbs",
+      "pl": "Chcę",
+      "en": "I want",
+      "level": 4
+    },
+    {
+      "id": "u62",
+      "category": "Common Verbs",
+      "pl": "Muszę",
+      "en": "I must / I have to",
+      "level": 4
+    },
+    {
+      "id": "u63",
+      "category": "Common Verbs",
+      "pl": "Mogę",
+      "en": "I can / I am able to",
+      "level": 4
+    },
+    {
+      "id": "u64",
+      "category": "Common Verbs",
+      "pl": "Lubię",
+      "en": "I like",
+      "level": 4
+    },
+    {
+      "id": "u65",
+      "category": "Common Verbs",
+      "pl": "Potrzebuję",
+      "en": "I need",
+      "level": 4
+    },
+    {
+      "id": "u66",
+      "category": "Common Verbs",
+      "pl": "Rozumiem",
+      "en": "I understand",
+      "level": 4
+    },
+    {
+      "id": "u67",
+      "category": "Common Verbs",
+      "pl": "Pamiętam",
+      "en": "I remember",
+      "level": 4
+    },
+    {
+      "id": "u68",
+      "category": "Common Verbs",
+      "pl": "Zapomniałem",
+      "en": "I forgot (male)",
+      "level": 4
+    },
+    {
+      "id": "u69",
+      "category": "Common Verbs",
+      "pl": "Wiem",
+      "en": "I know",
+      "level": 4
+    },
+    {
+      "id": "u70",
+      "category": "Common Verbs",
+      "pl": "Myślę, że...",
+      "en": "I think that...",
+      "level": 4
+    },
+    {
+      "id": "l4_71",
+      "category": "Opinions",
+      "pl": "Masz słuszność",
+      "en": "You have a point",
+      "level": 4
+    },
+    {
+      "id": "l4_72",
+      "category": "Opinions",
+      "pl": "To zależy",
+      "en": "It depends",
+      "level": 4
+    },
+    {
+      "id": "l4_74",
+      "category": "Social",
+      "pl": "Jak minął dzień?",
+      "en": "How was your day?",
+      "level": 4
+    },
+    {
+      "id": "l4_75",
+      "category": "Social",
+      "pl": "Dobrze się bawię",
+      "en": "I'm having a good time",
+      "level": 4
+    },
+    {
+      "id": "l4_76",
+      "category": "Social",
+      "pl": "Miło było cię widzieć",
+      "en": "It was nice seeing you",
+      "level": 4
+    },
+    {
+      "id": "l4_77",
+      "category": "Time & Planning",
+      "pl": "W zeszłym roku",
+      "en": "Last year",
+      "level": 4
+    },
+    {
+      "id": "l4_78",
+      "category": "Time & Planning",
+      "pl": "Za godzinę",
+      "en": "In an hour",
+      "level": 4
+    },
+    {
+      "id": "l4_79",
+      "category": "Time & Planning",
+      "pl": "Niedawno",
+      "en": "Recently",
+      "level": 4
+    },
+    {
+      "id": "l4_81",
+      "category": "Descriptions",
+      "pl": "Szeroki / Wąski",
+      "en": "Wide / Narrow",
+      "level": 4
+    },
+    {
+      "id": "l4_82",
+      "category": "Activities",
+      "pl": "Odpoczywać",
+      "en": "To rest",
+      "level": 4
+    },
+    {
+      "id": "l4_83",
+      "category": "Descriptions",
+      "pl": "Twardy / Miękki",
+      "en": "Hard / Soft",
+      "level": 4
+    },
+    {
+      "id": "l4_84",
+      "category": "Descriptions",
+      "pl": "Stary / Nowy",
+      "en": "Old / New",
+      "level": 4
+    }
   ]
 }

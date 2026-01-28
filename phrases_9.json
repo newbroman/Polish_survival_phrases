@@ -1,81 +1,497 @@
 {
-  "lastUpdated": "2026-01-27",
+  "level": 9,
+  "description": "Work & Professional Life",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "w1", "category": "Employment", "pl": "Szukam pracy", "en": "I am looking for a job", "level": 9 },
-    { "id": "w2", "category": "Employment", "pl": "Rozmowa kwalifikacyjna", "en": "Job interview", "level": 9 },
-    { "id": "w3", "category": "Employment", "pl": "Moje doświadczenie", "en": "My experience", "level": 9 },
-    { "id": "w4", "category": "Employment", "pl": "Umowa o pracę", "en": "Employment contract", "level": 9 },
-    { "id": "w5", "category": "Employment", "pl": "Wynagrodzenie / Pensja", "en": "Salary", "level": 9 },
-    { "id": "w6", "category": "Employment", "pl": "Nadgodziny", "en": "Overtime", "level": 9 },
-    { "id": "w7", "category": "Employment", "pl": "Urlop", "en": "Vacation / Leave", "level": 9 },
-    { "id": "w8", "category": "Employment", "pl": "Zwolnienie lekarskie", "en": "Sick leave (L4)", "level": 9 },
-    { "id": "w9", "category": "Employment", "pl": "Emerytura", "en": "Retirement", "level": 9 },
-    { "id": "w10", "category": "Employment", "pl": "Podatki", "en": "Taxes", "level": 9 },
-
-    { "id": "o11", "category": "Office Life", "pl": "Biuro", "en": "Office", "level": 9 },
-    { "id": "o12", "category": "Office Life", "pl": "Biurko", "en": "Desk", "level": 9 },
-    { "id": "o13", "category": "Office Life", "pl": "Komputer / Laptop", "en": "Computer / Laptop", "level": 9 },
-    { "id": "o14", "category": "Office Life", "pl": "Drukarka", "en": "Printer", "level": 9 },
-    { "id": "o15", "category": "Office Life", "pl": "Hasło", "en": "Password", "level": 9 },
-    { "id": "o16", "category": "Office Life", "pl": "Spotkanie / Zebranie", "en": "Meeting", "level": 9 },
-    { "id": "o17", "category": "Office Life", "pl": "Przerwa na kawę", "en": "Coffee break", "level": 9 },
-    { "id": "o18", "category": "Office Life", "pl": "Współpracownik", "en": "Co-worker (male)", "level": 9 },
-    { "id": "o19", "category": "Office Life", "pl": "Szef / Kierownik", "en": "Boss / Manager", "level": 9 },
-    { "id": "o20", "category": "Office Life", "pl": "Klient", "en": "Client / Customer", "level": 9 },
-
-    { "id": "c21", "category": "Communication", "pl": "Dostałem maila", "en": "I received an email", "level": 9 },
-    { "id": "c22", "category": "Communication", "pl": "Wyślę to w załączniku", "en": "I will send it in an attachment", "level": 9 },
-    { "id": "c23", "category": "Communication", "pl": "Czy możemy porozmawiać?", "en": "Can we talk?", "level": 9 },
-    { "id": "c24", "category": "Communication", "pl": "Zadzwonię później", "en": "I will call later", "level": 9 },
-    { "id": "c25", "category": "Communication", "pl": "Jestem na spotkaniu", "en": "I am in a meeting", "level": 9 },
-    { "id": "c26", "category": "Communication", "pl": "Potwierdzam", "en": "I confirm", "level": 9 },
-    { "id": "c27", "category": "Communication", "pl": "Proszę o odpowiedź", "en": "Please reply", "level": 9 },
-    { "id": "c28", "category": "Communication", "pl": "Z poważaniem", "en": "Yours sincerely (formal)", "level": 9 },
-    { "id": "c29", "category": "Communication", "pl": "Pozdrawiam", "en": "Best regards (standard)", "level": 9 },
-    { "id": "c30", "category": "Communication", "pl": "Dziękuję za współpracę", "en": "Thank you for the cooperation", "level": 9 },
-
-    { "id": "p31", "category": "Projects", "pl": "Projekt", "en": "Project", "level": 9 },
-    { "id": "p32", "category": "Projects", "pl": "Termin / Deadline", "en": "Deadline", "level": 9 },
-    { "id": "p33", "category": "Projects", "pl": "Plan", "en": "Plan", "level": 9 },
-    { "id": "p34", "category": "Projects", "pl": "Cel", "en": "Goal", "level": 9 },
-    { "id": "p35", "category": "Projects", "pl": "Sukces", "en": "Success", "level": 9 },
-    { "id": "p36", "category": "Projects", "pl": "Problem / Wyzwanie", "en": "Problem / Challenge", "level": 9 },
-    { "id": "p37", "category": "Projects", "pl": "Rozwiązanie", "en": "Solution", "level": 9 },
-    { "id": "p38", "category": "Projects", "pl": "Budżet", "en": "Budget", "level": 9 },
-    { "id": "p39", "category": "Projects", "pl": "Koszty", "en": "Costs", "level": 9 },
-    { "id": "p40", "category": "Projects", "pl": "Raport", "en": "Report", "level": 9 },
-
-    { "id": "v41", "category": "Business Verbs", "pl": "Pracować zdalnie", "en": "To work remotely", "level": 9 },
-    { "id": "v42", "category": "Business Verbs", "pl": "Zatrudnić", "en": "To hire", "level": 9 },
-    { "id": "v43", "category": "Business Verbs", "pl": "Zwolnić się", "en": "To quit / resign", "level": 9 },
-    { "id": "v44", "category": "Business Verbs", "pl": "Podpisać", "en": "To sign", "level": 9 },
-    { "id": "v45", "category": "Business Verbs", "pl": "Sprzedawać", "en": "To sell", "level": 9 },
-    { "id": "v46", "category": "Business Verbs", "pl": "Kupować", "en": "To buy", "level": 9 },
-    { "id": "v47", "category": "Business Verbs", "pl": "Inwestować", "en": "To invest", "level": 9 },
-    { "id": "v48", "category": "Business Verbs", "pl": "Zarabiać", "en": "To earn", "level": 9 },
-    { "id": "v49", "category": "Business Verbs", "pl": "Negocjować", "en": "To negotiate", "level": 9 },
-    { "id": "v50", "category": "Business Verbs", "pl": "Rozwijać", "en": "To develop", "level": 9 },
-
-    { "id": "m51", "category": "Money & Finance", "pl": "Konto bankowe", "en": "Bank account", "level": 9 },
-    { "id": "m52", "category": "Money & Finance", "pl": "Przelew", "en": "Transfer", "level": 9 },
-    { "id": "m53", "category": "Money & Finance", "pl": "Faktura", "en": "Invoice", "level": 9 },
-    { "id": "m54", "category": "Money & Finance", "pl": "Podatek VAT", "en": "VAT tax", "level": 9 },
-    { "id": "m55", "category": "Money & Finance", "pl": "Zysk", "en": "Profit", "level": 9 },
-    { "id": "m56", "category": "Money & Finance", "pl": "Strata", "en": "Loss", "level": 9 },
-    { "id": "m57", "category": "Money & Finance", "pl": "Pożyczka / Kredyt", "en": "Loan / Credit", "level": 9 },
-    { "id": "m58", "category": "Money & Finance", "pl": "Karta płatnicza", "en": "Payment card", "level": 9 },
-    { "id": "m59", "category": "Money & Finance", "pl": "Gotówka", "en": "Cash", "level": 9 },
-    { "id": "m60", "category": "Money & Finance", "pl": "Waluta", "en": "Currency", "level": 9 },
-
-    { "id": "s61", "category": "Common Phrases", "pl": "Czym się zajmujesz?", "en": "What do you do (for a living)?", "level": 9 },
-    { "id": "s62", "category": "Common Phrases", "pl": "Pracuję w marketingu", "en": "I work in marketing", "level": 9 },
-    { "id": "s63", "category": "Common Phrases", "pl": "Mamy dużo pracy", "en": "We have a lot of work", "level": 9 },
-    { "id": "s64", "category": "Common Phrases", "pl": "To nie należy do moich obowiązków", "en": "That is not part of my duties", "level": 9 },
-    { "id": "s65", "category": "Common Phrases", "pl": "Potrzebuję więcej informacji", "en": "I need more information", "level": 9 },
-    { "id": "s66", "category": "Common Phrases", "pl": "W czym mogę pomóc?", "en": "How can I help?", "level": 9 },
-    { "id": "s67", "category": "Common Phrases", "pl": "Dziękuję za Twój czas", "en": "Thank you for your time", "level": 9 },
-    { "id": "s68", "category": "Common Phrases", "pl": "Zróbmy to", "en": "Let's do it", "level": 9 },
-    { "id": "s69", "category": "Common Phrases", "pl": "To jest priorytet", "en": "This is a priority", "level": 9 },
-    { "id": "s70", "category": "Common Phrases", "pl": "Powodzenia w nowej pracy!", "en": "Good luck in your new job!", "level": 9 }
+    {
+      "id": "c21",
+      "category": "Communication",
+      "pl": "Dostałem maila",
+      "en": "I received an email",
+      "level": 9
+    },
+    {
+      "id": "c22",
+      "category": "Communication",
+      "pl": "Wyślę to w załączniku",
+      "en": "I will send it in an attachment",
+      "level": 9
+    },
+    {
+      "id": "c23",
+      "category": "Communication",
+      "pl": "Czy możemy porozmawiać?",
+      "en": "Can we talk?",
+      "level": 9
+    },
+    {
+      "id": "c24",
+      "category": "Communication",
+      "pl": "Zadzwonię później",
+      "en": "I will call later",
+      "level": 9
+    },
+    {
+      "id": "c25",
+      "category": "Communication",
+      "pl": "Jestem na spotkaniu",
+      "en": "I am in a meeting",
+      "level": 9
+    },
+    {
+      "id": "c26",
+      "category": "Communication",
+      "pl": "Potwierdzam",
+      "en": "I confirm",
+      "level": 9
+    },
+    {
+      "id": "c27",
+      "category": "Communication",
+      "pl": "Proszę o odpowiedź",
+      "en": "Please reply",
+      "level": 9
+    },
+    {
+      "id": "c28",
+      "category": "Communication",
+      "pl": "Z poważaniem",
+      "en": "Yours sincerely (formal)",
+      "level": 9
+    },
+    {
+      "id": "c29",
+      "category": "Communication",
+      "pl": "Pozdrawiam",
+      "en": "Best regards (standard)",
+      "level": 9
+    },
+    {
+      "id": "c30",
+      "category": "Communication",
+      "pl": "Dziękuję za współpracę",
+      "en": "Thank you for the cooperation",
+      "level": 9
+    },
+    {
+      "id": "m51",
+      "category": "Money & Finance",
+      "pl": "Konto bankowe",
+      "en": "Bank account",
+      "level": 9
+    },
+    {
+      "id": "m52",
+      "category": "Money & Finance",
+      "pl": "Przelew",
+      "en": "Transfer",
+      "level": 9
+    },
+    {
+      "id": "m53",
+      "category": "Money & Finance",
+      "pl": "Faktura",
+      "en": "Invoice",
+      "level": 9
+    },
+    {
+      "id": "m54",
+      "category": "Money & Finance",
+      "pl": "Podatek VAT",
+      "en": "VAT tax",
+      "level": 9
+    },
+    {
+      "id": "m55",
+      "category": "Money & Finance",
+      "pl": "Zysk",
+      "en": "Profit",
+      "level": 9
+    },
+    {
+      "id": "m56",
+      "category": "Money & Finance",
+      "pl": "Strata",
+      "en": "Loss",
+      "level": 9
+    },
+    {
+      "id": "m57",
+      "category": "Money & Finance",
+      "pl": "Pożyczka / Kredyt",
+      "en": "Loan / Credit",
+      "level": 9
+    },
+    {
+      "id": "m58",
+      "category": "Money & Finance",
+      "pl": "Karta płatnicza",
+      "en": "Payment card",
+      "level": 9
+    },
+    {
+      "id": "m60",
+      "category": "Money & Finance",
+      "pl": "Waluta",
+      "en": "Currency",
+      "level": 9
+    },
+    {
+      "id": "o11",
+      "category": "Office Life",
+      "pl": "Biuro",
+      "en": "Office",
+      "level": 9
+    },
+    {
+      "id": "o12",
+      "category": "Office Life",
+      "pl": "Biurko",
+      "en": "Desk",
+      "level": 9
+    },
+    {
+      "id": "o13",
+      "category": "Office Life",
+      "pl": "Komputer / Laptop",
+      "en": "Computer / Laptop",
+      "level": 9
+    },
+    {
+      "id": "o14",
+      "category": "Office Life",
+      "pl": "Drukarka",
+      "en": "Printer",
+      "level": 9
+    },
+    {
+      "id": "o16",
+      "category": "Office Life",
+      "pl": "Spotkanie / Zebranie",
+      "en": "Meeting",
+      "level": 9
+    },
+    {
+      "id": "o17",
+      "category": "Office Life",
+      "pl": "Przerwa na kawę",
+      "en": "Coffee break",
+      "level": 9
+    },
+    {
+      "id": "o18",
+      "category": "Office Life",
+      "pl": "Współpracownik",
+      "en": "Co-worker (male)",
+      "level": 9
+    },
+    {
+      "id": "o19",
+      "category": "Office Life",
+      "pl": "Szef / Kierownik",
+      "en": "Boss / Manager",
+      "level": 9
+    },
+    {
+      "id": "o20",
+      "category": "Office Life",
+      "pl": "Klient",
+      "en": "Client / Customer",
+      "level": 9
+    },
+    {
+      "id": "p31",
+      "category": "Projects",
+      "pl": "Projekt",
+      "en": "Project",
+      "level": 9
+    },
+    {
+      "id": "p32",
+      "category": "Projects",
+      "pl": "Termin / Deadline",
+      "en": "Deadline",
+      "level": 9
+    },
+    {
+      "id": "p33",
+      "category": "Projects",
+      "pl": "Plan",
+      "en": "Plan",
+      "level": 9
+    },
+    {
+      "id": "p34",
+      "category": "Projects",
+      "pl": "Cel",
+      "en": "Goal",
+      "level": 9
+    },
+    {
+      "id": "p35",
+      "category": "Projects",
+      "pl": "Sukces",
+      "en": "Success",
+      "level": 9
+    },
+    {
+      "id": "p36",
+      "category": "Projects",
+      "pl": "Problem / Wyzwanie",
+      "en": "Problem / Challenge",
+      "level": 9
+    },
+    {
+      "id": "p37",
+      "category": "Projects",
+      "pl": "Rozwiązanie",
+      "en": "Solution",
+      "level": 9
+    },
+    {
+      "id": "p38",
+      "category": "Projects",
+      "pl": "Budżet",
+      "en": "Budget",
+      "level": 9
+    },
+    {
+      "id": "p39",
+      "category": "Projects",
+      "pl": "Koszty",
+      "en": "Costs",
+      "level": 9
+    },
+    {
+      "id": "p40",
+      "category": "Projects",
+      "pl": "Raport",
+      "en": "Report",
+      "level": 9
+    },
+    {
+      "id": "s62",
+      "category": "Common Phrases",
+      "pl": "Pracuję w marketingu",
+      "en": "I work in marketing",
+      "level": 9
+    },
+    {
+      "id": "s63",
+      "category": "Common Phrases",
+      "pl": "Mamy dużo pracy",
+      "en": "We have a lot of work",
+      "level": 9
+    },
+    {
+      "id": "s64",
+      "category": "Common Phrases",
+      "pl": "To nie należy do moich obowiązków",
+      "en": "That is not part of my duties",
+      "level": 9
+    },
+    {
+      "id": "s65",
+      "category": "Common Phrases",
+      "pl": "Potrzebuję więcej informacji",
+      "en": "I need more information",
+      "level": 9
+    },
+    {
+      "id": "s66",
+      "category": "Common Phrases",
+      "pl": "W czym mogę pomóc?",
+      "en": "How can I help?",
+      "level": 9
+    },
+    {
+      "id": "s67",
+      "category": "Common Phrases",
+      "pl": "Dziękuję za Twój czas",
+      "en": "Thank you for your time",
+      "level": 9
+    },
+    {
+      "id": "s68",
+      "category": "Common Phrases",
+      "pl": "Zróbmy to",
+      "en": "Let's do it",
+      "level": 9
+    },
+    {
+      "id": "s69",
+      "category": "Common Phrases",
+      "pl": "To jest priorytet",
+      "en": "This is a priority",
+      "level": 9
+    },
+    {
+      "id": "s70",
+      "category": "Common Phrases",
+      "pl": "Powodzenia w nowej pracy!",
+      "en": "Good luck in your new job!",
+      "level": 9
+    },
+    {
+      "id": "v41",
+      "category": "Business Verbs",
+      "pl": "Pracować zdalnie",
+      "en": "To work remotely",
+      "level": 9
+    },
+    {
+      "id": "v42",
+      "category": "Business Verbs",
+      "pl": "Zatrudnić",
+      "en": "To hire",
+      "level": 9
+    },
+    {
+      "id": "v43",
+      "category": "Business Verbs",
+      "pl": "Zwolnić się",
+      "en": "To quit / resign",
+      "level": 9
+    },
+    {
+      "id": "v44",
+      "category": "Business Verbs",
+      "pl": "Podpisać",
+      "en": "To sign",
+      "level": 9
+    },
+    {
+      "id": "v45",
+      "category": "Business Verbs",
+      "pl": "Sprzedawać",
+      "en": "To sell",
+      "level": 9
+    },
+    {
+      "id": "v47",
+      "category": "Business Verbs",
+      "pl": "Inwestować",
+      "en": "To invest",
+      "level": 9
+    },
+    {
+      "id": "v48",
+      "category": "Business Verbs",
+      "pl": "Zarabiać",
+      "en": "To earn",
+      "level": 9
+    },
+    {
+      "id": "v49",
+      "category": "Business Verbs",
+      "pl": "Negocjować",
+      "en": "To negotiate",
+      "level": 9
+    },
+    {
+      "id": "v50",
+      "category": "Business Verbs",
+      "pl": "Rozwijać",
+      "en": "To develop",
+      "level": 9
+    },
+    {
+      "id": "w10",
+      "category": "Employment",
+      "pl": "Podatki",
+      "en": "Taxes",
+      "level": 9
+    },
+    {
+      "id": "w2",
+      "category": "Employment",
+      "pl": "Rozmowa kwalifikacyjna",
+      "en": "Job interview",
+      "level": 9
+    },
+    {
+      "id": "w3",
+      "category": "Employment",
+      "pl": "Moje doświadczenie",
+      "en": "My experience",
+      "level": 9
+    },
+    {
+      "id": "w4",
+      "category": "Employment",
+      "pl": "Umowa o pracę",
+      "en": "Employment contract",
+      "level": 9
+    },
+    {
+      "id": "w5",
+      "category": "Employment",
+      "pl": "Wynagrodzenie / Pensja",
+      "en": "Salary",
+      "level": 9
+    },
+    {
+      "id": "w6",
+      "category": "Employment",
+      "pl": "Nadgodziny",
+      "en": "Overtime",
+      "level": 9
+    },
+    {
+      "id": "w7",
+      "category": "Employment",
+      "pl": "Urlop",
+      "en": "Vacation / Leave",
+      "level": 9
+    },
+    {
+      "id": "w8",
+      "category": "Employment",
+      "pl": "Zwolnienie lekarskie",
+      "en": "Sick leave (L4)",
+      "level": 9
+    },
+    {
+      "id": "w9",
+      "category": "Employment",
+      "pl": "Emerytura",
+      "en": "Retirement",
+      "level": 9
+    },
+    {
+      "id": "l9_72",
+      "category": "Common Phrases",
+      "pl": "Pracuję na pełen etat",
+      "en": "I work full-time",
+      "level": 9
+    },
+    {
+      "id": "l9_74",
+      "category": "Money & Finance",
+      "pl": "Wynagrodzenie",
+      "en": "Salary / Compensation",
+      "level": 9
+    },
+    {
+      "id": "l9_75",
+      "category": "Office Life",
+      "pl": "Sala konferencyjna",
+      "en": "Conference room",
+      "level": 9
+    },
+    {
+      "id": "l9_76",
+      "category": "Office Life",
+      "pl": "Spotkanie",
+      "en": "Meeting",
+      "level": 9
+    },
+    {
+      "id": "l9_77",
+      "category": "Business Verbs",
+      "pl": "Zarządzać",
+      "en": "To manage",
+      "level": 9
+    }
   ]
 }

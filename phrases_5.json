@@ -1,81 +1,497 @@
 {
-  "lastUpdated": "2026-01-27",
+  "level": 5,
+  "description": "Practical Needs & Small Talk",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "w1", "category": "Weather", "pl": "Jaka jest dzisiaj pogoda?", "en": "How is the weather today?", "level": 5 },
-    { "id": "w2", "category": "Weather", "pl": "Jest słonecznie", "en": "It is sunny", "level": 5 },
-    { "id": "w3", "category": "Weather", "pl": "Pada deszcz", "en": "It is raining", "level": 5 },
-    { "id": "w4", "category": "Weather", "pl": "Pada śnieg", "en": "It is snowing", "level": 5 },
-    { "id": "w5", "category": "Weather", "pl": "Jest zimno", "en": "It is cold", "level": 5 },
-    { "id": "w6", "category": "Weather", "pl": "Jest gorąco", "en": "It is hot", "level": 5 },
-    { "id": "w7", "category": "Weather", "pl": "Jest wietrznie", "en": "It is windy", "level": 5 },
-    { "id": "w8", "category": "Weather", "pl": "Będzie burza", "en": "There will be a storm", "level": 5 },
-    { "id": "w9", "category": "Weather", "pl": "Ładna pogoda, prawda?", "en": "Nice weather, right?", "level": 5 },
-    { "id": "w10", "category": "Weather", "pl": "Nie lubię deszczu", "en": "I don't like rain", "level": 5 },
-
-    { "id": "st11", "category": "Small Talk", "pl": "Masz rodzeństwo?", "en": "Do you have siblings?", "level": 5 },
-    { "id": "st12", "category": "Small Talk", "pl": "Masz zwierzęta?", "en": "Do you have pets?", "level": 5 },
-    { "id": "st13", "category": "Small Talk", "pl": "Czym się interesujesz?", "en": "What are your interests?", "level": 5 },
-    { "id": "st14", "category": "Small Talk", "pl": "Moje hobby to...", "en": "My hobby is...", "level": 5 },
-    { "id": "st15", "category": "Small Talk", "pl": "Jaki jest twój ulubiony film?", "en": "What is your favorite movie?", "level": 5 },
-    { "id": "st16", "category": "Small Talk", "pl": "Lubię podróżować", "en": "I like traveling", "level": 5 },
-    { "id": "st17", "category": "Small Talk", "pl": "Gdzie byłeś na wakacjach?", "en": "Where were you on vacation?", "level": 5 },
-    { "id": "st18", "category": "Small Talk", "pl": "Chciałbym tam pojechać", "en": "I would like to go there", "level": 5 },
-    { "id": "st19", "category": "Small Talk", "pl": "To brzmi ciekawie", "en": "That sounds interesting", "level": 5 },
-    { "id": "st20", "category": "Small Talk", "pl": "Naprawdę?", "en": "Really?", "level": 5 },
-
-    { "id": "n21", "category": "Needs & Wants", "pl": "Chciałbym zamówić...", "en": "I would like to order...", "level": 5 },
-    { "id": "n22", "category": "Needs & Wants", "pl": "Gdzie mogę kupić...?", "en": "Where can I buy...?", "level": 5 },
-    { "id": "n23", "category": "Needs & Wants", "pl": "Potrzebuję pomocy z...", "en": "I need help with...", "level": 5 },
-    { "id": "n24", "category": "Needs & Wants", "pl": "Czy możesz mi pożyczyć...?", "en": "Can you lend me...?", "level": 5 },
-    { "id": "n25", "category": "Needs & Wants", "pl": "Szukam prezentu dla...", "en": "I am looking for a gift for...", "level": 5 },
-    { "id": "n26", "category": "Needs & Wants", "pl": "Chętnie", "en": "Gladly / With pleasure", "level": 5 },
-    { "id": "n27", "category": "Needs & Wants", "pl": "Nie mam czasu", "en": "I don't have time", "level": 5 },
-    { "id": "n28", "category": "Needs & Wants", "pl": "Jestem zajęty", "en": "I am busy (male)", "level": 5 },
-    { "id": "n29", "category": "Needs & Wants", "pl": "Będę za chwilę", "en": "I will be there in a moment", "level": 5 },
-    { "id": "n30", "category": "Needs & Wants", "pl": "Czekaj na mnie", "en": "Wait for me", "level": 5 },
-
-    { "id": "f31", "category": "Feelings", "pl": "Jestem głodny", "en": "I am hungry (male)", "level": 5 },
-    { "id": "f32", "category": "Feelings", "pl": "Chce mi się pić", "en": "I am thirsty", "level": 5 },
-    { "id": "f33", "category": "Feelings", "pl": "Jestem śpiący", "en": "I am sleepy (male)", "level": 5 },
-    { "id": "f34", "category": "Feelings", "pl": "Jestem znudzony", "en": "I am bored (male)", "level": 5 },
-    { "id": "f35", "category": "Feelings", "pl": "Jestem zaskoczony", "en": "I am surprised (male)", "level": 5 },
-    { "id": "f36", "category": "Feelings", "pl": "To jest niesamowite!", "en": "This is amazing!", "level": 5 },
-    { "id": "f37", "category": "Feelings", "pl": "Nie martw się", "en": "Don't worry", "level": 5 },
-    { "id": "f38", "category": "Feelings", "pl": "Wszystko będzie dobrze", "en": "Everything will be fine", "level": 5 },
-    { "id": "f39", "category": "Feelings", "pl": "Uspokój się", "en": "Calm down", "level": 5 },
-    { "id": "f40", "category": "Feelings", "pl": "Boję się", "en": "I am afraid", "level": 5 },
-
-    { "id": "q41", "category": "Daily Questions", "pl": "Która jest godzina?", "en": "What time is it?", "level": 5 },
-    { "id": "q42", "category": "Daily Questions", "pl": "O której zaczynamy?", "en": "What time do we start?", "level": 5 },
-    { "id": "q43", "category": "Daily Questions", "pl": "Gdzie idziemy?", "en": "Where are we going?", "level": 5 },
-    { "id": "q44", "category": "Daily Questions", "pl": "Co robimy wieczorem?", "en": "What are we doing this evening?", "level": 5 },
-    { "id": "q45", "category": "Daily Questions", "pl": "Czy to jest daleko?", "en": "Is it far?", "level": 5 },
-    { "id": "q46", "category": "Daily Questions", "pl": "Czy to jest blisko?", "en": "Is it close?", "level": 5 },
-    { "id": "q47", "category": "Daily Questions", "pl": "Masz ochotę na kawę?", "en": "Do you feel like having coffee?", "level": 5 },
-    { "id": "q48", "category": "Daily Questions", "pl": "Co o tym sądzisz?", "en": "What do you think about it?", "level": 5 },
-    { "id": "q49", "category": "Daily Questions", "pl": "Jak to działa?", "en": "How does it work?", "level": 5 },
-    { "id": "q50", "category": "Daily Questions", "pl": "Możesz mi pomóc?", "en": "Can you help me?", "level": 5 },
-
-    { "id": "v51", "category": "Verbs 2", "pl": "Szukam pracy", "en": "I am looking for a job", "level": 5 },
-    { "id": "v52", "category": "Verbs 2", "pl": "Uczę się", "en": "I am studying / learning", "level": 5 },
-    { "id": "v53", "category": "Verbs 2", "pl": "Pracuję", "en": "I am working", "level": 5 },
-    { "id": "v54", "category": "Verbs 2", "pl": "Odpoczywam", "en": "I am resting", "level": 5 },
-    { "id": "v55", "category": "Verbs 2", "pl": "Śpię", "en": "I am sleeping", "level": 5 },
-    { "id": "v56", "category": "Verbs 2", "pl": "Piszę maila", "en": "I am writing an email", "level": 5 },
-    { "id": "v57", "category": "Verbs 2", "pl": "Rozmawiam przez telefon", "en": "I am talking on the phone", "level": 5 },
-    { "id": "v58", "category": "Verbs 2", "pl": "Słucham", "en": "I am listening", "level": 5 },
-    { "id": "v59", "category": "Verbs 2", "pl": "Patrzę", "en": "I am looking", "level": 5 },
-    { "id": "v60", "category": "Verbs 2", "pl": "Czekam", "en": "I am waiting", "level": 5 },
-
-    { "id": "l61", "category": "Location Details", "pl": "Na zewnątrz", "en": "Outside", "level": 5 },
-    { "id": "l62", "category": "Location Details", "pl": "W środku", "en": "Inside", "level": 5 },
-    { "id": "l63", "category": "Location Details", "pl": "Na górze", "en": "Upstairs / On top", "level": 5 },
-    { "id": "l64", "category": "Location Details", "pl": "Na dole", "en": "Downstairs / At the bottom", "level": 5 },
-    { "id": "l65", "category": "Location Details", "pl": "Obok", "en": "Next to / Beside", "level": 5 },
-    { "id": "l66", "category": "Location Details", "pl": "Pomiędzy", "en": "Between", "level": 5 },
-    { "id": "l67", "category": "Location Details", "pl": "Przed", "en": "In front of", "level": 5 },
-    { "id": "l68", "category": "Location Details", "pl": "Za", "en": "Behind", "level": 5 },
-    { "id": "l69", "category": "Location Details", "pl": "Wszędzie", "en": "Everywhere", "level": 5 },
-    { "id": "l70", "category": "Location Details", "pl": "Nigdzie", "en": "Nowhere", "level": 5 }
+    {
+      "id": "f33",
+      "category": "Feelings",
+      "pl": "Jestem śpiący",
+      "en": "I am sleepy (male)",
+      "level": 5
+    },
+    {
+      "id": "f34",
+      "category": "Feelings",
+      "pl": "Jestem znudzony",
+      "en": "I am bored (male)",
+      "level": 5
+    },
+    {
+      "id": "f35",
+      "category": "Feelings",
+      "pl": "Jestem zaskoczony",
+      "en": "I am surprised (male)",
+      "level": 5
+    },
+    {
+      "id": "f36",
+      "category": "Feelings",
+      "pl": "To jest niesamowite!",
+      "en": "This is amazing!",
+      "level": 5
+    },
+    {
+      "id": "f37",
+      "category": "Feelings",
+      "pl": "Nie martw się",
+      "en": "Don't worry",
+      "level": 5
+    },
+    {
+      "id": "f38",
+      "category": "Feelings",
+      "pl": "Wszystko będzie dobrze",
+      "en": "Everything will be fine",
+      "level": 5
+    },
+    {
+      "id": "f39",
+      "category": "Feelings",
+      "pl": "Uspokój się",
+      "en": "Calm down",
+      "level": 5
+    },
+    {
+      "id": "f40",
+      "category": "Feelings",
+      "pl": "Boję się",
+      "en": "I am afraid",
+      "level": 5
+    },
+    {
+      "id": "l61",
+      "category": "Location Details",
+      "pl": "Na zewnątrz",
+      "en": "Outside",
+      "level": 5
+    },
+    {
+      "id": "l62",
+      "category": "Location Details",
+      "pl": "W środku",
+      "en": "Inside",
+      "level": 5
+    },
+    {
+      "id": "l63",
+      "category": "Location Details",
+      "pl": "Na górze",
+      "en": "Upstairs / On top",
+      "level": 5
+    },
+    {
+      "id": "l64",
+      "category": "Location Details",
+      "pl": "Na dole",
+      "en": "Downstairs / At the bottom",
+      "level": 5
+    },
+    {
+      "id": "l65",
+      "category": "Location Details",
+      "pl": "Obok",
+      "en": "Next to / Beside",
+      "level": 5
+    },
+    {
+      "id": "l66",
+      "category": "Location Details",
+      "pl": "Pomiędzy",
+      "en": "Between",
+      "level": 5
+    },
+    {
+      "id": "l67",
+      "category": "Location Details",
+      "pl": "Przed",
+      "en": "In front of",
+      "level": 5
+    },
+    {
+      "id": "l68",
+      "category": "Location Details",
+      "pl": "Za",
+      "en": "Behind",
+      "level": 5
+    },
+    {
+      "id": "l69",
+      "category": "Location Details",
+      "pl": "Wszędzie",
+      "en": "Everywhere",
+      "level": 5
+    },
+    {
+      "id": "l70",
+      "category": "Location Details",
+      "pl": "Nigdzie",
+      "en": "Nowhere",
+      "level": 5
+    },
+    {
+      "id": "n21",
+      "category": "Needs & Wants",
+      "pl": "Chciałbym zamówić...",
+      "en": "I would like to order...",
+      "level": 5
+    },
+    {
+      "id": "n22",
+      "category": "Needs & Wants",
+      "pl": "Gdzie mogę kupić...?",
+      "en": "Where can I buy...?",
+      "level": 5
+    },
+    {
+      "id": "n23",
+      "category": "Needs & Wants",
+      "pl": "Potrzebuję pomocy z...",
+      "en": "I need help with...",
+      "level": 5
+    },
+    {
+      "id": "n24",
+      "category": "Needs & Wants",
+      "pl": "Czy możesz mi pożyczyć...?",
+      "en": "Can you lend me...?",
+      "level": 5
+    },
+    {
+      "id": "n25",
+      "category": "Needs & Wants",
+      "pl": "Szukam prezentu dla...",
+      "en": "I am looking for a gift for...",
+      "level": 5
+    },
+    {
+      "id": "n26",
+      "category": "Needs & Wants",
+      "pl": "Chętnie",
+      "en": "Gladly / With pleasure",
+      "level": 5
+    },
+    {
+      "id": "n27",
+      "category": "Needs & Wants",
+      "pl": "Nie mam czasu",
+      "en": "I don't have time",
+      "level": 5
+    },
+    {
+      "id": "n29",
+      "category": "Needs & Wants",
+      "pl": "Będę za chwilę",
+      "en": "I will be there in a moment",
+      "level": 5
+    },
+    {
+      "id": "n30",
+      "category": "Needs & Wants",
+      "pl": "Czekaj na mnie",
+      "en": "Wait for me",
+      "level": 5
+    },
+    {
+      "id": "q41",
+      "category": "Daily Questions",
+      "pl": "Która jest godzina?",
+      "en": "What time is it?",
+      "level": 5
+    },
+    {
+      "id": "q42",
+      "category": "Daily Questions",
+      "pl": "O której zaczynamy?",
+      "en": "What time do we start?",
+      "level": 5
+    },
+    {
+      "id": "q43",
+      "category": "Daily Questions",
+      "pl": "Gdzie idziemy?",
+      "en": "Where are we going?",
+      "level": 5
+    },
+    {
+      "id": "q44",
+      "category": "Daily Questions",
+      "pl": "Co robimy wieczorem?",
+      "en": "What are we doing this evening?",
+      "level": 5
+    },
+    {
+      "id": "q45",
+      "category": "Daily Questions",
+      "pl": "Czy to jest daleko?",
+      "en": "Is it far?",
+      "level": 5
+    },
+    {
+      "id": "q46",
+      "category": "Daily Questions",
+      "pl": "Czy to jest blisko?",
+      "en": "Is it close?",
+      "level": 5
+    },
+    {
+      "id": "q47",
+      "category": "Daily Questions",
+      "pl": "Masz ochotę na kawę?",
+      "en": "Do you feel like having coffee?",
+      "level": 5
+    },
+    {
+      "id": "q49",
+      "category": "Daily Questions",
+      "pl": "Jak to działa?",
+      "en": "How does it work?",
+      "level": 5
+    },
+    {
+      "id": "q50",
+      "category": "Daily Questions",
+      "pl": "Możesz mi pomóc?",
+      "en": "Can you help me?",
+      "level": 5
+    },
+    {
+      "id": "st11",
+      "category": "Small Talk",
+      "pl": "Masz rodzeństwo?",
+      "en": "Do you have siblings?",
+      "level": 5
+    },
+    {
+      "id": "st12",
+      "category": "Small Talk",
+      "pl": "Masz zwierzęta?",
+      "en": "Do you have pets?",
+      "level": 5
+    },
+    {
+      "id": "st14",
+      "category": "Small Talk",
+      "pl": "Moje hobby to...",
+      "en": "My hobby is...",
+      "level": 5
+    },
+    {
+      "id": "st15",
+      "category": "Small Talk",
+      "pl": "Jaki jest twój ulubiony film?",
+      "en": "What is your favorite movie?",
+      "level": 5
+    },
+    {
+      "id": "st16",
+      "category": "Small Talk",
+      "pl": "Lubię podróżować",
+      "en": "I like traveling",
+      "level": 5
+    },
+    {
+      "id": "st17",
+      "category": "Small Talk",
+      "pl": "Gdzie byłeś na wakacjach?",
+      "en": "Where were you on vacation?",
+      "level": 5
+    },
+    {
+      "id": "st18",
+      "category": "Small Talk",
+      "pl": "Chciałbym tam pojechać",
+      "en": "I would like to go there",
+      "level": 5
+    },
+    {
+      "id": "st19",
+      "category": "Small Talk",
+      "pl": "To brzmi ciekawie",
+      "en": "That sounds interesting",
+      "level": 5
+    },
+    {
+      "id": "st20",
+      "category": "Small Talk",
+      "pl": "Naprawdę?",
+      "en": "Really?",
+      "level": 5
+    },
+    {
+      "id": "v51",
+      "category": "Verbs 2",
+      "pl": "Szukam pracy",
+      "en": "I am looking for a job",
+      "level": 5
+    },
+    {
+      "id": "v52",
+      "category": "Verbs 2",
+      "pl": "Uczę się",
+      "en": "I am studying / learning",
+      "level": 5
+    },
+    {
+      "id": "v53",
+      "category": "Verbs 2",
+      "pl": "Pracuję",
+      "en": "I am working",
+      "level": 5
+    },
+    {
+      "id": "v54",
+      "category": "Verbs 2",
+      "pl": "Odpoczywam",
+      "en": "I am resting",
+      "level": 5
+    },
+    {
+      "id": "v55",
+      "category": "Verbs 2",
+      "pl": "Śpię",
+      "en": "I am sleeping",
+      "level": 5
+    },
+    {
+      "id": "v56",
+      "category": "Verbs 2",
+      "pl": "Piszę maila",
+      "en": "I am writing an email",
+      "level": 5
+    },
+    {
+      "id": "v57",
+      "category": "Verbs 2",
+      "pl": "Rozmawiam przez telefon",
+      "en": "I am talking on the phone",
+      "level": 5
+    },
+    {
+      "id": "v58",
+      "category": "Verbs 2",
+      "pl": "Słucham",
+      "en": "I am listening",
+      "level": 5
+    },
+    {
+      "id": "v59",
+      "category": "Verbs 2",
+      "pl": "Patrzę",
+      "en": "I am looking",
+      "level": 5
+    },
+    {
+      "id": "v60",
+      "category": "Verbs 2",
+      "pl": "Czekam",
+      "en": "I am waiting",
+      "level": 5
+    },
+    {
+      "id": "w1",
+      "category": "Weather",
+      "pl": "Jaka jest dzisiaj pogoda?",
+      "en": "How is the weather today?",
+      "level": 5
+    },
+    {
+      "id": "w10",
+      "category": "Weather",
+      "pl": "Nie lubię deszczu",
+      "en": "I don't like rain",
+      "level": 5
+    },
+    {
+      "id": "w2",
+      "category": "Weather",
+      "pl": "Jest słonecznie",
+      "en": "It is sunny",
+      "level": 5
+    },
+    {
+      "id": "w3",
+      "category": "Weather",
+      "pl": "Pada deszcz",
+      "en": "It is raining",
+      "level": 5
+    },
+    {
+      "id": "w4",
+      "category": "Weather",
+      "pl": "Pada śnieg",
+      "en": "It is snowing",
+      "level": 5
+    },
+    {
+      "id": "w5",
+      "category": "Weather",
+      "pl": "Jest zimno",
+      "en": "It is cold",
+      "level": 5
+    },
+    {
+      "id": "w6",
+      "category": "Weather",
+      "pl": "Jest gorąco",
+      "en": "It is hot",
+      "level": 5
+    },
+    {
+      "id": "w7",
+      "category": "Weather",
+      "pl": "Jest wietrznie",
+      "en": "It is windy",
+      "level": 5
+    },
+    {
+      "id": "w8",
+      "category": "Weather",
+      "pl": "Będzie burza",
+      "en": "There will be a storm",
+      "level": 5
+    },
+    {
+      "id": "w9",
+      "category": "Weather",
+      "pl": "Ładna pogoda, prawda?",
+      "en": "Nice weather, right?",
+      "level": 5
+    },
+    {
+      "id": "l5_71",
+      "category": "Daily Questions",
+      "pl": "Dokąd idziesz?",
+      "en": "Where are you going?",
+      "level": 5
+    },
+    {
+      "id": "l5_72",
+      "category": "Feelings",
+      "pl": "Jestem zadowolony",
+      "en": "I am satisfied (male)",
+      "level": 5
+    },
+    {
+      "id": "l5_73",
+      "category": "Needs & Wants",
+      "pl": "Potrzebuję odpoczynku",
+      "en": "I need rest",
+      "level": 5
+    },
+    {
+      "id": "l5_74",
+      "category": "Small Talk",
+      "pl": "Jakie są twoje plany na weekend?",
+      "en": "What are your plans for the weekend?",
+      "level": 5
+    },
+    {
+      "id": "l5_75",
+      "category": "Small Talk",
+      "pl": "Lubisz sport?",
+      "en": "Do you like sports?",
+      "level": 5
+    }
   ]
 }

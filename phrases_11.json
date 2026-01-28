@@ -1,81 +1,497 @@
 {
-  "lastUpdated": "2026-01-27",
+  "level": 11,
+  "description": "Family Basics & Social Relationships",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "f1", "category": "Family Members", "pl": "Rodzina", "en": "Family", "level": 12 },
-    { "id": "f2", "category": "Family Members", "pl": "Rodzice", "en": "Parents", "level": 12 },
-    { "id": "f3", "category": "Family Members", "pl": "Mama", "en": "Mom", "level": 12 },
-    { "id": "f4", "category": "Family Members", "pl": "Tata", "en": "Dad", "level": 12 },
-    { "id": "f5", "category": "Family Members", "pl": "Rodzeństwo", "en": "Siblings", "level": 12 },
-    { "id": "f6", "category": "Family Members", "pl": "Brat", "en": "Brother", "level": 12 },
-    { "id": "f7", "category": "Family Members", "pl": "Siostra", "en": "Sister", "level": 12 },
-    { "id": "f8", "category": "Family Members", "pl": "Dziecko", "en": "Child", "level": 12 },
-    { "id": "f9", "category": "Family Members", "pl": "Syn", "en": "Son", "level": 12 },
-    { "id": "f10", "category": "Family Members", "pl": "Córka", "en": "Daughter", "level": 12 },
-
-    { "id": "ef11", "category": "Extended Family", "pl": "Dziadkowie", "en": "Grandparents", "level": 12 },
-    { "id": "ef12", "category": "Extended Family", "pl": "Babcia", "en": "Grandmother", "level": 12 },
-    { "id": "ef13", "category": "Extended Family", "pl": "Dziadek", "en": "Grandfather", "level": 12 },
-    { "id": "ef14", "category": "Extended Family", "pl": "Wnuk / Wnuczka", "en": "Grandson / Granddaughter", "level": 12 },
-    { "id": "ef15", "category": "Extended Family", "pl": "Wujek", "en": "Uncle", "level": 12 },
-    { "id": "ef16", "category": "Extended Family", "pl": "Ciocia", "en": "Aunt", "level": 12 },
-    { "id": "ef17", "category": "Extended Family", "pl": "Kuzyn / Kuzynka", "en": "Cousin (m/f)", "level": 12 },
-    { "id": "ef18", "category": "Extended Family", "pl": "Siostrzeniec / Bratanek", "en": "Nephew (sister's/brother's son)", "level": 12 },
-    { "id": "ef19", "category": "Extended Family", "pl": "Siostrzenica / Bratanica", "en": "Niece (sister's/brother's daughter)", "level": 12 },
-    { "id": "ef20", "category": "Extended Family", "pl": "Teściowie", "en": "Parents-in-law", "level": 12 },
-
-    { "id": "r21", "category": "Relationships", "pl": "Mąż", "en": "Husband", "level": 12 },
-    { "id": "r22", "category": "Relationships", "pl": "Żona", "en": "Wife", "level": 12 },
-    { "id": "r23", "category": "Relationships", "pl": "Chłopak", "en": "Boyfriend", "level": 12 },
-    { "id": "r24", "category": "Relationships", "pl": "Dziewczyna", "en": "Girlfriend", "level": 12 },
-    { "id": "r25", "category": "Relationships", "pl": "Narzeczony / Narzeczona", "en": "Fiancé / Fiancée", "level": 12 },
-    { "id": "r26", "category": "Relationships", "pl": "Partner / Partnerka", "en": "Partner (m/f)", "level": 12 },
-    { "id": "r27", "category": "Relationships", "pl": "Przyjaciel / Przyjaciółka", "en": "Friend (close m/f)", "level": 12 },
-    { "id": "r28", "category": "Relationships", "pl": "Kolega / Koleżanka", "en": "Acquaintance / Friend (m/f)", "level": 12 },
-    { "id": "r29", "category": "Relationships", "pl": "Sąsiad / Sąsiadka", "en": "Neighbor (m/f)", "level": 12 },
-    { "id": "r30", "category": "Relationships", "pl": "Singiel", "en": "Single (person)", "level": 12 },
-
-    { "id": "s31", "category": "Social Status", "pl": "Jestem żonaty / zamężna", "en": "I am married (m/f)", "level": 12 },
-    { "id": "s32", "category": "Social Status", "pl": "Mam dzieci", "en": "I have children", "level": 12 },
-    { "id": "s33", "category": "Social Status", "pl": "Nie mam dzieci", "en": "I don't have children", "level": 12 },
-    { "id": "s34", "category": "Social Status", "pl": "Mieszkam z...", "en": "I live with...", "level": 12 },
-    { "id": "s35", "category": "Social Status", "pl": "Pochodzę z...", "en": "I come from...", "level": 12 },
-    { "id": "s36", "category": "Social Status", "pl": "Znamy się ze szkoły", "en": "We know each other from school", "level": 12 },
-    { "id": "s37", "category": "Social Status", "pl": "Znamy się z pracy", "en": "We know each other from work", "level": 12 },
-    { "id": "s38", "category": "Social Status", "pl": "To mój bliski znajomy", "en": "This is my close friend (male)", "level": 12 },
-    { "id": "s39", "category": "Social Status", "pl": "Zakochałem się", "en": "I fell in love (male)", "level": 12 },
-    { "id": "s40", "category": "Social Status", "pl": "Randka", "en": "Date", "level": 12 },
-
-    { "id": "p41", "category": "Personality", "pl": "Miły / Miła", "en": "Nice (m/f)", "level": 12 },
-    { "id": "p42", "category": "Personality", "pl": "Uprzejmy", "en": "Polite / Kind", "level": 12 },
-    { "id": "p43", "category": "Personality", "pl": "Zabawny", "en": "Funny", "level": 12 },
-    { "id": "p44", "category": "Personality", "pl": "Mądry", "en": "Smart / Wise", "level": 12 },
-    { "id": "p45", "category": "Personality", "pl": "Cichy", "en": "Quiet", "level": 12 },
-    { "id": "p46", "category": "Personality", "pl": "Głośny", "en": "Loud", "level": 12 },
-    { "id": "p47", "category": "Personality", "pl": "Leniwy", "en": "Lazy", "level": 12 },
-    { "id": "p48", "category": "Personality", "pl": "Pracowity", "en": "Hardworking", "level": 12 },
-    { "id": "p49", "category": "Personality", "pl": "Cierpliwy", "en": "Patient", "level": 12 },
-    { "id": "p50", "category": "Personality", "pl": "Uczciwy", "en": "Honest", "level": 12 },
-
-    { "id": "v51", "category": "Common Verbs", "pl": "Kochać", "en": "To love", "level": 12 },
-    { "id": "v52", "category": "Common Verbs", "pl": "Lubić", "en": "To like", "level": 12 },
-    { "id": "v53", "category": "Common Verbs", "pl": "Ufać", "en": "To trust", "level": 12 },
-    { "id": "v54", "category": "Common Verbs", "pl": "Pomagać", "en": "To help", "level": 12 },
-    { "id": "v55", "category": "Common Verbs", "pl": "Odwiedzać", "en": "To visit", "level": 12 },
-    { "id": "v56", "category": "Common Verbs", "pl": "Rozmawiać", "en": "To talk", "level": 12 },
-    { "id": "v57", "category": "Common Verbs", "pl": "Spotykać się", "en": "To meet up", "level": 12 },
-    { "id": "v58", "category": "Common Verbs", "pl": "Kłócić się", "en": "To argue", "level": 12 },
-    { "id": "v59", "category": "Common Verbs", "pl": "Przepraszać", "en": "To apologize", "level": 12 },
-    { "id": "v60", "category": "Common Verbs", "pl": "Wybaczać", "en": "To forgive", "level": 12 },
-
-    { "id": "u61", "category": "Life Events", "pl": "Ślub", "en": "Wedding", "level": 12 },
-    { "id": "u62", "category": "Life Events", "pl": "Wesele", "en": "Wedding party", "level": 12 },
-    { "id": "u63", "category": "Life Events", "pl": "Urodziny", "en": "Birthday", "level": 12 },
-    { "id": "u64", "category": "Life Events", "pl": "Imieniny", "en": "Name day", "level": 12 },
-    { "id": "u65", "category": "Life Events", "pl": "Pogrzeb", "en": "Funeral", "level": 12 },
-    { "id": "u66", "category": "Life Events", "pl": "Narodziny", "en": "Birth", "level": 12 },
-    { "id": "u67", "category": "Life Events", "pl": "Rocznica", "en": "Anniversary", "level": 12 },
-    { "id": "u68", "category": "Life Events", "pl": "Gość", "en": "Guest", "level": 12 },
-    { "id": "u69", "category": "Life Events", "pl": "Prezent", "en": "Gift", "level": 12 },
-    { "id": "u70", "category": "Life Events", "pl": "Gratulacje!", "en": "Congratulations!", "level": 12 }
+    {
+      "id": "ef11",
+      "category": "Extended Family",
+      "pl": "Dziadkowie",
+      "en": "Grandparents",
+      "level": 12
+    },
+    {
+      "id": "ef12",
+      "category": "Extended Family",
+      "pl": "Babcia",
+      "en": "Grandmother",
+      "level": 12
+    },
+    {
+      "id": "ef13",
+      "category": "Extended Family",
+      "pl": "Dziadek",
+      "en": "Grandfather",
+      "level": 12
+    },
+    {
+      "id": "ef14",
+      "category": "Extended Family",
+      "pl": "Wnuk / Wnuczka",
+      "en": "Grandson / Granddaughter",
+      "level": 12
+    },
+    {
+      "id": "ef15",
+      "category": "Extended Family",
+      "pl": "Wujek",
+      "en": "Uncle",
+      "level": 12
+    },
+    {
+      "id": "ef16",
+      "category": "Extended Family",
+      "pl": "Ciocia",
+      "en": "Aunt",
+      "level": 12
+    },
+    {
+      "id": "ef17",
+      "category": "Extended Family",
+      "pl": "Kuzyn / Kuzynka",
+      "en": "Cousin (m/f)",
+      "level": 12
+    },
+    {
+      "id": "ef18",
+      "category": "Extended Family",
+      "pl": "Siostrzeniec / Bratanek",
+      "en": "Nephew (sister's/brother's son)",
+      "level": 12
+    },
+    {
+      "id": "ef19",
+      "category": "Extended Family",
+      "pl": "Siostrzenica / Bratanica",
+      "en": "Niece (sister's/brother's daughter)",
+      "level": 12
+    },
+    {
+      "id": "ef20",
+      "category": "Extended Family",
+      "pl": "Teściowie",
+      "en": "Parents-in-law",
+      "level": 12
+    },
+    {
+      "id": "f1",
+      "category": "Family Members",
+      "pl": "Rodzina",
+      "en": "Family",
+      "level": 12
+    },
+    {
+      "id": "f10",
+      "category": "Family Members",
+      "pl": "Córka",
+      "en": "Daughter",
+      "level": 12
+    },
+    {
+      "id": "f2",
+      "category": "Family Members",
+      "pl": "Rodzice",
+      "en": "Parents",
+      "level": 12
+    },
+    {
+      "id": "f3",
+      "category": "Family Members",
+      "pl": "Mama",
+      "en": "Mom",
+      "level": 12
+    },
+    {
+      "id": "f4",
+      "category": "Family Members",
+      "pl": "Tata",
+      "en": "Dad",
+      "level": 12
+    },
+    {
+      "id": "f5",
+      "category": "Family Members",
+      "pl": "Rodzeństwo",
+      "en": "Siblings",
+      "level": 12
+    },
+    {
+      "id": "f6",
+      "category": "Family Members",
+      "pl": "Brat",
+      "en": "Brother",
+      "level": 12
+    },
+    {
+      "id": "f7",
+      "category": "Family Members",
+      "pl": "Siostra",
+      "en": "Sister",
+      "level": 12
+    },
+    {
+      "id": "f8",
+      "category": "Family Members",
+      "pl": "Dziecko",
+      "en": "Child",
+      "level": 12
+    },
+    {
+      "id": "f9",
+      "category": "Family Members",
+      "pl": "Syn",
+      "en": "Son",
+      "level": 12
+    },
+    {
+      "id": "p41",
+      "category": "Personality",
+      "pl": "Miły / Miła",
+      "en": "Nice (m/f)",
+      "level": 12
+    },
+    {
+      "id": "p42",
+      "category": "Personality",
+      "pl": "Uprzejmy",
+      "en": "Polite / Kind",
+      "level": 12
+    },
+    {
+      "id": "p43",
+      "category": "Personality",
+      "pl": "Zabawny",
+      "en": "Funny",
+      "level": 12
+    },
+    {
+      "id": "p44",
+      "category": "Personality",
+      "pl": "Mądry",
+      "en": "Smart / Wise",
+      "level": 12
+    },
+    {
+      "id": "p45",
+      "category": "Personality",
+      "pl": "Cichy",
+      "en": "Quiet",
+      "level": 12
+    },
+    {
+      "id": "p46",
+      "category": "Personality",
+      "pl": "Głośny",
+      "en": "Loud",
+      "level": 12
+    },
+    {
+      "id": "p47",
+      "category": "Personality",
+      "pl": "Leniwy",
+      "en": "Lazy",
+      "level": 12
+    },
+    {
+      "id": "p48",
+      "category": "Personality",
+      "pl": "Pracowity",
+      "en": "Hardworking",
+      "level": 12
+    },
+    {
+      "id": "p49",
+      "category": "Personality",
+      "pl": "Cierpliwy",
+      "en": "Patient",
+      "level": 12
+    },
+    {
+      "id": "p50",
+      "category": "Personality",
+      "pl": "Uczciwy",
+      "en": "Honest",
+      "level": 12
+    },
+    {
+      "id": "r21",
+      "category": "Relationships",
+      "pl": "Mąż",
+      "en": "Husband",
+      "level": 12
+    },
+    {
+      "id": "r22",
+      "category": "Relationships",
+      "pl": "Żona",
+      "en": "Wife",
+      "level": 12
+    },
+    {
+      "id": "r23",
+      "category": "Relationships",
+      "pl": "Chłopak",
+      "en": "Boyfriend",
+      "level": 12
+    },
+    {
+      "id": "r24",
+      "category": "Relationships",
+      "pl": "Dziewczyna",
+      "en": "Girlfriend",
+      "level": 12
+    },
+    {
+      "id": "r25",
+      "category": "Relationships",
+      "pl": "Narzeczony / Narzeczona",
+      "en": "Fiancé / Fiancée",
+      "level": 12
+    },
+    {
+      "id": "r26",
+      "category": "Relationships",
+      "pl": "Partner / Partnerka",
+      "en": "Partner (m/f)",
+      "level": 12
+    },
+    {
+      "id": "r27",
+      "category": "Relationships",
+      "pl": "Przyjaciel / Przyjaciółka",
+      "en": "Friend (close m/f)",
+      "level": 12
+    },
+    {
+      "id": "r28",
+      "category": "Relationships",
+      "pl": "Kolega / Koleżanka",
+      "en": "Acquaintance / Friend (m/f)",
+      "level": 12
+    },
+    {
+      "id": "r29",
+      "category": "Relationships",
+      "pl": "Sąsiad / Sąsiadka",
+      "en": "Neighbor (m/f)",
+      "level": 12
+    },
+    {
+      "id": "r30",
+      "category": "Relationships",
+      "pl": "Singiel",
+      "en": "Single (person)",
+      "level": 12
+    },
+    {
+      "id": "s31",
+      "category": "Social Status",
+      "pl": "Jestem żonaty / zamężna",
+      "en": "I am married (m/f)",
+      "level": 12
+    },
+    {
+      "id": "s32",
+      "category": "Social Status",
+      "pl": "Mam dzieci",
+      "en": "I have children",
+      "level": 12
+    },
+    {
+      "id": "s33",
+      "category": "Social Status",
+      "pl": "Nie mam dzieci",
+      "en": "I don't have children",
+      "level": 12
+    },
+    {
+      "id": "s34",
+      "category": "Social Status",
+      "pl": "Mieszkam z...",
+      "en": "I live with...",
+      "level": 12
+    },
+    {
+      "id": "s35",
+      "category": "Social Status",
+      "pl": "Pochodzę z...",
+      "en": "I come from...",
+      "level": 12
+    },
+    {
+      "id": "s36",
+      "category": "Social Status",
+      "pl": "Znamy się ze szkoły",
+      "en": "We know each other from school",
+      "level": 12
+    },
+    {
+      "id": "s37",
+      "category": "Social Status",
+      "pl": "Znamy się z pracy",
+      "en": "We know each other from work",
+      "level": 12
+    },
+    {
+      "id": "s38",
+      "category": "Social Status",
+      "pl": "To mój bliski znajomy",
+      "en": "This is my close friend (male)",
+      "level": 12
+    },
+    {
+      "id": "s39",
+      "category": "Social Status",
+      "pl": "Zakochałem się",
+      "en": "I fell in love (male)",
+      "level": 12
+    },
+    {
+      "id": "s40",
+      "category": "Social Status",
+      "pl": "Randka",
+      "en": "Date",
+      "level": 12
+    },
+    {
+      "id": "u61",
+      "category": "Life Events",
+      "pl": "Ślub",
+      "en": "Wedding",
+      "level": 12
+    },
+    {
+      "id": "u62",
+      "category": "Life Events",
+      "pl": "Wesele",
+      "en": "Wedding party",
+      "level": 12
+    },
+    {
+      "id": "u63",
+      "category": "Life Events",
+      "pl": "Urodziny",
+      "en": "Birthday",
+      "level": 12
+    },
+    {
+      "id": "u64",
+      "category": "Life Events",
+      "pl": "Imieniny",
+      "en": "Name day",
+      "level": 12
+    },
+    {
+      "id": "u65",
+      "category": "Life Events",
+      "pl": "Pogrzeb",
+      "en": "Funeral",
+      "level": 12
+    },
+    {
+      "id": "u66",
+      "category": "Life Events",
+      "pl": "Narodziny",
+      "en": "Birth",
+      "level": 12
+    },
+    {
+      "id": "u67",
+      "category": "Life Events",
+      "pl": "Rocznica",
+      "en": "Anniversary",
+      "level": 12
+    },
+    {
+      "id": "u68",
+      "category": "Life Events",
+      "pl": "Gość",
+      "en": "Guest",
+      "level": 12
+    },
+    {
+      "id": "u69",
+      "category": "Life Events",
+      "pl": "Prezent",
+      "en": "Gift",
+      "level": 12
+    },
+    {
+      "id": "v51",
+      "category": "Common Verbs",
+      "pl": "Kochać",
+      "en": "To love",
+      "level": 12
+    },
+    {
+      "id": "v52",
+      "category": "Common Verbs",
+      "pl": "Lubić",
+      "en": "To like",
+      "level": 12
+    },
+    {
+      "id": "v53",
+      "category": "Common Verbs",
+      "pl": "Ufać",
+      "en": "To trust",
+      "level": 12
+    },
+    {
+      "id": "v55",
+      "category": "Common Verbs",
+      "pl": "Odwiedzać",
+      "en": "To visit",
+      "level": 12
+    },
+    {
+      "id": "v56",
+      "category": "Common Verbs",
+      "pl": "Rozmawiać",
+      "en": "To talk",
+      "level": 12
+    },
+    {
+      "id": "v57",
+      "category": "Common Verbs",
+      "pl": "Spotykać się",
+      "en": "To meet up",
+      "level": 12
+    },
+    {
+      "id": "v58",
+      "category": "Common Verbs",
+      "pl": "Kłócić się",
+      "en": "To argue",
+      "level": 12
+    },
+    {
+      "id": "v59",
+      "category": "Common Verbs",
+      "pl": "Przepraszać",
+      "en": "To apologize",
+      "level": 12
+    },
+    {
+      "id": "v60",
+      "category": "Common Verbs",
+      "pl": "Wybaczać",
+      "en": "To forgive",
+      "level": 12
+    },
+    {
+      "id": "l11_71",
+      "category": "Common Verbs",
+      "pl": "Kochać się",
+      "en": "To be in love",
+      "level": 11
+    },
+    {
+      "id": "l11_72",
+      "category": "Life Events",
+      "pl": "Zaręczyny",
+      "en": "Engagement",
+      "level": 11
+    }
   ]
 }

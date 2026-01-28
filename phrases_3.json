@@ -1,84 +1,497 @@
 {
   "level": 3,
-  "description": "Advanced Social, Nuance & Problem Solving",
+  "description": "Expressing Opinions & Problem Solving",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "l3_1", "category": "Opinions", "pl": "Moim zdaniem...", "en": "In my opinion...", "level": 2 },
-    { "id": "l3_2", "category": "Opinions", "pl": "Masz rację", "en": "You are right", "level": 2 },
-    { "id": "l3_3", "category": "Opinions", "pl": "Nie zgadzam się", "en": "I disagree", "level": 2 },
-    { "id": "l3_4", "category": "Opinions", "pl": "To zależy od sytuacji", "en": "It depends on the situation", "level": 2 },
-    { "id": "l3_5", "category": "Opinions", "pl": "Wydaje mi się, że...", "en": "It seems to me that...", "level": 2 },
-    { "id": "l3_6", "category": "Opinions", "pl": "To nie ma sensu", "en": "That makes no sense", "level": 2 },
-    { "id": "l3_7", "category": "Opinions", "pl": "Co o tym sądzisz?", "en": "What do you think about it?", "level": 2 },
-    { "id": "l3_8", "category": "Opinions", "pl": "Nie mam zdania", "en": "I have no opinion", "level": 2 },
-    { "id": "l3_9", "category": "Opinions", "pl": "Dokładnie tak", "en": "Exactly so", "level": 2 },
-    { "id": "l3_10", "category": "Opinions", "pl": "Bez wątpienia", "en": "Without a doubt", "level": 2 },
-
-    { "id": "l3_11", "category": "Problem Solving", "pl": "Coś poszło nie tak", "en": "Something went wrong", "level": 2 },
-    { "id": "l3_12", "category": "Problem Solving", "pl": "Potrzebuję wyjaśnienia", "en": "I need an explanation", "level": 2 },
-    { "id": "l3_13", "category": "Problem Solving", "pl": "Czy możesz mi pomóc z tym?", "en": "Can you help me with this?", "level": 2 },
-    { "id": "l3_14", "category": "Problem Solving", "pl": "To nie moja wina", "en": "It's not my fault", "level": 2 },
-    { "id": "l3_15", "category": "Problem Solving", "pl": "Zróbmy to inaczej", "en": "Let's do it differently", "level": 2 },
-    { "id": "l3_16", "category": "Problem Solving", "pl": "Muszę to sprawdzić", "en": "I need to check that", "level": 2 },
-    { "id": "l3_17", "category": "Problem Solving", "pl": "Nie ma pośpiechu", "en": "There is no rush", "level": 2 },
-    { "id": "l3_18", "category": "Problem Solving", "pl": "To pomyłka", "en": "It's a mistake", "level": 2 },
-    { "id": "l3_19", "category": "Problem Solving", "pl": "Zajmę się tym", "en": "I'll take care of it", "level": 2 },
-    { "id": "l3_20", "category": "Problem Solving", "pl": "Jakie jest rozwiązanie?", "en": "What is the solution?", "level": 2 },
-
-    { "id": "l3_21", "category": "Deep Social", "pl": "Co masz na myśli?", "en": "What do you mean?", "level": 2 },
-    { "id": "l3_22", "category": "Deep Social", "pl": "Długo się nie widzieliśmy", "en": "Long time no see", "level": 2 },
-    { "id": "l3_23", "category": "Deep Social", "pl": "O czym rozmawialiście?", "en": "What were you talking about?", "level": 2 },
-    { "id": "l3_24", "category": "Deep Social", "pl": "Nie przejmuj się", "en": "Don't worry about it", "level": 2 },
-    { "id": "l3_25", "category": "Deep Social", "pl": "Szkoda czasu", "en": "It's a waste of time", "level": 2 },
-    { "id": "l3_26", "category": "Deep Social", "pl": "To brzmi świetnie", "en": "That sounds great", "level": 2 },
-    { "id": "l3_27", "category": "Deep Social", "pl": "Masz chwilę?", "en": "Do you have a moment?", "level": 2 },
-    { "id": "l3_28", "category": "Deep Social", "pl": "Będę za tobą tęsknić", "en": "I will miss you", "level": 2 },
-    { "id": "l3_29", "category": "Deep Social", "pl": "Możesz na mnie liczyć", "en": "You can count on me", "level": 2 },
-    { "id": "l3_30", "category": "Deep Social", "pl": "Wszystko będzie dobrze", "en": "Everything will be fine", "level": 2 },
-
-    { "id": "l3_31", "category": "Connectors", "pl": "Mimo to...", "en": "Despite that...", "level": 2 },
-    { "id": "l3_32", "category": "Connectors", "pl": "Poza tym...", "en": "Besides...", "level": 2 },
-    { "id": "l3_33", "category": "Connectors", "pl": "Właściwie...", "en": "Actually / In fact...", "level": 2 },
-    { "id": "l3_34", "category": "Connectors", "pl": "W każdym razie...", "en": "In any case / Anyway...", "level": 2 },
-    { "id": "l3_35", "category": "Connectors", "pl": "Z jednej strony...", "en": "On one hand...", "level": 2 },
-    { "id": "l3_36", "category": "Connectors", "pl": "Z drugiej strony...", "en": "On the other hand...", "level": 2 },
-    { "id": "l3_37", "category": "Connectors", "pl": "Szczerze mówiąc...", "en": "To be honest...", "level": 2 },
-    { "id": "l3_38", "category": "Connectors", "pl": "Chodzi o to, że...", "en": "The point is that...", "level": 2 },
-    { "id": "l3_39", "category": "Connectors", "pl": "Na szczęście", "en": "Fortunately", "level": 2 },
-    { "id": "l3_40", "category": "Connectors", "pl": "Niestety", "en": "Unfortunately", "level": 2 },
-
-    { "id": "l3_41", "category": "Lifestyle", "pl": "Jakie masz plany?", "en": "What are your plans?", "level": 2 },
-    { "id": "l3_42", "category": "Lifestyle", "pl": "Jestem zajęty", "en": "I am busy", "level": 2 },
-    { "id": "l3_43", "category": "Lifestyle", "pl": "Mam wolne", "en": "I have time off / I'm free", "level": 2 },
-    { "id": "l3_44", "category": "Lifestyle", "pl": "Warto spróbować", "en": "It's worth a try", "level": 2 },
-    { "id": "l3_45", "category": "Lifestyle", "pl": "Czym się interesujesz?", "en": "What are you interested in?", "level": 2 },
-    { "id": "l3_46", "category": "Lifestyle", "pl": "To moja pasja", "en": "It's my passion", "level": 2 },
-    { "id": "l3_47", "category": "Lifestyle", "pl": "Chciałbym podróżować", "en": "I would like to travel", "level": 2 },
-    { "id": "l3_48", "category": "Lifestyle", "pl": "Uczę się codziennie", "en": "I learn every day", "level": 2 },
-    { "id": "l3_49", "category": "Lifestyle", "pl": "Nie mam ochoty", "en": "I don't feel like it", "level": 2 },
-    { "id": "l3_50", "category": "Lifestyle", "pl": "To zależy od pogody", "en": "It depends on the weather", "level": 2 },
-
-    { "id": "l3_51", "category": "Emergencies", "pl": "To pilne!", "en": "It's urgent!", "level": 2 },
-    { "id": "l3_52", "category": "Emergencies", "pl": "Zgubiono bagaż", "en": "Lost luggage", "level": 2 },
-    { "id": "l3_53", "category": "Emergencies", "pl": "Ukradli mi portfel", "en": "They stole my wallet", "level": 2 },
-    { "id": "l3_54", "category": "Emergencies", "pl": "Potrzebuję lekarza", "en": "I need a doctor", "level": 2 },
-    { "id": "l3_55", "category": "Emergencies", "pl": "Gdzie jest komisariat?", "en": "Where is the police station?", "level": 2 },
-    { "id": "l3_56", "category": "Emergencies", "pl": "Zgubiłem się", "en": "I am lost", "level": 2 },
-    { "id": "l3_57", "category": "Emergencies", "pl": "Proszę wezwać pomoc", "en": "Please call for help", "level": 2 },
-
-    { "id": "l3_58", "category": "Work & Professional", "pl": "Pracuję nad tym", "en": "I am working on it", "level": 2 },
-    { "id": "l3_59", "category": "Work & Professional", "pl": "Potrzebuję feedbacku", "en": "I need feedback", "level": 2 },
-    { "id": "l3_60", "category": "Work & Professional", "pl": "Ustalmy spotkanie", "en": "Let's set a meeting", "level": 2 },
-    { "id": "l3_61", "category": "Work & Professional", "pl": "To jest priorytet", "en": "This is a priority", "level": 2 },
-    { "id": "l3_62", "category": "Work & Professional", "pl": "Prześlij mi to mailem", "en": "Send it to me by email", "level": 2 },
-
-    { "id": "l3_63", "category": "Nuance & Fillers", "pl": "W sumie...", "en": "Actually / All in all...", "level": 2 },
-    { "id": "l3_64", "category": "Nuance & Fillers", "pl": "Prawdę mówiąc...", "en": "To tell the truth...", "level": 2 },
-    { "id": "l3_65", "category": "Nuance & Fillers", "pl": "No wiesz...", "en": "Well you know...", "level": 2 },
-
-    { "id": "l3_66", "category": "Deadlines", "pl": "Na wczoraj", "en": "ASAP (Literally: for yesterday)", "level": 2 },
-    { "id": "l3_67", "category": "Deadlines", "pl": "Jaki jest termin?", "en": "What is the deadline?", "level": 2 },
-    { "id": "l3_68", "category": "Deadlines", "pl": "Spóźnię się", "en": "I will be late", "level": 2 },
-    { "id": "l3_69", "category": "Deadlines", "pl": "Zdążymy na czas", "en": "We will make it on time", "level": 2 },
-    { "id": "l3_70", "category": "Deadlines", "pl": "W ostatniej chwili", "en": "At the last minute", "level": 2 }
+    {
+      "id": "l3_1",
+      "category": "Opinions",
+      "pl": "Moim zdaniem...",
+      "en": "In my opinion...",
+      "level": 2
+    },
+    {
+      "id": "l3_10",
+      "category": "Opinions",
+      "pl": "Bez wątpienia",
+      "en": "Without a doubt",
+      "level": 2
+    },
+    {
+      "id": "l3_11",
+      "category": "Problem Solving",
+      "pl": "Coś poszło nie tak",
+      "en": "Something went wrong",
+      "level": 2
+    },
+    {
+      "id": "l3_12",
+      "category": "Problem Solving",
+      "pl": "Potrzebuję wyjaśnienia",
+      "en": "I need an explanation",
+      "level": 2
+    },
+    {
+      "id": "l3_13",
+      "category": "Problem Solving",
+      "pl": "Czy możesz mi pomóc z tym?",
+      "en": "Can you help me with this?",
+      "level": 2
+    },
+    {
+      "id": "l3_14",
+      "category": "Problem Solving",
+      "pl": "To nie moja wina",
+      "en": "It's not my fault",
+      "level": 2
+    },
+    {
+      "id": "l3_15",
+      "category": "Problem Solving",
+      "pl": "Zróbmy to inaczej",
+      "en": "Let's do it differently",
+      "level": 2
+    },
+    {
+      "id": "l3_16",
+      "category": "Problem Solving",
+      "pl": "Daj mi chwilę",
+      "en": "Give me a moment",
+      "level": 2
+    },
+    {
+      "id": "l3_17",
+      "category": "Problem Solving",
+      "pl": "Czy to działa?",
+      "en": "Does this work?",
+      "level": 2
+    },
+    {
+      "id": "l3_18",
+      "category": "Problem Solving",
+      "pl": "Nie jestem pewien",
+      "en": "I'm not sure",
+      "level": 2
+    },
+    {
+      "id": "l3_19",
+      "category": "Problem Solving",
+      "pl": "Muszę to przemyśleć",
+      "en": "I need to think about it",
+      "level": 2
+    },
+    {
+      "id": "l3_2",
+      "category": "Opinions",
+      "pl": "Masz rację",
+      "en": "You are right",
+      "level": 2
+    },
+    {
+      "id": "l3_20",
+      "category": "Problem Solving",
+      "pl": "Zróbmy listę",
+      "en": "Let's make a list",
+      "level": 2
+    },
+    {
+      "id": "l3_21",
+      "category": "Requests",
+      "pl": "Czy mógłbyś...?",
+      "en": "Could you...?",
+      "level": 2
+    },
+    {
+      "id": "l3_22",
+      "category": "Requests",
+      "pl": "Czy mogę prosić o...?",
+      "en": "May I ask for...?",
+      "level": 2
+    },
+    {
+      "id": "l3_23",
+      "category": "Requests",
+      "pl": "Byłbym wdzięczny",
+      "en": "I would be grateful",
+      "level": 2
+    },
+    {
+      "id": "l3_24",
+      "category": "Requests",
+      "pl": "Potrzebuję twojej rady",
+      "en": "I need your advice",
+      "level": 2
+    },
+    {
+      "id": "l3_25",
+      "category": "Requests",
+      "pl": "Czy możesz to sprawdzić?",
+      "en": "Can you check this?",
+      "level": 2
+    },
+    {
+      "id": "l3_26",
+      "category": "Requests",
+      "pl": "Proszę daj mi znać",
+      "en": "Please let me know",
+      "level": 2
+    },
+    {
+      "id": "l3_27",
+      "category": "Requests",
+      "pl": "Czy to możliwe?",
+      "en": "Is this possible?",
+      "level": 2
+    },
+    {
+      "id": "l3_28",
+      "category": "Requests",
+      "pl": "Kiedy będzie gotowe?",
+      "en": "When will it be ready?",
+      "level": 2
+    },
+    {
+      "id": "l3_29",
+      "category": "Requests",
+      "pl": "Czy możesz to powtórzyć?",
+      "en": "Can you repeat that?",
+      "level": 2
+    },
+    {
+      "id": "l3_3",
+      "category": "Opinions",
+      "pl": "Nie zgadzam się",
+      "en": "I disagree",
+      "level": 2
+    },
+    {
+      "id": "l3_30",
+      "category": "Requests",
+      "pl": "Mógłbyś mówić wolniej?",
+      "en": "Could you speak slower?",
+      "level": 2
+    },
+    {
+      "id": "l3_31",
+      "category": "Connectors",
+      "pl": "Po pierwsze...",
+      "en": "First of all...",
+      "level": 2
+    },
+    {
+      "id": "l3_32",
+      "category": "Connectors",
+      "pl": "Po drugie...",
+      "en": "Secondly...",
+      "level": 2
+    },
+    {
+      "id": "l3_33",
+      "category": "Connectors",
+      "pl": "W końcu...",
+      "en": "Finally...",
+      "level": 2
+    },
+    {
+      "id": "l3_34",
+      "category": "Connectors",
+      "pl": "Z drugiej strony...",
+      "en": "On the other hand...",
+      "level": 2
+    },
+    {
+      "id": "l3_35",
+      "category": "Connectors",
+      "pl": "Innymi słowy...",
+      "en": "In other words...",
+      "level": 2
+    },
+    {
+      "id": "l3_36",
+      "category": "Connectors",
+      "pl": "Na przykład...",
+      "en": "For example...",
+      "level": 2
+    },
+    {
+      "id": "l3_37",
+      "category": "Connectors",
+      "pl": "Szczerze mówiąc...",
+      "en": "To be honest...",
+      "level": 2
+    },
+    {
+      "id": "l3_38",
+      "category": "Connectors",
+      "pl": "Chodzi o to, że...",
+      "en": "The point is that...",
+      "level": 2
+    },
+    {
+      "id": "l3_39",
+      "category": "Connectors",
+      "pl": "Na szczęście",
+      "en": "Fortunately",
+      "level": 2
+    },
+    {
+      "id": "l3_4",
+      "category": "Opinions",
+      "pl": "To zależy od sytuacji",
+      "en": "It depends on the situation",
+      "level": 2
+    },
+    {
+      "id": "l3_41",
+      "category": "Lifestyle",
+      "pl": "Jakie masz plany?",
+      "en": "What are your plans?",
+      "level": 2
+    },
+    {
+      "id": "l3_42",
+      "category": "Lifestyle",
+      "pl": "Jestem zajęty",
+      "en": "I am busy",
+      "level": 2
+    },
+    {
+      "id": "l3_43",
+      "category": "Lifestyle",
+      "pl": "Mam wolne",
+      "en": "I have time off / I'm free",
+      "level": 2
+    },
+    {
+      "id": "l3_44",
+      "category": "Lifestyle",
+      "pl": "Warto spróbować",
+      "en": "It's worth a try",
+      "level": 2
+    },
+    {
+      "id": "l3_45",
+      "category": "Lifestyle",
+      "pl": "Czym się interesujesz?",
+      "en": "What are you interested in?",
+      "level": 2
+    },
+    {
+      "id": "l3_46",
+      "category": "Lifestyle",
+      "pl": "To moja pasja",
+      "en": "It's my passion",
+      "level": 2
+    },
+    {
+      "id": "l3_47",
+      "category": "Lifestyle",
+      "pl": "Chciałbym podróżować",
+      "en": "I would like to travel",
+      "level": 2
+    },
+    {
+      "id": "l3_48",
+      "category": "Lifestyle",
+      "pl": "Uczę się codziennie",
+      "en": "I learn every day",
+      "level": 2
+    },
+    {
+      "id": "l3_49",
+      "category": "Lifestyle",
+      "pl": "Nie mam ochoty",
+      "en": "I don't feel like it",
+      "level": 2
+    },
+    {
+      "id": "l3_5",
+      "category": "Opinions",
+      "pl": "Wydaje mi się, że...",
+      "en": "It seems to me that...",
+      "level": 2
+    },
+    {
+      "id": "l3_50",
+      "category": "Lifestyle",
+      "pl": "To zależy od pogody",
+      "en": "It depends on the weather",
+      "level": 2
+    },
+    {
+      "id": "l3_51",
+      "category": "Emergencies",
+      "pl": "To pilne!",
+      "en": "It's urgent!",
+      "level": 2
+    },
+    {
+      "id": "l3_52",
+      "category": "Emergencies",
+      "pl": "Zgubiono bagaż",
+      "en": "Lost luggage",
+      "level": 2
+    },
+    {
+      "id": "l3_53",
+      "category": "Emergencies",
+      "pl": "Ukradli mi portfel",
+      "en": "They stole my wallet",
+      "level": 2
+    },
+    {
+      "id": "l3_54",
+      "category": "Emergencies",
+      "pl": "Potrzebuję pomocy prawnej",
+      "en": "I need legal help",
+      "level": 2
+    },
+    {
+      "id": "l3_55",
+      "category": "Emergencies",
+      "pl": "Gdzie jest najbliższy szpital?",
+      "en": "Where is the nearest hospital?",
+      "level": 2
+    },
+    {
+      "id": "l3_56",
+      "category": "Emergencies",
+      "pl": "Zadzwoń po karetkę",
+      "en": "Call an ambulance",
+      "level": 2
+    },
+    {
+      "id": "l3_57",
+      "category": "Emergencies",
+      "pl": "Nie mogę oddychać",
+      "en": "I can't breathe",
+      "level": 2
+    },
+    {
+      "id": "l3_58",
+      "category": "Emergencies",
+      "pl": "Jestem ranny",
+      "en": "I am injured",
+      "level": 2
+    },
+    {
+      "id": "l3_59",
+      "category": "Emergencies",
+      "pl": "To wypadek",
+      "en": "It's an accident",
+      "level": 2
+    },
+    {
+      "id": "l3_6",
+      "category": "Opinions",
+      "pl": "To nie ma sensu",
+      "en": "That makes no sense",
+      "level": 2
+    },
+    {
+      "id": "l3_60",
+      "category": "Emergencies",
+      "pl": "Proszę o pomoc",
+      "en": "I'm asking for help",
+      "level": 2
+    },
+    {
+      "id": "l3_7",
+      "category": "Opinions",
+      "pl": "Co o tym sądzisz?",
+      "en": "What do you think about it?",
+      "level": 2
+    },
+    {
+      "id": "l3_8",
+      "category": "Opinions",
+      "pl": "Nie mam zdania",
+      "en": "I have no opinion",
+      "level": 2
+    },
+    {
+      "id": "l3_9",
+      "category": "Opinions",
+      "pl": "Dokładnie tak",
+      "en": "Exactly so",
+      "level": 2
+    },
+    {
+      "id": "l3_61",
+      "category": "Connectors",
+      "pl": "Przede wszystkim",
+      "en": "Above all / First and foremost",
+      "level": 3
+    },
+    {
+      "id": "l3_62",
+      "category": "Problem Solving",
+      "pl": "Jak to naprawić?",
+      "en": "How to fix this?",
+      "level": 3
+    },
+    {
+      "id": "l3_63",
+      "category": "Problem Solving",
+      "pl": "Czy to jest bezpieczne?",
+      "en": "Is this safe?",
+      "level": 3
+    },
+    {
+      "id": "l3_64",
+      "category": "Requests",
+      "pl": "Czy możesz mi pokazać?",
+      "en": "Can you show me?",
+      "level": 3
+    },
+    {
+      "id": "l3_65",
+      "category": "Requests",
+      "pl": "Potrzebuję więcej czasu",
+      "en": "I need more time",
+      "level": 3
+    },
+    {
+      "id": "l3_66",
+      "category": "Opinions",
+      "pl": "Nie jestem przekonany",
+      "en": "I'm not convinced",
+      "level": 3
+    },
+    {
+      "id": "l3_67",
+      "category": "Opinions",
+      "pl": "To dobry pomysł",
+      "en": "That's a good idea",
+      "level": 3
+    },
+    {
+      "id": "l3_68",
+      "category": "Lifestyle",
+      "pl": "Lubię to robić",
+      "en": "I like doing this",
+      "level": 3
+    },
+    {
+      "id": "l3_69",
+      "category": "Lifestyle",
+      "pl": "To jest moje ulubione",
+      "en": "This is my favorite",
+      "level": 3
+    },
+    {
+      "id": "l3_70",
+      "category": "Emergencies",
+      "pl": "Gdzie jest wyjście awaryjne?",
+      "en": "Where is the emergency exit?",
+      "level": 3
+    },
+    {
+      "id": "l3_71",
+      "category": "Connectors",
+      "pl": "Podsumowując",
+      "en": "To sum up / In summary",
+      "level": 3
+    }
   ]
 }

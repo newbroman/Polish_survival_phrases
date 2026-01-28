@@ -1,81 +1,497 @@
 {
-  "lastUpdated": "2026-01-27",
+  "level": 6,
+  "description": "Health & Medical Situations",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "h1", "category": "Body Parts", "pl": "Głowa", "en": "Head", "level": 6 },
-    { "id": "h2", "category": "Body Parts", "pl": "Ręka", "en": "Hand / Arm", "level": 6 },
-    { "id": "h3", "category": "Body Parts", "pl": "Noga", "en": "Leg", "level": 6 },
-    { "id": "h4", "category": "Body Parts", "pl": "Plecy", "en": "Back", "level": 6 },
-    { "id": "h5", "category": "Body Parts", "pl": "Brzuch", "en": "Stomach", "level": 6 },
-    { "id": "h6", "category": "Body Parts", "pl": "Serce", "en": "Heart", "level": 6 },
-    { "id": "h7", "category": "Body Parts", "pl": "Oczy", "en": "Eyes", "level": 6 },
-    { "id": "h8", "category": "Body Parts", "pl": "Uszy", "en": "Ears", "level": 6 },
-    { "id": "h9", "category": "Body Parts", "pl": "Zęby", "en": "Teeth", "level": 6 },
-    { "id": "h10", "category": "Body Parts", "pl": "Gardło", "en": "Throat", "level": 6 },
-
-    { "id": "m11", "category": "Medical Issues", "pl": "Boli mnie...", "en": "My ... hurts", "level": 6 },
-    { "id": "m12", "category": "Medical Issues", "pl": "Mam gorączkę", "en": "I have a fever", "level": 6 },
-    { "id": "m13", "category": "Medical Issues", "pl": "Mam katar", "en": "I have a runny nose", "level": 6 },
-    { "id": "m14", "category": "Medical Issues", "pl": "Mam kaszel", "en": "I have a cough", "level": 6 },
-    { "id": "m15", "category": "Medical Issues", "pl": "Jestem uczulony na...", "en": "I am allergic to... (male)", "level": 6 },
-    { "id": "m16", "category": "Medical Issues", "pl": "Kręci mi się w głowie", "en": "I feel dizzy", "level": 6 },
-    { "id": "m17", "category": "Medical Issues", "pl": "Mam mdłości", "en": "I feel nauseous", "level": 6 },
-    { "id": "m18", "category": "Medical Issues", "pl": "Zraniłem się", "en": "I hurt myself (male)", "level": 6 },
-    { "id": "m19", "category": "Medical Issues", "pl": "To boli", "en": "It hurts", "level": 6 },
-    { "id": "m20", "category": "Medical Issues", "pl": "Potrzebuję recepty", "en": "I need a prescription", "level": 6 },
-
-    { "id": "p21", "category": "Pharmacy", "pl": "Lekarstwo", "en": "Medicine", "level": 6 },
-    { "id": "p22", "category": "Pharmacy", "pl": "Tabletki przeciwbólowe", "en": "Painkillers", "level": 6 },
-    { "id": "p23", "category": "Pharmacy", "pl": "Antybiotyk", "en": "Antibiotic", "level": 6 },
-    { "id": "p24", "category": "Pharmacy", "pl": "Plaster", "en": "Plaster / Band-aid", "level": 6 },
-    { "id": "p25", "category": "Pharmacy", "pl": "Bandaż", "en": "Bandage", "level": 6 },
-    { "id": "p26", "category": "Pharmacy", "pl": "Syrop", "en": "Syrup", "level": 6 },
-    { "id": "p27", "category": "Pharmacy", "pl": "Maść", "en": "Ointment", "level": 6 },
-    { "id": "p28", "category": "Pharmacy", "pl": "Witaminy", "en": "Vitamins", "level": 6 },
-    { "id": "p29", "category": "Pharmacy", "pl": "Termometr", "en": "Thermometer", "level": 6 },
-    { "id": "p30", "category": "Pharmacy", "pl": "Ciśnieniomierz", "en": "Blood pressure monitor", "level": 6 },
-
-    { "id": "d31", "category": "At the Doctor", "pl": "Muszę iść do lekarza", "en": "I must go to the doctor", "level": 6 },
-    { "id": "d32", "category": "At the Doctor", "pl": "Chciałbym się umówić na wizytę", "en": "I would like to make an appointment", "level": 6 },
-    { "id": "d33", "category": "At the Doctor", "pl": "Kiedy lekarz przyjmuje?", "en": "When does the doctor see patients?", "level": 6 },
-    { "id": "d34", "category": "At the Doctor", "pl": "Gdzie jest najbliższy szpital?", "en": "Where is the nearest hospital?", "level": 6 },
-    { "id": "d35", "category": "At the Doctor", "pl": "To jest nagły wypadek", "en": "This is an emergency", "level": 6 },
-    { "id": "d36", "category": "At the Doctor", "pl": "Proszę usiąść", "en": "Please sit down", "level": 6 },
-    { "id": "d37", "category": "At the Doctor", "pl": "Proszę głęboko oddychać", "en": "Please breathe deeply", "level": 6 },
-    { "id": "d38", "category": "At the Doctor", "pl": "Od kiedy to boli?", "en": "Since when does it hurt?", "level": 6 },
-    { "id": "d39", "category": "At the Doctor", "pl": "Biorę leki na...", "en": "I take medication for...", "level": 6 },
-    { "id": "d40", "category": "At the Doctor", "pl": "Jak się pan/pani czuje?", "en": "How do you feel? (formal m/f)", "level": 6 },
-
-    { "id": "e41", "category": "Emergencies", "pl": "Zadzwoń po karetkę!", "en": "Call an ambulance!", "level": 6 },
-    { "id": "e42", "category": "Emergencies", "pl": "On/Ona zemdlał(a)", "en": "He/She fainted", "level": 6 },
-    { "id": "e43", "category": "Emergencies", "pl": "Nie mogę oddychać", "en": "I can't breathe", "level": 6 },
-    { "id": "e44", "category": "Emergencies", "pl": "To jest krew", "en": "This is blood", "level": 6 },
-    { "id": "e45", "category": "Emergencies", "pl": "Pali się!", "en": "Fire!", "level": 6 },
-    { "id": "e46", "category": "Emergencies", "pl": "Okradli mnie", "en": "I was robbed (male)", "level": 6 },
-    { "id": "e47", "category": "Emergencies", "pl": "Zgubiłem portfel", "en": "I lost my wallet (male)", "level": 6 },
-    { "id": "e48", "category": "Emergencies", "pl": "Zgubiłem telefon", "en": "I lost my phone (male)", "level": 6 },
-    { "id": "e49", "category": "Emergencies", "pl": "Potrzebuję policji", "en": "I need the police", "level": 6 },
-    { "id": "e50", "category": "Emergencies", "pl": "Pomóż mi, proszę", "en": "Help me, please", "level": 6 },
-
-    { "id": "s51", "category": "State of Being", "pl": "Jestem zmęczony", "en": "I am tired (male)", "level": 6 },
-    { "id": "s52", "category": "State of Being", "pl": "Jestem śpiący", "en": "I am sleepy (male)", "level": 6 },
-    { "id": "s53", "category": "State of Being", "pl": "Jestem zestresowany", "en": "I am stressed (male)", "level": 6 },
-    { "id": "s54", "category": "State of Being", "pl": "Jestem głodny", "en": "I am hungry (male)", "level": 6 },
-    { "id": "s55", "category": "State of Being", "pl": "Jestem spragniony", "en": "I am thirsty (male)", "level": 6 },
-    { "id": "s56", "category": "State of Being", "pl": "Jestem zdrowy", "en": "I am healthy (male)", "level": 6 },
-    { "id": "s57", "category": "State of Being", "pl": "Czuję się lepiej", "en": "I feel better", "level": 6 },
-    { "id": "s58", "category": "State of Being", "pl": "Czuję się gorzej", "en": "I feel worse", "level": 6 },
-    { "id": "s59", "category": "State of Being", "pl": "Muszę odpocząć", "en": "I must rest", "level": 6 },
-    { "id": "s60", "category": "State of Being", "pl": "Chcę iść do domu", "en": "I want to go home", "level": 6 },
-
-    { "id": "a61", "category": "Actions", "pl": "Leżeć", "en": "To lie down", "level": 6 },
-    { "id": "a62", "category": "Actions", "pl": "Siedzieć", "en": "To sit", "level": 6 },
-    { "id": "a63", "category": "Actions", "pl": "Stać", "en": "To stand", "level": 6 },
-    { "id": "a64", "category": "Actions", "pl": "Spać", "en": "To sleep", "level": 6 },
-    { "id": "a65", "category": "Actions", "pl": "Jeść", "en": "To eat", "level": 6 },
-    { "id": "a66", "category": "Actions", "pl": "Pić", "en": "To drink", "level": 6 },
-    { "id": "a67", "category": "Actions", "pl": "Brać leki", "en": "To take medicine", "level": 6 },
-    { "id": "a68", "category": "Actions", "pl": "Dzwonić", "en": "To call", "level": 6 },
-    { "id": "a69", "category": "Actions", "pl": "Czekać", "en": "To wait", "level": 6 },
-    { "id": "a70", "category": "Actions", "pl": "Pomagać", "en": "To help", "level": 6 }
+    {
+      "id": "a61",
+      "category": "Actions",
+      "pl": "Leżeć",
+      "en": "To lie down",
+      "level": 6
+    },
+    {
+      "id": "a62",
+      "category": "Actions",
+      "pl": "Siedzieć",
+      "en": "To sit",
+      "level": 6
+    },
+    {
+      "id": "a63",
+      "category": "Actions",
+      "pl": "Stać",
+      "en": "To stand",
+      "level": 6
+    },
+    {
+      "id": "a64",
+      "category": "Actions",
+      "pl": "Spać",
+      "en": "To sleep",
+      "level": 6
+    },
+    {
+      "id": "a65",
+      "category": "Actions",
+      "pl": "Jeść",
+      "en": "To eat",
+      "level": 6
+    },
+    {
+      "id": "a66",
+      "category": "Actions",
+      "pl": "Pić",
+      "en": "To drink",
+      "level": 6
+    },
+    {
+      "id": "a67",
+      "category": "Actions",
+      "pl": "Brać leki",
+      "en": "To take medicine",
+      "level": 6
+    },
+    {
+      "id": "a68",
+      "category": "Actions",
+      "pl": "Dzwonić",
+      "en": "To call",
+      "level": 6
+    },
+    {
+      "id": "a69",
+      "category": "Actions",
+      "pl": "Czekać",
+      "en": "To wait",
+      "level": 6
+    },
+    {
+      "id": "a70",
+      "category": "Actions",
+      "pl": "Pomagać",
+      "en": "To help",
+      "level": 6
+    },
+    {
+      "id": "d31",
+      "category": "At the Doctor",
+      "pl": "Muszę iść do lekarza",
+      "en": "I must go to the doctor",
+      "level": 6
+    },
+    {
+      "id": "d32",
+      "category": "At the Doctor",
+      "pl": "Chciałbym się umówić na wizytę",
+      "en": "I would like to make an appointment",
+      "level": 6
+    },
+    {
+      "id": "d33",
+      "category": "At the Doctor",
+      "pl": "Kiedy lekarz przyjmuje?",
+      "en": "When does the doctor see patients?",
+      "level": 6
+    },
+    {
+      "id": "d35",
+      "category": "At the Doctor",
+      "pl": "To jest nagły wypadek",
+      "en": "This is an emergency",
+      "level": 6
+    },
+    {
+      "id": "d36",
+      "category": "At the Doctor",
+      "pl": "Proszę usiąść",
+      "en": "Please sit down",
+      "level": 6
+    },
+    {
+      "id": "d37",
+      "category": "At the Doctor",
+      "pl": "Proszę głęboko oddychać",
+      "en": "Please breathe deeply",
+      "level": 6
+    },
+    {
+      "id": "d38",
+      "category": "At the Doctor",
+      "pl": "Od kiedy to boli?",
+      "en": "Since when does it hurt?",
+      "level": 6
+    },
+    {
+      "id": "d39",
+      "category": "At the Doctor",
+      "pl": "Biorę leki na...",
+      "en": "I take medication for...",
+      "level": 6
+    },
+    {
+      "id": "d40",
+      "category": "At the Doctor",
+      "pl": "Jak się pan/pani czuje?",
+      "en": "How do you feel? (formal m/f)",
+      "level": 6
+    },
+    {
+      "id": "e41",
+      "category": "Emergencies",
+      "pl": "Zadzwoń po karetkę!",
+      "en": "Call an ambulance!",
+      "level": 6
+    },
+    {
+      "id": "e42",
+      "category": "Emergencies",
+      "pl": "On/Ona zemdlał(a)",
+      "en": "He/She fainted",
+      "level": 6
+    },
+    {
+      "id": "e44",
+      "category": "Emergencies",
+      "pl": "To jest krew",
+      "en": "This is blood",
+      "level": 6
+    },
+    {
+      "id": "e45",
+      "category": "Emergencies",
+      "pl": "Pali się!",
+      "en": "Fire!",
+      "level": 6
+    },
+    {
+      "id": "e46",
+      "category": "Emergencies",
+      "pl": "Okradli mnie",
+      "en": "I was robbed (male)",
+      "level": 6
+    },
+    {
+      "id": "e47",
+      "category": "Emergencies",
+      "pl": "Zgubiłem portfel",
+      "en": "I lost my wallet (male)",
+      "level": 6
+    },
+    {
+      "id": "e48",
+      "category": "Emergencies",
+      "pl": "Zgubiłem telefon",
+      "en": "I lost my phone (male)",
+      "level": 6
+    },
+    {
+      "id": "e49",
+      "category": "Emergencies",
+      "pl": "Potrzebuję policji",
+      "en": "I need the police",
+      "level": 6
+    },
+    {
+      "id": "e50",
+      "category": "Emergencies",
+      "pl": "Pomóż mi, proszę",
+      "en": "Help me, please",
+      "level": 6
+    },
+    {
+      "id": "h1",
+      "category": "Body Parts",
+      "pl": "Głowa",
+      "en": "Head",
+      "level": 6
+    },
+    {
+      "id": "h10",
+      "category": "Body Parts",
+      "pl": "Gardło",
+      "en": "Throat",
+      "level": 6
+    },
+    {
+      "id": "h2",
+      "category": "Body Parts",
+      "pl": "Ręka",
+      "en": "Hand / Arm",
+      "level": 6
+    },
+    {
+      "id": "h3",
+      "category": "Body Parts",
+      "pl": "Noga",
+      "en": "Leg",
+      "level": 6
+    },
+    {
+      "id": "h4",
+      "category": "Body Parts",
+      "pl": "Plecy",
+      "en": "Back",
+      "level": 6
+    },
+    {
+      "id": "h5",
+      "category": "Body Parts",
+      "pl": "Brzuch",
+      "en": "Stomach",
+      "level": 6
+    },
+    {
+      "id": "h6",
+      "category": "Body Parts",
+      "pl": "Serce",
+      "en": "Heart",
+      "level": 6
+    },
+    {
+      "id": "h7",
+      "category": "Body Parts",
+      "pl": "Oczy",
+      "en": "Eyes",
+      "level": 6
+    },
+    {
+      "id": "h8",
+      "category": "Body Parts",
+      "pl": "Uszy",
+      "en": "Ears",
+      "level": 6
+    },
+    {
+      "id": "h9",
+      "category": "Body Parts",
+      "pl": "Zęby",
+      "en": "Teeth",
+      "level": 6
+    },
+    {
+      "id": "m11",
+      "category": "Medical Issues",
+      "pl": "Boli mnie...",
+      "en": "My ... hurts",
+      "level": 6
+    },
+    {
+      "id": "m12",
+      "category": "Medical Issues",
+      "pl": "Mam gorączkę",
+      "en": "I have a fever",
+      "level": 6
+    },
+    {
+      "id": "m13",
+      "category": "Medical Issues",
+      "pl": "Mam katar",
+      "en": "I have a runny nose",
+      "level": 6
+    },
+    {
+      "id": "m14",
+      "category": "Medical Issues",
+      "pl": "Mam kaszel",
+      "en": "I have a cough",
+      "level": 6
+    },
+    {
+      "id": "m15",
+      "category": "Medical Issues",
+      "pl": "Jestem uczulony na...",
+      "en": "I am allergic to... (male)",
+      "level": 6
+    },
+    {
+      "id": "m16",
+      "category": "Medical Issues",
+      "pl": "Kręci mi się w głowie",
+      "en": "I feel dizzy",
+      "level": 6
+    },
+    {
+      "id": "m17",
+      "category": "Medical Issues",
+      "pl": "Mam mdłości",
+      "en": "I feel nauseous",
+      "level": 6
+    },
+    {
+      "id": "m18",
+      "category": "Medical Issues",
+      "pl": "Zraniłem się",
+      "en": "I hurt myself (male)",
+      "level": 6
+    },
+    {
+      "id": "m19",
+      "category": "Medical Issues",
+      "pl": "To boli",
+      "en": "It hurts",
+      "level": 6
+    },
+    {
+      "id": "m20",
+      "category": "Medical Issues",
+      "pl": "Potrzebuję recepty",
+      "en": "I need a prescription",
+      "level": 6
+    },
+    {
+      "id": "p21",
+      "category": "Pharmacy",
+      "pl": "Lekarstwo",
+      "en": "Medicine",
+      "level": 6
+    },
+    {
+      "id": "p22",
+      "category": "Pharmacy",
+      "pl": "Tabletki przeciwbólowe",
+      "en": "Painkillers",
+      "level": 6
+    },
+    {
+      "id": "p23",
+      "category": "Pharmacy",
+      "pl": "Antybiotyk",
+      "en": "Antibiotic",
+      "level": 6
+    },
+    {
+      "id": "p24",
+      "category": "Pharmacy",
+      "pl": "Plaster",
+      "en": "Plaster / Band-aid",
+      "level": 6
+    },
+    {
+      "id": "p25",
+      "category": "Pharmacy",
+      "pl": "Bandaż",
+      "en": "Bandage",
+      "level": 6
+    },
+    {
+      "id": "p26",
+      "category": "Pharmacy",
+      "pl": "Syrop",
+      "en": "Syrup",
+      "level": 6
+    },
+    {
+      "id": "p27",
+      "category": "Pharmacy",
+      "pl": "Maść",
+      "en": "Ointment",
+      "level": 6
+    },
+    {
+      "id": "p28",
+      "category": "Pharmacy",
+      "pl": "Witaminy",
+      "en": "Vitamins",
+      "level": 6
+    },
+    {
+      "id": "p29",
+      "category": "Pharmacy",
+      "pl": "Termometr",
+      "en": "Thermometer",
+      "level": 6
+    },
+    {
+      "id": "p30",
+      "category": "Pharmacy",
+      "pl": "Ciśnieniomierz",
+      "en": "Blood pressure monitor",
+      "level": 6
+    },
+    {
+      "id": "s53",
+      "category": "State of Being",
+      "pl": "Jestem zestresowany",
+      "en": "I am stressed (male)",
+      "level": 6
+    },
+    {
+      "id": "s55",
+      "category": "State of Being",
+      "pl": "Jestem spragniony",
+      "en": "I am thirsty (male)",
+      "level": 6
+    },
+    {
+      "id": "s56",
+      "category": "State of Being",
+      "pl": "Jestem zdrowy",
+      "en": "I am healthy (male)",
+      "level": 6
+    },
+    {
+      "id": "s57",
+      "category": "State of Being",
+      "pl": "Czuję się lepiej",
+      "en": "I feel better",
+      "level": 6
+    },
+    {
+      "id": "s58",
+      "category": "State of Being",
+      "pl": "Czuję się gorzej",
+      "en": "I feel worse",
+      "level": 6
+    },
+    {
+      "id": "s59",
+      "category": "State of Being",
+      "pl": "Muszę odpocząć",
+      "en": "I must rest",
+      "level": 6
+    },
+    {
+      "id": "s60",
+      "category": "State of Being",
+      "pl": "Chcę iść do domu",
+      "en": "I want to go home",
+      "level": 6
+    },
+    {
+      "id": "l6_74",
+      "category": "Medical Issues",
+      "pl": "Mam alergię na...",
+      "en": "I'm allergic to...",
+      "level": 6
+    },
+    {
+      "id": "l6_75",
+      "category": "Emergencies",
+      "pl": "To nagły wypadek",
+      "en": "This is an emergency",
+      "level": 6
+    },
+    {
+      "id": "l6_78",
+      "category": "Medical Issues",
+      "pl": "Ból głowy",
+      "en": "Headache",
+      "level": 6
+    },
+    {
+      "id": "l6_79",
+      "category": "Medical Issues",
+      "pl": "Kaszel",
+      "en": "Cough",
+      "level": 6
+    },
+    {
+      "id": "l6_80",
+      "category": "Pharmacy",
+      "pl": "Tabletka",
+      "en": "Pill / Tablet",
+      "level": 6
+    }
   ]
 }

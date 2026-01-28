@@ -1,81 +1,497 @@
 {
-  "lastUpdated": "2026-01-27",
+  "level": 20,
+  "description": "Connectors & Advanced Grammar",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "g1", "category": "Conjunctions", "pl": "I", "en": "And", "level": 20 },
-    { "id": "g2", "category": "Conjunctions", "pl": "Ale", "en": "But", "level": 20 },
-    { "id": "g3", "category": "Conjunctions", "pl": "Ponieważ", "en": "Because", "level": 20 },
-    { "id": "g4", "category": "Conjunctions", "pl": "Dlatego", "en": "That's why / Therefore", "level": 20 },
-    { "id": "g5", "category": "Conjunctions", "pl": "Więc", "en": "So", "level": 20 },
-    { "id": "g6", "category": "Conjunctions", "pl": "Albo / Lub", "en": "Or", "level": 20 },
-    { "id": "g7", "category": "Conjunctions", "pl": "Jeśli / Jeżeli", "en": "If", "level": 20 },
-    { "id": "g8", "category": "Conjunctions", "pl": "Chociaż", "en": "Although / Even though", "level": 20 },
-    { "id": "g9", "category": "Conjunctions", "pl": "Żeby", "en": "In order to / So that", "level": 20 },
-    { "id": "g10", "category": "Conjunctions", "pl": "Zanim", "en": "Before (action)", "level": 20 },
-
-    { "id": "t11", "category": "Time Transitions", "pl": "Nagle", "en": "Suddenly", "level": 20 },
-    { "id": "t12", "category": "Time Transitions", "pl": "Wtedy", "en": "Then / At that time", "level": 20 },
-    { "id": "t13", "category": "Time Transitions", "pl": "Potem", "en": "Later / Afterwards", "level": 20 },
-    { "id": "t14", "category": "Time Transitions", "pl": "Wkrótce", "en": "Soon", "level": 20 },
-    { "id": "t15", "category": "Time Transitions", "pl": "Zawsze", "en": "Always", "level": 20 },
-    { "id": "t16", "category": "Time Transitions", "pl": "Nigdy", "en": "Never", "level": 20 },
-    { "id": "t17", "category": "Time Transitions", "pl": "Często", "en": "Often", "level": 20 },
-    { "id": "t18", "category": "Time Transitions", "pl": "Rzadko", "en": "Rarely", "level": 20 },
-    { "id": "t19", "category": "Time Transitions", "pl": "Czasami", "en": "Sometimes", "level": 20 },
-    { "id": "t20", "category": "Time Transitions", "pl": "Na szczęście", "en": "Fortunately / Luckily", "level": 20 },
-
-    { "id": "f21", "category": "Fillers", "pl": "Właściwie", "en": "Actually", "level": 20 },
-    { "id": "f22", "category": "Fillers", "pl": "No i...", "en": "And so...", "level": 20 },
-    { "id": "f23", "category": "Fillers", "pl": "Wiesz...", "en": "You know...", "level": 20 },
-    { "id": "f24", "category": "Fillers", "pl": "Zrozumiałe", "en": "Understandable", "level": 20 },
-    { "id": "f25", "category": "Fillers", "pl": "Naprawdę?", "en": "Really?", "level": 20 },
-    { "id": "f26", "category": "Fillers", "pl": "W sumie", "en": "All in all / In sum", "level": 20 },
-    { "id": "f27", "category": "Fillers", "pl": "Na pewno", "en": "For sure / Certainly", "level": 20 },
-    { "id": "f28", "category": "Fillers", "pl": "Chyba", "en": "Probably / I guess", "level": 20 },
-    { "id": "f29", "category": "Fillers", "pl": "Prawie", "en": "Almost", "level": 20 },
-    { "id": "f30", "category": "Fillers", "pl": "Dosłownie", "en": "Literally", "level": 20 },
-
-    { "id": "o31", "category": "Opinions", "pl": "Moim zdaniem", "en": "In my opinion", "level": 20 },
-    { "id": "o32", "category": "Opinions", "pl": "Według mnie", "en": "According to me", "level": 20 },
-    { "id": "o33", "category": "Opinions", "pl": "Zgadzam się", "en": "I agree", "level": 20 },
-    { "id": "o34", "category": "Opinions", "pl": "Nie zgadzam się", "en": "I don't agree", "level": 20 },
-    { "id": "o35", "category": "Opinions", "pl": "Masz rację", "en": "You are right", "level": 20 },
-    { "id": "o36", "category": "Opinions", "pl": "To zależy", "en": "It depends", "level": 20 },
-    { "id": "o37", "category": "Opinions", "pl": "Wydaje mi się, że...", "en": "It seems to me that...", "level": 20 },
-    { "id": "o38", "category": "Opinions", "pl": "Myślę, że...", "en": "I think that...", "level": 20 },
-    { "id": "o39", "category": "Opinions", "pl": "Wierzę, że...", "en": "I believe that...", "level": 20 },
-    { "id": "o40", "category": "Opinions", "pl": "Nie mam pojęcia", "en": "I have no idea", "level": 20 },
-
-    { "id": "a41", "category": "Adverbs of Manner", "pl": "Szybko", "en": "Fast / Quickly", "level": 20 },
-    { "id": "a42", "category": "Adverbs of Manner", "pl": "Wolno", "en": "Slowly", "level": 20 },
-    { "id": "a43", "category": "Adverbs of Manner", "pl": "Dobrze", "en": "Well", "level": 20 },
-    { "id": "a44", "category": "Adverbs of Manner", "pl": "Źle", "en": "Badly", "level": 20 },
-    { "id": "a45", "category": "Adverbs of Manner", "pl": "Cicho", "en": "Quietly", "level": 20 },
-    { "id": "a46", "category": "Adverbs of Manner", "pl": "Głośno", "en": "Loudly", "level": 20 },
-    { "id": "a47", "category": "Adverbs of Manner", "pl": "Uważnie", "en": "Carefully / Attentively", "level": 20 },
-    { "id": "a48", "category": "Adverbs of Manner", "pl": "Łatwo", "en": "Easily", "level": 20 },
-    { "id": "a49", "category": "Adverbs of Manner", "pl": "Trudno", "en": "Hard / With difficulty", "level": 20 },
-    { "id": "a50", "category": "Adverbs of Manner", "pl": "Niestety", "en": "Unfortunately", "level": 20 },
-
-    { "id": "c51", "category": "Comparison", "pl": "Bardziej", "en": "More", "level": 20 },
-    { "id": "c52", "category": "Comparison", "pl": "Mniej", "en": "Less", "level": 20 },
-    { "id": "c53", "category": "Comparison", "pl": "Najbardziej", "en": "Most", "level": 20 },
-    { "id": "c54", "category": "Comparison", "pl": "Najmniej", "en": "Least", "level": 20 },
-    { "id": "c55", "category": "Comparison", "pl": "Lepszy", "en": "Better", "level": 20 },
-    { "id": "c56", "category": "Comparison", "pl": "Gorszy", "en": "Worse", "level": 20 },
-    { "id": "c57", "category": "Comparison", "pl": "Taki sam", "en": "The same", "level": 20 },
-    { "id": "c58", "category": "Comparison", "pl": "Inny", "en": "Different", "level": 20 },
-    { "id": "c59", "category": "Comparison", "pl": "Niż", "en": "Than", "level": 20 },
-    { "id": "c60", "category": "Comparison", "pl": "Tak jak", "en": "Just like", "level": 20 },
-
-    { "id": "u61", "category": "Useful Extras", "pl": "Wszędzie", "en": "Everywhere", "level": 20 },
-    { "id": "u62", "category": "Useful Extras", "pl": "Nigdzie", "en": "Nowhere", "level": 20 },
-    { "id": "u63", "category": "Useful Extras", "pl": "Ktoś", "en": "Someone", "level": 20 },
-    { "id": "u64", "category": "Useful Extras", "pl": "Nikt", "en": "Nobody", "level": 20 },
-    { "id": "u65", "category": "Useful Extras", "pl": "Coś", "en": "Something", "level": 20 },
-    { "id": "u66", "category": "Useful Extras", "pl": "Nic", "en": "Nothing", "level": 20 },
-    { "id": "u67", "category": "Useful Extras", "pl": "Wszyscy", "en": "Everyone", "level": 20 },
-    { "id": "u68", "category": "Useful Extras", "pl": "Wszystko", "en": "Everything", "level": 20 },
-    { "id": "u69", "category": "Useful Extras", "pl": "Osobno", "en": "Separately", "level": 20 },
-    { "id": "u70", "category": "Useful Extras", "pl": "Razem", "en": "Together", "level": 20 }
+    {
+      "id": "a43",
+      "category": "Adverbs of Manner",
+      "pl": "Dobrze",
+      "en": "Well",
+      "level": 20
+    },
+    {
+      "id": "a44",
+      "category": "Adverbs of Manner",
+      "pl": "Źle",
+      "en": "Badly",
+      "level": 20
+    },
+    {
+      "id": "a45",
+      "category": "Adverbs of Manner",
+      "pl": "Cicho",
+      "en": "Quietly",
+      "level": 20
+    },
+    {
+      "id": "a46",
+      "category": "Adverbs of Manner",
+      "pl": "Głośno",
+      "en": "Loudly",
+      "level": 20
+    },
+    {
+      "id": "a47",
+      "category": "Adverbs of Manner",
+      "pl": "Uważnie",
+      "en": "Carefully / Attentively",
+      "level": 20
+    },
+    {
+      "id": "a48",
+      "category": "Adverbs of Manner",
+      "pl": "Łatwo",
+      "en": "Easily",
+      "level": 20
+    },
+    {
+      "id": "a49",
+      "category": "Adverbs of Manner",
+      "pl": "Trudno",
+      "en": "Hard / With difficulty",
+      "level": 20
+    },
+    {
+      "id": "c51",
+      "category": "Comparison",
+      "pl": "Bardziej",
+      "en": "More",
+      "level": 20
+    },
+    {
+      "id": "c52",
+      "category": "Comparison",
+      "pl": "Mniej",
+      "en": "Less",
+      "level": 20
+    },
+    {
+      "id": "c53",
+      "category": "Comparison",
+      "pl": "Najbardziej",
+      "en": "Most",
+      "level": 20
+    },
+    {
+      "id": "c54",
+      "category": "Comparison",
+      "pl": "Najmniej",
+      "en": "Least",
+      "level": 20
+    },
+    {
+      "id": "c55",
+      "category": "Comparison",
+      "pl": "Lepszy",
+      "en": "Better",
+      "level": 20
+    },
+    {
+      "id": "c56",
+      "category": "Comparison",
+      "pl": "Gorszy",
+      "en": "Worse",
+      "level": 20
+    },
+    {
+      "id": "c57",
+      "category": "Comparison",
+      "pl": "Taki sam",
+      "en": "The same",
+      "level": 20
+    },
+    {
+      "id": "c58",
+      "category": "Comparison",
+      "pl": "Inny",
+      "en": "Different",
+      "level": 20
+    },
+    {
+      "id": "c59",
+      "category": "Comparison",
+      "pl": "Niż",
+      "en": "Than",
+      "level": 20
+    },
+    {
+      "id": "c60",
+      "category": "Comparison",
+      "pl": "Tak jak",
+      "en": "Just like",
+      "level": 20
+    },
+    {
+      "id": "f21",
+      "category": "Fillers",
+      "pl": "Właściwie",
+      "en": "Actually",
+      "level": 20
+    },
+    {
+      "id": "f22",
+      "category": "Fillers",
+      "pl": "No i...",
+      "en": "And so...",
+      "level": 20
+    },
+    {
+      "id": "f23",
+      "category": "Fillers",
+      "pl": "Wiesz...",
+      "en": "You know...",
+      "level": 20
+    },
+    {
+      "id": "f24",
+      "category": "Fillers",
+      "pl": "Zrozumiałe",
+      "en": "Understandable",
+      "level": 20
+    },
+    {
+      "id": "f26",
+      "category": "Fillers",
+      "pl": "W sumie",
+      "en": "All in all / In sum",
+      "level": 20
+    },
+    {
+      "id": "f28",
+      "category": "Fillers",
+      "pl": "Chyba",
+      "en": "Probably / I guess",
+      "level": 20
+    },
+    {
+      "id": "f29",
+      "category": "Fillers",
+      "pl": "Prawie",
+      "en": "Almost",
+      "level": 20
+    },
+    {
+      "id": "f30",
+      "category": "Fillers",
+      "pl": "Dosłownie",
+      "en": "Literally",
+      "level": 20
+    },
+    {
+      "id": "g1",
+      "category": "Conjunctions",
+      "pl": "I",
+      "en": "And",
+      "level": 20
+    },
+    {
+      "id": "g10",
+      "category": "Conjunctions",
+      "pl": "Zanim",
+      "en": "Before (action)",
+      "level": 20
+    },
+    {
+      "id": "g2",
+      "category": "Conjunctions",
+      "pl": "Ale",
+      "en": "But",
+      "level": 20
+    },
+    {
+      "id": "g3",
+      "category": "Conjunctions",
+      "pl": "Ponieważ",
+      "en": "Because",
+      "level": 20
+    },
+    {
+      "id": "g4",
+      "category": "Conjunctions",
+      "pl": "Dlatego",
+      "en": "That's why / Therefore",
+      "level": 20
+    },
+    {
+      "id": "g5",
+      "category": "Conjunctions",
+      "pl": "Więc",
+      "en": "So",
+      "level": 20
+    },
+    {
+      "id": "g6",
+      "category": "Conjunctions",
+      "pl": "Albo / Lub",
+      "en": "Or",
+      "level": 20
+    },
+    {
+      "id": "g7",
+      "category": "Conjunctions",
+      "pl": "Jeśli / Jeżeli",
+      "en": "If",
+      "level": 20
+    },
+    {
+      "id": "g8",
+      "category": "Conjunctions",
+      "pl": "Chociaż",
+      "en": "Although / Even though",
+      "level": 20
+    },
+    {
+      "id": "g9",
+      "category": "Conjunctions",
+      "pl": "Żeby",
+      "en": "In order to / So that",
+      "level": 20
+    },
+    {
+      "id": "o32",
+      "category": "Opinions",
+      "pl": "Według mnie",
+      "en": "According to me",
+      "level": 20
+    },
+    {
+      "id": "o39",
+      "category": "Opinions",
+      "pl": "Wierzę, że...",
+      "en": "I believe that...",
+      "level": 20
+    },
+    {
+      "id": "o40",
+      "category": "Opinions",
+      "pl": "Nie mam pojęcia",
+      "en": "I have no idea",
+      "level": 20
+    },
+    {
+      "id": "t11",
+      "category": "Time Transitions",
+      "pl": "Nagle",
+      "en": "Suddenly",
+      "level": 20
+    },
+    {
+      "id": "t12",
+      "category": "Time Transitions",
+      "pl": "Wtedy",
+      "en": "Then / At that time",
+      "level": 20
+    },
+    {
+      "id": "t13",
+      "category": "Time Transitions",
+      "pl": "Potem",
+      "en": "Later / Afterwards",
+      "level": 20
+    },
+    {
+      "id": "t14",
+      "category": "Time Transitions",
+      "pl": "Wkrótce",
+      "en": "Soon",
+      "level": 20
+    },
+    {
+      "id": "u63",
+      "category": "Useful Extras",
+      "pl": "Ktoś",
+      "en": "Someone",
+      "level": 20
+    },
+    {
+      "id": "u64",
+      "category": "Useful Extras",
+      "pl": "Nikt",
+      "en": "Nobody",
+      "level": 20
+    },
+    {
+      "id": "u65",
+      "category": "Useful Extras",
+      "pl": "Coś",
+      "en": "Something",
+      "level": 20
+    },
+    {
+      "id": "u66",
+      "category": "Useful Extras",
+      "pl": "Nic",
+      "en": "Nothing",
+      "level": 20
+    },
+    {
+      "id": "u67",
+      "category": "Useful Extras",
+      "pl": "Wszyscy",
+      "en": "Everyone",
+      "level": 20
+    },
+    {
+      "id": "u68",
+      "category": "Useful Extras",
+      "pl": "Wszystko",
+      "en": "Everything",
+      "level": 20
+    },
+    {
+      "id": "u69",
+      "category": "Useful Extras",
+      "pl": "Osobno",
+      "en": "Separately",
+      "level": 20
+    },
+    {
+      "id": "u70",
+      "category": "Useful Extras",
+      "pl": "Razem",
+      "en": "Together",
+      "level": 20
+    },
+    {
+      "id": "l20_72",
+      "category": "Opinions",
+      "pl": "Z mojego punktu widzenia",
+      "en": "From my point of view",
+      "level": 20
+    },
+    {
+      "id": "l20_73",
+      "category": "Time Transitions",
+      "pl": "Wcześniej",
+      "en": "Earlier / Previously",
+      "level": 20
+    },
+    {
+      "id": "l20_74",
+      "category": "Time Transitions",
+      "pl": "Później",
+      "en": "Later",
+      "level": 20
+    },
+    {
+      "id": "l20_75",
+      "category": "Time Transitions",
+      "pl": "Równocześnie",
+      "en": "Simultaneously / At the same time",
+      "level": 20
+    },
+    {
+      "id": "l20_76",
+      "category": "Time Transitions",
+      "pl": "W międzyczasie",
+      "en": "Meanwhile / In the meantime",
+      "level": 20
+    },
+    {
+      "id": "l20_80",
+      "category": "Conjunctions",
+      "pl": "Albo",
+      "en": "Or",
+      "level": 20
+    },
+    {
+      "id": "l20_81",
+      "category": "Conjunctions",
+      "pl": "Ani",
+      "en": "Neither / Nor",
+      "level": 20
+    },
+    {
+      "id": "l20_82",
+      "category": "Comparison",
+      "pl": "Tak samo jak",
+      "en": "The same as / Just like",
+      "level": 20
+    },
+    {
+      "id": "l20_83",
+      "category": "Comparison",
+      "pl": "Inaczej niż",
+      "en": "Different from / Unlike",
+      "level": 20
+    },
+    {
+      "id": "l20_84",
+      "category": "Adverbs of Manner",
+      "pl": "Ostrożnie",
+      "en": "Carefully / Cautiously",
+      "level": 20
+    },
+    {
+      "id": "l20_87",
+      "category": "Useful Extras",
+      "pl": "Gdzieś",
+      "en": "Somewhere",
+      "level": 20
+    },
+    {
+      "id": "l20_88",
+      "category": "Useful Extras",
+      "pl": "Kiedyś",
+      "en": "Sometime / Once",
+      "level": 20
+    },
+    {
+      "id": "l20_95",
+      "category": "Conjunctions",
+      "pl": "Jeśli",
+      "en": "If",
+      "level": 20
+    },
+    {
+      "id": "l20_98",
+      "category": "Conjunctions",
+      "pl": "Jednak",
+      "en": "However / Yet",
+      "level": 20
+    },
+    {
+      "id": "l20_99",
+      "category": "Conjunctions",
+      "pl": "Natomiast",
+      "en": "Whereas / On the other hand",
+      "level": 20
+    },
+    {
+      "id": "l20_100",
+      "category": "Comparison",
+      "pl": "Podobny",
+      "en": "Similar",
+      "level": 20
+    },
+    {
+      "id": "l20_101",
+      "category": "Comparison",
+      "pl": "Różny",
+      "en": "Different",
+      "level": 20
+    },
+    {
+      "id": "l20_102",
+      "category": "Adverbs of Manner",
+      "pl": "Normalnie",
+      "en": "Normally",
+      "level": 20
+    },
+    {
+      "id": "l20_103",
+      "category": "Fillers",
+      "pl": "Raczej",
+      "en": "Rather / Quite",
+      "level": 20
+    },
+    {
+      "id": "l20_104",
+      "category": "Useful Extras",
+      "pl": "Każdy",
+      "en": "Every / Each",
+      "level": 20
+    }
   ]
 }

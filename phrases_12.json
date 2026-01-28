@@ -1,20 +1,497 @@
 {
-  "lastUpdated": "2026-01-27",
+  "level": 12,
+  "description": "Family, Relationships & Connections",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "f1", "category": "Family Members", "pl": "Rodzina", "en": "Family", "level": 12 },
-    { "id": "f2", "category": "Family Members", "pl": "Rodzice", "en": "Parents", "level": 12 },
-    { "id": "f3", "category": "Family Members", "pl": "Mama", "en": "Mom", "level": 12 },
-    { "id": "f4", "category": "Family Members", "pl": "Tata", "en": "Dad", "level": 12 },
-    { "id": "f5", "category": "Family Members", "pl": "Rodzeństwo", "en": "Siblings", "level": 12 },
-    { "id": "f6", "category": "Family Members", "pl": "Brat", "en": "Brother", "level": 12 },
-    { "id": "f7", "category": "Family Members", "pl": "Siostra", "en": "Sister", "level": 12 },
-    { "id": "f8", "category": "Family Members", "pl": "Dziecko", "en": "Child", "level": 12 },
-    { "id": "f9", "category": "Family Members", "pl": "Syn", "en": "Son", "level": 12 },
-    { "id": "f10", "category": "Family Members", "pl": "Córka", "en": "Daughter", "level": 12 },
-
-    { "id": "ef11", "category": "Extended Family", "pl": "Dziadkowie", "en": "Grandparents", "level": 12 },
-    { "id": "ef12", "category": "Extended Family", "pl": "Babcia", "en": "Grandmother", "level": 12 },
-    { "id": "ef13", "category": "Extended Family", "pl": "Dziadek", "en": "Grandfather", "level": 12 },
-    { "id": "ef14", "category": "Extended Family", "pl": "Wnuk / Wnuczka", "en": "Grandson / Granddaughter", "level": 12 },
-    { "id": "ef15", "category": "Extended Family", "pl": "Wujek", "en": "Uncle", "level": 12 },
-    { "id": "ef16", "category": "Extended Family", "pl": "Ciocia", "en": "Aunt", "level": 12 },
+    {
+      "id": "ef14",
+      "category": "Extended Family",
+      "pl": "Wnuk",
+      "en": "Grandson",
+      "level": 12
+    },
+    {
+      "id": "ef15",
+      "category": "Extended Family",
+      "pl": "Wnuczka",
+      "en": "Granddaughter",
+      "level": 12
+    },
+    {
+      "id": "ef18",
+      "category": "Extended Family",
+      "pl": "Kuzyn",
+      "en": "Cousin (male)",
+      "level": 12
+    },
+    {
+      "id": "ef19",
+      "category": "Extended Family",
+      "pl": "Kuzynka",
+      "en": "Cousin (female)",
+      "level": 12
+    },
+    {
+      "id": "ef20",
+      "category": "Extended Family",
+      "pl": "Siostrzeniec",
+      "en": "Nephew (sister's son)",
+      "level": 12
+    },
+    {
+      "id": "ef21",
+      "category": "Extended Family",
+      "pl": "Bratanek",
+      "en": "Nephew (brother's son)",
+      "level": 12
+    },
+    {
+      "id": "ef22",
+      "category": "Extended Family",
+      "pl": "Siostrzenica",
+      "en": "Niece (sister's daughter)",
+      "level": 12
+    },
+    {
+      "id": "ef23",
+      "category": "Extended Family",
+      "pl": "Bratanica",
+      "en": "Niece (brother's daughter)",
+      "level": 12
+    },
+    {
+      "id": "fp44",
+      "category": "Family Phrases",
+      "pl": "Moja rodzina jest duża",
+      "en": "My family is big",
+      "level": 12
+    },
+    {
+      "id": "fp46",
+      "category": "Family Phrases",
+      "pl": "Jestem jedynakiem",
+      "en": "I am an only child (male)",
+      "level": 12
+    },
+    {
+      "id": "fp47",
+      "category": "Family Phrases",
+      "pl": "Jestem jedynaczką",
+      "en": "I am an only child (female)",
+      "level": 12
+    },
+    {
+      "id": "fp48",
+      "category": "Family Phrases",
+      "pl": "Ile masz dzieci?",
+      "en": "How many children do you have?",
+      "level": 12
+    },
+    {
+      "id": "fp49",
+      "category": "Family Phrases",
+      "pl": "To mój brat",
+      "en": "This is my brother",
+      "level": 12
+    },
+    {
+      "id": "fp50",
+      "category": "Family Phrases",
+      "pl": "To moja siostra",
+      "en": "This is my sister",
+      "level": 12
+    },
+    {
+      "id": "fp51",
+      "category": "Family Phrases",
+      "pl": "Jak się miewa twoja mama?",
+      "en": "How is your mom doing?",
+      "level": 12
+    },
+    {
+      "id": "fp52",
+      "category": "Family Phrases",
+      "pl": "Pozdrów rodzinę",
+      "en": "Give my regards to your family",
+      "level": 12
+    },
+    {
+      "id": "fp53",
+      "category": "Family Phrases",
+      "pl": "Odwiedzam dziadków",
+      "en": "I am visiting my grandparents",
+      "level": 12
+    },
+    {
+      "id": "fp54",
+      "category": "Family Phrases",
+      "pl": "Mieszkam z rodzicami",
+      "en": "I live with my parents",
+      "level": 12
+    },
+    {
+      "id": "fp55",
+      "category": "Family Phrases",
+      "pl": "Chcemy założyć rodzinę",
+      "en": "We want to start a family",
+      "level": 12
+    },
+    {
+      "id": "il25",
+      "category": "In-Laws",
+      "pl": "Teściowa",
+      "en": "Mother-in-law",
+      "level": 12
+    },
+    {
+      "id": "il26",
+      "category": "In-Laws",
+      "pl": "Teść",
+      "en": "Father-in-law",
+      "level": 12
+    },
+    {
+      "id": "il27",
+      "category": "In-Laws",
+      "pl": "Synowa",
+      "en": "Daughter-in-law",
+      "level": 12
+    },
+    {
+      "id": "il28",
+      "category": "In-Laws",
+      "pl": "Zięć",
+      "en": "Son-in-law",
+      "level": 12
+    },
+    {
+      "id": "il29",
+      "category": "In-Laws",
+      "pl": "Szwagier",
+      "en": "Brother-in-law",
+      "level": 12
+    },
+    {
+      "id": "il30",
+      "category": "In-Laws",
+      "pl": "Szwagierka",
+      "en": "Sister-in-law",
+      "level": 12
+    },
+    {
+      "id": "rl33",
+      "category": "Relationships",
+      "pl": "Małżeństwo",
+      "en": "Marriage / Married couple",
+      "level": 12
+    },
+    {
+      "id": "rl34",
+      "category": "Relationships",
+      "pl": "Narzeczony",
+      "en": "Fiancé",
+      "level": 12
+    },
+    {
+      "id": "rl35",
+      "category": "Relationships",
+      "pl": "Narzeczona",
+      "en": "Fiancée",
+      "level": 12
+    },
+    {
+      "id": "rl38",
+      "category": "Relationships",
+      "pl": "Partner",
+      "en": "Partner (male)",
+      "level": 12
+    },
+    {
+      "id": "rl39",
+      "category": "Relationships",
+      "pl": "Partnerka",
+      "en": "Partner (female)",
+      "level": 12
+    },
+    {
+      "id": "rl40",
+      "category": "Relationships",
+      "pl": "Przyjaciel",
+      "en": "Friend (male)",
+      "level": 12
+    },
+    {
+      "id": "rl41",
+      "category": "Relationships",
+      "pl": "Przyjaciółka",
+      "en": "Friend (female)",
+      "level": 12
+    },
+    {
+      "id": "rl42",
+      "category": "Relationships",
+      "pl": "Znajomy",
+      "en": "Acquaintance",
+      "level": 12
+    },
+    {
+      "id": "rl43",
+      "category": "Relationships",
+      "pl": "Sąsiad",
+      "en": "Neighbor",
+      "level": 12
+    },
+    {
+      "id": "st56",
+      "category": "Status",
+      "pl": "Wolny",
+      "en": "Single (male)",
+      "level": 12
+    },
+    {
+      "id": "st57",
+      "category": "Status",
+      "pl": "Wolna",
+      "en": "Single (female)",
+      "level": 12
+    },
+    {
+      "id": "st58",
+      "category": "Status",
+      "pl": "Zajęty",
+      "en": "Taken / Busy (male)",
+      "level": 12
+    },
+    {
+      "id": "st59",
+      "category": "Status",
+      "pl": "Zajęta",
+      "en": "Taken / Busy (female)",
+      "level": 12
+    },
+    {
+      "id": "st60",
+      "category": "Status",
+      "pl": "Żonaty",
+      "en": "Married (male)",
+      "level": 12
+    },
+    {
+      "id": "st61",
+      "category": "Status",
+      "pl": "Zamężna",
+      "en": "Married (female)",
+      "level": 12
+    },
+    {
+      "id": "st62",
+      "category": "Status",
+      "pl": "Rozwiedziony",
+      "en": "Divorced",
+      "level": 12
+    },
+    {
+      "id": "st63",
+      "category": "Status",
+      "pl": "Wdowiec",
+      "en": "Widower",
+      "level": 12
+    },
+    {
+      "id": "st64",
+      "category": "Status",
+      "pl": "Wdowa",
+      "en": "Widow",
+      "level": 12
+    },
+    {
+      "id": "l12_71",
+      "category": "Extended Family",
+      "pl": "Pradziadkowie",
+      "en": "Great-grandparents",
+      "level": 12
+    },
+    {
+      "id": "l12_72",
+      "category": "Extended Family",
+      "pl": "Prawnuk",
+      "en": "Great-grandson",
+      "level": 12
+    },
+    {
+      "id": "l12_73",
+      "category": "Extended Family",
+      "pl": "Prawnuczka",
+      "en": "Great-granddaughter",
+      "level": 12
+    },
+    {
+      "id": "l12_74",
+      "category": "Extended Family",
+      "pl": "Krewni",
+      "en": "Relatives / Kin",
+      "level": 12
+    },
+    {
+      "id": "l12_75",
+      "category": "Extended Family",
+      "pl": "Dalsza rodzina",
+      "en": "Extended family",
+      "level": 12
+    },
+    {
+      "id": "l12_76",
+      "category": "In-Laws",
+      "pl": "Szwagier ze strony męża",
+      "en": "Husband's brother",
+      "level": 12
+    },
+    {
+      "id": "l12_77",
+      "category": "Relationships",
+      "pl": "Były chłopak",
+      "en": "Ex-boyfriend",
+      "level": 12
+    },
+    {
+      "id": "l12_78",
+      "category": "Relationships",
+      "pl": "Była dziewczyna",
+      "en": "Ex-girlfriend",
+      "level": 12
+    },
+    {
+      "id": "l12_79",
+      "category": "Relationships",
+      "pl": "Najlepszy przyjaciel",
+      "en": "Best friend (male)",
+      "level": 12
+    },
+    {
+      "id": "l12_80",
+      "category": "Relationships",
+      "pl": "Najlepsza przyjaciółka",
+      "en": "Best friend (female)",
+      "level": 12
+    },
+    {
+      "id": "l12_81",
+      "category": "Family Phrases",
+      "pl": "Jesteśmy blisko",
+      "en": "We are close",
+      "level": 12
+    },
+    {
+      "id": "l12_82",
+      "category": "Family Phrases",
+      "pl": "Moja rodzina mieszka daleko",
+      "en": "My family lives far away",
+      "level": 12
+    },
+    {
+      "id": "l12_83",
+      "category": "Family Phrases",
+      "pl": "Rodzina jest najważniejsza",
+      "en": "Family is most important",
+      "level": 12
+    },
+    {
+      "id": "l12_84",
+      "category": "Family Phrases",
+      "pl": "Spotykamy się w święta",
+      "en": "We meet during holidays",
+      "level": 12
+    },
+    {
+      "id": "l12_85",
+      "category": "Family Phrases",
+      "pl": "To mój kuzyn",
+      "en": "This is my cousin (male)",
+      "level": 12
+    },
+    {
+      "id": "l12_86",
+      "category": "Family Phrases",
+      "pl": "To moja kuzynka",
+      "en": "This is my cousin (female)",
+      "level": 12
+    },
+    {
+      "id": "l12_87",
+      "category": "Status",
+      "pl": "W związku",
+      "en": "In a relationship",
+      "level": 12
+    },
+    {
+      "id": "l12_88",
+      "category": "Status",
+      "pl": "Zaręczony",
+      "en": "Engaged (male)",
+      "level": 12
+    },
+    {
+      "id": "l12_89",
+      "category": "Status",
+      "pl": "Zaręczona",
+      "en": "Engaged (female)",
+      "level": 12
+    },
+    {
+      "id": "l12_90",
+      "category": "Events",
+      "pl": "Chrzciny",
+      "en": "Baptism / Christening",
+      "level": 12
+    },
+    {
+      "id": "l12_91",
+      "category": "Events",
+      "pl": "Komunia",
+      "en": "First Communion",
+      "level": 12
+    },
+    {
+      "id": "l12_92",
+      "category": "Events",
+      "pl": "Bierzmowanie",
+      "en": "Confirmation",
+      "level": 12
+    },
+    {
+      "id": "l12_93",
+      "category": "Events",
+      "pl": "Spotkanie rodzinne",
+      "en": "Family gathering",
+      "level": 12
+    },
+    {
+      "id": "l12_94",
+      "category": "Events",
+      "pl": "Zjazd rodzinny",
+      "en": "Family reunion",
+      "level": 12
+    },
+    {
+      "id": "l12_95",
+      "category": "Events",
+      "pl": "Obchody",
+      "en": "Celebration",
+      "level": 12
+    },
+    {
+      "id": "l12_96",
+      "category": "Events",
+      "pl": "Jubileusz",
+      "en": "Jubilee / Milestone anniversary",
+      "level": 12
+    },
+    {
+      "id": "l12_97",
+      "category": "Events",
+      "pl": "Stypa",
+      "en": "Funeral reception",
+      "level": 12
+    }
+  ]
+}

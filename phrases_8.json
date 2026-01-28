@@ -1,81 +1,497 @@
 {
-  "lastUpdated": "2026-01-27",
+  "level": 8,
+  "description": "Food & Grocery Shopping",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "f1", "category": "Groceries", "pl": "Zakupy", "en": "Shopping", "level": 8 },
-    { "id": "f2", "category": "Groceries", "pl": "Lista zakupów", "en": "Shopping list", "level": 8 },
-    { "id": "f3", "category": "Groceries", "pl": "Koszyk", "en": "Basket", "level": 8 },
-    { "id": "f4", "category": "Groceries", "pl": "Wózek", "en": "Trolley / Cart", "level": 8 },
-    { "id": "f5", "category": "Groceries", "pl": "Reklamówka / Torba", "en": "Plastic bag / Bag", "level": 8 },
-    { "id": "f6", "category": "Groceries", "pl": "Warzywa i owoce", "en": "Vegetables and fruits", "level": 8 },
-    { "id": "f7", "category": "Groceries", "pl": "Nabiał", "en": "Dairy", "level": 8 },
-    { "id": "f8", "category": "Groceries", "pl": "Mięso i wędliny", "en": "Meat and cold cuts", "level": 8 },
-    { "id": "f9", "category": "Groceries", "pl": "Pieczywo", "en": "Bakery / Bread", "level": 8 },
-    { "id": "f10", "category": "Groceries", "pl": "Mrożonki", "en": "Frozen food", "level": 8 },
-
-    { "id": "v11", "category": "Vegetables", "pl": "Ziemniak", "en": "Potato", "level": 8 },
-    { "id": "v12", "category": "Vegetables", "pl": "Cebula", "en": "Onion", "level": 8 },
-    { "id": "v13", "category": "Vegetables", "pl": "Czosnek", "en": "Garlic", "level": 8 },
-    { "id": "v14", "category": "Vegetables", "pl": "Pomidor", "en": "Tomato", "level": 8 },
-    { "id": "v15", "category": "Vegetables", "pl": "Ogórek", "en": "Cucumber", "level": 8 },
-    { "id": "v16", "category": "Vegetables", "pl": "Marchewka", "en": "Carrot", "level": 8 },
-    { "id": "v17", "category": "Vegetables", "pl": "Papryka", "en": "Pepper", "level": 8 },
-    { "id": "v18", "category": "Vegetables", "pl": "Sałata", "en": "Lettuce", "level": 8 },
-    { "id": "v19", "category": "Vegetables", "pl": "Kapusta", "en": "Cabbage", "level": 8 },
-    { "id": "v20", "category": "Vegetables", "pl": "Pieczarki", "en": "Mushrooms", "level": 8 },
-
-    { "id": "fr21", "category": "Fruit", "pl": "Jabłko", "en": "Apple", "level": 8 },
-    { "id": "fr22", "category": "Fruit", "pl": "Banan", "en": "Banana", "level": 8 },
-    { "id": "fr23", "category": "Fruit", "pl": "Truskawki", "en": "Strawberries", "level": 8 },
-    { "id": "fr24", "category": "Fruit", "pl": "Cytryna", "en": "Lemon", "level": 8 },
-    { "id": "fr25", "category": "Fruit", "pl": "Pomarańcza", "en": "Orange", "level": 8 },
-    { "id": "fr26", "category": "Fruit", "pl": "Maliny", "en": "Raspberries", "level": 8 },
-    { "id": "fr27", "category": "Fruit", "pl": "Jagody", "en": "Blueberries", "level": 8 },
-    { "id": "fr28", "category": "Fruit", "pl": "Śliwki", "en": "Plums", "level": 8 },
-    { "id": "fr29", "category": "Fruit", "pl": "Gruszka", "en": "Pear", "level": 8 },
-    { "id": "fr30", "category": "Fruit", "pl": "Winogrona", "en": "Grapes", "level": 8 },
-
-    { "id": "d31", "category": "Dairy & Basic", "pl": "Mleko", "en": "Milk", "level": 8 },
-    { "id": "d32", "category": "Dairy & Basic", "pl": "Ser żółty", "en": "Cheese (Hard)", "level": 8 },
-    { "id": "d33", "category": "Dairy & Basic", "pl": "Twaróg", "en": "Cottage cheese", "level": 8 },
-    { "id": "d34", "category": "Dairy & Basic", "pl": "Masło", "en": "Butter", "level": 8 },
-    { "id": "d35", "category": "Dairy & Basic", "pl": "Jajka", "en": "Eggs", "level": 8 },
-    { "id": "d36", "category": "Dairy & Basic", "pl": "Jogurt", "en": "Yogurt", "level": 8 },
-    { "id": "d37", "category": "Dairy & Basic", "pl": "Śmietana", "en": "Sour cream", "level": 8 },
-    { "id": "d38", "category": "Dairy & Basic", "pl": "Olej", "en": "Oil", "level": 8 },
-    { "id": "d39", "category": "Dairy & Basic", "pl": "Mąka", "en": "Flour", "level": 8 },
-    { "id": "d40", "category": "Dairy & Basic", "pl": "Cukier", "en": "Sugar", "level": 8 },
-
-    { "id": "s41", "category": "Supermarket Phrases", "pl": "Gdzie znajdę...?", "en": "Where will I find...?", "level": 8 },
-    { "id": "s42", "category": "Supermarket Phrases", "pl": "Czy jest świeży?", "en": "Is it fresh?", "level": 8 },
-    { "id": "s43", "category": "Supermarket Phrases", "pl": "Na wagę", "en": "By weight", "level": 8 },
-    { "id": "s44", "category": "Supermarket Phrases", "pl": "Poproszę sto gram", "en": "100 grams, please", "level": 8 },
-    { "id": "s45", "category": "Supermarket Phrases", "pl": "To wszystko, dziękuję", "en": "That's all, thank you", "level": 8 },
-    { "id": "s46", "category": "Supermarket Phrases", "pl": "Zbiera pan/pani punkty?", "en": "Do you collect points? (formal)", "level": 8 },
-    { "id": "s47", "category": "Supermarket Phrases", "pl": "Potrzebuje pan/pani paragon?", "en": "Do you need a receipt? (formal)", "level": 8 },
-    { "id": "s48", "category": "Supermarket Phrases", "pl": "Płatność kartą", "en": "Payment by card", "level": 8 },
-    { "id": "s49", "category": "Supermarket Phrases", "pl": "Kasa samoobsługowa", "en": "Self-service checkout", "level": 8 },
-    { "id": "s50", "category": "Supermarket Phrases", "pl": "Promocja", "en": "Sale / Promotion", "level": 8 },
-
-    { "id": "k51", "category": "Kitchen", "pl": "Gotować", "en": "To cook", "level": 8 },
-    { "id": "k52", "category": "Kitchen", "pl": "Piec", "en": "To bake", "level": 8 },
-    { "id": "k53", "category": "Kitchen", "pl": "Smażyć", "en": "To fry", "level": 8 },
-    { "id": "k54", "category": "Kitchen", "pl": "Kroić", "en": "To cut / slice", "level": 8 },
-    { "id": "k55", "category": "Kitchen", "pl": "Garnek", "en": "Pot", "level": 8 },
-    { "id": "k56", "category": "Kitchen", "pl": "Patelnia", "en": "Frying pan", "level": 8 },
-    { "id": "k57", "category": "Kitchen", "pl": "Nóż", "en": "Knife", "level": 8 },
-    { "id": "k58", "category": "Kitchen", "pl": "Widelec", "en": "Fork", "level": 8 },
-    { "id": "k59", "category": "Kitchen", "pl": "Łyżka", "en": "Spoon", "level": 8 },
-    { "id": "k60", "category": "Kitchen", "pl": "Talerz", "en": "Plate", "level": 8 },
-
-    { "id": "a61", "category": "Taste", "pl": "Słodkie", "en": "Sweet", "level": 8 },
-    { "id": "a62", "category": "Taste", "pl": "Słone", "en": "Salty", "level": 8 },
-    { "id": "a63", "category": "Taste", "pl": "Kwaśne", "en": "Sour", "level": 8 },
-    { "id": "a64", "category": "Taste", "pl": "Ostre", "en": "Spicy", "level": 8 },
-    { "id": "a65", "category": "Taste", "pl": "Gorzkie", "en": "Bitter", "level": 8 },
-    { "id": "a66", "category": "Taste", "pl": "Pyszne!", "en": "Delicious!", "level": 8 },
-    { "id": "a67", "category": "Taste", "pl": "Niesmaczne", "en": "Not tasty", "level": 8 },
-    { "id": "a68", "category": "Taste", "pl": "Gorące", "en": "Hot (temp)", "level": 8 },
-    { "id": "a69", "category": "Taste", "pl": "Zimne", "en": "Cold (temp)", "level": 8 },
-    { "id": "a70", "category": "Taste", "pl": "Świeże", "en": "Fresh", "level": 8 }
+    {
+      "id": "a61",
+      "category": "Taste",
+      "pl": "Słodkie",
+      "en": "Sweet",
+      "level": 8
+    },
+    {
+      "id": "a62",
+      "category": "Taste",
+      "pl": "Słone",
+      "en": "Salty",
+      "level": 8
+    },
+    {
+      "id": "a63",
+      "category": "Taste",
+      "pl": "Kwaśne",
+      "en": "Sour",
+      "level": 8
+    },
+    {
+      "id": "a64",
+      "category": "Taste",
+      "pl": "Ostre",
+      "en": "Spicy",
+      "level": 8
+    },
+    {
+      "id": "a65",
+      "category": "Taste",
+      "pl": "Gorzkie",
+      "en": "Bitter",
+      "level": 8
+    },
+    {
+      "id": "a66",
+      "category": "Taste",
+      "pl": "Pyszne!",
+      "en": "Delicious!",
+      "level": 8
+    },
+    {
+      "id": "a67",
+      "category": "Taste",
+      "pl": "Niesmaczne",
+      "en": "Not tasty",
+      "level": 8
+    },
+    {
+      "id": "a68",
+      "category": "Taste",
+      "pl": "Gorące",
+      "en": "Hot (temp)",
+      "level": 8
+    },
+    {
+      "id": "a69",
+      "category": "Taste",
+      "pl": "Zimne",
+      "en": "Cold (temp)",
+      "level": 8
+    },
+    {
+      "id": "a70",
+      "category": "Taste",
+      "pl": "Świeże",
+      "en": "Fresh",
+      "level": 8
+    },
+    {
+      "id": "d31",
+      "category": "Dairy & Basic",
+      "pl": "Mleko",
+      "en": "Milk",
+      "level": 8
+    },
+    {
+      "id": "d32",
+      "category": "Dairy & Basic",
+      "pl": "Ser żółty",
+      "en": "Cheese (Hard)",
+      "level": 8
+    },
+    {
+      "id": "d33",
+      "category": "Dairy & Basic",
+      "pl": "Twaróg",
+      "en": "Cottage cheese",
+      "level": 8
+    },
+    {
+      "id": "d34",
+      "category": "Dairy & Basic",
+      "pl": "Masło",
+      "en": "Butter",
+      "level": 8
+    },
+    {
+      "id": "d35",
+      "category": "Dairy & Basic",
+      "pl": "Jajka",
+      "en": "Eggs",
+      "level": 8
+    },
+    {
+      "id": "d36",
+      "category": "Dairy & Basic",
+      "pl": "Jogurt",
+      "en": "Yogurt",
+      "level": 8
+    },
+    {
+      "id": "d37",
+      "category": "Dairy & Basic",
+      "pl": "Śmietana",
+      "en": "Sour cream",
+      "level": 8
+    },
+    {
+      "id": "d38",
+      "category": "Dairy & Basic",
+      "pl": "Olej",
+      "en": "Oil",
+      "level": 8
+    },
+    {
+      "id": "d39",
+      "category": "Dairy & Basic",
+      "pl": "Mąka",
+      "en": "Flour",
+      "level": 8
+    },
+    {
+      "id": "d40",
+      "category": "Dairy & Basic",
+      "pl": "Cukier",
+      "en": "Sugar",
+      "level": 8
+    },
+    {
+      "id": "f1",
+      "category": "Groceries",
+      "pl": "Zakupy",
+      "en": "Shopping",
+      "level": 8
+    },
+    {
+      "id": "f10",
+      "category": "Groceries",
+      "pl": "Mrożonki",
+      "en": "Frozen food",
+      "level": 8
+    },
+    {
+      "id": "f2",
+      "category": "Groceries",
+      "pl": "Lista zakupów",
+      "en": "Shopping list",
+      "level": 8
+    },
+    {
+      "id": "f3",
+      "category": "Groceries",
+      "pl": "Koszyk",
+      "en": "Basket",
+      "level": 8
+    },
+    {
+      "id": "f4",
+      "category": "Groceries",
+      "pl": "Wózek",
+      "en": "Trolley / Cart",
+      "level": 8
+    },
+    {
+      "id": "f5",
+      "category": "Groceries",
+      "pl": "Reklamówka / Torba",
+      "en": "Plastic bag / Bag",
+      "level": 8
+    },
+    {
+      "id": "f6",
+      "category": "Groceries",
+      "pl": "Warzywa i owoce",
+      "en": "Vegetables and fruits",
+      "level": 8
+    },
+    {
+      "id": "f7",
+      "category": "Groceries",
+      "pl": "Nabiał",
+      "en": "Dairy",
+      "level": 8
+    },
+    {
+      "id": "f8",
+      "category": "Groceries",
+      "pl": "Mięso i wędliny",
+      "en": "Meat and cold cuts",
+      "level": 8
+    },
+    {
+      "id": "f9",
+      "category": "Groceries",
+      "pl": "Pieczywo",
+      "en": "Bakery / Bread",
+      "level": 8
+    },
+    {
+      "id": "fr21",
+      "category": "Fruit",
+      "pl": "Jabłko",
+      "en": "Apple",
+      "level": 8
+    },
+    {
+      "id": "fr22",
+      "category": "Fruit",
+      "pl": "Banan",
+      "en": "Banana",
+      "level": 8
+    },
+    {
+      "id": "fr23",
+      "category": "Fruit",
+      "pl": "Truskawki",
+      "en": "Strawberries",
+      "level": 8
+    },
+    {
+      "id": "fr24",
+      "category": "Fruit",
+      "pl": "Cytryna",
+      "en": "Lemon",
+      "level": 8
+    },
+    {
+      "id": "fr25",
+      "category": "Fruit",
+      "pl": "Pomarańcza",
+      "en": "Orange",
+      "level": 8
+    },
+    {
+      "id": "fr26",
+      "category": "Fruit",
+      "pl": "Maliny",
+      "en": "Raspberries",
+      "level": 8
+    },
+    {
+      "id": "fr27",
+      "category": "Fruit",
+      "pl": "Jagody",
+      "en": "Blueberries",
+      "level": 8
+    },
+    {
+      "id": "fr28",
+      "category": "Fruit",
+      "pl": "Śliwki",
+      "en": "Plums",
+      "level": 8
+    },
+    {
+      "id": "fr29",
+      "category": "Fruit",
+      "pl": "Gruszka",
+      "en": "Pear",
+      "level": 8
+    },
+    {
+      "id": "fr30",
+      "category": "Fruit",
+      "pl": "Winogrona",
+      "en": "Grapes",
+      "level": 8
+    },
+    {
+      "id": "k51",
+      "category": "Kitchen",
+      "pl": "Gotować",
+      "en": "To cook",
+      "level": 8
+    },
+    {
+      "id": "k52",
+      "category": "Kitchen",
+      "pl": "Piec",
+      "en": "To bake",
+      "level": 8
+    },
+    {
+      "id": "k53",
+      "category": "Kitchen",
+      "pl": "Smażyć",
+      "en": "To fry",
+      "level": 8
+    },
+    {
+      "id": "k54",
+      "category": "Kitchen",
+      "pl": "Kroić",
+      "en": "To cut / slice",
+      "level": 8
+    },
+    {
+      "id": "k55",
+      "category": "Kitchen",
+      "pl": "Garnek",
+      "en": "Pot",
+      "level": 8
+    },
+    {
+      "id": "k56",
+      "category": "Kitchen",
+      "pl": "Patelnia",
+      "en": "Frying pan",
+      "level": 8
+    },
+    {
+      "id": "k57",
+      "category": "Kitchen",
+      "pl": "Nóż",
+      "en": "Knife",
+      "level": 8
+    },
+    {
+      "id": "k58",
+      "category": "Kitchen",
+      "pl": "Widelec",
+      "en": "Fork",
+      "level": 8
+    },
+    {
+      "id": "k59",
+      "category": "Kitchen",
+      "pl": "Łyżka",
+      "en": "Spoon",
+      "level": 8
+    },
+    {
+      "id": "k60",
+      "category": "Kitchen",
+      "pl": "Talerz",
+      "en": "Plate",
+      "level": 8
+    },
+    {
+      "id": "s41",
+      "category": "Supermarket Phrases",
+      "pl": "Gdzie znajdę...?",
+      "en": "Where will I find...?",
+      "level": 8
+    },
+    {
+      "id": "s42",
+      "category": "Supermarket Phrases",
+      "pl": "Czy jest świeży?",
+      "en": "Is it fresh?",
+      "level": 8
+    },
+    {
+      "id": "s43",
+      "category": "Supermarket Phrases",
+      "pl": "Na wagę",
+      "en": "By weight",
+      "level": 8
+    },
+    {
+      "id": "s44",
+      "category": "Supermarket Phrases",
+      "pl": "Poproszę sto gram",
+      "en": "100 grams, please",
+      "level": 8
+    },
+    {
+      "id": "s45",
+      "category": "Supermarket Phrases",
+      "pl": "To wszystko, dziękuję",
+      "en": "That's all, thank you",
+      "level": 8
+    },
+    {
+      "id": "s46",
+      "category": "Supermarket Phrases",
+      "pl": "Zbiera pan/pani punkty?",
+      "en": "Do you collect points? (formal)",
+      "level": 8
+    },
+    {
+      "id": "s47",
+      "category": "Supermarket Phrases",
+      "pl": "Potrzebuje pan/pani paragon?",
+      "en": "Do you need a receipt? (formal)",
+      "level": 8
+    },
+    {
+      "id": "s48",
+      "category": "Supermarket Phrases",
+      "pl": "Płatność kartą",
+      "en": "Payment by card",
+      "level": 8
+    },
+    {
+      "id": "s49",
+      "category": "Supermarket Phrases",
+      "pl": "Kasa samoobsługowa",
+      "en": "Self-service checkout",
+      "level": 8
+    },
+    {
+      "id": "s50",
+      "category": "Supermarket Phrases",
+      "pl": "Promocja",
+      "en": "Sale / Promotion",
+      "level": 8
+    },
+    {
+      "id": "v11",
+      "category": "Vegetables",
+      "pl": "Ziemniak",
+      "en": "Potato",
+      "level": 8
+    },
+    {
+      "id": "v12",
+      "category": "Vegetables",
+      "pl": "Cebula",
+      "en": "Onion",
+      "level": 8
+    },
+    {
+      "id": "v13",
+      "category": "Vegetables",
+      "pl": "Czosnek",
+      "en": "Garlic",
+      "level": 8
+    },
+    {
+      "id": "v14",
+      "category": "Vegetables",
+      "pl": "Pomidor",
+      "en": "Tomato",
+      "level": 8
+    },
+    {
+      "id": "v15",
+      "category": "Vegetables",
+      "pl": "Ogórek",
+      "en": "Cucumber",
+      "level": 8
+    },
+    {
+      "id": "v16",
+      "category": "Vegetables",
+      "pl": "Marchewka",
+      "en": "Carrot",
+      "level": 8
+    },
+    {
+      "id": "v17",
+      "category": "Vegetables",
+      "pl": "Papryka",
+      "en": "Pepper",
+      "level": 8
+    },
+    {
+      "id": "v18",
+      "category": "Vegetables",
+      "pl": "Sałata",
+      "en": "Lettuce",
+      "level": 8
+    },
+    {
+      "id": "v19",
+      "category": "Vegetables",
+      "pl": "Kapusta",
+      "en": "Cabbage",
+      "level": 8
+    },
+    {
+      "id": "v20",
+      "category": "Vegetables",
+      "pl": "Pieczarki",
+      "en": "Mushrooms",
+      "level": 8
+    }
   ]
 }

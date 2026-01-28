@@ -1,81 +1,497 @@
 {
-  "lastUpdated": "2026-01-27",
+  "level": 16,
+  "description": "Technology & Digital Life",
+  "lastUpdated": "2026-01-28",
   "phrases": [
-    { "id": "b1", "category": "Banking Basics", "pl": "Bank", "en": "Bank", "level": 16 },
-    { "id": "b2", "category": "Banking Basics", "pl": "Konto bankowe", "en": "Bank account", "level": 16 },
-    { "id": "b3", "category": "Banking Basics", "pl": "Karta płatnicza", "en": "Payment card", "level": 16 },
-    { "id": "b4", "category": "Banking Basics", "pl": "Karta kredytowa", "en": "Credit card", "level": 16 },
-    { "id": "b5", "category": "Banking Basics", "pl": "Numer konta", "en": "Account number", "level": 16 },
-    { "id": "b6", "category": "Banking Basics", "pl": "Otworzyć konto", "en": "To open an account", "level": 16 },
-    { "id": "b7", "category": "Banking Basics", "pl": "Zamknąć konto", "en": "To close an account", "level": 16 },
-    { "id": "b8", "category": "Banking Basics", "pl": "Tożsamość", "en": "Identity", "level": 16 },
-    { "id": "b9", "category": "Banking Basics", "pl": "Dowód osobisty", "en": "ID card", "level": 16 },
-    { "id": "b10", "category": "Banking Basics", "pl": "Podpis", "en": "Signature", "level": 16 },
-
-    { "id": "t11", "category": "Transactions", "pl": "Przelew", "en": "Bank transfer", "level": 16 },
-    { "id": "t12", "category": "Transactions", "pl": "Zrobić przelew", "en": "To make a transfer", "level": 16 },
-    { "id": "t13", "category": "Transactions", "pl": "Otrzymać przelew", "en": "To receive a transfer", "level": 16 },
-    { "id": "t14", "category": "Transactions", "pl": "Saldo", "en": "Balance", "level": 16 },
-    { "id": "t15", "category": "Transactions", "pl": "Wyciąg z konta", "en": "Account statement", "level": 16 },
-    { "id": "t16", "category": "Transactions", "pl": "Bankomat", "en": "ATM", "level": 16 },
-    { "id": "t17", "category": "Transactions", "pl": "Wypłacić gotówkę", "en": "To withdraw cash", "level": 16 },
-    { "id": "t18", "category": "Transactions", "pl": "Wpłacić pieniądze", "en": "To deposit money", "level": 16 },
-    { "id": "t19", "category": "Transactions", "pl": "Prowizja", "en": "Commission / Fee", "level": 16 },
-    { "id": "t20", "category": "Transactions", "pl": "BLIK", "en": "BLIK (Polish mobile payment system)", "level": 16 },
-
-    { "id": "d21", "category": "Digital World", "pl": "Internet", "en": "Internet", "level": 16 },
-    { "id": "d22", "category": "Digital World", "pl": "Wi-Fi", "en": "Wi-Fi", "level": 16 },
-    { "id": "d23", "category": "Digital World", "pl": "Hasło", "en": "Password", "level": 16 },
-    { "id": "d24", "category": "Digital World", "pl": "Login / Użytkownik", "en": "Login / User", "level": 16 },
-    { "id": "d25", "category": "Digital World", "pl": "Zalogować się", "en": "To log in", "level": 16 },
-    { "id": "d26", "category": "Digital World", "pl": "Wylogować się", "en": "To log out", "level": 16 },
-    { "id": "d27", "category": "Digital World", "pl": "Aplikacja", "en": "Application / App", "level": 16 },
-    { "id": "d28", "category": "Digital World", "pl": "Strona internetowa", "en": "Website", "level": 16 },
-    { "id": "d29", "category": "Digital World", "pl": "Link / Odnośnik", "en": "Link", "level": 16 },
-    { "id": "d30", "category": "Digital World", "pl": "Pobrać / Ściągnąć", "en": "To download", "level": 16 },
-
-    { "id": "v31", "category": "Devices", "pl": "Komputer", "en": "Computer", "level": 16 },
-    { "id": "v32", "category": "Devices", "pl": "Laptop", "en": "Laptop", "level": 16 },
-    { "id": "v33", "category": "Devices", "pl": "Telefon / Smartfon", "en": "Phone / Smartphone", "level": 16 },
-    { "id": "v34", "category": "Devices", "pl": "Tablet", "en": "Tablet", "level": 16 },
-    { "id": "v35", "category": "Devices", "pl": "Ładowarka", "en": "Charger", "level": 16 },
-    { "id": "v36", "category": "Devices", "pl": "Bateria", "en": "Battery", "level": 16 },
-    { "id": "v37", "category": "Devices", "pl": "Ekran", "en": "Screen", "level": 16 },
-    { "id": "v38", "category": "Devices", "pl": "Klawiatura", "en": "Keyboard", "level": 16 },
-    { "id": "v39", "category": "Devices", "pl": "Myszka", "en": "Mouse (computer)", "level": 16 },
-    { "id": "v40", "category": "Devices", "pl": "Słuchawki", "en": "Headphones", "level": 16 },
-
-    { "id": "s41", "category": "Social Media", "pl": "Media społecznościowe", "en": "Social media", "level": 16 },
-    { "id": "s42", "category": "Social Media", "pl": "Wiadomość", "en": "Message", "level": 16 },
-    { "id": "s43", "category": "Social Media", "pl": "E-mail / Poczta", "en": "Email", "level": 16 },
-    { "id": "s44", "category": "Social Media", "pl": "Powiadomienie", "en": "Notification", "level": 16 },
-    { "id": "s45", "category": "Social Media", "pl": "Udostępnić", "en": "To share", "level": 16 },
-    { "id": "s46", "category": "Social Media", "pl": "Skomentować", "en": "To comment", "level": 16 },
-    { "id": "s47", "category": "Social Media", "pl": "Polubić", "en": "To like", "level": 16 },
-    { "id": "s48", "category": "Social Media", "pl": "Zdjęcie", "en": "Photo", "level": 16 },
-    { "id": "s49", "category": "Social Media", "pl": "Profil", "en": "Profile", "level": 16 },
-    { "id": "s50", "category": "Social Media", "pl": "Obserwować", "en": "To follow", "level": 16 },
-
-    { "id": "p51", "category": "Tech Problems", "pl": "Nie działa", "en": "It’s not working", "level": 16 },
-    { "id": "p52", "category": "Tech Problems", "pl": "Zepsuło się", "en": "It broke", "level": 16 },
-    { "id": "p53", "category": "Tech Problems", "pl": "Błąd", "en": "Error", "level": 16 },
-    { "id": "p54", "category": "Tech Problems", "pl": "Zawiesił się", "en": "It froze", "level": 16 },
-    { "id": "p55", "category": "Tech Problems", "pl": "Brak sygnału", "en": "No signal", "level": 16 },
-    { "id": "p56", "category": "Tech Problems", "pl": "Słaby zasięg", "en": "Weak reception / signal", "level": 16 },
-    { "id": "p57", "category": "Tech Problems", "pl": "Zresetować", "en": "To reset", "level": 16 },
-    { "id": "p58", "category": "Tech Problems", "pl": "Naprawić", "en": "To repair", "level": 16 },
-    { "id": "p59", "category": "Tech Problems", "pl": "Wirus", "en": "Virus", "level": 16 },
-    { "id": "p60", "category": "Tech Problems", "pl": "Zhakowany", "en": "Hacked", "level": 16 },
-
-    { "id": "u61", "category": "Useful Phrases", "pl": "Zapomniałem hasła", "en": "I forgot my password", "level": 16 },
-    { "id": "u62", "category": "Useful Phrases", "pl": "Czy jest tutaj Wi-Fi?", "en": "Is there Wi-Fi here?", "level": 16 },
-    { "id": "u63", "category": "Useful Phrases", "pl": "Moja karta nie działa", "en": "My card isn't working", "level": 16 },
-    { "id": "u64", "category": "Useful Phrases", "pl": "Zgubiłem telefon", "en": "I lost my phone", "level": 16 },
-    { "id": "u65", "category": "Useful Phrases", "pl": "Muszę naładować telefon", "en": "I need to charge my phone", "level": 16 },
-    { "id": "u66", "category": "Useful Phrases", "pl": "Wyślij mi to na maila", "en": "Send it to me via email", "level": 16 },
-    { "id": "u67", "category": "Useful Phrases", "pl": "To jest bezpieczne?", "en": "Is it safe?", "level": 16 },
-    { "id": "u68", "category": "Useful Phrases", "pl": "Zmień ustawienia", "en": "Change settings", "level": 16 },
-    { "id": "u69", "category": "Useful Phrases", "pl": "Zrób kopię zapasową", "en": "Make a backup", "level": 16 },
-    { "id": "u70", "category": "Useful Phrases", "pl": "Zeskanuj kod QR", "en": "Scan the QR code", "level": 16 }
+    {
+      "id": "b1",
+      "category": "Banking Basics",
+      "pl": "Bank",
+      "en": "Bank",
+      "level": 16
+    },
+    {
+      "id": "b10",
+      "category": "Banking Basics",
+      "pl": "Podpis",
+      "en": "Signature",
+      "level": 16
+    },
+    {
+      "id": "b4",
+      "category": "Banking Basics",
+      "pl": "Karta kredytowa",
+      "en": "Credit card",
+      "level": 16
+    },
+    {
+      "id": "b5",
+      "category": "Banking Basics",
+      "pl": "Numer konta",
+      "en": "Account number",
+      "level": 16
+    },
+    {
+      "id": "b6",
+      "category": "Banking Basics",
+      "pl": "Otworzyć konto",
+      "en": "To open an account",
+      "level": 16
+    },
+    {
+      "id": "b7",
+      "category": "Banking Basics",
+      "pl": "Zamknąć konto",
+      "en": "To close an account",
+      "level": 16
+    },
+    {
+      "id": "b8",
+      "category": "Banking Basics",
+      "pl": "Tożsamość",
+      "en": "Identity",
+      "level": 16
+    },
+    {
+      "id": "b9",
+      "category": "Banking Basics",
+      "pl": "Dowód osobisty",
+      "en": "ID card",
+      "level": 16
+    },
+    {
+      "id": "d22",
+      "category": "Digital World",
+      "pl": "Wi-Fi",
+      "en": "Wi-Fi",
+      "level": 16
+    },
+    {
+      "id": "d24",
+      "category": "Digital World",
+      "pl": "Login / Użytkownik",
+      "en": "Login / User",
+      "level": 16
+    },
+    {
+      "id": "d25",
+      "category": "Digital World",
+      "pl": "Zalogować się",
+      "en": "To log in",
+      "level": 16
+    },
+    {
+      "id": "d26",
+      "category": "Digital World",
+      "pl": "Wylogować się",
+      "en": "To log out",
+      "level": 16
+    },
+    {
+      "id": "d27",
+      "category": "Digital World",
+      "pl": "Aplikacja",
+      "en": "Application / App",
+      "level": 16
+    },
+    {
+      "id": "d28",
+      "category": "Digital World",
+      "pl": "Strona internetowa",
+      "en": "Website",
+      "level": 16
+    },
+    {
+      "id": "d29",
+      "category": "Digital World",
+      "pl": "Link / Odnośnik",
+      "en": "Link",
+      "level": 16
+    },
+    {
+      "id": "d30",
+      "category": "Digital World",
+      "pl": "Pobrać / Ściągnąć",
+      "en": "To download",
+      "level": 16
+    },
+    {
+      "id": "p51",
+      "category": "Tech Problems",
+      "pl": "Nie działa",
+      "en": "It’s not working",
+      "level": 16
+    },
+    {
+      "id": "p53",
+      "category": "Tech Problems",
+      "pl": "Błąd",
+      "en": "Error",
+      "level": 16
+    },
+    {
+      "id": "p54",
+      "category": "Tech Problems",
+      "pl": "Zawiesił się",
+      "en": "It froze",
+      "level": 16
+    },
+    {
+      "id": "p55",
+      "category": "Tech Problems",
+      "pl": "Brak sygnału",
+      "en": "No signal",
+      "level": 16
+    },
+    {
+      "id": "p56",
+      "category": "Tech Problems",
+      "pl": "Słaby zasięg",
+      "en": "Weak reception / signal",
+      "level": 16
+    },
+    {
+      "id": "p57",
+      "category": "Tech Problems",
+      "pl": "Zresetować",
+      "en": "To reset",
+      "level": 16
+    },
+    {
+      "id": "p58",
+      "category": "Tech Problems",
+      "pl": "Naprawić",
+      "en": "To repair",
+      "level": 16
+    },
+    {
+      "id": "p59",
+      "category": "Tech Problems",
+      "pl": "Wirus",
+      "en": "Virus",
+      "level": 16
+    },
+    {
+      "id": "p60",
+      "category": "Tech Problems",
+      "pl": "Zhakowany",
+      "en": "Hacked",
+      "level": 16
+    },
+    {
+      "id": "s42",
+      "category": "Social Media",
+      "pl": "Wiadomość",
+      "en": "Message",
+      "level": 16
+    },
+    {
+      "id": "s43",
+      "category": "Social Media",
+      "pl": "E-mail / Poczta",
+      "en": "Email",
+      "level": 16
+    },
+    {
+      "id": "s44",
+      "category": "Social Media",
+      "pl": "Powiadomienie",
+      "en": "Notification",
+      "level": 16
+    },
+    {
+      "id": "s45",
+      "category": "Social Media",
+      "pl": "Udostępnić",
+      "en": "To share",
+      "level": 16
+    },
+    {
+      "id": "s46",
+      "category": "Social Media",
+      "pl": "Skomentować",
+      "en": "To comment",
+      "level": 16
+    },
+    {
+      "id": "s47",
+      "category": "Social Media",
+      "pl": "Polubić",
+      "en": "To like",
+      "level": 16
+    },
+    {
+      "id": "s48",
+      "category": "Social Media",
+      "pl": "Zdjęcie",
+      "en": "Photo",
+      "level": 16
+    },
+    {
+      "id": "s49",
+      "category": "Social Media",
+      "pl": "Profil",
+      "en": "Profile",
+      "level": 16
+    },
+    {
+      "id": "s50",
+      "category": "Social Media",
+      "pl": "Obserwować",
+      "en": "To follow",
+      "level": 16
+    },
+    {
+      "id": "t12",
+      "category": "Transactions",
+      "pl": "Zrobić przelew",
+      "en": "To make a transfer",
+      "level": 16
+    },
+    {
+      "id": "t13",
+      "category": "Transactions",
+      "pl": "Otrzymać przelew",
+      "en": "To receive a transfer",
+      "level": 16
+    },
+    {
+      "id": "t14",
+      "category": "Transactions",
+      "pl": "Saldo",
+      "en": "Balance",
+      "level": 16
+    },
+    {
+      "id": "t15",
+      "category": "Transactions",
+      "pl": "Wyciąg z konta",
+      "en": "Account statement",
+      "level": 16
+    },
+    {
+      "id": "t16",
+      "category": "Transactions",
+      "pl": "Bankomat",
+      "en": "ATM",
+      "level": 16
+    },
+    {
+      "id": "t17",
+      "category": "Transactions",
+      "pl": "Wypłacić gotówkę",
+      "en": "To withdraw cash",
+      "level": 16
+    },
+    {
+      "id": "t18",
+      "category": "Transactions",
+      "pl": "Wpłacić pieniądze",
+      "en": "To deposit money",
+      "level": 16
+    },
+    {
+      "id": "t19",
+      "category": "Transactions",
+      "pl": "Prowizja",
+      "en": "Commission / Fee",
+      "level": 16
+    },
+    {
+      "id": "t20",
+      "category": "Transactions",
+      "pl": "BLIK",
+      "en": "BLIK (Polish mobile payment system)",
+      "level": 16
+    },
+    {
+      "id": "u61",
+      "category": "Useful Phrases",
+      "pl": "Zapomniałem hasła",
+      "en": "I forgot my password",
+      "level": 16
+    },
+    {
+      "id": "u62",
+      "category": "Useful Phrases",
+      "pl": "Czy jest tutaj Wi-Fi?",
+      "en": "Is there Wi-Fi here?",
+      "level": 16
+    },
+    {
+      "id": "u63",
+      "category": "Useful Phrases",
+      "pl": "Moja karta nie działa",
+      "en": "My card isn't working",
+      "level": 16
+    },
+    {
+      "id": "u65",
+      "category": "Useful Phrases",
+      "pl": "Muszę naładować telefon",
+      "en": "I need to charge my phone",
+      "level": 16
+    },
+    {
+      "id": "u66",
+      "category": "Useful Phrases",
+      "pl": "Wyślij mi to na maila",
+      "en": "Send it to me via email",
+      "level": 16
+    },
+    {
+      "id": "u67",
+      "category": "Useful Phrases",
+      "pl": "To jest bezpieczne?",
+      "en": "Is it safe?",
+      "level": 16
+    },
+    {
+      "id": "u68",
+      "category": "Useful Phrases",
+      "pl": "Zmień ustawienia",
+      "en": "Change settings",
+      "level": 16
+    },
+    {
+      "id": "u69",
+      "category": "Useful Phrases",
+      "pl": "Zrób kopię zapasową",
+      "en": "Make a backup",
+      "level": 16
+    },
+    {
+      "id": "u70",
+      "category": "Useful Phrases",
+      "pl": "Zeskanuj kod QR",
+      "en": "Scan the QR code",
+      "level": 16
+    },
+    {
+      "id": "v31",
+      "category": "Devices",
+      "pl": "Komputer",
+      "en": "Computer",
+      "level": 16
+    },
+    {
+      "id": "v32",
+      "category": "Devices",
+      "pl": "Laptop",
+      "en": "Laptop",
+      "level": 16
+    },
+    {
+      "id": "v33",
+      "category": "Devices",
+      "pl": "Telefon / Smartfon",
+      "en": "Phone / Smartphone",
+      "level": 16
+    },
+    {
+      "id": "v34",
+      "category": "Devices",
+      "pl": "Tablet",
+      "en": "Tablet",
+      "level": 16
+    },
+    {
+      "id": "v36",
+      "category": "Devices",
+      "pl": "Bateria",
+      "en": "Battery",
+      "level": 16
+    },
+    {
+      "id": "v37",
+      "category": "Devices",
+      "pl": "Ekran",
+      "en": "Screen",
+      "level": 16
+    },
+    {
+      "id": "v38",
+      "category": "Devices",
+      "pl": "Klawiatura",
+      "en": "Keyboard",
+      "level": 16
+    },
+    {
+      "id": "v39",
+      "category": "Devices",
+      "pl": "Myszka",
+      "en": "Mouse (computer)",
+      "level": 16
+    },
+    {
+      "id": "l16_72",
+      "category": "Banking Basics",
+      "pl": "Wpłata",
+      "en": "Deposit",
+      "level": 16
+    },
+    {
+      "id": "l16_74",
+      "category": "Devices",
+      "pl": "Smartfon",
+      "en": "Smartphone",
+      "level": 16
+    },
+    {
+      "id": "l16_77",
+      "category": "Social Media",
+      "pl": "Post",
+      "en": "Post",
+      "level": 16
+    },
+    {
+      "id": "l16_78",
+      "category": "Transactions",
+      "pl": "Płatność",
+      "en": "Payment",
+      "level": 16
+    },
+    {
+      "id": "l16_79",
+      "category": "Transactions",
+      "pl": "Rachunek",
+      "en": "Bill / Invoice",
+      "level": 16
+    },
+    {
+      "id": "l16_81",
+      "category": "Digital World",
+      "pl": "Email",
+      "en": "Email",
+      "level": 16
+    },
+    {
+      "id": "l16_82",
+      "category": "Digital World",
+      "pl": "Link",
+      "en": "Link",
+      "level": 16
+    },
+    {
+      "id": "l16_84",
+      "category": "Devices",
+      "pl": "Mysz",
+      "en": "Mouse",
+      "level": 16
+    },
+    {
+      "id": "l16_85",
+      "category": "Social Media",
+      "pl": "Komentarz",
+      "en": "Comment",
+      "level": 16
+    },
+    {
+      "id": "l16_86",
+      "category": "Tech Problems",
+      "pl": "Awaria",
+      "en": "Malfunction / Breakdown",
+      "level": 16
+    }
   ]
 }
