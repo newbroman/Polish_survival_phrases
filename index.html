@@ -31,7 +31,7 @@
         .quiz-header { background: var(--card); padding: 12px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 48px; height: 48px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .q-content { flex-grow: 1; text-align: center; }
-        .q-text { font-size: 1.3rem; font-weight: 800; }
+        .q-text { font-size: 1.1rem; font-weight: 800; }
         .feedback { height: 14px; font-size: 0.75rem; font-weight: bold; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
@@ -85,7 +85,7 @@
 <div class="quiz-header" id="quiz-ui">
     <button class="speaker-btn" onclick="speakTarget()">🔊</button>
     <div class="q-content">
-        <div id="q-text" class="q-text">Loading...</div>
+        <div id="q-text" class="q-text">Connecting...</div>
         <div id="feedback" class="feedback"></div>
     </div>
 </div>
@@ -108,31 +108,26 @@
 
 <script>
     const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
-    let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
-    let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
-    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null, reverse = false;
+    let stats = {}, currentLevel = 1, phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null, reverse = false;
     const THRESHOLD = 3;
     let plVoice = null;
 
     function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
     window.speechSynthesis.onvoiceschanged = initSpeech;
 
-    const lvlSelect = document.getElementById('level-select');
-    levelNames.forEach((name, i) => {
-        const opt = document.createElement('option');
-        opt.value = i+1; opt.innerText = `Level ${i+1}: ${name}`;
-        if (i+1 === currentLevel) opt.selected = true;
-        lvlSelect.appendChild(opt);
-    });
-
     async function loadLevelData() {
+        const statusEl = document.getElementById('q-text');
+        // Cache-busting version string
+        const version = new Date().getTime();
+        
         try {
-            const resp = await fetch(`phrases_${currentLevel}.json`);
-            if (!resp.ok) throw new Error("File not found");
+            const resp = await fetch(`phrases_${currentLevel}.json?v=${version}`);
+            if (!resp.ok) throw new Error("404");
+            
             const data = await resp.json();
             phrasesData = data.phrases;
             
-            // Clean logic to fill the pool
+            // Populate Pool
             const unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
             activePool = unmastered.slice(0, 12);
             
@@ -140,10 +135,9 @@
             updateMap(); 
             startNewRound();
             cacheAllPhrases();
-            return true;
         } catch (err) { 
-            console.error("Load failed:", err);
-            return false;
+            statusEl.innerText = `Retrying Level ${currentLevel}...`;
+            setTimeout(loadLevelData, 1000); // Try again in 1s if failed
         }
     }
 
@@ -163,10 +157,7 @@
     function toggleLang() { reverse = document.getElementById('lang-toggle').checked; updateMap(); startNewRound(); }
 
     function startNewRound() {
-        if (!activePool.length || !document.getElementById('tab-learning').classList.contains('active')) {
-            document.getElementById('q-text').innerText = "Level Complete!";
-            return;
-        }
+        if (!activePool.length || !document.getElementById('tab-learning').classList.contains('active')) return;
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = reverse ? currentTarget.pl : currentTarget.en;
         document.getElementById('feedback').innerText = "";
@@ -178,12 +169,11 @@
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Correct! 🌟";
             saveStats();
-            
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
                     activePool = activePool.filter(p => p.pl !== phrase.pl);
-                    let nextCandidate = phrasesData.find(p => (stats[p.pl]||0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
-                    if (nextCandidate && activePool.length < 12) activePool.push(nextCandidate);
+                    let next = phrasesData.find(p => (stats[p.pl]||0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
+                    if (next && activePool.length < 12) activePool.push(next);
                 }
                 updateStats(); updateMap();
                 if (activePool.length === 0) document.getElementById('overlay').style.display='flex'; else startNewRound();
@@ -200,18 +190,6 @@
         area.innerHTML = '';
         if (document.getElementById('tab-learning').classList.contains('active')) {
             area.className = "grid";
-            
-            // Safety: if data exists but pool is empty, try one more time to load
-            if (activePool.length === 0 && phrasesData.length > 0) {
-                 const unmastered = phrasesData.filter(p => (stats[p.pl]||0) < THRESHOLD);
-                 if (unmastered.length > 0) {
-                     activePool = unmastered.slice(0, 12);
-                 } else {
-                     document.getElementById('overlay').style.display = 'flex';
-                     return;
-                 }
-            }
-
             activePool.forEach(p => {
                 const tile = document.createElement('div'); tile.className = 'tile';
                 tile.innerText = reverse ? p.en : p.pl;
@@ -243,45 +221,36 @@
     }
 
     async function jumpToLevel(lvl) {
-        currentLevel = lvl; lvlSelect.value = lvl; document.getElementById('search-bar').value = '';
-        saveStats(); 
-        await loadLevelData(); 
-        showSaveToast(`Level ${lvl}`);
+        currentLevel = lvl; document.getElementById('level-select').value = lvl;
+        saveStats(); await loadLevelData(); 
     }
 
-    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
-    function downloadProgress() { 
-        const date = new Date().toLocaleDateString().replace(/\//g, '-');
-        const blob = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); 
-        const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `polish_progress_${date}.txt`; a.click(); 
+    function saveStats() { 
+        localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
+        localStorage.setItem('pl_current_level_idx', currentLevel); 
     }
-    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
-    function showSaveToast(msg) { const t = document.getElementById('save-toast'); t.innerText = msg; t.style.display='block'; setTimeout(()=>t.style.display='none', 1000); }
-    function resetEverything() { if(confirm("Clear all progress?")) { localStorage.clear(); location.reload(); } }
+
+    function resetEverything() { if(confirm("Clear all?")) { localStorage.clear(); location.reload(); } }
     function updateStats() { if(phrasesData.length) document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%"; }
-    function switchMode(m) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; document.getElementById('search-bar').value = ''; updateMap(); }
+    function switchMode(m) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; updateMap(); }
     function speak(t) { const m = new SpeechSynthesisUtterance(t); if(plVoice) m.voice=plVoice; m.lang='pl-PL'; window.speechSynthesis.speak(m); }
     async function changeLevel(v) { currentLevel = parseInt(v); saveStats(); await loadLevelData(); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
     async function advanceLevel() { 
-        currentLevel++; 
-        if(currentLevel > 20) currentLevel = 1; 
-        lvlSelect.value = currentLevel; 
+        currentLevel++; if(currentLevel > 20) currentLevel = 1; 
+        document.getElementById('level-select').value = currentLevel;
         document.getElementById('overlay').style.display='none'; 
         await changeLevel(currentLevel); 
     }
 
-    // New more aggressive initialization
-    async function initApp() {
+    // Startup
+    document.addEventListener('DOMContentLoaded', () => {
+        stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
+        currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
+        document.getElementById('level-select').value = currentLevel;
         initSpeech();
-        const success = await loadLevelData();
-        if (!success) {
-            console.warn("Retrying first load...");
-            setTimeout(loadLevelData, 500);
-        }
-    }
-
-    window.onload = initApp;
+        loadLevelData();
+    });
 </script>
 </body>
 </html>
