@@ -122,7 +122,9 @@
             phrasesData = data.phrases;
             // Clean slate for activePool to prevent 13-square bug
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
-            updateStats(); updateMap(); startNewRound();
+            updateStats(); 
+            updateMap(); 
+            startNewRound();
             cacheAllPhrases();
         } catch (err) { 
             console.error("Load failed:", err);
@@ -220,24 +222,85 @@
     }
 
     function jumpToLevel(lvl) {
-        currentLevel = lvl; lvlSelect.value = lvl; document.getElementById('search-bar').value = '';
-        saveStats(); loadLevelData(); showSaveToast(`Jumped to Level ${lvl}`);
+        currentLevel = lvl; 
+        lvlSelect.value = lvl; 
+        document.getElementById('search-bar').value = '';
+        saveStats(); 
+        loadLevelData(); 
+        showSaveToast(`Jumped to Level ${lvl}`);
     }
 
-    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
+    function saveStats() { 
+        localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
+        localStorage.setItem('pl_current_level_idx', currentLevel); 
+    }
+    
     function downloadProgress() { 
         const date = new Date().toLocaleDateString().replace(/\//g, '-');
         const blob = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); 
-        const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `polish_progress_${date}.txt`; a.click(); 
+        const a = document.createElement("a"); 
+        a.href = URL.createObjectURL(blob); 
+        a.download = `polish_progress_${date}.txt`; 
+        a.click(); 
     }
-    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
-    function showSaveToast(msg) { const t = document.getElementById('save-toast'); t.innerText = msg; t.style.display='block'; setTimeout(()=>t.style.display='none', 1000); }
-    function resetEverything() { if(confirm("Clear all progress?")) { localStorage.clear(); location.reload(); } }
-    function updateStats() { if(phrasesData.length) document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%"; }
-    function switchMode(m) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; document.getElementById('search-bar').value = ''; updateMap(); }
-    function speak(t) { const m = new SpeechSynthesisUtterance(t); if(plVoice) m.voice=plVoice; m.lang='pl-PL'; window.speechSynthesis.speak(m); }
-    function changeLevel(v) { currentLevel = parseInt(v); saveStats(); loadLevelData(); }
-    function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
+    
+    function importProgress(e) { 
+        const r = new FileReader(); 
+        r.onload = (ev) => { 
+            const d = JSON.parse(ev.target.result); 
+            stats = d.stats; 
+            currentLevel = d.currentLevel; 
+            saveStats(); 
+            location.reload(); 
+        }; 
+        r.readAsText(e.target.files[0]); 
+    }
+    
+    function showSaveToast(msg) { 
+        const t = document.getElementById('save-toast'); 
+        t.innerText = msg; 
+        t.style.display='block'; 
+        setTimeout(()=>t.style.display='none', 1000); 
+    }
+    
+    function resetEverything() { 
+        if(confirm("Clear all progress?")) { 
+            localStorage.clear(); 
+            location.reload(); 
+        } 
+    }
+    
+    function updateStats() { 
+        if(phrasesData.length) {
+            document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%"; 
+        }
+    }
+    
+    function switchMode(m) { 
+        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); 
+        document.getElementById('tab-'+m).classList.add('active'); 
+        document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; 
+        document.getElementById('search-bar').value = ''; 
+        updateMap(); 
+    }
+    
+    function speak(t) { 
+        const m = new SpeechSynthesisUtterance(t); 
+        if(plVoice) m.voice=plVoice; 
+        m.lang='pl-PL'; 
+        window.speechSynthesis.speak(m); 
+    }
+    
+    function changeLevel(v) { 
+        currentLevel = parseInt(v); 
+        saveStats(); 
+        loadLevelData(); 
+    }
+    
+    function speakTarget() { 
+        if(currentTarget) speak(currentTarget.pl); 
+    }
+    
     function advanceLevel() { 
         currentLevel++; 
         if(currentLevel > 20) currentLevel = 1; 
