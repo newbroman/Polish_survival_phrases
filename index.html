@@ -1,28 +1,22 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master</title>
+    <title>Polish Survival Phrases</title>
     <style>
-        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
-        @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --pol-red: #dc143c; --bg: #f5f5f5; --card: white; --tile-bg: #e8f4f8; --wrong-blue: #4a90e2; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: #333; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
         
-        html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
-        
-        .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; }
-        .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
+        .header { padding: 8px; display: flex; align-items: center; gap: 6px; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .header h1 { font-size: 1rem; font-weight: 800; flex-grow: 1; }
+        #level-select { font-size: 0.7rem; padding: 6px 8px; border-radius: 6px; border: 1px solid #ccc; font-weight: 600; background: var(--bg); color: #666; appearance: none; -webkit-appearance: none; -moz-appearance: none; cursor: pointer; }
+        #search-bar { font-size: 0.7rem; padding: 6px 8px; border-radius: 6px; border: 1px solid #ccc; width: 100%; max-width: 180px; }
 
-        .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 8px 0; display: flex; flex-direction: column; gap: 6px; }
-        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.65rem; font-weight: bold; }
-        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 6px 8px; border-radius: 6px; font-size: 0.8rem; outline: none; box-sizing: border-box; }
-
-        .progress-container { width: 100%; height: 3px; background: #ddd; }
-        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
-
-        .quiz-header { background: var(--card); padding: 10px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+        #quiz-ui { padding: 8px; background: var(--card); border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+        #progress-bar-bg { height: 4px; background: #ddd; border-radius: 2px; flex-grow: 1; overflow: hidden; }
+        #progress-bar { height: 100%; background: var(--pol-red); width: 0%; transition: width 0.3s; }
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .q-content { flex-grow: 1; text-align: center; min-width: 0; }
         .q-text { font-size: 1.1rem; font-weight: 800; word-wrap: break-word; }
@@ -55,30 +49,14 @@
 </head>
 <body>
 
-<div id="save-toast"></div>
-
-<div id="overlay">
-    <h1>LEVEL MASTERED! 🏆</h1>
-    <button onclick="advanceLevel()">Next Level</button>
-</div>
-
 <div class="header">
-    <div class="title-banner"><h1 class="title">Say some Polish phrases</h1></div>
-    <div class="controls-row">
-        <div class="toggle-container">
-            <span>EN ⮕ PL</span>
-            <input type="checkbox" id="lang-toggle" onchange="toggleLang()">
-            <span>PL ⮕ EN</span>
-        </div>
-        <select id="level-select" onchange="changeLevel(this.value)"></select>
-        <input type="text" id="search-bar" class="search-box" placeholder="Search all levels..." oninput="handleGlobalSearch()">
-    </div>
+    <h1>🇵🇱 Polish Survival</h1>
+    <select id="level-select" onchange="changeLevel(this.value)"></select>
+    <input id="search-bar" type="text" placeholder="Search..." oninput="filterBanked()">
 </div>
 
-<div class="progress-container"><div id="progress-bar"></div></div>
-
-<div class="quiz-header" id="quiz-ui">
-    <button class="speaker-btn" onclick="speakTarget()">🔊</button>
+<div id="quiz-ui">
+    <button class="speaker-btn" id="speaker-btn">🔊</button>
     <div class="q-content">
         <div id="q-text" class="q-text">Ready?</div>
         <div id="feedback" class="feedback"></div>
@@ -96,197 +74,177 @@
 
 <div class="footer">
     <button class="footer-btn" onclick="downloadProgress()">Save File</button>
-    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load File</button>
-    <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Clear All</button>
-    <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
+    <button class="footer-btn" onclick="uploadProgress()">Load File</button>
+    <button class="footer-btn" onclick="if(confirm('Reset all progress?')) resetProgress()">Reset</button>
 </div>
 
+<div id="save-toast">Progress Saved</div>
+<div id="overlay">
+    <h1>🎉 Level Complete!</h1>
+    <p style="margin-bottom:20px;">You've mastered all phrases in this level.</p>
+    <button onclick="advanceLevel()">Next Level</button>
+</div>
+
+<input type="file" id="file-input" style="display:none" accept=".json">
+
 <script>
-    let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
-    let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
-    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null, reverse = false;
-    let levelDescriptions = {}; // Will be populated from JSON files
     const THRESHOLD = 3;
     let plVoice = null;
+    let currentLevel = 1;
+    let phrasesData = [];
+    let stats = {};
+    let currentTarget = null;
+    let wrongChoices = [];
+    let lastTapTime = 0;
+    let isSpeaking = false;
 
-    function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
-    window.speechSynthesis.onvoiceschanged = initSpeech;
+    function initSpeech() { 
+        if(window.speechSynthesis) { 
+            window.speechSynthesis.onvoiceschanged = () => { 
+                const v = window.speechSynthesis.getVoices(); 
+                plVoice = v.find(x=>x.lang.startsWith('pl')) || v[0]; 
+            }; 
+        } 
+    }
 
-    const lvlSelect = document.getElementById('level-select');
-
-    async function populateLevelSelect() {
-        // Load descriptions from actual phrase files
-        for (let i = 1; i <= 20; i++) {
+    async function populateLevelSelect() { 
+        const s = document.getElementById('level-select'); 
+        for(let i=1; i<=20; i++) { 
             try {
-                const resp = await fetch(`phrases_${i}.json?v=${Date.now()}`);
-                if (resp.ok) {
-                    const data = await resp.json();
-                    levelDescriptions[i] = data.description || `Level ${i}`;
-                }
-            } catch(e) {
-                levelDescriptions[i] = `Level ${i}`;
-            }
-        }
-        
-        // Populate dropdown with actual descriptions
-        for (let i = 1; i <= 20; i++) {
-            const opt = document.createElement('option');
-            opt.value = i;
-            opt.innerText = `Level ${i}: ${levelDescriptions[i]}`;
-            if (i === currentLevel) opt.selected = true;
-            lvlSelect.appendChild(opt);
-        }
+                const r = await fetch(`phrases_${i}.json?t=${Date.now()}`); 
+                const d = await r.json(); 
+                const o = document.createElement('option'); 
+                o.value = i; 
+                o.textContent = `Level ${i}: ${d.description || 'Loading...'}`; 
+                s.appendChild(o); 
+            } catch(e) { 
+                const o = document.createElement('option'); 
+                o.value = i; 
+                o.textContent = `Level ${i}`; 
+                s.appendChild(o); 
+            } 
+        } 
+        s.value = currentLevel; 
     }
 
-    async function loadLevelData() {
-        try {
-            const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
-            if (!resp.ok) throw new Error("File not found");
-            const data = await resp.json();
-            phrasesData = data.phrases;
-            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
-            updateStats(); 
-            updateMap(); 
-            startNewRound();
-            cacheAllPhrases();
-        } catch (err) { 
-            console.error("Load failed:", err);
-            document.getElementById('q-text').innerText = "Level file missing!";
-        }
-    }
-
-    async function cacheAllPhrases() {
-        if (allPhrasesCache.length > 0) return;
-        for (let i = 1; i <= 20; i++) {
-            try {
-                const r = await fetch(`phrases_${i}.json?v=${Date.now()}`);
-                if (r.ok) {
-                    const d = await r.json();
-                    allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: i})));
-                }
-            } catch(e) {}
-        }
-    }
-
-    function toggleLang() { reverse = document.getElementById('lang-toggle').checked; updateMap(); startNewRound(); }
-
-    function startNewRound() {
-        if (!activePool.length || document.getElementById('tab-learning').className.indexOf('active') === -1) return;
-        currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
-        document.getElementById('q-text').innerText = reverse ? currentTarget.pl : currentTarget.en;
-        document.getElementById('feedback').innerText = "";
-        setTimeout(() => speak(currentTarget.pl), 300);
-    }
-
-    function checkAnswer(phrase, el) {
-        if (phrase.pl === currentTarget.pl) {
-            stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Correct! 🌟";
-            saveStats();
-            
-            setTimeout(() => {
-                if (stats[phrase.pl] >= THRESHOLD) {
-                    activePool = activePool.filter(p => p.pl !== phrase.pl);
-                    let nextCandidate = phrasesData.find(p => (stats[p.pl]||0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
-                    if (nextCandidate && activePool.length < 12) {
-                        activePool.push(nextCandidate);
-                    }
-                }
-                
-                updateStats(); 
-                updateMap();
-
-                if (activePool.length === 0) {
-                    document.getElementById('overlay').style.display='flex';
-                } else {
-                    startNewRound();
-                }
-            }, 800);
-        } else {
-            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
-            el.classList.add('wrong');
-            setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1400);
-        }
-    }
-
-    function updateMap() {
-        const area = document.getElementById('mastery-map'); area.innerHTML = '';
-        if (document.getElementById('tab-learning').classList.contains('active')) {
-            area.className = "grid";
-            activePool.forEach(p => {
-                const tile = document.createElement('div'); tile.className = 'tile';
-                tile.innerText = reverse ? p.en : p.pl;
-                const c = stats[p.pl] || 0;
-                if (c > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${c/THRESHOLD})`;
-                tile.onclick = () => checkAnswer(p, tile);
-                area.appendChild(tile);
-            });
-        } else {
-            area.className = "mastered-list";
-            phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).forEach(p => {
-                const item = document.createElement('div'); item.className = 'banked-item';
-                item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
-                area.appendChild(item);
-            });
-        }
-    }
-
-    function handleGlobalSearch() {
-        const q = document.getElementById('search-bar').value.toLowerCase();
-        if (!q) return updateMap();
-        const area = document.getElementById('mastery-map'); area.innerHTML = ''; area.className = "mastered-list";
-        allPhrasesCache.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)).slice(0, 30).forEach(p => {
-            const item = document.createElement('div'); item.className = 'banked-item';
-            item.innerHTML = `<span class="lvl-tag">Lvl ${p.lvl}</span><div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
-            item.onclick = () => jumpToLevel(p.lvl);
-            area.appendChild(item);
-        });
-    }
-
-    function jumpToLevel(lvl) {
-        currentLevel = lvl; 
-        lvlSelect.value = lvl; 
-        document.getElementById('search-bar').value = '';
-        saveStats(); 
-        loadLevelData(); 
-        showSaveToast(`Jumped to Level ${lvl}`);
+    function loadStats() { 
+        const s = localStorage.getItem('polishStats'); 
+        stats = s ? JSON.parse(s) : {}; 
     }
 
     function saveStats() { 
-        localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
-        localStorage.setItem('pl_current_level_idx', currentLevel); 
+        localStorage.setItem('polishStats', JSON.stringify(stats)); 
+        localStorage.setItem('polishCurrentLevel', currentLevel); 
+        updateStats(); 
+        showToast(); 
     }
-    
+
+    function showToast() { 
+        const t = document.getElementById('save-toast'); 
+        t.style.display='block'; 
+        setTimeout(()=>t.style.display='none', 1500); 
+    }
+
+    async function loadLevelData() { 
+        try { 
+            const r = await fetch(`phrases_${currentLevel}.json?t=${Date.now()}`); 
+            const d = await r.json(); 
+            phrasesData = d.phrases || []; 
+            updateStats(); 
+            updateMap(); 
+            pickNewTarget(); 
+        } catch(e) { 
+            console.error(e); 
+        } 
+    }
+
+    function pickNewTarget() { 
+        const unmastered = phrasesData.filter(p=>(stats[p.pl]||0)<THRESHOLD); 
+        if(!unmastered.length) { 
+            document.getElementById('overlay').style.display='flex'; 
+            return; 
+        } 
+        currentTarget = unmastered[Math.floor(Math.random()*unmastered.length)]; 
+        wrongChoices = phrasesData.filter(p=>p.pl!==currentTarget.pl).sort(()=>Math.random()-0.5).slice(0,15); 
+        document.getElementById('q-text').textContent = currentTarget.en; 
+        document.getElementById('feedback').textContent = ''; 
+    }
+
+    function checkAnswer(chosen) { 
+        const fb = document.getElementById('feedback'); 
+        if(chosen === currentTarget.pl) { 
+            fb.textContent = '✅ Correct!'; 
+            fb.style.color = 'green'; 
+            stats[currentTarget.pl] = (stats[currentTarget.pl]||0)+1; 
+            saveStats(); 
+            setTimeout(()=>{ pickNewTarget(); updateMap(); }, 600); 
+        } else { 
+            fb.textContent = '❌ Wrong! It was: '+currentTarget.pl; 
+            fb.style.color = 'red'; 
+            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl]||0)-1); 
+            saveStats(); 
+            setTimeout(()=>{ pickNewTarget(); updateMap(); }, 1200); 
+        } 
+    }
+
+    function updateMap() { 
+        const m = document.getElementById('mastery-map'); 
+        const mode = document.querySelector('.tab.active').id.replace('tab-',''); 
+        if(mode==='learning') { 
+            const tiles = phrasesData.map(p=>{ 
+                const mastered = (stats[p.pl]||0)>=THRESHOLD; 
+                const cls = mastered ? 'tile' : 'tile wrong'; 
+                return `<div class="${cls}" onclick="checkAnswer('${p.pl.replace(/'/g,"\\'")}')"><span>${p.pl}</span></div>`; 
+            }).join(''); 
+            m.innerHTML = `<div class="grid">${tiles}</div>`; 
+        } else { 
+            const mastered = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD); 
+            const searchTerm = document.getElementById('search-bar').value.toLowerCase(); 
+            const filtered = searchTerm ? mastered.filter(p=>p.pl.toLowerCase().includes(searchTerm)||p.en.toLowerCase().includes(searchTerm)) : mastered; 
+            const items = filtered.map(p=>`<div class="banked-item" onclick="speak('${p.pl.replace(/'/g,"\\'")}')"><div><strong>${p.pl}</strong><br><small>${p.en}</small></div><span class="lvl-tag">L${p.level}</span><span style="font-size:1.2rem;">🔊</span></div>`).join(''); 
+            m.innerHTML = `<div class="mastered-list">${items}</div>`; 
+        } 
+    }
+
+    function filterBanked() { 
+        updateMap(); 
+    }
+
     function downloadProgress() { 
-        const date = new Date().toLocaleDateString().replace(/\//g, '-');
-        const blob = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); 
-        const a = document.createElement("a"); 
+        const blob = new Blob([JSON.stringify({stats,currentLevel},null,2)], {type:'application/json'}); 
+        const a = document.createElement('a'); 
         a.href = URL.createObjectURL(blob); 
-        a.download = `polish_progress_${date}.txt`; 
+        a.download = 'polish-progress.json'; 
         a.click(); 
     }
-    
-    function importProgress(e) { 
-        const r = new FileReader(); 
-        r.onload = (ev) => { 
-            const d = JSON.parse(ev.target.result); 
-            stats = d.stats; 
-            currentLevel = d.currentLevel; 
-            saveStats(); 
-            location.reload(); 
+
+    function uploadProgress() { 
+        const i = document.getElementById('file-input'); 
+        i.onchange = (e) => { 
+            const f = e.target.files[0]; 
+            if(f) { 
+                const r = new FileReader(); 
+                r.onload = (ev) => { 
+                    try { 
+                        const d = JSON.parse(ev.target.result); 
+                        stats = d.stats || {}; 
+                        currentLevel = d.currentLevel || 1; 
+                        saveStats(); 
+                        document.getElementById('level-select').value = currentLevel; 
+                        loadLevelData(); 
+                        alert('Progress loaded!'); 
+                    } catch(e) { 
+                        alert('Invalid file!'); 
+                    } 
+                }; 
+                r.readAsText(f); 
+            } 
         }; 
-        r.readAsText(e.target.files[0]); 
+        i.click(); 
     }
-    
-    function showSaveToast(msg) { 
-        const t = document.getElementById('save-toast'); 
-        t.innerText = msg; 
-        t.style.display='block'; 
-        setTimeout(()=>t.style.display='none', 1000); 
-    }
-    
-    function resetEverything() { 
-        if(confirm("Clear all progress?")) { 
+
+    function resetProgress() { 
+        if(confirm('This will delete all your progress. Are you sure?')) { 
             localStorage.clear(); 
             location.reload(); 
         } 
@@ -306,10 +264,22 @@
         updateMap(); 
     }
     
-    function speak(t) { 
+    function speak(t, rate = 1.0) { 
+        if(isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            return;
+        }
+        
         const m = new SpeechSynthesisUtterance(t); 
         if(plVoice) m.voice=plVoice; 
-        m.lang='pl-PL'; 
+        m.lang='pl-PL';
+        m.rate = rate;
+        
+        m.onstart = () => { isSpeaking = true; };
+        m.onend = () => { isSpeaking = false; };
+        m.onerror = () => { isSpeaking = false; };
+        
         window.speechSynthesis.speak(m); 
     }
     
@@ -320,22 +290,44 @@
     }
     
     function speakTarget() { 
-        if(currentTarget) speak(currentTarget.pl); 
+        if(!currentTarget) return;
+        
+        const now = Date.now();
+        const timeSinceLastTap = now - lastTapTime;
+        
+        // Double tap detected (within 400ms)
+        if(timeSinceLastTap < 400 && timeSinceLastTap > 0) {
+            speak(currentTarget.pl, 0.5); // Half speed
+            lastTapTime = 0; // Reset to prevent triple-tap
+        } else {
+            speak(currentTarget.pl, 1.0); // Normal speed
+            lastTapTime = now;
+        }
     }
     
     function advanceLevel() { 
         currentLevel++; 
         if(currentLevel > 20) currentLevel = 1; 
-        lvlSelect.value = currentLevel; 
+        document.getElementById('level-select').value = currentLevel;
         document.getElementById('overlay').style.display='none';
         changeLevel(currentLevel); 
     }
 
+    // Setup speaker button with double-tap support
+    document.getElementById('speaker-btn').addEventListener('click', speakTarget);
+
     window.onload = async () => { 
         initSpeech(); 
         await populateLevelSelect(); 
+        loadStats(); 
+        const savedLevel = localStorage.getItem('polishCurrentLevel'); 
+        if(savedLevel) { 
+            currentLevel = parseInt(savedLevel); 
+            document.getElementById('level-select').value = currentLevel; 
+        } 
         loadLevelData(); 
     };
 </script>
+
 </body>
 </html>
