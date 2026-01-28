@@ -111,7 +111,7 @@
 
     async function loadLevelData() {
         try {
-            const resp = await fetch(`./phrases_${currentLevel}.json`);
+            const resp = await fetch(`./phrases_${currentLevel}.json?v=${Date.now()}`);
             const data = await resp.json();
             phrasesData = data.phrases;
             const unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
@@ -204,7 +204,20 @@
 
     function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
     function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); }
-    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
+    
+    function importProgress(e) { 
+        const r = new FileReader(); 
+        r.onload = (ev) => { 
+            const d = JSON.parse(ev.target.result); 
+            stats = d.stats; 
+            currentLevel = d.currentLevel || 1; 
+            lvlSelect.value = currentLevel;
+            saveStats(); 
+            loadLevelData(); // FORCE RE-LOAD OF THE NEW LEVEL DATA
+        }; 
+        r.readAsText(e.target.files[0]); 
+    }
+
     function resetEverything() { if(confirm("Clear all progress?")) { localStorage.clear(); location.reload(); } }
     function updateStats() { if(phrasesData.length) document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%"; }
     function speak(t) { const m = new SpeechSynthesisUtterance(t); if(plVoice) m.voice=plVoice; m.lang='pl-PL'; window.speechSynthesis.speak(m); }
