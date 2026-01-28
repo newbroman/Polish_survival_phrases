@@ -16,7 +16,7 @@
 
         .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 12px 0; border-bottom: 1px solid #ccc; }
-        .title { font-weight: 800; font-size: 1.2rem; color: #333; text-align: center; margin: 0; }
+        .title { font-weight: 800; font-size: 1.4rem; color: #333; text-align: center; margin: 0; }
 
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 10px 0; display: flex; flex-direction: column; gap: 8px; }
         .toggle-container { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.7rem; font-weight: bold; }
@@ -26,7 +26,7 @@
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
         .quiz-header { background: var(--card); padding: 12px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
-        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 44px; height: 44px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 48px; height: 48px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .q-content { flex-grow: 1; text-align: center; }
         .q-text { font-size: 1.1rem; font-weight: 800; }
         .feedback { height: 14px; font-size: 0.75rem; font-weight: bold; }
@@ -74,7 +74,7 @@
 <div class="quiz-header" id="quiz-ui">
     <button class="speaker-btn" onclick="speakTarget()">🔊</button>
     <div class="q-content">
-        <div id="q-text" class="q-text">Initializing...</div>
+        <div id="q-text" class="q-text">Loading...</div>
         <div id="feedback" class="feedback"></div>
     </div>
 </div>
@@ -110,23 +110,15 @@
     });
 
     async function loadLevelData() {
-        const statusEl = document.getElementById('q-text');
-        statusEl.innerText = `Fetching Level ${currentLevel}...`;
         try {
-            const resp = await fetch(`./phrases_${currentLevel}.json?v=${Date.now()}`);
-            if (!resp.ok) throw new Error();
+            const resp = await fetch(`./phrases_${currentLevel}.json`);
             const data = await resp.json();
             phrasesData = data.phrases;
-            
             const unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
             activePool = unmastered.slice(0, 12);
-            
             updateStats(); updateMap(); startNewRound();
-            if (allPhrasesCache.length === 0) cacheAllPhrases();
-        } catch (e) {
-            statusEl.innerText = "Fetch failed. Tap to retry.";
-            statusEl.onclick = () => loadLevelData();
-        }
+            if(allPhrasesCache.length === 0) cacheAllPhrases();
+        } catch (e) { document.getElementById('q-text').innerText = "Load Failed. Try Refresh."; }
     }
 
     async function cacheAllPhrases() {
@@ -148,7 +140,7 @@
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = reverse ? currentTarget.pl : currentTarget.en;
         document.getElementById('feedback').innerText = "";
-        setTimeout(() => speak(currentTarget.pl), 250);
+        setTimeout(() => speak(currentTarget.pl), 300);
     }
 
     function checkAnswer(phrase, el) {
@@ -197,7 +189,7 @@
         const q = document.getElementById('search-bar').value.toLowerCase();
         if (!q) return updateMap();
         const area = document.getElementById('mastery-map'); area.innerHTML = ''; area.className = "mastered-list";
-        allPhrasesCache.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)).slice(0, 25).forEach(p => {
+        allPhrasesCache.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)).slice(0, 30).forEach(p => {
             const item = document.createElement('div'); item.className = 'banked-item';
             item.innerHTML = `<span class="lvl-tag">Lvl ${p.lvl}</span><div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
             item.onclick = () => jumpToLevel(p.lvl);
@@ -213,7 +205,7 @@
     function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
     function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); }
     function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
-    function resetEverything() { if(confirm("Reset progress?")) { localStorage.clear(); location.reload(); } }
+    function resetEverything() { if(confirm("Clear all progress?")) { localStorage.clear(); location.reload(); } }
     function updateStats() { if(phrasesData.length) document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%"; }
     function speak(t) { const m = new SpeechSynthesisUtterance(t); if(plVoice) m.voice=plVoice; m.lang='pl-PL'; window.speechSynthesis.speak(m); }
     async function changeLevel(v) { currentLevel = parseInt(v); saveStats(); await loadLevelData(); }
@@ -222,4 +214,12 @@
     function switchMode(m) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; updateMap(); }
 
     window.addEventListener('load', () => {
-        stats = JSON.parse(localStorage.getItem('pl_mastery_final'))
+        stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
+        currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
+        lvlSelect.value = currentLevel;
+        initSpeech();
+        loadLevelData();
+    });
+</script>
+</body>
+</html>
