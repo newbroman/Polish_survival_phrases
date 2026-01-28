@@ -79,7 +79,7 @@
 <div class="quiz-header" id="quiz-ui">
     <button class="speaker-btn" onclick="speakTarget()">🔊</button>
     <div class="q-content">
-        <div id="q-text" class="q-text">Connecting...</div>
+        <div id="q-text" class="q-text" style="cursor:pointer;" onclick="loadLevelData(0)">Connecting...</div>
         <div id="feedback" class="feedback"></div>
     </div>
 </div>
@@ -114,21 +114,30 @@
         lvlSelect.appendChild(opt);
     });
 
-    async function loadLevelData() {
+    async function loadLevelData(retryCount = 0) {
         const statusEl = document.getElementById('q-text');
-        statusEl.innerText = "Syncing...";
+        statusEl.innerText = retryCount > 0 ? `Retrying... (${retryCount})` : "Syncing...";
+        statusEl.style.color = 'inherit';
+
         try {
-            const path = `phrases_${currentLevel}.json?v=${Date.now()}`;
+            const path = `./phrases_${currentLevel}.json?v=${Date.now()}`;
             const resp = await fetch(path);
             if (!resp.ok) throw new Error("404");
+            
             const data = await resp.json();
             phrasesData = data.phrases;
             const unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
             activePool = unmastered.slice(0, 12);
+            
             updateStats(); updateMap(); startNewRound();
             cacheAllPhrases();
         } catch (e) {
-            statusEl.innerText = "Fetch Failed. Check filename.";
+            if (retryCount < 3) {
+                setTimeout(() => loadLevelData(retryCount + 1), 1000);
+            } else {
+                statusEl.innerText = "Fetch Failed. Tap to Retry.";
+                statusEl.style.color = 'red';
+            }
         }
     }
 
@@ -136,7 +145,7 @@
         if (allPhrasesCache.length > 0) return;
         for (let i = 1; i <= 20; i++) {
             try {
-                const r = await fetch(`phrases_${i}.json`);
+                const r = await fetch(`./phrases_${i}.json`);
                 if (r.ok) {
                     const d = await r.json();
                     allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: i})));
@@ -211,7 +220,7 @@
 
     async function jumpToLevel(lvl) {
         currentLevel = lvl; lvlSelect.value = lvl; document.getElementById('search-bar').value = '';
-        saveStats(); await loadLevelData(); showToast(`Jumped to Level ${lvl}`);
+        saveStats(); await loadLevelData();
     }
 
     function saveStats() { 
@@ -219,10 +228,9 @@
         localStorage.setItem('pl_current_level_idx', currentLevel); 
     }
 
-    function showToast(m) { const t = document.getElementById('save-toast'); t.innerText = m; t.style.display='block'; setTimeout(()=>t.style.display='none', 1500); }
     function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); }
     function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
-    function resetEverything() { if(confirm("Clear all?")) { localStorage.clear(); location.reload(); } }
+    function resetEverything() { if(confirm("Clear all progress?")) { localStorage.clear(); location.reload(); } }
     function updateStats() { if(phrasesData.length) document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%"; }
     function speak(t) { const m = new SpeechSynthesisUtterance(t); if(plVoice) m.voice=plVoice; m.lang='pl-PL'; window.speechSynthesis.speak(m); }
     async function changeLevel(v) { currentLevel = parseInt(v); saveStats(); await loadLevelData(); }
