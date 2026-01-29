@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Polish Phrase Master</title>
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+    
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -12,43 +15,37 @@
         body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
         .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 6px 0; border-bottom: 1px solid #ccc; }
-        .title { font-weight: 800; font-size: 0.9rem; color: #333; text-align: center; margin: 0; }
+        .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; }
+        .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
 
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 10px 0; display: flex; flex-direction: column; gap: 8px; }
-        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.6rem; font-weight: bold; }
+        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.65rem; font-weight: bold; }
         
-        /* THE COMPACT BUTTON STYLE */
-        .search-box { 
-            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 6px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; 
-            outline: none; box-sizing: border-box; height: 34px;
+        /* Safe Mobile Styles */
+        select, .search-box { 
+            width: 100%; 
+            background: var(--bg); 
+            border: 1px solid #ccc; 
+            color: var(--text); 
+            padding: 6px 10px; 
+            border-radius: 6px; 
+            font-size: 14px; /* Fixed font size for mobile consistency */
+            font-weight: 600;
+            outline: none; 
+            box-sizing: border-box;
+            appearance: none; 
+            -webkit-appearance: none;
+            height: 38px;
         }
 
-        /* The Level Selector Scale Hack: Prevents mobile zoom while keeping text small */
-        #level-select {
-            width: 133.33%; /* Compansate for 0.75 scale */
-            transform: scale(0.75);
-            transform-origin: left center;
-            height: 44px; /* Native touch target height */
-            font-size: 16px; /* Prevents iOS auto-zoom */
-            font-weight: 600;
-            background: var(--bg);
-            color: var(--text);
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 0 35px 0 12px;
-            appearance: none;
-            -webkit-appearance: none;
+        select {
             cursor: pointer;
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='gray' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 18px;
-            margin-bottom: -10px; /* Adjusts for the scale-induced gap */
+            background-position: right 10px center;
+            background-size: 12px;
+            padding-right: 30px;
         }
-        
-        .select-wrapper { width: 100%; height: 34px; overflow: visible; }
 
         select option { background: var(--card); color: var(--text); font-size: 14px; }
 
@@ -56,19 +53,219 @@
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
         .quiz-header { background: var(--card); padding: 10px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 40px; height: 40px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-        .q-content { flex-grow: 1; text-align: center; }
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .q-content { flex-grow: 1; text-align: center; min-width: 0; }
         .q-text { font-size: 1.1rem; font-weight: 800; }
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.7rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
+        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
         .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; -webkit-overflow-scrolling: touch; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
-        .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; font-size: 0.6rem; font-weight: 700; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow: hidden; }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
         .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 6px; }
-        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 10
+        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 10px; border-radius: 8px; border: 1px solid #ddd; position: relative; cursor: pointer; }
+        .lvl-tag { font-size: 0.5rem; background: #eee; padding: 2px 4px; border-radius: 4px; position: absolute; right: 40px; top: 10px; color: #888; }
+
+        .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
+        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 8px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
+
+        #save-toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.65rem; display: none; z-index: 1000; }
+        #overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        #overlay button { background: var(--pol-red); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div id="save-toast"></div>
+<div id="overlay"><h1>LEVEL MASTERED! 🏆</h1><button onclick="advanceLevel()">Next Level</button></div>
+
+<div class="header">
+    <div class="title-banner"><h1 class="title">Say some Polish phrases</h1></div>
+    <div class="controls-row">
+        <div class="toggle-container">
+            <span>EN ⮕ PL</span>
+            <input type="checkbox" id="lang-toggle" onchange="toggleLang()">
+            <span>PL ⮕ EN</span>
+        </div>
+        <select id="level-select" onchange="changeLevel(this.value)"></select>
+        <input type="text" id="search-bar" class="search-box" placeholder="Search all levels..." oninput="handleGlobalSearch()">
+    </div>
+</div>
+
+<div class="progress-container"><div id="progress-bar"></div></div>
+
+<div class="quiz-header" id="quiz-ui">
+    <button class="speaker-btn" onclick="speakTarget()">🔊</button>
+    <div class="q-content">
+        <div id="q-text" class="q-text">Ready?</div>
+        <div id="feedback" class="feedback"></div>
+    </div>
+</div>
+
+<div class="mode-tabs">
+    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">PRACTICE</div>
+    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
+</div>
+
+<div class="map-section"><div id="mastery-map"></div></div>
+
+<div class="footer">
+    <button class="footer-btn" onclick="downloadProgress()">Save File</button>
+    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load File</button>
+    <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Clear All</button>
+    <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
+</div>
+
+<script>
+    let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
+    let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
+    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null, reverse = false, lastTapTime = 0;
+    const THRESHOLD = 3;
+    let plVoice = null;
+
+    function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
+    window.speechSynthesis.onvoiceschanged = initSpeech;
+
+    async function populateLevelSelect() {
+        const lvlSelect = document.getElementById('level-select');
+        lvlSelect.innerHTML = ''; 
+        for (let i = 1; i <= 20; i++) {
+            try {
+                const resp = await fetch(`phrases_${i}.json?v=${Date.now()}`);
+                if (resp.ok) {
+                    const data = await resp.json();
+                    const masteredCount = data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+                    const isDone = masteredCount > 0 && masteredCount === data.phrases.length;
+                    
+                    const opt = document.createElement('option');
+                    opt.value = i;
+                    opt.innerText = `Lvl ${i}: ${data.description || 'Level '+i} ${isDone ? '✓' : ''}`;
+                    if (i === currentLevel) opt.selected = true;
+                    lvlSelect.appendChild(opt);
+                }
+            } catch(e) { /* Level file not found */ }
+        }
+    }
+
+    async function loadLevelData() {
+        try {
+            const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
+            if (!resp.ok) throw new Error();
+            const data = await resp.json();
+            phrasesData = data.phrases;
+            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
+            if (activePool.length === 0) activePool = phrasesData.slice(0, 12);
+            updateStats(); updateMap(); startNewRound();
+            cacheAllPhrases();
+            populateLevelSelect();
+        } catch (err) { document.getElementById('q-text').innerText = "Load Level " + currentLevel; }
+    }
+
+    async function cacheAllPhrases() {
+        if (allPhrasesCache.length > 0) return;
+        for (let i = 1; i <= 20; i++) {
+            try {
+                const r = await fetch(`phrases_${i}.json`);
+                if (r.ok) {
+                    const d = await r.json();
+                    allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: i})));
+                }
+            } catch(e) {}
+        }
+    }
+
+    function startNewRound() {
+        if (!activePool.length || !document.getElementById('tab-learning').classList.contains('active')) return;
+        currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
+        document.getElementById('q-text').innerText = reverse ? currentTarget.pl : currentTarget.en;
+        document.getElementById('feedback').innerText = "";
+        setTimeout(() => speak(currentTarget.pl), 300);
+    }
+
+    function checkAnswer(phrase, el) {
+        if (phrase.pl === currentTarget.pl) {
+            stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
+            document.getElementById('feedback').innerText = "Correct! 🌟";
+            saveStats();
+            setTimeout(() => {
+                if (stats[phrase.pl] >= THRESHOLD) {
+                    activePool = activePool.filter(p => p.pl !== phrase.pl);
+                    let next = phrasesData.find(p => (stats[p.pl]||0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
+                    if (next && activePool.length < 12) activePool.push(next);
+                }
+                updateStats(); updateMap();
+                if (activePool.length === 0) document.getElementById('overlay').style.display='flex'; else startNewRound();
+            }, 800);
+        } else {
+            el.classList.add('wrong');
+            setTimeout(() => { el.classList.remove('wrong'); startNewRound(); }, 1200);
+        }
+    }
+
+    function updateMap() {
+        const area = document.getElementById('mastery-map'); area.innerHTML = '';
+        if (document.getElementById('tab-learning').classList.contains('active')) {
+            area.className = "grid";
+            activePool.forEach(p => {
+                const tile = document.createElement('div'); tile.className = 'tile';
+                tile.innerText = reverse ? p.en : p.pl;
+                const c = stats[p.pl] || 0;
+                if (c > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${c/THRESHOLD})`;
+                tile.onclick = () => checkAnswer(p, tile);
+                area.appendChild(tile);
+            });
+        } else {
+            area.className = "mastered-list";
+            phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).forEach(p => {
+                const item = document.createElement('div'); item.className = 'banked-item';
+                item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
+                area.appendChild(item);
+            });
+        }
+    }
+
+    function handleGlobalSearch() {
+        const q = document.getElementById('search-bar').value.toLowerCase();
+        if (!q) return updateMap();
+        const area = document.getElementById('mastery-map'); area.innerHTML = ''; area.className = "mastered-list";
+        allPhrasesCache.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)).slice(0, 30).forEach(p => {
+            const item = document.createElement('div'); item.className = 'banked-item';
+            item.innerHTML = `<span class="lvl-tag">Lvl ${p.lvl}</span><div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
+            item.onclick = () => { currentLevel = p.lvl; document.getElementById('level-select').value = p.lvl; saveStats(); loadLevelData(); };
+            area.appendChild(item);
+        });
+    }
+
+    function speak(t, rate = 1.0) { 
+        window.speechSynthesis.cancel();
+        const m = new SpeechSynthesisUtterance(t); 
+        if(plVoice) m.voice=plVoice; 
+        m.lang='pl-PL'; m.rate = rate;
+        window.speechSynthesis.speak(m); 
+    }
+
+    function speakTarget() { 
+        const now = Date.now();
+        if(now - lastTapTime < 400) speak(currentTarget.pl, 0.5); else speak(currentTarget.pl, 1.0);
+        lastTapTime = now;
+    }
+
+    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
+    function changeLevel(v) { currentLevel = parseInt(v); saveStats(); loadLevelData(); }
+    function toggleLang() { reverse = document.getElementById('lang-toggle').checked; updateMap(); startNewRound(); }
+    function updateStats() { if(phrasesData.length) document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%"; }
+    function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; changeLevel(currentLevel); }
+    function switchMode(m) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; updateMap(); }
+    function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `progress.txt`; a.click(); }
+    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
+    function resetEverything() { if(confirm("Clear progress?")) { localStorage.clear(); location.reload(); } }
+
+    window.onload = () => { initSpeech(); loadLevelData(); };
+</script>
+</body>
+</html>
