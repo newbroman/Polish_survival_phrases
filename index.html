@@ -17,7 +17,6 @@
 
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 4px; }
         
-        /* Custom UI Controls - 10px Font */
         .custom-dropdown { position: relative; width: 100%; }
         .dropdown-trigger { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
@@ -33,11 +32,7 @@
             z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .dropdown-menu.show { display: block; }
-        .dropdown-item { 
-            padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; 
-            cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
-        }
-        .dropdown-item:active { background: var(--tile-bg); }
+        .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
         .dropdown-item.mastered::after { content: ' ✓'; color: #27ae60; font-weight: bold; }
 
         .search-box { 
@@ -65,7 +60,7 @@
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
         .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 6px; }
-        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 10px; border-radius: 8px; border: 1px solid #ddd; position: relative; cursor: pointer; }
+        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 10px; border-radius: 8px; border: 1px solid #ddd; cursor: pointer; }
 
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 8px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
@@ -117,7 +112,7 @@
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
-    let lastPhraseText = null; // History tracker to prevent repeats
+    let lastPhraseText = null;
     const THRESHOLD = 3;
     let plVoice = null;
 
@@ -136,7 +131,6 @@
                     const data = await resp.json();
                     const masteredCount = data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
                     const isDone = masteredCount === data.phrases.length;
-                    
                     const item = document.createElement('div');
                     item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
                     item.innerText = `Lvl ${i}: ${data.description || 'Level '+i}`;
@@ -160,12 +154,12 @@
             const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
             const data = await resp.json();
             phrasesData = data.phrases;
+            // Static grid initialization: fill 12 slots with unmastered words
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
-            if (activePool.length === 0) activePool = phrasesData.slice(0, 12);
             updateStats(); updateMap(); startNewRound();
             cacheAllPhrases();
             populateDropdown();
-        } catch (err) { document.getElementById('q-text').innerText = "Select Level"; }
+        } catch (err) { console.error("Data load failed"); }
     }
 
     async function cacheAllPhrases() {
@@ -183,9 +177,7 @@
 
     function startNewRound() {
         if (!activePool.length || !document.getElementById('tab-learning').classList.contains('active')) return;
-        
         let nextTarget;
-        // logic: Prevent repeat unless only 1 remains
         if (activePool.length > 1) {
             do {
                 nextTarget = activePool[Math.floor(Math.random() * activePool.length)];
@@ -193,10 +185,8 @@
         } else {
             nextTarget = activePool[0];
         }
-
         currentTarget = nextTarget;
         lastPhraseText = currentTarget.pl;
-        
         document.getElementById('q-text').innerText = currentTarget.en;
         document.getElementById('feedback').innerText = "";
         setTimeout(() => speak(currentTarget.pl), 300);
@@ -207,14 +197,24 @@
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Correct! 🌟";
             saveStats();
+            
             setTimeout(() => {
+                // If mastered, replace this specific slot with a new unmastered word
                 if (stats[phrase.pl] >= THRESHOLD) {
-                    activePool = activePool.filter(p => p.pl !== phrase.pl);
-                    let next = phrasesData.find(p => (stats[p.pl]||0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
-                    if (next && activePool.length < 12) activePool.push(next);
+                    const nextAvailable = phrasesData.find(p => 
+                        (stats[p.pl] || 0) < THRESHOLD && 
+                        !activePool.some(ap => ap.pl === p.pl)
+                    );
+                    const index = activePool.indexOf(phrase);
+                    if (nextAvailable) {
+                        activePool[index] = nextAvailable;
+                    } else {
+                        activePool.splice(index, 1); // No words left to replace it
+                    }
                 }
                 updateStats(); updateMap();
-                if (activePool.length === 0) document.getElementById('overlay').style.display='flex'; else startNewRound();
+                if (activePool.length === 0) document.getElementById('overlay').style.display='flex'; 
+                else startNewRound();
             }, 800);
         } else {
             el.classList.add('wrong');
@@ -223,11 +223,13 @@
     }
 
     function updateMap() {
-        const area = document.getElementById('mastery-map'); area.innerHTML = '';
+        const area = document.getElementById('mastery-map'); 
+        area.innerHTML = '';
         if (document.getElementById('tab-learning').classList.contains('active')) {
             area.className = "grid";
             activePool.forEach(p => {
-                const tile = document.createElement('div'); tile.className = 'tile';
+                const tile = document.createElement('div'); 
+                tile.className = 'tile';
                 tile.innerText = p.pl;
                 const c = stats[p.pl] || 0;
                 if (c > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${c/THRESHOLD})`;
@@ -237,7 +239,8 @@
         } else {
             area.className = "mastered-list";
             phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).forEach(p => {
-                const item = document.createElement('div'); item.className = 'banked-item';
+                const item = document.createElement('div'); 
+                item.className = 'banked-item';
                 item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
                 area.appendChild(item);
             });
