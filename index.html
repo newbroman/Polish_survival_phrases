@@ -47,44 +47,45 @@
         .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 100%; justify-content: center; }
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
         .q-content { text-align: center; min-width: 0; }
-        .q-text { font-size: 1.1rem; font-weight: 800; transition: filter 0.2s; }
+        .q-text { font-size: 1.1rem; font-weight: 800; }
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
-        .hidden-text { filter: blur(8px); }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
         .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
-        .toggle-row { display: flex; gap: 6px; width: 100%; max-width: 300px; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
             background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
             text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; 
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s, filter 0.2s; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s; 
         }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
-        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 5px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
-        .active-toggle { border-color: var(--pol-red); color: var(--pol-red); background: #fff1f3; }
+        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
+        .active-swap { background: var(--pol-red) !important; color: white !important; border-color: var(--pol-red) !important; }
 
-        #overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
+        #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
     </style>
 </head>
 <body>
 
-<div id="overlay"><h1>LEVEL MASTERED! 🏆</h1><button onclick="advanceLevel()">Next Level</button></div>
+<div id="overlay"><h1>LEVEL MASTERED! 🏆</h1><button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;">Next Level</button></div>
 
 <div class="header">
     <div class="title-banner"><h1 class="title">Say some Polish phrases</h1></div>
     <div class="controls-row">
         <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading Levels...</div>
+            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading...</div>
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
-        <input type="text" id="search-bar" class="search-box" placeholder="Search phrases..." oninput="handleGlobalSearch()">
+        <div style="display: flex; gap: 4px;">
+            <input type="text" id="search-bar" class="search-box" style="flex-grow: 1;" placeholder="Search..." oninput="handleGlobalSearch()">
+            <button id="lang-swap-btn" class="footer-btn" style="flex: 0 0 80px;" onclick="toggleLangSwap()">Swap EN/PL</button>
+        </div>
     </div>
 </div>
 
@@ -97,10 +98,6 @@
             <div id="q-text" class="q-text">Ready?</div>
             <div id="feedback" class="feedback"></div>
         </div>
-    </div>
-    <div class="toggle-row" id="practice-toggles">
-        <button id="btn-toggle-en" class="footer-btn" onclick="togglePracticeLang('en')">Blur English</button>
-        <button id="btn-toggle-pl" class="footer-btn" onclick="togglePracticeLang('pl')">Blur Polish</button>
     </div>
 </div>
 
@@ -125,8 +122,7 @@
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let lastPhraseText = null;
-    let hideENPractice = false;
-    let hidePLPractice = false;
+    let isSwapped = false; // Language Toggle State
     const THRESHOLD = 3;
     const MIN_SCORE = -2;
     let plVoice = null;
@@ -141,11 +137,19 @@
         document.getElementById('lvl-menu').classList.toggle('show'); 
     }
 
+    function toggleLangSwap() {
+        isSwapped = !isSwapped;
+        document.getElementById('lang-swap-btn').classList.toggle('active-swap', isSwapped);
+        updateMap();
+        if(currentTarget) {
+            document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
+        }
+    }
+
     async function populateDropdown() {
         const menu = document.getElementById('lvl-menu');
         menu.innerHTML = '';
-        let i = 0; 
-        while (i < 50) {
+        for (let i = 0; i < 30; i++) {
             try {
                 const resp = await fetch(`phrases_${i}.json?v=${Date.now()}`);
                 if (resp.ok) {
@@ -159,9 +163,8 @@
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(levelNum); };
                     menu.appendChild(item);
                     if(levelNum === currentLevel) document.getElementById('lvl-current').innerText = item.innerText;
-                    i++;
-                } else break;
-            } catch(e) { break; }
+                }
+            } catch(e) {}
         }
     }
 
@@ -180,7 +183,7 @@
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
             updateStats(); updateMap(); startNewRound();
             cacheAllPhrases(); populateDropdown();
-        } catch (err) { document.getElementById('q-text').innerText = "Level file not found"; }
+        } catch (err) { document.getElementById('q-text').innerText = "File not found"; }
     }
 
     async function cacheAllPhrases() {
@@ -204,23 +207,9 @@
         } else nextTarget = activePool[0];
         currentTarget = nextTarget;
         lastPhraseText = currentTarget.pl;
-        const qEl = document.getElementById('q-text');
-        qEl.innerText = currentTarget.en;
-        qEl.classList.toggle('hidden-text', hideENPractice);
+        document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
         document.getElementById('feedback').innerText = "";
         setTimeout(() => speak(currentTarget.pl), 300);
-    }
-
-    function togglePracticeLang(lang) {
-        if (lang === 'en') {
-            hideENPractice = !hideENPractice;
-            document.getElementById('q-text').classList.toggle('hidden-text', hideENPractice);
-            document.getElementById('btn-toggle-en').classList.toggle('active-toggle', hideENPractice);
-        } else {
-            hidePLPractice = !hidePLPractice;
-            document.getElementById('btn-toggle-pl').classList.toggle('active-toggle', hidePLPractice);
-            updateMap();
-        }
     }
 
     function checkAnswer(phrase, el) {
@@ -250,12 +239,11 @@
     function updateMap() {
         const area = document.getElementById('mastery-map'); area.innerHTML = '';
         if (document.getElementById('tab-learning').classList.contains('active')) {
-            document.getElementById('practice-toggles').style.display = 'flex';
             area.className = "grid";
             activePool.forEach(p => {
                 const tile = document.createElement('div'); tile.className = 'tile';
-                if (hidePLPractice) tile.classList.add('hidden-text');
-                tile.innerText = p.pl;
+                // IF SWAPPED: Show English on Tiles. DEFAULT: Show Polish on Tiles.
+                tile.innerText = isSwapped ? p.en : p.pl;
                 const score = stats[p.pl] || 0;
                 if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
                 else if (score < 0) { tile.style.backgroundColor = `rgba(52, 152, 219, ${Math.abs(score)/2})`; tile.style.color = "white"; }
@@ -263,10 +251,10 @@
                 area.appendChild(tile);
             });
         } else {
-            document.getElementById('practice-toggles').style.display = 'none';
             area.className = "mastered-list";
             phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).forEach(p => {
                 const item = document.createElement('div'); item.className = 'banked-item';
+                item.style.display='flex'; item.style.justifyContent='space-between'; item.style.padding='10px'; item.style.background='var(--card)'; item.style.borderRadius='8px'; item.style.border='1px solid #ddd'; item.style.marginBottom='6px';
                 item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
                 area.appendChild(item);
             });
@@ -279,6 +267,7 @@
         const area = document.getElementById('mastery-map'); area.innerHTML = ''; area.className = "mastered-list";
         allPhrasesCache.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)).slice(0, 40).forEach(p => {
             const item = document.createElement('div'); item.className = 'banked-item';
+            item.style.padding='10px'; item.style.background='var(--card)'; item.style.border='1px solid #ddd'; item.style.marginBottom='6px';
             item.innerHTML = `<strong>${p.pl}</strong><br><small>${p.en} (Lvl ${p.lvl})</small>`;
             item.onclick = () => selectLevel(p.lvl);
             area.appendChild(item);
