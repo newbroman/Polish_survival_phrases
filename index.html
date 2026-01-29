@@ -33,7 +33,6 @@
         }
         .dropdown-menu.show { display: block; }
         .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); }
-        .dropdown-item.mastered::after { content: ' ✓'; color: #27ae60; font-weight: bold; }
 
         .search-box { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
@@ -44,9 +43,10 @@
         .progress-container { width: 100%; height: 3px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
-        .quiz-header { background: var(--card); padding: 10px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+        .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
+        .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 100%; justify-content: center; }
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
-        .q-content { flex-grow: 1; text-align: center; min-width: 0; }
+        .q-content { text-align: center; min-width: 0; }
         .q-text { font-size: 1.1rem; font-weight: 800; transition: filter 0.2s; }
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
         .hidden-text { filter: blur(8px); }
@@ -55,8 +55,8 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
-        .toggle-row { display: flex; gap: 8px; margin-bottom: 10px; width: 100%; max-width: 420px; }
+        .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
+        .toggle-row { display: flex; gap: 6px; width: 100%; max-width: 300px; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
@@ -64,14 +64,13 @@
             text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; 
             box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s, filter 0.2s; 
         }
-        .tile:active { transform: scale(0.95); }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
-        .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 6px; }
-        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 10px; border-radius: 8px; border: 1px solid #ddd; cursor: pointer; }
-
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
-        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
+        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 5px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
+        .active-toggle { border-color: var(--pol-red); color: var(--pol-red); background: #fff1f3; }
+
+        #overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
     </style>
 </head>
 <body>
@@ -92,10 +91,16 @@
 <div class="progress-container"><div id="progress-bar"></div></div>
 
 <div class="quiz-header" id="quiz-ui">
-    <button class="speaker-btn" onclick="speakTarget()">🔊</button>
-    <div class="q-content">
-        <div id="q-text" class="q-text">Ready?</div>
-        <div id="feedback" class="feedback"></div>
+    <div class="quiz-top-row">
+        <button class="speaker-btn" onclick="speakTarget()">🔊</button>
+        <div class="q-content">
+            <div id="q-text" class="q-text">Ready?</div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </div>
+    <div class="toggle-row" id="practice-toggles">
+        <button id="btn-toggle-en" class="footer-btn" onclick="togglePracticeLang('en')">Blur English</button>
+        <button id="btn-toggle-pl" class="footer-btn" onclick="togglePracticeLang('pl')">Blur Polish</button>
     </div>
 </div>
 
@@ -105,10 +110,6 @@
 </div>
 
 <div class="map-section">
-    <div class="toggle-row" id="practice-toggles">
-        <button class="footer-btn" onclick="togglePracticeLang('en')">Toggle English</button>
-        <button class="footer-btn" onclick="togglePracticeLang('pl')">Toggle Polish Tiles</button>
-    </div>
     <div id="mastery-map"></div>
 </div>
 
@@ -144,8 +145,7 @@
         const menu = document.getElementById('lvl-menu');
         menu.innerHTML = '';
         let i = 0; 
-        let searching = true;
-        while (searching) {
+        while (i < 50) {
             try {
                 const resp = await fetch(`phrases_${i}.json?v=${Date.now()}`);
                 if (resp.ok) {
@@ -160,9 +160,8 @@
                     menu.appendChild(item);
                     if(levelNum === currentLevel) document.getElementById('lvl-current').innerText = item.innerText;
                     i++;
-                } else searching = false;
-            } catch(e) { searching = false; }
-            if (i > 100) break; 
+                } else break;
+            } catch(e) { break; }
         }
     }
 
@@ -186,7 +185,7 @@
 
     async function cacheAllPhrases() {
         allPhrasesCache = [];
-        for (let i = 0; i <= 30; i++) {
+        for (let i = 0; i <= 10; i++) {
             try {
                 const r = await fetch(`phrases_${i}.json`);
                 if (r.ok) {
@@ -216,8 +215,10 @@
         if (lang === 'en') {
             hideENPractice = !hideENPractice;
             document.getElementById('q-text').classList.toggle('hidden-text', hideENPractice);
+            document.getElementById('btn-toggle-en').classList.toggle('active-toggle', hideENPractice);
         } else {
             hidePLPractice = !hidePLPractice;
+            document.getElementById('btn-toggle-pl').classList.toggle('active-toggle', hidePLPractice);
             updateMap();
         }
     }
