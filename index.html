@@ -17,6 +17,7 @@
 
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 4px; }
         
+        /* Custom UI Controls - 10px Font */
         .custom-dropdown { position: relative; width: 100%; }
         .dropdown-trigger { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
@@ -56,11 +57,8 @@
 
         .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
-        .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.3s; }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
-
-        .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 6px; }
-        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 10px; border-radius: 8px; border: 1px solid #ddd; cursor: pointer; }
 
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 8px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
@@ -114,6 +112,7 @@
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let lastPhraseText = null;
     const THRESHOLD = 3;
+    const MIN_SCORE = -2;
     let plVoice = null;
 
     function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
@@ -154,12 +153,11 @@
             const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
             const data = await resp.json();
             phrasesData = data.phrases;
-            // Static grid initialization: fill 12 slots with unmastered words
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
             updateStats(); updateMap(); startNewRound();
             cacheAllPhrases();
             populateDropdown();
-        } catch (err) { console.error("Data load failed"); }
+        } catch (err) { console.error("Load error"); }
     }
 
     async function cacheAllPhrases() {
@@ -199,7 +197,6 @@
             saveStats();
             
             setTimeout(() => {
-                // If mastered, replace this specific slot with a new unmastered word
                 if (stats[phrase.pl] >= THRESHOLD) {
                     const nextAvailable = phrasesData.find(p => 
                         (stats[p.pl] || 0) < THRESHOLD && 
@@ -209,7 +206,7 @@
                     if (nextAvailable) {
                         activePool[index] = nextAvailable;
                     } else {
-                        activePool.splice(index, 1); // No words left to replace it
+                        activePool.splice(index, 1);
                     }
                 }
                 updateStats(); updateMap();
@@ -217,8 +214,20 @@
                 else startNewRound();
             }, 800);
         } else {
+            // Penalty Logic with Floor of -2
+            if (!stats[currentTarget.pl]) stats[currentTarget.pl] = 0;
+            if (stats[currentTarget.pl] > MIN_SCORE) {
+                stats[currentTarget.pl] -= 1;
+            }
             el.classList.add('wrong');
-            setTimeout(() => { el.classList.remove('wrong'); startNewRound(); }, 1200);
+            document.getElementById('feedback').innerText = "Mistake! Penalty applied.";
+            saveStats();
+            
+            setTimeout(() => { 
+                el.classList.remove('wrong'); 
+                updateMap(); // Redraw grid to show blue tint or reduced red
+                startNewRound(); 
+            }, 1200);
         }
     }
 
@@ -231,8 +240,17 @@
                 const tile = document.createElement('div'); 
                 tile.className = 'tile';
                 tile.innerText = p.pl;
-                const c = stats[p.pl] || 0;
-                if (c > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${c/THRESHOLD})`;
+                const score = stats[p.pl] || 0;
+                
+                // Color Logic: Blue for negative, Red for positive
+                if (score > 0) {
+                    tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
+                } else if (score < 0) {
+                    // Blue tint for "cold" words
+                    tile.style.backgroundColor = `rgba(52, 152, 219, ${Math.abs(score)/Math.abs(MIN_SCORE)})`;
+                    tile.style.color = score <= MIN_SCORE ? "white" : "inherit";
+                }
+                
                 tile.onclick = () => checkAnswer(p, tile);
                 area.appendChild(tile);
             });
@@ -241,6 +259,7 @@
             phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).forEach(p => {
                 const item = document.createElement('div'); 
                 item.className = 'banked-item';
+                item.style.background = "var(--card)";
                 item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
                 area.appendChild(item);
             });
