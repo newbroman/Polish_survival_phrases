@@ -17,73 +17,55 @@
 
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 4px; }
         
-        /* CUSTOM DROPDOWN - No more native popups */
+        /* Custom UI Controls - 10px Font */
         .custom-dropdown { position: relative; width: 100%; }
         .dropdown-trigger { 
-            width: 100%; 
-            background: var(--bg); 
-            border: 1px solid #ccc; 
-            color: var(--text); 
-            padding: 4px 8px; 
-            border-radius: 4px; 
-            font-size: 10px; /* Close to your 7px request */
-            font-weight: 700; 
-            text-align: left;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
+            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
+            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
+            text-align: left; height: 28px; display: flex; align-items: center; 
+            justify-content: space-between; cursor: pointer; box-sizing: border-box;
         }
-        .dropdown-trigger::after { content: '▼'; font-size: 6px; color: #888; }
+        .dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
 
         .dropdown-menu { 
-            position: absolute; 
-            top: 100%; left: 0; right: 0; 
-            background: var(--card); 
-            border: 1px solid #ccc; 
-            border-radius: 4px; 
-            max-height: 200px; 
-            overflow-y: auto; 
-            z-index: 1000; 
-            display: none; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
+            border: 1px solid #ccc; border-radius: 4px; max-height: 200px; overflow-y: auto; 
+            z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .dropdown-menu.show { display: block; }
         .dropdown-item { 
-            padding: 6px 8px; 
-            font-size: 8px; 
-            border-bottom: 1px solid #eee; 
-            cursor: pointer;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; 
+            cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
         }
         .dropdown-item:active { background: var(--tile-bg); }
-        .dropdown-item.mastered::after { content: ' ✓'; color: green; font-weight: bold; }
+        .dropdown-item.mastered::after { content: ' ✓'; color: #27ae60; font-weight: bold; }
 
         .search-box { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 4px 8px; border-radius: 4px; font-size: 8px; font-weight: 700; height: 24px; outline: none;
+            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
+            height: 28px; outline: none; box-sizing: border-box;
         }
 
         .progress-container { width: 100%; height: 3px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
         .quiz-header { background: var(--card); padding: 10px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .q-content { flex-grow: 1; text-align: center; min-width: 0; }
         .q-text { font-size: 1.1rem; font-weight: 800; }
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.7rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
+        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; -webkit-overflow-scrolling: touch; }
+        .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
         .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
+
+        .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 6px; }
+        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 10px; border-radius: 8px; border: 1px solid #ddd; position: relative; cursor: pointer; }
 
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 8px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
@@ -100,7 +82,7 @@
     <div class="title-banner"><h1 class="title">Say some Polish phrases</h1></div>
     <div class="controls-row">
         <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown()">Loading...</div>
+            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading Level...</div>
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="handleGlobalSearch()">
@@ -134,14 +116,15 @@
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
-    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null, lastTapTime = 0;
+    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
+    let lastPhraseText = null; // History tracker to prevent repeats
     const THRESHOLD = 3;
     let plVoice = null;
 
     function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
     window.speechSynthesis.onvoiceschanged = initSpeech;
 
-    function toggleDropdown() { document.getElementById('lvl-menu').classList.toggle('show'); }
+    function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
 
     async function populateDropdown() {
         const menu = document.getElementById('lvl-menu');
@@ -151,13 +134,13 @@
                 const resp = await fetch(`phrases_${i}.json?v=${Date.now()}`);
                 if (resp.ok) {
                     const data = await resp.json();
-                    const mastered = data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-                    const isDone = mastered === data.phrases.length;
+                    const masteredCount = data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+                    const isDone = masteredCount === data.phrases.length;
                     
                     const item = document.createElement('div');
                     item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
-                    item.innerText = `Lvl ${i}: ${data.description}`;
-                    item.onclick = () => { selectLevel(i); };
+                    item.innerText = `Lvl ${i}: ${data.description || 'Level '+i}`;
+                    item.onclick = () => selectLevel(i);
                     menu.appendChild(item);
                     if(i === currentLevel) document.getElementById('lvl-current').innerText = item.innerText;
                 }
@@ -182,7 +165,7 @@
             updateStats(); updateMap(); startNewRound();
             cacheAllPhrases();
             populateDropdown();
-        } catch (err) { console.error("Load failed"); }
+        } catch (err) { document.getElementById('q-text').innerText = "Select Level"; }
     }
 
     async function cacheAllPhrases() {
@@ -200,7 +183,20 @@
 
     function startNewRound() {
         if (!activePool.length || !document.getElementById('tab-learning').classList.contains('active')) return;
-        currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
+        
+        let nextTarget;
+        // logic: Prevent repeat unless only 1 remains
+        if (activePool.length > 1) {
+            do {
+                nextTarget = activePool[Math.floor(Math.random() * activePool.length)];
+            } while (nextTarget.pl === lastPhraseText);
+        } else {
+            nextTarget = activePool[0];
+        }
+
+        currentTarget = nextTarget;
+        lastPhraseText = currentTarget.pl;
+        
         document.getElementById('q-text').innerText = currentTarget.en;
         document.getElementById('feedback').innerText = "";
         setTimeout(() => speak(currentTarget.pl), 300);
@@ -254,8 +250,8 @@
         const area = document.getElementById('mastery-map'); area.innerHTML = ''; area.className = "mastered-list";
         allPhrasesCache.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)).slice(0, 30).forEach(p => {
             const item = document.createElement('div'); item.className = 'banked-item';
-            item.innerHTML = `<span class="lvl-tag">Lvl ${p.lvl}</span><div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
-            item.onclick = () => { selectLevel(p.lvl); };
+            item.innerHTML = `<strong>${p.pl}</strong><br><small>${p.en} (Lvl ${p.lvl})</small>`;
+            item.onclick = () => selectLevel(p.lvl);
             area.appendChild(item);
         });
     }
@@ -270,8 +266,8 @@
 
     function speakTarget() { 
         const now = Date.now();
-        if(now - lastTapTime < 400) speak(currentTarget.pl, 0.5); else speak(currentTarget.pl, 1.0);
-        lastTapTime = now;
+        if(now - (window.lastTapTime || 0) < 400) speak(currentTarget.pl, 0.5); else speak(currentTarget.pl, 1.0);
+        window.lastTapTime = now;
     }
 
     function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
@@ -282,7 +278,7 @@
     function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
     function resetEverything() { if(confirm("Clear progress?")) { localStorage.clear(); location.reload(); } }
 
-    window.onclick = function(event) { if (!event.target.matches('.dropdown-trigger')) { document.getElementById('lvl-menu').classList.remove('show'); } }
+    window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = () => { initSpeech(); loadLevelData(); };
 </script>
 </body>
