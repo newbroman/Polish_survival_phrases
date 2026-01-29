@@ -33,7 +33,6 @@
         }
         .dropdown-menu.show { display: block; }
         .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); }
-        .dropdown-item:active { background: var(--tile-bg); }
         .dropdown-item.mastered::after { content: ' ✓'; color: #27ae60; font-weight: bold; }
 
         .search-box { 
@@ -48,20 +47,22 @@
         .quiz-header { background: var(--card); padding: 10px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
         .q-content { flex-grow: 1; text-align: center; min-width: 0; }
-        .q-text { font-size: 1.1rem; font-weight: 800; }
+        .q-text { font-size: 1.1rem; font-weight: 800; transition: filter 0.2s; }
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
+        .hidden-text { filter: blur(8px); }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
         .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
+        .toggle-row { display: flex; gap: 8px; margin-bottom: 10px; width: 100%; max-width: 420px; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
             background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
             text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; 
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s, filter 0.2s; 
         }
         .tile:active { transform: scale(0.95); }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
@@ -70,10 +71,7 @@
         .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 10px; border-radius: 8px; border: 1px solid #ddd; cursor: pointer; }
 
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
-        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 8px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
-
-        #overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; color: white; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-        #overlay button { background: var(--pol-red); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; margin-top: 15px; cursor: pointer; }
+        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
     </style>
 </head>
 <body>
@@ -87,7 +85,7 @@
             <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading Levels...</div>
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
-        <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="handleGlobalSearch()">
+        <input type="text" id="search-bar" class="search-box" placeholder="Search phrases..." oninput="handleGlobalSearch()">
     </div>
 </div>
 
@@ -106,7 +104,13 @@
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
 </div>
 
-<div class="map-section"><div id="mastery-map"></div></div>
+<div class="map-section">
+    <div class="toggle-row" id="practice-toggles">
+        <button class="footer-btn" onclick="togglePracticeLang('en')">Toggle English</button>
+        <button class="footer-btn" onclick="togglePracticeLang('pl')">Toggle Polish Tiles</button>
+    </div>
+    <div id="mastery-map"></div>
+</div>
 
 <div class="footer">
     <button class="footer-btn" onclick="downloadProgress()">Save</button>
@@ -117,9 +121,11 @@
 
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
-    let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
+    let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let lastPhraseText = null;
+    let hideENPractice = false;
+    let hidePLPractice = false;
     const THRESHOLD = 3;
     const MIN_SCORE = -2;
     let plVoice = null;
@@ -137,9 +143,8 @@
     async function populateDropdown() {
         const menu = document.getElementById('lvl-menu');
         menu.innerHTML = '';
-        let i = 0;
+        let i = 0; 
         let searching = true;
-
         while (searching) {
             try {
                 const resp = await fetch(`phrases_${i}.json?v=${Date.now()}`);
@@ -147,20 +152,15 @@
                     const data = await resp.json();
                     const masteredCount = data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
                     const isDone = masteredCount === data.phrases.length;
-                    
                     const item = document.createElement('div');
                     item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
                     item.innerText = `Lvl ${i}: ${data.description || 'Level '+i}`;
-                    
                     const levelNum = i;
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(levelNum); };
-                    
                     menu.appendChild(item);
-                    if(levelNum === currentLevel) {
-                        document.getElementById('lvl-current').innerText = item.innerText;
-                    }
+                    if(levelNum === currentLevel) document.getElementById('lvl-current').innerText = item.innerText;
                     i++;
-                } else { searching = false; }
+                } else searching = false;
             } catch(e) { searching = false; }
             if (i > 100) break; 
         }
@@ -178,19 +178,15 @@
             const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
             const data = await resp.json();
             phrasesData = data.phrases;
-            // Fill 12 slots with unmastered words
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
             updateStats(); updateMap(); startNewRound();
-            cacheAllPhrases();
-            populateDropdown();
-        } catch (err) { 
-            document.getElementById('q-text').innerText = "File phrases_" + currentLevel + ".json not found";
-        }
+            cacheAllPhrases(); populateDropdown();
+        } catch (err) { document.getElementById('q-text').innerText = "Level file not found"; }
     }
 
     async function cacheAllPhrases() {
         allPhrasesCache = [];
-        for (let i = 1; i <= 30; i++) {
+        for (let i = 0; i <= 30; i++) {
             try {
                 const r = await fetch(`phrases_${i}.json`);
                 if (r.ok) {
@@ -205,17 +201,25 @@
         if (!activePool.length || !document.getElementById('tab-learning').classList.contains('active')) return;
         let nextTarget;
         if (activePool.length > 1) {
-            do {
-                nextTarget = activePool[Math.floor(Math.random() * activePool.length)];
-            } while (nextTarget.pl === lastPhraseText);
-        } else {
-            nextTarget = activePool[0];
-        }
+            do { nextTarget = activePool[Math.floor(Math.random() * activePool.length)]; } while (nextTarget.pl === lastPhraseText);
+        } else nextTarget = activePool[0];
         currentTarget = nextTarget;
         lastPhraseText = currentTarget.pl;
-        document.getElementById('q-text').innerText = currentTarget.en;
+        const qEl = document.getElementById('q-text');
+        qEl.innerText = currentTarget.en;
+        qEl.classList.toggle('hidden-text', hideENPractice);
         document.getElementById('feedback').innerText = "";
         setTimeout(() => speak(currentTarget.pl), 300);
+    }
+
+    function togglePracticeLang(lang) {
+        if (lang === 'en') {
+            hideENPractice = !hideENPractice;
+            document.getElementById('q-text').classList.toggle('hidden-text', hideENPractice);
+        } else {
+            hidePLPractice = !hidePLPractice;
+            updateMap();
+        }
     }
 
     function checkAnswer(phrase, el) {
@@ -223,60 +227,45 @@
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Correct! 🌟";
             saveStats();
-            
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
-                    const nextAvailable = phrasesData.find(p => 
-                        (stats[p.pl] || 0) < THRESHOLD && 
-                        !activePool.some(ap => ap.pl === p.pl)
-                    );
+                    const nextAvailable = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
                     const index = activePool.indexOf(phrase);
-                    if (nextAvailable) { activePool[index] = nextAvailable; } 
-                    else { activePool.splice(index, 1); }
+                    if (nextAvailable) activePool[index] = nextAvailable; else activePool.splice(index, 1);
                 }
                 updateStats(); updateMap();
-                if (activePool.length === 0) document.getElementById('overlay').style.display='flex'; 
-                else startNewRound();
+                if (activePool.length === 0) document.getElementById('overlay').style.display='flex'; else startNewRound();
             }, 800);
         } else {
-            // Penalty Logic
             if (!stats[currentTarget.pl]) stats[currentTarget.pl] = 0;
-            if (stats[currentTarget.pl] > MIN_SCORE) { stats[currentTarget.pl] -= 1; }
+            if (stats[currentTarget.pl] > MIN_SCORE) stats[currentTarget.pl] -= 1;
             el.classList.add('wrong');
-            document.getElementById('feedback').innerText = "Mistake! Mastery: " + stats[currentTarget.pl];
+            document.getElementById('feedback').innerText = "Mistake!";
             saveStats();
-            setTimeout(() => { 
-                el.classList.remove('wrong'); 
-                updateMap(); 
-                startNewRound(); 
-            }, 1200);
+            setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
         }
     }
 
     function updateMap() {
-        const area = document.getElementById('mastery-map'); 
-        area.innerHTML = '';
+        const area = document.getElementById('mastery-map'); area.innerHTML = '';
         if (document.getElementById('tab-learning').classList.contains('active')) {
+            document.getElementById('practice-toggles').style.display = 'flex';
             area.className = "grid";
             activePool.forEach(p => {
-                const tile = document.createElement('div'); 
-                tile.className = 'tile';
+                const tile = document.createElement('div'); tile.className = 'tile';
+                if (hidePLPractice) tile.classList.add('hidden-text');
                 tile.innerText = p.pl;
                 const score = stats[p.pl] || 0;
-                if (score > 0) {
-                    tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
-                } else if (score < 0) {
-                    tile.style.backgroundColor = `rgba(52, 152, 219, ${Math.abs(score)/Math.abs(MIN_SCORE)})`;
-                    tile.style.color = "white";
-                }
+                if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
+                else if (score < 0) { tile.style.backgroundColor = `rgba(52, 152, 219, ${Math.abs(score)/2})`; tile.style.color = "white"; }
                 tile.onclick = () => checkAnswer(p, tile);
                 area.appendChild(tile);
             });
         } else {
+            document.getElementById('practice-toggles').style.display = 'none';
             area.className = "mastered-list";
             phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).forEach(p => {
-                const item = document.createElement('div'); 
-                item.className = 'banked-item';
+                const item = document.createElement('div'); item.className = 'banked-item';
                 item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
                 area.appendChild(item);
             });
@@ -298,36 +287,19 @@
     function speak(t, rate = 1.0) { 
         window.speechSynthesis.cancel();
         const m = new SpeechSynthesisUtterance(t); 
-        if(plVoice) m.voice=plVoice; 
-        m.lang='pl-PL'; m.rate = rate;
+        if(plVoice) m.voice=plVoice; m.lang='pl-PL'; m.rate = rate;
         window.speechSynthesis.speak(m); 
     }
 
     function speakTarget() { 
         const now = Date.now();
-        if(now - (window.lastTapTime || 0) < 400) speak(currentTarget.pl, 0.5); 
-        else speak(currentTarget.pl, 1.0);
+        if(now - (window.lastTapTime || 0) < 400) speak(currentTarget.pl, 0.5); else speak(currentTarget.pl, 1.0);
         window.lastTapTime = now;
     }
 
-    function saveStats() { 
-        localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
-        localStorage.setItem('pl_current_level_idx', currentLevel); 
-    }
-    
-    function updateStats() { 
-        if(phrasesData.length) {
-            const mastered = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length;
-            document.getElementById('progress-bar').style.width = (mastered/phrasesData.length)*100+"%"; 
-        }
-    }
-
-    function advanceLevel() { 
-        currentLevel++; 
-        document.getElementById('overlay').style.display='none'; 
-        selectLevel(currentLevel); 
-    }
-
+    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
+    function updateStats() { if(phrasesData.length) { const mastered = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (mastered/phrasesData.length)*100+"%"; } }
+    function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; selectLevel(currentLevel); }
     function switchMode(m) { 
         document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); 
         document.getElementById('tab-'+m).classList.add('active'); 
@@ -337,25 +309,16 @@
 
     function downloadProgress() { 
         const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); 
-        const a = document.createElement("a"); 
-        a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); 
+        const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); 
     }
 
     function importProgress(e) { 
         const r = new FileReader(); 
-        r.onload = (ev) => { 
-            const d = JSON.parse(ev.target.result); 
-            stats = d.stats; currentLevel = d.currentLevel; 
-            saveStats(); location.reload(); 
-        }; 
+        r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; 
         r.readAsText(e.target.files[0]); 
     }
 
-    function resetEverything() { 
-        if(confirm("This will delete all progress. Are you sure?")) { 
-            localStorage.clear(); location.reload(); 
-        } 
-    }
+    function resetEverything() { if(confirm("Clear all progress?")) { localStorage.clear(); location.reload(); } }
 
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = () => { initSpeech(); loadLevelData(); };
