@@ -126,12 +126,14 @@
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let lastPhraseText = null;
     let isSwapped = false; 
+    let correctStreak = 0; // Track consecutive correct answers for pitch shifting
     const THRESHOLD = 3;
     const MIN_SCORE = -2;
     let plVoice = null;
     let audioCtx = null;
 
-    function playNote(freq, dur, type='triangle') {
+    // --- SOUND ENGINE ---
+    function playNote(freq, dur, type='sine') {
         try {
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -147,12 +149,24 @@
         } catch(e) { console.log("Audio blocked"); }
     }
 
-    function playSuccess() {
-        playNote(523, 0.2); 
-        setTimeout(() => playNote(659, 0.2), 100);
-        setTimeout(() => playNote(783, 0.4), 200);
+    function playCorrect() {
+        // Pitch starts at 440Hz (A4) and increases by ~50Hz per streak
+        const basePitch = 440;
+        const streakPitch = basePitch + (correctStreak * 40);
+        playNote(streakPitch, 0.15, 'sine');
     }
 
+    function playSuccess() {
+        playNote(523, 0.2, 'triangle'); 
+        setTimeout(() => playNote(659, 0.2, 'triangle'), 100);
+        setTimeout(() => playNote(783, 0.4, 'triangle'), 200);
+    }
+
+    function playError() {
+        playNote(150, 0.4, 'sawtooth');
+    }
+
+    // --- CORE LOGIC ---
     function initSpeech() { 
         plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); 
     }
@@ -175,7 +189,7 @@
     async function populateDropdown() {
         const menu = document.getElementById('lvl-menu');
         menu.innerHTML = '';
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 30; i++) {
             try {
                 const resp = await fetch(`phrases_${i}.json`);
                 if (resp.ok) {
@@ -240,6 +254,8 @@
 
     function checkAnswer(phrase, el) {
         if (phrase.pl === currentTarget.pl) {
+            correctStreak++;
+            playCorrect();
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Correct! 🌟";
             saveStats();
@@ -253,14 +269,16 @@
                 if (activePool.length === 0) {
                     document.getElementById('overlay').style.display='flex';
                     playSuccess();
+                    correctStreak = 0;
                 } else startNewRound();
             }, 800);
         } else {
+            correctStreak = 0; // Reset streak on mistake
+            playError();
             if (!stats[currentTarget.pl]) stats[currentTarget.pl] = 0;
             if (stats[currentTarget.pl] > MIN_SCORE) stats[currentTarget.pl] -= 1;
             el.classList.add('wrong');
             document.getElementById('feedback').innerText = "Mistake!";
-            playNote(150, 0.3, 'sawtooth');
             saveStats();
             setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
         }
