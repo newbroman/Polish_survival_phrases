@@ -54,7 +54,7 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
+        .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
@@ -63,6 +63,9 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s; 
         }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
+        
+        .search-results-label { font-size: 0.6rem; font-weight: 800; color: var(--pol-red); margin: 10px 0 5px 0; width: 100%; max-width: 420px; text-align: left; }
+        .global-result-item { width: 100%; max-width: 420px; background: var(--card); border: 1px solid #ddd; border-radius: 6px; padding: 8px; margin-bottom: 4px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center;}
 
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
@@ -86,7 +89,7 @@
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <div style="display: flex; gap: 4px;">
-            <input type="text" id="search-bar" class="search-box" style="flex-grow: 1;" placeholder="Search..." oninput="handleGlobalSearch()">
+            <input type="text" id="search-bar" class="search-box" style="flex-grow: 1;" placeholder="Search PL or EN..." oninput="handleSmartSearch()">
             <button id="lang-swap-btn" class="footer-btn" style="flex: 0 0 85px;" onclick="toggleLangSwap()">Swap EN/PL</button>
         </div>
     </div>
@@ -111,6 +114,7 @@
 
 <div class="map-section">
     <div id="mastery-map"></div>
+    <div id="search-results-extra" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
 </div>
 
 <div class="footer">
@@ -126,7 +130,7 @@
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let lastPhraseText = null;
     let isSwapped = false; 
-    let correctStreak = 0; // Track consecutive correct answers for pitch shifting
+    let correctStreak = 0; 
     const THRESHOLD = 3;
     const MIN_SCORE = -2;
     let plVoice = null;
@@ -146,14 +150,11 @@
             g.gain.exponentialRampToValueAtTime(0.01, now + dur);
             osc.connect(g); g.connect(audioCtx.destination);
             osc.start(); osc.stop(now + dur);
-        } catch(e) { console.log("Audio blocked"); }
+        } catch(e) {}
     }
 
     function playCorrect() {
-        // Pitch starts at 440Hz (A4) and increases by ~50Hz per streak
-        const basePitch = 440;
-        const streakPitch = basePitch + (correctStreak * 40);
-        playNote(streakPitch, 0.15, 'sine');
+        playNote(440 + (correctStreak * 40), 0.15, 'sine');
     }
 
     function playSuccess() {
@@ -162,11 +163,7 @@
         setTimeout(() => playNote(783, 0.4, 'triangle'), 200);
     }
 
-    function playError() {
-        playNote(150, 0.4, 'sawtooth');
-    }
-
-    // --- CORE LOGIC ---
+    // --- LOGIC ---
     function initSpeech() { 
         plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); 
     }
@@ -211,6 +208,7 @@
     function selectLevel(lvl) {
         currentLevel = lvl;
         document.getElementById('lvl-menu').classList.remove('show');
+        document.getElementById('search-bar').value = ''; // Clear search on level change
         saveStats();
         loadLevelData();
     }
@@ -228,7 +226,7 @@
 
     async function cacheAllPhrases() {
         allPhrasesCache = [];
-        for (let i = 0; i <= 5; i++) {
+        for (let i = 0; i < 20; i++) {
             try {
                 const r = await fetch(`phrases_${i}.json`);
                 if (r.ok) {
@@ -236,6 +234,43 @@
                     allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: i})));
                 }
             } catch(e) {}
+        }
+    }
+
+    function handleSmartSearch() {
+        const query = document.getElementById('search-bar').value.toLowerCase();
+        const extraResults = document.getElementById('search-results-extra');
+        extraResults.innerHTML = '';
+
+        if (!query) {
+            updateMap();
+            return;
+        }
+
+        // 1. Update the Practice Grid (Filter it)
+        updateMap(query);
+
+        // 2. Global Results (Only if in Learning Mode)
+        if (document.getElementById('tab-learning').classList.contains('active')) {
+            const matches = allPhrasesCache.filter(p => 
+                (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)) &&
+                p.lvl !== currentLevel
+            ).slice(0, 5);
+
+            if (matches.length > 0) {
+                const label = document.createElement('div');
+                label.className = 'search-results-label';
+                label.innerText = 'FOUND IN OTHER LEVELS:';
+                extraResults.appendChild(label);
+
+                matches.forEach(p => {
+                    const item = document.createElement('div');
+                    item.className = 'global-result-item';
+                    item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div style="color:var(--pol-red); font-weight:bold;">LVL ${p.lvl}</div>`;
+                    item.onclick = () => selectLevel(p.lvl);
+                    extraResults.appendChild(item);
+                });
+            }
         }
     }
 
@@ -269,12 +304,11 @@
                 if (activePool.length === 0) {
                     document.getElementById('overlay').style.display='flex';
                     playSuccess();
-                    correctStreak = 0;
                 } else startNewRound();
             }, 800);
         } else {
-            correctStreak = 0; // Reset streak on mistake
-            playError();
+            correctStreak = 0; 
+            playNote(150, 0.4, 'sawtooth');
             if (!stats[currentTarget.pl]) stats[currentTarget.pl] = 0;
             if (stats[currentTarget.pl] > MIN_SCORE) stats[currentTarget.pl] -= 1;
             el.classList.add('wrong');
@@ -284,11 +318,17 @@
         }
     }
 
-    function updateMap() {
+    function updateMap(filter = "") {
         const area = document.getElementById('mastery-map'); area.innerHTML = '';
-        if (document.getElementById('tab-learning').classList.contains('active')) {
+        const isLearning = document.getElementById('tab-learning').classList.contains('active');
+        
+        if (isLearning) {
             area.className = "grid";
-            activePool.forEach(p => {
+            const itemsToShow = filter 
+                ? activePool.filter(p => p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter))
+                : activePool;
+
+            itemsToShow.forEach(p => {
                 const tile = document.createElement('div'); tile.className = 'tile';
                 tile.innerText = isSwapped ? p.en : p.pl;
                 const score = stats[p.pl] || 0;
@@ -298,27 +338,18 @@
                 area.appendChild(tile);
             });
         } else {
-            area.className = "mastered-list";
-            phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).forEach(p => {
-                const item = document.createElement('div'); item.className = 'tile';
-                item.style.width='100%'; item.style.aspectRatio='auto'; item.style.padding='10px'; item.style.marginBottom='5px'; item.style.display='flex'; item.style.justifyContent='space-between';
-                item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
-                area.appendChild(item);
+            area.className = "grid"; // Keep grid style for Banked
+            const itemsToShow = phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD)
+                .filter(p => !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter));
+
+            itemsToShow.forEach(p => {
+                const tile = document.createElement('div'); tile.className = 'tile';
+                tile.style.backgroundColor = 'var(--pol-red)'; tile.style.color = 'white';
+                tile.innerText = isSwapped ? p.en : p.pl;
+                tile.onclick = () => speak(p.pl);
+                area.appendChild(tile);
             });
         }
-    }
-
-    function handleGlobalSearch() {
-        const q = document.getElementById('search-bar').value.toLowerCase();
-        if (!q) return updateMap();
-        const area = document.getElementById('mastery-map'); area.innerHTML = ''; area.className = "mastered-list";
-        allPhrasesCache.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)).forEach(p => {
-            const item = document.createElement('div'); item.className = 'tile';
-            item.style.width='100%'; item.style.aspectRatio='auto'; item.style.padding='10px'; item.style.marginBottom='5px';
-            item.innerHTML = `<strong>${p.pl}</strong><br><small>${p.en} (Lvl ${p.lvl})</small>`;
-            item.onclick = () => selectLevel(p.lvl);
-            area.appendChild(item);
-        });
     }
 
     function speak(t, rate = 1.0) { 
@@ -337,10 +368,12 @@
     function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
     function updateStats() { if(phrasesData.length) { const mastered = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (mastered/phrasesData.length)*100+"%"; } }
     function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; selectLevel(currentLevel); }
+    
     function switchMode(m) { 
         document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); 
         document.getElementById('tab-'+m).classList.add('active'); 
         document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; 
+        document.getElementById('search-results-extra').innerHTML = '';
         updateMap(); 
     }
 
