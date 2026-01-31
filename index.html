@@ -33,6 +33,7 @@
         }
         .dropdown-menu.show { display: block; }
         .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); }
+        .dropdown-item.mastered { color: var(--pol-red); }
 
         .search-box { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
@@ -72,6 +73,7 @@
         .active-swap { background: var(--pol-red) !important; color: white !important; border-color: var(--pol-red) !important; }
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
+        .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; }
     </style>
 </head>
 <body>
@@ -89,7 +91,7 @@
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <div style="display: flex; gap: 4px;">
-            <input type="text" id="search-bar" class="search-box" style="flex-grow: 1;" placeholder="Search PL or EN..." oninput="handleSmartSearch()">
+            <input type="text" id="search-bar" class="search-box" style="flex-grow: 1;" placeholder="Search..." oninput="handleSmartSearch()">
             <button id="lang-swap-btn" class="footer-btn" style="flex: 0 0 85px;" onclick="toggleLangSwap()">Swap EN/PL</button>
         </div>
     </div>
@@ -136,7 +138,6 @@
     let plVoice = null;
     let audioCtx = null;
 
-    // --- SOUND ENGINE ---
     function playNote(freq, dur, type='sine') {
         try {
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -153,34 +154,19 @@
         } catch(e) {}
     }
 
-    function playCorrect() {
-        playNote(440 + (correctStreak * 40), 0.15, 'sine');
-    }
+    function playCorrect() { playNote(440 + (correctStreak * 40), 0.15, 'sine'); }
+    function playSuccess() { playNote(523, 0.2, 'triangle'); setTimeout(() => playNote(659, 0.2, 'triangle'), 100); setTimeout(() => playNote(783, 0.4, 'triangle'), 200); }
 
-    function playSuccess() {
-        playNote(523, 0.2, 'triangle'); 
-        setTimeout(() => playNote(659, 0.2, 'triangle'), 100);
-        setTimeout(() => playNote(783, 0.4, 'triangle'), 200);
-    }
-
-    // --- LOGIC ---
-    function initSpeech() { 
-        plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); 
-    }
+    function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
     window.speechSynthesis.onvoiceschanged = initSpeech;
 
-    function toggleDropdown(e) { 
-        e.stopPropagation(); 
-        document.getElementById('lvl-menu').classList.toggle('show'); 
-    }
+    function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
 
     function toggleLangSwap() {
         isSwapped = !isSwapped;
         document.getElementById('lang-swap-btn').classList.toggle('active-swap', isSwapped);
         updateMap();
-        if(currentTarget) {
-            document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
-        }
+        if(currentTarget) document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
     }
 
     async function populateDropdown() {
@@ -208,7 +194,7 @@
     function selectLevel(lvl) {
         currentLevel = lvl;
         document.getElementById('lvl-menu').classList.remove('show');
-        document.getElementById('search-bar').value = ''; // Clear search on level change
+        document.getElementById('search-bar').value = '';
         saveStats();
         loadLevelData();
     }
@@ -222,6 +208,12 @@
             updateStats(); updateMap(); startNewRound();
             cacheAllPhrases(); populateDropdown();
         } catch (err) { document.getElementById('q-text').innerText = "File not found"; }
+    }
+
+    function resetLevelMastery() {
+        phrasesData.forEach(p => stats[p.pl] = 0);
+        saveStats();
+        loadLevelData();
     }
 
     async function cacheAllPhrases() {
@@ -241,31 +233,15 @@
         const query = document.getElementById('search-bar').value.toLowerCase();
         const extraResults = document.getElementById('search-results-extra');
         extraResults.innerHTML = '';
-
-        if (!query) {
-            updateMap();
-            return;
-        }
-
-        // 1. Update the Practice Grid (Filter it)
+        if (!query) { updateMap(); return; }
         updateMap(query);
-
-        // 2. Global Results (Only if in Learning Mode)
         if (document.getElementById('tab-learning').classList.contains('active')) {
-            const matches = allPhrasesCache.filter(p => 
-                (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)) &&
-                p.lvl !== currentLevel
-            ).slice(0, 5);
-
+            const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)) && p.lvl !== currentLevel).slice(0, 5);
             if (matches.length > 0) {
-                const label = document.createElement('div');
-                label.className = 'search-results-label';
-                label.innerText = 'FOUND IN OTHER LEVELS:';
+                const label = document.createElement('div'); label.className = 'search-results-label'; label.innerText = 'FOUND IN OTHER LEVELS:';
                 extraResults.appendChild(label);
-
                 matches.forEach(p => {
-                    const item = document.createElement('div');
-                    item.className = 'global-result-item';
+                    const item = document.createElement('div'); item.className = 'global-result-item';
                     item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div style="color:var(--pol-red); font-weight:bold;">LVL ${p.lvl}</div>`;
                     item.onclick = () => selectLevel(p.lvl);
                     extraResults.appendChild(item);
@@ -275,7 +251,7 @@
     }
 
     function startNewRound() {
-        if (!activePool.length || !document.getElementById('tab-learning').classList.contains('active')) return;
+        if (!activePool.length) return;
         let nextTarget;
         if (activePool.length > 1) {
             do { nextTarget = activePool[Math.floor(Math.random() * activePool.length)]; } while (nextTarget.pl === lastPhraseText);
@@ -289,8 +265,7 @@
 
     function checkAnswer(phrase, el) {
         if (phrase.pl === currentTarget.pl) {
-            correctStreak++;
-            playCorrect();
+            correctStreak++; playCorrect();
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Correct! 🌟";
             saveStats();
@@ -301,20 +276,14 @@
                     if (nextAvailable) activePool[index] = nextAvailable; else activePool.splice(index, 1);
                 }
                 updateStats(); updateMap();
-                if (activePool.length === 0) {
-                    document.getElementById('overlay').style.display='flex';
-                    playSuccess();
-                } else startNewRound();
+                if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); correctStreak = 0; } else startNewRound();
             }, 800);
         } else {
-            correctStreak = 0; 
-            playNote(150, 0.4, 'sawtooth');
+            correctStreak = 0; playNote(150, 0.4, 'sawtooth');
             if (!stats[currentTarget.pl]) stats[currentTarget.pl] = 0;
             if (stats[currentTarget.pl] > MIN_SCORE) stats[currentTarget.pl] -= 1;
-            el.classList.add('wrong');
-            document.getElementById('feedback').innerText = "Mistake!";
-            saveStats();
-            setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
+            el.classList.add('wrong'); document.getElementById('feedback').innerText = "Mistake!";
+            saveStats(); setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
         }
     }
 
@@ -323,11 +292,15 @@
         const isLearning = document.getElementById('tab-learning').classList.contains('active');
         
         if (isLearning) {
+            if (activePool.length === 0 && !filter) {
+                const notice = document.createElement('div');
+                notice.className = 'review-notice';
+                notice.innerHTML = `<h3>Level Mastered!</h3><p>Would you like to practice this level again?</p><button onclick="resetLevelMastery()" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold;">Repeat Level</button>`;
+                area.appendChild(notice);
+                return;
+            }
             area.className = "grid";
-            const itemsToShow = filter 
-                ? activePool.filter(p => p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter))
-                : activePool;
-
+            const itemsToShow = filter ? activePool.filter(p => p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter)) : activePool;
             itemsToShow.forEach(p => {
                 const tile = document.createElement('div'); tile.className = 'tile';
                 tile.innerText = isSwapped ? p.en : p.pl;
@@ -338,10 +311,8 @@
                 area.appendChild(tile);
             });
         } else {
-            area.className = "grid"; // Keep grid style for Banked
-            const itemsToShow = phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD)
-                .filter(p => !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter));
-
+            area.className = "grid";
+            const itemsToShow = phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).filter(p => !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter));
             itemsToShow.forEach(p => {
                 const tile = document.createElement('div'); tile.className = 'tile';
                 tile.style.backgroundColor = 'var(--pol-red)'; tile.style.color = 'white';
@@ -352,18 +323,8 @@
         }
     }
 
-    function speak(t, rate = 1.0) { 
-        window.speechSynthesis.cancel();
-        const m = new SpeechSynthesisUtterance(t); 
-        if(plVoice) m.voice=plVoice; m.lang='pl-PL'; m.rate = rate;
-        window.speechSynthesis.speak(m); 
-    }
-
-    function speakTarget() { 
-        const now = Date.now();
-        if(now - (window.lastTapTime || 0) < 400) speak(currentTarget.pl, 0.5); else speak(currentTarget.pl, 1.0);
-        window.lastTapTime = now;
-    }
+    function speak(t, rate = 1.0) { window.speechSynthesis.cancel(); const m = new SpeechSynthesisUtterance(t); if(plVoice) m.voice=plVoice; m.lang='pl-PL'; m.rate = rate; window.speechSynthesis.speak(m); }
+    function speakTarget() { const now = Date.now(); if(now - (window.lastTapTime || 0) < 400) speak(currentTarget.pl, 0.5); else speak(currentTarget.pl, 1.0); window.lastTapTime = now; }
 
     function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
     function updateStats() { if(phrasesData.length) { const mastered = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (mastered/phrasesData.length)*100+"%"; } }
@@ -377,17 +338,8 @@
         updateMap(); 
     }
 
-    function downloadProgress() { 
-        const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); 
-        const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); 
-    }
-
-    function importProgress(e) { 
-        const r = new FileReader(); 
-        r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; 
-        r.readAsText(e.target.files[0]); 
-    }
-
+    function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); }
+    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
     function resetEverything() { if(confirm("Clear all progress?")) { localStorage.clear(); location.reload(); } }
 
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
