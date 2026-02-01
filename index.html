@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Polish Master</title>
     <style>
-        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
-        @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
+        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --accent-blue: #1976d2; }
+        @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; --accent-blue: #42a5f5; } }
         
         html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
         body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
@@ -69,15 +69,19 @@
         .pb-pl { font-weight: 800; font-size: 0.85rem; color: var(--pol-red); }
         .pb-en { font-size: 0.75rem; opacity: 0.7; text-align: right; }
         .pb-copy { padding: 8px; opacity: 0.3; font-size: 0.8rem; cursor: copy; }
+        
         .pb-header { font-size: 0.7rem; font-weight: 900; padding: 14px 8px 6px 8px; color: var(--pol-red); text-transform: uppercase; border-bottom: 2px solid #eee; margin-bottom: 4px; width: 100%; background: var(--bg); border-radius: 4px; box-sizing: border-box; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
         .pb-header::after { content: 'FILTER 🔍'; font-size: 0.45rem; opacity: 0.5; }
-        .copied { background: #e8f5e9 !important; }
 
-        .filter-banner { width: 100%; max-width: 500px; background: #e3f2fd; padding: 8px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.7rem; color: #1976d2; font-weight: bold; border: 1px solid #bbdefb; }
-        .reset-filter-btn { background: #1976d2; color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.6rem; cursor: pointer; }
+        /* FIXED VIEWING BOX */
+        .filter-banner { width: 100%; max-width: 500px; background: var(--card); padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.75rem; color: var(--accent-blue); font-weight: 800; border: 1px solid var(--accent-blue); box-sizing: border-box; }
+        .reset-filter-btn { background: var(--accent-blue); color: white; border: none; padding: 6px 12px; border-radius: 6px; font-size: 0.65rem; cursor: pointer; font-weight: bold; }
 
-        .search-results-list { width: 100%; max-width: 400px; margin-top: 10px; }
-        .global-search-item { background: var(--card); border: 1px solid #ddd; padding: 8px; margin: 4px 0; border-radius: 6px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        /* FIXED REPEAT BOX */
+        .mastered-card { background: var(--card); padding: 30px 20px; border-radius: 12px; border: 2px solid var(--pol-red); text-align: center; width: 80%; max-width: 300px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .mastered-card h2 { margin: 0 0 10px 0; color: var(--pol-red); font-size: 1.2rem; }
+        .mastered-card p { font-size: 0.8rem; margin: 0 0 20px 0; opacity: 0.8; }
+        .repeat-btn { background: var(--pol-red); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
 
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
@@ -157,17 +161,25 @@
     let pbFilterLevel = null; 
     const THRESHOLD = 3, MAX_POTENTIAL_LEVELS = 50;
 
-    function playNote(freq, dur) {
+    function playNote(freq, dur, type = 'sine') {
         try {
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             if (audioCtx.state === 'suspended') audioCtx.resume();
             const osc = audioCtx.createOscillator();
             const g = audioCtx.createGain();
+            osc.type = type;
             osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            g.gain.setValueAtTime(0.1, audioCtx.currentTime);
             g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
             osc.connect(g); g.connect(audioCtx.destination);
             osc.start(); osc.stop(audioCtx.currentTime + dur);
         } catch(e){}
+    }
+
+    function playVictory() {
+        playNote(523.25, 0.5); // C5
+        setTimeout(() => playNote(659.25, 0.5), 100); // E5
+        setTimeout(() => playNote(783.99, 0.8), 200); // G5
     }
 
     async function scanAndPopulate() {
@@ -187,7 +199,6 @@
                     const lvlIdx = i;
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(lvlIdx); };
                     menu.appendChild(item);
-                    
                     if(!isPhrasebook && i === currentLevel) {
                         document.getElementById('lvl-current').innerHTML = `<span>Lvl ${i}: ${data.description || ''}</span><span>${isLevelDone ? '🏅' : ''}</span>`;
                     }
@@ -197,9 +208,7 @@
             } catch(e) { levelFound = false; }
         }
         document.getElementById('main-title').innerHTML = `Polish Master <span style="font-size:0.8rem; opacity:0.8;">(🏅 ${totalMedals})</span>`;
-        if (isPhrasebook && pbFilterLevel === null) {
-            document.getElementById('lvl-current').innerHTML = `<span>Select Category</span>`;
-        }
+        if (isPhrasebook && pbFilterLevel === null) document.getElementById('lvl-current').innerHTML = `<span>Select Category</span>`;
         updateTabCounters();
     }
 
@@ -226,11 +235,8 @@
             .then(data => {
                 phrasesData = data.phrases;
                 document.getElementById('lang-swap-btn').style.display = (currentLevel === 0) ? 'none' : 'block';
-                if (currentLevel === 0) {
-                    activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-                } else {
-                    activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
-                }
+                if (currentLevel === 0) activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
+                else activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
                 updateMap(); startNewRound(); updateStats(); scanAndPopulate();
             });
     }
@@ -238,26 +244,22 @@
     function switchMode(m) {
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         document.getElementById('tab-' + m).classList.add('active');
-        isMarathon = (m === 'test');
-        isPhrasebook = (m === 'phrasebook');
+        isMarathon = (m === 'test'); isPhrasebook = (m === 'phrasebook');
         if(!isPhrasebook) pbFilterLevel = null;
-        
         document.getElementById('quiz-ui').style.display = isPhrasebook ? 'none' : 'flex';
         if (isPhrasebook) updatePhrasebook(); else if (isMarathon) startMarathon(); else { updateMap(); startNewRound(); }
-        updateTabCounters();
-        scanAndPopulate(); 
+        updateTabCounters(); scanAndPopulate(); 
     }
 
     function startMarathon() {
         const masteredPool = allPhrasesCache.filter(p => p.lvl !== 0 && (stats[p.pl] || 0) >= THRESHOLD);
         if (masteredPool.length < 5) {
             document.getElementById('q-text').innerText = "Master 5+ items first!";
-            document.getElementById('mastery-map').innerHTML = `<div class="empty-state-box">Finish more levels to unlock!</div>`;
+            document.getElementById('mastery-map').innerHTML = `<div class="mastered-card"><h2>Locked</h2><p>Master 5 phrases in learning mode to unlock the marathon.</p></div>`;
             return;
         }
         let shuffled = masteredPool.sort(() => 0.5 - Math.random());
-        activePool = shuffled.slice(0, 12);
-        marathonQueue = shuffled.slice(12); 
+        activePool = shuffled.slice(0, 12); marathonQueue = shuffled.slice(12); 
         updateMap(); startNewRound(); updateTabCounters();
     }
 
@@ -266,12 +268,10 @@
         const lCount = document.getElementById('learn-count');
         if (isMarathon) {
             const total = activePool.length + marathonQueue.length;
-            mCount.innerText = total > 0 ? `Rem: ${total}` : "";
-            lCount.innerText = "";
+            mCount.innerText = total > 0 ? `Rem: ${total}` : ""; lCount.innerText = "";
         } else if (!isPhrasebook) {
             const remaining = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).length;
-            lCount.innerText = remaining > 0 ? `Rem: ${remaining}` : "";
-            mCount.innerText = "";
+            lCount.innerText = remaining > 0 ? `Rem: ${remaining}` : ""; mCount.innerText = "";
         } else { mCount.innerText = ""; lCount.innerText = ""; }
     }
 
@@ -288,18 +288,11 @@
         }
 
         let list = allPhrasesCache.filter(p => p.lvl !== 0);
-        
         if (filter) {
             pbFilterLevel = null;
             document.getElementById('lvl-current').innerHTML = `<span>Searching...</span>`;
-            list = list.filter(p => 
-                p.pl.toLowerCase().includes(filter) || 
-                p.en.toLowerCase().includes(filter) || 
-                (p.lvlDesc && p.lvlDesc.toLowerCase().includes(filter))
-            );
-        } else if (pbFilterLevel !== null) {
-            list = list.filter(p => p.lvl === pbFilterLevel);
-        }
+            list = list.filter(p => p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter) || (p.lvlDesc && p.lvlDesc.toLowerCase().includes(filter)));
+        } else if (pbFilterLevel !== null) list = list.filter(p => p.lvl === pbFilterLevel);
 
         let currentHeader = -1;
         list.forEach(p => {
@@ -307,7 +300,7 @@
                 currentHeader = p.lvl;
                 const header = document.createElement('div');
                 header.className = 'pb-header';
-                header.innerText = p.lvlDesc ? p.lvlDesc : `Level ${p.lvl}`;
+                header.innerText = p.lvlDesc || `Level ${p.lvl}`;
                 header.onclick = () => { pbFilterLevel = p.lvl; updatePhrasebook(); document.getElementById('lvl-current').innerHTML = `<span>Category: ${p.lvlDesc}</span><span>🔍</span>`; };
                 area.appendChild(header);
             }
@@ -317,7 +310,6 @@
             row.onclick = (e) => { if(e.target.className !== 'pb-copy') speak(p.pl); };
             area.appendChild(row);
         });
-        
         if(list.length === 0) area.innerHTML = `<div class="empty-state-box">No matches found.</div>`;
     }
 
@@ -342,15 +334,14 @@
         area.className = (currentLevel === 0 && !isMarathon) ? "grid grid-alphabet" : "grid grid-standard";
         if (isLearning && activePool.length === 0) {
             const count = completions[currentLevel] || 0;
-            area.innerHTML = `<div class="empty-state-box"><span class="empty-state-icon">🏅</span><p>Level Mastered!</p><p>Times: ${count}</p><button onclick="resetLevelMastery()">Repeat</button></div>`;
+            area.innerHTML = `<div class="mastered-card"><h2>Level Mastered! 🏅</h2><p>You have completed this category ${count} times.</p><button class="repeat-btn" onclick="resetLevelMastery()">Repeat Level</button></div>`;
             return;
         }
         let displayList = (isMarathon || isLearning) ? activePool : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
         displayList.forEach(p => {
             const tile = document.createElement('div'); tile.className = 'tile';
-            if (p.lvl === 0 || (currentLevel === 0 && !isMarathon)) {
-                tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint">${p.en}</span><span class="emoji">${p.e || ''}</span>`;
-            } else { tile.innerHTML = `<span class="char">${isSwapped ? p.en : p.pl}</span>`; }
+            if (p.lvl === 0 || (currentLevel === 0 && !isMarathon)) tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint">${p.en}</span><span class="emoji">${p.e || ''}</span>`;
+            else tile.innerHTML = `<span class="char">${isSwapped ? p.en : p.pl}</span>`;
             if (!isMarathon) {
                 const score = stats[p.pl] || 0;
                 if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
@@ -377,7 +368,7 @@
                         if (next) activePool[idx] = next; else activePool.splice(idx, 1);
                     }
                 }
-                if (activePool.length === 0) document.getElementById('overlay').style.display='flex';
+                if (activePool.length === 0) { playVictory(); document.getElementById('overlay').style.display='flex'; }
                 else { updateMap(); startNewRound(); updateTabCounters(); }
             }, 800);
         } else {
@@ -389,14 +380,12 @@
     function startNewRound() {
         if (!activePool.length) return;
         let nextTarget;
-        if (activePool.length > 1) {
-            do { nextTarget = activePool[Math.floor(Math.random() * activePool.length)]; } while (nextTarget === lastTarget);
-        } else { nextTarget = activePool[0]; }
+        if (activePool.length > 1) { do { nextTarget = activePool[Math.floor(Math.random() * activePool.length)]; } while (nextTarget === lastTarget); }
+        else nextTarget = activePool[0];
         currentTarget = nextTarget; lastTarget = currentTarget;
         document.getElementById('feedback').innerText = "";
-        if (currentTarget.lvl === 0 || (currentLevel === 0 && !isMarathon)) {
-            document.getElementById('q-text').innerText = `As in: ${currentTarget.word || currentTarget.en}`;
-        } else { document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en; }
+        if (currentTarget.lvl === 0 || (currentLevel === 0 && !isMarathon)) document.getElementById('q-text').innerText = `As in: ${currentTarget.word || currentTarget.en}`;
+        else document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
         speak(currentTarget.pl);
     }
 
