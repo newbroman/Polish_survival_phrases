@@ -43,8 +43,9 @@
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 12px 5px; text-align: center; font-size: 0.65rem; font-weight: bold; cursor: pointer; opacity: 0.4; transition: 0.2s; }
+        .tab { flex: 1; padding: 12px 5px; text-align: center; font-size: 0.6rem; font-weight: bold; cursor: pointer; opacity: 0.4; transition: 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
+        .counter-label { font-size: 0.5rem; margin-top: 2px; opacity: 0.7; }
 
         .map-section { flex-grow: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
         
@@ -71,7 +72,7 @@
         .empty-state-icon { font-size: 2.2rem; margin-bottom: 10px; display: block; }
 
         .search-results-list { width: 100%; max-width: 400px; margin-top: 10px; }
-        .global-search-item { background: var(--card); border: 1px solid #ddd; padding: 8px; margin: 4px 0; border-radius: 6px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .global-search-item { background: var(--card); border: 1px solid #ddd; padding: 8px; margin: 4px 0; border-radius: 6px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
 
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
@@ -114,9 +115,17 @@
 </div>
 
 <div class="mode-tabs">
-    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">LEARNING</div>
-    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANK</div>
-    <div id="tab-test" class="tab" onclick="switchMode('test')">MARATHON</div>
+    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">
+        <span>LEARNING</span>
+        <span id="learn-count" class="counter-label"></span>
+    </div>
+    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">
+        <span>BANK</span>
+    </div>
+    <div id="tab-test" class="tab" onclick="switchMode('test')">
+        <span>MARATHON</span>
+        <span id="marathon-count" class="counter-label"></span>
+    </div>
 </div>
 
 <div class="map-section">
@@ -135,7 +144,7 @@
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let completions = JSON.parse(localStorage.getItem('pl_completion_counts')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
-    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
+    let phrasesData = [], activePool = [], marathonQueue = [], allPhrasesCache = [], currentTarget = null;
     let isSwapped = false, correctStreak = 0, audioCtx = null, isMarathon = false;
     const THRESHOLD = 3, MAX_POTENTIAL_LEVELS = 50;
 
@@ -178,6 +187,7 @@
             } catch(e) { levelFound = false; }
         }
         document.getElementById('main-title').innerHTML = `Polish Master <span style="font-size:0.8rem; opacity:0.8;">(🏅 ${totalMedals})</span>`;
+        updateTabCounters();
     }
 
     function selectLevel(lvl) {
@@ -209,6 +219,7 @@
         document.getElementById('tab-' + m).classList.add('active');
         isMarathon = (m === 'test');
         if (isMarathon) startMarathon(); else { updateMap(); startNewRound(); }
+        updateTabCounters();
     }
 
     function startMarathon() {
@@ -218,9 +229,24 @@
             document.getElementById('mastery-map').innerHTML = `<div class="empty-state-box">Finish more levels to unlock!</div>`;
             return;
         }
-        activePool = masteredPool.sort(() => 0.5 - Math.random()).slice(0, 12); 
+        let shuffled = masteredPool.sort(() => 0.5 - Math.random());
+        activePool = shuffled.slice(0, 12);
+        marathonQueue = shuffled.slice(12); 
         updateMap();
         startNewRound();
+        updateTabCounters();
+    }
+
+    function updateTabCounters() {
+        if (isMarathon) {
+            const total = activePool.length + marathonQueue.length;
+            document.getElementById('marathon-count').innerText = total > 0 ? `Remaining: ${total}` : "";
+            document.getElementById('learn-count').innerText = "";
+        } else {
+            const remaining = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).length;
+            document.getElementById('learn-count').innerText = remaining > 0 ? `Remaining: ${remaining}` : "";
+            document.getElementById('marathon-count').innerText = "";
+        }
     }
 
     function updateMap() {
@@ -267,14 +293,16 @@
             document.getElementById('feedback').innerText = "Dobrze! 🌟";
             saveStats();
             setTimeout(() => {
-                if (!isMarathon && stats[phrase.pl] >= THRESHOLD) {
-                    const idx = activePool.findIndex(ap => ap.pl === phrase.pl);
-                    const next = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.includes(p));
-                    if (next) activePool[idx] = next; 
+                const idx = activePool.findIndex(ap => ap.pl === phrase.pl);
+                if (isMarathon) {
+                    if (marathonQueue.length > 0) activePool[idx] = marathonQueue.shift();
                     else activePool.splice(idx, 1);
-                } else if (isMarathon) {
-                    const idx = activePool.findIndex(ap => ap.pl === phrase.pl);
-                    activePool.splice(idx, 1);
+                } else {
+                    if (stats[phrase.pl] >= THRESHOLD) {
+                        const next = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.includes(p));
+                        if (next) activePool[idx] = next; 
+                        else activePool.splice(idx, 1);
+                    }
                 }
                 
                 if (activePool.length === 0) {
@@ -282,7 +310,7 @@
                     document.getElementById('overlay-title').innerText = isMarathon ? "MARATHON COMPLETE! 🏆" : "LEVEL MASTERED! 🏆";
                     document.getElementById('overlay').style.display='flex';
                 } else {
-                    updateMap(); startNewRound();
+                    updateMap(); startNewRound(); updateTabCounters();
                 }
             }, 800);
         } else {
@@ -309,7 +337,6 @@
         const extra = document.getElementById('search-results-extra');
         extra.innerHTML = '';
         if (!q) return;
-
         const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q))).slice(0, 10);
         if (matches.length > 0) {
             matches.forEach(p => {
