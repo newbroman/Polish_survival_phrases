@@ -25,7 +25,6 @@
             justify-content: space-between; cursor: pointer; box-sizing: border-box;
         }
         .dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
-
         .dropdown-menu { 
             position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
             border: 1px solid #ccc; border-radius: 4px; max-height: 250px; overflow-y: auto; 
@@ -34,19 +33,12 @@
         .dropdown-menu.show { display: block; }
         .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); }
 
-        .search-box { 
-            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
-            height: 28px; outline: none; box-sizing: border-box;
-        }
-
         .progress-container { width: 100%; height: 3px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
         .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
         .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 100%; justify-content: center; }
-        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
-        .q-content { text-align: center; min-width: 0; }
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
         .q-text { font-size: 1.1rem; font-weight: 800; }
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
 
@@ -56,7 +48,6 @@
 
         .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
         
-        /* Grid adjusts based on Level */
         .grid { display: grid; gap: 6px; width: 100%; max-width: 420px; }
         .grid-standard { grid-template-columns: repeat(4, 1fr); }
         .grid-alphabet { grid-template-columns: repeat(5, 1fr); }
@@ -67,12 +58,15 @@
             text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: 0.1s; 
         }
         .tile .char { font-size: 0.9rem; font-weight: 800; line-height: 1; }
-        .tile .hint { font-size: 0.5rem; opacity: 0.7; font-weight: normal; margin-top: 1px; }
+        .tile .hint { font-size: 0.45rem; opacity: 0.7; font-weight: normal; margin-top: 1px; }
         .tile .emoji { font-size: 0.7rem; margin-top: 2px; }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
+
+        .global-search-item { width: 100%; max-width: 400px; background: var(--card); border: 1px solid #ddd; padding: 8px; margin: 2px 0; border-radius: 6px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
         
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
+        .active-swap { background: var(--pol-red) !important; color: white !important; }
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
     </style>
@@ -80,19 +74,20 @@
 <body>
 
 <div id="overlay">
-    <h1>POZIOM OPANOWANY! 🏆</h1>
-    <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;">Następny Poziom</button>
+    <h1>LEVEL MASTERED! 🏆</h1>
+    <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;">Next Level</button>
 </div>
 
 <div class="header">
     <div class="title-banner"><h1 class="title">Polish Master</h1></div>
     <div class="controls-row">
         <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Ładowanie...</div>
+            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading...</div>
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <div style="display: flex; gap: 4px;">
-            <input type="text" id="search-bar" class="search-box" style="flex-grow: 1;" placeholder="Szukaj..." oninput="handleSmartSearch()">
+            <input type="text" id="search-bar" class="search-box" style="flex-grow: 1;" placeholder="Search all levels..." oninput="handleSmartSearch()">
+            <button id="lang-swap-btn" class="footer-btn" style="flex: 0 0 85px;" onclick="toggleLangSwap()">EN / PL</button>
         </div>
     </div>
 </div>
@@ -103,25 +98,25 @@
     <div class="quiz-top-row">
         <button class="speaker-btn" onclick="speakTarget()">🔊</button>
         <div class="q-content">
-            <div id="q-text" class="q-text">Gotowy?</div>
+            <div id="q-text" class="q-text">Ready?</div>
             <div id="feedback" class="feedback"></div>
         </div>
     </div>
 </div>
 
 <div class="mode-tabs">
-    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">NAUKA</div>
+    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">LEARNING</div>
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANK</div>
 </div>
 
 <div class="map-section">
     <div id="mastery-map" class="grid grid-standard"></div>
-    <div id="search-results-extra"></div>
+    <div id="search-results-extra" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
 </div>
 
 <div class="footer">
-    <button class="footer-btn" onclick="downloadProgress()">Zapisz</button>
-    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Wczytaj</button>
+    <button class="footer-btn" onclick="downloadProgress()">Save</button>
+    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load</button>
     <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Reset</button>
     <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
 </div>
@@ -129,20 +124,64 @@
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
-    let phrasesData = [], activePool = [], currentTarget = null;
-    let audioCtx = null;
-    let correctStreak = 0;
+    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
+    let isSwapped = false, correctStreak = 0, audioCtx = null;
     const THRESHOLD = 3;
+    const MAX_POTENTIAL_LEVELS = 50; // Safety cap for scanning
 
-    // --- SOUND ENGINE ---
     function playNote(freq, dur) {
-        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = audioCtx.createOscillator();
-        const g = audioCtx.createGain();
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
-        osc.connect(g); g.connect(audioCtx.destination);
-        osc.start(); osc.stop(audioCtx.currentTime + dur);
+        try {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
+            osc.connect(g); g.connect(audioCtx.destination);
+            osc.start(); osc.stop(audioCtx.currentTime + dur);
+        } catch(e){}
+    }
+
+    // Adaptive Level Scanner: Checks for levels until it finds a missing one
+    async function scanAndPopulate() {
+        const menu = document.getElementById('lvl-menu');
+        menu.innerHTML = '';
+        allPhrasesCache = [];
+        let levelFound = true;
+        let i = 0;
+
+        while (levelFound && i < MAX_POTENTIAL_LEVELS) {
+            try {
+                const resp = await fetch(`phrases_${i}.json`);
+                if (resp.ok) {
+                    const data = await resp.json();
+                    
+                    // Add to dropdown
+                    const item = document.createElement('div');
+                    item.className = 'dropdown-item';
+                    item.innerText = `Lvl ${i}: ${data.description || ''}`;
+                    const lvlIdx = i; // Closure for onclick
+                    item.onclick = (e) => { e.stopPropagation(); selectLevel(lvlIdx); };
+                    menu.appendChild(item);
+                    
+                    if(i === currentLevel) document.getElementById('lvl-current').innerText = item.innerText;
+                    
+                    // Add to search cache
+                    allPhrasesCache.push(...data.phrases.map(p => ({...p, lvl: lvlIdx})));
+                    i++;
+                } else {
+                    levelFound = false;
+                }
+            } catch(e) {
+                levelFound = false;
+            }
+        }
+    }
+
+    function selectLevel(lvl) {
+        currentLevel = lvl;
+        document.getElementById('lvl-menu').classList.remove('show');
+        saveStats(); loadLevelData();
     }
 
     function loadLevelData() {
@@ -150,55 +189,60 @@
             .then(res => res.json())
             .then(data => {
                 phrasesData = data.phrases;
-                // For Level 0, we show EVERYTHING at once in the grid
-                if (currentLevel === 0) {
-                    activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-                } else {
-                    activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
-                }
-                updateMap();
-                startNewRound();
-                updateStats();
-                populateDropdown();
+                document.getElementById('lang-swap-btn').style.display = (currentLevel === 0) ? 'none' : 'block';
+                activePool = (currentLevel === 0) ? phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD) : phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
+                updateMap(); startNewRound(); updateStats(); scanAndPopulate();
             });
     }
 
     function updateMap(filter = "") {
-        const area = document.getElementById('mastery-map');
-        area.innerHTML = '';
-        
-        // Switch grid style based on level
+        const area = document.getElementById('mastery-map'); area.innerHTML = '';
         area.className = (currentLevel === 0) ? "grid grid-alphabet" : "grid grid-standard";
+        const isLearning = document.getElementById('tab-learning').classList.contains('active');
+        
+        if (isLearning && activePool.length === 0 && !filter) {
+            area.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding:20px; border:2px dashed var(--pol-red); border-radius:12px; background:white;">
+                <p style="font-size:0.8rem; font-weight:bold;">Level Mastered!</p>
+                <button onclick="resetLevelMastery()" style="padding:10px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold;">Repeat Level</button>
+            </div>`;
+            return;
+        }
 
-        const items = phrasesData.filter(p => {
-            const matchesFilter = !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter);
-            const isMastered = (stats[p.pl] || 0) >= THRESHOLD;
-            const isLearningTab = document.getElementById('tab-learning').classList.contains('active');
-            
-            return matchesFilter && (isLearningTab ? !isMastered : isMastered);
-        });
-
-        items.forEach(p => {
-            const tile = document.createElement('div');
-            tile.className = 'tile';
-            
-            // Level 0 gets the Foundation look: Letter + Hint + Emoji
+        phrasesData.filter(p => {
+            const matches = !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter);
+            const done = (stats[p.pl] || 0) >= THRESHOLD;
+            return matches && (isLearning ? !done : done);
+        }).forEach(p => {
+            const tile = document.createElement('div'); tile.className = 'tile';
             if (currentLevel === 0) {
-                tile.innerHTML = `
-                    <span class="char">${p.pl}</span>
-                    <span class="hint">${p.en}</span>
-                    <span class="emoji">${p.e || ''}</span>
-                `;
+                tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint">${p.en}</span><span class="emoji">${p.e || ''}</span>`;
             } else {
-                tile.innerHTML = `<span class="char" style="font-size:0.7rem">${p.pl}</span>`;
+                tile.innerHTML = `<span class="char" style="font-size:0.6rem">${isSwapped ? p.en : p.pl}</span>`;
             }
-
             const score = stats[p.pl] || 0;
             if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
-            
             tile.onclick = () => checkAnswer(p, tile);
             area.appendChild(tile);
         });
+    }
+
+    function handleSmartSearch() {
+        const q = document.getElementById('search-bar').value.toLowerCase();
+        const extra = document.getElementById('search-results-extra');
+        extra.innerHTML = '';
+        if (!q) { updateMap(); return; }
+        updateMap(q);
+        const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)) && p.lvl !== currentLevel).slice(0, 5);
+        if (matches.length > 0) {
+            const lbl = document.createElement('div'); lbl.innerText = 'FOUND IN OTHER LEVELS:'; lbl.style.fontSize='10px'; lbl.style.margin='10px 0 5px 0'; lbl.style.fontWeight='800';
+            extra.appendChild(lbl);
+            matches.forEach(p => {
+                const item = document.createElement('div'); item.className = 'global-search-item';
+                item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div style="color:var(--pol-red); font-weight:bold;">LVL ${p.lvl}</div>`;
+                item.onclick = () => selectLevel(p.lvl);
+                extra.appendChild(item);
+            });
+        }
     }
 
     function checkAnswer(phrase, el) {
@@ -206,28 +250,22 @@
             correctStreak++;
             playNote(440 + (correctStreak * 40), 0.2);
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Dobrze! 🌟";
+            document.getElementById('feedback').innerText = "Correct! 🌟";
             saveStats();
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
                     activePool = activePool.filter(ap => ap.pl !== phrase.pl);
-                    // Refill pool for phrase levels
                     if (currentLevel !== 0 && activePool.length < 12) {
                         const next = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.includes(p));
                         if (next) activePool.push(next);
                     }
                 }
                 updateMap();
-                if (activePool.length === 0) {
-                    document.getElementById('overlay').style.display='flex';
-                } else {
-                    startNewRound();
-                }
+                if (activePool.length === 0) document.getElementById('overlay').style.display='flex'; else startNewRound();
             }, 800);
         } else {
-            correctStreak = 0;
-            el.classList.add('wrong');
-            document.getElementById('feedback').innerText = "Błąd!";
+            correctStreak = 0; el.classList.add('wrong');
+            document.getElementById('feedback').innerText = "Wrong!";
             setTimeout(() => { el.classList.remove('wrong'); startNewRound(); }, 1200);
         }
     }
@@ -235,45 +273,36 @@
     function startNewRound() {
         if (!activePool.length) return;
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
-        // Quiz UI shows the hint/word to help the user find the letter
-        document.getElementById('q-text').innerText = currentLevel === 0 ? `Jak: ${currentTarget.word || currentTarget.en}` : currentTarget.en;
+        document.getElementById('feedback').innerText = "";
+        if (currentLevel === 0) document.getElementById('q-text').innerText = `As in: ${currentTarget.word || currentTarget.en}`;
+        else document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
         speak(currentTarget.pl);
     }
 
-    function speak(t) {
+    function speak(t, rate = 1.0) {
         window.speechSynthesis.cancel();
-        const m = new SpeechSynthesisUtterance(t);
-        m.lang = 'pl-PL';
+        const m = new SpeechSynthesisUtterance(t); m.lang = 'pl-PL'; m.rate = rate;
         window.speechSynthesis.speak(m);
     }
 
-    function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
-
-    function handleSmartSearch() {
-        const q = document.getElementById('search-bar').value.toLowerCase();
-        updateMap(q);
+    function speakTarget() {
+        const now = Date.now();
+        const rate = (now - (window.lastTap || 0) < 400) ? 0.5 : 1.0;
+        window.lastTap = now;
+        if(currentTarget) speak(currentTarget.pl, rate);
     }
 
-    function switchMode(m) {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + m).classList.add('active');
-        updateMap();
-    }
-
-    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
-    function updateStats() { 
-        const mastered = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; 
-        document.getElementById('progress-bar').style.width = (mastered/phrasesData.length)*100+"%"; 
-    }
-    
-    function populateDropdown() {
-        document.getElementById('lvl-current').innerText = `Poziom ${currentLevel}`;
-    }
-
+    function toggleLangSwap() { isSwapped = !isSwapped; document.getElementById('lang-swap-btn').classList.toggle('active-swap', isSwapped); updateMap(); startNewRound(); }
     function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; loadLevelData(); }
-    function resetEverything() { localStorage.clear(); location.reload(); }
-
+    function switchMode(m) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); document.getElementById('tab-' + m).classList.add('active'); updateMap(); }
+    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
+    function updateStats() { if (!phrasesData.length) return; const m = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (m/phrasesData.length)*100+"%"; }
+    function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; selectLevel(currentLevel); }
+    function resetLevelMastery() { phrasesData.forEach(p => stats[p.pl] = 0); saveStats(); loadLevelData(); }
+    function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `progress.txt`; a.click(); }
+    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
+    function resetEverything() { if(confirm("Reset all?")) { localStorage.clear(); location.reload(); } }
+    window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = loadLevelData;
 </script>
 </body>
