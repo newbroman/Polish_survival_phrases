@@ -70,8 +70,11 @@
         .pb-en { font-size: 0.75rem; opacity: 0.7; text-align: right; }
         .pb-copy { padding: 8px; opacity: 0.3; font-size: 0.8rem; cursor: copy; }
         .pb-header { font-size: 0.7rem; font-weight: 900; padding: 14px 8px 6px 8px; color: var(--pol-red); text-transform: uppercase; border-bottom: 2px solid #eee; margin-bottom: 4px; width: 100%; background: var(--bg); border-radius: 4px; box-sizing: border-box; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .pb-header::after { content: 'GO TO LEVEL ➔'; font-size: 0.45rem; opacity: 0.5; }
+        .pb-header::after { content: 'FILTER 🔍'; font-size: 0.45rem; opacity: 0.5; }
         .copied { background: #e8f5e9 !important; }
+
+        .filter-banner { width: 100%; max-width: 500px; background: #e3f2fd; padding: 8px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.7rem; color: #1976d2; font-weight: bold; border: 1px solid #bbdefb; }
+        .reset-filter-btn { background: #1976d2; color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.6rem; cursor: pointer; }
 
         .search-results-list { width: 100%; max-width: 400px; margin-top: 10px; }
         .global-search-item { background: var(--card); border: 1px solid #ddd; padding: 8px; margin: 4px 0; border-radius: 6px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
@@ -151,6 +154,7 @@
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
     let phrasesData = [], activePool = [], marathonQueue = [], allPhrasesCache = [], currentTarget = null, lastTarget = null;
     let isSwapped = false, correctStreak = 0, audioCtx = null, isMarathon = false, isPhrasebook = false;
+    let pbFilterLevel = null; 
     const THRESHOLD = 3, MAX_POTENTIAL_LEVELS = 50;
 
     function playNote(freq, dur) {
@@ -183,7 +187,8 @@
                     const lvlIdx = i;
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(lvlIdx); };
                     menu.appendChild(item);
-                    if(i === currentLevel) {
+                    
+                    if(!isPhrasebook && i === currentLevel) {
                         document.getElementById('lvl-current').innerHTML = `<span>Lvl ${i}: ${data.description || ''}</span><span>${isLevelDone ? '🏅' : ''}</span>`;
                     }
                     allPhrasesCache.push(...data.phrases.map(p => ({...p, lvl: lvlIdx, lvlDesc: data.description})));
@@ -192,16 +197,27 @@
             } catch(e) { levelFound = false; }
         }
         document.getElementById('main-title').innerHTML = `Polish Master <span style="font-size:0.8rem; opacity:0.8;">(🏅 ${totalMedals})</span>`;
+        if (isPhrasebook && pbFilterLevel === null) {
+            document.getElementById('lvl-current').innerHTML = `<span>Select Category</span>`;
+        }
         updateTabCounters();
     }
 
     function selectLevel(lvl) {
-        currentLevel = lvl; isMarathon = false; isPhrasebook = false;
-        document.getElementById('lvl-menu').classList.remove('show');
-        document.getElementById('search-bar').value = "";
-        document.getElementById('search-results-extra').innerHTML = "";
-        switchMode('learning');
-        saveStats(); loadLevelData();
+        if (isPhrasebook) {
+            pbFilterLevel = lvl;
+            document.getElementById('lvl-menu').classList.remove('show');
+            updatePhrasebook();
+            const meta = allPhrasesCache.find(p => p.lvl === lvl);
+            if(meta) document.getElementById('lvl-current').innerHTML = `<span>Category: ${meta.lvlDesc}</span><span>🔍</span>`;
+        } else {
+            currentLevel = lvl; isMarathon = false;
+            document.getElementById('lvl-menu').classList.remove('show');
+            document.getElementById('search-bar').value = "";
+            document.getElementById('search-results-extra').innerHTML = "";
+            switchMode('learning');
+            saveStats(); loadLevelData();
+        }
     }
 
     function loadLevelData() {
@@ -224,9 +240,12 @@
         document.getElementById('tab-' + m).classList.add('active');
         isMarathon = (m === 'test');
         isPhrasebook = (m === 'phrasebook');
+        if(!isPhrasebook) pbFilterLevel = null;
+        
         document.getElementById('quiz-ui').style.display = isPhrasebook ? 'none' : 'flex';
         if (isPhrasebook) updatePhrasebook(); else if (isMarathon) startMarathon(); else { updateMap(); startNewRound(); }
         updateTabCounters();
+        scanAndPopulate(); 
     }
 
     function startMarathon() {
@@ -260,23 +279,36 @@
         const area = document.getElementById('mastery-map');
         area.innerHTML = ''; area.className = "phrasebook-list";
         
+        if (pbFilterLevel !== null && !filter) {
+            const meta = allPhrasesCache.find(p => p.lvl === pbFilterLevel);
+            const banner = document.createElement('div');
+            banner.className = 'filter-banner';
+            banner.innerHTML = `<span>Viewing: ${meta ? meta.lvlDesc : 'Category'}</span><button class="reset-filter-btn" onclick="resetPbFilter()">Show All</button>`;
+            area.appendChild(banner);
+        }
+
         let list = allPhrasesCache.filter(p => p.lvl !== 0);
+        
         if (filter) {
+            pbFilterLevel = null;
+            document.getElementById('lvl-current').innerHTML = `<span>Searching...</span>`;
             list = list.filter(p => 
                 p.pl.toLowerCase().includes(filter) || 
                 p.en.toLowerCase().includes(filter) || 
                 (p.lvlDesc && p.lvlDesc.toLowerCase().includes(filter))
             );
+        } else if (pbFilterLevel !== null) {
+            list = list.filter(p => p.lvl === pbFilterLevel);
         }
 
         let currentHeader = -1;
         list.forEach(p => {
-            if (!filter && p.lvl !== currentHeader) {
+            if (!filter && pbFilterLevel === null && p.lvl !== currentHeader) {
                 currentHeader = p.lvl;
                 const header = document.createElement('div');
                 header.className = 'pb-header';
                 header.innerText = p.lvlDesc ? p.lvlDesc : `Level ${p.lvl}`;
-                header.onclick = () => selectLevel(p.lvl);
+                header.onclick = () => { pbFilterLevel = p.lvl; updatePhrasebook(); document.getElementById('lvl-current').innerHTML = `<span>Category: ${p.lvlDesc}</span><span>🔍</span>`; };
                 area.appendChild(header);
             }
             const row = document.createElement('div');
@@ -285,6 +317,14 @@
             row.onclick = (e) => { if(e.target.className !== 'pb-copy') speak(p.pl); };
             area.appendChild(row);
         });
+        
+        if(list.length === 0) area.innerHTML = `<div class="empty-state-box">No matches found.</div>`;
+    }
+
+    function resetPbFilter() {
+        pbFilterLevel = null;
+        document.getElementById('lvl-current').innerHTML = `<span>Select Category</span>`;
+        updatePhrasebook();
     }
 
     function copyText(e, text, el) {
