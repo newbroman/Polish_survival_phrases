@@ -17,12 +17,6 @@
 
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
         
-        /* GENDER TOGGLE - Added seamlessly */
-        .gender-toggle-row { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 4px 0; }
-        .gender-label { font-size: 0.65rem; font-weight: 600; opacity: 0.6; }
-        .gender-btn { background: var(--tile-bg); border: 1px solid #ccc; padding: 4px 10px; border-radius: 12px; cursor: pointer; font-size: 0.6rem; font-weight: 600; transition: all 0.2s; }
-        .gender-btn.active { background: var(--pol-red); color: white; border-color: var(--pol-red); }
-        
         .custom-dropdown { position: relative; width: 100%; }
         .dropdown-trigger { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
@@ -104,15 +98,6 @@
 <div class="header">
     <div class="title-banner"><h1 class="title" id="main-title">Polish Master</h1></div>
     <div class="controls-row">
-        <!-- GENDER TOGGLE - ONLY NEW ADDITION -->
-        <div class="gender-toggle-row">
-            <span class="gender-label">Gender:</span>
-            <button class="gender-btn" id="gender-m" onclick="setGender('m')">♂ Male</button>
-            <button class="gender-btn active" id="gender-both" onclick="setGender('both')">Both</button>
-            <button class="gender-btn" id="gender-f" onclick="setGender('f')">♀ Female</button>
-        </div>
-        <!-- END GENDER TOGGLE -->
-        
         <div class="custom-dropdown">
             <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading...</div>
             <div class="dropdown-menu" id="lvl-menu"></div>
@@ -166,66 +151,14 @@
 </div>
 
 <script>
-    // ORIGINAL CODE - UNCHANGED
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let completions = JSON.parse(localStorage.getItem('pl_completion_counts')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
-    
-    // GENDER SUPPORT - ONLY NEW ADDITION
-    let currentGender = localStorage.getItem('polishMasterGender') || 'both';
-    
     let phrasesData = [], activePool = [], marathonQueue = [], allPhrasesCache = [], currentTarget = null, lastTarget = null;
     let isSwapped = false, correctStreak = 0, audioCtx = null, isMarathon = false, isPhrasebook = false;
     let pbFilterLevel = null; 
     const THRESHOLD = 3, MAX_POTENTIAL_LEVELS = 100;
 
-    // GENDER FUNCTION - ONLY NEW ADDITION
-    function setGender(gender) {
-        currentGender = gender;
-        localStorage.setItem('polishMasterGender', gender);
-        
-        // Update button states
-        document.querySelectorAll('.gender-btn').forEach(btn => btn.classList.remove('active'));
-        document.getElementById('gender-' + gender).classList.add('active');
-        
-        // Reload display with new gender
-        updateMap();
-        if (currentTarget) {
-            displayQuestionText();
-        }
-    }
-    
-    // HELPER FUNCTION - Get gender-aware display text
-    function getGenderText(phrase, showOriginal = false) {
-        if (showOriginal || !phrase.gender || phrase.gender !== 'both' || !phrase.variants) {
-            return phrase.pl;
-        }
-        
-        if (currentGender === 'm') {
-            return phrase.variants.m;
-        } else if (currentGender === 'f') {
-            return phrase.variants.f;
-        } else {
-            return `${phrase.variants.m} / ${phrase.variants.f}`;
-        }
-    }
-    
-    // HELPER FUNCTION - Update question text with gender
-    function displayQuestionText() {
-        if (!currentTarget) return;
-        
-        if (currentTarget.lvl === 0 || (currentLevel === 0 && !isMarathon)) {
-            document.getElementById('q-text').innerText = `As in: ${currentTarget.word || currentTarget.en}`;
-        } else {
-            if (isSwapped) {
-                document.getElementById('q-text').innerText = getGenderText(currentTarget);
-            } else {
-                document.getElementById('q-text').innerText = currentTarget.en;
-            }
-        }
-    }
-
-    // ORIGINAL AUDIO FUNCTIONS - UNCHANGED
     function playNote(freq, dur, type = 'sine') {
         try {
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -247,7 +180,6 @@
         setTimeout(() => playNote(783.99, 0.8), 200);
     }
 
-    // ORIGINAL SCAN AND POPULATE - UNCHANGED
     async function scanAndPopulate() {
         const menu = document.getElementById('lvl-menu'); 
         menu.innerHTML = '';
@@ -375,11 +307,7 @@
             }
             const row = document.createElement('div');
             row.className = 'phrasebook-item';
-            
-            // GENDER-AWARE DISPLAY IN PHRASEBOOK
-            const displayPl = getGenderText(p);
-            
-            row.innerHTML = `<div class="pb-content"><span class="pb-pl">${displayPl}</span><span class="pb-en">${p.en}</span></div><div class="pb-copy" onclick="copyText(event, '${p.pl.replace(/'/g, "\\'")}', this)">📋</div>`;
+            row.innerHTML = `<div class="pb-content"><span class="pb-pl">${p.pl}</span><span class="pb-en">${p.en}</span></div><div class="pb-copy" onclick="copyText(event, '${p.pl.replace(/'/g, "\\'")}', this)">📋</div>`;
             row.onclick = (e) => { if(e.target.className !== 'pb-copy') speak(p.pl); };
             area.appendChild(row);
         });
@@ -401,7 +329,6 @@
         });
     }
 
-    // ORIGINAL UPDATE MAP - WITH GENDER SUPPORT ADDED
     function updateMap() {
         const area = document.getElementById('mastery-map'); area.innerHTML = '';
         const isLearning = document.getElementById('tab-learning').classList.contains('active');
@@ -414,15 +341,8 @@
         let displayList = (isMarathon || isLearning) ? activePool : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
         displayList.forEach(p => {
             const tile = document.createElement('div'); tile.className = 'tile';
-            
-            // GENDER-AWARE TILE DISPLAY
-            if (p.lvl === 0 || (currentLevel === 0 && !isMarathon)) {
-                tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint">${p.en}</span><span class="emoji">${p.e || ''}</span>`;
-            } else {
-                const displayText = isSwapped ? p.en : getGenderText(p);
-                tile.innerHTML = `<span class="char">${displayText}</span>`;
-            }
-            
+            if (p.lvl === 0 || (currentLevel === 0 && !isMarathon)) tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint">${p.en}</span><span class="emoji">${p.e || ''}</span>`;
+            else tile.innerHTML = `<span class="char">${isSwapped ? p.en : p.pl}</span>`;
             if (!isMarathon) {
                 const score = stats[p.pl] || 0;
                 if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
@@ -432,7 +352,6 @@
         });
     }
 
-    // ORIGINAL CHECK ANSWER - UNCHANGED (with victory cones!)
     function checkAnswer(phrase, el) {
         if (phrase.pl === currentTarget.pl) {
             correctStreak++; playNote(440 + (correctStreak * 40), 0.2);
@@ -459,7 +378,6 @@
         }
     }
 
-    // ORIGINAL START NEW ROUND - WITH GENDER SUPPORT
     function startNewRound() {
         if (!activePool.length) return;
         let nextTarget;
@@ -467,11 +385,11 @@
         else nextTarget = activePool[0];
         currentTarget = nextTarget; lastTarget = currentTarget;
         document.getElementById('feedback').innerText = "";
-        displayQuestionText();
+        if (currentTarget.lvl === 0 || (currentLevel === 0 && !isMarathon)) document.getElementById('q-text').innerText = `As in: ${currentTarget.word || currentTarget.en}`;
+        else document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
         speak(currentTarget.pl);
     }
 
-    // ORIGINAL SEARCH - UNCHANGED
     function handleSmartSearch() {
         const q = document.getElementById('search-bar').value.toLowerCase();
         if (isPhrasebook) { updatePhrasebook(q); return; }
@@ -486,7 +404,6 @@
         });
     }
 
-    // ORIGINAL FUNCTIONS - ALL UNCHANGED
     function speak(t, rate = 1.0) {
         window.speechSynthesis.cancel();
         const m = new SpeechSynthesisUtterance(t); m.lang = 'pl-PL'; m.rate = rate;
@@ -510,12 +427,7 @@
     function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; completions = d.completions || {}; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
     function resetEverything() { if(confirm("Reset all?")) { localStorage.clear(); location.reload(); } }
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
-    
-    // Initialize with saved gender preference
-    window.onload = () => {
-        loadLevelData();
-        setGender(currentGender);
-    };
+    window.onload = loadLevelData;
 </script>
 </body>
 </html>
