@@ -73,26 +73,26 @@
         .active-swap { background: var(--pol-red) !important; color: white !important; border-color: var(--pol-red) !important; }
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
-        .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; }
+        .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; color: var(--text); }
     </style>
 </head>
 <body>
 
 <div id="overlay">
-    <h1>LEVEL MASTERED! 🏆</h1>
-    <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;">Next Level</button>
+    <h1>POZIOM OPANOWANY! 🏆</h1>
+    <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;">Następny Poziom</button>
 </div>
 
 <div class="header">
-    <div class="title-banner"><h1 class="title">Say some Polish phrases</h1></div>
+    <div class="title-banner"><h1 class="title">Polish Phrase Master</h1></div>
     <div class="controls-row">
         <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading...</div>
+            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Ładowanie...</div>
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <div style="display: flex; gap: 4px;">
-            <input type="text" id="search-bar" class="search-box" style="flex-grow: 1;" placeholder="Search..." oninput="handleSmartSearch()">
-            <button id="lang-swap-btn" class="footer-btn" style="flex: 0 0 85px;" onclick="toggleLangSwap()">Swap EN/PL</button>
+            <input type="text" id="search-bar" class="search-box" style="flex-grow: 1;" placeholder="Szukaj..." oninput="handleSmartSearch()">
+            <button id="lang-swap-btn" class="footer-btn" style="flex: 0 0 85px;" onclick="toggleLangSwap()">Tryb: EN/PL</button>
         </div>
     </div>
 </div>
@@ -103,15 +103,15 @@
     <div class="quiz-top-row">
         <button class="speaker-btn" onclick="speakTarget()">🔊</button>
         <div class="q-content">
-            <div id="q-text" class="q-text">Ready?</div>
+            <div id="q-text" class="q-text">Gotowy?</div>
             <div id="feedback" class="feedback"></div>
         </div>
     </div>
 </div>
 
 <div class="mode-tabs">
-    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">PRACTICE</div>
-    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
+    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">NAUKA</div>
+    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANK</div>
 </div>
 
 <div class="map-section">
@@ -120,9 +120,9 @@
 </div>
 
 <div class="footer">
-    <button class="footer-btn" onclick="downloadProgress()">Save</button>
-    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load</button>
-    <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Clear</button>
+    <button class="footer-btn" onclick="downloadProgress()">Zapisz</button>
+    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Wczytaj</button>
+    <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Reset</button>
     <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
 </div>
 
@@ -181,7 +181,7 @@
                     const isDone = masteredCount === data.phrases.length;
                     const item = document.createElement('div');
                     item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
-                    item.innerText = `Lvl ${i}: ${data.description || 'Level '+i}`;
+                    item.innerText = `Poziom ${i}: ${data.description || 'Lvl '+i}`;
                     const lvlNum = i;
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(lvlNum); };
                     menu.appendChild(item);
@@ -207,7 +207,7 @@
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
             updateStats(); updateMap(); startNewRound();
             cacheAllPhrases(); populateDropdown();
-        } catch (err) { document.getElementById('q-text').innerText = "File not found"; }
+        } catch (err) { document.getElementById('q-text').innerText = "Nie znaleziono pliku"; }
     }
 
     function resetLevelMastery() {
@@ -238,11 +238,11 @@
         if (document.getElementById('tab-learning').classList.contains('active')) {
             const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)) && p.lvl !== currentLevel).slice(0, 5);
             if (matches.length > 0) {
-                const label = document.createElement('div'); label.className = 'search-results-label'; label.innerText = 'FOUND IN OTHER LEVELS:';
+                const label = document.createElement('div'); label.className = 'search-results-label'; label.innerText = 'ZNALEZIONO W INNYCH POZIOMACH:';
                 extraResults.appendChild(label);
                 matches.forEach(p => {
                     const item = document.createElement('div'); item.className = 'global-result-item';
-                    item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div style="color:var(--pol-red); font-weight:bold;">LVL ${p.lvl}</div>`;
+                    item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div style="color:var(--pol-red); font-weight:bold;">POZ ${p.lvl}</div>`;
                     item.onclick = () => selectLevel(p.lvl);
                     extraResults.appendChild(item);
                 });
@@ -267,7 +267,8 @@
         if (phrase.pl === currentTarget.pl) {
             correctStreak++; playCorrect();
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Correct! 🌟";
+            const compliments = ["Dobrze! 🌟", "Świetnie! 🌟", "Brawo! 🌟", "Doskonale! 🌟"];
+            document.getElementById('feedback').innerText = compliments[Math.floor(Math.random() * compliments.length)];
             saveStats();
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
@@ -282,7 +283,9 @@
             correctStreak = 0; playNote(150, 0.4, 'sawtooth');
             if (!stats[currentTarget.pl]) stats[currentTarget.pl] = 0;
             if (stats[currentTarget.pl] > MIN_SCORE) stats[currentTarget.pl] -= 1;
-            el.classList.add('wrong'); document.getElementById('feedback').innerText = "Mistake!";
+            el.classList.add('wrong'); 
+            const errors = ["Błąd!", "Nie to!", "Spróbuj ponownie"];
+            document.getElementById('feedback').innerText = errors[Math.floor(Math.random() * errors.length)];
             saveStats(); setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
         }
     }
@@ -295,7 +298,7 @@
             if (activePool.length === 0 && !filter) {
                 const notice = document.createElement('div');
                 notice.className = 'review-notice';
-                notice.innerHTML = `<h3>Level Mastered!</h3><p>Would you like to practice this level again?</p><button onclick="resetLevelMastery()" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold;">Repeat Level</button>`;
+                notice.innerHTML = `<h3>Poziom Opanowany!</h3><p>Chcesz poćwiczyć ten poziom jeszcze raz?</p><button onclick="resetLevelMastery()" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold;">Powtórz Poziom</button>`;
                 area.appendChild(notice);
                 return;
             }
@@ -340,7 +343,7 @@
 
     function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); }
     function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
-    function resetEverything() { if(confirm("Clear all progress?")) { localStorage.clear(); location.reload(); } }
+    function resetEverything() { if(confirm("Wyczyścić wszystkie postępy?")) { localStorage.clear(); location.reload(); } }
 
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = () => { initSpeech(); loadLevelData(); };
