@@ -43,9 +43,9 @@
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 12px 2px; text-align: center; font-size: 0.55rem; font-weight: bold; cursor: pointer; opacity: 0.4; transition: 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .tab { flex: 1; padding: 12px 1px; text-align: center; font-size: 0.52rem; font-weight: bold; cursor: pointer; opacity: 0.4; transition: 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
-        .counter-label { font-size: 0.45rem; margin-top: 2px; opacity: 0.7; }
+        .counter-label { font-size: 0.4rem; margin-top: 2px; opacity: 0.7; }
 
         .map-section { flex-grow: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
         
@@ -63,11 +63,15 @@
         .tile .emoji { font-size: 0.7rem; margin-top: 2px; }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
-        /* Phrasebook Styles */
         .phrasebook-list { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 4px; }
-        .phrasebook-item { background: var(--card); border: 1px solid #ddd; padding: 12px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .pb-pl { font-weight: 800; font-size: 0.85rem; color: var(--pol-red); flex: 1; }
-        .pb-en { font-size: 0.75rem; opacity: 0.7; flex: 1; text-align: right; }
+        .phrasebook-item { background: var(--card); border: 1px solid #ddd; padding: 12px; border-radius: 8px; display: flex; align-items: center; cursor: pointer; transition: background 0.2s; }
+        .pb-content { flex: 1; display: flex; justify-content: space-between; align-items: center; padding-right: 10px; }
+        .pb-pl { font-weight: 800; font-size: 0.85rem; color: var(--pol-red); }
+        .pb-en { font-size: 0.75rem; opacity: 0.7; text-align: right; }
+        .pb-copy { padding: 8px; opacity: 0.3; font-size: 0.8rem; cursor: copy; }
+        .pb-header { font-size: 0.7rem; font-weight: 900; padding: 14px 8px 6px 8px; color: var(--pol-red); text-transform: uppercase; border-bottom: 2px solid #eee; margin-bottom: 4px; width: 100%; background: var(--bg); border-radius: 4px; box-sizing: border-box; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .pb-header::after { content: 'GO TO LEVEL ➔'; font-size: 0.45rem; opacity: 0.5; }
+        .copied { background: #e8f5e9 !important; }
 
         .search-results-list { width: 100%; max-width: 400px; margin-top: 10px; }
         .global-search-item { background: var(--card); border: 1px solid #ddd; padding: 8px; margin: 4px 0; border-radius: 6px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
@@ -94,7 +98,7 @@
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <div style="display: flex; gap: 4px;">
-            <input type="text" id="search-bar" style="flex-grow: 1; padding: 5px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px;" placeholder="Search phrases..." oninput="handleSmartSearch()">
+            <input type="text" id="search-bar" style="flex-grow: 1; padding: 5px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px;" placeholder="Search phrases or categories..." oninput="handleSmartSearch()">
             <button id="lang-swap-btn" class="footer-btn" style="flex: 0 0 85px;" onclick="toggleLangSwap()">EN / PL</button>
         </div>
     </div>
@@ -182,7 +186,7 @@
                     if(i === currentLevel) {
                         document.getElementById('lvl-current').innerHTML = `<span>Lvl ${i}: ${data.description || ''}</span><span>${isLevelDone ? '🏅' : ''}</span>`;
                     }
-                    allPhrasesCache.push(...data.phrases.map(p => ({...p, lvl: lvlIdx})));
+                    allPhrasesCache.push(...data.phrases.map(p => ({...p, lvl: lvlIdx, lvlDesc: data.description})));
                     i++;
                 } else { levelFound = false; }
             } catch(e) { levelFound = false; }
@@ -220,16 +224,8 @@
         document.getElementById('tab-' + m).classList.add('active');
         isMarathon = (m === 'test');
         isPhrasebook = (m === 'phrasebook');
-        
         document.getElementById('quiz-ui').style.display = isPhrasebook ? 'none' : 'flex';
-        
-        if (isPhrasebook) {
-            updatePhrasebook();
-        } else if (isMarathon) {
-            startMarathon();
-        } else {
-            updateMap(); startNewRound();
-        }
+        if (isPhrasebook) updatePhrasebook(); else if (isMarathon) startMarathon(); else { updateMap(); startNewRound(); }
         updateTabCounters();
     }
 
@@ -243,9 +239,7 @@
         let shuffled = masteredPool.sort(() => 0.5 - Math.random());
         activePool = shuffled.slice(0, 12);
         marathonQueue = shuffled.slice(12); 
-        updateMap();
-        startNewRound();
-        updateTabCounters();
+        updateMap(); startNewRound(); updateTabCounters();
     }
 
     function updateTabCounters() {
@@ -259,27 +253,46 @@
             const remaining = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).length;
             lCount.innerText = remaining > 0 ? `Rem: ${remaining}` : "";
             mCount.innerText = "";
-        } else {
-            mCount.innerText = ""; lCount.innerText = "";
-        }
+        } else { mCount.innerText = ""; lCount.innerText = ""; }
     }
 
     function updatePhrasebook(filter = "") {
         const area = document.getElementById('mastery-map');
-        area.innerHTML = '';
-        area.className = "phrasebook-list";
+        area.innerHTML = ''; area.className = "phrasebook-list";
         
-        let list = allPhrasesCache;
+        let list = allPhrasesCache.filter(p => p.lvl !== 0);
         if (filter) {
-            list = list.filter(p => p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter));
+            list = list.filter(p => 
+                p.pl.toLowerCase().includes(filter) || 
+                p.en.toLowerCase().includes(filter) || 
+                (p.lvlDesc && p.lvlDesc.toLowerCase().includes(filter))
+            );
         }
 
+        let currentHeader = -1;
         list.forEach(p => {
+            if (!filter && p.lvl !== currentHeader) {
+                currentHeader = p.lvl;
+                const header = document.createElement('div');
+                header.className = 'pb-header';
+                header.innerText = p.lvlDesc ? p.lvlDesc : `Level ${p.lvl}`;
+                header.onclick = () => selectLevel(p.lvl);
+                area.appendChild(header);
+            }
             const row = document.createElement('div');
             row.className = 'phrasebook-item';
-            row.innerHTML = `<span class="pb-pl">${p.pl}</span><span class="pb-en">${p.en}</span>`;
-            row.onclick = () => speak(p.pl);
+            row.innerHTML = `<div class="pb-content"><span class="pb-pl">${p.pl}</span><span class="pb-en">${p.en}</span></div><div class="pb-copy" onclick="copyText(event, '${p.pl.replace(/'/g, "\\'")}', this)">📋</div>`;
+            row.onclick = (e) => { if(e.target.className !== 'pb-copy') speak(p.pl); };
             area.appendChild(row);
+        });
+    }
+
+    function copyText(e, text, el) {
+        e.stopPropagation();
+        navigator.clipboard.writeText(text).then(() => {
+            const row = el.closest('.phrasebook-item');
+            row.classList.add('copied');
+            setTimeout(() => row.classList.remove('copied'), 400);
         });
     }
 
@@ -287,22 +300,17 @@
         const area = document.getElementById('mastery-map'); area.innerHTML = '';
         const isLearning = document.getElementById('tab-learning').classList.contains('active');
         area.className = (currentLevel === 0 && !isMarathon) ? "grid grid-alphabet" : "grid grid-standard";
-
         if (isLearning && activePool.length === 0) {
             const count = completions[currentLevel] || 0;
             area.innerHTML = `<div class="empty-state-box"><span class="empty-state-icon">🏅</span><p>Level Mastered!</p><p>Times: ${count}</p><button onclick="resetLevelMastery()">Repeat</button></div>`;
             return;
         }
-
         let displayList = (isMarathon || isLearning) ? activePool : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-
         displayList.forEach(p => {
             const tile = document.createElement('div'); tile.className = 'tile';
             if (p.lvl === 0 || (currentLevel === 0 && !isMarathon)) {
                 tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint">${p.en}</span><span class="emoji">${p.e || ''}</span>`;
-            } else {
-                tile.innerHTML = `<span class="char">${isSwapped ? p.en : p.pl}</span>`;
-            }
+            } else { tile.innerHTML = `<span class="char">${isSwapped ? p.en : p.pl}</span>`; }
             if (!isMarathon) {
                 const score = stats[p.pl] || 0;
                 if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
@@ -314,8 +322,7 @@
 
     function checkAnswer(phrase, el) {
         if (phrase.pl === currentTarget.pl) {
-            correctStreak++;
-            playNote(440 + (correctStreak * 40), 0.2);
+            correctStreak++; playNote(440 + (correctStreak * 40), 0.2);
             if (!isMarathon) stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Dobrze! 🌟";
             saveStats();
@@ -327,19 +334,14 @@
                 } else {
                     if (stats[phrase.pl] >= THRESHOLD) {
                         const next = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.includes(p));
-                        if (next) activePool[idx] = next; 
-                        else activePool.splice(idx, 1);
+                        if (next) activePool[idx] = next; else activePool.splice(idx, 1);
                     }
                 }
-                if (activePool.length === 0) {
-                    document.getElementById('overlay').style.display='flex';
-                } else {
-                    updateMap(); startNewRound(); updateTabCounters();
-                }
+                if (activePool.length === 0) document.getElementById('overlay').style.display='flex';
+                else { updateMap(); startNewRound(); updateTabCounters(); }
             }, 800);
         } else {
-            correctStreak = 0; el.classList.add('wrong');
-            document.getElementById('feedback').innerText = "Błąd!";
+            correctStreak = 0; el.classList.add('wrong'); document.getElementById('feedback').innerText = "Błąd!";
             setTimeout(() => { el.classList.remove('wrong'); if(!isMarathon) startNewRound(); }, 1200);
         }
     }
@@ -354,21 +356,15 @@
         document.getElementById('feedback').innerText = "";
         if (currentTarget.lvl === 0 || (currentLevel === 0 && !isMarathon)) {
             document.getElementById('q-text').innerText = `As in: ${currentTarget.word || currentTarget.en}`;
-        } else {
-            document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
-        }
+        } else { document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en; }
         speak(currentTarget.pl);
     }
 
     function handleSmartSearch() {
         const q = document.getElementById('search-bar').value.toLowerCase();
-        if (isPhrasebook) {
-            updatePhrasebook(q);
-            return;
-        }
+        if (isPhrasebook) { updatePhrasebook(q); return; }
         const extra = document.getElementById('search-results-extra');
-        extra.innerHTML = '';
-        if (!q) return;
+        extra.innerHTML = ''; if (!q) return;
         const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q))).slice(0, 10);
         matches.forEach(p => {
             const item = document.createElement('div'); item.className = 'global-search-item';
