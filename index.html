@@ -33,7 +33,6 @@
         }
         .dropdown-menu.show { display: block; }
         .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); }
-        .dropdown-item.mastered { color: var(--pol-red); }
 
         .search-box { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
@@ -55,27 +54,27 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
-        .grid.alphabet-grid { grid-template-columns: repeat(5, 1fr); }
+        .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
+        
+        /* Grid adjusts based on Level */
+        .grid { display: grid; gap: 6px; width: 100%; max-width: 420px; }
+        .grid-standard { grid-template-columns: repeat(4, 1fr); }
+        .grid-alphabet { grid-template-columns: repeat(5, 1fr); }
         
         .tile { 
             aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
-            text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; 
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: 0.1s; 
+            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 2px; 
+            text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: 0.1s; 
         }
-        .tile .char { font-size: 0.9rem; margin-bottom: 2px; }
-        .tile .hint { font-size: 0.45rem; opacity: 0.7; font-weight: normal; }
+        .tile .char { font-size: 0.9rem; font-weight: 800; line-height: 1; }
+        .tile .hint { font-size: 0.5rem; opacity: 0.7; font-weight: normal; margin-top: 1px; }
         .tile .emoji { font-size: 0.7rem; margin-top: 2px; }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
         
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
-        .active-swap { background: var(--pol-red) !important; color: white !important; border-color: var(--pol-red) !important; }
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
-        .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; color: var(--text); }
     </style>
 </head>
 <body>
@@ -94,7 +93,6 @@
         </div>
         <div style="display: flex; gap: 4px;">
             <input type="text" id="search-bar" class="search-box" style="flex-grow: 1;" placeholder="Szukaj..." oninput="handleSmartSearch()">
-            <button id="lang-swap-btn" class="footer-btn" style="flex: 0 0 85px;" onclick="toggleLangSwap()">EN / PL</button>
         </div>
     </div>
 </div>
@@ -117,8 +115,8 @@
 </div>
 
 <div class="map-section">
-    <div id="mastery-map"></div>
-    <div id="search-results-extra" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
+    <div id="mastery-map" class="grid grid-standard"></div>
+    <div id="search-results-extra"></div>
 </div>
 
 <div class="footer">
@@ -131,260 +129,152 @@
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
-    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
-    let lastPhraseText = null;
-    let isSwapped = false; 
-    let correctStreak = 0; 
-    const THRESHOLD = 3;
-    const MIN_SCORE = -2;
-    let plVoice = null;
+    let phrasesData = [], activePool = [], currentTarget = null;
     let audioCtx = null;
+    let correctStreak = 0;
+    const THRESHOLD = 3;
 
-    // --- SOUND ---
-    function playNote(freq, dur, type='sine') {
-        try {
-            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            if (audioCtx.state === 'suspended') audioCtx.resume();
-            const now = audioCtx.currentTime;
-            const osc = audioCtx.createOscillator();
-            const g = audioCtx.createGain();
-            osc.type = type;
-            osc.frequency.setValueAtTime(freq, now);
-            g.gain.setValueAtTime(0.1, now);
-            g.gain.exponentialRampToValueAtTime(0.01, now + dur);
-            osc.connect(g); g.connect(audioCtx.destination);
-            osc.start(); osc.stop(now + dur);
-        } catch(e) {}
+    // --- SOUND ENGINE ---
+    function playNote(freq, dur) {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
+        osc.connect(g); g.connect(audioCtx.destination);
+        osc.start(); osc.stop(audioCtx.currentTime + dur);
     }
 
-    function playCorrect() { playNote(440 + (correctStreak * 40), 0.15, 'sine'); }
-    function playSuccess() { playNote(523, 0.2, 'triangle'); setTimeout(() => playNote(659, 0.2, 'triangle'), 100); setTimeout(() => playNote(783, 0.4, 'triangle'), 200); }
-
-    // --- LOGIC ---
-    function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
-    window.speechSynthesis.onvoiceschanged = initSpeech;
-
-    function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-
-    function toggleLangSwap() {
-        isSwapped = !isSwapped;
-        document.getElementById('lang-swap-btn').classList.toggle('active-swap', isSwapped);
-        updateMap();
-        if(currentTarget) updateQuizUI();
-    }
-
-    async function populateDropdown() {
-        const menu = document.getElementById('lvl-menu');
-        menu.innerHTML = '';
-        for (let i = 0; i < 30; i++) {
-            try {
-                const resp = await fetch(`phrases_${i}.json`);
-                if (resp.ok) {
-                    const data = await resp.json();
-                    const masteredCount = data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-                    const isDone = masteredCount === data.phrases.length;
-                    const item = document.createElement('div');
-                    item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
-                    item.innerText = `Poz ${i}: ${data.description || 'Lvl '+i}`;
-                    const lvlNum = i;
-                    item.onclick = (e) => { e.stopPropagation(); selectLevel(lvlNum); };
-                    menu.appendChild(item);
-                    if(lvlNum === currentLevel) document.getElementById('lvl-current').innerText = item.innerText;
+    function loadLevelData() {
+        fetch(`phrases_${currentLevel}.json?v=${Date.now()}`)
+            .then(res => res.json())
+            .then(data => {
+                phrasesData = data.phrases;
+                // For Level 0, we show EVERYTHING at once in the grid
+                if (currentLevel === 0) {
+                    activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
+                } else {
+                    activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
                 }
-            } catch(e) {}
-        }
+                updateMap();
+                startNewRound();
+                updateStats();
+                populateDropdown();
+            });
     }
 
-    function selectLevel(lvl) {
-        currentLevel = lvl;
-        document.getElementById('lvl-menu').classList.remove('show');
-        document.getElementById('search-bar').value = '';
-        saveStats();
-        loadLevelData();
-    }
+    function updateMap(filter = "") {
+        const area = document.getElementById('mastery-map');
+        area.innerHTML = '';
+        
+        // Switch grid style based on level
+        area.className = (currentLevel === 0) ? "grid grid-alphabet" : "grid grid-standard";
 
-    async function loadLevelData() {
-        try {
-            const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
-            const data = await resp.json();
-            phrasesData = data.phrases;
-            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 15);
-            updateStats(); updateMap(); startNewRound();
-            cacheAllPhrases(); populateDropdown();
-        } catch (err) { document.getElementById('q-text').innerText = "Błąd pliku"; }
-    }
+        const items = phrasesData.filter(p => {
+            const matchesFilter = !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter);
+            const isMastered = (stats[p.pl] || 0) >= THRESHOLD;
+            const isLearningTab = document.getElementById('tab-learning').classList.contains('active');
+            
+            return matchesFilter && (isLearningTab ? !isMastered : isMastered);
+        });
 
-    function startNewRound() {
-        if (!activePool.length) return;
-        let nextTarget;
-        if (activePool.length > 1) {
-            do { nextTarget = activePool[Math.floor(Math.random() * activePool.length)]; } while (nextTarget.pl === lastPhraseText);
-        } else nextTarget = activePool[0];
-        currentTarget = nextTarget;
-        lastPhraseText = currentTarget.pl;
-        updateQuizUI();
-        document.getElementById('feedback').innerText = "";
-        setTimeout(() => speakTarget(), 300);
-    }
+        items.forEach(p => {
+            const tile = document.createElement('div');
+            tile.className = 'tile';
+            
+            // Level 0 gets the Foundation look: Letter + Hint + Emoji
+            if (currentLevel === 0) {
+                tile.innerHTML = `
+                    <span class="char">${p.pl}</span>
+                    <span class="hint">${p.en}</span>
+                    <span class="emoji">${p.e || ''}</span>
+                `;
+            } else {
+                tile.innerHTML = `<span class="char" style="font-size:0.7rem">${p.pl}</span>`;
+            }
 
-    function updateQuizUI() {
-        if (!currentTarget) return;
-        // If Level 0, quiz shows the emoji or phonetic hint depending on swap
-        if (currentLevel === 0) {
-            document.getElementById('q-text').innerText = isSwapped ? (currentTarget.hint || currentTarget.en) : (currentTarget.e || currentTarget.pl);
-        } else {
-            document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
-        }
+            const score = stats[p.pl] || 0;
+            if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
+            
+            tile.onclick = () => checkAnswer(p, tile);
+            area.appendChild(tile);
+        });
     }
 
     function checkAnswer(phrase, el) {
         if (phrase.pl === currentTarget.pl) {
-            correctStreak++; playCorrect();
+            correctStreak++;
+            playNote(440 + (correctStreak * 40), 0.2);
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            const compliments = ["Dobrze! 🌟", "Świetnie! 🌟", "Brawo!"];
-            document.getElementById('feedback').innerText = compliments[Math.floor(Math.random() * compliments.length)];
+            document.getElementById('feedback').innerText = "Dobrze! 🌟";
             saveStats();
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
-                    const nextAvailable = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
-                    const index = activePool.indexOf(phrase);
-                    if (nextAvailable) activePool[index] = nextAvailable; else activePool.splice(index, 1);
+                    activePool = activePool.filter(ap => ap.pl !== phrase.pl);
+                    // Refill pool for phrase levels
+                    if (currentLevel !== 0 && activePool.length < 12) {
+                        const next = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.includes(p));
+                        if (next) activePool.push(next);
+                    }
                 }
-                updateStats(); updateMap();
-                if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); correctStreak = 0; } else startNewRound();
+                updateMap();
+                if (activePool.length === 0) {
+                    document.getElementById('overlay').style.display='flex';
+                } else {
+                    startNewRound();
+                }
             }, 800);
         } else {
-            correctStreak = 0; playNote(150, 0.4, 'sawtooth');
-            if (!stats[currentTarget.pl]) stats[currentTarget.pl] = 0;
-            if (stats[currentTarget.pl] > MIN_SCORE) stats[currentTarget.pl] -= 1;
-            el.classList.add('wrong'); 
+            correctStreak = 0;
+            el.classList.add('wrong');
             document.getElementById('feedback').innerText = "Błąd!";
-            saveStats(); setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
+            setTimeout(() => { el.classList.remove('wrong'); startNewRound(); }, 1200);
         }
     }
 
-    function updateMap(filter = "") {
-        const area = document.getElementById('mastery-map'); area.innerHTML = '';
-        const isLearning = document.getElementById('tab-learning').classList.contains('active');
-        
-        if (isLearning) {
-            if (activePool.length === 0 && !filter) {
-                area.innerHTML = `<div class="review-notice"><h3>Brawo!</h3><button onclick="resetLevelMastery()" style="padding:10px; background:var(--pol-red); color:white; border:none; border-radius:6px;">Powtórz Poziom</button></div>`;
-                return;
-            }
-            
-            area.className = currentLevel === 0 ? "grid alphabet-grid" : "grid";
-            const items = filter ? activePool.filter(p => p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter)) : activePool;
-            
-            items.forEach(p => {
-                const tile = document.createElement('div'); tile.className = 'tile';
-                const score = stats[p.pl] || 0;
-                
-                if (currentLevel === 0) {
-                    tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint">${p.hint || p.en}</span><span class="emoji">${p.e || ''}</span>`;
-                } else {
-                    tile.innerText = isSwapped ? p.en : p.pl;
-                }
-
-                if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
-                else if (score < 0) { tile.style.backgroundColor = `rgba(52, 152, 219, ${Math.abs(score)/2})`; tile.style.color = "white"; }
-                
-                tile.onclick = () => checkAnswer(p, tile);
-                area.appendChild(tile);
-            });
-        } else {
-            area.className = currentLevel === 0 ? "grid alphabet-grid" : "grid";
-            const items = phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).filter(p => !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter));
-            items.forEach(p => {
-                const tile = document.createElement('div'); tile.className = 'tile';
-                tile.style.backgroundColor = 'var(--pol-red)'; tile.style.color = 'white';
-                if (currentLevel === 0) {
-                    tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint" style="color:white">${p.hint || p.en}</span><span class="emoji">${p.e || ''}</span>`;
-                } else {
-                    tile.innerText = isSwapped ? p.en : p.pl;
-                }
-                tile.onclick = () => speakTarget(p);
-                area.appendChild(tile);
-            });
-        }
+    function startNewRound() {
+        if (!activePool.length) return;
+        currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
+        // Quiz UI shows the hint/word to help the user find the letter
+        document.getElementById('q-text').innerText = currentLevel === 0 ? `Jak: ${currentTarget.word || currentTarget.en}` : currentTarget.en;
+        speak(currentTarget.pl);
     }
 
-    function speak(t, hintWord = "", rate = 1.0) { 
+    function speak(t) {
         window.speechSynthesis.cancel();
-        const m = new SpeechSynthesisUtterance(t); 
-        m.lang='pl-PL'; m.rate = rate;
-        if (hintWord) {
-            m.onend = () => {
-                const h = new SpeechSynthesisUtterance("jak " + hintWord);
-                h.lang='pl-PL'; h.rate = 0.8;
-                window.speechSynthesis.speak(h);
-            }
-        }
-        window.speechSynthesis.speak(m); 
+        const m = new SpeechSynthesisUtterance(t);
+        m.lang = 'pl-PL';
+        window.speechSynthesis.speak(m);
     }
 
-    function speakTarget(p = currentTarget) { 
-        if (!p) return;
-        const rate = (Date.now() - (window.lastTapTime || 0) < 400) ? 0.5 : 1.0;
-        window.lastTapTime = Date.now();
-        
-        // If level 0, use the "A jak Auto" style
-        if (currentLevel === 0 && p.word) {
-            speak(p.pl, p.word, rate);
-        } else {
-            speak(p.pl, "", rate);
-        }
-    }
-
-    // --- SYSTEM ---
-    async function cacheAllPhrases() {
-        allPhrasesCache = [];
-        for (let i = 0; i < 15; i++) {
-            try {
-                const r = await fetch(`phrases_${i}.json`);
-                if (r.ok) {
-                    const d = await r.json();
-                    allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: i})));
-                }
-            } catch(e) {}
-        }
-    }
+    function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
 
     function handleSmartSearch() {
-        const query = document.getElementById('search-bar').value.toLowerCase();
-        const extraResults = document.getElementById('search-results-extra');
-        extraResults.innerHTML = '';
-        if (!query) { updateMap(); return; }
-        updateMap(query);
-        const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)) && p.lvl !== currentLevel).slice(0, 5);
-        if (matches.length > 0) {
-            const label = document.createElement('div'); label.innerText = 'W INNYCH POZIOMACH:'; label.style.fontSize='10px';
-            extraResults.appendChild(label);
-            matches.forEach(p => {
-                const item = document.createElement('div'); item.style.width='90%'; item.style.background='var(--card)'; item.style.padding='5px'; item.style.margin='2px';
-                item.innerHTML = `<strong>${p.pl}</strong> <small>(Poz ${p.lvl})</small>`;
-                item.onclick = () => selectLevel(p.lvl);
-                extraResults.appendChild(item);
-            });
-        }
+        const q = document.getElementById('search-bar').value.toLowerCase();
+        updateMap(q);
+    }
+
+    function switchMode(m) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + m).classList.add('active');
+        updateMap();
     }
 
     function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
-    function updateStats() { if(phrasesData.length) { const mastered = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (mastered/phrasesData.length)*100+"%"; } }
-    function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; selectLevel(currentLevel); }
-    function resetLevelMastery() { phrasesData.forEach(p => stats[p.pl] = 0); saveStats(); loadLevelData(); }
-    function switchMode(m) { 
-        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); 
-        document.getElementById('tab-'+m).classList.add('active'); 
-        document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; 
-        updateMap(); 
+    function updateStats() { 
+        const mastered = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; 
+        document.getElementById('progress-bar').style.width = (mastered/phrasesData.length)*100+"%"; 
     }
-    function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `progress.txt`; a.click(); }
-    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
-    function resetEverything() { if(confirm("Reset?")) { localStorage.clear(); location.reload(); } }
+    
+    function populateDropdown() {
+        document.getElementById('lvl-current').innerText = `Poziom ${currentLevel}`;
+    }
 
-    window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
-    window.onload = () => { initSpeech(); loadLevelData(); };
+    function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
+    function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; loadLevelData(); }
+    function resetEverything() { localStorage.clear(); location.reload(); }
+
+    window.onload = loadLevelData;
 </script>
 </body>
 </html>
