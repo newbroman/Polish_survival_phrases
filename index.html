@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Polish Master</title>
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Polish Master">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="theme-color" content="#dc143c">
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --accent-blue: #1976d2; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; --accent-blue: #42a5f5; } }
@@ -92,9 +101,23 @@
         .active-swap { background: var(--pol-red) !important; color: white !important; }
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; text-align: center; }
+
+        /* PWA Install Button */
+        .install-banner { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: var(--pol-red); color: white; padding: 12px 20px; border-radius: 25px; box-shadow: 0 4px 15px rgba(220,20,60,0.4); z-index: 500; display: none; align-items: center; gap: 10px; font-size: 0.75rem; font-weight: 700; }
+        .install-banner.show { display: flex; }
+        .install-btn { background: white; color: var(--pol-red); border: none; padding: 8px 16px; border-radius: 15px; font-weight: 700; cursor: pointer; font-size: 0.7rem; }
+        .close-install { background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; padding: 0 5px; opacity: 0.8; }
+
     </style>
 </head>
 <body>
+<!-- PWA Install Banner -->
+<div class="install-banner" id="installBanner">
+    <span>📱 Install Polish Master App</span>
+    <button class="install-btn" id="installBtn">Install</button>
+    <button class="close-install" onclick="closeInstallBanner()">×</button>
+</div>
+
 
 <div id="overlay">
     <h1 id="overlay-title">LEVEL MASTERED! 🏆</h1>
@@ -516,6 +539,61 @@
         loadLevelData();
         setGender(currentGender);
     };
+
+
+    // PWA Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(reg => console.log('Service Worker registered:', reg.scope))
+                .catch(err => console.log('Service Worker registration failed:', err));
+        });
+    }
+
+    // PWA Install Prompt
+    let deferredPrompt;
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Show install banner if not already installed
+        if (!window.matchMedia('(display-mode: standalone)').matches) {
+            setTimeout(() => {
+                document.getElementById('installBanner').classList.add('show');
+            }, 3000); // Show after 3 seconds
+        }
+    });
+
+    document.getElementById('installBtn')?.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        
+        if (outcome === 'accepted') {
+            console.log('User accepted install');
+            document.getElementById('installBanner').classList.remove('show');
+        }
+        
+        deferredPrompt = null;
+    });
+
+    function closeInstallBanner() {
+        document.getElementById('installBanner').classList.remove('show');
+        localStorage.setItem('installBannerDismissed', 'true');
+    }
+
+    // Hide install banner if already dismissed
+    if (localStorage.getItem('installBannerDismissed') === 'true') {
+        document.getElementById('installBanner')?.remove();
+    }
+
+    // Detect if running as installed app
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+        console.log('Running as installed PWA');
+    }
+
 </script>
 </body>
 </html>
