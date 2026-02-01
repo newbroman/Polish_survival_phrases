@@ -1,674 +1,426 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polish Master - Learning App with Gender Toggle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Polish Phrase Master</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
+        @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+        html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
-        .app-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
+        .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 12px 0; border-bottom: 1px solid #ccc; }
+        .title { font-weight: 800; font-size: 1.2rem; color: #333; text-align: center; margin: 0; text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
+
+        .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 10px 0; display: flex; flex-direction: column; gap: 8px; }
+        .toggle-container { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.7rem; font-weight: bold; }
         
-        /* Header with Gender Toggle */
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px;
-        }
+        /* Gender toggle - integrated into existing toggle design */
+        .gender-toggle-container { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
+        .gender-btn { background: var(--tile-bg); border: 1px solid #ccc; padding: 4px 10px; border-radius: 12px; cursor: pointer; font-size: 0.65rem; font-weight: 600; transition: all 0.2s; }
+        .gender-btn.active { background: var(--pol-red); color: white; border-color: var(--pol-red); }
         
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+        select, .search-box { width: 100%; background: var(--bg); border: 1px solid #ddd; color: var(--text); padding: 8px; border-radius: 8px; font-size: 0.85rem; outline: none; box-sizing: border-box; }
+
+        .progress-container { width: 100%; height: 4px; background: #ddd; }
+        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
+
+        .quiz-header { background: var(--card); padding: 12px 5%; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; flex-shrink: 0; position: relative; }
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 48px; height: 48px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .q-content { flex-grow: 1; text-align: center; }
+        .q-text { font-size: 1.3rem; font-weight: 800; }
+        .feedback { height: 14px; font-size: 0.75rem; font-weight: bold; }
         
-        .app-title {
-            font-size: 28px;
-            font-weight: 700;
-        }
+        /* Gender info button - subtle, top-right of quiz header */
+        .gender-info-btn { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: rgba(220, 20, 60, 0.1); border: 1px solid var(--pol-red); color: var(--pol-red); width: 24px; height: 24px; border-radius: 50%; font-size: 0.7rem; font-weight: bold; cursor: pointer; display: none; }
+        .gender-info-btn:active { background: var(--pol-red); color: white; }
+
+        .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
+        .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
+
+        .map-section { flex-grow: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; -webkit-overflow-scrolling: touch; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; max-width: 420px; }
+        .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 10px; cursor: pointer; padding: 6px; text-align: center; font-size: 0.65rem; font-weight: 700; line-height: 1.1; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden; }
+        .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
+
+        .mastered-list { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 8px; }
+        .banked-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 12px; border-radius: 10px; border: 1px solid #ddd; text-align: left; position: relative; cursor: pointer; }
+        .lvl-tag { font-size: 0.5rem; background: #eee; padding: 2px 4px; border-radius: 4px; position: absolute; right: 45px; top: 12px; color: #888; }
+
+        .footer { padding: 10px 10px 30px 10px; display: flex; justify-content: center; gap: 8px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
+        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.65rem; padding: 8px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
+
+        #save-toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.7rem; display: none; z-index: 1000; pointer-events: none; }
         
-        .gender-toggle {
-            background: rgba(255,255,255,0.2);
-            border-radius: 20px;
-            padding: 4px;
-            display: flex;
-            gap: 4px;
-        }
-        
-        .gender-btn {
-            padding: 8px 16px;
-            border: none;
-            background: transparent;
-            color: rgba(255,255,255,0.7);
-            border-radius: 16px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .gender-btn.active {
-            background: white;
-            color: #667eea;
-        }
-        
-        .gender-btn:hover:not(.active) {
-            background: rgba(255,255,255,0.1);
-            color: white;
-        }
-        
-        .mode-toggle {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .mode-btn {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid rgba(255,255,255,0.3);
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .mode-btn.active {
-            background: white;
-            color: #667eea;
-        }
-        
-        /* Tier Navigation */
-        .tier-nav {
-            display: flex;
-            background: #f8f9fa;
-            overflow-x: auto;
-        }
-        
-        .tier-tab {
-            flex: 1;
-            padding: 15px 10px;
-            text-align: center;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s;
-            min-width: 100px;
-        }
-        
-        .tier-tab.active.foundation { border-color: #9b59b6; background: #f8f5ff; }
-        .tier-tab.active.survival { border-color: #27ae60; background: #f0fff4; }
-        .tier-tab.active.practical { border-color: #f39c12; background: #fffbf0; }
-        .tier-tab.active.advanced { border-color: #3498db; background: #f0f8ff; }
-        
-        .tier-name {
-            font-weight: 600;
-            font-size: 13px;
-        }
-        
-        .tier-count {
-            font-size: 11px;
-            color: #666;
-            margin-top: 3px;
-        }
-        
-        /* Flashcard */
-        .flashcard-container {
-            padding: 40px 30px;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .flashcard {
-            width: 100%;
-            max-width: 500px;
-            background: white;
-            border-radius: 15px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-            position: relative;
-        }
-        
-        .flashcard:hover {
-            transform: translateY(-5px);
-        }
-        
-        .flashcard.flipped {
-            background: #f8f9fa;
-        }
-        
-        .phrase-polish {
-            font-size: 32px;
-            font-weight: 700;
-            color: #667eea;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-        
-        .phrase-english {
-            font-size: 24px;
-            color: #666;
-            line-height: 1.4;
-        }
-        
-        .gender-indicator {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #667eea;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        
-        .gender-info-btn {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(102, 126, 234, 0.1);
-            color: #667eea;
-            border: 2px solid #667eea;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .gender-info-btn:hover {
-            background: #667eea;
-            color: white;
-        }
-        
-        /* Gender Variant Modal */
-        .gender-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .gender-modal.show {
-            display: flex;
-        }
-        
-        .gender-modal-content {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 500px;
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        
-        .gender-modal h3 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        
-        .gender-variant {
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        
-        .gender-variant-label {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 5px;
-        }
-        
-        .gender-variant-text {
-            font-size: 20px;
-            font-weight: 600;
-            color: #667eea;
-        }
-        
-        .close-modal {
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
-        
-        /* Controls */
-        .controls {
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #e0e0e0;
-        }
-        
-        .progress {
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .nav-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .nav-btn {
-            padding: 10px 20px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .nav-btn:hover {
-            background: #5568d3;
-            transform: translateY(-2px);
-        }
-        
-        .nav-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        /* Level selector */
-        .level-selector {
-            padding: 20px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .level-selector select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-            background: white;
-        }
-        
-        /* Info box */
-        .info-box {
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 15px;
-            margin: 20px;
-            border-radius: 8px;
-        }
-        
-        .info-box strong {
-            color: #1976d2;
-        }
+        /* Gender modal - minimal overlay */
+        .gender-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 200; align-items: center; justify-content: center; }
+        .gender-modal.show { display: flex; }
+        .gender-modal-content { background: var(--card); border-radius: 15px; padding: 25px; max-width: 350px; margin: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .gender-modal h3 { margin: 0 0 15px 0; font-size: 1.1rem; }
+        .gender-variant { background: var(--bg); padding: 12px; border-radius: 8px; margin-bottom: 8px; }
+        .gender-variant-label { font-size: 0.7rem; color: #888; margin-bottom: 4px; }
+        .gender-variant-text { font-size: 1.1rem; font-weight: 700; color: var(--pol-red); }
+        .close-modal { margin-top: 15px; padding: 10px; background: var(--pol-red); color: white; border: none; border-radius: 8px; cursor: pointer; width: 100%; font-weight: 600; }
     </style>
 </head>
 <body>
-    <div class="app-container">
-        <!-- Header -->
-        <div class="header">
-            <div class="header-top">
-                <div class="app-title">🇵🇱 Polish Master</div>
-                <div class="gender-toggle">
-                    <button class="gender-btn" onclick="setGender('m')">♂ Male</button>
-                    <button class="gender-btn active" onclick="setGender('both')">Both</button>
-                    <button class="gender-btn" onclick="setGender('f')">♀ Female</button>
-                </div>
-            </div>
-            <div class="mode-toggle">
-                <button class="mode-btn active" onclick="switchMode('learning')">📚 Learning Mode</button>
-                <button class="mode-btn" onclick="switchMode('phrasebook')">📖 Phrasebook</button>
-            </div>
-        </div>
-        
-        <!-- Info Box -->
-        <div class="info-box">
-            <strong>Gender Toggle:</strong> Polish adjectives and verbs change based on speaker's gender. 
-            Select your gender above, or choose "Both" to see all forms while learning.
-        </div>
-        
-        <!-- Tier Navigation -->
-        <div class="tier-nav">
-            <div class="tier-tab foundation" onclick="switchTier('foundation')">
-                <div class="tier-name">🟣 Foundation</div>
-                <div class="tier-count">123 items</div>
-            </div>
-            <div class="tier-tab survival active" onclick="switchTier('survival')">
-                <div class="tier-name">🟢 Survival</div>
-                <div class="tier-count">350 phrases</div>
-            </div>
-            <div class="tier-tab practical" onclick="switchTier('practical')">
-                <div class="tier-name">🟡 Practical</div>
-                <div class="tier-count">700 phrases</div>
-            </div>
-            <div class="tier-tab advanced" onclick="switchTier('advanced')">
-                <div class="tier-name">🔵 Advanced</div>
-                <div class="tier-count">625 phrases</div>
-            </div>
-        </div>
-        
-        <!-- Level Selector -->
-        <div class="level-selector">
-            <select id="levelSelect" onchange="loadLevel(this.value)">
-                <option value="">Select a level...</option>
-            </select>
-        </div>
-        
-        <!-- Flashcard -->
-        <div class="flashcard-container">
-            <div class="flashcard" id="flashcard" onclick="flipCard()">
-                <button class="gender-info-btn" id="genderInfoBtn" onclick="showGenderInfo(event)" style="display: none;">ℹ️</button>
-                <div id="genderIndicator" class="gender-indicator" style="display: none;"></div>
-                <div class="phrase-polish" id="phrasePolish">Select a level to start</div>
-                <div class="phrase-english" id="phraseEnglish" style="display: none;"></div>
-            </div>
-        </div>
-        
-        <!-- Controls -->
-        <div class="controls">
-            <div class="progress" id="progress">-</div>
-            <div class="nav-buttons">
-                <button class="nav-btn" id="prevBtn" onclick="prevPhrase()" disabled>← Previous</button>
-                <button class="nav-btn" id="nextBtn" onclick="nextPhrase()" disabled>Next →</button>
-            </div>
-        </div>
-        
-        <!-- Gender Info Modal -->
-        <div class="gender-modal" id="genderModal" onclick="closeGenderModal()">
-            <div class="gender-modal-content" onclick="event.stopPropagation()">
-                <h3>Gender Variants</h3>
-                <div id="genderVariantsContent"></div>
-                <button class="close-modal" onclick="closeGenderModal()">Close</button>
-            </div>
-        </div>
+
+<div id="save-toast"></div>
+
+<div id="overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; color: white; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <h1>LEVEL MASTERED! 🏆</h1>
+    <button onclick="advanceLevel()" style="background:var(--pol-red); color:white; border:none; padding:15px 30px; border-radius:10px; font-weight:bold; margin-top: 20px;">Next Level</button>
+</div>
+
+<!-- Gender Info Modal -->
+<div class="gender-modal" id="genderModal" onclick="closeGenderModal()">
+    <div class="gender-modal-content" onclick="event.stopPropagation()">
+        <h3>Gender Variants</h3>
+        <div id="genderVariantsContent"></div>
+        <button class="close-modal" onclick="closeGenderModal()">Close</button>
     </div>
-    
-    <script>
-        // State
-        let currentGender = localStorage.getItem('polishMasterGender') || 'both';
-        let currentMode = 'learning';
-        let currentTier = 'survival';
-        let currentLevel = null;
-        let currentPhrases = [];
-        let currentIndex = 0;
-        let isFlipped = false;
+</div>
+
+<div class="header">
+    <div class="title-banner"><h1 class="title">Say some Polish phrases</h1></div>
+    <div class="controls-row">
+        <div class="toggle-container">
+            <span>EN ⮕ PL</span>
+            <input type="checkbox" id="lang-toggle" onchange="toggleLang()">
+            <span>PL ⮕ EN</span>
+        </div>
+        <div class="gender-toggle-container">
+            <span style="opacity: 0.6;">Gender:</span>
+            <button class="gender-btn" onclick="setGender('m')">♂ Male</button>
+            <button class="gender-btn active" onclick="setGender('both')">Both</button>
+            <button class="gender-btn" onclick="setGender('f')">♀ Female</button>
+        </div>
+        <select id="level-select" onchange="changeLevel(this.value)"></select>
+        <input type="text" id="search-bar" class="search-box" placeholder="Search all levels..." oninput="handleGlobalSearch()">
+    </div>
+</div>
+
+<div class="progress-container"><div id="progress-bar"></div></div>
+
+<div class="quiz-header" id="quiz-ui">
+    <button class="speaker-btn" onclick="speakTarget()">🔊</button>
+    <div class="q-content">
+        <div id="q-text" class="q-text">Ready?</div>
+        <div id="feedback" class="feedback"></div>
+    </div>
+    <button class="gender-info-btn" id="genderInfoBtn" onclick="showGenderInfo(event)">ℹ️</button>
+</div>
+
+<div class="mode-tabs">
+    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">PRACTICE</div>
+    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
+</div>
+
+<div class="map-section">
+    <div id="mastery-map"></div>
+</div>
+
+<div class="footer">
+    <button class="footer-btn" onclick="downloadProgress()">Save File</button>
+    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load File</button>
+    <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Clear All</button>
+    <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
+</div>
+
+<script>
+    const levelNames = ["Basics", "Greetings", "Numbers", "Food", "Travel", "Home", "Work", "Nature", "Body", "Shopping", "Time", "Weather", "Family", "Clothes", "Directions", "Health", "Gov", "Culture", "Abstract", "Glue"];
+    let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
+    let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 1;
+    let currentGender = localStorage.getItem('polishMasterGender') || 'both';
+    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null, reverse = false;
+    const THRESHOLD = 3;
+    let plVoice = null;
+
+    function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
+    window.speechSynthesis.onvoiceschanged = initSpeech;
+
+    // Initialize gender toggle UI
+    function setGender(gender) {
+        currentGender = gender;
+        localStorage.setItem('polishMasterGender', gender);
         
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            setGender(currentGender);
-            loadTierLevels();
-        });
+        // Update button states
+        document.querySelectorAll('.gender-btn').forEach(btn => btn.classList.remove('active'));
+        event?.target?.classList.add('active');
         
-        // Gender toggle
-        function setGender(gender) {
-            currentGender = gender;
-            localStorage.setItem('polishMasterGender', gender);
-            
-            // Update UI
-            document.querySelectorAll('.gender-btn').forEach(btn => btn.classList.remove('active'));
-            event?.target?.classList?.add('active') || 
-                document.querySelector(`.gender-btn:nth-child(${gender === 'm' ? 1 : gender === 'both' ? 2 : 3})`).classList.add('active');
-            
-            // Reload current phrase with new gender
-            if (currentPhrases.length > 0) {
-                displayPhrase();
+        // Reload display with new gender
+        updateMap();
+        if (currentTarget) {
+            document.getElementById('q-text').innerText = getDisplayText(currentTarget, reverse);
+            updateGenderInfoButton();
+        }
+    }
+
+    // Get display text based on gender setting
+    function getDisplayText(phrase, showEnglish = false) {
+        if (showEnglish) {
+            return reverse ? phrase.pl : phrase.en;
+        }
+        
+        // If phrase has gender variants, apply user's preference
+        if (phrase.gender === 'both' && phrase.variants) {
+            if (currentGender === 'm') {
+                return reverse ? phrase.variants.m : phrase.en;
+            } else if (currentGender === 'f') {
+                return reverse ? phrase.variants.f : phrase.en;
+            } else {
+                // Both mode - show both forms
+                return reverse ? `${phrase.variants.m} / ${phrase.variants.f}` : phrase.en;
             }
         }
         
-        // Switch tier
-        function switchTier(tier) {
-            currentTier = tier;
-            document.querySelectorAll('.tier-tab').forEach(tab => tab.classList.remove('active'));
-            document.querySelector(`.tier-tab.${tier}`).classList.add('active');
-            loadTierLevels();
+        // No gender variant - return normal
+        return reverse ? phrase.pl : phrase.en;
+    }
+
+    // Update gender info button visibility
+    function updateGenderInfoButton() {
+        const btn = document.getElementById('genderInfoBtn');
+        if (currentTarget && currentTarget.gender === 'both' && currentTarget.variants) {
+            btn.style.display = 'flex';
+        } else {
+            btn.style.display = 'none';
         }
+    }
+
+    // Show gender info modal
+    function showGenderInfo(event) {
+        event.stopPropagation();
         
-        // Load levels for current tier
-        function loadTierLevels() {
-            const tierLevels = {
-                'foundation': [0, 0.1],
-                'survival': [1, 2, 3, 4, 5],
-                'practical': [6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-                'advanced': [16, 17, 18, 19, 20, 21, 22]
-            };
-            
-            const levels = tierLevels[currentTier] || [];
-            const select = document.getElementById('levelSelect');
-            select.innerHTML = '<option value="">Select a level...</option>';
-            
-            // Load level metadata
-            levels.forEach(async (levelNum) => {
-                try {
-                    const response = await fetch(`phrases_${levelNum}.json`);
-                    const data = await response.json();
-                    const option = document.createElement('option');
-                    option.value = levelNum;
-                    option.textContent = `Level ${levelNum}: ${data.description} (${data.phrases.length})`;
-                    select.appendChild(option);
-                } catch (e) {
-                    console.log(`Level ${levelNum} not found`);
+        if (!currentTarget || !currentTarget.variants) return;
+        
+        const modal = document.getElementById('genderModal');
+        const content = document.getElementById('genderVariantsContent');
+        
+        content.innerHTML = `
+            <div class="gender-variant">
+                <div class="gender-variant-label">♂ Masculine (Male speaker)</div>
+                <div class="gender-variant-text">${currentTarget.variants.m}</div>
+            </div>
+            <div class="gender-variant">
+                <div class="gender-variant-label">♀ Feminine (Female speaker)</div>
+                <div class="gender-variant-text">${currentTarget.variants.f}</div>
+            </div>
+            <div style="margin-top: 12px; padding: 10px; background: rgba(220,20,60,0.1); border-radius: 6px; font-size: 0.7rem; line-height: 1.4;">
+                <strong>💡 Tip:</strong> Polish adjectives and past tense verbs change based on speaker's gender.
+            </div>
+        `;
+        
+        modal.classList.add('show');
+    }
+
+    function closeGenderModal() {
+        document.getElementById('genderModal').classList.remove('show');
+    }
+
+    const lvlSelect = document.getElementById('level-select');
+    for (let i = 0; i <= 22; i++) {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.innerText = `Level ${i}`;
+        if (i === currentLevel) opt.selected = true;
+        lvlSelect.appendChild(opt);
+    }
+
+    async function loadLevelData() {
+        try {
+            const resp = await fetch(`phrases_${currentLevel}.json`);
+            if (!resp.ok) throw new Error("File not found");
+            const data = await resp.json();
+            phrasesData = data.phrases;
+            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
+            updateStats(); updateMap(); startNewRound();
+            cacheAllPhrases();
+        } catch (err) { 
+            console.error("Load failed:", err);
+            document.getElementById('q-text').innerText = "Level file missing!";
+        }
+    }
+
+    async function cacheAllPhrases() {
+        if (allPhrasesCache.length > 0) return;
+        for (let i = 0; i <= 22; i++) {
+            try {
+                const r = await fetch(`phrases_${i}.json`);
+                if (r.ok) {
+                    const d = await r.json();
+                    allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: i})));
                 }
+            } catch(e) {}
+        }
+    }
+
+    function toggleLang() { reverse = document.getElementById('lang-toggle').checked; updateMap(); startNewRound(); }
+
+    function startNewRound() {
+        if (!activePool.length || document.getElementById('tab-learning').className.indexOf('active') === -1) return;
+        currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
+        
+        // Display with gender awareness
+        const displayText = reverse ? 
+            (currentTarget.gender === 'both' && currentTarget.variants ? 
+                (currentGender === 'm' ? currentTarget.variants.m : 
+                 currentGender === 'f' ? currentTarget.variants.f : 
+                 `${currentTarget.variants.m} / ${currentTarget.variants.f}`) : 
+                currentTarget.pl) : 
+            currentTarget.en;
+        
+        document.getElementById('q-text').innerText = displayText;
+        document.getElementById('feedback').innerText = "";
+        updateGenderInfoButton();
+        
+        setTimeout(() => speak(currentTarget.pl), 300);
+    }
+
+    function checkAnswer(phrase, el) {
+        if (phrase.pl === currentTarget.pl) {
+            stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
+            document.getElementById('feedback').innerText = "Correct! 🌟";
+            saveStats();
+            
+            setTimeout(() => {
+                if (stats[phrase.pl] >= THRESHOLD) {
+                    activePool = activePool.filter(p => p.pl !== phrase.pl);
+                    let nextCandidate = phrasesData.find(p => (stats[p.pl]||0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
+                    if (nextCandidate && activePool.length < 12) {
+                        activePool.push(nextCandidate);
+                    }
+                }
+                
+                updateStats(); 
+                updateMap();
+
+                if (activePool.length === 0) {
+                    document.getElementById('overlay').style.display='flex';
+                } else {
+                    startNewRound();
+                }
+            }, 800);
+        } else {
+            stats[currentTarget.pl] = Math.max(0, (stats[currentTarget.pl] || 0) - 1);
+            el.classList.add('wrong');
+            setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1400);
+        }
+    }
+
+    function updateMap() {
+        const area = document.getElementById('mastery-map'); area.innerHTML = '';
+        if (document.getElementById('tab-learning').classList.contains('active')) {
+            area.className = "grid";
+            activePool.forEach(p => {
+                const tile = document.createElement('div'); tile.className = 'tile';
+                
+                // Display with gender awareness
+                if (p.gender === 'both' && p.variants) {
+                    if (currentGender === 'm') {
+                        tile.innerText = reverse ? p.en : p.variants.m;
+                    } else if (currentGender === 'f') {
+                        tile.innerText = reverse ? p.en : p.variants.f;
+                    } else {
+                        tile.innerText = reverse ? p.en : `${p.variants.m} / ${p.variants.f}`;
+                    }
+                } else {
+                    tile.innerText = reverse ? p.en : p.pl;
+                }
+                
+                const c = stats[p.pl] || 0;
+                if (c > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${c/THRESHOLD})`;
+                tile.onclick = () => checkAnswer(p, tile);
+                area.appendChild(tile);
+            });
+        } else {
+            area.className = "mastered-list";
+            phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).forEach(p => {
+                const item = document.createElement('div'); item.className = 'banked-item';
+                
+                // Display with gender awareness
+                let displayPl = p.pl;
+                if (p.gender === 'both' && p.variants) {
+                    if (currentGender === 'm') {
+                        displayPl = p.variants.m;
+                    } else if (currentGender === 'f') {
+                        displayPl = p.variants.f;
+                    }
+                }
+                
+                item.innerHTML = `<div><strong>${displayPl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
+                area.appendChild(item);
             });
         }
-        
-        // Load level
-        async function loadLevel(levelNum) {
-            if (!levelNum) return;
+    }
+
+    function handleGlobalSearch() {
+        const q = document.getElementById('search-bar').value.toLowerCase();
+        if (!q) return updateMap();
+        const area = document.getElementById('mastery-map'); area.innerHTML = ''; area.className = "mastered-list";
+        allPhrasesCache.filter(p => p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)).slice(0, 30).forEach(p => {
+            const item = document.createElement('div'); item.className = 'banked-item';
             
-            try {
-                const response = await fetch(`phrases_${levelNum}.json`);
-                const data = await response.json();
-                currentLevel = levelNum;
-                currentPhrases = data.phrases || [];
-                currentIndex = 0;
-                isFlipped = false;
-                
-                displayPhrase();
-                updateControls();
-            } catch (e) {
-                alert(`Error loading level ${levelNum}`);
-            }
-        }
-        
-        // Display current phrase with gender handling
-        function displayPhrase() {
-            if (currentPhrases.length === 0) return;
-            
-            const phrase = currentPhrases[currentIndex];
-            const flashcard = document.getElementById('flashcard');
-            const polishText = document.getElementById('phrasePolish');
-            const englishText = document.getElementById('phraseEnglish');
-            const genderInfoBtn = document.getElementById('genderInfoBtn');
-            const genderIndicator = document.getElementById('genderIndicator');
-            
-            // Get appropriate Polish text based on gender setting
-            let displayText = phrase.pl;
-            
-            if (phrase.gender === 'both' && phrase.variants) {
+            // Display with gender awareness in search results
+            let displayPl = p.pl;
+            if (p.gender === 'both' && p.variants) {
                 if (currentGender === 'm') {
-                    displayText = phrase.variants.m;
-                    genderIndicator.textContent = '♂';
-                    genderIndicator.style.display = 'block';
+                    displayPl = p.variants.m;
                 } else if (currentGender === 'f') {
-                    displayText = phrase.variants.f;
-                    genderIndicator.textContent = '♀';
-                    genderIndicator.style.display = 'block';
-                } else {
-                    // Both - show both forms
-                    displayText = `${phrase.variants.m} / ${phrase.variants.f}`;
-                    genderIndicator.textContent = '♂♀';
-                    genderIndicator.style.display = 'block';
+                    displayPl = p.variants.f;
                 }
-                
-                // Show info button for gendered phrases
-                genderInfoBtn.style.display = 'flex';
-            } else {
-                genderInfoBtn.style.display = 'none';
-                genderIndicator.style.display = 'none';
             }
             
-            polishText.textContent = displayText;
-            englishText.textContent = phrase.en;
-            
-            // Reset flip state
-            if (isFlipped) {
-                englishText.style.display = 'block';
-                flashcard.classList.add('flipped');
-            } else {
-                englishText.style.display = 'none';
-                flashcard.classList.remove('flipped');
-            }
-            
-            // Update progress
-            document.getElementById('progress').textContent = 
-                `${currentIndex + 1} / ${currentPhrases.length}`;
-        }
+            item.innerHTML = `<span class="lvl-tag">Lvl ${p.lvl}</span><div><strong>${displayPl}</strong><br><small>${p.en}</small></div><div onclick="event.stopPropagation(); speak('${p.pl}')">🔊</div>`;
+            item.onclick = () => jumpToLevel(p.lvl);
+            area.appendChild(item);
+        });
+    }
+
+    function jumpToLevel(lvl) {
+        currentLevel = lvl; lvlSelect.value = lvl; document.getElementById('search-bar').value = '';
+        saveStats(); loadLevelData(); showSaveToast(`Jumped to Level ${lvl}`);
+    }
+
+    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
+    function downloadProgress() { 
+        const date = new Date().toLocaleDateString().replace(/\//g, '-');
+        const blob = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); 
+        const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `polish_progress_${date}.txt`; a.click(); 
+    }
+    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
+    function showSaveToast(msg) { const t = document.getElementById('save-toast'); t.innerText = msg; t.style.display='block'; setTimeout(()=>t.style.display='none', 1000); }
+    function resetEverything() { if(confirm("Clear all progress?")) { localStorage.clear(); location.reload(); } }
+    function updateStats() { if(phrasesData.length) document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%"; }
+    function switchMode(m) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; document.getElementById('search-bar').value = ''; updateMap(); }
+    function speak(t) { const m = new SpeechSynthesisUtterance(t); if(plVoice) m.voice=plVoice; m.lang='pl-PL'; window.speechSynthesis.speak(m); }
+    function changeLevel(v) { currentLevel = parseInt(v); saveStats(); loadLevelData(); }
+    function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
+    function advanceLevel() { 
+        currentLevel++; 
+        if(currentLevel > 22) currentLevel = 1; 
+        lvlSelect.value = currentLevel; 
+        document.getElementById('overlay').style.display='none';
+        changeLevel(currentLevel); 
+    }
+
+    // Initialize gender toggle button states on load
+    window.onload = () => { 
+        initSpeech(); 
+        loadLevelData();
         
-        // Flip card
-        function flipCard() {
-            isFlipped = !isFlipped;
-            const flashcard = document.getElementById('flashcard');
-            const englishText = document.getElementById('phraseEnglish');
-            
-            if (isFlipped) {
-                englishText.style.display = 'block';
-                flashcard.classList.add('flipped');
-            } else {
-                englishText.style.display = 'none';
-                flashcard.classList.remove('flipped');
-            }
-        }
-        
-        // Show gender info modal
-        function showGenderInfo(event) {
-            event.stopPropagation();
-            
-            const phrase = currentPhrases[currentIndex];
-            if (!phrase.variants) return;
-            
-            const modal = document.getElementById('genderModal');
-            const content = document.getElementById('genderVariantsContent');
-            
-            content.innerHTML = `
-                <div class="gender-variant">
-                    <div class="gender-variant-label">♂ Masculine (Male speaker)</div>
-                    <div class="gender-variant-text">${phrase.variants.m}</div>
-                </div>
-                <div class="gender-variant">
-                    <div class="gender-variant-label">♀ Feminine (Female speaker)</div>
-                    <div class="gender-variant-text">${phrase.variants.f}</div>
-                </div>
-                <div style="margin-top: 15px; padding: 15px; background: #fff3cd; border-radius: 8px; font-size: 14px;">
-                    <strong>💡 Tip:</strong> In Polish, adjectives and past tense verbs change based on the speaker's gender. 
-                    Use the gender toggle above to see your preferred form.
-                </div>
-            `;
-            
-            modal.classList.add('show');
-        }
-        
-        // Close modal
-        function closeGenderModal() {
-            document.getElementById('genderModal').classList.remove('show');
-        }
-        
-        // Navigation
-        function nextPhrase() {
-            if (currentIndex < currentPhrases.length - 1) {
-                currentIndex++;
-                isFlipped = false;
-                displayPhrase();
-                updateControls();
-            }
-        }
-        
-        function prevPhrase() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                isFlipped = false;
-                displayPhrase();
-                updateControls();
-            }
-        }
-        
-        function updateControls() {
-            document.getElementById('prevBtn').disabled = currentIndex === 0;
-            document.getElementById('nextBtn').disabled = currentIndex >= currentPhrases.length - 1;
-        }
-        
-        // Switch mode
-        function switchMode(mode) {
-            currentMode = mode;
-            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            if (mode === 'phrasebook') {
-                window.location.href = 'phrasebook-features.html';
-            }
-        }
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
-                e.preventDefault();
-                if (!isFlipped) {
-                    flipCard();
-                } else {
-                    nextPhrase();
-                }
-            } else if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                prevPhrase();
-            } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-                e.preventDefault();
-                flipCard();
+        // Set active gender button
+        document.querySelectorAll('.gender-btn').forEach(btn => {
+            const btnGender = btn.onclick.toString().match(/'([mf]|both)'/)?.[1];
+            if (btnGender === currentGender) {
+                btn.classList.add('active');
             }
         });
-    </script>
+    };
+</script>
 </body>
 </html>
