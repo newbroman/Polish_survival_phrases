@@ -1,496 +1,496 @@
 {
   "level": 17,
-  "description": "Government & Official Matters",
-  "lastUpdated": "2026-01-28",
+  "description": "Government & Official Matters - Bureaucracy",
+  "tier": "ADVANCED",
   "phrases": [
     {
-      "id": "d11",
+      "id": "a17_01",
+      "category": "Documents",
+      "pl": "Dokument",
+      "en": "Document",
+      "level": 17
+    },
+    {
+      "id": "a17_02",
       "category": "Documents",
       "pl": "Dokumenty",
       "en": "Documents",
       "level": 17
     },
     {
-      "id": "d13",
+      "id": "a17_03",
       "category": "Documents",
       "pl": "Paszport",
       "en": "Passport",
       "level": 17
     },
     {
-      "id": "d15",
+      "id": "a17_04",
+      "category": "Documents",
+      "pl": "Dowód osobisty",
+      "en": "ID card",
+      "level": 17
+    },
+    {
+      "id": "a17_05",
       "category": "Documents",
       "pl": "PESEL",
       "en": "PESEL (Polish ID number)",
       "level": 17
     },
     {
-      "id": "d16",
+      "id": "a17_06",
       "category": "Documents",
       "pl": "Karta pobytu",
       "en": "Residence card",
       "level": 17
     },
     {
-      "id": "d17",
+      "id": "a17_07",
       "category": "Documents",
       "pl": "Wiza",
       "en": "Visa",
       "level": 17
     },
     {
-      "id": "d18",
+      "id": "a17_08",
       "category": "Documents",
-      "pl": "Zaświadczenie",
-      "en": "Certificate / Proof",
+      "pl": "Zezwolenie na pracę",
+      "en": "Work permit",
       "level": 17
     },
     {
-      "id": "d19",
+      "id": "a17_09",
       "category": "Documents",
-      "pl": "Zezwolenie",
-      "en": "Permit",
+      "pl": "Prawo jazdy",
+      "en": "Driver's license",
       "level": 17
     },
     {
-      "id": "d20",
-      "category": "Documents",
-      "pl": "Ubezpieczenie",
-      "en": "Insurance",
-      "level": 17
-    },
-    {
-      "id": "f51",
-      "category": "Formal Phrases",
-      "pl": "Chciałbym złożyć wniosek",
-      "en": "I would like to submit an application",
-      "level": 17
-    },
-    {
-      "id": "f52",
-      "category": "Formal Phrases",
-      "pl": "Gdzie jest okienko numer...?",
-      "en": "Where is window number...?",
-      "level": 17
-    },
-    {
-      "id": "f53",
-      "category": "Formal Phrases",
-      "pl": "Czy to jest płatne?",
-      "en": "Is there a fee for this?",
-      "level": 17
-    },
-    {
-      "id": "f54",
-      "category": "Formal Phrases",
-      "pl": "Proszę tutaj podpisać",
-      "en": "Please sign here",
-      "level": 17
-    },
-    {
-      "id": "f55",
-      "category": "Formal Phrases",
-      "pl": "Kiedy to będzie gotowe?",
-      "en": "When will it be ready?",
-      "level": 17
-    },
-    {
-      "id": "f56",
-      "category": "Formal Phrases",
-      "pl": "Potrzebuję kserokopii",
-      "en": "I need a photocopy",
-      "level": 17
-    },
-    {
-      "id": "f57",
-      "category": "Formal Phrases",
-      "pl": "Moja wiza wygasa",
-      "en": "My visa is expiring",
-      "level": 17
-    },
-    {
-      "id": "f58",
-      "category": "Formal Phrases",
-      "pl": "Zgubiłem dokumenty",
-      "en": "I lost my documents",
-      "level": 17
-    },
-    {
-      "id": "f59",
-      "category": "Formal Phrases",
-      "pl": "Czy muszę mieć termin?",
-      "en": "Do I need an appointment?",
-      "level": 17
-    },
-    {
-      "id": "f60",
-      "category": "Formal Phrases",
-      "pl": "To jest pilne",
-      "en": "This is urgent",
-      "level": 17
-    },
-    {
-      "id": "g1",
-      "category": "Administration",
-      "pl": "Urząd",
-      "en": "Office / Bureau",
-      "level": 17
-    },
-    {
-      "id": "g10",
-      "category": "Administration",
-      "pl": "Wniosek",
-      "en": "Application / Petition",
-      "level": 17
-    },
-    {
-      "id": "g2",
-      "category": "Administration",
-      "pl": "Urząd Miasta",
-      "en": "City Hall",
-      "level": 17
-    },
-    {
-      "id": "g3",
-      "category": "Administration",
-      "pl": "Urząd Skarbowy",
-      "en": "Tax Office",
-      "level": 17
-    },
-    {
-      "id": "g4",
-      "category": "Administration",
-      "pl": "Poczta",
-      "en": "Post Office",
-      "level": 17
-    },
-    {
-      "id": "g5",
-      "category": "Administration",
-      "pl": "Ambasada",
-      "en": "Embassy",
-      "level": 17
-    },
-    {
-      "id": "g6",
-      "category": "Administration",
-      "pl": "Konsulat",
-      "en": "Consulate",
-      "level": 17
-    },
-    {
-      "id": "g7",
-      "category": "Administration",
-      "pl": "Urzędnik",
-      "en": "Official / Clerk",
-      "level": 17
-    },
-    {
-      "id": "g8",
-      "category": "Administration",
-      "pl": "Kolejka",
-      "en": "Queue",
-      "level": 17
-    },
-    {
-      "id": "g9",
-      "category": "Administration",
-      "pl": "Numerek",
-      "en": "Ticket number (from machine)",
-      "level": 17
-    },
-    {
-      "id": "l31",
-      "category": "Legal & Formal",
-      "pl": "Prawo",
-      "en": "Law",
-      "level": 17
-    },
-    {
-      "id": "l32",
-      "category": "Legal & Formal",
-      "pl": "Prawnik",
-      "en": "Lawyer",
-      "level": 17
-    },
-    {
-      "id": "l33",
-      "category": "Legal & Formal",
-      "pl": "Notariusz",
-      "en": "Notary",
-      "level": 17
-    },
-    {
-      "id": "l35",
-      "category": "Legal & Formal",
-      "pl": "Pieczątka",
-      "en": "Stamp / Seal",
-      "level": 17
-    },
-    {
-      "id": "l36",
-      "category": "Legal & Formal",
-      "pl": "Oryginał",
-      "en": "Original",
-      "level": 17
-    },
-    {
-      "id": "l37",
-      "category": "Legal & Formal",
-      "pl": "Kserokopia",
-      "en": "Photocopy",
-      "level": 17
-    },
-    {
-      "id": "l38",
-      "category": "Legal & Formal",
-      "pl": "Tłumaczenie przysięgłe",
-      "en": "Sworn translation",
-      "level": 17
-    },
-    {
-      "id": "l39",
-      "category": "Legal & Formal",
-      "pl": "Podatek",
-      "en": "Tax",
-      "level": 17
-    },
-    {
-      "id": "p21",
-      "category": "At the Post Office",
-      "pl": "List",
-      "en": "Letter",
-      "level": 17
-    },
-    {
-      "id": "p22",
-      "category": "At the Post Office",
-      "pl": "Paczka",
-      "en": "Parcel / Package",
-      "level": 17
-    },
-    {
-      "id": "p23",
-      "category": "At the Post Office",
-      "pl": "Znaczek",
-      "en": "Stamp",
-      "level": 17
-    },
-    {
-      "id": "p24",
-      "category": "At the Post Office",
-      "pl": "Koperta",
-      "en": "Envelope",
-      "level": 17
-    },
-    {
-      "id": "p25",
-      "category": "At the Post Office",
-      "pl": "List polecony",
-      "en": "Registered letter",
-      "level": 17
-    },
-    {
-      "id": "p26",
-      "category": "At the Post Office",
-      "pl": "Awizo",
-      "en": "Delivery notice",
-      "level": 17
-    },
-    {
-      "id": "p27",
-      "category": "At the Post Office",
-      "pl": "Skrytka pocztowa",
-      "en": "P.O. box",
-      "level": 17
-    },
-    {
-      "id": "p28",
-      "category": "At the Post Office",
-      "pl": "Paczkomat",
-      "en": "Parcel locker",
-      "level": 17
-    },
-    {
-      "id": "p29",
-      "category": "At the Post Office",
-      "pl": "Nadać paczkę",
-      "en": "To send a package",
-      "level": 17
-    },
-    {
-      "id": "p30",
-      "category": "At the Post Office",
-      "pl": "Odebrać paczkę",
-      "en": "To pick up a package",
-      "level": 17
-    },
-    {
-      "id": "s61",
-      "category": "Public Safety",
-      "pl": "Policja",
-      "en": "Police",
-      "level": 17
-    },
-    {
-      "id": "s62",
-      "category": "Public Safety",
-      "pl": "Straż Pożarna",
-      "en": "Fire Department",
-      "level": 17
-    },
-    {
-      "id": "s63",
-      "category": "Public Safety",
-      "pl": "Straż Miejska",
-      "en": "City Guard",
-      "level": 17
-    },
-    {
-      "id": "s64",
-      "category": "Public Safety",
-      "pl": "Pogotowie",
-      "en": "Ambulance / Emergency",
-      "level": 17
-    },
-    {
-      "id": "s65",
-      "category": "Public Safety",
-      "pl": "Numer alarmowy 112",
-      "en": "Emergency number 112",
-      "level": 17
-    },
-    {
-      "id": "s66",
-      "category": "Public Safety",
-      "pl": "Złodziej",
-      "en": "Thief",
-      "level": 17
-    },
-    {
-      "id": "s67",
-      "category": "Public Safety",
-      "pl": "Wypadek",
-      "en": "Accident",
-      "level": 17
-    },
-    {
-      "id": "s68",
-      "category": "Public Safety",
-      "pl": "Pożar",
-      "en": "Fire",
-      "level": 17
-    },
-    {
-      "id": "s70",
-      "category": "Public Safety",
-      "pl": "Proszę wezwać policję",
-      "en": "Please call the police",
-      "level": 17
-    },
-    {
-      "id": "v41",
-      "category": "Bureaucracy Verbs",
-      "pl": "Wypełnić",
-      "en": "To fill out",
-      "level": 17
-    },
-    {
-      "id": "v43",
-      "category": "Bureaucracy Verbs",
-      "pl": "Złożyć wniosek",
-      "en": "To submit an application",
-      "level": 17
-    },
-    {
-      "id": "v45",
-      "category": "Bureaucracy Verbs",
-      "pl": "Przedłużyć",
-      "en": "To extend / renew",
-      "level": 17
-    },
-    {
-      "id": "v46",
-      "category": "Bureaucracy Verbs",
-      "pl": "Anulować",
-      "en": "To cancel",
-      "level": 17
-    },
-    {
-      "id": "v47",
-      "category": "Bureaucracy Verbs",
-      "pl": "Zgłosić",
-      "en": "To report / declare",
-      "level": 17
-    },
-    {
-      "id": "v48",
-      "category": "Bureaucracy Verbs",
-      "pl": "Potwierdzić",
-      "en": "To confirm",
-      "level": 17
-    },
-    {
-      "id": "v49",
-      "category": "Bureaucracy Verbs",
-      "pl": "Zameldować się",
-      "en": "To register address",
-      "level": 17
-    },
-    {
-      "id": "l17_71",
-      "category": "Bureaucracy Verbs",
-      "pl": "Składać wniosek",
-      "en": "To submit an application",
-      "level": 17
-    },
-    {
-      "id": "l17_74",
-      "category": "Legal & Formal",
-      "pl": "Umowa",
-      "en": "Contract / Agreement",
-      "level": 17
-    },
-    {
-      "id": "l17_75",
-      "category": "Legal & Formal",
-      "pl": "Regulamin",
-      "en": "Regulations / Rules",
-      "level": 17
-    },
-    {
-      "id": "l17_77",
-      "category": "Formal Phrases",
-      "pl": "Proszę czekać",
-      "en": "Please wait",
-      "level": 17
-    },
-    {
-      "id": "l17_80",
+      "id": "a17_10",
       "category": "Documents",
       "pl": "Akt urodzenia",
       "en": "Birth certificate",
       "level": 17
     },
     {
-      "id": "l17_81",
-      "category": "Bureaucracy Verbs",
-      "pl": "Rejestrować",
-      "en": "To register",
+      "id": "a17_11",
+      "category": "Documents",
+      "pl": "Akt małżeństwa",
+      "en": "Marriage certificate",
       "level": 17
     },
     {
-      "id": "l17_83",
-      "category": "Administration",
+      "id": "a17_12",
+      "category": "Documents",
+      "pl": "Świadectwo",
+      "en": "Certificate",
+      "level": 17
+    },
+    {
+      "id": "a17_13",
+      "category": "Documents",
+      "pl": "Zaświadczenie",
+      "en": "Confirmation / Certificate",
+      "level": 17
+    },
+    {
+      "id": "a17_14",
+      "category": "Documents",
+      "pl": "Umowa",
+      "en": "Contract",
+      "level": 17
+    },
+    {
+      "id": "a17_15",
+      "category": "Documents",
+      "pl": "Podpis",
+      "en": "Signature",
+      "level": 17
+    },
+    {
+      "id": "a17_16",
+      "category": "Documents",
+      "pl": "Pieczątka",
+      "en": "Stamp",
+      "level": 17
+    },
+    {
+      "id": "a17_17",
+      "category": "Documents",
+      "pl": "Kopia",
+      "en": "Copy",
+      "level": 17
+    },
+    {
+      "id": "a17_18",
+      "category": "Documents",
+      "pl": "Oryginał",
+      "en": "Original",
+      "level": 17
+    },
+    {
+      "id": "a17_19",
+      "category": "Documents",
+      "pl": "Tłumaczenie przysięgłe",
+      "en": "Certified translation",
+      "level": 17
+    },
+    {
+      "id": "a17_20",
+      "category": "Documents",
+      "pl": "Apostille",
+      "en": "Apostille",
+      "level": 17
+    },
+    {
+      "id": "a17_21",
+      "category": "Offices",
+      "pl": "Urząd",
+      "en": "Office / Bureau",
+      "level": 17
+    },
+    {
+      "id": "a17_22",
+      "category": "Offices",
+      "pl": "Urząd miasta",
+      "en": "City hall",
+      "level": 17
+    },
+    {
+      "id": "a17_23",
+      "category": "Offices",
+      "pl": "Urząd skarbowy",
+      "en": "Tax office",
+      "level": 17
+    },
+    {
+      "id": "a17_24",
+      "category": "Offices",
+      "pl": "Urząd pracy",
+      "en": "Employment office",
+      "level": 17
+    },
+    {
+      "id": "a17_25",
+      "category": "Offices",
+      "pl": "Urząd wojewódzki",
+      "en": "Voivodeship office",
+      "level": 17
+    },
+    {
+      "id": "a17_26",
+      "category": "Offices",
+      "pl": "ZUS",
+      "en": "Social Insurance Institution",
+      "level": 17
+    },
+    {
+      "id": "a17_27",
+      "category": "Offices",
+      "pl": "NFZ",
+      "en": "National Health Fund",
+      "level": 17
+    },
+    {
+      "id": "a17_28",
+      "category": "Offices",
+      "pl": "Ambasada",
+      "en": "Embassy",
+      "level": 17
+    },
+    {
+      "id": "a17_29",
+      "category": "Offices",
+      "pl": "Konsulat",
+      "en": "Consulate",
+      "level": 17
+    },
+    {
+      "id": "a17_30",
+      "category": "Offices",
+      "pl": "Policja",
+      "en": "Police",
+      "level": 17
+    },
+    {
+      "id": "a17_31",
+      "category": "Offices",
+      "pl": "Komisariat",
+      "en": "Police station",
+      "level": 17
+    },
+    {
+      "id": "a17_32",
+      "category": "Offices",
+      "pl": "Wniosek",
+      "en": "Application",
+      "level": 17
+    },
+    {
+      "id": "a17_33",
+      "category": "Offices",
       "pl": "Formularz",
       "en": "Form",
       "level": 17
     },
     {
-      "id": "l17_84",
-      "category": "At the Post Office",
-      "pl": "Przesyłka polecona",
-      "en": "Registered mail",
+      "id": "a17_34",
+      "category": "Offices",
+      "pl": "Wypełnić formularz",
+      "en": "To fill out a form",
+      "level": 17
+    },
+    {
+      "id": "a17_35",
+      "category": "Offices",
+      "pl": "Złożyć wniosek",
+      "en": "To submit an application",
+      "level": 17
+    },
+    {
+      "id": "a17_36",
+      "category": "Offices",
+      "pl": "Rejestracja",
+      "en": "Registration",
+      "level": 17
+    },
+    {
+      "id": "a17_37",
+      "category": "Offices",
+      "pl": "Zarejestrować się",
+      "en": "To register",
+      "level": 17
+    },
+    {
+      "id": "a17_38",
+      "category": "Offices",
+      "pl": "Meldunek",
+      "en": "Registration of residence",
+      "level": 17
+    },
+    {
+      "id": "a17_39",
+      "category": "Offices",
+      "pl": "Zameldować się",
+      "en": "To register residence",
+      "level": 17
+    },
+    {
+      "id": "a17_40",
+      "category": "Offices",
+      "pl": "Wymeldować się",
+      "en": "To deregister residence",
+      "level": 17
+    },
+    {
+      "id": "a17_41",
+      "category": "Offices",
+      "pl": "Opłata",
+      "en": "Fee",
+      "level": 17
+    },
+    {
+      "id": "a17_42",
+      "category": "Offices",
+      "pl": "Podatek",
+      "en": "Tax",
+      "level": 17
+    },
+    {
+      "id": "a17_43",
+      "category": "Offices",
+      "pl": "Termin",
+      "en": "Deadline / Appointment",
+      "level": 17
+    },
+    {
+      "id": "a17_44",
+      "category": "Offices",
+      "pl": "Kolejka",
+      "en": "Queue / Line",
+      "level": 17
+    },
+    {
+      "id": "a17_45",
+      "category": "Offices",
+      "pl": "Numer",
+      "en": "Number (ticket)",
+      "level": 17
+    },
+    {
+      "id": "a17_46",
+      "category": "Legal",
+      "pl": "Prawo",
+      "en": "Law / Right",
+      "level": 17
+    },
+    {
+      "id": "a17_47",
+      "category": "Legal",
+      "pl": "Prawnik",
+      "en": "Lawyer",
+      "level": 17
+    },
+    {
+      "id": "a17_48",
+      "category": "Legal",
+      "pl": "Adwokat",
+      "en": "Attorney",
+      "level": 17
+    },
+    {
+      "id": "a17_49",
+      "category": "Legal",
+      "pl": "Notariusz",
+      "en": "Notary",
+      "level": 17
+    },
+    {
+      "id": "a17_50",
+      "category": "Legal",
+      "pl": "Umowa",
+      "en": "Contract",
+      "level": 17
+    },
+    {
+      "id": "a17_51",
+      "category": "Legal",
+      "pl": "Umowa najmu",
+      "en": "Rental contract",
+      "level": 17
+    },
+    {
+      "id": "a17_52",
+      "category": "Legal",
+      "pl": "Umowa o pracę",
+      "en": "Employment contract",
+      "level": 17
+    },
+    {
+      "id": "a17_53",
+      "category": "Legal",
+      "pl": "Sąd",
+      "en": "Court",
+      "level": 17
+    },
+    {
+      "id": "a17_54",
+      "category": "Legal",
+      "pl": "Sprawa sądowa",
+      "en": "Court case",
+      "level": 17
+    },
+    {
+      "id": "a17_55",
+      "category": "Legal",
+      "pl": "Pozew",
+      "en": "Lawsuit",
+      "level": 17
+    },
+    {
+      "id": "a17_56",
+      "category": "Legal",
+      "pl": "Kara",
+      "en": "Penalty / Fine",
+      "level": 17
+    },
+    {
+      "id": "a17_57",
+      "category": "Legal",
+      "pl": "Mandat",
+      "en": "Fine / Ticket",
+      "level": 17
+    },
+    {
+      "id": "a17_58",
+      "category": "Legal",
+      "pl": "Przepisy",
+      "en": "Regulations / Rules",
+      "level": 17
+    },
+    {
+      "id": "a17_59",
+      "category": "Legal",
+      "pl": "Zgodnie z prawem",
+      "en": "According to the law",
+      "level": 17
+    },
+    {
+      "id": "a17_60",
+      "category": "Legal",
+      "pl": "Nielegalne",
+      "en": "Illegal",
+      "level": 17
+    },
+    {
+      "id": "a17_61",
+      "category": "Citizenship",
+      "pl": "Obywatelstwo",
+      "en": "Citizenship",
+      "level": 17
+    },
+    {
+      "id": "a17_62",
+      "category": "Citizenship",
+      "pl": "Obywatel",
+      "en": "Citizen",
+      "level": 17
+    },
+    {
+      "id": "a17_63",
+      "category": "Citizenship",
+      "pl": "Cudzoziemiec",
+      "en": "Foreigner",
+      "level": 17
+    },
+    {
+      "id": "a17_64",
+      "category": "Citizenship",
+      "pl": "Pobyt stały",
+      "en": "Permanent residence",
+      "level": 17
+    },
+    {
+      "id": "a17_65",
+      "category": "Citizenship",
+      "pl": "Pobyt czasowy",
+      "en": "Temporary residence",
+      "level": 17
+    },
+    {
+      "id": "a17_66",
+      "category": "Citizenship",
+      "pl": "Wniosek o obywatelstwo",
+      "en": "Citizenship application",
+      "level": 17
+    },
+    {
+      "id": "a17_67",
+      "category": "Citizenship",
+      "pl": "Deportacja",
+      "en": "Deportation",
+      "level": 17
+    },
+    {
+      "id": "a17_68",
+      "category": "Citizenship",
+      "pl": "Azyl",
+      "en": "Asylum",
+      "level": 17
+    },
+    {
+      "id": "a17_69",
+      "category": "Citizenship",
+      "pl": "Uchodźca",
+      "en": "Refugee",
+      "level": 17
+    },
+    {
+      "id": "a17_70",
+      "category": "Citizenship",
+      "pl": "Granica",
+      "en": "Border",
       "level": 17
     }
   ]

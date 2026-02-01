@@ -1,496 +1,496 @@
 {
   "level": 10,
-  "description": "Leisure & Entertainment",
-  "lastUpdated": "2026-01-28",
+  "description": "Weather & Outdoor - Climate & Nature",
+  "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "a61",
-      "category": "Nature",
-      "pl": "Przyroda / Natura",
-      "en": "Nature",
+      "id": "p10_01",
+      "category": "Weather",
+      "pl": "Jaka jest pogoda?",
+      "en": "What's the weather like?",
       "level": 10
     },
     {
-      "id": "a65",
-      "category": "Nature",
-      "pl": "Jezioro",
-      "en": "Lake",
+      "id": "p10_02",
+      "category": "Weather",
+      "pl": "Pogoda",
+      "en": "Weather",
       "level": 10
     },
     {
-      "id": "a67",
-      "category": "Nature",
+      "id": "p10_03",
+      "category": "Weather",
+      "pl": "Słonecznie",
+      "en": "Sunny",
+      "level": 10
+    },
+    {
+      "id": "p10_04",
+      "category": "Weather",
+      "pl": "Pochmurno",
+      "en": "Cloudy",
+      "level": 10
+    },
+    {
+      "id": "p10_05",
+      "category": "Weather",
+      "pl": "Pada deszcz",
+      "en": "It's raining",
+      "level": 10
+    },
+    {
+      "id": "p10_06",
+      "category": "Weather",
+      "pl": "Pada śnieg",
+      "en": "It's snowing",
+      "level": 10
+    },
+    {
+      "id": "p10_07",
+      "category": "Weather",
+      "pl": "Deszcz",
+      "en": "Rain",
+      "level": 10
+    },
+    {
+      "id": "p10_08",
+      "category": "Weather",
+      "pl": "Śnieg",
+      "en": "Snow",
+      "level": 10
+    },
+    {
+      "id": "p10_09",
+      "category": "Weather",
+      "pl": "Wiatr",
+      "en": "Wind",
+      "level": 10
+    },
+    {
+      "id": "p10_10",
+      "category": "Weather",
+      "pl": "Wietrznie",
+      "en": "Windy",
+      "level": 10
+    },
+    {
+      "id": "p10_11",
+      "category": "Weather",
+      "pl": "Burza",
+      "en": "Storm / Thunderstorm",
+      "level": 10
+    },
+    {
+      "id": "p10_12",
+      "category": "Weather",
+      "pl": "Mgła",
+      "en": "Fog",
+      "level": 10
+    },
+    {
+      "id": "p10_13",
+      "category": "Weather",
+      "pl": "Gorąco",
+      "en": "Hot",
+      "level": 10
+    },
+    {
+      "id": "p10_14",
+      "category": "Weather",
+      "pl": "Zimno",
+      "en": "Cold",
+      "level": 10
+    },
+    {
+      "id": "p10_15",
+      "category": "Weather",
+      "pl": "Ciepło",
+      "en": "Warm",
+      "level": 10
+    },
+    {
+      "id": "p10_16",
+      "category": "Weather",
+      "pl": "Chłodno",
+      "en": "Cool",
+      "level": 10
+    },
+    {
+      "id": "p10_17",
+      "category": "Weather",
+      "pl": "Jest zimno",
+      "en": "It's cold",
+      "level": 10
+    },
+    {
+      "id": "p10_18",
+      "category": "Weather",
+      "pl": "Jest gorąco",
+      "en": "It's hot",
+      "level": 10
+    },
+    {
+      "id": "p10_19",
+      "category": "Weather",
+      "pl": "Temperatura",
+      "en": "Temperature",
+      "level": 10
+    },
+    {
+      "id": "p10_20",
+      "category": "Weather",
+      "pl": "Stopnie",
+      "en": "Degrees",
+      "level": 10
+    },
+    {
+      "id": "p10_21",
+      "category": "Weather",
+      "pl": "Piękna pogoda",
+      "en": "Beautiful weather",
+      "level": 10
+    },
+    {
+      "id": "p10_22",
+      "category": "Weather",
+      "pl": "Brzydka pogoda",
+      "en": "Bad weather",
+      "level": 10
+    },
+    {
+      "id": "p10_23",
+      "category": "Weather",
+      "pl": "Prognoza pogody",
+      "en": "Weather forecast",
+      "level": 10
+    },
+    {
+      "id": "p10_24",
+      "category": "Weather",
+      "pl": "Będzie padać?",
+      "en": "Will it rain?",
+      "level": 10
+    },
+    {
+      "id": "p10_25",
+      "category": "Weather",
+      "pl": "Parasol",
+      "en": "Umbrella",
+      "level": 10
+    },
+    {
+      "id": "p10_26",
+      "category": "Seasons",
+      "pl": "Wiosna",
+      "en": "Spring",
+      "level": 10
+    },
+    {
+      "id": "p10_27",
+      "category": "Seasons",
+      "pl": "Lato",
+      "en": "Summer",
+      "level": 10
+    },
+    {
+      "id": "p10_28",
+      "category": "Seasons",
+      "pl": "Jesień",
+      "en": "Autumn / Fall",
+      "level": 10
+    },
+    {
+      "id": "p10_29",
+      "category": "Seasons",
+      "pl": "Zima",
+      "en": "Winter",
+      "level": 10
+    },
+    {
+      "id": "p10_30",
+      "category": "Seasons",
+      "pl": "Na wiosnę",
+      "en": "In spring",
+      "level": 10
+    },
+    {
+      "id": "p10_31",
+      "category": "Seasons",
+      "pl": "Latem",
+      "en": "In summer",
+      "level": 10
+    },
+    {
+      "id": "p10_32",
+      "category": "Seasons",
+      "pl": "Jesienią",
+      "en": "In autumn",
+      "level": 10
+    },
+    {
+      "id": "p10_33",
+      "category": "Seasons",
+      "pl": "Zimą",
+      "en": "In winter",
+      "level": 10
+    },
+    {
+      "id": "p10_34",
+      "category": "Seasons",
+      "pl": "Pora roku",
+      "en": "Season",
+      "level": 10
+    },
+    {
+      "id": "p10_35",
+      "category": "Seasons",
+      "pl": "Jaka jest Twoja ulubiona pora roku?",
+      "en": "What's your favorite season?",
+      "level": 10
+    },
+    {
+      "id": "p10_36",
+      "category": "Outdoor",
+      "pl": "Park",
+      "en": "Park",
+      "level": 10
+    },
+    {
+      "id": "p10_37",
+      "category": "Outdoor",
+      "pl": "Las",
+      "en": "Forest",
+      "level": 10
+    },
+    {
+      "id": "p10_38",
+      "category": "Outdoor",
+      "pl": "Góry",
+      "en": "Mountains",
+      "level": 10
+    },
+    {
+      "id": "p10_39",
+      "category": "Outdoor",
       "pl": "Plaża",
       "en": "Beach",
       "level": 10
     },
     {
-      "id": "a68",
-      "category": "Nature",
+      "id": "p10_40",
+      "category": "Outdoor",
+      "pl": "Morze",
+      "en": "Sea",
+      "level": 10
+    },
+    {
+      "id": "p10_41",
+      "category": "Outdoor",
+      "pl": "Jezioro",
+      "en": "Lake",
+      "level": 10
+    },
+    {
+      "id": "p10_42",
+      "category": "Outdoor",
+      "pl": "Rzeka",
+      "en": "River",
+      "level": 10
+    },
+    {
+      "id": "p10_43",
+      "category": "Outdoor",
+      "pl": "Spacer",
+      "en": "Walk",
+      "level": 10
+    },
+    {
+      "id": "p10_44",
+      "category": "Outdoor",
+      "pl": "Iść na spacer",
+      "en": "To go for a walk",
+      "level": 10
+    },
+    {
+      "id": "p10_45",
+      "category": "Outdoor",
+      "pl": "Wędrówka",
+      "en": "Hike",
+      "level": 10
+    },
+    {
+      "id": "p10_46",
+      "category": "Outdoor",
+      "pl": "Ścieżka",
+      "en": "Path / Trail",
+      "level": 10
+    },
+    {
+      "id": "p10_47",
+      "category": "Outdoor",
+      "pl": "Widok",
+      "en": "View",
+      "level": 10
+    },
+    {
+      "id": "p10_48",
+      "category": "Outdoor",
+      "pl": "Piękny widok",
+      "en": "Beautiful view",
+      "level": 10
+    },
+    {
+      "id": "p10_49",
+      "category": "Outdoor",
+      "pl": "Świeże powietrze",
+      "en": "Fresh air",
+      "level": 10
+    },
+    {
+      "id": "p10_50",
+      "category": "Outdoor",
       "pl": "Słońce",
       "en": "Sun",
       "level": 10
     },
     {
-      "id": "a69",
-      "category": "Nature",
-      "pl": "Księżyc",
-      "en": "Moon",
+      "id": "p10_51",
+      "category": "Outdoor",
+      "pl": "Chmura",
+      "en": "Cloud",
       "level": 10
     },
     {
-      "id": "a70",
-      "category": "Nature",
+      "id": "p10_52",
+      "category": "Outdoor",
+      "pl": "Niebo",
+      "en": "Sky",
+      "level": 10
+    },
+    {
+      "id": "p10_53",
+      "category": "Outdoor",
       "pl": "Gwiazdy",
       "en": "Stars",
       "level": 10
     },
     {
-      "id": "e11",
-      "category": "Entertainment",
-      "pl": "Kino",
-      "en": "Cinema",
+      "id": "p10_54",
+      "category": "Outdoor",
+      "pl": "Księżyc",
+      "en": "Moon",
       "level": 10
     },
     {
-      "id": "e12",
-      "category": "Entertainment",
-      "pl": "Teatr",
-      "en": "Theatre",
+      "id": "p10_55",
+      "category": "Outdoor",
+      "pl": "Wschód słońca",
+      "en": "Sunrise",
       "level": 10
     },
     {
-      "id": "e13",
-      "category": "Entertainment",
-      "pl": "Koncert",
-      "en": "Concert",
+      "id": "p10_56",
+      "category": "Clothing",
+      "pl": "Kurtka",
+      "en": "Jacket",
       "level": 10
     },
     {
-      "id": "e14",
-      "category": "Entertainment",
-      "pl": "Muzeum",
-      "en": "Museum",
+      "id": "p10_57",
+      "category": "Clothing",
+      "pl": "Płaszcz",
+      "en": "Coat",
       "level": 10
     },
     {
-      "id": "e15",
-      "category": "Entertainment",
-      "pl": "Galeria sztuki",
-      "en": "Art gallery",
+      "id": "p10_58",
+      "category": "Clothing",
+      "pl": "Sweter",
+      "en": "Sweater",
       "level": 10
     },
     {
-      "id": "e16",
-      "category": "Entertainment",
-      "pl": "Wystawa",
-      "en": "Exhibition",
+      "id": "p10_59",
+      "category": "Clothing",
+      "pl": "Czapka",
+      "en": "Hat / Cap",
       "level": 10
     },
     {
-      "id": "e17",
-      "category": "Entertainment",
-      "pl": "Impreza / Party",
-      "en": "Party",
+      "id": "p10_60",
+      "category": "Clothing",
+      "pl": "Szalik",
+      "en": "Scarf",
       "level": 10
     },
     {
-      "id": "e18",
-      "category": "Entertainment",
-      "pl": "Bilet wstępu",
-      "en": "Entrance ticket",
+      "id": "p10_61",
+      "category": "Clothing",
+      "pl": "Rękawiczki",
+      "en": "Gloves",
       "level": 10
     },
     {
-      "id": "e19",
-      "category": "Entertainment",
-      "pl": "Rezerwacja stolika",
-      "en": "Table reservation",
+      "id": "p10_62",
+      "category": "Clothing",
+      "pl": "Buty",
+      "en": "Shoes",
       "level": 10
     },
     {
-      "id": "l1",
-      "category": "Free Time",
-      "pl": "Czas wolny",
-      "en": "Free time",
+      "id": "p10_63",
+      "category": "Clothing",
+      "pl": "Okulary przeciwsłoneczne",
+      "en": "Sunglasses",
       "level": 10
     },
     {
-      "id": "l10",
-      "category": "Free Time",
-      "pl": "Interesuję się...",
-      "en": "I am interested in...",
+      "id": "p10_64",
+      "category": "Clothing",
+      "pl": "Krem przeciwsłoneczny",
+      "en": "Sunscreen",
       "level": 10
     },
     {
-      "id": "l2",
-      "category": "Free Time",
-      "pl": "Co robisz w wolnym czasie?",
-      "en": "What do you do in your free time?",
+      "id": "p10_65",
+      "category": "Clothing",
+      "pl": "Jest za zimno na...",
+      "en": "It's too cold for...",
       "level": 10
     },
     {
-      "id": "l4",
-      "category": "Free Time",
-      "pl": "Relaksuję się",
-      "en": "I am relaxing",
+      "id": "p10_66",
+      "category": "Clothing",
+      "pl": "Jest za gorąco na...",
+      "en": "It's too hot for...",
       "level": 10
     },
     {
-      "id": "l5",
-      "category": "Free Time",
-      "pl": "Spotykam się ze znajomymi",
-      "en": "I am meeting with friends",
+      "id": "p10_67",
+      "category": "Clothing",
+      "pl": "Potrzebuję ciepłej kurtki",
+      "en": "I need a warm jacket",
       "level": 10
     },
     {
-      "id": "l6",
-      "category": "Free Time",
-      "pl": "Spaceruję w parku",
-      "en": "I am walking in the park",
+      "id": "p10_68",
+      "category": "Clothing",
+      "pl": "Potrzebuję parasola",
+      "en": "I need an umbrella",
       "level": 10
     },
     {
-      "id": "l7",
-      "category": "Free Time",
-      "pl": "Chodzę na siłownię",
-      "en": "I go to the gym",
+      "id": "p10_69",
+      "category": "Clothing",
+      "pl": "Ubranie",
+      "en": "Clothing",
       "level": 10
     },
     {
-      "id": "l8",
-      "category": "Free Time",
-      "pl": "Gram w gry",
-      "en": "I play games",
-      "level": 10
-    },
-    {
-      "id": "m31",
-      "category": "Music & Media",
-      "pl": "Muzyka",
-      "en": "Music",
-      "level": 10
-    },
-    {
-      "id": "m32",
-      "category": "Music & Media",
-      "pl": "Słuchawki",
-      "en": "Headphones",
-      "level": 10
-    },
-    {
-      "id": "m33",
-      "category": "Music & Media",
-      "pl": "Głośnik",
-      "en": "Speaker",
-      "level": 10
-    },
-    {
-      "id": "m34",
-      "category": "Music & Media",
-      "pl": "Piosenka",
-      "en": "Song",
-      "level": 10
-    },
-    {
-      "id": "m35",
-      "category": "Music & Media",
-      "pl": "Radio",
-      "en": "Radio",
-      "level": 10
-    },
-    {
-      "id": "m36",
-      "category": "Music & Media",
-      "pl": "Telewizja",
-      "en": "Television",
-      "level": 10
-    },
-    {
-      "id": "m37",
-      "category": "Music & Media",
-      "pl": "Serial",
-      "en": "TV series",
-      "level": 10
-    },
-    {
-      "id": "m38",
-      "category": "Music & Media",
-      "pl": "Wiadomości",
-      "en": "News",
-      "level": 10
-    },
-    {
-      "id": "m39",
-      "category": "Music & Media",
-      "pl": "Internet",
-      "en": "Internet",
-      "level": 10
-    },
-    {
-      "id": "m40",
-      "category": "Music & Media",
-      "pl": "Media społecznościowe",
-      "en": "Social media",
-      "level": 10
-    },
-    {
-      "id": "p41",
-      "category": "Plans",
-      "pl": "Masz plany na wieczór?",
-      "en": "Do you have plans for the evening?",
-      "level": 10
-    },
-    {
-      "id": "p42",
-      "category": "Plans",
-      "pl": "Chcesz gdzieś wyjść?",
-      "en": "Do you want to go out somewhere?",
-      "level": 10
-    },
-    {
-      "id": "p43",
-      "category": "Plans",
-      "pl": "Możemy iść na piwo",
-      "en": "We can go for a beer",
-      "level": 10
-    },
-    {
-      "id": "p44",
-      "category": "Plans",
-      "pl": "Możemy iść na spacer",
-      "en": "We can go for a walk",
-      "level": 10
-    },
-    {
-      "id": "p45",
-      "category": "Plans",
-      "pl": "O której się spotykamy?",
-      "en": "What time are we meeting?",
-      "level": 10
-    },
-    {
-      "id": "p46",
-      "category": "Plans",
-      "pl": "Gdzie się spotykamy?",
-      "en": "Where are we meeting?",
-      "level": 10
-    },
-    {
-      "id": "p47",
-      "category": "Plans",
-      "pl": "Będę o siódmej",
-      "en": "I will be there at seven",
-      "level": 10
-    },
-    {
-      "id": "p49",
-      "category": "Plans",
-      "pl": "Czekam na Ciebie",
-      "en": "I am waiting for you",
-      "level": 10
-    },
-    {
-      "id": "p50",
-      "category": "Plans",
-      "pl": "Do zobaczenia później!",
-      "en": "See you later!",
-      "level": 10
-    },
-    {
-      "id": "s21",
-      "category": "Sports",
-      "pl": "Sport",
-      "en": "Sport",
-      "level": 10
-    },
-    {
-      "id": "s22",
-      "category": "Sports",
-      "pl": "Piłka nożna",
-      "en": "Football (Soccer)",
-      "level": 10
-    },
-    {
-      "id": "s23",
-      "category": "Sports",
-      "pl": "Bieganie",
-      "en": "Running",
-      "level": 10
-    },
-    {
-      "id": "s24",
-      "category": "Sports",
-      "pl": "Pływanie",
-      "en": "Swimming",
-      "level": 10
-    },
-    {
-      "id": "s25",
-      "category": "Sports",
-      "pl": "Jazda na rowerze",
-      "en": "Cycling / Bike riding",
-      "level": 10
-    },
-    {
-      "id": "s26",
-      "category": "Sports",
-      "pl": "Jazda na nartach",
-      "en": "Skiing",
-      "level": 10
-    },
-    {
-      "id": "s27",
-      "category": "Sports",
-      "pl": "Siłownia",
-      "en": "Gym",
-      "level": 10
-    },
-    {
-      "id": "s28",
-      "category": "Sports",
-      "pl": "Mecz",
-      "en": "Match",
-      "level": 10
-    },
-    {
-      "id": "s29",
-      "category": "Sports",
-      "pl": "Drużyna",
-      "en": "Team",
-      "level": 10
-    },
-    {
-      "id": "s30",
-      "category": "Sports",
-      "pl": "Kibicować",
-      "en": "To cheer / support a team",
-      "level": 10
-    },
-    {
-      "id": "v51",
-      "category": "Activities",
-      "pl": "Czytać",
-      "en": "To read",
-      "level": 10
-    },
-    {
-      "id": "v52",
-      "category": "Activities",
-      "pl": "Pisać",
-      "en": "To write",
-      "level": 10
-    },
-    {
-      "id": "v53",
-      "category": "Activities",
-      "pl": "Malować",
-      "en": "To paint",
-      "level": 10
-    },
-    {
-      "id": "v54",
-      "category": "Activities",
-      "pl": "Śpiewać",
-      "en": "To sing",
-      "level": 10
-    },
-    {
-      "id": "v55",
-      "category": "Activities",
-      "pl": "Tańczyć",
-      "en": "To dance",
-      "level": 10
-    },
-    {
-      "id": "v56",
-      "category": "Activities",
-      "pl": "Fotografować",
-      "en": "To photograph",
-      "level": 10
-    },
-    {
-      "id": "v60",
-      "category": "Activities",
-      "pl": "Oglądać",
-      "en": "To watch",
-      "level": 10
-    },
-    {
-      "id": "l10_75",
-      "category": "Free Time",
-      "pl": "Relaksować się",
-      "en": "To relax",
-      "level": 10
-    },
-    {
-      "id": "l10_76",
-      "category": "Free Time",
-      "pl": "Nudzę się",
-      "en": "I'm bored",
-      "level": 10
-    },
-    {
-      "id": "l10_77",
-      "category": "Nature",
-      "pl": "Przyroda",
-      "en": "Nature / Wildlife",
-      "level": 10
-    },
-    {
-      "id": "l10_78",
-      "category": "Nature",
-      "pl": "Zwierzęta",
-      "en": "Animals",
-      "level": 10
-    },
-    {
-      "id": "l10_79",
-      "category": "Plans",
-      "pl": "Masz ochotę na...?",
-      "en": "Do you feel like...?",
-      "level": 10
-    },
-    {
-      "id": "l10_80",
-      "category": "Plans",
-      "pl": "Spotkajmy się później",
-      "en": "Let's meet later",
-      "level": 10
-    },
-    {
-      "id": "l10_82",
-      "category": "Activities",
-      "pl": "Grać",
-      "en": "To play",
-      "level": 10
-    },
-    {
-      "id": "l10_85",
-      "category": "Sports",
-      "pl": "Trening",
-      "en": "Training / Workout",
-      "level": 10
-    },
-    {
-      "id": "l10_86",
-      "category": "Music & Media",
-      "pl": "Film",
-      "en": "Movie / Film",
-      "level": 10
-    },
-    {
-      "id": "l10_87",
-      "category": "Sports",
-      "pl": "Hokej",
-      "en": "Hockey",
-      "level": 10
-    },
-    {
-      "id": "l10_88",
-      "category": "Free Time",
-      "pl": "Rozrywka",
-      "en": "Entertainment / Fun",
+      "id": "p10_70",
+      "category": "Clothing",
+      "pl": "Co mam ubrać?",
+      "en": "What should I wear?",
       "level": 10
     }
   ]

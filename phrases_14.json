@@ -1,496 +1,496 @@
 {
   "level": 14,
-  "description": "Home & Household Maintenance",
-  "lastUpdated": "2026-01-28",
+  "description": "Problems & Complaints - Resolving Issues",
+  "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "a11",
-      "category": "Appliances",
-      "pl": "Lodówka",
-      "en": "Fridge",
+      "id": "p14_01",
+      "category": "Problems",
+      "pl": "Problem",
+      "en": "Problem",
       "level": 14
     },
     {
-      "id": "a12",
-      "category": "Appliances",
-      "pl": "Pralka",
-      "en": "Washing machine",
+      "id": "p14_02",
+      "category": "Problems",
+      "pl": "Mam problem",
+      "en": "I have a problem",
       "level": 14
     },
     {
-      "id": "a13",
-      "category": "Appliances",
-      "pl": "Zmywarka",
-      "en": "Dishwasher",
-      "level": 14
-    },
-    {
-      "id": "a14",
-      "category": "Appliances",
-      "pl": "Kuchenka",
-      "en": "Stove / Cooker",
-      "level": 14
-    },
-    {
-      "id": "a15",
-      "category": "Appliances",
-      "pl": "Piekarnik",
-      "en": "Oven",
-      "level": 14
-    },
-    {
-      "id": "a16",
-      "category": "Appliances",
-      "pl": "Mikrofalówka",
-      "en": "Microwave",
-      "level": 14
-    },
-    {
-      "id": "a17",
-      "category": "Appliances",
-      "pl": "Odkurzacz",
-      "en": "Vacuum cleaner",
-      "level": 14
-    },
-    {
-      "id": "a18",
-      "category": "Appliances",
-      "pl": "Czajnik",
-      "en": "Kettle",
-      "level": 14
-    },
-    {
-      "id": "a19",
-      "category": "Appliances",
-      "pl": "Klimatyzacja",
-      "en": "Air conditioning",
-      "level": 14
-    },
-    {
-      "id": "a20",
-      "category": "Appliances",
-      "pl": "Ogrzewanie",
-      "en": "Heating",
-      "level": 14
-    },
-    {
-      "id": "h10",
-      "category": "Rooms",
-      "pl": "Winda",
-      "en": "Elevator / Lift",
-      "level": 14
-    },
-    {
-      "id": "h4",
-      "category": "Rooms",
-      "pl": "Sypialnia",
-      "en": "Bedroom",
-      "level": 14
-    },
-    {
-      "id": "h5",
-      "category": "Rooms",
-      "pl": "Salon",
-      "en": "Living room",
-      "level": 14
-    },
-    {
-      "id": "h6",
-      "category": "Rooms",
-      "pl": "Przedpokój",
-      "en": "Hallway",
-      "level": 14
-    },
-    {
-      "id": "h7",
-      "category": "Rooms",
-      "pl": "Balkon",
-      "en": "Balcony",
-      "level": 14
-    },
-    {
-      "id": "h8",
-      "category": "Rooms",
-      "pl": "Piwnica",
-      "en": "Basement / Cellar",
-      "level": 14
-    },
-    {
-      "id": "h9",
-      "category": "Rooms",
-      "pl": "Piętro",
-      "en": "Floor (level)",
-      "level": 14
-    },
-    {
-      "id": "m22",
-      "category": "Furniture",
-      "pl": "Szafa",
-      "en": "Wardrobe / Closet",
-      "level": 14
-    },
-    {
-      "id": "m23",
-      "category": "Furniture",
-      "pl": "Stół",
-      "en": "Table",
-      "level": 14
-    },
-    {
-      "id": "m24",
-      "category": "Furniture",
-      "pl": "Krzesło",
-      "en": "Chair",
-      "level": 14
-    },
-    {
-      "id": "m25",
-      "category": "Furniture",
-      "pl": "Kanapa / Sofa",
-      "en": "Sofa",
-      "level": 14
-    },
-    {
-      "id": "m26",
-      "category": "Furniture",
-      "pl": "Fotel",
-      "en": "Armchair",
-      "level": 14
-    },
-    {
-      "id": "m27",
-      "category": "Furniture",
-      "pl": "Półka",
-      "en": "Shelf",
-      "level": 14
-    },
-    {
-      "id": "m29",
-      "category": "Furniture",
-      "pl": "Lustro",
-      "en": "Mirror",
-      "level": 14
-    },
-    {
-      "id": "m30",
-      "category": "Furniture",
-      "pl": "Dywan",
-      "en": "Carpet / Rug",
-      "level": 14
-    },
-    {
-      "id": "p31",
-      "category": "Issues",
+      "id": "p14_03",
+      "category": "Problems",
       "pl": "Coś nie działa",
-      "en": "Something isn't working",
+      "en": "Something doesn't work",
       "level": 14
     },
     {
-      "id": "p32",
-      "category": "Issues",
-      "pl": "Zepsuło się",
-      "en": "It broke down",
+      "id": "p14_04",
+      "category": "Problems",
+      "pl": "Coś poszło nie tak",
+      "en": "Something went wrong",
       "level": 14
     },
     {
-      "id": "p33",
-      "category": "Issues",
-      "pl": "Kran przecieka",
-      "en": "The tap is leaking",
+      "id": "p14_05",
+      "category": "Problems",
+      "pl": "To nie działa",
+      "en": "This doesn't work",
       "level": 14
     },
     {
-      "id": "p34",
-      "category": "Issues",
-      "pl": "Nie ma prądu",
-      "en": "There is no electricity",
+      "id": "p14_06",
+      "category": "Problems",
+      "pl": "Jest zepsute",
+      "en": "It's broken",
       "level": 14
     },
     {
-      "id": "p35",
-      "category": "Issues",
-      "pl": "Nie ma ciepłej wody",
-      "en": "There is no hot water",
+      "id": "p14_07",
+      "category": "Problems",
+      "pl": "Nie mogę...",
+      "en": "I can't...",
       "level": 14
     },
     {
-      "id": "p36",
-      "category": "Issues",
-      "pl": "Ogrzewanie nie działa",
-      "en": "The heating isn't working",
+      "id": "p14_08",
+      "category": "Problems",
+      "pl": "To nie moja wina",
+      "en": "It's not my fault",
       "level": 14
     },
     {
-      "id": "p37",
-      "category": "Issues",
-      "pl": "Zatkana rura",
-      "en": "Clogged pipe",
+      "id": "p14_09",
+      "category": "Problems",
+      "pl": "Nie rozumiem dlaczego",
+      "en": "I don't understand why",
       "level": 14
     },
     {
-      "id": "p38",
-      "category": "Issues",
-      "pl": "Wybite okno",
-      "en": "Broken window",
+      "id": "p14_10",
+      "category": "Problems",
+      "pl": "To nie jest w porządku",
+      "en": "This is not okay",
       "level": 14
     },
     {
-      "id": "p39",
-      "category": "Issues",
-      "pl": "Zamek jest zacięty",
-      "en": "The lock is jammed",
+      "id": "p14_11",
+      "category": "Problems",
+      "pl": "Jest błąd",
+      "en": "There's a mistake",
       "level": 14
     },
     {
-      "id": "p40",
-      "category": "Issues",
-      "pl": "Zgubiłem klucze",
-      "en": "I lost the keys",
+      "id": "p14_12",
+      "category": "Problems",
+      "pl": "To jest złe",
+      "en": "This is wrong",
       "level": 14
     },
     {
-      "id": "s41",
-      "category": "Services",
-      "pl": "Hydraulik",
-      "en": "Plumber",
+      "id": "p14_13",
+      "category": "Problems",
+      "pl": "Pomyłka",
+      "en": "Mistake / Error",
       "level": 14
     },
     {
-      "id": "s42",
-      "category": "Services",
-      "pl": "Elektryk",
-      "en": "Electrician",
+      "id": "p14_14",
+      "category": "Problems",
+      "pl": "Potrzebuję wyjaśnienia",
+      "en": "I need an explanation",
       "level": 14
     },
     {
-      "id": "s43",
-      "category": "Services",
-      "pl": "Ślusarz",
-      "en": "Locksmith",
+      "id": "p14_15",
+      "category": "Problems",
+      "pl": "Jak to naprawić?",
+      "en": "How to fix this?",
       "level": 14
     },
     {
-      "id": "s44",
-      "category": "Services",
-      "pl": "Naprawa",
-      "en": "Repair",
+      "id": "p14_16",
+      "category": "Problems",
+      "pl": "Czy możesz to naprawić?",
+      "en": "Can you fix this?",
       "level": 14
     },
     {
-      "id": "s45",
-      "category": "Services",
-      "pl": "Remont",
-      "en": "Renovation",
+      "id": "p14_17",
+      "category": "Problems",
+      "pl": "Kiedy to zostanie naprawione?",
+      "en": "When will this be fixed?",
       "level": 14
     },
     {
-      "id": "s46",
-      "category": "Services",
-      "pl": "Właściciel mieszkania",
-      "en": "Landlord",
+      "id": "p14_18",
+      "category": "Problems",
+      "pl": "To nie to co zamówiłem/zamówiłam",
+      "en": "This is not what I ordered",
       "level": 14
     },
     {
-      "id": "s47",
-      "category": "Services",
-      "pl": "Czynsz",
-      "en": "Rent",
+      "id": "p14_19",
+      "category": "Problems",
+      "pl": "Brakuje...",
+      "en": "Missing... / There's no...",
       "level": 14
     },
     {
-      "id": "s48",
-      "category": "Services",
-      "pl": "Rachunki",
-      "en": "Bills",
+      "id": "p14_20",
+      "category": "Problems",
+      "pl": "Nie ma...",
+      "en": "There is no...",
       "level": 14
     },
     {
-      "id": "s49",
-      "category": "Services",
-      "pl": "Umowa najmu",
-      "en": "Rental agreement",
+      "id": "p14_21",
+      "category": "Problems",
+      "pl": "Zgubiłem/Zgubiłam...",
+      "en": "I lost...",
       "level": 14
     },
     {
-      "id": "s50",
-      "category": "Services",
-      "pl": "Kaucja",
-      "en": "Security deposit",
+      "id": "p14_22",
+      "category": "Problems",
+      "pl": "Ktoś ukradł...",
+      "en": "Someone stole...",
       "level": 14
     },
     {
-      "id": "u61",
-      "category": "Daily Items",
-      "pl": "Ręcznik",
-      "en": "Towel",
+      "id": "p14_23",
+      "category": "Problems",
+      "pl": "Nie mogę znaleźć...",
+      "en": "I can't find...",
       "level": 14
     },
     {
-      "id": "u62",
-      "category": "Daily Items",
-      "pl": "Pościel",
-      "en": "Bedding / Linens",
+      "id": "p14_24",
+      "category": "Problems",
+      "pl": "Gdzie to zostawiłem/zostawiłam?",
+      "en": "Where did I leave this?",
       "level": 14
     },
     {
-      "id": "u63",
-      "category": "Daily Items",
-      "pl": "Poduszka",
-      "en": "Pillow",
+      "id": "p14_25",
+      "category": "Problems",
+      "pl": "Zapomniałem/Zapomniałam",
+      "en": "I forgot",
       "level": 14
     },
     {
-      "id": "u64",
-      "category": "Daily Items",
-      "pl": "Koc",
-      "en": "Blanket",
+      "id": "p14_26",
+      "category": "Complaints",
+      "pl": "Skarga",
+      "en": "Complaint",
       "level": 14
     },
     {
-      "id": "u65",
-      "category": "Daily Items",
-      "pl": "Mydło",
-      "en": "Soap",
+      "id": "p14_27",
+      "category": "Complaints",
+      "pl": "Chcę złożyć skargę",
+      "en": "I want to make a complaint",
       "level": 14
     },
     {
-      "id": "u66",
-      "category": "Daily Items",
-      "pl": "Papier toaletowy",
-      "en": "Toilet paper",
+      "id": "p14_28",
+      "category": "Complaints",
+      "pl": "To jest nieakceptowalne",
+      "en": "This is unacceptable",
       "level": 14
     },
     {
-      "id": "u67",
-      "category": "Daily Items",
-      "pl": "Śmieci",
-      "en": "Trash / Rubbish",
+      "id": "p14_29",
+      "category": "Complaints",
+      "pl": "Jestem niezadowolony/niezadowolona",
+      "en": "I'm dissatisfied",
       "level": 14
     },
     {
-      "id": "u68",
-      "category": "Daily Items",
-      "pl": "Klucz",
-      "en": "Key",
+      "id": "p14_30",
+      "category": "Complaints",
+      "pl": "To jest za drogie",
+      "en": "This is too expensive",
       "level": 14
     },
     {
-      "id": "u69",
-      "category": "Daily Items",
-      "pl": "Pilot do telewizora",
-      "en": "TV Remote",
+      "id": "p14_31",
+      "category": "Complaints",
+      "pl": "Jakość jest zła",
+      "en": "Quality is bad",
       "level": 14
     },
     {
-      "id": "u70",
-      "category": "Daily Items",
-      "pl": "Żarówka",
-      "en": "Light bulb",
+      "id": "p14_32",
+      "category": "Complaints",
+      "pl": "Obsługa jest słaba",
+      "en": "Service is poor",
       "level": 14
     },
     {
-      "id": "v51",
-      "category": "Verbs",
-      "pl": "Naprawiać",
-      "en": "To repair",
+      "id": "p14_33",
+      "category": "Complaints",
+      "pl": "Czekam za długo",
+      "en": "I'm waiting too long",
       "level": 14
     },
     {
-      "id": "v52",
-      "category": "Verbs",
-      "pl": "Sprzątać",
-      "en": "To clean",
+      "id": "p14_34",
+      "category": "Complaints",
+      "pl": "To jest brudne",
+      "en": "This is dirty",
       "level": 14
     },
     {
-      "id": "v53",
-      "category": "Verbs",
-      "pl": "Wynajmować",
-      "en": "To rent",
+      "id": "p14_35",
+      "category": "Complaints",
+      "pl": "To jest zimne",
+      "en": "This is cold",
       "level": 14
     },
     {
-      "id": "v54",
-      "category": "Verbs",
-      "pl": "Otwierać",
-      "en": "To open",
+      "id": "p14_36",
+      "category": "Complaints",
+      "pl": "To nie jest świeże",
+      "en": "This is not fresh",
       "level": 14
     },
     {
-      "id": "v55",
-      "category": "Verbs",
-      "pl": "Zamykać",
-      "en": "To close",
+      "id": "p14_37",
+      "category": "Complaints",
+      "pl": "Chcę zwrot pieniędzy",
+      "en": "I want a refund",
       "level": 14
     },
     {
-      "id": "v56",
-      "category": "Verbs",
-      "pl": "Włączać",
-      "en": "To turn on",
+      "id": "p14_38",
+      "category": "Complaints",
+      "pl": "Chcę wymienić",
+      "en": "I want to exchange",
       "level": 14
     },
     {
-      "id": "v57",
-      "category": "Verbs",
-      "pl": "Wyłączać",
-      "en": "To turn off",
+      "id": "p14_39",
+      "category": "Complaints",
+      "pl": "Gdzie jest kierownik?",
+      "en": "Where is the manager?",
       "level": 14
     },
     {
-      "id": "v58",
-      "category": "Verbs",
-      "pl": "Mieszkać",
-      "en": "To live / dwell",
+      "id": "p14_40",
+      "category": "Complaints",
+      "pl": "Chcę rozmawiać z kierownikiem",
+      "en": "I want to speak to the manager",
       "level": 14
     },
     {
-      "id": "v59",
-      "category": "Verbs",
-      "pl": "Przeprowadzać się",
-      "en": "To move (house)",
+      "id": "p14_41",
+      "category": "Complaints",
+      "pl": "To nie jest fair",
+      "en": "This is not fair",
       "level": 14
     },
     {
-      "id": "v60",
-      "category": "Verbs",
-      "pl": "Malować ściany",
-      "en": "To paint the walls",
+      "id": "p14_42",
+      "category": "Complaints",
+      "pl": "Nie zgadzam się",
+      "en": "I don't agree",
       "level": 14
     },
     {
-      "id": "l14_77",
-      "category": "Rooms",
-      "pl": "Korytarz",
-      "en": "Corridor / Hallway",
+      "id": "p14_43",
+      "category": "Complaints",
+      "pl": "Rozczarowany/Rozczarowana",
+      "en": "Disappointed",
       "level": 14
     },
     {
-      "id": "l14_80",
-      "category": "Daily Items",
-      "pl": "Szczotka",
-      "en": "Brush",
+      "id": "p14_44",
+      "category": "Complaints",
+      "pl": "Oczekiwałem/Oczekiwałam czegoś innego",
+      "en": "I expected something different",
       "level": 14
     },
     {
-      "id": "l14_81",
-      "category": "Appliances",
-      "pl": "Mikrofala",
-      "en": "Microwave",
+      "id": "p14_45",
+      "category": "Complaints",
+      "pl": "To nie jest to co obiecano",
+      "en": "This is not what was promised",
       "level": 14
     },
     {
-      "id": "l14_82",
-      "category": "Furniture",
-      "pl": "Komoda",
-      "en": "Dresser / Chest of drawers",
+      "id": "p14_46",
+      "category": "Solutions",
+      "pl": "Jak możemy to rozwiązać?",
+      "en": "How can we solve this?",
       "level": 14
     },
     {
-      "id": "l14_83",
-      "category": "Rooms",
-      "pl": "Strych",
-      "en": "Attic",
+      "id": "p14_47",
+      "category": "Solutions",
+      "pl": "Proszę to naprawić",
+      "en": "Please fix this",
+      "level": 14
+    },
+    {
+      "id": "p14_48",
+      "category": "Solutions",
+      "pl": "Proszę wymienić",
+      "en": "Please replace",
+      "level": 14
+    },
+    {
+      "id": "p14_49",
+      "category": "Solutions",
+      "pl": "Zróbmy to inaczej",
+      "en": "Let's do it differently",
+      "level": 14
+    },
+    {
+      "id": "p14_50",
+      "category": "Solutions",
+      "pl": "Czy jest inna opcja?",
+      "en": "Is there another option?",
+      "level": 14
+    },
+    {
+      "id": "p14_51",
+      "category": "Solutions",
+      "pl": "Może spróbujmy...",
+      "en": "Maybe let's try...",
+      "level": 14
+    },
+    {
+      "id": "p14_52",
+      "category": "Solutions",
+      "pl": "Co proponujesz?",
+      "en": "What do you suggest?",
+      "level": 14
+    },
+    {
+      "id": "p14_53",
+      "category": "Solutions",
+      "pl": "Dziękuję za zrozumienie",
+      "en": "Thank you for understanding",
+      "level": 14
+    },
+    {
+      "id": "p14_54",
+      "category": "Solutions",
+      "pl": "Przepraszam za kłopot",
+      "en": "Sorry for the trouble",
+      "level": 14
+    },
+    {
+      "id": "p14_55",
+      "category": "Solutions",
+      "pl": "Nie ma problemu",
+      "en": "No problem",
+      "level": 14
+    },
+    {
+      "id": "p14_56",
+      "category": "Solutions",
+      "pl": "W porządku",
+      "en": "Okay / Alright",
+      "level": 14
+    },
+    {
+      "id": "p14_57",
+      "category": "Solutions",
+      "pl": "Zgoda",
+      "en": "Agreed / Deal",
+      "level": 14
+    },
+    {
+      "id": "p14_58",
+      "category": "Solutions",
+      "pl": "Dobrze",
+      "en": "Good / Fine",
+      "level": 14
+    },
+    {
+      "id": "p14_59",
+      "category": "Solutions",
+      "pl": "Dziękuję za pomoc",
+      "en": "Thank you for your help",
+      "level": 14
+    },
+    {
+      "id": "p14_60",
+      "category": "Solutions",
+      "pl": "Problem rozwiązany",
+      "en": "Problem solved",
+      "level": 14
+    },
+    {
+      "id": "p14_61",
+      "category": "Safety",
+      "pl": "Czy to jest bezpieczne?",
+      "en": "Is this safe?",
+      "level": 14
+    },
+    {
+      "id": "p14_62",
+      "category": "Safety",
+      "pl": "Niebezpieczne",
+      "en": "Dangerous",
+      "level": 14
+    },
+    {
+      "id": "p14_63",
+      "category": "Safety",
+      "pl": "Ostrożnie",
+      "en": "Careful / Caution",
+      "level": 14
+    },
+    {
+      "id": "p14_64",
+      "category": "Safety",
+      "pl": "Uwaga!",
+      "en": "Watch out! / Attention!",
+      "level": 14
+    },
+    {
+      "id": "p14_65",
+      "category": "Safety",
+      "pl": "Stop!",
+      "en": "Stop!",
+      "level": 14
+    },
+    {
+      "id": "p14_66",
+      "category": "Safety",
+      "pl": "Nie dotykaj",
+      "en": "Don't touch",
+      "level": 14
+    },
+    {
+      "id": "p14_67",
+      "category": "Safety",
+      "pl": "Zamknięte",
+      "en": "Closed",
+      "level": 14
+    },
+    {
+      "id": "p14_68",
+      "category": "Safety",
+      "pl": "Otwarte",
+      "en": "Open",
+      "level": 14
+    },
+    {
+      "id": "p14_69",
+      "category": "Safety",
+      "pl": "Wyjście awaryjne",
+      "en": "Emergency exit",
+      "level": 14
+    },
+    {
+      "id": "p14_70",
+      "category": "Safety",
+      "pl": "Gdzie jest wyjście?",
+      "en": "Where is the exit?",
       "level": 14
     }
   ]

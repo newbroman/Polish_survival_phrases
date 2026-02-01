@@ -1,496 +1,496 @@
 {
   "level": 3,
-  "description": "Expressing Opinions & Problem Solving",
-  "lastUpdated": "2026-01-28",
+  "description": "Food & Dining - Restaurants & Ordering",
+  "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "l3_1",
-      "category": "Opinions",
-      "pl": "Moim zdaniem...",
-      "en": "In my opinion...",
-      "level": 2
-    },
-    {
-      "id": "l3_10",
-      "category": "Opinions",
-      "pl": "Bez wątpienia",
-      "en": "Without a doubt",
-      "level": 2
-    },
-    {
-      "id": "l3_11",
-      "category": "Problem Solving",
-      "pl": "Coś poszło nie tak",
-      "en": "Something went wrong",
-      "level": 2
-    },
-    {
-      "id": "l3_12",
-      "category": "Problem Solving",
-      "pl": "Potrzebuję wyjaśnienia",
-      "en": "I need an explanation",
-      "level": 2
-    },
-    {
-      "id": "l3_13",
-      "category": "Problem Solving",
-      "pl": "Czy możesz mi pomóc z tym?",
-      "en": "Can you help me with this?",
-      "level": 2
-    },
-    {
-      "id": "l3_14",
-      "category": "Problem Solving",
-      "pl": "To nie moja wina",
-      "en": "It's not my fault",
-      "level": 2
-    },
-    {
-      "id": "l3_15",
-      "category": "Problem Solving",
-      "pl": "Zróbmy to inaczej",
-      "en": "Let's do it differently",
-      "level": 2
-    },
-    {
-      "id": "l3_16",
-      "category": "Problem Solving",
-      "pl": "Daj mi chwilę",
-      "en": "Give me a moment",
-      "level": 2
-    },
-    {
-      "id": "l3_17",
-      "category": "Problem Solving",
-      "pl": "Czy to działa?",
-      "en": "Does this work?",
-      "level": 2
-    },
-    {
-      "id": "l3_18",
-      "category": "Problem Solving",
-      "pl": "Nie jestem pewien",
-      "en": "I'm not sure",
-      "level": 2
-    },
-    {
-      "id": "l3_19",
-      "category": "Problem Solving",
-      "pl": "Muszę to przemyśleć",
-      "en": "I need to think about it",
-      "level": 2
-    },
-    {
-      "id": "l3_2",
-      "category": "Opinions",
-      "pl": "Masz rację",
-      "en": "You are right",
-      "level": 2
-    },
-    {
-      "id": "l3_20",
-      "category": "Problem Solving",
-      "pl": "Zróbmy listę",
-      "en": "Let's make a list",
-      "level": 2
-    },
-    {
-      "id": "l3_21",
-      "category": "Requests",
-      "pl": "Czy mógłbyś...?",
-      "en": "Could you...?",
-      "level": 2
-    },
-    {
-      "id": "l3_22",
-      "category": "Requests",
-      "pl": "Czy mogę prosić o...?",
-      "en": "May I ask for...?",
-      "level": 2
-    },
-    {
-      "id": "l3_23",
-      "category": "Requests",
-      "pl": "Byłbym wdzięczny",
-      "en": "I would be grateful",
-      "level": 2
-    },
-    {
-      "id": "l3_24",
-      "category": "Requests",
-      "pl": "Potrzebuję twojej rady",
-      "en": "I need your advice",
-      "level": 2
-    },
-    {
-      "id": "l3_25",
-      "category": "Requests",
-      "pl": "Czy możesz to sprawdzić?",
-      "en": "Can you check this?",
-      "level": 2
-    },
-    {
-      "id": "l3_26",
-      "category": "Requests",
-      "pl": "Proszę daj mi znać",
-      "en": "Please let me know",
-      "level": 2
-    },
-    {
-      "id": "l3_27",
-      "category": "Requests",
-      "pl": "Czy to możliwe?",
-      "en": "Is this possible?",
-      "level": 2
-    },
-    {
-      "id": "l3_28",
-      "category": "Requests",
-      "pl": "Kiedy będzie gotowe?",
-      "en": "When will it be ready?",
-      "level": 2
-    },
-    {
-      "id": "l3_29",
-      "category": "Requests",
-      "pl": "Czy możesz to powtórzyć?",
-      "en": "Can you repeat that?",
-      "level": 2
-    },
-    {
-      "id": "l3_3",
-      "category": "Opinions",
-      "pl": "Nie zgadzam się",
-      "en": "I disagree",
-      "level": 2
-    },
-    {
-      "id": "l3_30",
-      "category": "Requests",
-      "pl": "Mógłbyś mówić wolniej?",
-      "en": "Could you speak slower?",
-      "level": 2
-    },
-    {
-      "id": "l3_31",
-      "category": "Connectors",
-      "pl": "Po pierwsze...",
-      "en": "First of all...",
-      "level": 2
-    },
-    {
-      "id": "l3_32",
-      "category": "Connectors",
-      "pl": "Po drugie...",
-      "en": "Secondly...",
-      "level": 2
-    },
-    {
-      "id": "l3_33",
-      "category": "Connectors",
-      "pl": "W końcu...",
-      "en": "Finally...",
-      "level": 2
-    },
-    {
-      "id": "l3_34",
-      "category": "Connectors",
-      "pl": "Z drugiej strony...",
-      "en": "On the other hand...",
-      "level": 2
-    },
-    {
-      "id": "l3_35",
-      "category": "Connectors",
-      "pl": "Innymi słowy...",
-      "en": "In other words...",
-      "level": 2
-    },
-    {
-      "id": "l3_36",
-      "category": "Connectors",
-      "pl": "Na przykład...",
-      "en": "For example...",
-      "level": 2
-    },
-    {
-      "id": "l3_37",
-      "category": "Connectors",
-      "pl": "Szczerze mówiąc...",
-      "en": "To be honest...",
-      "level": 2
-    },
-    {
-      "id": "l3_38",
-      "category": "Connectors",
-      "pl": "Chodzi o to, że...",
-      "en": "The point is that...",
-      "level": 2
-    },
-    {
-      "id": "l3_39",
-      "category": "Connectors",
-      "pl": "Na szczęście",
-      "en": "Fortunately",
-      "level": 2
-    },
-    {
-      "id": "l3_4",
-      "category": "Opinions",
-      "pl": "To zależy od sytuacji",
-      "en": "It depends on the situation",
-      "level": 2
-    },
-    {
-      "id": "l3_41",
-      "category": "Lifestyle",
-      "pl": "Jakie masz plany?",
-      "en": "What are your plans?",
-      "level": 2
-    },
-    {
-      "id": "l3_42",
-      "category": "Lifestyle",
-      "pl": "Jestem zajęty",
-      "en": "I am busy",
-      "level": 2
-    },
-    {
-      "id": "l3_43",
-      "category": "Lifestyle",
-      "pl": "Mam wolne",
-      "en": "I have time off / I'm free",
-      "level": 2
-    },
-    {
-      "id": "l3_44",
-      "category": "Lifestyle",
-      "pl": "Warto spróbować",
-      "en": "It's worth a try",
-      "level": 2
-    },
-    {
-      "id": "l3_45",
-      "category": "Lifestyle",
-      "pl": "Czym się interesujesz?",
-      "en": "What are you interested in?",
-      "level": 2
-    },
-    {
-      "id": "l3_46",
-      "category": "Lifestyle",
-      "pl": "To moja pasja",
-      "en": "It's my passion",
-      "level": 2
-    },
-    {
-      "id": "l3_47",
-      "category": "Lifestyle",
-      "pl": "Chciałbym podróżować",
-      "en": "I would like to travel",
-      "level": 2
-    },
-    {
-      "id": "l3_48",
-      "category": "Lifestyle",
-      "pl": "Uczę się codziennie",
-      "en": "I learn every day",
-      "level": 2
-    },
-    {
-      "id": "l3_49",
-      "category": "Lifestyle",
-      "pl": "Nie mam ochoty",
-      "en": "I don't feel like it",
-      "level": 2
-    },
-    {
-      "id": "l3_5",
-      "category": "Opinions",
-      "pl": "Wydaje mi się, że...",
-      "en": "It seems to me that...",
-      "level": 2
-    },
-    {
-      "id": "l3_50",
-      "category": "Lifestyle",
-      "pl": "To zależy od pogody",
-      "en": "It depends on the weather",
-      "level": 2
-    },
-    {
-      "id": "l3_51",
-      "category": "Emergencies",
-      "pl": "To pilne!",
-      "en": "It's urgent!",
-      "level": 2
-    },
-    {
-      "id": "l3_52",
-      "category": "Emergencies",
-      "pl": "Zgubiono bagaż",
-      "en": "Lost luggage",
-      "level": 2
-    },
-    {
-      "id": "l3_53",
-      "category": "Emergencies",
-      "pl": "Ukradli mi portfel",
-      "en": "They stole my wallet",
-      "level": 2
-    },
-    {
-      "id": "l3_54",
-      "category": "Emergencies",
-      "pl": "Potrzebuję pomocy prawnej",
-      "en": "I need legal help",
-      "level": 2
-    },
-    {
-      "id": "l3_55",
-      "category": "Emergencies",
-      "pl": "Gdzie jest najbliższy szpital?",
-      "en": "Where is the nearest hospital?",
-      "level": 2
-    },
-    {
-      "id": "l3_56",
-      "category": "Emergencies",
-      "pl": "Zadzwoń po karetkę",
-      "en": "Call an ambulance",
-      "level": 2
-    },
-    {
-      "id": "l3_57",
-      "category": "Emergencies",
-      "pl": "Nie mogę oddychać",
-      "en": "I can't breathe",
-      "level": 2
-    },
-    {
-      "id": "l3_58",
-      "category": "Emergencies",
-      "pl": "Jestem ranny",
-      "en": "I am injured",
-      "level": 2
-    },
-    {
-      "id": "l3_59",
-      "category": "Emergencies",
-      "pl": "To wypadek",
-      "en": "It's an accident",
-      "level": 2
-    },
-    {
-      "id": "l3_6",
-      "category": "Opinions",
-      "pl": "To nie ma sensu",
-      "en": "That makes no sense",
-      "level": 2
-    },
-    {
-      "id": "l3_60",
-      "category": "Emergencies",
-      "pl": "Proszę o pomoc",
-      "en": "I'm asking for help",
-      "level": 2
-    },
-    {
-      "id": "l3_7",
-      "category": "Opinions",
-      "pl": "Co o tym sądzisz?",
-      "en": "What do you think about it?",
-      "level": 2
-    },
-    {
-      "id": "l3_8",
-      "category": "Opinions",
-      "pl": "Nie mam zdania",
-      "en": "I have no opinion",
-      "level": 2
-    },
-    {
-      "id": "l3_9",
-      "category": "Opinions",
-      "pl": "Dokładnie tak",
-      "en": "Exactly so",
-      "level": 2
-    },
-    {
-      "id": "l3_61",
-      "category": "Connectors",
-      "pl": "Przede wszystkim",
-      "en": "Above all / First and foremost",
+      "id": "s3_01",
+      "category": "Restaurant Basics",
+      "pl": "Stolik dla jednej osoby",
+      "en": "Table for one",
       "level": 3
     },
     {
-      "id": "l3_62",
-      "category": "Problem Solving",
-      "pl": "Jak to naprawić?",
-      "en": "How to fix this?",
+      "id": "s3_02",
+      "category": "Restaurant Basics",
+      "pl": "Stolik dla dwóch osób",
+      "en": "Table for two",
       "level": 3
     },
     {
-      "id": "l3_63",
-      "category": "Problem Solving",
-      "pl": "Czy to jest bezpieczne?",
-      "en": "Is this safe?",
+      "id": "s3_03",
+      "category": "Restaurant Basics",
+      "pl": "Rezerwacja",
+      "en": "Reservation",
       "level": 3
     },
     {
-      "id": "l3_64",
-      "category": "Requests",
-      "pl": "Czy możesz mi pokazać?",
-      "en": "Can you show me?",
+      "id": "s3_04",
+      "category": "Restaurant Basics",
+      "pl": "Mam rezerwację",
+      "en": "I have a reservation",
       "level": 3
     },
     {
-      "id": "l3_65",
-      "category": "Requests",
-      "pl": "Potrzebuję więcej czasu",
-      "en": "I need more time",
+      "id": "s3_05",
+      "category": "Restaurant Basics",
+      "pl": "Menu, proszę",
+      "en": "Menu, please",
       "level": 3
     },
     {
-      "id": "l3_66",
-      "category": "Opinions",
-      "pl": "Nie jestem przekonany",
-      "en": "I'm not convinced",
+      "id": "s3_06",
+      "category": "Restaurant Basics",
+      "pl": "Rachunek, proszę",
+      "en": "The bill, please",
       "level": 3
     },
     {
-      "id": "l3_67",
-      "category": "Opinions",
-      "pl": "To dobry pomysł",
-      "en": "That's a good idea",
+      "id": "s3_07",
+      "category": "Restaurant Basics",
+      "pl": "Czy mogę zapłacić kartą?",
+      "en": "Can I pay by card?",
       "level": 3
     },
     {
-      "id": "l3_68",
-      "category": "Lifestyle",
-      "pl": "Lubię to robić",
-      "en": "I like doing this",
+      "id": "s3_08",
+      "category": "Restaurant Basics",
+      "pl": "Razem czy osobno?",
+      "en": "Together or separate?",
       "level": 3
     },
     {
-      "id": "l3_69",
-      "category": "Lifestyle",
-      "pl": "To jest moje ulubione",
-      "en": "This is my favorite",
+      "id": "s3_09",
+      "category": "Restaurant Basics",
+      "pl": "Razem",
+      "en": "Together",
       "level": 3
     },
     {
-      "id": "l3_70",
-      "category": "Emergencies",
-      "pl": "Gdzie jest wyjście awaryjne?",
-      "en": "Where is the emergency exit?",
+      "id": "s3_10",
+      "category": "Restaurant Basics",
+      "pl": "Osobno",
+      "en": "Separately",
       "level": 3
     },
     {
-      "id": "l3_71",
-      "category": "Connectors",
-      "pl": "Podsumowując",
-      "en": "To sum up / In summary",
+      "id": "s3_11",
+      "category": "Restaurant Basics",
+      "pl": "Napiwek",
+      "en": "Tip",
+      "level": 3
+    },
+    {
+      "id": "s3_12",
+      "category": "Restaurant Basics",
+      "pl": "Czy napiwek jest wliczony?",
+      "en": "Is tip included?",
+      "level": 3
+    },
+    {
+      "id": "s3_13",
+      "category": "Restaurant Basics",
+      "pl": "Paragon, proszę",
+      "en": "Receipt, please",
+      "level": 3
+    },
+    {
+      "id": "s3_14",
+      "category": "Restaurant Basics",
+      "pl": "Toaleta",
+      "en": "Restroom",
+      "level": 3
+    },
+    {
+      "id": "s3_15",
+      "category": "Restaurant Basics",
+      "pl": "Gdzie jest toaleta?",
+      "en": "Where is the restroom?",
+      "level": 3
+    },
+    {
+      "id": "s3_16",
+      "category": "Ordering",
+      "pl": "Poproszę...",
+      "en": "I'll have... / I'd like...",
+      "level": 3
+    },
+    {
+      "id": "s3_17",
+      "category": "Ordering",
+      "pl": "Dla mnie...",
+      "en": "For me...",
+      "level": 3
+    },
+    {
+      "id": "s3_18",
+      "category": "Ordering",
+      "pl": "Co Pan/Pani poleca?",
+      "en": "What do you recommend?",
+      "level": 3
+    },
+    {
+      "id": "s3_19",
+      "category": "Ordering",
+      "pl": "Poproszę to samo",
+      "en": "I'll have the same",
+      "level": 3
+    },
+    {
+      "id": "s3_20",
+      "category": "Ordering",
+      "pl": "Czy to jest pikantne?",
+      "en": "Is this spicy?",
+      "level": 3
+    },
+    {
+      "id": "s3_21",
+      "category": "Ordering",
+      "pl": "Nie za ostre",
+      "en": "Not too spicy",
+      "level": 3
+    },
+    {
+      "id": "s3_22",
+      "category": "Ordering",
+      "pl": "Bez cebuli",
+      "en": "No onions",
+      "level": 3
+    },
+    {
+      "id": "s3_23",
+      "category": "Ordering",
+      "pl": "Bez czosnku",
+      "en": "No garlic",
+      "level": 3
+    },
+    {
+      "id": "s3_24",
+      "category": "Ordering",
+      "pl": "Jeszcze jedno piwo",
+      "en": "Another beer",
+      "level": 3
+    },
+    {
+      "id": "s3_25",
+      "category": "Ordering",
+      "pl": "Jeszcze wodę",
+      "en": "More water",
+      "level": 3
+    },
+    {
+      "id": "s3_26",
+      "category": "Ordering",
+      "pl": "To wszystko",
+      "en": "That's all",
+      "level": 3
+    },
+    {
+      "id": "s3_27",
+      "category": "Ordering",
+      "pl": "Jeszcze nie",
+      "en": "Not yet",
+      "level": 3
+    },
+    {
+      "id": "s3_28",
+      "category": "Ordering",
+      "pl": "Chwileczkę",
+      "en": "Just a moment",
+      "level": 3
+    },
+    {
+      "id": "s3_29",
+      "category": "Ordering",
+      "pl": "Czy mogę zobaczyć menu?",
+      "en": "Can I see the menu?",
+      "level": 3
+    },
+    {
+      "id": "s3_30",
+      "category": "Ordering",
+      "pl": "Co jest w tym daniu?",
+      "en": "What's in this dish?",
+      "level": 3
+    },
+    {
+      "id": "s3_31",
+      "category": "Ordering",
+      "pl": "Czy to jest mięso?",
+      "en": "Is this meat?",
+      "level": 3
+    },
+    {
+      "id": "s3_32",
+      "category": "Ordering",
+      "pl": "Bez mięsa",
+      "en": "Without meat",
+      "level": 3
+    },
+    {
+      "id": "s3_33",
+      "category": "Ordering",
+      "pl": "Czy macie dania wegetariańskie?",
+      "en": "Do you have vegetarian dishes?",
+      "level": 3
+    },
+    {
+      "id": "s3_34",
+      "category": "Ordering",
+      "pl": "Jestem wegetarianinem/wegetarianką",
+      "en": "I'm vegetarian",
+      "level": 3
+    },
+    {
+      "id": "s3_35",
+      "category": "Ordering",
+      "pl": "Mam alergię na...",
+      "en": "I'm allergic to...",
+      "level": 3
+    },
+    {
+      "id": "s3_36",
+      "category": "Drinks",
+      "pl": "Woda",
+      "en": "Water",
+      "level": 3
+    },
+    {
+      "id": "s3_37",
+      "category": "Drinks",
+      "pl": "Woda gazowana",
+      "en": "Sparkling water",
+      "level": 3
+    },
+    {
+      "id": "s3_38",
+      "category": "Drinks",
+      "pl": "Woda niegazowana",
+      "en": "Still water",
+      "level": 3
+    },
+    {
+      "id": "s3_39",
+      "category": "Drinks",
+      "pl": "Kawa",
+      "en": "Coffee",
+      "level": 3
+    },
+    {
+      "id": "s3_40",
+      "category": "Drinks",
+      "pl": "Herbata",
+      "en": "Tea",
+      "level": 3
+    },
+    {
+      "id": "s3_41",
+      "category": "Drinks",
+      "pl": "Sok",
+      "en": "Juice",
+      "level": 3
+    },
+    {
+      "id": "s3_42",
+      "category": "Drinks",
+      "pl": "Piwo",
+      "en": "Beer",
+      "level": 3
+    },
+    {
+      "id": "s3_43",
+      "category": "Drinks",
+      "pl": "Wino",
+      "en": "Wine",
+      "level": 3
+    },
+    {
+      "id": "s3_44",
+      "category": "Drinks",
+      "pl": "Czerwone wino",
+      "en": "Red wine",
+      "level": 3
+    },
+    {
+      "id": "s3_45",
+      "category": "Drinks",
+      "pl": "Białe wino",
+      "en": "White wine",
+      "level": 3
+    },
+    {
+      "id": "s3_46",
+      "category": "Food Items",
+      "pl": "Zupa",
+      "en": "Soup",
+      "level": 3
+    },
+    {
+      "id": "s3_47",
+      "category": "Food Items",
+      "pl": "Sałatka",
+      "en": "Salad",
+      "level": 3
+    },
+    {
+      "id": "s3_48",
+      "category": "Food Items",
+      "pl": "Chleb",
+      "en": "Bread",
+      "level": 3
+    },
+    {
+      "id": "s3_49",
+      "category": "Food Items",
+      "pl": "Mięso",
+      "en": "Meat",
+      "level": 3
+    },
+    {
+      "id": "s3_50",
+      "category": "Food Items",
+      "pl": "Ryba",
+      "en": "Fish",
+      "level": 3
+    },
+    {
+      "id": "s3_51",
+      "category": "Food Items",
+      "pl": "Kurczak",
+      "en": "Chicken",
+      "level": 3
+    },
+    {
+      "id": "s3_52",
+      "category": "Food Items",
+      "pl": "Ziemniaki",
+      "en": "Potatoes",
+      "level": 3
+    },
+    {
+      "id": "s3_53",
+      "category": "Food Items",
+      "pl": "Warzywa",
+      "en": "Vegetables",
+      "level": 3
+    },
+    {
+      "id": "s3_54",
+      "category": "Food Items",
+      "pl": "Deser",
+      "en": "Dessert",
+      "level": 3
+    },
+    {
+      "id": "s3_55",
+      "category": "Food Items",
+      "pl": "Śniadanie",
+      "en": "Breakfast",
+      "level": 3
+    },
+    {
+      "id": "s3_56",
+      "category": "Complaints & Requests",
+      "pl": "To nie jest moje zamówienie",
+      "en": "This isn't my order",
+      "level": 3
+    },
+    {
+      "id": "s3_57",
+      "category": "Complaints & Requests",
+      "pl": "Jest zimne",
+      "en": "It's cold",
+      "level": 3
+    },
+    {
+      "id": "s3_58",
+      "category": "Complaints & Requests",
+      "pl": "Czekam już długo",
+      "en": "I've been waiting a long time",
+      "level": 3
+    },
+    {
+      "id": "s3_59",
+      "category": "Complaints & Requests",
+      "pl": "Więcej chleba, proszę",
+      "en": "More bread, please",
+      "level": 3
+    },
+    {
+      "id": "s3_60",
+      "category": "Complaints & Requests",
+      "pl": "Sztućce, proszę",
+      "en": "Cutlery, please",
+      "level": 3
+    },
+    {
+      "id": "s3_61",
+      "category": "Polish Dishes",
+      "pl": "Pierogi",
+      "en": "Dumplings",
+      "level": 3
+    },
+    {
+      "id": "s3_62",
+      "category": "Polish Dishes",
+      "pl": "Bigos",
+      "en": "Hunter's stew",
+      "level": 3
+    },
+    {
+      "id": "s3_63",
+      "category": "Polish Dishes",
+      "pl": "Żurek",
+      "en": "Sour rye soup",
+      "level": 3
+    },
+    {
+      "id": "s3_64",
+      "category": "Polish Dishes",
+      "pl": "Kotlet schabowy",
+      "en": "Pork cutlet",
+      "level": 3
+    },
+    {
+      "id": "s3_65",
+      "category": "Polish Dishes",
+      "pl": "Gołąbki",
+      "en": "Cabbage rolls",
+      "level": 3
+    },
+    {
+      "id": "s3_66",
+      "category": "Polish Dishes",
+      "pl": "Rosół",
+      "en": "Chicken soup",
+      "level": 3
+    },
+    {
+      "id": "s3_67",
+      "category": "Polish Dishes",
+      "pl": "Placki ziemniaczane",
+      "en": "Potato pancakes",
+      "level": 3
+    },
+    {
+      "id": "s3_68",
+      "category": "Polish Dishes",
+      "pl": "Naleśniki",
+      "en": "Pancakes / Crepes",
+      "level": 3
+    },
+    {
+      "id": "s3_69",
+      "category": "Polish Dishes",
+      "pl": "Kiełbasa",
+      "en": "Sausage",
+      "level": 3
+    },
+    {
+      "id": "s3_70",
+      "category": "Polish Dishes",
+      "pl": "Sernik",
+      "en": "Cheesecake",
       "level": 3
     }
   ]

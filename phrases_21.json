@@ -1,82 +1,382 @@
-
 {
   "level": 21,
   "description": "The Shopping Marathon (75 Phrases)",
   "phrases": [
-    {"id": 1, "en": "The total is thirty złoty.", "pl": "Razem trzydzieści złotych."},
-    {"id": 2, "en": "The total is forty złoty.", "pl": "Razem czterdzieści złotych."},
-    {"id": 3, "en": "It costs thirty-one złoty.", "pl": "To kosztuje trzydzieści jeden złotych."},
-    {"id": 4, "en": "It costs forty-one złoty.", "pl": "To kosztuje czterdzieści jeden złotych."},
-    {"id": 5, "en": "That will be thirty-two złoty.", "pl": "To będzie trzydzieści dwa złote."},
-    {"id": 6, "en": "That will be forty-two złoty.", "pl": "To będzie czterdzieści dwa złote."},
-    {"id": 7, "en": "Thirty-three złoty, please.", "pl": "Trzydzieści trzy złote, poproszę."},
-    {"id": 8, "en": "Forty-three złoty, please.", "pl": "Czterdzieści trzy złote, poproszę."},
-    {"id": 9, "en": "It comes to thirty-four złoty.", "pl": "To wynosi trzydzieści cztery złote."},
-    {"id": 10, "en": "It comes to forty-four złoty.", "pl": "To wynosi czterdzieści cztery złote."},
-    {"id": 11, "en": "Total is thirty-five złoty.", "pl": "Razem trzydzieści pięć złotych."},
-    {"id": 12, "en": "Total is forty-five złoty.", "pl": "Razem czterdzieści pięć złotych."},
-    {"id": 13, "en": "Thirty-six złoty and fifty cents.", "pl": "Trzydzieści sześć złotych pięćdziesiąt."},
-    {"id": 14, "en": "Forty-six złoty and fifty cents.", "pl": "Czterdzieści sześć złotych pięćdziesiąt."},
-    {"id": 15, "en": "Thirty-seven złoty total.", "pl": "Razem trzydzieści siedem złotych."},
-    {"id": 16, "en": "Forty-seven złoty total.", "pl": "Razem czterdzieści siedem złotych."},
-    {"id": 17, "en": "It's thirty-eight złoty.", "pl": "To trzydzieści osiem złotych."},
-    {"id": 18, "en": "It's forty-eight złoty.", "pl": "To czterdzieści osiem złotych."},
-    {"id": 19, "en": "Exactly thirty-nine złoty.", "pl": "Dokładnie trzydzieści dziewięć złotych."},
-    {"id": 20, "en": "Exactly forty-nine złoty.", "pl": "Dokładnie czterdzieści dziewięć złotych."},
-    {"id": 21, "en": "Thirty złoty for the bread.", "pl": "Trzydzieści złotych za chleb."},
-    {"id": 22, "en": "Forty złoty for the coffee.", "pl": "Czterdzieści złotych za kawę."},
-    {"id": 23, "en": "Wait, is it thirty or forty?", "pl": "Chwila, czy to trzydzieści czy czterdzieści?"},
-    {"id": 24, "en": "It costs thirty-two fifty.", "pl": "To kosztuje trzydzieści dwa pięćdziesiąt."},
-    {"id": 25, "en": "It costs forty-two fifty.", "pl": "To kosztuje czterdzieści dwa pięćdziesiąt."},
-    {"id": 26, "en": "Thirty-four złoty with the discount.", "pl": "Trzydzieści cztery złote ze zniżką."},
-    {"id": 27, "en": "Forty-four złoty with the discount.", "pl": "Czterdzieści cztery złote ze zniżką."},
-    {"id": 28, "en": "The milk is three złoty.", "pl": "Mleko kosztuje trzy złote."},
-    {"id": 29, "en": "The butter is eight złoty.", "pl": "Masło kosztuje osiem złotych."},
-    {"id": 30, "en": "The eggs are ten złoty.", "pl": "Jajka kosztują dziesięć złotych."},
-    {"id": 31, "en": "Total for everything: thirty-six.", "pl": "Razem za wszystko: trzydzieści sześć."},
-    {"id": 32, "en": "Total for everything: forty-six.", "pl": "Razem za wszystko: czterdzieści sześć."},
-    {"id": 33, "en": "I only have thirty złoty.", "pl": "Mam tylko trzydzieści złotych."},
-    {"id": 34, "en": "I only have forty złoty.", "pl": "Mam tylko czterdzieści złotych."},
-    {"id": 35, "en": "Is thirty enough?", "pl": "Czy trzydzieści wystarczy?"},
-    {"id": 36, "en": "Is forty enough?", "pl": "Czy czterdzieści wystarczy?"},
-    {"id": 37, "en": "It's more than thirty.", "pl": "To więcej niż trzydzieści."},
-    {"id": 38, "en": "It's more than forty.", "pl": "To więcej niż czterdzieści."},
-    {"id": 39, "en": "It's less than thirty-five.", "pl": "To mniej niż trzydzieści pięć."},
-    {"id": 40, "en": "It's less than forty-five.", "pl": "To mniej niż czterdzieści pięć."},
-    {"id": 41, "en": "Exactly thirty-three.", "pl": "Dokładnie trzydzieści trzy."},
-    {"id": 42, "en": "Exactly forty-three.", "pl": "Dokładnie czterdzieści trzy."},
-    {"id": 43, "en": "Thirty-seven fifty-five.", "pl": "Trzydzieści siedem pięćdziesiąt pięć."},
-    {"id": 44, "en": "Forty-seven fifty-five.", "pl": "Czterdzieści siedem pięćdziesiąt pięć."},
-    {"id": 45, "en": "Thirty-eight or thirty-nine?", "pl": "Trzydzieści osiem czy trzydzieści dziewięć?"},
-    {"id": 46, "en": "Forty-eight or forty-nine?", "pl": "Czterdzieści osiem czy czterdzieści dziewięć?"},
-    {"id": 47, "en": "The cheese costs thirty złoty.", "pl": "Ser kosztuje trzydzieści złotych."},
-    {"id": 48, "en": "The meat costs forty złoty.", "pl": "Mięso kosztuje czterdzieści złotych."},
-    {"id": 49, "en": "The bill is thirty-two.", "pl": "Rachunek wynosi trzydzieści dwa."},
-    {"id": 50, "en": "The bill is forty-two.", "pl": "Rachunek wynosi czterdzieści dwa."},
-    {"id": 51, "en": "Thirty-one, thirty-two, thirty-three.", "pl": "Trzydzieści jeden, trzydzieści dwa, trzydzieści trzy."},
-    {"id": 52, "en": "Forty-one, forty-two, forty-three.", "pl": "Czterdzieści jeden, czterdzieści dwa, czterdzieści trzy."},
-    {"id": 53, "en": "Almost thirty złoty.", "pl": "Prawie trzydzieści złotych."},
-    {"id": 54, "en": "Almost forty złoty.", "pl": "Prawie czterdzieści złotych."},
-    {"id": 55, "en": "Plus thirty złoty tax.", "pl": "Plus trzydzieści złotych podatku."},
-    {"id": 56, "en": "Plus forty złoty tax.", "pl": "Plus czterdzieści złotych podatku."},
-    {"id": 57, "en": "Minus thirty złoty discount.", "pl": "Minus trzydzieści złotych zniżki."},
-    {"id": 58, "en": "Minus forty złoty discount.", "pl": "Minus czterdzieści złotych zniżki."},
-    {"id": 59, "en": "Thirty-four is not forty-four.", "pl": "Trzydzieści cztery to nie czterdzieści cztery."},
-    {"id": 60, "en": "Four hundred thirty złoty.", "pl": "Czterysta trzydzieści złotych."},
-    {"id": 61, "en": "Four hundred forty złoty.", "pl": "Czterysta czterdzieści złotych."},
-    {"id": 62, "en": "Thirty-six and change.", "pl": "Trzydzieści sześć i reszta."},
-    {"id": 63, "en": "Forty-six and change.", "pl": "Czterdzieści sześć i reszta."},
-    {"id": 64, "en": "I paid thirty.", "pl": "Zapłaciłem trzydzieści."},
-    {"id": 65, "en": "I paid forty.", "pl": "Zapłaciłem czterdzieści."},
-    {"id": 66, "en": "You owe thirty-two.", "pl": "Jesteś winien trzydzieści dwa."},
-    {"id": 67, "en": "You owe forty-two.", "pl": "Jesteś winien czterdzieści dwa."},
-    {"id": 68, "en": "Thirty-eight eighty-eight.", "pl": "Trzydzieści osiem osiemdziesiąt osiem."},
-    {"id": 69, "en": "Forty-eight eighty-eight.", "pl": "Czterdzieści osiem osiemdziesiąt osiem."},
-    {"id": 70, "en": "Thirty-five cents.", "pl": "Trzydzieści pięć groszy."},
-    {"id": 71, "en": "Forty-five cents.", "pl": "Czterdzieści pięć groszy."},
-    {"id": 72, "en": "It's exactly thirty.", "pl": "To dokładnie trzydzieści."},
-    {"id": 73, "en": "It's exactly forty.", "pl": "To dokładnie czterdzieści."},
-    {"id": 74, "en": "Thirty-three plus forty-three.", "pl": "Trzydzieści trzy plus czterdzieści trzy."},
-    {"id": 75, "en": "Finally, the total is seventy.", "pl": "W końcu, razem siedemdziesiąt."}
-  ]
+    {
+      "id": 1,
+      "en": "The total is thirty złoty.",
+      "pl": "Razem trzydzieści złotych."
+    },
+    {
+      "id": 2,
+      "en": "The total is forty złoty.",
+      "pl": "Razem czterdzieści złotych."
+    },
+    {
+      "id": 3,
+      "en": "It costs thirty-one złoty.",
+      "pl": "To kosztuje trzydzieści jeden złotych."
+    },
+    {
+      "id": 4,
+      "en": "It costs forty-one złoty.",
+      "pl": "To kosztuje czterdzieści jeden złotych."
+    },
+    {
+      "id": 5,
+      "en": "That will be thirty-two złoty.",
+      "pl": "To będzie trzydzieści dwa złote."
+    },
+    {
+      "id": 6,
+      "en": "That will be forty-two złoty.",
+      "pl": "To będzie czterdzieści dwa złote."
+    },
+    {
+      "id": 7,
+      "en": "Thirty-three złoty, please.",
+      "pl": "Trzydzieści trzy złote, poproszę."
+    },
+    {
+      "id": 8,
+      "en": "Forty-three złoty, please.",
+      "pl": "Czterdzieści trzy złote, poproszę."
+    },
+    {
+      "id": 9,
+      "en": "It comes to thirty-four złoty.",
+      "pl": "To wynosi trzydzieści cztery złote."
+    },
+    {
+      "id": 10,
+      "en": "It comes to forty-four złoty.",
+      "pl": "To wynosi czterdzieści cztery złote."
+    },
+    {
+      "id": 11,
+      "en": "Total is thirty-five złoty.",
+      "pl": "Razem trzydzieści pięć złotych."
+    },
+    {
+      "id": 12,
+      "en": "Total is forty-five złoty.",
+      "pl": "Razem czterdzieści pięć złotych."
+    },
+    {
+      "id": 13,
+      "en": "Thirty-six złoty and fifty cents.",
+      "pl": "Trzydzieści sześć złotych pięćdziesiąt."
+    },
+    {
+      "id": 14,
+      "en": "Forty-six złoty and fifty cents.",
+      "pl": "Czterdzieści sześć złotych pięćdziesiąt."
+    },
+    {
+      "id": 15,
+      "en": "Thirty-seven złoty total.",
+      "pl": "Razem trzydzieści siedem złotych."
+    },
+    {
+      "id": 16,
+      "en": "Forty-seven złoty total.",
+      "pl": "Razem czterdzieści siedem złotych."
+    },
+    {
+      "id": 17,
+      "en": "It's thirty-eight złoty.",
+      "pl": "To trzydzieści osiem złotych."
+    },
+    {
+      "id": 18,
+      "en": "It's forty-eight złoty.",
+      "pl": "To czterdzieści osiem złotych."
+    },
+    {
+      "id": 19,
+      "en": "Exactly thirty-nine złoty.",
+      "pl": "Dokładnie trzydzieści dziewięć złotych."
+    },
+    {
+      "id": 20,
+      "en": "Exactly forty-nine złoty.",
+      "pl": "Dokładnie czterdzieści dziewięć złotych."
+    },
+    {
+      "id": 21,
+      "en": "Thirty złoty for the bread.",
+      "pl": "Trzydzieści złotych za chleb."
+    },
+    {
+      "id": 22,
+      "en": "Forty złoty for the coffee.",
+      "pl": "Czterdzieści złotych za kawę."
+    },
+    {
+      "id": 23,
+      "en": "Wait, is it thirty or forty?",
+      "pl": "Chwila, czy to trzydzieści czy czterdzieści?"
+    },
+    {
+      "id": 24,
+      "en": "It costs thirty-two fifty.",
+      "pl": "To kosztuje trzydzieści dwa pięćdziesiąt."
+    },
+    {
+      "id": 25,
+      "en": "It costs forty-two fifty.",
+      "pl": "To kosztuje czterdzieści dwa pięćdziesiąt."
+    },
+    {
+      "id": 26,
+      "en": "Thirty-four złoty with the discount.",
+      "pl": "Trzydzieści cztery złote ze zniżką."
+    },
+    {
+      "id": 27,
+      "en": "Forty-four złoty with the discount.",
+      "pl": "Czterdzieści cztery złote ze zniżką."
+    },
+    {
+      "id": 28,
+      "en": "The milk is three złoty.",
+      "pl": "Mleko kosztuje trzy złote."
+    },
+    {
+      "id": 29,
+      "en": "The butter is eight złoty.",
+      "pl": "Masło kosztuje osiem złotych."
+    },
+    {
+      "id": 30,
+      "en": "The eggs are ten złoty.",
+      "pl": "Jajka kosztują dziesięć złotych."
+    },
+    {
+      "id": 31,
+      "en": "Total for everything: thirty-six.",
+      "pl": "Razem za wszystko: trzydzieści sześć."
+    },
+    {
+      "id": 32,
+      "en": "Total for everything: forty-six.",
+      "pl": "Razem za wszystko: czterdzieści sześć."
+    },
+    {
+      "id": 33,
+      "en": "I only have thirty złoty.",
+      "pl": "Mam tylko trzydzieści złotych."
+    },
+    {
+      "id": 34,
+      "en": "I only have forty złoty.",
+      "pl": "Mam tylko czterdzieści złotych."
+    },
+    {
+      "id": 35,
+      "en": "Is thirty enough?",
+      "pl": "Czy trzydzieści wystarczy?"
+    },
+    {
+      "id": 36,
+      "en": "Is forty enough?",
+      "pl": "Czy czterdzieści wystarczy?"
+    },
+    {
+      "id": 37,
+      "en": "It's more than thirty.",
+      "pl": "To więcej niż trzydzieści."
+    },
+    {
+      "id": 38,
+      "en": "It's more than forty.",
+      "pl": "To więcej niż czterdzieści."
+    },
+    {
+      "id": 39,
+      "en": "It's less than thirty-five.",
+      "pl": "To mniej niż trzydzieści pięć."
+    },
+    {
+      "id": 40,
+      "en": "It's less than forty-five.",
+      "pl": "To mniej niż czterdzieści pięć."
+    },
+    {
+      "id": 41,
+      "en": "Exactly thirty-three.",
+      "pl": "Dokładnie trzydzieści trzy."
+    },
+    {
+      "id": 42,
+      "en": "Exactly forty-three.",
+      "pl": "Dokładnie czterdzieści trzy."
+    },
+    {
+      "id": 43,
+      "en": "Thirty-seven fifty-five.",
+      "pl": "Trzydzieści siedem pięćdziesiąt pięć."
+    },
+    {
+      "id": 44,
+      "en": "Forty-seven fifty-five.",
+      "pl": "Czterdzieści siedem pięćdziesiąt pięć."
+    },
+    {
+      "id": 45,
+      "en": "Thirty-eight or thirty-nine?",
+      "pl": "Trzydzieści osiem czy trzydzieści dziewięć?"
+    },
+    {
+      "id": 46,
+      "en": "Forty-eight or forty-nine?",
+      "pl": "Czterdzieści osiem czy czterdzieści dziewięć?"
+    },
+    {
+      "id": 47,
+      "en": "The cheese costs thirty złoty.",
+      "pl": "Ser kosztuje trzydzieści złotych."
+    },
+    {
+      "id": 48,
+      "en": "The meat costs forty złoty.",
+      "pl": "Mięso kosztuje czterdzieści złotych."
+    },
+    {
+      "id": 49,
+      "en": "The bill is thirty-two.",
+      "pl": "Rachunek wynosi trzydzieści dwa."
+    },
+    {
+      "id": 50,
+      "en": "The bill is forty-two.",
+      "pl": "Rachunek wynosi czterdzieści dwa."
+    },
+    {
+      "id": 51,
+      "en": "Thirty-one, thirty-two, thirty-three.",
+      "pl": "Trzydzieści jeden, trzydzieści dwa, trzydzieści trzy."
+    },
+    {
+      "id": 52,
+      "en": "Forty-one, forty-two, forty-three.",
+      "pl": "Czterdzieści jeden, czterdzieści dwa, czterdzieści trzy."
+    },
+    {
+      "id": 53,
+      "en": "Almost thirty złoty.",
+      "pl": "Prawie trzydzieści złotych."
+    },
+    {
+      "id": 54,
+      "en": "Almost forty złoty.",
+      "pl": "Prawie czterdzieści złotych."
+    },
+    {
+      "id": 55,
+      "en": "Plus thirty złoty tax.",
+      "pl": "Plus trzydzieści złotych podatku."
+    },
+    {
+      "id": 56,
+      "en": "Plus forty złoty tax.",
+      "pl": "Plus czterdzieści złotych podatku."
+    },
+    {
+      "id": 57,
+      "en": "Minus thirty złoty discount.",
+      "pl": "Minus trzydzieści złotych zniżki."
+    },
+    {
+      "id": 58,
+      "en": "Minus forty złoty discount.",
+      "pl": "Minus czterdzieści złotych zniżki."
+    },
+    {
+      "id": 59,
+      "en": "Thirty-four is not forty-four.",
+      "pl": "Trzydzieści cztery to nie czterdzieści cztery."
+    },
+    {
+      "id": 60,
+      "en": "Four hundred thirty złoty.",
+      "pl": "Czterysta trzydzieści złotych."
+    },
+    {
+      "id": 61,
+      "en": "Four hundred forty złoty.",
+      "pl": "Czterysta czterdzieści złotych."
+    },
+    {
+      "id": 62,
+      "en": "Thirty-six and change.",
+      "pl": "Trzydzieści sześć i reszta."
+    },
+    {
+      "id": 63,
+      "en": "Forty-six and change.",
+      "pl": "Czterdzieści sześć i reszta."
+    },
+    {
+      "id": 64,
+      "en": "I paid thirty.",
+      "pl": "Zapłaciłem trzydzieści."
+    },
+    {
+      "id": 65,
+      "en": "I paid forty.",
+      "pl": "Zapłaciłem czterdzieści."
+    },
+    {
+      "id": 66,
+      "en": "You owe thirty-two.",
+      "pl": "Jesteś winien trzydzieści dwa."
+    },
+    {
+      "id": 67,
+      "en": "You owe forty-two.",
+      "pl": "Jesteś winien czterdzieści dwa."
+    },
+    {
+      "id": 68,
+      "en": "Thirty-eight eighty-eight.",
+      "pl": "Trzydzieści osiem osiemdziesiąt osiem."
+    },
+    {
+      "id": 69,
+      "en": "Forty-eight eighty-eight.",
+      "pl": "Czterdzieści osiem osiemdziesiąt osiem."
+    },
+    {
+      "id": 70,
+      "en": "Thirty-five cents.",
+      "pl": "Trzydzieści pięć groszy."
+    },
+    {
+      "id": 71,
+      "en": "Forty-five cents.",
+      "pl": "Czterdzieści pięć groszy."
+    },
+    {
+      "id": 72,
+      "en": "It's exactly thirty.",
+      "pl": "To dokładnie trzydzieści."
+    },
+    {
+      "id": 73,
+      "en": "It's exactly forty.",
+      "pl": "To dokładnie czterdzieści."
+    },
+    {
+      "id": 74,
+      "en": "Thirty-three plus forty-three.",
+      "pl": "Trzydzieści trzy plus czterdzieści trzy."
+    },
+    {
+      "id": 75,
+      "en": "Finally, the total is seventy.",
+      "pl": "W końcu, razem siedemdziesiąt."
+    }
+  ],
+  "tier": "ADVANCED"
 }

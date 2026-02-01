@@ -1,0 +1,66 @@
+{
+  "tiers": [
+    {
+      "id": "foundation",
+      "name": "FOUNDATION",
+      "description": "Alphabet, digraphs & pronunciation",
+      "levels": [
+        0,
+        0.1
+      ],
+      "phraseCount": 123,
+      "color": "purple"
+    },
+    {
+      "id": "survival",
+      "name": "SURVIVAL",
+      "description": "Days 1-7 in Poland - Absolute essentials",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "phraseCount": 350,
+      "color": "green"
+    },
+    {
+      "id": "practical",
+      "name": "PRACTICAL",
+      "description": "Weeks/Months in Poland - Daily life",
+      "levels": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "phraseCount": 700,
+      "color": "yellow"
+    },
+    {
+      "id": "advanced",
+      "name": "ADVANCED",
+      "description": "Fluency & Cultural Depth",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "phraseCount": 625,
+      "color": "blue"
+    }
+  ],
+  "totalPhrases": 1798,
+  "totalLevels": 24
+}
