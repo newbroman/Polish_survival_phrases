@@ -39,36 +39,36 @@
         .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
         .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 100%; justify-content: center; }
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-        .q-text { font-size: 1.1rem; font-weight: 800; text-align: center; }
+        .q-text { font-size: 1rem; font-weight: 800; text-align: center; max-width: 200px; }
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.65rem; font-weight: bold; cursor: pointer; opacity: 0.4; white-space: nowrap; }
+        .tab { flex: 1; padding: 12px 5px; text-align: center; font-size: 0.65rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
+        .map-section { flex-grow: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
         
-        .grid { display: grid; gap: 6px; width: 100%; max-width: 420px; }
-        .grid-standard { grid-template-columns: repeat(4, 1fr); }
-        .grid-alphabet { grid-template-columns: repeat(5, 1fr); }
+        .grid { display: grid; gap: 8px; width: 100%; max-width: 400px; }
+        .grid-standard { grid-template-columns: repeat(4, 1fr); } /* 4 columns for all phrases */
+        .grid-alphabet { grid-template-columns: repeat(5, 1fr); } /* 5 columns for Level 0 */
         
         .tile { 
             aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 2px; 
-            text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: 0.1s; 
+            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
+            text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: 0.1s; overflow: hidden;
         }
-        .tile .char { font-size: 0.8rem; font-weight: 800; line-height: 1.1; word-break: break-word; }
-        .tile .hint { font-size: 0.45rem; opacity: 0.7; font-weight: normal; margin-top: 1px; }
+        .tile .char { font-size: 0.65rem; font-weight: 800; line-height: 1.1; word-wrap: break-word; width: 100%; }
+        .tile .hint { font-size: 0.45rem; opacity: 0.7; font-weight: normal; margin-top: 2px; }
         .tile .emoji { font-size: 0.7rem; margin-top: 2px; }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
         .empty-state-box {
-            grid-column: 1/-1; text-align: center; padding: 30px 20px; 
+            grid-column: 1/-1; text-align: center; padding: 25px; 
             border: 2px dashed var(--pol-red); border-radius: 16px; 
             background: var(--card); box-shadow: 0 4px 15px rgba(220, 20, 60, 0.15); color: var(--text);
-            width: 90%; max-width: 350px;
+            width: 85%;
         }
-        .empty-state-icon { font-size: 2.5rem; margin-bottom: 10px; display: block; }
+        .empty-state-icon { font-size: 2.2rem; margin-bottom: 10px; display: block; }
 
         .global-search-item { width: 100%; max-width: 400px; background: var(--card); border: 1px solid #ddd; padding: 8px; margin: 2px 0; border-radius: 6px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
         
@@ -76,14 +76,14 @@
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
         .active-swap { background: var(--pol-red) !important; color: white !important; }
 
-        #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
+        #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; text-align: center; }
     </style>
 </head>
 <body>
 
 <div id="overlay">
     <h1 id="overlay-title">LEVEL MASTERED! 🏆</h1>
-    <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;">Next Level</button>
+    <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 1rem;">Continue</button>
 </div>
 
 <div class="header">
@@ -115,11 +115,11 @@
 <div class="mode-tabs">
     <div id="tab-learning" class="tab active" onclick="switchMode('learning')">LEARNING</div>
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANK</div>
-    <div id="tab-test" class="tab" onclick="switchMode('test')">MARATHON TEST</div>
+    <div id="tab-test" class="tab" onclick="switchMode('test')">MARATHON</div>
 </div>
 
 <div class="map-section">
-    <div id="mastery-map" class="grid grid-standard"></div>
+    <div id="mastery-map" class="grid"></div>
     <div id="search-results-extra" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
 </div>
 
@@ -163,14 +163,12 @@
                     const data = await resp.json();
                     const isLevelDone = data.phrases.every(p => (stats[p.pl] || 0) >= THRESHOLD);
                     if (isLevelDone) totalMedals++;
-
                     const item = document.createElement('div');
                     item.className = 'dropdown-item';
                     item.innerHTML = `<span>Lvl ${i}: ${data.description || ''}</span><span>${isLevelDone ? '🏅' : ''}</span>`;
                     const lvlIdx = i;
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(lvlIdx); };
                     menu.appendChild(item);
-                    
                     if(i === currentLevel) {
                         document.getElementById('lvl-current').innerHTML = `<span>Lvl ${i}: ${data.description || ''}</span><span>${isLevelDone ? '🏅' : ''}</span>`;
                     }
@@ -183,11 +181,9 @@
     }
 
     function selectLevel(lvl) {
-        currentLevel = lvl;
-        isMarathon = false;
+        currentLevel = lvl; isMarathon = false;
         document.getElementById('lvl-menu').classList.remove('show');
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-learning').classList.add('active');
+        switchMode('learning');
         saveStats(); loadLevelData();
     }
 
@@ -206,37 +202,28 @@
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         document.getElementById('tab-' + m).classList.add('active');
         isMarathon = (m === 'test');
-        
-        if (isMarathon) {
-            startMarathon();
-        } else {
-            updateMap();
-            startNewRound();
-        }
+        if (isMarathon) startMarathon(); else { updateMap(); startNewRound(); }
     }
 
     function startMarathon() {
         const masteredPool = allPhrasesCache.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
         if (masteredPool.length < 5) {
-            document.getElementById('q-text').innerText = "Master at least 5 phrases first!";
-            document.getElementById('mastery-map').innerHTML = "";
+            document.getElementById('q-text').innerText = "Master 5+ items first!";
+            document.getElementById('mastery-map').innerHTML = `<div class="empty-state-box">Finish more levels to unlock!</div>`;
             return;
         }
-        activePool = masteredPool.sort(() => 0.5 - Math.random()).slice(0, 10);
-        document.getElementById('mastery-map').innerHTML = `
-            <div class="empty-state-box">
-                <span class="empty-state-icon">🏃‍♂️</span>
-                <p style="font-size: 0.9rem; font-weight: 800;">Marathon Test</p>
-                <p style="font-size: 0.7rem; opacity: 0.8;">Testing 10 random phrases from all mastered levels.</p>
-            </div>`;
+        activePool = masteredPool.sort(() => 0.5 - Math.random()).slice(0, 12); // Always 12 for 4x3 grid
+        updateMap();
         startNewRound();
     }
 
     function updateMap(filter = "") {
         const area = document.getElementById('mastery-map'); area.innerHTML = '';
-        area.className = (currentLevel === 0) ? "grid grid-alphabet" : "grid grid-standard";
         const isLearning = document.getElementById('tab-learning').classList.contains('active');
         
+        // Grid logic: Only Level 0 (Alphabet) gets 5 columns. Everything else (including Marathon) gets 4.
+        area.className = (currentLevel === 0 && !isMarathon) ? "grid grid-alphabet" : "grid grid-standard";
+
         if (isLearning && activePool.length === 0 && !filter) {
             const count = completions[currentLevel] || 0;
             area.innerHTML = `
@@ -244,27 +231,28 @@
                     <span class="empty-state-icon">🏅</span>
                     <p style="font-size: 0.9rem; font-weight: 800; margin: 0 0 5px 0;">Level Mastered!</p>
                     <p style="font-size: 0.7rem; margin-bottom: 15px; opacity: 0.8;">Times Completed: ${count}</p>
-                    <button onclick="resetLevelMastery()" 
-                        style="padding: 12px 20px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%;">
-                        Repeat Level
-                    </button>
+                    <button onclick="resetLevelMastery()" style="padding: 12px 20px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold; width: 100%;">Repeat Level</button>
                 </div>`;
             return;
         }
 
-        phrasesData.filter(p => {
+        let displayList = isMarathon ? activePool : phrasesData.filter(p => {
             const matches = !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter);
             const done = (stats[p.pl] || 0) >= THRESHOLD;
-            return matches && (isLearning ? !done : done);
-        }).forEach(p => {
+            return matches && (document.getElementById('tab-mastered').classList.contains('active') ? done : !done);
+        });
+
+        displayList.forEach(p => {
             const tile = document.createElement('div'); tile.className = 'tile';
-            if (currentLevel === 0) {
+            if (p.lvl === 0) {
                 tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint">${p.en}</span><span class="emoji">${p.e || ''}</span>`;
             } else {
-                tile.innerHTML = `<span class="char" style="font-size:0.55rem">${isSwapped ? p.en : p.pl}</span>`;
+                tile.innerHTML = `<span class="char">${isSwapped ? p.en : p.pl}</span>`;
             }
-            const score = stats[p.pl] || 0;
-            if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
+            if (!isMarathon) {
+                const score = stats[p.pl] || 0;
+                if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
+            }
             tile.onclick = () => checkAnswer(p, tile);
             area.appendChild(tile);
         });
@@ -288,17 +276,12 @@
                     activePool = activePool.filter(ap => ap.pl !== phrase.pl);
                 }
                 
-                if (isMarathon && activePool.length === 0) {
+                if (activePool.length === 0) {
                     playNote(523.25, 0.1); playNote(659.25, 0.1); playNote(783.99, 0.3);
-                    document.getElementById('overlay-title').innerText = "TEST COMPLETE! 🏆";
-                    document.getElementById('overlay').style.display='flex';
-                } else if (!isMarathon && activePool.length === 0) {
-                    playNote(523.25, 0.1); playNote(659.25, 0.1); playNote(783.99, 0.3);
-                    document.getElementById('overlay-title').innerText = "LEVEL MASTERED! 🏆";
+                    document.getElementById('overlay-title').innerText = isMarathon ? "MARATHON COMPLETE! 🏆" : "LEVEL MASTERED! 🏆";
                     document.getElementById('overlay').style.display='flex';
                 } else {
-                    if (!isMarathon) updateMap();
-                    startNewRound();
+                    updateMap(); startNewRound();
                 }
             }, 800);
         } else {
@@ -312,9 +295,7 @@
         if (!activePool.length) return;
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('feedback').innerText = "";
-        
-        // Context-aware Quiz Text
-        if (currentTarget.lvl === 0 || (currentLevel === 0 && !isMarathon)) {
+        if (currentTarget.lvl === 0) {
             document.getElementById('q-text').innerText = `As in: ${currentTarget.word || currentTarget.en}`;
         } else {
             document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
@@ -330,7 +311,7 @@
         if(!isMarathon) updateMap(q);
         const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)) && p.lvl !== currentLevel).slice(0, 5);
         if (matches.length > 0) {
-            const lbl = document.createElement('div'); lbl.innerText = 'FOUND IN OTHER LEVELS:'; lbl.style.fontSize='10px'; lbl.style.margin='10px 0 5px 0'; lbl.style.fontWeight='800';
+            const lbl = document.createElement('div'); lbl.innerText = 'OTHER LEVELS:'; lbl.style.fontSize='9px'; lbl.style.margin='10px 0 5px 0'; lbl.style.fontWeight='800';
             extra.appendChild(lbl);
             matches.forEach(p => {
                 const item = document.createElement('div'); item.className = 'global-search-item';
@@ -362,12 +343,8 @@
         localStorage.setItem('pl_completion_counts', JSON.stringify(completions));
     }
     function updateStats() { if (!phrasesData.length) return; const m = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (m/phrasesData.length)*100+"%"; }
-    function advanceLevel() { if(isMarathon) { switchMode('learning'); } else { currentLevel++; } document.getElementById('overlay').style.display='none'; selectLevel(currentLevel); }
-    function resetLevelMastery() { 
-        completions[currentLevel] = (completions[currentLevel] || 0) + 1;
-        phrasesData.forEach(p => stats[p.pl] = 0); 
-        saveStats(); loadLevelData(); 
-    }
+    function advanceLevel() { document.getElementById('overlay').style.display='none'; if(isMarathon) switchMode('learning'); else { currentLevel++; selectLevel(currentLevel); } }
+    function resetLevelMastery() { completions[currentLevel] = (completions[currentLevel] || 0) + 1; phrasesData.forEach(p => stats[p.pl] = 0); saveStats(); loadLevelData(); }
     function downloadProgress() { const b = new Blob([JSON.stringify({stats, completions, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `progress.txt`; a.click(); }
     function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; completions = d.completions || {}; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
     function resetEverything() { if(confirm("Reset all?")) { localStorage.clear(); location.reload(); } }
