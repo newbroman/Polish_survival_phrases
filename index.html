@@ -6,13 +6,13 @@
     <title>Polish Phrase Master</title>
     <!-- PWA Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Polish Master">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Polish Phrase Master">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
     <link rel="apple-touch-icon" href="icon-192.png">
-    <meta name="theme-color" content="#dc143c">
+    <meta name="theme-color" content="#ffffff">
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --accent-blue: #1976d2; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; --accent-blue: #42a5f5; } }
@@ -113,7 +113,7 @@
 <body>
 <!-- PWA Install Banner -->
 <div class="install-banner" id="installBanner">
-    <span>📱 Install Polish Master App</span>
+    <span>📱 Install Polish Phrase Master App</span>
     <button class="install-btn" id="installBtn">Install</button>
     <button class="close-install" onclick="closeInstallBanner()">×</button>
 </div>
@@ -125,7 +125,7 @@
 </div>
 
 <div class="header">
-    <div class="title-banner"><h1 class="title" id="main-title">Polish Master</h1></div>
+    <div class="title-banner"><h1 class="title" id="main-title">Polish Phrase Master</h1></div>
     <div class="controls-row">
         <!-- GENDER TOGGLE - ONLY NEW ADDITION -->
         <div class="gender-toggle-row">
@@ -300,7 +300,7 @@
                 }
             } catch(e) {}
         }
-        document.getElementById('main-title').innerHTML = `Polish Master <span style="font-size:0.8rem; opacity:0.8;">(🏅 ${totalMedals})</span>`;
+        document.getElementById('main-title').innerHTML = `Polish Phrase Master <span style="font-size:0.8rem; opacity:0.8;">(🏅 ${totalMedals})</span>`;
         if (isPhrasebook && pbFilterLevel === null) document.getElementById('lvl-current').innerHTML = `<span>Select Category</span>`;
         updateTabCounters();
     }
