@@ -39,11 +39,11 @@
         .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
         .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 100%; justify-content: center; }
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-        .q-text { font-size: 1.1rem; font-weight: 800; }
+        .q-text { font-size: 1.1rem; font-weight: 800; text-align: center; }
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
+        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.65rem; font-weight: bold; cursor: pointer; opacity: 0.4; white-space: nowrap; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
         .map-section { flex-grow: 1; padding: 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
@@ -57,16 +57,16 @@
             background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 2px; 
             text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: 0.1s; 
         }
-        .tile .char { font-size: 0.9rem; font-weight: 800; line-height: 1; }
+        .tile .char { font-size: 0.8rem; font-weight: 800; line-height: 1.1; word-break: break-word; }
         .tile .hint { font-size: 0.45rem; opacity: 0.7; font-weight: normal; margin-top: 1px; }
         .tile .emoji { font-size: 0.7rem; margin-top: 2px; }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
-        /* Mastered Box Styling */
         .empty-state-box {
             grid-column: 1/-1; text-align: center; padding: 30px 20px; 
             border: 2px dashed var(--pol-red); border-radius: 16px; 
             background: var(--card); box-shadow: 0 4px 15px rgba(220, 20, 60, 0.15); color: var(--text);
+            width: 90%; max-width: 350px;
         }
         .empty-state-icon { font-size: 2.5rem; margin-bottom: 10px; display: block; }
 
@@ -82,7 +82,7 @@
 <body>
 
 <div id="overlay">
-    <h1>LEVEL MASTERED! 🏆</h1>
+    <h1 id="overlay-title">LEVEL MASTERED! 🏆</h1>
     <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;">Next Level</button>
 </div>
 
@@ -115,6 +115,7 @@
 <div class="mode-tabs">
     <div id="tab-learning" class="tab active" onclick="switchMode('learning')">LEARNING</div>
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANK</div>
+    <div id="tab-test" class="tab" onclick="switchMode('test')">MARATHON TEST</div>
 </div>
 
 <div class="map-section">
@@ -134,7 +135,7 @@
     let completions = JSON.parse(localStorage.getItem('pl_completion_counts')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
-    let isSwapped = false, correctStreak = 0, audioCtx = null;
+    let isSwapped = false, correctStreak = 0, audioCtx = null, isMarathon = false;
     const THRESHOLD = 3, MAX_POTENTIAL_LEVELS = 50;
 
     function playNote(freq, dur) {
@@ -183,7 +184,10 @@
 
     function selectLevel(lvl) {
         currentLevel = lvl;
+        isMarathon = false;
         document.getElementById('lvl-menu').classList.remove('show');
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-learning').classList.add('active');
         saveStats(); loadLevelData();
     }
 
@@ -196,6 +200,36 @@
                 activePool = (currentLevel === 0) ? phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD) : phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
                 updateMap(); startNewRound(); updateStats(); scanAndPopulate();
             });
+    }
+
+    function switchMode(m) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + m).classList.add('active');
+        isMarathon = (m === 'test');
+        
+        if (isMarathon) {
+            startMarathon();
+        } else {
+            updateMap();
+            startNewRound();
+        }
+    }
+
+    function startMarathon() {
+        const masteredPool = allPhrasesCache.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+        if (masteredPool.length < 5) {
+            document.getElementById('q-text').innerText = "Master at least 5 phrases first!";
+            document.getElementById('mastery-map').innerHTML = "";
+            return;
+        }
+        activePool = masteredPool.sort(() => 0.5 - Math.random()).slice(0, 10);
+        document.getElementById('mastery-map').innerHTML = `
+            <div class="empty-state-box">
+                <span class="empty-state-icon">🏃‍♂️</span>
+                <p style="font-size: 0.9rem; font-weight: 800;">Marathon Test</p>
+                <p style="font-size: 0.7rem; opacity: 0.8;">Testing 10 random phrases from all mastered levels.</p>
+            </div>`;
+        startNewRound();
     }
 
     function updateMap(filter = "") {
@@ -227,7 +261,7 @@
             if (currentLevel === 0) {
                 tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint">${p.en}</span><span class="emoji">${p.e || ''}</span>`;
             } else {
-                tile.innerHTML = `<span class="char" style="font-size:0.6rem">${isSwapped ? p.en : p.pl}</span>`;
+                tile.innerHTML = `<span class="char" style="font-size:0.55rem">${isSwapped ? p.en : p.pl}</span>`;
             }
             const score = stats[p.pl] || 0;
             if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
@@ -236,12 +270,64 @@
         });
     }
 
+    function checkAnswer(phrase, el) {
+        if (phrase.pl === currentTarget.pl) {
+            correctStreak++;
+            playNote(440 + (correctStreak * 40), 0.2);
+            if (!isMarathon) stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
+            document.getElementById('feedback').innerText = "Dobrze! 🌟";
+            saveStats();
+            setTimeout(() => {
+                if (!isMarathon && stats[phrase.pl] >= THRESHOLD) {
+                    activePool = activePool.filter(ap => ap.pl !== phrase.pl);
+                    if (currentLevel !== 0 && activePool.length < 12) {
+                        const next = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.includes(p));
+                        if (next) activePool.push(next);
+                    }
+                } else if (isMarathon) {
+                    activePool = activePool.filter(ap => ap.pl !== phrase.pl);
+                }
+                
+                if (isMarathon && activePool.length === 0) {
+                    playNote(523.25, 0.1); playNote(659.25, 0.1); playNote(783.99, 0.3);
+                    document.getElementById('overlay-title').innerText = "TEST COMPLETE! 🏆";
+                    document.getElementById('overlay').style.display='flex';
+                } else if (!isMarathon && activePool.length === 0) {
+                    playNote(523.25, 0.1); playNote(659.25, 0.1); playNote(783.99, 0.3);
+                    document.getElementById('overlay-title').innerText = "LEVEL MASTERED! 🏆";
+                    document.getElementById('overlay').style.display='flex';
+                } else {
+                    if (!isMarathon) updateMap();
+                    startNewRound();
+                }
+            }, 800);
+        } else {
+            correctStreak = 0; el.classList.add('wrong');
+            document.getElementById('feedback').innerText = "Błąd!";
+            setTimeout(() => { el.classList.remove('wrong'); if(!isMarathon) startNewRound(); }, 1200);
+        }
+    }
+
+    function startNewRound() {
+        if (!activePool.length) return;
+        currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
+        document.getElementById('feedback').innerText = "";
+        
+        // Context-aware Quiz Text
+        if (currentTarget.lvl === 0 || (currentLevel === 0 && !isMarathon)) {
+            document.getElementById('q-text').innerText = `As in: ${currentTarget.word || currentTarget.en}`;
+        } else {
+            document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
+        }
+        speak(currentTarget.pl);
+    }
+
     function handleSmartSearch() {
         const q = document.getElementById('search-bar').value.toLowerCase();
         const extra = document.getElementById('search-results-extra');
         extra.innerHTML = '';
-        if (!q) { updateMap(); return; }
-        updateMap(q);
+        if (!q) { if(!isMarathon) updateMap(); return; }
+        if(!isMarathon) updateMap(q);
         const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q)) && p.lvl !== currentLevel).slice(0, 5);
         if (matches.length > 0) {
             const lbl = document.createElement('div'); lbl.innerText = 'FOUND IN OTHER LEVELS:'; lbl.style.fontSize='10px'; lbl.style.margin='10px 0 5px 0'; lbl.style.fontWeight='800';
@@ -253,43 +339,6 @@
                 extra.appendChild(item);
             });
         }
-    }
-
-    function checkAnswer(phrase, el) {
-        if (phrase.pl === currentTarget.pl) {
-            correctStreak++;
-            playNote(440 + (correctStreak * 40), 0.2);
-            stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Dobrze! 🌟";
-            saveStats();
-            setTimeout(() => {
-                if (stats[phrase.pl] >= THRESHOLD) {
-                    activePool = activePool.filter(ap => ap.pl !== phrase.pl);
-                    if (currentLevel !== 0 && activePool.length < 12) {
-                        const next = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.includes(p));
-                        if (next) activePool.push(next);
-                    }
-                }
-                updateMap();
-                if (activePool.length === 0) {
-                    playNote(523.25, 0.1); playNote(659.25, 0.1); playNote(783.99, 0.3); // Simple Fanfare
-                    document.getElementById('overlay').style.display='flex'; 
-                } else startNewRound();
-            }, 800);
-        } else {
-            correctStreak = 0; el.classList.add('wrong');
-            document.getElementById('feedback').innerText = "Błąd!";
-            setTimeout(() => { el.classList.remove('wrong'); startNewRound(); }, 1200);
-        }
-    }
-
-    function startNewRound() {
-        if (!activePool.length) return;
-        currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
-        document.getElementById('feedback').innerText = "";
-        if (currentLevel === 0) document.getElementById('q-text').innerText = `As in: ${currentTarget.word || currentTarget.en}`;
-        else document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
-        speak(currentTarget.pl);
     }
 
     function speak(t, rate = 1.0) {
@@ -305,16 +354,15 @@
         if(currentTarget) speak(currentTarget.pl, rate);
     }
 
-    function toggleLangSwap() { isSwapped = !isSwapped; document.getElementById('lang-swap-btn').classList.toggle('active-swap', isSwapped); updateMap(); startNewRound(); }
+    function toggleLangSwap() { isSwapped = !isSwapped; document.getElementById('lang-swap-btn').classList.toggle('active-swap', isSwapped); if(!isMarathon) updateMap(); startNewRound(); }
     function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function switchMode(m) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); document.getElementById('tab-' + m).classList.add('active'); updateMap(); }
     function saveStats() { 
         localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
         localStorage.setItem('pl_current_level_idx', currentLevel); 
         localStorage.setItem('pl_completion_counts', JSON.stringify(completions));
     }
     function updateStats() { if (!phrasesData.length) return; const m = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (m/phrasesData.length)*100+"%"; }
-    function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; selectLevel(currentLevel); }
+    function advanceLevel() { if(isMarathon) { switchMode('learning'); } else { currentLevel++; } document.getElementById('overlay').style.display='none'; selectLevel(currentLevel); }
     function resetLevelMastery() { 
         completions[currentLevel] = (completions[currentLevel] || 0) + 1;
         phrasesData.forEach(p => stats[p.pl] = 0); 
