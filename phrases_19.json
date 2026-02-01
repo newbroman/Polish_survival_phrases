@@ -1,567 +1,517 @@
 {
   "level": 19,
-  "description": "Advanced Grammar & Connectors - Fluent Expression",
-  "tier": "ADVANCED",
+  "description": "Culture & Entertainment - Museums, Theatre & Cinema",
+  "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "a19_01",
-      "category": "Connectors",
-      "pl": "I",
-      "en": "And",
+      "id": "p13_41",
+      "category": "Entertainment",
+      "pl": "Kino",
+      "en": "Cinema / Movie theater",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_02",
-      "category": "Connectors",
-      "pl": "Ale",
-      "en": "But",
+      "id": "p13_42",
+      "category": "Entertainment",
+      "pl": "Teatr",
+      "en": "Theater",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_03",
-      "category": "Connectors",
-      "pl": "Lub",
-      "en": "Or",
+      "id": "p13_43",
+      "category": "Entertainment",
+      "pl": "Koncert",
+      "en": "Concert",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_04",
-      "category": "Connectors",
-      "pl": "Bo",
-      "en": "Because",
+      "id": "p13_44",
+      "category": "Entertainment",
+      "pl": "Muzeum",
+      "en": "Museum",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_05",
-      "category": "Connectors",
-      "pl": "Więc",
-      "en": "So / Therefore",
+      "id": "p13_45",
+      "category": "Entertainment",
+      "pl": "Galeria",
+      "en": "Gallery",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_06",
-      "category": "Connectors",
-      "pl": "Jeśli",
-      "en": "If",
+      "id": "p13_46",
+      "category": "Entertainment",
+      "pl": "Wystawa",
+      "en": "Exhibition",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_07",
-      "category": "Connectors",
-      "pl": "Jeżeli",
-      "en": "If",
+      "id": "p13_47",
+      "category": "Entertainment",
+      "pl": "Bilet",
+      "en": "Ticket",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_08",
-      "category": "Connectors",
-      "pl": "Gdy",
-      "en": "When",
+      "id": "p13_48",
+      "category": "Entertainment",
+      "pl": "Ile kosztuje bilet?",
+      "en": "How much is the ticket?",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_09",
-      "category": "Connectors",
-      "pl": "Kiedy",
-      "en": "When",
+      "id": "p13_49",
+      "category": "Entertainment",
+      "pl": "Dwa bilety, proszę",
+      "en": "Two tickets, please",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_10",
-      "category": "Connectors",
-      "pl": "Ponieważ",
-      "en": "Because",
+      "id": "p13_50",
+      "category": "Entertainment",
+      "pl": "Kiedy zaczyna się film?",
+      "en": "When does the movie start?",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_11",
-      "category": "Connectors",
-      "pl": "Dlatego",
-      "en": "That's why / Therefore",
+      "id": "p13_51",
+      "category": "Entertainment",
+      "pl": "O której kończy się spektakl?",
+      "en": "What time does the show end?",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_12",
-      "category": "Connectors",
-      "pl": "Jednak",
-      "en": "However",
+      "id": "p13_52",
+      "category": "Entertainment",
+      "pl": "Czy są jeszcze bilety?",
+      "en": "Are there still tickets?",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_13",
-      "category": "Connectors",
-      "pl": "Mimo to",
-      "en": "Nevertheless",
+      "id": "p13_53",
+      "category": "Entertainment",
+      "pl": "Wyprzedane",
+      "en": "Sold out",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_14",
-      "category": "Connectors",
-      "pl": "Chociaż",
-      "en": "Although",
+      "id": "p13_54",
+      "category": "Entertainment",
+      "pl": "Rezerwacja online",
+      "en": "Online booking",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_15",
-      "category": "Connectors",
-      "pl": "Pomimo",
-      "en": "Despite",
+      "id": "p13_55",
+      "category": "Entertainment",
+      "pl": "Polecam",
+      "en": "I recommend",
       "level": 19,
       "gender": null
     },
     {
-      "id": "a19_16",
-      "category": "Connectors",
-      "pl": "Zatem",
-      "en": "Thus / So",
-      "level": 19,
-      "gender": null
+      "id": "p13_71",
+      "category": "Museums",
+      "pl": "Muzeum",
+      "en": "Museum",
+      "level": 19
     },
     {
-      "id": "a19_17",
-      "category": "Connectors",
-      "pl": "Również",
-      "en": "Also",
-      "level": 19,
-      "gender": null
+      "id": "p13_72",
+      "category": "Museums",
+      "pl": "Gdzie jest muzeum?",
+      "en": "Where is the museum?",
+      "level": 19
     },
     {
-      "id": "a19_18",
-      "category": "Connectors",
-      "pl": "Także",
-      "en": "Also",
-      "level": 19,
-      "gender": null
+      "id": "p13_73",
+      "category": "Museums",
+      "pl": "Ile kosztuje bilet do muzeum?",
+      "en": "How much is a museum ticket?",
+      "level": 19
     },
     {
-      "id": "a19_19",
-      "category": "Connectors",
-      "pl": "Ponadto",
-      "en": "Moreover / Furthermore",
-      "level": 19,
-      "gender": null
+      "id": "p13_74",
+      "category": "Museums",
+      "pl": "O której otwiera się muzeum?",
+      "en": "What time does the museum open?",
+      "level": 19
     },
     {
-      "id": "a19_20",
-      "category": "Connectors",
-      "pl": "Oprócz tego",
-      "en": "Besides that",
-      "level": 19,
-      "gender": null
+      "id": "p13_75",
+      "category": "Museums",
+      "pl": "O której zamyka się muzeum?",
+      "en": "What time does the museum close?",
+      "level": 19
     },
     {
-      "id": "a19_21",
-      "category": "Connectors",
-      "pl": "Z drugiej strony",
-      "en": "On the other hand",
-      "level": 19,
-      "gender": null
+      "id": "p13_76",
+      "category": "Museums",
+      "pl": "Czy jest zniżka dla studentów?",
+      "en": "Is there a student discount?",
+      "level": 19
     },
     {
-      "id": "a19_22",
-      "category": "Connectors",
-      "pl": "Z jednej strony",
-      "en": "On one hand",
-      "level": 19,
-      "gender": null
+      "id": "p13_77",
+      "category": "Museums",
+      "pl": "Bilet ulgowy",
+      "en": "Reduced ticket / Concession",
+      "level": 19
     },
     {
-      "id": "a19_23",
-      "category": "Connectors",
-      "pl": "Po pierwsze",
-      "en": "First of all / Firstly",
-      "level": 19,
-      "gender": null
+      "id": "p13_78",
+      "category": "Museums",
+      "pl": "Bilet normalny",
+      "en": "Full price ticket",
+      "level": 19
     },
     {
-      "id": "a19_24",
-      "category": "Connectors",
-      "pl": "Po drugie",
-      "en": "Secondly",
-      "level": 19,
-      "gender": null
+      "id": "p13_79",
+      "category": "Museums",
+      "pl": "Czy mogę robić zdjęcia?",
+      "en": "Can I take photos?",
+      "level": 19
     },
     {
-      "id": "a19_25",
-      "category": "Connectors",
-      "pl": "Po trzecie",
-      "en": "Thirdly",
-      "level": 19,
-      "gender": null
+      "id": "p13_80",
+      "category": "Museums",
+      "pl": "Zakaz fotografowania",
+      "en": "No photography",
+      "level": 19
     },
     {
-      "id": "a19_26",
-      "category": "Connectors",
-      "pl": "W końcu",
-      "en": "Finally / Eventually",
-      "level": 19,
-      "gender": null
+      "id": "p13_81",
+      "category": "Museums",
+      "pl": "Wystawa",
+      "en": "Exhibition",
+      "level": 19
     },
     {
-      "id": "a19_27",
-      "category": "Connectors",
-      "pl": "Na koniec",
-      "en": "At the end / Finally",
-      "level": 19,
-      "gender": null
+      "id": "p13_82",
+      "category": "Museums",
+      "pl": "Wystawa czasowa",
+      "en": "Temporary exhibition",
+      "level": 19
     },
     {
-      "id": "a19_28",
-      "category": "Connectors",
-      "pl": "Podsumowując",
-      "en": "To sum up / In summary",
-      "level": 19,
-      "gender": null
+      "id": "p13_83",
+      "category": "Museums",
+      "pl": "Wystawa stała",
+      "en": "Permanent exhibition",
+      "level": 19
     },
     {
-      "id": "a19_29",
-      "category": "Connectors",
-      "pl": "Ogólnie",
-      "en": "Generally / Overall",
-      "level": 19,
-      "gender": null
+      "id": "p13_84",
+      "category": "Museums",
+      "pl": "Galeria",
+      "en": "Gallery",
+      "level": 19
     },
     {
-      "id": "a19_30",
-      "category": "Connectors",
-      "pl": "Szczególnie",
-      "en": "Especially / Particularly",
-      "level": 19,
-      "gender": null
+      "id": "p13_85",
+      "category": "Museums",
+      "pl": "Galeria sztuki",
+      "en": "Art gallery",
+      "level": 19
     },
     {
-      "id": "a19_31",
-      "category": "Advanced",
-      "pl": "Innymi słowy",
-      "en": "In other words",
-      "level": 19,
-      "gender": null
+      "id": "p13_86",
+      "category": "Museums",
+      "pl": "Przewodnik",
+      "en": "Guide / Guidebook",
+      "level": 19
     },
     {
-      "id": "a19_32",
-      "category": "Advanced",
-      "pl": "Chodzi o to, że...",
-      "en": "The point is that...",
-      "level": 19,
-      "gender": null
+      "id": "p13_87",
+      "category": "Museums",
+      "pl": "Czy jest przewodnik po angielsku?",
+      "en": "Is there an English guide?",
+      "level": 19
     },
     {
-      "id": "a19_33",
-      "category": "Advanced",
-      "pl": "Mam na myśli...",
-      "en": "I mean...",
-      "level": 19,
-      "gender": null
+      "id": "p13_88",
+      "category": "Museums",
+      "pl": "Audioguide",
+      "en": "Audio guide",
+      "level": 19
     },
     {
-      "id": "a19_34",
-      "category": "Advanced",
-      "pl": "To znaczy...",
-      "en": "That is... / I mean...",
-      "level": 19,
-      "gender": null
+      "id": "p13_89",
+      "category": "Museums",
+      "pl": "Szatnia",
+      "en": "Cloakroom / Coat check",
+      "level": 19
     },
     {
-      "id": "a19_35",
-      "category": "Advanced",
-      "pl": "Na przykład",
-      "en": "For example",
-      "level": 19,
-      "gender": null
+      "id": "p13_90",
+      "category": "Museums",
+      "pl": "Sklep muzealny",
+      "en": "Museum shop",
+      "level": 19
     },
     {
-      "id": "a19_36",
-      "category": "Advanced",
-      "pl": "Między innymi",
-      "en": "Among others",
-      "level": 19,
-      "gender": null
+      "id": "p13_91",
+      "category": "Theatre",
+      "pl": "Teatr",
+      "en": "Theatre",
+      "level": 19
     },
     {
-      "id": "a19_37",
-      "category": "Advanced",
-      "pl": "W każdym razie",
-      "en": "In any case / Anyway",
-      "level": 19,
-      "gender": null
+      "id": "p13_92",
+      "category": "Theatre",
+      "pl": "Opera",
+      "en": "Opera",
+      "level": 19
     },
     {
-      "id": "a19_38",
-      "category": "Advanced",
-      "pl": "W takim razie",
-      "en": "In that case",
-      "level": 19,
-      "gender": null
+      "id": "p13_93",
+      "category": "Theatre",
+      "pl": "Balet",
+      "en": "Ballet",
+      "level": 19
     },
     {
-      "id": "a19_39",
-      "category": "Advanced",
-      "pl": "W przeciwnym razie",
-      "en": "Otherwise",
-      "level": 19,
-      "gender": null
+      "id": "p13_94",
+      "category": "Theatre",
+      "pl": "Koncert",
+      "en": "Concert",
+      "level": 19
     },
     {
-      "id": "a19_40",
-      "category": "Advanced",
-      "pl": "W rzeczywistości",
-      "en": "In reality / Actually",
-      "level": 19,
-      "gender": null
+      "id": "p13_95",
+      "category": "Theatre",
+      "pl": "Spektakl",
+      "en": "Performance / Show",
+      "level": 19
     },
     {
-      "id": "a19_41",
-      "category": "Advanced",
-      "pl": "Właściwie",
-      "en": "Actually / In fact",
-      "level": 19,
-      "gender": null
+      "id": "p13_96",
+      "category": "Theatre",
+      "pl": "Przedstawienie",
+      "en": "Performance / Play",
+      "level": 19
     },
     {
-      "id": "a19_42",
-      "category": "Advanced",
-      "pl": "Szczerze mówiąc",
-      "en": "To be honest / Frankly",
-      "level": 19,
-      "gender": null
+      "id": "p13_97",
+      "category": "Theatre",
+      "pl": "Kiedy zaczyna się spektakl?",
+      "en": "When does the show start?",
+      "level": 19
     },
     {
-      "id": "a19_43",
-      "category": "Advanced",
-      "pl": "Prawdę mówiąc",
-      "en": "To tell the truth",
-      "level": 19,
-      "gender": null
+      "id": "p13_98",
+      "category": "Theatre",
+      "pl": "O której kończy się spektakl?",
+      "en": "What time does the show end?",
+      "level": 19
     },
     {
-      "id": "a19_44",
-      "category": "Advanced",
-      "pl": "Jeśli chodzi o...",
-      "en": "When it comes to...",
-      "level": 19,
-      "gender": null
+      "id": "p13_99",
+      "category": "Theatre",
+      "pl": "Ile trwa spektakl?",
+      "en": "How long is the show?",
+      "level": 19
     },
     {
-      "id": "a19_45",
-      "category": "Advanced",
-      "pl": "Odnośnie...",
-      "en": "Regarding...",
-      "level": 19,
-      "gender": null
+      "id": "p13_100",
+      "category": "Theatre",
+      "pl": "Czy są jeszcze bilety?",
+      "en": "Are there still tickets?",
+      "level": 19
     },
     {
-      "id": "a19_46",
-      "category": "Advanced",
-      "pl": "Jeśli chodzi o mnie",
-      "en": "As for me",
-      "level": 19,
-      "gender": null
+      "id": "p13_101",
+      "category": "Theatre",
+      "pl": "Wyprzedane",
+      "en": "Sold out",
+      "level": 19
     },
     {
-      "id": "a19_47",
-      "category": "Advanced",
-      "pl": "Z mojego punktu widzenia",
-      "en": "From my point of view",
-      "level": 19,
-      "gender": null
+      "id": "p13_102",
+      "category": "Theatre",
+      "pl": "Rezerwacja",
+      "en": "Reservation / Booking",
+      "level": 19
     },
     {
-      "id": "a19_48",
-      "category": "Advanced",
-      "pl": "Według mnie",
-      "en": "According to me",
+      "id": "p13_103",
+      "category": "Theatre",
+      "pl": "Chciałbym/Chciałabym zarezerwować bilety",
+      "en": "I'd like to book tickets",
       "level": 19,
-      "gender": null
+      "gender": "both",
+      "variants": {
+        "m": "Chciałbym zarezerwować bilety",
+        "f": "Chciałabym zarezerwować bilety"
+      }
     },
     {
-      "id": "a19_49",
-      "category": "Advanced",
-      "pl": "Przede wszystkim",
-      "en": "Above all / First and foremost",
-      "level": 19,
-      "gender": null
+      "id": "p13_104",
+      "category": "Theatre",
+      "pl": "Dwa bilety, proszę",
+      "en": "Two tickets, please",
+      "level": 19
     },
     {
-      "id": "a19_50",
-      "category": "Advanced",
-      "pl": "Przede wszystkim",
-      "en": "Most importantly",
-      "level": 19,
-      "gender": null
+      "id": "p13_105",
+      "category": "Theatre",
+      "pl": "Miejsce",
+      "en": "Seat",
+      "level": 19
     },
     {
-      "id": "a19_51",
-      "category": "Adverbs",
-      "pl": "Bardzo",
-      "en": "Very",
-      "level": 19,
-      "gender": null
+      "id": "p13_106",
+      "category": "Theatre",
+      "pl": "Rząd",
+      "en": "Row",
+      "level": 19
     },
     {
-      "id": "a19_52",
-      "category": "Adverbs",
-      "pl": "Dużo",
-      "en": "A lot / Much",
-      "level": 19,
-      "gender": null
+      "id": "p13_107",
+      "category": "Theatre",
+      "pl": "Balkon",
+      "en": "Balcony",
+      "level": 19
     },
     {
-      "id": "a19_53",
-      "category": "Adverbs",
-      "pl": "Mało",
-      "en": "Little / Few",
-      "level": 19,
-      "gender": null
+      "id": "p13_108",
+      "category": "Theatre",
+      "pl": "Parter",
+      "en": "Ground floor / Stalls",
+      "level": 19
     },
     {
-      "id": "a19_54",
-      "category": "Adverbs",
-      "pl": "Trochę",
-      "en": "A bit / A little",
-      "level": 19,
-      "gender": null
+      "id": "p13_109",
+      "category": "Theatre",
+      "pl": "Loża",
+      "en": "Box (theatre)",
+      "level": 19
     },
     {
-      "id": "a19_55",
-      "category": "Adverbs",
-      "pl": "Zbyt",
-      "en": "Too / Too much",
-      "level": 19,
-      "gender": null
+      "id": "p13_110",
+      "category": "Theatre",
+      "pl": "Scena",
+      "en": "Stage",
+      "level": 19
     },
     {
-      "id": "a19_56",
-      "category": "Adverbs",
-      "pl": "Wystarczająco",
-      "en": "Enough / Sufficiently",
-      "level": 19,
-      "gender": null
+      "id": "p13_111",
+      "category": "Theatre",
+      "pl": "Przerwa",
+      "en": "Intermission / Interval",
+      "level": 19
     },
     {
-      "id": "a19_57",
-      "category": "Adverbs",
-      "pl": "Szybko",
-      "en": "Quickly / Fast",
-      "level": 19,
-      "gender": null
+      "id": "p13_112",
+      "category": "Theatre",
+      "pl": "Garderoba",
+      "en": "Cloakroom",
+      "level": 19
     },
     {
-      "id": "a19_58",
-      "category": "Adverbs",
-      "pl": "Wolno",
-      "en": "Slowly",
-      "level": 19,
-      "gender": null
+      "id": "p13_113",
+      "category": "Theatre",
+      "pl": "Program",
+      "en": "Program / Programme",
+      "level": 19
     },
     {
-      "id": "a19_59",
-      "category": "Adverbs",
-      "pl": "Dobrze",
-      "en": "Well / Good",
-      "level": 19,
-      "gender": null
+      "id": "p13_114",
+      "category": "Theatre",
+      "pl": "Czy są napisy?",
+      "en": "Are there subtitles?",
+      "level": 19
     },
     {
-      "id": "a19_60",
-      "category": "Adverbs",
-      "pl": "Źle",
-      "en": "Badly / Bad",
-      "level": 19,
-      "gender": null
+      "id": "p13_115",
+      "category": "Theatre",
+      "pl": "Napisy po angielsku",
+      "en": "English subtitles",
+      "level": 19
     },
     {
-      "id": "a19_61",
-      "category": "Adverbs",
-      "pl": "Łatwo",
-      "en": "Easily",
-      "level": 19,
-      "gender": null
+      "id": "p13_116",
+      "category": "Cinema",
+      "pl": "Kino",
+      "en": "Cinema / Movie theater",
+      "level": 19
     },
     {
-      "id": "a19_62",
-      "category": "Adverbs",
-      "pl": "Trudno",
-      "en": "Difficultly / Hard",
-      "level": 19,
-      "gender": null
+      "id": "p13_117",
+      "category": "Cinema",
+      "pl": "Film",
+      "en": "Movie / Film",
+      "level": 19
     },
     {
-      "id": "a19_63",
-      "category": "Adverbs",
-      "pl": "Naprawdę",
-      "en": "Really / Truly",
-      "level": 19,
-      "gender": null
+      "id": "p13_118",
+      "category": "Cinema",
+      "pl": "Seans",
+      "en": "Screening / Showing",
+      "level": 19
     },
     {
-      "id": "a19_64",
-      "category": "Adverbs",
-      "pl": "Prawie",
-      "en": "Almost / Nearly",
-      "level": 19,
-      "gender": null
+      "id": "p13_119",
+      "category": "Cinema",
+      "pl": "Kiedy zaczyna się film?",
+      "en": "When does the movie start?",
+      "level": 19
     },
     {
-      "id": "a19_65",
-      "category": "Adverbs",
-      "pl": "Całkowicie",
-      "en": "Completely / Totally",
-      "level": 19,
-      "gender": null
+      "id": "p13_120",
+      "category": "Cinema",
+      "pl": "Jaki film polecasz?",
+      "en": "What movie do you recommend?",
+      "level": 19
     },
     {
-      "id": "a19_66",
-      "category": "Adverbs",
-      "pl": "Zupełnie",
-      "en": "Completely / Quite",
-      "level": 19,
-      "gender": null
+      "id": "p13_121",
+      "category": "Cinema",
+      "pl": "Wersja oryginalna",
+      "en": "Original version",
+      "level": 19
     },
     {
-      "id": "a19_67",
-      "category": "Adverbs",
-      "pl": "Absolutnie",
-      "en": "Absolutely",
-      "level": 19,
-      "gender": null
+      "id": "p13_122",
+      "category": "Cinema",
+      "pl": "Z lektorem",
+      "en": "With voice-over",
+      "level": 19
     },
     {
-      "id": "a19_68",
-      "category": "Adverbs",
-      "pl": "Pewnie",
-      "en": "Probably / Surely",
-      "level": 19,
-      "gender": null
+      "id": "p13_123",
+      "category": "Cinema",
+      "pl": "Dubbing",
+      "en": "Dubbed",
+      "level": 19
     },
     {
-      "id": "a19_69",
-      "category": "Adverbs",
-      "pl": "Na pewno",
-      "en": "For sure / Certainly",
-      "level": 19,
-      "gender": null
+      "id": "p13_124",
+      "category": "Cinema",
+      "pl": "Napisy",
+      "en": "Subtitles",
+      "level": 19
     },
     {
-      "id": "a19_70",
-      "category": "Adverbs",
-      "pl": "Oczywiście",
-      "en": "Obviously / Of course",
-      "level": 19,
-      "gender": null
+      "id": "p13_125",
+      "category": "Cinema",
+      "pl": "Popcorn",
+      "en": "Popcorn",
+      "level": 19
     }
   ]
 }

@@ -1,607 +1,532 @@
 {
   "level": 8,
-  "description": "Meeting People & Small Talk - Social Basics",
-  "tier": "PRACTICAL",
+  "description": "Numbers in Practice - Prices, Time & Counting",
+  "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "p8_01",
-      "category": "Greetings",
-      "pl": "Cześć",
-      "en": "Hi / Hello (informal)",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_02",
-      "category": "Greetings",
-      "pl": "Dzień dobry",
-      "en": "Good morning / Good day (formal)",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_03",
-      "category": "Greetings",
-      "pl": "Dobry wieczór",
-      "en": "Good evening",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_04",
-      "category": "Greetings",
-      "pl": "Dobranoc",
-      "en": "Good night",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_05",
-      "category": "Greetings",
-      "pl": "Do widzenia",
-      "en": "Goodbye (formal)",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_06",
-      "category": "Greetings",
-      "pl": "Cześć (goodbye)",
-      "en": "Bye (informal)",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_07",
-      "category": "Greetings",
-      "pl": "Do zobaczenia",
-      "en": "See you",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_08",
-      "category": "Greetings",
-      "pl": "Jak się masz?",
-      "en": "How are you? (informal)",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_09",
-      "category": "Greetings",
-      "pl": "Jak się Pan/Pani miewa?",
-      "en": "How are you? (formal)",
-      "level": 8,
-      "gender": "both",
-      "variants": {
-        "m": "Jak się Pan",
-        "f": "Pani miewa?"
-      }
-    },
-    {
-      "id": "p8_10",
-      "category": "Greetings",
-      "pl": "Dobrze, dziękuję",
-      "en": "Good, thank you",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_11",
-      "category": "Greetings",
-      "pl": "A Pan/Pani?",
-      "en": "And you? (formal)",
-      "level": 8,
-      "gender": "both",
-      "variants": {
-        "m": "A Pan",
-        "f": "Pani?"
-      }
-    },
-    {
-      "id": "p8_12",
-      "category": "Greetings",
-      "pl": "A Ty?",
-      "en": "And you? (informal)",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_13",
-      "category": "Greetings",
-      "pl": "Miło cię poznać",
-      "en": "Nice to meet you (informal)",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_14",
-      "category": "Greetings",
-      "pl": "Miło Pana/Panią poznać",
-      "en": "Nice to meet you (formal)",
-      "level": 8,
-      "gender": "both",
-      "variants": {
-        "m": "Miło Pana",
-        "f": "Panią poznać"
-      }
-    },
-    {
-      "id": "p8_15",
-      "category": "Greetings",
-      "pl": "Jak się nazywasz?",
-      "en": "What's your name? (informal)",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_16",
-      "category": "Greetings",
-      "pl": "Jak Pan/Pani ma na imię?",
-      "en": "What's your name? (formal)",
-      "level": 8,
-      "gender": "both",
-      "variants": {
-        "m": "Jak Pan",
-        "f": "Pani ma na imię?"
-      }
-    },
-    {
-      "id": "p8_17",
-      "category": "Greetings",
-      "pl": "Nazywam się...",
-      "en": "My name is...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_18",
-      "category": "Greetings",
-      "pl": "Jestem...",
-      "en": "I am...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_19",
-      "category": "Greetings",
-      "pl": "To jest...",
-      "en": "This is...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_20",
-      "category": "Greetings",
-      "pl": "Poznaj...",
-      "en": "Meet...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_21",
-      "category": "Nationality",
-      "pl": "Skąd jesteś?",
-      "en": "Where are you from?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_22",
-      "category": "Nationality",
-      "pl": "Jestem z...",
-      "en": "I'm from...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_23",
-      "category": "Nationality",
-      "pl": "Jestem Amerykaninem/Amerykanką",
-      "en": "I'm American",
-      "level": 8,
-      "gender": "both",
-      "variants": {
-        "m": "Jestem Amerykaninem",
-        "f": "Amerykanką"
-      }
-    },
-    {
-      "id": "p8_24",
-      "category": "Nationality",
-      "pl": "Jestem Anglikiem/Angielką",
-      "en": "I'm English",
-      "level": 8,
-      "gender": "both",
-      "variants": {
-        "m": "Jestem Anglikiem",
-        "f": "Angielką"
-      }
-    },
-    {
-      "id": "p8_25",
-      "category": "Nationality",
-      "pl": "Jestem z Kanady",
-      "en": "I'm from Canada",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_26",
-      "category": "Nationality",
-      "pl": "Jestem z Australii",
-      "en": "I'm from Australia",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_27",
-      "category": "Nationality",
-      "pl": "Mieszkam w...",
-      "en": "I live in...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_28",
-      "category": "Nationality",
-      "pl": "Przyjechałem/Przyjechałam z...",
-      "en": "I came from...",
-      "level": 8,
-      "gender": "both",
-      "variants": {
-        "m": "Przyjechałem",
-        "f": "Przyjechałam z..."
-      }
-    },
-    {
-      "id": "p8_29",
-      "category": "Nationality",
-      "pl": "Jestem turystą",
-      "en": "I'm a tourist",
-      "level": 8,
-      "gender": "both",
-      "variants": {
-        "m": "Jestem turystą",
-        "f": "Jestem turystką"
-      }
-    },
-    {
-      "id": "p8_30",
-      "category": "Nationality",
-      "pl": "Jestem tu na wakacjach",
-      "en": "I'm here on vacation",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_31",
-      "category": "Nationality",
-      "pl": "Jestem tu w interesach",
-      "en": "I'm here on business",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_32",
-      "category": "Nationality",
-      "pl": "Pierwszy raz w Polsce",
-      "en": "First time in Poland",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_33",
-      "category": "Nationality",
-      "pl": "Jak długo tu jesteś?",
-      "en": "How long have you been here?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_34",
-      "category": "Nationality",
-      "pl": "Jestem tu od...",
-      "en": "I've been here since...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_35",
-      "category": "Nationality",
-      "pl": "Zostanę tu...",
-      "en": "I'll stay here...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_36",
-      "category": "Small Talk",
-      "pl": "Co słychać?",
-      "en": "What's up? / How's it going?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_37",
-      "category": "Small Talk",
-      "pl": "Wszystko w porządku?",
-      "en": "Everything okay?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_38",
-      "category": "Small Talk",
-      "pl": "Świetnie!",
-      "en": "Great!",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_39",
-      "category": "Small Talk",
-      "pl": "Nieźle",
-      "en": "Not bad",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_40",
-      "category": "Small Talk",
-      "pl": "Tak sobie",
-      "en": "So-so",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_41",
-      "category": "Small Talk",
-      "pl": "Co robisz?",
-      "en": "What do you do?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_42",
-      "category": "Small Talk",
-      "pl": "Pracuję jako...",
-      "en": "I work as...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_43",
-      "category": "Small Talk",
-      "pl": "Jestem studentem/studentką",
-      "en": "I'm a student",
-      "level": 8,
-      "gender": "both",
-      "variants": {
-        "m": "Jestem studentem",
-        "f": "studentką"
-      }
-    },
-    {
-      "id": "p8_44",
-      "category": "Small Talk",
-      "pl": "Lubię...",
-      "en": "I like...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_45",
-      "category": "Small Talk",
-      "pl": "Nie lubię...",
-      "en": "I don't like...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_46",
-      "category": "Small Talk",
-      "pl": "Interesuję się...",
-      "en": "I'm interested in...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_47",
-      "category": "Small Talk",
-      "pl": "Moje hobby to...",
-      "en": "My hobby is...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_48",
-      "category": "Small Talk",
-      "pl": "Czy lubisz...?",
-      "en": "Do you like...?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_49",
-      "category": "Small Talk",
-      "pl": "Co lubisz robić?",
-      "en": "What do you like to do?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_50",
-      "category": "Small Talk",
-      "pl": "Jakie masz plany?",
-      "en": "What are your plans?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_51",
-      "category": "Small Talk",
-      "pl": "Nic specjalnego",
-      "en": "Nothing special",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_52",
-      "category": "Small Talk",
-      "pl": "Zobaczmy się później",
-      "en": "See you later",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_53",
-      "category": "Small Talk",
-      "pl": "Miłego dnia!",
-      "en": "Have a nice day!",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_54",
-      "category": "Small Talk",
-      "pl": "Miłego wieczoru!",
-      "en": "Have a nice evening!",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_55",
-      "category": "Small Talk",
-      "pl": "Powodzenia!",
-      "en": "Good luck!",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_56",
-      "category": "Invitations",
-      "pl": "Czy chcesz...?",
-      "en": "Do you want to...?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_57",
-      "category": "Invitations",
-      "pl": "Chodźmy...",
-      "en": "Let's go...",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_58",
-      "category": "Invitations",
-      "pl": "Może pójdziemy na kawę?",
-      "en": "Shall we go for coffee?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_59",
-      "category": "Invitations",
-      "pl": "Może pójdziemy na piwo?",
-      "en": "Shall we go for a beer?",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_60",
-      "category": "Invitations",
-      "pl": "Tak, chętnie",
-      "en": "Yes, I'd love to",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_61",
-      "category": "Invitations",
-      "pl": "Nie, dziękuję",
-      "en": "No, thank you",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_62",
-      "category": "Invitations",
-      "pl": "Może innym razem",
-      "en": "Maybe another time",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_63",
-      "category": "Invitations",
-      "pl": "Jestem zajęty/zajęta",
-      "en": "I'm busy",
-      "level": 8,
-      "gender": "both",
-      "variants": {
-        "m": "Jestem zajęty",
-        "f": "zajęta"
-      }
-    },
-    {
-      "id": "p8_64",
-      "category": "Invitations",
-      "pl": "Mam czas",
-      "en": "I have time",
-      "level": 8,
-      "gender": null
-    },
-    {
-      "id": "p8_65",
-      "category": "Invitations",
+      "id": "n5_01",
+      "category": "Counting",
+      "pl": "Jeden",
+      "en": "One",
+      "level": 8
+    },
+    {
+      "id": "n5_02",
+      "category": "Counting",
+      "pl": "Dwa",
+      "en": "Two",
+      "level": 8
+    },
+    {
+      "id": "n5_03",
+      "category": "Counting",
+      "pl": "Trzy",
+      "en": "Three",
+      "level": 8
+    },
+    {
+      "id": "n5_04",
+      "category": "Counting",
+      "pl": "Cztery",
+      "en": "Four",
+      "level": 8
+    },
+    {
+      "id": "n5_05",
+      "category": "Counting",
+      "pl": "Pięć",
+      "en": "Five",
+      "level": 8
+    },
+    {
+      "id": "n5_06",
+      "category": "Counting",
+      "pl": "Dziesięć",
+      "en": "Ten",
+      "level": 8
+    },
+    {
+      "id": "n5_07",
+      "category": "Counting",
+      "pl": "Dwadzieścia",
+      "en": "Twenty",
+      "level": 8
+    },
+    {
+      "id": "n5_08",
+      "category": "Counting",
+      "pl": "Pięćdziesiąt",
+      "en": "Fifty",
+      "level": 8
+    },
+    {
+      "id": "n5_09",
+      "category": "Counting",
+      "pl": "Sto",
+      "en": "One hundred",
+      "level": 8
+    },
+    {
+      "id": "n5_10",
+      "category": "Counting",
+      "pl": "Dwieście",
+      "en": "Two hundred",
+      "level": 8
+    },
+    {
+      "id": "n5_11",
+      "category": "Counting",
+      "pl": "Tysiąc",
+      "en": "One thousand",
+      "level": 8
+    },
+    {
+      "id": "n5_12",
+      "category": "Counting",
+      "pl": "Pierwszy",
+      "en": "First",
+      "level": 8
+    },
+    {
+      "id": "n5_13",
+      "category": "Counting",
+      "pl": "Drugi",
+      "en": "Second",
+      "level": 8
+    },
+    {
+      "id": "n5_14",
+      "category": "Counting",
+      "pl": "Trzeci",
+      "en": "Third",
+      "level": 8
+    },
+    {
+      "id": "n5_15",
+      "category": "Counting",
+      "pl": "Ostatni",
+      "en": "Last",
+      "level": 8
+    },
+    {
+      "id": "n5_16",
+      "category": "Prices",
+      "pl": "Ile to kosztuje?",
+      "en": "How much does it cost?",
+      "level": 8
+    },
+    {
+      "id": "n5_17",
+      "category": "Prices",
+      "pl": "Dziesięć złotych",
+      "en": "Ten zloty",
+      "level": 8
+    },
+    {
+      "id": "n5_18",
+      "category": "Prices",
+      "pl": "Dwadzieścia złotych",
+      "en": "Twenty zloty",
+      "level": 8
+    },
+    {
+      "id": "n5_19",
+      "category": "Prices",
+      "pl": "Pięćdziesiąt złotych",
+      "en": "Fifty zloty",
+      "level": 8
+    },
+    {
+      "id": "n5_20",
+      "category": "Prices",
+      "pl": "Sto złotych",
+      "en": "One hundred zloty",
+      "level": 8
+    },
+    {
+      "id": "n5_21",
+      "category": "Prices",
+      "pl": "To kosztuje pięć złotych",
+      "en": "It costs five zloty",
+      "level": 8
+    },
+    {
+      "id": "n5_22",
+      "category": "Prices",
+      "pl": "To jest za drogie",
+      "en": "That's too expensive",
+      "level": 8
+    },
+    {
+      "id": "n5_23",
+      "category": "Prices",
+      "pl": "To jest tanie",
+      "en": "That's cheap",
+      "level": 8
+    },
+    {
+      "id": "n5_24",
+      "category": "Prices",
+      "pl": "Czy mogę zapłacić kartą?",
+      "en": "Can I pay by card?",
+      "level": 8
+    },
+    {
+      "id": "n5_25",
+      "category": "Prices",
+      "pl": "Płacę gotówką",
+      "en": "I'm paying cash",
+      "level": 8
+    },
+    {
+      "id": "n5_26",
+      "category": "Prices",
+      "pl": "Reszta",
+      "en": "Change (money)",
+      "level": 8
+    },
+    {
+      "id": "n5_27",
+      "category": "Prices",
+      "pl": "Paragon",
+      "en": "Receipt",
+      "level": 8
+    },
+    {
+      "id": "n5_28",
+      "category": "Prices",
+      "pl": "Zniżka",
+      "en": "Discount",
+      "level": 8
+    },
+    {
+      "id": "n5_29",
+      "category": "Prices",
+      "pl": "Promocja",
+      "en": "Sale / Promotion",
+      "level": 8
+    },
+    {
+      "id": "n5_30",
+      "category": "Prices",
+      "pl": "Gratis",
+      "en": "Free",
+      "level": 8
+    },
+    {
+      "id": "n5_31",
+      "category": "Time",
+      "pl": "Która godzina?",
+      "en": "What time is it?",
+      "level": 8
+    },
+    {
+      "id": "n5_32",
+      "category": "Time",
+      "pl": "Jest pierwsza",
+      "en": "It's one o'clock",
+      "level": 8
+    },
+    {
+      "id": "n5_33",
+      "category": "Time",
+      "pl": "Jest druga",
+      "en": "It's two o'clock",
+      "level": 8
+    },
+    {
+      "id": "n5_34",
+      "category": "Time",
+      "pl": "Jest trzecia",
+      "en": "It's three o'clock",
+      "level": 8
+    },
+    {
+      "id": "n5_35",
+      "category": "Time",
+      "pl": "Jest piąta",
+      "en": "It's five o'clock",
+      "level": 8
+    },
+    {
+      "id": "n5_36",
+      "category": "Time",
+      "pl": "Jest dziesiąta",
+      "en": "It's ten o'clock",
+      "level": 8
+    },
+    {
+      "id": "n5_37",
+      "category": "Time",
+      "pl": "Jest dwunasta",
+      "en": "It's twelve o'clock / noon",
+      "level": 8
+    },
+    {
+      "id": "n5_38",
+      "category": "Time",
+      "pl": "Wpół do drugiej",
+      "en": "Half past one",
+      "level": 8
+    },
+    {
+      "id": "n5_39",
+      "category": "Time",
+      "pl": "Kwadrans po trzeciej",
+      "en": "Quarter past three",
+      "level": 8
+    },
+    {
+      "id": "n5_40",
+      "category": "Time",
+      "pl": "Za kwadrans czwarta",
+      "en": "Quarter to four",
+      "level": 8
+    },
+    {
+      "id": "n5_41",
+      "category": "Time",
       "pl": "O której?",
       "en": "At what time?",
-      "level": 8,
-      "gender": null
+      "level": 8
     },
     {
-      "id": "p8_66",
-      "category": "Invitations",
-      "pl": "Gdzie?",
-      "en": "Where?",
-      "level": 8,
-      "gender": null
+      "id": "n5_42",
+      "category": "Time",
+      "pl": "O drugiej",
+      "en": "At two",
+      "level": 8
     },
     {
-      "id": "p8_67",
-      "category": "Invitations",
-      "pl": "Spotkajmy się...",
-      "en": "Let's meet...",
-      "level": 8,
-      "gender": null
+      "id": "n5_43",
+      "category": "Time",
+      "pl": "O piątej trzydzieści",
+      "en": "At five thirty",
+      "level": 8
     },
     {
-      "id": "p8_68",
-      "category": "Invitations",
-      "pl": "Do zobaczenia!",
-      "en": "See you!",
-      "level": 8,
-      "gender": null
+      "id": "n5_44",
+      "category": "Time",
+      "pl": "Rano",
+      "en": "In the morning",
+      "level": 8
     },
     {
-      "id": "p8_69",
-      "category": "Invitations",
-      "pl": "Trzymaj się!",
-      "en": "Take care!",
-      "level": 8,
-      "gender": null
+      "id": "n5_45",
+      "category": "Time",
+      "pl": "Po południu",
+      "en": "In the afternoon",
+      "level": 8
     },
     {
-      "id": "p8_70",
-      "category": "Invitations",
-      "pl": "Pozdrawiam",
-      "en": "Regards / Best wishes",
-      "level": 8,
-      "gender": null
+      "id": "n5_46",
+      "category": "Time",
+      "pl": "Wieczorem",
+      "en": "In the evening",
+      "level": 8
+    },
+    {
+      "id": "n5_47",
+      "category": "Time",
+      "pl": "W nocy",
+      "en": "At night",
+      "level": 8
+    },
+    {
+      "id": "n5_48",
+      "category": "Time",
+      "pl": "Teraz",
+      "en": "Now",
+      "level": 8
+    },
+    {
+      "id": "n5_49",
+      "category": "Time",
+      "pl": "Później",
+      "en": "Later",
+      "level": 8
+    },
+    {
+      "id": "n5_50",
+      "category": "Time",
+      "pl": "Wcześniej",
+      "en": "Earlier",
+      "level": 8
+    },
+    {
+      "id": "n5_51",
+      "category": "Dates",
+      "pl": "Dziś",
+      "en": "Today",
+      "level": 8
+    },
+    {
+      "id": "n5_52",
+      "category": "Dates",
+      "pl": "Jutro",
+      "en": "Tomorrow",
+      "level": 8
+    },
+    {
+      "id": "n5_53",
+      "category": "Dates",
+      "pl": "Wczoraj",
+      "en": "Yesterday",
+      "level": 8
+    },
+    {
+      "id": "n5_54",
+      "category": "Dates",
+      "pl": "Pojutrze",
+      "en": "Day after tomorrow",
+      "level": 8
+    },
+    {
+      "id": "n5_55",
+      "category": "Dates",
+      "pl": "Przedwczoraj",
+      "en": "Day before yesterday",
+      "level": 8
+    },
+    {
+      "id": "n5_56",
+      "category": "Dates",
+      "pl": "W poniedziałek",
+      "en": "On Monday",
+      "level": 8
+    },
+    {
+      "id": "n5_57",
+      "category": "Dates",
+      "pl": "W weekend",
+      "en": "On the weekend",
+      "level": 8
+    },
+    {
+      "id": "n5_58",
+      "category": "Dates",
+      "pl": "W przyszłym tygodniu",
+      "en": "Next week",
+      "level": 8
+    },
+    {
+      "id": "n5_59",
+      "category": "Dates",
+      "pl": "W tym miesiącu",
+      "en": "This month",
+      "level": 8
+    },
+    {
+      "id": "n5_60",
+      "category": "Dates",
+      "pl": "Pierwszego stycznia",
+      "en": "January first",
+      "level": 8
+    },
+    {
+      "id": "n5_61",
+      "category": "Dates",
+      "pl": "Drugiego lutego",
+      "en": "February second",
+      "level": 8
+    },
+    {
+      "id": "n5_62",
+      "category": "Dates",
+      "pl": "Trzeciego marca",
+      "en": "March third",
+      "level": 8
+    },
+    {
+      "id": "n5_63",
+      "category": "Dates",
+      "pl": "Kiedy?",
+      "en": "When?",
+      "level": 8
+    },
+    {
+      "id": "n5_64",
+      "category": "Dates",
+      "pl": "Który dzień?",
+      "en": "What day?",
+      "level": 8
+    },
+    {
+      "id": "n5_65",
+      "category": "Dates",
+      "pl": "Jaka data?",
+      "en": "What date?",
+      "level": 8
+    },
+    {
+      "id": "n5_66",
+      "category": "Positions",
+      "pl": "Pierwszy w kolejce",
+      "en": "First in line",
+      "level": 8
+    },
+    {
+      "id": "n5_67",
+      "category": "Positions",
+      "pl": "Drugi od lewej",
+      "en": "Second from the left",
+      "level": 8
+    },
+    {
+      "id": "n5_68",
+      "category": "Positions",
+      "pl": "Trzeci piętro",
+      "en": "Third floor",
+      "level": 8
+    },
+    {
+      "id": "n5_69",
+      "category": "Positions",
+      "pl": "Pokój numer dziesięć",
+      "en": "Room number ten",
+      "level": 8
+    },
+    {
+      "id": "n5_70",
+      "category": "Positions",
+      "pl": "Peron numer pięć",
+      "en": "Platform number five",
+      "level": 8
+    },
+    {
+      "id": "n5_71",
+      "category": "Positions",
+      "pl": "Autobus numer trzy",
+      "en": "Bus number three",
+      "level": 8
+    },
+    {
+      "id": "n5_72",
+      "category": "Positions",
+      "pl": "Stół numer osiem",
+      "en": "Table number eight",
+      "level": 8
+    },
+    {
+      "id": "n5_73",
+      "category": "Positions",
+      "pl": "Na górze",
+      "en": "Upstairs / At the top",
+      "level": 8
+    },
+    {
+      "id": "n5_74",
+      "category": "Positions",
+      "pl": "Na dole",
+      "en": "Downstairs / At the bottom",
+      "level": 8
+    },
+    {
+      "id": "n5_75",
+      "category": "Positions",
+      "pl": "W środku",
+      "en": "In the middle",
+      "level": 8
     }
   ]
 }

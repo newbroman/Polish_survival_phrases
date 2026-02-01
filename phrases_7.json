@@ -1,569 +1,569 @@
 {
   "level": 7,
-  "description": "Phone & Internet - Connectivity Essentials",
-  "tier": "PRACTICAL",
+  "description": "Shopping & Money - Purchases & Payment",
+  "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "p7_01",
-      "category": "WiFi & Internet",
-      "pl": "WiFi",
-      "en": "WiFi",
+      "id": "s5_01",
+      "category": "Prices & Payment",
+      "pl": "Ile to kosztuje?",
+      "en": "How much is this?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_02",
-      "category": "WiFi & Internet",
-      "pl": "Internet",
-      "en": "Internet",
+      "id": "s5_02",
+      "category": "Prices & Payment",
+      "pl": "Za drogie",
+      "en": "Too expensive",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_03",
-      "category": "WiFi & Internet",
-      "pl": "Jaki jest kod WiFi?",
-      "en": "What is the WiFi password?",
+      "id": "s5_03",
+      "category": "Prices & Payment",
+      "pl": "Za dużo",
+      "en": "Too much",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_04",
-      "category": "WiFi & Internet",
-      "pl": "Hasło do WiFi",
-      "en": "WiFi password",
+      "id": "s5_04",
+      "category": "Prices & Payment",
+      "pl": "Czy mogę zapłacić kartą?",
+      "en": "Can I pay by card?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_05",
-      "category": "WiFi & Internet",
-      "pl": "Czy jest WiFi?",
-      "en": "Is there WiFi?",
+      "id": "s5_05",
+      "category": "Prices & Payment",
+      "pl": "Gotówka",
+      "en": "Cash",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_06",
-      "category": "WiFi & Internet",
-      "pl": "WiFi nie działa",
-      "en": "WiFi doesn't work",
+      "id": "s5_06",
+      "category": "Prices & Payment",
+      "pl": "Karta",
+      "en": "Card",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_07",
-      "category": "WiFi & Internet",
-      "pl": "Internet jest wolny",
-      "en": "Internet is slow",
+      "id": "s5_07",
+      "category": "Prices & Payment",
+      "pl": "Bankomat",
+      "en": "ATM",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_08",
-      "category": "WiFi & Internet",
-      "pl": "Nie mogę się połączyć",
-      "en": "I can't connect",
+      "id": "s5_08",
+      "category": "Prices & Payment",
+      "pl": "Gdzie jest bankomat?",
+      "en": "Where is the ATM?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_09",
-      "category": "WiFi & Internet",
-      "pl": "Potrzebuję internetu",
-      "en": "I need internet",
+      "id": "s5_09",
+      "category": "Prices & Payment",
+      "pl": "Reszta",
+      "en": "Change (money back)",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_10",
-      "category": "WiFi & Internet",
-      "pl": "Czy WiFi jest darmowe?",
-      "en": "Is WiFi free?",
+      "id": "s5_10",
+      "category": "Prices & Payment",
+      "pl": "Proszę resztę",
+      "en": "Change, please",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_11",
-      "category": "WiFi & Internet",
-      "pl": "Sieć",
-      "en": "Network",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_12",
-      "category": "WiFi & Internet",
-      "pl": "Nazwa sieci",
-      "en": "Network name",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_13",
-      "category": "WiFi & Internet",
-      "pl": "Sygnał jest słaby",
-      "en": "Signal is weak",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_14",
-      "category": "WiFi & Internet",
-      "pl": "Nie ma zasięgu",
-      "en": "No signal / No coverage",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_15",
-      "category": "WiFi & Internet",
-      "pl": "Dane mobilne",
-      "en": "Mobile data",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_16",
-      "category": "WiFi & Internet",
-      "pl": "Roaming",
-      "en": "Roaming",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_17",
-      "category": "WiFi & Internet",
-      "pl": "Czy mogę użyć komputera?",
-      "en": "Can I use the computer?",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_18",
-      "category": "WiFi & Internet",
-      "pl": "Drukarka",
-      "en": "Printer",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_19",
-      "category": "WiFi & Internet",
-      "pl": "Czy mogę wydrukować?",
-      "en": "Can I print?",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_20",
-      "category": "WiFi & Internet",
-      "pl": "Email",
-      "en": "Email",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_21",
-      "category": "Phone",
-      "pl": "Telefon",
-      "en": "Phone",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_22",
-      "category": "Phone",
-      "pl": "Mój telefon",
-      "en": "My phone",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_23",
-      "category": "Phone",
-      "pl": "Telefon komórkowy",
-      "en": "Mobile phone",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_24",
-      "category": "Phone",
-      "pl": "Smartfon",
-      "en": "Smartphone",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_25",
-      "category": "Phone",
-      "pl": "Mój telefon nie działa",
-      "en": "My phone doesn't work",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_26",
-      "category": "Phone",
-      "pl": "Telefon jest rozładowany",
-      "en": "Phone is dead / out of battery",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_27",
-      "category": "Phone",
-      "pl": "Bateria",
-      "en": "Battery",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_28",
-      "category": "Phone",
-      "pl": "Ładowarka",
-      "en": "Charger",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_29",
-      "category": "Phone",
-      "pl": "Gdzie mogę naładować telefon?",
-      "en": "Where can I charge my phone?",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_30",
-      "category": "Phone",
-      "pl": "Czy mogę naładować telefon?",
-      "en": "Can I charge my phone?",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_31",
-      "category": "Phone",
-      "pl": "Gniazdko",
-      "en": "Socket / Outlet",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_32",
-      "category": "Phone",
-      "pl": "Kabel",
-      "en": "Cable",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_33",
-      "category": "Phone",
-      "pl": "Karta SIM",
-      "en": "SIM card",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_34",
-      "category": "Phone",
-      "pl": "Gdzie mogę kupić kartę SIM?",
-      "en": "Where can I buy a SIM card?",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_35",
-      "category": "Phone",
-      "pl": "Potrzebuję karty SIM",
-      "en": "I need a SIM card",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_36",
-      "category": "Phone",
-      "pl": "Numer telefonu",
-      "en": "Phone number",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_37",
-      "category": "Phone",
-      "pl": "Mój numer to...",
-      "en": "My number is...",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_38",
-      "category": "Phone",
-      "pl": "Czy mogę zadzwonić?",
-      "en": "Can I make a call?",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_39",
-      "category": "Phone",
-      "pl": "Zadzwonię później",
-      "en": "I'll call later",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_40",
-      "category": "Phone",
-      "pl": "Proszę zadzwonić do mnie",
-      "en": "Please call me",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_41",
-      "category": "Phone",
-      "pl": "SMS",
-      "en": "Text message",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_42",
-      "category": "Phone",
-      "pl": "Wiadomość",
-      "en": "Message",
-      "level": 7,
-      "gender": null
-    },
-    {
-      "id": "p7_43",
-      "category": "Phone",
-      "pl": "Zgubiłem/Zgubiłam telefon",
-      "en": "I lost my phone",
+      "id": "s5_11",
+      "category": "Prices & Payment",
+      "pl": "Reszta dla Pana/Pani",
+      "en": "Keep the change",
       "level": 7,
       "gender": "both",
       "variants": {
-        "m": "Zgubiłem",
-        "f": "Zgubiłam telefon"
+        "m": "Reszta dla Pana",
+        "f": "Pani"
       }
     },
     {
-      "id": "p7_44",
-      "category": "Phone",
-      "pl": "Telefon został skradziony",
-      "en": "Phone was stolen",
+      "id": "s5_12",
+      "category": "Prices & Payment",
+      "pl": "Paragon",
+      "en": "Receipt",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_45",
-      "category": "Phone",
-      "pl": "Czy mogę użyć telefonu?",
-      "en": "Can I use the phone?",
+      "id": "s5_13",
+      "category": "Prices & Payment",
+      "pl": "Paragon, proszę",
+      "en": "Receipt, please",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_46",
-      "category": "Tech Issues",
-      "pl": "Nie działa",
-      "en": "Doesn't work / Not working",
+      "id": "s5_14",
+      "category": "Prices & Payment",
+      "pl": "Ile płacę?",
+      "en": "How much do I pay?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_47",
-      "category": "Tech Issues",
-      "pl": "Zepsuty",
-      "en": "Broken",
+      "id": "s5_15",
+      "category": "Prices & Payment",
+      "pl": "Razem",
+      "en": "Total / Together",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_48",
-      "category": "Tech Issues",
-      "pl": "Czy możesz to naprawić?",
-      "en": "Can you fix this?",
+      "id": "s5_16",
+      "category": "Prices & Payment",
+      "pl": "To wszystko",
+      "en": "That's all",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_49",
-      "category": "Tech Issues",
-      "pl": "Potrzebuję pomocy technicznej",
-      "en": "I need technical help",
+      "id": "s5_17",
+      "category": "Prices & Payment",
+      "pl": "Wezmę to",
+      "en": "I'll take it",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_50",
-      "category": "Tech Issues",
-      "pl": "Komputer",
-      "en": "Computer",
+      "id": "s5_18",
+      "category": "Prices & Payment",
+      "pl": "Nie, dziękuję",
+      "en": "No, thank you",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_51",
-      "category": "Tech Issues",
-      "pl": "Laptop",
-      "en": "Laptop",
+      "id": "s5_19",
+      "category": "Prices & Payment",
+      "pl": "Tylko patrzę",
+      "en": "Just looking",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_52",
-      "category": "Tech Issues",
-      "pl": "Tablet",
-      "en": "Tablet",
+      "id": "s5_20",
+      "category": "Prices & Payment",
+      "pl": "Czy jest zniżka?",
+      "en": "Is there a discount?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_53",
-      "category": "Tech Issues",
-      "pl": "Słuchawki",
-      "en": "Headphones",
+      "id": "s5_21",
+      "category": "Shopping",
+      "pl": "Gdzie mogę kupić...?",
+      "en": "Where can I buy...?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_54",
-      "category": "Tech Issues",
-      "pl": "Adapter",
-      "en": "Adapter",
+      "id": "s5_22",
+      "category": "Shopping",
+      "pl": "Szukam...",
+      "en": "I'm looking for...",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_55",
-      "category": "Tech Issues",
-      "pl": "Potrzebuję adaptera",
-      "en": "I need an adapter",
+      "id": "s5_23",
+      "category": "Shopping",
+      "pl": "Czy macie...?",
+      "en": "Do you have...?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_56",
-      "category": "Tech Issues",
-      "pl": "USB",
-      "en": "USB",
+      "id": "s5_24",
+      "category": "Shopping",
+      "pl": "W jakim rozmiarze?",
+      "en": "What size?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_57",
-      "category": "Tech Issues",
-      "pl": "Pendrive",
-      "en": "USB drive / Flash drive",
+      "id": "s5_25",
+      "category": "Shopping",
+      "pl": "Mały",
+      "en": "Small",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_58",
-      "category": "Tech Issues",
-      "pl": "Czy mogę to podłączyć?",
-      "en": "Can I plug this in?",
+      "id": "s5_26",
+      "category": "Shopping",
+      "pl": "Średni",
+      "en": "Medium",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_59",
-      "category": "Tech Issues",
-      "pl": "Ekran",
-      "en": "Screen",
+      "id": "s5_27",
+      "category": "Shopping",
+      "pl": "Duży",
+      "en": "Large",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_60",
-      "category": "Tech Issues",
-      "pl": "Klawiatura",
-      "en": "Keyboard",
+      "id": "s5_28",
+      "category": "Shopping",
+      "pl": "Za mały",
+      "en": "Too small",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_61",
-      "category": "Communication",
-      "pl": "Adres email",
-      "en": "Email address",
+      "id": "s5_29",
+      "category": "Shopping",
+      "pl": "Za duży",
+      "en": "Too big",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_62",
-      "category": "Communication",
-      "pl": "Mój email to...",
-      "en": "My email is...",
+      "id": "s5_30",
+      "category": "Shopping",
+      "pl": "Czy mogę przymierzyć?",
+      "en": "Can I try it on?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_63",
-      "category": "Communication",
-      "pl": "Proszę napisać email",
-      "en": "Please write an email",
+      "id": "s5_31",
+      "category": "Shopping",
+      "pl": "Gdzie jest przymierzalnia?",
+      "en": "Where is the fitting room?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_64",
-      "category": "Communication",
-      "pl": "Proszę wysłać SMS",
-      "en": "Please send a text",
+      "id": "s5_32",
+      "category": "Shopping",
+      "pl": "Czy macie to w innym kolorze?",
+      "en": "Do you have this in another color?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_65",
-      "category": "Communication",
-      "pl": "WhatsApp",
-      "en": "WhatsApp",
+      "id": "s5_33",
+      "category": "Shopping",
+      "pl": "Czy macie to w innym rozmiarze?",
+      "en": "Do you have this in another size?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_66",
-      "category": "Communication",
-      "pl": "Messenger",
-      "en": "Messenger",
+      "id": "s5_34",
+      "category": "Shopping",
+      "pl": "To pasuje",
+      "en": "This fits",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_67",
-      "category": "Communication",
-      "pl": "Kontakt",
-      "en": "Contact",
+      "id": "s5_35",
+      "category": "Shopping",
+      "pl": "To nie pasuje",
+      "en": "This doesn't fit",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_68",
-      "category": "Communication",
-      "pl": "Dane kontaktowe",
-      "en": "Contact details",
+      "id": "s5_36",
+      "category": "Shopping",
+      "pl": "Czy mogę to zwrócić?",
+      "en": "Can I return this?",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_69",
-      "category": "Communication",
-      "pl": "Proszę o kontakt",
-      "en": "Please contact me",
+      "id": "s5_37",
+      "category": "Shopping",
+      "pl": "Torba, proszę",
+      "en": "Bag, please",
       "level": 7,
       "gender": null
     },
     {
-      "id": "p7_70",
-      "category": "Communication",
-      "pl": "Jak mogę się z Tobą skontaktować?",
-      "en": "How can I contact you?",
+      "id": "s5_38",
+      "category": "Shopping",
+      "pl": "Sklep",
+      "en": "Shop / Store",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_39",
+      "category": "Shopping",
+      "pl": "Supermarket",
+      "en": "Supermarket",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_40",
+      "category": "Shopping",
+      "pl": "Apteka",
+      "en": "Pharmacy",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_41",
+      "category": "Money & Numbers",
+      "pl": "Złoty",
+      "en": "Zloty (Polish currency)",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_42",
+      "category": "Money & Numbers",
+      "pl": "Grosz",
+      "en": "Grosz (Polish cent)",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_43",
+      "category": "Money & Numbers",
+      "pl": "Pięć złotych",
+      "en": "Five zloty",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_44",
+      "category": "Money & Numbers",
+      "pl": "Dziesięć złotych",
+      "en": "Ten zloty",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_45",
+      "category": "Money & Numbers",
+      "pl": "Dwadzieścia złotych",
+      "en": "Twenty zloty",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_46",
+      "category": "Money & Numbers",
+      "pl": "Pięćdziesiąt złotych",
+      "en": "Fifty zloty",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_47",
+      "category": "Money & Numbers",
+      "pl": "Sto złotych",
+      "en": "One hundred zloty",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_48",
+      "category": "Money & Numbers",
+      "pl": "Jeden",
+      "en": "One",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_49",
+      "category": "Money & Numbers",
+      "pl": "Dwa",
+      "en": "Two",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_50",
+      "category": "Money & Numbers",
+      "pl": "Trzy",
+      "en": "Three",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_51",
+      "category": "Money & Numbers",
+      "pl": "Cztery",
+      "en": "Four",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_52",
+      "category": "Money & Numbers",
+      "pl": "Pięć",
+      "en": "Five",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_53",
+      "category": "Money & Numbers",
+      "pl": "Dziesięć",
+      "en": "Ten",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_54",
+      "category": "Money & Numbers",
+      "pl": "Dwadzieścia",
+      "en": "Twenty",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_55",
+      "category": "Money & Numbers",
+      "pl": "Sto",
+      "en": "One hundred",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_56",
+      "category": "Colors & Descriptions",
+      "pl": "Jaki kolor?",
+      "en": "What color?",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_57",
+      "category": "Colors & Descriptions",
+      "pl": "Biały",
+      "en": "White",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_58",
+      "category": "Colors & Descriptions",
+      "pl": "Czarny",
+      "en": "Black",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_59",
+      "category": "Colors & Descriptions",
+      "pl": "Czerwony",
+      "en": "Red",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_60",
+      "category": "Colors & Descriptions",
+      "pl": "Niebieski",
+      "en": "Blue",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_61",
+      "category": "Colors & Descriptions",
+      "pl": "Zielony",
+      "en": "Green",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_62",
+      "category": "Colors & Descriptions",
+      "pl": "Żółty",
+      "en": "Yellow",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_63",
+      "category": "Colors & Descriptions",
+      "pl": "Szary",
+      "en": "Gray",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_64",
+      "category": "Colors & Descriptions",
+      "pl": "Nowy",
+      "en": "New",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_65",
+      "category": "Colors & Descriptions",
+      "pl": "Stary",
+      "en": "Old",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_66",
+      "category": "Colors & Descriptions",
+      "pl": "Dobry",
+      "en": "Good",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_67",
+      "category": "Colors & Descriptions",
+      "pl": "Zły",
+      "en": "Bad",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_68",
+      "category": "Colors & Descriptions",
+      "pl": "Tani",
+      "en": "Cheap",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_69",
+      "category": "Colors & Descriptions",
+      "pl": "Drogi",
+      "en": "Expensive",
+      "level": 7,
+      "gender": null
+    },
+    {
+      "id": "s5_70",
+      "category": "Colors & Descriptions",
+      "pl": "Ładny",
+      "en": "Nice / Pretty",
       "level": 7,
       "gender": null
     }

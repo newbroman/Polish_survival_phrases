@@ -1,577 +1,585 @@
 {
   "level": 9,
-  "description": "Time & Scheduling - Days, Times & Appointments",
+  "description": "Health & Medical - Pharmacy & Doctor Visits",
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p9_01",
-      "category": "Time Basics",
-      "pl": "Która godzina?",
-      "en": "What time is it?",
+      "id": "p6_01",
+      "category": "Symptoms & Pain",
+      "pl": "Boli mnie...",
+      "en": "It hurts... / My ... hurts",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_02",
-      "category": "Time Basics",
-      "pl": "Jest godzina...",
-      "en": "It's ... o'clock",
+      "id": "p6_02",
+      "category": "Symptoms & Pain",
+      "pl": "Boli mnie głowa",
+      "en": "My head hurts / I have a headache",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_03",
-      "category": "Time Basics",
-      "pl": "O której?",
-      "en": "At what time?",
+      "id": "p6_03",
+      "category": "Symptoms & Pain",
+      "pl": "Boli mnie brzuch",
+      "en": "My stomach hurts",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_04",
-      "category": "Time Basics",
-      "pl": "Teraz",
-      "en": "Now",
+      "id": "p6_04",
+      "category": "Symptoms & Pain",
+      "pl": "Boli mnie gardło",
+      "en": "My throat hurts",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_05",
-      "category": "Time Basics",
-      "pl": "Później",
-      "en": "Later",
+      "id": "p6_05",
+      "category": "Symptoms & Pain",
+      "pl": "Boli mnie ząb",
+      "en": "My tooth hurts",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_06",
-      "category": "Time Basics",
-      "pl": "Wcześniej",
-      "en": "Earlier",
+      "id": "p6_06",
+      "category": "Symptoms & Pain",
+      "pl": "Boli mnie plecy",
+      "en": "My back hurts",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_07",
-      "category": "Time Basics",
-      "pl": "Rano",
-      "en": "Morning / In the morning",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_08",
-      "category": "Time Basics",
-      "pl": "Po południu",
-      "en": "Afternoon",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_09",
-      "category": "Time Basics",
-      "pl": "Wieczorem",
-      "en": "Evening / In the evening",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_10",
-      "category": "Time Basics",
-      "pl": "W nocy",
-      "en": "At night",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_11",
-      "category": "Time Basics",
-      "pl": "O ósmej rano",
-      "en": "At 8 AM",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_12",
-      "category": "Time Basics",
-      "pl": "O ósmej wieczorem",
-      "en": "At 8 PM",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_13",
-      "category": "Time Basics",
-      "pl": "Za godzinę",
-      "en": "In an hour",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_14",
-      "category": "Time Basics",
-      "pl": "Za pół godziny",
-      "en": "In half an hour",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_15",
-      "category": "Time Basics",
-      "pl": "Za chwilę",
-      "en": "In a moment",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_16",
-      "category": "Time Basics",
-      "pl": "Godzinę temu",
-      "en": "An hour ago",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_17",
-      "category": "Time Basics",
-      "pl": "Cały dzień",
-      "en": "All day",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_18",
-      "category": "Time Basics",
-      "pl": "Całą noc",
-      "en": "All night",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_19",
-      "category": "Time Basics",
-      "pl": "Minutę",
-      "en": "Minute",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_20",
-      "category": "Time Basics",
-      "pl": "Godzinę",
-      "en": "Hour",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_21",
-      "category": "Days",
-      "pl": "Dzisiaj",
-      "en": "Today",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_22",
-      "category": "Days",
-      "pl": "Wczoraj",
-      "en": "Yesterday",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_23",
-      "category": "Days",
-      "pl": "Jutro",
-      "en": "Tomorrow",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_24",
-      "category": "Days",
-      "pl": "Pojutrze",
-      "en": "Day after tomorrow",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_25",
-      "category": "Days",
-      "pl": "Przedwczoraj",
-      "en": "Day before yesterday",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_26",
-      "category": "Days",
-      "pl": "Poniedziałek",
-      "en": "Monday",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_27",
-      "category": "Days",
-      "pl": "Wtorek",
-      "en": "Tuesday",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_28",
-      "category": "Days",
-      "pl": "Środa",
-      "en": "Wednesday",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_29",
-      "category": "Days",
-      "pl": "Czwartek",
-      "en": "Thursday",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_30",
-      "category": "Days",
-      "pl": "Piątek",
-      "en": "Friday",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_31",
-      "category": "Days",
-      "pl": "Sobota",
-      "en": "Saturday",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_32",
-      "category": "Days",
-      "pl": "Niedziela",
-      "en": "Sunday",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_33",
-      "category": "Days",
-      "pl": "Dzień",
-      "en": "Day",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_34",
-      "category": "Days",
-      "pl": "Tydzień",
-      "en": "Week",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_35",
-      "category": "Days",
-      "pl": "Weekend",
-      "en": "Weekend",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_36",
-      "category": "Scheduling",
-      "pl": "Kiedy?",
-      "en": "When?",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_37",
-      "category": "Scheduling",
-      "pl": "O której godzinie?",
-      "en": "At what time?",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_38",
-      "category": "Scheduling",
-      "pl": "Spotkanie",
-      "en": "Meeting / Appointment",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_39",
-      "category": "Scheduling",
-      "pl": "Mam spotkanie",
-      "en": "I have a meeting",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_40",
-      "category": "Scheduling",
-      "pl": "Rezerwacja",
-      "en": "Reservation / Booking",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_41",
-      "category": "Scheduling",
-      "pl": "Chciałbym/Chciałabym zarezerwować",
-      "en": "I'd like to book",
+      "id": "p6_07",
+      "category": "Symptoms & Pain",
+      "pl": "Jestem chory/chora",
+      "en": "I'm sick",
       "level": 9,
       "gender": "both",
       "variants": {
-        "m": "Chciałbym",
-        "f": "Chciałabym zarezerwować"
+        "m": "Jestem chory",
+        "f": "chora"
       }
     },
     {
-      "id": "p9_42",
-      "category": "Scheduling",
-      "pl": "Czy jest wolny termin?",
-      "en": "Is there an available slot?",
+      "id": "p6_08",
+      "category": "Symptoms & Pain",
+      "pl": "Mam gorączkę",
+      "en": "I have a fever",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_43",
-      "category": "Scheduling",
-      "pl": "Kiedy Pan/Pani ma czas?",
-      "en": "When do you have time?",
+      "id": "p6_09",
+      "category": "Symptoms & Pain",
+      "pl": "Mam kaszel",
+      "en": "I have a cough",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_10",
+      "category": "Symptoms & Pain",
+      "pl": "Mam katar",
+      "en": "I have a runny nose",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_11",
+      "category": "Symptoms & Pain",
+      "pl": "Wymiotuję",
+      "en": "I'm vomiting",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_12",
+      "category": "Symptoms & Pain",
+      "pl": "Mam biegunkę",
+      "en": "I have diarrhea",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_13",
+      "category": "Symptoms & Pain",
+      "pl": "Mam zawroty głowy",
+      "en": "I'm dizzy",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_14",
+      "category": "Symptoms & Pain",
+      "pl": "Nie mogę spać",
+      "en": "I can't sleep",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_15",
+      "category": "Symptoms & Pain",
+      "pl": "Jestem zmęczony/zmęczona",
+      "en": "I'm tired",
       "level": 9,
       "gender": "both",
       "variants": {
-        "m": "Kiedy Pan",
-        "f": "Pani ma czas?"
+        "m": "Jestem zmęczony",
+        "f": "zmęczona"
       }
     },
     {
-      "id": "p9_44",
-      "category": "Scheduling",
-      "pl": "Czy jutro jest możliwe?",
-      "en": "Is tomorrow possible?",
+      "id": "p6_16",
+      "category": "Symptoms & Pain",
+      "pl": "Czuję się źle",
+      "en": "I feel bad / unwell",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_45",
-      "category": "Scheduling",
-      "pl": "Muszę zmienić termin",
-      "en": "I need to change the appointment",
+      "id": "p6_17",
+      "category": "Symptoms & Pain",
+      "pl": "Czuję się lepiej",
+      "en": "I feel better",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_46",
-      "category": "Scheduling",
-      "pl": "Muszę odwołać",
-      "en": "I need to cancel",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_47",
-      "category": "Scheduling",
-      "pl": "Spóźnię się",
-      "en": "I'll be late",
-      "level": 9,
-      "gender": null
-    },
-    {
-      "id": "p9_48",
-      "category": "Scheduling",
-      "pl": "Jestem spóźniony/spóźniona",
-      "en": "I'm late",
+      "id": "p6_18",
+      "category": "Symptoms & Pain",
+      "pl": "Jestem chory/chora od wczoraj",
+      "en": "I've been sick since yesterday",
       "level": 9,
       "gender": "both",
       "variants": {
-        "m": "Jestem spóźniony",
-        "f": "spóźniona"
+        "m": "Jestem chory",
+        "f": "chora od wczoraj"
       }
     },
     {
-      "id": "p9_49",
-      "category": "Scheduling",
-      "pl": "Za pięć minut",
-      "en": "In five minutes",
+      "id": "p6_19",
+      "category": "Symptoms & Pain",
+      "pl": "To boli bardzo",
+      "en": "It hurts a lot",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_50",
-      "category": "Scheduling",
-      "pl": "Za dziesięć minut",
-      "en": "In ten minutes",
+      "id": "p6_20",
+      "category": "Symptoms & Pain",
+      "pl": "Nie mogę oddychać",
+      "en": "I can't breathe",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_51",
-      "category": "Scheduling",
-      "pl": "Punktualnie",
-      "en": "On time",
+      "id": "p6_21",
+      "category": "Doctor & Pharmacy",
+      "pl": "Potrzebuję lekarza",
+      "en": "I need a doctor",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_52",
-      "category": "Scheduling",
-      "pl": "Czekam",
-      "en": "I'm waiting",
+      "id": "p6_22",
+      "category": "Doctor & Pharmacy",
+      "pl": "Gdzie jest lekarz?",
+      "en": "Where is the doctor?",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_53",
-      "category": "Scheduling",
-      "pl": "Proszę czekać",
-      "en": "Please wait",
+      "id": "p6_23",
+      "category": "Doctor & Pharmacy",
+      "pl": "Gdzie jest apteka?",
+      "en": "Where is the pharmacy?",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_54",
-      "category": "Scheduling",
-      "pl": "Ile czasu to zajmie?",
-      "en": "How long will it take?",
+      "id": "p6_24",
+      "category": "Doctor & Pharmacy",
+      "pl": "Apteka",
+      "en": "Pharmacy",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_55",
-      "category": "Scheduling",
-      "pl": "Kiedy będzie gotowe?",
-      "en": "When will it be ready?",
+      "id": "p6_25",
+      "category": "Doctor & Pharmacy",
+      "pl": "Szpital",
+      "en": "Hospital",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_56",
-      "category": "Time Periods",
-      "pl": "Miesiąc",
-      "en": "Month",
+      "id": "p6_26",
+      "category": "Doctor & Pharmacy",
+      "pl": "Przychodnia",
+      "en": "Clinic",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_57",
-      "category": "Time Periods",
-      "pl": "Rok",
-      "en": "Year",
+      "id": "p6_27",
+      "category": "Doctor & Pharmacy",
+      "pl": "Dentysta",
+      "en": "Dentist",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_58",
-      "category": "Time Periods",
-      "pl": "W tym tygodniu",
-      "en": "This week",
+      "id": "p6_28",
+      "category": "Doctor & Pharmacy",
+      "pl": "Recepta",
+      "en": "Prescription",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_59",
-      "category": "Time Periods",
-      "pl": "W przyszłym tygodniu",
-      "en": "Next week",
+      "id": "p6_29",
+      "category": "Doctor & Pharmacy",
+      "pl": "Mam receptę",
+      "en": "I have a prescription",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_60",
-      "category": "Time Periods",
-      "pl": "W zeszłym tygodniu",
-      "en": "Last week",
+      "id": "p6_30",
+      "category": "Doctor & Pharmacy",
+      "pl": "Potrzebuję leku na...",
+      "en": "I need medicine for...",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_61",
-      "category": "Time Periods",
-      "pl": "W tym miesiącu",
-      "en": "This month",
+      "id": "p6_31",
+      "category": "Doctor & Pharmacy",
+      "pl": "Lek przeciwbólowy",
+      "en": "Painkiller",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_62",
-      "category": "Time Periods",
-      "pl": "W przyszłym miesiącu",
-      "en": "Next month",
+      "id": "p6_32",
+      "category": "Doctor & Pharmacy",
+      "pl": "Aspiryna",
+      "en": "Aspirin",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_63",
-      "category": "Time Periods",
-      "pl": "Zawsze",
-      "en": "Always",
+      "id": "p6_33",
+      "category": "Doctor & Pharmacy",
+      "pl": "Antybiotyk",
+      "en": "Antibiotic",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_64",
-      "category": "Time Periods",
-      "pl": "Nigdy",
-      "en": "Never",
+      "id": "p6_34",
+      "category": "Doctor & Pharmacy",
+      "pl": "Witaminy",
+      "en": "Vitamins",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_65",
-      "category": "Time Periods",
-      "pl": "Czasami",
-      "en": "Sometimes",
+      "id": "p6_35",
+      "category": "Doctor & Pharmacy",
+      "pl": "Plaster",
+      "en": "Band-aid",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_66",
-      "category": "Time Periods",
-      "pl": "Często",
-      "en": "Often",
+      "id": "p6_36",
+      "category": "Doctor & Pharmacy",
+      "pl": "Termometr",
+      "en": "Thermometer",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_67",
-      "category": "Time Periods",
-      "pl": "Rzadko",
-      "en": "Rarely",
+      "id": "p6_37",
+      "category": "Doctor & Pharmacy",
+      "pl": "Mam alergię na...",
+      "en": "I'm allergic to...",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_68",
-      "category": "Time Periods",
-      "pl": "Codziennie",
-      "en": "Every day",
+      "id": "p6_38",
+      "category": "Doctor & Pharmacy",
+      "pl": "Alergia",
+      "en": "Allergy",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_69",
-      "category": "Time Periods",
-      "pl": "Co tydzień",
-      "en": "Every week",
+      "id": "p6_39",
+      "category": "Doctor & Pharmacy",
+      "pl": "Ubezpieczenie",
+      "en": "Insurance",
       "level": 9,
       "gender": null
     },
     {
-      "id": "p9_70",
-      "category": "Time Periods",
-      "pl": "Raz w miesiącu",
-      "en": "Once a month",
+      "id": "p6_40",
+      "category": "Doctor & Pharmacy",
+      "pl": "Mam ubezpieczenie",
+      "en": "I have insurance",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_41",
+      "category": "Doctor & Pharmacy",
+      "pl": "Karta ubezpieczenia",
+      "en": "Insurance card",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_42",
+      "category": "Doctor & Pharmacy",
+      "pl": "Ile to kosztuje?",
+      "en": "How much is this?",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_43",
+      "category": "Doctor & Pharmacy",
+      "pl": "Czy potrzebuję recepty?",
+      "en": "Do I need a prescription?",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_44",
+      "category": "Doctor & Pharmacy",
+      "pl": "Jak często to brać?",
+      "en": "How often to take this?",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_45",
+      "category": "Doctor & Pharmacy",
+      "pl": "Przed jedzeniem czy po?",
+      "en": "Before or after eating?",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_46",
+      "category": "Medical Situations",
+      "pl": "Zadzwoń po karetkę",
+      "en": "Call an ambulance",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_47",
+      "category": "Medical Situations",
+      "pl": "To nagły wypadek",
+      "en": "It's an emergency",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_48",
+      "category": "Medical Situations",
+      "pl": "Jestem w ciąży",
+      "en": "I'm pregnant",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_49",
+      "category": "Medical Situations",
+      "pl": "Mam cukrzycę",
+      "en": "I have diabetes",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_50",
+      "category": "Medical Situations",
+      "pl": "Mam astmę",
+      "en": "I have asthma",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_51",
+      "category": "Medical Situations",
+      "pl": "Biorę leki na...",
+      "en": "I take medication for...",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_52",
+      "category": "Medical Situations",
+      "pl": "Upadłem/Upadłam",
+      "en": "I fell",
+      "level": 9,
+      "gender": "both",
+      "variants": {
+        "m": "Upadłem",
+        "f": "Upadłam"
+      }
+    },
+    {
+      "id": "p6_53",
+      "category": "Medical Situations",
+      "pl": "Skaleczyłem/Skaleczyłam się",
+      "en": "I cut myself",
+      "level": 9,
+      "gender": "both",
+      "variants": {
+        "m": "Skaleczyłem",
+        "f": "Skaleczyłam się"
+      }
+    },
+    {
+      "id": "p6_54",
+      "category": "Medical Situations",
+      "pl": "Sparzenie",
+      "en": "Burn",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_55",
+      "category": "Medical Situations",
+      "pl": "Złamanie",
+      "en": "Fracture / Broken bone",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_56",
+      "category": "Medical Situations",
+      "pl": "Krwawienie",
+      "en": "Bleeding",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_57",
+      "category": "Medical Situations",
+      "pl": "Grupa krwi",
+      "en": "Blood type",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_58",
+      "category": "Medical Situations",
+      "pl": "Moja grupa krwi to...",
+      "en": "My blood type is...",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_59",
+      "category": "Medical Situations",
+      "pl": "Potrzebuję tłumacza",
+      "en": "I need a translator",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_60",
+      "category": "Medical Situations",
+      "pl": "Czy ktoś mówi po angielsku?",
+      "en": "Does anyone speak English?",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_61",
+      "category": "Body Parts",
+      "pl": "Głowa",
+      "en": "Head",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_62",
+      "category": "Body Parts",
+      "pl": "Brzuch",
+      "en": "Stomach",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_63",
+      "category": "Body Parts",
+      "pl": "Ręka",
+      "en": "Hand / Arm",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_64",
+      "category": "Body Parts",
+      "pl": "Noga",
+      "en": "Leg / Foot",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_65",
+      "category": "Body Parts",
+      "pl": "Plecy",
+      "en": "Back",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_66",
+      "category": "Body Parts",
+      "pl": "Oko",
+      "en": "Eye",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_67",
+      "category": "Body Parts",
+      "pl": "Ucho",
+      "en": "Ear",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_68",
+      "category": "Body Parts",
+      "pl": "Gardło",
+      "en": "Throat",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_69",
+      "category": "Body Parts",
+      "pl": "Ząb",
+      "en": "Tooth",
+      "level": 9,
+      "gender": null
+    },
+    {
+      "id": "p6_70",
+      "category": "Body Parts",
+      "pl": "Szyja",
+      "en": "Neck",
       "level": 9,
       "gender": null
     }

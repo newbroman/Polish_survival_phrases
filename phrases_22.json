@@ -1,1007 +1,583 @@
 {
   "level": 22,
-  "description": "Dates, Times & Meetings (200 Phrases)",
+  "description": "Asking for Help & Clarification - Getting Unstuck",
+  "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": 1,
-      "en": "What time is it? (Formal)",
-      "pl": "Która jest godzina?"
-    },
-    {
-      "id": 2,
-      "en": "What time is it? (Casual)",
-      "pl": "Która godzina?"
-    },
-    {
-      "id": 3,
-      "en": "It is exactly eight o'clock.",
-      "pl": "Jest dokładnie ósma."
-    },
-    {
-      "id": 4,
-      "en": "Let's meet at four o'clock.",
-      "pl": "Spotkajmy się o czwartej."
-    },
-    {
-      "id": 5,
-      "en": "Is it three-thirty?",
-      "pl": "Czy jest wpół do czwartej?"
-    },
-    {
-      "id": 6,
-      "en": "The meeting is at four-thirty.",
-      "pl": "Spotkanie jest o wpół do piątej."
-    },
-    {
-      "id": 7,
-      "en": "Today is Monday.",
-      "pl": "Dzisiaj jest poniedziałek."
-    },
-    {
-      "id": 8,
-      "en": "Tomorrow is Tuesday.",
-      "pl": "Jutro jest wtorek."
-    },
-    {
-      "id": 9,
-      "en": "Let's meet on Wednesday.",
-      "pl": "Spotkajmy się w środę."
-    },
-    {
-      "id": 10,
-      "en": "See you on Thursday.",
-      "pl": "Do zobaczenia w czwartek."
-    },
-    {
-      "id": 11,
-      "en": "I have time on Friday.",
-      "pl": "Mam czas w piątek."
-    },
-    {
-      "id": 12,
-      "en": "Are you busy on Saturday?",
-      "pl": "Czy jesteś zajęty w sobotę?"
-    },
-    {
-      "id": 13,
-      "en": "Sunday is a day off.",
-      "pl": "Niedziela to dzień wolny."
-    },
-    {
-      "id": 14,
-      "en": "It is 8:30.",
-      "pl": "Jest wpół do dziewiątej."
-    },
-    {
-      "id": 15,
-      "en": "It is 8:40.",
-      "pl": "Jest za dwadzieścia dziewiąta."
-    },
-    {
-      "id": 16,
-      "en": "The train leaves at 4:30.",
-      "pl": "Pociąg odjeżdża o wpół do piątej."
-    },
-    {
-      "id": 17,
-      "en": "The bus leaves at 4:40.",
-      "pl": "Autobus odjeżdża za dwadzieścia piąta."
-    },
-    {
-      "id": 18,
-      "en": "I will be there in thirty minutes.",
-      "pl": "Będę tam za trzydzieści minut."
-    },
-    {
-      "id": 19,
-      "en": "I will be there in forty minutes.",
-      "pl": "Będę tam za czterdzieści minut."
-    },
-    {
-      "id": 20,
-      "en": "Let's meet at 3:30.",
-      "pl": "Spotkajmy się o wpół do czwartej."
-    },
-    {
-      "id": 21,
-      "en": "Let's meet at 4:30.",
-      "pl": "Spotkajmy się o wpół do piątej."
-    },
-    {
-      "id": 22,
-      "en": "Is it 3:40 or 4:40?",
-      "pl": "Czy jest za dwadzieścia czwarta czy za dwadzieścia piąta?"
-    },
-    {
-      "id": 23,
-      "en": "The movie starts at 7:30.",
-      "pl": "Film zaczyna się o wpół do ósmej."
-    },
-    {
-      "id": 24,
-      "en": "The show ends at 7:40.",
-      "pl": "Przedstawienie kończy się o za dwadzieścia ósma."
-    },
-    {
-      "id": 25,
-      "en": "I wake up at 6:30.",
-      "pl": "Budzę się o wpół do siódmej."
-    },
-    {
-      "id": 26,
-      "en": "I go to work at 7:40.",
-      "pl": "Idę do pracy o za dwadzieścia ósma."
-    },
-    {
-      "id": 27,
-      "en": "Lunch is at 1:30.",
-      "pl": "Obiad jest o wpół do drugiej."
-    },
-    {
-      "id": 28,
-      "en": "Dinner is at 6:40.",
-      "pl": "Kolacja jest o za dwadzieścia siódma."
-    },
-    {
-      "id": 29,
-      "en": "Do you have time at 3:30?",
-      "pl": "Czy masz czas o wpół do czwartej?"
-    },
-    {
-      "id": 30,
-      "en": "Do you have time at 4:30?",
-      "pl": "Czy masz czas o wpół do piątej?"
-    },
-    {
-      "id": 31,
-      "en": "I am free on Monday at 3:00.",
-      "pl": "Jestem wolny w poniedziałek o trzeciej."
-    },
-    {
-      "id": 32,
-      "en": "I am busy on Tuesday at 4:00.",
-      "pl": "Jestem zajęty we wtorek o czwartej."
-    },
-    {
-      "id": 33,
-      "en": "Let's meet on Wednesday at 5:30.",
-      "pl": "Spotkajmy się w środę o wpół do szóstej."
-    },
-    {
-      "id": 34,
-      "en": "Can we meet on Thursday at 4:40?",
-      "pl": "Czy możemy się spotkać w czwartek o za dwadzieścia piąta?"
-    },
-    {
-      "id": 35,
-      "en": "Friday at 3:30 is perfect.",
-      "pl": "Piątek o wpół do czwartej jest idealny."
-    },
-    {
-      "id": 36,
-      "en": "Saturday at 4:30 works for me.",
-      "pl": "Sobota o wpół do piątej mi pasuje."
-    },
-    {
-      "id": 37,
-      "en": "Sunday morning at 10:00.",
-      "pl": "Niedziela rano o dziesiątej."
-    },
-    {
-      "id": 38,
-      "en": "What day is today?",
-      "pl": "Jaki dzisiaj jest dzień?"
-    },
-    {
-      "id": 39,
-      "en": "Today is the 30th.",
-      "pl": "Dzisiaj jest trzydziesty."
-    },
-    {
-      "id": 40,
-      "en": "Tomorrow is the 31st.",
-      "pl": "Jutro jest trzydziesty pierwszy."
-    },
-    {
-      "id": 41,
-      "en": "Wait, is it the 40th? No, that's impossible.",
-      "pl": "Czekaj, czy to czterdziesty? Nie, to niemożliwe."
-    },
-    {
-      "id": 42,
-      "en": "The appointment is on the 3rd.",
-      "pl": "Wizyta jest trzeciego."
-    },
-    {
-      "id": 43,
-      "en": "The deadline is on the 4th.",
-      "pl": "Termin jest czwartego."
-    },
-    {
-      "id": 44,
-      "en": "I'll see you in 30 seconds.",
-      "pl": "Zobaczymy się za trzydzieści sekund."
-    },
-    {
-      "id": 45,
-      "en": "I'll see you in 40 seconds.",
-      "pl": "Zobaczymy się za czterdzieści sekund."
-    },
-    {
-      "id": 46,
-      "en": "It takes 30 minutes by car.",
-      "pl": "To zajmuje trzydzieści minut samochodem."
-    },
-    {
-      "id": 47,
-      "en": "It takes 40 minutes by bus.",
-      "pl": "To zajmuje czterdzieści minut autobusem."
-    },
-    {
-      "id": 48,
-      "en": "He is 30 years old.",
-      "pl": "On ma trzydzieści lat."
-    },
-    {
-      "id": 49,
-      "en": "She is 40 years old.",
-      "pl": "Ona ma czterdzieści lat."
-    },
-    {
-      "id": 50,
-      "en": "We have 30 minutes left.",
-      "pl": "Zostało nam trzydzieści minut."
-    },
-    {
-      "id": 51,
-      "en": "We have 40 minutes left.",
-      "pl": "Zostało nam czterdzieści minut."
-    },
-    {
-      "id": 52,
-      "en": "It's 3:35.",
-      "pl": "Jest trzecia trzydzieści pięć."
-    },
-    {
-      "id": 53,
-      "en": "It's 4:35.",
-      "pl": "Jest czwarta trzydzieści pięć."
-    },
-    {
-      "id": 54,
-      "en": "It's 3:45.",
-      "pl": "Jest za kwadrans czwarta."
-    },
-    {
-      "id": 55,
-      "en": "It's 4:45.",
-      "pl": "Jest za kwadrans piąta."
-    },
-    {
-      "id": 56,
-      "en": "Meeting at 3:15.",
-      "pl": "Spotkanie o trzeciej piętnaście."
-    },
-    {
-      "id": 57,
-      "en": "Meeting at 4:15.",
-      "pl": "Spotkanie o czwartej piętnaście."
-    },
-    {
-      "id": 58,
-      "en": "I'll be ready at 3:20.",
-      "pl": "Będę gotowy o trzeciej dwadzieścia."
-    },
-    {
-      "id": 59,
-      "en": "I'll be ready at 4:20.",
-      "pl": "Będę gotowy o czwartej dwadzieścia."
-    },
-    {
-      "id": 60,
-      "en": "Call me at 3:50.",
-      "pl": "Zadzwoń do mnie o za dziesięć czwarta."
-    },
-    {
-      "id": 61,
-      "en": "Call me at 4:50.",
-      "pl": "Zadzwoń do mnie o za dziesięć piąta."
-    },
-    {
-      "id": 62,
-      "en": "The store opens at 9:30.",
-      "pl": "Sklep otwiera się o wpół do dziesiątej."
-    },
-    {
-      "id": 63,
-      "en": "The shop closes at 6:40.",
-      "pl": "Sklep zamyka się o za dwadzieścia siódma."
-    },
-    {
-      "id": 64,
-      "en": "Monday morning, 8:30.",
-      "pl": "Poniedziałek rano, wpół do dziewiątej."
-    },
-    {
-      "id": 65,
-      "en": "Tuesday evening, 7:40.",
-      "pl": "Wtorek wieczorem, za dwadzieścia ósma."
-    },
-    {
-      "id": 66,
-      "en": "Wednesday afternoon, 2:30.",
-      "pl": "Środa po południu, wpół do trzeciej."
-    },
-    {
-      "id": 67,
-      "en": "Thursday night, 11:40.",
-      "pl": "Czwartek w nocy, za dwadzieścia dwunasta."
-    },
-    {
-      "id": 68,
-      "en": "Friday night, 10:30.",
-      "pl": "Piątek wieczorem, wpół do jedenastej."
-    },
-    {
-      "id": 69,
-      "en": "Saturday noon, 12:00.",
-      "pl": "Sobota w południe, dwunasta."
-    },
-    {
-      "id": 70,
-      "en": "Sunday at 3:40 PM.",
-      "pl": "Niedziela o piętnastej czterdzieści."
-    },
-    {
-      "id": 71,
-      "en": "Are we meeting at 3:00?",
-      "pl": "Czy widzimy się o trzeciej?"
-    },
-    {
-      "id": 72,
-      "en": "Are we meeting at 4:00?",
-      "pl": "Czy widzimy się o czwartej?"
-    },
-    {
-      "id": 73,
-      "en": "I can't do 3:30.",
-      "pl": "Nie mogę o wpół do czwartej."
-    },
-    {
-      "id": 74,
-      "en": "I can't do 4:30.",
-      "pl": "Nie mogę o wpół do piątej."
-    },
-    {
-      "id": 75,
-      "en": "How about 3:45?",
-      "pl": "Może za kwadrans czwarta?"
-    },
-    {
-      "id": 76,
-      "en": "How about 4:45?",
-      "pl": "Może za kwadrans piąta?"
-    },
-    {
-      "id": 77,
-      "en": "See you at 3:10.",
-      "pl": "Do zobaczenia o trzeciej dziesięć."
-    },
-    {
-      "id": 78,
-      "en": "See you at 4:10.",
-      "pl": "Do zobaczenia o czwartej dziesięć."
-    },
-    {
-      "id": 79,
-      "en": "I'm running 30 minutes late.",
-      "pl": "Mam trzydzieści minut spóźnienia."
-    },
-    {
-      "id": 80,
-      "en": "I'm running 40 minutes late.",
-      "pl": "Mam czterdzieści minut spóźnienia."
-    },
-    {
-      "id": 81,
-      "en": "The flight is 30 minutes early.",
-      "pl": "Lot jest trzydzieści minut wcześniej."
-    },
-    {
-      "id": 82,
-      "en": "The train is 40 minutes late.",
-      "pl": "Pociąg ma czterdzieści minut opóźnienia."
-    },
-    {
-      "id": 83,
-      "en": "Is it 3:25?",
-      "pl": "Czy jest trzecia dwadzieścia pięć?"
-    },
-    {
-      "id": 84,
-      "en": "Is it 4:25?",
-      "pl": "Czy jest czwarta dwadzieścia pięć?"
-    },
-    {
-      "id": 85,
-      "en": "Exactly 3:33.",
-      "pl": "Dokładnie trzecia trzydzieści trzy."
-    },
-    {
-      "id": 86,
-      "en": "Exactly 4:44.",
-      "pl": "Dokładnie czwarta czterdzieści cztery."
-    },
-    {
-      "id": 87,
-      "en": "Let's start in 30 seconds.",
-      "pl": "Zacznijmy za trzydzieści sekund."
-    },
-    {
-      "id": 88,
-      "en": "Let's finish in 40 seconds.",
-      "pl": "Skończmy za czterdzieści sekund."
-    },
-    {
-      "id": 89,
-      "en": "The total time is 30 minutes.",
-      "pl": "Całkowity czas to trzydzieści minut."
-    },
-    {
-      "id": 90,
-      "en": "The total time is 40 minutes.",
-      "pl": "Całkowity czas to czterdzieści minut."
-    },
-    {
-      "id": 91,
-      "en": "See you on Monday at 9:30.",
-      "pl": "Do zobaczenia w poniedziałek o wpół do dziesiątej."
-    },
-    {
-      "id": 92,
-      "en": "See you on Tuesday at 10:40.",
-      "pl": "Do zobaczenia we wtorek o za dwadzieścia jedenasta."
-    },
-    {
-      "id": 93,
-      "en": "See you on Wednesday at 11:30.",
-      "pl": "Do zobaczenia w środę o wpół do dwunastej."
-    },
-    {
-      "id": 94,
-      "en": "See you on Thursday at 12:40.",
-      "pl": "Do zobaczenia w czwartek o za dwadzieścia pierwsza."
-    },
-    {
-      "id": 95,
-      "en": "See you on Friday at 1:30.",
-      "pl": "Do zobaczenia w piątek o wpół do drugiej."
-    },
-    {
-      "id": 96,
-      "en": "See you on Saturday at 2:40.",
-      "pl": "Do zobaczenia w sobotę o za dwadzieścia trzecia."
-    },
-    {
-      "id": 97,
-      "en": "See you on Sunday at 3:30.",
-      "pl": "Do zobaczenia w niedzielę o wpół do czwartej."
-    },
-    {
-      "id": 98,
-      "en": "It is exactly thirty degrees.",
-      "pl": "Jest dokładnie trzydzieści stopni."
-    },
-    {
-      "id": 99,
-      "en": "It is exactly forty degrees.",
-      "pl": "Jest dokładnie czterdzieści stopni."
-    },
-    {
-      "id": 100,
-      "en": "I need 30 or 40 more.",
-      "pl": "Potrzebuję jeszcze trzydziestu lub czterdziestu."
-    },
-    {
-      "id": 101,
-      "en": "Good morning, it's 8:30.",
-      "pl": "Dzień dobry, jest wpół do dziewiątej."
-    },
-    {
-      "id": 102,
-      "en": "Good evening, it's 8:40.",
-      "pl": "Dobry wieczór, jest za dwadzieścia dziewiąta."
-    },
-    {
-      "id": 103,
-      "en": "What day of the week is it?",
-      "pl": "Jaki to dzień tygodnia?"
-    },
-    {
-      "id": 104,
-      "en": "It's a busy Monday.",
-      "pl": "To pracowity poniedziałek."
-    },
-    {
-      "id": 105,
-      "en": "Tuesday is better for me.",
-      "pl": "Wtorek jest dla mnie lepszy."
-    },
-    {
-      "id": 106,
-      "en": "Wednesday is the middle of the week.",
-      "pl": "Środa to środek tygodnia."
-    },
-    {
-      "id": 107,
-      "en": "I love Thursdays.",
-      "pl": "Uwielbiam czwartki."
-    },
-    {
-      "id": 108,
-      "en": "Friday is my favorite day.",
-      "pl": "Piątek to mój ulubiony dzień."
-    },
-    {
-      "id": 109,
-      "en": "Let's relax on Saturday.",
-      "pl": "Odpocznijmy w sobotę."
-    },
-    {
-      "id": 110,
-      "en": "Sunday is for family.",
-      "pl": "Niedziela jest dla rodziny."
-    },
-    {
-      "id": 111,
-      "en": "Can we meet at 3:30 PM?",
-      "pl": "Czy możemy się spotkać o piętnastej trzydzieści?"
-    },
-    {
-      "id": 112,
-      "en": "Can we meet at 4:40 PM?",
-      "pl": "Czy możemy się spotkać o szesnastej czterdzieści?"
-    },
-    {
-      "id": 113,
-      "en": "The concert is on Friday at 8:00.",
-      "pl": "Koncert jest w piątek o ósmej."
-    },
-    {
-      "id": 114,
-      "en": "The class is on Monday at 10:30.",
-      "pl": "Lekcja jest w poniedziałek o wpół do jedenastej."
-    },
-    {
-      "id": 115,
-      "en": "The game is on Saturday at 4:40.",
-      "pl": "Mecz jest w sobotę o za dwadzieścia piąta."
-    },
-    {
-      "id": 116,
-      "en": "Is it 3:30 already?",
-      "pl": "Czy to już wpół do czwartej?"
-    },
-    {
-      "id": 117,
-      "en": "Is it 4:40 already?",
-      "pl": "Czy to już za dwadzieścia piąta?"
-    },
-    {
-      "id": 118,
-      "en": "I'll call you at 3:15.",
-      "pl": "Zadzwoń do mnie o trzeciej piętnaście."
-    },
-    {
-      "id": 119,
-      "en": "I'll text you at 4:45.",
-      "pl": "Napiszę do ciebie za kwadrans piąta."
-    },
-    {
-      "id": 120,
-      "en": "Wait for me at 3:30.",
-      "pl": "Czekaj na mnie o wpół do czwartej."
-    },
-    {
-      "id": 121,
-      "en": "Wait for me at 4:40.",
-      "pl": "Czekaj na mnie za dwadzieścia piąta."
-    },
-    {
-      "id": 122,
-      "en": "I was here at 3:00.",
-      "pl": "Byłem tutaj o trzeciej."
-    },
-    {
-      "id": 123,
-      "en": "I was here at 4:00.",
-      "pl": "Byłem tutaj o czwartej."
-    },
-    {
-      "id": 124,
-      "en": "She arrived at 3:30.",
-      "pl": "Przyjechała o wpół do czwartej."
-    },
-    {
-      "id": 125,
-      "en": "He arrived at 4:40.",
-      "pl": "Przyjechał o za dwadzieścia piąta."
-    },
-    {
-      "id": 126,
-      "en": "The bank opens at 9:00.",
-      "pl": "Bank otwiera się o dziewiątej."
-    },
-    {
-      "id": 127,
-      "en": "The bank closes at 4:30.",
-      "pl": "Bank zamyka się o wpół do piątej."
-    },
-    {
-      "id": 128,
-      "en": "It's almost 3:30.",
-      "pl": "Jest prawie wpół do czwartej."
-    },
-    {
-      "id": 129,
-      "en": "It's almost 4:40.",
-      "pl": "Jest prawie za dwadzieścia piąta."
-    },
-    {
-      "id": 130,
-      "en": "Let's check the time.",
-      "pl": "Sprawdźmy godzinę."
-    },
-    {
-      "id": 131,
-      "en": "My watch says 3:30.",
-      "pl": "Mój zegarek pokazuje wpół do czwartej."
-    },
-    {
-      "id": 132,
-      "en": "Your phone says 4:40.",
-      "pl": "Twój telefon pokazuje za dwadzieścia piąta."
-    },
-    {
-      "id": 133,
-      "en": "30 minutes until lunch.",
-      "pl": "Trzydzieści minut do obiadu."
-    },
-    {
-      "id": 134,
-      "en": "40 minutes until dinner.",
-      "pl": "Czterdzieści minut do kolacji."
-    },
-    {
-      "id": 135,
-      "en": "The store is open 24/7.",
-      "pl": "Sklep jest otwarty całą dobę."
-    },
-    {
-      "id": 136,
-      "en": "What time do you wake up?",
-      "pl": "O której godzinie się budzisz?"
-    },
-    {
-      "id": 137,
-      "en": "I wake up at 7:30.",
-      "pl": "Budzę się o wpół do ósmej."
-    },
-    {
-      "id": 138,
-      "en": "I go to bed at 11:40.",
-      "pl": "Idę spać o za dwadzieścia dwunasta."
-    },
-    {
-      "id": 139,
-      "en": "Let's meet at 3:33 PM.",
-      "pl": "Spotkajmy się o piętnastej trzydzieści trzy."
-    },
-    {
-      "id": 140,
-      "en": "Let's meet at 4:44 PM.",
-      "pl": "Spotkajmy się o szesnastej czterdzieści cztery."
-    },
-    {
-      "id": 141,
-      "en": "I'll be there in 30.",
-      "pl": "Będę za trzydzieści."
-    },
-    {
-      "id": 142,
-      "en": "I'll be there in 40.",
-      "pl": "Będę za czterdzieści."
-    },
-    {
-      "id": 143,
-      "en": "Is it 3:30 or 4:30?",
-      "pl": "Czy jest wpół do czwartej czy wpół do piątej?"
-    },
-    {
-      "id": 144,
-      "en": "Is it 3:40 or 4:40?",
-      "pl": "Czy jest za dwadzieścia czwarta czy za dwadzieścia piąta?"
-    },
-    {
-      "id": 145,
-      "en": "Monday morning is busy.",
-      "pl": "Poniedziałek rano jest pracowity."
-    },
-    {
-      "id": 146,
-      "en": "Tuesday afternoon is free.",
-      "pl": "Wtorek po południu jest wolny."
-    },
-    {
-      "id": 147,
-      "en": "Wednesday night is quiet.",
-      "pl": "Środa wieczorem jest spokojna."
-    },
-    {
-      "id": 148,
-      "en": "Thursday evening is nice.",
-      "pl": "Czwartek wieczorem jest miły."
-    },
-    {
-      "id": 149,
-      "en": "Friday morning is fast.",
-      "pl": "Piątek rano szybko mija."
-    },
-    {
-      "id": 150,
-      "en": "Saturday night is fun.",
-      "pl": "Sobota wieczorem jest zabawna."
-    },
-    {
-      "id": 151,
-      "en": "Sunday morning is lazy.",
-      "pl": "Niedziela rano jest leniwa."
-    },
-    {
-      "id": 152,
-      "en": "See you in 30 days.",
-      "pl": "Do zobaczenia za trzydzieści dni."
-    },
-    {
-      "id": 153,
-      "en": "See you in 40 days.",
-      "pl": "Do zobaczenia za czterdzieści dni."
-    },
-    {
-      "id": 154,
-      "en": "It takes 30 hours.",
-      "pl": "To trwa trzydzieści godzin."
-    },
-    {
-      "id": 155,
-      "en": "It takes 40 hours.",
-      "pl": "To trwa czterdzieści godzin."
-    },
-    {
-      "id": 156,
-      "en": "30 minutes ago.",
-      "pl": "Trzydzieści minut temu."
-    },
-    {
-      "id": 157,
-      "en": "40 minutes ago.",
-      "pl": "Czterdzieści minut temu."
-    },
-    {
-      "id": 158,
-      "en": "In 30 minutes.",
-      "pl": "Za trzydzieści minut."
-    },
-    {
-      "id": 159,
-      "en": "In 40 minutes.",
-      "pl": "Za czterdzieści minut."
-    },
-    {
-      "id": 160,
-      "en": "At 3:30 exactly.",
-      "pl": "Dokładnie o wpół do czwartej."
-    },
-    {
-      "id": 161,
-      "en": "At 4:40 exactly.",
-      "pl": "Dokładnie o za dwadzieścia piąta."
-    },
-    {
-      "id": 162,
-      "en": "What time is the flight?",
-      "pl": "O której godzinie jest lot?"
-    },
-    {
-      "id": 163,
-      "en": "The flight is at 3:30.",
-      "pl": "Lot jest o wpół do czwartej."
-    },
-    {
-      "id": 164,
-      "en": "The flight is at 4:40.",
-      "pl": "Lot jest o za dwadzieścia piąta."
-    },
-    {
-      "id": 165,
-      "en": "The meeting starts at 3:30.",
-      "pl": "Spotkanie zaczyna się o wpół do czwartej."
-    },
-    {
-      "id": 166,
-      "en": "The meeting ends at 4:40.",
-      "pl": "Spotkanie kończy się o za dwadzieścia piąta."
-    },
-    {
-      "id": 167,
-      "en": "I have an appointment at 3:30.",
-      "pl": "Mam wizytę o wpół do czwartej."
-    },
-    {
-      "id": 168,
-      "en": "I have an appointment at 4:40.",
-      "pl": "Mam wizytę o za dwadzieścia piąta."
-    },
-    {
-      "id": 169,
-      "en": "Is it 3:30 PM or AM?",
-      "pl": "Czy to wpół do czwartej po południu czy rano?"
-    },
-    {
-      "id": 170,
-      "en": "Is it 4:40 PM or AM?",
-      "pl": "Czy to za dwadzieścia piąta po południu czy rano?"
-    },
-    {
-      "id": 171,
-      "en": "I will call at 3:30.",
-      "pl": "Zadzwonię o wpół do czwartej."
-    },
-    {
-      "id": 172,
-      "en": "I will call at 4:40.",
-      "pl": "Zadzwonię o za dwadzieścia piąta."
-    },
-    {
-      "id": 173,
-      "en": "Text me at 3:30.",
-      "pl": "Napisz do mnie o wpół do czwartej."
-    },
-    {
-      "id": 174,
-      "en": "Text me at 4:40.",
-      "pl": "Napisz do mnie o za dwadzieścia piąta."
-    },
-    {
-      "id": 175,
-      "en": "Monday is a holiday.",
-      "pl": "Poniedziałek to święto."
-    },
-    {
-      "id": 176,
-      "en": "Tuesday is a work day.",
-      "pl": "Wtorek to dzień pracy."
-    },
-    {
-      "id": 177,
-      "en": "Wednesday is for meetings.",
-      "pl": "Środa jest na spotkania."
-    },
-    {
-      "id": 178,
-      "en": "Thursday is for shopping.",
-      "pl": "Czwartek jest na zakupy."
-    },
-    {
-      "id": 179,
-      "en": "Friday is for friends.",
-      "pl": "Piątek jest dla przyjaciół."
-    },
-    {
-      "id": 180,
-      "en": "Saturday is for sports.",
-      "pl": "Sobota jest na sport."
-    },
-    {
-      "id": 181,
-      "en": "Sunday is for rest.",
-      "pl": "Niedziela jest na odpoczynek."
-    },
-    {
-      "id": 182,
-      "en": "Can we meet earlier than 3:30?",
-      "pl": "Czy możemy się spotkać wcześniej niż o wpół do czwartej?"
-    },
-    {
-      "id": 183,
-      "en": "Can we meet later than 4:40?",
-      "pl": "Czy możemy się spotkać później niż o za dwadzieścia piąta?"
-    },
-    {
-      "id": 184,
-      "en": "3:30 is too early.",
-      "pl": "Wpół do czwartej to za wcześnie."
-    },
-    {
-      "id": 185,
-      "en": "4:40 is too late.",
-      "pl": "Za dwadzieścia piąta to za późno."
-    },
-    {
-      "id": 186,
-      "en": "Is 3:30 okay?",
-      "pl": "Czy wpół do czwartej pasuje?"
-    },
-    {
-      "id": 187,
-      "en": "Is 4:40 okay?",
-      "pl": "Czy za dwadzieścia piąta pasuje?"
-    },
-    {
-      "id": 188,
-      "en": "I'll see you at 3:30 sharp.",
-      "pl": "Zobaczymy się punktualnie o wpół do czwartej."
-    },
-    {
-      "id": 189,
-      "en": "I'll see you at 4:40 sharp.",
-      "pl": "Zobaczymy się punktualnie o za dwadzieścia piąta."
-    },
-    {
-      "id": 190,
-      "en": "Wait for me, it's 3:30.",
-      "pl": "Czekaj na mnie, jest wpół do czwartej."
-    },
-    {
-      "id": 191,
-      "en": "Hurry up, it's 4:40.",
-      "pl": "Pospiesz się, jest za dwadzieścia piąta."
-    },
-    {
-      "id": 192,
-      "en": "The time is 3:30.",
-      "pl": "Godzina to wpół do czwartej."
-    },
-    {
-      "id": 193,
-      "en": "The time is 4:40.",
-      "pl": "Godzina to za dwadzieścia piąta."
-    },
-    {
-      "id": 194,
-      "en": "Let's go, it's 3:30.",
-      "pl": "Chodźmy, jest wpół do czwartej."
-    },
-    {
-      "id": 195,
-      "en": "Stop, it's 4:40.",
-      "pl": "Stój, jest za dwadzieścia piąta."
-    },
-    {
-      "id": 196,
-      "en": "30 plus 10 is 40.",
-      "pl": "Trzydzieści plus dziesięć to czterdzieści."
-    },
-    {
-      "id": 197,
-      "en": "40 minus 10 is 30.",
-      "pl": "Czterdzieści minus dziesięć to trzydzieści."
-    },
-    {
-      "id": 198,
-      "en": "30, 40, 50.",
-      "pl": "Trzydzieści, czterdzieści, pięćdziesiąt."
-    },
-    {
-      "id": 199,
-      "en": "It's 3:30, time to go.",
-      "pl": "Jest wpół do czwartej, czas iść."
-    },
-    {
-      "id": 200,
-      "en": "Finally, it's 4:40!",
-      "pl": "W końcu jest za dwadzieścia piąta!"
+      "id": "p15_01",
+      "category": "Asking for Help",
+      "pl": "Pomóż mi",
+      "en": "Help me",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_02",
+      "category": "Asking for Help",
+      "pl": "Czy możesz mi pomóc?",
+      "en": "Can you help me?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_03",
+      "category": "Asking for Help",
+      "pl": "Potrzebuję pomocy",
+      "en": "I need help",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_04",
+      "category": "Asking for Help",
+      "pl": "Czy ktoś może mi pomóc?",
+      "en": "Can someone help me?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_05",
+      "category": "Asking for Help",
+      "pl": "Proszę mi pomóc",
+      "en": "Please help me",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_06",
+      "category": "Asking for Help",
+      "pl": "Nie wiem jak to zrobić",
+      "en": "I don't know how to do this",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_07",
+      "category": "Asking for Help",
+      "pl": "Czy możesz mi pokazać?",
+      "en": "Can you show me?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_08",
+      "category": "Asking for Help",
+      "pl": "Jak to działa?",
+      "en": "How does this work?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_09",
+      "category": "Asking for Help",
+      "pl": "Co mam zrobić?",
+      "en": "What should I do?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_10",
+      "category": "Asking for Help",
+      "pl": "Gdzie mam iść?",
+      "en": "Where should I go?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_11",
+      "category": "Asking for Help",
+      "pl": "Kiedy mam przyjść?",
+      "en": "When should I come?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_12",
+      "category": "Asking for Help",
+      "pl": "Kto może mi pomóc?",
+      "en": "Who can help me?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_13",
+      "category": "Asking for Help",
+      "pl": "Potrzebuję rady",
+      "en": "I need advice",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_14",
+      "category": "Asking for Help",
+      "pl": "Co polecasz?",
+      "en": "What do you recommend?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_15",
+      "category": "Asking for Help",
+      "pl": "Czy to jest dobry pomysł?",
+      "en": "Is this a good idea?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_16",
+      "category": "Asking for Help",
+      "pl": "Jestem zdezorientowany/zdezorientowana",
+      "en": "I'm confused",
+      "level": 22,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem zdezorientowany",
+        "f": "zdezorientowana"
+      }
+    },
+    {
+      "id": "p15_17",
+      "category": "Asking for Help",
+      "pl": "Nie jestem pewien/pewna",
+      "en": "I'm not sure",
+      "level": 22,
+      "gender": "both",
+      "variants": {
+        "m": "Nie jestem pewien",
+        "f": "pewna"
+      }
+    },
+    {
+      "id": "p15_18",
+      "category": "Asking for Help",
+      "pl": "Potrzebuję więcej informacji",
+      "en": "I need more information",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_19",
+      "category": "Asking for Help",
+      "pl": "Czy możesz to wyjaśnić?",
+      "en": "Can you explain this?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_20",
+      "category": "Asking for Help",
+      "pl": "Daj mi wskazówkę",
+      "en": "Give me a hint",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_21",
+      "category": "Asking for Help",
+      "pl": "Potrzebuję przykładu",
+      "en": "I need an example",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_22",
+      "category": "Asking for Help",
+      "pl": "Czy możesz to napisać?",
+      "en": "Can you write this?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_23",
+      "category": "Asking for Help",
+      "pl": "Czy możesz to narysować?",
+      "en": "Can you draw this?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_24",
+      "category": "Asking for Help",
+      "pl": "Potrzebuję tłumacza",
+      "en": "I need a translator",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_25",
+      "category": "Asking for Help",
+      "pl": "Czy możesz przetłumaczyć?",
+      "en": "Can you translate?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_26",
+      "category": "Clarification",
+      "pl": "Proszę powtórzyć",
+      "en": "Please repeat",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_27",
+      "category": "Clarification",
+      "pl": "Jeszcze raz",
+      "en": "One more time",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_28",
+      "category": "Clarification",
+      "pl": "Wolniej, proszę",
+      "en": "Slower, please",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_29",
+      "category": "Clarification",
+      "pl": "Głośniej, proszę",
+      "en": "Louder, please",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_30",
+      "category": "Clarification",
+      "pl": "Nie słyszę",
+      "en": "I can't hear",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_31",
+      "category": "Clarification",
+      "pl": "Co powiedziałeś/powiedziałaś?",
+      "en": "What did you say?",
+      "level": 22,
+      "gender": "both",
+      "variants": {
+        "m": "Co powiedziałeś",
+        "f": "powiedziałaś?"
+      }
+    },
+    {
+      "id": "p15_32",
+      "category": "Clarification",
+      "pl": "Co to znaczy?",
+      "en": "What does this mean?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_33",
+      "category": "Clarification",
+      "pl": "Jak to się wymawia?",
+      "en": "How do you pronounce this?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_34",
+      "category": "Clarification",
+      "pl": "Jak to się pisze?",
+      "en": "How do you spell this?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_35",
+      "category": "Clarification",
+      "pl": "Czy możesz przeliterować?",
+      "en": "Can you spell it?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_36",
+      "category": "Clarification",
+      "pl": "Nie rozumiem tego słowa",
+      "en": "I don't understand this word",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_37",
+      "category": "Clarification",
+      "pl": "Co to jest po polsku?",
+      "en": "What is this in Polish?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_38",
+      "category": "Clarification",
+      "pl": "Co to jest po angielsku?",
+      "en": "What is this in English?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_39",
+      "category": "Clarification",
+      "pl": "Proszę użyć prostszych słów",
+      "en": "Please use simpler words",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_40",
+      "category": "Clarification",
+      "pl": "Czy możesz to pokazać?",
+      "en": "Can you show this?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_41",
+      "category": "Clarification",
+      "pl": "Daj mi przykład",
+      "en": "Give me an example",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_42",
+      "category": "Clarification",
+      "pl": "Na przykład?",
+      "en": "For example?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_43",
+      "category": "Clarification",
+      "pl": "Czy to znaczy...?",
+      "en": "Does this mean...?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_44",
+      "category": "Clarification",
+      "pl": "Czy dobrze rozumiem?",
+      "en": "Do I understand correctly?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_45",
+      "category": "Clarification",
+      "pl": "Innymi słowy...",
+      "en": "In other words...",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_46",
+      "category": "Clarification",
+      "pl": "To znaczy...",
+      "en": "That means...",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_47",
+      "category": "Clarification",
+      "pl": "Rozumiem teraz",
+      "en": "I understand now",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_48",
+      "category": "Clarification",
+      "pl": "Aha!",
+      "en": "Aha! / I see!",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_49",
+      "category": "Clarification",
+      "pl": "Jasne",
+      "en": "Clear / Got it",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_50",
+      "category": "Clarification",
+      "pl": "Teraz rozumiem",
+      "en": "Now I understand",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_51",
+      "category": "Time Requests",
+      "pl": "Potrzebuję więcej czasu",
+      "en": "I need more time",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_52",
+      "category": "Time Requests",
+      "pl": "Daj mi chwilę",
+      "en": "Give me a moment",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_53",
+      "category": "Time Requests",
+      "pl": "Chwileczkę",
+      "en": "Just a second",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_54",
+      "category": "Time Requests",
+      "pl": "Zaraz",
+      "en": "In a moment / Soon",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_55",
+      "category": "Time Requests",
+      "pl": "Proszę poczekać",
+      "en": "Please wait",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_56",
+      "category": "Time Requests",
+      "pl": "Moment",
+      "en": "Moment",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_57",
+      "category": "Time Requests",
+      "pl": "Muszę to przemyśleć",
+      "en": "I need to think about this",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_58",
+      "category": "Time Requests",
+      "pl": "Odpowiem później",
+      "en": "I'll answer later",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_59",
+      "category": "Time Requests",
+      "pl": "Dam znać jutro",
+      "en": "I'll let you know tomorrow",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_60",
+      "category": "Time Requests",
+      "pl": "Nie teraz",
+      "en": "Not now",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_61",
+      "category": "Understanding",
+      "pl": "Rozumiesz?",
+      "en": "Do you understand?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_62",
+      "category": "Understanding",
+      "pl": "Czy wszystko jasne?",
+      "en": "Is everything clear?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_63",
+      "category": "Understanding",
+      "pl": "Tak, rozumiem",
+      "en": "Yes, I understand",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_64",
+      "category": "Understanding",
+      "pl": "Nie, nie rozumiem",
+      "en": "No, I don't understand",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_65",
+      "category": "Understanding",
+      "pl": "Czy mogę to powtórzyć?",
+      "en": "Can I repeat this?",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_66",
+      "category": "Understanding",
+      "pl": "Powiedz jeszcze raz",
+      "en": "Say it again",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_67",
+      "category": "Understanding",
+      "pl": "Dobrze zrozumiałem/zrozumiałam?",
+      "en": "Did I understand correctly?",
+      "level": 22,
+      "gender": "both",
+      "variants": {
+        "m": "Dobrze zrozumiałem",
+        "f": "zrozumiałam?"
+      }
+    },
+    {
+      "id": "p15_68",
+      "category": "Understanding",
+      "pl": "Potwierdzam",
+      "en": "I confirm",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_69",
+      "category": "Understanding",
+      "pl": "Zgadza się",
+      "en": "That's right / Correct",
+      "level": 22,
+      "gender": null
+    },
+    {
+      "id": "p15_70",
+      "category": "Understanding",
+      "pl": "Dokładnie",
+      "en": "Exactly",
+      "level": 22,
+      "gender": null
     }
-  ],
-  "tier": "ADVANCED"
+  ]
 }

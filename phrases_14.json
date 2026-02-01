@@ -1,595 +1,502 @@
 {
   "level": 14,
-  "description": "Problems & Complaints - Resolving Issues",
+  "description": "Outdoor Activities - Walking, Hiking & Cycling",
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p14_01",
-      "category": "Problems",
-      "pl": "Problem",
-      "en": "Problem",
-      "level": 14,
-      "gender": null
+      "id": "p10_71",
+      "category": "Walking",
+      "pl": "Spacer",
+      "en": "Walk / Stroll",
+      "level": 14
     },
     {
-      "id": "p14_02",
-      "category": "Problems",
-      "pl": "Mam problem",
-      "en": "I have a problem",
-      "level": 14,
-      "gender": null
+      "id": "p10_72",
+      "category": "Walking",
+      "pl": "Iść na spacer",
+      "en": "To go for a walk",
+      "level": 14
     },
     {
-      "id": "p14_03",
-      "category": "Problems",
-      "pl": "Coś nie działa",
-      "en": "Something doesn't work",
-      "level": 14,
-      "gender": null
+      "id": "p10_73",
+      "category": "Walking",
+      "pl": "Chodzić",
+      "en": "To walk",
+      "level": 14
     },
     {
-      "id": "p14_04",
-      "category": "Problems",
-      "pl": "Coś poszło nie tak",
-      "en": "Something went wrong",
-      "level": 14,
-      "gender": null
+      "id": "p10_74",
+      "category": "Walking",
+      "pl": "Chodnik",
+      "en": "Sidewalk / Pavement",
+      "level": 14
     },
     {
-      "id": "p14_05",
-      "category": "Problems",
-      "pl": "To nie działa",
-      "en": "This doesn't work",
-      "level": 14,
-      "gender": null
+      "id": "p10_75",
+      "category": "Walking",
+      "pl": "Ścieżka",
+      "en": "Path / Trail",
+      "level": 14
     },
     {
-      "id": "p14_06",
-      "category": "Problems",
-      "pl": "Jest zepsute",
-      "en": "It's broken",
-      "level": 14,
-      "gender": null
+      "id": "p10_76",
+      "category": "Walking",
+      "pl": "Park",
+      "en": "Park",
+      "level": 14
     },
     {
-      "id": "p14_07",
-      "category": "Problems",
-      "pl": "Nie mogę...",
-      "en": "I can't...",
-      "level": 14,
-      "gender": null
+      "id": "p10_77",
+      "category": "Walking",
+      "pl": "Gdzie jest park?",
+      "en": "Where is the park?",
+      "level": 14
     },
     {
-      "id": "p14_08",
-      "category": "Problems",
-      "pl": "To nie moja wina",
-      "en": "It's not my fault",
-      "level": 14,
-      "gender": null
+      "id": "p10_78",
+      "category": "Walking",
+      "pl": "Ławka",
+      "en": "Bench",
+      "level": 14
     },
     {
-      "id": "p14_09",
-      "category": "Problems",
-      "pl": "Nie rozumiem dlaczego",
-      "en": "I don't understand why",
-      "level": 14,
-      "gender": null
+      "id": "p10_79",
+      "category": "Walking",
+      "pl": "Fontanna",
+      "en": "Fountain",
+      "level": 14
     },
     {
-      "id": "p14_10",
-      "category": "Problems",
-      "pl": "To nie jest w porządku",
-      "en": "This is not okay",
-      "level": 14,
-      "gender": null
+      "id": "p10_80",
+      "category": "Walking",
+      "pl": "Most",
+      "en": "Bridge",
+      "level": 14
     },
     {
-      "id": "p14_11",
-      "category": "Problems",
-      "pl": "Jest błąd",
-      "en": "There's a mistake",
-      "level": 14,
-      "gender": null
+      "id": "p10_81",
+      "category": "Walking",
+      "pl": "Rzeka",
+      "en": "River",
+      "level": 14
     },
     {
-      "id": "p14_12",
-      "category": "Problems",
-      "pl": "To jest złe",
-      "en": "This is wrong",
-      "level": 14,
-      "gender": null
+      "id": "p10_82",
+      "category": "Walking",
+      "pl": "Jezioro",
+      "en": "Lake",
+      "level": 14
     },
     {
-      "id": "p14_13",
-      "category": "Problems",
-      "pl": "Pomyłka",
-      "en": "Mistake / Error",
-      "level": 14,
-      "gender": null
+      "id": "p10_83",
+      "category": "Walking",
+      "pl": "Plaża",
+      "en": "Beach",
+      "level": 14
     },
     {
-      "id": "p14_14",
-      "category": "Problems",
-      "pl": "Potrzebuję wyjaśnienia",
-      "en": "I need an explanation",
-      "level": 14,
-      "gender": null
+      "id": "p10_84",
+      "category": "Walking",
+      "pl": "Bulwar",
+      "en": "Boulevard / Promenade",
+      "level": 14
     },
     {
-      "id": "p14_15",
-      "category": "Problems",
-      "pl": "Jak to naprawić?",
-      "en": "How to fix this?",
-      "level": 14,
-      "gender": null
+      "id": "p10_85",
+      "category": "Walking",
+      "pl": "Deptak",
+      "en": "Pedestrian street",
+      "level": 14
     },
     {
-      "id": "p14_16",
-      "category": "Problems",
-      "pl": "Czy możesz to naprawić?",
-      "en": "Can you fix this?",
-      "level": 14,
-      "gender": null
+      "id": "p10_86",
+      "category": "Hiking",
+      "pl": "Wędrówka",
+      "en": "Hiking / Trekking",
+      "level": 14
     },
     {
-      "id": "p14_17",
-      "category": "Problems",
-      "pl": "Kiedy to zostanie naprawione?",
-      "en": "When will this be fixed?",
-      "level": 14,
-      "gender": null
+      "id": "p10_87",
+      "category": "Hiking",
+      "pl": "Iść na wędrówkę",
+      "en": "To go hiking",
+      "level": 14
     },
     {
-      "id": "p14_18",
-      "category": "Problems",
-      "pl": "To nie to co zamówiłem/zamówiłam",
-      "en": "This is not what I ordered",
-      "level": 14,
-      "gender": "both",
-      "variants": {
-        "m": "To nie to co zamówiłem",
-        "f": "zamówiłam"
-      }
+      "id": "p10_88",
+      "category": "Hiking",
+      "pl": "Szlak",
+      "en": "Trail / Hiking path",
+      "level": 14
     },
     {
-      "id": "p14_19",
-      "category": "Problems",
-      "pl": "Brakuje...",
-      "en": "Missing... / There's no...",
-      "level": 14,
-      "gender": null
+      "id": "p10_89",
+      "category": "Hiking",
+      "pl": "Szlak turystyczny",
+      "en": "Tourist trail",
+      "level": 14
     },
     {
-      "id": "p14_20",
-      "category": "Problems",
-      "pl": "Nie ma...",
-      "en": "There is no...",
-      "level": 14,
-      "gender": null
+      "id": "p10_90",
+      "category": "Hiking",
+      "pl": "Góry",
+      "en": "Mountains",
+      "level": 14
     },
     {
-      "id": "p14_21",
-      "category": "Problems",
-      "pl": "Zgubiłem/Zgubiłam...",
-      "en": "I lost...",
-      "level": 14,
-      "gender": "both",
-      "variants": {
-        "m": "Zgubiłem",
-        "f": "Zgubiłam..."
-      }
+      "id": "p10_91",
+      "category": "Hiking",
+      "pl": "Szczyt",
+      "en": "Peak / Summit",
+      "level": 14
     },
     {
-      "id": "p14_22",
-      "category": "Problems",
-      "pl": "Ktoś ukradł...",
-      "en": "Someone stole...",
-      "level": 14,
-      "gender": null
+      "id": "p10_92",
+      "category": "Hiking",
+      "pl": "Las",
+      "en": "Forest",
+      "level": 14
     },
     {
-      "id": "p14_23",
-      "category": "Problems",
-      "pl": "Nie mogę znaleźć...",
-      "en": "I can't find...",
-      "level": 14,
-      "gender": null
+      "id": "p10_93",
+      "category": "Hiking",
+      "pl": "Dolina",
+      "en": "Valley",
+      "level": 14
     },
     {
-      "id": "p14_24",
-      "category": "Problems",
-      "pl": "Gdzie to zostawiłem/zostawiłam?",
-      "en": "Where did I leave this?",
-      "level": 14,
-      "gender": "both",
-      "variants": {
-        "m": "Gdzie to zostawiłem",
-        "f": "zostawiłam?"
-      }
+      "id": "p10_94",
+      "category": "Hiking",
+      "pl": "Wodospad",
+      "en": "Waterfall",
+      "level": 14
     },
     {
-      "id": "p14_25",
-      "category": "Problems",
-      "pl": "Zapomniałem/Zapomniałam",
-      "en": "I forgot",
-      "level": 14,
-      "gender": "both",
-      "variants": {
-        "m": "Zapomniałem",
-        "f": "Zapomniałam"
-      }
+      "id": "p10_95",
+      "category": "Hiking",
+      "pl": "Punkt widokowy",
+      "en": "Viewpoint",
+      "level": 14
     },
     {
-      "id": "p14_26",
-      "category": "Complaints",
-      "pl": "Skarga",
-      "en": "Complaint",
-      "level": 14,
-      "gender": null
+      "id": "p10_96",
+      "category": "Hiking",
+      "pl": "Mapa szlaku",
+      "en": "Trail map",
+      "level": 14
     },
     {
-      "id": "p14_27",
-      "category": "Complaints",
-      "pl": "Chcę złożyć skargę",
-      "en": "I want to make a complaint",
-      "level": 14,
-      "gender": null
+      "id": "p10_97",
+      "category": "Hiking",
+      "pl": "Plecak",
+      "en": "Backpack",
+      "level": 14
     },
     {
-      "id": "p14_28",
-      "category": "Complaints",
-      "pl": "To jest nieakceptowalne",
-      "en": "This is unacceptable",
-      "level": 14,
-      "gender": null
+      "id": "p10_98",
+      "category": "Hiking",
+      "pl": "Buty trekkingowe",
+      "en": "Hiking boots",
+      "level": 14
     },
     {
-      "id": "p14_29",
-      "category": "Complaints",
-      "pl": "Jestem niezadowolony/niezadowolona",
-      "en": "I'm dissatisfied",
+      "id": "p10_99",
+      "category": "Hiking",
+      "pl": "Ile trwa ta trasa?",
+      "en": "How long is this route?",
+      "level": 14
+    },
+    {
+      "id": "p10_100",
+      "category": "Hiking",
+      "pl": "Czy szlak jest trudny?",
+      "en": "Is the trail difficult?",
+      "level": 14
+    },
+    {
+      "id": "p10_101",
+      "category": "Cycling",
+      "pl": "Rower",
+      "en": "Bicycle / Bike",
+      "level": 14
+    },
+    {
+      "id": "p10_102",
+      "category": "Cycling",
+      "pl": "Jeździć na rowerze",
+      "en": "To ride a bike",
+      "level": 14
+    },
+    {
+      "id": "p10_103",
+      "category": "Cycling",
+      "pl": "Ścieżka rowerowa",
+      "en": "Bike path / Cycle lane",
+      "level": 14
+    },
+    {
+      "id": "p10_104",
+      "category": "Cycling",
+      "pl": "Wypożyczalnia rowerów",
+      "en": "Bike rental",
+      "level": 14
+    },
+    {
+      "id": "p10_105",
+      "category": "Cycling",
+      "pl": "Chciałbym/Chciałabym wynająć rower",
+      "en": "I'd like to rent a bike",
       "level": 14,
       "gender": "both",
       "variants": {
-        "m": "Jestem niezadowolony",
-        "f": "niezadowolona"
+        "m": "Chciałbym wynająć rower",
+        "f": "Chciałabym wynająć rower"
       }
     },
     {
-      "id": "p14_30",
-      "category": "Complaints",
-      "pl": "To jest za drogie",
-      "en": "This is too expensive",
-      "level": 14,
-      "gender": null
+      "id": "p10_106",
+      "category": "Cycling",
+      "pl": "Ile kosztuje wypożyczenie roweru?",
+      "en": "How much does bike rental cost?",
+      "level": 14
     },
     {
-      "id": "p14_31",
-      "category": "Complaints",
-      "pl": "Jakość jest zła",
-      "en": "Quality is bad",
-      "level": 14,
-      "gender": null
+      "id": "p10_107",
+      "category": "Cycling",
+      "pl": "Na godzinę",
+      "en": "Per hour",
+      "level": 14
     },
     {
-      "id": "p14_32",
-      "category": "Complaints",
-      "pl": "Obsługa jest słaba",
-      "en": "Service is poor",
-      "level": 14,
-      "gender": null
+      "id": "p10_108",
+      "category": "Cycling",
+      "pl": "Na cały dzień",
+      "en": "For the whole day",
+      "level": 14
     },
     {
-      "id": "p14_33",
-      "category": "Complaints",
-      "pl": "Czekam za długo",
-      "en": "I'm waiting too long",
-      "level": 14,
-      "gender": null
+      "id": "p10_109",
+      "category": "Cycling",
+      "pl": "Kask",
+      "en": "Helmet",
+      "level": 14
     },
     {
-      "id": "p14_34",
-      "category": "Complaints",
-      "pl": "To jest brudne",
-      "en": "This is dirty",
-      "level": 14,
-      "gender": null
+      "id": "p10_110",
+      "category": "Cycling",
+      "pl": "Zamek do roweru",
+      "en": "Bike lock",
+      "level": 14
     },
     {
-      "id": "p14_35",
-      "category": "Complaints",
-      "pl": "To jest zimne",
-      "en": "This is cold",
-      "level": 14,
-      "gender": null
+      "id": "p10_111",
+      "category": "Cycling",
+      "pl": "Pompka",
+      "en": "Pump",
+      "level": 14
     },
     {
-      "id": "p14_36",
-      "category": "Complaints",
-      "pl": "To nie jest świeże",
-      "en": "This is not fresh",
-      "level": 14,
-      "gender": null
+      "id": "p10_112",
+      "category": "Cycling",
+      "pl": "Mój rower jest zepsuty",
+      "en": "My bike is broken",
+      "level": 14
     },
     {
-      "id": "p14_37",
-      "category": "Complaints",
-      "pl": "Chcę zwrot pieniędzy",
-      "en": "I want a refund",
-      "level": 14,
-      "gender": null
+      "id": "p10_113",
+      "category": "Cycling",
+      "pl": "Guma jest przebita",
+      "en": "The tire is flat",
+      "level": 14
     },
     {
-      "id": "p14_38",
-      "category": "Complaints",
-      "pl": "Chcę wymienić",
-      "en": "I want to exchange",
-      "level": 14,
-      "gender": null
+      "id": "p10_114",
+      "category": "Cycling",
+      "pl": "Naprawa roweru",
+      "en": "Bike repair",
+      "level": 14
     },
     {
-      "id": "p14_39",
-      "category": "Complaints",
-      "pl": "Gdzie jest kierownik?",
-      "en": "Where is the manager?",
-      "level": 14,
-      "gender": null
+      "id": "p10_115",
+      "category": "Cycling",
+      "pl": "Gdzie mogę naprawić rower?",
+      "en": "Where can I repair my bike?",
+      "level": 14
     },
     {
-      "id": "p14_40",
-      "category": "Complaints",
-      "pl": "Chcę rozmawiać z kierownikiem",
-      "en": "I want to speak to the manager",
-      "level": 14,
-      "gender": null
+      "id": "p10_71",
+      "category": "Walking",
+      "pl": "Spacer",
+      "en": "Walk / Stroll",
+      "level": 14
     },
     {
-      "id": "p14_41",
-      "category": "Complaints",
-      "pl": "To nie jest fair",
-      "en": "This is not fair",
-      "level": 14,
-      "gender": null
+      "id": "p10_72",
+      "category": "Walking",
+      "pl": "Iść na spacer",
+      "en": "To go for a walk",
+      "level": 14
     },
     {
-      "id": "p14_42",
-      "category": "Complaints",
-      "pl": "Nie zgadzam się",
-      "en": "I don't agree",
-      "level": 14,
-      "gender": null
+      "id": "p10_73",
+      "category": "Walking",
+      "pl": "Chodzić",
+      "en": "To walk",
+      "level": 14
     },
     {
-      "id": "p14_43",
-      "category": "Complaints",
-      "pl": "Rozczarowany/Rozczarowana",
-      "en": "Disappointed",
-      "level": 14,
-      "gender": "both",
-      "variants": {
-        "m": "Rozczarowany",
-        "f": "Rozczarowana"
-      }
+      "id": "p10_74",
+      "category": "Walking",
+      "pl": "Chodnik",
+      "en": "Sidewalk / Pavement",
+      "level": 14
     },
     {
-      "id": "p14_44",
-      "category": "Complaints",
-      "pl": "Oczekiwałem/Oczekiwałam czegoś innego",
-      "en": "I expected something different",
-      "level": 14,
-      "gender": "both",
-      "variants": {
-        "m": "Oczekiwałem",
-        "f": "Oczekiwałam czegoś innego"
-      }
+      "id": "p10_75",
+      "category": "Walking",
+      "pl": "Ścieżka",
+      "en": "Path / Trail",
+      "level": 14
     },
     {
-      "id": "p14_45",
-      "category": "Complaints",
-      "pl": "To nie jest to co obiecano",
-      "en": "This is not what was promised",
-      "level": 14,
-      "gender": null
+      "id": "p10_76",
+      "category": "Walking",
+      "pl": "Park",
+      "en": "Park",
+      "level": 14
     },
     {
-      "id": "p14_46",
-      "category": "Solutions",
-      "pl": "Jak możemy to rozwiązać?",
-      "en": "How can we solve this?",
-      "level": 14,
-      "gender": null
+      "id": "p10_77",
+      "category": "Walking",
+      "pl": "Gdzie jest park?",
+      "en": "Where is the park?",
+      "level": 14
     },
     {
-      "id": "p14_47",
-      "category": "Solutions",
-      "pl": "Proszę to naprawić",
-      "en": "Please fix this",
-      "level": 14,
-      "gender": null
+      "id": "p10_78",
+      "category": "Walking",
+      "pl": "Ławka",
+      "en": "Bench",
+      "level": 14
     },
     {
-      "id": "p14_48",
-      "category": "Solutions",
-      "pl": "Proszę wymienić",
-      "en": "Please replace",
-      "level": 14,
-      "gender": null
+      "id": "p10_79",
+      "category": "Walking",
+      "pl": "Fontanna",
+      "en": "Fountain",
+      "level": 14
     },
     {
-      "id": "p14_49",
-      "category": "Solutions",
-      "pl": "Zróbmy to inaczej",
-      "en": "Let's do it differently",
-      "level": 14,
-      "gender": null
+      "id": "p10_80",
+      "category": "Walking",
+      "pl": "Most",
+      "en": "Bridge",
+      "level": 14
     },
     {
-      "id": "p14_50",
-      "category": "Solutions",
-      "pl": "Czy jest inna opcja?",
-      "en": "Is there another option?",
-      "level": 14,
-      "gender": null
+      "id": "p10_81",
+      "category": "Walking",
+      "pl": "Rzeka",
+      "en": "River",
+      "level": 14
     },
     {
-      "id": "p14_51",
-      "category": "Solutions",
-      "pl": "Może spróbujmy...",
-      "en": "Maybe let's try...",
-      "level": 14,
-      "gender": null
+      "id": "p10_82",
+      "category": "Walking",
+      "pl": "Jezioro",
+      "en": "Lake",
+      "level": 14
     },
     {
-      "id": "p14_52",
-      "category": "Solutions",
-      "pl": "Co proponujesz?",
-      "en": "What do you suggest?",
-      "level": 14,
-      "gender": null
+      "id": "p10_83",
+      "category": "Walking",
+      "pl": "Plaża",
+      "en": "Beach",
+      "level": 14
     },
     {
-      "id": "p14_53",
-      "category": "Solutions",
-      "pl": "Dziękuję za zrozumienie",
-      "en": "Thank you for understanding",
-      "level": 14,
-      "gender": null
+      "id": "p10_84",
+      "category": "Walking",
+      "pl": "Bulwar",
+      "en": "Boulevard / Promenade",
+      "level": 14
     },
     {
-      "id": "p14_54",
-      "category": "Solutions",
-      "pl": "Przepraszam za kłopot",
-      "en": "Sorry for the trouble",
-      "level": 14,
-      "gender": null
+      "id": "p10_85",
+      "category": "Walking",
+      "pl": "Deptak",
+      "en": "Pedestrian street",
+      "level": 14
     },
     {
-      "id": "p14_55",
-      "category": "Solutions",
-      "pl": "Nie ma problemu",
-      "en": "No problem",
-      "level": 14,
-      "gender": null
+      "id": "p10_86",
+      "category": "Hiking",
+      "pl": "Wędrówka",
+      "en": "Hiking / Trekking",
+      "level": 14
     },
     {
-      "id": "p14_56",
-      "category": "Solutions",
-      "pl": "W porządku",
-      "en": "Okay / Alright",
-      "level": 14,
-      "gender": null
+      "id": "p10_87",
+      "category": "Hiking",
+      "pl": "Iść na wędrówkę",
+      "en": "To go hiking",
+      "level": 14
     },
     {
-      "id": "p14_57",
-      "category": "Solutions",
-      "pl": "Zgoda",
-      "en": "Agreed / Deal",
-      "level": 14,
-      "gender": null
+      "id": "p10_88",
+      "category": "Hiking",
+      "pl": "Szlak",
+      "en": "Trail / Hiking path",
+      "level": 14
     },
     {
-      "id": "p14_58",
-      "category": "Solutions",
-      "pl": "Dobrze",
-      "en": "Good / Fine",
-      "level": 14,
-      "gender": null
+      "id": "p10_89",
+      "category": "Hiking",
+      "pl": "Szlak turystyczny",
+      "en": "Tourist trail",
+      "level": 14
     },
     {
-      "id": "p14_59",
-      "category": "Solutions",
-      "pl": "Dziękuję za pomoc",
-      "en": "Thank you for your help",
-      "level": 14,
-      "gender": null
+      "id": "p10_90",
+      "category": "Hiking",
+      "pl": "Góry",
+      "en": "Mountains",
+      "level": 14
     },
     {
-      "id": "p14_60",
-      "category": "Solutions",
-      "pl": "Problem rozwiązany",
-      "en": "Problem solved",
-      "level": 14,
-      "gender": null
+      "id": "p10_91",
+      "category": "Hiking",
+      "pl": "Szczyt",
+      "en": "Peak / Summit",
+      "level": 14
     },
     {
-      "id": "p14_61",
-      "category": "Safety",
-      "pl": "Czy to jest bezpieczne?",
-      "en": "Is this safe?",
-      "level": 14,
-      "gender": null
+      "id": "p10_92",
+      "category": "Hiking",
+      "pl": "Las",
+      "en": "Forest",
+      "level": 14
     },
     {
-      "id": "p14_62",
-      "category": "Safety",
-      "pl": "Niebezpieczne",
-      "en": "Dangerous",
-      "level": 14,
-      "gender": null
+      "id": "p10_93",
+      "category": "Hiking",
+      "pl": "Dolina",
+      "en": "Valley",
+      "level": 14
     },
     {
-      "id": "p14_63",
-      "category": "Safety",
-      "pl": "Ostrożnie",
-      "en": "Careful / Caution",
-      "level": 14,
-      "gender": null
+      "id": "p10_94",
+      "category": "Hiking",
+      "pl": "Wodospad",
+      "en": "Waterfall",
+      "level": 14
     },
     {
-      "id": "p14_64",
-      "category": "Safety",
-      "pl": "Uwaga!",
-      "en": "Watch out! / Attention!",
-      "level": 14,
-      "gender": null
-    },
-    {
-      "id": "p14_65",
-      "category": "Safety",
-      "pl": "Stop!",
-      "en": "Stop!",
-      "level": 14,
-      "gender": null
-    },
-    {
-      "id": "p14_66",
-      "category": "Safety",
-      "pl": "Nie dotykaj",
-      "en": "Don't touch",
-      "level": 14,
-      "gender": null
-    },
-    {
-      "id": "p14_67",
-      "category": "Safety",
-      "pl": "Zamknięte",
-      "en": "Closed",
-      "level": 14,
-      "gender": null
-    },
-    {
-      "id": "p14_68",
-      "category": "Safety",
-      "pl": "Otwarte",
-      "en": "Open",
-      "level": 14,
-      "gender": null
-    },
-    {
-      "id": "p14_69",
-      "category": "Safety",
-      "pl": "Wyjście awaryjne",
-      "en": "Emergency exit",
-      "level": 14,
-      "gender": null
-    },
-    {
-      "id": "p14_70",
-      "category": "Safety",
-      "pl": "Gdzie jest wyjście?",
-      "en": "Where is the exit?",
-      "level": 14,
-      "gender": null
+      "id": "p10_95",
+      "category": "Hiking",
+      "pl": "Punkt widokowy",
+      "en": "Viewpoint",
+      "level": 14
     }
   ]
 }

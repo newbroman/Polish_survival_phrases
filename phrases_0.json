@@ -1,345 +1,398 @@
 {
   "level": 0,
-  "description": "Alfabet & Digraphs: Polish Sounds",
+  "description": "Alphabet & Digraphs: Polish Sounds",
   "phrases": [
     {
       "pl": "A",
       "en": "ah",
       "word": "Auto",
-      "e": "🚗"
+      "e": "🚗",
+      "level": 0
     },
     {
       "pl": "Ą",
       "en": "own",
       "word": "Mąka",
-      "e": "🌾"
+      "e": "🌾",
+      "level": 0
     },
     {
       "pl": "B",
       "en": "b",
       "word": "But",
-      "e": "👞"
+      "e": "👞",
+      "level": 0
     },
     {
       "pl": "C",
       "en": "ts",
       "word": "Cukier",
-      "e": "🍬"
+      "e": "🍬",
+      "level": 0
     },
     {
       "pl": "Ć",
       "en": "ch!",
       "word": "Ćma",
-      "e": "🦋"
+      "e": "🦋",
+      "level": 0
     },
     {
       "pl": "D",
       "en": "d",
       "word": "Dom",
-      "e": "🏠"
+      "e": "🏠",
+      "level": 0
     },
     {
       "pl": "E",
       "en": "eh",
       "word": "Ekran",
-      "e": "📱"
+      "e": "📱",
+      "level": 0
     },
     {
       "pl": "Ę",
       "en": "en",
       "word": "Gęś",
-      "e": "🦢"
+      "e": "🦢",
+      "level": 0
     },
     {
       "pl": "F",
       "en": "f",
       "word": "Farba",
-      "e": "🎨"
+      "e": "🎨",
+      "level": 0
     },
     {
       "pl": "G",
       "en": "g",
       "word": "Góra",
-      "e": "🏔️"
+      "e": "🏔️",
+      "level": 0
     },
     {
       "pl": "H",
       "en": "h",
       "word": "Herbata",
-      "e": "🍵"
+      "e": "🍵",
+      "level": 0
     },
     {
       "pl": "I",
       "en": "ee",
       "word": "Imię",
-      "e": "🆔"
+      "e": "🆔",
+      "level": 0
     },
     {
       "pl": "J",
       "en": "y",
       "word": "Jajko",
-      "e": "🥚"
+      "e": "🥚",
+      "level": 0
     },
     {
       "pl": "K",
       "en": "k",
       "word": "Kot",
-      "e": "🐱"
+      "e": "🐱",
+      "level": 0
     },
     {
       "pl": "L",
       "en": "l",
       "word": "Lampa",
-      "e": "💡"
+      "e": "💡",
+      "level": 0
     },
     {
       "pl": "Ł",
       "en": "w",
       "word": "Łódź",
-      "e": "⛵"
+      "e": "⛵",
+      "level": 0
     },
     {
       "pl": "M",
       "en": "m",
       "word": "Mama",
-      "e": "👩"
+      "e": "👩",
+      "level": 0
     },
     {
       "pl": "N",
       "en": "n",
       "word": "Noc",
-      "e": "🌙"
+      "e": "🌙",
+      "level": 0
     },
     {
       "pl": "Ń",
       "en": "ny",
       "word": "Koń",
-      "e": "🐎"
+      "e": "🐎",
+      "level": 0
     },
     {
       "pl": "O",
       "en": "oh",
       "word": "Okno",
-      "e": "🪟"
+      "e": "🪟",
+      "level": 0
     },
     {
       "pl": "Ó",
       "en": "oo",
       "word": "Ogród",
-      "e": "🌳"
+      "e": "🌳",
+      "level": 0
     },
     {
       "pl": "P",
       "en": "p",
       "word": "Pies",
-      "e": "🐶"
+      "e": "🐶",
+      "level": 0
     },
     {
       "pl": "R",
       "en": "r",
       "word": "Ręka",
-      "e": "✋"
+      "e": "✋",
+      "level": 0
     },
     {
       "pl": "S",
       "en": "s",
       "word": "Ser",
-      "e": "🧀"
+      "e": "🧀",
+      "level": 0
     },
     {
       "pl": "Ś",
       "en": "sh!",
       "word": "Śnieg",
-      "e": "❄️"
+      "e": "❄️",
+      "level": 0
     },
     {
       "pl": "T",
       "en": "t",
       "word": "Tak",
-      "e": "👍"
+      "e": "👍",
+      "level": 0
     },
     {
       "pl": "U",
       "en": "oo",
       "word": "Ucho",
-      "e": "👂"
+      "e": "👂",
+      "level": 0
     },
     {
       "pl": "W",
       "en": "v",
       "word": "Woda",
-      "e": "💧"
+      "e": "💧",
+      "level": 0
     },
     {
       "pl": "Y",
       "en": "i",
       "word": "Syn",
-      "e": "👦"
+      "e": "👦",
+      "level": 0
     },
     {
       "pl": "Z",
       "en": "z",
       "word": "Ząb",
-      "e": "🦷"
+      "e": "🦷",
+      "level": 0
     },
     {
       "pl": "Ź",
       "en": "zh!",
       "word": "Źle",
-      "e": "👎"
+      "e": "👎",
+      "level": 0
     },
     {
       "pl": "Ż",
       "en": "zh",
       "word": "Żaba",
-      "e": "🐸"
+      "e": "🐸",
+      "level": 0
     },
     {
       "pl": "CZ",
       "en": "ch",
       "word": "Czas",
       "e": "⏰",
-      "note": "time"
+      "note": "time",
+      "level": 0
     },
     {
       "pl": "CZ",
       "en": "ch",
       "word": "Czarny",
       "e": "⬛",
-      "note": "black"
+      "note": "black",
+      "level": 0
     },
     {
       "pl": "CZ",
       "en": "ch",
       "word": "Często",
       "e": "🔄",
-      "note": "often"
+      "note": "often",
+      "level": 0
     },
     {
       "pl": "CH",
       "en": "kh",
       "word": "Chleb",
       "e": "🍞",
-      "note": "bread"
+      "note": "bread",
+      "level": 0
     },
     {
       "pl": "CH",
       "en": "kh",
       "word": "Chory",
       "e": "🤒",
-      "note": "sick"
+      "note": "sick",
+      "level": 0
     },
     {
       "pl": "CH",
       "en": "kh",
       "word": "Chwila",
       "e": "⏱️",
-      "note": "moment"
+      "note": "moment",
+      "level": 0
     },
     {
       "pl": "SZ",
       "en": "sh",
       "word": "Szkoła",
       "e": "🏫",
-      "note": "school"
+      "note": "school",
+      "level": 0
     },
     {
       "pl": "SZ",
       "en": "sh",
       "word": "Szybko",
       "e": "⚡",
-      "note": "fast"
+      "note": "fast",
+      "level": 0
     },
     {
       "pl": "SZ",
       "en": "sh",
       "word": "Szafa",
       "e": "🚪",
-      "note": "wardrobe"
+      "note": "wardrobe",
+      "level": 0
     },
     {
       "pl": "RZ",
       "en": "zh",
       "word": "Rzeka",
       "e": "🌊",
-      "note": "river"
+      "note": "river",
+      "level": 0
     },
     {
       "pl": "RZ",
       "en": "zh",
       "word": "Rzecz",
       "e": "📦",
-      "note": "thing"
+      "note": "thing",
+      "level": 0
     },
     {
       "pl": "RZ",
       "en": "zh",
       "word": "Rzadko",
       "e": "🌙",
-      "note": "rarely"
+      "note": "rarely",
+      "level": 0
     },
     {
       "pl": "DZ",
       "en": "dz",
       "word": "Dzwon",
       "e": "🔔",
-      "note": "bell"
+      "note": "bell",
+      "level": 0
     },
     {
       "pl": "DZ",
       "en": "dz",
       "word": "Bardzo",
       "e": "💯",
-      "note": "very"
+      "note": "very",
+      "level": 0
     },
     {
       "pl": "DZ",
       "en": "dz",
       "word": "Dzień",
       "e": "☀️",
-      "note": "day"
+      "note": "day",
+      "level": 0
     },
     {
       "pl": "DŹ",
       "en": "dj!",
       "word": "Dźwig",
       "e": "🏗️",
-      "note": "crane"
+      "note": "crane",
+      "level": 0
     },
     {
       "pl": "DŹ",
       "en": "dj!",
       "word": "Dźwięk",
       "e": "🔊",
-      "note": "sound"
+      "note": "sound",
+      "level": 0
     },
     {
       "pl": "DŹ",
       "en": "dj!",
       "word": "Niedźwiedź",
       "e": "🐻",
-      "note": "bear"
+      "note": "bear",
+      "level": 0
     },
     {
       "pl": "DŻ",
       "en": "j",
       "word": "Dżem",
       "e": "🍓",
-      "note": "jam"
+      "note": "jam",
+      "level": 0
     },
     {
       "pl": "DŻ",
       "en": "j",
       "word": "Dżungla",
       "e": "🌴",
-      "note": "jungle"
+      "note": "jungle",
+      "level": 0
     },
     {
       "pl": "DŻ",
       "en": "j",
       "word": "Dżinsy",
       "e": "👖",
-      "note": "jeans"
+      "note": "jeans",
+      "level": 0
     }
   ],
   "tier": "FOUNDATION"

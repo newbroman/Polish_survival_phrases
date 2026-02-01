@@ -1,0 +1,639 @@
+{
+  "level": 25,
+  "description": "Expressing Opinions & Abstract Concepts - Advanced Expression",
+  "tier": "ADVANCED",
+  "phrases": [
+    {
+      "id": "a18_01",
+      "category": "Opinions",
+      "pl": "Moim zdaniem...",
+      "en": "In my opinion...",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_02",
+      "category": "Opinions",
+      "pl": "Myślę, że...",
+      "en": "I think that...",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_03",
+      "category": "Opinions",
+      "pl": "Uważam, że...",
+      "en": "I believe that...",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_04",
+      "category": "Opinions",
+      "pl": "Wydaje mi się, że...",
+      "en": "It seems to me that...",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_05",
+      "category": "Opinions",
+      "pl": "Zgadzam się",
+      "en": "I agree",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_06",
+      "category": "Opinions",
+      "pl": "Nie zgadzam się",
+      "en": "I disagree",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_07",
+      "category": "Opinions",
+      "pl": "Masz rację",
+      "en": "You're right",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_08",
+      "category": "Opinions",
+      "pl": "Nie masz racji",
+      "en": "You're wrong",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_09",
+      "category": "Opinions",
+      "pl": "To zależy",
+      "en": "It depends",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_10",
+      "category": "Opinions",
+      "pl": "To zależy od sytuacji",
+      "en": "It depends on the situation",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_11",
+      "category": "Opinions",
+      "pl": "Bez wątpienia",
+      "en": "Without a doubt",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_12",
+      "category": "Opinions",
+      "pl": "Nie jestem przekonany/przekonana",
+      "en": "I'm not convinced",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Nie jestem przekonany",
+        "f": "przekonana"
+      }
+    },
+    {
+      "id": "a18_13",
+      "category": "Opinions",
+      "pl": "To dobry pomysł",
+      "en": "That's a good idea",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_14",
+      "category": "Opinions",
+      "pl": "To zły pomysł",
+      "en": "That's a bad idea",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_15",
+      "category": "Opinions",
+      "pl": "To nie ma sensu",
+      "en": "That makes no sense",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_16",
+      "category": "Opinions",
+      "pl": "To ma sens",
+      "en": "That makes sense",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_17",
+      "category": "Opinions",
+      "pl": "Co o tym sądzisz?",
+      "en": "What do you think about it?",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_18",
+      "category": "Opinions",
+      "pl": "Nie mam zdania",
+      "en": "I have no opinion",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_19",
+      "category": "Opinions",
+      "pl": "Trudno powiedzieć",
+      "en": "Hard to say",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_20",
+      "category": "Opinions",
+      "pl": "Zobaczymy",
+      "en": "We'll see",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_21",
+      "category": "Opinions",
+      "pl": "Może",
+      "en": "Maybe",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_22",
+      "category": "Opinions",
+      "pl": "Prawdopodobnie",
+      "en": "Probably",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_23",
+      "category": "Opinions",
+      "pl": "Na pewno",
+      "en": "For sure / Certainly",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_24",
+      "category": "Opinions",
+      "pl": "Oczywiście",
+      "en": "Of course / Obviously",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_25",
+      "category": "Opinions",
+      "pl": "Dokładnie tak",
+      "en": "Exactly so",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_26",
+      "category": "Abstract",
+      "pl": "Szczęście",
+      "en": "Happiness / Luck",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_27",
+      "category": "Abstract",
+      "pl": "Miłość",
+      "en": "Love",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_28",
+      "category": "Abstract",
+      "pl": "Nienawiść",
+      "en": "Hate",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_29",
+      "category": "Abstract",
+      "pl": "Wolność",
+      "en": "Freedom",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_30",
+      "category": "Abstract",
+      "pl": "Równość",
+      "en": "Equality",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_31",
+      "category": "Abstract",
+      "pl": "Sprawiedliwość",
+      "en": "Justice",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_32",
+      "category": "Abstract",
+      "pl": "Prawda",
+      "en": "Truth",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_33",
+      "category": "Abstract",
+      "pl": "Kłamstwo",
+      "en": "Lie",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_34",
+      "category": "Abstract",
+      "pl": "Zaufanie",
+      "en": "Trust",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_35",
+      "category": "Abstract",
+      "pl": "Nadzieja",
+      "en": "Hope",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_36",
+      "category": "Abstract",
+      "pl": "Strach",
+      "en": "Fear",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_37",
+      "category": "Abstract",
+      "pl": "Odwaga",
+      "en": "Courage",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_38",
+      "category": "Abstract",
+      "pl": "Mądrość",
+      "en": "Wisdom",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_39",
+      "category": "Abstract",
+      "pl": "Wiedza",
+      "en": "Knowledge",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_40",
+      "category": "Abstract",
+      "pl": "Doświadczenie",
+      "en": "Experience",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_41",
+      "category": "Abstract",
+      "pl": "Pamięć",
+      "en": "Memory",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_42",
+      "category": "Abstract",
+      "pl": "Wyobraźnia",
+      "en": "Imagination",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_43",
+      "category": "Abstract",
+      "pl": "Kreatywność",
+      "en": "Creativity",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_44",
+      "category": "Abstract",
+      "pl": "Inteligencja",
+      "en": "Intelligence",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_45",
+      "category": "Abstract",
+      "pl": "Głupota",
+      "en": "Stupidity",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_46",
+      "category": "Abstract",
+      "pl": "Cierpliwość",
+      "en": "Patience",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_47",
+      "category": "Abstract",
+      "pl": "Spokój",
+      "en": "Peace / Calm",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_48",
+      "category": "Abstract",
+      "pl": "Chaos",
+      "en": "Chaos",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_49",
+      "category": "Abstract",
+      "pl": "Porządek",
+      "en": "Order",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_50",
+      "category": "Abstract",
+      "pl": "Równowaga",
+      "en": "Balance",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_51",
+      "category": "Emotions",
+      "pl": "Emocje",
+      "en": "Emotions",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_52",
+      "category": "Emotions",
+      "pl": "Uczucia",
+      "en": "Feelings",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_53",
+      "category": "Emotions",
+      "pl": "Szczęśliwy/Szczęśliwa",
+      "en": "Happy",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Szczęśliwy",
+        "f": "Szczęśliwa"
+      }
+    },
+    {
+      "id": "a18_54",
+      "category": "Emotions",
+      "pl": "Smutny/Smutna",
+      "en": "Sad",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Smutny",
+        "f": "Smutna"
+      }
+    },
+    {
+      "id": "a18_55",
+      "category": "Emotions",
+      "pl": "Zły/Zła",
+      "en": "Angry",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Zły",
+        "f": "Zła"
+      }
+    },
+    {
+      "id": "a18_56",
+      "category": "Emotions",
+      "pl": "Spokojny/Spokojna",
+      "en": "Calm",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Spokojny",
+        "f": "Spokojna"
+      }
+    },
+    {
+      "id": "a18_57",
+      "category": "Emotions",
+      "pl": "Zdenerwowany/Zdenerwowana",
+      "en": "Nervous",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Zdenerwowany",
+        "f": "Zdenerwowana"
+      }
+    },
+    {
+      "id": "a18_58",
+      "category": "Emotions",
+      "pl": "Podekscytowany/Podekscytowana",
+      "en": "Excited",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Podekscytowany",
+        "f": "Podekscytowana"
+      }
+    },
+    {
+      "id": "a18_59",
+      "category": "Emotions",
+      "pl": "Znudzony/Znudzona",
+      "en": "Bored",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Znudzony",
+        "f": "Znudzona"
+      }
+    },
+    {
+      "id": "a18_60",
+      "category": "Emotions",
+      "pl": "Zaskoczony/Zaskoczona",
+      "en": "Surprised",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Zaskoczony",
+        "f": "Zaskoczona"
+      }
+    },
+    {
+      "id": "a18_61",
+      "category": "Emotions",
+      "pl": "Przestraszony/Przestraszona",
+      "en": "Scared",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Przestraszony",
+        "f": "Przestraszona"
+      }
+    },
+    {
+      "id": "a18_62",
+      "category": "Emotions",
+      "pl": "Dumny/Dumna",
+      "en": "Proud",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Dumny",
+        "f": "Dumna"
+      }
+    },
+    {
+      "id": "a18_63",
+      "category": "Emotions",
+      "pl": "Wstyd",
+      "en": "Shame",
+      "level": 25,
+      "gender": null
+    },
+    {
+      "id": "a18_64",
+      "category": "Emotions",
+      "pl": "Zawstydzony/Zawstydzona",
+      "en": "Ashamed",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Zawstydzony",
+        "f": "Zawstydzona"
+      }
+    },
+    {
+      "id": "a18_65",
+      "category": "Emotions",
+      "pl": "Samotny/Samotna",
+      "en": "Lonely",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Samotny",
+        "f": "Samotna"
+      }
+    },
+    {
+      "id": "a18_66",
+      "category": "Emotions",
+      "pl": "Zadowolony/Zadowolona",
+      "en": "Satisfied / Content",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Zadowolony",
+        "f": "Zadowolona"
+      }
+    },
+    {
+      "id": "a18_67",
+      "category": "Emotions",
+      "pl": "Niezadowolony/Niezadowolona",
+      "en": "Dissatisfied",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Niezadowolony",
+        "f": "Niezadowolona"
+      }
+    },
+    {
+      "id": "a18_68",
+      "category": "Emotions",
+      "pl": "Rozczarowany/Rozczarowana",
+      "en": "Disappointed",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Rozczarowany",
+        "f": "Rozczarowana"
+      }
+    },
+    {
+      "id": "a18_69",
+      "category": "Emotions",
+      "pl": "Optymistyczny/Optymistyczna",
+      "en": "Optimistic",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Optymistyczny",
+        "f": "Optymistyczna"
+      }
+    },
+    {
+      "id": "a18_70",
+      "category": "Emotions",
+      "pl": "Pesymistyczny/Pesymistyczna",
+      "en": "Pessimistic",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Pesymistyczny",
+        "f": "Pesymistyczna"
+      }
+    }
+  ]
+}

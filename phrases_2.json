@@ -1,131 +1,483 @@
 {
   "level": 2,
-  "description": "Getting Around - Public Transport & Directions",
+  "description": "Day 1 Survival Kit - Absolute Essentials",
   "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "s2_01",
-      "category": "Directions",
-      "pl": "W lewo",
-      "en": "Left / To the left",
+      "id": "s1_01",
+      "category": "Emergency",
+      "pl": "Pomoc!",
+      "en": "Help!",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_02",
-      "category": "Directions",
-      "pl": "W prawo",
-      "en": "Right / To the right",
+      "id": "s1_02",
+      "category": "Emergency",
+      "pl": "Zadzwoń po policję",
+      "en": "Call the police",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_03",
-      "category": "Directions",
-      "pl": "Prosto",
-      "en": "Straight ahead",
+      "id": "s1_03",
+      "category": "Emergency",
+      "pl": "Potrzebuję lekarza",
+      "en": "I need a doctor",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_04",
-      "category": "Directions",
-      "pl": "Z powrotem",
-      "en": "Back / Return",
+      "id": "s1_04",
+      "category": "Emergency",
+      "pl": "Gdzie jest szpital?",
+      "en": "Where is the hospital?",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_05",
-      "category": "Directions",
-      "pl": "Tutaj",
-      "en": "Here",
+      "id": "s1_05",
+      "category": "Emergency",
+      "pl": "To pilne!",
+      "en": "It's urgent!",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_06",
-      "category": "Directions",
-      "pl": "Tam",
-      "en": "There",
+      "id": "s1_06",
+      "category": "Emergency",
+      "pl": "Zadzwoń po karetkę",
+      "en": "Call an ambulance",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_07",
-      "category": "Directions",
-      "pl": "Blisko",
-      "en": "Close / Near",
+      "id": "s1_07",
+      "category": "Emergency",
+      "pl": "Jestem ranny/ranna",
+      "en": "I am injured",
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem ranny",
+        "f": "ranna"
+      }
+    },
+    {
+      "id": "s1_08",
+      "category": "Emergency",
+      "pl": "Ukradli mi portfel",
+      "en": "They stole my wallet",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_08",
-      "category": "Directions",
-      "pl": "Daleko",
-      "en": "Far",
+      "id": "s1_09",
+      "category": "Emergency",
+      "pl": "Zgubiłem/Zgubiłam paszport",
+      "en": "I lost my passport",
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Zgubiłem",
+        "f": "Zgubiłam paszport"
+      }
+    },
+    {
+      "id": "s1_10",
+      "category": "Emergency",
+      "pl": "Gdzie jest policja?",
+      "en": "Where is the police?",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_09",
-      "category": "Directions",
-      "pl": "Obok",
-      "en": "Next to",
+      "id": "s1_11",
+      "category": "Basic Communication",
+      "pl": "Tak",
+      "en": "Yes",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_10",
-      "category": "Directions",
-      "pl": "Naprzeciwko",
-      "en": "Opposite / Across from",
+      "id": "s1_12",
+      "category": "Basic Communication",
+      "pl": "Nie",
+      "en": "No",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_11",
-      "category": "Directions",
-      "pl": "Za rogiem",
-      "en": "Around the corner",
+      "id": "s1_13",
+      "category": "Basic Communication",
+      "pl": "Proszę",
+      "en": "Please",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_12",
-      "category": "Directions",
-      "pl": "Na końcu ulicy",
-      "en": "At the end of the street",
+      "id": "s1_14",
+      "category": "Basic Communication",
+      "pl": "Dziękuję",
+      "en": "Thank you",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_13",
-      "category": "Directions",
-      "pl": "Pierwsza ulica",
-      "en": "First street",
+      "id": "s1_15",
+      "category": "Basic Communication",
+      "pl": "Przepraszam",
+      "en": "Sorry / Excuse me",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_14",
-      "category": "Directions",
-      "pl": "Druga ulica",
-      "en": "Second street",
+      "id": "s1_16",
+      "category": "Basic Communication",
+      "pl": "Nie rozumiem",
+      "en": "I don't understand",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_15",
-      "category": "Directions",
-      "pl": "Przy rondzie",
-      "en": "At the roundabout",
+      "id": "s1_17",
+      "category": "Basic Communication",
+      "pl": "Czy mówisz po angielsku?",
+      "en": "Do you speak English?",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_16",
-      "category": "Navigation Help",
+      "id": "s1_18",
+      "category": "Basic Communication",
+      "pl": "Proszę mówić wolniej",
+      "en": "Please speak slowly",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_19",
+      "category": "Basic Communication",
+      "pl": "Proszę powtórzyć",
+      "en": "Please repeat",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_20",
+      "category": "Basic Communication",
+      "pl": "Co to znaczy?",
+      "en": "What does this mean?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_21",
+      "category": "Basic Communication",
+      "pl": "Jak to się nazywa?",
+      "en": "What is this called?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_22",
+      "category": "Basic Communication",
+      "pl": "Nie mówię po polsku",
+      "en": "I don't speak Polish",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_23",
+      "category": "Basic Communication",
+      "pl": "Mówię trochę po polsku",
+      "en": "I speak a little Polish",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_24",
+      "category": "Basic Communication",
+      "pl": "Rozumiem",
+      "en": "I understand",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_25",
+      "category": "Basic Communication",
+      "pl": "Nie wiem",
+      "en": "I don't know",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_26",
+      "category": "Essential Questions",
+      "pl": "Gdzie jest...?",
+      "en": "Where is...?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_27",
+      "category": "Essential Questions",
+      "pl": "Ile to kosztuje?",
+      "en": "How much is this?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_28",
+      "category": "Essential Questions",
+      "pl": "Kiedy...?",
+      "en": "When...?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_29",
+      "category": "Essential Questions",
+      "pl": "Jak...?",
+      "en": "How...?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_30",
+      "category": "Essential Questions",
+      "pl": "Co to jest?",
+      "en": "What is this?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_31",
+      "category": "Essential Questions",
+      "pl": "Który...?",
+      "en": "Which...?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_32",
+      "category": "Essential Questions",
+      "pl": "Kto...?",
+      "en": "Who...?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_33",
+      "category": "Essential Questions",
+      "pl": "Dlaczego...?",
+      "en": "Why...?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_34",
+      "category": "Essential Questions",
+      "pl": "Ile...?",
+      "en": "How many/much...?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_35",
+      "category": "Essential Questions",
+      "pl": "O której godzinie?",
+      "en": "At what time?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_36",
+      "category": "Essential Questions",
+      "pl": "Czy...?",
+      "en": "Do/Does/Is...?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_37",
+      "category": "Essential Questions",
+      "pl": "Gdzie jest toaleta?",
+      "en": "Where is the bathroom?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_38",
+      "category": "Essential Questions",
+      "pl": "Gdzie jest bankomat?",
+      "en": "Where is the ATM?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_39",
+      "category": "Essential Questions",
+      "pl": "Jaki jest kod WiFi?",
+      "en": "What is the WiFi password?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_40",
+      "category": "Essential Questions",
+      "pl": "Czy mogę...?",
+      "en": "Can I...?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_41",
+      "category": "Survival Needs",
+      "pl": "Potrzebuję...",
+      "en": "I need...",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_42",
+      "category": "Survival Needs",
+      "pl": "Woda, proszę",
+      "en": "Water, please",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_43",
+      "category": "Survival Needs",
+      "pl": "Jestem głodny/głodna",
+      "en": "I'm hungry",
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem głodny",
+        "f": "głodna"
+      }
+    },
+    {
+      "id": "s1_44",
+      "category": "Survival Needs",
+      "pl": "Jestem spragniony/spragniona",
+      "en": "I'm thirsty",
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem spragniony",
+        "f": "spragniona"
+      }
+    },
+    {
+      "id": "s1_45",
+      "category": "Survival Needs",
+      "pl": "Jestem zmęczony/zmęczona",
+      "en": "I'm tired",
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem zmęczony",
+        "f": "zmęczona"
+      }
+    },
+    {
+      "id": "s1_46",
+      "category": "Survival Needs",
+      "pl": "Potrzebuję WiFi",
+      "en": "I need WiFi",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_47",
+      "category": "Survival Needs",
+      "pl": "Mój telefon nie działa",
+      "en": "My phone doesn't work",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_48",
+      "category": "Survival Needs",
+      "pl": "Gdzie mogę naładować telefon?",
+      "en": "Where can I charge my phone?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_49",
+      "category": "Survival Needs",
+      "pl": "Jestem chory/chora",
+      "en": "I'm sick",
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem chory",
+        "f": "chora"
+      }
+    },
+    {
+      "id": "s1_50",
+      "category": "Survival Needs",
+      "pl": "Boli mnie głowa",
+      "en": "My head hurts",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_51",
+      "category": "Survival Needs",
+      "pl": "Boli mnie brzuch",
+      "en": "My stomach hurts",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_52",
+      "category": "Survival Needs",
+      "pl": "Mam alergię",
+      "en": "I have an allergy",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_53",
+      "category": "Survival Needs",
+      "pl": "Toaleta",
+      "en": "Bathroom / Toilet",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_54",
+      "category": "Survival Needs",
+      "pl": "WC",
+      "en": "Restroom",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_55",
+      "category": "Survival Needs",
+      "pl": "Przepraszam, toaleta?",
+      "en": "Excuse me, bathroom?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_56",
+      "category": "Getting Help",
+      "pl": "Czy możesz mi pomóc?",
+      "en": "Can you help me?",
+      "level": 2,
+      "gender": null
+    },
+    {
+      "id": "s1_57",
+      "category": "Getting Help",
       "pl": "Jestem zagubiony/zagubiona",
       "en": "I'm lost",
       "level": 2,
@@ -136,442 +488,110 @@
       }
     },
     {
-      "id": "s2_17",
-      "category": "Navigation Help",
-      "pl": "Jak dostać się do...?",
-      "en": "How do I get to...?",
+      "id": "s1_58",
+      "category": "Getting Help",
+      "pl": "Proszę pokazać",
+      "en": "Please show me",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_18",
-      "category": "Navigation Help",
-      "pl": "Czy to jest droga do...?",
-      "en": "Is this the way to...?",
+      "id": "s1_59",
+      "category": "Getting Help",
+      "pl": "Czy możesz napisać to?",
+      "en": "Can you write this down?",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_19",
-      "category": "Navigation Help",
-      "pl": "Jak daleko to jest?",
-      "en": "How far is it?",
+      "id": "s1_60",
+      "category": "Getting Help",
+      "pl": "Proszę o pomoc",
+      "en": "I'm asking for help",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_20",
-      "category": "Navigation Help",
-      "pl": "Czy mogę iść piechotą?",
-      "en": "Can I walk there?",
+      "id": "s1_61",
+      "category": "Getting Help",
+      "pl": "Nie jestem stąd",
+      "en": "I'm not from here",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_21",
-      "category": "Navigation Help",
-      "pl": "Ile czasu zajmie dojście?",
-      "en": "How long does it take to walk?",
+      "id": "s1_62",
+      "category": "Getting Help",
+      "pl": "Jestem turystą",
+      "en": "I'm a tourist",
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem turystą",
+        "f": "Jestem turystką"
+      }
+    },
+    {
+      "id": "s1_63",
+      "category": "Getting Help",
+      "pl": "Czy ktoś mówi po angielsku?",
+      "en": "Does anyone speak English?",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_22",
-      "category": "Navigation Help",
-      "pl": "Proszę pokazać na mapie",
-      "en": "Please show me on the map",
+      "id": "s1_64",
+      "category": "Getting Help",
+      "pl": "Proszę zadzwonić...",
+      "en": "Please call...",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_23",
-      "category": "Navigation Help",
-      "pl": "Czy możesz mnie zaprowadzić?",
-      "en": "Can you take me there?",
+      "id": "s1_65",
+      "category": "Getting Help",
+      "pl": "Gdzie mogę znaleźć...?",
+      "en": "Where can I find...?",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_24",
-      "category": "Navigation Help",
-      "pl": "Gdzie jestem?",
-      "en": "Where am I?",
+      "id": "s1_66",
+      "category": "Getting Help",
+      "pl": "Czy to jest blisko?",
+      "en": "Is this close?",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_25",
-      "category": "Navigation Help",
-      "pl": "Jaka to ulica?",
-      "en": "What street is this?",
+      "id": "s1_67",
+      "category": "Getting Help",
+      "pl": "Czy to jest daleko?",
+      "en": "Is this far?",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_26",
-      "category": "Navigation Help",
-      "pl": "Szukam...",
-      "en": "I'm looking for...",
+      "id": "s1_68",
+      "category": "Getting Help",
+      "pl": "Jak długo to trwa?",
+      "en": "How long does it take?",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_27",
-      "category": "Navigation Help",
-      "pl": "Czy to jest w pobliżu?",
-      "en": "Is this nearby?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_28",
-      "category": "Navigation Help",
-      "pl": "Muszę wrócić do hotelu",
-      "en": "I need to get back to my hotel",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_29",
-      "category": "Navigation Help",
-      "pl": "Adres to...",
-      "en": "The address is...",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_30",
-      "category": "Navigation Help",
-      "pl": "Czy jest mapa?",
-      "en": "Is there a map?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_31",
-      "category": "Public Transport",
-      "pl": "Dworzec kolejowy",
-      "en": "Train station",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_32",
-      "category": "Public Transport",
-      "pl": "Dworzec autobusowy",
-      "en": "Bus station",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_33",
-      "category": "Public Transport",
-      "pl": "Przystanek autobusowy",
-      "en": "Bus stop",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_34",
-      "category": "Public Transport",
-      "pl": "Metro",
-      "en": "Metro / Subway",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_35",
-      "category": "Public Transport",
-      "pl": "Tramwaj",
-      "en": "Tram",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_36",
-      "category": "Public Transport",
-      "pl": "Bilet",
-      "en": "Ticket",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_37",
-      "category": "Public Transport",
-      "pl": "Bilet do...",
-      "en": "Ticket to...",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_38",
-      "category": "Public Transport",
-      "pl": "Ile kosztuje bilet?",
-      "en": "How much is the ticket?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_39",
-      "category": "Public Transport",
-      "pl": "Gdzie kupić bilet?",
-      "en": "Where to buy a ticket?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_40",
-      "category": "Public Transport",
-      "pl": "Jeden bilet, proszę",
-      "en": "One ticket, please",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_41",
-      "category": "Public Transport",
-      "pl": "Bilet powrotny",
-      "en": "Return ticket",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_42",
-      "category": "Public Transport",
-      "pl": "Bilet w jedną stronę",
-      "en": "One-way ticket",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_43",
-      "category": "Public Transport",
-      "pl": "O której odjeżdża?",
-      "en": "What time does it leave?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_44",
-      "category": "Public Transport",
-      "pl": "O której przyjeżdża?",
-      "en": "What time does it arrive?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_45",
-      "category": "Public Transport",
-      "pl": "Który autobus do...?",
-      "en": "Which bus to...?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_46",
-      "category": "Public Transport",
-      "pl": "Czy ten autobus jedzie do...?",
-      "en": "Does this bus go to...?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_47",
-      "category": "Public Transport",
-      "pl": "Następny przystanek",
-      "en": "Next stop",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_48",
-      "category": "Public Transport",
-      "pl": "Proszę się zatrzymać tutaj",
-      "en": "Please stop here",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_49",
-      "category": "Public Transport",
-      "pl": "Czy to jest ostatni przystanek?",
-      "en": "Is this the last stop?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_50",
-      "category": "Public Transport",
-      "pl": "Rozkład jazdy",
-      "en": "Timetable / Schedule",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_51",
-      "category": "Taxi",
-      "pl": "Taxi!",
-      "en": "Taxi!",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_52",
-      "category": "Taxi",
-      "pl": "Do centrum, proszę",
-      "en": "To the center, please",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_53",
-      "category": "Taxi",
-      "pl": "Do tego adresu",
-      "en": "To this address",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_54",
-      "category": "Taxi",
-      "pl": "Ile będzie kosztować?",
-      "en": "How much will it cost?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_55",
-      "category": "Taxi",
-      "pl": "Proszę włączyć taksometr",
-      "en": "Please turn on the meter",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_56",
-      "category": "Taxi",
-      "pl": "Zatrzymaj się tutaj",
-      "en": "Stop here",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_57",
-      "category": "Taxi",
+      "id": "s1_69",
+      "category": "Getting Help",
       "pl": "Proszę czekać",
       "en": "Please wait",
       "level": 2,
       "gender": null
     },
     {
-      "id": "s2_58",
-      "category": "Taxi",
-      "pl": "Ile płacę?",
-      "en": "How much do I pay?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_59",
-      "category": "Taxi",
-      "pl": "Reszta dla Pana/Pani",
-      "en": "Keep the change",
-      "level": 2,
-      "gender": "both",
-      "variants": {
-        "m": "Reszta dla Pana",
-        "f": "Pani"
-      }
-    },
-    {
-      "id": "s2_60",
-      "category": "Taxi",
-      "pl": "Czy mogę dostać paragon?",
-      "en": "Can I get a receipt?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_61",
-      "category": "Airport & Travel",
-      "pl": "Lotnisko",
-      "en": "Airport",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_62",
-      "category": "Airport & Travel",
-      "pl": "Gdzie jest odbiór bagażu?",
-      "en": "Where is baggage claim?",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_63",
-      "category": "Airport & Travel",
-      "pl": "Zgubiłem/Zgubiłam bagaż",
-      "en": "I lost my luggage",
-      "level": 2,
-      "gender": "both",
-      "variants": {
-        "m": "Zgubiłem",
-        "f": "Zgubiłam bagaż"
-      }
-    },
-    {
-      "id": "s2_64",
-      "category": "Airport & Travel",
-      "pl": "Paszyport, proszę",
-      "en": "Passport, please",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_65",
-      "category": "Airport & Travel",
-      "pl": "Karta pokładowa",
-      "en": "Boarding pass",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_66",
-      "category": "Airport & Travel",
-      "pl": "Bramka numer...",
-      "en": "Gate number...",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_67",
-      "category": "Airport & Travel",
-      "pl": "Opóźnienie",
-      "en": "Delay",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_68",
-      "category": "Airport & Travel",
-      "pl": "Odprawa bagażu",
-      "en": "Check-in / Baggage check",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_69",
-      "category": "Airport & Travel",
-      "pl": "Kontrola bezpieczeństwa",
-      "en": "Security check",
-      "level": 2,
-      "gender": null
-    },
-    {
-      "id": "s2_70",
-      "category": "Airport & Travel",
-      "pl": "Wyjście",
-      "en": "Exit",
+      "id": "s1_70",
+      "category": "Getting Help",
+      "pl": "Chwileczkę",
+      "en": "Just a moment",
       "level": 2,
       "gender": null
     }

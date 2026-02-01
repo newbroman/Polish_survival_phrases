@@ -1,143 +1,299 @@
 {
   "level": 15,
-  "description": "Asking for Help & Clarification - Getting Unstuck",
+  "description": "Work & Business - Professional Situations",
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p15_01",
-      "category": "Asking for Help",
-      "pl": "Pomóż mi",
-      "en": "Help me",
+      "id": "p11_01",
+      "category": "Work Basics",
+      "pl": "Praca",
+      "en": "Work / Job",
       "level": 15,
       "gender": null
     },
     {
-      "id": "p15_02",
-      "category": "Asking for Help",
-      "pl": "Czy możesz mi pomóc?",
-      "en": "Can you help me?",
+      "id": "p11_02",
+      "category": "Work Basics",
+      "pl": "Pracuję w...",
+      "en": "I work in/at...",
       "level": 15,
       "gender": null
     },
     {
-      "id": "p15_03",
-      "category": "Asking for Help",
-      "pl": "Potrzebuję pomocy",
-      "en": "I need help",
+      "id": "p11_03",
+      "category": "Work Basics",
+      "pl": "Pracuję jako...",
+      "en": "I work as...",
       "level": 15,
       "gender": null
     },
     {
-      "id": "p15_04",
-      "category": "Asking for Help",
-      "pl": "Czy ktoś może mi pomóc?",
-      "en": "Can someone help me?",
+      "id": "p11_04",
+      "category": "Work Basics",
+      "pl": "Biuro",
+      "en": "Office",
       "level": 15,
       "gender": null
     },
     {
-      "id": "p15_05",
-      "category": "Asking for Help",
-      "pl": "Proszę mi pomóc",
-      "en": "Please help me",
+      "id": "p11_05",
+      "category": "Work Basics",
+      "pl": "Firma",
+      "en": "Company",
       "level": 15,
       "gender": null
     },
     {
-      "id": "p15_06",
-      "category": "Asking for Help",
-      "pl": "Nie wiem jak to zrobić",
-      "en": "I don't know how to do this",
+      "id": "p11_06",
+      "category": "Work Basics",
+      "pl": "Szef",
+      "en": "Boss",
       "level": 15,
       "gender": null
     },
     {
-      "id": "p15_07",
-      "category": "Asking for Help",
-      "pl": "Czy możesz mi pokazać?",
-      "en": "Can you show me?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_08",
-      "category": "Asking for Help",
-      "pl": "Jak to działa?",
-      "en": "How does this work?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_09",
-      "category": "Asking for Help",
-      "pl": "Co mam zrobić?",
-      "en": "What should I do?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_10",
-      "category": "Asking for Help",
-      "pl": "Gdzie mam iść?",
-      "en": "Where should I go?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_11",
-      "category": "Asking for Help",
-      "pl": "Kiedy mam przyjść?",
-      "en": "When should I come?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_12",
-      "category": "Asking for Help",
-      "pl": "Kto może mi pomóc?",
-      "en": "Who can help me?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_13",
-      "category": "Asking for Help",
-      "pl": "Potrzebuję rady",
-      "en": "I need advice",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_14",
-      "category": "Asking for Help",
-      "pl": "Co polecasz?",
-      "en": "What do you recommend?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_15",
-      "category": "Asking for Help",
-      "pl": "Czy to jest dobry pomysł?",
-      "en": "Is this a good idea?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_16",
-      "category": "Asking for Help",
-      "pl": "Jestem zdezorientowany/zdezorientowana",
-      "en": "I'm confused",
+      "id": "p11_07",
+      "category": "Work Basics",
+      "pl": "Kolega/Koleżanka z pracy",
+      "en": "Coworker",
       "level": 15,
       "gender": "both",
       "variants": {
-        "m": "Jestem zdezorientowany",
-        "f": "zdezorientowana"
+        "m": "Kolega",
+        "f": "Koleżanka z pracy"
       }
     },
     {
-      "id": "p15_17",
-      "category": "Asking for Help",
+      "id": "p11_08",
+      "category": "Work Basics",
+      "pl": "Spotkanie",
+      "en": "Meeting",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_09",
+      "category": "Work Basics",
+      "pl": "Jestem na spotkaniu",
+      "en": "I'm in a meeting",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_10",
+      "category": "Work Basics",
+      "pl": "Konferencja",
+      "en": "Conference",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_11",
+      "category": "Work Basics",
+      "pl": "Prezentacja",
+      "en": "Presentation",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_12",
+      "category": "Work Basics",
+      "pl": "Projekt",
+      "en": "Project",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_13",
+      "category": "Work Basics",
+      "pl": "Raport",
+      "en": "Report",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_14",
+      "category": "Work Basics",
+      "pl": "Dokument",
+      "en": "Document",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_15",
+      "category": "Work Basics",
+      "pl": "Umowa",
+      "en": "Contract",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_16",
+      "category": "Work Basics",
+      "pl": "Podpis",
+      "en": "Signature",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_17",
+      "category": "Work Basics",
+      "pl": "Proszę podpisać tutaj",
+      "en": "Please sign here",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_18",
+      "category": "Work Basics",
+      "pl": "Termin",
+      "en": "Deadline",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_19",
+      "category": "Work Basics",
+      "pl": "Wizytówka",
+      "en": "Business card",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_20",
+      "category": "Work Basics",
+      "pl": "Czy mogę dostać wizytówkę?",
+      "en": "Can I have your business card?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_21",
+      "category": "Communication",
+      "pl": "Zadzwonię później",
+      "en": "I'll call later",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_22",
+      "category": "Communication",
+      "pl": "Proszę o odpowiedź",
+      "en": "Please reply",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_23",
+      "category": "Communication",
+      "pl": "Dostałem/Dostałam email",
+      "en": "I received an email",
+      "level": 15,
+      "gender": "both",
+      "variants": {
+        "m": "Dostałem",
+        "f": "Dostałam email"
+      }
+    },
+    {
+      "id": "p11_24",
+      "category": "Communication",
+      "pl": "Wyślę email",
+      "en": "I'll send an email",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_25",
+      "category": "Communication",
+      "pl": "Proszę sprawdzić email",
+      "en": "Please check email",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_26",
+      "category": "Communication",
+      "pl": "Załącznik",
+      "en": "Attachment",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_27",
+      "category": "Communication",
+      "pl": "Wyślę w załączniku",
+      "en": "I'll send it as an attachment",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_28",
+      "category": "Communication",
+      "pl": "Proszę o potwierdzenie",
+      "en": "Please confirm",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_29",
+      "category": "Communication",
+      "pl": "Potwierdzam",
+      "en": "I confirm",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_30",
+      "category": "Communication",
+      "pl": "Rozumiem",
+      "en": "I understand",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_31",
+      "category": "Communication",
+      "pl": "Zgadzam się",
+      "en": "I agree",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_32",
+      "category": "Communication",
+      "pl": "Nie zgadzam się",
+      "en": "I disagree",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_33",
+      "category": "Communication",
+      "pl": "Mam pytanie",
+      "en": "I have a question",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_34",
+      "category": "Communication",
+      "pl": "Czy mogę zadać pytanie?",
+      "en": "Can I ask a question?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_35",
+      "category": "Communication",
+      "pl": "Proszę wyjaśnić",
+      "en": "Please explain",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_36",
+      "category": "Communication",
       "pl": "Nie jestem pewien/pewna",
       "en": "I'm not sure",
       "level": 15,
@@ -148,434 +304,282 @@
       }
     },
     {
-      "id": "p15_18",
-      "category": "Asking for Help",
-      "pl": "Potrzebuję więcej informacji",
-      "en": "I need more information",
+      "id": "p11_37",
+      "category": "Communication",
+      "pl": "Muszę to sprawdzić",
+      "en": "I need to check this",
       "level": 15,
       "gender": null
     },
     {
-      "id": "p15_19",
-      "category": "Asking for Help",
-      "pl": "Czy możesz to wyjaśnić?",
-      "en": "Can you explain this?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_20",
-      "category": "Asking for Help",
-      "pl": "Daj mi wskazówkę",
-      "en": "Give me a hint",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_21",
-      "category": "Asking for Help",
-      "pl": "Potrzebuję przykładu",
-      "en": "I need an example",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_22",
-      "category": "Asking for Help",
-      "pl": "Czy możesz to napisać?",
-      "en": "Can you write this?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_23",
-      "category": "Asking for Help",
-      "pl": "Czy możesz to narysować?",
-      "en": "Can you draw this?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_24",
-      "category": "Asking for Help",
-      "pl": "Potrzebuję tłumacza",
-      "en": "I need a translator",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_25",
-      "category": "Asking for Help",
-      "pl": "Czy możesz przetłumaczyć?",
-      "en": "Can you translate?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_26",
-      "category": "Clarification",
-      "pl": "Proszę powtórzyć",
-      "en": "Please repeat",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_27",
-      "category": "Clarification",
-      "pl": "Jeszcze raz",
-      "en": "One more time",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_28",
-      "category": "Clarification",
-      "pl": "Wolniej, proszę",
-      "en": "Slower, please",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_29",
-      "category": "Clarification",
-      "pl": "Głośniej, proszę",
-      "en": "Louder, please",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_30",
-      "category": "Clarification",
-      "pl": "Nie słyszę",
-      "en": "I can't hear",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_31",
-      "category": "Clarification",
-      "pl": "Co powiedziałeś/powiedziałaś?",
-      "en": "What did you say?",
-      "level": 15,
-      "gender": "both",
-      "variants": {
-        "m": "Co powiedziałeś",
-        "f": "powiedziałaś?"
-      }
-    },
-    {
-      "id": "p15_32",
-      "category": "Clarification",
-      "pl": "Co to znaczy?",
-      "en": "What does this mean?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_33",
-      "category": "Clarification",
-      "pl": "Jak to się wymawia?",
-      "en": "How do you pronounce this?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_34",
-      "category": "Clarification",
-      "pl": "Jak to się pisze?",
-      "en": "How do you spell this?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_35",
-      "category": "Clarification",
-      "pl": "Czy możesz przeliterować?",
-      "en": "Can you spell it?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_36",
-      "category": "Clarification",
-      "pl": "Nie rozumiem tego słowa",
-      "en": "I don't understand this word",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_37",
-      "category": "Clarification",
-      "pl": "Co to jest po polsku?",
-      "en": "What is this in Polish?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_38",
-      "category": "Clarification",
-      "pl": "Co to jest po angielsku?",
-      "en": "What is this in English?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_39",
-      "category": "Clarification",
-      "pl": "Proszę użyć prostszych słów",
-      "en": "Please use simpler words",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_40",
-      "category": "Clarification",
-      "pl": "Czy możesz to pokazać?",
-      "en": "Can you show this?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_41",
-      "category": "Clarification",
-      "pl": "Daj mi przykład",
-      "en": "Give me an example",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_42",
-      "category": "Clarification",
-      "pl": "Na przykład?",
-      "en": "For example?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_43",
-      "category": "Clarification",
-      "pl": "Czy to znaczy...?",
-      "en": "Does this mean...?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_44",
-      "category": "Clarification",
-      "pl": "Czy dobrze rozumiem?",
-      "en": "Do I understand correctly?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_45",
-      "category": "Clarification",
-      "pl": "Innymi słowy...",
-      "en": "In other words...",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_46",
-      "category": "Clarification",
-      "pl": "To znaczy...",
-      "en": "That means...",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_47",
-      "category": "Clarification",
-      "pl": "Rozumiem teraz",
-      "en": "I understand now",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_48",
-      "category": "Clarification",
-      "pl": "Aha!",
-      "en": "Aha! / I see!",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_49",
-      "category": "Clarification",
-      "pl": "Jasne",
-      "en": "Clear / Got it",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_50",
-      "category": "Clarification",
-      "pl": "Teraz rozumiem",
-      "en": "Now I understand",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_51",
-      "category": "Time Requests",
-      "pl": "Potrzebuję więcej czasu",
-      "en": "I need more time",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_52",
-      "category": "Time Requests",
-      "pl": "Daj mi chwilę",
-      "en": "Give me a moment",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_53",
-      "category": "Time Requests",
-      "pl": "Chwileczkę",
-      "en": "Just a second",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_54",
-      "category": "Time Requests",
-      "pl": "Zaraz",
-      "en": "In a moment / Soon",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_55",
-      "category": "Time Requests",
-      "pl": "Proszę poczekać",
-      "en": "Please wait",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_56",
-      "category": "Time Requests",
-      "pl": "Moment",
-      "en": "Moment",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_57",
-      "category": "Time Requests",
+      "id": "p11_38",
+      "category": "Communication",
       "pl": "Muszę to przemyśleć",
-      "en": "I need to think about this",
+      "en": "I need to think about it",
       "level": 15,
       "gender": null
     },
     {
-      "id": "p15_58",
-      "category": "Time Requests",
-      "pl": "Odpowiem później",
-      "en": "I'll answer later",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_59",
-      "category": "Time Requests",
-      "pl": "Dam znać jutro",
-      "en": "I'll let you know tomorrow",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_60",
-      "category": "Time Requests",
-      "pl": "Nie teraz",
-      "en": "Not now",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_61",
-      "category": "Understanding",
-      "pl": "Rozumiesz?",
-      "en": "Do you understand?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_62",
-      "category": "Understanding",
-      "pl": "Czy wszystko jasne?",
-      "en": "Is everything clear?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_63",
-      "category": "Understanding",
-      "pl": "Tak, rozumiem",
-      "en": "Yes, I understand",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_64",
-      "category": "Understanding",
-      "pl": "Nie, nie rozumiem",
-      "en": "No, I don't understand",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_65",
-      "category": "Understanding",
-      "pl": "Czy mogę to powtórzyć?",
-      "en": "Can I repeat this?",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_66",
-      "category": "Understanding",
-      "pl": "Powiedz jeszcze raz",
-      "en": "Say it again",
-      "level": 15,
-      "gender": null
-    },
-    {
-      "id": "p15_67",
-      "category": "Understanding",
-      "pl": "Dobrze zrozumiałem/zrozumiałam?",
-      "en": "Did I understand correctly?",
+      "id": "p11_39",
+      "category": "Communication",
+      "pl": "Dam Panu/Pani znać",
+      "en": "I'll let you know",
       "level": 15,
       "gender": "both",
       "variants": {
-        "m": "Dobrze zrozumiałem",
-        "f": "zrozumiałam?"
+        "m": "Dam Panu",
+        "f": "Pani znać"
       }
     },
     {
-      "id": "p15_68",
-      "category": "Understanding",
-      "pl": "Potwierdzam",
-      "en": "I confirm",
+      "id": "p11_40",
+      "category": "Communication",
+      "pl": "Proszę dać mi znać",
+      "en": "Please let me know",
       "level": 15,
       "gender": null
     },
     {
-      "id": "p15_69",
-      "category": "Understanding",
-      "pl": "Zgadza się",
-      "en": "That's right / Correct",
+      "id": "p11_41",
+      "category": "Communication",
+      "pl": "Skontaktuję się",
+      "en": "I'll get in touch",
       "level": 15,
       "gender": null
     },
     {
-      "id": "p15_70",
-      "category": "Understanding",
-      "pl": "Dokładnie",
-      "en": "Exactly",
+      "id": "p11_42",
+      "category": "Communication",
+      "pl": "Dziękuję za kontakt",
+      "en": "Thank you for contacting",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_43",
+      "category": "Communication",
+      "pl": "Proszę o informację",
+      "en": "Please inform me",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_44",
+      "category": "Communication",
+      "pl": "Informacja",
+      "en": "Information",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_45",
+      "category": "Communication",
+      "pl": "Szczegóły",
+      "en": "Details",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_46",
+      "category": "Meetings",
+      "pl": "Czy możemy się spotkać?",
+      "en": "Can we meet?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_47",
+      "category": "Meetings",
+      "pl": "Kiedy Pan/Pani ma czas?",
+      "en": "When do you have time?",
+      "level": 15,
+      "gender": "both",
+      "variants": {
+        "m": "Kiedy Pan",
+        "f": "Pani ma czas?"
+      }
+    },
+    {
+      "id": "p11_48",
+      "category": "Meetings",
+      "pl": "Jutro o dziesiątej",
+      "en": "Tomorrow at ten",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_49",
+      "category": "Meetings",
+      "pl": "Pasuje mi",
+      "en": "That works for me",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_50",
+      "category": "Meetings",
+      "pl": "Niestety nie mogę",
+      "en": "Unfortunately I can't",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_51",
+      "category": "Meetings",
+      "pl": "Muszę przełożyć",
+      "en": "I need to reschedule",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_52",
+      "category": "Meetings",
+      "pl": "Czy możemy przełożyć?",
+      "en": "Can we reschedule?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_53",
+      "category": "Meetings",
+      "pl": "Spóźnię się",
+      "en": "I'll be late",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_54",
+      "category": "Meetings",
+      "pl": "Zaraz będę",
+      "en": "I'll be there soon",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_55",
+      "category": "Meetings",
+      "pl": "Jestem w drodze",
+      "en": "I'm on my way",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_56",
+      "category": "Meetings",
+      "pl": "Agenda",
+      "en": "Agenda",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_57",
+      "category": "Meetings",
+      "pl": "Notatki",
+      "en": "Notes",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_58",
+      "category": "Meetings",
+      "pl": "Decyzja",
+      "en": "Decision",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_59",
+      "category": "Meetings",
+      "pl": "Plan",
+      "en": "Plan",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_60",
+      "category": "Meetings",
+      "pl": "Następny krok",
+      "en": "Next step",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_61",
+      "category": "Requests",
+      "pl": "Czy możesz to zrobić?",
+      "en": "Can you do this?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_62",
+      "category": "Requests",
+      "pl": "Potrzebuję tego do...",
+      "en": "I need this by...",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_63",
+      "category": "Requests",
+      "pl": "Kiedy będzie gotowe?",
+      "en": "When will it be ready?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_64",
+      "category": "Requests",
+      "pl": "To jest pilne",
+      "en": "This is urgent",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_65",
+      "category": "Requests",
+      "pl": "Nie ma pośpiechu",
+      "en": "No rush",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_66",
+      "category": "Requests",
+      "pl": "Proszę to sprawdzić",
+      "en": "Please check this",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_67",
+      "category": "Requests",
+      "pl": "Czy to jest poprawne?",
+      "en": "Is this correct?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_68",
+      "category": "Requests",
+      "pl": "Proszę poprawić",
+      "en": "Please correct",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_69",
+      "category": "Requests",
+      "pl": "Dziękuję za pomoc",
+      "en": "Thank you for your help",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_70",
+      "category": "Requests",
+      "pl": "Bardzo pomocne",
+      "en": "Very helpful",
       "level": 15,
       "gender": null
     }

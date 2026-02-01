@@ -1,0 +1,567 @@
+{
+  "level": 27,
+  "description": "Idioms & Common Expressions - Sound Like a Native",
+  "tier": "ADVANCED",
+  "phrases": [
+    {
+      "id": "a20_01",
+      "category": "Sayings",
+      "pl": "Nie ma sprawy",
+      "en": "No problem",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_02",
+      "category": "Sayings",
+      "pl": "Nie ma za co",
+      "en": "You're welcome / Don't mention it",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_03",
+      "category": "Sayings",
+      "pl": "Nic się nie stało",
+      "en": "Nothing happened / No worries",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_04",
+      "category": "Sayings",
+      "pl": "Nic nie szkodzi",
+      "en": "It doesn't matter / No harm done",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_05",
+      "category": "Sayings",
+      "pl": "Nie przejmuj się",
+      "en": "Don't worry",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_06",
+      "category": "Sayings",
+      "pl": "Spokojnie",
+      "en": "Calm down / Take it easy",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_07",
+      "category": "Sayings",
+      "pl": "Daj spokój",
+      "en": "Come on / Give it a rest",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_08",
+      "category": "Sayings",
+      "pl": "No właśnie",
+      "en": "Exactly / That's right",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_09",
+      "category": "Sayings",
+      "pl": "No to co?",
+      "en": "So what?",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_10",
+      "category": "Sayings",
+      "pl": "Co z tego?",
+      "en": "So what? / What of it?",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_11",
+      "category": "Sayings",
+      "pl": "Mniejsza o to",
+      "en": "Never mind that",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_12",
+      "category": "Sayings",
+      "pl": "Trudno",
+      "en": "Too bad / Can't be helped",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_13",
+      "category": "Sayings",
+      "pl": "Tak czy siak",
+      "en": "Either way / Anyway",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_14",
+      "category": "Sayings",
+      "pl": "Tak czy owak",
+      "en": "One way or another",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_15",
+      "category": "Sayings",
+      "pl": "W sam raz",
+      "en": "Just right / Perfect",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_16",
+      "category": "Sayings",
+      "pl": "Jak najbardziej",
+      "en": "Absolutely / By all means",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_17",
+      "category": "Sayings",
+      "pl": "Jak najmniej",
+      "en": "As little as possible",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_18",
+      "category": "Sayings",
+      "pl": "Coś w tym jest",
+      "en": "There's something to it",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_19",
+      "category": "Sayings",
+      "pl": "Nic z tego",
+      "en": "Nothing doing / No way",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_20",
+      "category": "Sayings",
+      "pl": "Wszystko jedno",
+      "en": "It's all the same / Doesn't matter",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_21",
+      "category": "Sayings",
+      "pl": "Bez sensu",
+      "en": "Nonsense / Pointless",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_22",
+      "category": "Sayings",
+      "pl": "To ma sens",
+      "en": "That makes sense",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_23",
+      "category": "Sayings",
+      "pl": "Warto spróbować",
+      "en": "Worth a try",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_24",
+      "category": "Sayings",
+      "pl": "Nie warto",
+      "en": "Not worth it",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_25",
+      "category": "Sayings",
+      "pl": "Jak zwykle",
+      "en": "As usual",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_26",
+      "category": "Idioms",
+      "pl": "Mieć muchy w nosie",
+      "en": "To be in a bad mood (lit: have flies in nose)",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_27",
+      "category": "Idioms",
+      "pl": "Wziąć się w garść",
+      "en": "To pull yourself together (lit: take yourself in fist)",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_28",
+      "category": "Idioms",
+      "pl": "Trzymać kciuki",
+      "en": "To keep fingers crossed (lit: hold thumbs)",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_29",
+      "category": "Idioms",
+      "pl": "Nie ma mowy",
+      "en": "No way / Out of the question",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_30",
+      "category": "Idioms",
+      "pl": "Bez dwóch zdań",
+      "en": "Without a doubt / Hands down",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_31",
+      "category": "Idioms",
+      "pl": "Kropla w morzu",
+      "en": "A drop in the ocean",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_32",
+      "category": "Idioms",
+      "pl": "Leje jak z cebra",
+      "en": "It's pouring (lit: pouring like from a bucket)",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_33",
+      "category": "Idioms",
+      "pl": "Wpaść jak śliwka w kompot",
+      "en": "To fall into a trap (lit: fall like plum in compote)",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_34",
+      "category": "Idioms",
+      "pl": "Rzucać grochem o ścianę",
+      "en": "To talk to a brick wall (lit: throw peas at wall)",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_35",
+      "category": "Idioms",
+      "pl": "Mieć dwie lewe ręce",
+      "en": "To be clumsy (lit: have two left hands)",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_36",
+      "category": "Idioms",
+      "pl": "Nie mój cyrk, nie moje małpy",
+      "en": "Not my circus, not my monkeys",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_37",
+      "category": "Idioms",
+      "pl": "Trafić kulą w płot",
+      "en": "To be way off (lit: hit fence with bullet)",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_38",
+      "category": "Idioms",
+      "pl": "Mieć głowę na karku",
+      "en": "To have one's head screwed on",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_39",
+      "category": "Idioms",
+      "pl": "Stracić głowę",
+      "en": "To lose one's head",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_40",
+      "category": "Idioms",
+      "pl": "Nie wszystko złoto, co się świeci",
+      "en": "All that glitters is not gold",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_41",
+      "category": "Idioms",
+      "pl": "Lepszy wróbel w garści niż gołąb na dachu",
+      "en": "A bird in hand is worth two in the bush",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_42",
+      "category": "Idioms",
+      "pl": "Kto rano wstaje, temu Pan Bóg daje",
+      "en": "The early bird catches the worm",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_43",
+      "category": "Idioms",
+      "pl": "Co ma wisieć, nie utonie",
+      "en": "What's meant to be will be",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_44",
+      "category": "Idioms",
+      "pl": "Jak Kuba Bogu, tak Bóg Kubie",
+      "en": "Tit for tat",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_45",
+      "category": "Idioms",
+      "pl": "Gdzie kucharek sześć, tam nie ma co jeść",
+      "en": "Too many cooks spoil the broth",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_46",
+      "category": "Idioms",
+      "pl": "Nie chwal dnia przed zachodem słońca",
+      "en": "Don't count your chickens before they hatch",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_47",
+      "category": "Idioms",
+      "pl": "Apetyt rośnie w miarę jedzenia",
+      "en": "Appetite comes with eating",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_48",
+      "category": "Idioms",
+      "pl": "Cicha woda brzegi rwie",
+      "en": "Still waters run deep",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_49",
+      "category": "Idioms",
+      "pl": "Diabeł tkwi w szczegółach",
+      "en": "The devil is in the details",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_50",
+      "category": "Idioms",
+      "pl": "Lepiej późno niż wcale",
+      "en": "Better late than never",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_51",
+      "category": "Fillers",
+      "pl": "No",
+      "en": "Well / So (filler)",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_52",
+      "category": "Fillers",
+      "pl": "No więc",
+      "en": "Well then / So",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_53",
+      "category": "Fillers",
+      "pl": "Wiesz...",
+      "en": "You know...",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_54",
+      "category": "Fillers",
+      "pl": "Znaczy się",
+      "en": "I mean / Like",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_55",
+      "category": "Fillers",
+      "pl": "Tak jakby",
+      "en": "Sort of / Kind of",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_56",
+      "category": "Fillers",
+      "pl": "Coś takiego",
+      "en": "Something like that",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_57",
+      "category": "Fillers",
+      "pl": "I tak dalej",
+      "en": "And so on",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_58",
+      "category": "Fillers",
+      "pl": "Itd.",
+      "en": "Etc.",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_59",
+      "category": "Fillers",
+      "pl": "Aha",
+      "en": "Aha / I see",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_60",
+      "category": "Fillers",
+      "pl": "O!",
+      "en": "Oh!",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_61",
+      "category": "Fillers",
+      "pl": "Oj!",
+      "en": "Oh! / Oops!",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_62",
+      "category": "Fillers",
+      "pl": "Wow!",
+      "en": "Wow!",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_63",
+      "category": "Fillers",
+      "pl": "Jejku!",
+      "en": "Gosh! / Wow!",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_64",
+      "category": "Fillers",
+      "pl": "O rany!",
+      "en": "Oh my! / Gosh!",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_65",
+      "category": "Fillers",
+      "pl": "O matko!",
+      "en": "Oh my God!",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_66",
+      "category": "Fillers",
+      "pl": "Ojej!",
+      "en": "Oh dear!",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_67",
+      "category": "Fillers",
+      "pl": "Ups!",
+      "en": "Oops!",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_68",
+      "category": "Fillers",
+      "pl": "Hmm",
+      "en": "Hmm",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_69",
+      "category": "Fillers",
+      "pl": "Eee...",
+      "en": "Uhh... / Umm...",
+      "level": 27,
+      "gender": null
+    },
+    {
+      "id": "a20_70",
+      "category": "Fillers",
+      "pl": "No dobra",
+      "en": "Okay then / Alright",
+      "level": 27,
+      "gender": null
+    }
+  ]
+}

@@ -1,382 +1,595 @@
 {
   "level": 21,
-  "description": "The Shopping Marathon (75 Phrases)",
+  "description": "Problems & Complaints - Resolving Issues",
+  "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": 1,
-      "en": "The total is thirty złoty.",
-      "pl": "Razem trzydzieści złotych."
-    },
-    {
-      "id": 2,
-      "en": "The total is forty złoty.",
-      "pl": "Razem czterdzieści złotych."
-    },
-    {
-      "id": 3,
-      "en": "It costs thirty-one złoty.",
-      "pl": "To kosztuje trzydzieści jeden złotych."
-    },
-    {
-      "id": 4,
-      "en": "It costs forty-one złoty.",
-      "pl": "To kosztuje czterdzieści jeden złotych."
-    },
-    {
-      "id": 5,
-      "en": "That will be thirty-two złoty.",
-      "pl": "To będzie trzydzieści dwa złote."
-    },
-    {
-      "id": 6,
-      "en": "That will be forty-two złoty.",
-      "pl": "To będzie czterdzieści dwa złote."
-    },
-    {
-      "id": 7,
-      "en": "Thirty-three złoty, please.",
-      "pl": "Trzydzieści trzy złote, poproszę."
-    },
-    {
-      "id": 8,
-      "en": "Forty-three złoty, please.",
-      "pl": "Czterdzieści trzy złote, poproszę."
-    },
-    {
-      "id": 9,
-      "en": "It comes to thirty-four złoty.",
-      "pl": "To wynosi trzydzieści cztery złote."
-    },
-    {
-      "id": 10,
-      "en": "It comes to forty-four złoty.",
-      "pl": "To wynosi czterdzieści cztery złote."
-    },
-    {
-      "id": 11,
-      "en": "Total is thirty-five złoty.",
-      "pl": "Razem trzydzieści pięć złotych."
-    },
-    {
-      "id": 12,
-      "en": "Total is forty-five złoty.",
-      "pl": "Razem czterdzieści pięć złotych."
-    },
-    {
-      "id": 13,
-      "en": "Thirty-six złoty and fifty cents.",
-      "pl": "Trzydzieści sześć złotych pięćdziesiąt."
-    },
-    {
-      "id": 14,
-      "en": "Forty-six złoty and fifty cents.",
-      "pl": "Czterdzieści sześć złotych pięćdziesiąt."
-    },
-    {
-      "id": 15,
-      "en": "Thirty-seven złoty total.",
-      "pl": "Razem trzydzieści siedem złotych."
-    },
-    {
-      "id": 16,
-      "en": "Forty-seven złoty total.",
-      "pl": "Razem czterdzieści siedem złotych."
-    },
-    {
-      "id": 17,
-      "en": "It's thirty-eight złoty.",
-      "pl": "To trzydzieści osiem złotych."
-    },
-    {
-      "id": 18,
-      "en": "It's forty-eight złoty.",
-      "pl": "To czterdzieści osiem złotych."
-    },
-    {
-      "id": 19,
-      "en": "Exactly thirty-nine złoty.",
-      "pl": "Dokładnie trzydzieści dziewięć złotych."
-    },
-    {
-      "id": 20,
-      "en": "Exactly forty-nine złoty.",
-      "pl": "Dokładnie czterdzieści dziewięć złotych."
-    },
-    {
-      "id": 21,
-      "en": "Thirty złoty for the bread.",
-      "pl": "Trzydzieści złotych za chleb."
-    },
-    {
-      "id": 22,
-      "en": "Forty złoty for the coffee.",
-      "pl": "Czterdzieści złotych za kawę."
-    },
-    {
-      "id": 23,
-      "en": "Wait, is it thirty or forty?",
-      "pl": "Chwila, czy to trzydzieści czy czterdzieści?"
-    },
-    {
-      "id": 24,
-      "en": "It costs thirty-two fifty.",
-      "pl": "To kosztuje trzydzieści dwa pięćdziesiąt."
-    },
-    {
-      "id": 25,
-      "en": "It costs forty-two fifty.",
-      "pl": "To kosztuje czterdzieści dwa pięćdziesiąt."
-    },
-    {
-      "id": 26,
-      "en": "Thirty-four złoty with the discount.",
-      "pl": "Trzydzieści cztery złote ze zniżką."
-    },
-    {
-      "id": 27,
-      "en": "Forty-four złoty with the discount.",
-      "pl": "Czterdzieści cztery złote ze zniżką."
-    },
-    {
-      "id": 28,
-      "en": "The milk is three złoty.",
-      "pl": "Mleko kosztuje trzy złote."
-    },
-    {
-      "id": 29,
-      "en": "The butter is eight złoty.",
-      "pl": "Masło kosztuje osiem złotych."
-    },
-    {
-      "id": 30,
-      "en": "The eggs are ten złoty.",
-      "pl": "Jajka kosztują dziesięć złotych."
-    },
-    {
-      "id": 31,
-      "en": "Total for everything: thirty-six.",
-      "pl": "Razem za wszystko: trzydzieści sześć."
-    },
-    {
-      "id": 32,
-      "en": "Total for everything: forty-six.",
-      "pl": "Razem za wszystko: czterdzieści sześć."
-    },
-    {
-      "id": 33,
-      "en": "I only have thirty złoty.",
-      "pl": "Mam tylko trzydzieści złotych."
-    },
-    {
-      "id": 34,
-      "en": "I only have forty złoty.",
-      "pl": "Mam tylko czterdzieści złotych."
-    },
-    {
-      "id": 35,
-      "en": "Is thirty enough?",
-      "pl": "Czy trzydzieści wystarczy?"
-    },
-    {
-      "id": 36,
-      "en": "Is forty enough?",
-      "pl": "Czy czterdzieści wystarczy?"
-    },
-    {
-      "id": 37,
-      "en": "It's more than thirty.",
-      "pl": "To więcej niż trzydzieści."
-    },
-    {
-      "id": 38,
-      "en": "It's more than forty.",
-      "pl": "To więcej niż czterdzieści."
-    },
-    {
-      "id": 39,
-      "en": "It's less than thirty-five.",
-      "pl": "To mniej niż trzydzieści pięć."
-    },
-    {
-      "id": 40,
-      "en": "It's less than forty-five.",
-      "pl": "To mniej niż czterdzieści pięć."
-    },
-    {
-      "id": 41,
-      "en": "Exactly thirty-three.",
-      "pl": "Dokładnie trzydzieści trzy."
-    },
-    {
-      "id": 42,
-      "en": "Exactly forty-three.",
-      "pl": "Dokładnie czterdzieści trzy."
-    },
-    {
-      "id": 43,
-      "en": "Thirty-seven fifty-five.",
-      "pl": "Trzydzieści siedem pięćdziesiąt pięć."
-    },
-    {
-      "id": 44,
-      "en": "Forty-seven fifty-five.",
-      "pl": "Czterdzieści siedem pięćdziesiąt pięć."
-    },
-    {
-      "id": 45,
-      "en": "Thirty-eight or thirty-nine?",
-      "pl": "Trzydzieści osiem czy trzydzieści dziewięć?"
-    },
-    {
-      "id": 46,
-      "en": "Forty-eight or forty-nine?",
-      "pl": "Czterdzieści osiem czy czterdzieści dziewięć?"
-    },
-    {
-      "id": 47,
-      "en": "The cheese costs thirty złoty.",
-      "pl": "Ser kosztuje trzydzieści złotych."
-    },
-    {
-      "id": 48,
-      "en": "The meat costs forty złoty.",
-      "pl": "Mięso kosztuje czterdzieści złotych."
-    },
-    {
-      "id": 49,
-      "en": "The bill is thirty-two.",
-      "pl": "Rachunek wynosi trzydzieści dwa."
-    },
-    {
-      "id": 50,
-      "en": "The bill is forty-two.",
-      "pl": "Rachunek wynosi czterdzieści dwa."
-    },
-    {
-      "id": 51,
-      "en": "Thirty-one, thirty-two, thirty-three.",
-      "pl": "Trzydzieści jeden, trzydzieści dwa, trzydzieści trzy."
-    },
-    {
-      "id": 52,
-      "en": "Forty-one, forty-two, forty-three.",
-      "pl": "Czterdzieści jeden, czterdzieści dwa, czterdzieści trzy."
-    },
-    {
-      "id": 53,
-      "en": "Almost thirty złoty.",
-      "pl": "Prawie trzydzieści złotych."
-    },
-    {
-      "id": 54,
-      "en": "Almost forty złoty.",
-      "pl": "Prawie czterdzieści złotych."
-    },
-    {
-      "id": 55,
-      "en": "Plus thirty złoty tax.",
-      "pl": "Plus trzydzieści złotych podatku."
-    },
-    {
-      "id": 56,
-      "en": "Plus forty złoty tax.",
-      "pl": "Plus czterdzieści złotych podatku."
-    },
-    {
-      "id": 57,
-      "en": "Minus thirty złoty discount.",
-      "pl": "Minus trzydzieści złotych zniżki."
-    },
-    {
-      "id": 58,
-      "en": "Minus forty złoty discount.",
-      "pl": "Minus czterdzieści złotych zniżki."
-    },
-    {
-      "id": 59,
-      "en": "Thirty-four is not forty-four.",
-      "pl": "Trzydzieści cztery to nie czterdzieści cztery."
-    },
-    {
-      "id": 60,
-      "en": "Four hundred thirty złoty.",
-      "pl": "Czterysta trzydzieści złotych."
-    },
-    {
-      "id": 61,
-      "en": "Four hundred forty złoty.",
-      "pl": "Czterysta czterdzieści złotych."
-    },
-    {
-      "id": 62,
-      "en": "Thirty-six and change.",
-      "pl": "Trzydzieści sześć i reszta."
-    },
-    {
-      "id": 63,
-      "en": "Forty-six and change.",
-      "pl": "Czterdzieści sześć i reszta."
-    },
-    {
-      "id": 64,
-      "en": "I paid thirty.",
-      "pl": "Zapłaciłem trzydzieści."
-    },
-    {
-      "id": 65,
-      "en": "I paid forty.",
-      "pl": "Zapłaciłem czterdzieści."
-    },
-    {
-      "id": 66,
-      "en": "You owe thirty-two.",
-      "pl": "Jesteś winien trzydzieści dwa."
-    },
-    {
-      "id": 67,
-      "en": "You owe forty-two.",
-      "pl": "Jesteś winien czterdzieści dwa."
-    },
-    {
-      "id": 68,
-      "en": "Thirty-eight eighty-eight.",
-      "pl": "Trzydzieści osiem osiemdziesiąt osiem."
-    },
-    {
-      "id": 69,
-      "en": "Forty-eight eighty-eight.",
-      "pl": "Czterdzieści osiem osiemdziesiąt osiem."
-    },
-    {
-      "id": 70,
-      "en": "Thirty-five cents.",
-      "pl": "Trzydzieści pięć groszy."
-    },
-    {
-      "id": 71,
-      "en": "Forty-five cents.",
-      "pl": "Czterdzieści pięć groszy."
-    },
-    {
-      "id": 72,
-      "en": "It's exactly thirty.",
-      "pl": "To dokładnie trzydzieści."
-    },
-    {
-      "id": 73,
-      "en": "It's exactly forty.",
-      "pl": "To dokładnie czterdzieści."
-    },
-    {
-      "id": 74,
-      "en": "Thirty-three plus forty-three.",
-      "pl": "Trzydzieści trzy plus czterdzieści trzy."
-    },
-    {
-      "id": 75,
-      "en": "Finally, the total is seventy.",
-      "pl": "W końcu, razem siedemdziesiąt."
+      "id": "p14_01",
+      "category": "Problems",
+      "pl": "Problem",
+      "en": "Problem",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_02",
+      "category": "Problems",
+      "pl": "Mam problem",
+      "en": "I have a problem",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_03",
+      "category": "Problems",
+      "pl": "Coś nie działa",
+      "en": "Something doesn't work",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_04",
+      "category": "Problems",
+      "pl": "Coś poszło nie tak",
+      "en": "Something went wrong",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_05",
+      "category": "Problems",
+      "pl": "To nie działa",
+      "en": "This doesn't work",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_06",
+      "category": "Problems",
+      "pl": "Jest zepsute",
+      "en": "It's broken",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_07",
+      "category": "Problems",
+      "pl": "Nie mogę...",
+      "en": "I can't...",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_08",
+      "category": "Problems",
+      "pl": "To nie moja wina",
+      "en": "It's not my fault",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_09",
+      "category": "Problems",
+      "pl": "Nie rozumiem dlaczego",
+      "en": "I don't understand why",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_10",
+      "category": "Problems",
+      "pl": "To nie jest w porządku",
+      "en": "This is not okay",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_11",
+      "category": "Problems",
+      "pl": "Jest błąd",
+      "en": "There's a mistake",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_12",
+      "category": "Problems",
+      "pl": "To jest złe",
+      "en": "This is wrong",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_13",
+      "category": "Problems",
+      "pl": "Pomyłka",
+      "en": "Mistake / Error",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_14",
+      "category": "Problems",
+      "pl": "Potrzebuję wyjaśnienia",
+      "en": "I need an explanation",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_15",
+      "category": "Problems",
+      "pl": "Jak to naprawić?",
+      "en": "How to fix this?",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_16",
+      "category": "Problems",
+      "pl": "Czy możesz to naprawić?",
+      "en": "Can you fix this?",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_17",
+      "category": "Problems",
+      "pl": "Kiedy to zostanie naprawione?",
+      "en": "When will this be fixed?",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_18",
+      "category": "Problems",
+      "pl": "To nie to co zamówiłem/zamówiłam",
+      "en": "This is not what I ordered",
+      "level": 21,
+      "gender": "both",
+      "variants": {
+        "m": "To nie to co zamówiłem",
+        "f": "zamówiłam"
+      }
+    },
+    {
+      "id": "p14_19",
+      "category": "Problems",
+      "pl": "Brakuje...",
+      "en": "Missing... / There's no...",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_20",
+      "category": "Problems",
+      "pl": "Nie ma...",
+      "en": "There is no...",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_21",
+      "category": "Problems",
+      "pl": "Zgubiłem/Zgubiłam...",
+      "en": "I lost...",
+      "level": 21,
+      "gender": "both",
+      "variants": {
+        "m": "Zgubiłem",
+        "f": "Zgubiłam..."
+      }
+    },
+    {
+      "id": "p14_22",
+      "category": "Problems",
+      "pl": "Ktoś ukradł...",
+      "en": "Someone stole...",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_23",
+      "category": "Problems",
+      "pl": "Nie mogę znaleźć...",
+      "en": "I can't find...",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_24",
+      "category": "Problems",
+      "pl": "Gdzie to zostawiłem/zostawiłam?",
+      "en": "Where did I leave this?",
+      "level": 21,
+      "gender": "both",
+      "variants": {
+        "m": "Gdzie to zostawiłem",
+        "f": "zostawiłam?"
+      }
+    },
+    {
+      "id": "p14_25",
+      "category": "Problems",
+      "pl": "Zapomniałem/Zapomniałam",
+      "en": "I forgot",
+      "level": 21,
+      "gender": "both",
+      "variants": {
+        "m": "Zapomniałem",
+        "f": "Zapomniałam"
+      }
+    },
+    {
+      "id": "p14_26",
+      "category": "Complaints",
+      "pl": "Skarga",
+      "en": "Complaint",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_27",
+      "category": "Complaints",
+      "pl": "Chcę złożyć skargę",
+      "en": "I want to make a complaint",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_28",
+      "category": "Complaints",
+      "pl": "To jest nieakceptowalne",
+      "en": "This is unacceptable",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_29",
+      "category": "Complaints",
+      "pl": "Jestem niezadowolony/niezadowolona",
+      "en": "I'm dissatisfied",
+      "level": 21,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem niezadowolony",
+        "f": "niezadowolona"
+      }
+    },
+    {
+      "id": "p14_30",
+      "category": "Complaints",
+      "pl": "To jest za drogie",
+      "en": "This is too expensive",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_31",
+      "category": "Complaints",
+      "pl": "Jakość jest zła",
+      "en": "Quality is bad",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_32",
+      "category": "Complaints",
+      "pl": "Obsługa jest słaba",
+      "en": "Service is poor",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_33",
+      "category": "Complaints",
+      "pl": "Czekam za długo",
+      "en": "I'm waiting too long",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_34",
+      "category": "Complaints",
+      "pl": "To jest brudne",
+      "en": "This is dirty",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_35",
+      "category": "Complaints",
+      "pl": "To jest zimne",
+      "en": "This is cold",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_36",
+      "category": "Complaints",
+      "pl": "To nie jest świeże",
+      "en": "This is not fresh",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_37",
+      "category": "Complaints",
+      "pl": "Chcę zwrot pieniędzy",
+      "en": "I want a refund",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_38",
+      "category": "Complaints",
+      "pl": "Chcę wymienić",
+      "en": "I want to exchange",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_39",
+      "category": "Complaints",
+      "pl": "Gdzie jest kierownik?",
+      "en": "Where is the manager?",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_40",
+      "category": "Complaints",
+      "pl": "Chcę rozmawiać z kierownikiem",
+      "en": "I want to speak to the manager",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_41",
+      "category": "Complaints",
+      "pl": "To nie jest fair",
+      "en": "This is not fair",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_42",
+      "category": "Complaints",
+      "pl": "Nie zgadzam się",
+      "en": "I don't agree",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_43",
+      "category": "Complaints",
+      "pl": "Rozczarowany/Rozczarowana",
+      "en": "Disappointed",
+      "level": 21,
+      "gender": "both",
+      "variants": {
+        "m": "Rozczarowany",
+        "f": "Rozczarowana"
+      }
+    },
+    {
+      "id": "p14_44",
+      "category": "Complaints",
+      "pl": "Oczekiwałem/Oczekiwałam czegoś innego",
+      "en": "I expected something different",
+      "level": 21,
+      "gender": "both",
+      "variants": {
+        "m": "Oczekiwałem",
+        "f": "Oczekiwałam czegoś innego"
+      }
+    },
+    {
+      "id": "p14_45",
+      "category": "Complaints",
+      "pl": "To nie jest to co obiecano",
+      "en": "This is not what was promised",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_46",
+      "category": "Solutions",
+      "pl": "Jak możemy to rozwiązać?",
+      "en": "How can we solve this?",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_47",
+      "category": "Solutions",
+      "pl": "Proszę to naprawić",
+      "en": "Please fix this",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_48",
+      "category": "Solutions",
+      "pl": "Proszę wymienić",
+      "en": "Please replace",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_49",
+      "category": "Solutions",
+      "pl": "Zróbmy to inaczej",
+      "en": "Let's do it differently",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_50",
+      "category": "Solutions",
+      "pl": "Czy jest inna opcja?",
+      "en": "Is there another option?",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_51",
+      "category": "Solutions",
+      "pl": "Może spróbujmy...",
+      "en": "Maybe let's try...",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_52",
+      "category": "Solutions",
+      "pl": "Co proponujesz?",
+      "en": "What do you suggest?",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_53",
+      "category": "Solutions",
+      "pl": "Dziękuję za zrozumienie",
+      "en": "Thank you for understanding",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_54",
+      "category": "Solutions",
+      "pl": "Przepraszam za kłopot",
+      "en": "Sorry for the trouble",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_55",
+      "category": "Solutions",
+      "pl": "Nie ma problemu",
+      "en": "No problem",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_56",
+      "category": "Solutions",
+      "pl": "W porządku",
+      "en": "Okay / Alright",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_57",
+      "category": "Solutions",
+      "pl": "Zgoda",
+      "en": "Agreed / Deal",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_58",
+      "category": "Solutions",
+      "pl": "Dobrze",
+      "en": "Good / Fine",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_59",
+      "category": "Solutions",
+      "pl": "Dziękuję za pomoc",
+      "en": "Thank you for your help",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_60",
+      "category": "Solutions",
+      "pl": "Problem rozwiązany",
+      "en": "Problem solved",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_61",
+      "category": "Safety",
+      "pl": "Czy to jest bezpieczne?",
+      "en": "Is this safe?",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_62",
+      "category": "Safety",
+      "pl": "Niebezpieczne",
+      "en": "Dangerous",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_63",
+      "category": "Safety",
+      "pl": "Ostrożnie",
+      "en": "Careful / Caution",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_64",
+      "category": "Safety",
+      "pl": "Uwaga!",
+      "en": "Watch out! / Attention!",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_65",
+      "category": "Safety",
+      "pl": "Stop!",
+      "en": "Stop!",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_66",
+      "category": "Safety",
+      "pl": "Nie dotykaj",
+      "en": "Don't touch",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_67",
+      "category": "Safety",
+      "pl": "Zamknięte",
+      "en": "Closed",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_68",
+      "category": "Safety",
+      "pl": "Otwarte",
+      "en": "Open",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_69",
+      "category": "Safety",
+      "pl": "Wyjście awaryjne",
+      "en": "Emergency exit",
+      "level": 21,
+      "gender": null
+    },
+    {
+      "id": "p14_70",
+      "category": "Safety",
+      "pl": "Gdzie jest wyjście?",
+      "en": "Where is the exit?",
+      "level": 21,
+      "gender": null
     }
-  ],
-  "tier": "ADVANCED"
+  ]
 }

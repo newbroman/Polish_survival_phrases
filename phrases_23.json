@@ -1,69 +1,571 @@
 {
-  "description": "The Polish Alphabet (Fully Shuffled)",
+  "level": 23,
+  "description": "Polish Culture & Traditions - Cultural Understanding",
+  "tier": "ADVANCED",
   "phrases": [
-    {"id": 1, "en": "J as in Eggs", "pl": "J jak jajka"},
-    {"id": 2, "en": "Ą as in Tail", "pl": "Ą jak ogon"},
-    {"id": 3, "en": "Ź as in Badly", "pl": "Ź jak źle"},
-    {"id": 4, "en": "S as in Cheese", "pl": "S jak ser"},
-    {"id": 5, "en": "L as in Lamp", "pl": "L jak lampa"},
-    {"id": 6, "en": "Ó as in Pencil", "pl": "Ó jak ołówek"},
-    {"id": 7, "en": "Ś as in Snow", "pl": "Ś jak śnieg"},
-    {"id": 8, "en": "W as in Fork", "pl": "W jak widelec"},
-    {"id": 9, "en": "Ę as in Goose", "pl": "Ę jak gęś"},
-    {"id": 10, "en": "B as in Banana", "pl": "B jak banan"},
-    {"id": 11, "en": "Ł as in Boat", "pl": "Ł jak łódka"},
-    {"id": 12, "en": "Ć as in Aunt", "pl": "Ć jak ciocia"},
-    {"id": 13, "en": "N as in Night", "pl": "N jak noc"},
-    {"id": 14, "en": "Y as in Fish (plural)", "pl": "Y jak ryby"},
-    {"id": 15, "en": "G as in Newspaper", "pl": "G jak gazeta"},
-    {"id": 16, "en": "A as in Auto", "pl": "A jak auto"},
-    {"id": 17, "en": "Ź as in Source", "pl": "Ź jak źródło"},
-    {"id": 18, "en": "K as in Book", "pl": "K jak książka"},
-    {"id": 19, "en": "P as in Table", "pl": "P jak pulpit"},
-    {"id": 20, "en": "Ż as in Life", "pl": "Ż jak życie"},
-    {"id": 21, "en": "D as in House", "pl": "D jak dom"},
-    {"id": 22, "en": "H as in Hammer", "pl": "H jak młotek"},
-    {"id": 23, "en": "O as in Eye", "pl": "O jak oko"},
-    {"id": 24, "en": "Ę as in Tongue", "pl": "Ę jak język"},
-    {"id": 25, "en": "T as in Father", "pl": "T jak tata"},
-    {"id": 26, "en": "M as in City", "pl": "M jak miasto"},
-    {"id": 27, "en": "C as in Sugar", "pl": "C jak cukier"},
-    {"id": 28, "en": "I as in Needle", "pl": "I jak igła"},
-    {"id": 29, "en": "R as in Hand", "pl": "R jak ręka"},
-    {"id": 30, "en": "Ś as in World", "pl": "Ś jak świat"},
-    {"id": 31, "en": "Ń as in Horse", "pl": "Ń jak koń"},
-    {"id": 32, "en": "U as in Mouth", "pl": "U jak usta"},
-    {"id": 33, "en": "B as in Drum", "pl": "B jak bęben"},
-    {"id": 34, "en": "Ó as in Garden", "pl": "Ó jak ogród"},
-    {"id": 35, "en": "F as in Photo", "pl": "F jak fotel"},
-    {"id": 36, "en": "L as in Ice cream", "pl": "L jak lody"},
-    {"id": 37, "en": "Z as in Zebra", "pl": "Z jak zebra"},
-    {"id": 38, "en": "Ą as in Trout", "pl": "Ą jak pstrąg"},
-    {"id": 39, "en": "K as in Cat", "pl": "K jak kot"},
-    {"id": 40, "en": "A as in Pineapple", "pl": "A jak ananas"},
-    {"id": 41, "en": "E as in Element", "pl": "E jak element"},
-    {"id": 42, "en": "Ń as in Elephant", "pl": "Ń jak słoń"},
-    {"id": 43, "en": "W as in Water", "pl": "W jak woda"},
-    {"id": 44, "en": "Y as in Mushrooms", "pl": "Y jak grzyby"},
-    {"id": 45, "en": "Ż as in Frog", "pl": "Ż jak żaba"},
-    {"id": 46, "en": "J as in Apple", "pl": "J jak jabłko"},
-    {"id": 47, "en": "H as in Tea", "pl": "H jak herbata"},
-    {"id": 48, "en": "S as in Sun", "pl": "S jak słońce"},
-    {"id": 49, "en": "P as in Dog", "pl": "P jak pies"},
-    {"id": 50, "en": "Ć as in Darkness", "pl": "Ć jak ćma"},
-    {"id": 51, "en": "Ł as in Spoon", "pl": "Ł jak łyżka"},
-    {"id": 52, "en": "G as in Mountain", "pl": "G jak góra"},
-    {"id": 53, "en": "T as in Plate", "pl": "T jak talerz"},
-    {"id": 54, "en": "C as in Onion", "pl": "C jak cebula"},
-    {"id": 55, "en": "D as in Tree", "pl": "D jak drzewo"},
-    {"id": 56, "en": "U as in Street", "pl": "U jak ulica"},
-    {"id": 57, "en": "M as in Mama", "pl": "M jak mama"},
-    {"id": 58, "en": "F as in Factory", "pl": "F jak fabryka"},
-    {"id": 59, "en": "O as in Window", "pl": "O jak okno"},
-    {"id": 60, "en": "E as in Screen", "pl": "E jak ekran"},
-    {"id": 61, "en": "I as in Name", "pl": "I jak imię"},
-    {"id": 62, "en": "N as in Leg", "pl": "N jak noga"},
-    {"id": 63, "en": "R as in Fish", "pl": "R jak ryba"},
-    {"id": 64, "en": "Z as in Clock", "pl": "Z jak zegar"}
+    {
+      "id": "a16_01",
+      "category": "Holidays",
+      "pl": "Święta",
+      "en": "Holidays",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_02",
+      "category": "Holidays",
+      "pl": "Boże Narodzenie",
+      "en": "Christmas",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_03",
+      "category": "Holidays",
+      "pl": "Wigilia",
+      "en": "Christmas Eve",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_04",
+      "category": "Holidays",
+      "pl": "Wielkanoc",
+      "en": "Easter",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_05",
+      "category": "Holidays",
+      "pl": "Nowy Rok",
+      "en": "New Year",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_06",
+      "category": "Holidays",
+      "pl": "Sylwester",
+      "en": "New Year's Eve",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_07",
+      "category": "Holidays",
+      "pl": "Wszystkich Świętych",
+      "en": "All Saints' Day",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_08",
+      "category": "Holidays",
+      "pl": "Święto Niepodległości",
+      "en": "Independence Day",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_09",
+      "category": "Holidays",
+      "pl": "Konstytucja 3 Maja",
+      "en": "Constitution Day (May 3rd)",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_10",
+      "category": "Holidays",
+      "pl": "Andrzejki",
+      "en": "St. Andrew's Day",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_11",
+      "category": "Holidays",
+      "pl": "Tłusty Czwartek",
+      "en": "Fat Thursday",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_12",
+      "category": "Holidays",
+      "pl": "Wielki Post",
+      "en": "Lent",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_13",
+      "category": "Holidays",
+      "pl": "Śmigus-Dyngus",
+      "en": "Wet Monday (Easter Monday)",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_14",
+      "category": "Holidays",
+      "pl": "Dzień Babci",
+      "en": "Grandmother's Day",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_15",
+      "category": "Holidays",
+      "pl": "Dzień Dziadka",
+      "en": "Grandfather's Day",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_16",
+      "category": "Traditions",
+      "pl": "Tradycja",
+      "en": "Tradition",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_17",
+      "category": "Traditions",
+      "pl": "Zwyczaj",
+      "en": "Custom",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_18",
+      "category": "Traditions",
+      "pl": "Gościnność",
+      "en": "Hospitality",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_19",
+      "category": "Traditions",
+      "pl": "Opłatek",
+      "en": "Christmas wafer",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_20",
+      "category": "Traditions",
+      "pl": "Dzielenie się opłatkiem",
+      "en": "Sharing the Christmas wafer",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_21",
+      "category": "Traditions",
+      "pl": "Kolęda",
+      "en": "Christmas carol",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_22",
+      "category": "Traditions",
+      "pl": "Choinka",
+      "en": "Christmas tree",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_23",
+      "category": "Traditions",
+      "pl": "Prezenty",
+      "en": "Gifts",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_24",
+      "category": "Traditions",
+      "pl": "Pisanki",
+      "en": "Decorated Easter eggs",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_25",
+      "category": "Traditions",
+      "pl": "Koszyczek wielkanocny",
+      "en": "Easter basket",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_26",
+      "category": "Traditions",
+      "pl": "Śledź",
+      "en": "Herring",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_27",
+      "category": "Traditions",
+      "pl": "Barszcz",
+      "en": "Beet soup",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_28",
+      "category": "Traditions",
+      "pl": "Karp",
+      "en": "Carp",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_29",
+      "category": "Traditions",
+      "pl": "Dwanaście potraw",
+      "en": "Twelve dishes (Christmas Eve)",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_30",
+      "category": "Traditions",
+      "pl": "Pączki",
+      "en": "Donuts",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_31",
+      "category": "Traditions",
+      "pl": "Faworki",
+      "en": "Angel wings (pastry)",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_32",
+      "category": "Traditions",
+      "pl": "Imieniny",
+      "en": "Name day",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_33",
+      "category": "Traditions",
+      "pl": "Wszystkiego najlepszego z okazji imienin!",
+      "en": "Happy name day!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_34",
+      "category": "Traditions",
+      "pl": "Sto lat!",
+      "en": "May you live 100 years! (birthday song)",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_35",
+      "category": "Traditions",
+      "pl": "Na zdrowie!",
+      "en": "Cheers! / Bless you!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_36",
+      "category": "Cultural",
+      "pl": "Polska",
+      "en": "Poland",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_37",
+      "category": "Cultural",
+      "pl": "Polski",
+      "en": "Polish",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_38",
+      "category": "Cultural",
+      "pl": "Polak/Polka",
+      "en": "Polish person",
+      "level": 23,
+      "gender": "both",
+      "variants": {
+        "m": "Polak",
+        "f": "Polka"
+      }
+    },
+    {
+      "id": "a16_39",
+      "category": "Cultural",
+      "pl": "Kultura",
+      "en": "Culture",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_40",
+      "category": "Cultural",
+      "pl": "Historia",
+      "en": "History",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_41",
+      "category": "Cultural",
+      "pl": "Kościół",
+      "en": "Church",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_42",
+      "category": "Cultural",
+      "pl": "Msza",
+      "en": "Mass (church service)",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_43",
+      "category": "Cultural",
+      "pl": "Religia",
+      "en": "Religion",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_44",
+      "category": "Cultural",
+      "pl": "Katolicki",
+      "en": "Catholic",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_45",
+      "category": "Cultural",
+      "pl": "Papież",
+      "en": "Pope",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_46",
+      "category": "Cultural",
+      "pl": "Jan Paweł II",
+      "en": "John Paul II",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_47",
+      "category": "Cultural",
+      "pl": "Solidarność",
+      "en": "Solidarity",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_48",
+      "category": "Cultural",
+      "pl": "Hymn narodowy",
+      "en": "National anthem",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_49",
+      "category": "Cultural",
+      "pl": "Flaga",
+      "en": "Flag",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_50",
+      "category": "Cultural",
+      "pl": "Godło",
+      "en": "Coat of arms / Emblem",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_51",
+      "category": "Cultural",
+      "pl": "Orzeł biały",
+      "en": "White eagle (Polish symbol)",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_52",
+      "category": "Cultural",
+      "pl": "Warszawa",
+      "en": "Warsaw",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_53",
+      "category": "Cultural",
+      "pl": "Kraków",
+      "en": "Krakow",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_54",
+      "category": "Cultural",
+      "pl": "Wawel",
+      "en": "Wawel (castle)",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_55",
+      "category": "Cultural",
+      "pl": "Rynek Główny",
+      "en": "Main Market Square",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_56",
+      "category": "Expressions",
+      "pl": "Sto lat!",
+      "en": "100 years! (birthday wish)",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_57",
+      "category": "Expressions",
+      "pl": "Smacznego!",
+      "en": "Enjoy your meal!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_58",
+      "category": "Expressions",
+      "pl": "Na zdrowie!",
+      "en": "Cheers! / Bless you!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_59",
+      "category": "Expressions",
+      "pl": "Powodzenia!",
+      "en": "Good luck!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_60",
+      "category": "Expressions",
+      "pl": "Gratulacje!",
+      "en": "Congratulations!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_61",
+      "category": "Expressions",
+      "pl": "Współczuję",
+      "en": "I'm sorry for your loss / My condolences",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_62",
+      "category": "Expressions",
+      "pl": "Wesołych Świąt!",
+      "en": "Merry Christmas!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_63",
+      "category": "Expressions",
+      "pl": "Szczęśliwego Nowego Roku!",
+      "en": "Happy New Year!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_64",
+      "category": "Expressions",
+      "pl": "Wesołego Alleluja!",
+      "en": "Happy Easter!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_65",
+      "category": "Expressions",
+      "pl": "Wszystkiego najlepszego!",
+      "en": "All the best!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_66",
+      "category": "Expressions",
+      "pl": "Trzymaj się!",
+      "en": "Take care!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_67",
+      "category": "Expressions",
+      "pl": "Do usłyszenia!",
+      "en": "Talk to you later!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_68",
+      "category": "Expressions",
+      "pl": "Miłego dnia!",
+      "en": "Have a nice day!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_69",
+      "category": "Expressions",
+      "pl": "Miłego weekendu!",
+      "en": "Have a nice weekend!",
+      "level": 23,
+      "gender": null
+    },
+    {
+      "id": "a16_70",
+      "category": "Expressions",
+      "pl": "Pozdrawiam serdecznie",
+      "en": "Warm regards",
+      "level": 23,
+      "gender": null
+    }
   ]
 }

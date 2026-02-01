@@ -1,585 +1,581 @@
 {
   "level": 6,
-  "description": "Health & Medical - Pharmacy & Doctor Visits",
-  "tier": "PRACTICAL",
+  "description": "Accommodation - Hotels & Lodging",
+  "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "p6_01",
-      "category": "Symptoms & Pain",
-      "pl": "Boli mnie...",
-      "en": "It hurts... / My ... hurts",
+      "id": "s4_01",
+      "category": "Check-in & Basics",
+      "pl": "Mam rezerwację",
+      "en": "I have a reservation",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_02",
-      "category": "Symptoms & Pain",
-      "pl": "Boli mnie głowa",
-      "en": "My head hurts / I have a headache",
+      "id": "s4_02",
+      "category": "Check-in & Basics",
+      "pl": "Rezerwacja na nazwisko...",
+      "en": "Reservation under the name...",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_03",
-      "category": "Symptoms & Pain",
-      "pl": "Boli mnie brzuch",
-      "en": "My stomach hurts",
+      "id": "s4_03",
+      "category": "Check-in & Basics",
+      "pl": "Pokój dla jednej osoby",
+      "en": "Single room",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_04",
-      "category": "Symptoms & Pain",
-      "pl": "Boli mnie gardło",
-      "en": "My throat hurts",
+      "id": "s4_04",
+      "category": "Check-in & Basics",
+      "pl": "Pokój dla dwóch osób",
+      "en": "Double room",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_05",
-      "category": "Symptoms & Pain",
-      "pl": "Boli mnie ząb",
-      "en": "My tooth hurts",
+      "id": "s4_05",
+      "category": "Check-in & Basics",
+      "pl": "Na ile nocy?",
+      "en": "For how many nights?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_06",
-      "category": "Symptoms & Pain",
-      "pl": "Boli mnie plecy",
-      "en": "My back hurts",
+      "id": "s4_06",
+      "category": "Check-in & Basics",
+      "pl": "Na jedną noc",
+      "en": "For one night",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_07",
-      "category": "Symptoms & Pain",
-      "pl": "Jestem chory/chora",
-      "en": "I'm sick",
-      "level": 6,
-      "gender": "both",
-      "variants": {
-        "m": "Jestem chory",
-        "f": "chora"
-      }
-    },
-    {
-      "id": "p6_08",
-      "category": "Symptoms & Pain",
-      "pl": "Mam gorączkę",
-      "en": "I have a fever",
+      "id": "s4_07",
+      "category": "Check-in & Basics",
+      "pl": "Na trzy noce",
+      "en": "For three nights",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_09",
-      "category": "Symptoms & Pain",
-      "pl": "Mam kaszel",
-      "en": "I have a cough",
+      "id": "s4_08",
+      "category": "Check-in & Basics",
+      "pl": "Ile kosztuje pokój?",
+      "en": "How much is the room?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_10",
-      "category": "Symptoms & Pain",
-      "pl": "Mam katar",
-      "en": "I have a runny nose",
+      "id": "s4_09",
+      "category": "Check-in & Basics",
+      "pl": "Czy śniadanie jest wliczone?",
+      "en": "Is breakfast included?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_11",
-      "category": "Symptoms & Pain",
-      "pl": "Wymiotuję",
-      "en": "I'm vomiting",
+      "id": "s4_10",
+      "category": "Check-in & Basics",
+      "pl": "O której jest śniadanie?",
+      "en": "What time is breakfast?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_12",
-      "category": "Symptoms & Pain",
-      "pl": "Mam biegunkę",
-      "en": "I have diarrhea",
+      "id": "s4_11",
+      "category": "Check-in & Basics",
+      "pl": "Klucz, proszę",
+      "en": "Key, please",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_13",
-      "category": "Symptoms & Pain",
-      "pl": "Mam zawroty głowy",
-      "en": "I'm dizzy",
+      "id": "s4_12",
+      "category": "Check-in & Basics",
+      "pl": "Numer pokoju",
+      "en": "Room number",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_14",
-      "category": "Symptoms & Pain",
-      "pl": "Nie mogę spać",
-      "en": "I can't sleep",
+      "id": "s4_13",
+      "category": "Check-in & Basics",
+      "pl": "Mój pokój to numer...",
+      "en": "My room is number...",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_15",
-      "category": "Symptoms & Pain",
-      "pl": "Jestem zmęczony/zmęczona",
-      "en": "I'm tired",
-      "level": 6,
-      "gender": "both",
-      "variants": {
-        "m": "Jestem zmęczony",
-        "f": "zmęczona"
-      }
-    },
-    {
-      "id": "p6_16",
-      "category": "Symptoms & Pain",
-      "pl": "Czuję się źle",
-      "en": "I feel bad / unwell",
+      "id": "s4_14",
+      "category": "Check-in & Basics",
+      "pl": "Paszport, proszę",
+      "en": "Passport, please",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_17",
-      "category": "Symptoms & Pain",
-      "pl": "Czuję się lepiej",
-      "en": "I feel better",
+      "id": "s4_15",
+      "category": "Check-in & Basics",
+      "pl": "Czy mogę zapłacić kartą?",
+      "en": "Can I pay by card?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_18",
-      "category": "Symptoms & Pain",
-      "pl": "Jestem chory/chora od wczoraj",
-      "en": "I've been sick since yesterday",
-      "level": 6,
-      "gender": "both",
-      "variants": {
-        "m": "Jestem chory",
-        "f": "chora od wczoraj"
-      }
-    },
-    {
-      "id": "p6_19",
-      "category": "Symptoms & Pain",
-      "pl": "To boli bardzo",
-      "en": "It hurts a lot",
+      "id": "s4_16",
+      "category": "Check-in & Basics",
+      "pl": "Czy macie wolne pokoje?",
+      "en": "Do you have available rooms?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_20",
-      "category": "Symptoms & Pain",
-      "pl": "Nie mogę oddychać",
-      "en": "I can't breathe",
+      "id": "s4_17",
+      "category": "Check-in & Basics",
+      "pl": "Czy mogę zobaczyć pokój?",
+      "en": "Can I see the room?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_21",
-      "category": "Doctor & Pharmacy",
-      "pl": "Potrzebuję lekarza",
-      "en": "I need a doctor",
+      "id": "s4_18",
+      "category": "Check-in & Basics",
+      "pl": "Recepcja",
+      "en": "Reception / Front desk",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_22",
-      "category": "Doctor & Pharmacy",
-      "pl": "Gdzie jest lekarz?",
-      "en": "Where is the doctor?",
+      "id": "s4_19",
+      "category": "Check-in & Basics",
+      "pl": "Portier",
+      "en": "Porter / Concierge",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_23",
-      "category": "Doctor & Pharmacy",
-      "pl": "Gdzie jest apteka?",
-      "en": "Where is the pharmacy?",
+      "id": "s4_20",
+      "category": "Check-in & Basics",
+      "pl": "Bagaż",
+      "en": "Luggage / Baggage",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_24",
-      "category": "Doctor & Pharmacy",
-      "pl": "Apteka",
-      "en": "Pharmacy",
+      "id": "s4_21",
+      "category": "Room Issues",
+      "pl": "Jaki jest kod WiFi?",
+      "en": "What is the WiFi password?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_25",
-      "category": "Doctor & Pharmacy",
-      "pl": "Szpital",
-      "en": "Hospital",
+      "id": "s4_22",
+      "category": "Room Issues",
+      "pl": "WiFi nie działa",
+      "en": "WiFi doesn't work",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_26",
-      "category": "Doctor & Pharmacy",
-      "pl": "Przychodnia",
-      "en": "Clinic",
+      "id": "s4_23",
+      "category": "Room Issues",
+      "pl": "Klimatyzacja nie działa",
+      "en": "Air conditioning doesn't work",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_27",
-      "category": "Doctor & Pharmacy",
-      "pl": "Dentysta",
-      "en": "Dentist",
+      "id": "s4_24",
+      "category": "Room Issues",
+      "pl": "Ogrzewanie nie działa",
+      "en": "Heating doesn't work",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_28",
-      "category": "Doctor & Pharmacy",
-      "pl": "Recepta",
-      "en": "Prescription",
+      "id": "s4_25",
+      "category": "Room Issues",
+      "pl": "Nie ma gorącej wody",
+      "en": "There's no hot water",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_29",
-      "category": "Doctor & Pharmacy",
-      "pl": "Mam receptę",
-      "en": "I have a prescription",
+      "id": "s4_26",
+      "category": "Room Issues",
+      "pl": "Prysznic nie działa",
+      "en": "The shower doesn't work",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_30",
-      "category": "Doctor & Pharmacy",
-      "pl": "Potrzebuję leku na...",
-      "en": "I need medicine for...",
+      "id": "s4_27",
+      "category": "Room Issues",
+      "pl": "Telewizor nie działa",
+      "en": "The TV doesn't work",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_31",
-      "category": "Doctor & Pharmacy",
-      "pl": "Lek przeciwbólowy",
-      "en": "Painkiller",
+      "id": "s4_28",
+      "category": "Room Issues",
+      "pl": "Światło nie działa",
+      "en": "The light doesn't work",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_32",
-      "category": "Doctor & Pharmacy",
-      "pl": "Aspiryna",
-      "en": "Aspirin",
+      "id": "s4_29",
+      "category": "Room Issues",
+      "pl": "Jest za głośno",
+      "en": "It's too loud",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_33",
-      "category": "Doctor & Pharmacy",
-      "pl": "Antybiotyk",
-      "en": "Antibiotic",
+      "id": "s4_30",
+      "category": "Room Issues",
+      "pl": "Jest za zimno",
+      "en": "It's too cold",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_34",
-      "category": "Doctor & Pharmacy",
-      "pl": "Witaminy",
-      "en": "Vitamins",
+      "id": "s4_31",
+      "category": "Room Issues",
+      "pl": "Jest za gorąco",
+      "en": "It's too hot",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_35",
-      "category": "Doctor & Pharmacy",
-      "pl": "Plaster",
-      "en": "Band-aid",
+      "id": "s4_32",
+      "category": "Room Issues",
+      "pl": "Pokój jest brudny",
+      "en": "The room is dirty",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_36",
-      "category": "Doctor & Pharmacy",
-      "pl": "Termometr",
-      "en": "Thermometer",
+      "id": "s4_33",
+      "category": "Room Issues",
+      "pl": "Potrzebuję ręczników",
+      "en": "I need towels",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_37",
-      "category": "Doctor & Pharmacy",
-      "pl": "Mam alergię na...",
-      "en": "I'm allergic to...",
+      "id": "s4_34",
+      "category": "Room Issues",
+      "pl": "Potrzebuję mydła",
+      "en": "I need soap",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_38",
-      "category": "Doctor & Pharmacy",
-      "pl": "Alergia",
-      "en": "Allergy",
+      "id": "s4_35",
+      "category": "Room Issues",
+      "pl": "Potrzebuję papieru toaletowego",
+      "en": "I need toilet paper",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_39",
-      "category": "Doctor & Pharmacy",
-      "pl": "Ubezpieczenie",
-      "en": "Insurance",
+      "id": "s4_36",
+      "category": "Room Issues",
+      "pl": "Czy mogę zmienić pokój?",
+      "en": "Can I change rooms?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_40",
-      "category": "Doctor & Pharmacy",
-      "pl": "Mam ubezpieczenie",
-      "en": "I have insurance",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_41",
-      "category": "Doctor & Pharmacy",
-      "pl": "Karta ubezpieczenia",
-      "en": "Insurance card",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_42",
-      "category": "Doctor & Pharmacy",
-      "pl": "Ile to kosztuje?",
-      "en": "How much is this?",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_43",
-      "category": "Doctor & Pharmacy",
-      "pl": "Czy potrzebuję recepty?",
-      "en": "Do I need a prescription?",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_44",
-      "category": "Doctor & Pharmacy",
-      "pl": "Jak często to brać?",
-      "en": "How often to take this?",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_45",
-      "category": "Doctor & Pharmacy",
-      "pl": "Przed jedzeniem czy po?",
-      "en": "Before or after eating?",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_46",
-      "category": "Medical Situations",
-      "pl": "Zadzwoń po karetkę",
-      "en": "Call an ambulance",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_47",
-      "category": "Medical Situations",
-      "pl": "To nagły wypadek",
-      "en": "It's an emergency",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_48",
-      "category": "Medical Situations",
-      "pl": "Jestem w ciąży",
-      "en": "I'm pregnant",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_49",
-      "category": "Medical Situations",
-      "pl": "Mam cukrzycę",
-      "en": "I have diabetes",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_50",
-      "category": "Medical Situations",
-      "pl": "Mam astmę",
-      "en": "I have asthma",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_51",
-      "category": "Medical Situations",
-      "pl": "Biorę leki na...",
-      "en": "I take medication for...",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "p6_52",
-      "category": "Medical Situations",
-      "pl": "Upadłem/Upadłam",
-      "en": "I fell",
+      "id": "s4_37",
+      "category": "Room Issues",
+      "pl": "Zgubiłem/Zgubiłam klucz",
+      "en": "I lost my key",
       "level": 6,
       "gender": "both",
       "variants": {
-        "m": "Upadłem",
-        "f": "Upadłam"
+        "m": "Zgubiłem",
+        "f": "Zgubiłam klucz"
       }
     },
     {
-      "id": "p6_53",
-      "category": "Medical Situations",
-      "pl": "Skaleczyłem/Skaleczyłam się",
-      "en": "I cut myself",
+      "id": "s4_38",
+      "category": "Room Issues",
+      "pl": "Klucz nie działa",
+      "en": "The key doesn't work",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_39",
+      "category": "Room Issues",
+      "pl": "Zamknąłem/Zamknęłam się",
+      "en": "I locked myself out",
       "level": 6,
       "gender": "both",
       "variants": {
-        "m": "Skaleczyłem",
-        "f": "Skaleczyłam się"
+        "m": "Zamknąłem",
+        "f": "Zamknęłam się"
       }
     },
     {
-      "id": "p6_54",
-      "category": "Medical Situations",
-      "pl": "Sparzenie",
-      "en": "Burn",
+      "id": "s4_40",
+      "category": "Room Issues",
+      "pl": "Proszę posprzątać pokój",
+      "en": "Please clean the room",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_55",
-      "category": "Medical Situations",
-      "pl": "Złamanie",
-      "en": "Fracture / Broken bone",
+      "id": "s4_41",
+      "category": "Room Issues",
+      "pl": "Nie przeszkadzać",
+      "en": "Do not disturb",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_56",
-      "category": "Medical Situations",
-      "pl": "Krwawienie",
-      "en": "Bleeding",
+      "id": "s4_42",
+      "category": "Room Issues",
+      "pl": "Proszę obudzić mnie o...",
+      "en": "Please wake me at...",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_57",
-      "category": "Medical Situations",
-      "pl": "Grupa krwi",
-      "en": "Blood type",
+      "id": "s4_43",
+      "category": "Room Issues",
+      "pl": "Zostawiłem/Zostawiłam coś w pokoju",
+      "en": "I left something in the room",
+      "level": 6,
+      "gender": "both",
+      "variants": {
+        "m": "Zostawiłem",
+        "f": "Zostawiłam coś w pokoju"
+      }
+    },
+    {
+      "id": "s4_44",
+      "category": "Room Issues",
+      "pl": "Czy mogę dostać dodatkowe koce?",
+      "en": "Can I get extra blankets?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_58",
-      "category": "Medical Situations",
-      "pl": "Moja grupa krwi to...",
-      "en": "My blood type is...",
+      "id": "s4_45",
+      "category": "Room Issues",
+      "pl": "Czy mogę dostać poduszkę?",
+      "en": "Can I get a pillow?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_59",
-      "category": "Medical Situations",
-      "pl": "Potrzebuję tłumacza",
-      "en": "I need a translator",
+      "id": "s4_46",
+      "category": "Check-out & Services",
+      "pl": "O której jest wymeldowanie?",
+      "en": "What time is check-out?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_60",
-      "category": "Medical Situations",
-      "pl": "Czy ktoś mówi po angielsku?",
-      "en": "Does anyone speak English?",
+      "id": "s4_47",
+      "category": "Check-out & Services",
+      "pl": "Chciałbym/Chciałabym się wymeldować",
+      "en": "I'd like to check out",
+      "level": 6,
+      "gender": "both",
+      "variants": {
+        "m": "Chciałbym",
+        "f": "Chciałabym się wymeldować"
+      }
+    },
+    {
+      "id": "s4_48",
+      "category": "Check-out & Services",
+      "pl": "Rachunek, proszę",
+      "en": "The bill, please",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_61",
-      "category": "Body Parts",
-      "pl": "Głowa",
-      "en": "Head",
+      "id": "s4_49",
+      "category": "Check-out & Services",
+      "pl": "Czy mogę zostawić bagaż?",
+      "en": "Can I leave my luggage?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_62",
-      "category": "Body Parts",
-      "pl": "Brzuch",
-      "en": "Stomach",
+      "id": "s4_50",
+      "category": "Check-out & Services",
+      "pl": "Czy mogę przedłużyć pobyt?",
+      "en": "Can I extend my stay?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_63",
-      "category": "Body Parts",
-      "pl": "Ręka",
-      "en": "Hand / Arm",
+      "id": "s4_51",
+      "category": "Check-out & Services",
+      "pl": "Jeszcze jedna noc",
+      "en": "One more night",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_64",
-      "category": "Body Parts",
-      "pl": "Noga",
-      "en": "Leg / Foot",
+      "id": "s4_52",
+      "category": "Check-out & Services",
+      "pl": "Parking",
+      "en": "Parking",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_65",
-      "category": "Body Parts",
-      "pl": "Plecy",
-      "en": "Back",
+      "id": "s4_53",
+      "category": "Check-out & Services",
+      "pl": "Czy jest parking?",
+      "en": "Is there parking?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_66",
-      "category": "Body Parts",
-      "pl": "Oko",
-      "en": "Eye",
+      "id": "s4_54",
+      "category": "Check-out & Services",
+      "pl": "Ile kosztuje parking?",
+      "en": "How much is parking?",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_67",
-      "category": "Body Parts",
-      "pl": "Ucho",
-      "en": "Ear",
+      "id": "s4_55",
+      "category": "Check-out & Services",
+      "pl": "Winda",
+      "en": "Elevator / Lift",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_68",
-      "category": "Body Parts",
-      "pl": "Gardło",
-      "en": "Throat",
+      "id": "s4_56",
+      "category": "Check-out & Services",
+      "pl": "Schody",
+      "en": "Stairs",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_69",
-      "category": "Body Parts",
-      "pl": "Ząb",
-      "en": "Tooth",
+      "id": "s4_57",
+      "category": "Check-out & Services",
+      "pl": "Pralnia",
+      "en": "Laundry",
       "level": 6,
       "gender": null
     },
     {
-      "id": "p6_70",
-      "category": "Body Parts",
-      "pl": "Szyja",
-      "en": "Neck",
+      "id": "s4_58",
+      "category": "Check-out & Services",
+      "pl": "Czy możecie zadzwonić po taxi?",
+      "en": "Can you call a taxi?",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_59",
+      "category": "Check-out & Services",
+      "pl": "Czy jest sejf w pokoju?",
+      "en": "Is there a safe in the room?",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_60",
+      "category": "Check-out & Services",
+      "pl": "Minibar",
+      "en": "Minibar",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_61",
+      "category": "Room Amenities",
+      "pl": "Łóżko",
+      "en": "Bed",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_62",
+      "category": "Room Amenities",
+      "pl": "Łazienka",
+      "en": "Bathroom",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_63",
+      "category": "Room Amenities",
+      "pl": "Prysznic",
+      "en": "Shower",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_64",
+      "category": "Room Amenities",
+      "pl": "Wanna",
+      "en": "Bathtub",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_65",
+      "category": "Room Amenities",
+      "pl": "Ręcznik",
+      "en": "Towel",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_66",
+      "category": "Room Amenities",
+      "pl": "Szampon",
+      "en": "Shampoo",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_67",
+      "category": "Room Amenities",
+      "pl": "Mydło",
+      "en": "Soap",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_68",
+      "category": "Room Amenities",
+      "pl": "Papier toaletowy",
+      "en": "Toilet paper",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_69",
+      "category": "Room Amenities",
+      "pl": "Balkon",
+      "en": "Balcony",
+      "level": 6,
+      "gender": null
+    },
+    {
+      "id": "s4_70",
+      "category": "Room Amenities",
+      "pl": "Widok",
+      "en": "View",
       "level": 6,
       "gender": null
     }
