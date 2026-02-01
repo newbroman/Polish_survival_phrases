@@ -1,37 +1,345 @@
 {
-  "description": "Alfabet: Fundamenty",
+  "level": 0,
+  "description": "Alfabet & Digraphs: Polish Sounds",
   "phrases": [
-    { "pl": "A", "en": "ah", "word": "Auto", "e": "🚗" },
-    { "pl": "Ą", "en": "own", "word": "Mąka", "e": "🌾" },
-    { "pl": "B", "en": "b", "word": "But", "e": "👞" },
-    { "pl": "C", "en": "ts", "word": "Cukier", "e": "🍬" },
-    { "pl": "Ć", "en": "ch!", "word": "Ćma", "e": "🦋" },
-    { "pl": "D", "en": "d", "word": "Dom", "e": "🏠" },
-    { "pl": "E", "en": "eh", "word": "Ekran", "e": "📱" },
-    { "pl": "Ę", "en": "en", "word": "Gęś", "e": "🦢" },
-    { "pl": "F", "en": "f", "word": "Farba", "e": "🎨" },
-    { "pl": "G", "en": "g", "word": "Góra", "e": "🏔️" },
-    { "pl": "H", "en": "h", "word": "Herbata", "e": "🍵" },
-    { "pl": "I", "en": "ee", "word": "Imię", "e": "🆔" },
-    { "pl": "J", "en": "y", "word": "Jajko", "e": "🥚" },
-    { "pl": "K", "en": "k", "word": "Kot", "e": "🐱" },
-    { "pl": "L", "en": "l", "word": "Lampa", "e": "💡" },
-    { "pl": "Ł", "en": "w", "word": "Łódź", "e": "⛵" },
-    { "pl": "M", "en": "m", "word": "Mama", "e": "👩" },
-    { "pl": "N", "en": "n", "word": "Noc", "e": "🌙" },
-    { "pl": "Ń", "en": "ny", "word": "Koń", "e": "🐎" },
-    { "pl": "O", "en": "oh", "word": "Okno", "e": "🪟" },
-    { "pl": "Ó", "en": "oo", "word": "Ogród", "e": "🌳" },
-    { "pl": "P", "en": "p", "word": "Pies", "e": "🐶" },
-    { "pl": "R", "en": "r", "word": "Ręka", "e": "✋" },
-    { "pl": "S", "en": "s", "word": "Ser", "e": "🧀" },
-    { "pl": "Ś", "en": "sh!", "word": "Śnieg", "e": "❄️" },
-    { "pl": "T", "en": "t", "word": "Tak", "e": "👍" },
-    { "pl": "U", "en": "oo", "word": "Ucho", "e": "👂" },
-    { "pl": "W", "en": "v", "word": "Woda", "e": "💧" },
-    { "pl": "Y", "en": "i", "word": "Syn", "e": "👦" },
-    { "pl": "Z", "en": "z", "word": "Ząb", "e": "🦷" },
-    { "pl": "Ź", "en": "zh!", "word": "Źle", "e": "👎" },
-    { "pl": "Ż", "en": "zh", "word": "Żaba", "e": "🐸" }
+    {
+      "pl": "A",
+      "en": "ah",
+      "word": "Auto",
+      "e": "🚗"
+    },
+    {
+      "pl": "Ą",
+      "en": "own",
+      "word": "Mąka",
+      "e": "🌾"
+    },
+    {
+      "pl": "B",
+      "en": "b",
+      "word": "But",
+      "e": "👞"
+    },
+    {
+      "pl": "C",
+      "en": "ts",
+      "word": "Cukier",
+      "e": "🍬"
+    },
+    {
+      "pl": "Ć",
+      "en": "ch!",
+      "word": "Ćma",
+      "e": "🦋"
+    },
+    {
+      "pl": "D",
+      "en": "d",
+      "word": "Dom",
+      "e": "🏠"
+    },
+    {
+      "pl": "E",
+      "en": "eh",
+      "word": "Ekran",
+      "e": "📱"
+    },
+    {
+      "pl": "Ę",
+      "en": "en",
+      "word": "Gęś",
+      "e": "🦢"
+    },
+    {
+      "pl": "F",
+      "en": "f",
+      "word": "Farba",
+      "e": "🎨"
+    },
+    {
+      "pl": "G",
+      "en": "g",
+      "word": "Góra",
+      "e": "🏔️"
+    },
+    {
+      "pl": "H",
+      "en": "h",
+      "word": "Herbata",
+      "e": "🍵"
+    },
+    {
+      "pl": "I",
+      "en": "ee",
+      "word": "Imię",
+      "e": "🆔"
+    },
+    {
+      "pl": "J",
+      "en": "y",
+      "word": "Jajko",
+      "e": "🥚"
+    },
+    {
+      "pl": "K",
+      "en": "k",
+      "word": "Kot",
+      "e": "🐱"
+    },
+    {
+      "pl": "L",
+      "en": "l",
+      "word": "Lampa",
+      "e": "💡"
+    },
+    {
+      "pl": "Ł",
+      "en": "w",
+      "word": "Łódź",
+      "e": "⛵"
+    },
+    {
+      "pl": "M",
+      "en": "m",
+      "word": "Mama",
+      "e": "👩"
+    },
+    {
+      "pl": "N",
+      "en": "n",
+      "word": "Noc",
+      "e": "🌙"
+    },
+    {
+      "pl": "Ń",
+      "en": "ny",
+      "word": "Koń",
+      "e": "🐎"
+    },
+    {
+      "pl": "O",
+      "en": "oh",
+      "word": "Okno",
+      "e": "🪟"
+    },
+    {
+      "pl": "Ó",
+      "en": "oo",
+      "word": "Ogród",
+      "e": "🌳"
+    },
+    {
+      "pl": "P",
+      "en": "p",
+      "word": "Pies",
+      "e": "🐶"
+    },
+    {
+      "pl": "R",
+      "en": "r",
+      "word": "Ręka",
+      "e": "✋"
+    },
+    {
+      "pl": "S",
+      "en": "s",
+      "word": "Ser",
+      "e": "🧀"
+    },
+    {
+      "pl": "Ś",
+      "en": "sh!",
+      "word": "Śnieg",
+      "e": "❄️"
+    },
+    {
+      "pl": "T",
+      "en": "t",
+      "word": "Tak",
+      "e": "👍"
+    },
+    {
+      "pl": "U",
+      "en": "oo",
+      "word": "Ucho",
+      "e": "👂"
+    },
+    {
+      "pl": "W",
+      "en": "v",
+      "word": "Woda",
+      "e": "💧"
+    },
+    {
+      "pl": "Y",
+      "en": "i",
+      "word": "Syn",
+      "e": "👦"
+    },
+    {
+      "pl": "Z",
+      "en": "z",
+      "word": "Ząb",
+      "e": "🦷"
+    },
+    {
+      "pl": "Ź",
+      "en": "zh!",
+      "word": "Źle",
+      "e": "👎"
+    },
+    {
+      "pl": "Ż",
+      "en": "zh",
+      "word": "Żaba",
+      "e": "🐸"
+    },
+    {
+      "pl": "CZ",
+      "en": "ch",
+      "word": "Czas",
+      "e": "⏰",
+      "note": "time"
+    },
+    {
+      "pl": "CZ",
+      "en": "ch",
+      "word": "Czarny",
+      "e": "⬛",
+      "note": "black"
+    },
+    {
+      "pl": "CZ",
+      "en": "ch",
+      "word": "Często",
+      "e": "🔄",
+      "note": "often"
+    },
+    {
+      "pl": "CH",
+      "en": "kh",
+      "word": "Chleb",
+      "e": "🍞",
+      "note": "bread"
+    },
+    {
+      "pl": "CH",
+      "en": "kh",
+      "word": "Chory",
+      "e": "🤒",
+      "note": "sick"
+    },
+    {
+      "pl": "CH",
+      "en": "kh",
+      "word": "Chwila",
+      "e": "⏱️",
+      "note": "moment"
+    },
+    {
+      "pl": "SZ",
+      "en": "sh",
+      "word": "Szkoła",
+      "e": "🏫",
+      "note": "school"
+    },
+    {
+      "pl": "SZ",
+      "en": "sh",
+      "word": "Szybko",
+      "e": "⚡",
+      "note": "fast"
+    },
+    {
+      "pl": "SZ",
+      "en": "sh",
+      "word": "Szafa",
+      "e": "🚪",
+      "note": "wardrobe"
+    },
+    {
+      "pl": "RZ",
+      "en": "zh",
+      "word": "Rzeka",
+      "e": "🌊",
+      "note": "river"
+    },
+    {
+      "pl": "RZ",
+      "en": "zh",
+      "word": "Rzecz",
+      "e": "📦",
+      "note": "thing"
+    },
+    {
+      "pl": "RZ",
+      "en": "zh",
+      "word": "Rzadko",
+      "e": "🌙",
+      "note": "rarely"
+    },
+    {
+      "pl": "DZ",
+      "en": "dz",
+      "word": "Dzwon",
+      "e": "🔔",
+      "note": "bell"
+    },
+    {
+      "pl": "DZ",
+      "en": "dz",
+      "word": "Bardzo",
+      "e": "💯",
+      "note": "very"
+    },
+    {
+      "pl": "DZ",
+      "en": "dz",
+      "word": "Dzień",
+      "e": "☀️",
+      "note": "day"
+    },
+    {
+      "pl": "DŹ",
+      "en": "dj!",
+      "word": "Dźwig",
+      "e": "🏗️",
+      "note": "crane"
+    },
+    {
+      "pl": "DŹ",
+      "en": "dj!",
+      "word": "Dźwięk",
+      "e": "🔊",
+      "note": "sound"
+    },
+    {
+      "pl": "DŹ",
+      "en": "dj!",
+      "word": "Niedźwiedź",
+      "e": "🐻",
+      "note": "bear"
+    },
+    {
+      "pl": "DŻ",
+      "en": "j",
+      "word": "Dżem",
+      "e": "🍓",
+      "note": "jam"
+    },
+    {
+      "pl": "DŻ",
+      "en": "j",
+      "word": "Dżungla",
+      "e": "🌴",
+      "note": "jungle"
+    },
+    {
+      "pl": "DŻ",
+      "en": "j",
+      "word": "Dżinsy",
+      "e": "👖",
+      "note": "jeans"
+    }
   ]
 }

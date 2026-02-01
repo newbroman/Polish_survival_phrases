@@ -1,0 +1,496 @@
+{
+  "level": 0.1,
+  "description": "Pronunciation Practice: Common Sound Combinations",
+  "phrases": [
+    {
+      "id": "p01",
+      "category": "CZ Practice",
+      "pl": "Cztery",
+      "en": "Four",
+      "level": 0
+    },
+    {
+      "id": "p02",
+      "category": "CZ Practice",
+      "pl": "Człowiek",
+      "en": "Person",
+      "level": 0
+    },
+    {
+      "id": "p03",
+      "category": "CZ Practice",
+      "pl": "Cześć",
+      "en": "Hi",
+      "level": 0
+    },
+    {
+      "id": "p04",
+      "category": "CZ Practice",
+      "pl": "Czerwony",
+      "en": "Red",
+      "level": 0
+    },
+    {
+      "id": "p05",
+      "category": "CZ Practice",
+      "pl": "Coś",
+      "en": "Something",
+      "level": 0
+    },
+    {
+      "id": "p06",
+      "category": "SZ Practice",
+      "pl": "Dobry",
+      "en": "Good",
+      "level": 0
+    },
+    {
+      "id": "p07",
+      "category": "SZ Practice",
+      "pl": "Proszę",
+      "en": "Please",
+      "level": 0
+    },
+    {
+      "id": "p08",
+      "category": "SZ Practice",
+      "pl": "Można",
+      "en": "One can / It's possible",
+      "level": 0
+    },
+    {
+      "id": "p09",
+      "category": "SZ Practice",
+      "pl": "Nasz",
+      "en": "Our",
+      "level": 0
+    },
+    {
+      "id": "p10",
+      "category": "SZ Practice",
+      "pl": "Jeszcze",
+      "en": "Still / Yet",
+      "level": 0
+    },
+    {
+      "id": "p11",
+      "category": "RZ Practice",
+      "pl": "Dobrze",
+      "en": "Well / Good",
+      "level": 0
+    },
+    {
+      "id": "p12",
+      "category": "RZ Practice",
+      "pl": "Może",
+      "en": "Maybe",
+      "level": 0
+    },
+    {
+      "id": "p13",
+      "category": "RZ Practice",
+      "pl": "Trzeba",
+      "en": "One must / Need to",
+      "level": 0
+    },
+    {
+      "id": "p14",
+      "category": "RZ Practice",
+      "pl": "Morze",
+      "en": "Sea",
+      "level": 0
+    },
+    {
+      "id": "p15",
+      "category": "RZ Practice",
+      "pl": "Twarz",
+      "en": "Face",
+      "level": 0
+    },
+    {
+      "id": "p16",
+      "category": "CH Practice",
+      "pl": "Chcę",
+      "en": "I want",
+      "level": 0
+    },
+    {
+      "id": "p17",
+      "category": "CH Practice",
+      "pl": "Cicho",
+      "en": "Quiet",
+      "level": 0
+    },
+    {
+      "id": "p18",
+      "category": "CH Practice",
+      "pl": "Mucha",
+      "en": "Fly",
+      "level": 0
+    },
+    {
+      "id": "p19",
+      "category": "CH Practice",
+      "pl": "Suchy",
+      "en": "Dry",
+      "level": 0
+    },
+    {
+      "id": "p20",
+      "category": "CH Practice",
+      "pl": "Dach",
+      "en": "Roof",
+      "level": 0
+    },
+    {
+      "id": "p21",
+      "category": "Mixed Practice",
+      "pl": "Dzisiaj",
+      "en": "Today",
+      "level": 0
+    },
+    {
+      "id": "p22",
+      "category": "Mixed Practice",
+      "pl": "Dzięki",
+      "en": "Thanks",
+      "level": 0
+    },
+    {
+      "id": "p23",
+      "category": "Mixed Practice",
+      "pl": "Wszystko",
+      "en": "Everything",
+      "level": 0
+    },
+    {
+      "id": "p24",
+      "category": "Mixed Practice",
+      "pl": "Przepraszam",
+      "en": "Sorry / Excuse me",
+      "level": 0
+    },
+    {
+      "id": "p25",
+      "category": "Mixed Practice",
+      "pl": "Oczywiście",
+      "en": "Of course",
+      "level": 0
+    },
+    {
+      "id": "p26",
+      "category": "Challenging",
+      "pl": "Szczęście",
+      "en": "Happiness / Luck",
+      "level": 0
+    },
+    {
+      "id": "p27",
+      "category": "Challenging",
+      "pl": "Pszczoła",
+      "en": "Bee",
+      "level": 0
+    },
+    {
+      "id": "p28",
+      "category": "Challenging",
+      "pl": "Chrząszcz",
+      "en": "Beetle",
+      "level": 0
+    },
+    {
+      "id": "p29",
+      "category": "Challenging",
+      "pl": "Grzecznie",
+      "en": "Politely",
+      "level": 0
+    },
+    {
+      "id": "p30",
+      "category": "Challenging",
+      "pl": "Zmęczony",
+      "en": "Tired",
+      "level": 0
+    },
+    {
+      "id": "p31",
+      "category": "Survival Words",
+      "pl": "Gdzie",
+      "en": "Where",
+      "level": 0
+    },
+    {
+      "id": "p32",
+      "category": "Survival Words",
+      "pl": "Który",
+      "en": "Which",
+      "level": 0
+    },
+    {
+      "id": "p33",
+      "category": "Survival Words",
+      "pl": "Potrzebuję",
+      "en": "I need",
+      "level": 0
+    },
+    {
+      "id": "p34",
+      "category": "Survival Words",
+      "pl": "Szukam",
+      "en": "I'm looking for",
+      "level": 0
+    },
+    {
+      "id": "p35",
+      "category": "Survival Words",
+      "pl": "Rozumiem",
+      "en": "I understand",
+      "level": 0
+    },
+    {
+      "id": "p36",
+      "category": "Numbers",
+      "pl": "Trzy",
+      "en": "Three",
+      "level": 0
+    },
+    {
+      "id": "p37",
+      "category": "Numbers",
+      "pl": "Dziesięć",
+      "en": "Ten",
+      "level": 0
+    },
+    {
+      "id": "p38",
+      "category": "Numbers",
+      "pl": "Dwadzieścia",
+      "en": "Twenty",
+      "level": 0
+    },
+    {
+      "id": "p39",
+      "category": "Numbers",
+      "pl": "Trzydzieści",
+      "en": "Thirty",
+      "level": 0
+    },
+    {
+      "id": "p40",
+      "category": "Numbers",
+      "pl": "Czterdzieści",
+      "en": "Forty",
+      "level": 0
+    },
+    {
+      "id": "p41",
+      "category": "Common Phrases",
+      "pl": "Nie rozumiem",
+      "en": "I don't understand",
+      "level": 0
+    },
+    {
+      "id": "p42",
+      "category": "Common Phrases",
+      "pl": "Czy mówisz po angielsku?",
+      "en": "Do you speak English?",
+      "level": 0
+    },
+    {
+      "id": "p43",
+      "category": "Common Phrases",
+      "pl": "Jak się masz?",
+      "en": "How are you?",
+      "level": 0
+    },
+    {
+      "id": "p44",
+      "category": "Common Phrases",
+      "pl": "Miło cię poznać",
+      "en": "Nice to meet you",
+      "level": 0
+    },
+    {
+      "id": "p45",
+      "category": "Common Phrases",
+      "pl": "Do widzenia",
+      "en": "Goodbye",
+      "level": 0
+    },
+    {
+      "id": "p46",
+      "category": "Days",
+      "pl": "Poniedziałek",
+      "en": "Monday",
+      "level": 0
+    },
+    {
+      "id": "p47",
+      "category": "Days",
+      "pl": "Środa",
+      "en": "Wednesday",
+      "level": 0
+    },
+    {
+      "id": "p48",
+      "category": "Days",
+      "pl": "Czwartek",
+      "en": "Thursday",
+      "level": 0
+    },
+    {
+      "id": "p49",
+      "category": "Days",
+      "pl": "Piątek",
+      "en": "Friday",
+      "level": 0
+    },
+    {
+      "id": "p50",
+      "category": "Days",
+      "pl": "Niedziela",
+      "en": "Sunday",
+      "level": 0
+    },
+    {
+      "id": "p51",
+      "category": "Food",
+      "pl": "Czekolada",
+      "en": "Chocolate",
+      "level": 0
+    },
+    {
+      "id": "p52",
+      "category": "Food",
+      "pl": "Ciastko",
+      "en": "Cookie",
+      "level": 0
+    },
+    {
+      "id": "p53",
+      "category": "Food",
+      "pl": "Herbata",
+      "en": "Tea",
+      "level": 0
+    },
+    {
+      "id": "p54",
+      "category": "Food",
+      "pl": "Warzyw",
+      "en": "Vegetables",
+      "level": 0
+    },
+    {
+      "id": "p55",
+      "category": "Food",
+      "pl": "Owoce",
+      "en": "Fruits",
+      "level": 0
+    },
+    {
+      "id": "p56",
+      "category": "Places",
+      "pl": "Dworzec",
+      "en": "Train station",
+      "level": 0
+    },
+    {
+      "id": "p57",
+      "category": "Places",
+      "pl": "Ulica",
+      "en": "Street",
+      "level": 0
+    },
+    {
+      "id": "p58",
+      "category": "Places",
+      "pl": "Rynek",
+      "en": "Market square",
+      "level": 0
+    },
+    {
+      "id": "p59",
+      "category": "Places",
+      "pl": "Kościół",
+      "en": "Church",
+      "level": 0
+    },
+    {
+      "id": "p60",
+      "category": "Places",
+      "pl": "Apteka",
+      "en": "Pharmacy",
+      "level": 0
+    },
+    {
+      "id": "p61",
+      "category": "Verbs",
+      "pl": "Mówić",
+      "en": "To speak",
+      "level": 0
+    },
+    {
+      "id": "p62",
+      "category": "Verbs",
+      "pl": "Czytać",
+      "en": "To read",
+      "level": 0
+    },
+    {
+      "id": "p63",
+      "category": "Verbs",
+      "pl": "Pisać",
+      "en": "To write",
+      "level": 0
+    },
+    {
+      "id": "p64",
+      "category": "Verbs",
+      "pl": "Słuchać",
+      "en": "To listen",
+      "level": 0
+    },
+    {
+      "id": "p65",
+      "category": "Verbs",
+      "pl": "Uczyć się",
+      "en": "To learn",
+      "level": 0
+    },
+    {
+      "id": "p66",
+      "category": "Adjectives",
+      "pl": "Ładny",
+      "en": "Nice / Pretty",
+      "level": 0
+    },
+    {
+      "id": "p67",
+      "category": "Adjectives",
+      "pl": "Brzydki",
+      "en": "Ugly",
+      "level": 0
+    },
+    {
+      "id": "p68",
+      "category": "Adjectives",
+      "pl": "Trudny",
+      "en": "Difficult",
+      "level": 0
+    },
+    {
+      "id": "p69",
+      "category": "Adjectives",
+      "pl": "Łatwy",
+      "en": "Easy",
+      "level": 0
+    },
+    {
+      "id": "p70",
+      "category": "Adjectives",
+      "pl": "Ważny",
+      "en": "Important",
+      "level": 0
+    }
+  ]
+}
