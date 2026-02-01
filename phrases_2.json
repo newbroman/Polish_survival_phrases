@@ -8,490 +8,572 @@
       "category": "Directions",
       "pl": "W lewo",
       "en": "Left / To the left",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_02",
       "category": "Directions",
       "pl": "W prawo",
       "en": "Right / To the right",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_03",
       "category": "Directions",
       "pl": "Prosto",
       "en": "Straight ahead",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_04",
       "category": "Directions",
       "pl": "Z powrotem",
       "en": "Back / Return",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_05",
       "category": "Directions",
       "pl": "Tutaj",
       "en": "Here",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_06",
       "category": "Directions",
       "pl": "Tam",
       "en": "There",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_07",
       "category": "Directions",
       "pl": "Blisko",
       "en": "Close / Near",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_08",
       "category": "Directions",
       "pl": "Daleko",
       "en": "Far",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_09",
       "category": "Directions",
       "pl": "Obok",
       "en": "Next to",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_10",
       "category": "Directions",
       "pl": "Naprzeciwko",
       "en": "Opposite / Across from",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_11",
       "category": "Directions",
       "pl": "Za rogiem",
       "en": "Around the corner",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_12",
       "category": "Directions",
       "pl": "Na końcu ulicy",
       "en": "At the end of the street",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_13",
       "category": "Directions",
       "pl": "Pierwsza ulica",
       "en": "First street",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_14",
       "category": "Directions",
       "pl": "Druga ulica",
       "en": "Second street",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_15",
       "category": "Directions",
       "pl": "Przy rondzie",
       "en": "At the roundabout",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_16",
       "category": "Navigation Help",
       "pl": "Jestem zagubiony/zagubiona",
       "en": "I'm lost",
-      "level": 2
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem zagubiony",
+        "f": "zagubiona"
+      }
     },
     {
       "id": "s2_17",
       "category": "Navigation Help",
       "pl": "Jak dostać się do...?",
       "en": "How do I get to...?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_18",
       "category": "Navigation Help",
       "pl": "Czy to jest droga do...?",
       "en": "Is this the way to...?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_19",
       "category": "Navigation Help",
       "pl": "Jak daleko to jest?",
       "en": "How far is it?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_20",
       "category": "Navigation Help",
       "pl": "Czy mogę iść piechotą?",
       "en": "Can I walk there?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_21",
       "category": "Navigation Help",
       "pl": "Ile czasu zajmie dojście?",
       "en": "How long does it take to walk?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_22",
       "category": "Navigation Help",
       "pl": "Proszę pokazać na mapie",
       "en": "Please show me on the map",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_23",
       "category": "Navigation Help",
       "pl": "Czy możesz mnie zaprowadzić?",
       "en": "Can you take me there?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_24",
       "category": "Navigation Help",
       "pl": "Gdzie jestem?",
       "en": "Where am I?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_25",
       "category": "Navigation Help",
       "pl": "Jaka to ulica?",
       "en": "What street is this?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_26",
       "category": "Navigation Help",
       "pl": "Szukam...",
       "en": "I'm looking for...",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_27",
       "category": "Navigation Help",
       "pl": "Czy to jest w pobliżu?",
       "en": "Is this nearby?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_28",
       "category": "Navigation Help",
       "pl": "Muszę wrócić do hotelu",
       "en": "I need to get back to my hotel",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_29",
       "category": "Navigation Help",
       "pl": "Adres to...",
       "en": "The address is...",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_30",
       "category": "Navigation Help",
       "pl": "Czy jest mapa?",
       "en": "Is there a map?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_31",
       "category": "Public Transport",
       "pl": "Dworzec kolejowy",
       "en": "Train station",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_32",
       "category": "Public Transport",
       "pl": "Dworzec autobusowy",
       "en": "Bus station",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_33",
       "category": "Public Transport",
       "pl": "Przystanek autobusowy",
       "en": "Bus stop",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_34",
       "category": "Public Transport",
       "pl": "Metro",
       "en": "Metro / Subway",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_35",
       "category": "Public Transport",
       "pl": "Tramwaj",
       "en": "Tram",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_36",
       "category": "Public Transport",
       "pl": "Bilet",
       "en": "Ticket",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_37",
       "category": "Public Transport",
       "pl": "Bilet do...",
       "en": "Ticket to...",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_38",
       "category": "Public Transport",
       "pl": "Ile kosztuje bilet?",
       "en": "How much is the ticket?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_39",
       "category": "Public Transport",
       "pl": "Gdzie kupić bilet?",
       "en": "Where to buy a ticket?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_40",
       "category": "Public Transport",
       "pl": "Jeden bilet, proszę",
       "en": "One ticket, please",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_41",
       "category": "Public Transport",
       "pl": "Bilet powrotny",
       "en": "Return ticket",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_42",
       "category": "Public Transport",
       "pl": "Bilet w jedną stronę",
       "en": "One-way ticket",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_43",
       "category": "Public Transport",
       "pl": "O której odjeżdża?",
       "en": "What time does it leave?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_44",
       "category": "Public Transport",
       "pl": "O której przyjeżdża?",
       "en": "What time does it arrive?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_45",
       "category": "Public Transport",
       "pl": "Który autobus do...?",
       "en": "Which bus to...?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_46",
       "category": "Public Transport",
       "pl": "Czy ten autobus jedzie do...?",
       "en": "Does this bus go to...?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_47",
       "category": "Public Transport",
       "pl": "Następny przystanek",
       "en": "Next stop",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_48",
       "category": "Public Transport",
       "pl": "Proszę się zatrzymać tutaj",
       "en": "Please stop here",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_49",
       "category": "Public Transport",
       "pl": "Czy to jest ostatni przystanek?",
       "en": "Is this the last stop?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_50",
       "category": "Public Transport",
       "pl": "Rozkład jazdy",
       "en": "Timetable / Schedule",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_51",
       "category": "Taxi",
       "pl": "Taxi!",
       "en": "Taxi!",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_52",
       "category": "Taxi",
       "pl": "Do centrum, proszę",
       "en": "To the center, please",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_53",
       "category": "Taxi",
       "pl": "Do tego adresu",
       "en": "To this address",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_54",
       "category": "Taxi",
       "pl": "Ile będzie kosztować?",
       "en": "How much will it cost?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_55",
       "category": "Taxi",
       "pl": "Proszę włączyć taksometr",
       "en": "Please turn on the meter",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_56",
       "category": "Taxi",
       "pl": "Zatrzymaj się tutaj",
       "en": "Stop here",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_57",
       "category": "Taxi",
       "pl": "Proszę czekać",
       "en": "Please wait",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_58",
       "category": "Taxi",
       "pl": "Ile płacę?",
       "en": "How much do I pay?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_59",
       "category": "Taxi",
       "pl": "Reszta dla Pana/Pani",
       "en": "Keep the change",
-      "level": 2
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Reszta dla Pana",
+        "f": "Pani"
+      }
     },
     {
       "id": "s2_60",
       "category": "Taxi",
       "pl": "Czy mogę dostać paragon?",
       "en": "Can I get a receipt?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_61",
       "category": "Airport & Travel",
       "pl": "Lotnisko",
       "en": "Airport",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_62",
       "category": "Airport & Travel",
       "pl": "Gdzie jest odbiór bagażu?",
       "en": "Where is baggage claim?",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_63",
       "category": "Airport & Travel",
       "pl": "Zgubiłem/Zgubiłam bagaż",
       "en": "I lost my luggage",
-      "level": 2
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Zgubiłem",
+        "f": "Zgubiłam bagaż"
+      }
     },
     {
       "id": "s2_64",
       "category": "Airport & Travel",
       "pl": "Paszyport, proszę",
       "en": "Passport, please",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_65",
       "category": "Airport & Travel",
       "pl": "Karta pokładowa",
       "en": "Boarding pass",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_66",
       "category": "Airport & Travel",
       "pl": "Bramka numer...",
       "en": "Gate number...",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_67",
       "category": "Airport & Travel",
       "pl": "Opóźnienie",
       "en": "Delay",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_68",
       "category": "Airport & Travel",
       "pl": "Odprawa bagażu",
       "en": "Check-in / Baggage check",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_69",
       "category": "Airport & Travel",
       "pl": "Kontrola bezpieczeństwa",
       "en": "Security check",
-      "level": 2
+      "level": 2,
+      "gender": null
     },
     {
       "id": "s2_70",
       "category": "Airport & Travel",
       "pl": "Wyjście",
       "en": "Exit",
-      "level": 2
+      "level": 2,
+      "gender": null
     }
   ]
 }

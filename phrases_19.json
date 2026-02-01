@@ -8,490 +8,560 @@
       "category": "Connectors",
       "pl": "I",
       "en": "And",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_02",
       "category": "Connectors",
       "pl": "Ale",
       "en": "But",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_03",
       "category": "Connectors",
       "pl": "Lub",
       "en": "Or",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_04",
       "category": "Connectors",
       "pl": "Bo",
       "en": "Because",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_05",
       "category": "Connectors",
       "pl": "Więc",
       "en": "So / Therefore",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_06",
       "category": "Connectors",
       "pl": "Jeśli",
       "en": "If",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_07",
       "category": "Connectors",
       "pl": "Jeżeli",
       "en": "If",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_08",
       "category": "Connectors",
       "pl": "Gdy",
       "en": "When",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_09",
       "category": "Connectors",
       "pl": "Kiedy",
       "en": "When",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_10",
       "category": "Connectors",
       "pl": "Ponieważ",
       "en": "Because",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_11",
       "category": "Connectors",
       "pl": "Dlatego",
       "en": "That's why / Therefore",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_12",
       "category": "Connectors",
       "pl": "Jednak",
       "en": "However",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_13",
       "category": "Connectors",
       "pl": "Mimo to",
       "en": "Nevertheless",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_14",
       "category": "Connectors",
       "pl": "Chociaż",
       "en": "Although",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_15",
       "category": "Connectors",
       "pl": "Pomimo",
       "en": "Despite",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_16",
       "category": "Connectors",
       "pl": "Zatem",
       "en": "Thus / So",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_17",
       "category": "Connectors",
       "pl": "Również",
       "en": "Also",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_18",
       "category": "Connectors",
       "pl": "Także",
       "en": "Also",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_19",
       "category": "Connectors",
       "pl": "Ponadto",
       "en": "Moreover / Furthermore",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_20",
       "category": "Connectors",
       "pl": "Oprócz tego",
       "en": "Besides that",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_21",
       "category": "Connectors",
       "pl": "Z drugiej strony",
       "en": "On the other hand",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_22",
       "category": "Connectors",
       "pl": "Z jednej strony",
       "en": "On one hand",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_23",
       "category": "Connectors",
       "pl": "Po pierwsze",
       "en": "First of all / Firstly",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_24",
       "category": "Connectors",
       "pl": "Po drugie",
       "en": "Secondly",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_25",
       "category": "Connectors",
       "pl": "Po trzecie",
       "en": "Thirdly",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_26",
       "category": "Connectors",
       "pl": "W końcu",
       "en": "Finally / Eventually",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_27",
       "category": "Connectors",
       "pl": "Na koniec",
       "en": "At the end / Finally",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_28",
       "category": "Connectors",
       "pl": "Podsumowując",
       "en": "To sum up / In summary",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_29",
       "category": "Connectors",
       "pl": "Ogólnie",
       "en": "Generally / Overall",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_30",
       "category": "Connectors",
       "pl": "Szczególnie",
       "en": "Especially / Particularly",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_31",
       "category": "Advanced",
       "pl": "Innymi słowy",
       "en": "In other words",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_32",
       "category": "Advanced",
       "pl": "Chodzi o to, że...",
       "en": "The point is that...",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_33",
       "category": "Advanced",
       "pl": "Mam na myśli...",
       "en": "I mean...",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_34",
       "category": "Advanced",
       "pl": "To znaczy...",
       "en": "That is... / I mean...",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_35",
       "category": "Advanced",
       "pl": "Na przykład",
       "en": "For example",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_36",
       "category": "Advanced",
       "pl": "Między innymi",
       "en": "Among others",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_37",
       "category": "Advanced",
       "pl": "W każdym razie",
       "en": "In any case / Anyway",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_38",
       "category": "Advanced",
       "pl": "W takim razie",
       "en": "In that case",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_39",
       "category": "Advanced",
       "pl": "W przeciwnym razie",
       "en": "Otherwise",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_40",
       "category": "Advanced",
       "pl": "W rzeczywistości",
       "en": "In reality / Actually",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_41",
       "category": "Advanced",
       "pl": "Właściwie",
       "en": "Actually / In fact",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_42",
       "category": "Advanced",
       "pl": "Szczerze mówiąc",
       "en": "To be honest / Frankly",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_43",
       "category": "Advanced",
       "pl": "Prawdę mówiąc",
       "en": "To tell the truth",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_44",
       "category": "Advanced",
       "pl": "Jeśli chodzi o...",
       "en": "When it comes to...",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_45",
       "category": "Advanced",
       "pl": "Odnośnie...",
       "en": "Regarding...",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_46",
       "category": "Advanced",
       "pl": "Jeśli chodzi o mnie",
       "en": "As for me",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_47",
       "category": "Advanced",
       "pl": "Z mojego punktu widzenia",
       "en": "From my point of view",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_48",
       "category": "Advanced",
       "pl": "Według mnie",
       "en": "According to me",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_49",
       "category": "Advanced",
       "pl": "Przede wszystkim",
       "en": "Above all / First and foremost",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_50",
       "category": "Advanced",
       "pl": "Przede wszystkim",
       "en": "Most importantly",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_51",
       "category": "Adverbs",
       "pl": "Bardzo",
       "en": "Very",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_52",
       "category": "Adverbs",
       "pl": "Dużo",
       "en": "A lot / Much",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_53",
       "category": "Adverbs",
       "pl": "Mało",
       "en": "Little / Few",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_54",
       "category": "Adverbs",
       "pl": "Trochę",
       "en": "A bit / A little",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_55",
       "category": "Adverbs",
       "pl": "Zbyt",
       "en": "Too / Too much",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_56",
       "category": "Adverbs",
       "pl": "Wystarczająco",
       "en": "Enough / Sufficiently",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_57",
       "category": "Adverbs",
       "pl": "Szybko",
       "en": "Quickly / Fast",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_58",
       "category": "Adverbs",
       "pl": "Wolno",
       "en": "Slowly",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_59",
       "category": "Adverbs",
       "pl": "Dobrze",
       "en": "Well / Good",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_60",
       "category": "Adverbs",
       "pl": "Źle",
       "en": "Badly / Bad",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_61",
       "category": "Adverbs",
       "pl": "Łatwo",
       "en": "Easily",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_62",
       "category": "Adverbs",
       "pl": "Trudno",
       "en": "Difficultly / Hard",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_63",
       "category": "Adverbs",
       "pl": "Naprawdę",
       "en": "Really / Truly",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_64",
       "category": "Adverbs",
       "pl": "Prawie",
       "en": "Almost / Nearly",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_65",
       "category": "Adverbs",
       "pl": "Całkowicie",
       "en": "Completely / Totally",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_66",
       "category": "Adverbs",
       "pl": "Zupełnie",
       "en": "Completely / Quite",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_67",
       "category": "Adverbs",
       "pl": "Absolutnie",
       "en": "Absolutely",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_68",
       "category": "Adverbs",
       "pl": "Pewnie",
       "en": "Probably / Surely",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_69",
       "category": "Adverbs",
       "pl": "Na pewno",
       "en": "For sure / Certainly",
-      "level": 19
+      "level": 19,
+      "gender": null
     },
     {
       "id": "a19_70",
       "category": "Adverbs",
       "pl": "Oczywiście",
       "en": "Obviously / Of course",
-      "level": 19
+      "level": 19,
+      "gender": null
     }
   ]
 }

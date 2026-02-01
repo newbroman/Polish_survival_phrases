@@ -8,490 +8,564 @@
       "category": "Holidays",
       "pl": "Święta",
       "en": "Holidays",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_02",
       "category": "Holidays",
       "pl": "Boże Narodzenie",
       "en": "Christmas",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_03",
       "category": "Holidays",
       "pl": "Wigilia",
       "en": "Christmas Eve",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_04",
       "category": "Holidays",
       "pl": "Wielkanoc",
       "en": "Easter",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_05",
       "category": "Holidays",
       "pl": "Nowy Rok",
       "en": "New Year",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_06",
       "category": "Holidays",
       "pl": "Sylwester",
       "en": "New Year's Eve",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_07",
       "category": "Holidays",
       "pl": "Wszystkich Świętych",
       "en": "All Saints' Day",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_08",
       "category": "Holidays",
       "pl": "Święto Niepodległości",
       "en": "Independence Day",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_09",
       "category": "Holidays",
       "pl": "Konstytucja 3 Maja",
       "en": "Constitution Day (May 3rd)",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_10",
       "category": "Holidays",
       "pl": "Andrzejki",
       "en": "St. Andrew's Day",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_11",
       "category": "Holidays",
       "pl": "Tłusty Czwartek",
       "en": "Fat Thursday",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_12",
       "category": "Holidays",
       "pl": "Wielki Post",
       "en": "Lent",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_13",
       "category": "Holidays",
       "pl": "Śmigus-Dyngus",
       "en": "Wet Monday (Easter Monday)",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_14",
       "category": "Holidays",
       "pl": "Dzień Babci",
       "en": "Grandmother's Day",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_15",
       "category": "Holidays",
       "pl": "Dzień Dziadka",
       "en": "Grandfather's Day",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_16",
       "category": "Traditions",
       "pl": "Tradycja",
       "en": "Tradition",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_17",
       "category": "Traditions",
       "pl": "Zwyczaj",
       "en": "Custom",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_18",
       "category": "Traditions",
       "pl": "Gościnność",
       "en": "Hospitality",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_19",
       "category": "Traditions",
       "pl": "Opłatek",
       "en": "Christmas wafer",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_20",
       "category": "Traditions",
       "pl": "Dzielenie się opłatkiem",
       "en": "Sharing the Christmas wafer",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_21",
       "category": "Traditions",
       "pl": "Kolęda",
       "en": "Christmas carol",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_22",
       "category": "Traditions",
       "pl": "Choinka",
       "en": "Christmas tree",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_23",
       "category": "Traditions",
       "pl": "Prezenty",
       "en": "Gifts",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_24",
       "category": "Traditions",
       "pl": "Pisanki",
       "en": "Decorated Easter eggs",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_25",
       "category": "Traditions",
       "pl": "Koszyczek wielkanocny",
       "en": "Easter basket",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_26",
       "category": "Traditions",
       "pl": "Śledź",
       "en": "Herring",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_27",
       "category": "Traditions",
       "pl": "Barszcz",
       "en": "Beet soup",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_28",
       "category": "Traditions",
       "pl": "Karp",
       "en": "Carp",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_29",
       "category": "Traditions",
       "pl": "Dwanaście potraw",
       "en": "Twelve dishes (Christmas Eve)",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_30",
       "category": "Traditions",
       "pl": "Pączki",
       "en": "Donuts",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_31",
       "category": "Traditions",
       "pl": "Faworki",
       "en": "Angel wings (pastry)",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_32",
       "category": "Traditions",
       "pl": "Imieniny",
       "en": "Name day",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_33",
       "category": "Traditions",
       "pl": "Wszystkiego najlepszego z okazji imienin!",
       "en": "Happy name day!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_34",
       "category": "Traditions",
       "pl": "Sto lat!",
       "en": "May you live 100 years! (birthday song)",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_35",
       "category": "Traditions",
       "pl": "Na zdrowie!",
       "en": "Cheers! / Bless you!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_36",
       "category": "Cultural",
       "pl": "Polska",
       "en": "Poland",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_37",
       "category": "Cultural",
       "pl": "Polski",
       "en": "Polish",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_38",
       "category": "Cultural",
       "pl": "Polak/Polka",
       "en": "Polish person",
-      "level": 16
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Polak",
+        "f": "Polka"
+      }
     },
     {
       "id": "a16_39",
       "category": "Cultural",
       "pl": "Kultura",
       "en": "Culture",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_40",
       "category": "Cultural",
       "pl": "Historia",
       "en": "History",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_41",
       "category": "Cultural",
       "pl": "Kościół",
       "en": "Church",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_42",
       "category": "Cultural",
       "pl": "Msza",
       "en": "Mass (church service)",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_43",
       "category": "Cultural",
       "pl": "Religia",
       "en": "Religion",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_44",
       "category": "Cultural",
       "pl": "Katolicki",
       "en": "Catholic",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_45",
       "category": "Cultural",
       "pl": "Papież",
       "en": "Pope",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_46",
       "category": "Cultural",
       "pl": "Jan Paweł II",
       "en": "John Paul II",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_47",
       "category": "Cultural",
       "pl": "Solidarność",
       "en": "Solidarity",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_48",
       "category": "Cultural",
       "pl": "Hymn narodowy",
       "en": "National anthem",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_49",
       "category": "Cultural",
       "pl": "Flaga",
       "en": "Flag",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_50",
       "category": "Cultural",
       "pl": "Godło",
       "en": "Coat of arms / Emblem",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_51",
       "category": "Cultural",
       "pl": "Orzeł biały",
       "en": "White eagle (Polish symbol)",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_52",
       "category": "Cultural",
       "pl": "Warszawa",
       "en": "Warsaw",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_53",
       "category": "Cultural",
       "pl": "Kraków",
       "en": "Krakow",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_54",
       "category": "Cultural",
       "pl": "Wawel",
       "en": "Wawel (castle)",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_55",
       "category": "Cultural",
       "pl": "Rynek Główny",
       "en": "Main Market Square",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_56",
       "category": "Expressions",
       "pl": "Sto lat!",
       "en": "100 years! (birthday wish)",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_57",
       "category": "Expressions",
       "pl": "Smacznego!",
       "en": "Enjoy your meal!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_58",
       "category": "Expressions",
       "pl": "Na zdrowie!",
       "en": "Cheers! / Bless you!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_59",
       "category": "Expressions",
       "pl": "Powodzenia!",
       "en": "Good luck!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_60",
       "category": "Expressions",
       "pl": "Gratulacje!",
       "en": "Congratulations!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_61",
       "category": "Expressions",
       "pl": "Współczuję",
       "en": "I'm sorry for your loss / My condolences",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_62",
       "category": "Expressions",
       "pl": "Wesołych Świąt!",
       "en": "Merry Christmas!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_63",
       "category": "Expressions",
       "pl": "Szczęśliwego Nowego Roku!",
       "en": "Happy New Year!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_64",
       "category": "Expressions",
       "pl": "Wesołego Alleluja!",
       "en": "Happy Easter!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_65",
       "category": "Expressions",
       "pl": "Wszystkiego najlepszego!",
       "en": "All the best!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_66",
       "category": "Expressions",
       "pl": "Trzymaj się!",
       "en": "Take care!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_67",
       "category": "Expressions",
       "pl": "Do usłyszenia!",
       "en": "Talk to you later!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_68",
       "category": "Expressions",
       "pl": "Miłego dnia!",
       "en": "Have a nice day!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_69",
       "category": "Expressions",
       "pl": "Miłego weekendu!",
       "en": "Have a nice weekend!",
-      "level": 16
+      "level": 16,
+      "gender": null
     },
     {
       "id": "a16_70",
       "category": "Expressions",
       "pl": "Pozdrawiam serdecznie",
       "en": "Warm regards",
-      "level": 16
+      "level": 16,
+      "gender": null
     }
   ]
 }

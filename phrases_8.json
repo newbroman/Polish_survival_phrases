@@ -8,490 +8,600 @@
       "category": "Greetings",
       "pl": "Cześć",
       "en": "Hi / Hello (informal)",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_02",
       "category": "Greetings",
       "pl": "Dzień dobry",
       "en": "Good morning / Good day (formal)",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_03",
       "category": "Greetings",
       "pl": "Dobry wieczór",
       "en": "Good evening",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_04",
       "category": "Greetings",
       "pl": "Dobranoc",
       "en": "Good night",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_05",
       "category": "Greetings",
       "pl": "Do widzenia",
       "en": "Goodbye (formal)",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_06",
       "category": "Greetings",
       "pl": "Cześć (goodbye)",
       "en": "Bye (informal)",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_07",
       "category": "Greetings",
       "pl": "Do zobaczenia",
       "en": "See you",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_08",
       "category": "Greetings",
       "pl": "Jak się masz?",
       "en": "How are you? (informal)",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_09",
       "category": "Greetings",
       "pl": "Jak się Pan/Pani miewa?",
       "en": "How are you? (formal)",
-      "level": 8
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Jak się Pan",
+        "f": "Pani miewa?"
+      }
     },
     {
       "id": "p8_10",
       "category": "Greetings",
       "pl": "Dobrze, dziękuję",
       "en": "Good, thank you",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_11",
       "category": "Greetings",
       "pl": "A Pan/Pani?",
       "en": "And you? (formal)",
-      "level": 8
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "A Pan",
+        "f": "Pani?"
+      }
     },
     {
       "id": "p8_12",
       "category": "Greetings",
       "pl": "A Ty?",
       "en": "And you? (informal)",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_13",
       "category": "Greetings",
       "pl": "Miło cię poznać",
       "en": "Nice to meet you (informal)",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_14",
       "category": "Greetings",
       "pl": "Miło Pana/Panią poznać",
       "en": "Nice to meet you (formal)",
-      "level": 8
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Miło Pana",
+        "f": "Panią poznać"
+      }
     },
     {
       "id": "p8_15",
       "category": "Greetings",
       "pl": "Jak się nazywasz?",
       "en": "What's your name? (informal)",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_16",
       "category": "Greetings",
       "pl": "Jak Pan/Pani ma na imię?",
       "en": "What's your name? (formal)",
-      "level": 8
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Jak Pan",
+        "f": "Pani ma na imię?"
+      }
     },
     {
       "id": "p8_17",
       "category": "Greetings",
       "pl": "Nazywam się...",
       "en": "My name is...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_18",
       "category": "Greetings",
       "pl": "Jestem...",
       "en": "I am...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_19",
       "category": "Greetings",
       "pl": "To jest...",
       "en": "This is...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_20",
       "category": "Greetings",
       "pl": "Poznaj...",
       "en": "Meet...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_21",
       "category": "Nationality",
       "pl": "Skąd jesteś?",
       "en": "Where are you from?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_22",
       "category": "Nationality",
       "pl": "Jestem z...",
       "en": "I'm from...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_23",
       "category": "Nationality",
       "pl": "Jestem Amerykaninem/Amerykanką",
       "en": "I'm American",
-      "level": 8
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem Amerykaninem",
+        "f": "Amerykanką"
+      }
     },
     {
       "id": "p8_24",
       "category": "Nationality",
       "pl": "Jestem Anglikiem/Angielką",
       "en": "I'm English",
-      "level": 8
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem Anglikiem",
+        "f": "Angielką"
+      }
     },
     {
       "id": "p8_25",
       "category": "Nationality",
       "pl": "Jestem z Kanady",
       "en": "I'm from Canada",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_26",
       "category": "Nationality",
       "pl": "Jestem z Australii",
       "en": "I'm from Australia",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_27",
       "category": "Nationality",
       "pl": "Mieszkam w...",
       "en": "I live in...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_28",
       "category": "Nationality",
       "pl": "Przyjechałem/Przyjechałam z...",
       "en": "I came from...",
-      "level": 8
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Przyjechałem",
+        "f": "Przyjechałam z..."
+      }
     },
     {
       "id": "p8_29",
       "category": "Nationality",
       "pl": "Jestem turystą",
       "en": "I'm a tourist",
-      "level": 8
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem turystą",
+        "f": "Jestem turystką"
+      }
     },
     {
       "id": "p8_30",
       "category": "Nationality",
       "pl": "Jestem tu na wakacjach",
       "en": "I'm here on vacation",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_31",
       "category": "Nationality",
       "pl": "Jestem tu w interesach",
       "en": "I'm here on business",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_32",
       "category": "Nationality",
       "pl": "Pierwszy raz w Polsce",
       "en": "First time in Poland",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_33",
       "category": "Nationality",
       "pl": "Jak długo tu jesteś?",
       "en": "How long have you been here?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_34",
       "category": "Nationality",
       "pl": "Jestem tu od...",
       "en": "I've been here since...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_35",
       "category": "Nationality",
       "pl": "Zostanę tu...",
       "en": "I'll stay here...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_36",
       "category": "Small Talk",
       "pl": "Co słychać?",
       "en": "What's up? / How's it going?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_37",
       "category": "Small Talk",
       "pl": "Wszystko w porządku?",
       "en": "Everything okay?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_38",
       "category": "Small Talk",
       "pl": "Świetnie!",
       "en": "Great!",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_39",
       "category": "Small Talk",
       "pl": "Nieźle",
       "en": "Not bad",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_40",
       "category": "Small Talk",
       "pl": "Tak sobie",
       "en": "So-so",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_41",
       "category": "Small Talk",
       "pl": "Co robisz?",
       "en": "What do you do?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_42",
       "category": "Small Talk",
       "pl": "Pracuję jako...",
       "en": "I work as...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_43",
       "category": "Small Talk",
       "pl": "Jestem studentem/studentką",
       "en": "I'm a student",
-      "level": 8
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem studentem",
+        "f": "studentką"
+      }
     },
     {
       "id": "p8_44",
       "category": "Small Talk",
       "pl": "Lubię...",
       "en": "I like...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_45",
       "category": "Small Talk",
       "pl": "Nie lubię...",
       "en": "I don't like...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_46",
       "category": "Small Talk",
       "pl": "Interesuję się...",
       "en": "I'm interested in...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_47",
       "category": "Small Talk",
       "pl": "Moje hobby to...",
       "en": "My hobby is...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_48",
       "category": "Small Talk",
       "pl": "Czy lubisz...?",
       "en": "Do you like...?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_49",
       "category": "Small Talk",
       "pl": "Co lubisz robić?",
       "en": "What do you like to do?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_50",
       "category": "Small Talk",
       "pl": "Jakie masz plany?",
       "en": "What are your plans?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_51",
       "category": "Small Talk",
       "pl": "Nic specjalnego",
       "en": "Nothing special",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_52",
       "category": "Small Talk",
       "pl": "Zobaczmy się później",
       "en": "See you later",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_53",
       "category": "Small Talk",
       "pl": "Miłego dnia!",
       "en": "Have a nice day!",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_54",
       "category": "Small Talk",
       "pl": "Miłego wieczoru!",
       "en": "Have a nice evening!",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_55",
       "category": "Small Talk",
       "pl": "Powodzenia!",
       "en": "Good luck!",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_56",
       "category": "Invitations",
       "pl": "Czy chcesz...?",
       "en": "Do you want to...?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_57",
       "category": "Invitations",
       "pl": "Chodźmy...",
       "en": "Let's go...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_58",
       "category": "Invitations",
       "pl": "Może pójdziemy na kawę?",
       "en": "Shall we go for coffee?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_59",
       "category": "Invitations",
       "pl": "Może pójdziemy na piwo?",
       "en": "Shall we go for a beer?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_60",
       "category": "Invitations",
       "pl": "Tak, chętnie",
       "en": "Yes, I'd love to",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_61",
       "category": "Invitations",
       "pl": "Nie, dziękuję",
       "en": "No, thank you",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_62",
       "category": "Invitations",
       "pl": "Może innym razem",
       "en": "Maybe another time",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_63",
       "category": "Invitations",
       "pl": "Jestem zajęty/zajęta",
       "en": "I'm busy",
-      "level": 8
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem zajęty",
+        "f": "zajęta"
+      }
     },
     {
       "id": "p8_64",
       "category": "Invitations",
       "pl": "Mam czas",
       "en": "I have time",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_65",
       "category": "Invitations",
       "pl": "O której?",
       "en": "At what time?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_66",
       "category": "Invitations",
       "pl": "Gdzie?",
       "en": "Where?",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_67",
       "category": "Invitations",
       "pl": "Spotkajmy się...",
       "en": "Let's meet...",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_68",
       "category": "Invitations",
       "pl": "Do zobaczenia!",
       "en": "See you!",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_69",
       "category": "Invitations",
       "pl": "Trzymaj się!",
       "en": "Take care!",
-      "level": 8
+      "level": 8,
+      "gender": null
     },
     {
       "id": "p8_70",
       "category": "Invitations",
       "pl": "Pozdrawiam",
       "en": "Regards / Best wishes",
-      "level": 8
+      "level": 8,
+      "gender": null
     }
   ]
 }

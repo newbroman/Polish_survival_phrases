@@ -8,490 +8,580 @@
       "category": "Symptoms & Pain",
       "pl": "Boli mnie...",
       "en": "It hurts... / My ... hurts",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_02",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie głowa",
       "en": "My head hurts / I have a headache",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_03",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie brzuch",
       "en": "My stomach hurts",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_04",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie gardło",
       "en": "My throat hurts",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_05",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie ząb",
       "en": "My tooth hurts",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_06",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie plecy",
       "en": "My back hurts",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_07",
       "category": "Symptoms & Pain",
       "pl": "Jestem chory/chora",
       "en": "I'm sick",
-      "level": 6
+      "level": 6,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem chory",
+        "f": "chora"
+      }
     },
     {
       "id": "p6_08",
       "category": "Symptoms & Pain",
       "pl": "Mam gorączkę",
       "en": "I have a fever",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_09",
       "category": "Symptoms & Pain",
       "pl": "Mam kaszel",
       "en": "I have a cough",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_10",
       "category": "Symptoms & Pain",
       "pl": "Mam katar",
       "en": "I have a runny nose",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_11",
       "category": "Symptoms & Pain",
       "pl": "Wymiotuję",
       "en": "I'm vomiting",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_12",
       "category": "Symptoms & Pain",
       "pl": "Mam biegunkę",
       "en": "I have diarrhea",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_13",
       "category": "Symptoms & Pain",
       "pl": "Mam zawroty głowy",
       "en": "I'm dizzy",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_14",
       "category": "Symptoms & Pain",
       "pl": "Nie mogę spać",
       "en": "I can't sleep",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_15",
       "category": "Symptoms & Pain",
       "pl": "Jestem zmęczony/zmęczona",
       "en": "I'm tired",
-      "level": 6
+      "level": 6,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem zmęczony",
+        "f": "zmęczona"
+      }
     },
     {
       "id": "p6_16",
       "category": "Symptoms & Pain",
       "pl": "Czuję się źle",
       "en": "I feel bad / unwell",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_17",
       "category": "Symptoms & Pain",
       "pl": "Czuję się lepiej",
       "en": "I feel better",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_18",
       "category": "Symptoms & Pain",
       "pl": "Jestem chory/chora od wczoraj",
       "en": "I've been sick since yesterday",
-      "level": 6
+      "level": 6,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem chory",
+        "f": "chora od wczoraj"
+      }
     },
     {
       "id": "p6_19",
       "category": "Symptoms & Pain",
       "pl": "To boli bardzo",
       "en": "It hurts a lot",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_20",
       "category": "Symptoms & Pain",
       "pl": "Nie mogę oddychać",
       "en": "I can't breathe",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_21",
       "category": "Doctor & Pharmacy",
       "pl": "Potrzebuję lekarza",
       "en": "I need a doctor",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_22",
       "category": "Doctor & Pharmacy",
       "pl": "Gdzie jest lekarz?",
       "en": "Where is the doctor?",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_23",
       "category": "Doctor & Pharmacy",
       "pl": "Gdzie jest apteka?",
       "en": "Where is the pharmacy?",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_24",
       "category": "Doctor & Pharmacy",
       "pl": "Apteka",
       "en": "Pharmacy",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_25",
       "category": "Doctor & Pharmacy",
       "pl": "Szpital",
       "en": "Hospital",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_26",
       "category": "Doctor & Pharmacy",
       "pl": "Przychodnia",
       "en": "Clinic",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_27",
       "category": "Doctor & Pharmacy",
       "pl": "Dentysta",
       "en": "Dentist",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_28",
       "category": "Doctor & Pharmacy",
       "pl": "Recepta",
       "en": "Prescription",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_29",
       "category": "Doctor & Pharmacy",
       "pl": "Mam receptę",
       "en": "I have a prescription",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_30",
       "category": "Doctor & Pharmacy",
       "pl": "Potrzebuję leku na...",
       "en": "I need medicine for...",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_31",
       "category": "Doctor & Pharmacy",
       "pl": "Lek przeciwbólowy",
       "en": "Painkiller",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_32",
       "category": "Doctor & Pharmacy",
       "pl": "Aspiryna",
       "en": "Aspirin",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_33",
       "category": "Doctor & Pharmacy",
       "pl": "Antybiotyk",
       "en": "Antibiotic",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_34",
       "category": "Doctor & Pharmacy",
       "pl": "Witaminy",
       "en": "Vitamins",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_35",
       "category": "Doctor & Pharmacy",
       "pl": "Plaster",
       "en": "Band-aid",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_36",
       "category": "Doctor & Pharmacy",
       "pl": "Termometr",
       "en": "Thermometer",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_37",
       "category": "Doctor & Pharmacy",
       "pl": "Mam alergię na...",
       "en": "I'm allergic to...",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_38",
       "category": "Doctor & Pharmacy",
       "pl": "Alergia",
       "en": "Allergy",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_39",
       "category": "Doctor & Pharmacy",
       "pl": "Ubezpieczenie",
       "en": "Insurance",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_40",
       "category": "Doctor & Pharmacy",
       "pl": "Mam ubezpieczenie",
       "en": "I have insurance",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_41",
       "category": "Doctor & Pharmacy",
       "pl": "Karta ubezpieczenia",
       "en": "Insurance card",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_42",
       "category": "Doctor & Pharmacy",
       "pl": "Ile to kosztuje?",
       "en": "How much is this?",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_43",
       "category": "Doctor & Pharmacy",
       "pl": "Czy potrzebuję recepty?",
       "en": "Do I need a prescription?",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_44",
       "category": "Doctor & Pharmacy",
       "pl": "Jak często to brać?",
       "en": "How often to take this?",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_45",
       "category": "Doctor & Pharmacy",
       "pl": "Przed jedzeniem czy po?",
       "en": "Before or after eating?",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_46",
       "category": "Medical Situations",
       "pl": "Zadzwoń po karetkę",
       "en": "Call an ambulance",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_47",
       "category": "Medical Situations",
       "pl": "To nagły wypadek",
       "en": "It's an emergency",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_48",
       "category": "Medical Situations",
       "pl": "Jestem w ciąży",
       "en": "I'm pregnant",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_49",
       "category": "Medical Situations",
       "pl": "Mam cukrzycę",
       "en": "I have diabetes",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_50",
       "category": "Medical Situations",
       "pl": "Mam astmę",
       "en": "I have asthma",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_51",
       "category": "Medical Situations",
       "pl": "Biorę leki na...",
       "en": "I take medication for...",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_52",
       "category": "Medical Situations",
       "pl": "Upadłem/Upadłam",
       "en": "I fell",
-      "level": 6
+      "level": 6,
+      "gender": "both",
+      "variants": {
+        "m": "Upadłem",
+        "f": "Upadłam"
+      }
     },
     {
       "id": "p6_53",
       "category": "Medical Situations",
       "pl": "Skaleczyłem/Skaleczyłam się",
       "en": "I cut myself",
-      "level": 6
+      "level": 6,
+      "gender": "both",
+      "variants": {
+        "m": "Skaleczyłem",
+        "f": "Skaleczyłam się"
+      }
     },
     {
       "id": "p6_54",
       "category": "Medical Situations",
       "pl": "Sparzenie",
       "en": "Burn",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_55",
       "category": "Medical Situations",
       "pl": "Złamanie",
       "en": "Fracture / Broken bone",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_56",
       "category": "Medical Situations",
       "pl": "Krwawienie",
       "en": "Bleeding",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_57",
       "category": "Medical Situations",
       "pl": "Grupa krwi",
       "en": "Blood type",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_58",
       "category": "Medical Situations",
       "pl": "Moja grupa krwi to...",
       "en": "My blood type is...",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_59",
       "category": "Medical Situations",
       "pl": "Potrzebuję tłumacza",
       "en": "I need a translator",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_60",
       "category": "Medical Situations",
       "pl": "Czy ktoś mówi po angielsku?",
       "en": "Does anyone speak English?",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_61",
       "category": "Body Parts",
       "pl": "Głowa",
       "en": "Head",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_62",
       "category": "Body Parts",
       "pl": "Brzuch",
       "en": "Stomach",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_63",
       "category": "Body Parts",
       "pl": "Ręka",
       "en": "Hand / Arm",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_64",
       "category": "Body Parts",
       "pl": "Noga",
       "en": "Leg / Foot",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_65",
       "category": "Body Parts",
       "pl": "Plecy",
       "en": "Back",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_66",
       "category": "Body Parts",
       "pl": "Oko",
       "en": "Eye",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_67",
       "category": "Body Parts",
       "pl": "Ucho",
       "en": "Ear",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_68",
       "category": "Body Parts",
       "pl": "Gardło",
       "en": "Throat",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_69",
       "category": "Body Parts",
       "pl": "Ząb",
       "en": "Tooth",
-      "level": 6
+      "level": 6,
+      "gender": null
     },
     {
       "id": "p6_70",
       "category": "Body Parts",
       "pl": "Szyja",
       "en": "Neck",
-      "level": 6
+      "level": 6,
+      "gender": null
     }
   ]
 }

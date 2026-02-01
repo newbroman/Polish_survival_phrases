@@ -8,490 +8,560 @@
       "category": "Documents",
       "pl": "Dokument",
       "en": "Document",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_02",
       "category": "Documents",
       "pl": "Dokumenty",
       "en": "Documents",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_03",
       "category": "Documents",
       "pl": "Paszport",
       "en": "Passport",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_04",
       "category": "Documents",
       "pl": "Dowód osobisty",
       "en": "ID card",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_05",
       "category": "Documents",
       "pl": "PESEL",
       "en": "PESEL (Polish ID number)",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_06",
       "category": "Documents",
       "pl": "Karta pobytu",
       "en": "Residence card",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_07",
       "category": "Documents",
       "pl": "Wiza",
       "en": "Visa",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_08",
       "category": "Documents",
       "pl": "Zezwolenie na pracę",
       "en": "Work permit",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_09",
       "category": "Documents",
       "pl": "Prawo jazdy",
       "en": "Driver's license",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_10",
       "category": "Documents",
       "pl": "Akt urodzenia",
       "en": "Birth certificate",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_11",
       "category": "Documents",
       "pl": "Akt małżeństwa",
       "en": "Marriage certificate",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_12",
       "category": "Documents",
       "pl": "Świadectwo",
       "en": "Certificate",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_13",
       "category": "Documents",
       "pl": "Zaświadczenie",
       "en": "Confirmation / Certificate",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_14",
       "category": "Documents",
       "pl": "Umowa",
       "en": "Contract",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_15",
       "category": "Documents",
       "pl": "Podpis",
       "en": "Signature",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_16",
       "category": "Documents",
       "pl": "Pieczątka",
       "en": "Stamp",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_17",
       "category": "Documents",
       "pl": "Kopia",
       "en": "Copy",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_18",
       "category": "Documents",
       "pl": "Oryginał",
       "en": "Original",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_19",
       "category": "Documents",
       "pl": "Tłumaczenie przysięgłe",
       "en": "Certified translation",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_20",
       "category": "Documents",
       "pl": "Apostille",
       "en": "Apostille",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_21",
       "category": "Offices",
       "pl": "Urząd",
       "en": "Office / Bureau",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_22",
       "category": "Offices",
       "pl": "Urząd miasta",
       "en": "City hall",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_23",
       "category": "Offices",
       "pl": "Urząd skarbowy",
       "en": "Tax office",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_24",
       "category": "Offices",
       "pl": "Urząd pracy",
       "en": "Employment office",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_25",
       "category": "Offices",
       "pl": "Urząd wojewódzki",
       "en": "Voivodeship office",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_26",
       "category": "Offices",
       "pl": "ZUS",
       "en": "Social Insurance Institution",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_27",
       "category": "Offices",
       "pl": "NFZ",
       "en": "National Health Fund",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_28",
       "category": "Offices",
       "pl": "Ambasada",
       "en": "Embassy",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_29",
       "category": "Offices",
       "pl": "Konsulat",
       "en": "Consulate",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_30",
       "category": "Offices",
       "pl": "Policja",
       "en": "Police",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_31",
       "category": "Offices",
       "pl": "Komisariat",
       "en": "Police station",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_32",
       "category": "Offices",
       "pl": "Wniosek",
       "en": "Application",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_33",
       "category": "Offices",
       "pl": "Formularz",
       "en": "Form",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_34",
       "category": "Offices",
       "pl": "Wypełnić formularz",
       "en": "To fill out a form",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_35",
       "category": "Offices",
       "pl": "Złożyć wniosek",
       "en": "To submit an application",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_36",
       "category": "Offices",
       "pl": "Rejestracja",
       "en": "Registration",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_37",
       "category": "Offices",
       "pl": "Zarejestrować się",
       "en": "To register",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_38",
       "category": "Offices",
       "pl": "Meldunek",
       "en": "Registration of residence",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_39",
       "category": "Offices",
       "pl": "Zameldować się",
       "en": "To register residence",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_40",
       "category": "Offices",
       "pl": "Wymeldować się",
       "en": "To deregister residence",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_41",
       "category": "Offices",
       "pl": "Opłata",
       "en": "Fee",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_42",
       "category": "Offices",
       "pl": "Podatek",
       "en": "Tax",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_43",
       "category": "Offices",
       "pl": "Termin",
       "en": "Deadline / Appointment",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_44",
       "category": "Offices",
       "pl": "Kolejka",
       "en": "Queue / Line",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_45",
       "category": "Offices",
       "pl": "Numer",
       "en": "Number (ticket)",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_46",
       "category": "Legal",
       "pl": "Prawo",
       "en": "Law / Right",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_47",
       "category": "Legal",
       "pl": "Prawnik",
       "en": "Lawyer",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_48",
       "category": "Legal",
       "pl": "Adwokat",
       "en": "Attorney",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_49",
       "category": "Legal",
       "pl": "Notariusz",
       "en": "Notary",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_50",
       "category": "Legal",
       "pl": "Umowa",
       "en": "Contract",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_51",
       "category": "Legal",
       "pl": "Umowa najmu",
       "en": "Rental contract",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_52",
       "category": "Legal",
       "pl": "Umowa o pracę",
       "en": "Employment contract",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_53",
       "category": "Legal",
       "pl": "Sąd",
       "en": "Court",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_54",
       "category": "Legal",
       "pl": "Sprawa sądowa",
       "en": "Court case",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_55",
       "category": "Legal",
       "pl": "Pozew",
       "en": "Lawsuit",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_56",
       "category": "Legal",
       "pl": "Kara",
       "en": "Penalty / Fine",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_57",
       "category": "Legal",
       "pl": "Mandat",
       "en": "Fine / Ticket",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_58",
       "category": "Legal",
       "pl": "Przepisy",
       "en": "Regulations / Rules",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_59",
       "category": "Legal",
       "pl": "Zgodnie z prawem",
       "en": "According to the law",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_60",
       "category": "Legal",
       "pl": "Nielegalne",
       "en": "Illegal",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_61",
       "category": "Citizenship",
       "pl": "Obywatelstwo",
       "en": "Citizenship",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_62",
       "category": "Citizenship",
       "pl": "Obywatel",
       "en": "Citizen",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_63",
       "category": "Citizenship",
       "pl": "Cudzoziemiec",
       "en": "Foreigner",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_64",
       "category": "Citizenship",
       "pl": "Pobyt stały",
       "en": "Permanent residence",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_65",
       "category": "Citizenship",
       "pl": "Pobyt czasowy",
       "en": "Temporary residence",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_66",
       "category": "Citizenship",
       "pl": "Wniosek o obywatelstwo",
       "en": "Citizenship application",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_67",
       "category": "Citizenship",
       "pl": "Deportacja",
       "en": "Deportation",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_68",
       "category": "Citizenship",
       "pl": "Azyl",
       "en": "Asylum",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_69",
       "category": "Citizenship",
       "pl": "Uchodźca",
       "en": "Refugee",
-      "level": 17
+      "level": 17,
+      "gender": null
     },
     {
       "id": "a17_70",
       "category": "Citizenship",
       "pl": "Granica",
       "en": "Border",
-      "level": 17
+      "level": 17,
+      "gender": null
     }
   ]
 }

@@ -8,490 +8,616 @@
       "category": "Family",
       "pl": "Rodzina",
       "en": "Family",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_02",
       "category": "Family",
       "pl": "Mama",
       "en": "Mom / Mother",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_03",
       "category": "Family",
       "pl": "Tata",
       "en": "Dad / Father",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_04",
       "category": "Family",
       "pl": "Rodzice",
       "en": "Parents",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_05",
       "category": "Family",
       "pl": "Brat",
       "en": "Brother",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_06",
       "category": "Family",
       "pl": "Siostra",
       "en": "Sister",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_07",
       "category": "Family",
       "pl": "Syn",
       "en": "Son",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_08",
       "category": "Family",
       "pl": "Córka",
       "en": "Daughter",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_09",
       "category": "Family",
       "pl": "Dzieci",
       "en": "Children",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_10",
       "category": "Family",
       "pl": "Mąż",
       "en": "Husband",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_11",
       "category": "Family",
       "pl": "Żona",
       "en": "Wife",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_12",
       "category": "Family",
       "pl": "Partner/Partnerka",
       "en": "Partner",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Partner",
+        "f": "Partnerka"
+      }
     },
     {
       "id": "p12_13",
       "category": "Family",
       "pl": "Chłopak",
       "en": "Boyfriend",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_14",
       "category": "Family",
       "pl": "Dziewczyna",
       "en": "Girlfriend",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_15",
       "category": "Family",
       "pl": "Narzeczony/Narzeczona",
       "en": "Fiancé/Fiancée",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Narzeczony",
+        "f": "Narzeczona"
+      }
     },
     {
       "id": "p12_16",
       "category": "Relationship Status",
       "pl": "Czy masz rodzinę?",
       "en": "Do you have family?",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_17",
       "category": "Relationship Status",
       "pl": "Mam rodzinę",
       "en": "I have family",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_18",
       "category": "Relationship Status",
       "pl": "Czy masz dzieci?",
       "en": "Do you have children?",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_19",
       "category": "Relationship Status",
       "pl": "Mam jedno dziecko",
       "en": "I have one child",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_20",
       "category": "Relationship Status",
       "pl": "Mam dwoje dzieci",
       "en": "I have two children",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_21",
       "category": "Relationship Status",
       "pl": "Nie mam dzieci",
       "en": "I don't have children",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_22",
       "category": "Relationship Status",
       "pl": "Jestem żonaty/zamężna",
       "en": "I'm married",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem żonaty",
+        "f": "zamężna"
+      }
     },
     {
       "id": "p12_23",
       "category": "Relationship Status",
       "pl": "Jestem singlem/singielką",
       "en": "I'm single",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem singlem",
+        "f": "singielką"
+      }
     },
     {
       "id": "p12_24",
       "category": "Relationship Status",
       "pl": "Jestem w związku",
       "en": "I'm in a relationship",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_25",
       "category": "Relationship Status",
       "pl": "Jestem rozwiedziony/rozwiedziona",
       "en": "I'm divorced",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem rozwiedziony",
+        "f": "rozwiedziona"
+      }
     },
     {
       "id": "p12_26",
       "category": "Relationship Status",
       "pl": "Moja rodzina jest w...",
       "en": "My family is in...",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_27",
       "category": "Relationship Status",
       "pl": "Mieszkam z rodziną",
       "en": "I live with family",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_28",
       "category": "Relationship Status",
       "pl": "Mieszkam sam/sama",
       "en": "I live alone",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Mieszkam sam",
+        "f": "sama"
+      }
     },
     {
       "id": "p12_29",
       "category": "Relationship Status",
       "pl": "Jak się miewa rodzina?",
       "en": "How is your family?",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_30",
       "category": "Relationship Status",
       "pl": "Pozdrowienia dla rodziny",
       "en": "Regards to your family",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_31",
       "category": "Friends",
       "pl": "Przyjaciel/Przyjaciółka",
       "en": "Friend",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Przyjaciel",
+        "f": "Przyjaciółka"
+      }
     },
     {
       "id": "p12_32",
       "category": "Friends",
       "pl": "Przyjaciele",
       "en": "Friends",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_33",
       "category": "Friends",
       "pl": "Mój przyjaciel",
       "en": "My friend",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_34",
       "category": "Friends",
       "pl": "To jest mój przyjaciel",
       "en": "This is my friend",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_35",
       "category": "Friends",
       "pl": "To jest moja przyjaciółka",
       "en": "This is my friend (female)",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_36",
       "category": "Friends",
       "pl": "Kolega/Koleżanka",
       "en": "Colleague / Friend",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Kolega",
+        "f": "Koleżanka"
+      }
     },
     {
       "id": "p12_37",
       "category": "Friends",
       "pl": "Znajomy/Znajoma",
       "en": "Acquaintance",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Znajomy",
+        "f": "Znajoma"
+      }
     },
     {
       "id": "p12_38",
       "category": "Friends",
       "pl": "Sąsiad/Sąsiadka",
       "en": "Neighbor",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Sąsiad",
+        "f": "Sąsiadka"
+      }
     },
     {
       "id": "p12_39",
       "category": "Friends",
       "pl": "Czy masz przyjaciół tutaj?",
       "en": "Do you have friends here?",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_40",
       "category": "Friends",
       "pl": "Poznałem/Poznałam kogoś",
       "en": "I met someone",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Poznałem",
+        "f": "Poznałam kogoś"
+      }
     },
     {
       "id": "p12_41",
       "category": "Friends",
       "pl": "Ludzie",
       "en": "People",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_42",
       "category": "Friends",
       "pl": "Osoba",
       "en": "Person",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_43",
       "category": "Friends",
       "pl": "Ktoś",
       "en": "Someone",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_44",
       "category": "Friends",
       "pl": "Nikt",
       "en": "Nobody",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_45",
       "category": "Friends",
       "pl": "Wszyscy",
       "en": "Everyone / Everybody",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_46",
       "category": "Friends",
       "pl": "Razem",
       "en": "Together",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_47",
       "category": "Friends",
       "pl": "Sam/Sama",
       "en": "Alone",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Sam",
+        "f": "Sama"
+      }
     },
     {
       "id": "p12_48",
       "category": "Friends",
       "pl": "Z przyjaciółmi",
       "en": "With friends",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_49",
       "category": "Friends",
       "pl": "Grupa",
       "en": "Group",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_50",
       "category": "Friends",
       "pl": "Jesteśmy grupą",
       "en": "We're a group",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_51",
       "category": "Friends",
       "pl": "Czy możemy dołączyć?",
       "en": "Can we join?",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_52",
       "category": "Friends",
       "pl": "Oczywiście",
       "en": "Of course",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_53",
       "category": "Friends",
       "pl": "Zapraszam",
       "en": "You're welcome / Come in",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_54",
       "category": "Friends",
       "pl": "Dziękuję za zaproszenie",
       "en": "Thank you for the invitation",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_55",
       "category": "Friends",
       "pl": "Miło spędzony czas",
       "en": "Nice time spent",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_56",
       "category": "Personal",
       "pl": "Ile masz lat?",
       "en": "How old are you?",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_57",
       "category": "Personal",
       "pl": "Mam ... lat",
       "en": "I'm ... years old",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_58",
       "category": "Personal",
       "pl": "Młody/Młoda",
       "en": "Young",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Młody",
+        "f": "Młoda"
+      }
     },
     {
       "id": "p12_59",
       "category": "Personal",
       "pl": "Stary/Stara",
       "en": "Old",
-      "level": 12
+      "level": 12,
+      "gender": "both",
+      "variants": {
+        "m": "Stary",
+        "f": "Stara"
+      }
     },
     {
       "id": "p12_60",
       "category": "Personal",
       "pl": "Urodziny",
       "en": "Birthday",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_61",
       "category": "Personal",
       "pl": "Wszystkiego najlepszego!",
       "en": "Happy birthday!",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_62",
       "category": "Personal",
       "pl": "Kiedy masz urodziny?",
       "en": "When is your birthday?",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_63",
       "category": "Personal",
       "pl": "Imię",
       "en": "First name",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_64",
       "category": "Personal",
       "pl": "Nazwisko",
       "en": "Last name / Surname",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_65",
       "category": "Personal",
       "pl": "Jak się pisze Twoje nazwisko?",
       "en": "How do you spell your last name?",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_66",
       "category": "Personal",
       "pl": "Mężczyzna",
       "en": "Man",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_67",
       "category": "Personal",
       "pl": "Kobieta",
       "en": "Woman",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_68",
       "category": "Personal",
       "pl": "Chłopiec",
       "en": "Boy",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_69",
       "category": "Personal",
       "pl": "Dziewczyna",
       "en": "Girl",
-      "level": 12
+      "level": 12,
+      "gender": null
     },
     {
       "id": "p12_70",
       "category": "Personal",
       "pl": "Dziecko",
       "en": "Child",
-      "level": 12
+      "level": 12,
+      "gender": null
     }
   ]
 }

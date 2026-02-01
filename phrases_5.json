@@ -8,490 +8,564 @@
       "category": "Prices & Payment",
       "pl": "Ile to kosztuje?",
       "en": "How much is this?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_02",
       "category": "Prices & Payment",
       "pl": "Za drogie",
       "en": "Too expensive",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_03",
       "category": "Prices & Payment",
       "pl": "Za dużo",
       "en": "Too much",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_04",
       "category": "Prices & Payment",
       "pl": "Czy mogę zapłacić kartą?",
       "en": "Can I pay by card?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_05",
       "category": "Prices & Payment",
       "pl": "Gotówka",
       "en": "Cash",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_06",
       "category": "Prices & Payment",
       "pl": "Karta",
       "en": "Card",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_07",
       "category": "Prices & Payment",
       "pl": "Bankomat",
       "en": "ATM",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_08",
       "category": "Prices & Payment",
       "pl": "Gdzie jest bankomat?",
       "en": "Where is the ATM?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_09",
       "category": "Prices & Payment",
       "pl": "Reszta",
       "en": "Change (money back)",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_10",
       "category": "Prices & Payment",
       "pl": "Proszę resztę",
       "en": "Change, please",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_11",
       "category": "Prices & Payment",
       "pl": "Reszta dla Pana/Pani",
       "en": "Keep the change",
-      "level": 5
+      "level": 5,
+      "gender": "both",
+      "variants": {
+        "m": "Reszta dla Pana",
+        "f": "Pani"
+      }
     },
     {
       "id": "s5_12",
       "category": "Prices & Payment",
       "pl": "Paragon",
       "en": "Receipt",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_13",
       "category": "Prices & Payment",
       "pl": "Paragon, proszę",
       "en": "Receipt, please",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_14",
       "category": "Prices & Payment",
       "pl": "Ile płacę?",
       "en": "How much do I pay?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_15",
       "category": "Prices & Payment",
       "pl": "Razem",
       "en": "Total / Together",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_16",
       "category": "Prices & Payment",
       "pl": "To wszystko",
       "en": "That's all",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_17",
       "category": "Prices & Payment",
       "pl": "Wezmę to",
       "en": "I'll take it",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_18",
       "category": "Prices & Payment",
       "pl": "Nie, dziękuję",
       "en": "No, thank you",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_19",
       "category": "Prices & Payment",
       "pl": "Tylko patrzę",
       "en": "Just looking",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_20",
       "category": "Prices & Payment",
       "pl": "Czy jest zniżka?",
       "en": "Is there a discount?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_21",
       "category": "Shopping",
       "pl": "Gdzie mogę kupić...?",
       "en": "Where can I buy...?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_22",
       "category": "Shopping",
       "pl": "Szukam...",
       "en": "I'm looking for...",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_23",
       "category": "Shopping",
       "pl": "Czy macie...?",
       "en": "Do you have...?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_24",
       "category": "Shopping",
       "pl": "W jakim rozmiarze?",
       "en": "What size?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_25",
       "category": "Shopping",
       "pl": "Mały",
       "en": "Small",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_26",
       "category": "Shopping",
       "pl": "Średni",
       "en": "Medium",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_27",
       "category": "Shopping",
       "pl": "Duży",
       "en": "Large",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_28",
       "category": "Shopping",
       "pl": "Za mały",
       "en": "Too small",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_29",
       "category": "Shopping",
       "pl": "Za duży",
       "en": "Too big",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_30",
       "category": "Shopping",
       "pl": "Czy mogę przymierzyć?",
       "en": "Can I try it on?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_31",
       "category": "Shopping",
       "pl": "Gdzie jest przymierzalnia?",
       "en": "Where is the fitting room?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_32",
       "category": "Shopping",
       "pl": "Czy macie to w innym kolorze?",
       "en": "Do you have this in another color?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_33",
       "category": "Shopping",
       "pl": "Czy macie to w innym rozmiarze?",
       "en": "Do you have this in another size?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_34",
       "category": "Shopping",
       "pl": "To pasuje",
       "en": "This fits",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_35",
       "category": "Shopping",
       "pl": "To nie pasuje",
       "en": "This doesn't fit",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_36",
       "category": "Shopping",
       "pl": "Czy mogę to zwrócić?",
       "en": "Can I return this?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_37",
       "category": "Shopping",
       "pl": "Torba, proszę",
       "en": "Bag, please",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_38",
       "category": "Shopping",
       "pl": "Sklep",
       "en": "Shop / Store",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_39",
       "category": "Shopping",
       "pl": "Supermarket",
       "en": "Supermarket",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_40",
       "category": "Shopping",
       "pl": "Apteka",
       "en": "Pharmacy",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_41",
       "category": "Money & Numbers",
       "pl": "Złoty",
       "en": "Zloty (Polish currency)",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_42",
       "category": "Money & Numbers",
       "pl": "Grosz",
       "en": "Grosz (Polish cent)",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_43",
       "category": "Money & Numbers",
       "pl": "Pięć złotych",
       "en": "Five zloty",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_44",
       "category": "Money & Numbers",
       "pl": "Dziesięć złotych",
       "en": "Ten zloty",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_45",
       "category": "Money & Numbers",
       "pl": "Dwadzieścia złotych",
       "en": "Twenty zloty",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_46",
       "category": "Money & Numbers",
       "pl": "Pięćdziesiąt złotych",
       "en": "Fifty zloty",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_47",
       "category": "Money & Numbers",
       "pl": "Sto złotych",
       "en": "One hundred zloty",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_48",
       "category": "Money & Numbers",
       "pl": "Jeden",
       "en": "One",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_49",
       "category": "Money & Numbers",
       "pl": "Dwa",
       "en": "Two",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_50",
       "category": "Money & Numbers",
       "pl": "Trzy",
       "en": "Three",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_51",
       "category": "Money & Numbers",
       "pl": "Cztery",
       "en": "Four",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_52",
       "category": "Money & Numbers",
       "pl": "Pięć",
       "en": "Five",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_53",
       "category": "Money & Numbers",
       "pl": "Dziesięć",
       "en": "Ten",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_54",
       "category": "Money & Numbers",
       "pl": "Dwadzieścia",
       "en": "Twenty",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_55",
       "category": "Money & Numbers",
       "pl": "Sto",
       "en": "One hundred",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_56",
       "category": "Colors & Descriptions",
       "pl": "Jaki kolor?",
       "en": "What color?",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_57",
       "category": "Colors & Descriptions",
       "pl": "Biały",
       "en": "White",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_58",
       "category": "Colors & Descriptions",
       "pl": "Czarny",
       "en": "Black",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_59",
       "category": "Colors & Descriptions",
       "pl": "Czerwony",
       "en": "Red",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_60",
       "category": "Colors & Descriptions",
       "pl": "Niebieski",
       "en": "Blue",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_61",
       "category": "Colors & Descriptions",
       "pl": "Zielony",
       "en": "Green",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_62",
       "category": "Colors & Descriptions",
       "pl": "Żółty",
       "en": "Yellow",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_63",
       "category": "Colors & Descriptions",
       "pl": "Szary",
       "en": "Gray",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_64",
       "category": "Colors & Descriptions",
       "pl": "Nowy",
       "en": "New",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_65",
       "category": "Colors & Descriptions",
       "pl": "Stary",
       "en": "Old",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_66",
       "category": "Colors & Descriptions",
       "pl": "Dobry",
       "en": "Good",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_67",
       "category": "Colors & Descriptions",
       "pl": "Zły",
       "en": "Bad",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_68",
       "category": "Colors & Descriptions",
       "pl": "Tani",
       "en": "Cheap",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_69",
       "category": "Colors & Descriptions",
       "pl": "Drogi",
       "en": "Expensive",
-      "level": 5
+      "level": 5,
+      "gender": null
     },
     {
       "id": "s5_70",
       "category": "Colors & Descriptions",
       "pl": "Ładny",
       "en": "Nice / Pretty",
-      "level": 5
+      "level": 5,
+      "gender": null
     }
   ]
 }

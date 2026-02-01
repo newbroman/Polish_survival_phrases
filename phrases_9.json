@@ -8,490 +8,572 @@
       "category": "Time Basics",
       "pl": "Która godzina?",
       "en": "What time is it?",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_02",
       "category": "Time Basics",
       "pl": "Jest godzina...",
       "en": "It's ... o'clock",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_03",
       "category": "Time Basics",
       "pl": "O której?",
       "en": "At what time?",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_04",
       "category": "Time Basics",
       "pl": "Teraz",
       "en": "Now",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_05",
       "category": "Time Basics",
       "pl": "Później",
       "en": "Later",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_06",
       "category": "Time Basics",
       "pl": "Wcześniej",
       "en": "Earlier",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_07",
       "category": "Time Basics",
       "pl": "Rano",
       "en": "Morning / In the morning",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_08",
       "category": "Time Basics",
       "pl": "Po południu",
       "en": "Afternoon",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_09",
       "category": "Time Basics",
       "pl": "Wieczorem",
       "en": "Evening / In the evening",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_10",
       "category": "Time Basics",
       "pl": "W nocy",
       "en": "At night",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_11",
       "category": "Time Basics",
       "pl": "O ósmej rano",
       "en": "At 8 AM",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_12",
       "category": "Time Basics",
       "pl": "O ósmej wieczorem",
       "en": "At 8 PM",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_13",
       "category": "Time Basics",
       "pl": "Za godzinę",
       "en": "In an hour",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_14",
       "category": "Time Basics",
       "pl": "Za pół godziny",
       "en": "In half an hour",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_15",
       "category": "Time Basics",
       "pl": "Za chwilę",
       "en": "In a moment",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_16",
       "category": "Time Basics",
       "pl": "Godzinę temu",
       "en": "An hour ago",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_17",
       "category": "Time Basics",
       "pl": "Cały dzień",
       "en": "All day",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_18",
       "category": "Time Basics",
       "pl": "Całą noc",
       "en": "All night",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_19",
       "category": "Time Basics",
       "pl": "Minutę",
       "en": "Minute",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_20",
       "category": "Time Basics",
       "pl": "Godzinę",
       "en": "Hour",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_21",
       "category": "Days",
       "pl": "Dzisiaj",
       "en": "Today",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_22",
       "category": "Days",
       "pl": "Wczoraj",
       "en": "Yesterday",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_23",
       "category": "Days",
       "pl": "Jutro",
       "en": "Tomorrow",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_24",
       "category": "Days",
       "pl": "Pojutrze",
       "en": "Day after tomorrow",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_25",
       "category": "Days",
       "pl": "Przedwczoraj",
       "en": "Day before yesterday",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_26",
       "category": "Days",
       "pl": "Poniedziałek",
       "en": "Monday",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_27",
       "category": "Days",
       "pl": "Wtorek",
       "en": "Tuesday",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_28",
       "category": "Days",
       "pl": "Środa",
       "en": "Wednesday",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_29",
       "category": "Days",
       "pl": "Czwartek",
       "en": "Thursday",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_30",
       "category": "Days",
       "pl": "Piątek",
       "en": "Friday",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_31",
       "category": "Days",
       "pl": "Sobota",
       "en": "Saturday",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_32",
       "category": "Days",
       "pl": "Niedziela",
       "en": "Sunday",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_33",
       "category": "Days",
       "pl": "Dzień",
       "en": "Day",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_34",
       "category": "Days",
       "pl": "Tydzień",
       "en": "Week",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_35",
       "category": "Days",
       "pl": "Weekend",
       "en": "Weekend",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_36",
       "category": "Scheduling",
       "pl": "Kiedy?",
       "en": "When?",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_37",
       "category": "Scheduling",
       "pl": "O której godzinie?",
       "en": "At what time?",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_38",
       "category": "Scheduling",
       "pl": "Spotkanie",
       "en": "Meeting / Appointment",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_39",
       "category": "Scheduling",
       "pl": "Mam spotkanie",
       "en": "I have a meeting",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_40",
       "category": "Scheduling",
       "pl": "Rezerwacja",
       "en": "Reservation / Booking",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_41",
       "category": "Scheduling",
       "pl": "Chciałbym/Chciałabym zarezerwować",
       "en": "I'd like to book",
-      "level": 9
+      "level": 9,
+      "gender": "both",
+      "variants": {
+        "m": "Chciałbym",
+        "f": "Chciałabym zarezerwować"
+      }
     },
     {
       "id": "p9_42",
       "category": "Scheduling",
       "pl": "Czy jest wolny termin?",
       "en": "Is there an available slot?",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_43",
       "category": "Scheduling",
       "pl": "Kiedy Pan/Pani ma czas?",
       "en": "When do you have time?",
-      "level": 9
+      "level": 9,
+      "gender": "both",
+      "variants": {
+        "m": "Kiedy Pan",
+        "f": "Pani ma czas?"
+      }
     },
     {
       "id": "p9_44",
       "category": "Scheduling",
       "pl": "Czy jutro jest możliwe?",
       "en": "Is tomorrow possible?",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_45",
       "category": "Scheduling",
       "pl": "Muszę zmienić termin",
       "en": "I need to change the appointment",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_46",
       "category": "Scheduling",
       "pl": "Muszę odwołać",
       "en": "I need to cancel",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_47",
       "category": "Scheduling",
       "pl": "Spóźnię się",
       "en": "I'll be late",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_48",
       "category": "Scheduling",
       "pl": "Jestem spóźniony/spóźniona",
       "en": "I'm late",
-      "level": 9
+      "level": 9,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem spóźniony",
+        "f": "spóźniona"
+      }
     },
     {
       "id": "p9_49",
       "category": "Scheduling",
       "pl": "Za pięć minut",
       "en": "In five minutes",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_50",
       "category": "Scheduling",
       "pl": "Za dziesięć minut",
       "en": "In ten minutes",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_51",
       "category": "Scheduling",
       "pl": "Punktualnie",
       "en": "On time",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_52",
       "category": "Scheduling",
       "pl": "Czekam",
       "en": "I'm waiting",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_53",
       "category": "Scheduling",
       "pl": "Proszę czekać",
       "en": "Please wait",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_54",
       "category": "Scheduling",
       "pl": "Ile czasu to zajmie?",
       "en": "How long will it take?",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_55",
       "category": "Scheduling",
       "pl": "Kiedy będzie gotowe?",
       "en": "When will it be ready?",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_56",
       "category": "Time Periods",
       "pl": "Miesiąc",
       "en": "Month",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_57",
       "category": "Time Periods",
       "pl": "Rok",
       "en": "Year",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_58",
       "category": "Time Periods",
       "pl": "W tym tygodniu",
       "en": "This week",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_59",
       "category": "Time Periods",
       "pl": "W przyszłym tygodniu",
       "en": "Next week",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_60",
       "category": "Time Periods",
       "pl": "W zeszłym tygodniu",
       "en": "Last week",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_61",
       "category": "Time Periods",
       "pl": "W tym miesiącu",
       "en": "This month",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_62",
       "category": "Time Periods",
       "pl": "W przyszłym miesiącu",
       "en": "Next month",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_63",
       "category": "Time Periods",
       "pl": "Zawsze",
       "en": "Always",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_64",
       "category": "Time Periods",
       "pl": "Nigdy",
       "en": "Never",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_65",
       "category": "Time Periods",
       "pl": "Czasami",
       "en": "Sometimes",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_66",
       "category": "Time Periods",
       "pl": "Często",
       "en": "Often",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_67",
       "category": "Time Periods",
       "pl": "Rzadko",
       "en": "Rarely",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_68",
       "category": "Time Periods",
       "pl": "Codziennie",
       "en": "Every day",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_69",
       "category": "Time Periods",
       "pl": "Co tydzień",
       "en": "Every week",
-      "level": 9
+      "level": 9,
+      "gender": null
     },
     {
       "id": "p9_70",
       "category": "Time Periods",
       "pl": "Raz w miesiącu",
       "en": "Once a month",
-      "level": 9
+      "level": 9,
+      "gender": null
     }
   ]
 }

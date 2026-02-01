@@ -8,490 +8,576 @@
       "category": "Check-in & Basics",
       "pl": "Mam rezerwację",
       "en": "I have a reservation",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_02",
       "category": "Check-in & Basics",
       "pl": "Rezerwacja na nazwisko...",
       "en": "Reservation under the name...",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_03",
       "category": "Check-in & Basics",
       "pl": "Pokój dla jednej osoby",
       "en": "Single room",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_04",
       "category": "Check-in & Basics",
       "pl": "Pokój dla dwóch osób",
       "en": "Double room",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_05",
       "category": "Check-in & Basics",
       "pl": "Na ile nocy?",
       "en": "For how many nights?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_06",
       "category": "Check-in & Basics",
       "pl": "Na jedną noc",
       "en": "For one night",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_07",
       "category": "Check-in & Basics",
       "pl": "Na trzy noce",
       "en": "For three nights",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_08",
       "category": "Check-in & Basics",
       "pl": "Ile kosztuje pokój?",
       "en": "How much is the room?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_09",
       "category": "Check-in & Basics",
       "pl": "Czy śniadanie jest wliczone?",
       "en": "Is breakfast included?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_10",
       "category": "Check-in & Basics",
       "pl": "O której jest śniadanie?",
       "en": "What time is breakfast?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_11",
       "category": "Check-in & Basics",
       "pl": "Klucz, proszę",
       "en": "Key, please",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_12",
       "category": "Check-in & Basics",
       "pl": "Numer pokoju",
       "en": "Room number",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_13",
       "category": "Check-in & Basics",
       "pl": "Mój pokój to numer...",
       "en": "My room is number...",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_14",
       "category": "Check-in & Basics",
       "pl": "Paszport, proszę",
       "en": "Passport, please",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_15",
       "category": "Check-in & Basics",
       "pl": "Czy mogę zapłacić kartą?",
       "en": "Can I pay by card?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_16",
       "category": "Check-in & Basics",
       "pl": "Czy macie wolne pokoje?",
       "en": "Do you have available rooms?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_17",
       "category": "Check-in & Basics",
       "pl": "Czy mogę zobaczyć pokój?",
       "en": "Can I see the room?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_18",
       "category": "Check-in & Basics",
       "pl": "Recepcja",
       "en": "Reception / Front desk",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_19",
       "category": "Check-in & Basics",
       "pl": "Portier",
       "en": "Porter / Concierge",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_20",
       "category": "Check-in & Basics",
       "pl": "Bagaż",
       "en": "Luggage / Baggage",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_21",
       "category": "Room Issues",
       "pl": "Jaki jest kod WiFi?",
       "en": "What is the WiFi password?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_22",
       "category": "Room Issues",
       "pl": "WiFi nie działa",
       "en": "WiFi doesn't work",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_23",
       "category": "Room Issues",
       "pl": "Klimatyzacja nie działa",
       "en": "Air conditioning doesn't work",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_24",
       "category": "Room Issues",
       "pl": "Ogrzewanie nie działa",
       "en": "Heating doesn't work",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_25",
       "category": "Room Issues",
       "pl": "Nie ma gorącej wody",
       "en": "There's no hot water",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_26",
       "category": "Room Issues",
       "pl": "Prysznic nie działa",
       "en": "The shower doesn't work",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_27",
       "category": "Room Issues",
       "pl": "Telewizor nie działa",
       "en": "The TV doesn't work",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_28",
       "category": "Room Issues",
       "pl": "Światło nie działa",
       "en": "The light doesn't work",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_29",
       "category": "Room Issues",
       "pl": "Jest za głośno",
       "en": "It's too loud",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_30",
       "category": "Room Issues",
       "pl": "Jest za zimno",
       "en": "It's too cold",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_31",
       "category": "Room Issues",
       "pl": "Jest za gorąco",
       "en": "It's too hot",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_32",
       "category": "Room Issues",
       "pl": "Pokój jest brudny",
       "en": "The room is dirty",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_33",
       "category": "Room Issues",
       "pl": "Potrzebuję ręczników",
       "en": "I need towels",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_34",
       "category": "Room Issues",
       "pl": "Potrzebuję mydła",
       "en": "I need soap",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_35",
       "category": "Room Issues",
       "pl": "Potrzebuję papieru toaletowego",
       "en": "I need toilet paper",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_36",
       "category": "Room Issues",
       "pl": "Czy mogę zmienić pokój?",
       "en": "Can I change rooms?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_37",
       "category": "Room Issues",
       "pl": "Zgubiłem/Zgubiłam klucz",
       "en": "I lost my key",
-      "level": 4
+      "level": 4,
+      "gender": "both",
+      "variants": {
+        "m": "Zgubiłem",
+        "f": "Zgubiłam klucz"
+      }
     },
     {
       "id": "s4_38",
       "category": "Room Issues",
       "pl": "Klucz nie działa",
       "en": "The key doesn't work",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_39",
       "category": "Room Issues",
       "pl": "Zamknąłem/Zamknęłam się",
       "en": "I locked myself out",
-      "level": 4
+      "level": 4,
+      "gender": "both",
+      "variants": {
+        "m": "Zamknąłem",
+        "f": "Zamknęłam się"
+      }
     },
     {
       "id": "s4_40",
       "category": "Room Issues",
       "pl": "Proszę posprzątać pokój",
       "en": "Please clean the room",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_41",
       "category": "Room Issues",
       "pl": "Nie przeszkadzać",
       "en": "Do not disturb",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_42",
       "category": "Room Issues",
       "pl": "Proszę obudzić mnie o...",
       "en": "Please wake me at...",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_43",
       "category": "Room Issues",
       "pl": "Zostawiłem/Zostawiłam coś w pokoju",
       "en": "I left something in the room",
-      "level": 4
+      "level": 4,
+      "gender": "both",
+      "variants": {
+        "m": "Zostawiłem",
+        "f": "Zostawiłam coś w pokoju"
+      }
     },
     {
       "id": "s4_44",
       "category": "Room Issues",
       "pl": "Czy mogę dostać dodatkowe koce?",
       "en": "Can I get extra blankets?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_45",
       "category": "Room Issues",
       "pl": "Czy mogę dostać poduszkę?",
       "en": "Can I get a pillow?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_46",
       "category": "Check-out & Services",
       "pl": "O której jest wymeldowanie?",
       "en": "What time is check-out?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_47",
       "category": "Check-out & Services",
       "pl": "Chciałbym/Chciałabym się wymeldować",
       "en": "I'd like to check out",
-      "level": 4
+      "level": 4,
+      "gender": "both",
+      "variants": {
+        "m": "Chciałbym",
+        "f": "Chciałabym się wymeldować"
+      }
     },
     {
       "id": "s4_48",
       "category": "Check-out & Services",
       "pl": "Rachunek, proszę",
       "en": "The bill, please",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_49",
       "category": "Check-out & Services",
       "pl": "Czy mogę zostawić bagaż?",
       "en": "Can I leave my luggage?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_50",
       "category": "Check-out & Services",
       "pl": "Czy mogę przedłużyć pobyt?",
       "en": "Can I extend my stay?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_51",
       "category": "Check-out & Services",
       "pl": "Jeszcze jedna noc",
       "en": "One more night",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_52",
       "category": "Check-out & Services",
       "pl": "Parking",
       "en": "Parking",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_53",
       "category": "Check-out & Services",
       "pl": "Czy jest parking?",
       "en": "Is there parking?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_54",
       "category": "Check-out & Services",
       "pl": "Ile kosztuje parking?",
       "en": "How much is parking?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_55",
       "category": "Check-out & Services",
       "pl": "Winda",
       "en": "Elevator / Lift",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_56",
       "category": "Check-out & Services",
       "pl": "Schody",
       "en": "Stairs",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_57",
       "category": "Check-out & Services",
       "pl": "Pralnia",
       "en": "Laundry",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_58",
       "category": "Check-out & Services",
       "pl": "Czy możecie zadzwonić po taxi?",
       "en": "Can you call a taxi?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_59",
       "category": "Check-out & Services",
       "pl": "Czy jest sejf w pokoju?",
       "en": "Is there a safe in the room?",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_60",
       "category": "Check-out & Services",
       "pl": "Minibar",
       "en": "Minibar",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_61",
       "category": "Room Amenities",
       "pl": "Łóżko",
       "en": "Bed",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_62",
       "category": "Room Amenities",
       "pl": "Łazienka",
       "en": "Bathroom",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_63",
       "category": "Room Amenities",
       "pl": "Prysznic",
       "en": "Shower",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_64",
       "category": "Room Amenities",
       "pl": "Wanna",
       "en": "Bathtub",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_65",
       "category": "Room Amenities",
       "pl": "Ręcznik",
       "en": "Towel",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_66",
       "category": "Room Amenities",
       "pl": "Szampon",
       "en": "Shampoo",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_67",
       "category": "Room Amenities",
       "pl": "Mydło",
       "en": "Soap",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_68",
       "category": "Room Amenities",
       "pl": "Papier toaletowy",
       "en": "Toilet paper",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_69",
       "category": "Room Amenities",
       "pl": "Balkon",
       "en": "Balcony",
-      "level": 4
+      "level": 4,
+      "gender": null
     },
     {
       "id": "s4_70",
       "category": "Room Amenities",
       "pl": "Widok",
       "en": "View",
-      "level": 4
+      "level": 4,
+      "gender": null
     }
   ]
 }

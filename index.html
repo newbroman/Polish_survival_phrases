@@ -2,432 +2,673 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Master</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish Master - Learning App with Gender Toggle</title>
     <style>
-        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --accent-blue: #1976d2; }
-        @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; --accent-blue: #42a5f5; } }
-        
-        html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
-        
-        .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; }
-        .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; }
-
-        .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
-        
-        .custom-dropdown { position: relative; width: 100%; }
-        .dropdown-trigger { 
-            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
-            text-align: left; height: 28px; display: flex; align-items: center; 
-            justify-content: space-between; cursor: pointer; box-sizing: border-box;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
-        .dropdown-menu { 
-            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
-            border: 1px solid #ccc; border-radius: 4px; max-height: 250px; overflow-y: auto; 
-            z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .dropdown-menu.show { display: block; }
-        .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); display: flex; justify-content: space-between; align-items: center; }
-
-        .progress-container { width: 100%; height: 3px; background: #ddd; }
-        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
-
-        .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
-        .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 100%; justify-content: center; }
-        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-        .q-text { font-size: 1rem; font-weight: 800; text-align: center; max-width: 220px; word-wrap: break-word; }
-        .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
-
-        .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 12px 1px; text-align: center; font-size: 0.52rem; font-weight: bold; cursor: pointer; opacity: 0.4; transition: 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
-        .counter-label { font-size: 0.4rem; margin-top: 2px; opacity: 0.7; }
-
-        .map-section { flex-grow: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
         
-        .grid { display: grid; gap: 8px; width: 100%; max-width: 400px; }
-        .grid-standard { grid-template-columns: repeat(4, 1fr); } 
-        .grid-alphabet { grid-template-columns: repeat(5, 1fr); }
-        
-        .tile { 
-            aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
-            text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: 0.1s; overflow: hidden;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
         }
-        .tile .char { font-size: 0.62rem; font-weight: 800; line-height: 1.1; word-wrap: break-word; width: 100%; }
-        .tile .hint { font-size: 0.45rem; opacity: 0.7; font-weight: normal; margin-top: 2px; }
-        .tile .emoji { font-size: 0.7rem; margin-top: 2px; }
-        .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
-
-        .phrasebook-list { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 4px; }
-        .phrasebook-item { background: var(--card); border: 1px solid #ddd; padding: 12px; border-radius: 8px; display: flex; align-items: center; cursor: pointer; transition: background 0.2s; }
-        .pb-content { flex: 1; display: flex; justify-content: space-between; align-items: center; padding-right: 10px; }
-        .pb-pl { font-weight: 800; font-size: 0.85rem; color: var(--pol-red); }
-        .pb-en { font-size: 0.75rem; opacity: 0.7; text-align: right; }
-        .pb-copy { padding: 8px; opacity: 0.3; font-size: 0.8rem; cursor: copy; }
-        .pb-header { font-size: 0.7rem; font-weight: 900; padding: 14px 8px 6px 8px; color: var(--pol-red); text-transform: uppercase; border-bottom: 2px solid #eee; margin-bottom: 4px; width: 100%; background: var(--bg); border-radius: 4px; box-sizing: border-box; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .pb-header::after { content: 'FILTER 🔍'; font-size: 0.45rem; opacity: 0.5; }
-        .copied { background: #e8f5e9 !important; }
-
-        .filter-banner { width: 100%; max-width: 500px; background: var(--card); padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.75rem; color: var(--accent-blue); font-weight: 800; border: 1px solid var(--accent-blue); box-sizing: border-box; }
-        .reset-filter-btn { background: var(--accent-blue); color: white; border: none; padding: 6px 12px; border-radius: 6px; font-size: 0.65rem; cursor: pointer; font-weight: bold; }
-
-        .mastered-card { background: var(--card); padding: 30px 20px; border-radius: 12px; border: 2px solid var(--pol-red); text-align: center; width: 80%; max-width: 300px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .mastered-card h2 { margin: 0 0 10px 0; color: var(--pol-red); font-size: 1.2rem; }
-        .mastered-card p { font-size: 0.8rem; margin: 0 0 20px 0; opacity: 0.8; color: var(--text); }
-        .repeat-btn { background: var(--pol-red); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
-
-        .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
-        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
-        .active-swap { background: var(--pol-red) !important; color: white !important; }
-
-        #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; text-align: center; }
+        
+        .app-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        /* Header with Gender Toggle */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .app-title {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .gender-toggle {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 4px;
+            display: flex;
+            gap: 4px;
+        }
+        
+        .gender-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            border-radius: 16px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .gender-btn.active {
+            background: white;
+            color: #667eea;
+        }
+        
+        .gender-btn:hover:not(.active) {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        .mode-toggle {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .mode-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .mode-btn.active {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Tier Navigation */
+        .tier-nav {
+            display: flex;
+            background: #f8f9fa;
+            overflow-x: auto;
+        }
+        
+        .tier-tab {
+            flex: 1;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            min-width: 100px;
+        }
+        
+        .tier-tab.active.foundation { border-color: #9b59b6; background: #f8f5ff; }
+        .tier-tab.active.survival { border-color: #27ae60; background: #f0fff4; }
+        .tier-tab.active.practical { border-color: #f39c12; background: #fffbf0; }
+        .tier-tab.active.advanced { border-color: #3498db; background: #f0f8ff; }
+        
+        .tier-name {
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+        .tier-count {
+            font-size: 11px;
+            color: #666;
+            margin-top: 3px;
+        }
+        
+        /* Flashcard */
+        .flashcard-container {
+            padding: 40px 30px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flashcard {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .flashcard:hover {
+            transform: translateY(-5px);
+        }
+        
+        .flashcard.flipped {
+            background: #f8f9fa;
+        }
+        
+        .phrase-polish {
+            font-size: 32px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        
+        .phrase-english {
+            font-size: 24px;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .gender-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #667eea;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .gender-info-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            border: 2px solid #667eea;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .gender-info-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        /* Gender Variant Modal */
+        .gender-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .gender-modal.show {
+            display: flex;
+        }
+        
+        .gender-modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .gender-modal h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .gender-variant {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .gender-variant-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .gender-variant-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .close-modal {
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        
+        /* Controls */
+        .controls {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .progress {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        
+        .nav-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Level selector */
+        .level-selector {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .level-selector select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+        }
+        
+        /* Info box */
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 8px;
+        }
+        
+        .info-box strong {
+            color: #1976d2;
+        }
     </style>
 </head>
 <body>
-
-<div id="overlay">
-    <h1 id="overlay-title">LEVEL MASTERED! 🏆</h1>
-    <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 1rem;">Continue</button>
-</div>
-
-<div class="header">
-    <div class="title-banner"><h1 class="title" id="main-title">Polish Master</h1></div>
-    <div class="controls-row">
-        <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading...</div>
-            <div class="dropdown-menu" id="lvl-menu"></div>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-top">
+                <div class="app-title">🇵🇱 Polish Master</div>
+                <div class="gender-toggle">
+                    <button class="gender-btn" onclick="setGender('m')">♂ Male</button>
+                    <button class="gender-btn active" onclick="setGender('both')">Both</button>
+                    <button class="gender-btn" onclick="setGender('f')">♀ Female</button>
+                </div>
+            </div>
+            <div class="mode-toggle">
+                <button class="mode-btn active" onclick="switchMode('learning')">📚 Learning Mode</button>
+                <button class="mode-btn" onclick="switchMode('phrasebook')">📖 Phrasebook</button>
+            </div>
         </div>
-        <div style="display: flex; gap: 4px;">
-            <input type="text" id="search-bar" style="flex-grow: 1; padding: 5px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px;" placeholder="Search phrases or categories..." oninput="handleSmartSearch()">
-            <button id="lang-swap-btn" class="footer-btn" style="flex: 0 0 85px;" onclick="toggleLangSwap()">EN / PL</button>
-        </div>
-    </div>
-</div>
-
-<div class="progress-container"><div id="progress-bar"></div></div>
-
-<div class="quiz-header" id="quiz-ui">
-    <div class="quiz-top-row">
-        <button class="speaker-btn" onclick="speakTarget()">🔊</button>
-        <div class="q-content">
-            <div id="q-text" class="q-text">Ready?</div>
-            <div id="feedback" class="feedback"></div>
-        </div>
-    </div>
-</div>
-
-<div class="mode-tabs">
-    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">
-        <span>LEARNING</span>
-        <span id="learn-count" class="counter-label"></span>
-    </div>
-    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">
-        <span>BANK</span>
-    </div>
-    <div id="tab-test" class="tab" onclick="switchMode('test')">
-        <span>MARATHON</span>
-        <span id="marathon-count" class="counter-label"></span>
-    </div>
-    <div id="tab-phrasebook" class="tab" onclick="switchMode('phrasebook')">
-        <span>PHRASEBOOK</span>
-    </div>
-</div>
-
-<div class="map-section">
-    <div id="mastery-map" class="grid"></div>
-    <div id="search-results-extra" class="search-results-list"></div>
-</div>
-
-<div class="footer">
-    <button class="footer-btn" onclick="downloadProgress()">Save</button>
-    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load</button>
-    <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Reset</button>
-    <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
-</div>
-
-<script>
-    let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
-    let completions = JSON.parse(localStorage.getItem('pl_completion_counts')) || {};
-    let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
-    let phrasesData = [], activePool = [], marathonQueue = [], allPhrasesCache = [], currentTarget = null, lastTarget = null;
-    let isSwapped = false, correctStreak = 0, audioCtx = null, isMarathon = false, isPhrasebook = false;
-    let pbFilterLevel = null; 
-    const THRESHOLD = 3, MAX_POTENTIAL_LEVELS = 100;
-
-    function playNote(freq, dur, type = 'sine') {
-        try {
-            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            if (audioCtx.state === 'suspended') audioCtx.resume();
-            const osc = audioCtx.createOscillator();
-            const g = audioCtx.createGain();
-            osc.type = type;
-            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-            g.gain.setValueAtTime(0.1, audioCtx.currentTime);
-            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
-            osc.connect(g); g.connect(audioCtx.destination);
-            osc.start(); osc.stop(audioCtx.currentTime + dur);
-        } catch(e){}
-    }
-
-    function playVictory() {
-        playNote(523.25, 0.5); 
-        setTimeout(() => playNote(659.25, 0.5), 100);
-        setTimeout(() => playNote(783.99, 0.8), 200);
-    }
-
-    async function scanAndPopulate() {
-        const menu = document.getElementById('lvl-menu'); 
-        menu.innerHTML = '';
-        allPhrasesCache = [];
-        let totalMedals = 0;
-
-        for (let i = 0; i < MAX_POTENTIAL_LEVELS; i++) {
-            try {
-                const resp = await fetch(`phrases_${i}.json`);
-                if (resp.ok) {
-                    const data = await resp.json();
-                    const isLevelDone = data.phrases.every(p => (stats[p.pl] || 0) >= THRESHOLD);
-                    if (isLevelDone) totalMedals++;
-                    
-                    const item = document.createElement('div');
-                    item.className = 'dropdown-item';
-                    item.innerHTML = `<span>Lvl ${i}: ${data.description || ''}</span><span>${isLevelDone ? '🏅' : ''}</span>`;
-                    
-                    const lvlIdx = i;
-                    item.onclick = (e) => { e.stopPropagation(); selectLevel(lvlIdx); };
-                    menu.appendChild(item);
-
-                    if(!isPhrasebook && i === currentLevel) {
-                        document.getElementById('lvl-current').innerHTML = `<span>Lvl ${i}: ${data.description || ''}</span><span>${isLevelDone ? '🏅' : ''}</span>`;
-                    }
-                    allPhrasesCache.push(...data.phrases.map(p => ({...p, lvl: lvlIdx, lvlDesc: data.description})));
-                }
-            } catch(e) {}
-        }
-        document.getElementById('main-title').innerHTML = `Polish Master <span style="font-size:0.8rem; opacity:0.8;">(🏅 ${totalMedals})</span>`;
-        if (isPhrasebook && pbFilterLevel === null) document.getElementById('lvl-current').innerHTML = `<span>Select Category</span>`;
-        updateTabCounters();
-    }
-
-    function selectLevel(lvl) {
-        if (isPhrasebook) {
-            pbFilterLevel = lvl;
-            document.getElementById('lvl-menu').classList.remove('show');
-            updatePhrasebook();
-            const meta = allPhrasesCache.find(p => p.lvl === lvl);
-            if(meta) document.getElementById('lvl-current').innerHTML = `<span>Category: ${meta.lvlDesc}</span><span>🔍</span>`;
-        } else {
-            currentLevel = lvl; isMarathon = false;
-            document.getElementById('lvl-menu').classList.remove('show');
-            document.getElementById('search-bar').value = "";
-            switchMode('learning');
-            saveStats(); loadLevelData();
-        }
-    }
-
-    function loadLevelData() {
-        fetch(`phrases_${currentLevel}.json?v=${Date.now()}`)
-            .then(res => res.json())
-            .then(data => {
-                phrasesData = data.phrases;
-                document.getElementById('lang-swap-btn').style.display = (currentLevel === 0) ? 'none' : 'block';
-                if (currentLevel === 0) activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-                else activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
-                updateMap(); startNewRound(); updateStats(); scanAndPopulate();
-            });
-    }
-
-    function switchMode(m) {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + m).classList.add('active');
-        isMarathon = (m === 'test'); isPhrasebook = (m === 'phrasebook');
-        if(!isPhrasebook) pbFilterLevel = null;
-        document.getElementById('quiz-ui').style.display = isPhrasebook ? 'none' : 'flex';
-        if (isPhrasebook) updatePhrasebook(); else if (isMarathon) startMarathon(); else { updateMap(); startNewRound(); }
-        updateTabCounters(); scanAndPopulate(); 
-    }
-
-    function startMarathon() {
-        const masteredPool = allPhrasesCache.filter(p => p.lvl !== 0 && (stats[p.pl] || 0) >= THRESHOLD);
-        if (masteredPool.length < 5) {
-            document.getElementById('q-text').innerText = "Master 5+ items first!";
-            document.getElementById('mastery-map').innerHTML = `<div class="mastered-card"><h2>Locked</h2><p>Master 5 phrases in learning mode to unlock the marathon.</p></div>`;
-            return;
-        }
-        let shuffled = masteredPool.sort(() => 0.5 - Math.random());
-        activePool = shuffled.slice(0, 12); marathonQueue = shuffled.slice(12); 
-        updateMap(); startNewRound(); updateTabCounters();
-    }
-
-    function updateTabCounters() {
-        const mCount = document.getElementById('marathon-count');
-        const lCount = document.getElementById('learn-count');
-        if (isMarathon) {
-            const total = activePool.length + marathonQueue.length;
-            mCount.innerText = total > 0 ? `Rem: ${total}` : ""; lCount.innerText = "";
-        } else if (!isPhrasebook) {
-            const remaining = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).length;
-            lCount.innerText = remaining > 0 ? `Rem: ${remaining}` : ""; mCount.innerText = "";
-        } else { mCount.innerText = ""; lCount.innerText = ""; }
-    }
-
-    function updatePhrasebook(filter = "") {
-        const area = document.getElementById('mastery-map');
-        area.innerHTML = ''; area.className = "phrasebook-list";
         
-        if (pbFilterLevel !== null && !filter) {
-            const meta = allPhrasesCache.find(p => p.lvl === pbFilterLevel);
-            const banner = document.createElement('div');
-            banner.className = 'filter-banner';
-            banner.innerHTML = `<span>Viewing: ${meta ? meta.lvlDesc : 'Category'}</span><button class="reset-filter-btn" onclick="resetPbFilter()">Show All</button>`;
-            area.appendChild(banner);
-        }
-
-        let list = allPhrasesCache.filter(p => p.lvl !== 0);
-        if (filter) {
-            pbFilterLevel = null;
-            document.getElementById('lvl-current').innerHTML = `<span>Searching...</span>`;
-            list = list.filter(p => p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter) || (p.lvlDesc && p.lvlDesc.toLowerCase().includes(filter)));
-        } else if (pbFilterLevel !== null) list = list.filter(p => p.lvl === pbFilterLevel);
-
-        let currentHeader = -1;
-        list.forEach(p => {
-            if (!filter && pbFilterLevel === null && p.lvl !== currentHeader) {
-                currentHeader = p.lvl;
-                const header = document.createElement('div');
-                header.className = 'pb-header';
-                header.innerText = p.lvlDesc || `Level ${p.lvl}`;
-                header.onclick = () => { pbFilterLevel = p.lvl; updatePhrasebook(); document.getElementById('lvl-current').innerHTML = `<span>Category: ${p.lvlDesc}</span><span>🔍</span>`; };
-                area.appendChild(header);
+        <!-- Info Box -->
+        <div class="info-box">
+            <strong>Gender Toggle:</strong> Polish adjectives and verbs change based on speaker's gender. 
+            Select your gender above, or choose "Both" to see all forms while learning.
+        </div>
+        
+        <!-- Tier Navigation -->
+        <div class="tier-nav">
+            <div class="tier-tab foundation" onclick="switchTier('foundation')">
+                <div class="tier-name">🟣 Foundation</div>
+                <div class="tier-count">123 items</div>
+            </div>
+            <div class="tier-tab survival active" onclick="switchTier('survival')">
+                <div class="tier-name">🟢 Survival</div>
+                <div class="tier-count">350 phrases</div>
+            </div>
+            <div class="tier-tab practical" onclick="switchTier('practical')">
+                <div class="tier-name">🟡 Practical</div>
+                <div class="tier-count">700 phrases</div>
+            </div>
+            <div class="tier-tab advanced" onclick="switchTier('advanced')">
+                <div class="tier-name">🔵 Advanced</div>
+                <div class="tier-count">625 phrases</div>
+            </div>
+        </div>
+        
+        <!-- Level Selector -->
+        <div class="level-selector">
+            <select id="levelSelect" onchange="loadLevel(this.value)">
+                <option value="">Select a level...</option>
+            </select>
+        </div>
+        
+        <!-- Flashcard -->
+        <div class="flashcard-container">
+            <div class="flashcard" id="flashcard" onclick="flipCard()">
+                <button class="gender-info-btn" id="genderInfoBtn" onclick="showGenderInfo(event)" style="display: none;">ℹ️</button>
+                <div id="genderIndicator" class="gender-indicator" style="display: none;"></div>
+                <div class="phrase-polish" id="phrasePolish">Select a level to start</div>
+                <div class="phrase-english" id="phraseEnglish" style="display: none;"></div>
+            </div>
+        </div>
+        
+        <!-- Controls -->
+        <div class="controls">
+            <div class="progress" id="progress">-</div>
+            <div class="nav-buttons">
+                <button class="nav-btn" id="prevBtn" onclick="prevPhrase()" disabled>← Previous</button>
+                <button class="nav-btn" id="nextBtn" onclick="nextPhrase()" disabled>Next →</button>
+            </div>
+        </div>
+        
+        <!-- Gender Info Modal -->
+        <div class="gender-modal" id="genderModal" onclick="closeGenderModal()">
+            <div class="gender-modal-content" onclick="event.stopPropagation()">
+                <h3>Gender Variants</h3>
+                <div id="genderVariantsContent"></div>
+                <button class="close-modal" onclick="closeGenderModal()">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // State
+        let currentGender = localStorage.getItem('polishMasterGender') || 'both';
+        let currentMode = 'learning';
+        let currentTier = 'survival';
+        let currentLevel = null;
+        let currentPhrases = [];
+        let currentIndex = 0;
+        let isFlipped = false;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            setGender(currentGender);
+            loadTierLevels();
+        });
+        
+        // Gender toggle
+        function setGender(gender) {
+            currentGender = gender;
+            localStorage.setItem('polishMasterGender', gender);
+            
+            // Update UI
+            document.querySelectorAll('.gender-btn').forEach(btn => btn.classList.remove('active'));
+            event?.target?.classList?.add('active') || 
+                document.querySelector(`.gender-btn:nth-child(${gender === 'm' ? 1 : gender === 'both' ? 2 : 3})`).classList.add('active');
+            
+            // Reload current phrase with new gender
+            if (currentPhrases.length > 0) {
+                displayPhrase();
             }
-            const row = document.createElement('div');
-            row.className = 'phrasebook-item';
-            row.innerHTML = `<div class="pb-content"><span class="pb-pl">${p.pl}</span><span class="pb-en">${p.en}</span></div><div class="pb-copy" onclick="copyText(event, '${p.pl.replace(/'/g, "\\'")}', this)">📋</div>`;
-            row.onclick = (e) => { if(e.target.className !== 'pb-copy') speak(p.pl); };
-            area.appendChild(row);
-        });
-        if(list.length === 0) area.innerHTML = `<div class="empty-state-box">No matches found.</div>`;
-    }
-
-    function resetPbFilter() {
-        pbFilterLevel = null;
-        document.getElementById('lvl-current').innerHTML = `<span>Select Category</span>`;
-        updatePhrasebook();
-    }
-
-    function copyText(e, text, el) {
-        e.stopPropagation();
-        navigator.clipboard.writeText(text).then(() => {
-            const row = el.closest('.phrasebook-item');
-            row.classList.add('copied');
-            setTimeout(() => row.classList.remove('copied'), 400);
-        });
-    }
-
-    function updateMap() {
-        const area = document.getElementById('mastery-map'); area.innerHTML = '';
-        const isLearning = document.getElementById('tab-learning').classList.contains('active');
-        area.className = (currentLevel === 0 && !isMarathon) ? "grid grid-alphabet" : "grid grid-standard";
-        if (isLearning && activePool.length === 0) {
-            const count = completions[currentLevel] || 0;
-            area.innerHTML = `<div class="mastered-card"><h2>Level Mastered! 🏅</h2><p>You have completed this category ${count} times.</p><button class="repeat-btn" onclick="resetLevelMastery()">Repeat Level</button></div>`;
-            return;
         }
-        let displayList = (isMarathon || isLearning) ? activePool : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-        displayList.forEach(p => {
-            const tile = document.createElement('div'); tile.className = 'tile';
-            if (p.lvl === 0 || (currentLevel === 0 && !isMarathon)) tile.innerHTML = `<span class="char">${p.pl}</span><span class="hint">${p.en}</span><span class="emoji">${p.e || ''}</span>`;
-            else tile.innerHTML = `<span class="char">${isSwapped ? p.en : p.pl}</span>`;
-            if (!isMarathon) {
-                const score = stats[p.pl] || 0;
-                if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
-            }
-            tile.onclick = () => checkAnswer(p, tile);
-            area.appendChild(tile);
-        });
-    }
-
-    function checkAnswer(phrase, el) {
-        if (phrase.pl === currentTarget.pl) {
-            correctStreak++; playNote(440 + (correctStreak * 40), 0.2);
-            if (!isMarathon) stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Dobrze! 🌟";
-            saveStats();
-            setTimeout(() => {
-                const idx = activePool.findIndex(ap => ap.pl === phrase.pl);
-                if (isMarathon) {
-                    if (marathonQueue.length > 0) activePool[idx] = marathonQueue.shift();
-                    else activePool.splice(idx, 1);
-                } else {
-                    if (stats[phrase.pl] >= THRESHOLD) {
-                        const next = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.includes(p));
-                        if (next) activePool[idx] = next; else activePool.splice(idx, 1);
-                    }
+        
+        // Switch tier
+        function switchTier(tier) {
+            currentTier = tier;
+            document.querySelectorAll('.tier-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`.tier-tab.${tier}`).classList.add('active');
+            loadTierLevels();
+        }
+        
+        // Load levels for current tier
+        function loadTierLevels() {
+            const tierLevels = {
+                'foundation': [0, 0.1],
+                'survival': [1, 2, 3, 4, 5],
+                'practical': [6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                'advanced': [16, 17, 18, 19, 20, 21, 22]
+            };
+            
+            const levels = tierLevels[currentTier] || [];
+            const select = document.getElementById('levelSelect');
+            select.innerHTML = '<option value="">Select a level...</option>';
+            
+            // Load level metadata
+            levels.forEach(async (levelNum) => {
+                try {
+                    const response = await fetch(`phrases_${levelNum}.json`);
+                    const data = await response.json();
+                    const option = document.createElement('option');
+                    option.value = levelNum;
+                    option.textContent = `Level ${levelNum}: ${data.description} (${data.phrases.length})`;
+                    select.appendChild(option);
+                } catch (e) {
+                    console.log(`Level ${levelNum} not found`);
                 }
-                if (activePool.length === 0) { playVictory(); document.getElementById('overlay').style.display='flex'; }
-                else { updateMap(); startNewRound(); updateTabCounters(); }
-            }, 800);
-        } else {
-            correctStreak = 0; el.classList.add('wrong'); document.getElementById('feedback').innerText = "Błąd!";
-            setTimeout(() => { el.classList.remove('wrong'); if(!isMarathon) startNewRound(); }, 1200);
+            });
         }
-    }
-
-    function startNewRound() {
-        if (!activePool.length) return;
-        let nextTarget;
-        if (activePool.length > 1) { do { nextTarget = activePool[Math.floor(Math.random() * activePool.length)]; } while (nextTarget === lastTarget); }
-        else nextTarget = activePool[0];
-        currentTarget = nextTarget; lastTarget = currentTarget;
-        document.getElementById('feedback').innerText = "";
-        if (currentTarget.lvl === 0 || (currentLevel === 0 && !isMarathon)) document.getElementById('q-text').innerText = `As in: ${currentTarget.word || currentTarget.en}`;
-        else document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
-        speak(currentTarget.pl);
-    }
-
-    function handleSmartSearch() {
-        const q = document.getElementById('search-bar').value.toLowerCase();
-        if (isPhrasebook) { updatePhrasebook(q); return; }
-        const extra = document.getElementById('search-results-extra');
-        extra.innerHTML = ''; if (!q) return;
-        const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(q) || p.en.toLowerCase().includes(q))).slice(0, 10);
-        matches.forEach(p => {
-            const item = document.createElement('div'); item.className = 'global-search-item';
-            item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div style="color:var(--pol-red); font-weight:bold; font-size:10px;">LVL ${p.lvl}</div>`;
-            item.onclick = () => selectLevel(p.lvl);
-            extra.appendChild(item);
+        
+        // Load level
+        async function loadLevel(levelNum) {
+            if (!levelNum) return;
+            
+            try {
+                const response = await fetch(`phrases_${levelNum}.json`);
+                const data = await response.json();
+                currentLevel = levelNum;
+                currentPhrases = data.phrases || [];
+                currentIndex = 0;
+                isFlipped = false;
+                
+                displayPhrase();
+                updateControls();
+            } catch (e) {
+                alert(`Error loading level ${levelNum}`);
+            }
+        }
+        
+        // Display current phrase with gender handling
+        function displayPhrase() {
+            if (currentPhrases.length === 0) return;
+            
+            const phrase = currentPhrases[currentIndex];
+            const flashcard = document.getElementById('flashcard');
+            const polishText = document.getElementById('phrasePolish');
+            const englishText = document.getElementById('phraseEnglish');
+            const genderInfoBtn = document.getElementById('genderInfoBtn');
+            const genderIndicator = document.getElementById('genderIndicator');
+            
+            // Get appropriate Polish text based on gender setting
+            let displayText = phrase.pl;
+            
+            if (phrase.gender === 'both' && phrase.variants) {
+                if (currentGender === 'm') {
+                    displayText = phrase.variants.m;
+                    genderIndicator.textContent = '♂';
+                    genderIndicator.style.display = 'block';
+                } else if (currentGender === 'f') {
+                    displayText = phrase.variants.f;
+                    genderIndicator.textContent = '♀';
+                    genderIndicator.style.display = 'block';
+                } else {
+                    // Both - show both forms
+                    displayText = `${phrase.variants.m} / ${phrase.variants.f}`;
+                    genderIndicator.textContent = '♂♀';
+                    genderIndicator.style.display = 'block';
+                }
+                
+                // Show info button for gendered phrases
+                genderInfoBtn.style.display = 'flex';
+            } else {
+                genderInfoBtn.style.display = 'none';
+                genderIndicator.style.display = 'none';
+            }
+            
+            polishText.textContent = displayText;
+            englishText.textContent = phrase.en;
+            
+            // Reset flip state
+            if (isFlipped) {
+                englishText.style.display = 'block';
+                flashcard.classList.add('flipped');
+            } else {
+                englishText.style.display = 'none';
+                flashcard.classList.remove('flipped');
+            }
+            
+            // Update progress
+            document.getElementById('progress').textContent = 
+                `${currentIndex + 1} / ${currentPhrases.length}`;
+        }
+        
+        // Flip card
+        function flipCard() {
+            isFlipped = !isFlipped;
+            const flashcard = document.getElementById('flashcard');
+            const englishText = document.getElementById('phraseEnglish');
+            
+            if (isFlipped) {
+                englishText.style.display = 'block';
+                flashcard.classList.add('flipped');
+            } else {
+                englishText.style.display = 'none';
+                flashcard.classList.remove('flipped');
+            }
+        }
+        
+        // Show gender info modal
+        function showGenderInfo(event) {
+            event.stopPropagation();
+            
+            const phrase = currentPhrases[currentIndex];
+            if (!phrase.variants) return;
+            
+            const modal = document.getElementById('genderModal');
+            const content = document.getElementById('genderVariantsContent');
+            
+            content.innerHTML = `
+                <div class="gender-variant">
+                    <div class="gender-variant-label">♂ Masculine (Male speaker)</div>
+                    <div class="gender-variant-text">${phrase.variants.m}</div>
+                </div>
+                <div class="gender-variant">
+                    <div class="gender-variant-label">♀ Feminine (Female speaker)</div>
+                    <div class="gender-variant-text">${phrase.variants.f}</div>
+                </div>
+                <div style="margin-top: 15px; padding: 15px; background: #fff3cd; border-radius: 8px; font-size: 14px;">
+                    <strong>💡 Tip:</strong> In Polish, adjectives and past tense verbs change based on the speaker's gender. 
+                    Use the gender toggle above to see your preferred form.
+                </div>
+            `;
+            
+            modal.classList.add('show');
+        }
+        
+        // Close modal
+        function closeGenderModal() {
+            document.getElementById('genderModal').classList.remove('show');
+        }
+        
+        // Navigation
+        function nextPhrase() {
+            if (currentIndex < currentPhrases.length - 1) {
+                currentIndex++;
+                isFlipped = false;
+                displayPhrase();
+                updateControls();
+            }
+        }
+        
+        function prevPhrase() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                isFlipped = false;
+                displayPhrase();
+                updateControls();
+            }
+        }
+        
+        function updateControls() {
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+            document.getElementById('nextBtn').disabled = currentIndex >= currentPhrases.length - 1;
+        }
+        
+        // Switch mode
+        function switchMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            if (mode === 'phrasebook') {
+                window.location.href = 'phrasebook-features.html';
+            }
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                if (!isFlipped) {
+                    flipCard();
+                } else {
+                    nextPhrase();
+                }
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevPhrase();
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                flipCard();
+            }
         });
-    }
-
-    function speak(t, rate = 1.0) {
-        window.speechSynthesis.cancel();
-        const m = new SpeechSynthesisUtterance(t); m.lang = 'pl-PL'; m.rate = rate;
-        window.speechSynthesis.speak(m);
-    }
-
-    function speakTarget() {
-        const now = Date.now();
-        const rate = (now - (window.lastTap || 0) < 400) ? 0.5 : 1.0;
-        window.lastTap = now;
-        if(currentTarget) speak(currentTarget.pl, rate);
-    }
-
-    function toggleLangSwap() { isSwapped = !isSwapped; document.getElementById('lang-swap-btn').classList.toggle('active-swap', isSwapped); updateMap(); if(!isPhrasebook) startNewRound(); }
-    function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); localStorage.setItem('pl_completion_counts', JSON.stringify(completions)); }
-    function updateStats() { if (!phrasesData.length) return; const m = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (m/phrasesData.length)*100+"%"; }
-    function advanceLevel() { document.getElementById('overlay').style.display='none'; if(isMarathon) switchMode('learning'); else { currentLevel++; selectLevel(currentLevel); } }
-    function resetLevelMastery() { completions[currentLevel] = (completions[currentLevel] || 0) + 1; phrasesData.forEach(p => stats[p.pl] = 0); saveStats(); loadLevelData(); }
-    function downloadProgress() { const b = new Blob([JSON.stringify({stats, completions, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `progress.txt`; a.click(); }
-    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; completions = d.completions || {}; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
-    function resetEverything() { if(confirm("Reset all?")) { localStorage.clear(); location.reload(); } }
-    window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
-    window.onload = loadLevelData;
-</script>
+    </script>
 </body>
 </html>
