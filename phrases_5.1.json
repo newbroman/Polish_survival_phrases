@@ -1,0 +1,532 @@
+{
+  "level": 5.1,
+  "description": "Numbers in Practice - Prices, Time & Counting",
+  "tier": "SURVIVAL",
+  "phrases": [
+    {
+      "id": "n5_01",
+      "category": "Counting",
+      "pl": "Jeden",
+      "en": "One",
+      "level": 5.1
+    },
+    {
+      "id": "n5_02",
+      "category": "Counting",
+      "pl": "Dwa",
+      "en": "Two",
+      "level": 5.1
+    },
+    {
+      "id": "n5_03",
+      "category": "Counting",
+      "pl": "Trzy",
+      "en": "Three",
+      "level": 5.1
+    },
+    {
+      "id": "n5_04",
+      "category": "Counting",
+      "pl": "Cztery",
+      "en": "Four",
+      "level": 5.1
+    },
+    {
+      "id": "n5_05",
+      "category": "Counting",
+      "pl": "Pięć",
+      "en": "Five",
+      "level": 5.1
+    },
+    {
+      "id": "n5_06",
+      "category": "Counting",
+      "pl": "Dziesięć",
+      "en": "Ten",
+      "level": 5.1
+    },
+    {
+      "id": "n5_07",
+      "category": "Counting",
+      "pl": "Dwadzieścia",
+      "en": "Twenty",
+      "level": 5.1
+    },
+    {
+      "id": "n5_08",
+      "category": "Counting",
+      "pl": "Pięćdziesiąt",
+      "en": "Fifty",
+      "level": 5.1
+    },
+    {
+      "id": "n5_09",
+      "category": "Counting",
+      "pl": "Sto",
+      "en": "One hundred",
+      "level": 5.1
+    },
+    {
+      "id": "n5_10",
+      "category": "Counting",
+      "pl": "Dwieście",
+      "en": "Two hundred",
+      "level": 5.1
+    },
+    {
+      "id": "n5_11",
+      "category": "Counting",
+      "pl": "Tysiąc",
+      "en": "One thousand",
+      "level": 5.1
+    },
+    {
+      "id": "n5_12",
+      "category": "Counting",
+      "pl": "Pierwszy",
+      "en": "First",
+      "level": 5.1
+    },
+    {
+      "id": "n5_13",
+      "category": "Counting",
+      "pl": "Drugi",
+      "en": "Second",
+      "level": 5.1
+    },
+    {
+      "id": "n5_14",
+      "category": "Counting",
+      "pl": "Trzeci",
+      "en": "Third",
+      "level": 5.1
+    },
+    {
+      "id": "n5_15",
+      "category": "Counting",
+      "pl": "Ostatni",
+      "en": "Last",
+      "level": 5.1
+    },
+    {
+      "id": "n5_16",
+      "category": "Prices",
+      "pl": "Ile to kosztuje?",
+      "en": "How much does it cost?",
+      "level": 5.1
+    },
+    {
+      "id": "n5_17",
+      "category": "Prices",
+      "pl": "Dziesięć złotych",
+      "en": "Ten zloty",
+      "level": 5.1
+    },
+    {
+      "id": "n5_18",
+      "category": "Prices",
+      "pl": "Dwadzieścia złotych",
+      "en": "Twenty zloty",
+      "level": 5.1
+    },
+    {
+      "id": "n5_19",
+      "category": "Prices",
+      "pl": "Pięćdziesiąt złotych",
+      "en": "Fifty zloty",
+      "level": 5.1
+    },
+    {
+      "id": "n5_20",
+      "category": "Prices",
+      "pl": "Sto złotych",
+      "en": "One hundred zloty",
+      "level": 5.1
+    },
+    {
+      "id": "n5_21",
+      "category": "Prices",
+      "pl": "To kosztuje pięć złotych",
+      "en": "It costs five zloty",
+      "level": 5.1
+    },
+    {
+      "id": "n5_22",
+      "category": "Prices",
+      "pl": "To jest za drogie",
+      "en": "That's too expensive",
+      "level": 5.1
+    },
+    {
+      "id": "n5_23",
+      "category": "Prices",
+      "pl": "To jest tanie",
+      "en": "That's cheap",
+      "level": 5.1
+    },
+    {
+      "id": "n5_24",
+      "category": "Prices",
+      "pl": "Czy mogę zapłacić kartą?",
+      "en": "Can I pay by card?",
+      "level": 5.1
+    },
+    {
+      "id": "n5_25",
+      "category": "Prices",
+      "pl": "Płacę gotówką",
+      "en": "I'm paying cash",
+      "level": 5.1
+    },
+    {
+      "id": "n5_26",
+      "category": "Prices",
+      "pl": "Reszta",
+      "en": "Change (money)",
+      "level": 5.1
+    },
+    {
+      "id": "n5_27",
+      "category": "Prices",
+      "pl": "Paragon",
+      "en": "Receipt",
+      "level": 5.1
+    },
+    {
+      "id": "n5_28",
+      "category": "Prices",
+      "pl": "Zniżka",
+      "en": "Discount",
+      "level": 5.1
+    },
+    {
+      "id": "n5_29",
+      "category": "Prices",
+      "pl": "Promocja",
+      "en": "Sale / Promotion",
+      "level": 5.1
+    },
+    {
+      "id": "n5_30",
+      "category": "Prices",
+      "pl": "Gratis",
+      "en": "Free",
+      "level": 5.1
+    },
+    {
+      "id": "n5_31",
+      "category": "Time",
+      "pl": "Która godzina?",
+      "en": "What time is it?",
+      "level": 5.1
+    },
+    {
+      "id": "n5_32",
+      "category": "Time",
+      "pl": "Jest pierwsza",
+      "en": "It's one o'clock",
+      "level": 5.1
+    },
+    {
+      "id": "n5_33",
+      "category": "Time",
+      "pl": "Jest druga",
+      "en": "It's two o'clock",
+      "level": 5.1
+    },
+    {
+      "id": "n5_34",
+      "category": "Time",
+      "pl": "Jest trzecia",
+      "en": "It's three o'clock",
+      "level": 5.1
+    },
+    {
+      "id": "n5_35",
+      "category": "Time",
+      "pl": "Jest piąta",
+      "en": "It's five o'clock",
+      "level": 5.1
+    },
+    {
+      "id": "n5_36",
+      "category": "Time",
+      "pl": "Jest dziesiąta",
+      "en": "It's ten o'clock",
+      "level": 5.1
+    },
+    {
+      "id": "n5_37",
+      "category": "Time",
+      "pl": "Jest dwunasta",
+      "en": "It's twelve o'clock / noon",
+      "level": 5.1
+    },
+    {
+      "id": "n5_38",
+      "category": "Time",
+      "pl": "Wpół do drugiej",
+      "en": "Half past one",
+      "level": 5.1
+    },
+    {
+      "id": "n5_39",
+      "category": "Time",
+      "pl": "Kwadrans po trzeciej",
+      "en": "Quarter past three",
+      "level": 5.1
+    },
+    {
+      "id": "n5_40",
+      "category": "Time",
+      "pl": "Za kwadrans czwarta",
+      "en": "Quarter to four",
+      "level": 5.1
+    },
+    {
+      "id": "n5_41",
+      "category": "Time",
+      "pl": "O której?",
+      "en": "At what time?",
+      "level": 5.1
+    },
+    {
+      "id": "n5_42",
+      "category": "Time",
+      "pl": "O drugiej",
+      "en": "At two",
+      "level": 5.1
+    },
+    {
+      "id": "n5_43",
+      "category": "Time",
+      "pl": "O piątej trzydzieści",
+      "en": "At five thirty",
+      "level": 5.1
+    },
+    {
+      "id": "n5_44",
+      "category": "Time",
+      "pl": "Rano",
+      "en": "In the morning",
+      "level": 5.1
+    },
+    {
+      "id": "n5_45",
+      "category": "Time",
+      "pl": "Po południu",
+      "en": "In the afternoon",
+      "level": 5.1
+    },
+    {
+      "id": "n5_46",
+      "category": "Time",
+      "pl": "Wieczorem",
+      "en": "In the evening",
+      "level": 5.1
+    },
+    {
+      "id": "n5_47",
+      "category": "Time",
+      "pl": "W nocy",
+      "en": "At night",
+      "level": 5.1
+    },
+    {
+      "id": "n5_48",
+      "category": "Time",
+      "pl": "Teraz",
+      "en": "Now",
+      "level": 5.1
+    },
+    {
+      "id": "n5_49",
+      "category": "Time",
+      "pl": "Później",
+      "en": "Later",
+      "level": 5.1
+    },
+    {
+      "id": "n5_50",
+      "category": "Time",
+      "pl": "Wcześniej",
+      "en": "Earlier",
+      "level": 5.1
+    },
+    {
+      "id": "n5_51",
+      "category": "Dates",
+      "pl": "Dziś",
+      "en": "Today",
+      "level": 5.1
+    },
+    {
+      "id": "n5_52",
+      "category": "Dates",
+      "pl": "Jutro",
+      "en": "Tomorrow",
+      "level": 5.1
+    },
+    {
+      "id": "n5_53",
+      "category": "Dates",
+      "pl": "Wczoraj",
+      "en": "Yesterday",
+      "level": 5.1
+    },
+    {
+      "id": "n5_54",
+      "category": "Dates",
+      "pl": "Pojutrze",
+      "en": "Day after tomorrow",
+      "level": 5.1
+    },
+    {
+      "id": "n5_55",
+      "category": "Dates",
+      "pl": "Przedwczoraj",
+      "en": "Day before yesterday",
+      "level": 5.1
+    },
+    {
+      "id": "n5_56",
+      "category": "Dates",
+      "pl": "W poniedziałek",
+      "en": "On Monday",
+      "level": 5.1
+    },
+    {
+      "id": "n5_57",
+      "category": "Dates",
+      "pl": "W weekend",
+      "en": "On the weekend",
+      "level": 5.1
+    },
+    {
+      "id": "n5_58",
+      "category": "Dates",
+      "pl": "W przyszłym tygodniu",
+      "en": "Next week",
+      "level": 5.1
+    },
+    {
+      "id": "n5_59",
+      "category": "Dates",
+      "pl": "W tym miesiącu",
+      "en": "This month",
+      "level": 5.1
+    },
+    {
+      "id": "n5_60",
+      "category": "Dates",
+      "pl": "Pierwszego stycznia",
+      "en": "January first",
+      "level": 5.1
+    },
+    {
+      "id": "n5_61",
+      "category": "Dates",
+      "pl": "Drugiego lutego",
+      "en": "February second",
+      "level": 5.1
+    },
+    {
+      "id": "n5_62",
+      "category": "Dates",
+      "pl": "Trzeciego marca",
+      "en": "March third",
+      "level": 5.1
+    },
+    {
+      "id": "n5_63",
+      "category": "Dates",
+      "pl": "Kiedy?",
+      "en": "When?",
+      "level": 5.1
+    },
+    {
+      "id": "n5_64",
+      "category": "Dates",
+      "pl": "Który dzień?",
+      "en": "What day?",
+      "level": 5.1
+    },
+    {
+      "id": "n5_65",
+      "category": "Dates",
+      "pl": "Jaka data?",
+      "en": "What date?",
+      "level": 5.1
+    },
+    {
+      "id": "n5_66",
+      "category": "Positions",
+      "pl": "Pierwszy w kolejce",
+      "en": "First in line",
+      "level": 5.1
+    },
+    {
+      "id": "n5_67",
+      "category": "Positions",
+      "pl": "Drugi od lewej",
+      "en": "Second from the left",
+      "level": 5.1
+    },
+    {
+      "id": "n5_68",
+      "category": "Positions",
+      "pl": "Trzeci piętro",
+      "en": "Third floor",
+      "level": 5.1
+    },
+    {
+      "id": "n5_69",
+      "category": "Positions",
+      "pl": "Pokój numer dziesięć",
+      "en": "Room number ten",
+      "level": 5.1
+    },
+    {
+      "id": "n5_70",
+      "category": "Positions",
+      "pl": "Peron numer pięć",
+      "en": "Platform number five",
+      "level": 5.1
+    },
+    {
+      "id": "n5_71",
+      "category": "Positions",
+      "pl": "Autobus numer trzy",
+      "en": "Bus number three",
+      "level": 5.1
+    },
+    {
+      "id": "n5_72",
+      "category": "Positions",
+      "pl": "Stół numer osiem",
+      "en": "Table number eight",
+      "level": 5.1
+    },
+    {
+      "id": "n5_73",
+      "category": "Positions",
+      "pl": "Na górze",
+      "en": "Upstairs / At the top",
+      "level": 5.1
+    },
+    {
+      "id": "n5_74",
+      "category": "Positions",
+      "pl": "Na dole",
+      "en": "Downstairs / At the bottom",
+      "level": 5.1
+    },
+    {
+      "id": "n5_75",
+      "category": "Positions",
+      "pl": "W środku",
+      "en": "In the middle",
+      "level": 5.1
+    }
+  ]
+}

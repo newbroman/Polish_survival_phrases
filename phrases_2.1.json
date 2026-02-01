@@ -1,0 +1,537 @@
+{
+  "level": 2.1,
+  "description": "Car Travel & Rental - Driving in Poland",
+  "tier": "SURVIVAL",
+  "phrases": [
+    {
+      "id": "s2_71",
+      "category": "Car Rental",
+      "pl": "Wypożyczalnia samochodów",
+      "en": "Car rental",
+      "level": 2
+    },
+    {
+      "id": "s2_72",
+      "category": "Car Rental",
+      "pl": "Chciałbym/Chciałabym wynająć samochód",
+      "en": "I'd like to rent a car",
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Chciałbym wynająć samochód",
+        "f": "Chciałabym wynająć samochód"
+      }
+    },
+    {
+      "id": "s2_73",
+      "category": "Car Rental",
+      "pl": "Na ile dni?",
+      "en": "For how many days?",
+      "level": 2
+    },
+    {
+      "id": "s2_74",
+      "category": "Car Rental",
+      "pl": "Na jeden dzień",
+      "en": "For one day",
+      "level": 2
+    },
+    {
+      "id": "s2_75",
+      "category": "Car Rental",
+      "pl": "Na tydzień",
+      "en": "For a week",
+      "level": 2
+    },
+    {
+      "id": "s2_76",
+      "category": "Car Rental",
+      "pl": "Ile to kosztuje?",
+      "en": "How much does it cost?",
+      "level": 2
+    },
+    {
+      "id": "s2_77",
+      "category": "Car Rental",
+      "pl": "Ile kosztuje na dzień?",
+      "en": "How much per day?",
+      "level": 2
+    },
+    {
+      "id": "s2_78",
+      "category": "Car Rental",
+      "pl": "Czy ubezpieczenie jest wliczone?",
+      "en": "Is insurance included?",
+      "level": 2
+    },
+    {
+      "id": "s2_79",
+      "category": "Car Rental",
+      "pl": "Potrzebuję ubezpieczenia",
+      "en": "I need insurance",
+      "level": 2
+    },
+    {
+      "id": "s2_80",
+      "category": "Car Rental",
+      "pl": "Prawo jazdy",
+      "en": "Driver's license",
+      "level": 2
+    },
+    {
+      "id": "s2_81",
+      "category": "Car Rental",
+      "pl": "Mam międzynarodowe prawo jazdy",
+      "en": "I have an international driver's license",
+      "level": 2
+    },
+    {
+      "id": "s2_82",
+      "category": "Car Rental",
+      "pl": "Pełny zbiornik",
+      "en": "Full tank",
+      "level": 2
+    },
+    {
+      "id": "s2_83",
+      "category": "Car Rental",
+      "pl": "Czy mogę zwrócić samochód w innym mieście?",
+      "en": "Can I return the car in another city?",
+      "level": 2
+    },
+    {
+      "id": "s2_84",
+      "category": "Car Rental",
+      "pl": "Automatyczna skrzynia biegów",
+      "en": "Automatic transmission",
+      "level": 2
+    },
+    {
+      "id": "s2_85",
+      "category": "Car Rental",
+      "pl": "Manualna skrzynia biegów",
+      "en": "Manual transmission",
+      "level": 2
+    },
+    {
+      "id": "s2_86",
+      "category": "Driving",
+      "pl": "Samochód",
+      "en": "Car",
+      "level": 2
+    },
+    {
+      "id": "s2_87",
+      "category": "Driving",
+      "pl": "Prowadzić samochód",
+      "en": "To drive a car",
+      "level": 2
+    },
+    {
+      "id": "s2_88",
+      "category": "Driving",
+      "pl": "Parkować",
+      "en": "To park",
+      "level": 2
+    },
+    {
+      "id": "s2_89",
+      "category": "Driving",
+      "pl": "Parking",
+      "en": "Parking / Parking lot",
+      "level": 2
+    },
+    {
+      "id": "s2_90",
+      "category": "Driving",
+      "pl": "Gdzie mogę zaparkować?",
+      "en": "Where can I park?",
+      "level": 2
+    },
+    {
+      "id": "s2_91",
+      "category": "Driving",
+      "pl": "Czy parking jest płatny?",
+      "en": "Is parking paid?",
+      "level": 2
+    },
+    {
+      "id": "s2_92",
+      "category": "Driving",
+      "pl": "Ile kosztuje parking?",
+      "en": "How much is parking?",
+      "level": 2
+    },
+    {
+      "id": "s2_93",
+      "category": "Driving",
+      "pl": "Parkomat",
+      "en": "Parking meter",
+      "level": 2
+    },
+    {
+      "id": "s2_94",
+      "category": "Driving",
+      "pl": "Bilet parkingowy",
+      "en": "Parking ticket",
+      "level": 2
+    },
+    {
+      "id": "s2_95",
+      "category": "Driving",
+      "pl": "Strefa płatnego parkowania",
+      "en": "Paid parking zone",
+      "level": 2
+    },
+    {
+      "id": "s2_96",
+      "category": "Driving",
+      "pl": "Autostrada",
+      "en": "Highway / Motorway",
+      "level": 2
+    },
+    {
+      "id": "s2_97",
+      "category": "Driving",
+      "pl": "Opłata za autostradę",
+      "en": "Highway toll",
+      "level": 2
+    },
+    {
+      "id": "s2_98",
+      "category": "Driving",
+      "pl": "Viatioll",
+      "en": "Toll payment system",
+      "level": 2
+    },
+    {
+      "id": "s2_99",
+      "category": "Driving",
+      "pl": "Ograniczenie prędkości",
+      "en": "Speed limit",
+      "level": 2
+    },
+    {
+      "id": "s2_100",
+      "category": "Driving",
+      "pl": "Sygnalizacja świetlna",
+      "en": "Traffic lights",
+      "level": 2
+    },
+    {
+      "id": "s2_101",
+      "category": "Driving",
+      "pl": "Skrzyżowanie",
+      "en": "Intersection / Crossroads",
+      "level": 2
+    },
+    {
+      "id": "s2_102",
+      "category": "Driving",
+      "pl": "Rondo",
+      "en": "Roundabout",
+      "level": 2
+    },
+    {
+      "id": "s2_103",
+      "category": "Driving",
+      "pl": "Zakaz parkowania",
+      "en": "No parking",
+      "level": 2
+    },
+    {
+      "id": "s2_104",
+      "category": "Driving",
+      "pl": "Zakaz wjazdu",
+      "en": "No entry",
+      "level": 2
+    },
+    {
+      "id": "s2_105",
+      "category": "Driving",
+      "pl": "Jednokie runkowa",
+      "en": "One way",
+      "level": 2
+    },
+    {
+      "id": "s2_106",
+      "category": "Gas Station",
+      "pl": "Stacja benzynowa",
+      "en": "Gas station",
+      "level": 2
+    },
+    {
+      "id": "s2_107",
+      "category": "Gas Station",
+      "pl": "Gdzie jest stacja benzynowa?",
+      "en": "Where is the gas station?",
+      "level": 2
+    },
+    {
+      "id": "s2_108",
+      "category": "Gas Station",
+      "pl": "Benzyna",
+      "en": "Gasoline / Petrol",
+      "level": 2
+    },
+    {
+      "id": "s2_109",
+      "category": "Gas Station",
+      "pl": "Diesel",
+      "en": "Diesel",
+      "level": 2
+    },
+    {
+      "id": "s2_110",
+      "category": "Gas Station",
+      "pl": "Pełny bak",
+      "en": "Full tank",
+      "level": 2
+    },
+    {
+      "id": "s2_111",
+      "category": "Gas Station",
+      "pl": "Proszę zatankować",
+      "en": "Please fill it up",
+      "level": 2
+    },
+    {
+      "id": "s2_112",
+      "category": "Gas Station",
+      "pl": "Za pięćdziesiąt złotych",
+      "en": "Fifty zloty worth",
+      "level": 2
+    },
+    {
+      "id": "s2_113",
+      "category": "Gas Station",
+      "pl": "Dystrybutor numer...",
+      "en": "Pump number...",
+      "level": 2
+    },
+    {
+      "id": "s2_114",
+      "category": "Gas Station",
+      "pl": "Płacę kartą",
+      "en": "I'm paying by card",
+      "level": 2
+    },
+    {
+      "id": "s2_115",
+      "category": "Gas Station",
+      "pl": "Płacę gotówką",
+      "en": "I'm paying cash",
+      "level": 2
+    },
+    {
+      "id": "s2_116",
+      "category": "Gas Station",
+      "pl": "Toaleta",
+      "en": "Restroom",
+      "level": 2
+    },
+    {
+      "id": "s2_117",
+      "category": "Gas Station",
+      "pl": "Sklep",
+      "en": "Shop / Store",
+      "level": 2
+    },
+    {
+      "id": "s2_118",
+      "category": "Gas Station",
+      "pl": "Myjnia samochodowa",
+      "en": "Car wash",
+      "level": 2
+    },
+    {
+      "id": "s2_119",
+      "category": "Gas Station",
+      "pl": "Olej",
+      "en": "Oil",
+      "level": 2
+    },
+    {
+      "id": "s2_120",
+      "category": "Gas Station",
+      "pl": "Sprawdzić olej",
+      "en": "Check the oil",
+      "level": 2
+    },
+    {
+      "id": "s2_121",
+      "category": "Car Problems",
+      "pl": "Samochód się zepsuł",
+      "en": "The car broke down",
+      "level": 2
+    },
+    {
+      "id": "s2_122",
+      "category": "Car Problems",
+      "pl": "Samochód nie odpala",
+      "en": "The car won't start",
+      "level": 2
+    },
+    {
+      "id": "s2_123",
+      "category": "Car Problems",
+      "pl": "Mam problem z samochodem",
+      "en": "I have a problem with the car",
+      "level": 2
+    },
+    {
+      "id": "s2_124",
+      "category": "Car Problems",
+      "pl": "Potrzebuję pomocy drogowej",
+      "en": "I need roadside assistance",
+      "level": 2
+    },
+    {
+      "id": "s2_125",
+      "category": "Car Problems",
+      "pl": "Pomoc drogowa",
+      "en": "Roadside assistance",
+      "level": 2
+    },
+    {
+      "id": "s2_126",
+      "category": "Car Problems",
+      "pl": "Mechanik",
+      "en": "Mechanic",
+      "level": 2
+    },
+    {
+      "id": "s2_127",
+      "category": "Car Problems",
+      "pl": "Warsztat samochodowy",
+      "en": "Car repair shop",
+      "level": 2
+    },
+    {
+      "id": "s2_128",
+      "category": "Car Problems",
+      "pl": "Holowanie",
+      "en": "Towing",
+      "level": 2
+    },
+    {
+      "id": "s2_129",
+      "category": "Car Problems",
+      "pl": "Potrzebuję holowania",
+      "en": "I need a tow",
+      "level": 2
+    },
+    {
+      "id": "s2_130",
+      "category": "Car Problems",
+      "pl": "Guma jest przebita",
+      "en": "The tire is flat",
+      "level": 2
+    },
+    {
+      "id": "s2_131",
+      "category": "Car Problems",
+      "pl": "Koło zapasowe",
+      "en": "Spare tire",
+      "level": 2
+    },
+    {
+      "id": "s2_132",
+      "category": "Car Problems",
+      "pl": "Akumulator jest rozładowany",
+      "en": "The battery is dead",
+      "level": 2
+    },
+    {
+      "id": "s2_133",
+      "category": "Car Problems",
+      "pl": "Silnik",
+      "en": "Engine",
+      "level": 2
+    },
+    {
+      "id": "s2_134",
+      "category": "Car Problems",
+      "pl": "Hamulce",
+      "en": "Brakes",
+      "level": 2
+    },
+    {
+      "id": "s2_135",
+      "category": "Car Problems",
+      "pl": "Coś dziwnie brzmi",
+      "en": "Something sounds strange",
+      "level": 2
+    },
+    {
+      "id": "s2_136",
+      "category": "Navigation",
+      "pl": "Mapa",
+      "en": "Map",
+      "level": 2
+    },
+    {
+      "id": "s2_137",
+      "category": "Navigation",
+      "pl": "GPS",
+      "en": "GPS",
+      "level": 2
+    },
+    {
+      "id": "s2_138",
+      "category": "Navigation",
+      "pl": "Nawigacja",
+      "en": "Navigation",
+      "level": 2
+    },
+    {
+      "id": "s2_139",
+      "category": "Navigation",
+      "pl": "Jechać prosto",
+      "en": "Go straight",
+      "level": 2
+    },
+    {
+      "id": "s2_140",
+      "category": "Navigation",
+      "pl": "Skręcić w lewo",
+      "en": "Turn left",
+      "level": 2
+    },
+    {
+      "id": "s2_141",
+      "category": "Navigation",
+      "pl": "Skręcić w prawo",
+      "en": "Turn right",
+      "level": 2
+    },
+    {
+      "id": "s2_142",
+      "category": "Navigation",
+      "pl": "Zawrócić",
+      "en": "Turn around / Make a U-turn",
+      "level": 2
+    },
+    {
+      "id": "s2_143",
+      "category": "Navigation",
+      "pl": "Jak dojechać do...?",
+      "en": "How do I drive to...?",
+      "level": 2
+    },
+    {
+      "id": "s2_144",
+      "category": "Navigation",
+      "pl": "Czy to jest droga do...?",
+      "en": "Is this the road to...?",
+      "level": 2
+    },
+    {
+      "id": "s2_145",
+      "category": "Navigation",
+      "pl": "Ile kilometrów?",
+      "en": "How many kilometers?",
+      "level": 2
+    }
+  ]
+}

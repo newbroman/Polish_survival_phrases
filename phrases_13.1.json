@@ -1,0 +1,517 @@
+{
+  "level": 13.1,
+  "description": "Culture & Entertainment - Museums, Theatre & Cinema",
+  "tier": "PRACTICAL",
+  "phrases": [
+    {
+      "id": "p13_41",
+      "category": "Entertainment",
+      "pl": "Kino",
+      "en": "Cinema / Movie theater",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_42",
+      "category": "Entertainment",
+      "pl": "Teatr",
+      "en": "Theater",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_43",
+      "category": "Entertainment",
+      "pl": "Koncert",
+      "en": "Concert",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_44",
+      "category": "Entertainment",
+      "pl": "Muzeum",
+      "en": "Museum",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_45",
+      "category": "Entertainment",
+      "pl": "Galeria",
+      "en": "Gallery",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_46",
+      "category": "Entertainment",
+      "pl": "Wystawa",
+      "en": "Exhibition",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_47",
+      "category": "Entertainment",
+      "pl": "Bilet",
+      "en": "Ticket",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_48",
+      "category": "Entertainment",
+      "pl": "Ile kosztuje bilet?",
+      "en": "How much is the ticket?",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_49",
+      "category": "Entertainment",
+      "pl": "Dwa bilety, proszę",
+      "en": "Two tickets, please",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_50",
+      "category": "Entertainment",
+      "pl": "Kiedy zaczyna się film?",
+      "en": "When does the movie start?",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_51",
+      "category": "Entertainment",
+      "pl": "O której kończy się spektakl?",
+      "en": "What time does the show end?",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_52",
+      "category": "Entertainment",
+      "pl": "Czy są jeszcze bilety?",
+      "en": "Are there still tickets?",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_53",
+      "category": "Entertainment",
+      "pl": "Wyprzedane",
+      "en": "Sold out",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_54",
+      "category": "Entertainment",
+      "pl": "Rezerwacja online",
+      "en": "Online booking",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_55",
+      "category": "Entertainment",
+      "pl": "Polecam",
+      "en": "I recommend",
+      "level": 13,
+      "gender": null
+    },
+    {
+      "id": "p13_71",
+      "category": "Museums",
+      "pl": "Muzeum",
+      "en": "Museum",
+      "level": 13
+    },
+    {
+      "id": "p13_72",
+      "category": "Museums",
+      "pl": "Gdzie jest muzeum?",
+      "en": "Where is the museum?",
+      "level": 13
+    },
+    {
+      "id": "p13_73",
+      "category": "Museums",
+      "pl": "Ile kosztuje bilet do muzeum?",
+      "en": "How much is a museum ticket?",
+      "level": 13
+    },
+    {
+      "id": "p13_74",
+      "category": "Museums",
+      "pl": "O której otwiera się muzeum?",
+      "en": "What time does the museum open?",
+      "level": 13
+    },
+    {
+      "id": "p13_75",
+      "category": "Museums",
+      "pl": "O której zamyka się muzeum?",
+      "en": "What time does the museum close?",
+      "level": 13
+    },
+    {
+      "id": "p13_76",
+      "category": "Museums",
+      "pl": "Czy jest zniżka dla studentów?",
+      "en": "Is there a student discount?",
+      "level": 13
+    },
+    {
+      "id": "p13_77",
+      "category": "Museums",
+      "pl": "Bilet ulgowy",
+      "en": "Reduced ticket / Concession",
+      "level": 13
+    },
+    {
+      "id": "p13_78",
+      "category": "Museums",
+      "pl": "Bilet normalny",
+      "en": "Full price ticket",
+      "level": 13
+    },
+    {
+      "id": "p13_79",
+      "category": "Museums",
+      "pl": "Czy mogę robić zdjęcia?",
+      "en": "Can I take photos?",
+      "level": 13
+    },
+    {
+      "id": "p13_80",
+      "category": "Museums",
+      "pl": "Zakaz fotografowania",
+      "en": "No photography",
+      "level": 13
+    },
+    {
+      "id": "p13_81",
+      "category": "Museums",
+      "pl": "Wystawa",
+      "en": "Exhibition",
+      "level": 13
+    },
+    {
+      "id": "p13_82",
+      "category": "Museums",
+      "pl": "Wystawa czasowa",
+      "en": "Temporary exhibition",
+      "level": 13
+    },
+    {
+      "id": "p13_83",
+      "category": "Museums",
+      "pl": "Wystawa stała",
+      "en": "Permanent exhibition",
+      "level": 13
+    },
+    {
+      "id": "p13_84",
+      "category": "Museums",
+      "pl": "Galeria",
+      "en": "Gallery",
+      "level": 13
+    },
+    {
+      "id": "p13_85",
+      "category": "Museums",
+      "pl": "Galeria sztuki",
+      "en": "Art gallery",
+      "level": 13
+    },
+    {
+      "id": "p13_86",
+      "category": "Museums",
+      "pl": "Przewodnik",
+      "en": "Guide / Guidebook",
+      "level": 13
+    },
+    {
+      "id": "p13_87",
+      "category": "Museums",
+      "pl": "Czy jest przewodnik po angielsku?",
+      "en": "Is there an English guide?",
+      "level": 13
+    },
+    {
+      "id": "p13_88",
+      "category": "Museums",
+      "pl": "Audioguide",
+      "en": "Audio guide",
+      "level": 13
+    },
+    {
+      "id": "p13_89",
+      "category": "Museums",
+      "pl": "Szatnia",
+      "en": "Cloakroom / Coat check",
+      "level": 13
+    },
+    {
+      "id": "p13_90",
+      "category": "Museums",
+      "pl": "Sklep muzealny",
+      "en": "Museum shop",
+      "level": 13
+    },
+    {
+      "id": "p13_91",
+      "category": "Theatre",
+      "pl": "Teatr",
+      "en": "Theatre",
+      "level": 13
+    },
+    {
+      "id": "p13_92",
+      "category": "Theatre",
+      "pl": "Opera",
+      "en": "Opera",
+      "level": 13
+    },
+    {
+      "id": "p13_93",
+      "category": "Theatre",
+      "pl": "Balet",
+      "en": "Ballet",
+      "level": 13
+    },
+    {
+      "id": "p13_94",
+      "category": "Theatre",
+      "pl": "Koncert",
+      "en": "Concert",
+      "level": 13
+    },
+    {
+      "id": "p13_95",
+      "category": "Theatre",
+      "pl": "Spektakl",
+      "en": "Performance / Show",
+      "level": 13
+    },
+    {
+      "id": "p13_96",
+      "category": "Theatre",
+      "pl": "Przedstawienie",
+      "en": "Performance / Play",
+      "level": 13
+    },
+    {
+      "id": "p13_97",
+      "category": "Theatre",
+      "pl": "Kiedy zaczyna się spektakl?",
+      "en": "When does the show start?",
+      "level": 13
+    },
+    {
+      "id": "p13_98",
+      "category": "Theatre",
+      "pl": "O której kończy się spektakl?",
+      "en": "What time does the show end?",
+      "level": 13
+    },
+    {
+      "id": "p13_99",
+      "category": "Theatre",
+      "pl": "Ile trwa spektakl?",
+      "en": "How long is the show?",
+      "level": 13
+    },
+    {
+      "id": "p13_100",
+      "category": "Theatre",
+      "pl": "Czy są jeszcze bilety?",
+      "en": "Are there still tickets?",
+      "level": 13
+    },
+    {
+      "id": "p13_101",
+      "category": "Theatre",
+      "pl": "Wyprzedane",
+      "en": "Sold out",
+      "level": 13
+    },
+    {
+      "id": "p13_102",
+      "category": "Theatre",
+      "pl": "Rezerwacja",
+      "en": "Reservation / Booking",
+      "level": 13
+    },
+    {
+      "id": "p13_103",
+      "category": "Theatre",
+      "pl": "Chciałbym/Chciałabym zarezerwować bilety",
+      "en": "I'd like to book tickets",
+      "level": 13,
+      "gender": "both",
+      "variants": {
+        "m": "Chciałbym zarezerwować bilety",
+        "f": "Chciałabym zarezerwować bilety"
+      }
+    },
+    {
+      "id": "p13_104",
+      "category": "Theatre",
+      "pl": "Dwa bilety, proszę",
+      "en": "Two tickets, please",
+      "level": 13
+    },
+    {
+      "id": "p13_105",
+      "category": "Theatre",
+      "pl": "Miejsce",
+      "en": "Seat",
+      "level": 13
+    },
+    {
+      "id": "p13_106",
+      "category": "Theatre",
+      "pl": "Rząd",
+      "en": "Row",
+      "level": 13
+    },
+    {
+      "id": "p13_107",
+      "category": "Theatre",
+      "pl": "Balkon",
+      "en": "Balcony",
+      "level": 13
+    },
+    {
+      "id": "p13_108",
+      "category": "Theatre",
+      "pl": "Parter",
+      "en": "Ground floor / Stalls",
+      "level": 13
+    },
+    {
+      "id": "p13_109",
+      "category": "Theatre",
+      "pl": "Loża",
+      "en": "Box (theatre)",
+      "level": 13
+    },
+    {
+      "id": "p13_110",
+      "category": "Theatre",
+      "pl": "Scena",
+      "en": "Stage",
+      "level": 13
+    },
+    {
+      "id": "p13_111",
+      "category": "Theatre",
+      "pl": "Przerwa",
+      "en": "Intermission / Interval",
+      "level": 13
+    },
+    {
+      "id": "p13_112",
+      "category": "Theatre",
+      "pl": "Garderoba",
+      "en": "Cloakroom",
+      "level": 13
+    },
+    {
+      "id": "p13_113",
+      "category": "Theatre",
+      "pl": "Program",
+      "en": "Program / Programme",
+      "level": 13
+    },
+    {
+      "id": "p13_114",
+      "category": "Theatre",
+      "pl": "Czy są napisy?",
+      "en": "Are there subtitles?",
+      "level": 13
+    },
+    {
+      "id": "p13_115",
+      "category": "Theatre",
+      "pl": "Napisy po angielsku",
+      "en": "English subtitles",
+      "level": 13
+    },
+    {
+      "id": "p13_116",
+      "category": "Cinema",
+      "pl": "Kino",
+      "en": "Cinema / Movie theater",
+      "level": 13
+    },
+    {
+      "id": "p13_117",
+      "category": "Cinema",
+      "pl": "Film",
+      "en": "Movie / Film",
+      "level": 13
+    },
+    {
+      "id": "p13_118",
+      "category": "Cinema",
+      "pl": "Seans",
+      "en": "Screening / Showing",
+      "level": 13
+    },
+    {
+      "id": "p13_119",
+      "category": "Cinema",
+      "pl": "Kiedy zaczyna się film?",
+      "en": "When does the movie start?",
+      "level": 13
+    },
+    {
+      "id": "p13_120",
+      "category": "Cinema",
+      "pl": "Jaki film polecasz?",
+      "en": "What movie do you recommend?",
+      "level": 13
+    },
+    {
+      "id": "p13_121",
+      "category": "Cinema",
+      "pl": "Wersja oryginalna",
+      "en": "Original version",
+      "level": 13
+    },
+    {
+      "id": "p13_122",
+      "category": "Cinema",
+      "pl": "Z lektorem",
+      "en": "With voice-over",
+      "level": 13
+    },
+    {
+      "id": "p13_123",
+      "category": "Cinema",
+      "pl": "Dubbing",
+      "en": "Dubbed",
+      "level": 13
+    },
+    {
+      "id": "p13_124",
+      "category": "Cinema",
+      "pl": "Napisy",
+      "en": "Subtitles",
+      "level": 13
+    },
+    {
+      "id": "p13_125",
+      "category": "Cinema",
+      "pl": "Popcorn",
+      "en": "Popcorn",
+      "level": 13
+    }
+  ]
+}

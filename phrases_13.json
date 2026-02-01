@@ -1,6 +1,6 @@
 {
   "level": 13,
-  "description": "Hobbies & Interests - Leisure Activities",
+  "description": "Hobbies & Sports - Activities & Leisure",
   "tier": "PRACTICAL",
   "phrases": [
     {
@@ -320,126 +320,6 @@
       "category": "Sports",
       "pl": "Trening",
       "en": "Training / Workout",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_41",
-      "category": "Entertainment",
-      "pl": "Kino",
-      "en": "Cinema / Movie theater",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_42",
-      "category": "Entertainment",
-      "pl": "Teatr",
-      "en": "Theater",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_43",
-      "category": "Entertainment",
-      "pl": "Koncert",
-      "en": "Concert",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_44",
-      "category": "Entertainment",
-      "pl": "Muzeum",
-      "en": "Museum",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_45",
-      "category": "Entertainment",
-      "pl": "Galeria",
-      "en": "Gallery",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_46",
-      "category": "Entertainment",
-      "pl": "Wystawa",
-      "en": "Exhibition",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_47",
-      "category": "Entertainment",
-      "pl": "Bilet",
-      "en": "Ticket",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_48",
-      "category": "Entertainment",
-      "pl": "Ile kosztuje bilet?",
-      "en": "How much is the ticket?",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_49",
-      "category": "Entertainment",
-      "pl": "Dwa bilety, proszę",
-      "en": "Two tickets, please",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_50",
-      "category": "Entertainment",
-      "pl": "Kiedy zaczyna się film?",
-      "en": "When does the movie start?",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_51",
-      "category": "Entertainment",
-      "pl": "O której kończy się spektakl?",
-      "en": "What time does the show end?",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_52",
-      "category": "Entertainment",
-      "pl": "Czy są jeszcze bilety?",
-      "en": "Are there still tickets?",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_53",
-      "category": "Entertainment",
-      "pl": "Wyprzedane",
-      "en": "Sold out",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_54",
-      "category": "Entertainment",
-      "pl": "Rezerwacja online",
-      "en": "Online booking",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_55",
-      "category": "Entertainment",
-      "pl": "Polecam",
-      "en": "I recommend",
       "level": 13,
       "gender": null
     },

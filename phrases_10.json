@@ -1,6 +1,6 @@
 {
   "level": 10,
-  "description": "Weather & Outdoor - Climate & Nature",
+  "description": "Weather & Seasons - Climate Talk",
   "tier": "PRACTICAL",
   "phrases": [
     {
@@ -284,6 +284,126 @@
       "gender": null
     },
     {
+      "id": "p10_56",
+      "category": "Clothing",
+      "pl": "Kurtka",
+      "en": "Jacket",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_57",
+      "category": "Clothing",
+      "pl": "Płaszcz",
+      "en": "Coat",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_58",
+      "category": "Clothing",
+      "pl": "Sweter",
+      "en": "Sweater",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_59",
+      "category": "Clothing",
+      "pl": "Czapka",
+      "en": "Hat / Cap",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_60",
+      "category": "Clothing",
+      "pl": "Szalik",
+      "en": "Scarf",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_61",
+      "category": "Clothing",
+      "pl": "Rękawiczki",
+      "en": "Gloves",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_62",
+      "category": "Clothing",
+      "pl": "Buty",
+      "en": "Shoes",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_63",
+      "category": "Clothing",
+      "pl": "Okulary przeciwsłoneczne",
+      "en": "Sunglasses",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_64",
+      "category": "Clothing",
+      "pl": "Krem przeciwsłoneczny",
+      "en": "Sunscreen",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_65",
+      "category": "Clothing",
+      "pl": "Jest za zimno na...",
+      "en": "It's too cold for...",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_66",
+      "category": "Clothing",
+      "pl": "Jest za gorąco na...",
+      "en": "It's too hot for...",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_67",
+      "category": "Clothing",
+      "pl": "Potrzebuję ciepłej kurtki",
+      "en": "I need a warm jacket",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_68",
+      "category": "Clothing",
+      "pl": "Potrzebuję parasola",
+      "en": "I need an umbrella",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_69",
+      "category": "Clothing",
+      "pl": "Ubranie",
+      "en": "Clothing",
+      "level": 10,
+      "gender": null
+    },
+    {
+      "id": "p10_70",
+      "category": "Clothing",
+      "pl": "Co mam ubrać?",
+      "en": "What should I wear?",
+      "level": 10,
+      "gender": null
+    },
+    {
       "id": "p10_36",
       "category": "Outdoor",
       "pl": "Park",
@@ -440,126 +560,6 @@
       "category": "Outdoor",
       "pl": "Wschód słońca",
       "en": "Sunrise",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_56",
-      "category": "Clothing",
-      "pl": "Kurtka",
-      "en": "Jacket",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_57",
-      "category": "Clothing",
-      "pl": "Płaszcz",
-      "en": "Coat",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_58",
-      "category": "Clothing",
-      "pl": "Sweter",
-      "en": "Sweater",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_59",
-      "category": "Clothing",
-      "pl": "Czapka",
-      "en": "Hat / Cap",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_60",
-      "category": "Clothing",
-      "pl": "Szalik",
-      "en": "Scarf",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_61",
-      "category": "Clothing",
-      "pl": "Rękawiczki",
-      "en": "Gloves",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_62",
-      "category": "Clothing",
-      "pl": "Buty",
-      "en": "Shoes",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_63",
-      "category": "Clothing",
-      "pl": "Okulary przeciwsłoneczne",
-      "en": "Sunglasses",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_64",
-      "category": "Clothing",
-      "pl": "Krem przeciwsłoneczny",
-      "en": "Sunscreen",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_65",
-      "category": "Clothing",
-      "pl": "Jest za zimno na...",
-      "en": "It's too cold for...",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_66",
-      "category": "Clothing",
-      "pl": "Jest za gorąco na...",
-      "en": "It's too hot for...",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_67",
-      "category": "Clothing",
-      "pl": "Potrzebuję ciepłej kurtki",
-      "en": "I need a warm jacket",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_68",
-      "category": "Clothing",
-      "pl": "Potrzebuję parasola",
-      "en": "I need an umbrella",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_69",
-      "category": "Clothing",
-      "pl": "Ubranie",
-      "en": "Clothing",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p10_70",
-      "category": "Clothing",
-      "pl": "Co mam ubrać?",
-      "en": "What should I wear?",
       "level": 10,
       "gender": null
     }
