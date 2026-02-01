@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -31,7 +31,7 @@
             z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .dropdown-menu.show { display: block; }
-        .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); }
+        .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); display: flex; justify-content: space-between; align-items: center; }
 
         .progress-container { width: 100%; height: 3px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
@@ -62,6 +62,14 @@
         .tile .emoji { font-size: 0.7rem; margin-top: 2px; }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
+        /* Mastered Box Styling */
+        .empty-state-box {
+            grid-column: 1/-1; text-align: center; padding: 30px 20px; 
+            border: 2px dashed var(--pol-red); border-radius: 16px; 
+            background: var(--card); box-shadow: 0 4px 15px rgba(220, 20, 60, 0.15); color: var(--text);
+        }
+        .empty-state-icon { font-size: 2.5rem; margin-bottom: 10px; display: block; }
+
         .global-search-item { width: 100%; max-width: 400px; background: var(--card); border: 1px solid #ddd; padding: 8px; margin: 2px 0; border-radius: 6px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
         
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
@@ -79,7 +87,7 @@
 </div>
 
 <div class="header">
-    <div class="title-banner"><h1 class="title">Polish Master</h1></div>
+    <div class="title-banner"><h1 class="title" id="main-title">Polish Master</h1></div>
     <div class="controls-row">
         <div class="custom-dropdown">
             <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading...</div>
@@ -123,11 +131,11 @@
 
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
+    let completions = JSON.parse(localStorage.getItem('pl_completion_counts')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let isSwapped = false, correctStreak = 0, audioCtx = null;
-    const THRESHOLD = 3;
-    const MAX_POTENTIAL_LEVELS = 50; // Safety cap for scanning
+    const THRESHOLD = 3, MAX_POTENTIAL_LEVELS = 50;
 
     function playNote(freq, dur) {
         try {
@@ -142,40 +150,35 @@
         } catch(e){}
     }
 
-    // Adaptive Level Scanner: Checks for levels until it finds a missing one
     async function scanAndPopulate() {
-        const menu = document.getElementById('lvl-menu');
-        menu.innerHTML = '';
+        const menu = document.getElementById('lvl-menu'); menu.innerHTML = '';
         allPhrasesCache = [];
-        let levelFound = true;
-        let i = 0;
+        let i = 0, levelFound = true, totalMedals = 0;
 
         while (levelFound && i < MAX_POTENTIAL_LEVELS) {
             try {
                 const resp = await fetch(`phrases_${i}.json`);
                 if (resp.ok) {
                     const data = await resp.json();
-                    
-                    // Add to dropdown
+                    const isLevelDone = data.phrases.every(p => (stats[p.pl] || 0) >= THRESHOLD);
+                    if (isLevelDone) totalMedals++;
+
                     const item = document.createElement('div');
                     item.className = 'dropdown-item';
-                    item.innerText = `Lvl ${i}: ${data.description || ''}`;
-                    const lvlIdx = i; // Closure for onclick
+                    item.innerHTML = `<span>Lvl ${i}: ${data.description || ''}</span><span>${isLevelDone ? '🏅' : ''}</span>`;
+                    const lvlIdx = i;
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(lvlIdx); };
                     menu.appendChild(item);
                     
-                    if(i === currentLevel) document.getElementById('lvl-current').innerText = item.innerText;
-                    
-                    // Add to search cache
+                    if(i === currentLevel) {
+                        document.getElementById('lvl-current').innerHTML = `<span>Lvl ${i}: ${data.description || ''}</span><span>${isLevelDone ? '🏅' : ''}</span>`;
+                    }
                     allPhrasesCache.push(...data.phrases.map(p => ({...p, lvl: lvlIdx})));
                     i++;
-                } else {
-                    levelFound = false;
-                }
-            } catch(e) {
-                levelFound = false;
-            }
+                } else { levelFound = false; }
+            } catch(e) { levelFound = false; }
         }
+        document.getElementById('main-title').innerHTML = `Polish Master <span style="font-size:0.8rem; opacity:0.8;">(🏅 ${totalMedals})</span>`;
     }
 
     function selectLevel(lvl) {
@@ -201,10 +204,17 @@
         const isLearning = document.getElementById('tab-learning').classList.contains('active');
         
         if (isLearning && activePool.length === 0 && !filter) {
-            area.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding:20px; border:2px dashed var(--pol-red); border-radius:12px; background:white;">
-                <p style="font-size:0.8rem; font-weight:bold;">Level Mastered!</p>
-                <button onclick="resetLevelMastery()" style="padding:10px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold;">Repeat Level</button>
-            </div>`;
+            const count = completions[currentLevel] || 0;
+            area.innerHTML = `
+                <div class="empty-state-box">
+                    <span class="empty-state-icon">🏅</span>
+                    <p style="font-size: 0.9rem; font-weight: 800; margin: 0 0 5px 0;">Level Mastered!</p>
+                    <p style="font-size: 0.7rem; margin-bottom: 15px; opacity: 0.8;">Times Completed: ${count}</p>
+                    <button onclick="resetLevelMastery()" 
+                        style="padding: 12px 20px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%;">
+                        Repeat Level
+                    </button>
+                </div>`;
             return;
         }
 
@@ -250,7 +260,7 @@
             correctStreak++;
             playNote(440 + (correctStreak * 40), 0.2);
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Correct! 🌟";
+            document.getElementById('feedback').innerText = "Dobrze! 🌟";
             saveStats();
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
@@ -261,11 +271,14 @@
                     }
                 }
                 updateMap();
-                if (activePool.length === 0) document.getElementById('overlay').style.display='flex'; else startNewRound();
+                if (activePool.length === 0) {
+                    playNote(523.25, 0.1); playNote(659.25, 0.1); playNote(783.99, 0.3); // Simple Fanfare
+                    document.getElementById('overlay').style.display='flex'; 
+                } else startNewRound();
             }, 800);
         } else {
             correctStreak = 0; el.classList.add('wrong');
-            document.getElementById('feedback').innerText = "Wrong!";
+            document.getElementById('feedback').innerText = "Błąd!";
             setTimeout(() => { el.classList.remove('wrong'); startNewRound(); }, 1200);
         }
     }
@@ -295,12 +308,20 @@
     function toggleLangSwap() { isSwapped = !isSwapped; document.getElementById('lang-swap-btn').classList.toggle('active-swap', isSwapped); updateMap(); startNewRound(); }
     function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
     function switchMode(m) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); document.getElementById('tab-' + m).classList.add('active'); updateMap(); }
-    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
+    function saveStats() { 
+        localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
+        localStorage.setItem('pl_current_level_idx', currentLevel); 
+        localStorage.setItem('pl_completion_counts', JSON.stringify(completions));
+    }
     function updateStats() { if (!phrasesData.length) return; const m = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (m/phrasesData.length)*100+"%"; }
     function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; selectLevel(currentLevel); }
-    function resetLevelMastery() { phrasesData.forEach(p => stats[p.pl] = 0); saveStats(); loadLevelData(); }
-    function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `progress.txt`; a.click(); }
-    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
+    function resetLevelMastery() { 
+        completions[currentLevel] = (completions[currentLevel] || 0) + 1;
+        phrasesData.forEach(p => stats[p.pl] = 0); 
+        saveStats(); loadLevelData(); 
+    }
+    function downloadProgress() { const b = new Blob([JSON.stringify({stats, completions, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `progress.txt`; a.click(); }
+    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; completions = d.completions || {}; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
     function resetEverything() { if(confirm("Reset all?")) { localStorage.clear(); location.reload(); } }
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = loadLevelData;
