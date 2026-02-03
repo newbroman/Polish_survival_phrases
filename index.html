@@ -11,7 +11,6 @@
         html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
         body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
-        /* HEADER & UI */
         .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; position: relative; }
         .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; }
@@ -32,7 +31,7 @@
             z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .dropdown-menu.show { display: block; }
-        .dropdown-item { padding: 12px; font-size: 11px; border-bottom: 1px solid #eee; cursor: pointer; display: flex; justify-content: space-between; }
+        .dropdown-item { padding: 12px; font-size: 11px; border-bottom: 1px solid #eee; cursor: pointer; display: flex; justify-content: space-between; color: var(--text); }
 
         .progress-container { width: 100%; height: 3px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
@@ -84,7 +83,7 @@
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <div style="display:flex; gap:6px; align-items:center;">
-            <input type="text" id="search-bar" style="flex:1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px;" placeholder="Search..." oninput="handleSmartSearch()">
+            <input type="text" id="search-bar" style="flex:1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px;" placeholder="Search..." oninput="handleSearch()">
             <button id="hf-toggle" style="background:#eee; border:1px solid #ccc; padding:6px; border-radius:4px; font-size:0.6rem; font-weight:bold;" onclick="toggleHandsfree()">Handsfree: OFF</button>
         </div>
     </div>
@@ -116,9 +115,8 @@
     <button class="footer-btn" onclick="resetEverything()" style="color:red" id="txt-reset">Reset</button>
 </div>
 
-<script src="phrases.js"></script> 
+<script src="all_phrases.js"></script> 
 <script>
-    // Alphabet Details for Level 0 integration
     const alphaDetails = {
         'A': {h:'ah', e:'🚗', w:'Auto'}, 'Ą': {h:'own', e:'🌾', w:'Mąka'}, 'B': {h:'b', e:'👞', w:'But'},
         'C': {h:'ts', e:'🍬', w:'Cukier'}, 'Ć': {h:'ch!', e:'🦋', w:'Ćma'}, 'CH': {h:'h', e:'🍞', w:'Chleb'},
@@ -140,55 +138,52 @@
         'PL': { learning: 'NAUKA', bank: 'BANK', pb: 'ROZMÓWKI', save: 'Zapisz', reset: 'Resetuj', victory: 'POZIOM ZALICZONY! 🏆', next: 'Następny Poziom' }
     };
 
-    // If phrases.js isn't loaded, create empty array to prevent crashes
-    if (typeof phrases === 'undefined') { var phrases = []; }
-
+    // Global variable check for the data in all_phrases.js
+    let phrasesData = (typeof phrases !== 'undefined') ? phrases : [];
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
     let uiLang = localStorage.getItem('pl_ui_lang') || 'EN';
     let isSwapped = (localStorage.getItem('pl_swap') === 'true');
-    let isHandsfree = false, hfTimeout = null;
-    let activePhrases = [], currentTarget = null;
+    let isHandsfree = false, hfTimeout = null, currentMode = 'learning';
+    let activeList = [], currentTarget = null;
 
     function init() {
         applyUILang();
-        buildLevelMenu();
+        buildMenu();
         loadLevel();
     }
 
-    function buildLevelMenu() {
+    function buildMenu() {
         const menu = document.getElementById('lvl-menu'); menu.innerHTML = '';
-        // Find unique level numbers in the data
-        const levels = [...new Set(phrases.map(p => p.level))].sort((a,b) => a-b);
+        const levels = [...new Set(phrasesData.map(p => p.level))].sort((a,b) => a-b);
         
         levels.forEach(lvl => {
             const item = document.createElement('div');
             item.className = 'dropdown-item';
-            // Find first phrase category for that level as a label
-            const category = phrases.find(p => p.level === lvl)?.category || 'Phrases';
-            item.innerHTML = `<span>Lvl ${lvl}: ${category}</span>`;
+            const cat = phrasesData.find(p => p.level === lvl)?.category || 'Phrases';
+            item.innerHTML = `<span>Level ${lvl}: ${cat}</span>`;
             item.onclick = () => { currentLevel = lvl; loadLevel(); toggleDropdown(); };
             menu.appendChild(item);
-            if (lvl === currentLevel) document.getElementById('lvl-current').innerText = `Lvl ${lvl}: ${category}`;
+            if (lvl === currentLevel) document.getElementById('lvl-current').innerText = `Level ${lvl}: ${cat}`;
         });
     }
 
     function loadLevel() {
-        activePhrases = phrases.filter(p => p.level === currentLevel && (stats[p.pl] || 0) < 3).slice(0, 15);
+        activeList = phrasesData.filter(p => p.level === currentLevel && (stats[p.pl] || 0) < 3).slice(0, 12);
         localStorage.setItem('pl_current_level_idx', currentLevel);
-        updateUI();
+        updateMap();
     }
 
-    function updateUI() {
+    function updateMap() {
         const area = document.getElementById('mastery-map'); area.innerHTML = '';
         area.className = (currentLevel === 0) ? "grid grid-alphabet" : "grid grid-standard";
         
-        if (activePhrases.length === 0) {
-            area.innerHTML = `<div style="padding:40px; text-align:center;"><h2>Well Done! 🏅</h2></div>`;
+        if (activeList.length === 0) {
+            area.innerHTML = `<div style="padding:40px; text-align:center;"><h2>Mastered! 🏅</h2></div>`;
             return;
         }
 
-        activePhrases.forEach(p => {
+        activeList.forEach(p => {
             const tile = document.createElement('div'); tile.className = 'tile';
             if (currentLevel === 0) {
                 const det = alphaDetails[p.pl] || {};
@@ -199,28 +194,17 @@
             tile.onclick = () => checkAnswer(p, tile);
             area.appendChild(tile);
         });
-        startNewRound();
+        startRound();
         updateProgress();
     }
 
-    function startNewRound() {
-        if (!activePhrases.length) return;
-        currentTarget = activePhrases[Math.floor(Math.random() * activePhrases.length)];
-        
-        let q;
-        if (currentLevel === 0) {
-            q = isSwapped ? currentTarget.pl : (alphaDetails[currentTarget.pl]?.w || currentTarget.en);
-        } else {
-            q = isSwapped ? currentTarget.pl : currentTarget.en;
-        }
-        
+    function startRound() {
+        if (!activeList.length) return;
+        currentTarget = activeList[Math.floor(Math.random() * activeList.length)];
+        let q = isSwapped ? currentTarget.pl : (currentLevel === 0 ? (alphaDetails[currentTarget.pl]?.w || currentTarget.en) : currentTarget.en);
         document.getElementById('q-text').innerText = q;
         if (!isSwapped) speak(currentTarget.pl);
-
-        if (isHandsfree) {
-            clearTimeout(hfTimeout);
-            hfTimeout = setTimeout(() => checkAnswer(currentTarget, null), 4000);
-        }
+        if (isHandsfree) { clearTimeout(hfTimeout); hfTimeout = setTimeout(() => checkAnswer(currentTarget, null), 4000); }
     }
 
     function checkAnswer(p, el) {
@@ -228,10 +212,10 @@
             if (isSwapped) speak(p.pl);
             stats[p.pl] = (stats[p.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Dobrze!";
-            save();
+            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             setTimeout(() => {
-                if (stats[p.pl] >= 3) activePhrases = activePhrases.filter(x => x.pl !== p.pl);
-                updateUI();
+                if (stats[p.pl] >= 3) activeList = activeList.filter(x => x.pl !== p.pl);
+                updateMap();
             }, 600);
         } else if (el) {
             el.classList.add('wrong');
@@ -241,7 +225,7 @@
 
     function speak(t) { window.speechSynthesis.cancel(); const m = new SpeechSynthesisUtterance(t); m.lang='pl-PL'; window.speechSynthesis.speak(m); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
-    function toggleSwap() { isSwapped = !isSwapped; localStorage.setItem('pl_swap', isSwapped); updateUI(); }
+    function toggleSwap() { isSwapped = !isSwapped; localStorage.setItem('pl_swap', isSwapped); updateMap(); }
     function toggleUILang() { uiLang = (uiLang === 'EN' ? 'PL' : 'EN'); localStorage.setItem('pl_ui_lang', uiLang); applyUILang(); }
     function applyUILang() {
         const t = uiTexts[uiLang];
@@ -254,17 +238,12 @@
         document.getElementById('txt-victory').innerText = t.victory;
         document.getElementById('txt-continue').innerText = t.next;
     }
-    function toggleHandsfree() { 
-        isHandsfree = !isHandsfree; 
-        document.getElementById('hf-toggle').innerText = `Handsfree: ${isHandsfree ? 'ON' : 'OFF'}`;
-        if (isHandsfree) startNewRound(); else clearTimeout(hfTimeout);
-    }
+    function toggleHandsfree() { isHandsfree = !isHandsfree; document.getElementById('hf-toggle').innerText = `Handsfree: ${isHandsfree ? 'ON' : 'OFF'}`; if (isHandsfree) startRound(); else clearTimeout(hfTimeout); }
     function toggleDropdown(e) { if(e) e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function save() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); }
     function updateProgress() {
-        const total = phrases.filter(p => p.level === currentLevel).length;
-        const mastered = phrases.filter(p => p.level === currentLevel && (stats[p.pl]||0) >= 3).length;
-        document.getElementById('progress-bar').style.width = (mastered/total)*100 + "%";
+        const lvlPhrases = phrasesData.filter(p => p.level === currentLevel);
+        const mastered = lvlPhrases.filter(p => (stats[p.pl]||0) >= 3).length;
+        document.getElementById('progress-bar').style.width = (mastered/lvlPhrases.length)*100 + "%";
     }
     function resetEverything() { if(confirm("Reset?")) { localStorage.clear(); location.reload(); } }
     window.onload = init;
