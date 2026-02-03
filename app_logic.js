@@ -246,7 +246,7 @@ async function startHandsFree() {
         quizHistory.push(p.pl);
         if (quizHistory.length > 2) quizHistory.shift();
 
-        let sequence;
+       let sequence;
         if (currentLevel === 0) {
             const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
             sequence = [
