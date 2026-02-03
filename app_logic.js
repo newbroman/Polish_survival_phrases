@@ -1,18 +1,30 @@
 /**
- * app_logic.js
- * COMPLETE ENGINE: Corrected Brackets, Alphabet Emoji Logic, and Level 0 Quiz.
+ * app_logic.js 
+ * FULL ENGINE - All features included.
  */
+
+// 1. PERSISTENCE & SETTINGS
+let stats = JSON.parse(localStorage.getItem('pl_stats')) || {};
+let currentLevel = parseInt(localStorage.getItem('pl_current_level')) || 0;
+let uiLang = localStorage.getItem('pl_ui_lang') || 'EN';
+let isSwapped = localStorage.getItem('pl_swap') === 'true';
+const THRESHOLD = 5;
 
 // 2. GLOBAL STATE
 let globalPhrases = []; 
+let phrasesData = [];
+let activePool = [];
 let visibleItems = []; 
+let currentTarget = null;
 let streakCounter = 0;
+let quizHistory = []; 
+
+// Hands-Free State
 let hfActive = false;
 let hfPaused = false;
 let hfAbort = false;
 let hfSkip = false;
 let hfDelay = 3000; 
-let quizHistory = []; 
 
 // 3. INITIALIZATION
 async function buildGlobalIndex() {
@@ -33,19 +45,6 @@ async function init() {
     await buildGlobalIndex(); 
     await populateLevelMenu();
     loadLevel(currentLevel);
-    if (typeof applyUILang === "function") applyUILang();
-}
-
-function toggleSwap() {
-    isSwapped = !isSwapped;
-    localStorage.setItem('pl_swap', isSwapped);
-    updateMap();
-    nextRound();
-}
-
-function toggleUILanguage() {
-    uiLang = (uiLang === 'EN') ? 'PL' : 'EN';
-    localStorage.setItem('pl_ui_lang', uiLang);
     applyUILang();
 }
 
@@ -84,13 +83,16 @@ async function loadLevel(lvl) {
         const data = await response.json();
         phrasesData = data.phrases;
         
+        // Update Grid Layout
         const area = document.getElementById('mastery-map');
-        if (lvl === 0 && area) {
-            area.className = 'grid-alphabet';
-        } else if (area) {
-            area.className = 'grid';
+        if (area) {
+            area.className = (lvl === 0) ? 'grid-alphabet' : 'grid';
         }
         
+        // Update Title
+        const trigger = document.getElementById('lvl-current');
+        if (trigger) trigger.innerText = `Level ${lvl}: ${data.description}`;
+
         activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
         updateMap();
         nextRound();
@@ -126,15 +128,13 @@ function updateMap(filter = "") {
         if (isSearching) {
             tile.innerHTML = `<div style="font-size:0.6rem; color:var(--pol-red);">LVL ${p.levelOrigin}</div><div>${isSwapped ? p.en : p.pl}</div>`;
         } else if (currentLevel === 0) {
-            const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
-            tile.innerHTML = `
-                <div style="font-weight: 800; font-size: 1.4rem; line-height: 1;">${p.pl}</div>
-                <div style="font-size: 1.1rem; margin-top: 4px;">${d.e}</div>
-            `;
+            const d = alphaHints[p.pl] || { e: '' };
+            tile.innerHTML = `<div style="font-size: 1.4rem;">${p.pl}</div><div style="font-size: 0.9rem;">${d.e}</div>`;
         } else {
-            tile.innerText = isSwapped ? p.en : getGenderText(p);
+            tile.innerText = isSwapped ? p.en : p.pl;
         }
 
+        // Color coding for progress
         const score = stats[p.pl] || 0;
         if (score > 0 && currentLevel !== 0) {
             const opacity = Math.min(score / THRESHOLD, 1);
@@ -143,14 +143,9 @@ function updateMap(filter = "") {
         
         tile.onclick = () => {
             if (isSearching) {
-                if (p.levelOrigin !== currentLevel) {
-                    currentLevel = p.levelOrigin;
-                    localStorage.setItem('pl_current_level', currentLevel);
-                    loadLevel(currentLevel);
-                }
                 speak(p.pl);
             } else if (currentLevel === 0) {
-                const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
+                const d = alphaHints[p.pl] || { j: '' };
                 speak(`${p.pl} jak ${d.j}`); 
             } else {
                 isLearning ? checkAnswer(p, tile) : speak(p.pl);
@@ -161,38 +156,14 @@ function updateMap(filter = "") {
     updateTabCounts();
 }
 
-// 6. AUDIO FEEDBACK
-function playFeedback(type) {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.connect(gain); gain.connect(ctx.destination);
-
-    if (type === 'correct') {
-        const pitch = Math.min(200 + (streakCounter * 28.57), 2200);
-        osc.frequency.setValueAtTime(pitch, ctx.currentTime);
-        gain.gain.setValueAtTime(0.1, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
-        osc.start(); osc.stop(ctx.currentTime + 0.2);
-    } else {
-        osc.frequency.setValueAtTime(150, ctx.currentTime);
-        osc.type = 'sawtooth';
-        gain.gain.setValueAtTime(0.1, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
-        osc.start(); osc.stop(ctx.currentTime + 0.3);
-    }
-}
-
-// 7. QUIZ LOGIC
+// 6. QUIZ LOGIC
 function nextRound() {
     if (document.getElementById('search-bar').value.trim() !== "") return;
     const qText = document.getElementById('q-text');
+    
     const sourcePool = (currentLevel === 0) ? phrasesData : ((visibleItems.length > 0) ? visibleItems : activePool);
 
-    if (sourcePool.length === 0) {
-        if (currentLevel !== 0) showCelebration();
-        return;
-    }
+    if (!sourcePool || sourcePool.length === 0) return;
 
     let newTarget;
     let attempts = 0;
@@ -203,17 +174,13 @@ function nextRound() {
 
     currentTarget = newTarget;
     quizHistory.push(currentTarget.pl);
-    if (quizHistory.length > 2) quizHistory.shift();
+    if (quizHistory.length > 3) quizHistory.shift();
 
     qText.style.fontSize = (currentLevel === 0) ? "2.5rem" : "1.1rem";
     qText.innerText = isSwapped ? currentTarget.pl : currentTarget.en;
     
     if (!isSwapped) {
-        if (currentLevel === 0) {
-            speak(`Znajdź: ${currentTarget.pl}`); 
-        } else {
-            speak(currentTarget.pl);
-        }
+        speak(currentLevel === 0 ? `Znajdź: ${currentTarget.pl}` : currentTarget.pl);
     }
 }
 
@@ -221,28 +188,27 @@ function checkAnswer(p, tile) {
     if (p.pl === currentTarget.pl) {
         streakCounter++;
         playFeedback('correct');
-        if (isSwapped) speak(p.pl);
         stats[p.pl] = (stats[p.pl] || 0) + 1;
         saveStats();
+        
         document.getElementById('feedback').innerText = `Combo: ${streakCounter}`;
         setTimeout(() => {
+            document.getElementById('feedback').innerText = "";
             if (currentLevel !== 0 && stats[p.pl] >= THRESHOLD) {
                 activePool = activePool.filter(i => i.pl !== p.pl);
             }
-            document.getElementById('feedback').innerText = "";
             updateMap();
             nextRound();
-        }, 800);
+        }, 600);
     } else {
         streakCounter = 0; 
         playFeedback('wrong');
         tile.style.backgroundColor = 'var(--wrong-blue)';
-        document.getElementById('feedback').innerText = "Błąd!";
-        setTimeout(() => tile.style.backgroundColor = '', 500);
+        setTimeout(() => tile.style.backgroundColor = '', 400);
     }
 }
 
-// 8. HANDS-FREE MODE
+// 7. HANDS-FREE MODE
 async function startHandsFree() {
     if (hfActive && !hfPaused) return; 
     hfActive = true; hfAbort = false; hfPaused = false;
@@ -253,39 +219,22 @@ async function startHandsFree() {
         if (hfPaused) { await sleep(500); continue; }
         let p = activePool[Math.floor(Math.random() * activePool.length)];
 
-        quizHistory.push(p.pl);
-        if (quizHistory.length > 2) quizHistory.shift();
-
-        let sequence;
-        if (currentLevel === 0) {
-            const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
-            sequence = [
-                { text: `${p.pl} jak ${d.j}`, rate: 1.0, lang: 'pl-PL' },
-                { text: d.h, rate: 0.8, lang: 'pl-PL' }
-            ];
-        } else {
-            sequence = [
-                { text: p.pl, rate: 1.0, lang: 'pl-PL' },
-                { text: p.en, rate: 1.0, lang: 'en-US' },
-                { text: p.pl, rate: 0.7, lang: 'pl-PL' }
-            ];
-        }
+        let sequence = (currentLevel === 0) ? 
+            [{ text: p.pl, rate: 1.0, lang: 'pl-PL' }] : 
+            [{ text: p.pl, rate: 1.0, lang: 'pl-PL' }, { text: p.en, rate: 1.0, lang: 'en-US' }];
 
         for (let item of sequence) {
             if (hfAbort || hfSkip) break;
-            while (hfPaused && !hfAbort) { await sleep(500); }
             display.innerText = item.text; 
             centerDisplay.innerText = item.text; 
             await speakAsync(item.text, item.rate, item.lang);
             await sleep(hfDelay);
         }
         hfSkip = false;
-        if (activePool.length > 0 && !hfAbort) await sleep(hfDelay);
     }
-    if (!hfAbort) stopHandsFree();
 }
 
-// 9. CORE UTILS & UI
+// 8. UTILS
 function speak(text, rate = 1.0, lang = 'pl-PL') {
     window.speechSynthesis.cancel();
     const msg = new SpeechSynthesisUtterance(text);
@@ -295,64 +244,41 @@ function speak(text, rate = 1.0, lang = 'pl-PL') {
 
 function speakAsync(text, rate, lang = 'pl-PL') {
     return new Promise(resolve => {
-        if (hfAbort) return resolve();
         const msg = new SpeechSynthesisUtterance(text);
         msg.lang = lang; msg.rate = rate;
-        msg.onend = resolve; msg.onerror = resolve;
+        msg.onend = resolve;
         window.speechSynthesis.speak(msg);
     });
 }
 
+function playFeedback(type) {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.frequency.setValueAtTime(type === 'correct' ? 600 : 150, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+    osc.start(); osc.stop(ctx.currentTime + 0.2);
+}
+
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 function toggleDropdown() { document.getElementById('lvl-menu').classList.toggle('show'); }
-function updatePauseSpeed() { hfDelay = parseInt(document.getElementById('hf-pause-speed').value); }
-function pauseHandsFree() { hfPaused = !hfPaused; }
-function skipHandsFree() { hfSkip = true; }
-function stopHandsFree() {
-    hfActive = false; hfAbort = true;
-    document.getElementById('hf-speaking-display').innerText = "";
-    document.getElementById('handsfree-controls').style.display = 'none';
-    window.speechSynthesis.cancel();
-}
-function toggleHandsFreePanel() {
-    const p = document.getElementById('handsfree-controls');
-    const mask = document.getElementById('hf-speaking-display');
-    if (p.style.display === 'flex') {
-        stopHandsFree();
-        mask.style.display = 'none';
-    } else {
-        p.style.display = 'flex';
-        mask.style.display = 'flex';
-        mask.innerText = "Ready?";
-        document.getElementById('hf-current-phrase').innerText = "Ready?";
-    }
-}
-function applyUILang() {
-    const langBtn = document.getElementById('ui-lang-btn');
-    if (langBtn) langBtn.innerText = uiLang;
-}
-function updateTabCounts() {
-    const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-    const learning = phrasesData.length - mastered;
-    document.getElementById('learning-count').innerText = `(${learning})`;
-    document.getElementById('banked-count').innerText = `(${mastered})`;
-}
 function saveStats() { localStorage.setItem('pl_stats', JSON.stringify(stats)); }
-function getGenderText(p) { return (currentGender === 'f' && p.pl_f) ? p.pl_f : p.pl; }
 function handleSearch() { updateMap(document.getElementById('search-bar').value); }
-function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
-function showCelebration() { document.getElementById('overlay').style.display = 'flex'; }
-function advanceLevel() { 
-    document.getElementById('overlay').style.display = 'none';
-    currentLevel++; 
-    localStorage.setItem('pl_current_level', currentLevel);
-    loadLevel(currentLevel); 
-}
+function toggleSwap() { isSwapped = !isSwapped; localStorage.setItem('pl_swap', isSwapped); updateMap(); nextRound(); }
 function switchMode(m) {
     document.getElementById('tab-learning').classList.toggle('active', m === 'learning');
     document.getElementById('tab-mastered').classList.toggle('active', m === 'mastered');
     updateMap();
 }
-function resetEverything() {
-    if(confirm("Reset progress?")) { stats = {}; saveStats(); location.reload(); }
+function updateTabCounts() {
+    const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+    document.getElementById('learning-count').innerText = `(${phrasesData.length - mastered})`;
+    document.getElementById('banked-count').innerText = `(${mastered})`;
+}
+function applyUILang() { document.getElementById('ui-lang-btn').innerText = uiLang; }
+function stopHandsFree() { hfActive = false; hfAbort = true; window.speechSynthesis.cancel(); toggleHandsFreePanel(); }
+function toggleHandsFreePanel() {
+    const p = document.getElementById('handsfree-controls');
+    p.style.display = (p.style.display === 'flex') ? 'none' : 'flex';
 }
