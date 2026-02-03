@@ -251,3 +251,37 @@ function toggleHandsFreePanel() {
     const panel = document.getElementById('handsfree-controls');
     panel.style.display = (panel.style.display === 'none') ? 'flex' : 'none';
 }
+// --- PROGRESS FILE MANAGEMENT ---
+
+function saveProgressToFile() {
+    const data = JSON.stringify(stats);
+    const blob = new Blob([data], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `polish_progress_${new Date().toISOString().slice(0,10)}.json`;
+    a.click();
+}
+
+function loadProgressFromFile() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = e => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = event => {
+            try {
+                const loadedStats = JSON.parse(event.target.result);
+                stats = loadedStats;
+                saveStats(); // Save to localStorage
+                alert("Progress Loaded!");
+                location.reload();
+            } catch (err) {
+                alert("Invalid file format.");
+            }
+        };
+        reader.readAsText(file);
+    };
+    input.click();
+}
