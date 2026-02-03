@@ -193,14 +193,14 @@ body { display: flex; flex-direction: column; }
 
 .grid-alphabet .tile {
     aspect-ratio: 1 / 1;
-    height: auto !important;
-    padding: 5px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 60px; /* Comfortable tap target */
-
+    border-radius: 12px;
+    background: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
 /* --- HF Study Mode Overlay (Covers Grid) --- */
 .hf-overlay {
