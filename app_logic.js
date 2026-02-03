@@ -1,11 +1,7 @@
 /**
  * app_logic.js
- * COMPLETE ENGINE: Includes Alphabet "jak" logic, 6-column Grid for Level 0,
- * Global Search Indexing, and Pitch-Shifted Audio Feedback.
+ * COMPLETE ENGINE: Minimalist Alphabet Grid (5-col), Corrected Hands-Free Logic.
  */
-
-// 1. DATA CONSTANTS
-// 1. DATA (If not in app_data.js, keep here. If it IS in app_data.js, delete this block)
 
 // 2. GLOBAL STATE
 let globalPhrases = []; 
@@ -130,11 +126,11 @@ function updateMap(filter = "") {
         if (isSearching) {
             tile.innerHTML = `<div style="font-size:0.6rem; color:var(--pol-red);">LVL ${p.levelOrigin}</div><div>${isSwapped ? p.en : p.pl}</div>`;
         } else if (currentLevel === 0) {
-            // Minimalist Alphabet: Letter + Emoji
+            // Minimalist Grid: Letter + Emoji
             const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
             tile.innerHTML = `
                 <div style="font-weight: 800; font-size: 1.4rem; line-height: 1;">${p.pl}</div>
-                <div style="font-size: 1rem; margin-top: 4px;">${d.e}</div>
+                <div style="font-size: 1.1rem; margin-top: 4px;">${d.e}</div>
             `;
         } else {
             tile.innerText = isSwapped ? p.en : getGenderText(p);
@@ -156,7 +152,7 @@ function updateMap(filter = "") {
                 speak(p.pl);
             } else if (currentLevel === 0) {
                 const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
-                speak(`${p.pl} jak ${d.j}`); // Audio lesson: "A jak auto"
+                speak(`${p.pl} jak ${d.j}`); 
             } else {
                 isLearning ? checkAnswer(p, tile) : speak(p.pl);
             }
@@ -171,12 +167,10 @@ function playFeedback(type) {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
-    osc.connect(gain);
-    gain.connect(ctx.destination);
+    osc.connect(gain); gain.connect(ctx.destination);
 
     if (type === 'correct') {
         const pitch = Math.min(200 + (streakCounter * 28.57), 2200);
-        osc.type = 'sine'; 
         osc.frequency.setValueAtTime(pitch, ctx.currentTime);
         gain.gain.setValueAtTime(0.1, ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
@@ -196,7 +190,7 @@ function nextRound() {
     const qText = document.getElementById('q-text');
     const sourcePool = (visibleItems.length > 0) ? visibleItems : activePool;
 
-    if (activePool.length === 0) {
+    if (activePool.length === 0 && currentLevel !== 0) {
         showCelebration();
         return;
     }
@@ -247,12 +241,7 @@ async function startHandsFree() {
 
     while (hfActive && !hfAbort && activePool.length > 0) {
         if (hfPaused) { await sleep(500); continue; }
-        let p;
-        let attempts = 0;
-        do {
-            p = activePool[Math.floor(Math.random() * activePool.length)];
-            attempts++;
-        } while (quizHistory.includes(p.pl) && attempts < 10 && activePool.length > 2);
+        let p = activePool[Math.floor(Math.random() * activePool.length)];
 
         quizHistory.push(p.pl);
         if (quizHistory.length > 2) quizHistory.shift();
@@ -262,15 +251,13 @@ async function startHandsFree() {
             const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
             sequence = [
                 { text: `${p.pl} jak ${d.j}`, rate: 1.0, lang: 'pl-PL' },
-                { text: d.h, rate: 0.8, lang: 'pl-PL' } // Speaks the phonetic sound
+                { text: d.h, rate: 0.8, lang: 'pl-PL' }
             ];
-        }
         } else {
             sequence = [
                 { text: p.pl, rate: 1.0, lang: 'pl-PL' },
                 { text: p.en, rate: 1.0, lang: 'en-US' },
-                { text: p.pl, rate: 0.7, lang: 'pl-PL' },
-                { text: p.pl, rate: 1.0, lang: 'pl-PL' }
+                { text: p.pl, rate: 0.7, lang: 'pl-PL' }
             ];
         }
 
@@ -332,11 +319,7 @@ function toggleHandsFreePanel() {
 }
 function applyUILang() {
     const langBtn = document.getElementById('ui-lang-btn');
-    const lTab = document.getElementById('tab-learning');
-    const bTab = document.getElementById('tab-mastered');
     if (langBtn) langBtn.innerText = uiLang;
-    if (lTab) lTab.firstChild.textContent = uiTexts[uiLang].learning + " ";
-    if (bTab) bTab.firstChild.textContent = uiTexts[uiLang].bank + " ";
 }
 function updateTabCounts() {
     const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
@@ -359,4 +342,7 @@ function switchMode(m) {
     document.getElementById('tab-learning').classList.toggle('active', m === 'learning');
     document.getElementById('tab-mastered').classList.toggle('active', m === 'mastered');
     updateMap();
+}
+function resetEverything() {
+    if(confirm("Reset all progress?")) { stats = {}; saveStats(); location.reload(); }
 }
