@@ -1,6 +1,6 @@
 /**
  * app_logic.js
- * The core engine handling data, rendering, quiz flow, and Hands-Free mode.
+ * The complete logic engine.
  */
 
 // --- INITIALIZATION ---
@@ -16,9 +16,9 @@ async function init() {
 async function populateLevelMenu() {
     const menu = document.getElementById('lvl-menu');
     const trigger = document.getElementById('lvl-current');
+    if (!menu || !trigger) return;
+    
     menu.innerHTML = '';
-
-    // Scans for external phrases_0.json to phrases_15.json
     for (let i = 0; i <= 15; i++) {
         try {
             const response = await fetch(`phrases_${i}.json`);
@@ -37,7 +37,7 @@ async function populateLevelMenu() {
                 menu.appendChild(item);
                 if (i === currentLevel) trigger.innerText = `Level ${i}: ${data.description}`;
             }
-        } catch (e) { /* Level doesn't exist, skip */ }
+        } catch (e) { /* Level not found */ }
     }
 }
 
@@ -47,7 +47,7 @@ async function loadLevel(lvl) {
         const data = await response.json();
         phrasesData = data.phrases;
         
-        // Filter out mastered items for the learning pool
+        // Populate the pool of phrases not yet mastered
         activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
         
         updateMap();
@@ -62,9 +62,10 @@ async function loadLevel(lvl) {
 function updateMap(filter = "") {
     const area = document.getElementById('mastery-map');
     const isLearning = document.getElementById('tab-learning').classList.contains('active');
+    if (!area) return;
     area.innerHTML = '';
 
-    // ALPHABET VS STANDARD GRID
+    // Switch Grid Layouts
     if (currentLevel === 0) {
         area.classList.add('grid-alphabet');
     } else {
@@ -73,16 +74,14 @@ function updateMap(filter = "") {
 
     let items = [];
     if (isLearning) {
-        // Filter by search bar if text is present
         items = activePool.filter(p => 
             !filter || 
             p.pl.toLowerCase().includes(filter.toLowerCase()) || 
             p.en.toLowerCase().includes(filter.toLowerCase())
         );
-        // Force 4x3 grid (max 12 items) for standard levels
+        // Maintain the 4x3 grid for learning levels 1+
         if (currentLevel !== 0) items = items.slice(0, 12);
     } else {
-        // Show all Mastered/Banked items
         items = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
     }
 
@@ -97,7 +96,6 @@ function updateMap(filter = "") {
             tile.innerText = isSwapped ? p.en : getGenderText(p);
         }
 
-        // Apply visual mastery scoring
         const score = stats[p.pl] || 0;
         if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
         
@@ -111,13 +109,13 @@ function updateMap(filter = "") {
 // --- QUIZ LOGIC ---
 
 function nextRound() {
+    const qText = document.getElementById('q-text');
     if (activePool.length === 0) {
-        document.getElementById('q-text').innerText = "Level Mastered! 🏆";
+        qText.innerText = uiTexts[uiLang].victory;
         return;
     }
     currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
-    // Question logic: if swapped, ask in Polish, answer in English
-    document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
+    qText.innerText = isSwapped ? currentTarget.pl : currentTarget.en;
     if (!isSwapped) speak(currentTarget.pl);
 }
 
@@ -133,12 +131,12 @@ function checkAnswer(p, tile) {
                 activePool = activePool.filter(item => item.pl !== p.pl);
                 updateMap();
             }
+            document.getElementById('feedback').innerText = "";
             nextRound();
         }, 800);
     } else {
-        tile.classList.add('wrong');
+        tile.style.backgroundColor = 'var(--wrong-blue)';
         document.getElementById('feedback').innerText = "Spróbuj ponownie";
-        setTimeout(() => tile.classList.remove('wrong'), 500);
     }
 }
 
@@ -151,24 +149,14 @@ async function startHandsFree() {
     if (hfActive) return;
     hfActive = true;
     hfAbort = false;
-    document.getElementById('hf-toggle-btn').classList.add('active-mode');
-
     while (hfActive && !hfAbort && activePool.length > 0) {
         let p = activePool[Math.floor(Math.random() * activePool.length)];
         currentTarget = p;
         updateMap();
-
-        // 1. Polish (Slow)
         await speakAsync(p.pl, 0.8);
         await sleep(1500);
-        
-        // 2. English
         await speakAsync(p.en, 1.0, 'en-US');
-        await sleep(1500);
-
-        // 3. Polish (Normal)
-        await speakAsync(p.pl, 1.0);
-        await sleep(3000); // Wait for user to repeat
+        await sleep(3000);
     }
 }
 
@@ -176,10 +164,31 @@ function stopHandsFree() {
     hfActive = false;
     hfAbort = true;
     window.speechSynthesis.cancel();
-    document.getElementById('hf-toggle-btn').classList.remove('active-mode');
 }
 
-// --- UTILITIES ---
+// --- UI & UTILS ---
+
+function applyUILang() {
+    const langBtn = document.getElementById('ui-lang-btn');
+    const learnTab = document.getElementById('tab-learning');
+    const bankTab = document.getElementById('tab-mastered');
+    if (langBtn) langBtn.innerText = uiLang;
+    if (learnTab) learnTab.firstChild.textContent = uiTexts[uiLang].learning + " ";
+    if (bankTab) bankTab.firstChild.textContent = uiTexts[uiLang].bank + " ";
+}
+
+function toggleUILanguage() {
+    uiLang = (uiLang === 'EN') ? 'PL' : 'EN';
+    localStorage.setItem('pl_ui_lang', uiLang);
+    applyUILang();
+}
+
+function toggleSwap() {
+    isSwapped = !isSwapped;
+    localStorage.setItem('pl_swap', isSwapped);
+    updateMap();
+    nextRound();
+}
 
 function speak(text, rate = 1.0, lang = 'pl-PL') {
     window.speechSynthesis.cancel();
@@ -191,10 +200,9 @@ function speak(text, rate = 1.0, lang = 'pl-PL') {
 
 function speakAsync(text, rate, lang = 'pl-PL') {
     return new Promise(resolve => {
-        if (hfAbort) { resolve(); return; }
+        if (hfAbort) return resolve();
         const msg = new SpeechSynthesisUtterance(text);
-        msg.lang = lang;
-        msg.rate = rate;
+        msg.lang = lang; msg.rate = rate;
         msg.onend = resolve;
         window.speechSynthesis.speak(msg);
     });
@@ -205,7 +213,6 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 function updateTabCounts() {
     const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
     const learning = phrasesData.length - mastered;
-    
     document.getElementById('learning-count').innerText = `(${learning})`;
     document.getElementById('banked-count').innerText = `(${mastered})`;
 }
@@ -214,112 +221,41 @@ function getGenderText(p) {
     return (currentGender === 'f' && p.pl_f) ? p.pl_f : p.pl;
 }
 
-function toggleDropdown() {
-    document.getElementById('lvl-menu').classList.toggle('show');
-}
-
-function toggleSwap() {
-    isSwapped = !isSwapped;
-    localStorage.setItem('pl_swap', isSwapped);
-    updateMap();
-    nextRound();
-}
-
-function switchMode(mode) {
-    document.getElementById('tab-learning').classList.toggle('active', mode === 'learning');
-    document.getElementById('tab-mastered').classList.toggle('active', mode === 'mastered');
-    updateMap();
-}
-
-function handleSearch() {
-    const val = document.getElementById('search-bar').value;
-    updateMap(val);
-}
-
-function saveStats() {
-    localStorage.setItem('pl_stats', JSON.stringify(stats));
-}
-
-function resetEverything() {
-    if(confirm("Reset all progress?")) {
-        localStorage.clear();
-        location.reload();
-    }
-}
-
-function toggleHandsFreePanel() {
-    const panel = document.getElementById('handsfree-controls');
-    panel.style.display = (panel.style.display === 'none') ? 'flex' : 'none';
-}
-// --- PROGRESS FILE MANAGEMENT ---
+function saveStats() { localStorage.setItem('pl_stats', JSON.stringify(stats)); }
 
 function saveProgressToFile() {
-    const data = JSON.stringify(stats);
-    const blob = new Blob([data], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
+    const blob = new Blob([JSON.stringify(stats)], { type: 'application/json' });
     const a = document.createElement('a');
-    a.href = url;
-    a.download = `polish_progress_${new Date().toISOString().slice(0,10)}.json`;
+    a.href = URL.createObjectURL(blob);
+    a.download = `polish_progress.json`;
     a.click();
 }
 
 function loadProgressFromFile() {
     const input = document.createElement('input');
     input.type = 'file';
-    input.accept = '.json';
     input.onchange = e => {
-        const file = e.target.files[0];
         const reader = new FileReader();
-        reader.onload = event => {
-            try {
-                const loadedStats = JSON.parse(event.target.result);
-                stats = loadedStats;
-                saveStats(); // Save to localStorage
-                alert("Progress Loaded!");
-                location.reload();
-            } catch (err) {
-                alert("Invalid file format.");
-            }
+        reader.onload = ev => {
+            stats = JSON.parse(ev.target.result);
+            saveStats();
+            location.reload();
         };
-        reader.readAsText(file);
+        reader.readAsText(e.target.files[0]);
     };
     input.click();
 }
 
-// --- UI LANGUAGE LOGIC ---
-
-function applyUILang() {
-    const langBtn = document.getElementById('ui-lang-btn');
-    const learnTab = document.getElementById('tab-learning');
-    const bankTab = document.getElementById('tab-mastered');
-    
-    if (langBtn) langBtn.innerText = uiLang;
-    
-    // Update tab text based on uiTexts dictionary in app_data.js
-    if (learnTab) {
-        const count = document.getElementById('learning-count').innerText;
-        learnTab.innerHTML = `${uiTexts[uiLang].learning} <span id="learning-count">${count}</span>`;
-    }
-    if (bankTab) {
-        const count = document.getElementById('banked-count').innerText;
-        bankTab.innerHTML = `${uiTexts[uiLang].bank} <span id="banked-count">${count}</span>`;
-    }
-
-    // Update the dropdown title if it exists
-    const trigger = document.getElementById('lvl-current');
-    if (trigger && phrasesData.description) {
-        trigger.innerText = `Level ${currentLevel}: ${phrasesData.description}`;
-    }
+function toggleDropdown() { document.getElementById('lvl-menu').classList.toggle('show'); }
+function switchMode(m) {
+    document.getElementById('tab-learning').classList.toggle('active', m === 'learning');
+    document.getElementById('tab-mastered').classList.toggle('active', m === 'mastered');
+    updateMap();
 }
-
-function toggleUILanguage() {
-    uiLang = (uiLang === 'EN') ? 'PL' : 'EN';
-    localStorage.setItem('pl_ui_lang', uiLang);
-    applyUILang();
+function handleSearch() { updateMap(document.getElementById('search-bar').value); }
+function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
+function toggleHandsFreePanel() {
+    const p = document.getElementById('handsfree-controls');
+    p.style.display = (p.style.display === 'none') ? 'flex' : 'none';
 }
-function advanceLevel() {
-    document.getElementById('overlay').style.display = 'none';
-    currentLevel++;
-    localStorage.setItem('pl_current_level', currentLevel);
-    loadLevel(currentLevel);
-}
+function resetEverything() { if(confirm("Reset?")) { localStorage.clear(); location.reload(); } }
