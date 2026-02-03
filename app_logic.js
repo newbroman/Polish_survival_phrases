@@ -73,24 +73,35 @@ function updateMap(filter = "") {
     if (!area) return;
     area.innerHTML = '';
 
-    if (currentLevel === 0) area.classList.add('grid-alphabet');
-    else area.classList.remove('grid-alphabet');
-
-    let items = isLearning ? 
-        activePool.filter(p => !filter || p.pl.toLowerCase().includes(filter.toLowerCase()) || p.en.toLowerCase().includes(filter.toLowerCase())) :
-        phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-
-    // Sync quiz with visible 4x3 grid
-    if (isLearning && currentLevel !== 0) {
-        items = items.slice(0, 12);
-        visibleItems = items; 
+    // Determine which pool to use
+    let items;
+    
+    if (filter.trim() !== "") {
+        // GLOBAL SEARCH: Look through ALL phrases in this level
+        items = phrasesData.filter(p => 
+            p.pl.toLowerCase().includes(filter.toLowerCase()) || 
+            p.en.toLowerCase().includes(filter.toLowerCase())
+        );
     } else {
-        visibleItems = items; 
+        // STANDARD TAB VIEW: Respect Learning vs Banked
+        items = isLearning ? 
+            activePool : 
+            phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+
+        // Keep the 4x3 grid limit only for the standard Learning view
+        if (isLearning && currentLevel !== 0) {
+            items = items.slice(0, 12);
+        }
     }
 
+    visibleItems = items; 
+
+    // Render the tiles
     items.forEach(p => {
         const tile = document.createElement('div');
         tile.className = 'tile';
+        
+        // Handle Alphabet Level vs Phrases
         if (currentLevel === 0) {
             const details = alphaHints[p.pl] || { h: '', e: '' };
             tile.innerHTML = `<span>${p.pl}</span><span class="hint">${details.h} ${details.e}</span>`;
@@ -98,12 +109,25 @@ function updateMap(filter = "") {
             tile.innerText = isSwapped ? p.en : getGenderText(p);
         }
 
+        // Apply progress coloring
         const score = stats[p.pl] || 0;
-        if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
+        if (score > 0) {
+            const opacity = Math.min(score / THRESHOLD, 1);
+            tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
+        }
         
-        tile.onclick = () => isLearning ? checkAnswer(p, tile) : speak(p.pl);
+        tile.onclick = () => {
+            if (filter.trim() !== "") {
+                // If searching, just speak the word
+                speak(p.pl);
+            } else {
+                // If in quiz mode, check the answer
+                isLearning ? checkAnswer(p, tile) : speak(p.pl);
+            }
+        };
         area.appendChild(tile);
     });
+    
     updateTabCounts();
 }
 
