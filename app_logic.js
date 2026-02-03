@@ -16,12 +16,6 @@ let hfDelay = 3000;
 let quizHistory = []; 
 
 // --- INITIALIZATION ---
-async function init() {
-    await buildGlobalIndex(); // Builds the master list for search
-    await populateLevelMenu();
-    loadLevel(currentLevel);
-    applyUILang();
-}
 
 async function buildGlobalIndex() {
     globalPhrases = [];
@@ -41,6 +35,15 @@ async function buildGlobalIndex() {
         }
     }
 }
+
+async function init() {
+    await buildGlobalIndex(); // Builds the master list for search
+    await populateLevelMenu();
+    loadLevel(currentLevel);
+    applyUILang();
+}
+
+
 
 // --- DATA & LEVEL LOADING ---
 async function populateLevelMenu() {
