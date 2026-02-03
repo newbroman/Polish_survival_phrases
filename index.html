@@ -178,6 +178,16 @@
             border-color: var(--pol-red);
         }
         .footer-btn.active-swap { background: var(--pol-red); color: white; border-color: var(--pol-red); }
+        .grid-alphabet { 
+    grid-template-columns: repeat(6, 1fr) !important; 
+    gap: 4px !important; 
+}
+.tile .hint {
+    font-size: 0.5rem;
+    opacity: 0.7;
+    margin-top: 2px;
+}
+        
 </style>
 </head>
 <body>
@@ -266,6 +276,7 @@
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let lastPhraseText = null;
     let isSwapped = false;
+    const alphaHints = {'A':'ah','Ą':'own','B':'b','C':'ts','Ć':'ch!','CH':'h','CZ':'ch','D':'d','DZ':'dz','DŹ':'j!','DŻ':'j','E':'eh','Ę':'en','F':'f','G':'g','H':'h','I':'ee','J':'y','K':'k','L':'l','Ł':'w','M':'m','N':'n','Ń':'ny','O':'oh','Ó':'oo','P':'p','R':'r','RZ':'zh','S':'s','Ś':'sh!','SZ':'sh','T':'t','U':'oo','W':'v','Y':'i','Z':'z','Ź':'zh!','Ż':'zh'};
     let currentGender = localStorage.getItem('polishMasterGender') || 'both';
     let uiLang = localStorage.getItem('polishMasterUILang') || 'en'; 
     let correctStreak = 0; 
@@ -585,8 +596,18 @@ function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v
             area.className = "grid";
             const itemsToShow = filter ? activePool.filter(p => p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter)) : activePool;
             itemsToShow.forEach(p => {
-                const tile = document.createElement('div'); tile.className = 'tile';
-                tile.innerText = isSwapped ? p.en : getGenderText(p);
+               const tile = document.createElement('div');
+tile.className = 'tile';
+
+if (currentLevel === 0) {
+    // Force 6 columns and add the phonetic hint
+    area.classList.add('grid-alphabet'); 
+    tile.innerHTML = `<span>${p.pl}</span><span class="hint">${alphaHints[p.pl] || ''}</span>`;
+} else {
+    // Use standard layout for phrases
+    area.classList.remove('grid-alphabet');
+    tile.innerText = isSwapped ? p.en : getGenderText(p);
+}
                 const score = stats[p.pl] || 0;
                 if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
                 else if (score < 0) { tile.style.backgroundColor = `rgba(52, 152, 219, ${Math.abs(score)/2})`; tile.style.color = "white"; }
