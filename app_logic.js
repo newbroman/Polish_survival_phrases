@@ -285,3 +285,41 @@ function loadProgressFromFile() {
     };
     input.click();
 }
+
+// --- UI LANGUAGE LOGIC ---
+
+function applyUILang() {
+    const langBtn = document.getElementById('ui-lang-btn');
+    const learnTab = document.getElementById('tab-learning');
+    const bankTab = document.getElementById('tab-mastered');
+    
+    if (langBtn) langBtn.innerText = uiLang;
+    
+    // Update tab text based on uiTexts dictionary in app_data.js
+    if (learnTab) {
+        const count = document.getElementById('learning-count').innerText;
+        learnTab.innerHTML = `${uiTexts[uiLang].learning} <span id="learning-count">${count}</span>`;
+    }
+    if (bankTab) {
+        const count = document.getElementById('banked-count').innerText;
+        bankTab.innerHTML = `${uiTexts[uiLang].bank} <span id="banked-count">${count}</span>`;
+    }
+
+    // Update the dropdown title if it exists
+    const trigger = document.getElementById('lvl-current');
+    if (trigger && phrasesData.description) {
+        trigger.innerText = `Level ${currentLevel}: ${phrasesData.description}`;
+    }
+}
+
+function toggleUILanguage() {
+    uiLang = (uiLang === 'EN') ? 'PL' : 'EN';
+    localStorage.setItem('pl_ui_lang', uiLang);
+    applyUILang();
+}
+function advanceLevel() {
+    document.getElementById('overlay').style.display = 'none';
+    currentLevel++;
+    localStorage.setItem('pl_current_level', currentLevel);
+    loadLevel(currentLevel);
+}
