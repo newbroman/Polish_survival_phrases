@@ -75,10 +75,6 @@ async function loadLevel(lvl) {
         phrasesData = data.phrases;
         
         const area = document.getElementById('mastery-map');
-        const trigger = document.getElementById('lvl-current');
-        if (trigger) trigger.innerText = `Level ${lvl}: ${data.description || 'Phrases'}`;
-        
-        // UI Fix: Toggle 6-column grid for Alphabet
         if (lvl === 0 && area) {
             area.classList.add('grid-alphabet');
         } else if (area) {
@@ -91,7 +87,6 @@ async function loadLevel(lvl) {
         nextRound();
     } catch (e) { console.error("Load failed:", e); }
 }
-
 // 5. GRID RENDERING
 function updateMap(filter = "") {
     const area = document.getElementById('mastery-map');
