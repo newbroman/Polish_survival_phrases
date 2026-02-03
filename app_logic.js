@@ -419,6 +419,9 @@ function switchMode(m) {
     document.getElementById('tab-mastered').classList.toggle('active', m === 'mastered');
     updateMap();
 }
-function handleSearch() { updateMap(document.getElementById('search-bar').value); }
+function handleSearch() {
+    const query = document.getElementById('search-bar').value;
+    updateMap(query);
+}
 function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
 function getGenderText(p) { return (currentGender === 'f' && p.pl_f) ? p.pl_f : p.pl; }
