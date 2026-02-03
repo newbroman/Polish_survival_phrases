@@ -96,7 +96,25 @@
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
         .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
+        .grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 8px; 
+    width: 100%; 
+    max-width: 400px; 
+}
+
+/* Add this new class */
+.grid.alphabet-mode {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 4px !important;
+}
+
+.tile .hint {
+    font-size: 0.5rem;
+    opacity: 0.7;
+    margin-top: 2px;
+}
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
             background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
@@ -182,11 +200,7 @@
     grid-template-columns: repeat(6, 1fr) !important; 
     gap: 4px !important; 
 }
-.tile .hint {
-    font-size: 0.5rem;
-    opacity: 0.7;
-    margin-top: 2px;
-}
+
         
 </style>
 </head>
@@ -480,7 +494,6 @@ function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v
         document.getElementById('lvl-menu').classList.remove('show');
         document.getElementById('search-bar').value = '';
         saveStats();
-        updateTabCounts();
         loadLevelData();
     }
 
