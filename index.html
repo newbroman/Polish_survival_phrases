@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master</title>
+    <title>Polish Master</title>
     
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#dc143c">
@@ -16,7 +16,7 @@
 <body onload="init()">
 
     <div id="overlay">
-        <h1 id="victory-text">POZIOM ZALICZONY! 🏆</h1>
+        <h1>POZIOM ZALICZONY! 🏆</h1>
         <button onclick="advanceLevel()">Następny Poziom</button>
     </div>
 
@@ -24,26 +24,28 @@
         <div class="title-banner">
             <h1 class="title">Polish Master</h1>
         </div>
+        
         <div class="controls-row">
             <div class="custom-dropdown">
                 <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading Levels...</div>
                 <div class="dropdown-menu" id="lvl-menu"></div>
             </div>
-            <button class="footer-btn" id="ui-lang-btn" onclick="toggleUILanguage()" style="width: auto; padding: 0 12px; height: 36px;">EN</button>
+            <button class="footer-btn" id="ui-lang-btn" onclick="toggleUILanguage()">EN</button>
         </div>
         
-        <div style="padding: 0 10px 10px; display: flex; gap: 8px; align-items: center;">
-            <input type="text" id="search-bar" placeholder="Search phrases..." oninput="handleSearch()" style="flex: 1; margin-bottom: 0;">
-            <button class="footer-btn" onclick="toggleHandsFreePanel()" id="hf-toggle-btn" style="width: auto; padding: 10px; white-space: nowrap;">🎧 Hands-Free</button>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search phrases..." oninput="handleSearch()">
+            <button class="footer-btn" onclick="toggleHandsFreePanel()" id="hf-toggle-btn">🎧 HF</button>
         </div>
     </div>
 
     <div class="quiz-header">
         <div class="quiz-top-row">
-                       <button class="icon-btn" onclick="toggleSwap()" title="Swap Language">🔄</button>
-             <button class="icon-btn" onclick="speakTarget()">🔊</button>
+            <button class="icon-btn" onclick="toggleSwap()" title="Swap Language">🔄</button>
+            <button class="icon-btn" onclick="speakTarget()">🔊</button>
             <div id="q-text" class="q-text">Ready?</div>
         </div>
+        <div id="hf-speaking-display"></div>
         <div id="feedback" class="feedback"></div>
     </div>
 
@@ -56,8 +58,33 @@
         </div>
     </div>
 
-    <div class="map-section">
+    <div class="map-section" style="position: relative;">
         <div id="mastery-map" class="grid"></div>
+
+        <div id="handsfree-controls" class="hf-overlay">
+            <div class="hf-content">
+                <h3 style="margin-top:0">Study Mode</h3>
+                
+                <div id="hf-current-phrase">Ready to start?</div>
+
+                <div class="hf-button-row">
+                    <button class="hf-main-btn" onclick="startHandsFree()">▶ Play</button>
+                    <button class="hf-main-btn" onclick="pauseHandsFree()">⏸ Pause</button>
+                    <button class="hf-main-btn" onclick="skipHandsFree()">⏭ Skip</button>
+                </div>
+
+                <div class="hf-settings">
+                    <label>Pause Length: </label>
+                    <select id="hf-pause-speed" onchange="updatePauseSpeed()">
+                        <option value="1000">1s</option>
+                        <option value="3000" selected>3s</option>
+                        <option value="5000">5s</option>
+                    </select>
+                </div>
+
+                <button class="footer-btn" onclick="toggleHandsFreePanel()" style="margin-top: 25px; background: #eee; color: #333;">Close Study Mode</button>
+            </div>
+        </div>
     </div>
 
     <div class="footer">
@@ -66,13 +93,8 @@
         <button class="footer-btn" onclick="resetEverything()" style="color:var(--pol-red)">Reset</button>
     </div>
 
-    <div id="handsfree-controls" style="display:none;">
-        <button onclick="startHandsFree()">Start Sequence</button>
-        <button onclick="stopHandsFree()" style="color: #ff4444;">Stop</button>
-    </div>
-
     <script src="app_data.js"></script>
     <script src="app_logic.js"></script>
+
 </body>
-</html>
 </html>
