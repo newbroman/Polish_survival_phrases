@@ -1,182 +1,358 @@
-/* --- Root & Themes --- */
-:root { 
-    --pol-red: #dc143c; 
-    --wrong-blue: #3498db; 
-    --bg: #f0f2f5; 
-    --card: #ffffff; 
-    --text: #333; 
-    --tile-bg: #dee2e6; 
+/**
+ * app_logic.js
+ * COMPLETE ENGINE: Corrected Brackets, Alphabet Emoji Logic, and Level 0 Quiz.
+ */
+
+// 2. GLOBAL STATE
+let globalPhrases = []; 
+let visibleItems = []; 
+let streakCounter = 0;
+let hfActive = false;
+let hfPaused = false;
+let hfAbort = false;
+let hfSkip = false;
+let hfDelay = 3000; 
+let quizHistory = []; 
+
+// 3. INITIALIZATION
+async function buildGlobalIndex() {
+    globalPhrases = [];
+    for (let i = 0; i <= 15; i++) {
+        try {
+            const response = await fetch(`phrases_${i}.json`);
+            if (response.ok) {
+                const data = await response.json();
+                const tagged = data.phrases.map(p => ({ ...p, levelOrigin: i }));
+                globalPhrases = globalPhrases.concat(tagged);
+            } else { break; }
+        } catch (e) { break; }
+    }
 }
 
-@media (prefers-color-scheme: dark) { 
-    :root { 
-        --bg: #1a1a1a; 
-        --card: #2d2d2d; 
-        --text: #f0f0f0; 
-        --tile-bg: #404040; 
-    } 
+async function init() {
+    await buildGlobalIndex(); 
+    await populateLevelMenu();
+    loadLevel(currentLevel);
+    if (typeof applyUILang === "function") applyUILang();
 }
 
-/* --- Base Layout --- */
-html, body { 
-    height: 100%; 
-    margin: 0; 
-    overflow: hidden; 
-    position: fixed; 
-    width: 100%; 
-    font-family: -apple-system, system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+function toggleSwap() {
+    isSwapped = !isSwapped;
+    localStorage.setItem('pl_swap', isSwapped);
+    updateMap();
+    nextRound();
 }
 
-body { display: flex; flex-direction: column; }
-
-/* --- Header & Navigation --- */
-.header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-
-.title-banner { 
-    background: linear-gradient(to bottom, #ffffff 50%, var(--pol-red) 50%); 
-    padding: 6px 0; 
-    border-bottom: 1px solid #ccc;
-}
-.title { 
-    font-weight: 800; font-size: 0.9rem; color: #333; 
-    text-align: center; margin: 0; text-transform: uppercase; 
+function toggleUILanguage() {
+    uiLang = (uiLang === 'EN') ? 'PL' : 'EN';
+    localStorage.setItem('pl_ui_lang', uiLang);
+    applyUILang();
 }
 
-.controls-row { 
-    width: 95%; max-width: 450px; 
-    margin: 0 auto; padding: 8px 0; 
-    display: flex; gap: 8px; align-items: center;
+// 4. DATA & LEVEL LOADING
+async function populateLevelMenu() {
+    const menu = document.getElementById('lvl-menu');
+    const trigger = document.getElementById('lvl-current');
+    if (!menu || !trigger) return;
+    
+    menu.innerHTML = '';
+    for (let i = 0; i <= 15; i++) {
+        try {
+            const response = await fetch(`phrases_${i}.json`);
+            if (response.ok) {
+                const data = await response.json();
+                const item = document.createElement('div');
+                item.className = 'dropdown-item';
+                item.innerHTML = `<span>Level ${i}: ${data.description || 'Phrases'}</span>`;
+                item.onclick = (e) => {
+                    e.stopPropagation();
+                    currentLevel = i;
+                    localStorage.setItem('pl_current_level', i);
+                    loadLevel(i);
+                    toggleDropdown();
+                };
+                menu.appendChild(item);
+                if (i === currentLevel) trigger.innerText = `Level ${i}: ${data.description}`;
+            }
+        } catch (e) {}
+    }
 }
 
-.custom-dropdown { flex: 4; position: relative; }
-.dropdown-trigger { 
-    width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-    padding: 0 12px; border-radius: 8px; font-size: 13px; font-weight: 700; 
-    height: 44px; display: flex; align-items: center; justify-content: space-between; 
-    cursor: pointer; box-sizing: border-box;
-}
-.dropdown-trigger::after { content: '▼'; font-size: 8px; color: #888; }
-
-#ui-lang-btn { flex: 0.8; height: 32px; font-size: 10px; padding: 0; min-width: 45px; }
-
-.dropdown-menu { 
-    position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
-    border: 1px solid #ccc; border-radius: 4px; max-height: 300px; overflow-y: auto; 
-    z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-.dropdown-menu.show { display: block; }
-.dropdown-item { padding: 12px; font-size: 12px; border-bottom: 1px solid #eee; cursor: pointer; }
-
-/* --- Search & HF Row --- */
-.search-container { padding: 0 10px 10px; display: flex; gap: 8px; align-items: center; max-width: 450px; margin: 0 auto; }
-#search-bar { 
-    flex: 4; height: 44px; font-size: 14px; padding: 0 12px; 
-    border: 1px solid #ccc; border-radius: 8px; background: var(--card); 
-    color: var(--text); box-sizing: border-box;
+async function loadLevel(lvl) {
+    try {
+        const response = await fetch(`phrases_${lvl}.json`);
+        const data = await response.json();
+        phrasesData = data.phrases;
+        
+        const area = document.getElementById('mastery-map');
+        if (lvl === 0 && area) {
+            area.className = 'grid-alphabet';
+        } else if (area) {
+            area.className = 'grid';
+        }
+        
+        activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
+        updateMap();
+        nextRound();
+    } catch (e) { console.error("Load failed:", e); }
 }
 
-#hf-toggle-btn { flex: 1.2; height: 38px; font-size: 10px; padding: 0 8px; white-space: nowrap; }
+// 5. GRID RENDERING
+function updateMap(filter = "") {
+    const area = document.getElementById('mastery-map');
+    const isLearning = document.getElementById('tab-learning').classList.contains('active');
+    if (!area) return;
+    area.innerHTML = '';
 
-/* --- Quiz Area --- */
-.quiz-header { 
-    position: relative; background: var(--card); padding: 15px; 
-    border-bottom: 1px solid #ddd; flex-shrink: 0; min-height: 80px;
-    display: flex; flex-direction: column; justify-content: center;
-}
-.quiz-top-row { display: flex; align-items: center; gap: 15px; width: 100%; justify-content: center; }
-.icon-btn { 
-    background: var(--bg); border: 1px solid #ddd; border-radius: 50%; 
-    width: 44px; height: 44px; font-size: 1.2rem; display: flex; 
-    align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;
-}
-.q-text { font-size: 1.1rem; font-weight: 800; text-align: center; flex: 1; max-width: 200px; }
+    let items;
+    const isSearching = filter.trim() !== "";
 
-#hf-speaking-display {
-    display: none; position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--card); z-index: 100; 
-    align-items: center; justify-content: center;
-    font-size: 1.3rem; font-weight: 800; color: var(--pol-red);
-}
+    if (isSearching) {
+        items = globalPhrases.filter(p => 
+            p.pl.toLowerCase().includes(filter.toLowerCase()) || 
+            p.en.toLowerCase().includes(filter.toLowerCase())
+        ).slice(0, 40); 
+    } else {
+        items = isLearning ? activePool : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+        if (isLearning && currentLevel !== 0) items = items.slice(0, 12);
+    }
 
-.feedback { height: 14px; font-size: 0.8rem; font-weight: bold; margin-top: 5px; color: var(--pol-red); text-align: center; }
+    visibleItems = items; 
 
-/* --- Mode Tabs --- */
-.mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-.tab { flex: 1; padding: 14px 2px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
-.tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
+    items.forEach(p => {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+        
+        if (isSearching) {
+            tile.innerHTML = `<div style="font-size:0.6rem; color:var(--pol-red);">LVL ${p.levelOrigin}</div><div>${isSwapped ? p.en : p.pl}</div>`;
+        } else if (currentLevel === 0) {
+            const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
+            tile.innerHTML = `
+                <div style="font-weight: 800; font-size: 1.4rem; line-height: 1;">${p.pl}</div>
+                <div style="font-size: 1.1rem; margin-top: 4px;">${d.e}</div>
+            `;
+        } else {
+            tile.innerText = isSwapped ? p.en : getGenderText(p);
+        }
 
-/* --- Grid System --- */
-.map-section { 
-    flex-grow: 1; padding: 10px; overflow-y: auto; 
-    display: flex; flex-direction: column; align-items: center;
-    position: relative; 
-}
-
-/* Default 3-column phrase grid */
-.grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 8px;
-    width: 100%;
-    max-width: 500px;
-}
-
-/* 5-column alphabet grid for Level 0 */
-.grid-alphabet {
-    display: grid !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 6px !important;
-    width: 100%;
-    max-width: 500px;
-}
-
-.tile { 
-    aspect-ratio: 1/1; 
-    background: var(--tile-bg); 
-    border-radius: 12px; 
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    cursor: pointer; padding: 4px; text-align: center; 
-    font-size: 0.75rem; font-weight: 600; transition: transform 0.1s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        const score = stats[p.pl] || 0;
+        if (score > 0 && currentLevel !== 0) {
+            const opacity = Math.min(score / THRESHOLD, 1);
+            tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
+        }
+        
+        tile.onclick = () => {
+            if (isSearching) {
+                if (p.levelOrigin !== currentLevel) {
+                    currentLevel = p.levelOrigin;
+                    localStorage.setItem('pl_current_level', currentLevel);
+                    loadLevel(currentLevel);
+                }
+                speak(p.pl);
+            } else if (currentLevel === 0) {
+                const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
+                speak(`${p.pl} jak ${d.j}`); 
+            } else {
+                isLearning ? checkAnswer(p, tile) : speak(p.pl);
+            }
+        };
+        area.appendChild(tile);
+    });
+    updateTabCounts();
 }
 
-.grid-alphabet .tile {
-    font-size: 1.2rem;
-    background: var(--card);
+// 6. AUDIO FEEDBACK
+function playFeedback(type) {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+
+    if (type === 'correct') {
+        const pitch = Math.min(200 + (streakCounter * 28.57), 2200);
+        osc.frequency.setValueAtTime(pitch, ctx.currentTime);
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+        osc.start(); osc.stop(ctx.currentTime + 0.2);
+    } else {
+        osc.frequency.setValueAtTime(150, ctx.currentTime);
+        osc.type = 'sawtooth';
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+        osc.start(); osc.stop(ctx.currentTime + 0.3);
+    }
 }
 
-.tile:active { transform: scale(0.92); }
-.tile .hint { font-size: 0.55rem; opacity: 0.8; margin-top: 3px; font-weight: 400; }
+// 7. QUIZ LOGIC
+function nextRound() {
+    if (document.getElementById('search-bar').value.trim() !== "") return;
+    const qText = document.getElementById('q-text');
+    const sourcePool = (currentLevel === 0) ? phrasesData : ((visibleItems.length > 0) ? visibleItems : activePool);
 
-/* --- HF Study Mode Overlay --- */
-.hf-overlay {
-    display: none; position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: var(--bg); z-index: 50;
-    flex-direction: column; align-items: center; justify-content: center;
-    padding: 20px;
-}
-.hf-content {
-    width: 90%; max-width: 350px; background: var(--card);
-    padding: 25px; border-radius: 20px; text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-.hf-button-row { display: flex; gap: 10px; justify-content: center; margin: 20px 0; }
-.hf-main-btn { padding: 12px 18px; border-radius: 10px; border: none; background: var(--pol-red); color: white; font-weight: bold; cursor: pointer; }
+    if (sourcePool.length === 0) {
+        if (currentLevel !== 0) showCelebration();
+        return;
+    }
 
-/* --- Footer --- */
-.footer { padding: 10px 10px 24px; display: flex; gap: 8px; border-top: 1px solid #ddd; background: var(--card); }
-.footer-btn { 
-    background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-    font-size: 0.7rem; padding: 10px; border-radius: 8px; cursor: pointer; 
-    flex: 1; font-weight: bold; text-transform: uppercase;
+    let newTarget;
+    let attempts = 0;
+    do {
+        newTarget = sourcePool[Math.floor(Math.random() * sourcePool.length)];
+        attempts++;
+    } while (quizHistory.includes(newTarget.pl) && attempts < 10 && sourcePool.length > 2);
+
+    currentTarget = newTarget;
+    quizHistory.push(currentTarget.pl);
+    if (quizHistory.length > 2) quizHistory.shift();
+
+    qText.style.fontSize = (currentLevel === 0) ? "2.5rem" : "1.1rem";
+    qText.innerText = isSwapped ? currentTarget.pl : currentTarget.en;
+    
+    if (!isSwapped) {
+        if (currentLevel === 0) {
+            speak(`Znajdź: ${currentTarget.pl}`); 
+        } else {
+            speak(currentTarget.pl);
+        }
+    }
 }
 
-#overlay { 
-    position: fixed; inset: 0; background: rgba(0,0,0,0.9); 
-    display: none; flex-direction: column; align-items: center; 
-    justify-content: center; z-index: 2000; color: white; 
+function checkAnswer(p, tile) {
+    if (p.pl === currentTarget.pl) {
+        streakCounter++;
+        playFeedback('correct');
+        if (isSwapped) speak(p.pl);
+        stats[p.pl] = (stats[p.pl] || 0) + 1;
+        saveStats();
+        document.getElementById('feedback').innerText = `Combo: ${streakCounter}`;
+        setTimeout(() => {
+            if (currentLevel !== 0 && stats[p.pl] >= THRESHOLD) {
+                activePool = activePool.filter(i => i.pl !== p.pl);
+            }
+            document.getElementById('feedback').innerText = "";
+            updateMap();
+            nextRound();
+        }, 800);
+    } else {
+        streakCounter = 0; 
+        playFeedback('wrong');
+        tile.style.backgroundColor = 'var(--wrong-blue)';
+        document.getElementById('feedback').innerText = "Błąd!";
+        setTimeout(() => tile.style.backgroundColor = '', 500);
+    }
+}
+
+// 8. HANDS-FREE MODE
+async function startHandsFree() {
+    if (hfActive && !hfPaused) return; 
+    hfActive = true; hfAbort = false; hfPaused = false;
+    const display = document.getElementById('hf-speaking-display');
+    const centerDisplay = document.getElementById('hf-current-phrase');
+
+    while (hfActive && !hfAbort && activePool.length > 0) {
+        if (hfPaused) { await sleep(500); continue; }
+        let p = activePool[Math.floor(Math.random() * activePool.length)];
+
+        quizHistory.push(p.pl);
+        if (quizHistory.length > 2) quizHistory.shift();
+
+        let sequence;
+        if (currentLevel === 0) {
+            const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
+            sequence = [
+                { text: `${p.pl} jak ${d.j}`, rate: 1.0, lang: 'pl-PL' },
+                { text: d.h, rate: 0.8, lang: 'pl-PL' }
+            ];
+        } else {
+            sequence = [
+                { text: p.pl, rate: 1.0, lang: 'pl-PL' },
+                { text: p.en, rate: 1.0, lang: 'en-US' },
+                { text: p.pl, rate: 0.7, lang: 'pl-PL' }
+            ];
+        }
+
+        for (let item of sequence) {
+            if (hfAbort || hfSkip) break;
+            while (hfPaused && !hfAbort) { await sleep(500); }
+            display.innerText = item.text; 
+            centerDisplay.innerText = item.text; 
+            await speakAsync(item.text, item.rate, item.lang);
+            await sleep(hfDelay);
+        }
+        hfSkip = false;
+        if (activePool.length > 0 && !hfAbort) await sleep(hfDelay);
+    }
+    if (!hfAbort) stopHandsFree();
+}
+
+// 9. CORE UTILS & UI
+function speak(text, rate = 1.0, lang = 'pl-PL') {
+    window.speechSynthesis.cancel();
+    const msg = new SpeechSynthesisUtterance(text);
+    msg.lang = lang; msg.rate = rate;
+    window.speechSynthesis.speak(msg);
+}
+
+function speakAsync(text, rate, lang = 'pl-PL') {
+    return new Promise(resolve => {
+        if (hfAbort) return resolve();
+        const msg = new SpeechSynthesisUtterance(text);
+        msg.lang = lang; msg.rate = rate;
+        msg.onend = resolve; msg.onerror = resolve;
+        window.speechSynthesis.speak(msg);
+    });
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+function toggleDropdown() { document.getElementById('lvl-menu').classList.toggle('show'); }
+function updatePauseSpeed() { hfDelay = parseInt(document.getElementById('hf-pause-speed').value); }
+function pauseHandsFree() { hfPaused = !hfPaused; }
+function skipHandsFree() { hfSkip = true; }
+function stopHandsFree() {
+    hfActive = false; hfAbort = true;
+    document.getElementById('hf-speaking-display').innerText = "";
+    document.getElementById('handsfree-controls').style.display = 'none';
+    window.speechSynthesis.cancel();
+}
+function toggleHandsFreePanel() {
+    const p = document.getElementById('handsfree-controls');
+    const mask = document.getElementById('hf-speaking-display');
+    if (p.style.display === 'flex') {
+        stopHandsFree();
+        mask.style.display = 'none';
+    } else {
+        p.style.display = 'flex';
+        mask.style.display = 'flex';
+        mask.innerText = "Ready?";
+        document.getElementById('hf-current-phrase').innerText = "Ready?";
+    }
+}
+function applyUILang() {
+    const langBtn = document.getElementById('ui-lang-btn');
+    if (langBtn) langBtn.innerText = uiLang;
+}
+function updateTabCounts() {
+    const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+    const learning = phrasesData.length - mastered;
+    document.getElementById('learning-count').innerText = `(${learning})`;
+    document.getElementById('banked-count').innerText = `(${mastered})`;
+}
+function saveStats() { localStorage.setItem('pl_stats', JSON.stringify(stats)); }
+function getGenderText(p) { return (currentGender === 'f' && p.pl_f) ? p.pl_f : p.pl; }
+function handleSearch() { updateMap(document.getElementById('search-bar').value); }
+function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
+function showCelebration() { document.getElementById('overlay').style.display = 'flex'; }
+function advanceLevel() { 
+    document.getElementById('overlay').style.display = 'none';
+    currentLevel++; 
+    localStorage.setItem('pl_current_level', currentLevel);
+    loadLevel(currentLevel); 
+}
+function switchMode(m) {
+    document.getElementById('tab-learning').classList.toggle('active', m === 'learning');
+    document.getElementById('tab-mastered').classList.toggle('active', m === 'mastered');
+    updateMap();
+}
+function resetEverything() {
+    if(confirm("Reset progress?")) { stats = {}; saveStats(); location.reload(); }
 }
