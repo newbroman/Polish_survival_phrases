@@ -4,6 +4,41 @@
  * Global Search Indexing, and Advanced Hands-Free Study Mode.
  */
 
+const alphaHints = {
+    "A": { h: "auto", e: "car" },
+    "Ą": { h: "pająk", e: "spider" },
+    "B": { h: "buty", e: "shoes" },
+    "C": { h: "cytryna", e: "lemon" },
+    "Ć": { h: "ćma", e: "moth" },
+    "D": { h: "dom", e: "house" },
+    "E": { h: "ekran", e: "screen" },
+    "Ę": { h: "gęś", e: "goose" },
+    "F": { h: "farba", e: "paint" },
+    "G": { h: "góra", e: "mountain" },
+    "H": { h: "herbata", e: "tea" },
+    "I": { h: "igła", e: "needle" },
+    "J": { h: "jajko", e: "egg" },
+    "K": { h: "kot", e: "cat" },
+    "L": { h: "lampa", e: "lamp" },
+    "Ł": { h: "łyżka", e: "spoon" },
+    "M": { h: "mama", e: "mom" },
+    "N": { h: "nos", e: "nose" },
+    "Ń": { h: "słoń", e: "elephant" },
+    "O": { h: "okno", e: "window" },
+    "Ó": { h: "ołówki", e: "pencils" },
+    "P": { h: "pies", e: "dog" },
+    "R": { h: "rower", e: "bike" },
+    "S": { h: "ser", e: "cheese" },
+    "Ś": { h: "ślimak", e: "snail" },
+    "T": { h: "tata", e: "dad" },
+    "U": { h: "ucho", e: "ear" },
+    "W": { h: "woda", e: "water" },
+    "Y": { h: "ryba", e: "fish" },
+    "Z": { h: "zegar", e: "clock" },
+    "Ź": { h: "źrebię", e: "foal" },
+    "Ż": { h: "żaba", e: "frog" }
+};
+
 // --- GLOBAL STATE ---
 let globalPhrases = []; 
 let visibleItems = []; 
@@ -14,6 +49,8 @@ let hfAbort = false;
 let hfSkip = false;
 let hfDelay = 3000; 
 let quizHistory = []; 
+
+
 
 // --- INITIALIZATION ---
 
@@ -101,7 +138,7 @@ function updateMap(filter = "") {
     const isSearching = filter.trim() !== "";
 
     if (isSearching) {
-        // GLOBAL SEARCH: Look through every phrase in the entire app
+        // GLOBAL SEARCH: Look through every phrase in the entire index
         items = globalPhrases.filter(p => 
             p.pl.toLowerCase().includes(filter.toLowerCase()) || 
             p.en.toLowerCase().includes(filter.toLowerCase())
@@ -112,6 +149,7 @@ function updateMap(filter = "") {
             activePool : 
             phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
 
+        // Keep the 4x3 grid focus for Learning mode (Level 0 shows all)
         if (isLearning && currentLevel !== 0) {
             items = items.slice(0, 12);
         }
@@ -124,17 +162,26 @@ function updateMap(filter = "") {
         tile.className = 'tile';
         
         if (isSearching) {
+            // SEARCH UI: Show Level number and the phrase
             tile.innerHTML = `
                 <div style="font-size:0.6rem; color:var(--pol-red); margin-bottom:4px;">LVL ${p.levelOrigin}</div>
                 <div style="font-size:0.8rem;">${isSwapped ? p.en : p.pl}</div>
             `;
         } else if (currentLevel === 0) {
+            // ALPHABET UI: Display letter and the hint from alphaHints
             const details = alphaHints[p.pl] || { h: '', e: '' };
-            tile.innerHTML = `<span>${p.pl}</span><span class="hint">${details.h} ${details.e}</span>`;
+            tile.innerHTML = `
+                <div style="font-size: 1.4rem; font-weight: 800;">${p.pl}</div>
+                <div class="hint" style="font-size: 0.6rem; margin-top: 4px;">
+                    ${details.h} <span style="opacity: 0.6;">(${details.e})</span>
+                </div>
+            `;
         } else {
+            // STANDARD QUIZ UI
             tile.innerText = isSwapped ? p.en : getGenderText(p);
         }
 
+        // Apply progress coloring (Red saturation based on mastery score)
         const score = stats[p.pl] || 0;
         if (score > 0) {
             const opacity = Math.min(score / THRESHOLD, 1);
@@ -143,6 +190,7 @@ function updateMap(filter = "") {
         
         tile.onclick = () => {
             if (isSearching) {
+                // If result is from a different level, load it and clear search
                 if (p.levelOrigin !== currentLevel) {
                     currentLevel = p.levelOrigin;
                     localStorage.setItem('pl_current_level', currentLevel);
@@ -151,11 +199,13 @@ function updateMap(filter = "") {
                 }
                 speak(p.pl);
             } else {
+                // Normal Quiz/Bank behavior
                 isLearning ? checkAnswer(p, tile) : speak(p.pl);
             }
         };
         area.appendChild(tile);
     });
+    
     updateTabCounts();
 }
 
@@ -286,13 +336,31 @@ async function startHandsFree() {
         quizHistory.push(p.pl);
         if (quizHistory.length > 2) quizHistory.shift();
 
-        const sequence = [
-            { text: p.pl, rate: 1.0, lang: 'pl-PL' },
-            { text: p.en, rate: 1.0, lang: 'en-US' },
-            { text: p.pl, rate: 0.7, lang: 'pl-PL' },
-            { text: p.pl, rate: 1.0, lang: 'pl-PL' }
-        ];
+        // --- NEW: Dynamic Sequence Builder ---
+        let sequence;
+        
+        if (currentLevel === 0) {
+            // Level 0: Alphabet "Letter jak Hint" mode
+            const hint = alphaHints[p.pl] ? alphaHints[p.pl].h : "";
+            const phoneticPhrase = hint ? `${p.pl} jak ${hint}` : p.pl;
 
+            sequence = [
+                { text: phoneticPhrase, rate: 1.0, lang: 'pl-PL' }, // "J jak jajko"
+                { text: p.en, rate: 1.0, lang: 'en-US' },           // "egg"
+                { text: phoneticPhrase, rate: 0.7, lang: 'pl-PL' }, // Slow Polish
+                { text: phoneticPhrase, rate: 1.0, lang: 'pl-PL' }  // Normal Polish
+            ];
+        } else {
+            // Standard Levels: Phrase mode
+            sequence = [
+                { text: p.pl, rate: 1.0, lang: 'pl-PL' },
+                { text: p.en, rate: 1.0, lang: 'en-US' },
+                { text: p.pl, rate: 0.7, lang: 'pl-PL' },
+                { text: p.pl, rate: 1.0, lang: 'pl-PL' }
+            ];
+        }
+
+        // --- Execution Loop ---
         for (let item of sequence) {
             if (hfAbort || hfSkip) break;
             while (hfPaused && !hfAbort) { await sleep(500); }
@@ -303,6 +371,7 @@ async function startHandsFree() {
             await speakAsync(item.text, item.rate, item.lang);
             await sleep(hfDelay);
         }
+
         hfSkip = false;
         if (activePool.length > 0 && !hfAbort) await sleep(hfDelay);
     }
