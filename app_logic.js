@@ -1,7 +1,10 @@
 /**
  * app_logic.js
- * The complete logic engine for Polish Master.
+ * Final Version: Fixed Quiz-Grid Sync, Audio Feedback, and Level Labels.
  */
+
+let visibleItems = []; // Tracks only what's currently on the 4x3 grid
+let streakCounter = 0;
 
 // --- INITIALIZATION ---
 async function init() {
@@ -44,6 +47,11 @@ async function loadLevel(lvl) {
         const response = await fetch(`phrases_${lvl}.json`);
         const data = await response.json();
         phrasesData = data.phrases;
+        
+        // Update the Level Selector Label
+        const trigger = document.getElementById('lvl-current');
+        if (trigger) trigger.innerText = `Level ${lvl}: ${data.description || 'Phrases'}`;
+        
         activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
         updateMap();
         nextRound();
@@ -64,8 +72,13 @@ function updateMap(filter = "") {
         activePool.filter(p => !filter || p.pl.toLowerCase().includes(filter.toLowerCase()) || p.en.toLowerCase().includes(filter.toLowerCase())) :
         phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
 
-    // Enforce 4x3 grid for Levels 1+
-    if (isLearning && currentLevel !== 0) items = items.slice(0, 12);
+    // CRITICAL FIX: Sync quiz with visible 4x3 grid
+    if (isLearning && currentLevel !== 0) {
+        items = items.slice(0, 12);
+        visibleItems = items; 
+    } else {
+        visibleItems = items; 
+    }
 
     items.forEach(p => {
         const tile = document.createElement('div');
@@ -79,30 +92,86 @@ function updateMap(filter = "") {
 
         const score = stats[p.pl] || 0;
         if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
+        
         tile.onclick = () => isLearning ? checkAnswer(p, tile) : speak(p.pl);
         area.appendChild(tile);
     });
     updateTabCounts();
 }
 
+// --- AUDIO FEEDBACK (The Tones) ---
+function playFeedback(type) {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    if (type === 'correct') {
+        // Base frequency of 200Hz, increasing by 32Hz for every streak point
+        // Caps at 2500Hz so it doesn't get too piercing
+        const pitch = Math.min(200 + (streakCounter * 32), 2500);
+        
+        osc.frequency.setValueAtTime(pitch, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+        osc.start(); 
+        osc.stop(ctx.currentTime + 0.2);
+    } else {
+        // Low buzz for wrong answer
+        osc.frequency.setValueAtTime(150, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+        osc.start(); 
+        osc.stop(ctx.currentTime + 0.3);
+    }
+}
+
 // --- QUIZ LOGIC ---
 function nextRound() {
     const qText = document.getElementById('q-text');
+    const sourcePool = (visibleItems.length > 0) ? visibleItems : activePool;
+
+    // Trigger celebration if everything is mastered
     if (activePool.length === 0) {
-        qText.innerText = uiTexts[uiLang].victory;
+        showCelebration();
         return;
     }
-    currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
+    
+    currentTarget = sourcePool[Math.floor(Math.random() * sourcePool.length)];
     qText.innerText = isSwapped ? currentTarget.pl : currentTarget.en;
     if (!isSwapped) speak(currentTarget.pl);
 }
 
+function showCelebration() {
+    const overlay = document.getElementById('overlay');
+    overlay.style.display = 'flex'; // Shows the hidden box
+    
+    // Play a little victory arpeggio
+    const notes = [200, 400, 600, 800, 1200];
+    notes.forEach((pitch, i) => {
+        setTimeout(() => {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.frequency.setValueAtTime(pitch, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+            osc.start(); osc.stop(ctx.currentTime + 0.4);
+        }, i * 150);
+    });
+}
+
 function checkAnswer(p, tile) {
     if (p.pl === currentTarget.pl) {
+        streakCounter++; // Increment streak
+        playFeedback('correct');
+        
         if (isSwapped) speak(p.pl);
         stats[p.pl] = (stats[p.pl] || 0) + 1;
         saveStats();
-        document.getElementById('feedback').innerText = "Dobrze!";
+        
+        document.getElementById('feedback').innerText = `Combo: ${streakCounter}!`;
+        
         setTimeout(() => {
             if (stats[p.pl] >= THRESHOLD) activePool = activePool.filter(i => i.pl !== p.pl);
             document.getElementById('feedback').innerText = "";
@@ -110,26 +179,26 @@ function checkAnswer(p, tile) {
             nextRound();
         }, 800);
     } else {
+        streakCounter = 0; // Reset streak on error
+        playFeedback('wrong');
         tile.style.backgroundColor = 'var(--wrong-blue)';
-        document.getElementById('feedback').innerText = "Spróbuj ponownie";
+        document.getElementById('feedback').innerText = "Błąd!";
     }
 }
 
-// --- HANDS-FREE ENGINE (Updated Sequence) ---
+// --- HANDS-FREE ENGINE ---
 let hfActive = false;
 let hfAbort = false;
 
 async function startHandsFree() {
     if (hfActive) return;
-    hfActive = true;
-    hfAbort = false;
+    hfActive = true; hfAbort = false;
     document.getElementById('hf-toggle-btn').style.color = 'var(--pol-red)';
 
     while (hfActive && !hfAbort && activePool.length > 0) {
         let p = activePool[Math.floor(Math.random() * activePool.length)];
         currentTarget = p;
         updateMap();
-
         await speakAsync(p.pl, 1.0);      // Polish
         await sleep(1500);                // Pause
         await speakAsync(p.en, 1.0, 'en-US'); // English
@@ -137,14 +206,13 @@ async function startHandsFree() {
         await speakAsync(p.pl, 0.7);      // Polish (Slow)
         await sleep(1500);                // Pause
         await speakAsync(p.pl, 1.0);      // Polish (Final)
-        await sleep(3500);                // Long Pause to digest
+        await sleep(3500);                // Repeat Pause
     }
     stopHandsFree();
 }
 
 function stopHandsFree() {
-    hfActive = false;
-    hfAbort = true;
+    hfActive = false; hfAbort = true;
     window.speechSynthesis.cancel();
     document.getElementById('hf-toggle-btn').style.color = '';
 }
@@ -175,8 +243,7 @@ function toggleSwap() {
 function speak(text, rate = 1.0, lang = 'pl-PL') {
     window.speechSynthesis.cancel();
     const msg = new SpeechSynthesisUtterance(text);
-    msg.lang = lang;
-    msg.rate = rate;
+    msg.lang = lang; msg.rate = rate;
     window.speechSynthesis.speak(msg);
 }
 
@@ -185,8 +252,7 @@ function speakAsync(text, rate, lang = 'pl-PL') {
         if (hfAbort) return resolve();
         const msg = new SpeechSynthesisUtterance(text);
         msg.lang = lang; msg.rate = rate;
-        msg.onend = resolve;
-        msg.onerror = resolve;
+        msg.onend = resolve; msg.onerror = resolve;
         window.speechSynthesis.speak(msg);
     });
 }
@@ -240,5 +306,5 @@ function toggleHandsFreePanel() {
     const p = document.getElementById('handsfree-controls');
     p.style.display = (p.style.display === 'none') ? 'flex' : 'none';
 }
-function resetEverything() { if(confirm("Reset all progress?")) { localStorage.clear(); location.reload(); } }
+function resetEverything() { if(confirm("Reset progress?")) { localStorage.clear(); location.reload(); } }
 function getGenderText(p) { return (currentGender === 'f' && p.pl_f) ? p.pl_f : p.pl; }
