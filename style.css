@@ -169,3 +169,17 @@ body { display: flex; flex-direction: column; }
     display: none; flex-direction: column; align-items: center; 
     justify-content: center; z-index: 2000; color: white; 
 }
+.quiz-top-row {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Tighter gap for the buttons next to the speaker */
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 5px;
+}
+
+.icon-btn {
+    flex-shrink: 0; /* Prevents buttons from squishing */
+    width: 40px;
+    height: 40px;
+}
