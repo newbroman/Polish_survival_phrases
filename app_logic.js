@@ -5,6 +5,7 @@
  */
 
 // --- GLOBAL STATE ---
+let globalPhrases = []; // New: Stores every phrase from every level
 let visibleItems = []; 
 let streakCounter = 0;
 let hfActive = false;
@@ -16,11 +17,18 @@ let quizHistory = []; // Stores the last two phrase IDs
 
 // --- INITIALIZATION ---
 async function init() {
+    await buildGlobalIndex(); // Build the master list
     await populateLevelMenu();
     loadLevel(currentLevel);
     applyUILang();
 }
 
+async function init() {
+    await buildGlobalIndex(); // Build the master list
+    await populateLevelMenu();
+    loadLevel(currentLevel);
+    applyUILang();
+}
 // --- DATA & LEVEL LOADING ---
 async function populateLevelMenu() {
     const menu = document.getElementById('lvl-menu');
