@@ -5,40 +5,6 @@
  */
 
 // 1. DATA CONSTANTS
-const alphaHints = {
-    "A": { h: "auto", e: "car" },
-    "Ą": { h: "pająk", e: "spider" },
-    "B": { h: "buty", e: "shoes" },
-    "C": { h: "cytryna", e: "lemon" },
-    "Ć": { h: "ćma", e: "moth" },
-    "D": { h: "dom", e: "house" },
-    "E": { h: "ekran", e: "screen" },
-    "Ę": { h: "gęś", e: "goose" },
-    "F": { h: "farba", e: "paint" },
-    "G": { h: "góra", e: "mountain" },
-    "H": { h: "herbata", e: "tea" },
-    "I": { h: "igła", e: "needle" },
-    "J": { h: "jajko", e: "egg" },
-    "K": { h: "kot", e: "cat" },
-    "L": { h: "lampa", e: "lamp" },
-    "Ł": { h: "łyżka", e: "spoon" },
-    "M": { h: "mama", e: "mom" },
-    "N": { h: "nos", e: "nose" },
-    "Ń": { h: "słoń", e: "elephant" },
-    "O": { h: "okno", e: "window" },
-    "Ó": { h: "ołówki", e: "pencils" },
-    "P": { h: "pies", e: "dog" },
-    "R": { h: "rower", e: "bike" },
-    "S": { h: "ser", e: "cheese" },
-    "Ś": { h: "ślimak", e: "snail" },
-    "T": { h: "tata", e: "dad" },
-    "U": { h: "ucho", e: "ear" },
-    "W": { h: "woda", e: "water" },
-    "Y": { h: "ryba", e: "fish" },
-    "Z": { h: "zegar", e: "clock" },
-    "Ź": { h: "źrebię", e: "foal" },
-    "Ż": { h: "żaba", e: "frog" }
-};
 
 // 2. GLOBAL STATE
 let globalPhrases = []; 
