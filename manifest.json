@@ -1,8 +1,8 @@
 {
-  "name": "Polish Phrase Master",
-  "short_name": "Polish Quiz",
-  "description": "Interactive Polish language learning quiz with audio pronunciation",
-  "start_url": "./index.html",
+  "name": "Polish Master",
+  "short_name": "PolishMaster",
+  "description": "Master Polish phrases with a gamified grid and hands-free mode.",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#f0f2f5",
   "theme_color": "#dc143c",
@@ -17,8 +17,7 @@
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }
