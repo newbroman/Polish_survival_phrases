@@ -1,4 +1,4 @@
-const CACHE_NAME = 'polish-phrase-master-v1007 ';
+const CACHE_NAME = 'polish-phrase-master-v1008';
 const urlsToCache = [
   './',
   './index.html',
