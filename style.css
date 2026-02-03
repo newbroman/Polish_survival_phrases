@@ -1,16 +1,116 @@
-:root { --pol-red: #dc143c; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
-@media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
-
-body { font-family: sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; flex-direction: column; height: 100vh; }
-
-.grid { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 8px; 
-    padding: 10px;
+/* --- Root & Themes --- */
+:root { 
+    --pol-red: #dc143c; 
+    --wrong-blue: #3498db; 
+    --bg: #f0f2f5; 
+    --card: #ffffff; 
+    --text: #333; 
+    --tile-bg: #dee2e6; 
 }
 
-/* THE ALPHABET FIX */
+@media (prefers-color-scheme: dark) { 
+    :root { 
+        --bg: #1a1a1a; 
+        --card: #2d2d2d; 
+        --text: #f0f0f0; 
+        --tile-bg: #404040; 
+    } 
+}
+
+/* --- Base Layout --- */
+html, body { 
+    height: 100%; 
+    margin: 0; 
+    overflow: hidden; 
+    position: fixed; 
+    width: 100%; 
+    font-family: -apple-system, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+body { display: flex; flex-direction: column; }
+
+/* --- Header & Title --- */
+.header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+.title-banner { 
+    background: linear-gradient(to bottom, #ffffff 50%, var(--pol-red) 50%); 
+    padding: 8px 0; 
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+.title { 
+    font-weight: 800; 
+    font-size: 1rem; 
+    color: #333; 
+    text-align: center; 
+    margin: 0; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+/* --- Controls & Dropdown --- */
+.controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; gap: 8px; }
+
+.custom-dropdown { position: relative; flex: 1; }
+.dropdown-trigger { 
+    width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
+    padding: 6px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; 
+    height: 32px; display: flex; align-items: center; justify-content: space-between; cursor: pointer;
+    box-sizing: border-box;
+}
+.dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
+
+.dropdown-menu { 
+    position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
+    border: 1px solid #ccc; border-radius: 4px; max-height: 300px; overflow-y: auto; 
+    z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.dropdown-menu.show { display: block; }
+.dropdown-item { 
+    padding: 12px; font-size: 11px; border-bottom: 1px solid #eee; cursor: pointer;
+    display: flex; justify-content: space-between;
+}
+
+/* --- Search Bar --- */
+#search-bar {
+    width: 90%; max-width: 400px; margin: 0 auto 8px; padding: 8px;
+    border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background: var(--card); color: var(--text);
+}
+
+/* --- Quiz Area --- */
+.quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; flex-shrink: 0; }
+.quiz-top-row { display: flex; align-items: center; gap: 8px; width: 100%; justify-content: center; }
+
+.icon-btn { 
+    background: var(--bg); border: 1px solid #ddd; border-radius: 50%; 
+    width: 44px; height: 44px; font-size: 1.2rem; display: flex; 
+    align-items: center; justify-content: center; cursor: pointer;
+}
+
+.q-text { font-size: 1.1rem; font-weight: 800; text-align: center; flex: 1; max-width: 200px; }
+.feedback { height: 14px; font-size: 0.8rem; font-weight: bold; margin-top: 5px; color: var(--pol-red); text-align: center; }
+
+/* --- Mode Tabs --- */
+.mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+.tab { 
+    flex: 1; padding: 14px 2px; text-align: center; font-size: 0.7rem; 
+    font-weight: bold; cursor: pointer; opacity: 0.5; transition: 0.2s;
+}
+.tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
+
+/* --- Grid & Tiles --- */
+.map-section { 
+    flex-grow: 1; padding: 10px; overflow-y: auto; 
+    display: flex; flex-direction: column; align-items: center;
+}
+
+.grid { 
+    display: grid; grid-template-columns: repeat(4, 1fr); 
+    gap: 8px; width: 100%; max-width: 400px; 
+}
+
+/* THE ALPHABET FIX: 6 Columns */
 .grid.grid-alphabet {
     grid-template-columns: repeat(6, 1fr) !important;
     gap: 4px !important;
@@ -19,9 +119,41 @@ body { font-family: sans-serif; background: var(--bg); color: var(--text); margi
 .tile { 
     aspect-ratio: 1/1; background: var(--tile-bg); border-radius: 8px; 
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; cursor: pointer; font-size: 0.8rem;
+    cursor: pointer; padding: 4px; text-align: center; font-size: 0.7rem; font-weight: 600;
 }
 
-.tile .hint { font-size: 0.5rem; opacity: 0.7; margin-top: 2px; }
+/* Phonetic Hint Styling */
+.tile span { display: block; }
+.tile .hint {
+    font-size: 0.5rem;
+    opacity: 0.7;
+    margin-top: 2px;
+    font-weight: 400;
+}
 
-/* Add your existing header, dropdown, and tab styles here */
+.tile:active { transform: scale(0.95); }
+
+/* --- Footer & Hands-Free --- */
+.footer { 
+    padding: 10px 10px 24px 10px; display: flex; justify-content: center; 
+    gap: 10px; border-top: 1px solid #ddd; background: var(--card); 
+}
+
+.footer-btn { 
+    background: var(--bg); border: 1px solid #ccc; color: #666; 
+    font-size: 0.7rem; padding: 10px; border-radius: 6px; cursor: pointer; 
+    flex: 1; font-weight: bold; text-transform: uppercase;
+}
+
+#handsfree-controls {
+    display: none; padding: 15px; background: #333; color: white;
+    justify-content: space-around; align-items: center; position: fixed;
+    bottom: 0; left: 0; right: 0; z-index: 2000;
+}
+
+/* --- Overlay --- */
+#overlay { 
+    position: fixed; inset: 0; background: rgba(0,0,0,0.9); 
+    display: none; flex-direction: column; align-items: center; 
+    justify-content: center; z-index: 2000; color: white; 
+}
