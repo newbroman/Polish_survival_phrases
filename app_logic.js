@@ -117,13 +117,8 @@ function updateMap(filter = "") {
             p.en.toLowerCase().includes(filter.toLowerCase())
         ).slice(0, 40); 
     } else {
-        items = isLearning ? 
-            activePool : 
-            phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
-
-        if (isLearning && currentLevel !== 0) {
-            items = items.slice(0, 12);
-        }
+        items = isLearning ? activePool : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+        if (isLearning && currentLevel !== 0) items = items.slice(0, 12);
     }
 
     visibleItems = items; 
@@ -133,11 +128,9 @@ function updateMap(filter = "") {
         tile.className = 'tile';
         
         if (isSearching) {
-            tile.innerHTML = `
-                <div style="font-size:0.6rem; color:var(--pol-red); margin-bottom:4px;">LVL ${p.levelOrigin}</div>
-                <div style="font-size:0.8rem;">${isSwapped ? p.en : p.pl}</div>
-            `;
-      } else if (currentLevel === 0) {
+            tile.innerHTML = `<div style="font-size:0.6rem; color:var(--pol-red);">LVL ${p.levelOrigin}</div><div>${isSwapped ? p.en : p.pl}</div>`;
+        } else if (currentLevel === 0) {
+            // Minimalist Alphabet: Letter + Emoji
             const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
             tile.innerHTML = `
                 <div style="font-weight: 800; font-size: 1.4rem; line-height: 1;">${p.pl}</div>
@@ -148,16 +141,22 @@ function updateMap(filter = "") {
         }
 
         const score = stats[p.pl] || 0;
-        if (score > 0) {
+        if (score > 0 && currentLevel !== 0) {
             const opacity = Math.min(score / THRESHOLD, 1);
             tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
         }
         
         tile.onclick = () => {
-            if (currentLevel === 0) {
+            if (isSearching) {
+                if (p.levelOrigin !== currentLevel) {
+                    currentLevel = p.levelOrigin;
+                    localStorage.setItem('pl_current_level', currentLevel);
+                    loadLevel(currentLevel);
+                }
+                speak(p.pl);
+            } else if (currentLevel === 0) {
                 const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
-                // Audio says: "A jak auto"
-                speak(`${p.pl} jak ${d.j}`);
+                speak(`${p.pl} jak ${d.j}`); // Audio lesson: "A jak auto"
             } else {
                 isLearning ? checkAnswer(p, tile) : speak(p.pl);
             }
