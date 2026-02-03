@@ -1,11 +1,11 @@
 /**
  * app_logic.js
  * COMPLETE ENGINE: Includes Pitch-Shifting Combo Beeps, 4x3 Grid Sync, 
- * and Advanced Hands-Free Study Mode.
+ * Global Search Indexing, and Advanced Hands-Free Study Mode.
  */
 
 // --- GLOBAL STATE ---
-let globalPhrases = []; // New: Stores every phrase from every level
+let globalPhrases = []; 
 let visibleItems = []; 
 let streakCounter = 0;
 let hfActive = false;
@@ -13,22 +13,35 @@ let hfPaused = false;
 let hfAbort = false;
 let hfSkip = false;
 let hfDelay = 3000; 
-let quizHistory = []; // Stores the last two phrase IDs
+let quizHistory = []; 
 
 // --- INITIALIZATION ---
 async function init() {
-    await buildGlobalIndex(); // Build the master list
+    await buildGlobalIndex(); // Builds the master list for search
     await populateLevelMenu();
     loadLevel(currentLevel);
     applyUILang();
 }
 
-async function init() {
-    await buildGlobalIndex(); // Build the master list
-    await populateLevelMenu();
-    loadLevel(currentLevel);
-    applyUILang();
+async function buildGlobalIndex() {
+    globalPhrases = [];
+    // Adjust 15 to the actual number of levels you have
+    for (let i = 0; i <= 15; i++) {
+        try {
+            const response = await fetch(`phrases_${i}.json`);
+            if (response.ok) {
+                const data = await response.json();
+                // Tag each phrase with its level for the "teleport" search feature
+                const tagged = data.phrases.map(p => ({ ...p, levelOrigin: i }));
+                globalPhrases = globalPhrases.concat(tagged);
+            }
+        } catch (e) { 
+            console.log(`Index built: ${globalPhrases.length} total phrases.`);
+            break; 
+        }
+    }
 }
+
 // --- DATA & LEVEL LOADING ---
 async function populateLevelMenu() {
     const menu = document.getElementById('lvl-menu');
@@ -68,7 +81,7 @@ async function loadLevel(lvl) {
         if (trigger) trigger.innerText = `Level ${lvl}: ${data.description || 'Phrases'}`;
         
         activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-        streakCounter = 0; // Reset streak on level change
+        streakCounter = 0; 
         updateMap();
         nextRound();
     } catch (e) { console.error("Load failed:", e); }
@@ -81,22 +94,21 @@ function updateMap(filter = "") {
     if (!area) return;
     area.innerHTML = '';
 
-    // Determine which pool to use
     let items;
-    
-    if (filter.trim() !== "") {
-        // GLOBAL SEARCH: Look through ALL phrases in this level
-        items = phrasesData.filter(p => 
+    const isSearching = filter.trim() !== "";
+
+    if (isSearching) {
+        // GLOBAL SEARCH: Look through every phrase in the entire app
+        items = globalPhrases.filter(p => 
             p.pl.toLowerCase().includes(filter.toLowerCase()) || 
             p.en.toLowerCase().includes(filter.toLowerCase())
-        );
+        ).slice(0, 40); 
     } else {
-        // STANDARD TAB VIEW: Respect Learning vs Banked
+        // STANDARD VIEW: Current level tabs
         items = isLearning ? 
             activePool : 
             phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
 
-        // Keep the 4x3 grid limit only for the standard Learning view
         if (isLearning && currentLevel !== 0) {
             items = items.slice(0, 12);
         }
@@ -104,20 +116,22 @@ function updateMap(filter = "") {
 
     visibleItems = items; 
 
-    // Render the tiles
     items.forEach(p => {
         const tile = document.createElement('div');
         tile.className = 'tile';
         
-        // Handle Alphabet Level vs Phrases
-        if (currentLevel === 0) {
+        if (isSearching) {
+            tile.innerHTML = `
+                <div style="font-size:0.6rem; color:var(--pol-red); margin-bottom:4px;">LVL ${p.levelOrigin}</div>
+                <div style="font-size:0.8rem;">${isSwapped ? p.en : p.pl}</div>
+            `;
+        } else if (currentLevel === 0) {
             const details = alphaHints[p.pl] || { h: '', e: '' };
             tile.innerHTML = `<span>${p.pl}</span><span class="hint">${details.h} ${details.e}</span>`;
         } else {
             tile.innerText = isSwapped ? p.en : getGenderText(p);
         }
 
-        // Apply progress coloring
         const score = stats[p.pl] || 0;
         if (score > 0) {
             const opacity = Math.min(score / THRESHOLD, 1);
@@ -125,17 +139,20 @@ function updateMap(filter = "") {
         }
         
         tile.onclick = () => {
-            if (filter.trim() !== "") {
-                // If searching, just speak the word
+            if (isSearching) {
+                if (p.levelOrigin !== currentLevel) {
+                    currentLevel = p.levelOrigin;
+                    localStorage.setItem('pl_current_level', currentLevel);
+                    loadLevel(currentLevel);
+                    document.getElementById('search-bar').value = ""; 
+                }
                 speak(p.pl);
             } else {
-                // If in quiz mode, check the answer
                 isLearning ? checkAnswer(p, tile) : speak(p.pl);
             }
         };
         area.appendChild(tile);
     });
-    
     updateTabCounts();
 }
 
@@ -148,31 +165,26 @@ function playFeedback(type) {
     gain.connect(ctx.destination);
 
     if (type === 'correct') {
-        // Calculation: 200 + (70 * 28.57) ≈ 2200Hz
         const pitch = Math.min(200 + (streakCounter * 28.57), 2200);
-        
         osc.type = 'sine'; 
         osc.frequency.setValueAtTime(pitch, ctx.currentTime);
-        
-        // Short, clean "ping"
         gain.gain.setValueAtTime(0.1, ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
-        
-        osc.start(); 
-        osc.stop(ctx.currentTime + 0.2);
+        osc.start(); osc.stop(ctx.currentTime + 0.2);
     } else {
-        // Error remains a low buzz at 150Hz
         osc.frequency.setValueAtTime(150, ctx.currentTime);
         osc.type = 'sawtooth';
         gain.gain.setValueAtTime(0.1, ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
-        osc.start(); 
-        osc.stop(ctx.currentTime + 0.3);
+        osc.start(); osc.stop(ctx.currentTime + 0.3);
     }
 }
 
 // --- QUIZ LOGIC ---
 function nextRound() {
+    // Stop quiz logic if searching
+    if (document.getElementById('search-bar').value.trim() !== "") return;
+
     const qText = document.getElementById('q-text');
     const sourcePool = (visibleItems.length > 0) ? visibleItems : activePool;
 
@@ -183,21 +195,14 @@ function nextRound() {
 
     let newTarget;
     let attempts = 0;
-
-    // Pick a phrase that isn't in the last 2 played
     do {
         newTarget = sourcePool[Math.floor(Math.random() * sourcePool.length)];
         attempts++;
-        // If the pool is very small (1 or 2 items), we must break to avoid infinite loop
     } while (quizHistory.includes(newTarget.pl) && attempts < 10 && sourcePool.length > 2);
 
     currentTarget = newTarget;
-
-    // Update history: Add new ID to the end, keep only the last 2
     quizHistory.push(currentTarget.pl);
-    if (quizHistory.length > 2) {
-        quizHistory.shift();
-    }
+    if (quizHistory.length > 2) quizHistory.shift();
 
     qText.innerText = isSwapped ? currentTarget.pl : currentTarget.en;
     if (!isSwapped) speak(currentTarget.pl);
@@ -250,7 +255,6 @@ function advanceLevel() {
     loadLevel(currentLevel);
 }
 
-
 // --- HANDS-FREE STUDY MODE ---
 function updatePauseSpeed() {
     hfDelay = parseInt(document.getElementById('hf-pause-speed').value);
@@ -260,37 +264,25 @@ function pauseHandsFree() { hfPaused = !hfPaused; }
 function skipHandsFree() { hfSkip = true; }
 
 async function startHandsFree() {
-    // Prevent multiple instances from running at once
     if (hfActive && !hfPaused) return; 
-    
-    hfActive = true; 
-    hfAbort = false; 
-    hfPaused = false;
+    hfActive = true; hfAbort = false; hfPaused = false;
 
     const display = document.getElementById('hf-speaking-display');
     const centerDisplay = document.getElementById('hf-current-phrase');
 
     while (hfActive && !hfAbort && activePool.length > 0) {
-        // Handle Pause State
-        if (hfPaused) { 
-            await sleep(500); 
-            continue; 
-        }
+        if (hfPaused) { await sleep(500); continue; }
 
-        // 1. Pick a phrase with the "No-Repeat" buffer logic
         let p;
         let attempts = 0;
         do {
             p = activePool[Math.floor(Math.random() * activePool.length)];
             attempts++;
-            // Ensure we don't pick the last 2 phrases played
         } while (quizHistory.includes(p.pl) && attempts < 10 && activePool.length > 2);
 
-        // 2. Update history buffer
         quizHistory.push(p.pl);
         if (quizHistory.length > 2) quizHistory.shift();
 
-        // 3. Define the sequence: Polish -> English -> Slow Polish -> Normal Polish
         const sequence = [
             { text: p.pl, rate: 1.0, lang: 'pl-PL' },
             { text: p.en, rate: 1.0, lang: 'en-US' },
@@ -298,41 +290,32 @@ async function startHandsFree() {
             { text: p.pl, rate: 1.0, lang: 'pl-PL' }
         ];
 
-        // 4. Execute the sequence
         for (let item of sequence) {
-            // Check for Stop or Skip signals
             if (hfAbort || hfSkip) break;
-            
-            // Check for Pause signal mid-sequence
             while (hfPaused && !hfAbort) { await sleep(500); }
             
-            // Update BOTH displays (The mask at the top and the control box in the center)
             display.innerText = item.text; 
             centerDisplay.innerText = item.text; 
             
-            // Speak and wait for the selected pause duration
             await speakAsync(item.text, item.rate, item.lang);
             await sleep(hfDelay);
         }
-
-        // 5. Reset skip for the next phrase
         hfSkip = false;
-
-        // Final breath before moving to the next random phrase
-        if (activePool.length > 0 && !hfAbort) {
-            await sleep(hfDelay);
-        }
+        if (activePool.length > 0 && !hfAbort) await sleep(hfDelay);
     }
-    
-    // Cleanup if the loop finishes (e.g., all words mastered)
     if (!hfAbort) stopHandsFree();
 }
+
 function toggleHandsFreePanel() {
     const p = document.getElementById('handsfree-controls');
+    const mask = document.getElementById('hf-speaking-display');
     if (p.style.display === 'flex') {
         stopHandsFree();
+        mask.style.display = 'none';
     } else {
         p.style.display = 'flex';
+        mask.style.display = 'flex'; // Activates the mask over icons
+        mask.innerText = "Ready?";
         document.getElementById('hf-current-phrase').innerText = "Ready?";
     }
 }
@@ -393,7 +376,6 @@ function updateTabCounts() {
     document.getElementById('banked-count').innerText = `(${mastered})`;
 }
 
-// --- FILE & DATA MANAGEMENT ---
 function saveStats() { localStorage.setItem('pl_stats', JSON.stringify(stats)); }
 
 function saveProgressToFile() {
