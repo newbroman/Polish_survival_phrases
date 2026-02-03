@@ -132,7 +132,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem zagubiony",
-        "f": "zagubiona"
+        "f": "Jestem zagubiona"
       }
     },
     {
@@ -480,7 +480,7 @@
       "gender": "both",
       "variants": {
         "m": "Reszta dla Pana",
-        "f": "Pani"
+        "f": "Reszta dla Pani"
       }
     },
     {
@@ -515,7 +515,7 @@
       "level": 3,
       "gender": "both",
       "variants": {
-        "m": "Zgubiłem",
+        "m": "Zgubiłem bagaż",
         "f": "Zgubiłam bagaż"
       }
     },

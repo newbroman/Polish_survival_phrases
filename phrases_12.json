@@ -331,7 +331,7 @@
       "level": 12,
       "gender": "both",
       "variants": {
-        "m": "Chciałbym",
+        "m": "Chciałbym zarezerwować",
         "f": "Chciałabym zarezerwować"
       }
     },
@@ -396,7 +396,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem spóźniony",
-        "f": "spóźniona"
+        "f": "Jestem spóźniona"
       }
     },
     {

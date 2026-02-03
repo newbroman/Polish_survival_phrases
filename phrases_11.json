@@ -96,7 +96,7 @@
       "gender": "both",
       "variants": {
         "m": "A Pan",
-        "f": "Pani?"
+        "f": "A Pani?"
       }
     },
     {
@@ -204,7 +204,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem Amerykaninem",
-        "f": "Amerykanką"
+        "f": "Jestem Amerykanką"
       }
     },
     {
@@ -216,7 +216,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem Anglikiem",
-        "f": "Angielką"
+        "f": "Jestem Angielką"
       }
     },
     {
@@ -251,7 +251,7 @@
       "level": 11,
       "gender": "both",
       "variants": {
-        "m": "Przyjechałem",
+        "m": "Przyjechałem z...",
         "f": "Przyjechałam z..."
       }
     },
@@ -380,7 +380,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem studentem",
-        "f": "studentką"
+        "f": "Jestem studentką"
       }
     },
     {
@@ -544,7 +544,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem zajęty",
-        "f": "zajęta"
+        "f": "Jestem zajęta"
       }
     },
     {

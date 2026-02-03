@@ -132,7 +132,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem zdezorientowany",
-        "f": "zdezorientowana"
+        "f": "Jestem zdezorientowana"
       }
     },
     {
@@ -144,7 +144,7 @@
       "gender": "both",
       "variants": {
         "m": "Nie jestem pewien",
-        "f": "pewna"
+        "f": "Nie jestem pewna"
       }
     },
     {
@@ -260,7 +260,7 @@
       "gender": "both",
       "variants": {
         "m": "Co powiedziałeś",
-        "f": "powiedziałaś?"
+        "f": "Co powiedziałaś?"
       }
     },
     {
@@ -552,7 +552,7 @@
       "gender": "both",
       "variants": {
         "m": "Dobrze zrozumiałem",
-        "f": "zrozumiałam?"
+        "f": "Dobrze zrozumiałam?"
       }
     },
     {

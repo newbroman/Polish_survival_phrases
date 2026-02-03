@@ -1,99 +1,89 @@
-# Polish Master v2.0 - Restructured Edition
+# Polish Phrase Master - PWA
 
-**Total:** 31 levels, 2,093 phrases
-**Features:** Gender toggle, optimal 70-phrase levels, comprehensive coverage
+An interactive Polish language learning quiz with audio pronunciation, designed as a Progressive Web App.
 
----
+## Features
 
-## 🎯 Level Structure
+- 🎯 Interactive tile-based quiz interface
+- 🔊 Audio pronunciation with Polish voice synthesis
+- 🎵 Musical feedback tones for correct/incorrect answers
+- 👥 Gender-aware phrases (male/female/both variants)
+- 🔄 Language swap mode (EN↔PL)
+- 🎧 Hands-free learning mode with sequential playback
+- 📱 PWA - Install on mobile devices and use offline
+- 💾 Progress tracking with save/load functionality
+- 🌓 Dark mode support
 
-### 🟣 FOUNDATION (2 levels, 123 items)
-- **Level 0:** Alphabet & Digraphs (53 items)
-- **Level 0.1:** Pronunciation Practice (70 items)
+## Installation
 
-### 🟢 SURVIVAL (7 levels, 500 phrases)
-Days 1-7 essentials for tourists
+### GitHub Pages Deployment
 
-- **Level 1:** Day 1 Survival Kit (70 phrases)
-- **Level 2:** Public Transport & Directions (70 phrases)
-- **Level 2.1:** Car Travel & Rental (75 phrases) ⭐
-- **Level 3:** Food & Dining (70 phrases)
-- **Level 4:** Accommodation (70 phrases)
-- **Level 5:** Shopping & Money (70 phrases)
-- **Level 5.1:** Numbers in Practice (75 phrases) ⭐ NEW
+1. Create a new repository on GitHub
+2. Upload all files from this directory
+3. Go to Settings → Pages
+4. Select "Deploy from a branch" and choose `main` branch
+5. Your app will be available at `https://yourusername.github.io/repository-name/`
 
-### 🟡 PRACTICAL (14 levels, 960 phrases)
-Extended stay and daily life
+### Local Development
 
-- **Level 6:** Health & Medical (70 phrases)
-- **Level 7:** Phone & Internet (70 phrases)
-- **Level 8:** Meeting People (70 phrases)
-- **Level 9:** Time & Scheduling (70 phrases)
-- **Level 10:** Weather & Seasons (70 phrases)
-- **Level 10.1:** Outdoor Activities (70 phrases) ⭐
-- **Level 11:** Work & Business (70 phrases)
-- **Level 12:** Family & Relationships (70 phrases)
-- **Level 12.1:** Home Life (70 phrases) ⭐
-- **Level 13:** Hobbies & Sports (55 phrases)
-- **Level 13.1:** Culture & Entertainment (70 phrases) ⭐
-- **Level 13.2:** Music & Pop Culture (65 phrases) ⭐
-- **Level 14:** Problems & Complaints (70 phrases)
-- **Level 15:** Asking for Help (70 phrases)
+1. Clone the repository
+2. Serve with any static file server:
+   ```bash
+   python3 -m http.server 8000
+   ```
+3. Open `http://localhost:8000` in your browser
 
-### 🔵 ADVANCED (7 levels, 625 phrases)
-Cultural depth and fluency
+### Install as PWA
 
-- **Level 16:** Polish Culture & Traditions (70 phrases)
-- **Level 17:** Government & Official (70 phrases)
-- **Level 18:** Opinions & Abstract (70 phrases)
-- **Level 19:** Advanced Grammar (70 phrases)
-- **Level 20:** Idioms & Expressions (70 phrases)
-- **Level 21:** Shopping Marathon (75 phrases)
-- **Level 22:** Advanced Dates & Times (200 phrases)
+Once deployed:
+1. Visit the URL in Chrome/Edge/Safari
+2. Click the install icon in the address bar
+3. Or use browser menu: "Install app" / "Add to Home Screen"
 
----
+## File Structure
 
-## ⭐ New Levels Created
+```
+pwa-version/
+├── index.html              # Main app file
+├── manifest.json           # PWA manifest
+├── service-worker.js       # Offline caching
+├── icon-192.png           # App icon (192x192)
+├── icon-512.png           # App icon (512x512)
+├── phrases_0.json         # Level 0 phrases
+├── phrases_1.json         # Level 1 phrases
+└── ...                    # Additional phrase levels
+```
 
-### Level 2.1: Car Travel & Rental (75 phrases)
-Complete car coverage: rental, driving, parking, gas stations, breakdowns
+## Usage
 
-### Level 5.1: Numbers in Practice (75 phrases) ⭐ NEW
-Practical number usage: prices, time, dates, counting, positions
+### Practice Mode
+- Select a level from the dropdown
+- Listen to the Polish phrase
+- Click the correct tile to answer
+- Build up your mastery (3 correct answers per phrase)
 
-### Level 10.1: Outdoor Activities (70 phrases)
-Walking, hiking, cycling - parks, trails, bike rentals
+### Hands-Free Mode
+- Click "▼ Hands-Free" to expand the panel
+- Click "▶ START HANDS-FREE" to begin
+- Listen to sequential phrases: Polish → English → Polish (slow) → Polish (normal)
+- Skip phrases with the SKIP button
+- Pause anytime with the PAUSE button
 
-### Level 12.1: Home Life (70 phrases)
-Cooking, furniture, decorating, gardening
+### Banked Tab
+- View all mastered phrases (3+ correct answers)
+- Click any tile to hear pronunciation
 
-### Level 13.1: Culture & Entertainment (70 phrases)
-Museums, theatres, cinema, cultural venues
+## Browser Compatibility
 
-### Level 13.2: Music & Pop Culture (65 phrases)
-Songs, genres, Polish artists, karaoke, lyrics
+- ✅ Chrome/Edge (recommended)
+- ✅ Safari (iOS/macOS)
+- ✅ Firefox
+- ⚠️ Requires browser support for Web Speech API
 
----
+## License
 
-## 🎯 Gender Toggle
+MIT License - Feel free to use and modify
 
-**91 phrases with masculine/feminine variants**
-- Toggle: ♂ Male | Both | ♀ Female
-- Integrated into original UI
-- Saves preference
+## Credits
 
----
-
-## ✅ Complete Coverage
-
-**Transport:** Walking, bus, train, taxi, airport, car rental, driving
-**Culture:** Museums, theatres, opera, cinema, concerts
-**Outdoor:** Walking, hiking, cycling, parks, trails
-**Home:** Cooking, furniture, decorating, gardening
-**Music:** Songs, genres, pop phrases, Polish artists
-**Numbers:** Prices, time, dates, counting, positions
-**Plus:** Food, accommodation, shopping, health, tech, social, work, emergencies
-
----
-
-**Polish Master v2.0** - Comprehensive, balanced, and ready for Poland! 🇵🇱
+Built with vanilla JavaScript, no frameworks required.

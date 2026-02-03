@@ -60,7 +60,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem chory",
-        "f": "chora"
+        "f": "Jestem chora"
       }
     },
     {
@@ -128,7 +128,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem zmęczony",
-        "f": "zmęczona"
+        "f": "Jestem zmęczona"
       }
     },
     {
@@ -443,7 +443,7 @@
       "level": 9,
       "gender": "both",
       "variants": {
-        "m": "Skaleczyłem",
+        "m": "Skaleczyłem się",
         "f": "Skaleczyłam się"
       }
     },

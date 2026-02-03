@@ -1,12 +1,12 @@
 {
   "name": "Polish Phrase Master",
-  "short_name": "Phrase Master",
-  "description": "Learn Polish phrases with flashcards, quizzes, and gender-aware language support",
+  "short_name": "Polish Quiz",
+  "description": "Interactive Polish language learning quiz with audio pronunciation",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f0f2f5",
-  "theme_color": "#ffffff",
-  "orientation": "portrait-primary",
+  "theme_color": "#dc143c",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "icon-192.png",
@@ -19,21 +19,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    }
-  ],
-  "categories": [
-    "education",
-    "lifestyle"
-  ],
-  "lang": "en-US",
-  "dir": "ltr",
-  "scope": "./",
-  "screenshots": [
-    {
-      "src": "screenshot.png",
-      "sizes": "540x720",
-      "type": "image/png",
-      "form_factor": "narrow"
     }
   ]
 }

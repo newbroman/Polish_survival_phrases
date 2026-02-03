@@ -299,7 +299,7 @@
       "level": 6,
       "gender": "both",
       "variants": {
-        "m": "Zgubiłem",
+        "m": "Zgubiłem klucz",
         "f": "Zgubiłam klucz"
       }
     },
@@ -319,7 +319,7 @@
       "level": 6,
       "gender": "both",
       "variants": {
-        "m": "Zamknąłem",
+        "m": "Zamknąłem się",
         "f": "Zamknęłam się"
       }
     },
@@ -355,7 +355,7 @@
       "level": 6,
       "gender": "both",
       "variants": {
-        "m": "Zostawiłem",
+        "m": "Zostawiłem coś w pokoju",
         "f": "Zostawiłam coś w pokoju"
       }
     },
@@ -391,7 +391,7 @@
       "level": 6,
       "gender": "both",
       "variants": {
-        "m": "Chciałbym",
+        "m": "Chciałbym się wymeldować",
         "f": "Chciałabym się wymeldować"
       }
     },

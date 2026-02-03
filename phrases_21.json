@@ -148,7 +148,7 @@
       "gender": "both",
       "variants": {
         "m": "To nie to co zamówiłem",
-        "f": "zamówiłam"
+        "f": "To nie to co zamówiłam"
       }
     },
     {
@@ -204,7 +204,7 @@
       "gender": "both",
       "variants": {
         "m": "Gdzie to zostawiłem",
-        "f": "zostawiłam?"
+        "f": "Gdzie to zostawiłam?"
       }
     },
     {
@@ -252,7 +252,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem niezadowolony",
-        "f": "niezadowolona"
+        "f": "Jestem niezadowolona"
       }
     },
     {
@@ -379,7 +379,7 @@
       "level": 21,
       "gender": "both",
       "variants": {
-        "m": "Oczekiwałem",
+        "m": "Oczekiwałem czegoś innego",
         "f": "Oczekiwałam czegoś innego"
       }
     },

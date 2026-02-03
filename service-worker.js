@@ -1,73 +1,54 @@
-const CACHE_NAME = 'polish-master-v2.1';
+const CACHE_NAME = 'polish-phrase-master-v1';
 const urlsToCache = [
   './',
   './index.html',
-  './manifest.json'
+  './manifest.json',
+  './phrases_0.json',
+  './phrases_1.json',
+  './phrases_2.json',
+  './phrases_3.json',
+  './phrases_4.json',
+  './phrases_5.json',
+  './phrases_6.json',
+  './phrases_7.json',
+  './phrases_8.json',
+  './phrases_9.json'
 ];
 
-// Cache all phrase files dynamically
-for (let i = 0; i <= 29; i++) {
-  urlsToCache.push(`./phrases_${i}.json`);
-}
-
-// Install event - cache all resources
-self.addEventListener('install', (event) => {
+// Install event - cache resources
+self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
+      .then(cache => cache.addAll(urlsToCache))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
 // Activate event - clean up old caches
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
+    caches.keys().then(cacheNames => {
       return Promise.all(
-        cacheNames.map((cacheName) => {
+        cacheNames.map(cacheName => {
           if (cacheName !== CACHE_NAME) {
-            console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 // Fetch event - serve from cache, fallback to network
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
-      .then((response) => {
+      .then(response => {
         // Cache hit - return response
         if (response) {
           return response;
         }
-        
-        // Clone the request
-        const fetchRequest = event.request.clone();
-        
-        return fetch(fetchRequest).then((response) => {
-          // Check if valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-          
-          // Clone the response
-          const responseToCache = response.clone();
-          
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
-          
-          return response;
-        });
+        return fetch(event.request);
       })
   );
 });

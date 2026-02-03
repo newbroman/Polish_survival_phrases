@@ -59,7 +59,7 @@
       "level": 15,
       "gender": "both",
       "variants": {
-        "m": "Kolega",
+        "m": "Kolega z pracy",
         "f": "Koleżanka z pracy"
       }
     },
@@ -191,7 +191,7 @@
       "level": 15,
       "gender": "both",
       "variants": {
-        "m": "Dostałem",
+        "m": "Dostałem email",
         "f": "Dostałam email"
       }
     },
@@ -300,7 +300,7 @@
       "gender": "both",
       "variants": {
         "m": "Nie jestem pewien",
-        "f": "pewna"
+        "f": "Nie jestem pewna"
       }
     },
     {

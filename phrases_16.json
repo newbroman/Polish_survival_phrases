@@ -188,7 +188,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem żonaty",
-        "f": "zamężna"
+        "f": "Jestem zamężna"
       }
     },
     {
@@ -200,7 +200,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem singlem",
-        "f": "singielką"
+        "f": "Jestem singielką"
       }
     },
     {
@@ -220,7 +220,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem rozwiedziony",
-        "f": "rozwiedziona"
+        "f": "Jestem rozwiedziona"
       }
     },
     {
@@ -248,7 +248,7 @@
       "gender": "both",
       "variants": {
         "m": "Mieszkam sam",
-        "f": "sama"
+        "f": "Mieszkam sama"
       }
     },
     {
@@ -363,7 +363,7 @@
       "level": 16,
       "gender": "both",
       "variants": {
-        "m": "Poznałem",
+        "m": "Poznałem kogoś",
         "f": "Poznałam kogoś"
       }
     },

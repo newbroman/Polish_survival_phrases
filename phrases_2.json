@@ -60,7 +60,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem ranny",
-        "f": "ranna"
+        "f": "Jestem ranna"
       }
     },
     {
@@ -79,7 +79,7 @@
       "level": 2,
       "gender": "both",
       "variants": {
-        "m": "Zgubiłem",
+        "m": "Zgubiłem paszport",
         "f": "Zgubiłam paszport"
       }
     },
@@ -356,7 +356,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem głodny",
-        "f": "głodna"
+        "f": "Jestem głodna"
       }
     },
     {
@@ -368,7 +368,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem spragniony",
-        "f": "spragniona"
+        "f": "Jestem spragniona"
       }
     },
     {
@@ -380,7 +380,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem zmęczony",
-        "f": "zmęczona"
+        "f": "Jestem zmęczona"
       }
     },
     {
@@ -416,7 +416,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem chory",
-        "f": "chora"
+        "f": "Jestem chora"
       }
     },
     {
@@ -484,7 +484,7 @@
       "gender": "both",
       "variants": {
         "m": "Jestem zagubiony",
-        "f": "zagubiona"
+        "f": "Jestem zagubiona"
       }
     },
     {
