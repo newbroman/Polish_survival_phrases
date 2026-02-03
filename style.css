@@ -37,26 +37,20 @@ body { display: flex; flex-direction: column; }
     background: linear-gradient(to bottom, #ffffff 50%, var(--pol-red) 50%); 
     padding: 8px 0; 
     border-bottom: 1px solid #ccc;
-    position: relative;
 }
 .title { 
-    font-weight: 800; 
-    font-size: 1rem; 
-    color: #333; 
-    text-align: center; 
-    margin: 0; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
+    font-weight: 800; font-size: 1rem; color: #333; 
+    text-align: center; margin: 0; text-transform: uppercase; 
 }
 
 /* --- Controls & Dropdown --- */
-.controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; gap: 8px; }
+.controls-row { width: 95%; max-width: 400px; margin: 0 auto; padding: 8px 0; display: flex; gap: 8px; }
 
-.custom-dropdown { position: relative; flex: 1; }
+.custom-dropdown { position: relative; flex: 2; }
 .dropdown-trigger { 
     width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
     padding: 6px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; 
-    height: 32px; display: flex; align-items: center; justify-content: space-between; cursor: pointer;
+    height: 36px; display: flex; align-items: center; justify-content: space-between; cursor: pointer;
     box-sizing: border-box;
 }
 .dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
@@ -67,15 +61,13 @@ body { display: flex; flex-direction: column; }
     z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 .dropdown-menu.show { display: block; }
-.dropdown-item { 
-    padding: 12px; font-size: 11px; border-bottom: 1px solid #eee; cursor: pointer;
-    display: flex; justify-content: space-between;
-}
+.dropdown-item { padding: 12px; font-size: 11px; border-bottom: 1px solid #eee; cursor: pointer; }
 
 /* --- Search Bar --- */
 #search-bar {
-    width: 90%; max-width: 400px; margin: 0 auto 8px; padding: 8px;
-    border: 1px solid #ccc; border-radius: 4px; font-size: 12px; background: var(--card); color: var(--text);
+    width: 95%; max-width: 400px; margin: 0 auto 8px; padding: 10px;
+    border: 1px solid #ccc; border-radius: 4px; font-size: 12px; 
+    background: var(--card); color: var(--text); box-sizing: border-box;
 }
 
 /* --- Quiz Area --- */
@@ -84,7 +76,7 @@ body { display: flex; flex-direction: column; }
 
 .icon-btn { 
     background: var(--bg); border: 1px solid #ddd; border-radius: 50%; 
-    width: 44px; height: 44px; font-size: 1.2rem; display: flex; 
+    width: 48px; height: 48px; font-size: 1.4rem; display: flex; 
     align-items: center; justify-content: center; cursor: pointer;
 }
 
@@ -94,61 +86,81 @@ body { display: flex; flex-direction: column; }
 /* --- Mode Tabs --- */
 .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
 .tab { 
-    flex: 1; padding: 14px 2px; text-align: center; font-size: 0.7rem; 
+    flex: 1; padding: 14px 2px; text-align: center; font-size: 0.75rem; 
     font-weight: bold; cursor: pointer; opacity: 0.5; transition: 0.2s;
 }
 .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-/* --- Grid & Tiles --- */
+/* --- GRID SYSTEM --- */
 .map-section { 
     flex-grow: 1; padding: 10px; overflow-y: auto; 
     display: flex; flex-direction: column; align-items: center;
 }
 
+/* Default 4x3 Grid (Levels 1-15) */
 .grid { 
-    display: grid; grid-template-columns: repeat(4, 1fr); 
-    gap: 8px; width: 100%; max-width: 400px; 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+    width: 100%; 
+    max-width: 420px; 
 }
 
-/* THE ALPHABET FIX: 6 Columns */
+/* Alphabet 6-column Grid (Level 0) */
 .grid.grid-alphabet {
     grid-template-columns: repeat(6, 1fr) !important;
-    gap: 4px !important;
+    gap: 5px !important;
 }
 
+/* --- Tiles --- */
 .tile { 
-    aspect-ratio: 1/1; background: var(--tile-bg); border-radius: 8px; 
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    cursor: pointer; padding: 4px; text-align: center; font-size: 0.7rem; font-weight: 600;
+    aspect-ratio: 1/1; 
+    background: var(--tile-bg); 
+    border-radius: 8px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer; 
+    padding: 4px; 
+    text-align: center; 
+    font-size: 0.75rem; 
+    font-weight: 600;
+    transition: transform 0.1s, background 0.2s;
 }
 
-/* Phonetic Hint Styling */
-.tile span { display: block; }
+.tile:active { transform: scale(0.92); }
+
+/* Alphabet Tile Hints */
 .tile .hint {
-    font-size: 0.5rem;
-    opacity: 0.7;
-    margin-top: 2px;
+    font-size: 0.55rem;
+    opacity: 0.8;
+    margin-top: 3px;
     font-weight: 400;
 }
 
-.tile:active { transform: scale(0.95); }
-
-/* --- Footer & Hands-Free --- */
+/* --- Footer & Buttons --- */
 .footer { 
     padding: 10px 10px 24px 10px; display: flex; justify-content: center; 
     gap: 10px; border-top: 1px solid #ddd; background: var(--card); 
 }
 
 .footer-btn { 
-    background: var(--bg); border: 1px solid #ccc; color: #666; 
+    background: var(--bg); border: 1px solid #ccc; color: var(--text); 
     font-size: 0.7rem; padding: 10px; border-radius: 6px; cursor: pointer; 
     flex: 1; font-weight: bold; text-transform: uppercase;
 }
 
+/* --- Hands-Free Panel --- */
 #handsfree-controls {
-    display: none; padding: 15px; background: #333; color: white;
+    display: none; padding: 15px; background: #222; color: white;
     justify-content: space-around; align-items: center; position: fixed;
-    bottom: 0; left: 0; right: 0; z-index: 2000;
+    bottom: 0; left: 0; right: 0; z-index: 2000; border-top: 2px solid var(--pol-red);
+}
+
+#handsfree-controls button {
+    background: #444; border: 1px solid #666; color: white; padding: 8px 15px;
+    border-radius: 4px; font-weight: bold;
 }
 
 /* --- Overlay --- */
