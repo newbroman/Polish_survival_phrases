@@ -31,29 +31,47 @@ html, body {
 
 body { display: flex; flex-direction: column; }
 
-/* --- Header & Title --- */
+/* --- Header & Navigation --- */
 .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+
 .title-banner { 
     background: linear-gradient(to bottom, #ffffff 50%, var(--pol-red) 50%); 
-    padding: 8px 0; 
+    padding: 6px 0; 
     border-bottom: 1px solid #ccc;
 }
 .title { 
-    font-weight: 800; font-size: 1rem; color: #333; 
+    font-weight: 800; font-size: 0.9rem; color: #333; 
     text-align: center; margin: 0; text-transform: uppercase; 
 }
 
-/* --- Controls & Dropdown --- */
-.controls-row { width: 95%; max-width: 400px; margin: 0 auto; padding: 8px 0; display: flex; gap: 8px; }
+/* --- Top Control Row (Level & UI Lang) --- */
+.controls-row { 
+    width: 95%; 
+    max-width: 450px; 
+    margin: 0 auto; 
+    padding: 8px 0; 
+    display: flex; 
+    gap: 8px; 
+    align-items: center;
+}
 
-.custom-dropdown { position: relative; flex: 2; }
+.custom-dropdown { flex: 4; position: relative; } /* BIG LEVEL SELECTOR */
+
 .dropdown-trigger { 
     width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-    padding: 6px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; 
-    height: 36px; display: flex; align-items: center; justify-content: space-between; cursor: pointer;
-    box-sizing: border-box;
+    padding: 0 12px; border-radius: 8px; font-size: 13px; font-weight: 700; 
+    height: 44px; display: flex; align-items: center; justify-content: space-between; 
+    cursor: pointer; box-sizing: border-box;
 }
-.dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
+.dropdown-trigger::after { content: '▼'; font-size: 8px; color: #888; }
+
+#ui-lang-btn { 
+    flex: 0.8; /* SMALL UI TOGGLE */
+    height: 32px; 
+    font-size: 10px; 
+    padding: 0; 
+    min-width: 45px; 
+}
 
 .dropdown-menu { 
     position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
@@ -61,23 +79,46 @@ body { display: flex; flex-direction: column; }
     z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 .dropdown-menu.show { display: block; }
-.dropdown-item { padding: 12px; font-size: 11px; border-bottom: 1px solid #eee; cursor: pointer; }
+.dropdown-item { padding: 12px; font-size: 12px; border-bottom: 1px solid #eee; cursor: pointer; }
 
-/* --- Search Bar --- */
-#search-bar {
-    width: 95%; max-width: 400px; margin: 0 auto 8px; padding: 10px;
-    border: 1px solid #ccc; border-radius: 4px; font-size: 12px; 
-    background: var(--card); color: var(--text); box-sizing: border-box;
+/* --- Search & Hands-Free Row --- */
+.search-container {
+    padding: 0 10px 10px; 
+    display: flex; 
+    gap: 8px; 
+    align-items: center;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+#search-bar { 
+    flex: 4; /* BIG SEARCH BOX */
+    height: 44px; 
+    font-size: 14px; 
+    padding: 0 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    background: var(--card); 
+    color: var(--text);
+    box-sizing: border-box;
+}
+
+#hf-toggle-btn { 
+    flex: 1.2; /* SMALL HANDS FREE */
+    height: 38px; 
+    font-size: 10px; 
+    padding: 0 8px; 
+    white-space: nowrap;
 }
 
 /* --- Quiz Area --- */
 .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; flex-shrink: 0; }
-.quiz-top-row { display: flex; align-items: center; gap: 8px; width: 100%; justify-content: center; }
+.quiz-top-row { display: flex; align-items: center; gap: 10px; width: 100%; justify-content: center; }
 
 .icon-btn { 
     background: var(--bg); border: 1px solid #ddd; border-radius: 50%; 
-    width: 48px; height: 48px; font-size: 1.4rem; display: flex; 
-    align-items: center; justify-content: center; cursor: pointer;
+    width: 44px; height: 44px; font-size: 1.2rem; display: flex; 
+    align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;
 }
 
 .q-text { font-size: 1.1rem; font-weight: 800; text-align: center; flex: 1; max-width: 200px; }
@@ -91,22 +132,22 @@ body { display: flex; flex-direction: column; }
 }
 .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-/* --- GRID SYSTEM --- */
+/* --- Grid System --- */
 .map-section { 
     flex-grow: 1; padding: 10px; overflow-y: auto; 
     display: flex; flex-direction: column; align-items: center;
 }
 
-/* Default 4x3 Grid (Levels 1-15) */
+/* Default 4-column layout */
 .grid { 
     display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr) !important; 
     gap: 10px; 
     width: 100%; 
     max-width: 420px; 
 }
 
-/* Alphabet 6-column Grid (Level 0) */
+/* Level 0: 6-column alphabet layout */
 .grid.grid-alphabet {
     grid-template-columns: repeat(6, 1fr) !important;
     gap: 5px !important;
@@ -126,23 +167,16 @@ body { display: flex; flex-direction: column; }
     text-align: center; 
     font-size: 0.75rem; 
     font-weight: 600;
-    transition: transform 0.1s, background 0.2s;
+    transition: transform 0.1s;
 }
-
 .tile:active { transform: scale(0.92); }
 
-/* Alphabet Tile Hints */
-.tile .hint {
-    font-size: 0.55rem;
-    opacity: 0.8;
-    margin-top: 3px;
-    font-weight: 400;
-}
+.tile .hint { font-size: 0.55rem; opacity: 0.8; margin-top: 3px; font-weight: 400; }
 
-/* --- Footer & Buttons --- */
+/* --- Footer & Progress Buttons --- */
 .footer { 
     padding: 10px 10px 24px 10px; display: flex; justify-content: center; 
-    gap: 10px; border-top: 1px solid #ddd; background: var(--card); 
+    gap: 8px; border-top: 1px solid #ddd; background: var(--card); 
 }
 
 .footer-btn { 
@@ -151,35 +185,19 @@ body { display: flex; flex-direction: column; }
     flex: 1; font-weight: bold; text-transform: uppercase;
 }
 
-/* --- Hands-Free Panel --- */
-#handsfree-controls {
-    display: none; padding: 15px; background: #222; color: white;
-    justify-content: space-around; align-items: center; position: fixed;
-    bottom: 0; left: 0; right: 0; z-index: 2000; border-top: 2px solid var(--pol-red);
-}
-
-#handsfree-controls button {
-    background: #444; border: 1px solid #666; color: white; padding: 8px 15px;
-    border-radius: 4px; font-weight: bold;
-}
-
 /* --- Overlay --- */
 #overlay { 
     position: fixed; inset: 0; background: rgba(0,0,0,0.9); 
     display: none; flex-direction: column; align-items: center; 
     justify-content: center; z-index: 2000; color: white; 
 }
-.quiz-top-row {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Tighter gap for the buttons next to the speaker */
-    width: 100%;
-    justify-content: flex-start;
-    padding: 0 5px;
-}
 
-.icon-btn {
-    flex-shrink: 0; /* Prevents buttons from squishing */
+/* --- Hands-Free Panel --- */
+#handsfree-controls {
+    display: none; padding: 15px; background: #222; color: white;
+    justify-content: space-around; align-items: center; position: fixed;
+    bottom: 0; left: 0; right: 0; z-index: 2000; border-top: 2px solid var(--pol-red);
+}
     width: 40px;
     height: 40px;
 }
