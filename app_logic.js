@@ -106,7 +106,7 @@ function updateMap(filter = "") {
     updateTabCounts();
 }
 
-// --- DYNAMIC AUDIO FEEDBACK ---
+// --- TUNED AUDIO FEEDBACK (200Hz to 2200Hz over 70 tiles) ---
 function playFeedback(type) {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator();
@@ -115,18 +115,26 @@ function playFeedback(type) {
     gain.connect(ctx.destination);
 
     if (type === 'correct') {
-        const pitch = Math.min(200 + (streakCounter * 100), 2000);
-        osc.type = 'sine';
+        // Calculation: 200 + (70 * 28.57) ≈ 2200Hz
+        const pitch = Math.min(200 + (streakCounter * 28.57), 2200);
+        
+        osc.type = 'sine'; 
         osc.frequency.setValueAtTime(pitch, ctx.currentTime);
+        
+        // Short, clean "ping"
         gain.gain.setValueAtTime(0.1, ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
-        osc.start(); osc.stop(ctx.currentTime + 0.2);
+        
+        osc.start(); 
+        osc.stop(ctx.currentTime + 0.2);
     } else {
+        // Error remains a low buzz at 150Hz
         osc.frequency.setValueAtTime(150, ctx.currentTime);
         osc.type = 'sawtooth';
         gain.gain.setValueAtTime(0.1, ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
-        osc.start(); osc.stop(ctx.currentTime + 0.3);
+        osc.start(); 
+        osc.stop(ctx.currentTime + 0.3);
     }
 }
 
@@ -190,6 +198,7 @@ function advanceLevel() {
     localStorage.setItem('pl_current_level', currentLevel);
     loadLevel(currentLevel);
 }
+
 
 // --- HANDS-FREE STUDY MODE ---
 function updatePauseSpeed() {
