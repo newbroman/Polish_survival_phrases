@@ -226,3 +226,53 @@ body { display: flex; flex-direction: column; }
     width: 40px;
     height: 40px;
 }
+.hf-overlay {
+    display: none;
+    position: absolute;
+    top: 210px; /* Adjust based on your header + tabs height */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--card);
+    z-index: 1500;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.hf-content {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.hf-button-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.hf-main-btn {
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    background: var(--pol-red);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hf-settings {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.hf-settings select {
+    padding: 5px;
+    border-radius: 5px;
+}
