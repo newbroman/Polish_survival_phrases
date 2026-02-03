@@ -496,6 +496,15 @@ function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v
         saveStats();
         loadLevelData();
     }
+    
+    function updateTabCounts() {
+    if (!phrasesData.length) return;
+    const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+    const learning = phrasesData.length - mastered;
+    
+    document.getElementById('learning-count').innerText = `(${learning})`;
+    document.getElementById('banked-count').innerText = `(${mastered})`;
+}
 
     async function loadLevelData() {
         try {
@@ -596,6 +605,11 @@ function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v
 
     function updateMap(filter = "") {
         const area = document.getElementById('mastery-map'); area.innerHTML = '';
+        if (currentLevel === 0) {
+    area.classList.add('grid-alphabet');
+} else {
+    area.classList.remove('grid-alphabet');
+}
         const isLearning = document.getElementById('tab-learning').classList.contains('active');
         
         if (isLearning) {
@@ -619,7 +633,11 @@ if (currentLevel === 0) {
 } else {
     // Use standard layout for phrases
     area.classList.remove('grid-alphabet');
+    if (currentLevel === 0) {
+    tile.innerHTML = `<span>${p.pl}</span><span class="hint">${alphaHints[p.pl] || ''}</span>`;
+} else {
     tile.innerText = isSwapped ? p.en : getGenderText(p);
+}
 }
                 const score = stats[p.pl] || 0;
                 if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
