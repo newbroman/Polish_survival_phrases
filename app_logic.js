@@ -12,6 +12,7 @@ let hfPaused = false;
 let hfAbort = false;
 let hfSkip = false;
 let hfDelay = 3000; 
+let quizHistory = []; // Stores the last two phrase IDs
 
 // --- INITIALIZATION ---
 async function init() {
@@ -147,7 +148,25 @@ function nextRound() {
         showCelebration();
         return;
     }
-    currentTarget = sourcePool[Math.floor(Math.random() * sourcePool.length)];
+
+    let newTarget;
+    let attempts = 0;
+
+    // Pick a phrase that isn't in the last 2 played
+    do {
+        newTarget = sourcePool[Math.floor(Math.random() * sourcePool.length)];
+        attempts++;
+        // If the pool is very small (1 or 2 items), we must break to avoid infinite loop
+    } while (quizHistory.includes(newTarget.pl) && attempts < 10 && sourcePool.length > 2);
+
+    currentTarget = newTarget;
+
+    // Update history: Add new ID to the end, keep only the last 2
+    quizHistory.push(currentTarget.pl);
+    if (quizHistory.length > 2) {
+        quizHistory.shift();
+    }
+
     qText.innerText = isSwapped ? currentTarget.pl : currentTarget.en;
     if (!isSwapped) speak(currentTarget.pl);
 }
@@ -209,16 +228,37 @@ function pauseHandsFree() { hfPaused = !hfPaused; }
 function skipHandsFree() { hfSkip = true; }
 
 async function startHandsFree() {
+    // Prevent multiple instances from running at once
     if (hfActive && !hfPaused) return; 
-    hfActive = true; hfAbort = false; hfPaused = false;
+    
+    hfActive = true; 
+    hfAbort = false; 
+    hfPaused = false;
+
     const display = document.getElementById('hf-speaking-display');
     const centerDisplay = document.getElementById('hf-current-phrase');
 
     while (hfActive && !hfAbort && activePool.length > 0) {
-        if (hfPaused) { await sleep(500); continue; }
-        let p = activePool[Math.floor(Math.random() * activePool.length)];
-        centerDisplay.innerText = p.pl;
+        // Handle Pause State
+        if (hfPaused) { 
+            await sleep(500); 
+            continue; 
+        }
 
+        // 1. Pick a phrase with the "No-Repeat" buffer logic
+        let p;
+        let attempts = 0;
+        do {
+            p = activePool[Math.floor(Math.random() * activePool.length)];
+            attempts++;
+            // Ensure we don't pick the last 2 phrases played
+        } while (quizHistory.includes(p.pl) && attempts < 10 && activePool.length > 2);
+
+        // 2. Update history buffer
+        quizHistory.push(p.pl);
+        if (quizHistory.length > 2) quizHistory.shift();
+
+        // 3. Define the sequence: Polish -> English -> Slow Polish -> Normal Polish
         const sequence = [
             { text: p.pl, rate: 1.0, lang: 'pl-PL' },
             { text: p.en, rate: 1.0, lang: 'en-US' },
@@ -226,19 +266,35 @@ async function startHandsFree() {
             { text: p.pl, rate: 1.0, lang: 'pl-PL' }
         ];
 
+        // 4. Execute the sequence
         for (let item of sequence) {
+            // Check for Stop or Skip signals
             if (hfAbort || hfSkip) break;
-            while (hfPaused) { await sleep(500); }
+            
+            // Check for Pause signal mid-sequence
+            while (hfPaused && !hfAbort) { await sleep(500); }
+            
+            // Update BOTH displays (The mask at the top and the control box in the center)
             display.innerText = item.text; 
+            centerDisplay.innerText = item.text; 
+            
+            // Speak and wait for the selected pause duration
             await speakAsync(item.text, item.rate, item.lang);
             await sleep(hfDelay);
         }
-        hfSkip = false;
-        if (activePool.length > 0) await sleep(hfDelay);
-    }
-    stopHandsFree();
-}
 
+        // 5. Reset skip for the next phrase
+        hfSkip = false;
+
+        // Final breath before moving to the next random phrase
+        if (activePool.length > 0 && !hfAbort) {
+            await sleep(hfDelay);
+        }
+    }
+    
+    // Cleanup if the loop finishes (e.g., all words mastered)
+    if (!hfAbort) stopHandsFree();
+}
 function toggleHandsFreePanel() {
     const p = document.getElementById('handsfree-controls');
     if (p.style.display === 'flex') {
