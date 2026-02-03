@@ -176,25 +176,31 @@ body { display: flex; flex-direction: column; }
 
 .grid-alphabet {
     display: grid !important;
-    grid-template-columns: repeat(6, 1fr) !important;
-    gap: 8px !important;
-    padding: 10px;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 4px !important;
+    padding: 8px;
 }
 
 .grid-alphabet .tile {
-    height: 70px; /* Shorter tiles */
-    padding: 5px;
-    font-size: 1.2rem;
-}
+    aspect-ratio: 1 / 1;
+    height: auto !important;
+    padding: 5px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px; /* Comfortable tap target */
 
-.grid-alphabet .tile .hint {
-    font-size: 0.5rem;
-}
+.grid-alphabet .tile {
+    aspect-ratio: 1 / 1;
+    height: auto !important;
+    padding: 5px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px; /* Comfortable tap target */
 
-.grid.grid-alphabet {
-    grid-template-columns: repeat(6, 1fr) !important;
-    gap: 5px !important;
-}
 
 /* --- HF Study Mode Overlay (Covers Grid) --- */
 .hf-overlay {
