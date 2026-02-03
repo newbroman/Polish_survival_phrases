@@ -1,0 +1,27 @@
+:root { --pol-red: #dc143c; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
+@media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
+
+body { font-family: sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; flex-direction: column; height: 100vh; }
+
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 8px; 
+    padding: 10px;
+}
+
+/* THE ALPHABET FIX */
+.grid.grid-alphabet {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 4px !important;
+}
+
+.tile { 
+    aspect-ratio: 1/1; background: var(--tile-bg); border-radius: 8px; 
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; cursor: pointer; font-size: 0.8rem;
+}
+
+.tile .hint { font-size: 0.5rem; opacity: 0.7; margin-top: 2px; }
+
+/* Add your existing header, dropdown, and tab styles here */
