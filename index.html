@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master</title>
+    <title>Polish Master PWA</title>
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --accent-blue: #1976d2; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; --accent-blue: #42a5f5; } }
@@ -11,6 +11,7 @@
         html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
         body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
+        /* HEADER & UI */
         .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; position: relative; }
         .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; }
@@ -21,36 +22,29 @@
         .custom-dropdown { position: relative; width: 100%; }
         .dropdown-trigger { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
-            text-align: left; height: 32px; display: flex; align-items: center; 
-            justify-content: space-between; cursor: pointer; box-sizing: border-box;
+            padding: 6px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; 
+            height: 32px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; box-sizing: border-box;
         }
         .dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
         .dropdown-menu { 
             position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
-            border: 1px solid #ccc; border-radius: 4px; max-height: 250px; overflow-y: auto; 
+            border: 1px solid #ccc; border-radius: 4px; max-height: 300px; overflow-y: auto; 
             z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .dropdown-menu.show { display: block; }
-        .dropdown-item { padding: 10px; font-size: 11px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); display: flex; justify-content: space-between; }
+        .dropdown-item { padding: 12px; font-size: 11px; border-bottom: 1px solid #eee; cursor: pointer; display: flex; justify-content: space-between; }
 
         .progress-container { width: 100%; height: 3px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
 
-        .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
+        .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
         .quiz-top-row { display: flex; align-items: center; gap: 8px; width: 100%; justify-content: center; }
-        
-        .icon-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 40px; height: 40px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-        .swap-btn { font-size: 0.9rem; color: var(--accent-blue); }
-
-        .handsfree-btn { background: var(--bg); border: 1px solid #ddd; padding: 4px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: bold; cursor: pointer; height: 32px;}
-        .handsfree-btn.active { background: #2ecc71; color: white; border-color: #27ae60; }
-        
-        .q-text { font-size: 1rem; font-weight: 800; text-align: center; flex: 1; max-width: 180px; }
-        .feedback { height: 14px; font-size: 0.8rem; font-weight: bold; margin-top: 4px; color: var(--pol-red); }
+        .icon-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .q-text { font-size: 1.1rem; font-weight: 800; text-align: center; flex: 1; max-width: 200px; }
+        .feedback { height: 14px; font-size: 0.8rem; font-weight: bold; margin-top: 5px; color: var(--pol-red); }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 14px 2px; text-align: center; font-size: 0.55rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
+        .tab { flex: 1; padding: 14px 2px; text-align: center; font-size: 0.6rem; font-weight: bold; cursor: pointer; opacity: 0.5; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
         .map-section { flex-grow: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; }
@@ -60,14 +54,13 @@
         
         .tile { 
             aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center;
+            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; text-align: center; font-size: 0.65rem;
         }
-        .tile .char { font-size: 0.7rem; font-weight: 800; color: var(--text); }
         .tile .hint { font-size: 0.45rem; opacity: 0.7; }
-        .tile .emoji { font-size: 0.7rem; }
+        .tile .emoji { font-size: 0.75rem; }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
-        .footer { padding: 10px 10px 24px 10px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
+        .footer { padding: 10px 10px 24px 10px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.7rem; padding: 8px; border-radius: 6px; cursor: pointer; flex: 1; font-weight: bold; }
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
@@ -76,33 +69,33 @@
 <body>
 
 <div id="overlay">
-    <h1 id="txt-victory">🏆 LEVEL COMPLETE!</h1>
-    <button onclick="advanceLevel()" style="padding: 15px 30px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem;" id="txt-continue">Next Level</button>
+    <h1 id="txt-victory">LEVEL COMPLETE! 🏆</h1>
+    <button onclick="advanceLevel()" style="padding: 15px 30px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;" id="txt-continue">Next Level</button>
 </div>
 
 <div class="header">
     <div class="title-banner">
         <h1 class="title">Polish Master</h1>
-        <div class="ui-lang-toggle" onclick="toggleUILanguage()" id="ui-lang-btn">EN</div>
+        <div class="ui-lang-toggle" onclick="toggleUILang()" id="ui-lang-btn">EN</div>
     </div>
     <div class="controls-row">
         <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Scanning...</div>
+            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading Levels...</div>
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <div style="display:flex; gap:6px; align-items:center;">
             <input type="text" id="search-bar" style="flex:1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px;" placeholder="Search..." oninput="handleSmartSearch()">
-            <button id="hf-toggle" class="handsfree-btn" onclick="toggleHandsfree()">Auto: OFF</button>
+            <button id="hf-toggle" style="background:#eee; border:1px solid #ccc; padding:6px; border-radius:4px; font-size:0.6rem; font-weight:bold;" onclick="toggleHandsfree()">Handsfree: OFF</button>
         </div>
     </div>
 </div>
 
 <div class="progress-container"><div id="progress-bar"></div></div>
 
-<div class="quiz-header" id="quiz-ui">
+<div class="quiz-header">
     <div class="quiz-top-row">
         <button class="icon-btn" onclick="speakTarget()">🔊</button>
-        <button class="icon-btn swap-btn" onclick="toggleSwap()">🔄</button>
+        <button class="icon-btn" onclick="toggleSwap()" style="color:var(--accent-blue)">🔄</button>
         <div id="q-text" class="q-text">Ready?</div>
     </div>
     <div id="feedback" class="feedback"></div>
@@ -111,7 +104,6 @@
 <div class="mode-tabs">
     <div id="tab-learning" class="tab active" onclick="switchMode('learning')">LEARNING</div>
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANK</div>
-    <div id="tab-test" class="tab" onclick="switchMode('test')">MARATHON</div>
     <div id="tab-phrasebook" class="tab" onclick="switchMode('phrasebook')">PHRASEBOOK</div>
 </div>
 
@@ -121,13 +113,13 @@
 
 <div class="footer">
     <button class="footer-btn" onclick="downloadProgress()" id="txt-save">Save</button>
-    <button class="footer-btn" onclick="document.getElementById('file-input').click()" id="txt-load">Load</button>
     <button class="footer-btn" onclick="resetEverything()" style="color:red" id="txt-reset">Reset</button>
-    <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
 </div>
 
+<script src="phrases.js"></script> 
 <script>
-    const alphaMap = {
+    // Alphabet Details for Level 0 integration
+    const alphaDetails = {
         'A': {h:'ah', e:'🚗', w:'Auto'}, 'Ą': {h:'own', e:'🌾', w:'Mąka'}, 'B': {h:'b', e:'👞', w:'But'},
         'C': {h:'ts', e:'🍬', w:'Cukier'}, 'Ć': {h:'ch!', e:'🦋', w:'Ćma'}, 'CH': {h:'h', e:'🍞', w:'Chleb'},
         'CZ': {h:'ch', e:'⏱️', w:'Czas'}, 'D': {h:'d', e:'🏠', w:'Dom'}, 'DZ': {h:'dz', e:'🔔', w:'Dzwon'},
@@ -143,115 +135,86 @@
         'Z': {h:'z', e:'🦷', w:'Ząb'}, 'Ź': {h:'zh!', e:'👎', w:'Źle'}, 'Ż': {h:'zh', e:'🐸', w:'Żaba'}
     };
 
-    const uiTranslations = {
-        'EN': { learning: 'LEARNING', bank: 'BANK', test: 'MARATHON', phrasebook: 'PHRASEBOOK', save: 'Save', load: 'Load', reset: 'Reset', victory: '🏆 LEVEL COMPLETE!', next: 'Next Level' },
-        'PL': { learning: 'NAUKA', bank: 'BANK', test: 'MARATON', phrasebook: 'ROZMÓWKI', save: 'Zapisz', load: 'Wczytaj', reset: 'Resetuj', victory: '🏆 POZIOM ZALICZONY!', next: 'Następny Poziom' }
+    const uiTexts = {
+        'EN': { learning: 'LEARNING', bank: 'BANK', pb: 'PHRASEBOOK', save: 'Save', reset: 'Reset', victory: 'LEVEL COMPLETE! 🏆', next: 'Next Level' },
+        'PL': { learning: 'NAUKA', bank: 'BANK', pb: 'ROZMÓWKI', save: 'Zapisz', reset: 'Resetuj', victory: 'POZIOM ZALICZONY! 🏆', next: 'Następny Poziom' }
     };
+
+    // If phrases.js isn't loaded, create empty array to prevent crashes
+    if (typeof phrases === 'undefined') { var phrases = []; }
 
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
     let uiLang = localStorage.getItem('pl_ui_lang') || 'EN';
-    let isSwapped = (localStorage.getItem('pl_swap') === 'true'); 
-    let phrasesData = [], activePool = [], currentTarget = null;
-    let isHandsfree = false, hfTimeout = null, currentMode = 'learning';
+    let isSwapped = (localStorage.getItem('pl_swap') === 'true');
+    let isHandsfree = false, hfTimeout = null;
+    let activePhrases = [], currentTarget = null;
 
-    function toggleUILanguage() {
-        uiLang = (uiLang === 'EN' ? 'PL' : 'EN');
-        localStorage.setItem('pl_ui_lang', uiLang);
-        applyUILanguage();
+    function init() {
+        applyUILang();
+        buildLevelMenu();
+        loadLevel();
     }
 
-    function applyUILanguage() {
-        const t = uiTranslations[uiLang];
-        document.getElementById('ui-lang-btn').innerText = uiLang;
-        document.getElementById('tab-learning').innerText = t.learning;
-        document.getElementById('tab-mastered').innerText = t.bank;
-        document.getElementById('tab-test').innerText = t.test;
-        document.getElementById('tab-phrasebook').innerText = t.phrasebook;
-        document.getElementById('txt-save').innerText = t.save;
-        document.getElementById('txt-load').innerText = t.load;
-        document.getElementById('txt-reset').innerText = t.reset;
-        document.getElementById('txt-victory').innerText = t.victory;
-        document.getElementById('txt-continue').innerText = t.next;
-    }
-
-    function toggleSwap() {
-        isSwapped = !isSwapped;
-        localStorage.setItem('pl_swap', isSwapped);
-        updateMap();
-    }
-
-    function toggleHandsfree() {
-        isHandsfree = !isHandsfree;
-        document.getElementById('hf-toggle').innerText = `Auto: ${isHandsfree ? 'ON' : 'OFF'}`;
-        document.getElementById('hf-toggle').classList.toggle('active', isHandsfree);
-        if (isHandsfree) startRound(); else clearTimeout(hfTimeout);
-    }
-
-    async function scanAndPopulate() {
+    function buildLevelMenu() {
         const menu = document.getElementById('lvl-menu'); menu.innerHTML = '';
-        for (let i = 0; i < 100; i++) {
-            try {
-                const res = await fetch(`phrases_${i}.json`);
-                if (res.ok) {
-                    const data = await res.json();
-                    const item = document.createElement('div');
-                    item.className = 'dropdown-item';
-                    item.innerHTML = `<span>Level ${i}: ${data.description}</span>`;
-                    item.onclick = () => { currentLevel = i; loadLevelData(); toggleDropdown(); };
-                    menu.appendChild(item);
-                    if (i === currentLevel) document.getElementById('lvl-current').innerText = `Level ${i}: ${data.description}`;
-                }
-            } catch(e) {}
-        }
-    }
-
-    function loadLevelData() {
-        fetch(`phrases_${currentLevel}.json`).then(res => res.json()).then(data => {
-            phrasesData = data.phrases;
-            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < 3).slice(0, 12);
-            updateMap();
-            localStorage.setItem('pl_current_level_idx', currentLevel);
-            scanAndPopulate(); 
+        // Find unique level numbers in the data
+        const levels = [...new Set(phrases.map(p => p.level))].sort((a,b) => a-b);
+        
+        levels.forEach(lvl => {
+            const item = document.createElement('div');
+            item.className = 'dropdown-item';
+            // Find first phrase category for that level as a label
+            const category = phrases.find(p => p.level === lvl)?.category || 'Phrases';
+            item.innerHTML = `<span>Lvl ${lvl}: ${category}</span>`;
+            item.onclick = () => { currentLevel = lvl; loadLevel(); toggleDropdown(); };
+            menu.appendChild(item);
+            if (lvl === currentLevel) document.getElementById('lvl-current').innerText = `Lvl ${lvl}: ${category}`;
         });
     }
 
-    function updateMap() {
+    function loadLevel() {
+        activePhrases = phrases.filter(p => p.level === currentLevel && (stats[p.pl] || 0) < 3).slice(0, 15);
+        localStorage.setItem('pl_current_level_idx', currentLevel);
+        updateUI();
+    }
+
+    function updateUI() {
         const area = document.getElementById('mastery-map'); area.innerHTML = '';
         area.className = (currentLevel === 0) ? "grid grid-alphabet" : "grid grid-standard";
         
-        if (activePool.length === 0) {
-            area.innerHTML = `<div style="padding:40px; text-align:center;"><h2>Mastered! 🏅</h2></div>`;
+        if (activePhrases.length === 0) {
+            area.innerHTML = `<div style="padding:40px; text-align:center;"><h2>Well Done! 🏅</h2></div>`;
             return;
         }
 
-        activePool.forEach(p => {
+        activePhrases.forEach(p => {
             const tile = document.createElement('div'); tile.className = 'tile';
             if (currentLevel === 0) {
-                const m = alphaMap[p.pl] || {};
-                tile.innerHTML = `<span class="char">${isSwapped ? p.en : p.pl}</span><span class="hint">${m.h || ''}</span><span class="emoji">${m.e || ''}</span>`;
+                const det = alphaDetails[p.pl] || {};
+                tile.innerHTML = `<b>${isSwapped ? p.en : p.pl}</b><span class="hint">${det.h||''}</span><span class="emoji">${det.e||''}</span>`;
             } else {
-                tile.innerHTML = `<span class="char" style="font-size:0.6rem">${isSwapped ? p.en : p.pl}</span>`;
+                tile.innerHTML = `<span>${isSwapped ? p.en : p.pl}</span>`;
             }
             tile.onclick = () => checkAnswer(p, tile);
             area.appendChild(tile);
         });
-        startRound();
+        startNewRound();
+        updateProgress();
     }
 
-    function startRound() {
-        if (!activePool.length) return;
-        currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
+    function startNewRound() {
+        if (!activePhrases.length) return;
+        currentTarget = activePhrases[Math.floor(Math.random() * activePhrases.length)];
         
-        // Question text logic based on Swap and Level 0
-        let qText = "";
+        let q;
         if (currentLevel === 0) {
-            qText = isSwapped ? currentTarget.pl : (alphaMap[currentTarget.pl]?.w || currentTarget.en);
+            q = isSwapped ? currentTarget.pl : (alphaDetails[currentTarget.pl]?.w || currentTarget.en);
         } else {
-            qText = isSwapped ? currentTarget.pl : currentTarget.en;
+            q = isSwapped ? currentTarget.pl : currentTarget.en;
         }
         
-        document.getElementById('q-text').innerText = qText;
+        document.getElementById('q-text').innerText = q;
         if (!isSwapped) speak(currentTarget.pl);
 
         if (isHandsfree) {
@@ -262,14 +225,14 @@
 
     function checkAnswer(p, el) {
         if (p.pl === currentTarget.pl) {
-            if (isSwapped) speak(currentTarget.pl);
+            if (isSwapped) speak(p.pl);
             stats[p.pl] = (stats[p.pl] || 0) + 1;
             document.getElementById('feedback').innerText = "Dobrze!";
-            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+            save();
             setTimeout(() => {
-                if (stats[p.pl] >= 3) activePool = activePool.filter(x => x.pl !== p.pl);
-                updateMap();
-            }, 700);
+                if (stats[p.pl] >= 3) activePhrases = activePhrases.filter(x => x.pl !== p.pl);
+                updateUI();
+            }, 600);
         } else if (el) {
             el.classList.add('wrong');
             setTimeout(() => el.classList.remove('wrong'), 500);
@@ -278,11 +241,33 @@
 
     function speak(t) { window.speechSynthesis.cancel(); const m = new SpeechSynthesisUtterance(t); m.lang='pl-PL'; window.speechSynthesis.speak(m); }
     function speakTarget() { if(currentTarget) speak(currentTarget.pl); }
+    function toggleSwap() { isSwapped = !isSwapped; localStorage.setItem('pl_swap', isSwapped); updateUI(); }
+    function toggleUILang() { uiLang = (uiLang === 'EN' ? 'PL' : 'EN'); localStorage.setItem('pl_ui_lang', uiLang); applyUILang(); }
+    function applyUILang() {
+        const t = uiTexts[uiLang];
+        document.getElementById('ui-lang-btn').innerText = uiLang;
+        document.getElementById('tab-learning').innerText = t.learning;
+        document.getElementById('tab-mastered').innerText = t.bank;
+        document.getElementById('tab-phrasebook').innerText = t.pb;
+        document.getElementById('txt-save').innerText = t.save;
+        document.getElementById('txt-reset').innerText = t.reset;
+        document.getElementById('txt-victory').innerText = t.victory;
+        document.getElementById('txt-continue').innerText = t.next;
+    }
+    function toggleHandsfree() { 
+        isHandsfree = !isHandsfree; 
+        document.getElementById('hf-toggle').innerText = `Handsfree: ${isHandsfree ? 'ON' : 'OFF'}`;
+        if (isHandsfree) startNewRound(); else clearTimeout(hfTimeout);
+    }
     function toggleDropdown(e) { if(e) e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function advanceLevel() { document.getElementById('overlay').style.display='none'; currentLevel++; loadLevelData(); }
+    function save() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); }
+    function updateProgress() {
+        const total = phrases.filter(p => p.level === currentLevel).length;
+        const mastered = phrases.filter(p => p.level === currentLevel && (stats[p.pl]||0) >= 3).length;
+        document.getElementById('progress-bar').style.width = (mastered/total)*100 + "%";
+    }
     function resetEverything() { if(confirm("Reset?")) { localStorage.clear(); location.reload(); } }
-
-    window.onload = () => { applyUILanguage(); scanAndPopulate(); loadLevelData(); };
+    window.onload = init;
 </script>
 </body>
 </html>
