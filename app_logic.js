@@ -1,8 +1,9 @@
 /**
  * app_logic.js
- * Core engine for fetching data, rendering the grid, 
- * and handling quiz logic.
+ * The core engine handling data, rendering, quiz flow, and Hands-Free mode.
  */
+
+// --- INITIALIZATION ---
 
 async function init() {
     await populateLevelMenu();
@@ -17,7 +18,7 @@ async function populateLevelMenu() {
     const trigger = document.getElementById('lvl-current');
     menu.innerHTML = '';
 
-    // Scans for your external phrases_0.json to phrases_15.json
+    // Scans for external phrases_0.json to phrases_15.json
     for (let i = 0; i <= 15; i++) {
         try {
             const response = await fetch(`phrases_${i}.json`);
@@ -26,7 +27,8 @@ async function populateLevelMenu() {
                 const item = document.createElement('div');
                 item.className = 'dropdown-item';
                 item.innerHTML = `<span>Level ${i}: ${data.description || 'Phrases'}</span>`;
-                item.onclick = () => {
+                item.onclick = (e) => {
+                    e.stopPropagation();
                     currentLevel = i;
                     localStorage.setItem('pl_current_level', i);
                     loadLevel(i);
@@ -35,7 +37,7 @@ async function populateLevelMenu() {
                 menu.appendChild(item);
                 if (i === currentLevel) trigger.innerText = `Level ${i}: ${data.description}`;
             }
-        } catch (e) { console.warn(`Level ${i} not found`); }
+        } catch (e) { /* Level doesn't exist, skip */ }
     }
 }
 
@@ -62,30 +64,40 @@ function updateMap(filter = "") {
     const isLearning = document.getElementById('tab-learning').classList.contains('active');
     area.innerHTML = '';
 
-    // ALPHABET GRID LOGIC (6 columns)
+    // ALPHABET VS STANDARD GRID
     if (currentLevel === 0) {
         area.classList.add('grid-alphabet');
     } else {
         area.classList.remove('grid-alphabet');
     }
 
-    const items = isLearning ? 
-        activePool.filter(p => !filter || p.pl.toLowerCase().includes(filter.toLowerCase())) :
-        phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+    let items = [];
+    if (isLearning) {
+        // Filter by search bar if text is present
+        items = activePool.filter(p => 
+            !filter || 
+            p.pl.toLowerCase().includes(filter.toLowerCase()) || 
+            p.en.toLowerCase().includes(filter.toLowerCase())
+        );
+        // Force 4x3 grid (max 12 items) for standard levels
+        if (currentLevel !== 0) items = items.slice(0, 12);
+    } else {
+        // Show all Mastered/Banked items
+        items = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+    }
 
     items.forEach(p => {
         const tile = document.createElement('div');
         tile.className = 'tile';
 
         if (currentLevel === 0) {
-            // Show Letter + Hint + Emoji from app-data.js
             const details = alphaHints[p.pl] || { h: '', e: '' };
             tile.innerHTML = `<span>${p.pl}</span><span class="hint">${details.h} ${details.e}</span>`;
         } else {
             tile.innerText = isSwapped ? p.en : getGenderText(p);
         }
 
-        // Visual progress (Red for correct, Blue for incorrect)
+        // Apply visual mastery scoring
         const score = stats[p.pl] || 0;
         if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
         
@@ -104,6 +116,7 @@ function nextRound() {
         return;
     }
     currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
+    // Question logic: if swapped, ask in Polish, answer in English
     document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
     if (!isSwapped) speak(currentTarget.pl);
 }
@@ -114,45 +127,127 @@ function checkAnswer(p, tile) {
         stats[p.pl] = (stats[p.pl] || 0) + 1;
         saveStats();
         document.getElementById('feedback').innerText = "Dobrze!";
+        
         setTimeout(() => {
-            if (stats[p.pl] >= THRESHOLD) activePool = activePool.filter(item => item.pl !== p.pl);
-            updateMap();
+            if (stats[p.pl] >= THRESHOLD) {
+                activePool = activePool.filter(item => item.pl !== p.pl);
+                updateMap();
+            }
             nextRound();
         }, 800);
     } else {
-        tile.style.backgroundColor = 'var(--wrong-blue)';
+        tile.classList.add('wrong');
         document.getElementById('feedback').innerText = "Spróbuj ponownie";
+        setTimeout(() => tile.classList.remove('wrong'), 500);
     }
 }
 
-// --- UTILS ---
+// --- HANDS-FREE ENGINE ---
 
-function speak(text) {
+let hfActive = false;
+let hfAbort = false;
+
+async function startHandsFree() {
+    if (hfActive) return;
+    hfActive = true;
+    hfAbort = false;
+    document.getElementById('hf-toggle-btn').classList.add('active-mode');
+
+    while (hfActive && !hfAbort && activePool.length > 0) {
+        let p = activePool[Math.floor(Math.random() * activePool.length)];
+        currentTarget = p;
+        updateMap();
+
+        // 1. Polish (Slow)
+        await speakAsync(p.pl, 0.8);
+        await sleep(1500);
+        
+        // 2. English
+        await speakAsync(p.en, 1.0, 'en-US');
+        await sleep(1500);
+
+        // 3. Polish (Normal)
+        await speakAsync(p.pl, 1.0);
+        await sleep(3000); // Wait for user to repeat
+    }
+}
+
+function stopHandsFree() {
+    hfActive = false;
+    hfAbort = true;
+    window.speechSynthesis.cancel();
+    document.getElementById('hf-toggle-btn').classList.remove('active-mode');
+}
+
+// --- UTILITIES ---
+
+function speak(text, rate = 1.0, lang = 'pl-PL') {
     window.speechSynthesis.cancel();
     const msg = new SpeechSynthesisUtterance(text);
-    msg.lang = 'pl-PL';
+    msg.lang = lang;
+    msg.rate = rate;
     window.speechSynthesis.speak(msg);
 }
+
+function speakAsync(text, rate, lang = 'pl-PL') {
+    return new Promise(resolve => {
+        if (hfAbort) { resolve(); return; }
+        const msg = new SpeechSynthesisUtterance(text);
+        msg.lang = lang;
+        msg.rate = rate;
+        msg.onend = resolve;
+        window.speechSynthesis.speak(msg);
+    });
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 function updateTabCounts() {
     const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
     const learning = phrasesData.length - mastered;
     
-    const lCount = document.getElementById('learning-count');
-    const bCount = document.getElementById('banked-count');
-    if (lCount) lCount.innerText = `(${learning})`;
-    if (bCount) bCount.innerText = `(${mastered})`;
+    document.getElementById('learning-count').innerText = `(${learning})`;
+    document.getElementById('banked-count').innerText = `(${mastered})`;
 }
 
 function getGenderText(p) {
-    if (currentGender === 'f' && p.pl_f) return p.pl_f;
-    return p.pl;
+    return (currentGender === 'f' && p.pl_f) ? p.pl_f : p.pl;
+}
+
+function toggleDropdown() {
+    document.getElementById('lvl-menu').classList.toggle('show');
+}
+
+function toggleSwap() {
+    isSwapped = !isSwapped;
+    localStorage.setItem('pl_swap', isSwapped);
+    updateMap();
+    nextRound();
+}
+
+function switchMode(mode) {
+    document.getElementById('tab-learning').classList.toggle('active', mode === 'learning');
+    document.getElementById('tab-mastered').classList.toggle('active', mode === 'mastered');
+    updateMap();
+}
+
+function handleSearch() {
+    const val = document.getElementById('search-bar').value;
+    updateMap(val);
 }
 
 function saveStats() {
     localStorage.setItem('pl_stats', JSON.stringify(stats));
 }
 
-function toggleDropdown() {
-    document.getElementById('lvl-menu').classList.toggle('show');
+function resetEverything() {
+    if(confirm("Reset all progress?")) {
+        localStorage.clear();
+        location.reload();
+    }
+}
+
+function toggleHandsFreePanel() {
+    const panel = document.getElementById('handsfree-controls');
+    panel.style.display = (panel.style.display === 'none') ? 'flex' : 'none';
 }
