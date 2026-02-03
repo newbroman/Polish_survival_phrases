@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Polish Phrase Master</title>
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#dc143c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body onload="init()">
 
@@ -15,18 +21,22 @@
     </div>
 
     <div class="header">
-        <div class="title-banner">POLISH MASTER</div>
+        <div class="title-banner">
+            <h1 class="title">Polish Master</h1>
+        </div>
         <div class="controls-row">
             <div class="custom-dropdown">
-                <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading...</div>
+                <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading Levels...</div>
                 <div class="dropdown-menu" id="lvl-menu"></div>
             </div>
-            <div style="display:flex; gap:5px;">
-                <button id="ui-lang-btn" onclick="toggleUILanguage()">EN</button>
-                <button id="swap-btn" onclick="toggleSwap()">🔄</button>
+            <div style="display:flex; gap:6px;">
+                <button class="footer-btn" id="ui-lang-btn" onclick="toggleUILanguage()">EN</button>
+                <button class="footer-btn" onclick="toggleSwap()">🔄</button>
             </div>
         </div>
-        <input type="text" id="search-bar" placeholder="Search phrases..." oninput="handleSearch()">
+        <div style="padding: 0 10px 10px;">
+            <input type="text" id="search-bar" placeholder="Search phrases..." oninput="handleSearch()">
+        </div>
     </div>
 
     <div class="quiz-header">
@@ -38,8 +48,12 @@
     </div>
 
     <div class="mode-tabs">
-        <div id="tab-learning" class="tab active" onclick="switchMode('learning')">LEARNING <span id="learning-count"></span></div>
-        <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANK <span id="banked-count"></span></div>
+        <div id="tab-learning" class="tab active" onclick="switchMode('learning')">
+            LEARNING <span id="learning-count"></span>
+        </div>
+        <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">
+            BANK <span id="banked-count"></span>
+        </div>
     </div>
 
     <div class="map-section">
@@ -47,16 +61,27 @@
     </div>
 
     <div class="footer">
-        <button onclick="toggleHandsFreePanel()" id="hf-toggle-btn">▼ Hands-Free</button>
-        <button onclick="resetEverything()" style="color:red">Reset</button>
+        <button class="footer-btn" onclick="toggleHandsFreePanel()" id="hf-toggle-btn">▼ Hands-Free</button>
+        <button class="footer-btn" onclick="resetEverything()" style="color:var(--pol-red)">Reset</button>
     </div>
 
-    <div id="handsfree-controls" style="display:none;">
-        <button onclick="startHandsFree()">Start</button>
-        <button onclick="stopHandsFree()">Stop</button>
+    <div id="handsfree-controls" style="display:none; position: fixed; bottom: 0; width: 100%; background: #333; padding: 20px 0; justify-content: space-around; z-index: 100;">
+        <button onclick="startHandsFree()" style="padding: 10px 20px;">Start</button>
+        <button onclick="stopHandsFree()" style="padding: 10px 20px;">Stop</button>
     </div>
 
-    <script src="app-data.js"></script>
-    <script src="app-logic.js"></script>
+    <script src="app_data.js"></script>
+    <script src="app_logic.js"></script>
+    
+    <script>
+        // Register service worker for PWA functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
 </body>
 </html>
