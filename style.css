@@ -187,11 +187,36 @@ body { display: flex; flex-direction: column; }
 
 /* --- Overlay --- */
 #overlay { 
-    position: fixed; inset: 0; background: rgba(0,0,0,0.9); 
-    display: none; flex-direction: column; align-items: center; 
-    justify-content: center; z-index: 2000; color: white; 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.85); 
+    display: none; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 3000; 
+    color: white; 
+    text-align: center;
 }
 
+#overlay h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffd700; /* Gold color for victory */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+#overlay button {
+    background: var(--pol-red);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+}
 /* --- Hands-Free Panel --- */
 #handsfree-controls {
     display: none; padding: 15px; background: #222; color: white;
