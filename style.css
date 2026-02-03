@@ -55,7 +55,7 @@ body { display: flex; flex-direction: column; }
     align-items: center;
 }
 
-.custom-dropdown { flex: 4; position: relative; } /* BIG LEVEL SELECTOR */
+.custom-dropdown { flex: 4; position: relative; } /* LARGE LEVEL SELECTOR */
 
 .dropdown-trigger { 
     width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
@@ -66,7 +66,7 @@ body { display: flex; flex-direction: column; }
 .dropdown-trigger::after { content: '▼'; font-size: 8px; color: #888; }
 
 #ui-lang-btn { 
-    flex: 0.8; /* SMALL UI TOGGLE */
+    flex: 0.8; 
     height: 32px; 
     font-size: 10px; 
     padding: 0; 
@@ -81,7 +81,7 @@ body { display: flex; flex-direction: column; }
 .dropdown-menu.show { display: block; }
 .dropdown-item { padding: 12px; font-size: 12px; border-bottom: 1px solid #eee; cursor: pointer; }
 
-/* --- Search & Hands-Free Row --- */
+/* --- Search & HF Row --- */
 .search-container {
     padding: 0 10px 10px; 
     display: flex; 
@@ -92,7 +92,7 @@ body { display: flex; flex-direction: column; }
 }
 
 #search-bar { 
-    flex: 4; /* BIG SEARCH BOX */
+    flex: 4; /* LARGE SEARCH BOX */
     height: 44px; 
     font-size: 14px; 
     padding: 0 12px; 
@@ -104,16 +104,33 @@ body { display: flex; flex-direction: column; }
 }
 
 #hf-toggle-btn { 
-    flex: 1.2; /* SMALL HANDS FREE */
+    flex: 1.2; 
     height: 38px; 
     font-size: 10px; 
     padding: 0 8px; 
     white-space: nowrap;
 }
 
-/* --- Quiz Area --- */
-.quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; flex-shrink: 0; }
-.quiz-top-row { display: flex; align-items: center; gap: 10px; width: 100%; justify-content: center; }
+/* --- Quiz Area & HF Masking --- */
+.quiz-header { 
+    position: relative; /* Anchor for the HF mask */
+    background: var(--card); 
+    padding: 15px; 
+    border-bottom: 1px solid #ddd; 
+    flex-shrink: 0; 
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quiz-top-row { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    width: 100%; 
+    justify-content: center; 
+}
 
 .icon-btn { 
     background: var(--bg); border: 1px solid #ddd; border-radius: 50%; 
@@ -122,6 +139,24 @@ body { display: flex; flex-direction: column; }
 }
 
 .q-text { font-size: 1.1rem; font-weight: 800; text-align: center; flex: 1; max-width: 200px; }
+
+/* The Mask: Covers icons and quiz text during HF */
+#hf-speaking-display {
+    display: none; 
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--card); 
+    z-index: 100; 
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--pol-red);
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
 .feedback { height: 14px; font-size: 0.8rem; font-weight: bold; margin-top: 5px; color: var(--pol-red); text-align: center; }
 
 /* --- Mode Tabs --- */
@@ -135,10 +170,10 @@ body { display: flex; flex-direction: column; }
 /* --- Grid System --- */
 .map-section { 
     flex-grow: 1; padding: 10px; overflow-y: auto; 
-    display: flex; flex-direction: column; align-items: center; position: relative;
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; /* Anchor for the control overlay */
 }
 
-/* Default 4-column layout */
 .grid { 
     display: grid; 
     grid-template-columns: repeat(4, 1fr) !important; 
@@ -147,11 +182,40 @@ body { display: flex; flex-direction: column; }
     max-width: 420px; 
 }
 
-/* Level 0: 6-column alphabet layout */
 .grid.grid-alphabet {
     grid-template-columns: repeat(6, 1fr) !important;
     gap: 5px !important;
 }
+
+/* --- HF Study Mode Overlay (Covers Grid) --- */
+.hf-overlay {
+    display: none;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--bg);
+    z-index: 50;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hf-content {
+    width: 90%; max-width: 350px;
+    background: var(--card);
+    padding: 25px; border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.hf-button-row { display: flex; gap: 10px; justify-content: center; margin: 20px 0; }
+.hf-main-btn { 
+    padding: 12px 18px; border-radius: 10px; border: none; 
+    background: var(--pol-red); color: white; font-weight: bold; cursor: pointer;
+}
+
+.hf-settings { margin-top: 15px; font-size: 0.9rem; }
+#hf-current-phrase { font-size: 1.1rem; font-weight: bold; color: var(--text); min-height: 1.5em; }
 
 /* --- Tiles --- */
 .tile { 
@@ -162,118 +226,26 @@ body { display: flex; flex-direction: column; }
     flex-direction: column; 
     align-items: center; 
     justify-content: center;
-    cursor: pointer; 
-    padding: 4px; 
-    text-align: center; 
-    font-size: 0.75rem; 
-    font-weight: 600;
-    transition: transform 0.1s;
+    cursor: pointer; padding: 4px; text-align: center; 
+    font-size: 0.75rem; font-weight: 600; transition: transform 0.1s;
 }
 .tile:active { transform: scale(0.92); }
-
 .tile .hint { font-size: 0.55rem; opacity: 0.8; margin-top: 3px; font-weight: 400; }
 
-/* --- Footer & Progress Buttons --- */
+/* --- Footer & Progress --- */
 .footer { 
     padding: 10px 10px 24px 10px; display: flex; justify-content: center; 
     gap: 8px; border-top: 1px solid #ddd; background: var(--card); 
 }
-
 .footer-btn { 
     background: var(--bg); border: 1px solid #ccc; color: var(--text); 
     font-size: 0.7rem; padding: 10px; border-radius: 6px; cursor: pointer; 
     flex: 1; font-weight: bold; text-transform: uppercase;
 }
 
-/* --- Overlay --- */
+/* --- Victory Overlay --- */
 #overlay { 
-    position: fixed; 
-    inset: 0; 
-    background: rgba(0, 0, 0, 0.85); 
-    display: none; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    z-index: 3000; 
-    color: white; 
-    text-align: center;
-}
-
-#overlay h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #ffd700; /* Gold color for victory */
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-#overlay button {
-    background: var(--pol-red);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
-}
-/* --- Hands-Free Panel --- */
-#handsfree-controls {
-    display: none; padding: 15px; background: #222; color: white;
-    justify-content: space-around; align-items: center; position: fixed;
-    bottom: 0; left: 0; right: 0; z-index: 2000; border-top: 2px solid var(--pol-red);
-}
-    width: 40px;
-    height: 40px;
-}
-.hf-overlay {
-    display: none; /* Controlled by JS */
-    position: absolute; /* Sits on top of the grid */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--card); /* Or use rgba(255, 255, 255, 0.95) for transparency */
-    z-index: 1500;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    text-align: center;
-}
-
-.hf-content {
-    width: 90%;
-    max-width: 350px;
-    background: var(--bg);
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.hf-button-row {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.hf-main-btn {
-    padding: 15px 20px;
-    border-radius: 10px;
-    border: none;
-    background: var(--pol-red);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.hf-settings {
-    margin-top: 15px;
-    font-size: 0.9rem;
-}
-
-.hf-settings select {
-    padding: 5px;
-    border-radius: 5px;
+    position: fixed; inset: 0; background: rgba(0,0,0,0.9); 
+    display: none; flex-direction: column; align-items: center; 
+    justify-content: center; z-index: 2000; color: white; 
 }
