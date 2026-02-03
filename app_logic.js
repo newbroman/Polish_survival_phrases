@@ -6,40 +6,6 @@
 
 // 1. DATA CONSTANTS
 // 1. DATA (If not in app_data.js, keep here. If it IS in app_data.js, delete this block)
-const alphaHints = {
-    "A": { h: "auto", e: "car" },
-    "Ą": { h: "pająk", e: "spider" },
-    "B": { h: "buty", e: "shoes" },
-    "C": { h: "cytryna", e: "lemon" },
-    "Ć": { h: "ćma", e: "moth" },
-    "D": { h: "dom", e: "house" },
-    "E": { h: "ekran", e: "screen" },
-    "Ę": { h: "gęś", e: "goose" },
-    "F": { h: "farba", e: "paint" },
-    "G": { h: "góra", e: "mountain" },
-    "H": { h: "herbata", e: "tea" },
-    "I": { h: "igła", e: "needle" },
-    "J": { h: "jajko", e: "egg" },
-    "K": { h: "kot", e: "cat" },
-    "L": { h: "lampa", e: "lamp" },
-    "Ł": { h: "łyżka", e: "spoon" },
-    "M": { h: "mama", e: "mom" },
-    "N": { h: "nos", e: "nose" },
-    "Ń": { h: "słoń", e: "elephant" },
-    "O": { h: "okno", e: "window" },
-    "Ó": { h: "ołówki", e: "pencils" },
-    "P": { h: "pies", e: "dog" },
-    "R": { h: "rower", e: "bike" },
-    "S": { h: "ser", e: "cheese" },
-    "Ś": { h: "ślimak", e: "snail" },
-    "T": { h: "tata", e: "dad" },
-    "U": { h: "ucho", e: "ear" },
-    "W": { h: "woda", e: "water" },
-    "Y": { h: "ryba", e: "fish" },
-    "Z": { h: "zegar", e: "clock" },
-    "Ź": { h: "źrebię", e: "foal" },
-    "Ż": { h: "żaba", e: "frog" }
-};
 
 // 2. GLOBAL STATE
 let globalPhrases = []; 
@@ -171,14 +137,11 @@ function updateMap(filter = "") {
                 <div style="font-size:0.6rem; color:var(--pol-red); margin-bottom:4px;">LVL ${p.levelOrigin}</div>
                 <div style="font-size:0.8rem;">${isSwapped ? p.en : p.pl}</div>
             `;
-       } else if (currentLevel === 0) {
-            // ALPHABET UI: p.pl is the Letter, details.h is the Hint
-            const details = alphaHints[p.pl] || { h: '', e: '' };
+      } else if (currentLevel === 0) {
+            const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
             tile.innerHTML = `
-                <div style="font-weight: 800; font-size: 1.2rem;">${p.pl}</div>
-                <div class="hint" style="font-size: 0.5rem; opacity: 0.7; margin-top: 2px;">
-                    ${details.h}
-                </div>
+                <div style="font-weight: 800; font-size: 1.4rem; line-height: 1;">${p.pl}</div>
+                <div style="font-size: 1rem; margin-top: 4px;">${d.e}</div>
             `;
         } else {
             tile.innerText = isSwapped ? p.en : getGenderText(p);
@@ -191,14 +154,10 @@ function updateMap(filter = "") {
         }
         
         tile.onclick = () => {
-            if (isSearching) {
-                if (p.levelOrigin !== currentLevel) {
-                    currentLevel = p.levelOrigin;
-                    localStorage.setItem('pl_current_level', currentLevel);
-                    loadLevel(currentLevel);
-                    document.getElementById('search-bar').value = ""; 
-                }
-                speak(p.pl);
+            if (currentLevel === 0) {
+                const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
+                // Audio says: "A jak auto"
+                speak(`${p.pl} jak ${d.j}`);
             } else {
                 isLearning ? checkAnswer(p, tile) : speak(p.pl);
             }
@@ -301,14 +260,12 @@ async function startHandsFree() {
 
         let sequence;
         if (currentLevel === 0) {
-            const hint = alphaHints[p.pl] ? alphaHints[p.pl].h : "";
-            const ph = hint ? `${p.pl} jak ${hint}` : p.pl;
+            const d = alphaHints[p.pl] || { h: '', e: '', j: '' };
             sequence = [
-                { text: ph, rate: 1.0, lang: 'pl-PL' },
-                { text: p.en, rate: 1.0, lang: 'en-US' },
-                { text: ph, rate: 0.7, lang: 'pl-PL' },
-                { text: ph, rate: 1.0, lang: 'pl-PL' }
+                { text: `${p.pl} jak ${d.j}`, rate: 1.0, lang: 'pl-PL' },
+                { text: d.h, rate: 0.8, lang: 'pl-PL' } // Speaks the phonetic sound
             ];
+        }
         } else {
             sequence = [
                 { text: p.pl, rate: 1.0, lang: 'pl-PL' },
