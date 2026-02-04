@@ -105,21 +105,40 @@
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
         .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; }
-    
-        .handsfree-controls {
-            display: flex; gap: 10px; align-items: center; padding: 10px; background: var(--card);
-            border-radius: 8px; margin-top: 10px; flex-wrap: wrap; justify-content: center;
+
+        /* --- NEW HANDS FREE STYLES --- */
+        #hf-overlay { 
+            position: fixed; inset: 0; background: #0a0a0a; z-index: 3000; color: white; 
+            display: none; flex-direction: column; align-items: center; justify-content: center; 
+            text-align: center; font-family: -apple-system, sans-serif;
         }
-        .handsfree-btn {
-            padding: 8px 16px; border: 2px solid var(--pol-red); background: white; color: var(--pol-red);
-            border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.85rem; transition: all 0.2s;
+        .hf-header { position: absolute; top: 0; left: 0; width: 100%; padding: 15px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; }
+        .hf-close { background: transparent; color: #888; font-size: 2rem; border: none; cursor: pointer; padding: 10px; line-height: 1; }
+        .hf-progress-bar { position: absolute; top: 0; left: 0; height: 4px; background: #dc143c; width: 0%; transition: width 0.3s; }
+        
+        .hf-content-area { flex: 1; display: flex; flex-direction: column; justify-content: center; width: 90%; max-width: 500px; }
+        .hf-big-text { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; color: #dc143c; line-height: 1.2; }
+        .hf-sub-text { font-size: 1.3rem; color: #bbb; margin-bottom: 1rem; font-weight: 400; }
+        .hf-meta { font-size: 0.8rem; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+
+        .hf-controls { display: flex; gap: 20px; margin-bottom: 40px; justify-content: center; width: 100%; }
+        .hf-btn { 
+            padding: 15px 30px; border-radius: 50px; border: 2px solid #333; 
+            font-size: 1rem; font-weight: bold; cursor: pointer; background: #222; 
+            color: white; transition: all 0.2s; min-width: 120px;
         }
-        .handsfree-btn.active { background: var(--pol-red); color: white; }
-        .handsfree-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-        .handsfree-status { padding: 8px 12px; background: #f0f0f0; border-radius: 6px; font-size: 0.8rem; color: #666; min-width: 200px; text-align: center; }
-        .pause-selector { display: flex; gap: 5px; align-items: center; }
-        .pause-option { padding: 6px 10px; border: 1px solid #ccc; background: white; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
-        .pause-option.active { background: var(--pol-red); color: white; border-color: var(--pol-red); }
+        .hf-btn:active { transform: scale(0.95); }
+        .hf-btn.primary { background: #dc143c; border-color: #dc143c; }
+        
+        .hf-celebration { display: none; flex-direction: column; align-items: center; gap: 20px; }
+        .hf-countdown-circle {
+            width: 80px; height: 80px; border-radius: 50%; border: 4px solid #dc143c;
+            display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .pause-selector { display: flex; gap: 5px; align-items: center; margin-top: 10px; justify-content: center; color: #666; font-size: 0.8rem; }
+        .pause-option { padding: 4px 10px; border: 1px solid #333; background: #111; border-radius: 4px; cursor: pointer; }
+        .pause-option.active { background: #dc143c; color: white; border-color: #dc143c; }
 </style>
 </head>
 <body>
@@ -127,6 +146,43 @@
 <div id="overlay">
     <h1></h1>
     <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;"></button>
+</div>
+
+<div id="hf-overlay">
+    <div class="hf-progress-bar" id="hf-bar"></div>
+    <div class="hf-header">
+        <div style="font-size:0.8rem; color:#666;" id="hf-level-indicator">Level 1.0</div>
+        <button class="hf-close" onclick="closeHandsFree()">×</button>
+    </div>
+
+    <div class="hf-content-area" id="hf-active-view">
+        <div class="hf-meta" id="hf-counter">1 / 20</div>
+        <div class="hf-big-text" id="hf-pl">Ready...</div>
+        <div class="hf-sub-text" id="hf-en">Get set...</div>
+        
+        <div class="pause-selector">
+            <span>Pause:</span>
+            <div class="pause-option" onclick="setPauseDuration(1)">1s</div>
+            <div class="pause-option active" onclick="setPauseDuration(3)">3s</div>
+            <div class="pause-option" onclick="setPauseDuration(5)">5s</div>
+        </div>
+    </div>
+
+    <div class="hf-content-area hf-celebration" id="hf-done-view">
+        <h2 style="color: #dc143c;">Level Complete!</h2>
+        <div class="hf-countdown-circle" id="hf-timer-val">10</div>
+        <p style="color: #888; font-size: 0.9rem;">Auto-advancing...</p>
+    </div>
+
+    <div class="hf-controls" id="hf-controls-active">
+        <button class="hf-btn" id="hf-pp-btn" onclick="togglePlayPauseHF()">⏸ Pause</button>
+        <button class="hf-btn" onclick="skipPhraseHF()">Next ⏭</button>
+    </div>
+
+    <div class="hf-controls" id="hf-controls-done" style="display:none;">
+        <button class="hf-btn" onclick="restartLevelHF()">↺ Restart</button>
+        <button class="hf-btn primary" onclick="forceNextLevelHF()">Next Level ⏭</button>
+    </div>
 </div>
 
 <div class="header">
@@ -150,21 +206,9 @@
                 </div>
             </div>
             <button id="lang-swap-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 100px;" onclick="toggleLangSwap()">Swap EN/PL</button>
-            <button id="hf-toggle-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 110px;" onclick="toggleHandsFreePanel()">▼ Hands-Free</button>
+            <button class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 110px; background:var(--pol-red); color:white; border-color:var(--pol-red);" onclick="openHandsFree()">🎧 Hands-Free</button>
         </div>
     </div>
-</div>
-
-<div class="handsfree-controls" id="handsfree-controls" style="display: none;">
-    <button class="handsfree-btn" id="hf-toggle" onclick="toggleHandsFree()">▶ START HANDS-FREE</button>
-    <button class="handsfree-btn" id="hf-skip" onclick="skipHandsFree()" disabled>⏭ SKIP</button>
-    <div class="pause-selector">
-        <span style="font-size: 0.75rem; color: #666;">Pause:</span>
-        <div class="pause-option active" onclick="setPauseDuration(1)">1s</div>
-        <div class="pause-option" onclick="setPauseDuration(3)">3s</div>
-        <div class="pause-option" onclick="setPauseDuration(5)">5s</div>
-    </div>
-    <div class="handsfree-status" id="hf-status">Ready to start</div>
 </div>
 
 <div class="progress-container"><div id="progress-bar"></div></div>
@@ -217,13 +261,11 @@
     let isAudioPriming = false;
     let audioPrimedAt = 0;
 
+    // --- STANDARD APP FUNCTIONS (unchanged logic) ---
     function playNote(freq, dur, type='sine') {
         try {
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume().then(() => playTone(freq, dur, type));
-                return;
-            }
+            if (audioCtx.state === 'suspended') { audioCtx.resume().then(() => playTone(freq, dur, type)); return; }
             playTone(freq, dur, type);
         } catch(e) {}
     }
@@ -250,7 +292,6 @@
     };
     
     function t(key) { return translations[uiLang][key] || translations.en[key] || key; }
-    
     function updateUILanguage() {
         document.querySelector('.title').innerText = t('title');
         document.getElementById('search-bar').placeholder = t('search');
@@ -283,16 +324,13 @@
 
     window.speechSynthesis.onvoiceschanged = initSpeech;
     function toggleGenderDropdown(e) { e.stopPropagation(); document.getElementById('gender-menu').classList.toggle('show'); }
-    
     function selectGender(gender) {
         currentGender = gender; localStorage.setItem('polishMasterGender', gender);
         const genderLabels = { m: 'Male', f: 'Female', both: 'Both' };
         document.getElementById('gender-current').innerText = genderLabels[gender];
         document.getElementById('gender-menu').classList.remove('show');
-        refreshActivePool();
-        updateMap(); startNewRound();
+        refreshActivePool(); updateMap(); startNewRound();
     }
-
     function refreshActivePool() {
         if (currentGender !== 'both') {
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both')).slice(0, 12);
@@ -300,74 +338,38 @@
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
         }
     }
-
     function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function toggleLangSwap() { 
-        uiLang = uiLang === 'en' ? 'pl' : 'en'; 
-        localStorage.setItem('polishMasterUILang', uiLang); 
-        updateUILanguage(); 
-    }
+    function toggleLangSwap() { uiLang = uiLang === 'en' ? 'pl' : 'en'; localStorage.setItem('polishMasterUILang', uiLang); updateUILanguage(); }
 
     async function populateDropdown() {
-        const menu = document.getElementById('lvl-menu'); 
-        menu.innerHTML = '';
-        levelList = [];
-        
-        let consecutiveEmptyMajors = 0;
-        const MAX_CONSECUTIVE_EMPTY = 5; // Circuit breaker to stop scanning if we hit 5 empty levels in a row
-
-        // Major loop up to 100
+        const menu = document.getElementById('lvl-menu'); menu.innerHTML = ''; levelList = [];
+        let consecutiveEmptyMajors = 0; const MAX_CONSECUTIVE_EMPTY = 5;
         for (let major = 0; major <= 100; major++) {
             let foundInThisMajor = false;
-            
-            // Prepare fetch promises for this major level (0-9 minors)
             const promises = [];
             for (let minor = 0; minor <= 9; minor++) {
                 const lvlId = minor === 0 && major === 0 ? "0" : (minor === 0 ? `${major}` : `${major}.${minor}`);
-                const url = `phrases_${lvlId}.json`;
-                promises.push(fetch(url).then(r => r.ok ? r.json().then(d => ({id: lvlId, data: d, exists: true})) : {exists: false}).catch(() => ({exists: false})));
+                promises.push(fetch(`phrases_${lvlId}.json`).then(r => r.ok ? r.json().then(d => ({id: lvlId, data: d, exists: true})) : {exists: false}).catch(() => ({exists: false})));
             }
-
-            // Execute fetches in parallel for speed
             const results = await Promise.all(promises);
-
-            // Process results in order
             for (const res of results) {
                 if (res.exists) {
                     foundInThisMajor = true;
                     const isDone = res.data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length === res.data.phrases.length;
-                    
                     let displayLabel = res.data.description || `Level ${res.id}`;
-                    if (!displayLabel.startsWith(res.id)) {
-                        displayLabel = `Lvl ${res.id}: ${displayLabel}`;
-                    }
-
+                    if (!displayLabel.startsWith(res.id)) displayLabel = `Lvl ${res.id}: ${displayLabel}`;
                     const levelObj = { id: res.id, description: displayLabel, isDone: isDone };
                     levelList.push(levelObj);
-
                     const item = document.createElement('div');
                     item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
                     item.innerText = displayLabel;
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(levelObj.id); };
                     menu.appendChild(item);
-                    
-                    if(res.id == currentLevel) {
-                        document.getElementById('lvl-current').innerText = displayLabel;
-                    }
+                    if(res.id == currentLevel) document.getElementById('lvl-current').innerText = displayLabel;
                 }
             }
-            
-            // Circuit Breaker Logic
-            if (foundInThisMajor) {
-                consecutiveEmptyMajors = 0;
-            } else {
-                consecutiveEmptyMajors++;
-            }
-            
-            // If we found 5 empty major levels in a row (e.g., 36, 37, 38, 39, 40 all missing), stop scanning.
-            if (consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY) {
-                break;
-            }
+            if (foundInThisMajor) consecutiveEmptyMajors = 0; else consecutiveEmptyMajors++;
+            if (consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY) break;
         }
     }
 
@@ -376,8 +378,7 @@
         document.getElementById('lvl-menu').classList.remove('show');
         document.getElementById('search-bar').value = '';
         document.getElementById('search-results-extra').innerHTML = '';
-        saveStats(); 
-        loadLevelData();
+        saveStats(); loadLevelData();
     }
 
     async function loadLevelData() {
@@ -385,16 +386,11 @@
             const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
             const data = await resp.json();
             phrasesData = data.phrases;
-            
             let label = data.description || `Level ${currentLevel}`;
-            if (!label.startsWith(currentLevel)) { label = `Lvl ${currentLevel}: ${label}`; }
+            if (!label.startsWith(currentLevel)) label = `Lvl ${currentLevel}: ${label}`;
             document.getElementById('lvl-current').innerText = label;
-            
-            refreshActivePool();
-            updateStats(); updateTabCounts(); updateMap(); startNewRound(); cacheAllPhrases(); populateDropdown();
-        } catch (err) { 
-            document.getElementById('q-text').innerText = "File not found"; 
-        }
+            refreshActivePool(); updateStats(); updateTabCounts(); updateMap(); startNewRound(); cacheAllPhrases(); populateDropdown();
+        } catch (err) { document.getElementById('q-text').innerText = "File not found"; }
     }
 
     async function cacheAllPhrases() {
@@ -403,24 +399,19 @@
             const lvl = levelList[i];
             try {
                 const r = await fetch(`phrases_${lvl.id}.json`);
-                if (r.ok) {
-                    const d = await r.json();
-                    allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: lvl.id})));
-                }
+                if (r.ok) { const d = await r.json(); allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: lvl.id}))); }
             } catch(e) {}
         }
     }
 
     function handleSmartSearch() {
         const query = document.getElementById('search-bar').value.toLowerCase();
-        const extraResults = document.getElementById('search-results-extra');
-        extraResults.innerHTML = '';
+        const extraResults = document.getElementById('search-results-extra'); extraResults.innerHTML = '';
         if (!query) { updateMap(); return; }
         updateMap(query);
         const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)) && p.lvl !== currentLevel).slice(0, 5);
         if (matches.length > 0) {
-            const label = document.createElement('div'); label.className = 'search-results-label'; label.innerText = t('foundInOther');
-            extraResults.appendChild(label);
+            const label = document.createElement('div'); label.className = 'search-results-label'; label.innerText = t('foundInOther'); extraResults.appendChild(label);
             matches.forEach(p => {
                 const item = document.createElement('div'); item.className = 'global-result-item';
                 item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div style="color:var(--pol-red); font-weight:bold;">LVL ${p.lvl}</div>`;
@@ -440,15 +431,10 @@
     }
 
     async function checkAnswer(phrase, el) {
-        if (audioCtx && (audioCtx.state === 'suspended' || isAudioPriming || (Date.now() - audioPrimedAt > 30000))) {
-            primeAudio(); await new Promise(resolve => setTimeout(resolve, 1000));
-        }
+        if (audioCtx && (audioCtx.state === 'suspended' || isAudioPriming || (Date.now() - audioPrimedAt > 30000))) { primeAudio(); await new Promise(resolve => setTimeout(resolve, 1000)); }
         if (phrase.pl === currentTarget.pl) {
-            correctStreak++; 
-            playCorrect(); 
-            stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = t('correct'); 
-            saveStats();
+            correctStreak++; playCorrect(); stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
+            document.getElementById('feedback').innerText = t('correct'); saveStats();
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
                     const nextAvailable = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
@@ -459,13 +445,9 @@
                 if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); correctStreak = 0; } else startNewRound();
             }, 800);
         } else {
-            correctStreak = 0; 
-            playNote(150, 0.4, 'sawtooth');
-            let currentScore = stats[currentTarget.pl] || 0;
-            stats[currentTarget.pl] = Math.max(MIN_SCORE, currentScore - 1);
-            el.classList.add('wrong'); 
-            document.getElementById('feedback').innerText = t('mistake');
-            saveStats(); 
+            correctStreak = 0; playNote(150, 0.4, 'sawtooth');
+            let currentScore = stats[currentTarget.pl] || 0; stats[currentTarget.pl] = Math.max(MIN_SCORE, currentScore - 1);
+            el.classList.add('wrong'); document.getElementById('feedback').innerText = t('mistake'); saveStats(); 
             setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
         }
     }
@@ -481,17 +463,12 @@
         area.className = "grid";
         const list = isLearning ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
         list.filter(p => !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter)).forEach(p => {
-            const tile = document.createElement('div'); 
-            tile.className = 'tile';
+            const tile = document.createElement('div'); tile.className = 'tile';
             tile.innerText = isSwapped ? p.en : getGenderText(p);
             const score = stats[p.pl] || 0;
-            if (score === -1) {
-                tile.style.backgroundColor = "#ADD8E6"; 
-                tile.style.color = "#333";
-            } else if (score <= -2) {
-                tile.style.backgroundColor = "#00008B"; 
-                tile.style.color = "white";
-            } else if (score > 0) {
+            if (score === -1) { tile.style.backgroundColor = "#ADD8E6"; tile.style.color = "#333"; }
+            else if (score <= -2) { tile.style.backgroundColor = "#00008B"; tile.style.color = "white"; }
+            else if (score > 0) {
                 const opacity = score / THRESHOLD;
                 tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
                 if (opacity > 0.6) tile.style.color = "white";
@@ -515,12 +492,9 @@
     function advanceLevel() { 
         const currentIdx = levelList.findIndex(l => l.id == currentLevel);
         if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
-            const nextLvlId = levelList[currentIdx + 1].id;
             document.getElementById('overlay').style.display='none'; 
-            selectLevel(nextLvlId);
-        } else {
-             document.getElementById('overlay').style.display='none'; 
-        }
+            selectLevel(levelList[currentIdx + 1].id);
+        } else { document.getElementById('overlay').style.display='none'; }
     }
     
     function switchMode(m) { 
@@ -533,90 +507,198 @@
     function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); }
     function importProgress(event) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(event.target.files[0]); }
     function resetEverything() { if(confirm("Clear all?")) { localStorage.clear(); location.reload(); } }
-
-    function primeAudio() {
-        if (audioCtx && audioCtx.state === 'suspended') {
-            isAudioPriming = true; audioCtx.resume().then(() => { audioPrimedAt = Date.now(); isAudioPriming = false; });
-        } else if (audioCtx) { audioPrimedAt = Date.now(); }
-    }
-    
-    document.addEventListener('click', primeAudio);
-    document.addEventListener('touchstart', primeAudio);
+    function primeAudio() { if (audioCtx && audioCtx.state === 'suspended') { isAudioPriming = true; audioCtx.resume().then(() => { audioPrimedAt = Date.now(); isAudioPriming = false; }); } else if (audioCtx) { audioPrimedAt = Date.now(); } }
+    document.addEventListener('click', primeAudio); document.addEventListener('touchstart', primeAudio);
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = () => { initSpeech(); updateUILanguage(); loadLevelData(); };
 
-    let handsFreeActive = false, handsFreeIndex = 0, handsFreeLevel = currentLevel, handsFreeAllPhrases = [], pauseDuration = 3000, handsFreeAbort = false;
+    // --- NEW HANDS FREE LOGIC ---
+    let hfActive = false;
+    let hfIndex = 0;
+    let hfPhrases = [];
+    let hfPauseDur = 3000;
+    let hfAbort = false;
+    let hfIsPaused = false;
+    let hfCountdownTimer = null;
 
-    function setPauseDuration(seconds) {
-        pauseDuration = seconds * 1000;
-        document.querySelectorAll('.pause-option').forEach(opt => opt.classList.remove('active'));
+    function setPauseDuration(sec) {
+        hfPauseDur = sec * 1000;
+        document.querySelectorAll('.pause-option').forEach(o => o.classList.remove('active'));
         event.target.classList.add('active');
     }
 
-    async function toggleHandsFree() {
-        const btn = document.getElementById('hf-toggle');
-        const skipBtn = document.getElementById('hf-skip');
-        if (!handsFreeActive) {
-            handsFreeActive = true; handsFreeAbort = false; handsFreeLevel = currentLevel; handsFreeIndex = 0;
-            btn.innerText = '⏸ PAUSE'; btn.classList.add('active'); skipBtn.disabled = false;
-            try {
-                const resp = await fetch(`phrases_${handsFreeLevel}.json`);
-                const data = await resp.json(); handsFreeAllPhrases = data.phrases;
-                await playHandsFreeSequence();
-            } catch(e) { toggleHandsFree(); }
+    async function openHandsFree() {
+        hfActive = true; hfAbort = false; hfIsPaused = false;
+        
+        // Load data if empty
+        if (!phrasesData || phrasesData.length === 0) await loadLevelData();
+        hfPhrases = phrasesData;
+        
+        // Memory Recall: Start where we left off, or 0
+        const savedIdx = localStorage.getItem('hf_mem_' + currentLevel);
+        hfIndex = savedIdx ? parseInt(savedIdx) : 0;
+        if(hfIndex >= hfPhrases.length) hfIndex = 0;
+
+        document.getElementById('hf-overlay').style.display = 'flex';
+        document.getElementById('hf-level-indicator').innerText = document.getElementById('lvl-current').innerText;
+        
+        // Show active view
+        document.getElementById('hf-active-view').style.display = 'flex';
+        document.getElementById('hf-done-view').style.display = 'none';
+        document.getElementById('hf-controls-active').style.display = 'flex';
+        document.getElementById('hf-controls-done').style.display = 'none';
+
+        runHandsFreeLoop();
+    }
+
+    function closeHandsFree() {
+        hfActive = false; hfAbort = true; 
+        clearTimeout(hfCountdownTimer);
+        window.speechSynthesis.cancel();
+        document.getElementById('hf-overlay').style.display = 'none';
+        // Reload main app to ensure sync
+        startNewRound();
+    }
+
+    function togglePlayPauseHF() {
+        if(hfIsPaused) {
+            hfIsPaused = false;
+            document.getElementById('hf-pp-btn').innerText = "⏸ Pause";
+            runHandsFreeLoop(); // Restart loop
         } else {
-            handsFreeActive = false; handsFreeAbort = true; speechSynthesis.cancel();
-            btn.innerText = '▶ START HANDS-FREE'; btn.classList.remove('active'); skipBtn.disabled = true;
-            document.getElementById('hf-status').innerText = 'Stopped'; startNewRound();
+            hfIsPaused = true;
+            hfAbort = true; // Break current loop
+            window.speechSynthesis.cancel();
+            document.getElementById('hf-pp-btn').innerText = "▶ Resume";
         }
     }
 
-    async function playHandsFreeSequence() {
-        while (handsFreeActive && !handsFreeAbort) {
-            if (handsFreeIndex >= handsFreeAllPhrases.length) {
-                const currentIdx = levelList.findIndex(l => l.id == handsFreeLevel);
-                if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
-                    handsFreeLevel = levelList[currentIdx + 1].id;
-                    const resp = await fetch(`phrases_${handsFreeLevel}.json`);
-                    const data = await resp.json(); handsFreeAllPhrases = data.phrases; handsFreeIndex = 0;
-                    await sleep(pauseDuration);
-                } else {
-                    toggleHandsFree(); return;
-                }
+    function skipPhraseHF() {
+        hfAbort = true; // Break current wait
+        setTimeout(() => {
+            hfAbort = false; 
+            hfIndex++;
+            runHandsFreeLoop();
+        }, 100);
+    }
+
+    async function runHandsFreeLoop() {
+        hfAbort = false;
+        while (hfActive && !hfIsPaused && hfIndex < hfPhrases.length) {
+            const p = hfPhrases[hfIndex];
+            
+            // UI Update
+            document.getElementById('hf-pl').innerText = p.pl;
+            document.getElementById('hf-en').innerText = p.en;
+            document.getElementById('hf-counter').innerText = `${hfIndex + 1} / ${hfPhrases.length}`;
+            document.getElementById('hf-bar').style.width = ((hfIndex / hfPhrases.length) * 100) + "%";
+
+            // Save Progress
+            localStorage.setItem('hf_mem_' + currentLevel, hfIndex);
+
+            // Sequence
+            await speakAsync(p.pl, 1.0); if(hfAbort) break;
+            await sleep(hfPauseDur); if(hfAbort) break;
+            
+            await speakAsync(p.en, 1.0, 'en-US'); if(hfAbort) break;
+            await sleep(hfPauseDur); if(hfAbort) break;
+            
+            await speakAsync(p.pl, 1.0); if(hfAbort) break;
+            await sleep(hfPauseDur); if(hfAbort) break;
+
+            hfIndex++;
+        }
+
+        if (hfIndex >= hfPhrases.length && !hfIsPaused && !hfAbort) {
+            handleLevelCompleteHF();
+        }
+    }
+
+    function handleLevelCompleteHF() {
+        playSuccess();
+        document.getElementById('hf-active-view').style.display = 'none';
+        document.getElementById('hf-controls-active').style.display = 'none';
+        
+        document.getElementById('hf-done-view').style.display = 'flex';
+        document.getElementById('hf-controls-done').style.display = 'flex';
+        
+        // Clear memory for this level so it restarts next time
+        localStorage.removeItem('hf_mem_' + currentLevel);
+
+        let secondsLeft = 10;
+        const timerEl = document.getElementById('hf-timer-val');
+        
+        clearInterval(hfCountdownTimer);
+        hfCountdownTimer = setInterval(() => {
+            secondsLeft--;
+            timerEl.innerText = secondsLeft;
+            if (secondsLeft <= 0) {
+                clearInterval(hfCountdownTimer);
+                forceNextLevelHF();
             }
-            if (handsFreeAbort) break;
-            const p = handsFreeAllPhrases[handsFreeIndex];
-            document.getElementById('hf-status').innerText = `Lvl ${handsFreeLevel} - ${handsFreeIndex + 1}/${handsFreeAllPhrases.length}: ${p.pl}`;
-            document.getElementById('q-text').innerText = p.pl;
-            await speakAsync(p.pl, 1.0); if (handsFreeAbort) break; await sleep(pauseDuration);
-            await speakAsync(p.en, 1.0, 'en-US'); if (handsFreeAbort) break; await sleep(pauseDuration);
-            await speakAsync(p.pl, 0.7); if (handsFreeAbort) break; await sleep(pauseDuration);
-            await speakAsync(p.pl, 1.0); if (handsFreeAbort) break; await sleep(pauseDuration);
-            handsFreeIndex++;
+        }, 1000);
+    }
+
+    function restartLevelHF() {
+        clearInterval(hfCountdownTimer);
+        hfIndex = 0;
+        document.getElementById('hf-done-view').style.display = 'none';
+        document.getElementById('hf-controls-done').style.display = 'none';
+        
+        document.getElementById('hf-active-view').style.display = 'flex';
+        document.getElementById('hf-controls-active').style.display = 'flex';
+        
+        runHandsFreeLoop();
+    }
+
+    async function forceNextLevelHF() {
+        clearInterval(hfCountdownTimer);
+        // Find next level
+        const currentIdx = levelList.findIndex(l => l.id == currentLevel);
+        if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
+            const nextLvlId = levelList[currentIdx + 1].id;
+            
+            // Switch Logic
+            currentLevel = nextLvlId;
+            saveStats();
+            
+            // Fetch new data MANUALLY for HF context
+            try {
+                const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
+                const data = await resp.json();
+                phrasesData = data.phrases;
+                hfPhrases = phrasesData;
+                hfIndex = 0;
+                
+                // Update UI Labels
+                let label = data.description || `Level ${currentLevel}`;
+                if (!label.startsWith(currentLevel)) label = `Lvl ${currentLevel}: ${label}`;
+                document.getElementById('lvl-current').innerText = label;
+                document.getElementById('hf-level-indicator').innerText = label;
+                
+                restartLevelHF(); // Start playing new level
+            } catch(e) {
+                alert("End of content reached!");
+                closeHandsFree();
+            }
+        } else {
+            alert("No more levels!");
+            closeHandsFree();
         }
     }
 
     function speakAsync(text, rate = 1.0, lang = 'pl-PL') {
         return new Promise(resolve => {
-            if (handsFreeAbort) { resolve(); return; }
+            if (hfAbort || hfIsPaused) { resolve(); return; }
             const u = new SpeechSynthesisUtterance(text);
-            u.lang = lang; u.rate = rate; u.onend = () => resolve(); u.onerror = () => resolve();
+            u.lang = lang; u.rate = rate; 
+            u.onend = () => resolve(); 
+            u.onerror = () => resolve();
             speechSynthesis.speak(u);
         });
     }
 
     function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
-    
-    function toggleHandsFreePanel() {
-        const panel = document.getElementById('handsfree-controls');
-        const btn = document.getElementById('hf-toggle-btn');
-        if (panel.style.display === 'none' || !panel.style.display) {
-            panel.style.display = 'flex'; btn.innerText = '▲ Hands-Free'; btn.classList.add('active-swap');
-        } else {
-            panel.style.display = 'none'; btn.innerText = '▼ Hands-Free'; btn.classList.remove('active-swap');
-        }
-    }
-
     function updateTabCounts() {
         if (!phrasesData.length) return;
         const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
