@@ -1,6 +1,7 @@
 /**
  * app-data.js
- * Contains ONLY the data dictionaries.
+ * Contains ONLY static dictionaries.
+ * State variables (stats, currentLevel) are now in app_logic.js
  */
 
 const alphaHints = {
