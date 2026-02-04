@@ -823,6 +823,19 @@ function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v
         }
     }
 
+    function updateTabCounts() {
+    if (!phrasesData.length) return;
+    
+    // Count how many in this level are mastered (Banked)
+    const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+    
+    // Count how many are left to learn (Practice)
+    // Note: We subtract from total because activePool only shows 12 at a time
+    const practiceCount = phrasesData.length - masteredCount;
+
+    document.getElementById('learning-count').innerText = `(${practiceCount})`;
+    document.getElementById('banked-count').innerText = `(${masteredCount})`;
+}
 
     // Register service worker for PWA
     if ('serviceWorker' in navigator) {
