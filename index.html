@@ -114,7 +114,6 @@
             padding: 8px 16px; border: 2px solid var(--pol-red); background: white; color: var(--pol-red);
             border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.85rem; transition: all 0.2s;
         }
-        .handsfree-btn:hover { background: var(--pol-red); color: white; }
         .handsfree-btn.active { background: var(--pol-red); color: white; }
         .handsfree-btn:disabled { opacity: 0.3; cursor: not-allowed; }
         .handsfree-status { padding: 8px 12px; background: #f0f0f0; border-radius: 6px; font-size: 0.8rem; color: #666; min-width: 200px; text-align: center; }
@@ -203,10 +202,9 @@
 
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
-    // currentLevel is now stored as a string to handle decimals like "1.1"
     let currentLevel = localStorage.getItem('pl_current_level_idx') || "0"; 
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
-    let levelList = []; // Will store list of available level files and descriptions
+    let levelList = []; 
     let lastPhraseText = null;
     let isSwapped = false;
     let currentGender = localStorage.getItem('polishMasterGender') || 'both';
@@ -310,42 +308,65 @@
         updateUILanguage(); 
     }
 
-    // UPDATED: Now supports decimal file names and scans for phrases_X.X.json
     async function populateDropdown() {
         const menu = document.getElementById('lvl-menu'); 
         menu.innerHTML = '';
         levelList = [];
+        
+        let consecutiveEmptyMajors = 0;
+        const MAX_CONSECUTIVE_EMPTY = 5; // Circuit breaker to stop scanning if we hit 5 empty levels in a row
 
-        // We check a range of possible level numbers (0.0 to 15.9)
-        for (let major = 0; major <= 15; major++) {
+        // Major loop up to 100
+        for (let major = 0; major <= 100; major++) {
+            let foundInThisMajor = false;
+            
+            // Prepare fetch promises for this major level (0-9 minors)
+            const promises = [];
             for (let minor = 0; minor <= 9; minor++) {
                 const lvlId = minor === 0 && major === 0 ? "0" : (minor === 0 ? `${major}` : `${major}.${minor}`);
-                try {
-                    const resp = await fetch(`phrases_${lvlId}.json`);
-                    if (resp.ok) {
-                        const data = await resp.json();
-                        const isDone = data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length === data.phrases.length;
-                        
-                        const levelObj = {
-                            id: lvlId,
-                            description: data.description || `Level ${lvlId}`,
-                            isDone: isDone
-                        };
-                        levelList.push(levelObj);
+                const url = `phrases_${lvlId}.json`;
+                promises.push(fetch(url).then(r => r.ok ? r.json().then(d => ({id: lvlId, data: d, exists: true})) : {exists: false}).catch(() => ({exists: false})));
+            }
 
-                        const item = document.createElement('div');
-                        item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
-                        item.innerText = levelObj.description;
-                        item.onclick = (e) => { e.stopPropagation(); selectLevel(levelObj.id); };
-                        menu.appendChild(item);
-                        
-                        if(levelObj.id == currentLevel) {
-                            document.getElementById('lvl-current').innerText = levelObj.description;
-                        }
-                    } else if (minor === 0 && major > 0) {
-                        // If phrases_1.json fails, don't necessarily stop, but if it's a major level, we might be at the end.
+            // Execute fetches in parallel for speed
+            const results = await Promise.all(promises);
+
+            // Process results in order
+            for (const res of results) {
+                if (res.exists) {
+                    foundInThisMajor = true;
+                    const isDone = res.data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length === res.data.phrases.length;
+                    
+                    let displayLabel = res.data.description || `Level ${res.id}`;
+                    if (!displayLabel.startsWith(res.id)) {
+                        displayLabel = `Lvl ${res.id}: ${displayLabel}`;
                     }
-                } catch(e) {}
+
+                    const levelObj = { id: res.id, description: displayLabel, isDone: isDone };
+                    levelList.push(levelObj);
+
+                    const item = document.createElement('div');
+                    item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
+                    item.innerText = displayLabel;
+                    item.onclick = (e) => { e.stopPropagation(); selectLevel(levelObj.id); };
+                    menu.appendChild(item);
+                    
+                    if(res.id == currentLevel) {
+                        document.getElementById('lvl-current').innerText = displayLabel;
+                    }
+                }
+            }
+            
+            // Circuit Breaker Logic
+            if (foundInThisMajor) {
+                consecutiveEmptyMajors = 0;
+            } else {
+                consecutiveEmptyMajors++;
+            }
+            
+            // If we found 5 empty major levels in a row (e.g., 36, 37, 38, 39, 40 all missing), stop scanning.
+            if (consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY) {
+                break;
             }
         }
     }
@@ -365,8 +386,9 @@
             const data = await resp.json();
             phrasesData = data.phrases;
             
-            // Update the trigger text to the current level description
-            document.getElementById('lvl-current').innerText = data.description || `Level ${currentLevel}`;
+            let label = data.description || `Level ${currentLevel}`;
+            if (!label.startsWith(currentLevel)) { label = `Lvl ${currentLevel}: ${label}`; }
+            document.getElementById('lvl-current').innerText = label;
             
             refreshActivePool();
             updateStats(); updateTabCounts(); updateMap(); startNewRound(); cacheAllPhrases(); populateDropdown();
@@ -377,7 +399,6 @@
 
     async function cacheAllPhrases() {
         allPhrasesCache = [];
-        // Scan for caching
         for (let i = 0; i < levelList.length; i++) {
             const lvl = levelList[i];
             try {
@@ -492,7 +513,6 @@
     function updateStats() { if(phrasesData.length) { const m = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (m/phrasesData.length)*100+"%"; } }
     
     function advanceLevel() { 
-        // Find next index in the levelList
         const currentIdx = levelList.findIndex(l => l.id == currentLevel);
         if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
             const nextLvlId = levelList[currentIdx + 1].id;
@@ -554,7 +574,6 @@
     async function playHandsFreeSequence() {
         while (handsFreeActive && !handsFreeAbort) {
             if (handsFreeIndex >= handsFreeAllPhrases.length) {
-                // Find next level in levelList
                 const currentIdx = levelList.findIndex(l => l.id == handsFreeLevel);
                 if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
                     handsFreeLevel = levelList[currentIdx + 1].id;
