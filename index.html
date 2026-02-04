@@ -532,10 +532,11 @@
 
     async function toggleHandsFree() {
         const btn = document.getElementById('hf-toggle');
-        const skipBtn = document.getElementById('hf-skip');
+        const panel = document.getElementById('handsfree-controls'); // Added this
         
         if (!handsFreeActive) {
             handsFreeActive = true; handsFreeAbort = false;
+            panel.classList.add('immersive'); // Makes it full screen
             
             // Resume Check
             if (hfLastLevel !== currentLevel || hfLastIndex > 0) {
@@ -550,19 +551,21 @@
                 handsFreeIndex = 0;
             }
 
-            btn.innerText = '⏸ PAUSE'; btn.classList.add('active'); skipBtn.disabled = false;
+            btn.innerText = '⏸ PAUSE'; btn.classList.add('active');
             await playHandsFreeSequence();
         } else {
             stopHandsFree();
         }
     }
 
-    function stopHandsFree() {
+   function stopHandsFree() {
         handsFreeActive = false; handsFreeAbort = true;
         speechSynthesis.cancel();
         const btn = document.getElementById('hf-toggle');
-        btn.innerText = '▶ START HANDS-FREE'; btn.classList.remove('active');
-        document.getElementById('hf-skip').disabled = true;
+        const panel = document.getElementById('handsfree-controls');
+        
+        btn.innerText = '▶ START'; btn.classList.remove('active');
+        panel.classList.remove('immersive'); // Exits full screen
         document.getElementById('hf-status').innerText = 'Stopped';
         saveStats();
     }
