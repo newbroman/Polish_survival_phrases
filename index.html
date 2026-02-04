@@ -112,10 +112,18 @@
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
         .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; }
     
-        .handsfree-controls {
-            display: flex; gap: 10px; align-items: center; padding: 10px; background: var(--card);
-            border-radius: 8px; margin-top: 10px; flex-wrap: wrap; justify-content: center;
-        }
+      .handsfree-controls.immersive {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
         .handsfree-btn {
             padding: 8px 16px; border: 2px solid var(--pol-red); background: white; color: var(--pol-red);
             border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.85rem; transition: all 0.2s;
@@ -127,6 +135,13 @@
         .pause-selector { display: flex; gap: 5px; align-items: center; }
         .pause-option { padding: 6px 10px; border: 1px solid #ccc; background: white; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
         .pause-option.active { background: var(--pol-red); color: white; border-color: var(--pol-red); }
+#hf-display-pl { font-size: 2.2rem; font-weight: 800; color: var(--pol-red); margin-bottom: 15px; padding: 0 10px; }
+#hf-display-en { font-size: 1.5rem; font-weight: 600; color: #666; opacity: 0.8; }
+
+.hf-bottom-nav { 
+    position: absolute; bottom: 40px; width: 100%; 
+    display: flex; flex-direction: column; align-items: center; gap: 15px; 
+}
 
         /* Animation for countdown */
         @keyframes flash { 50% { opacity: 0.5; } }
@@ -167,15 +182,24 @@
 </div>
 
 <div class="handsfree-controls" id="handsfree-controls" style="display: none;">
-    <button class="handsfree-btn" id="hf-toggle" onclick="toggleHandsFree()">▶ START HANDS-FREE</button>
-    <button class="handsfree-btn" id="hf-skip" onclick="skipHandsFree()" disabled>⏭ SKIP</button>
-    <div class="pause-selector">
-        <span style="font-size: 0.75rem; color: #666;">Pause:</span>
-        <div class="pause-option active" onclick="setPauseDuration(1)">1s</div>
-        <div class="pause-option" onclick="setPauseDuration(3)">3s</div>
-        <div class="pause-option" onclick="setPauseDuration(5)">5s</div>
+    <div id="hf-display-pl">Gotowy?</div>
+    <div id="hf-display-en">Press Start</div>
+
+    <div class="hf-bottom-nav">
+        <div class="handsfree-status" id="hf-status">Ready to begin</div>
+        
+        <div style="display: flex; gap: 10px;">
+            <button class="handsfree-btn" id="hf-toggle" onclick="toggleHandsFree()">▶ START</button>
+            <button class="handsfree-btn" id="hf-close" onclick="toggleHandsFreePanel()">✕ EXIT</button>
+        </div>
+
+        <div class="pause-selector">
+            <span style="font-size: 0.75rem; color: #666;">Pause:</span>
+            <div class="pause-option active" onclick="setPauseDuration(1)">1s</div>
+            <div class="pause-option" onclick="setPauseDuration(3)">3s</div>
+            <div class="pause-option" onclick="setPauseDuration(5)">5s</div>
+        </div>
     </div>
-    <div class="handsfree-status" id="hf-status">Ready to start</div>
 </div>
 
 <div class="progress-container"><div id="progress-bar"></div></div>
@@ -543,21 +567,27 @@
         saveStats();
     }
 
-    async function playHandsFreeSequence() {
+async function playHandsFreeSequence() {
         while (handsFreeActive && !handsFreeAbort) {
+            // 1. First, check if we finished the level
             if (handsFreeIndex >= phrasesData.length) {
                 playSuccess();
                 await handleLevelTransition();
                 if (handsFreeAbort) break;
             }
             
+            // 2. SAVE THE PROGRESS (Memory)
             hfLastLevel = currentLevel;
             hfLastIndex = handsFreeIndex;
             saveStats();
 
+            // 3. GET THE PHRASE (This is the line you found)
             const p = phrasesData[handsFreeIndex];
-            document.getElementById('hf-status').innerHTML = `Lvl ${currentLevel} - ${handsFreeIndex + 1}/${phrasesData.length}<br><small>${p.pl}</small>`;
-            document.getElementById('q-text').innerText = p.pl;
+
+            // 4. PASTE THE NEW UPDATE LINES HERE:
+            document.getElementById('hf-display-pl').innerText = p.pl;
+            document.getElementById('hf-display-en').innerText = p.en;
+            document.getElementById('hf-status').innerText = `Lvl ${currentLevel} — ${handsFreeIndex + 1}/${phrasesData.length}`;
             
             await speakAsync(p.pl, 1.0); if (handsFreeAbort) break; await sleep(pauseDuration);
             await speakAsync(p.en, 1.0, 'en-US'); if (handsFreeAbort) break; await sleep(pauseDuration);
