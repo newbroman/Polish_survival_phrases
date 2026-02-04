@@ -61,7 +61,8 @@
 
         .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; flex-shrink: 0; }
         .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 90%; max-width: 400px; margin: 0 auto; justify-content: flex-start; }
-        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
+        /* Speaker button updated to handle tap logic */
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; user-select: none; }
         .q-content { text-align: left; min-width: 0; }
         .q-text { font-size: 1.1rem; font-weight: 800; }
         .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
@@ -217,7 +218,7 @@
             <button id="ui-lang-en" class="ui-lang-btn active" onclick="toggleUILang()">EN</button>
             <button id="ui-lang-pl" class="ui-lang-btn" onclick="toggleUILang()">PL</button>
         </div>
-        <div class="speaker-btn" onclick="speak(currentTarget.pl)">🔊</div>
+        <div class="speaker-btn" onclick="handleSpeakerTap()">🔊</div>
         <div class="q-content">
             <div id="q-text" class="q-text">Ready?</div>
             <div id="feedback" class="feedback"></div>
@@ -695,6 +696,20 @@
         const practiceCount = phrasesData.length - masteredCount;
         document.getElementById('learning-count').innerText = `(${practiceCount})`;
         document.getElementById('banked-count').innerText = `(${masteredCount})`;
+    }
+
+    // --- NEW: Custom Tap Handler for Speaker Button ---
+    let lastSpeakerTap = 0;
+    function handleSpeakerTap() {
+        const now = Date.now();
+        if (now - lastSpeakerTap < 300) {
+            // Double Tap: Play Slow
+            speak(currentTarget.pl, 0.5);
+        } else {
+            // Single Tap: Play Normal
+            speak(currentTarget.pl, 1.0);
+        }
+        lastSpeakerTap = now;
     }
 </script>
 </body>
