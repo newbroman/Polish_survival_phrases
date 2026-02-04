@@ -1,497 +1,497 @@
 {
   "level": 1,
-  "description": "Pronunciation Practice: Common Sound Combinations",
+  "description": "Day 1 Survival Kit - Absolute Essentials",
+  "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "p01",
-      "category": "CZ Practice",
-      "pl": "Cztery",
-      "en": "Four",
+      "id": "s1_01",
+      "category": "Emergency",
+      "pl": "Pomoc!",
+      "en": "Help!",
       "level": 1
     },
     {
-      "id": "p02",
-      "category": "CZ Practice",
-      "pl": "Człowiek",
-      "en": "Person",
+      "id": "s1_02",
+      "category": "Emergency",
+      "pl": "Zadzwoń po policję",
+      "en": "Call the police",
       "level": 1
     },
     {
-      "id": "p03",
-      "category": "CZ Practice",
-      "pl": "Cześć",
-      "en": "Hi",
+      "id": "s1_03",
+      "category": "Emergency",
+      "pl": "Potrzebuję lekarza",
+      "en": "I need a doctor",
       "level": 1
     },
     {
-      "id": "p04",
-      "category": "CZ Practice",
-      "pl": "Czerwony",
-      "en": "Red",
+      "id": "s1_04",
+      "category": "Emergency",
+      "pl": "Gdzie jest szpital?",
+      "en": "Where is the hospital?",
       "level": 1
     },
     {
-      "id": "p05",
-      "category": "CZ Practice",
-      "pl": "Coś",
-      "en": "Something",
+      "id": "s1_05",
+      "category": "Emergency",
+      "pl": "To pilne!",
+      "en": "It's urgent!",
       "level": 1
     },
     {
-      "id": "p06",
-      "category": "SZ Practice",
-      "pl": "Dobry",
-      "en": "Good",
+      "id": "s1_06",
+      "category": "Emergency",
+      "pl": "Zadzwoń po karetkę",
+      "en": "Call an ambulance",
       "level": 1
     },
     {
-      "id": "p07",
-      "category": "SZ Practice",
+      "id": "s1_07",
+      "category": "Emergency",
+      "pl": "Jestem ranny/ranna",
+      "en": "I am injured",
+      "level": 1
+    },
+    {
+      "id": "s1_08",
+      "category": "Emergency",
+      "pl": "Ukradli mi portfel",
+      "en": "They stole my wallet",
+      "level": 1
+    },
+    {
+      "id": "s1_09",
+      "category": "Emergency",
+      "pl": "Zgubiłem/Zgubiłam paszport",
+      "en": "I lost my passport",
+      "level": 1
+    },
+    {
+      "id": "s1_10",
+      "category": "Emergency",
+      "pl": "Gdzie jest policja?",
+      "en": "Where is the police?",
+      "level": 1
+    },
+    {
+      "id": "s1_11",
+      "category": "Basic Communication",
+      "pl": "Tak",
+      "en": "Yes",
+      "level": 1
+    },
+    {
+      "id": "s1_12",
+      "category": "Basic Communication",
+      "pl": "Nie",
+      "en": "No",
+      "level": 1
+    },
+    {
+      "id": "s1_13",
+      "category": "Basic Communication",
       "pl": "Proszę",
       "en": "Please",
       "level": 1
     },
     {
-      "id": "p08",
-      "category": "SZ Practice",
-      "pl": "Można",
-      "en": "One can / It's possible",
+      "id": "s1_14",
+      "category": "Basic Communication",
+      "pl": "Dziękuję",
+      "en": "Thank you",
       "level": 1
     },
     {
-      "id": "p09",
-      "category": "SZ Practice",
-      "pl": "Nasz",
-      "en": "Our",
-      "level": 1
-    },
-    {
-      "id": "p10",
-      "category": "SZ Practice",
-      "pl": "Jeszcze",
-      "en": "Still / Yet",
-      "level": 1
-    },
-    {
-      "id": "p11",
-      "category": "RZ Practice",
-      "pl": "Dobrze",
-      "en": "Well / Good",
-      "level": 1
-    },
-    {
-      "id": "p12",
-      "category": "RZ Practice",
-      "pl": "Może",
-      "en": "Maybe",
-      "level": 1
-    },
-    {
-      "id": "p13",
-      "category": "RZ Practice",
-      "pl": "Trzeba",
-      "en": "One must / Need to",
-      "level": 1
-    },
-    {
-      "id": "p14",
-      "category": "RZ Practice",
-      "pl": "Morze",
-      "en": "Sea",
-      "level": 1
-    },
-    {
-      "id": "p15",
-      "category": "RZ Practice",
-      "pl": "Twarz",
-      "en": "Face",
-      "level": 1
-    },
-    {
-      "id": "p16",
-      "category": "CH Practice",
-      "pl": "Chcę",
-      "en": "I want",
-      "level": 1
-    },
-    {
-      "id": "p17",
-      "category": "CH Practice",
-      "pl": "Cicho",
-      "en": "Quiet",
-      "level": 1
-    },
-    {
-      "id": "p18",
-      "category": "CH Practice",
-      "pl": "Mucha",
-      "en": "Fly",
-      "level": 1
-    },
-    {
-      "id": "p19",
-      "category": "CH Practice",
-      "pl": "Suchy",
-      "en": "Dry",
-      "level": 1
-    },
-    {
-      "id": "p20",
-      "category": "CH Practice",
-      "pl": "Dach",
-      "en": "Roof",
-      "level": 1
-    },
-    {
-      "id": "p21",
-      "category": "Mixed Practice",
-      "pl": "Dzisiaj",
-      "en": "Today",
-      "level": 1
-    },
-    {
-      "id": "p22",
-      "category": "Mixed Practice",
-      "pl": "Dzięki",
-      "en": "Thanks",
-      "level": 1
-    },
-    {
-      "id": "p23",
-      "category": "Mixed Practice",
-      "pl": "Wszystko",
-      "en": "Everything",
-      "level": 1
-    },
-    {
-      "id": "p24",
-      "category": "Mixed Practice",
+      "id": "s1_15",
+      "category": "Basic Communication",
       "pl": "Przepraszam",
       "en": "Sorry / Excuse me",
       "level": 1
     },
     {
-      "id": "p25",
-      "category": "Mixed Practice",
-      "pl": "Oczywiście",
-      "en": "Of course",
-      "level": 1
-    },
-    {
-      "id": "p26",
-      "category": "Challenging",
-      "pl": "Szczęście",
-      "en": "Happiness / Luck",
-      "level": 1
-    },
-    {
-      "id": "p27",
-      "category": "Challenging",
-      "pl": "Pszczoła",
-      "en": "Bee",
-      "level": 1
-    },
-    {
-      "id": "p28",
-      "category": "Challenging",
-      "pl": "Chrząszcz",
-      "en": "Beetle",
-      "level": 1
-    },
-    {
-      "id": "p29",
-      "category": "Challenging",
-      "pl": "Grzecznie",
-      "en": "Politely",
-      "level": 1
-    },
-    {
-      "id": "p30",
-      "category": "Challenging",
-      "pl": "Zmęczony",
-      "en": "Tired",
-      "level": 1
-    },
-    {
-      "id": "p31",
-      "category": "Survival Words",
-      "pl": "Gdzie",
-      "en": "Where",
-      "level": 1
-    },
-    {
-      "id": "p32",
-      "category": "Survival Words",
-      "pl": "Który",
-      "en": "Which",
-      "level": 1
-    },
-    {
-      "id": "p33",
-      "category": "Survival Words",
-      "pl": "Potrzebuję",
-      "en": "I need",
-      "level": 1
-    },
-    {
-      "id": "p34",
-      "category": "Survival Words",
-      "pl": "Szukam",
-      "en": "I'm looking for",
-      "level": 1
-    },
-    {
-      "id": "p35",
-      "category": "Survival Words",
-      "pl": "Rozumiem",
-      "en": "I understand",
-      "level": 1
-    },
-    {
-      "id": "p36",
-      "category": "Numbers",
-      "pl": "Trzy",
-      "en": "Three",
-      "level": 1
-    },
-    {
-      "id": "p37",
-      "category": "Numbers",
-      "pl": "Dziesięć",
-      "en": "Ten",
-      "level": 1
-    },
-    {
-      "id": "p38",
-      "category": "Numbers",
-      "pl": "Dwadzieścia",
-      "en": "Twenty",
-      "level": 1
-    },
-    {
-      "id": "p39",
-      "category": "Numbers",
-      "pl": "Trzydzieści",
-      "en": "Thirty",
-      "level": 1
-    },
-    {
-      "id": "p40",
-      "category": "Numbers",
-      "pl": "Czterdzieści",
-      "en": "Forty",
-      "level": 1
-    },
-    {
-      "id": "p41",
-      "category": "Common Phrases",
+      "id": "s1_16",
+      "category": "Basic Communication",
       "pl": "Nie rozumiem",
       "en": "I don't understand",
       "level": 1
     },
     {
-      "id": "p42",
-      "category": "Common Phrases",
+      "id": "s1_17",
+      "category": "Basic Communication",
       "pl": "Czy mówisz po angielsku?",
       "en": "Do you speak English?",
       "level": 1
     },
     {
-      "id": "p43",
-      "category": "Common Phrases",
-      "pl": "Jak się masz?",
-      "en": "How are you?",
+      "id": "s1_18",
+      "category": "Basic Communication",
+      "pl": "Proszę mówić wolniej",
+      "en": "Please speak slowly",
       "level": 1
     },
     {
-      "id": "p44",
-      "category": "Common Phrases",
-      "pl": "Miło cię poznać",
-      "en": "Nice to meet you",
+      "id": "s1_19",
+      "category": "Basic Communication",
+      "pl": "Proszę powtórzyć",
+      "en": "Please repeat",
       "level": 1
     },
     {
-      "id": "p45",
-      "category": "Common Phrases",
-      "pl": "Do widzenia",
-      "en": "Goodbye",
+      "id": "s1_20",
+      "category": "Basic Communication",
+      "pl": "Co to znaczy?",
+      "en": "What does this mean?",
       "level": 1
     },
     {
-      "id": "p46",
-      "category": "Days",
-      "pl": "Poniedziałek",
-      "en": "Monday",
+      "id": "s1_21",
+      "category": "Basic Communication",
+      "pl": "Jak to się nazywa?",
+      "en": "What is this called?",
       "level": 1
     },
     {
-      "id": "p47",
-      "category": "Days",
-      "pl": "Środa",
-      "en": "Wednesday",
+      "id": "s1_22",
+      "category": "Basic Communication",
+      "pl": "Nie mówię po polsku",
+      "en": "I don't speak Polish",
       "level": 1
     },
     {
-      "id": "p48",
-      "category": "Days",
-      "pl": "Czwartek",
-      "en": "Thursday",
+      "id": "s1_23",
+      "category": "Basic Communication",
+      "pl": "Mówię trochę po polsku",
+      "en": "I speak a little Polish",
       "level": 1
     },
     {
-      "id": "p49",
-      "category": "Days",
-      "pl": "Piątek",
-      "en": "Friday",
+      "id": "s1_24",
+      "category": "Basic Communication",
+      "pl": "Rozumiem",
+      "en": "I understand",
       "level": 1
     },
     {
-      "id": "p50",
-      "category": "Days",
-      "pl": "Niedziela",
-      "en": "Sunday",
+      "id": "s1_25",
+      "category": "Basic Communication",
+      "pl": "Nie wiem",
+      "en": "I don't know",
       "level": 1
     },
     {
-      "id": "p51",
-      "category": "Food",
-      "pl": "Czekolada",
-      "en": "Chocolate",
+      "id": "s1_26",
+      "category": "Essential Questions",
+      "pl": "Gdzie jest...?",
+      "en": "Where is...?",
       "level": 1
     },
     {
-      "id": "p52",
-      "category": "Food",
-      "pl": "Ciastko",
-      "en": "Cookie",
+      "id": "s1_27",
+      "category": "Essential Questions",
+      "pl": "Ile to kosztuje?",
+      "en": "How much is this?",
       "level": 1
     },
     {
-      "id": "p53",
-      "category": "Food",
-      "pl": "Herbata",
-      "en": "Tea",
+      "id": "s1_28",
+      "category": "Essential Questions",
+      "pl": "Kiedy...?",
+      "en": "When...?",
       "level": 1
     },
     {
-      "id": "p54",
-      "category": "Food",
-      "pl": "Warzyw",
-      "en": "Vegetables",
+      "id": "s1_29",
+      "category": "Essential Questions",
+      "pl": "Jak...?",
+      "en": "How...?",
       "level": 1
     },
     {
-      "id": "p55",
-      "category": "Food",
-      "pl": "Owoce",
-      "en": "Fruits",
+      "id": "s1_30",
+      "category": "Essential Questions",
+      "pl": "Co to jest?",
+      "en": "What is this?",
       "level": 1
     },
     {
-      "id": "p56",
-      "category": "Places",
-      "pl": "Dworzec",
-      "en": "Train station",
+      "id": "s1_31",
+      "category": "Essential Questions",
+      "pl": "Który...?",
+      "en": "Which...?",
       "level": 1
     },
     {
-      "id": "p57",
-      "category": "Places",
-      "pl": "Ulica",
-      "en": "Street",
+      "id": "s1_32",
+      "category": "Essential Questions",
+      "pl": "Kto...?",
+      "en": "Who...?",
       "level": 1
     },
     {
-      "id": "p58",
-      "category": "Places",
-      "pl": "Rynek",
-      "en": "Market square",
+      "id": "s1_33",
+      "category": "Essential Questions",
+      "pl": "Dlaczego...?",
+      "en": "Why...?",
       "level": 1
     },
     {
-      "id": "p59",
-      "category": "Places",
-      "pl": "Kościół",
-      "en": "Church",
+      "id": "s1_34",
+      "category": "Essential Questions",
+      "pl": "Ile...?",
+      "en": "How many/much...?",
       "level": 1
     },
     {
-      "id": "p60",
-      "category": "Places",
-      "pl": "Apteka",
-      "en": "Pharmacy",
+      "id": "s1_35",
+      "category": "Essential Questions",
+      "pl": "O której godzinie?",
+      "en": "At what time?",
       "level": 1
     },
     {
-      "id": "p61",
-      "category": "Verbs",
-      "pl": "Mówić",
-      "en": "To speak",
+      "id": "s1_36",
+      "category": "Essential Questions",
+      "pl": "Czy...?",
+      "en": "Do/Does/Is...?",
       "level": 1
     },
     {
-      "id": "p62",
-      "category": "Verbs",
-      "pl": "Czytać",
-      "en": "To read",
+      "id": "s1_37",
+      "category": "Essential Questions",
+      "pl": "Gdzie jest toaleta?",
+      "en": "Where is the bathroom?",
       "level": 1
     },
     {
-      "id": "p63",
-      "category": "Verbs",
-      "pl": "Pisać",
-      "en": "To write",
+      "id": "s1_38",
+      "category": "Essential Questions",
+      "pl": "Gdzie jest bankomat?",
+      "en": "Where is the ATM?",
       "level": 1
     },
     {
-      "id": "p64",
-      "category": "Verbs",
-      "pl": "Słuchać",
-      "en": "To listen",
+      "id": "s1_39",
+      "category": "Essential Questions",
+      "pl": "Jaki jest kod WiFi?",
+      "en": "What is the WiFi password?",
       "level": 1
     },
     {
-      "id": "p65",
-      "category": "Verbs",
-      "pl": "Uczyć się",
-      "en": "To learn",
+      "id": "s1_40",
+      "category": "Essential Questions",
+      "pl": "Czy mogę...?",
+      "en": "Can I...?",
       "level": 1
     },
     {
-      "id": "p66",
-      "category": "Adjectives",
-      "pl": "Ładny",
-      "en": "Nice / Pretty",
+      "id": "s1_41",
+      "category": "Survival Needs",
+      "pl": "Potrzebuję...",
+      "en": "I need...",
       "level": 1
     },
     {
-      "id": "p67",
-      "category": "Adjectives",
-      "pl": "Brzydki",
-      "en": "Ugly",
+      "id": "s1_42",
+      "category": "Survival Needs",
+      "pl": "Woda, proszę",
+      "en": "Water, please",
       "level": 1
     },
     {
-      "id": "p68",
-      "category": "Adjectives",
-      "pl": "Trudny",
-      "en": "Difficult",
+      "id": "s1_43",
+      "category": "Survival Needs",
+      "pl": "Jestem głodny/głodna",
+      "en": "I'm hungry",
       "level": 1
     },
     {
-      "id": "p69",
-      "category": "Adjectives",
-      "pl": "Łatwy",
-      "en": "Easy",
+      "id": "s1_44",
+      "category": "Survival Needs",
+      "pl": "Jestem spragniony/spragniona",
+      "en": "I'm thirsty",
       "level": 1
     },
     {
-      "id": "p70",
-      "category": "Adjectives",
-      "pl": "Ważny",
-      "en": "Important",
+      "id": "s1_45",
+      "category": "Survival Needs",
+      "pl": "Jestem zmęczony/zmęczona",
+      "en": "I'm tired",
+      "level": 1
+    },
+    {
+      "id": "s1_46",
+      "category": "Survival Needs",
+      "pl": "Potrzebuję WiFi",
+      "en": "I need WiFi",
+      "level": 1
+    },
+    {
+      "id": "s1_47",
+      "category": "Survival Needs",
+      "pl": "Mój telefon nie działa",
+      "en": "My phone doesn't work",
+      "level": 1
+    },
+    {
+      "id": "s1_48",
+      "category": "Survival Needs",
+      "pl": "Gdzie mogę naładować telefon?",
+      "en": "Where can I charge my phone?",
+      "level": 1
+    },
+    {
+      "id": "s1_49",
+      "category": "Survival Needs",
+      "pl": "Jestem chory/chora",
+      "en": "I'm sick",
+      "level": 1
+    },
+    {
+      "id": "s1_50",
+      "category": "Survival Needs",
+      "pl": "Boli mnie głowa",
+      "en": "My head hurts",
+      "level": 1
+    },
+    {
+      "id": "s1_51",
+      "category": "Survival Needs",
+      "pl": "Boli mnie brzuch",
+      "en": "My stomach hurts",
+      "level": 1
+    },
+    {
+      "id": "s1_52",
+      "category": "Survival Needs",
+      "pl": "Mam alergię",
+      "en": "I have an allergy",
+      "level": 1
+    },
+    {
+      "id": "s1_53",
+      "category": "Survival Needs",
+      "pl": "Toaleta",
+      "en": "Bathroom / Toilet",
+      "level": 1
+    },
+    {
+      "id": "s1_54",
+      "category": "Survival Needs",
+      "pl": "WC",
+      "en": "Restroom",
+      "level": 1
+    },
+    {
+      "id": "s1_55",
+      "category": "Survival Needs",
+      "pl": "Przepraszam, toaleta?",
+      "en": "Excuse me, bathroom?",
+      "level": 1
+    },
+    {
+      "id": "s1_56",
+      "category": "Getting Help",
+      "pl": "Czy możesz mi pomóc?",
+      "en": "Can you help me?",
+      "level": 1
+    },
+    {
+      "id": "s1_57",
+      "category": "Getting Help",
+      "pl": "Jestem zagubiony/zagubiona",
+      "en": "I'm lost",
+      "level": 1
+    },
+    {
+      "id": "s1_58",
+      "category": "Getting Help",
+      "pl": "Proszę pokazać",
+      "en": "Please show me",
+      "level": 1
+    },
+    {
+      "id": "s1_59",
+      "category": "Getting Help",
+      "pl": "Czy możesz napisać to?",
+      "en": "Can you write this down?",
+      "level": 1
+    },
+    {
+      "id": "s1_60",
+      "category": "Getting Help",
+      "pl": "Proszę o pomoc",
+      "en": "I'm asking for help",
+      "level": 1
+    },
+    {
+      "id": "s1_61",
+      "category": "Getting Help",
+      "pl": "Nie jestem stąd",
+      "en": "I'm not from here",
+      "level": 1
+    },
+    {
+      "id": "s1_62",
+      "category": "Getting Help",
+      "pl": "Jestem turystą",
+      "en": "I'm a tourist",
+      "level": 1
+    },
+    {
+      "id": "s1_63",
+      "category": "Getting Help",
+      "pl": "Czy ktoś mówi po angielsku?",
+      "en": "Does anyone speak English?",
+      "level": 1
+    },
+    {
+      "id": "s1_64",
+      "category": "Getting Help",
+      "pl": "Proszę zadzwonić...",
+      "en": "Please call...",
+      "level": 1
+    },
+    {
+      "id": "s1_65",
+      "category": "Getting Help",
+      "pl": "Gdzie mogę znaleźć...?",
+      "en": "Where can I find...?",
+      "level": 1
+    },
+    {
+      "id": "s1_66",
+      "category": "Getting Help",
+      "pl": "Czy to jest blisko?",
+      "en": "Is this close?",
+      "level": 1
+    },
+    {
+      "id": "s1_67",
+      "category": "Getting Help",
+      "pl": "Czy to jest daleko?",
+      "en": "Is this far?",
+      "level": 1
+    },
+    {
+      "id": "s1_68",
+      "category": "Getting Help",
+      "pl": "Jak długo to trwa?",
+      "en": "How long does it take?",
+      "level": 1
+    },
+    {
+      "id": "s1_69",
+      "category": "Getting Help",
+      "pl": "Proszę czekać",
+      "en": "Please wait",
+      "level": 1
+    },
+    {
+      "id": "s1_70",
+      "category": "Getting Help",
+      "pl": "Chwileczkę",
+      "en": "Just a moment",
       "level": 1
     }
-  ],
-  "tier": "FOUNDATION"
+  ]
 }
