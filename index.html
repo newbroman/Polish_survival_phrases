@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Polish Phrase Master</title>
     <style>
-        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
+        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
         html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
@@ -41,30 +41,14 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .gender-dropdown-menu.show { display: block; }
-        .gender-dropdown-item { 
+        
+        .dropdown-item { 
             padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; 
             cursor: pointer; color: var(--text); 
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .gender-dropdown-item:last-child { border-bottom: none; }
-        .gender-dropdown-item:hover { background: var(--bg); }
-
-        .custom-dropdown { position: relative; width: 100%; }
-        .dropdown-trigger { 
-            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
-            text-align: left; height: 28px; display: flex; align-items: center; 
-            justify-content: space-between; cursor: pointer; box-sizing: border-box;
-        }
-        .dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
-
-        .dropdown-menu { 
-            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
-            border: 1px solid #ccc; border-radius: 4px; max-height: 250px; overflow-y: auto; 
-            z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .dropdown-menu.show { display: block; }
-        .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); }
-        .dropdown-item.mastered { color: var(--pol-red); }
+        .dropdown-item.mastered { color: var(--text); }
+        .check-icon { font-size: 12px; margin-left: 5px; }
 
         .search-box { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
@@ -106,7 +90,6 @@
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
         .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; }
 
-        /* --- NEW HANDS FREE STYLES --- */
         #hf-overlay { 
             position: fixed; inset: 0; background: #0a0a0a; z-index: 3000; color: white; 
             display: none; flex-direction: column; align-items: center; justify-content: center; 
@@ -139,6 +122,21 @@
         .pause-selector { display: flex; gap: 5px; align-items: center; margin-top: 10px; justify-content: center; color: #666; font-size: 0.8rem; }
         .pause-option { padding: 4px 10px; border: 1px solid #333; background: #111; border-radius: 4px; cursor: pointer; }
         .pause-option.active { background: #dc143c; color: white; border-color: #dc143c; }
+
+        .custom-dropdown { position: relative; width: 100%; }
+        .dropdown-trigger { 
+            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
+            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
+            text-align: left; height: 28px; display: flex; align-items: center; 
+            justify-content: space-between; cursor: pointer; box-sizing: border-box;
+        }
+        .dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
+        .dropdown-menu { 
+            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
+            border: 1px solid #ccc; border-radius: 4px; max-height: 250px; overflow-y: auto; 
+            z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .dropdown-menu.show { display: block; }
 </style>
 </head>
 <body>
@@ -261,7 +259,6 @@
     let isAudioPriming = false;
     let audioPrimedAt = 0;
 
-    // --- STANDARD APP FUNCTIONS (unchanged logic) ---
     function playNote(freq, dur, type='sine') {
         try {
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -360,9 +357,10 @@
                     if (!displayLabel.startsWith(res.id)) displayLabel = `Lvl ${res.id}: ${displayLabel}`;
                     const levelObj = { id: res.id, description: displayLabel, isDone: isDone };
                     levelList.push(levelObj);
+                    
                     const item = document.createElement('div');
                     item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
-                    item.innerText = displayLabel;
+                    item.innerHTML = `<span>${displayLabel}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(levelObj.id); };
                     menu.appendChild(item);
                     if(res.id == currentLevel) document.getElementById('lvl-current').innerText = displayLabel;
@@ -529,20 +527,14 @@
 
     async function openHandsFree() {
         hfActive = true; hfAbort = false; hfIsPaused = false;
-        
-        // Load data if empty
         if (!phrasesData || phrasesData.length === 0) await loadLevelData();
         hfPhrases = phrasesData;
-        
-        // Memory Recall: Start where we left off, or 0
         const savedIdx = localStorage.getItem('hf_mem_' + currentLevel);
         hfIndex = savedIdx ? parseInt(savedIdx) : 0;
         if(hfIndex >= hfPhrases.length) hfIndex = 0;
 
         document.getElementById('hf-overlay').style.display = 'flex';
         document.getElementById('hf-level-indicator').innerText = document.getElementById('lvl-current').innerText;
-        
-        // Show active view
         document.getElementById('hf-active-view').style.display = 'flex';
         document.getElementById('hf-done-view').style.display = 'none';
         document.getElementById('hf-controls-active').style.display = 'flex';
@@ -556,7 +548,6 @@
         clearTimeout(hfCountdownTimer);
         window.speechSynthesis.cancel();
         document.getElementById('hf-overlay').style.display = 'none';
-        // Reload main app to ensure sync
         startNewRound();
     }
 
@@ -564,17 +555,17 @@
         if(hfIsPaused) {
             hfIsPaused = false;
             document.getElementById('hf-pp-btn').innerText = "⏸ Pause";
-            runHandsFreeLoop(); // Restart loop
+            runHandsFreeLoop();
         } else {
             hfIsPaused = true;
-            hfAbort = true; // Break current loop
+            hfAbort = true;
             window.speechSynthesis.cancel();
             document.getElementById('hf-pp-btn').innerText = "▶ Resume";
         }
     }
 
     function skipPhraseHF() {
-        hfAbort = true; // Break current wait
+        hfAbort = true;
         setTimeout(() => {
             hfAbort = false; 
             hfIndex++;
@@ -582,29 +573,40 @@
         }, 100);
     }
 
+    // UPDATED PATTERN: PL -> Pause -> EN -> Pause -> PL (0.5x) -> Pause -> PL (1.0x)
     async function runHandsFreeLoop() {
         hfAbort = false;
         while (hfActive && !hfIsPaused && hfIndex < hfPhrases.length) {
             const p = hfPhrases[hfIndex];
-            
-            // UI Update
             document.getElementById('hf-pl').innerText = p.pl;
             document.getElementById('hf-en').innerText = p.en;
             document.getElementById('hf-counter').innerText = `${hfIndex + 1} / ${hfPhrases.length}`;
             document.getElementById('hf-bar').style.width = ((hfIndex / hfPhrases.length) * 100) + "%";
-
-            // Save Progress
             localStorage.setItem('hf_mem_' + currentLevel, hfIndex);
 
-            // Sequence
+            // 1. Polish (Normal)
             await speakAsync(p.pl, 1.0); if(hfAbort) break;
+            
+            // 2. Pause
             await sleep(hfPauseDur); if(hfAbort) break;
             
+            // 3. English
             await speakAsync(p.en, 1.0, 'en-US'); if(hfAbort) break;
+            
+            // 4. Pause
             await sleep(hfPauseDur); if(hfAbort) break;
             
-            await speakAsync(p.pl, 1.0); if(hfAbort) break;
+            // 5. Polish (Slow 0.5x)
+            await speakAsync(p.pl, 0.5); if(hfAbort) break;
+            
+            // 6. Pause
             await sleep(hfPauseDur); if(hfAbort) break;
+
+            // 7. Polish (Normal)
+            await speakAsync(p.pl, 1.0); if(hfAbort) break;
+            
+            // Short buffer before next card
+            await sleep(1000); if(hfAbort) break;
 
             hfIndex++;
         }
@@ -621,8 +623,6 @@
         
         document.getElementById('hf-done-view').style.display = 'flex';
         document.getElementById('hf-controls-done').style.display = 'flex';
-        
-        // Clear memory for this level so it restarts next time
         localStorage.removeItem('hf_mem_' + currentLevel);
 
         let secondsLeft = 10;
@@ -644,39 +644,29 @@
         hfIndex = 0;
         document.getElementById('hf-done-view').style.display = 'none';
         document.getElementById('hf-controls-done').style.display = 'none';
-        
         document.getElementById('hf-active-view').style.display = 'flex';
         document.getElementById('hf-controls-active').style.display = 'flex';
-        
         runHandsFreeLoop();
     }
 
     async function forceNextLevelHF() {
         clearInterval(hfCountdownTimer);
-        // Find next level
         const currentIdx = levelList.findIndex(l => l.id == currentLevel);
         if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
             const nextLvlId = levelList[currentIdx + 1].id;
-            
-            // Switch Logic
             currentLevel = nextLvlId;
             saveStats();
-            
-            // Fetch new data MANUALLY for HF context
             try {
                 const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
                 const data = await resp.json();
                 phrasesData = data.phrases;
                 hfPhrases = phrasesData;
                 hfIndex = 0;
-                
-                // Update UI Labels
                 let label = data.description || `Level ${currentLevel}`;
                 if (!label.startsWith(currentLevel)) label = `Lvl ${currentLevel}: ${label}`;
                 document.getElementById('lvl-current').innerText = label;
                 document.getElementById('hf-level-indicator').innerText = label;
-                
-                restartLevelHF(); // Start playing new level
+                restartLevelHF(); 
             } catch(e) {
                 alert("End of content reached!");
                 closeHandsFree();
