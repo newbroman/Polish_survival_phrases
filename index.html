@@ -434,7 +434,7 @@
             refreshPoolAndReset();
             updateStats();
             updateTabCounts();
-            cacheAllPhrases(); 
+        
             populateDropdown();
         } catch (err) { document.getElementById('q-text').innerText = "File not found"; }
     }
@@ -446,17 +446,27 @@
     }
 
     async function cacheAllPhrases() {
-        allPhrasesCache = [];
-        for (let i = 0; i < 20; i++) {
-            try {
-                const r = await fetch(`phrases_${i}.json`);
-                if (r.ok) {
-                    const d = await r.json();
-                    allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: i})));
-                }
-            } catch(e) {}
-        }
+    if (allPhrasesCache.length > 0) return; // Don't rebuild if we already have it
+    
+    const fetchPromises = [];
+    // Fetch 30 levels in parallel for speed
+    for (let i = 0; i < 30; i++) {
+        fetchPromises.push(
+            fetch(`phrases_${i}.json`)
+                .then(r => r.ok ? r.json() : null)
+                .then(data => {
+                    if (data && data.phrases) {
+                        return data.phrases.map(p => ({...p, lvl: i}));
+                    }
+                    return [];
+                })
+                .catch(() => [])
+        );
     }
+    const results = await Promise.all(fetchPromises);
+    allPhrasesCache = results.flat();
+    console.log("Search cache ready:", allPhrasesCache.length, "phrases");
+}
 
 function handleSmartSearch() {
         const query = document.getElementById('search-bar').value.toLowerCase();
@@ -699,10 +709,11 @@ function handleSmartSearch() {
         primeAudio();
     };
 
-    window.onload = () => {
-        loadLevelData();
-        updateUILanguage();
-    };
+  window.onload = async () => {
+    updateUILanguage();
+    await loadLevelData(); // Load current level first so the user can play
+    cacheAllPhrases();     // Then build search cache in the background
+};
 
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./service-worker.js').catch(() => {});
