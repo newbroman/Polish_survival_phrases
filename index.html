@@ -20,13 +20,17 @@
         .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; }
         .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; }
-        .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
+        .controls-row { width: 95%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
 
-        .custom-dropdown, .gender-dropdown { position: relative; width: 100%; }
+        .sub-controls { display: flex; gap: 4px; align-items: center; width: 100%; justify-content: space-between; }
+
+        /* Dropdowns */
+        .custom-dropdown, .gender-dropdown { position: relative; }
         .dropdown-trigger, .gender-dropdown-trigger { 
-            width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 6px 10px; 
+            background: var(--bg); border: 1px solid #ccc; padding: 6px 8px; 
             border-radius: 4px; font-size: 10px; font-weight: 700; cursor: pointer; 
             display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;
+            height: 28px;
         }
         .dropdown-menu, .gender-dropdown-menu { 
             position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
@@ -35,13 +39,12 @@
         }
         .dropdown-menu.show, .gender-dropdown-menu.show { display: block; }
         .dropdown-item { padding: 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
-        .dropdown-item.active-level { background: var(--pol-red); color: white; font-weight: bold; }
 
-        .search-box { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 6px; border-radius: 4px; font-size: 10px; outline: none; box-sizing: border-box; }
+        .search-box { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 6px; border-radius: 4px; font-size: 10px; outline: none; box-sizing: border-box; height: 28px; }
 
-        .quiz-header { padding: 15px; background: var(--card); border-bottom: 1px solid #ddd; text-align: center; flex-shrink: 0; }
-        .q-text { font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; }
-        .feedback { height: 20px; font-size: 0.85rem; font-weight: bold; color: var(--pol-red); }
+        /* Narrowing the Swap Button to fix overlapping */
+        .btn-narrow { width: 75px; flex: 0 0 auto; height: 28px; font-size: 0.55rem; font-weight: 800; border-radius: 4px; border: 1px solid #ccc; background: var(--bg); cursor: pointer; white-space: nowrap; }
+        .btn-hf { flex: 1; height: 28px; font-size: 0.6rem; font-weight: 800; border-radius: 4px; border: 1px solid #ccc; background: var(--bg); cursor: pointer; }
 
         /* FIXED 4 ROWS AND 3 COLUMNS */
         .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
@@ -51,7 +54,7 @@
             grid-template-rows: repeat(4, 1fr);
             gap: 10px; 
             width: 100%; 
-            max-width: 320px; /* Narrower to favor the 3-column look */
+            max-width: 320px; 
         }
         .tile { 
             aspect-ratio: 1; background: var(--tile-bg); border-radius: 10px; 
@@ -72,10 +75,11 @@
         .footer { padding: 10px 10px 30px 10px; display: flex; gap: 8px; background: var(--card); border-top: 1px solid #ddd; }
         .footer-btn { flex: 1; padding: 12px; border-radius: 10px; border: 1px solid #ccc; background: var(--bg); font-weight: bold; font-size: 0.75rem; cursor: pointer; }
 
-        /* Hands-Free Immersive Mode */
+        /* Hands-Free Immersive Mode Logic */
+        .handsfree-controls { display: none; }
         .handsfree-controls.immersive { 
-            position: fixed; inset: 0; background: var(--bg); z-index: 3000; 
-            display: flex; flex-direction: column; justify-content: center; 
+            display: flex; position: fixed; inset: 0; background: var(--bg); z-index: 3000; 
+            flex-direction: column; justify-content: center; 
             align-items: center; padding: 20px; text-align: center; 
         }
         #hf-display-pl { font-size: 2.8rem; font-weight: 800; color: var(--pol-red); margin-bottom: 15px; }
@@ -99,14 +103,26 @@
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <input type="text" id="search-bar" class="search-box" placeholder="Search phrases..." oninput="handleSmartSearch()">
-        <div style="display: flex; gap: 6px; width: 100%;">
-            <button class="footer-btn" style="padding:5px;" onclick="toggleLangSwap()">Swap EN/PL</button>
-            <button class="footer-btn" style="padding:5px;" onclick="toggleHandsFreePanel()">▼ Hands-Free</button>
+        
+        <div class="sub-controls">
+            <div class="gender-wrapper">
+                <span style="font-size: 0.6rem; font-weight: 800;">Sex:</span>
+                <div class="gender-dropdown">
+                    <div class="gender-dropdown-trigger" id="gender-current" onclick="toggleGenderDropdown(event)" style="min-width: 65px;">Both</div>
+                    <div class="gender-dropdown-menu" id="gender-menu">
+                        <div class="dropdown-item" onclick="selectGender('m')">Male</div>
+                        <div class="dropdown-item" onclick="selectGender('f')">Female</div>
+                        <div class="dropdown-item" onclick="selectGender('both')">Both</div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-narrow" onclick="toggleLangSwap()">Swap EN/PL</button>
+            <button class="btn-hf" onclick="toggleHandsFreePanel()">▼ Hands-Free</button>
         </div>
     </div>
 </div>
 
-<div id="handsfree-controls" style="display:none;">
+<div id="handsfree-controls">
     <div id="hf-display-pl">Gotowy?</div>
     <div id="hf-display-en">Press Start</div>
     <div style="margin-top:30px; display:flex; gap:10px;">
@@ -115,17 +131,17 @@
     </div>
     <div style="margin-top:20px; display:flex; gap:10px; align-items:center;">
         <span style="font-size:0.8rem; font-weight:bold;">Pause:</span>
-        <button class="pause-option active" onclick="setPause(1000, this)">1s</button>
-        <button class="pause-option" onclick="setPause(3000, this)">3s</button>
-        <button class="pause-option" onclick="setPause(5000, this)">5s</button>
+        <button class="pause-option active" onclick="setPause(1000, this)" style="padding: 5px;">1s</button>
+        <button class="pause-option" onclick="setPause(3000, this)" style="padding: 5px;">3s</button>
+        <button class="pause-option" onclick="setPause(5000, this)" style="padding: 5px;">5s</button>
     </div>
 </div>
 
 <div class="progress-container"><div id="progress-bar"></div></div>
 
 <div class="quiz-header">
-    <div id="q-text" class="q-text">Loading...</div>
-    <div id="feedback" class="feedback"></div>
+    <div id="q-text" style="font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; text-align: center;">Loading...</div>
+    <div id="feedback" style="height: 20px; font-size: 0.85rem; font-weight: bold; color: var(--pol-red); text-align: center;"></div>
 </div>
 
 <div class="mode-tabs">
@@ -139,20 +155,24 @@
 
 <div class="footer">
     <button class="footer-btn" onclick="downloadProgress()">Save</button>
+    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load</button>
     <button class="footer-btn" onclick="resetLevel()" style="color: var(--pol-red);">Reset</button>
 </div>
 
 <script>
+    // --- State & Variables ---
     const THRESHOLD = 3;
     let phrasesData = [], levelOrder = [], activePool = [];
     let currentLevel = parseFloat(localStorage.getItem('pl_current_level_idx')) || 0;
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentTarget = null;
     let isSwapped = false;
+    let currentGender = 'both';
     let handsFreeActive = false, handsFreeAbort = false, hfIndex = 0;
     let pauseDuration = 1000;
     let plVoice = null;
 
+    // --- 1. PRO LEVEL SCANNER ---
     async function scanForLevels() {
         const probes = [];
         for (let i = 0; i <= 40; i++) {
@@ -184,8 +204,11 @@
     }
 
     function refreshAll() {
-        // Pool is limited to 12 phrases to fit the 4x3 grid exactly
-        activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
+        activePool = phrasesData.filter(p => {
+            const score = stats[p.pl] || 0;
+            const genderMatch = (currentGender === 'both' || !p.gender || p.gender === currentGender);
+            return score < THRESHOLD && genderMatch;
+        }).slice(0, 12); // Lock to 12 for 4x3 grid
         updateMap();
         updateStats();
         updateTabCounts();
@@ -196,7 +219,6 @@
         const map = document.getElementById('mastery-map');
         map.innerHTML = '';
         const mode = document.querySelector('.tab.active').id === 'tab-learning' ? 'learning' : 'mastered';
-        
         const list = (mode === 'learning') ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
 
         list.forEach(p => {
@@ -226,6 +248,7 @@
                 if (activePool.length === 0) document.getElementById('overlay').style.display = 'flex';
             }, 600);
         } else {
+            // BLUE PENALTY SYSTEM
             stats[currentTarget.pl] = Math.max(-2, (stats[currentTarget.pl] || 0) - 1);
             el.classList.add('wrong-flash');
             document.getElementById('feedback').innerText = "Mistake!";
@@ -303,6 +326,11 @@
             menu.appendChild(item);
         });
     }
+    function toggleGenderDropdown(e) { e.stopPropagation(); document.getElementById('gender-menu').classList.toggle('show'); }
+    function selectGender(g) {
+        currentGender = g; document.getElementById('gender-current').innerText = g === 'both' ? 'Both' : (g === 'm' ? 'Male' : 'Female');
+        document.getElementById('gender-menu').classList.remove('show'); refreshAll();
+    }
     function switchMode(m) {
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         document.getElementById('tab-' + m).classList.add('active'); updateMap();
@@ -310,7 +338,8 @@
     function toggleLangSwap() { isSwapped = !isSwapped; refreshAll(); }
     function toggleHandsFreePanel() {
         const p = document.getElementById('handsfree-controls');
-        p.style.display = p.style.display === 'none' ? 'flex' : 'none';
+        if (p.classList.contains('immersive')) { stopHF(); }
+        else { p.classList.add('immersive'); }
     }
     function setPause(ms, btn) {
         pauseDuration = ms;
@@ -330,7 +359,6 @@
     function saveData() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); }
     function resetLevel() { if(confirm("Reset Level?")) { phrasesData.forEach(p => delete stats[p.pl]); saveData(); refreshAll(); } }
     function advanceLevel() { document.getElementById('overlay').style.display='none'; const idx = levelOrder.indexOf(currentLevel); if (idx < levelOrder.length - 1) selectLevel(levelOrder[idx + 1]); }
-    function handleSmartSearch() { updateMap(); }
     function downloadProgress() {
         const blob = new Blob([JSON.stringify(stats)], {type: 'application/json'});
         const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
@@ -339,7 +367,7 @@
 
     window.onload = () => { initSpeech(); scanForLevels(); };
     window.speechSynthesis.onvoiceschanged = initSpeech;
-    window.onclick = () => { document.getElementById('lvl-menu').classList.remove('show'); };
+    window.onclick = () => { document.getElementById('lvl-menu').classList.remove('show'); document.getElementById('gender-menu').classList.remove('show'); };
 </script>
 </body>
 </html>
