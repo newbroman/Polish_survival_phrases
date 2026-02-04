@@ -14,106 +14,180 @@
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
-        html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; background: var(--bg); color: var(--text); }
-        body { font-family: -apple-system, system-ui, sans-serif; display: flex; flex-direction: column; }
-
-        /* Header & Navigation */
-        .header { padding: 10px 15px; background: var(--card); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 10; }
-        .title-banner { text-align: center; margin-bottom: 8px; }
-        .title { margin: 0; font-size: 1.2rem; color: var(--pol-red); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
-        .controls-row { display: flex; gap: 8px; align-items: center; }
+        .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; }
+        .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; }
+
+        .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
         
-        /* Dropdown Styling */
-        .custom-dropdown { position: relative; flex: 1; }
-        .dropdown-trigger { background: var(--tile-bg); padding: 8px 12px; border-radius: 8px; text-align: center; cursor: pointer; font-weight: bold; font-size: 0.85rem; transition: 0.2s; }
-        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; width: 200px; background: var(--card); box-shadow: 0 8px 24px rgba(0,0,0,0.2); border-radius: 12px; max-height: 400px; overflow-y: auto; z-index: 1000; margin-top: 10px; border: 1px solid var(--tile-bg); }
-        .dropdown-menu.show { display: block; animation: slideDown 0.2s ease-out; }
-        .dropdown-item { padding: 12px 16px; border-bottom: 1px solid var(--tile-bg); cursor: pointer; font-size: 0.9rem; }
-        .dropdown-item:last-child { border-bottom: none; }
-        .dropdown-item.active-level { background: var(--pol-red); color: white; font-weight: bold; }
+        .ui-lang-toggle { display: flex; gap: 4px; justify-content: center; align-items: center; }
+        .ui-lang-btn { 
+            background: var(--bg); border: 1px solid #ccc; color: #666; 
+            font-size: 0.55rem; padding: 3px 8px; border-radius: 3px; cursor: pointer; 
+            font-weight: 600; transition: all 0.2s; min-width: 32px;
+        }
+        .ui-lang-btn.active { background: #4a9eff; color: white; border-color: #4a9eff; }
 
-        .search-box { flex: 2; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--tile-bg); background: var(--bg); color: var(--text); font-size: 0.9rem; outline: none; }
-        .search-box:focus { border-color: var(--pol-red); }
+        .gender-dropdown-wrapper { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 120px; }
+        .gender-label { font-size: 0.65rem; font-weight: 700; color: var(--text); white-space: nowrap; }
+        .gender-dropdown { position: relative; flex: 1; }
+        .gender-dropdown-trigger { 
+            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
+            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
+            text-align: left; height: 28px; display: flex; align-items: center; 
+            justify-content: space-between; cursor: pointer; box-sizing: border-box;
+        }
+        .gender-dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
+        .gender-dropdown-menu { 
+            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
+            border: 1px solid #ccc; border-radius: 4px; z-index: 1000; display: none; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .gender-dropdown-menu.show { display: block; }
+        .gender-dropdown-item { 
+            padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; 
+            cursor: pointer; color: var(--text); 
+        }
+        .gender-dropdown-item:last-child { border-bottom: none; }
+        .gender-dropdown-item:hover { background: var(--bg); }
 
-        /* Hands-Free Panel */
-        .handsfree-controls { display: none; flex-direction: column; background: var(--pol-red); color: white; padding: 20px; gap: 15px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
-        #hf-display-pl { font-size: 1.8rem; font-weight: 800; text-align: center; min-height: 2.2rem; }
-        #hf-display-en { font-size: 1.1rem; opacity: 0.85; text-align: center; font-style: italic; }
+        .custom-dropdown { position: relative; width: 100%; }
+        .dropdown-trigger { 
+            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
+            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
+            text-align: left; height: 28px; display: flex; align-items: center; 
+            justify-content: space-between; cursor: pointer; box-sizing: border-box;
+        }
+        .dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
+
+        .dropdown-menu { 
+            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
+            border: 1px solid #ccc; border-radius: 4px; max-height: 250px; overflow-y: auto; 
+            z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .dropdown-menu.show { display: block; }
+        .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); }
+        .dropdown-item.active-level { background-color: var(--pol-red) !important; color: white !important; font-weight: bold; }
+
+        .search-box { 
+            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
+            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
+            height: 28px; outline: none; box-sizing: border-box;
+        }
+
+        .progress-container { width: 100%; height: 3px; background: #ddd; }
+        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
+
+        .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; flex-shrink: 0; }
+        .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 90%; max-width: 400px; margin: 0 auto; justify-content: flex-start; }
+        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
+        .q-content { text-align: left; min-width: 0; }
+        .q-text { font-size: 1.1rem; font-weight: 800; }
+        .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
+
+        .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
+        .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
+
+        .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
+        .tile { 
+            aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
+            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
+            text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s; 
+        }
+        .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
         
-        .hf-bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
-        .handsfree-btn { background: white; color: var(--pol-red); border: none; padding: 10px 20px; border-radius: 25px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .search-results-label { font-size: 0.6rem; font-weight: 800; color: var(--pol-red); margin: 10px 0 5px 0; width: 100%; max-width: 420px; text-align: left; }
+        .global-result-item { width: 100%; max-width: 420px; background: var(--card); border: 1px solid #ddd; border-radius: 6px; padding: 8px; margin-bottom: 4px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center;}
+
+        .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
+        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
+        .active-swap { background: var(--pol-red) !important; color: white !important; border-color: var(--pol-red) !important; }
+
+        #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
         
-        .pause-selector { display: flex; gap: 8px; background: rgba(0,0,0,0.1); padding: 4px; border-radius: 10px; }
-        .pause-option { padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.75rem; font-weight: bold; }
-        .pause-option.active { background: white; color: var(--pol-red); }
-
-        /* Quiz UI */
-        .quiz-header { padding: 30px 20px; text-align: center; background: var(--card); flex-shrink: 0; }
-        .q-text { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; color: var(--text); }
-        .feedback { height: 24px; color: var(--pol-red); font-weight: bold; margin-top: 5px; }
-
-        /* Tile Grid */
-        .map-section { flex: 1; overflow-y: auto; padding: 15px; display: grid; grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); gap: 10px; align-content: start; }
-        .tile { aspect-ratio: 1; background: var(--tile-bg); border-radius: 10px; cursor: pointer; transition: transform 0.1s, background 0.3s; position: relative; }
-        .tile.mastered { background: var(--pol-red); box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3); }
-        .tile:active { transform: scale(0.9); }
-
-        /* Tabs & Progress */
-        .progress-container { height: 6px; background: var(--tile-bg); width: 100%; }
-        #progress-bar { height: 100%; background: var(--pol-red); width: 0%; transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-
-        .mode-tabs { display: flex; background: var(--card); border-top: 1px solid var(--tile-bg); }
-        .tab { flex: 1; padding: 15px; text-align: center; font-size: 0.75rem; font-weight: 800; cursor: pointer; opacity: 0.5; transition: 0.3s; letter-spacing: 0.5px; }
-        .tab.active { opacity: 1; color: var(--pol-red); border-bottom: 4px solid var(--pol-red); }
-
-        .footer { padding: 15px; display: flex; gap: 12px; background: var(--card); border-top: 1px solid var(--tile-bg); }
-        .footer-btn { flex: 1; padding: 12px; border-radius: 10px; border: 1px solid var(--tile-bg); background: var(--card); color: var(--text); font-weight: bold; font-size: 0.8rem; cursor: pointer; }
-
-        #overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); color:white; z-index:2000; flex-direction:column; justify-content:center; align-items:center; backdrop-filter: blur(5px); }
-        
-        @keyframes slideDown { from { transform: translateY(-10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .handsfree-controls.immersive { position: fixed; inset: 0; background: var(--bg); z-index: 3000; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center; }
+        .handsfree-btn { padding: 8px 16px; border: 2px solid var(--pol-red); background: white; color: var(--pol-red); border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.85rem; transition: all 0.2s; }
+        .handsfree-btn.active { background: var(--pol-red); color: white; }
+        .handsfree-status { padding: 8px 12px; background: #f0f0f0; border-radius: 6px; font-size: 0.8rem; color: #666; min-width: 200px; text-align: center; }
+        .pause-selector { display: flex; gap: 5px; align-items: center; }
+        .pause-option { padding: 6px 10px; border: 1px solid #ccc; background: white; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
+        .pause-option.active { background: var(--pol-red); color: white; border-color: var(--pol-red); }
+        #hf-display-pl { font-size: 2.2rem; font-weight: 800; color: var(--pol-red); margin-bottom: 15px; padding: 0 10px; }
+        #hf-display-en { font-size: 1.5rem; font-weight: 600; color: #666; opacity: 0.8; }
+        .hf-bottom-nav { position: absolute; bottom: 40px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 15px; }
     </style>
 </head>
 <body>
 
 <div id="overlay">
-    <h1 style="font-size: 2.5rem; margin-bottom: 10px;">ŚWIETNIE!</h1>
-    <p style="margin-bottom: 30px; font-size: 1.2rem;">Level complete.</p>
-    <button onclick="advanceLevel()" style="padding: 15px 40px; background: var(--pol-red); color: white; border: none; border-radius: 30px; font-weight: 800; font-size: 1.1rem; cursor:pointer;">NEXT LEVEL</button>
+    <h1>Level Mastered!</h1>
+    <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;">Next Level</button>
 </div>
 
 <div class="header">
-    <div class="title-banner"><h1 class="title">Survival Polish</h1></div>
+    <div class="title-banner"><h1 class="title">Say some Polish phrases</h1></div>
     <div class="controls-row">
         <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Scanning...</div>
+            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Level...</div>
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="handleSmartSearch()">
-        <button id="hf-toggle-btn" class="footer-btn" style="max-width: 110px;" onclick="toggleHandsFreePanel()">▼ Hands-Free</button>
+        <div style="display: flex; gap: 6px; align-items: center; width: 100%;">
+            <div class="gender-dropdown-wrapper">
+                <span class="gender-label" id="gender-label">Gender:</span>
+                <div class="gender-dropdown">
+                    <div class="gender-dropdown-trigger" id="gender-current" onclick="toggleGenderDropdown(event)">Both</div>
+                    <div class="gender-dropdown-menu" id="gender-menu">
+                        <div class="gender-dropdown-item" onclick="selectGender('m')">Male</div>
+                        <div class="gender-dropdown-item" onclick="selectGender('f')">Female</div>
+                        <div class="gender-dropdown-item" onclick="selectGender('both')">Both</div>
+                    </div>
+                </div>
+            </div>
+            <button id="lang-swap-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 100px;" onclick="toggleLangSwap()">Swap EN/PL</button>
+            <button id="hf-toggle-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 110px;" onclick="toggleHandsFreePanel()">▼ Hands-Free</button>
+        </div>
     </div>
 </div>
 
-<div class="handsfree-controls" id="handsfree-controls">
+<div class="handsfree-controls" id="handsfree-controls" style="display: none;">
     <div id="hf-display-pl">Gotowy?</div>
     <div id="hf-display-en">Press Start</div>
     <div class="hf-bottom-nav">
+        <div class="handsfree-status" id="hf-status">Ready to begin</div>
+        <div style="display: flex; gap: 10px;">
+            <button class="handsfree-btn" id="hf-toggle" onclick="toggleHandsFree()">▶ START</button>
+            <button class="handsfree-btn" id="hf-close" onclick="toggleHandsFreePanel()">✕ EXIT</button>
+        </div>
         <div class="pause-selector">
+            <span style="font-size: 0.75rem; color: #666;">Pause:</span>
             <div class="pause-option active" onclick="setPauseDuration(1)">1s</div>
             <div class="pause-option" onclick="setPauseDuration(3)">3s</div>
             <div class="pause-option" onclick="setPauseDuration(5)">5s</div>
         </div>
-        <button class="handsfree-btn" id="hf-toggle" onclick="toggleHandsFree()">▶ START</button>
-        <button class="handsfree-btn" style="background: rgba(255,255,255,0.2); color: white;" onclick="toggleHandsFreePanel()">✕</button>
     </div>
 </div>
 
 <div class="progress-container"><div id="progress-bar"></div></div>
 
-<div class="quiz-header">
-    <div id="q-text" class="q-text">Loading phrases...</div>
-    <div id="feedback" class="feedback"></div>
+<div class="quiz-header" id="quiz-ui">
+    <div class="quiz-top-row">
+        <div class="ui-lang-toggle">
+            <button id="ui-lang-en" class="ui-lang-btn active" onclick="toggleUILang()">EN</button>
+            <button id="ui-lang-pl" class="ui-lang-btn" onclick="toggleUILang()">PL</button>
+        </div>
+        <div class="speaker-btn" onclick="speak(currentTarget.pl)">🔊</div>
+        <div class="q-content">
+            <div id="q-text" class="q-text">Ready?</div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </div>
 </div>
 
 <div class="mode-tabs">
@@ -121,192 +195,175 @@
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED <span id="banked-count"></span></div>
 </div>
 
-<div class="map-section" id="mastery-map"></div>
-<div id="search-results-extra"></div>
+<div class="map-section">
+    <div id="mastery-map"></div>
+    <div id="search-results-extra" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
+</div>
 
 <div class="footer">
-    <button class="footer-btn" onclick="saveData()">Save Progress</button>
-    <button class="footer-btn" onclick="resetStats()" style="color: var(--pol-red); border-color: var(--pol-red);">Clear</button>
+    <button class="footer-btn" onclick="downloadProgress()">Save</button>
+    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load</button>
+    <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Clear</button>
+    <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
 </div>
 
 <script>
-    // --- Configuration & State ---
-    const THRESHOLD = 3;
-    let phrasesData = [], levelOrder = [], activePool = [];
+    // --- State & Variables ---
+    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
+    let levelOrder = []; 
     let currentLevel = parseFloat(localStorage.getItem('pl_current_level_idx')) || 0;
-    let stats = JSON.parse(localStorage.getItem('pl_stats')) || {};
-    let currentTarget = null;
-    let handsFreeActive = false, handsFreeAbort = false;
-    let pauseDuration = 1000;
-    let currentMode = 'learning';
+    let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let plVoice = null;
+    let uiLang = localStorage.getItem('polishMasterUILang') || 'en';
+    let isSwapped = false;
+    let currentGender = localStorage.getItem('polishMasterGender') || 'both';
+    let pauseDuration = 1000; 
+    let handsFreeActive = false, handsFreeAbort = false, handsFreeIndex = 0;
+    let hfLastIndex = parseInt(localStorage.getItem('hf_last_index')) || 0;
+    const THRESHOLD = 3;
 
-    // --- 1. Automatic Level Scanner ---
+    // --- 1. THE SCANNER ---
     async function scanForLevels() {
         levelOrder = [];
-        const maxCheck = 40;
         const probes = [];
-        
-        for (let i = 0; i <= maxCheck; i++) {
+        for (let i = 0; i <= 40; i++) {
             probes.push(i);
             for (let d = 1; d <= 9; d++) probes.push(parseFloat(`${i}.${d}`));
         }
-
         const results = await Promise.all(probes.map(async (n) => {
             try {
                 const r = await fetch(`phrases_${n}.json`, { method: 'HEAD' });
                 return r.ok ? n : null;
             } catch (e) { return null; }
         }));
-
         levelOrder = results.filter(n => n !== null).sort((a, b) => a - b);
         populateDropdown();
-
-        if (levelOrder.length > 0) {
-            const last = localStorage.getItem('pl_current_level_idx');
-            const toLoad = (last && levelOrder.includes(parseFloat(last))) ? parseFloat(last) : levelOrder[0];
-            await selectLevel(toLoad);
-        }
+        const saved = localStorage.getItem('pl_current_level_idx');
+        const toLoad = (saved && levelOrder.includes(parseFloat(saved))) ? parseFloat(saved) : (levelOrder.length > 0 ? levelOrder[0] : 0);
+        await selectLevel(toLoad);
     }
 
-    // --- 2. Core App Logic ---
+    // --- 2. THE LEVEL LOADER ---
     async function selectLevel(num) {
         currentLevel = num;
         localStorage.setItem('pl_current_level_idx', num);
         document.getElementById('lvl-current').innerText = `Level ${num}`;
-        
         try {
-            const resp = await fetch(`phrases_${num}.json`);
-            const data = await resp.json();
-            phrasesData = data.phrases;
-            refreshApp();
-            document.getElementById('lvl-menu').classList.remove('show');
-        } catch (e) { 
-            console.error("Failed to load level", e);
-            document.getElementById('q-text').innerText = "Level file missing!";
+            const r = await fetch(`phrases_${num}.json`);
+            if (!r.ok) throw new Error();
+            const d = await r.json();
+            phrasesData = d.phrases;
+            refreshActivePool();
+            updateMap();
+            updateStats();
+            updateTabCounts();
+            startNewRound();
+        } catch (err) { console.error("Load error:", err); }
+        document.getElementById('lvl-menu').classList.remove('show');
+    }
+
+    // --- 3. UI SYNC ---
+    function refreshActivePool() {
+        if (currentGender !== 'both') {
+            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both')).slice(0, 12);
+        } else {
+            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
         }
     }
 
-    function refreshApp() {
-        updateMap();
-        updateStats();
-        updateTabCounts();
-        startNewRound();
-        populateDropdown(); 
+    function updateMap(filter = "") {
+        const area = document.getElementById('mastery-map'); area.innerHTML = '';
+        const isLearning = document.getElementById('tab-learning').classList.contains('active');
+        area.className = "grid";
+        const list = isLearning ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
+        list.filter(p => !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter)).forEach(p => {
+            const tile = document.createElement('div'); tile.className = 'tile';
+            tile.innerText = isSwapped ? p.en : p.pl;
+            const score = stats[p.pl] || 0;
+            if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
+            tile.onclick = () => isLearning ? checkAnswer(p, tile) : speak(p.pl);
+            area.appendChild(tile);
+        });
     }
 
-    function updateMap() {
-        const map = document.getElementById('mastery-map');
-        map.innerHTML = '';
-        phrasesData.forEach(p => {
-            const score = stats[p.pl] || 0;
-            const mastered = score >= THRESHOLD;
-            if (currentMode === 'learning' && mastered) return;
-            if (currentMode === 'mastered' && !mastered) return;
-
-            const tile = document.createElement('div');
-            tile.className = 'tile' + (mastered ? ' mastered' : '');
-            tile.onclick = () => {
-                currentTarget = p;
-                document.getElementById('q-text').innerText = p.en;
-                speak(p.pl);
-            };
-            map.appendChild(tile);
-        });
+    async function checkAnswer(phrase, el) {
+        if (phrase.pl === currentTarget.pl) {
+            stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
+            document.getElementById('feedback').innerText = "Correct! 🌟";
+            saveStats();
+            setTimeout(() => {
+                refreshActivePool(); updateStats(); updateTabCounts(); updateMap();
+                if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; } else startNewRound();
+            }, 800);
+        } else {
+            el.classList.add('wrong'); document.getElementById('feedback').innerText = "Mistake!";
+            setTimeout(() => { el.classList.remove('wrong'); startNewRound(); }, 1200);
+        }
     }
 
     function startNewRound() {
-        const pool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-        if (pool.length > 0) {
-            currentTarget = pool[Math.floor(Math.random() * pool.length)];
-            document.getElementById('q-text').innerText = currentTarget.en;
-            document.getElementById('feedback').innerText = '';
-        } else {
-            document.getElementById('q-text').innerText = "Level Complete! 🎉";
-        }
+        if (!activePool.length) return;
+        currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
+        document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
+        document.getElementById('feedback').innerText = "";
+        setTimeout(() => speak(currentTarget.pl), 300);
     }
 
-    // --- 3. Speech & Hands-Free ---
-    function initSpeech() {
-        const loadVoices = () => {
-            plVoice = speechSynthesis.getVoices().find(v => v.lang.startsWith('pl'));
-        };
-        loadVoices();
-        speechSynthesis.onvoiceschanged = loadVoices;
-    }
-
-    function speak(text, lang = 'pl-PL', rate = 0.9) {
-        return new Promise(resolve => {
-            if (handsFreeAbort && lang === 'pl-PL') { resolve(); return; }
-            const u = new SpeechSynthesisUtterance(text);
-            if (lang === 'pl-PL' && plVoice) u.voice = plVoice;
-            u.lang = lang; u.rate = rate;
-            u.onend = () => resolve();
-            u.onerror = () => resolve();
-            speechSynthesis.speak(u);
-        });
-    }
-
+    // --- 4. HANDS FREE ---
     async function toggleHandsFree() {
-        if (handsFreeActive) {
-            handsFreeActive = false;
-            handsFreeAbort = true;
-            speechSynthesis.cancel();
-            document.getElementById('hf-toggle').innerText = '▶ START';
-        } else {
-            handsFreeActive = true;
-            handsFreeAbort = false;
-            document.getElementById('hf-toggle').innerText = '⏹ STOP';
-            runHandsFreeLoop();
-        }
+        if (!handsFreeActive) {
+            handsFreeActive = true; handsFreeAbort = false;
+            document.getElementById('handsfree-controls').classList.add('immersive');
+            document.getElementById('hf-toggle').innerText = '⏸ STOP';
+            await playHandsFreeSequence();
+        } else { stopHandsFree(); }
     }
 
-    async function runHandsFreeLoop() {
-        while (handsFreeActive && !handsFreeAbort) {
-            let pool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
-            if (pool.length === 0) {
-                await handleLevelTransition();
-                return;
-            }
+    function stopHandsFree() {
+        handsFreeActive = false; handsFreeAbort = true;
+        speechSynthesis.cancel();
+        document.getElementById('handsfree-controls').classList.remove('immersive');
+        document.getElementById('hf-toggle').innerText = '▶ START';
+    }
 
-            let p = pool[Math.floor(Math.random() * pool.length)];
-            document.getElementById('hf-display-en').innerText = p.en;
-            document.getElementById('hf-display-pl').innerText = '...';
-            
-            await speak(p.en, 'en-US', 1.0);
-            await new Promise(r => setTimeout(r, pauseDuration));
-            
+    async function playHandsFreeSequence() {
+        while (handsFreeActive && !handsFreeAbort) {
+            if (handsFreeIndex >= phrasesData.length) { await handleLevelTransition(); if (handsFreeAbort) break; }
+            const p = phrasesData[handsFreeIndex];
             document.getElementById('hf-display-pl').innerText = p.pl;
-            await speak(p.pl, 'pl-PL', 0.85);
-            
-            stats[p.pl] = (stats[p.pl] || 0) + 1;
-            updateStats();
-            await new Promise(r => setTimeout(r, 1500));
+            document.getElementById('hf-display-en').innerText = p.en;
+            await speakAsync(p.pl); if (handsFreeAbort) break; await sleep(pauseDuration);
+            await speakAsync(p.en, 1.0, 'en-US'); if (handsFreeAbort) break; await sleep(pauseDuration);
+            handsFreeIndex++;
         }
     }
 
     async function handleLevelTransition() {
         const idx = levelOrder.indexOf(currentLevel);
-        if (idx < levelOrder.length - 1) {
+        if (idx !== -1 && idx < levelOrder.length - 1) {
             const next = levelOrder[idx + 1];
-            await speak("Level complete. Moving to level " + next, 'en-US', 1.0);
+            await speak("Level complete. Moving to level " + next, 'en-US', 0.9);
+            handsFreeIndex = 0;
             await selectLevel(next);
-        } else {
-            handsFreeActive = false;
-            document.getElementById('hf-toggle').innerText = '▶ START';
-            document.getElementById('overlay').style.display = 'flex';
-        }
+        } else { stopHandsFree(); document.getElementById('overlay').style.display = 'flex'; }
     }
 
-    // --- 4. UI Helpers ---
-    function toggleDropdown(e) {
-        e.stopPropagation();
-        document.getElementById('lvl-menu').classList.toggle('show');
+    // --- 5. UTILS ---
+    function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
+    function speak(text, lang = 'pl-PL', rate = 1.0) {
+        return new Promise(resolve => {
+            const u = new SpeechSynthesisUtterance(text);
+            if (lang === 'pl-PL' && plVoice) u.voice = plVoice;
+            u.lang = lang; u.rate = rate; 
+            u.onend = () => resolve(); u.onerror = () => resolve();
+            speechSynthesis.speak(u);
+        });
     }
-
+    function speakAsync(t, r = 1.0, l = 'pl-PL') { return speak(t, l, r); }
+    function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+    function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
     function populateDropdown() {
-        const menu = document.getElementById('lvl-menu');
-        menu.innerHTML = '';
+        const menu = document.getElementById('lvl-menu'); menu.innerHTML = '';
         levelOrder.forEach(n => {
             const div = document.createElement('div');
             div.className = 'dropdown-item' + (n === currentLevel ? ' active-level' : '');
@@ -315,90 +372,54 @@
             menu.appendChild(div);
         });
     }
-
-    function switchMode(m) {
-        currentMode = m;
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById(`tab-${m}`).classList.add('active');
-        updateMap();
+    function saveStats() { 
+        localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
+        localStorage.setItem('pl_current_level_idx', currentLevel);
     }
-
-    function setPauseDuration(s) {
-        pauseDuration = s * 1000;
-        document.querySelectorAll('.pause-option').forEach(o => o.classList.toggle('active', parseInt(o.innerText) === s));
+    function updateStats() { 
+        const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length; 
+        document.getElementById('progress-bar').style.width = ((masteredCount / phrasesData.length) * 100) + "%"; 
     }
-
-    function toggleHandsFreePanel() {
-        const p = document.getElementById('handsfree-controls');
-        const isHidden = p.style.display === 'none' || !p.style.display;
-        p.style.display = isHidden ? 'flex' : 'none';
-        document.getElementById('hf-toggle-btn').innerText = isHidden ? '▲ Hands-Free' : '▼ Hands-Free';
-    }
-
-    function updateStats() {
-        const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-        const progress = phrasesData.length ? (mastered / phrasesData.length) * 100 : 0;
-        document.getElementById('progress-bar').style.width = progress + '%';
-        localStorage.setItem('pl_stats', JSON.stringify(stats));
-    }
-
     function updateTabCounts() {
         const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
         document.getElementById('learning-count').innerText = `(${phrasesData.length - mastered})`;
         document.getElementById('banked-count').innerText = `(${mastered})`;
     }
-
-    function handleSmartSearch() {
-        const term = document.getElementById('search-bar').value.toLowerCase();
-        const results = document.getElementById('search-results-extra');
-        results.innerHTML = '';
-        if (!term) { updateMap(); return; }
-        const found = phrasesData.filter(p => p.en.toLowerCase().includes(term) || p.pl.toLowerCase().includes(term));
-        found.forEach(p => {
-            const d = document.createElement('div');
-            d.style.padding = '10px';
-            d.style.borderBottom = '1px solid var(--tile-bg)';
-            d.innerText = `${p.en} → ${p.pl}`;
-            d.onclick = () => { speak(p.pl); document.getElementById('q-text').innerText = p.en; };
-            results.appendChild(d);
-        });
+    function toggleGenderDropdown(e) { e.stopPropagation(); document.getElementById('gender-menu').classList.toggle('show'); }
+    function selectGender(g) {
+        currentGender = g; localStorage.setItem('polishMasterGender', g);
+        document.getElementById('gender-current').innerText = g === 'both' ? 'Both' : (g === 'm' ? 'Male' : 'Female');
+        document.getElementById('gender-menu').classList.remove('show');
+        refreshActivePool(); updateMap(); startNewRound();
     }
-
+    function toggleUILang() { isSwapped = !isSwapped; updateMap(); startNewRound(); }
+    function toggleLangSwap() { uiLang = uiLang === 'en' ? 'pl' : 'en'; localStorage.setItem('polishMasterUILang', uiLang); }
+    function toggleHandsFreePanel() {
+        const p = document.getElementById('handsfree-controls');
+        p.style.display = (p.style.display === 'none' || !p.style.display) ? 'flex' : 'none';
+    }
+    function setPauseDuration(s) {
+        pauseDuration = s * 1000;
+        document.querySelectorAll('.pause-option').forEach(o => o.classList.toggle('active', parseInt(o.innerText) === s));
+    }
+    function handleSmartSearch() {
+        const q = document.getElementById('search-bar').value.toLowerCase();
+        updateMap(q);
+    }
     function advanceLevel() {
         document.getElementById('overlay').style.display = 'none';
         const idx = levelOrder.indexOf(currentLevel);
         if (idx < levelOrder.length - 1) selectLevel(levelOrder[idx + 1]);
     }
-
-    function resetStats() {
-        if (confirm("Reset all progress for this level?")) {
-            phrasesData.forEach(p => delete stats[p.pl]);
-            refreshApp();
-        }
+    function switchMode(m) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + m).classList.add('active');
+        updateMap();
     }
 
-    function saveData() {
-        const blob = new Blob([JSON.stringify(stats)], {type: 'application/json'});
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = 'polish_progress.json';
-        a.click();
-    }
-
-    // --- Initialization ---
-    window.onload = () => {
-        initSpeech();
-        scanForLevels();
-    };
-    window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
-
-    // Service Worker for Offline Use
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('sw.js').catch(() => {});
-        });
-    }
+    window.speechSynthesis.onvoiceschanged = initSpeech;
+    window.onload = () => { initSpeech(); scanForLevels(); };
+    window.onclick = () => { document.getElementById('lvl-menu').classList.remove('show'); document.getElementById('gender-menu').classList.remove('show'); };
 </script>
-
 </body>
 </html>
