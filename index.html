@@ -20,61 +20,75 @@
         .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; }
         .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; }
-
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
-        
-        .gender-dropdown-wrapper { display: flex; align-items: center; gap: 6px; flex: 1; }
-        .gender-label { font-size: 0.65rem; font-weight: 700; color: var(--text); }
-        .gender-dropdown { position: relative; flex: 1; }
-        .gender-dropdown-trigger { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 6px; border-radius: 4px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .gender-dropdown-menu { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border: 1px solid #ccc; z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .gender-dropdown-menu.show { display: block; }
-        .gender-dropdown-item { padding: 8px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
 
-        .custom-dropdown { position: relative; width: 100%; }
-        .dropdown-trigger { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 6px; border-radius: 4px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
-        .dropdown-menu { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border: 1px solid #ccc; max-height: 250px; overflow-y: auto; z-index: 1000; display: none; }
-        .dropdown-menu.show { display: block; }
-        .dropdown-item { padding: 8px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
+        .custom-dropdown, .gender-dropdown { position: relative; width: 100%; }
+        .dropdown-trigger, .gender-dropdown-trigger { 
+            width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 6px 10px; 
+            border-radius: 4px; font-size: 10px; font-weight: 700; cursor: pointer; 
+            display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;
+        }
+        .dropdown-menu, .gender-dropdown-menu { 
+            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
+            border: 1px solid #ccc; border-radius: 4px; max-height: 250px; overflow-y: auto; 
+            z-index: 1000; display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .dropdown-menu.show, .gender-dropdown-menu.show { display: block; }
+        .dropdown-item { padding: 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
         .dropdown-item.active-level { background: var(--pol-red); color: white; font-weight: bold; }
 
-        .search-box { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 6px; border-radius: 4px; font-size: 10px; outline: none; }
+        .search-box { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 6px; border-radius: 4px; font-size: 10px; outline: none; box-sizing: border-box; }
 
         .quiz-header { padding: 15px; background: var(--card); border-bottom: 1px solid #ddd; text-align: center; flex-shrink: 0; }
-        .q-text { font-size: 1.4rem; font-weight: 800; }
-        .feedback { height: 20px; font-size: 0.8rem; font-weight: bold; color: var(--pol-red); margin-top: 5px; }
+        .q-text { font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; }
+        .feedback { height: 20px; font-size: 0.85rem; font-weight: bold; color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; align-items: center; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; max-width: 420px; }
-        
-        .tile { aspect-ratio: 1; background: var(--tile-bg); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; text-align: center; cursor: pointer; padding: 4px; transition: background 0.3s, transform 0.1s; line-height: 1.1; }
+        /* FIXED 4 ROWS AND 3 COLUMNS */
+        .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px; 
+            width: 100%; 
+            max-width: 320px; /* Narrower to favor the 3-column look */
+        }
+        .tile { 
+            aspect-ratio: 1; background: var(--tile-bg); border-radius: 10px; 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 0.7rem; font-weight: 800; text-align: center; cursor: pointer; 
+            padding: 4px; transition: background 0.3s, transform 0.1s; line-height: 1.1; 
+        }
         .tile.mastered { background: var(--pol-red); color: white; }
         .tile.negative-score { background-color: var(--wrong-blue) !important; color: white !important; }
-        .tile.wrong { transform: scale(0.95); background-color: #ff4444 !important; }
+        .tile.wrong-flash { background-color: #ff4444 !important; transform: scale(0.95); }
 
-        .progress-container { width: 100%; height: 4px; background: #ddd; flex-shrink: 0; }
-        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.3s; }
+        .progress-container { width: 100%; height: 5px; background: #ddd; }
+        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
+        .mode-tabs { display: flex; background: var(--card); border-top: 1px solid #ddd; }
+        .tab { flex: 1; padding: 15px; text-align: center; font-size: 0.8rem; font-weight: bold; opacity: 0.5; cursor: pointer; }
+        .tab.active { opacity: 1; border-bottom: 4px solid var(--pol-red); color: var(--pol-red); }
 
-        .mode-tabs { display: flex; background: var(--card); border-top: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 12px; text-align: center; font-size: 0.8rem; font-weight: bold; opacity: 0.5; cursor: pointer; }
-        .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
+        .footer { padding: 10px 10px 30px 10px; display: flex; gap: 8px; background: var(--card); border-top: 1px solid #ddd; }
+        .footer-btn { flex: 1; padding: 12px; border-radius: 10px; border: 1px solid #ccc; background: var(--bg); font-weight: bold; font-size: 0.75rem; cursor: pointer; }
 
-        .footer { padding: 10px 10px 25px 10px; display: flex; gap: 8px; background: var(--card); border-top: 1px solid #ddd; flex-shrink: 0; }
-        .footer-btn { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid #ccc; background: var(--bg); font-size: 0.7rem; font-weight: bold; cursor: pointer; }
-
-        #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
+        /* Hands-Free Immersive Mode */
+        .handsfree-controls.immersive { 
+            position: fixed; inset: 0; background: var(--bg); z-index: 3000; 
+            display: flex; flex-direction: column; justify-content: center; 
+            align-items: center; padding: 20px; text-align: center; 
+        }
+        #hf-display-pl { font-size: 2.8rem; font-weight: 800; color: var(--pol-red); margin-bottom: 15px; }
+        #hf-display-en { font-size: 1.6rem; font-weight: 600; color: #666; }
         
-        .handsfree-controls.immersive { position: fixed; inset: 0; background: var(--bg); z-index: 3000; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
-        #hf-display-pl { font-size: 2.5rem; font-weight: 800; color: var(--pol-red); margin-bottom: 10px; }
-        #hf-display-en { font-size: 1.6rem; color: #666; font-style: italic; }
+        #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
     </style>
 </head>
 <body>
 
 <div id="overlay">
-    <h1 style="font-size: 2.5rem; margin-bottom: 10px;">ŚWIETNIE!</h1>
-    <p style="margin-bottom: 30px;">Level Complete</p>
-    <button onclick="advanceLevel()" style="padding: 15px 30px; background: var(--pol-red); color: white; border: none; border-radius: 30px; font-weight: 800; cursor:pointer;">NEXT LEVEL</button>
+    <h1 style="font-size: 3rem; margin-bottom: 10px;">DOBRZE!</h1>
+    <button onclick="advanceLevel()" style="padding: 15px 40px; background: var(--pol-red); color: white; border: none; border-radius: 30px; font-weight: 800; cursor:pointer;">NEXT LEVEL</button>
 </div>
 
 <div class="header">
@@ -86,32 +100,21 @@
         </div>
         <input type="text" id="search-bar" class="search-box" placeholder="Search phrases..." oninput="handleSmartSearch()">
         <div style="display: flex; gap: 6px; width: 100%;">
-            <div class="gender-dropdown-wrapper">
-                <span class="gender-label">Sex:</span>
-                <div class="gender-dropdown">
-                    <div class="gender-dropdown-trigger" id="gender-current" onclick="toggleGenderDropdown(event)">Both</div>
-                    <div class="gender-dropdown-menu" id="gender-menu">
-                        <div class="gender-dropdown-item" onclick="selectGender('m')">Male</div>
-                        <div class="gender-dropdown-item" onclick="selectGender('f')">Female</div>
-                        <div class="gender-dropdown-item" onclick="selectGender('both')">Both</div>
-                    </div>
-                </div>
-            </div>
-            <button class="footer-btn" onclick="toggleLangSwap()">Swap EN/PL</button>
-            <button class="footer-btn" onclick="toggleHandsFreePanel()">▼ Hands-Free</button>
+            <button class="footer-btn" style="padding:5px;" onclick="toggleLangSwap()">Swap EN/PL</button>
+            <button class="footer-btn" style="padding:5px;" onclick="toggleHandsFreePanel()">▼ Hands-Free</button>
         </div>
     </div>
 </div>
 
 <div id="handsfree-controls" style="display:none;">
-    <div id="hf-display-pl">Ready?</div>
+    <div id="hf-display-pl">Gotowy?</div>
     <div id="hf-display-en">Press Start</div>
     <div style="margin-top:30px; display:flex; gap:10px;">
         <button class="footer-btn" id="hf-toggle" onclick="toggleHandsFree()" style="padding:15px; background:white;">▶ START</button>
         <button class="footer-btn" onclick="toggleHandsFreePanel()" style="padding:15px;">✕ EXIT</button>
     </div>
     <div style="margin-top:20px; display:flex; gap:10px; align-items:center;">
-        <span style="font-size:0.8rem;">Speed:</span>
+        <span style="font-size:0.8rem; font-weight:bold;">Pause:</span>
         <button class="pause-option active" onclick="setPause(1000, this)">1s</button>
         <button class="pause-option" onclick="setPause(3000, this)">3s</button>
         <button class="pause-option" onclick="setPause(5000, this)">5s</button>
@@ -132,30 +135,24 @@
 
 <div class="map-section">
     <div id="mastery-map" class="grid"></div>
-    <div id="search-results-extra"></div>
 </div>
 
 <div class="footer">
     <button class="footer-btn" onclick="downloadProgress()">Save</button>
-    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load</button>
     <button class="footer-btn" onclick="resetLevel()" style="color: var(--pol-red);">Reset</button>
-    <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
 </div>
 
 <script>
-    // --- State ---
     const THRESHOLD = 3;
     let phrasesData = [], levelOrder = [], activePool = [];
     let currentLevel = parseFloat(localStorage.getItem('pl_current_level_idx')) || 0;
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentTarget = null;
     let isSwapped = false;
-    let currentGender = 'both';
     let handsFreeActive = false, handsFreeAbort = false, hfIndex = 0;
     let pauseDuration = 1000;
     let plVoice = null;
 
-    // --- 1. PRO SCANNER ---
     async function scanForLevels() {
         const probes = [];
         for (let i = 0; i <= 40; i++) {
@@ -182,25 +179,17 @@
             const d = await r.json();
             phrasesData = d.phrases;
             refreshAll();
-        } catch (e) { console.error("Load failed", e); }
+        } catch (e) { console.error("File missing:", num); }
         document.getElementById('lvl-menu').classList.remove('show');
     }
 
     function refreshAll() {
-        refreshPool();
+        // Pool is limited to 12 phrases to fit the 4x3 grid exactly
+        activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
         updateMap();
         updateStats();
         updateTabCounts();
         startRound();
-    }
-
-    // --- 2. CORE LOGIC (Blue Penalty Integrated) ---
-    function refreshPool() {
-        activePool = phrasesData.filter(p => {
-            const score = stats[p.pl] || 0;
-            const genderMatch = (currentGender === 'both' || !p.gender || p.gender === currentGender);
-            return score < THRESHOLD && genderMatch;
-        });
     }
 
     function updateMap() {
@@ -208,19 +197,16 @@
         map.innerHTML = '';
         const mode = document.querySelector('.tab.active').id === 'tab-learning' ? 'learning' : 'mastered';
         
-        phrasesData.forEach(p => {
-            const score = stats[p.pl] || 0;
-            const mastered = score >= THRESHOLD;
-            if (mode === 'learning' && mastered) return;
-            if (mode === 'mastered' && !mastered) return;
+        const list = (mode === 'learning') ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
 
+        list.forEach(p => {
+            const score = stats[p.pl] || 0;
             const tile = document.createElement('div');
             tile.className = 'tile';
             tile.innerText = isSwapped ? p.en : p.pl;
 
             if (score < 0) {
                 tile.classList.add('negative-score');
-                tile.style.opacity = (Math.abs(score) / 2) + 0.5; 
             } else if (score > 0) {
                 tile.style.background = `rgba(220, 20, 60, ${score / THRESHOLD})`;
             }
@@ -240,12 +226,11 @@
                 if (activePool.length === 0) document.getElementById('overlay').style.display = 'flex';
             }, 600);
         } else {
-            // Mistake penalty (Min -2)
             stats[currentTarget.pl] = Math.max(-2, (stats[currentTarget.pl] || 0) - 1);
-            el.classList.add('wrong');
-            document.getElementById('feedback').innerText = "Mistake! Penalty applied.";
+            el.classList.add('wrong-flash');
+            document.getElementById('feedback').innerText = "Mistake!";
             saveData();
-            setTimeout(() => { el.classList.remove('wrong'); refreshAll(); }, 1000);
+            setTimeout(() => { el.classList.remove('wrong-flash'); refreshAll(); }, 1000);
         }
     }
 
@@ -256,29 +241,11 @@
         speak(currentTarget.pl);
     }
 
-    // --- 3. SPEECH & HANDS-FREE ---
-    function initSpeech() { plVoice = speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
-    
-    function speak(t, l='pl-PL') {
-        const u = new SpeechSynthesisUtterance(t);
-        if (l==='pl-PL' && plVoice) u.voice = plVoice;
-        u.lang = l; u.rate = 0.9;
-        speechSynthesis.speak(u);
-    }
-
-    async function speakAsync(t, l='pl-PL') {
-        return new Promise(resolve => {
-            const u = new SpeechSynthesisUtterance(t);
-            if (l==='pl-PL' && plVoice) u.voice = plVoice;
-            u.lang = l; u.onend = resolve; u.onerror = resolve;
-            speechSynthesis.speak(u);
-        });
-    }
-
     async function toggleHandsFree() {
+        const panel = document.getElementById('handsfree-controls');
         if (!handsFreeActive) {
             handsFreeActive = true; handsFreeAbort = false;
-            document.getElementById('handsfree-controls').classList.add('immersive');
+            panel.classList.add('immersive');
             document.getElementById('hf-toggle').innerText = '⏹ STOP';
             await runHF();
         } else { stopHF(); }
@@ -293,29 +260,38 @@
 
     async function runHF() {
         while (handsFreeActive && !handsFreeAbort) {
-            if (hfIndex >= phrasesData.length) { await handleTransition(); if(handsFreeAbort) break; }
+            if (hfIndex >= phrasesData.length) { 
+                const idx = levelOrder.indexOf(currentLevel);
+                if (idx < levelOrder.length - 1) {
+                    hfIndex = 0; await selectLevel(levelOrder[idx + 1]);
+                } else { stopHF(); document.getElementById('overlay').style.display='flex'; return; }
+            }
             const p = phrasesData[hfIndex];
             document.getElementById('hf-display-pl').innerText = p.pl;
             document.getElementById('hf-display-en').innerText = p.en;
             await speakAsync(p.pl); if(handsFreeAbort) break;
-            await new Promise(r => setTimeout(r, pauseDuration));
+            await sleep(pauseDuration);
             await speakAsync(p.en, 'en-US'); if(handsFreeAbort) break;
-            await new Promise(r => setTimeout(r, pauseDuration));
+            await sleep(pauseDuration);
             hfIndex++;
         }
     }
 
-    async function handleTransition() {
-        const idx = levelOrder.indexOf(currentLevel);
-        if (idx < levelOrder.length - 1) {
-            const next = levelOrder[idx + 1];
-            await speakAsync("Moving to level " + next, 'en-US');
-            hfIndex = 0;
-            await selectLevel(next);
-        } else { stopHF(); document.getElementById('overlay').style.display='flex'; }
+    function initSpeech() { plVoice = speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
+    function speak(t, l='pl-PL') {
+        const u = new SpeechSynthesisUtterance(t);
+        if (l==='pl-PL' && plVoice) u.voice = plVoice;
+        u.lang = l; speechSynthesis.speak(u);
     }
-
-    // --- 4. UI HELPERS ---
+    function speakAsync(t, l='pl-PL') {
+        return new Promise(resolve => {
+            const u = new SpeechSynthesisUtterance(t);
+            if (l==='pl-PL' && plVoice) u.voice = plVoice;
+            u.lang = l; u.onend = resolve; u.onerror = resolve;
+            speechSynthesis.speak(u);
+        });
+    }
+    function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
     function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
     function populateDropdown() {
         const menu = document.getElementById('lvl-menu'); menu.innerHTML = '';
@@ -327,17 +303,9 @@
             menu.appendChild(item);
         });
     }
-    function toggleGenderDropdown(e) { e.stopPropagation(); document.getElementById('gender-menu').classList.toggle('show'); }
-    function selectGender(g) {
-        currentGender = g;
-        document.getElementById('gender-current').innerText = g === 'both' ? 'Both' : (g === 'm' ? 'Male' : 'Female');
-        document.getElementById('gender-menu').classList.remove('show');
-        refreshAll();
-    }
     function switchMode(m) {
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + m).classList.add('active');
-        updateMap();
+        document.getElementById('tab-' + m).classList.add('active'); updateMap();
     }
     function toggleLangSwap() { isSwapped = !isSwapped; refreshAll(); }
     function toggleHandsFreePanel() {
@@ -360,30 +328,18 @@
         document.getElementById('banked-count').innerText = `(${mastered})`;
     }
     function saveData() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); }
-    function resetLevel() { if(confirm("Reset this level?")) { phrasesData.forEach(p => delete stats[p.pl]); saveData(); refreshAll(); } }
+    function resetLevel() { if(confirm("Reset Level?")) { phrasesData.forEach(p => delete stats[p.pl]); saveData(); refreshAll(); } }
     function advanceLevel() { document.getElementById('overlay').style.display='none'; const idx = levelOrder.indexOf(currentLevel); if (idx < levelOrder.length - 1) selectLevel(levelOrder[idx + 1]); }
-    function handleSmartSearch() {
-        const q = document.getElementById('search-bar').value.toLowerCase();
-        updateMap(q);
-    }
+    function handleSmartSearch() { updateMap(); }
     function downloadProgress() {
         const blob = new Blob([JSON.stringify(stats)], {type: 'application/json'});
         const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
         a.download = 'polish_progress.json'; a.click();
     }
-    function importProgress(e) {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            stats = JSON.parse(event.target.result);
-            saveData(); refreshAll();
-        };
-        reader.readAsText(e.target.files[0]);
-    }
 
-    // --- Init ---
     window.onload = () => { initSpeech(); scanForLevels(); };
     window.speechSynthesis.onvoiceschanged = initSpeech;
-    window.onclick = () => { document.getElementById('lvl-menu').classList.remove('show'); document.getElementById('gender-menu').classList.remove('show'); };
+    window.onclick = () => { document.getElementById('lvl-menu').classList.remove('show'); };
 </script>
 </body>
 </html>
