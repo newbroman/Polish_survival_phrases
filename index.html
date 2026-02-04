@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Polish Phrase Master</title>
-    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#dc143c">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Polish Quiz">
-    <link rel="apple-touch-icon" href="icon-192.png">
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -17,6 +14,7 @@
         html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
         body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
+        /* Header & Navigation */
         .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; }
         .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; }
@@ -24,7 +22,6 @@
 
         .sub-controls { display: flex; gap: 4px; align-items: center; width: 100%; justify-content: space-between; }
 
-        /* Dropdowns */
         .custom-dropdown, .gender-dropdown { position: relative; }
         .dropdown-trigger, .gender-dropdown-trigger { 
             background: var(--bg); border: 1px solid #ccc; padding: 6px 8px; 
@@ -39,17 +36,16 @@
         }
         .dropdown-menu.show, .gender-dropdown-menu.show { display: block; }
         .dropdown-item { padding: 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
-        .dropdown-item.active-level { background: var(--pol-red); color: white; font-weight: bold; }
 
         .search-box { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 6px; border-radius: 4px; font-size: 10px; outline: none; box-sizing: border-box; height: 28px; }
 
         .gender-wrapper { display: flex; align-items: center; gap: 4px; flex: 0 1 auto; }
         .gender-label { font-size: 0.6rem; font-weight: 800; white-space: nowrap; }
 
-        .btn-narrow { width: 75px; flex: 0 0 auto; height: 28px; font-size: 0.55rem; font-weight: 800; border-radius: 4px; border: 1px solid #ccc; background: var(--bg); cursor: pointer; white-space: nowrap; }
+        .btn-narrow { width: 75px; flex: 0 0 auto; height: 28px; font-size: 0.55rem; font-weight: 800; border-radius: 4px; border: 1px solid #ccc; background: var(--bg); cursor: pointer; }
         .btn-hf { flex: 1; height: 28px; font-size: 0.6rem; font-weight: 800; border-radius: 4px; border: 1px solid #ccc; background: var(--bg); cursor: pointer; }
 
-        /* 4x3 Grid Layout */
+        /* FIXED 4 ROWS AND 3 COLUMNS */
         .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
         .grid { 
             display: grid; 
@@ -78,7 +74,7 @@
         .footer { padding: 10px 10px 30px 10px; display: flex; gap: 8px; background: var(--card); border-top: 1px solid #ddd; }
         .footer-btn { flex: 1; padding: 12px; border-radius: 10px; border: 1px solid #ccc; background: var(--bg); font-weight: bold; font-size: 0.75rem; cursor: pointer; }
 
-        /* Hands-Free Immersive Mode */
+        /* Hands-Free Immersive Mode Logic */
         .handsfree-controls { display: none; }
         .handsfree-controls.immersive { 
             display: flex; position: fixed; inset: 0; background: var(--bg); z-index: 3000; 
@@ -169,31 +165,35 @@
     let currentTarget = null, isSwapped = false, currentGender = 'both';
     let handsFreeActive = false, handsFreeAbort = false, hfIndex = 0, pauseDuration = 1000, plVoice = null;
 
-    // Fixed Scanner to find decimal levels and fetch descriptions
+    // --- SERVICE WORKER UNREGISTRATION ---
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+    }
+
     async function scanForLevels() {
         const probes = [];
         for (let i = 0; i <= 40; i++) {
             probes.push(i);
             for (let d = 1; d <= 9; d++) probes.push(parseFloat(`${i}.${d}`));
         }
-        
         const results = await Promise.all(probes.map(async (num) => {
             try {
                 const response = await fetch(`phrases_${num}.json`, { method: 'HEAD' });
                 return response.ok ? num : null;
             } catch (e) { return null; }
         }));
-
         levelOrder = results.filter(n => n !== null).sort((a, b) => a - b);
         await populateDropdown();
         await selectLevel(levelOrder.includes(currentLevel) ? currentLevel : levelOrder[0]);
     }
 
-    // Dropdown now correctly handles descriptions and decimals
     async function populateDropdown() {
         const menu = document.getElementById('lvl-menu');
         menu.innerHTML = '';
-        
         for (const num of levelOrder) {
             try {
                 const resp = await fetch(`phrases_${num}.json`);
@@ -201,17 +201,11 @@
                     const data = await resp.json();
                     const item = document.createElement('div');
                     item.className = 'dropdown-item' + (num === currentLevel ? ' active-level' : '');
-                    
-                    // Priority: JSON description > generic Level text
                     const label = data.description ? data.description : `Level ${num}`;
                     item.innerText = `Lvl ${num}: ${label}`;
-                    
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(num); };
                     menu.appendChild(item);
-                    
-                    if (num === currentLevel) {
-                        document.getElementById('lvl-current').innerText = item.innerText;
-                    }
+                    if (num === currentLevel) document.getElementById('lvl-current').innerText = item.innerText;
                 }
             } catch(e) {}
         }
@@ -235,7 +229,6 @@
         updateStats();
         updateTabCounts();
         startRound();
-        populateDropdown(); // Refresh labels in menu
     }
 
     function updateMap() {
@@ -249,10 +242,8 @@
             const tile = document.createElement('div');
             tile.className = 'tile';
             tile.innerText = isSwapped ? p.en : p.pl;
-
             if (score < 0) tile.classList.add('negative-score');
             else if (score > 0) tile.style.background = `rgba(220, 20, 60, ${score / THRESHOLD})`;
-            
             tile.onclick = () => (mode === 'learning') ? checkAnswer(p, tile) : speak(p.pl);
             map.appendChild(tile);
         });
@@ -368,12 +359,6 @@
     function saveData() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); }
     function resetLevel() { if(confirm("Reset Level?")) { phrasesData.forEach(p => delete stats[p.pl]); saveData(); refreshAll(); } }
     function advanceLevel() { document.getElementById('overlay').style.display='none'; const idx = levelOrder.indexOf(currentLevel); if (idx < levelOrder.length - 1) selectLevel(levelOrder[idx + 1]); }
-    function handleSmartSearch() { /* Implementation if needed */ }
-    function downloadProgress() {
-        const blob = new Blob([JSON.stringify(stats)], {type: 'application/json'});
-        const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-        a.download = 'polish_progress.json'; a.click();
-    }
 
     window.onload = () => { initSpeech(); scanForLevels(); };
     window.speechSynthesis.onvoiceschanged = initSpeech;
