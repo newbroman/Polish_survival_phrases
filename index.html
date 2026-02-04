@@ -14,208 +14,106 @@
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
-        html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
+        html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; background: var(--bg); color: var(--text); }
+        body { font-family: -apple-system, system-ui, sans-serif; display: flex; flex-direction: column; }
+
+        /* Header & Navigation */
+        .header { padding: 10px 15px; background: var(--card); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 10; }
+        .title-banner { text-align: center; margin-bottom: 8px; }
+        .title { margin: 0; font-size: 1.2rem; color: var(--pol-red); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
         
-        .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; }
-        .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; }
-
-        .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
+        .controls-row { display: flex; gap: 8px; align-items: center; }
         
-        .ui-lang-toggle { display: flex; gap: 4px; justify-content: center; align-items: center; }
-        .ui-lang-btn { 
-            background: var(--bg); border: 1px solid #ccc; color: #666; 
-            font-size: 0.55rem; padding: 3px 8px; border-radius: 3px; cursor: pointer; 
-            font-weight: 600; transition: all 0.2s; min-width: 32px;
-        }
-        .ui-lang-btn.active { background: #4a9eff; color: white; border-color: #4a9eff; }
+        /* Dropdown Styling */
+        .custom-dropdown { position: relative; flex: 1; }
+        .dropdown-trigger { background: var(--tile-bg); padding: 8px 12px; border-radius: 8px; text-align: center; cursor: pointer; font-weight: bold; font-size: 0.85rem; transition: 0.2s; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; width: 200px; background: var(--card); box-shadow: 0 8px 24px rgba(0,0,0,0.2); border-radius: 12px; max-height: 400px; overflow-y: auto; z-index: 1000; margin-top: 10px; border: 1px solid var(--tile-bg); }
+        .dropdown-menu.show { display: block; animation: slideDown 0.2s ease-out; }
+        .dropdown-item { padding: 12px 16px; border-bottom: 1px solid var(--tile-bg); cursor: pointer; font-size: 0.9rem; }
+        .dropdown-item:last-child { border-bottom: none; }
+        .dropdown-item.active-level { background: var(--pol-red); color: white; font-weight: bold; }
 
-        .gender-dropdown-wrapper { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 120px; }
-        .gender-label { font-size: 0.65rem; font-weight: 700; color: var(--text); white-space: nowrap; }
-        .gender-dropdown { position: relative; flex: 1; }
-        .gender-dropdown-trigger { 
-            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
-            text-align: left; height: 28px; display: flex; align-items: center; 
-            justify-content: space-between; cursor: pointer; box-sizing: border-box;
-        }
-        .gender-dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
-        .gender-dropdown-menu { 
-            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
-            border: 1px solid #ccc; border-radius: 4px; z-index: 1000; display: none; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .gender-dropdown-menu.show { display: block; }
-        .gender-dropdown-item { 
-            padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; 
-            cursor: pointer; color: var(--text); 
-        }
-        .gender-dropdown-item:last-child { border-bottom: none; }
-        .gender-dropdown-item:hover { background: var(--bg); }
+        .search-box { flex: 2; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--tile-bg); background: var(--bg); color: var(--text); font-size: 0.9rem; outline: none; }
+        .search-box:focus { border-color: var(--pol-red); }
 
-        .custom-dropdown { position: relative; width: 100%; }
-        .dropdown-trigger { 
-            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
-            text-align: left; height: 28px; display: flex; align-items: center; 
-            justify-content: space-between; cursor: pointer; box-sizing: border-box;
-        }
-        .dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
-
-        .dropdown-menu { 
-            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
-            border: 1px solid #ccc; border-radius: 4px; max-height: 250px; overflow-y: auto; 
-            z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .dropdown-menu.show { display: block; }
-        .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); }
-        .dropdown-item.mastered { color: var(--pol-red); }
-
-        .search-box { 
-            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; 
-            height: 28px; outline: none; box-sizing: border-box;
-        }
-
-        .progress-container { width: 100%; height: 3px; background: #ddd; }
-        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
-
-        .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; flex-shrink: 0; }
-        .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 90%; max-width: 400px; margin: 0 auto; justify-content: flex-start; }
-        .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
-        .q-content { text-align: left; min-width: 0; }
-        .q-text { font-size: 1.1rem; font-weight: 800; }
-        .feedback { height: 12px; font-size: 0.7rem; font-weight: bold; margin-top: 4px; }
-
-        .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
-        .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
-
-        .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
-        .tile { 
-            aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
-            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
-            text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; 
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s; 
-        }
-        .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
+        /* Hands-Free Panel */
+        .handsfree-controls { display: none; flex-direction: column; background: var(--pol-red); color: white; padding: 20px; gap: 15px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+        #hf-display-pl { font-size: 1.8rem; font-weight: 800; text-align: center; min-height: 2.2rem; }
+        #hf-display-en { font-size: 1.1rem; opacity: 0.85; text-align: center; font-style: italic; }
         
-        .search-results-label { font-size: 0.6rem; font-weight: 800; color: var(--pol-red); margin: 10px 0 5px 0; width: 100%; max-width: 420px; text-align: left; }
-        .global-result-item { width: 100%; max-width: 420px; background: var(--card); border: 1px solid #ddd; border-radius: 6px; padding: 8px; margin-bottom: 4px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center;}
+        .hf-bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+        .handsfree-btn { background: white; color: var(--pol-red); border: none; padding: 10px 20px; border-radius: 25px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        
+        .pause-selector { display: flex; gap: 8px; background: rgba(0,0,0,0.1); padding: 4px; border-radius: 10px; }
+        .pause-option { padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.75rem; font-weight: bold; }
+        .pause-option.active { background: white; color: var(--pol-red); }
 
-        .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
-        .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
-        .active-swap { background: var(--pol-red) !important; color: white !important; border-color: var(--pol-red) !important; }
+        /* Quiz UI */
+        .quiz-header { padding: 30px 20px; text-align: center; background: var(--card); flex-shrink: 0; }
+        .q-text { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; color: var(--text); }
+        .feedback { height: 24px; color: var(--pol-red); font-weight: bold; margin-top: 5px; }
 
-        #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
-        .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; }
-    
-      .handsfree-controls.immersive {
-    position: fixed;
-    inset: 0;
-    background: var(--bg);
-    z-index: 3000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-}
-        .handsfree-btn {
-            padding: 8px 16px; border: 2px solid var(--pol-red); background: white; color: var(--pol-red);
-            border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.85rem; transition: all 0.2s;
-        }
-        .handsfree-btn:hover { background: var(--pol-red); color: white; }
-        .handsfree-btn.active { background: var(--pol-red); color: white; }
-        .handsfree-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-        .handsfree-status { padding: 8px 12px; background: #f0f0f0; border-radius: 6px; font-size: 0.8rem; color: #666; min-width: 200px; text-align: center; }
-        .pause-selector { display: flex; gap: 5px; align-items: center; }
-        .pause-option { padding: 6px 10px; border: 1px solid #ccc; background: white; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
-        .pause-option.active { background: var(--pol-red); color: white; border-color: var(--pol-red); }
-#hf-display-pl { font-size: 2.2rem; font-weight: 800; color: var(--pol-red); margin-bottom: 15px; padding: 0 10px; }
-#hf-display-en { font-size: 1.5rem; font-weight: 600; color: #666; opacity: 0.8; }
+        /* Tile Grid */
+        .map-section { flex: 1; overflow-y: auto; padding: 15px; display: grid; grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); gap: 10px; align-content: start; }
+        .tile { aspect-ratio: 1; background: var(--tile-bg); border-radius: 10px; cursor: pointer; transition: transform 0.1s, background 0.3s; position: relative; }
+        .tile.mastered { background: var(--pol-red); box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3); }
+        .tile:active { transform: scale(0.9); }
 
-.hf-bottom-nav { 
-    position: absolute; bottom: 40px; width: 100%; 
-    display: flex; flex-direction: column; align-items: center; gap: 15px; 
-}
+        /* Tabs & Progress */
+        .progress-container { height: 6px; background: var(--tile-bg); width: 100%; }
+        #progress-bar { height: 100%; background: var(--pol-red); width: 0%; transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
 
-        /* Animation for countdown */
-        @keyframes flash { 50% { opacity: 0.5; } }
-        .hf-countdown { animation: flash 1s infinite; color: var(--pol-red); font-weight: bold; }
-</style>
+        .mode-tabs { display: flex; background: var(--card); border-top: 1px solid var(--tile-bg); }
+        .tab { flex: 1; padding: 15px; text-align: center; font-size: 0.75rem; font-weight: 800; cursor: pointer; opacity: 0.5; transition: 0.3s; letter-spacing: 0.5px; }
+        .tab.active { opacity: 1; color: var(--pol-red); border-bottom: 4px solid var(--pol-red); }
+
+        .footer { padding: 15px; display: flex; gap: 12px; background: var(--card); border-top: 1px solid var(--tile-bg); }
+        .footer-btn { flex: 1; padding: 12px; border-radius: 10px; border: 1px solid var(--tile-bg); background: var(--card); color: var(--text); font-weight: bold; font-size: 0.8rem; cursor: pointer; }
+
+        #overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); color:white; z-index:2000; flex-direction:column; justify-content:center; align-items:center; backdrop-filter: blur(5px); }
+        
+        @keyframes slideDown { from { transform: translateY(-10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    </style>
 </head>
 <body>
 
 <div id="overlay">
-    <h1></h1>
-    <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold;"></button>
+    <h1 style="font-size: 2.5rem; margin-bottom: 10px;">ŚWIETNIE!</h1>
+    <p style="margin-bottom: 30px; font-size: 1.2rem;">Level complete.</p>
+    <button onclick="advanceLevel()" style="padding: 15px 40px; background: var(--pol-red); color: white; border: none; border-radius: 30px; font-weight: 800; font-size: 1.1rem; cursor:pointer;">NEXT LEVEL</button>
 </div>
 
 <div class="header">
-    <div class="title-banner"><h1 class="title">Say some Polish phrases</h1></div>
+    <div class="title-banner"><h1 class="title">Survival Polish</h1></div>
     <div class="controls-row">
         <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)"></div>
+            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Scanning...</div>
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="handleSmartSearch()">
-        <div style="display: flex; gap: 6px; align-items: center; width: 100%;">
-            <div class="gender-dropdown-wrapper">
-                <span class="gender-label" id="gender-label">Gender:</span>
-                <div class="gender-dropdown">
-                    <div class="gender-dropdown-trigger" id="gender-current" onclick="toggleGenderDropdown(event)">Both</div>
-                    <div class="gender-dropdown-menu" id="gender-menu">
-                        <div class="gender-dropdown-item" onclick="selectGender('m')">Male</div>
-                        <div class="gender-dropdown-item" onclick="selectGender('f')">Female</div>
-                        <div class="gender-dropdown-item" onclick="selectGender('both')">Both</div>
-                    </div>
-                </div>
-            </div>
-            <button id="lang-swap-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 100px;" onclick="toggleLangSwap()">Swap EN/PL</button>
-            <button id="hf-toggle-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 110px;" onclick="toggleHandsFreePanel()">▼ Hands-Free</button>
-        </div>
+        <button id="hf-toggle-btn" class="footer-btn" style="max-width: 110px;" onclick="toggleHandsFreePanel()">▼ Hands-Free</button>
     </div>
 </div>
 
-<div class="handsfree-controls" id="handsfree-controls" style="display: none;">
+<div class="handsfree-controls" id="handsfree-controls">
     <div id="hf-display-pl">Gotowy?</div>
     <div id="hf-display-en">Press Start</div>
-
     <div class="hf-bottom-nav">
-        <div class="handsfree-status" id="hf-status">Ready to begin</div>
-        
-        <div style="display: flex; gap: 10px;">
-            <button class="handsfree-btn" id="hf-toggle" onclick="toggleHandsFree()">▶ START</button>
-            <button class="handsfree-btn" id="hf-close" onclick="toggleHandsFreePanel()">✕ EXIT</button>
-        </div>
-
         <div class="pause-selector">
-            <span style="font-size: 0.75rem; color: #666;">Pause:</span>
             <div class="pause-option active" onclick="setPauseDuration(1)">1s</div>
             <div class="pause-option" onclick="setPauseDuration(3)">3s</div>
             <div class="pause-option" onclick="setPauseDuration(5)">5s</div>
         </div>
+        <button class="handsfree-btn" id="hf-toggle" onclick="toggleHandsFree()">▶ START</button>
+        <button class="handsfree-btn" style="background: rgba(255,255,255,0.2); color: white;" onclick="toggleHandsFreePanel()">✕</button>
     </div>
 </div>
 
 <div class="progress-container"><div id="progress-bar"></div></div>
 
-<div class="quiz-header" id="quiz-ui">
-    <div class="quiz-top-row">
-        <div class="ui-lang-toggle">
-            <button id="ui-lang-en" class="ui-lang-btn active" onclick="toggleUILang()">EN</button>
-            <button id="ui-lang-pl" class="ui-lang-btn" onclick="toggleUILang()">PL</button>
-        </div>
-        <div class="speaker-btn" onclick="speak(currentTarget.pl)">🔊</div>
-        <div class="q-content">
-            <div id="q-text" class="q-text">Ready?</div>
-            <div id="feedback" class="feedback"></div>
-        </div>
-    </div>
+<div class="quiz-header">
+    <div id="q-text" class="q-text">Loading phrases...</div>
+    <div id="feedback" class="feedback"></div>
 </div>
 
 <div class="mode-tabs">
@@ -223,517 +121,284 @@
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED <span id="banked-count"></span></div>
 </div>
 
-<div class="map-section">
-    <div id="mastery-map"></div>
-    <div id="search-results-extra" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
-</div>
+<div class="map-section" id="mastery-map"></div>
+<div id="search-results-extra"></div>
 
 <div class="footer">
-    <button class="footer-btn" onclick="downloadProgress()">Save</button>
-    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load</button>
-    <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Clear</button>
-    <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
+    <button class="footer-btn" onclick="saveData()">Save Progress</button>
+    <button class="footer-btn" onclick="resetStats()" style="color: var(--pol-red); border-color: var(--pol-red);">Clear</button>
 </div>
 
 <script>
-    let levelOrder = []; 
-    let currentLevel = parseFloat(localStorage.getItem('pl_current_level_idx')) || 0; 
-    let phrasesData = [];
-    let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
-    let hfLastLevel = parseInt(localStorage.getItem('hf_last_level')) || 0;
-    let hfLastIndex = parseInt(localStorage.getItem('hf_last_index')) || 0;
-    
-    let lastPhraseText = null;
-    let isSwapped = false;
-    let currentGender = localStorage.getItem('polishMasterGender') || 'both';
-    let uiLang = localStorage.getItem('polishMasterUILang') || 'en'; 
-    let correctStreak = 0; 
+    // --- Configuration & State ---
     const THRESHOLD = 3;
-    const MIN_SCORE = -2;
+    let phrasesData = [], levelOrder = [], activePool = [];
+    let currentLevel = parseFloat(localStorage.getItem('pl_current_level_idx')) || 0;
+    let stats = JSON.parse(localStorage.getItem('pl_stats')) || {};
+    let currentTarget = null;
+    let handsFreeActive = false, handsFreeAbort = false;
+    let pauseDuration = 1000;
+    let currentMode = 'learning';
     let plVoice = null;
-    let audioCtx = null;
-    let isAudioPriming = false;
-    let audioPrimedAt = 0;
 
-async function scanForLevels() {
+    // --- 1. Automatic Level Scanner ---
+    async function scanForLevels() {
         levelOrder = [];
-        const maxMainLevels = 40; 
-
-        const checkList = [];
-        for (let i = 0; i <= maxMainLevels; i++) {
-            checkList.push(i); 
-            for (let d = 1; d <= 9; d++) {
-                checkList.push(parseFloat(`${i}.${d}`)); 
-            }
+        const maxCheck = 40;
+        const probes = [];
+        
+        for (let i = 0; i <= maxCheck; i++) {
+            probes.push(i);
+            for (let d = 1; d <= 9; d++) probes.push(parseFloat(`${i}.${d}`));
         }
 
-        const results = await Promise.all(checkList.map(async (num) => {
+        const results = await Promise.all(probes.map(async (n) => {
             try {
-                const response = await fetch(`phrases_${num}.json`, { method: 'HEAD' });
-                return response.ok ? num : null;
+                const r = await fetch(`phrases_${n}.json`, { method: 'HEAD' });
+                return r.ok ? n : null;
             } catch (e) { return null; }
         }));
 
         levelOrder = results.filter(n => n !== null).sort((a, b) => a - b);
-        console.log("Found levels:", levelOrder);
-        
-        const savedLvl = localStorage.getItem('currentLevel');
-        currentLevel = (savedLvl && levelOrder.includes(parseFloat(savedLvl))) 
-                       ? parseFloat(savedLvl) 
-                       : (levelOrder.length > 0 ? levelOrder[0] : 0);
-                       
+        populateDropdown();
+
         if (levelOrder.length > 0) {
-            selectLevel(currentLevel);
+            const last = localStorage.getItem('pl_current_level_idx');
+            const toLoad = (last && levelOrder.includes(parseFloat(last))) ? parseFloat(last) : levelOrder[0];
+            await selectLevel(toLoad);
         }
     }
 
-    function playNote(freq, dur, type='sine') {
-        try {
-            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume().then(() => playTone(freq, dur, type));
-                return;
-            }
-            playTone(freq, dur, type);
-        } catch(e) {}
-    }
-    
-    function playTone(freq, dur, type='sine') {
-        try {
-            const now = audioCtx.currentTime;
-            const osc = audioCtx.createOscillator();
-            const g = audioCtx.createGain();
-            osc.type = type; osc.frequency.setValueAtTime(freq, now);
-            g.gain.setValueAtTime(0.1, now); g.gain.exponentialRampToValueAtTime(0.01, now + dur);
-            osc.connect(g); g.connect(audioCtx.destination);
-            osc.start(); osc.stop(now + dur);
-        } catch(e) {}
-    }
-
-    function playCorrect() { playNote(440 + (correctStreak * 40), 0.15, 'sine'); }
-    function playSuccess() { playNote(523, 0.2, 'triangle'); setTimeout(() => playNote(659, 0.2, 'triangle'), 100); setTimeout(() => playNote(783, 0.4, 'triangle'), 200); }
-    function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
-
-    const translations = {
-        en: { title: "Say some Polish phrases", search: "Search...", swap: "Swap EN/PL", phraseGender: "Phrase Gender:", male: "Male", female: "Female", both: "Both", correct: "Correct! 🌟", mistake: "Mistake!", levelMastered: "LEVEL MASTERED! 🏆", nextLevel: "Next Level", masteredTitle: "Level Mastered!", masteredText: "You finished this set.", repeatLevel: "Repeat Level", foundInOther: "FOUND IN OTHER LEVELS:", loading: "Loading..." },
-        pl: { title: "Powiedz polskie zwroty", search: "Szukaj...", swap: "Zamień EN/PL", phraseGender: "Rodzaj zwrotu:", male: "Mężczyzna", female: "Kobieta", both: "Oboje", correct: "Dobrze! 🌟", mistake: "Błąd!", levelMastered: "POZIOM OPANOWANY! 🏆", nextLevel: "Następny poziom", masteredTitle: "Poziom opanowany!", masteredText: "Ukończyłeś tę kategorię.", repeatLevel: "Powtórz poziom", foundInOther: "ZNALEZIONO W INNYCH POZIOMACH:", loading: "Ładowanie..." }
-    };
-    
-    function t(key) { return translations[uiLang][key] || translations.en[key] || key; }
-    
-    function updateUILanguage() {
-        document.querySelector('.title').innerText = t('title');
-        document.getElementById('search-bar').placeholder = t('search');
-        document.getElementById('lang-swap-btn').innerText = t('swap');
-        document.getElementById('gender-label').innerText = t('phraseGender');
-        const genderItems = document.querySelectorAll('.gender-dropdown-item');
-        genderItems[0].innerText = t('male'); genderItems[1].innerText = t('female'); genderItems[2].innerText = t('both');
-        const genderMap = { m: t('male'), f: t('female'), both: t('both') };
-        document.getElementById('gender-current').innerText = genderMap[currentGender];
-        const overlay = document.getElementById('overlay');
-        overlay.querySelector('h1').innerText = t('levelMastered');
-        overlay.querySelector('button').innerText = t('nextLevel');
-        document.getElementById('lang-swap-btn').classList.toggle('active-swap', uiLang === 'pl');
-    }
-    
-    function toggleUILang() {
-        isSwapped = !isSwapped;
-        document.querySelectorAll('.ui-lang-btn').forEach(btn => btn.classList.remove('active'));
-        document.getElementById('ui-lang-' + (isSwapped ? 'pl' : 'en')).classList.add('active');
-        updateMap();
-        if(currentTarget) document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
-    }
-
-    function getGenderText(phrase) {
-        if (!phrase.gender || phrase.gender !== 'both' || !phrase.variants) return phrase.pl;
-        if (currentGender === 'm') return phrase.variants.m;
-        else if (currentGender === 'f') return phrase.variants.f;
-        else return phrase.pl;
-    }
-
-    window.speechSynthesis.onvoiceschanged = initSpeech;
-    function toggleGenderDropdown(e) { e.stopPropagation(); document.getElementById('gender-menu').classList.toggle('show'); }
-    
-    function selectGender(gender) {
-        currentGender = gender; localStorage.setItem('polishMasterGender', gender);
-        const genderLabels = { m: 'Male', f: 'Female', both: 'Both' };
-        document.getElementById('gender-current').innerText = genderLabels[gender];
-        document.getElementById('gender-menu').classList.remove('show');
-        refreshActivePool();
-        updateMap(); startNewRound();
-    }
-
-    function refreshActivePool() {
-        if (currentGender !== 'both') {
-            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both')).slice(0, 12);
-        } else {
-            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
-        }
-    }
-
-    function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function toggleLangSwap() { 
-        uiLang = uiLang === 'en' ? 'pl' : 'en'; 
-        localStorage.setItem('polishMasterUILang', uiLang); 
-        updateUILanguage(); 
-    }
-
-    async function populateDropdown() {
-    const menu = document.getElementById('lvl-menu'); 
-    menu.innerHTML = '';
-    
-    // Use the levels found by the scanner
-    for (let num of levelOrder) {
-        const item = document.createElement('div');
-        item.className = 'dropdown-item';
-        item.innerText = `Level ${num}`;
-        item.onclick = (e) => { e.stopPropagation(); selectLevel(num); };
-        menu.appendChild(item);
-        
-        if(num === currentLevel) {
-            document.getElementById('lvl-current').innerText = `Level ${num}`;
-        }
-    }
-}
-
+    // --- 2. Core App Logic ---
     async function selectLevel(num) {
         currentLevel = num;
-        // Save using your existing naming convention
-        localStorage.setItem('pl_current_level_idx', num); 
-
-        // UI Cleanup (Keeping your existing logic)
-        const menu = document.getElementById('lvl-menu');
-        if (menu) menu.classList.remove('show');
+        localStorage.setItem('pl_current_level_idx', num);
+        document.getElementById('lvl-current').innerText = `Level ${num}`;
         
-        const searchBar = document.getElementById('search-bar');
-        if (searchBar) searchBar.value = '';
-        
-        const searchResults = document.getElementById('search-results-extra');
-        if (searchResults) searchResults.innerHTML = '';
-
-        // The File Loader
-        const fileName = `phrases_${num}.json`;
         try {
-            const response = await fetch(fileName);
-            if (!response.ok) throw new Error(`File ${fileName} not found`);
-            const data = await response.json();
-            
+            const resp = await fetch(`phrases_${num}.json`);
+            const data = await resp.json();
             phrasesData = data.phrases;
-
-            // Update UI Titles
-            const titleEl = document.getElementById('lvl-title');
-            const descEl = document.getElementById('lvl-desc');
-            if (titleEl) titleEl.innerText = `Level ${num}`;
-            if (descEl) descEl.innerText = data.description || "";
-            
-            // Re-render the app with new data
-            renderLevel();
-            updateStats();
-            updateTabCounts();
-            
-        } catch (err) {
-            console.error("Error loading level:", err);
-            alert(`Missing file: ${fileName}`);
+            refreshApp();
+            document.getElementById('lvl-menu').classList.remove('show');
+        } catch (e) { 
+            console.error("Failed to load level", e);
+            document.getElementById('q-text').innerText = "Level file missing!";
         }
     }
 
-   
-
-    async function cacheAllPhrases() {
-        allPhrasesCache = [];
-        for (let i = 0; i < 25; i++) {
-            try {
-                const r = await fetch(`phrases_${i}.json`);
-                if (r.ok) {
-                    const d = await r.json();
-                    allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: i})));
-                }
-            } catch(e) {}
-        }
+    function refreshApp() {
+        updateMap();
+        updateStats();
+        updateTabCounts();
+        startNewRound();
+        populateDropdown(); 
     }
 
-    function handleSmartSearch() {
-        const query = document.getElementById('search-bar').value.toLowerCase();
-        const extraResults = document.getElementById('search-results-extra');
-        extraResults.innerHTML = '';
-        if (!query) { updateMap(); return; }
-        updateMap(query);
-        const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)) && p.lvl !== currentLevel).slice(0, 5);
-        if (matches.length > 0) {
-            const label = document.createElement('div'); label.className = 'search-results-label'; label.innerText = t('foundInOther');
-            extraResults.appendChild(label);
-            matches.forEach(p => {
-                const item = document.createElement('div'); item.className = 'global-result-item';
-                item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div style="color:var(--pol-red); font-weight:bold;">LVL ${p.lvl}</div>`;
-                item.onclick = () => selectLevel(p.lvl); extraResults.appendChild(item);
-            });
-        }
-    }
-
-    function startNewRound() {
-        if (!activePool.length) return;
-        let nextTarget;
-        if (activePool.length > 1) { do { nextTarget = activePool[Math.floor(Math.random() * activePool.length)]; } while (nextTarget.pl === lastPhraseText); } else nextTarget = activePool[0];
-        currentTarget = nextTarget; lastPhraseText = currentTarget.pl;
-        document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
-        document.getElementById('feedback').innerText = "";
-        setTimeout(() => speak(currentTarget.pl), 300);
-    }
-
-    async function checkAnswer(phrase, el) {
-        if (audioCtx && (audioCtx.state === 'suspended' || isAudioPriming || (Date.now() - audioPrimedAt > 30000))) {
-            primeAudio(); await new Promise(resolve => setTimeout(resolve, 1000));
-        }
-        if (phrase.pl === currentTarget.pl) {
-            correctStreak++; playCorrect(); stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Correct! 🌟"; saveStats();
-            setTimeout(() => {
-                if (stats[phrase.pl] >= THRESHOLD) {
-                    const nextAvailable = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
-                    const index = activePool.indexOf(phrase);
-                    if (nextAvailable) activePool[index] = nextAvailable; else activePool.splice(index, 1);
-                }
-                updateStats(); updateTabCounts(); updateMap();
-                if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); correctStreak = 0; } else startNewRound();
-            }, 800);
-        } else {
-            correctStreak = 0; playNote(150, 0.4, 'sawtooth');
-            if (stats[currentTarget.pl] > MIN_SCORE) stats[currentTarget.pl] -= 1;
-            el.classList.add('wrong'); document.getElementById('feedback').innerText = "Mistake!";
-            saveStats(); setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
-        }
-    }
-
-    function updateMap(filter = "") {
-        const area = document.getElementById('mastery-map'); area.innerHTML = '';
-        const isLearning = document.getElementById('tab-learning').classList.contains('active');
-        if (isLearning && activePool.length === 0 && !filter) {
-            const notice = document.createElement('div'); notice.className = 'review-notice';
-            notice.innerHTML = `<h3>${t("masteredTitle")}</h3><p>${t("masteredText")}</p><button onclick="resetLevelMastery()" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold;">${t("repeatLevel")}</button>`;
-            area.appendChild(notice); return;
-        }
-        area.className = "grid";
-        const list = isLearning ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
-        list.filter(p => !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter)).forEach(p => {
-            const tile = document.createElement('div'); tile.className = 'tile';
-            tile.innerText = isSwapped ? p.en : getGenderText(p);
+    function updateMap() {
+        const map = document.getElementById('mastery-map');
+        map.innerHTML = '';
+        phrasesData.forEach(p => {
             const score = stats[p.pl] || 0;
-            if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
-            else if (score < 0) { tile.style.backgroundColor = `rgba(52, 152, 219, ${Math.abs(score)/2})`; tile.style.color = "white"; }
-            tile.onclick = () => isLearning ? checkAnswer(p, tile) : speak(p.pl);
-            area.appendChild(tile);
+            const mastered = score >= THRESHOLD;
+            if (currentMode === 'learning' && mastered) return;
+            if (currentMode === 'mastered' && !mastered) return;
+
+            const tile = document.createElement('div');
+            tile.className = 'tile' + (mastered ? ' mastered' : '');
+            tile.onclick = () => {
+                currentTarget = p;
+                document.getElementById('q-text').innerText = p.en;
+                speak(p.pl);
+            };
+            map.appendChild(tile);
         });
     }
 
-    function speak(text, lang = 'pl-PL', rate = 1.0) {
-    return new Promise(resolve => {
-        if (handsFreeAbort) { resolve(); return; }
-        const u = new SpeechSynthesisUtterance(text);
-        if (lang === 'pl-PL' && plVoice) u.voice = plVoice;
-        u.lang = lang; 
-        u.rate = rate; 
-        u.onend = () => resolve();
-        u.onerror = () => resolve();
-        speechSynthesis.speak(u);
-    });
-}
-    function saveStats() { 
-        localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
-        localStorage.setItem('pl_current_level_idx', currentLevel);
-        localStorage.setItem('hf_last_level', hfLastLevel);
-        localStorage.setItem('hf_last_index', hfLastIndex);
-    }
-    
-    function updateStats() { 
-        if (phrasesData && phrasesData.length > 0) { 
-            const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length; 
-            const percentage = (masteredCount / phrasesData.length) * 100;
-            document.getElementById('progress-bar').style.width = percentage + "%"; 
+    function startNewRound() {
+        const pool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
+        if (pool.length > 0) {
+            currentTarget = pool[Math.floor(Math.random() * pool.length)];
+            document.getElementById('q-text').innerText = currentTarget.en;
+            document.getElementById('feedback').innerText = '';
         } else {
-            document.getElementById('progress-bar').style.width = "0%";
+            document.getElementById('q-text').innerText = "Level Complete! 🎉";
         }
     }
 
-    async function advanceLevel() {
-    const currentIndex = levelOrder.indexOf(currentLevel);
-    
-    if (currentIndex !== -1 && currentIndex < levelOrder.length - 1) {
-        // Move to the next level found by the scanner
-        currentLevel = levelOrder[currentIndex + 1];
-        
-        // Reset progress markers
-        handsFreeIndex = 0;
-        hfLastIndex = 0;
-        localStorage.setItem('hf_last_index', 0);
-        
-        document.getElementById('overlay').style.display = 'none';
-        await selectLevel(currentLevel);
-    } else {
-        alert("🎉 Course Complete!");
-        document.getElementById('overlay').style.display = 'none';
-    }
-}
-    function primeAudio() {
-        if (audioCtx && audioCtx.state === 'suspended') {
-            isAudioPriming = true; 
-            audioCtx.resume().then(() => { 
-                audioPrimedAt = Date.now(); 
-                isAudioPriming = false; 
-            });
-        } else if (audioCtx) { 
-            audioPrimedAt = Date.now(); 
-        }
-    }
-    
-    document.addEventListener('click', primeAudio);
-    document.addEventListener('touchstart', primeAudio);
-    window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
-    window.onload = () => { initSpeech(); updateUILanguage(); scanForLevels(); };
-
-    // --- HANDS FREE LOGIC (v26) ---
-    let handsFreeActive = false, handsFreeAbort = false;
-    let hfTimer = null;
-
-    function setPauseDuration(seconds) {
-        pauseDuration = seconds * 1000;
-        document.querySelectorAll('.pause-option').forEach(opt => opt.classList.remove('active'));
-        event.target.classList.add('active');
+    // --- 3. Speech & Hands-Free ---
+    function initSpeech() {
+        const loadVoices = () => {
+            plVoice = speechSynthesis.getVoices().find(v => v.lang.startsWith('pl'));
+        };
+        loadVoices();
+        speechSynthesis.onvoiceschanged = loadVoices;
     }
 
-    async function toggleHandsFree() {
-        const btn = document.getElementById('hf-toggle');
-        const panel = document.getElementById('handsfree-controls'); // Added this
-        
-        if (!handsFreeActive) {
-            handsFreeActive = true; handsFreeAbort = false;
-            panel.classList.add('immersive'); // Makes it full screen
-            
-            // Resume Check
-            if (hfLastLevel !== currentLevel || hfLastIndex > 0) {
-                if (confirm(`Resume Level ${hfLastLevel} at phrase ${hfLastIndex + 1}?`)) {
-                    currentLevel = hfLastLevel;
-                    handsFreeIndex = hfLastIndex;
-                    await scanForLevels();
-                } else {
-                    handsFreeIndex = 0;
-                }
-            } else {
-                handsFreeIndex = 0;
-            }
-
-            btn.innerText = '⏸ PAUSE'; btn.classList.add('active');
-            await playHandsFreeSequence();
-        } else {
-            stopHandsFree();
-        }
-    }
-
-   function stopHandsFree() {
-        handsFreeActive = false; handsFreeAbort = true;
-        speechSynthesis.cancel();
-        const btn = document.getElementById('hf-toggle');
-        const panel = document.getElementById('handsfree-controls');
-        
-        btn.innerText = '▶ START'; btn.classList.remove('active');
-        panel.classList.remove('immersive'); // Exits full screen
-        document.getElementById('hf-status').innerText = 'Stopped';
-        saveStats();
-    }
-
-async function playHandsFreeSequence() {
-        while (handsFreeActive && !handsFreeAbort) {
-            // 1. First, check if we finished the level
-            if (handsFreeIndex >= phrasesData.length) {
-                playSuccess();
-                await handleLevelTransition();
-                if (handsFreeAbort) break;
-            }
-            
-            // 2. SAVE THE PROGRESS (Memory)
-            hfLastLevel = currentLevel;
-            hfLastIndex = handsFreeIndex;
-            saveStats();
-
-            // 3. GET THE PHRASE (This is the line you found)
-            const p = phrasesData[handsFreeIndex];
-
-            // 4. PASTE THE NEW UPDATE LINES HERE:
-            document.getElementById('hf-display-pl').innerText = p.pl;
-            document.getElementById('hf-display-en').innerText = p.en;
-            document.getElementById('hf-status').innerText = `Lvl ${currentLevel} — ${handsFreeIndex + 1}/${phrasesData.length}`;
-            
-            await speakAsync(p.pl, 1.0); if (handsFreeAbort) break; await sleep(pauseDuration);
-            await speakAsync(p.en, 1.0, 'en-US'); if (handsFreeAbort) break; await sleep(pauseDuration);
-            await speakAsync(p.pl, 0.7); if (handsFreeAbort) break; await sleep(pauseDuration);
-            await speakAsync(p.pl, 1.0); if (handsFreeAbort) break; await sleep(pauseDuration);
-            
-            handsFreeIndex++;
-        }
-    }
-
-   async function handleLevelTransition() {
-        const currentIndex = levelOrder.indexOf(currentLevel);
-        
-        // Check if there is another level available in our scanned list
-        if (currentIndex !== -1 && currentIndex < levelOrder.length - 1) {
-            const nextLvl = levelOrder[currentIndex + 1];
-            
-            await speak("Level complete. Moving to level " + nextLvl, 'en-US', 0.9);
-            await sleep(1000);
-
-            // Update state
-            currentLevel = nextLvl;
-            handsFreeIndex = 0;
-            hfLastIndex = 0;
-            localStorage.setItem('hf_last_index', 0);
-            localStorage.setItem('pl_current_level_idx', currentLevel);
-
-            // Load the new data
-            await selectLevel(currentLevel);
-            
-            // Restart the loop with the new phrases
-            runHandsFreeLoop();
-        } else {
-            // No more levels left in the folder
-            await speak("Congratulations! You have completed all available levels.", 'en-US', 0.9);
-            stopHandsFree();
-            document.getElementById('overlay').style.display = 'flex';
-        }
-    }
-
-    window.repeatLevelHF = () => { window.hfRepeatFlag = true; };
-
-    function speakAsync(text, rate = 1.0, lang = 'pl-PL') {
+    function speak(text, lang = 'pl-PL', rate = 0.9) {
         return new Promise(resolve => {
-            if (handsFreeAbort) { resolve(); return; }
+            if (handsFreeAbort && lang === 'pl-PL') { resolve(); return; }
             const u = new SpeechSynthesisUtterance(text);
             if (lang === 'pl-PL' && plVoice) u.voice = plVoice;
-            u.lang = lang; u.rate = rate; 
-            u.onend = () => resolve(); u.onerror = () => resolve();
+            u.lang = lang; u.rate = rate;
+            u.onend = () => resolve();
+            u.onerror = () => resolve();
             speechSynthesis.speak(u);
         });
     }
 
-    function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
-    
-    function toggleHandsFreePanel() {
-        const panel = document.getElementById('handsfree-controls');
-        const btn = document.getElementById('hf-toggle-btn');
-        if (panel.style.display === 'none' || !panel.style.display) {
-            panel.style.display = 'flex'; btn.innerText = '▲ Hands-Free'; btn.classList.add('active-swap');
+    async function toggleHandsFree() {
+        if (handsFreeActive) {
+            handsFreeActive = false;
+            handsFreeAbort = true;
+            speechSynthesis.cancel();
+            document.getElementById('hf-toggle').innerText = '▶ START';
         } else {
-            panel.style.display = 'none'; btn.innerText = '▼ Hands-Free'; btn.classList.remove('active-swap');
+            handsFreeActive = true;
+            handsFreeAbort = false;
+            document.getElementById('hf-toggle').innerText = '⏹ STOP';
+            runHandsFreeLoop();
         }
     }
 
-    function updateTabCounts() {
-        if (!phrasesData.length) return;
-        const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-        document.getElementById('learning-count').innerText = `(${phrasesData.length - masteredCount})`;
-        document.getElementById('banked-count').innerText = `(${masteredCount})`;
+    async function runHandsFreeLoop() {
+        while (handsFreeActive && !handsFreeAbort) {
+            let pool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD);
+            if (pool.length === 0) {
+                await handleLevelTransition();
+                return;
+            }
+
+            let p = pool[Math.floor(Math.random() * pool.length)];
+            document.getElementById('hf-display-en').innerText = p.en;
+            document.getElementById('hf-display-pl').innerText = '...';
+            
+            await speak(p.en, 'en-US', 1.0);
+            await new Promise(r => setTimeout(r, pauseDuration));
+            
+            document.getElementById('hf-display-pl').innerText = p.pl;
+            await speak(p.pl, 'pl-PL', 0.85);
+            
+            stats[p.pl] = (stats[p.pl] || 0) + 1;
+            updateStats();
+            await new Promise(r => setTimeout(r, 1500));
+        }
     }
 
+    async function handleLevelTransition() {
+        const idx = levelOrder.indexOf(currentLevel);
+        if (idx < levelOrder.length - 1) {
+            const next = levelOrder[idx + 1];
+            await speak("Level complete. Moving to level " + next, 'en-US', 1.0);
+            await selectLevel(next);
+        } else {
+            handsFreeActive = false;
+            document.getElementById('hf-toggle').innerText = '▶ START';
+            document.getElementById('overlay').style.display = 'flex';
+        }
+    }
+
+    // --- 4. UI Helpers ---
+    function toggleDropdown(e) {
+        e.stopPropagation();
+        document.getElementById('lvl-menu').classList.toggle('show');
+    }
+
+    function populateDropdown() {
+        const menu = document.getElementById('lvl-menu');
+        menu.innerHTML = '';
+        levelOrder.forEach(n => {
+            const div = document.createElement('div');
+            div.className = 'dropdown-item' + (n === currentLevel ? ' active-level' : '');
+            div.innerText = `Level ${n}`;
+            div.onclick = () => selectLevel(n);
+            menu.appendChild(div);
+        });
+    }
+
+    function switchMode(m) {
+        currentMode = m;
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById(`tab-${m}`).classList.add('active');
+        updateMap();
+    }
+
+    function setPauseDuration(s) {
+        pauseDuration = s * 1000;
+        document.querySelectorAll('.pause-option').forEach(o => o.classList.toggle('active', parseInt(o.innerText) === s));
+    }
+
+    function toggleHandsFreePanel() {
+        const p = document.getElementById('handsfree-controls');
+        const isHidden = p.style.display === 'none' || !p.style.display;
+        p.style.display = isHidden ? 'flex' : 'none';
+        document.getElementById('hf-toggle-btn').innerText = isHidden ? '▲ Hands-Free' : '▼ Hands-Free';
+    }
+
+    function updateStats() {
+        const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+        const progress = phrasesData.length ? (mastered / phrasesData.length) * 100 : 0;
+        document.getElementById('progress-bar').style.width = progress + '%';
+        localStorage.setItem('pl_stats', JSON.stringify(stats));
+    }
+
+    function updateTabCounts() {
+        const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+        document.getElementById('learning-count').innerText = `(${phrasesData.length - mastered})`;
+        document.getElementById('banked-count').innerText = `(${mastered})`;
+    }
+
+    function handleSmartSearch() {
+        const term = document.getElementById('search-bar').value.toLowerCase();
+        const results = document.getElementById('search-results-extra');
+        results.innerHTML = '';
+        if (!term) { updateMap(); return; }
+        const found = phrasesData.filter(p => p.en.toLowerCase().includes(term) || p.pl.toLowerCase().includes(term));
+        found.forEach(p => {
+            const d = document.createElement('div');
+            d.style.padding = '10px';
+            d.style.borderBottom = '1px solid var(--tile-bg)';
+            d.innerText = `${p.en} → ${p.pl}`;
+            d.onclick = () => { speak(p.pl); document.getElementById('q-text').innerText = p.en; };
+            results.appendChild(d);
+        });
+    }
+
+    function advanceLevel() {
+        document.getElementById('overlay').style.display = 'none';
+        const idx = levelOrder.indexOf(currentLevel);
+        if (idx < levelOrder.length - 1) selectLevel(levelOrder[idx + 1]);
+    }
+
+    function resetStats() {
+        if (confirm("Reset all progress for this level?")) {
+            phrasesData.forEach(p => delete stats[p.pl]);
+            refreshApp();
+        }
+    }
+
+    function saveData() {
+        const blob = new Blob([JSON.stringify(stats)], {type: 'application/json'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'polish_progress.json';
+        a.click();
+    }
+
+    // --- Initialization ---
+    window.onload = () => {
+        initSpeech();
+        scanForLevels();
+    };
+    window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
+
+    // Service Worker for Offline Use
     if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => { navigator.serviceWorker.register('./service-worker.js').catch(() => {}); });
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js').catch(() => {});
+        });
     }
 </script>
+
+</body>
+</html>
