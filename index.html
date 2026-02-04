@@ -39,14 +39,17 @@
         }
         .dropdown-menu.show, .gender-dropdown-menu.show { display: block; }
         .dropdown-item { padding: 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
+        .dropdown-item.active-level { background: var(--pol-red); color: white; font-weight: bold; }
 
         .search-box { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 6px; border-radius: 4px; font-size: 10px; outline: none; box-sizing: border-box; height: 28px; }
 
-        /* Narrowing the Swap Button to fix overlapping */
+        .gender-wrapper { display: flex; align-items: center; gap: 4px; flex: 0 1 auto; }
+        .gender-label { font-size: 0.6rem; font-weight: 800; white-space: nowrap; }
+
         .btn-narrow { width: 75px; flex: 0 0 auto; height: 28px; font-size: 0.55rem; font-weight: 800; border-radius: 4px; border: 1px solid #ccc; background: var(--bg); cursor: pointer; white-space: nowrap; }
         .btn-hf { flex: 1; height: 28px; font-size: 0.6rem; font-weight: 800; border-radius: 4px; border: 1px solid #ccc; background: var(--bg); cursor: pointer; }
 
-        /* FIXED 4 ROWS AND 3 COLUMNS */
+        /* 4x3 Grid Layout */
         .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
         .grid { 
             display: grid; 
@@ -75,7 +78,7 @@
         .footer { padding: 10px 10px 30px 10px; display: flex; gap: 8px; background: var(--card); border-top: 1px solid #ddd; }
         .footer-btn { flex: 1; padding: 12px; border-radius: 10px; border: 1px solid #ccc; background: var(--bg); font-weight: bold; font-size: 0.75rem; cursor: pointer; }
 
-        /* Hands-Free Immersive Mode Logic */
+        /* Hands-Free Immersive Mode */
         .handsfree-controls { display: none; }
         .handsfree-controls.immersive { 
             display: flex; position: fixed; inset: 0; background: var(--bg); z-index: 3000; 
@@ -106,7 +109,7 @@
         
         <div class="sub-controls">
             <div class="gender-wrapper">
-                <span style="font-size: 0.6rem; font-weight: 800;">Sex:</span>
+                <span class="gender-label">Sex:</span>
                 <div class="gender-dropdown">
                     <div class="gender-dropdown-trigger" id="gender-current" onclick="toggleGenderDropdown(event)" style="min-width: 65px;">Both</div>
                     <div class="gender-dropdown-menu" id="gender-menu">
@@ -155,64 +158,84 @@
 
 <div class="footer">
     <button class="footer-btn" onclick="downloadProgress()">Save</button>
-    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load</button>
     <button class="footer-btn" onclick="resetLevel()" style="color: var(--pol-red);">Reset</button>
 </div>
 
 <script>
-    // --- State & Variables ---
     const THRESHOLD = 3;
     let phrasesData = [], levelOrder = [], activePool = [];
     let currentLevel = parseFloat(localStorage.getItem('pl_current_level_idx')) || 0;
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
-    let currentTarget = null;
-    let isSwapped = false;
-    let currentGender = 'both';
-    let handsFreeActive = false, handsFreeAbort = false, hfIndex = 0;
-    let pauseDuration = 1000;
-    let plVoice = null;
+    let currentTarget = null, isSwapped = false, currentGender = 'both';
+    let handsFreeActive = false, handsFreeAbort = false, hfIndex = 0, pauseDuration = 1000, plVoice = null;
 
-    // --- 1. PRO LEVEL SCANNER ---
+    // Fixed Scanner to find decimal levels and fetch descriptions
     async function scanForLevels() {
         const probes = [];
         for (let i = 0; i <= 40; i++) {
             probes.push(i);
             for (let d = 1; d <= 9; d++) probes.push(parseFloat(`${i}.${d}`));
         }
-        const results = await Promise.all(probes.map(async (n) => {
+        
+        const results = await Promise.all(probes.map(async (num) => {
             try {
-                const r = await fetch(`phrases_${n}.json`, { method: 'HEAD' });
-                return r.ok ? n : null;
+                const response = await fetch(`phrases_${num}.json`, { method: 'HEAD' });
+                return response.ok ? num : null;
             } catch (e) { return null; }
         }));
+
         levelOrder = results.filter(n => n !== null).sort((a, b) => a - b);
-        populateDropdown();
+        await populateDropdown();
         await selectLevel(levelOrder.includes(currentLevel) ? currentLevel : levelOrder[0]);
+    }
+
+    // Dropdown now correctly handles descriptions and decimals
+    async function populateDropdown() {
+        const menu = document.getElementById('lvl-menu');
+        menu.innerHTML = '';
+        
+        for (const num of levelOrder) {
+            try {
+                const resp = await fetch(`phrases_${num}.json`);
+                if (resp.ok) {
+                    const data = await resp.json();
+                    const item = document.createElement('div');
+                    item.className = 'dropdown-item' + (num === currentLevel ? ' active-level' : '');
+                    
+                    // Priority: JSON description > generic Level text
+                    const label = data.description ? data.description : `Level ${num}`;
+                    item.innerText = `Lvl ${num}: ${label}`;
+                    
+                    item.onclick = (e) => { e.stopPropagation(); selectLevel(num); };
+                    menu.appendChild(item);
+                    
+                    if (num === currentLevel) {
+                        document.getElementById('lvl-current').innerText = item.innerText;
+                    }
+                }
+            } catch(e) {}
+        }
     }
 
     async function selectLevel(num) {
         currentLevel = num;
         localStorage.setItem('pl_current_level_idx', num);
-        document.getElementById('lvl-current').innerText = `Level ${num}`;
         try {
             const r = await fetch(`phrases_${num}.json`);
             const d = await r.json();
             phrasesData = d.phrases;
             refreshAll();
-        } catch (e) { console.error("File missing:", num); }
+        } catch (e) { console.error("Load error:", num); }
         document.getElementById('lvl-menu').classList.remove('show');
     }
 
     function refreshAll() {
-        activePool = phrasesData.filter(p => {
-            const score = stats[p.pl] || 0;
-            const genderMatch = (currentGender === 'both' || !p.gender || p.gender === currentGender);
-            return score < THRESHOLD && genderMatch;
-        }).slice(0, 12); // Lock to 12 for 4x3 grid
+        activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
         updateMap();
         updateStats();
         updateTabCounts();
         startRound();
+        populateDropdown(); // Refresh labels in menu
     }
 
     function updateMap() {
@@ -227,11 +250,8 @@
             tile.className = 'tile';
             tile.innerText = isSwapped ? p.en : p.pl;
 
-            if (score < 0) {
-                tile.classList.add('negative-score');
-            } else if (score > 0) {
-                tile.style.background = `rgba(220, 20, 60, ${score / THRESHOLD})`;
-            }
+            if (score < 0) tile.classList.add('negative-score');
+            else if (score > 0) tile.style.background = `rgba(220, 20, 60, ${score / THRESHOLD})`;
             
             tile.onclick = () => (mode === 'learning') ? checkAnswer(p, tile) : speak(p.pl);
             map.appendChild(tile);
@@ -248,7 +268,6 @@
                 if (activePool.length === 0) document.getElementById('overlay').style.display = 'flex';
             }, 600);
         } else {
-            // BLUE PENALTY SYSTEM
             stats[currentTarget.pl] = Math.max(-2, (stats[currentTarget.pl] || 0) - 1);
             el.classList.add('wrong-flash');
             document.getElementById('feedback').innerText = "Mistake!";
@@ -271,7 +290,7 @@
             panel.classList.add('immersive');
             document.getElementById('hf-toggle').innerText = '⏹ STOP';
             await runHF();
-        } else { stopHF(); }
+        } else stopHF();
     }
 
     function stopHF() {
@@ -304,7 +323,7 @@
     function speak(t, l='pl-PL') {
         const u = new SpeechSynthesisUtterance(t);
         if (l==='pl-PL' && plVoice) u.voice = plVoice;
-        u.lang = l; speechSynthesis.speak(u);
+        u.lang = l; u.rate = 0.9; speechSynthesis.speak(u);
     }
     function speakAsync(t, l='pl-PL') {
         return new Promise(resolve => {
@@ -316,30 +335,20 @@
     }
     function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
     function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function populateDropdown() {
-        const menu = document.getElementById('lvl-menu'); menu.innerHTML = '';
-        levelOrder.forEach(n => {
-            const item = document.createElement('div');
-            item.className = 'dropdown-item' + (n === currentLevel ? ' active-level' : '');
-            item.innerText = `Level ${n}`;
-            item.onclick = () => selectLevel(n);
-            menu.appendChild(item);
-        });
+    function switchMode(m) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + m).classList.add('active'); updateMap();
     }
     function toggleGenderDropdown(e) { e.stopPropagation(); document.getElementById('gender-menu').classList.toggle('show'); }
     function selectGender(g) {
         currentGender = g; document.getElementById('gender-current').innerText = g === 'both' ? 'Both' : (g === 'm' ? 'Male' : 'Female');
         document.getElementById('gender-menu').classList.remove('show'); refreshAll();
     }
-    function switchMode(m) {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + m).classList.add('active'); updateMap();
-    }
     function toggleLangSwap() { isSwapped = !isSwapped; refreshAll(); }
     function toggleHandsFreePanel() {
         const p = document.getElementById('handsfree-controls');
-        if (p.classList.contains('immersive')) { stopHF(); }
-        else { p.classList.add('immersive'); }
+        if (p.classList.contains('immersive')) stopHF();
+        else p.classList.add('immersive');
     }
     function setPause(ms, btn) {
         pauseDuration = ms;
@@ -352,13 +361,14 @@
     }
     function updateTabCounts() {
         if(!phrasesData.length) return;
-        const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-        document.getElementById('learning-count').innerText = `(${phrasesData.length - mastered})`;
-        document.getElementById('banked-count').innerText = `(${mastered})`;
+        const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+        document.getElementById('learning-count').innerText = `(${phrasesData.length - masteredCount})`;
+        document.getElementById('banked-count').innerText = `(${masteredCount})`;
     }
     function saveData() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); }
     function resetLevel() { if(confirm("Reset Level?")) { phrasesData.forEach(p => delete stats[p.pl]); saveData(); refreshAll(); } }
     function advanceLevel() { document.getElementById('overlay').style.display='none'; const idx = levelOrder.indexOf(currentLevel); if (idx < levelOrder.length - 1) selectLevel(levelOrder[idx + 1]); }
+    function handleSmartSearch() { /* Implementation if needed */ }
     function downloadProgress() {
         const blob = new Blob([JSON.stringify(stats)], {type: 'application/json'});
         const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
@@ -367,7 +377,10 @@
 
     window.onload = () => { initSpeech(); scanForLevels(); };
     window.speechSynthesis.onvoiceschanged = initSpeech;
-    window.onclick = () => { document.getElementById('lvl-menu').classList.remove('show'); document.getElementById('gender-menu').classList.remove('show'); };
+    window.onclick = () => { 
+        document.getElementById('lvl-menu').classList.remove('show'); 
+        document.getElementById('gender-menu').classList.remove('show'); 
+    };
 </script>
 </body>
 </html>
