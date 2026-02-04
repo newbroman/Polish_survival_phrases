@@ -1,11 +1,8 @@
 /**
  * app-data.js
- * Contains global variables, phonetic alphabet hints, 
- * and persistent settings.
+ * Contains ONLY the data dictionaries.
  */
 
-// PHONETIC ALPHABET GUIDE (Level 0)
-// Format: { phonetic_sound, emoji_hint }
 const alphaHints = {
     'A': { h: 'ah', e: '🚗', j: 'auto' },
     'Ą': { h: 'own', e: '🌾', j: 'pająk' },
@@ -41,22 +38,6 @@ const alphaHints = {
     'Ż': { h: 'zh', e: '🐸', j: 'żaba' }
 };
 
-// GLOBAL APP STATE
-let phrasesData = [];      // Full list from the current JSON file
-let activePool = [];       // Only phrases still being learned
-let currentTarget = null;  // The phrase currently being asked
-let currentLevel = parseInt(localStorage.getItem('pl_current_level')) || 0;
-let stats = JSON.parse(localStorage.getItem('pl_stats')) || {};
-
-// USER PREFERENCES
-let isSwapped = (localStorage.getItem('pl_swap') === 'true');
-let currentGender = localStorage.getItem('pl_gender') || 'm'; // 'm' or 'f'
-let uiLang = localStorage.getItem('pl_ui_lang') || 'EN';
-
-// APP CONSTANTS
-const THRESHOLD = 3; // How many times a phrase must be correct to move to "Banked"
-
-// UI TEXT DICTIONARY
 const uiTexts = {
     'EN': {
         learning: 'LEARNING',
