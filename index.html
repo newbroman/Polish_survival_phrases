@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Polish Phrase Master</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#dc143c">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Polish Quiz">
-    <link rel="apple-touch-icon" href="icon-192.png">
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -127,10 +121,6 @@
         .pause-selector { display: flex; gap: 5px; align-items: center; }
         .pause-option { padding: 6px 10px; border: 1px solid #ccc; background: white; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
         .pause-option.active { background: var(--pol-red); color: white; border-color: var(--pol-red); }
-
-        /* Animation for countdown */
-        @keyframes flash { 50% { opacity: 0.5; } }
-        .hf-countdown { animation: flash 1s infinite; color: var(--pol-red); font-weight: bold; }
 </style>
 </head>
 <body>
@@ -214,9 +204,6 @@
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
-    let hfLastLevel = parseInt(localStorage.getItem('hf_last_level')) || 0;
-    let hfLastIndex = parseInt(localStorage.getItem('hf_last_index')) || 0;
-    
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let lastPhraseText = null;
     let isSwapped = false;
@@ -404,8 +391,11 @@
             primeAudio(); await new Promise(resolve => setTimeout(resolve, 1000));
         }
         if (phrase.pl === currentTarget.pl) {
-            correctStreak++; playCorrect(); stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Correct! 🌟"; saveStats();
+            correctStreak++; 
+            playCorrect(); 
+            stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
+            document.getElementById('feedback').innerText = t('correct'); 
+            saveStats();
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
                     const nextAvailable = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
@@ -416,10 +406,14 @@
                 if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); correctStreak = 0; } else startNewRound();
             }, 800);
         } else {
-            correctStreak = 0; playNote(150, 0.4, 'sawtooth');
-            if (stats[currentTarget.pl] > MIN_SCORE) stats[currentTarget.pl] -= 1;
-            el.classList.add('wrong'); document.getElementById('feedback').innerText = "Mistake!";
-            saveStats(); setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
+            correctStreak = 0; 
+            playNote(150, 0.4, 'sawtooth');
+            let currentScore = stats[currentTarget.pl] || 0;
+            stats[currentTarget.pl] = Math.max(MIN_SCORE, currentScore - 1);
+            el.classList.add('wrong'); 
+            document.getElementById('feedback').innerText = t('mistake');
+            saveStats(); 
+            setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
         }
     }
 
@@ -434,11 +428,21 @@
         area.className = "grid";
         const list = isLearning ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
         list.filter(p => !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter)).forEach(p => {
-            const tile = document.createElement('div'); tile.className = 'tile';
+            const tile = document.createElement('div'); 
+            tile.className = 'tile';
             tile.innerText = isSwapped ? p.en : getGenderText(p);
             const score = stats[p.pl] || 0;
-            if (score > 0) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
-            else if (score < 0) { tile.style.backgroundColor = `rgba(52, 152, 219, ${Math.abs(score)/2})`; tile.style.color = "white"; }
+            if (score === -1) {
+                tile.style.backgroundColor = "#ADD8E6"; 
+                tile.style.color = "#333";
+            } else if (score <= -2) {
+                tile.style.backgroundColor = "#00008B"; 
+                tile.style.color = "white";
+            } else if (score > 0) {
+                const opacity = score / THRESHOLD;
+                tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
+                if (opacity > 0.6) tile.style.color = "white";
+            }
             tile.onclick = () => isLearning ? checkAnswer(p, tile) : speak(p.pl);
             area.appendChild(tile);
         });
@@ -452,43 +456,25 @@
         m.lang=lang; m.rate = rate; window.speechSynthesis.speak(m); 
     }
 
-    function saveStats() { 
-        localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
-        localStorage.setItem('pl_current_level_idx', currentLevel);
-        localStorage.setItem('hf_last_level', hfLastLevel);
-        localStorage.setItem('hf_last_index', hfLastIndex);
-    }
+    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
+    function updateStats() { if(phrasesData.length) { const m = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (m/phrasesData.length)*100+"%"; } }
+    function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; selectLevel(currentLevel); }
     
-    function updateStats() { 
-        if (phrasesData && phrasesData.length > 0) { 
-            const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length; 
-            const percentage = (masteredCount / phrasesData.length) * 100;
-            document.getElementById('progress-bar').style.width = percentage + "%"; 
-        } else {
-            document.getElementById('progress-bar').style.width = "0%";
-        }
+    function switchMode(m) { 
+        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); 
+        document.getElementById('tab-'+m).classList.add('active'); 
+        document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; 
+        document.getElementById('search-results-extra').innerHTML = ''; updateMap(); 
     }
 
-    function advanceLevel() { 
-        currentLevel++; 
-        // Reset the "Memory" for the new level so it starts at phrase 1
-        hfLastIndex = 0; 
-        localStorage.setItem('hf_last_index', 0);
-        
-        document.getElementById('overlay').style.display = 'none'; 
-        selectLevel(currentLevel); 
-    }
+    function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); }
+    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
+    function resetEverything() { if(confirm("Clear all?")) { localStorage.clear(); location.reload(); } }
 
     function primeAudio() {
         if (audioCtx && audioCtx.state === 'suspended') {
-            isAudioPriming = true; 
-            audioCtx.resume().then(() => { 
-                audioPrimedAt = Date.now(); 
-                isAudioPriming = false; 
-            });
-        } else if (audioCtx) { 
-            audioPrimedAt = Date.now(); 
-        }
+            isAudioPriming = true; audioCtx.resume().then(() => { audioPrimedAt = Date.now(); isAudioPriming = false; });
+        } else if (audioCtx) { audioPrimedAt = Date.now(); }
     }
     
     document.addEventListener('click', primeAudio);
@@ -496,9 +482,7 @@
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = () => { initSpeech(); updateUILanguage(); loadLevelData(); };
 
-    // --- HANDS FREE LOGIC (v26) ---
-    let handsFreeActive = false, handsFreeAbort = false;
-    let hfTimer = null;
+    let handsFreeActive = false, handsFreeIndex = 0, handsFreeLevel = 0, handsFreeAllPhrases = [], pauseDuration = 3000, handsFreeAbort = false;
 
     function setPauseDuration(seconds) {
         pauseDuration = seconds * 1000;
@@ -509,98 +493,46 @@
     async function toggleHandsFree() {
         const btn = document.getElementById('hf-toggle');
         const skipBtn = document.getElementById('hf-skip');
-        
         if (!handsFreeActive) {
-            handsFreeActive = true; handsFreeAbort = false;
-            
-            // Resume Check
-            if (hfLastLevel !== currentLevel || hfLastIndex > 0) {
-                if (confirm(`Resume Level ${hfLastLevel} at phrase ${hfLastIndex + 1}?`)) {
-                    currentLevel = hfLastLevel;
-                    handsFreeIndex = hfLastIndex;
-                    await loadLevelData();
-                } else {
-                    handsFreeIndex = 0;
-                }
-            } else {
-                handsFreeIndex = 0;
-            }
-
+            handsFreeActive = true; handsFreeAbort = false; handsFreeLevel = currentLevel; handsFreeIndex = 0;
             btn.innerText = '⏸ PAUSE'; btn.classList.add('active'); skipBtn.disabled = false;
-            await playHandsFreeSequence();
+            try {
+                const resp = await fetch(`phrases_${handsFreeLevel}.json`);
+                const data = await resp.json(); handsFreeAllPhrases = data.phrases;
+                await playHandsFreeSequence();
+            } catch(e) { toggleHandsFree(); }
         } else {
-            stopHandsFree();
+            handsFreeActive = false; handsFreeAbort = true; speechSynthesis.cancel();
+            btn.innerText = '▶ START HANDS-FREE'; btn.classList.remove('active'); skipBtn.disabled = true;
+            document.getElementById('hf-status').innerText = 'Stopped'; startNewRound();
         }
-    }
-
-    function stopHandsFree() {
-        handsFreeActive = false; handsFreeAbort = true;
-        speechSynthesis.cancel();
-        const btn = document.getElementById('hf-toggle');
-        btn.innerText = '▶ START HANDS-FREE'; btn.classList.remove('active');
-        document.getElementById('hf-skip').disabled = true;
-        document.getElementById('hf-status').innerText = 'Stopped';
-        saveStats();
     }
 
     async function playHandsFreeSequence() {
         while (handsFreeActive && !handsFreeAbort) {
-            if (handsFreeIndex >= phrasesData.length) {
-                playSuccess();
-                await handleLevelTransition();
-                if (handsFreeAbort) break;
+            if (handsFreeIndex >= handsFreeAllPhrases.length) {
+                handsFreeLevel++; if (handsFreeLevel >= 30) { toggleHandsFree(); return; }
+                const resp = await fetch(`phrases_${handsFreeLevel}.json`);
+                const data = await resp.json(); handsFreeAllPhrases = data.phrases; handsFreeIndex = 0;
+                await sleep(pauseDuration);
             }
-            
-            hfLastLevel = currentLevel;
-            hfLastIndex = handsFreeIndex;
-            saveStats();
-
-            const p = phrasesData[handsFreeIndex];
-            document.getElementById('hf-status').innerHTML = `Lvl ${currentLevel} - ${handsFreeIndex + 1}/${phrasesData.length}<br><small>${p.pl}</small>`;
+            if (handsFreeAbort) break;
+            const p = handsFreeAllPhrases[handsFreeIndex];
+            document.getElementById('hf-status').innerText = `Lvl ${handsFreeLevel} - ${handsFreeIndex + 1}/${handsFreeAllPhrases.length}: ${p.pl}`;
             document.getElementById('q-text').innerText = p.pl;
-            
             await speakAsync(p.pl, 1.0); if (handsFreeAbort) break; await sleep(pauseDuration);
             await speakAsync(p.en, 1.0, 'en-US'); if (handsFreeAbort) break; await sleep(pauseDuration);
             await speakAsync(p.pl, 0.7); if (handsFreeAbort) break; await sleep(pauseDuration);
             await speakAsync(p.pl, 1.0); if (handsFreeAbort) break; await sleep(pauseDuration);
-            
             handsFreeIndex++;
         }
     }
-
-    async function handleLevelTransition() {
-        let countdown = 10;
-        let repeatRequested = false;
-        
-        while (countdown > 0 && !repeatRequested && !handsFreeAbort) {
-            document.getElementById('hf-status').innerHTML = `
-                <span class="hf-countdown">Level Complete! Next in ${countdown}s</span><br>
-                <button onclick="repeatLevelHF()" style="font-size:10px; padding:2px 5px;">Repeat Level</button>
-            `;
-            await sleep(1000);
-            countdown--;
-            // Global check if user clicked repeat
-            if (window.hfRepeatFlag) { repeatRequested = true; window.hfRepeatFlag = false; }
-        }
-
-        if (repeatRequested) {
-            handsFreeIndex = 0;
-        } else {
-            currentLevel++;
-            handsFreeIndex = 0;
-            await loadLevelData();
-        }
-    }
-
-    window.repeatLevelHF = () => { window.hfRepeatFlag = true; };
 
     function speakAsync(text, rate = 1.0, lang = 'pl-PL') {
         return new Promise(resolve => {
             if (handsFreeAbort) { resolve(); return; }
             const u = new SpeechSynthesisUtterance(text);
-            if (lang === 'pl-PL' && plVoice) u.voice = plVoice;
-            u.lang = lang; u.rate = rate; 
-            u.onend = () => resolve(); u.onerror = () => resolve();
+            u.lang = lang; u.rate = rate; u.onend = () => resolve(); u.onerror = () => resolve();
             speechSynthesis.speak(u);
         });
     }
@@ -620,11 +552,10 @@
     function updateTabCounts() {
         if (!phrasesData.length) return;
         const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-        document.getElementById('learning-count').innerText = `(${phrasesData.length - masteredCount})`;
+        const practiceCount = phrasesData.length - masteredCount;
+        document.getElementById('learning-count').innerText = `(${practiceCount})`;
         document.getElementById('banked-count').innerText = `(${masteredCount})`;
     }
-
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => { navigator.serviceWorker.register('./service-worker.js').catch(() => {}); });
-    }
 </script>
+</body>
+</html>
