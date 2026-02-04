@@ -493,16 +493,18 @@
         }
     }
 
-    function advanceLevel() { 
-        currentLevel++; 
-        // Reset the "Memory" for the new level so it starts at phrase 1
-        hfLastIndex = 0; 
-        localStorage.setItem('hf_last_index', 0);
-        
-        document.getElementById('overlay').style.display = 'none'; 
-        selectLevel(currentLevel); 
+    function advanceLevel() {
+    // Define your custom order here
+    const levelOrder = [0, 1, 2, 3, 4, 5, 5.1, 6, 7]; 
+    const currentIndex = levelOrder.indexOf(currentLevel);
+    
+    if (currentIndex < levelOrder.length - 1) {
+        currentLevel = levelOrder[currentIndex + 1];
+        selectLevel(currentLevel);
+    } else {
+        alert("You've reached the final level!");
     }
-
+}
     function primeAudio() {
         if (audioCtx && audioCtx.state === 'suspended') {
             isAudioPriming = true; 
