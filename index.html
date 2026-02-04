@@ -332,13 +332,21 @@
         document.getElementById('ui-lang-pl').classList.toggle('active', uiLang === 'pl');
     }
 
-    function setUILang(lang) {
-        uiLang = lang;
-        localStorage.setItem('polishMasterUILang', lang);
-        updateUILanguage();
-        updateMap();
-        if(currentTarget) document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
+   function setUILang(lang) {
+    uiLang = lang;
+    localStorage.setItem('polishMasterUILang', lang);
+    updateUILanguage();
+    updateMap();
+    
+    // Ensure the visual 'active' state matches the selected language
+    document.getElementById('ui-lang-en').classList.toggle('active', uiLang === 'en');
+    document.getElementById('ui-lang-pl').classList.toggle('active', uiLang === 'pl');
+    
+    if(currentTarget) {
+        // If it was showing the wrong side of the card, flip this logic
+        document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
     }
+}
 
     function getGenderText(phrase) {
         if (currentGender === 'm' && phrase.variants?.m) return phrase.variants.m;
