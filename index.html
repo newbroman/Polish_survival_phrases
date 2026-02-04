@@ -134,7 +134,7 @@
     <div class="title-banner"><h1 class="title">Say some Polish phrases</h1></div>
     <div class="controls-row">
         <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)"></div>
+            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading levels...</div>
             <div class="dropdown-menu" id="lvl-menu"></div>
         </div>
         <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="handleSmartSearch()">
@@ -203,8 +203,10 @@
 
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
-    let currentLevel = parseInt(localStorage.getItem('pl_current_level_idx')) || 0;
+    // currentLevel is now stored as a string to handle decimals like "1.1"
+    let currentLevel = localStorage.getItem('pl_current_level_idx') || "0"; 
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
+    let levelList = []; // Will store list of available level files and descriptions
     let lastPhraseText = null;
     let isSwapped = false;
     let currentGender = localStorage.getItem('polishMasterGender') || 'both';
@@ -308,31 +310,53 @@
         updateUILanguage(); 
     }
 
+    // UPDATED: Now supports decimal file names and scans for phrases_X.X.json
     async function populateDropdown() {
-        const menu = document.getElementById('lvl-menu'); menu.innerHTML = '';
-        for (let i = 0; i < 30; i++) {
-            try {
-                const resp = await fetch(`phrases_${i}.json`);
-                if (resp.ok) {
-                    const data = await resp.json();
-                    const isDone = data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length === data.phrases.length;
-                    const item = document.createElement('div');
-                    item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
-                    item.innerText = `Lvl ${i}: ${data.description || 'Level '+i}`;
-                    item.onclick = (e) => { e.stopPropagation(); selectLevel(i); };
-                    menu.appendChild(item);
-                    if(i === currentLevel) document.getElementById('lvl-current').innerText = item.innerText;
-                }
-            } catch(e) {}
+        const menu = document.getElementById('lvl-menu'); 
+        menu.innerHTML = '';
+        levelList = [];
+
+        // We check a range of possible level numbers (0.0 to 15.9)
+        for (let major = 0; major <= 15; major++) {
+            for (let minor = 0; minor <= 9; minor++) {
+                const lvlId = minor === 0 && major === 0 ? "0" : (minor === 0 ? `${major}` : `${major}.${minor}`);
+                try {
+                    const resp = await fetch(`phrases_${lvlId}.json`);
+                    if (resp.ok) {
+                        const data = await resp.json();
+                        const isDone = data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length === data.phrases.length;
+                        
+                        const levelObj = {
+                            id: lvlId,
+                            description: data.description || `Level ${lvlId}`,
+                            isDone: isDone
+                        };
+                        levelList.push(levelObj);
+
+                        const item = document.createElement('div');
+                        item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
+                        item.innerText = levelObj.description;
+                        item.onclick = (e) => { e.stopPropagation(); selectLevel(levelObj.id); };
+                        menu.appendChild(item);
+                        
+                        if(levelObj.id == currentLevel) {
+                            document.getElementById('lvl-current').innerText = levelObj.description;
+                        }
+                    } else if (minor === 0 && major > 0) {
+                        // If phrases_1.json fails, don't necessarily stop, but if it's a major level, we might be at the end.
+                    }
+                } catch(e) {}
+            }
         }
     }
 
     function selectLevel(lvl) {
-        currentLevel = lvl;
+        currentLevel = lvl.toString();
         document.getElementById('lvl-menu').classList.remove('show');
         document.getElementById('search-bar').value = '';
         document.getElementById('search-results-extra').innerHTML = '';
-        saveStats(); loadLevelData();
+        saveStats(); 
+        loadLevelData();
     }
 
     async function loadLevelData() {
@@ -340,19 +364,27 @@
             const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
             const data = await resp.json();
             phrasesData = data.phrases;
+            
+            // Update the trigger text to the current level description
+            document.getElementById('lvl-current').innerText = data.description || `Level ${currentLevel}`;
+            
             refreshActivePool();
             updateStats(); updateTabCounts(); updateMap(); startNewRound(); cacheAllPhrases(); populateDropdown();
-        } catch (err) { document.getElementById('q-text').innerText = "File not found"; }
+        } catch (err) { 
+            document.getElementById('q-text').innerText = "File not found"; 
+        }
     }
 
     async function cacheAllPhrases() {
         allPhrasesCache = [];
-        for (let i = 0; i < 25; i++) {
+        // Scan for caching
+        for (let i = 0; i < levelList.length; i++) {
+            const lvl = levelList[i];
             try {
-                const r = await fetch(`phrases_${i}.json`);
+                const r = await fetch(`phrases_${lvl.id}.json`);
                 if (r.ok) {
                     const d = await r.json();
-                    allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: i})));
+                    allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: lvl.id})));
                 }
             } catch(e) {}
         }
@@ -458,7 +490,18 @@
 
     function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
     function updateStats() { if(phrasesData.length) { const m = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; document.getElementById('progress-bar').style.width = (m/phrasesData.length)*100+"%"; } }
-    function advanceLevel() { currentLevel++; document.getElementById('overlay').style.display='none'; selectLevel(currentLevel); }
+    
+    function advanceLevel() { 
+        // Find next index in the levelList
+        const currentIdx = levelList.findIndex(l => l.id == currentLevel);
+        if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
+            const nextLvlId = levelList[currentIdx + 1].id;
+            document.getElementById('overlay').style.display='none'; 
+            selectLevel(nextLvlId);
+        } else {
+             document.getElementById('overlay').style.display='none'; 
+        }
+    }
     
     function switchMode(m) { 
         document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); 
@@ -468,7 +511,7 @@
     }
 
     function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); }
-    function importProgress(e) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(e.target.files[0]); }
+    function importProgress(event) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(event.target.files[0]); }
     function resetEverything() { if(confirm("Clear all?")) { localStorage.clear(); location.reload(); } }
 
     function primeAudio() {
@@ -482,7 +525,7 @@
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = () => { initSpeech(); updateUILanguage(); loadLevelData(); };
 
-    let handsFreeActive = false, handsFreeIndex = 0, handsFreeLevel = 0, handsFreeAllPhrases = [], pauseDuration = 3000, handsFreeAbort = false;
+    let handsFreeActive = false, handsFreeIndex = 0, handsFreeLevel = currentLevel, handsFreeAllPhrases = [], pauseDuration = 3000, handsFreeAbort = false;
 
     function setPauseDuration(seconds) {
         pauseDuration = seconds * 1000;
@@ -511,10 +554,16 @@
     async function playHandsFreeSequence() {
         while (handsFreeActive && !handsFreeAbort) {
             if (handsFreeIndex >= handsFreeAllPhrases.length) {
-                handsFreeLevel++; if (handsFreeLevel >= 30) { toggleHandsFree(); return; }
-                const resp = await fetch(`phrases_${handsFreeLevel}.json`);
-                const data = await resp.json(); handsFreeAllPhrases = data.phrases; handsFreeIndex = 0;
-                await sleep(pauseDuration);
+                // Find next level in levelList
+                const currentIdx = levelList.findIndex(l => l.id == handsFreeLevel);
+                if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
+                    handsFreeLevel = levelList[currentIdx + 1].id;
+                    const resp = await fetch(`phrases_${handsFreeLevel}.json`);
+                    const data = await resp.json(); handsFreeAllPhrases = data.phrases; handsFreeIndex = 0;
+                    await sleep(pauseDuration);
+                } else {
+                    toggleHandsFree(); return;
+                }
             }
             if (handsFreeAbort) break;
             const p = handsFreeAllPhrases[handsFreeIndex];
