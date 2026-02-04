@@ -112,7 +112,6 @@
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
         .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; }
     
-        /* Hands-free mode styles */
         .handsfree-controls {
             display: flex; gap: 10px; align-items: center; padding: 10px; background: var(--card);
             border-radius: 8px; margin-top: 10px; flex-wrap: wrap; justify-content: center;
@@ -128,7 +127,6 @@
         .pause-selector { display: flex; gap: 5px; align-items: center; }
         .pause-option { padding: 6px 10px; border: 1px solid #ccc; background: white; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
         .pause-option.active { background: var(--pol-red); color: white; border-color: var(--pol-red); }
-        .footer-btn.active-swap { background: var(--pol-red); color: white; border-color: var(--pol-red); }
 </style>
 </head>
 <body>
@@ -297,16 +295,24 @@
         const genderLabels = { m: 'Male', f: 'Female', both: 'Both' };
         document.getElementById('gender-current').innerText = genderLabels[gender];
         document.getElementById('gender-menu').classList.remove('show');
+        refreshActivePool();
+        updateMap(); startNewRound();
+    }
+
+    function refreshActivePool() {
         if (currentGender !== 'both') {
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both')).slice(0, 12);
         } else {
             activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
         }
-        updateMap(); startNewRound();
     }
 
     function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function toggleLangSwap() { uiLang = uiLang === 'en' ? 'pl' : 'en'; localStorage.setItem('polishMasterUILang', uiLang); updateUILanguage(); }
+    function toggleLangSwap() { 
+        uiLang = uiLang === 'en' ? 'pl' : 'en'; 
+        localStorage.setItem('polishMasterUILang', uiLang); 
+        updateUILanguage(); 
+    }
 
     async function populateDropdown() {
         const menu = document.getElementById('lvl-menu'); menu.innerHTML = '';
@@ -331,8 +337,8 @@
         currentLevel = lvl;
         document.getElementById('lvl-menu').classList.remove('show');
         document.getElementById('search-bar').value = '';
-        document.getElementById('search-results-extra').innerHTML = ''; // Fixed search clearing
-        saveStats(); updateTabCounts(); loadLevelData();
+        document.getElementById('search-results-extra').innerHTML = '';
+        saveStats(); loadLevelData();
     }
 
     async function loadLevelData() {
@@ -340,14 +346,14 @@
             const resp = await fetch(`phrases_${currentLevel}.json?v=${Date.now()}`);
             const data = await resp.json();
             phrasesData = data.phrases;
-            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
-            updateStats(); updateMap(); startNewRound(); cacheAllPhrases(); populateDropdown();
+            refreshActivePool();
+            updateStats(); updateTabCounts(); updateMap(); startNewRound(); cacheAllPhrases(); populateDropdown();
         } catch (err) { document.getElementById('q-text').innerText = "File not found"; }
     }
 
     async function cacheAllPhrases() {
         allPhrasesCache = [];
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 25; i++) {
             try {
                 const r = await fetch(`phrases_${i}.json`);
                 if (r.ok) {
@@ -388,7 +394,7 @@
 
     async function checkAnswer(phrase, el) {
         if (audioCtx && (audioCtx.state === 'suspended' || isAudioPriming || (Date.now() - audioPrimedAt > 30000))) {
-            primeAudio(); await new Promise(resolve => setTimeout(resolve, 2000));
+            primeAudio(); await new Promise(resolve => setTimeout(resolve, 1000));
         }
         if (phrase.pl === currentTarget.pl) {
             correctStreak++; playCorrect(); stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
@@ -399,7 +405,7 @@
                     const index = activePool.indexOf(phrase);
                     if (nextAvailable) activePool[index] = nextAvailable; else activePool.splice(index, 1);
                 }
-                updateStats(); updateMap();
+                updateStats(); updateTabCounts(); updateMap();
                 if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); correctStreak = 0; } else startNewRound();
             }, 800);
         } else {
@@ -521,20 +527,23 @@
     }
 
     function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+    
     function toggleHandsFreePanel() {
         const panel = document.getElementById('handsfree-controls');
         const btn = document.getElementById('hf-toggle-btn');
-        const isHidden = panel.style.display === 'none' || !panel.style.display;
-        panel.style.display = isHidden ? 'flex' : 'none';
-        btn.innerText = isHidden ? '▲ Hands-Free' : '▼ Hands-Free';
-        btn.classList.toggle('active-swap', isHidden);
+        if (panel.style.display === 'none' || !panel.style.display) {
+            panel.style.display = 'flex'; btn.innerText = '▲ Hands-Free'; btn.classList.add('active-swap');
+        } else {
+            panel.style.display = 'none'; btn.innerText = '▼ Hands-Free'; btn.classList.remove('active-swap');
+        }
     }
 
     function updateTabCounts() {
         if (!phrasesData.length) return;
-        const m = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-        document.getElementById('learning-count').innerText = `(${phrasesData.length - m})`;
-        document.getElementById('banked-count').innerText = `(${m})`;
+        const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+        const practiceCount = phrasesData.length - masteredCount;
+        document.getElementById('learning-count').innerText = `(${practiceCount})`;
+        document.getElementById('banked-count').innerText = `(${masteredCount})`;
     }
 
     if ('serviceWorker' in navigator) {
@@ -542,5 +551,4 @@
     }
 </script>
 </body>
-</html>
 </html>
