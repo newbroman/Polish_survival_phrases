@@ -405,10 +405,23 @@
         }
     }
 
-    function selectLevel(lvl) {
+   function selectLevel(lvl) {
         currentLevel = lvl;
+        
+        // 1. Hide the level menu
         document.getElementById('lvl-menu').classList.remove('show');
-        document.getElementById('search-bar').value = '';
+        
+        // 2. Clear the search bar text
+        const searchBar = document.getElementById('search-bar');
+        searchBar.value = '';
+        
+        // 3. Clear the extra search results from the bottom
+        const extraResults = document.getElementById('search-results-extra');
+        extraResults.innerHTML = '';
+        
+        // 4. Reset the view to "Practice" mode (optional, but usually preferred)
+        switchMode('learning');
+        
         saveStats();
         loadLevelData();
     }
@@ -445,21 +458,40 @@
         }
     }
 
-    function handleSmartSearch() {
+function handleSmartSearch() {
         const query = document.getElementById('search-bar').value.toLowerCase();
         const extraResults = document.getElementById('search-results-extra');
-        extraResults.innerHTML = '';
-        if (!query) { updateMap(); return; }
+        
+        // If the bar is empty, clear the extra list and refresh the grid
+        if (!query) { 
+            extraResults.innerHTML = '';
+            updateMap(); 
+            return; 
+        }
+
+        // Filter the current level tiles
         updateMap(query);
         
-        const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)) && p.lvl !== currentLevel).slice(0, 5);
+        // Search other levels
+        const matches = allPhrasesCache.filter(p => 
+            (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)) 
+            && p.lvl !== currentLevel
+        ).slice(0, 5);
+
+        extraResults.innerHTML = ''; // Clear previous global matches
         if (matches.length > 0) {
-            const label = document.createElement('div'); label.className = 'search-results-label'; label.innerText = t('foundInOther');
+            const label = document.createElement('div'); 
+            label.className = 'search-results-label'; 
+            label.innerText = t('foundInOther');
             extraResults.appendChild(label);
+
             matches.forEach(p => {
-                const item = document.createElement('div'); item.className = 'global-result-item';
+                const item = document.createElement('div'); 
+                item.className = 'global-result-item';
                 item.innerHTML = `<div><strong>${p.pl}</strong><br><small>${p.en}</small></div><div style="color:var(--pol-red); font-weight:bold;">LVL ${p.lvl}</div>`;
-                item.onclick = () => selectLevel(p.lvl);
+                
+                // When we click a result, selectLevel will now clear the search
+                item.onclick = () => selectLevel(p.lvl); 
                 extraResults.appendChild(item);
             });
         }
