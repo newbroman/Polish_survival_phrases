@@ -1,15 +1,19 @@
-/* --- GLOBAL STATE --- */
+/* --- GLOBAL STATE & PERSISTENCE --- */
 let stats = JSON.parse(localStorage.getItem('pl_stats')) || {};
-let currentLevel = parseInt(localStorage.getItem('pl_current_level')) || 1; // Default to Level 1
+let currentLevel = parseInt(localStorage.getItem('pl_current_level')) || 1;
+let uiLang = localStorage.getItem('pl_ui_lang') || 'EN';
 let isSwapped = localStorage.getItem('pl_swap') === 'true';
 const THRESHOLD = 5;
 
+let globalPhrases = []; 
 let phrasesData = [];
 let activePool = [];
 let visibleItems = []; 
 let currentTarget = null;
 let streakCounter = 0;
+let quizHistory = []; 
 
+// Hands-Free State
 let hfActive = false;
 let hfPaused = false;
 let hfAbort = false;
@@ -17,8 +21,23 @@ let hfDelay = 3000;
 
 /* --- INITIALIZATION --- */
 async function init() {
+    await buildGlobalIndex(); 
     await populateLevelMenu();
     loadLevel(currentLevel);
+}
+
+async function buildGlobalIndex() {
+    globalPhrases = [];
+    for (let i = 1; i <= 15; i++) { // Starting from 1 to avoid broken Level 0
+        try {
+            const response = await fetch(`phrases_${i}.json`);
+            if (response.ok) {
+                const data = await response.json();
+                const tagged = data.phrases.map(p => ({ ...p, levelOrigin: i }));
+                globalPhrases = globalPhrases.concat(tagged);
+            } else { break; }
+        } catch (e) { break; }
+    }
 }
 
 async function loadLevel(lvl) {
@@ -28,9 +47,8 @@ async function loadLevel(lvl) {
         const data = await response.json();
         phrasesData = data.phrases;
         
-        // Ensure standard grid class
         const area = document.getElementById('mastery-map');
-        if (area) area.className = 'grid';
+        if (area) area.className = 'grid'; // Pure 3-column grid
         
         const trigger = document.getElementById('lvl-current');
         if (trigger) trigger.innerText = `Level ${lvl}: ${data.description}`;
@@ -41,14 +59,25 @@ async function loadLevel(lvl) {
     } catch (e) { console.error("Load failed:", e); }
 }
 
-/* --- GRID & QUIZ --- */
-function updateMap() {
+/* --- GRID RENDERING --- */
+function updateMap(filter = "") {
     const area = document.getElementById('mastery-map');
     const isLearning = document.getElementById('tab-learning').classList.contains('active');
     if (!area) return;
     area.innerHTML = '';
 
-    let items = isLearning ? activePool.slice(0, 12) : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+    let items;
+    const isSearching = filter.trim() !== "";
+
+    if (isSearching) {
+        items = globalPhrases.filter(p => 
+            p.pl.toLowerCase().includes(filter.toLowerCase()) || 
+            p.en.toLowerCase().includes(filter.toLowerCase())
+        ).slice(0, 40); 
+    } else {
+        items = isLearning ? activePool : phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD);
+        if (isLearning) items = items.slice(0, 12);
+    }
     visibleItems = items; 
 
     items.forEach(p => {
@@ -64,18 +93,28 @@ function updateMap() {
         }
         
         tile.onclick = () => {
-            if (isLearning) checkAnswer(p, tile);
-            else speak(p.pl);
+            if (isSearching) speak(p.pl);
+            else isLearning ? checkAnswer(p, tile) : speak(p.pl);
         };
         area.appendChild(tile);
     });
+    updateTabCounts();
 }
 
+/* --- QUIZ LOGIC --- */
 function nextRound() {
     const qText = document.getElementById('q-text');
     if (!visibleItems.length) return;
 
-    currentTarget = visibleItems[Math.floor(Math.random() * visibleItems.length)];
+    let newTarget;
+    do {
+        newTarget = visibleItems[Math.floor(Math.random() * visibleItems.length)];
+    } while (quizHistory.includes(newTarget.pl) && visibleItems.length > 1);
+
+    currentTarget = newTarget;
+    quizHistory.push(currentTarget.pl);
+    if (quizHistory.length > 5) quizHistory.shift();
+
     qText.innerText = isSwapped ? currentTarget.pl : currentTarget.en;
     if (!isSwapped) speak(currentTarget.pl);
 }
@@ -84,7 +123,7 @@ function checkAnswer(p, tile) {
     if (p.pl === currentTarget.pl) {
         streakCounter++;
         playFeedback('correct');
-        tile.style.background = "#28a745";
+        tile.style.background = "#28a745"; // Success Green
         tile.style.color = "white";
         
         stats[p.pl] = (stats[p.pl] || 0) + 1;
@@ -100,34 +139,36 @@ function checkAnswer(p, tile) {
     } else {
         streakCounter = 0; 
         playFeedback('wrong');
-        tile.style.background = "#dc3545";
+        tile.style.background = "#dc3545"; // Error Red
         setTimeout(() => { tile.style.background = ""; }, 400);
     }
 }
 
-/* --- HANDS-FREE MODE (RESTORED) --- */
+/* --- HANDS-FREE MODE (SANDWICH) --- */
 async function startHandsFree() {
     if (hfActive) return;
     hfActive = true; hfAbort = false;
     const mask = document.getElementById('hf-speaking-display');
+    if (mask) mask.style.display = 'flex';
     
     while (hfActive && !hfAbort && activePool.length > 0) {
         let p = activePool[Math.floor(Math.random() * activePool.length)];
         
-        // Polish -> English -> Polish cycle
+        // 1. Polish
         mask.innerText = p.pl;
-        await speakAsync(p.pl, 1.0, 'pl-PL');
-        await sleep(hfDelay);
+        await speakAsync(p.pl, 0.8, 'pl-PL');
+        await sleep(2000);
         
+        // 2. English
         mask.innerText = p.en;
         await speakAsync(p.en, 1.0, 'en-US');
-        await sleep(hfDelay);
+        await sleep(2000);
+        
+        // 3. Polish
+        mask.innerText = p.pl;
+        await speakAsync(p.pl, 1.0, 'pl-PL');
+        await sleep(3000);
     }
-}
-
-function stopHandsFree() {
-    hfActive = false; hfAbort = true;
-    window.speechSynthesis.cancel();
 }
 
 /* --- UTILS --- */
@@ -148,6 +189,7 @@ function speakAsync(text, rate, lang) {
 }
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
 function playFeedback(type) {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator();
@@ -157,5 +199,47 @@ function playFeedback(type) {
     gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
     osc.start(); osc.stop(ctx.currentTime + 0.2);
 }
+
 function saveStats() { localStorage.setItem('pl_stats', JSON.stringify(stats)); }
+function toggleDropdown() { document.getElementById('lvl-menu').classList.toggle('show'); }
+function handleSearch() { updateMap(document.getElementById('search-bar').value); }
 function toggleSwap() { isSwapped = !isSwapped; localStorage.setItem('pl_swap', isSwapped); updateMap(); nextRound(); }
+
+async function populateLevelMenu() {
+    const menu = document.getElementById('lvl-menu');
+    if (!menu) return;
+    menu.innerHTML = '';
+    for (let i = 1; i <= 15; i++) {
+        try {
+            const response = await fetch(`phrases_${i}.json`);
+            if (response.ok) {
+                const data = await response.json();
+                const item = document.createElement('div');
+                item.className = 'dropdown-item';
+                item.innerText = `Level ${i}: ${data.description}`;
+                item.onclick = () => { currentLevel = i; loadLevel(i); toggleDropdown(); };
+                menu.appendChild(item);
+            }
+        } catch (e) {}
+    }
+}
+
+function updateTabCounts() {
+    const mastered = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+    const lCount = document.getElementById('learning-count');
+    const bCount = document.getElementById('banked-count');
+    if(lCount) lCount.innerText = `(${phrasesData.length - mastered})`;
+    if(bCount) bCount.innerText = `(${mastered})`;
+}
+
+function switchMode(m) {
+    document.getElementById('tab-learning').classList.toggle('active', m === 'learning');
+    document.getElementById('tab-mastered').classList.toggle('active', m === 'mastered');
+    updateMap();
+}
+
+function stopHandsFree() {
+    hfActive = false; hfAbort = true;
+    window.speechSynthesis.cancel();
+    document.getElementById('hf-speaking-display').style.display = 'none';
+}
