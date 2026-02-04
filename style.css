@@ -111,3 +111,37 @@ body { display: flex; flex-direction: column; }
     border: 1px solid #ccc;
     padding: 0 10px;
 }
+.dropdown-menu { 
+    display: none; /* This is likely missing */
+    position: absolute; 
+    top: 100%; left: 0; right: 0; 
+    background: var(--card); 
+    border: 1px solid #ccc; 
+    z-index: 1000;
+    max-height: 250px;
+    overflow-y: auto;
+}
+.dropdown-menu.show { display: block !important; }
+
+/* --- Fix 2: Hide the Study Mode (HF) panel until toggled --- */
+.hf-overlay {
+    display: none; /* Hide by default */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); /* Dim the background */
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Fix 3: Keep the Victory Overlay hidden --- */
+#overlay {
+    display: none; /* Only show via JS when level is done */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255,255,255,0.95);
+    z-index: 4000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
