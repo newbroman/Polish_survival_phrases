@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master v5.8</title>
+    <title>Polish Phrase Master v5.9</title>
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --gold: #ffd700; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -18,7 +18,7 @@
         }
         .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; }
         
-        .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
+        .controls-row { width: 95%; max-width: 450px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
         
         .search-row { display: flex; gap: 6px; width: 100%; }
         
@@ -36,7 +36,8 @@
             flex-shrink: 0;
         }
 
-        .gender-dropdown-wrapper { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 80px; }
+        /* GENDER DROPDOWN - Clean, no label */
+        .gender-dropdown-wrapper { display: flex; align-items: center; gap: 6px; flex: 1; }
         .gender-dropdown { position: relative; flex: 1; }
         .gender-dropdown-trigger { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
@@ -71,7 +72,7 @@
         }
 
         .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; flex-shrink: 0; transition: transform 0.1s; }
-        .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 90%; max-width: 400px; margin: 0 auto; justify-content: flex-start; }
+        .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 95%; max-width: 450px; margin: 0 auto; justify-content: flex-start; }
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; user-select: none; }
         .q-content { text-align: left; min-width: 0; }
         .q-text { font-size: 1.1rem; font-weight: 800; }
@@ -81,34 +82,33 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 10px 8px; overflow-y: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; box-sizing: border-box; transition: transform 0.1s; }
+        .map-section { flex-grow: 1; padding: 10px 8px; overflow-y: hidden; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; transition: transform 0.1s; }
         
-        /* UPDATED GRID for better definition and text wrapping */
+        /* RESTORED OLD GRID: 4 Columns x 3 Rows */
         .grid { 
             display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            grid-template-rows: repeat(4, 1fr);
-            gap: 8px; /* Increased gap slightly */
+            grid-template-columns: repeat(4, 1fr); /* 4 Columns */
+            grid-template-rows: repeat(3, 1fr);    /* 3 Rows */
+            gap: 6px; 
             width: 100%; 
-            max-width: 380px; 
+            height: 100%;
+            max-width: 450px; 
             margin: 0 auto;
-            height: 100%; 
-            max-height: 600px; /* Prevents tiles from becoming pillars on tall screens */
         }
         
         .tile { 
             display: flex; align-items: center; justify-content: center; 
-            background: #ffffff; /* White background for definition */
-            border: 1px solid #cbd5e0; /* Subtle border */
-            border-radius: 6px; cursor: pointer; padding: 6px; 
+            background: #ffffff; 
+            border: 1px solid #cbd5e0; 
+            border-radius: 6px; cursor: pointer; padding: 2px; 
             text-align: center; 
-            font-size: 0.75rem; 
-            font-weight: 700; line-height: 1.25; 
-            box-shadow: 0 3px 0 rgba(0,0,0,0.08); /* Stronger bottom shadow */
+            font-size: 0.7rem; /* Slightly smaller text for 4-col layout */
+            font-weight: 700; line-height: 1.2; 
+            box-shadow: 0 2px 0 rgba(0,0,0,0.08);
             transition: background 0.2s, transform 0.1s, box-shadow 0.1s; 
             position: relative;
             word-wrap: break-word; 
-            overflow-wrap: anywhere; /* FIX: Breaks text at slashes */
+            overflow-wrap: anywhere; /* Ensure text breaks in narrow columns */
             height: 100%;
         }
 
@@ -118,7 +118,6 @@
             max-width: 380px; 
             overflow-y: auto;
             display: block;
-            max-height: none; /* Let lvl0 scroll if needed */
         }
         .grid.lvl0 .tile {
             float: left; width: 18%; margin: 1%; aspect-ratio: 1/1;
@@ -242,7 +241,7 @@
             <div style="font-weight:bold; margin-bottom:5px;">💾 Saving</div>
             Your progress saves automatically to this device. Use the <b>Save</b> button below to download a backup file.
         </div>
-        <div style="text-align:center; font-size:0.75rem; color:#888;">Polish Phrase Master v1.3</div>
+        <div style="text-align:center; font-size:0.75rem; color:#888;">Polish Phrase Master v5.9</div>
     </div>
 </div>
 
@@ -1032,7 +1031,6 @@
             initAudioContext(); enableAudioKeepAlive(); // Ensure active
             const u = new SpeechSynthesisUtterance(text);
             u.lang = lang; u.rate = rate; 
-            if(lang === 'pl-PL' && plVoice) u.voice = plVoice;
             u.onend = () => resolve(); 
             u.onerror = () => resolve();
             speechSynthesis.speak(u);
