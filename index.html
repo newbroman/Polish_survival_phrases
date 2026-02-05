@@ -75,12 +75,11 @@
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
         .grid.lvl0 { grid-template-columns: repeat(5, 1fr); }
 
-        /* INCREASED FONT SIZES HERE */
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
             background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
             text-align: center; 
-            font-size: 0.75rem; /* Increased from 0.6rem */
+            font-size: 0.75rem; 
             font-weight: 700; line-height: 1.1; 
             box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s; 
         }
@@ -88,10 +87,9 @@
         
         .lvl0-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
         
-        /* INCREASED LEVEL 0 FONTS */
-        .lvl0-big { font-size: 1.2rem; font-weight: 800; color: var(--pol-red); } /* Increased from 1rem */
-        .lvl0-sub { font-size: 0.65rem; color: #666; margin-top: -2px; } /* Increased from 0.55rem */
-        .lvl0-emoji { font-size: 1.1rem; margin-top: 2px; } /* Increased from 0.9rem */
+        .lvl0-big { font-size: 1.2rem; font-weight: 800; color: var(--pol-red); }
+        .lvl0-sub { font-size: 0.65rem; color: #666; margin-top: -2px; }
+        .lvl0-emoji { font-size: 1.1rem; margin-top: 2px; }
 
         .search-results-label { font-size: 0.6rem; font-weight: 800; color: var(--pol-red); margin: 10px 0 5px 0; width: 100%; max-width: 420px; text-align: left; }
         .global-result-item { width: 100%; max-width: 420px; background: var(--card); border: 1px solid #ddd; border-radius: 6px; padding: 8px; margin-bottom: 4px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center;}
@@ -262,7 +260,8 @@
     let currentLevel = localStorage.getItem('pl_current_level_idx') || "0"; 
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let levelList = []; 
-    let lastPhraseText = null;
+    // REPLACED lastPhraseText with a queue
+    let recentPhrasesQueue = []; 
     let isSwapped = false;
     let currentGender = localStorage.getItem('polishMasterGender') || 'both';
     let uiLang = localStorage.getItem('polishMasterUILang') || 'en'; 
@@ -380,7 +379,6 @@
         refreshActivePool(); updateMap(); startNewRound();
     }
 
-    // UPDATED: Level 0 logic to show ALL items
     function refreshActivePool() {
         if (currentLevel === "0") {
             // Level 0: Bypass filters and limits, show full alphabet
@@ -436,7 +434,12 @@
         document.getElementById('lvl-menu').classList.remove('show');
         document.getElementById('search-bar').value = '';
         document.getElementById('search-results-extra').innerHTML = '';
-        saveStats(); loadLevelData();
+        saveStats(); 
+        
+        // Reset the history queue when switching levels
+        recentPhrasesQueue = [];
+        
+        loadLevelData();
     }
 
     async function loadLevelData() {
@@ -478,11 +481,37 @@
         }
     }
 
+    // --- UPDATED START NEW ROUND (HISTORY BUFFER LOGIC) ---
     function startNewRound() {
         if (!activePool.length) return;
+        
+        // Calculate safe history limit. 
+        // We only exclude up to 3 previous items, but ONLY if the pool is large enough.
+        // If pool size is 3, we exclude max 2. If pool size is 2, exclude 1.
+        const historyLimit = Math.min(3, activePool.length - 1);
+        
         let nextTarget;
-        if (activePool.length > 1) { do { nextTarget = activePool[Math.floor(Math.random() * activePool.length)]; } while (nextTarget.pl === lastPhraseText); } else nextTarget = activePool[0];
-        currentTarget = nextTarget; lastPhraseText = currentTarget.pl;
+        
+        if (activePool.length === 1) {
+            nextTarget = activePool[0];
+        } else {
+            do {
+                nextTarget = activePool[Math.floor(Math.random() * activePool.length)];
+            } while (
+                // Only loop if the target is found in the restricted "tail" of the history
+                // AND we actually have enough items to enforce a restriction.
+                historyLimit > 0 && recentPhrasesQueue.slice(-historyLimit).includes(nextTarget.pl)
+            );
+        }
+
+        currentTarget = nextTarget;
+        
+        // Update History Queue
+        recentPhrasesQueue.push(currentTarget.pl);
+        if (recentPhrasesQueue.length > 3) {
+            recentPhrasesQueue.shift(); // Keep max 3 items
+        }
+
         updateQuestionText();
         document.getElementById('feedback').innerText = "";
         
@@ -495,7 +524,6 @@
         }, 300);
     }
 
-    // UPDATED checkAnswer with Audio Wake-up
     async function checkAnswer(phrase, el) {
         await wakeUpAudioEngine();
 
@@ -607,14 +635,13 @@
     function importProgress(event) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(event.target.files[0]); }
     function resetEverything() { if(confirm("Clear all?")) { localStorage.clear(); location.reload(); } }
     
-    // Global listener to update timestamp (but not trigger audio)
     document.addEventListener('click', () => { lastInteractionTime = Date.now(); });
     document.addEventListener('touchstart', () => { lastInteractionTime = Date.now(); });
     
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = () => { initSpeech(); updateUILanguage(); loadLevelData(); };
 
-    // --- NEW HANDS FREE LOGIC ---
+    // --- HANDS FREE LOGIC ---
     let hfActive = false;
     let hfIndex = 0;
     let hfPhrases = [];
@@ -789,7 +816,6 @@
     }
 
     let lastSpeakerTap = 0;
-    // UPDATED Speaker Tap with Audio Wake-up
     async function handleSpeakerTap() {
         const now = Date.now();
         await wakeUpAudioEngine();
