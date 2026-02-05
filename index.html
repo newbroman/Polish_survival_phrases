@@ -61,7 +61,6 @@
 
         .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; flex-shrink: 0; }
         .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 90%; max-width: 400px; margin: 0 auto; justify-content: flex-start; }
-        /* Speaker button updated to handle tap logic */
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; user-select: none; }
         .q-content { text-align: left; min-width: 0; }
         .q-text { font-size: 1.1rem; font-weight: 800; }
@@ -72,7 +71,14 @@
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
         .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
+        
+        /* STANDARD GRID */
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
+        
+        /* LEVEL 0 GRID - 5 COLUMNS */
+        .grid.lvl0 { grid-template-columns: repeat(5, 1fr); }
+
+        /* TILE STYLES */
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
             background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
@@ -81,12 +87,21 @@
         }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
         
+        /* LEVEL 0 TILE CONTENT */
+        .lvl0-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
+        .lvl0-big { font-size: 1rem; font-weight: 800; color: var(--pol-red); }
+        .lvl0-sub { font-size: 0.55rem; color: #666; margin-top: -2px; }
+        .lvl0-emoji { font-size: 0.9rem; margin-top: 2px; }
+
         .search-results-label { font-size: 0.6rem; font-weight: 800; color: var(--pol-red); margin: 10px 0 5px 0; width: 100%; max-width: 420px; text-align: left; }
         .global-result-item { width: 100%; max-width: 420px; background: var(--card); border: 1px solid #ddd; border-radius: 6px; padding: 8px; margin-bottom: 4px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center;}
 
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
         .active-swap { background: var(--pol-red) !important; color: white !important; border-color: var(--pol-red) !important; }
+        
+        /* HARD MODE BUTTON ACTIVE STATE */
+        .hard-mode-active { background: #333 !important; color: #fff !important; border-color: #333 !important; }
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
         .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; }
@@ -205,6 +220,7 @@
                 </div>
             </div>
             <button id="lang-swap-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 100px;" onclick="toggleLangSwap()">Swap EN/PL</button>
+            <button id="hard-mode-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 100px;" onclick="toggleHardMode()">🧠 Hard Mode</button>
             <button class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 110px; background:var(--pol-red); color:white; border-color:var(--pol-red);" onclick="openHandsFree()">🎧 Hands-Free</button>
         </div>
     </div>
@@ -252,6 +268,7 @@
     let isSwapped = false;
     let currentGender = localStorage.getItem('polishMasterGender') || 'both';
     let uiLang = localStorage.getItem('polishMasterUILang') || 'en'; 
+    let hardMode = false; // New Advanced Mode State
     let correctStreak = 0; 
     const THRESHOLD = 3;
     const MIN_SCORE = -2;
@@ -310,7 +327,23 @@
         document.querySelectorAll('.ui-lang-btn').forEach(btn => btn.classList.remove('active'));
         document.getElementById('ui-lang-' + (isSwapped ? 'pl' : 'en')).classList.add('active');
         updateMap();
-        if(currentTarget) document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
+        // Updated to respect Hard Mode
+        if(currentTarget) updateQuestionText();
+    }
+
+    function toggleHardMode() {
+        hardMode = !hardMode;
+        document.getElementById('hard-mode-btn').classList.toggle('hard-mode-active');
+        updateQuestionText();
+    }
+
+    function updateQuestionText() {
+        if (!currentTarget) return;
+        if (hardMode) {
+            document.getElementById('q-text').innerText = "👂 Listen...";
+        } else {
+            document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
+        }
     }
 
     function getGenderText(phrase) {
@@ -424,9 +457,18 @@
         let nextTarget;
         if (activePool.length > 1) { do { nextTarget = activePool[Math.floor(Math.random() * activePool.length)]; } while (nextTarget.pl === lastPhraseText); } else nextTarget = activePool[0];
         currentTarget = nextTarget; lastPhraseText = currentTarget.pl;
-        document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
+        updateQuestionText();
         document.getElementById('feedback').innerText = "";
-        setTimeout(() => speak(currentTarget.pl), 300);
+        
+        // Speak Logic for Round Start
+        setTimeout(() => {
+            if (currentLevel === "0") {
+                // Special Logic for Level 0 Audio
+                speak(currentTarget.pl + " jak " + currentTarget.word);
+            } else {
+                speak(currentTarget.pl);
+            }
+        }, 300);
     }
 
     async function checkAnswer(phrase, el) {
@@ -434,6 +476,12 @@
         if (phrase.pl === currentTarget.pl) {
             correctStreak++; playCorrect(); stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = t('correct'); saveStats();
+            
+            // Re-play the sound on correct click (Useful for Level 0)
+            if (currentLevel === "0") {
+               speak(phrase.pl + " jak " + phrase.word);
+            }
+
             setTimeout(() => {
                 if (stats[phrase.pl] >= THRESHOLD) {
                     const nextAvailable = phrasesData.find(p => (stats[p.pl] || 0) < THRESHOLD && !activePool.some(ap => ap.pl === p.pl));
@@ -442,7 +490,7 @@
                 }
                 updateStats(); updateTabCounts(); updateMap();
                 if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); correctStreak = 0; } else startNewRound();
-            }, 800);
+            }, 1000); // Increased delay slightly to allow audio to finish
         } else {
             correctStreak = 0; playNote(150, 0.4, 'sawtooth');
             let currentScore = stats[currentTarget.pl] || 0; stats[currentTarget.pl] = Math.max(MIN_SCORE, currentScore - 1);
@@ -454,16 +502,39 @@
     function updateMap(filter = "") {
         const area = document.getElementById('mastery-map'); area.innerHTML = '';
         const isLearning = document.getElementById('tab-learning').classList.contains('active');
+        
         if (isLearning && activePool.length === 0 && !filter) {
             const notice = document.createElement('div'); notice.className = 'review-notice';
             notice.innerHTML = `<h3>${t("masteredTitle")}</h3><p>${t("masteredText")}</p><button onclick="resetLevelMastery()" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold;">${t("repeatLevel")}</button>`;
             area.appendChild(notice); return;
         }
-        area.className = "grid";
+
+        // Branching Logic for Level 0 Grid Layout
+        if (currentLevel === "0") {
+            area.className = "grid lvl0"; // Add 'lvl0' class for 5-col CSS
+        } else {
+            area.className = "grid"; // Standard 4-col CSS
+        }
+
         const list = isLearning ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
         list.filter(p => !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter)).forEach(p => {
             const tile = document.createElement('div'); tile.className = 'tile';
-            tile.innerText = isSwapped ? p.en : getGenderText(p);
+            
+            // Branching Logic for Tile Content
+            if (currentLevel === "0") {
+                // Level 0: Big Letter, Phonetic, Emoji
+                tile.innerHTML = `
+                    <div class="lvl0-content">
+                        <div class="lvl0-big">${p.pl}</div>
+                        <div class="lvl0-sub">${p.en}</div>
+                        <div class="lvl0-emoji">${p.e || ''}</div>
+                    </div>
+                `;
+            } else {
+                // Standard: Text (swapped or normal)
+                tile.innerText = isSwapped ? p.en : getGenderText(p);
+            }
+
             const score = stats[p.pl] || 0;
             if (score === -1) { tile.style.backgroundColor = "#ADD8E6"; tile.style.color = "#333"; }
             else if (score <= -2) { tile.style.backgroundColor = "#00008B"; tile.style.color = "white"; }
@@ -472,7 +543,16 @@
                 tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
                 if (opacity > 0.6) tile.style.color = "white";
             }
-            tile.onclick = () => isLearning ? checkAnswer(p, tile) : speak(p.pl);
+            
+            // Onclick interaction
+            tile.onclick = () => {
+                if (isLearning) {
+                    checkAnswer(p, tile);
+                } else {
+                    if (currentLevel === "0") speak(p.pl + " jak " + p.word);
+                    else speak(p.pl);
+                }
+            };
             area.appendChild(tile);
         });
     }
@@ -585,8 +665,12 @@
             document.getElementById('hf-bar').style.width = ((hfIndex / hfPhrases.length) * 100) + "%";
             localStorage.setItem('hf_mem_' + currentLevel, hfIndex);
 
+            // Special handling for Level 0 in Hands-Free
+            let plText = p.pl;
+            if(currentLevel === "0") plText = p.pl + " jak " + p.word;
+
             // 1. Polish (Normal)
-            await speakAsync(p.pl, 1.0); if(hfAbort) break;
+            await speakAsync(plText, 1.0); if(hfAbort) break;
             
             // 2. Pause
             await sleep(hfPauseDur); if(hfAbort) break;
@@ -598,13 +682,13 @@
             await sleep(hfPauseDur); if(hfAbort) break;
             
             // 5. Polish (Slow 0.5x)
-            await speakAsync(p.pl, 0.5); if(hfAbort) break;
+            await speakAsync(plText, 0.5); if(hfAbort) break;
             
             // 6. Pause
             await sleep(hfPauseDur); if(hfAbort) break;
 
             // 7. Polish (Normal)
-            await speakAsync(p.pl, 1.0); if(hfAbort) break;
+            await speakAsync(plText, 1.0); if(hfAbort) break;
             
             // Short buffer before next card
             await sleep(1000); if(hfAbort) break;
@@ -698,16 +782,15 @@
         document.getElementById('banked-count').innerText = `(${masteredCount})`;
     }
 
-    // --- NEW: Custom Tap Handler for Speaker Button ---
     let lastSpeakerTap = 0;
     function handleSpeakerTap() {
         const now = Date.now();
+        const textToSpeak = currentLevel === "0" ? (currentTarget.pl + " jak " + currentTarget.word) : currentTarget.pl;
+        
         if (now - lastSpeakerTap < 300) {
-            // Double Tap: Play Slow
-            speak(currentTarget.pl, 0.5);
+            speak(textToSpeak, 0.5); // Double Tap: Slow
         } else {
-            // Single Tap: Play Normal
-            speak(currentTarget.pl, 1.0);
+            speak(textToSpeak, 1.0); // Single Tap: Normal
         }
         lastSpeakerTap = now;
     }
