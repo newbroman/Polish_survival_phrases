@@ -226,14 +226,7 @@
       "e": "🐸",
       "level": 0
     },
-    {
-      "pl": "CZ",
-      "en": "ch",
-      "word": "Czas",
-      "e": "⏰",
-      "note": "time",
-      "level": 0
-    },
+   
     {
       "pl": "CZ",
       "en": "ch",
@@ -242,30 +235,8 @@
       "note": "black",
       "level": 0
     },
-    {
-      "pl": "CZ",
-      "en": "ch",
-      "word": "Często",
-      "e": "🔄",
-      "note": "often",
-      "level": 0
-    },
-    {
-      "pl": "CH",
-      "en": "kh",
-      "word": "Chleb",
-      "e": "🍞",
-      "note": "bread",
-      "level": 0
-    },
-    {
-      "pl": "CH",
-      "en": "kh",
-      "word": "Chory",
-      "e": "🤒",
-      "note": "sick",
-      "level": 0
-    },
+    
+
     {
       "pl": "CH",
       "en": "kh",
@@ -274,14 +245,7 @@
       "note": "moment",
       "level": 0
     },
-    {
-      "pl": "SZ",
-      "en": "sh",
-      "word": "Szkoła",
-      "e": "🏫",
-      "note": "school",
-      "level": 0
-    },
+   
     {
       "pl": "SZ",
       "en": "sh",
@@ -290,22 +254,8 @@
       "note": "fast",
       "level": 0
     },
-    {
-      "pl": "SZ",
-      "en": "sh",
-      "word": "Szafa",
-      "e": "🚪",
-      "note": "wardrobe",
-      "level": 0
-    },
-    {
-      "pl": "RZ",
-      "en": "zh",
-      "word": "Rzeka",
-      "e": "🌊",
-      "note": "river",
-      "level": 0
-    },
+   
+   
     {
       "pl": "RZ",
       "en": "zh",
@@ -314,52 +264,14 @@
       "note": "thing",
       "level": 0
     },
-    {
-      "pl": "RZ",
-      "en": "zh",
-      "word": "Rzadko",
-      "e": "🌙",
-      "note": "rarely",
-      "level": 0
-    },
-    {
-      "pl": "DZ",
-      "en": "dz",
-      "word": "Dzwon",
-      "e": "🔔",
-      "note": "bell",
-      "level": 0
-    },
+    
+   
     {
       "pl": "DZ",
       "en": "dz",
       "word": "Bardzo",
       "e": "💯",
       "note": "very",
-      "level": 0
-    },
-    {
-      "pl": "DZ",
-      "en": "dz",
-      "word": "Dzień",
-      "e": "☀️",
-      "note": "day",
-      "level": 0
-    },
-    {
-      "pl": "DŹ",
-      "en": "dj!",
-      "word": "Dźwig",
-      "e": "🏗️",
-      "note": "crane",
-      "level": 0
-    },
-    {
-      "pl": "DŹ",
-      "en": "dj!",
-      "word": "Dźwięk",
-      "e": "🔊",
-      "note": "sound",
       "level": 0
     },
     {
@@ -378,22 +290,7 @@
       "note": "jam",
       "level": 0
     },
-    {
-      "pl": "DŻ",
-      "en": "j",
-      "word": "Dżungla",
-      "e": "🌴",
-      "note": "jungle",
-      "level": 0
-    },
-    {
-      "pl": "DŻ",
-      "en": "j",
-      "word": "Dżinsy",
-      "e": "👖",
-      "note": "jeans",
-      "level": 0
-    }
+       
   ],
   "tier": "FOUNDATION"
 }
