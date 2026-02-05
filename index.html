@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master v5.1</title>
+    <title>Polish Phrase Master v5.6</title>
     <style>
-        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; --gold: #ffd700; }
+        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --gold: #ffd700; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
-        html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
+        html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; touch-action: none; }
         body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
         .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
@@ -29,26 +29,29 @@
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.3s; }
 
         .quiz-ui { background: var(--card); padding: 4px 12px; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-        .speaker-btn { width: 38px; height: 38px; background: var(--bg); border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; cursor: pointer; flex-shrink: 0; }
-        .swap-btn-quiz { width: 44px; height: 30px; font-size: 9px; font-weight: 800; border-radius: 4px; border: 1px solid #ccc; background: var(--bg); cursor: pointer; color: var(--text); flex-shrink: 0; }
+        .swap-btn-quiz { width: 44px; height: 32px; font-size: 9px; font-weight: 800; border-radius: 4px; border: 1px solid #ccc; background: var(--bg); cursor: pointer; color: var(--text); flex-shrink: 0; }
+        .speaker-btn { width: 38px; height: 38px; background: var(--bg); border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; flex-shrink: 0; }
         .q-text { font-size: 14px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; margin: 0 4px; }
 
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .tab { flex: 1; padding: 6px; text-align: center; font-size: 11px; font-weight: bold; cursor: pointer; opacity: 0.4; border-bottom: 2px solid transparent; }
         .tab.active { opacity: 1; border-bottom-color: var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 6px; width: 100%; box-sizing: border-box; display: flex; justify-content: center; overflow: hidden; }
+        .map-section { flex-grow: 1; padding: 6px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; overflow: hidden; }
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 400px; height: 100%; }
         
         .tile { background: var(--tile-bg); border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4px; font-size: 11px; font-weight: 700; box-shadow: 0 1px 2px rgba(0,0,0,0.1); border: 2px solid transparent; cursor: pointer; color: var(--text); box-sizing: border-box; height: 100%; overflow: hidden; }
         .tile.mastered { border-color: var(--gold); }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
-        #hf-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 3000; display: none; align-items: center; justify-content: center; }
+        #search-results-list { width: 100%; max-width: 400px; display: none; flex-direction: column; gap: 8px; overflow-y: auto; height: 100%; padding-bottom: 20px; }
+        .global-result-item { background: var(--card); border: 1px solid #ccc; border-left: 4px solid var(--pol-red); border-radius: 6px; padding: 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+
+        #hf-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 4000; display: none; align-items: center; justify-content: center; }
         .modal { background: var(--card); padding: 20px; border-radius: 12px; width: 85%; max-width: 380px; text-align: center; position: relative; }
 
         .footer { padding: 4px 6px; display: flex; gap: 4px; background: var(--card); border-top: 1px solid #ddd; flex-shrink: 0; }
-        .footer-btn { flex: 1; padding: 0 4px; border: 1px solid #ccc; border-radius: 4px; background: var(--bg); font-size: 10px; font-weight: bold; cursor: pointer; color: var(--text); height: 30px; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .footer-btn { flex: 1; border: 1px solid #ccc; border-radius: 4px; background: var(--bg); font-size: 10px; font-weight: bold; cursor: pointer; color: var(--text); height: 32px; display: flex; align-items: center; justify-content: center; text-align: center; }
         .primary-btn { background: var(--pol-red); color: white; border: none; }
     </style>
 </head>
@@ -57,10 +60,10 @@
 <div id="hf-overlay">
     <div class="modal">
         <button onclick="toggleHF()" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:24px; color:var(--text);">×</button>
-        <h2 id="hf-level-title" style="color:var(--pol-red); font-size:16px;">Level</h2>
+        <h2 id="hf-level-title" style="color:var(--pol-red); font-size:16px;">Hands-Free Mode</h2>
         <div style="margin: 25px 0;">
             <div id="hf-primary" style="font-size:22px; font-weight:800;">...</div>
-            <div id="hf-secondary" style="font-size:14px; color:#666; margin-top:6px;">...</div>
+            <div id="hf-secondary" style="font-size:14px; color:#666; margin-top:8px;">...</div>
         </div>
         <button id="hf-play-btn" class="footer-btn primary-btn" onclick="toggleHFPlayback()" style="width: 100%;">Pause</button>
     </div>
@@ -70,8 +73,8 @@
     <div class="controls-row">
         <select id="lvl-select" class="custom-select" onchange="selectLevel(this.value)"></select>
         <div class="search-row">
-            <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="updateMap()">
-            <button class="footer-btn" style="flex:0; width: 32px;" onclick="alert('3 Hits = Gold. Swap = Prompt Flip. Use Both Sexes/Male/Female to toggle adjectives.')">?</button>
+            <input type="text" id="search-bar" class="search-box" placeholder="Smart Search..." oninput="handleSmartSearch()">
+            <button class="footer-btn" style="flex:0; width: 34px;" onclick="alert('Mastery: 3 Hits. Swap: Reverse language. Hands-Free: Auto-loop.')">?</button>
         </div>
         <div class="feature-buttons-row">
             <button id="ui-lang-btn" class="footer-btn" onclick="toggleUILang()"><b>EN</b>/PL</button>
@@ -91,8 +94,8 @@
 </div>
 
 <div class="quiz-ui">
-    <div class="speaker-btn" onclick="handleSpeakerTap()">🔊</div>
     <button class="swap-btn-quiz" onclick="toggleSwap()">SWAP</button>
+    <div class="speaker-btn" onclick="handleSpeakerTap()">🔊</div>
     <div class="q-text" id="q-text">Ready?</div>
     <div id="feedback" style="font-size:10px; font-weight:bold; color:var(--pol-red);"></div>
 </div>
@@ -102,7 +105,10 @@
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
 </div>
 
-<div class="map-section"><div id="mastery-map" class="grid"></div></div>
+<div class="map-section">
+    <div id="mastery-map" class="grid"></div>
+    <div id="search-results-list"></div>
+</div>
 
 <div class="footer">
     <button class="footer-btn" onclick="downloadProgress()">Save</button>
@@ -114,17 +120,18 @@
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = localStorage.getItem('pl_current_level_idx') || "0";
-    let phrasesData = [], activePool = [], currentTarget = null;
+    let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let currentGender = localStorage.getItem('pl_gender_pref') || 'both';
     let uiLang = localStorage.getItem('pl_ui_lang') || 'en';
     let isSwapped = false, hardMode = false;
-    let hfActive = false, hfIndex = 0, hfTimer = null, hfPaused = false;
+    let hfActive = false, hfIndex = 0, hfPaused = false;
     const THRESHOLD = 3;
 
     async function init() {
         updateUILabels();
         await populateLevels();
         await loadLevel(currentLevel);
+        await cacheAllPhrases();
     }
 
     async function populateLevels() {
@@ -144,6 +151,37 @@
         }
     }
 
+    async function cacheAllPhrases() {
+        allPhrasesCache = [];
+        const lvls = ["0","1","2","2.1","3","4","5","5.1","6","7","8","9","10","10.1","11","12","12.1","13","13.1","13.2","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"];
+        for (const l of lvls) {
+            try {
+                const r = await fetch(`phrases_${l}.json`);
+                if (r.ok) {
+                    const d = await r.json();
+                    allPhrasesCache.push(...d.phrases.map(p => ({...p, lvl: l})));
+                }
+            } catch(e) {}
+        }
+    }
+
+    function handleSmartSearch() {
+        const query = document.getElementById('search-bar').value.toLowerCase();
+        const mapArea = document.getElementById('mastery-map');
+        const listArea = document.getElementById('search-results-list');
+        listArea.innerHTML = '';
+        if (!query) { mapArea.style.display = 'grid'; listArea.style.display = 'none'; return; }
+        mapArea.style.display = 'none'; listArea.style.display = 'flex';
+        const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query))).slice(0, 15);
+        matches.forEach(p => {
+            const item = document.createElement('div');
+            item.className = 'global-result-item';
+            item.innerHTML = `<div><div style="font-weight:bold;">${p.pl}</div><div style="color:#666;">${p.en}</div></div><div><span style="font-size:0.7rem; font-weight:bold; color:var(--pol-red);">LVL ${p.lvl}</span></div>`;
+            item.onclick = () => { selectLevel(p.lvl); document.getElementById('search-bar').value = ''; handleSmartSearch(); };
+            listArea.appendChild(item);
+        });
+    }
+
     async function loadLevel(l) {
         currentLevel = l;
         localStorage.setItem('pl_current_level_idx', l);
@@ -155,162 +193,76 @@
 
     function selectLevel(l) { loadLevel(l); }
     function toggleGenderMenu(e) { e.stopPropagation(); document.getElementById('gender-menu').classList.toggle('show'); }
-
     function setGender(g) {
-        currentGender = g;
-        localStorage.setItem('pl_gender_pref', g);
-        updateUILabels();
+        currentGender = g; localStorage.setItem('pl_gender_pref', g); updateUILabels();
         document.getElementById('gender-menu').classList.remove('show');
         refreshPool(); updateMap(); startRound();
     }
-
-    function toggleUILang() {
-        uiLang = (uiLang === 'en') ? 'pl' : 'en';
-        localStorage.setItem('pl_ui_lang', uiLang);
-        updateUILabels();
-    }
-
+    function toggleUILang() { uiLang = (uiLang === 'en') ? 'pl' : 'en'; localStorage.setItem('pl_ui_lang', uiLang); updateUILabels(); }
     function updateUILabels() {
         const labels = {'m': {en:'Male', pl:'Mężczyzna'}, 'f': {en:'Female', pl:'Kobieta'}, 'both': {en:'Both Sexes', pl:'Obie Płcie'}};
         document.getElementById('gender-label').innerText = labels[currentGender][uiLang];
         document.getElementById('ui-lang-btn').innerHTML = uiLang === 'en' ? '<b>EN</b>/PL' : 'EN/<b>PL</b>';
     }
-
     function refreshPool() {
-        if(!phrasesData) return;
         activePool = phrasesData.filter(p => {
             const m = (stats[p.pl] || 0) >= THRESHOLD;
             const g = (currentGender === 'both') || (!p.gender) || (p.gender === 'both') || (p.gender === currentGender);
             return !m && g;
         }).slice(0, 12);
     }
-
-    function getDisplay(p) {
-        if (p.gender === 'both' && p.variants) return (currentGender === 'f') ? p.variants.f : p.variants.m;
-        return p.pl;
-    }
-
+    function getDisplay(p) { if (p.gender === 'both' && p.variants) return (currentGender === 'f') ? p.variants.f : p.variants.m; return p.pl; }
     function updateMap() {
-        const area = document.getElementById('mastery-map');
-        area.innerHTML = '';
-        area.className = currentLevel === "0" ? "grid lvl0" : "grid";
+        const area = document.getElementById('mastery-map'); area.innerHTML = '';
         const isLearning = document.getElementById('tab-learning').classList.contains('active');
-        const query = document.getElementById('search-bar').value.toLowerCase();
-        const list = (isLearning ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD))
-            .filter(p => !query || p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query));
-
+        const list = (isLearning ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD));
         list.forEach(p => {
-            const tile = document.createElement('div');
-            tile.className = 'tile';
-            const score = stats[p.pl] || 0;
-            if (score >= THRESHOLD) tile.classList.add('mastered');
+            const tile = document.createElement('div'); tile.className = 'tile';
+            if ((stats[p.pl] || 0) >= THRESHOLD) tile.classList.add('mastered');
             tile.innerText = isSwapped ? p.en : getDisplay(p);
-            if (score > 0 && score < THRESHOLD) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
+            if ((stats[p.pl]||0) > 0 && (stats[p.pl]||0) < THRESHOLD) tile.style.backgroundColor = `rgba(220, 20, 60, ${stats[p.pl]/THRESHOLD})`;
             tile.onclick = () => checkAnswer(p, tile);
             area.appendChild(tile);
         });
         const m = phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).length;
         document.getElementById('progress-bar').style.width = (m / phrasesData.length * 100) + "%";
     }
-
     function startRound() {
         if (!activePool.length) { document.getElementById('q-text').innerText = "Done! 🎉"; return; }
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = hardMode ? "👂 Listen..." : (isSwapped ? getDisplay(currentTarget) : currentTarget.en);
         speak(getDisplay(currentTarget));
     }
-
     function checkAnswer(p, el) {
         if (p.pl === currentTarget.pl) {
-            stats[p.pl] = (stats[p.pl] || 0) + 1;
-            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+            stats[p.pl] = (stats[p.pl] || 0) + 1; localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             setTimeout(() => { refreshPool(); updateMap(); startRound(); }, 600);
-        } else {
-            el.classList.add('wrong');
-            setTimeout(() => { el.classList.remove('wrong'); }, 1000);
-        }
+        } else { el.classList.add('wrong'); setTimeout(() => { el.classList.remove('wrong'); }, 1000); }
     }
-
     function toggleHF() {
-        hfActive = !hfActive;
-        document.getElementById('hf-overlay').style.display = hfActive ? 'flex' : 'none';
-        if (hfActive) {
-            hfIndex = parseInt(localStorage.getItem('hf_mem_' + currentLevel)) || 0;
-            hfPaused = false;
-            runHF();
-        } else { clearTimeout(hfTimer); window.speechSynthesis.cancel(); }
+        hfActive = !hfActive; document.getElementById('hf-overlay').style.display = hfActive ? 'flex' : 'none';
+        if (hfActive) { hfIndex = parseInt(localStorage.getItem('hf_mem_' + currentLevel)) || 0; hfPaused = false; runHF(); } else { window.speechSynthesis.cancel(); }
     }
-
     async function runHF() {
         if (!hfActive || hfPaused || hfIndex >= phrasesData.length) return;
-        const p = phrasesData[hfIndex];
-        localStorage.setItem('hf_mem_' + currentLevel, hfIndex);
-        document.getElementById('hf-primary').innerText = getDisplay(p);
-        document.getElementById('hf-secondary').innerText = p.en;
-        await speakAsync(getDisplay(p), 1);
-        await sleep(2000);
-        await speakAsync(p.en, 1, 'en-US');
-        await sleep(2000);
-        hfIndex = (hfIndex + 1) % phrasesData.length;
-        hfTimer = setTimeout(runHF, 500);
+        const p = phrasesData[hfIndex]; localStorage.setItem('hf_mem_' + currentLevel, hfIndex);
+        document.getElementById('hf-primary').innerText = getDisplay(p); document.getElementById('hf-secondary').innerText = p.en;
+        await speakAsync(getDisplay(p), 1, 'pl-PL'); if (!hfActive || hfPaused) return; await sleep(1500);
+        await speakAsync(p.en, 1, 'en-US'); if (!hfActive || hfPaused) return; await sleep(2000);
+        await speakAsync(getDisplay(p), 0.5, 'pl-PL'); if (!hfActive || hfPaused) return; await sleep(2000);
+        await speakAsync(getDisplay(p), 1, 'pl-PL'); if (!hfActive || hfPaused) return; await sleep(1000);
+        hfIndex = (hfIndex + 1) % phrasesData.length; runHF();
     }
-
-    function toggleHFPlayback() {
-        hfPaused = !hfPaused;
-        document.getElementById('hf-play-btn').innerText = hfPaused ? "Resume" : "Pause";
-        if(!hfPaused) runHF(); else { clearTimeout(hfTimer); window.speechSynthesis.cancel(); }
-    }
-
-    function speak(t, rate=1, lang='pl-PL') {
-        window.speechSynthesis.cancel();
-        const u = new SpeechSynthesisUtterance(t);
-        u.lang = lang; u.rate = rate;
-        window.speechSynthesis.speak(u);
-    }
-
-    function speakAsync(t, rate, lang='pl-PL') {
-        return new Promise(resolve => {
-            const u = new SpeechSynthesisUtterance(t);
-            u.lang = lang; u.rate = rate;
-            u.onend = () => resolve();
-            window.speechSynthesis.speak(u);
-        });
-    }
-
-    function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+    function toggleHFPlayback() { hfPaused = !hfPaused; document.getElementById('hf-play-btn').innerText = hfPaused ? "Resume" : "Pause"; if(!hfPaused) runHF(); else window.speechSynthesis.cancel(); }
+    function speak(t, rate=1, lang='pl-PL') { window.speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); u.lang = lang; u.rate = rate; window.speechSynthesis.speak(u); }
+    function speakAsync(t, rate, lang) { return new Promise(resolve => { const u = new SpeechSynthesisUtterance(t); u.lang = lang; u.rate = rate; u.onend = () => resolve(); u.onerror = () => resolve(); window.speechSynthesis.speak(u); }); }
+    function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
     function toggleSwap() { isSwapped = !isSwapped; updateMap(); startRound(); }
     function toggleHardMode() { hardMode = !hardMode; document.getElementById('hard-btn').classList.toggle('primary-btn'); startRound(); }
-    function switchMode(m) { 
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + m).classList.add('active');
-        updateMap(); 
-    }
-    
-    let lastTap = 0;
-    function handleSpeakerTap() {
-        const now = Date.now();
-        speak(getDisplay(currentTarget), now - lastTap < 300 ? 0.5 : 1);
-        lastTap = now;
-    }
-
-    function downloadProgress() {
-        const blob = new Blob([JSON.stringify(stats)], {type: "text/plain"});
-        const a = document.createElement("a");
-        a.href = URL.createObjectURL(blob);
-        a.download = "polish_save.txt";
-        a.click();
-    }
-
-    function importProgress(e) {
-        const r = new FileReader();
-        r.onload = (event) => {
-            stats = JSON.parse(event.target.result);
-            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
-            location.reload();
-        };
-        r.readAsText(e.target.files[0]);
-    }
-
+    function switchMode(m) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); document.getElementById('tab-' + m).classList.add('active'); updateMap(); }
+    function handleSpeakerTap() { speak(getDisplay(currentTarget)); }
+    function downloadProgress() { const blob = new Blob([JSON.stringify(stats)], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "polish_save.txt"; a.click(); }
+    function importProgress(e) { const r = new FileReader(); r.onload = (event) => { stats = JSON.parse(event.target.result); localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); location.reload(); }; r.readAsText(e.target.files[0]); }
     function resetAll() { if(confirm("Reset all?")) { localStorage.clear(); location.reload(); } }
     window.onclick = () => document.getElementById('gender-menu').classList.remove('show');
     window.onload = init;
