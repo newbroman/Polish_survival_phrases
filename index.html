@@ -72,26 +72,26 @@
 
         .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
         
-        /* STANDARD GRID */
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
-        
-        /* LEVEL 0 GRID - 5 COLUMNS */
         .grid.lvl0 { grid-template-columns: repeat(5, 1fr); }
 
-        /* TILE STYLES */
+        /* INCREASED FONT SIZES HERE */
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
             background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
-            text-align: center; font-size: 0.6rem; font-weight: 700; line-height: 1.1; 
+            text-align: center; 
+            font-size: 0.75rem; /* Increased from 0.6rem */
+            font-weight: 700; line-height: 1.1; 
             box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s; 
         }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
         
-        /* LEVEL 0 TILE CONTENT */
         .lvl0-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
-        .lvl0-big { font-size: 1rem; font-weight: 800; color: var(--pol-red); }
-        .lvl0-sub { font-size: 0.55rem; color: #666; margin-top: -2px; }
-        .lvl0-emoji { font-size: 0.9rem; margin-top: 2px; }
+        
+        /* INCREASED LEVEL 0 FONTS */
+        .lvl0-big { font-size: 1.2rem; font-weight: 800; color: var(--pol-red); } /* Increased from 1rem */
+        .lvl0-sub { font-size: 0.65rem; color: #666; margin-top: -2px; } /* Increased from 0.55rem */
+        .lvl0-emoji { font-size: 1.1rem; margin-top: 2px; } /* Increased from 0.9rem */
 
         .search-results-label { font-size: 0.6rem; font-weight: 800; color: var(--pol-red); margin: 10px 0 5px 0; width: 100%; max-width: 420px; text-align: left; }
         .global-result-item { width: 100%; max-width: 420px; background: var(--card); border: 1px solid #ddd; border-radius: 6px; padding: 8px; margin-bottom: 4px; font-size: 0.7rem; display: flex; justify-content: space-between; align-items: center;}
@@ -99,8 +99,6 @@
         .footer { padding: 8px 8px 24px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
         .active-swap { background: var(--pol-red) !important; color: white !important; border-color: var(--pol-red) !important; }
-        
-        /* HARD MODE BUTTON ACTIVE STATE */
         .hard-mode-active { background: #333 !important; color: #fff !important; border-color: #333 !important; }
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
@@ -268,14 +266,16 @@
     let isSwapped = false;
     let currentGender = localStorage.getItem('polishMasterGender') || 'both';
     let uiLang = localStorage.getItem('polishMasterUILang') || 'en'; 
-    let hardMode = false; // New Advanced Mode State
+    let hardMode = false; 
     let correctStreak = 0; 
     const THRESHOLD = 3;
     const MIN_SCORE = -2;
     let plVoice = null;
     let audioCtx = null;
+    
+    // Audio Wake-up Tracking
+    let lastInteractionTime = Date.now();
     let isAudioPriming = false;
-    let audioPrimedAt = 0;
 
     function playNote(freq, dur, type='sine') {
         try {
@@ -295,6 +295,24 @@
             osc.connect(g); g.connect(audioCtx.destination);
             osc.start(); osc.stop(now + dur);
         } catch(e) {}
+    }
+
+    // Audio Wake Up Function
+    async function wakeUpAudioEngine() {
+        const now = Date.now();
+        // If > 30 seconds since last interaction, enforce a 2s delay
+        if (now - lastInteractionTime > 30000) {
+            primeAudio(); 
+            // Optional: You could show a spinner here
+            await new Promise(r => setTimeout(r, 2000));
+        }
+        lastInteractionTime = now;
+    }
+
+    function primeAudio() { 
+        if (audioCtx && audioCtx.state === 'suspended') { 
+            audioCtx.resume(); 
+        } 
     }
 
     function playCorrect() { playNote(440 + (correctStreak * 40), 0.15, 'sine'); }
@@ -327,7 +345,6 @@
         document.querySelectorAll('.ui-lang-btn').forEach(btn => btn.classList.remove('active'));
         document.getElementById('ui-lang-' + (isSwapped ? 'pl' : 'en')).classList.add('active');
         updateMap();
-        // Updated to respect Hard Mode
         if(currentTarget) updateQuestionText();
     }
 
@@ -362,13 +379,22 @@
         document.getElementById('gender-menu').classList.remove('show');
         refreshActivePool(); updateMap(); startNewRound();
     }
+
+    // UPDATED: Level 0 logic to show ALL items
     function refreshActivePool() {
-        if (currentGender !== 'both') {
-            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both')).slice(0, 12);
+        if (currentLevel === "0") {
+            // Level 0: Bypass filters and limits, show full alphabet
+            activePool = phrasesData;
         } else {
-            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
+            // Standard Levels
+            if (currentGender !== 'both') {
+                activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both')).slice(0, 12);
+            } else {
+                activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 12);
+            }
         }
     }
+
     function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
     function toggleLangSwap() { uiLang = uiLang === 'en' ? 'pl' : 'en'; localStorage.setItem('polishMasterUILang', uiLang); updateUILanguage(); }
 
@@ -460,10 +486,8 @@
         updateQuestionText();
         document.getElementById('feedback').innerText = "";
         
-        // Speak Logic for Round Start
         setTimeout(() => {
             if (currentLevel === "0") {
-                // Special Logic for Level 0 Audio
                 speak(currentTarget.pl + " jak " + currentTarget.word);
             } else {
                 speak(currentTarget.pl);
@@ -471,13 +495,14 @@
         }, 300);
     }
 
+    // UPDATED checkAnswer with Audio Wake-up
     async function checkAnswer(phrase, el) {
-        if (audioCtx && (audioCtx.state === 'suspended' || isAudioPriming || (Date.now() - audioPrimedAt > 30000))) { primeAudio(); await new Promise(resolve => setTimeout(resolve, 1000)); }
+        await wakeUpAudioEngine();
+
         if (phrase.pl === currentTarget.pl) {
             correctStreak++; playCorrect(); stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             document.getElementById('feedback').innerText = t('correct'); saveStats();
             
-            // Re-play the sound on correct click (Useful for Level 0)
             if (currentLevel === "0") {
                speak(phrase.pl + " jak " + phrase.word);
             }
@@ -490,7 +515,7 @@
                 }
                 updateStats(); updateTabCounts(); updateMap();
                 if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); correctStreak = 0; } else startNewRound();
-            }, 1000); // Increased delay slightly to allow audio to finish
+            }, 1000); 
         } else {
             correctStreak = 0; playNote(150, 0.4, 'sawtooth');
             let currentScore = stats[currentTarget.pl] || 0; stats[currentTarget.pl] = Math.max(MIN_SCORE, currentScore - 1);
@@ -509,20 +534,17 @@
             area.appendChild(notice); return;
         }
 
-        // Branching Logic for Level 0 Grid Layout
         if (currentLevel === "0") {
-            area.className = "grid lvl0"; // Add 'lvl0' class for 5-col CSS
+            area.className = "grid lvl0"; 
         } else {
-            area.className = "grid"; // Standard 4-col CSS
+            area.className = "grid"; 
         }
 
         const list = isLearning ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
         list.filter(p => !filter || p.pl.toLowerCase().includes(filter) || p.en.toLowerCase().includes(filter)).forEach(p => {
             const tile = document.createElement('div'); tile.className = 'tile';
             
-            // Branching Logic for Tile Content
             if (currentLevel === "0") {
-                // Level 0: Big Letter, Phonetic, Emoji
                 tile.innerHTML = `
                     <div class="lvl0-content">
                         <div class="lvl0-big">${p.pl}</div>
@@ -531,7 +553,6 @@
                     </div>
                 `;
             } else {
-                // Standard: Text (swapped or normal)
                 tile.innerText = isSwapped ? p.en : getGenderText(p);
             }
 
@@ -544,7 +565,6 @@
                 if (opacity > 0.6) tile.style.color = "white";
             }
             
-            // Onclick interaction
             tile.onclick = () => {
                 if (isLearning) {
                     checkAnswer(p, tile);
@@ -586,8 +606,11 @@
     function downloadProgress() { const b = new Blob([JSON.stringify({stats, currentLevel})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_progress.txt`; a.click(); }
     function importProgress(event) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(event.target.files[0]); }
     function resetEverything() { if(confirm("Clear all?")) { localStorage.clear(); location.reload(); } }
-    function primeAudio() { if (audioCtx && audioCtx.state === 'suspended') { isAudioPriming = true; audioCtx.resume().then(() => { audioPrimedAt = Date.now(); isAudioPriming = false; }); } else if (audioCtx) { audioPrimedAt = Date.now(); } }
-    document.addEventListener('click', primeAudio); document.addEventListener('touchstart', primeAudio);
+    
+    // Global listener to update timestamp (but not trigger audio)
+    document.addEventListener('click', () => { lastInteractionTime = Date.now(); });
+    document.addEventListener('touchstart', () => { lastInteractionTime = Date.now(); });
+    
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = () => { initSpeech(); updateUILanguage(); loadLevelData(); };
 
@@ -654,7 +677,6 @@
         }, 100);
     }
 
-    // UPDATED PATTERN: PL -> Pause -> EN -> Pause -> PL (0.5x) -> Pause -> PL (1.0x)
     async function runHandsFreeLoop() {
         hfAbort = false;
         while (hfActive && !hfIsPaused && hfIndex < hfPhrases.length) {
@@ -665,32 +687,16 @@
             document.getElementById('hf-bar').style.width = ((hfIndex / hfPhrases.length) * 100) + "%";
             localStorage.setItem('hf_mem_' + currentLevel, hfIndex);
 
-            // Special handling for Level 0 in Hands-Free
             let plText = p.pl;
             if(currentLevel === "0") plText = p.pl + " jak " + p.word;
 
-            // 1. Polish (Normal)
             await speakAsync(plText, 1.0); if(hfAbort) break;
-            
-            // 2. Pause
             await sleep(hfPauseDur); if(hfAbort) break;
-            
-            // 3. English
             await speakAsync(p.en, 1.0, 'en-US'); if(hfAbort) break;
-            
-            // 4. Pause
             await sleep(hfPauseDur); if(hfAbort) break;
-            
-            // 5. Polish (Slow 0.5x)
             await speakAsync(plText, 0.5); if(hfAbort) break;
-            
-            // 6. Pause
             await sleep(hfPauseDur); if(hfAbort) break;
-
-            // 7. Polish (Normal)
             await speakAsync(plText, 1.0); if(hfAbort) break;
-            
-            // Short buffer before next card
             await sleep(1000); if(hfAbort) break;
 
             hfIndex++;
@@ -783,14 +789,17 @@
     }
 
     let lastSpeakerTap = 0;
-    function handleSpeakerTap() {
+    // UPDATED Speaker Tap with Audio Wake-up
+    async function handleSpeakerTap() {
         const now = Date.now();
+        await wakeUpAudioEngine();
+        
         const textToSpeak = currentLevel === "0" ? (currentTarget.pl + " jak " + currentTarget.word) : currentTarget.pl;
         
         if (now - lastSpeakerTap < 300) {
-            speak(textToSpeak, 0.5); // Double Tap: Slow
+            speak(textToSpeak, 0.5); 
         } else {
-            speak(textToSpeak, 1.0); // Single Tap: Normal
+            speak(textToSpeak, 1.0); 
         }
         lastSpeakerTap = now;
     }
