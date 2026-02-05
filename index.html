@@ -60,6 +60,8 @@
         #help-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 4000; display: none; align-items: center; justify-content: center; }
         .help-modal { background: var(--card); color: var(--text); padding: 25px; border-radius: 12px; max-width: 90%; width: 400px; max-height: 80vh; overflow-y: auto; position: relative; font-size: 0.9rem; }
         .help-close { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; border: none; background: none; color: #666; cursor: pointer; }
+        .help-sec { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .help-h2 { color: var(--pol-red); font-weight: 800; margin-top: 0; text-align: center; }
 
         .custom-dropdown { position: relative; width: 100%; }
         .dropdown-trigger { width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); padding: 6px 10px; border-radius: 4px; font-size: 10px; font-weight: 700; text-align: left; height: 28px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; box-sizing: border-box; }
@@ -74,12 +76,30 @@
 <div id="help-overlay">
     <div class="help-modal">
         <button class="help-close" onclick="toggleHelp()">×</button>
-        <h2 style="color:var(--pol-red)">Master Polish</h2>
-        <p>🎯 Turn tiles <b>Gold</b> by answering correctly 3 times.</p>
-        <p>🔊 <b>Double-tap</b> the speaker for slow audio.</p>
-        <p>🔍 Search across <b>30 Levels</b> (Survival to Advanced).</p>
-        <p>💾 <b>Save</b> progress using the button below.</p>
-        <div style="text-align:center; font-size:0.7rem; color:#888; margin-top:15px;">v3.0 - Total Mastery Edition</div>
+        <h2 class="help-h2">Polish Phrase Master Guide</h2>
+        <div class="help-sec">
+            <div style="font-weight:bold; margin-bottom:5px;">⭐ Mastery & Banking</div>
+            <ul>
+                <li><b>Goal:</b> 3 correct hits to Bank a phrase.</li>
+                <li><b>Progress:</b> Tiles darken as you learn, turning <b>Gold</b> when mastered.</li>
+                <li><b>Penalty:</b> Mistakes subtract 1 point.</li>
+            </ul>
+        </div>
+        <div class="help-sec">
+            <div style="font-weight:bold; margin-bottom:5px;">🎧 Modes & Audio</div>
+            <ul>
+                <li><b>Hands-Free:</b> Auto-play mode. Remembers your bookmark per level.</li>
+                <li><b>Slow Audio:</b> Double-tap 🔊 for 0.5x speed.</li>
+            </ul>
+        </div>
+        <div class="help-sec">
+            <div style="font-weight:bold; margin-bottom:5px;">🛠 Features</div>
+            <ul>
+                <li><b>Global Search:</b> Scans all 30 levels instantly.</li>
+                <li><b>Hard Mode:</b> Hides text for audio-only testing.</li>
+            </ul>
+        </div>
+        <div style="text-align:center; font-size:0.7rem; color:#888;">v3.1 - Enhanced Storage & Help</div>
     </div>
 </div>
 
