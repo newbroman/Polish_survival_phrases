@@ -226,7 +226,6 @@
       "e": "🐸",
       "level": 0
     },
-   
     {
       "pl": "CZ",
       "en": "ch",
@@ -235,17 +234,14 @@
       "note": "black",
       "level": 0
     },
-    
-
     {
       "pl": "CH",
       "en": "kh",
-      "word": "Chwila",
-      "e": "⏱️",
-      "note": "moment",
+      "word": "Chleb",
+      "e": "🍞",
+      "note": "bread",
       "level": 0
     },
-   
     {
       "pl": "SZ",
       "en": "sh",
@@ -254,24 +250,20 @@
       "note": "fast",
       "level": 0
     },
-   
-   
     {
       "pl": "RZ",
       "en": "zh",
-      "word": "Rzecz",
-      "e": "📦",
-      "note": "thing",
+      "word": "Rzeka",
+      "e": "🌊",
+      "note": "river",
       "level": 0
     },
-    
-   
     {
       "pl": "DZ",
       "en": "dz",
-      "word": "Bardzo",
-      "e": "💯",
-      "note": "very",
+      "word": "Dzwon",
+      "e": "🔔",
+      "note": "bell",
       "level": 0
     },
     {
@@ -289,8 +281,7 @@
       "e": "🍓",
       "note": "jam",
       "level": 0
-    },
-       
+    }
   ],
   "tier": "FOUNDATION"
 }
