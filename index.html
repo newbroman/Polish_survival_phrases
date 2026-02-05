@@ -5,26 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Polish Phrase Master</title>
     <style>
-        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; }
+        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; --gold: #ffd700; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
         html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
         body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
-        .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; position: relative;}
         .title-banner { background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); padding: 8px 0; border-bottom: 1px solid #ccc; }
         .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; }
 
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
         
-        .ui-lang-toggle { display: flex; gap: 4px; justify-content: center; align-items: center; }
-        .ui-lang-btn { 
-            background: var(--bg); border: 1px solid #ccc; color: #666; 
-            font-size: 0.55rem; padding: 3px 8px; border-radius: 3px; cursor: pointer; 
-            font-weight: 600; transition: all 0.2s; min-width: 32px;
-        }
-        .ui-lang-btn.active { background: #4a9eff; color: white; border-color: #4a9eff; }
-
         .gender-dropdown-wrapper { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 120px; }
         .gender-label { font-size: 0.65rem; font-weight: 700; color: var(--text); white-space: nowrap; }
         .gender-dropdown { position: relative; flex: 1; }
@@ -56,10 +48,18 @@
             height: 28px; outline: none; box-sizing: border-box;
         }
 
+        .progress-wrapper { position: relative; width: 100%; }
         .progress-container { width: 100%; height: 3px; background: #ddd; }
-        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.5s; }
+        #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.3s; }
+        /* Progress Bar Flash Animation */
+        .progress-pulse { animation: bar-flash 0.5s ease-out; }
+        @keyframes bar-flash {
+            0% { background-color: var(--pol-red); }
+            50% { background-color: #fff; box-shadow: 0 0 10px #fff; }
+            100% { background-color: var(--pol-red); }
+        }
 
-        .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; flex-shrink: 0; }
+        .quiz-header { background: var(--card); padding: 10px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; flex-shrink: 0; transition: transform 0.1s; }
         .quiz-top-row { display: flex; align-items: center; gap: 12px; width: 90%; max-width: 400px; margin: 0 auto; justify-content: flex-start; }
         .speaker-btn { background: var(--bg); border: 1px solid #ddd; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; user-select: none; }
         .q-content { text-align: left; min-width: 0; }
@@ -70,7 +70,7 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box;}
+        .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; transition: transform 0.1s; }
         
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
         .grid.lvl0 { grid-template-columns: repeat(5, 1fr); }
@@ -81,12 +81,35 @@
             text-align: center; 
             font-size: 0.75rem; 
             font-weight: 700; line-height: 1.1; 
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s, transform 0.1s; 
+            box-shadow: 0 2px 0px rgba(0,0,0,0.15); /* Thicker bottom shadow for 3D effect */
+            transition: background 0.2s, transform 0.1s, box-shadow 0.1s; 
+            position: relative;
+            border: 2px solid transparent; 
         }
+        
+        /* TACTILE FEEDBACK: Pressing down effect */
+        .tile:active {
+            transform: translateY(2px);
+            box-shadow: 0 0 0 rgba(0,0,0,0.15);
+        }
+
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
         
-        .lvl0-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
+        /* GOLD BORDER FOR MASTERED ITEMS */
+        .tile.mastered-border {
+            border-color: var(--gold);
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+        }
         
+        /* GOLD POP ANIMATION */
+        @keyframes gold-pop-anim {
+            0% { transform: scale(1); background-color: var(--gold); }
+            50% { transform: scale(1.2); box-shadow: 0 0 15px var(--gold); }
+            100% { transform: scale(1); background-color: var(--tile-bg); }
+        }
+        .tile.gold-pop { animation: gold-pop-anim 0.6s ease-out; z-index: 10; }
+
+        .lvl0-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
         .lvl0-big { font-size: 1.2rem; font-weight: 800; color: var(--pol-red); }
         .lvl0-sub { font-size: 0.65rem; color: #666; margin-top: -2px; }
         .lvl0-emoji { font-size: 1.1rem; margin-top: 2px; }
@@ -98,6 +121,19 @@
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; }
         .active-swap { background: var(--pol-red) !important; color: white !important; border-color: var(--pol-red) !important; }
         .hard-mode-active { background: #333 !important; color: #fff !important; border-color: #333 !important; }
+
+        .ui-toggle-btn {
+            background: var(--bg); border: 1px solid #ccc; color: #666; 
+            font-size: 0.6rem; padding: 0 8px; border-radius: 6px; cursor: pointer; 
+            font-weight: 400; height: 28px; white-space: nowrap; max-width: 100px;
+        }
+
+        .swap-btn {
+            background: var(--bg); border: 1px solid #ccc; color: #666; 
+            font-size: 0.6rem; padding: 4px 8px; border-radius: 4px; cursor: pointer; 
+            font-weight: 800; min-width: 40px;
+        }
+        .swap-btn.active { background: #4a9eff; color: white; border-color: #4a9eff; }
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; color: white; }
         .review-notice { background: var(--card); padding: 20px; border-radius: 12px; border: 2px dashed var(--pol-red); text-align: center; max-width: 300px; }
@@ -215,21 +251,20 @@
                     </div>
                 </div>
             </div>
-            <button id="lang-swap-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 100px;" onclick="toggleLangSwap()">Swap EN/PL</button>
+            <button id="ui-lang-btn" class="ui-toggle-btn" onclick="toggleUILang()"><b>EN</b>/PL</button>
             <button id="hard-mode-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 100px;" onclick="toggleHardMode()">🧠 Hard Mode</button>
-            <button class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 110px; background:var(--pol-red); color:white; border-color:var(--pol-red);" onclick="openHandsFree()">🎧 Hands-Free</button>
+            <button id="hf-btn" class="footer-btn" style="height: 28px; padding: 0 8px; font-size: 0.6rem; flex: 0 0 auto; white-space: nowrap; max-width: 110px; background:var(--pol-red); color:white; border-color:var(--pol-red);" onclick="openHandsFree()">🎧 Hands-Free</button>
         </div>
     </div>
 </div>
 
-<div class="progress-container"><div id="progress-bar"></div></div>
+<div class="progress-wrapper">
+    <div class="progress-container"><div id="progress-bar"></div></div>
+</div>
 
 <div class="quiz-header" id="quiz-ui">
     <div class="quiz-top-row">
-        <div class="ui-lang-toggle">
-            <button id="ui-lang-en" class="ui-lang-btn active" onclick="toggleUILang()">EN</button>
-            <button id="ui-lang-pl" class="ui-lang-btn" onclick="toggleUILang()">PL</button>
-        </div>
+        <button class="swap-btn" onclick="toggleContentSwap()">SWAP</button>
         <div class="speaker-btn" onclick="handleSpeakerTap()">🔊</div>
         <div class="q-content">
             <div id="q-text" class="q-text">Ready?</div>
@@ -243,15 +278,15 @@
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED <span id="banked-count"></span></div>
 </div>
 
-<div class="map-section">
+<div class="map-section" id="game-area">
     <div id="mastery-map"></div>
     <div id="search-results-extra" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
 </div>
 
 <div class="footer">
-    <button class="footer-btn" onclick="downloadProgress()">Save</button>
-    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load</button>
-    <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Clear</button>
+    <button id="btn-save" class="footer-btn" onclick="downloadProgress()">Save</button>
+    <button id="btn-load" class="footer-btn" onclick="document.getElementById('file-input').click()">Load</button>
+    <button id="btn-clear" class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Clear</button>
     <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
 </div>
 
@@ -260,7 +295,6 @@
     let currentLevel = localStorage.getItem('pl_current_level_idx') || "0"; 
     let phrasesData = [], activePool = [], allPhrasesCache = [], currentTarget = null;
     let levelList = []; 
-    // REPLACED lastPhraseText with a queue
     let recentPhrasesQueue = []; 
     let isSwapped = false;
     let currentGender = localStorage.getItem('polishMasterGender') || 'both';
@@ -271,17 +305,36 @@
     const MIN_SCORE = -2;
     let plVoice = null;
     let audioCtx = null;
-    
-    // Audio Wake-up Tracking
-    let lastInteractionTime = Date.now();
-    let isAudioPriming = false;
+    let audioKeepAliveInterval = null;
+
+    function initAudioContext() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+    }
+
+    function enableAudioKeepAlive() {
+        if (audioKeepAliveInterval) return;
+        if (audioCtx && audioCtx.state === 'suspended') { audioCtx.resume(); }
+        audioKeepAliveInterval = setInterval(() => {
+            if (audioCtx) {
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+                try {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    gain.gain.value = 0.001;
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.01);
+                } catch(e) {}
+            }
+        }, 20000);
+    }
 
     function playNote(freq, dur, type='sine') {
-        try {
-            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            if (audioCtx.state === 'suspended') { audioCtx.resume().then(() => playTone(freq, dur, type)); return; }
-            playTone(freq, dur, type);
-        } catch(e) {}
+        initAudioContext(); enableAudioKeepAlive();
+        if (audioCtx.state === 'suspended') { audioCtx.resume().then(() => playTone(freq, dur, type)); } else { playTone(freq, dur, type); }
     }
     
     function playTone(freq, dur, type='sine') {
@@ -296,53 +349,105 @@
         } catch(e) {}
     }
 
-    // Audio Wake Up Function
-    async function wakeUpAudioEngine() {
-        const now = Date.now();
-        // If > 30 seconds since last interaction, enforce a 2s delay
-        if (now - lastInteractionTime > 30000) {
-            primeAudio(); 
-            // Optional: You could show a spinner here
-            await new Promise(r => setTimeout(r, 2000));
-        }
-        lastInteractionTime = now;
+    // --- DRAMATIC WRONG TONE (Slide Down) ---
+    function playWrongSlide() {
+        try {
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            osc.type = 'sawtooth'; 
+            osc.frequency.setValueAtTime(150, now);
+            osc.frequency.exponentialRampToValueAtTime(40, now + 0.4);
+            g.gain.setValueAtTime(0.2, now);
+            g.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+            osc.connect(g); g.connect(audioCtx.destination);
+            osc.start(); osc.stop(now + 0.4);
+        } catch(e) {}
     }
 
-    function primeAudio() { 
-        if (audioCtx && audioCtx.state === 'suspended') { 
-            audioCtx.resume(); 
-        } 
+    function playCorrect() { 
+        const freq = Math.min(220 + (correctStreak * 15), 880);
+        playNote(freq, 0.15, 'sine'); 
     }
 
-    function playCorrect() { playNote(440 + (correctStreak * 40), 0.15, 'sine'); }
-    function playSuccess() { playNote(523, 0.2, 'triangle'); setTimeout(() => playNote(659, 0.2, 'triangle'), 100); setTimeout(() => playNote(783, 0.4, 'triangle'), 200); }
+    function playBanked() {
+        setTimeout(() => playNote(523.25, 0.1, 'triangle'), 0);
+        setTimeout(() => playNote(659.25, 0.1, 'triangle'), 100);
+        setTimeout(() => playNote(783.99, 0.2, 'triangle'), 200);
+    }
+
+    function playSuccess() { 
+        playNote(523, 0.2, 'triangle'); 
+        setTimeout(() => playNote(659, 0.2, 'triangle'), 100); 
+        setTimeout(() => playNote(783, 0.4, 'triangle'), 200); 
+    }
+    
     function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
 
     const translations = {
-        en: { title: "Say some Polish phrases", search: "Search...", swap: "Swap EN/PL", phraseGender: "Phrase Gender:", male: "Male", female: "Female", both: "Both", correct: "Correct! 🌟", mistake: "Mistake!", levelMastered: "LEVEL MASTERED! 🏆", nextLevel: "Next Level", masteredTitle: "Level Mastered!", masteredText: "You finished this set.", repeatLevel: "Repeat Level", foundInOther: "FOUND IN OTHER LEVELS:", loading: "Loading..." },
-        pl: { title: "Powiedz polskie zwroty", search: "Szukaj...", swap: "Zamień EN/PL", phraseGender: "Rodzaj zwrotu:", male: "Mężczyzna", female: "Kobieta", both: "Oboje", correct: "Dobrze! 🌟", mistake: "Błąd!", levelMastered: "POZIOM OPANOWANY! 🏆", nextLevel: "Następny poziom", masteredTitle: "Poziom opanowany!", masteredText: "Ukończyłeś tę kategorię.", repeatLevel: "Powtórz poziom", foundInOther: "ZNALEZIONO W INNYCH POZIOMACH:", loading: "Ładowanie..." }
+        en: { 
+            title: "Say some Polish phrases", search: "Search...", phraseGender: "Phrase Gender:", 
+            male: "Male", female: "Female", both: "Both", correct: "Correct! 🌟", mistake: "Mistake!", 
+            levelMastered: "LEVEL MASTERED! 🏆", nextLevel: "Next Level", masteredTitle: "Level Mastered!", 
+            masteredText: "You finished this set.", repeatLevel: "Repeat Level", foundInOther: "FOUND IN OTHER LEVELS:", 
+            loading: "Loading levels...", hardMode: "🧠 Hard Mode", handsFree: "🎧 Hands-Free", 
+            practice: "PRACTICE", banked: "BANKED", save: "Save", load: "Load", clear: "Clear", ready: "Ready?"
+        },
+        pl: { 
+            title: "Powiedz polskie zwroty", search: "Szukaj...", phraseGender: "Rodzaj zwrotu:", 
+            male: "Mężczyzna", female: "Kobieta", both: "Oboje", correct: "Dobrze! 🌟", mistake: "Błąd!", 
+            levelMastered: "POZIOM OPANOWANY! 🏆", nextLevel: "Następny poziom", masteredTitle: "Poziom opanowany!", 
+            masteredText: "Ukończyłeś tę kategorię.", repeatLevel: "Powtórz poziom", foundInOther: "ZNALEZIONO W INNYCH POZIOMACH:", 
+            loading: "Ładowanie...", hardMode: "🧠 Trudny", handsFree: "🎧 Bez Rąk", 
+            practice: "TRENING", banked: "OPANOWANE", save: "Zapisz", load: "Wczytaj", clear: "Wyczyść", ready: "Gotowy?"
+        }
     };
     
     function t(key) { return translations[uiLang][key] || translations.en[key] || key; }
+    
     function updateUILanguage() {
+        const btn = document.getElementById('ui-lang-btn');
+        if (uiLang === 'en') btn.innerHTML = "<b>EN</b>/PL";
+        else btn.innerHTML = "EN/<b>PL</b>";
         document.querySelector('.title').innerText = t('title');
         document.getElementById('search-bar').placeholder = t('search');
-        document.getElementById('lang-swap-btn').innerText = t('swap');
         document.getElementById('gender-label').innerText = t('phraseGender');
+        document.getElementById('hard-mode-btn').innerText = t('hardMode');
+        document.getElementById('hf-btn').innerText = t('handsFree');
+        
+        const pCount = document.getElementById('learning-count').innerText;
+        const bCount = document.getElementById('banked-count').innerText;
+        const pNum = pCount.replace(/[^\d()]/g, '');
+        const bNum = bCount.replace(/[^\d()]/g, '');
+
+        document.getElementById('tab-learning').innerHTML = `${t('practice')} <span id="learning-count">${pNum}</span>`;
+        document.getElementById('tab-mastered').innerHTML = `${t('banked')} <span id="banked-count">${bNum}</span>`;
+        document.getElementById('btn-save').innerText = t('save');
+        document.getElementById('btn-load').innerText = t('load');
+        document.getElementById('btn-clear').innerText = t('clear');
+
         const genderItems = document.querySelectorAll('.gender-dropdown-item');
-        genderItems[0].innerText = t('male'); genderItems[1].innerText = t('female'); genderItems[2].innerText = t('both');
+        if(genderItems.length > 0) {
+            genderItems[0].innerText = t('male'); genderItems[1].innerText = t('female'); genderItems[2].innerText = t('both');
+        }
         const genderMap = { m: t('male'), f: t('female'), both: t('both') };
         document.getElementById('gender-current').innerText = genderMap[currentGender];
         const overlay = document.getElementById('overlay');
         overlay.querySelector('h1').innerText = t('levelMastered');
         overlay.querySelector('button').innerText = t('nextLevel');
-        document.getElementById('lang-swap-btn').classList.toggle('active-swap', uiLang === 'pl');
+        if (!currentTarget && document.getElementById('q-text').innerText.includes('?')) {
+             document.getElementById('q-text').innerText = t('ready');
+        }
     }
     
     function toggleUILang() {
+        uiLang = uiLang === 'en' ? 'pl' : 'en'; 
+        localStorage.setItem('polishMasterUILang', uiLang); 
+        updateUILanguage(); 
+    }
+
+    function toggleContentSwap() {
         isSwapped = !isSwapped;
-        document.querySelectorAll('.ui-lang-btn').forEach(btn => btn.classList.remove('active'));
-        document.getElementById('ui-lang-' + (isSwapped ? 'pl' : 'en')).classList.add('active');
         updateMap();
         if(currentTarget) updateQuestionText();
     }
@@ -381,10 +486,8 @@
 
     function refreshActivePool() {
         if (currentLevel === "0") {
-            // Level 0: Bypass filters and limits, show full alphabet
             activePool = phrasesData;
         } else {
-            // Standard Levels
             if (currentGender !== 'both') {
                 activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both')).slice(0, 12);
             } else {
@@ -394,7 +497,6 @@
     }
 
     function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function toggleLangSwap() { uiLang = uiLang === 'en' ? 'pl' : 'en'; localStorage.setItem('polishMasterUILang', uiLang); updateUILanguage(); }
 
     async function populateDropdown() {
         const menu = document.getElementById('lvl-menu'); menu.innerHTML = ''; levelList = [];
@@ -435,10 +537,7 @@
         document.getElementById('search-bar').value = '';
         document.getElementById('search-results-extra').innerHTML = '';
         saveStats(); 
-        
-        // Reset the history queue when switching levels
         recentPhrasesQueue = [];
-        
         loadLevelData();
     }
 
@@ -481,36 +580,23 @@
         }
     }
 
-    // --- UPDATED START NEW ROUND (HISTORY BUFFER LOGIC) ---
     function startNewRound() {
         if (!activePool.length) return;
-        
-        // Calculate safe history limit. 
-        // We only exclude up to 3 previous items, but ONLY if the pool is large enough.
-        // If pool size is 3, we exclude max 2. If pool size is 2, exclude 1.
         const historyLimit = Math.min(3, activePool.length - 1);
-        
         let nextTarget;
-        
         if (activePool.length === 1) {
             nextTarget = activePool[0];
         } else {
             do {
                 nextTarget = activePool[Math.floor(Math.random() * activePool.length)];
             } while (
-                // Only loop if the target is found in the restricted "tail" of the history
-                // AND we actually have enough items to enforce a restriction.
                 historyLimit > 0 && recentPhrasesQueue.slice(-historyLimit).includes(nextTarget.pl)
             );
         }
 
         currentTarget = nextTarget;
-        
-        // Update History Queue
         recentPhrasesQueue.push(currentTarget.pl);
-        if (recentPhrasesQueue.length > 3) {
-            recentPhrasesQueue.shift(); // Keep max 3 items
-        }
+        if (recentPhrasesQueue.length > 3) recentPhrasesQueue.shift();
 
         updateQuestionText();
         document.getElementById('feedback').innerText = "";
@@ -524,11 +610,30 @@
         }, 300);
     }
 
-    async function checkAnswer(phrase, el) {
-        await wakeUpAudioEngine();
+    // --- FLASH PROGRESS BAR ANIMATION ---
+    function triggerProgressFlash() {
+        const bar = document.getElementById('progress-bar');
+        bar.classList.remove('progress-pulse');
+        void bar.offsetWidth; // Trigger reflow
+        bar.classList.add('progress-pulse');
+    }
+
+    function checkAnswer(phrase, el) {
+        initAudioContext(); enableAudioKeepAlive();
 
         if (phrase.pl === currentTarget.pl) {
-            correctStreak++; playCorrect(); stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
+            correctStreak++;
+            stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
+            
+            triggerProgressFlash(); // Visual Pulse
+
+            if (stats[phrase.pl] >= THRESHOLD) {
+                playBanked();
+                el.classList.add('gold-pop'); // Golden Flash!
+            } else {
+                playCorrect();
+            }
+
             document.getElementById('feedback').innerText = t('correct'); saveStats();
             
             if (currentLevel === "0") {
@@ -545,7 +650,9 @@
                 if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); correctStreak = 0; } else startNewRound();
             }, 1000); 
         } else {
-            correctStreak = 0; playNote(150, 0.4, 'sawtooth');
+            correctStreak = 0; 
+            playWrongSlide(); // DRAMATIC SLIDE
+            
             let currentScore = stats[currentTarget.pl] || 0; stats[currentTarget.pl] = Math.max(MIN_SCORE, currentScore - 1);
             el.classList.add('wrong'); document.getElementById('feedback').innerText = t('mistake'); saveStats(); 
             setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
@@ -591,6 +698,11 @@
                 const opacity = score / THRESHOLD;
                 tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
                 if (opacity > 0.6) tile.style.color = "white";
+                
+                // --- NEW VISUAL: GOLD BORDER FOR MASTERED ITEMS ---
+                if (score >= THRESHOLD) {
+                    tile.classList.add('mastered-border');
+                }
             }
             
             tile.onclick = () => {
@@ -605,7 +717,8 @@
         });
     }
 
-    function speak(t, rate = 1.0, lang = 'pl-PL') { 
+    function speak(t, rate = 1.0, lang = 'pl-PL') {
+        initAudioContext(); enableAudioKeepAlive();
         if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
         window.speechSynthesis.cancel(); 
         const m = new SpeechSynthesisUtterance(t); 
@@ -635,8 +748,8 @@
     function importProgress(event) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(event.target.files[0]); }
     function resetEverything() { if(confirm("Clear all?")) { localStorage.clear(); location.reload(); } }
     
-    document.addEventListener('click', () => { lastInteractionTime = Date.now(); });
-    document.addEventListener('touchstart', () => { lastInteractionTime = Date.now(); });
+    document.addEventListener('click', () => { initAudioContext(); enableAudioKeepAlive(); }, {once: true});
+    document.addEventListener('touchstart', () => { initAudioContext(); enableAudioKeepAlive(); }, {once: true});
     
     window.onclick = () => document.getElementById('lvl-menu').classList.remove('show');
     window.onload = () => { initSpeech(); updateUILanguage(); loadLevelData(); };
@@ -658,6 +771,8 @@
 
     async function openHandsFree() {
         hfActive = true; hfAbort = false; hfIsPaused = false;
+        initAudioContext(); enableAudioKeepAlive(); // Ensure audio is ready
+
         if (!phrasesData || phrasesData.length === 0) await loadLevelData();
         hfPhrases = phrasesData;
         const savedIdx = localStorage.getItem('hf_mem_' + currentLevel);
@@ -798,6 +913,7 @@
     function speakAsync(text, rate = 1.0, lang = 'pl-PL') {
         return new Promise(resolve => {
             if (hfAbort || hfIsPaused) { resolve(); return; }
+            initAudioContext(); enableAudioKeepAlive(); // Ensure active
             const u = new SpeechSynthesisUtterance(text);
             u.lang = lang; u.rate = rate; 
             u.onend = () => resolve(); 
@@ -811,14 +927,21 @@
         if (!phrasesData.length) return;
         const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
         const practiceCount = phrasesData.length - masteredCount;
-        document.getElementById('learning-count').innerText = `(${practiceCount})`;
-        document.getElementById('banked-count').innerText = `(${masteredCount})`;
+        
+        // Use updated UI Lang logic to rewrite labels
+        const pNum = `(${practiceCount})`;
+        const bNum = `(${masteredCount})`;
+        
+        document.getElementById('tab-learning').innerHTML = `${t('practice')} <span id="learning-count">${pNum}</span>`;
+        document.getElementById('tab-mastered').innerHTML = `${t('banked')} <span id="banked-count">${bNum}</span>`;
     }
 
     let lastSpeakerTap = 0;
     async function handleSpeakerTap() {
         const now = Date.now();
-        await wakeUpAudioEngine();
+        initAudioContext(); enableAudioKeepAlive();
+
+        if (!currentTarget) return; // Safety check
         
         const textToSpeak = currentLevel === "0" ? (currentTarget.pl + " jak " + currentTarget.word) : currentTarget.pl;
         
