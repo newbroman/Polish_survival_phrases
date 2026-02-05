@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master v4.0</title>
+    <title>Polish Phrase Master v4.1</title>
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; --gold: #ffd700; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -20,11 +20,12 @@
         .lvl-dropdown-row { display: flex; gap: 6px; width: 100%; }
         .custom-select { flex: 1; background: var(--bg); border: 1px solid #ccc; padding: 8px; border-radius: 4px; font-size: 14px; color: var(--text); cursor: pointer; }
 
-        .gender-dropdown { position: relative; width: 120px; }
-        .gender-trigger { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 8px; border-radius: 4px; font-size: 13px; font-weight: bold; cursor: pointer; text-align: center; }
+        .gender-dropdown { position: relative; width: 130px; }
+        .gender-trigger { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 8px; border-radius: 4px; font-size: 13px; font-weight: bold; cursor: pointer; text-align: center; white-space: nowrap; overflow: hidden; }
         .gender-menu { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border: 1px solid #ccc; border-radius: 4px; z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .gender-menu.show { display: block; }
         .gender-item { padding: 10px; font-size: 13px; border-bottom: 1px solid #eee; cursor: pointer; text-align: center; }
+        .gender-item:last-child { border-bottom: none; }
 
         .progress-container { width: 100%; height: 4px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.3s; }
@@ -94,7 +95,7 @@
         <h2 style="color:var(--pol-red)">Mastery Guide</h2>
         <p>🎯 <b>Mastery:</b> Correct hits darken tiles. 3 hits turns a tile Gold.</p>
         <p>🔄 <b>Swap:</b> Toggles whether the tiles show Polish or English.</p>
-        <p>👫 <b>Gender:</b> Swaps adjective variants (e.g. <i>Zajęty</i> vs <i>Zajęta</i>) instantly.</p>
+        <p>👫 <b>Gender:</b> Select Male, Female, or Both Sexes to update adjective variants (e.g. <i>Zajęty</i> vs <i>Zajęta</i>).</p>
         <p>🎧 <b>Hands-Free:</b> Auto-loop mode that remembers your level bookmark.</p>
     </div>
 </div>
@@ -119,11 +120,11 @@
                 <option value="0">Loading...</option>
             </select>
             <div class="gender-dropdown">
-                <div class="gender-trigger" id="gender-label" onclick="toggleGenderMenu(event)">Gender: Both</div>
+                <div class="gender-trigger" id="gender-label" onclick="toggleGenderMenu(event)">Both Sexes</div>
                 <div class="gender-menu" id="gender-menu">
-                    <div class="gender-item" onclick="setGender('both')">Both</div>
                     <div class="gender-item" onclick="setGender('m')">Male</div>
                     <div class="gender-item" onclick="setGender('f')">Female</div>
+                    <div class="gender-item" onclick="setGender('both')">Both Sexes</div>
                 </div>
             </div>
         </div>
@@ -168,11 +169,16 @@
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = localStorage.getItem('pl_current_level_idx') || "0";
     let phrasesData = [], activePool = [], currentTarget = null;
-    let currentGender = 'both', isSwapped = false, hardMode = false;
+    let currentGender = localStorage.getItem('pl_gender_pref') || 'both';
+    let isSwapped = false, hardMode = false;
     let hfActive = false, hfIndex = 0, hfTimer = null, hfPaused = false;
     const THRESHOLD = 3;
 
     async function init() {
+        // Sync Label with stored preference
+        const labels = {'both': 'Both Sexes', 'm': 'Male', 'f': 'Female'};
+        document.getElementById('gender-label').innerText = labels[currentGender];
+        
         await populateLevels();
         await loadLevel(currentLevel);
     }
@@ -209,11 +215,21 @@
 
     function selectLevel(l) { loadLevel(l); }
 
+    function toggleGenderMenu(e) { 
+        e.stopPropagation(); 
+        document.getElementById('gender-menu').classList.toggle('show'); 
+    }
+
     function setGender(g) {
         currentGender = g;
-        document.getElementById('gender-label').innerText = "Gender: " + g.charAt(0).toUpperCase() + g.slice(1);
+        localStorage.setItem('pl_gender_pref', g);
+        const labels = {'both': 'Both Sexes', 'm': 'Male', 'f': 'Female'};
+        document.getElementById('gender-label').innerText = labels[g];
         document.getElementById('gender-menu').classList.remove('show');
-        refreshPool(); updateMap(); startRound();
+        
+        refreshPool(); 
+        updateMap(); 
+        startRound();
     }
 
     function refreshPool() {
