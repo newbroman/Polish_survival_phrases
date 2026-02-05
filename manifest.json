@@ -1,8 +1,7 @@
 {
-  "name": "Polish Master",
-  "short_name": "PolishMaster",
-  "description": "Master Polish phrases with a gamified grid and hands-free mode.",
-  "start_url": "index.html",
+  "name": "Polish Phrase Master",
+  "short_name": "PolMaster",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f0f2f5",
   "theme_color": "#dc143c",
@@ -11,8 +10,7 @@
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "icon-512.png",
