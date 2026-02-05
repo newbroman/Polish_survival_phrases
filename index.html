@@ -72,16 +72,28 @@
 
         .map-section { flex-grow: 1; padding: 12px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; transition: transform 0.1s; }
         
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 420px; }
-        .grid.lvl0 { grid-template-columns: repeat(5, 1fr); }
+        /* --- UPDATED GRID LAYOUT (3 columns) --- */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+            gap: 8px; /* Slightly more gap for cleaner look */
+            width: 100%; 
+            max-width: 350px; /* Reduced max-width to keep tiles from being huge */
+        }
+        
+        /* Level 0 overrides (Alphabet needs 5 cols) */
+        .grid.lvl0 { 
+            grid-template-columns: repeat(5, 1fr); 
+            max-width: 420px; 
+        }
 
         .tile { 
             aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
             background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 4px; 
             text-align: center; 
-            font-size: 0.75rem; 
+            font-size: 0.8rem; /* Slightly larger font for fewer tiles */
             font-weight: 700; line-height: 1.1; 
-            box-shadow: 0 2px 0px rgba(0,0,0,0.15); /* Thicker bottom shadow for 3D effect */
+            box-shadow: 0 2px 0px rgba(0,0,0,0.15); 
             transition: background 0.2s, transform 0.1s, box-shadow 0.1s; 
             position: relative;
             border: 2px solid transparent; 
@@ -370,8 +382,9 @@
         playNote(freq, 0.15, 'sine'); 
     }
 
+    // --- SUBTLE BANKED TONE (Sine Wave) ---
     function playBanked() {
-        // Subtle success chime (Sine wave instead of Triangle)
+        // Smooth sine wave chime, soft and glassy
         setTimeout(() => playNote(523.25, 0.1, 'sine'), 0);
         setTimeout(() => playNote(659.25, 0.1, 'sine'), 80);
         setTimeout(() => playNote(783.99, 0.2, 'sine'), 160);
