@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master v5.7</title>
+    <title>Polish Phrase Master v5.8</title>
     <style>
-        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; --gold: #ffd700; }
+        :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --gold: #ffd700; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
         html, body { height: 100%; margin: 0; overflow: hidden; position: fixed; width: 100%; }
@@ -20,7 +20,6 @@
         
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
         
-        /* NEW SEARCH ROW LAYOUT */
         .search-row { display: flex; gap: 6px; width: 100%; }
         
         .search-box { 
@@ -37,7 +36,6 @@
             flex-shrink: 0;
         }
 
-        /* GENDER DROPDOWN - Label Removed */
         .gender-dropdown-wrapper { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 80px; }
         .gender-dropdown { position: relative; flex: 1; }
         .gender-dropdown-trigger { 
@@ -83,41 +81,44 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; padding: 10px 8px; overflow-y: hidden; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; transition: transform 0.1s; }
+        .map-section { flex-grow: 1; padding: 10px 8px; overflow-y: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; box-sizing: border-box; transition: transform 0.1s; }
         
-        /* UPDATED GRID: 4 Rows x 3 Columns strict fit */
+        /* UPDATED GRID for better definition and text wrapping */
         .grid { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             grid-template-rows: repeat(4, 1fr);
-            gap: 6px; 
+            gap: 8px; /* Increased gap slightly */
             width: 100%; 
-            max-width: 360px; 
+            max-width: 380px; 
             margin: 0 auto;
-            height: 100%; /* Fill available space */
+            height: 100%; 
+            max-height: 600px; /* Prevents tiles from becoming pillars on tall screens */
         }
         
         .tile { 
             display: flex; align-items: center; justify-content: center; 
-            background: var(--tile-bg); border-radius: 6px; cursor: pointer; padding: 4px; 
+            background: #ffffff; /* White background for definition */
+            border: 1px solid #cbd5e0; /* Subtle border */
+            border-radius: 6px; cursor: pointer; padding: 6px; 
             text-align: center; 
             font-size: 0.75rem; 
-            font-weight: 700; line-height: 1.2; 
-            box-shadow: 0 2px 0px rgba(0,0,0,0.15); 
+            font-weight: 700; line-height: 1.25; 
+            box-shadow: 0 3px 0 rgba(0,0,0,0.08); /* Stronger bottom shadow */
             transition: background 0.2s, transform 0.1s, box-shadow 0.1s; 
             position: relative;
-            border: 2px solid transparent; 
-            word-wrap: break-word; overflow: hidden;
-            height: 100%; /* Fill grid cell */
-            min-height: 0; /* Override previous min-height */
+            word-wrap: break-word; 
+            overflow-wrap: anywhere; /* FIX: Breaks text at slashes */
+            height: 100%;
         }
 
         .grid.lvl0 { 
             grid-template-columns: repeat(5, 1fr); 
-            grid-template-rows: auto; /* Level 0 retains flow */
+            grid-template-rows: auto; 
             max-width: 380px; 
             overflow-y: auto;
-            display: block; /* Fallback for variable content */
+            display: block;
+            max-height: none; /* Let lvl0 scroll if needed */
         }
         .grid.lvl0 .tile {
             float: left; width: 18%; margin: 1%; aspect-ratio: 1/1;
@@ -125,20 +126,19 @@
         }
 
         .tile:active { transform: translateY(2px); box-shadow: 0 0 0 rgba(0,0,0,0.15); }
-        .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
-        .tile.mastered-border { border-color: var(--gold); box-shadow: 0 0 5px rgba(255, 215, 0, 0.4); }
+        .tile.wrong { background: var(--wrong-blue) !important; color: white !important; border-color: var(--wrong-blue) !important; }
+        .tile.mastered-border { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
         
         @keyframes gold-pop-anim {
             0% { transform: scale(1); background-color: var(--gold); }
             50% { transform: scale(1.2); box-shadow: 0 0 15px var(--gold); }
-            100% { transform: scale(1); background-color: var(--tile-bg); }
+            100% { transform: scale(1); background-color: #ffffff; }
         }
         .tile.gold-pop { animation: gold-pop-anim 0.6s ease-out; z-index: 10; }
 
-        /* SEARCH RESULTS LIST STYLING */
         #search-results-list {
             width: 100%; max-width: 400px;
-            display: none; /* Hidden by default */
+            display: none; 
             flex-direction: column;
             gap: 8px;
             padding-bottom: 20px;
