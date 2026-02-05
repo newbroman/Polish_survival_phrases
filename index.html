@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master v3.7</title>
+    <title>Polish Phrase Master v3.9</title>
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; --gold: #ffd700; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -31,30 +31,83 @@
 
         .quiz-ui { background: var(--card); padding: 15px; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; }
         .speaker-btn { width: 50px; height: 50px; background: var(--bg); border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; user-select: none; }
+        .q-content { flex: 1; }
         .q-text { font-size: 18px; font-weight: 800; }
+        .feedback { height: 16px; font-size: 12px; font-weight: bold; margin-top: 4px; }
+
+        .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
+        .tab { flex: 1; padding: 12px; text-align: center; font-size: 12px; font-weight: bold; cursor: pointer; opacity: 0.4; border-bottom: 3px solid transparent; }
+        .tab.active { opacity: 1; border-bottom-color: var(--pol-red); color: var(--pol-red); }
 
         .map-section { flex-grow: 1; overflow-y: auto; padding: 10px; width: 100%; box-sizing: border-box; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 400px; margin: 0 auto; }
-        .tile { min-height: 80px; background: var(--tile-bg); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 5px; font-size: 13px; font-weight: 700; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 2px solid transparent; cursor: pointer; word-wrap: break-word; color: var(--text); transition: background 0.2s; }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            grid-auto-rows: minmax(80px, auto);
+            gap: 8px; 
+            width: 100%; 
+            max-width: 400px; 
+            margin: 0 auto;
+        }
+        
+        .tile { 
+            background: var(--tile-bg); 
+            border-radius: 8px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            padding: 10px; 
+            font-size: 13px; 
+            font-weight: 700; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+            border: 2px solid transparent; 
+            cursor: pointer; 
+            word-wrap: break-word; 
+            color: var(--text); 
+            transition: all 0.2s;
+            box-sizing: border-box;
+        }
+
         .tile.mastered { border-color: var(--gold); }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
-        #help-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 2000; display: none; align-items: center; justify-content: center; }
-        .help-modal { background: var(--card); padding: 25px; border-radius: 12px; width: 90%; max-width: 400px; color: var(--text); }
-        
-        .footer { padding: 15px; display: flex; gap: 10px; background: var(--card); border-top: 1px solid #ddd; }
-        .footer-btn { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; background: var(--bg); font-size: 12px; font-weight: bold; cursor: pointer; color: var(--text); }
+        .grid.lvl0 { grid-template-columns: repeat(5, 1fr); max-width: 450px; }
+        .grid.lvl0 .tile { aspect-ratio: 1/1; min-height: auto; }
+
+        #help-overlay, #hf-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; display: none; align-items: center; justify-content: center; }
+        .modal { background: var(--card); padding: 25px; border-radius: 12px; width: 90%; max-width: 420px; color: var(--text); max-height: 85vh; overflow-y: auto; position: relative; }
+        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; background: none; border: none; color: var(--text); }
+
+        .footer { padding: 10px; display: flex; gap: 8px; background: var(--card); border-top: 1px solid #ddd; }
+        .footer-btn { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; background: var(--bg); font-size: 11px; font-weight: bold; cursor: pointer; color: var(--text); }
+        .primary-btn { background: var(--pol-red); color: white; border: none; }
     </style>
 </head>
 <body>
 
 <div id="help-overlay">
-    <div class="help-modal">
-        <h2 style="color:var(--pol-red)">How to Play</h2>
-        <p><b>Goal:</b> Turn tiles Gold by getting 3 correct hits.</p>
-        <p><b>Gender Toggle:</b> Switches adjectives (like Level 2) and filters gendered phrases.</p>
-        <p><b>Search:</b> Find any phrase across all loaded levels instantly.</p>
-        <button onclick="toggleHelp()" style="width:100%; padding:10px; background:var(--pol-red); color:white; border:none; border-radius:6px;">Close</button>
+    <div class="modal">
+        <button class="close-btn" onclick="toggleHelp()">×</button>
+        <h2 style="color:var(--pol-red)">Mastery Guide</h2>
+        <p>🎯 <b>Mastery:</b> 3 correct hits turns a tile Gold.</p>
+        <p>🔄 <b>Swap:</b> Changes whether the tiles show Polish or English.</p>
+        <p>🎧 <b>Hands-Free:</b> Auto-loop mode for passive learning.</p>
+        <p>👫 <b>Gender:</b> Switches adjectives (e.g. <i>Zajęty</i> vs <i>Zajęta</i>).</p>
+    </div>
+</div>
+
+<div id="hf-overlay">
+    <div class="modal" style="text-align:center;">
+        <button class="close-btn" onclick="toggleHF()">×</button>
+        <h2 id="hf-level-title" style="color:var(--pol-red); margin-bottom:5px;">Level 0</h2>
+        <p id="hf-counter" style="font-size:12px; color:#888;">Phrase 1 of 10</p>
+        <div style="margin: 40px 0;">
+            <div id="hf-primary" style="font-size:28px; font-weight:800;">...</div>
+            <div id="hf-secondary" style="font-size:18px; color:#666; margin-top:10px;">...</div>
+        </div>
+        <button id="hf-play-btn" class="footer-btn primary-btn" onclick="toggleHFPlayback()">Pause</button>
     </div>
 </div>
 
@@ -62,7 +115,7 @@
     <div class="controls-row">
         <div class="lvl-dropdown-row">
             <select id="lvl-select" class="custom-select" onchange="selectLevel(this.value)">
-                <option value="0">Loading Levels...</option>
+                <option value="0">Loading...</option>
             </select>
             <div class="gender-dropdown">
                 <div class="gender-trigger" id="gender-label" onclick="toggleGenderMenu(event)">Gender: Both</div>
@@ -77,16 +130,26 @@
             <input type="text" id="search-bar" class="search-box" placeholder="Search phrases..." oninput="updateMap()">
             <button class="footer-btn" style="flex:0; padding:0 15px" onclick="toggleHelp()">?</button>
         </div>
+        <div style="display: flex; gap: 6px; width: 100%;">
+            <button class="footer-btn" onclick="toggleSwap()">Swap</button>
+            <button class="footer-btn" id="hard-btn" onclick="toggleHardMode()">🧠 Hard</button>
+            <button class="footer-btn primary-btn" onclick="toggleHF()">🎧 Hands-Free</button>
+        </div>
     </div>
     <div class="progress-container"><div id="progress-bar"></div></div>
 </div>
 
 <div class="quiz-ui">
-    <div class="speaker-btn" onclick="handleSpeaker()">🔊</div>
-    <div>
+    <div class="speaker-btn" onclick="handleSpeakerTap()">🔊</div>
+    <div class="q-content">
         <div id="q-text" class="q-text">Ready?</div>
-        <div id="feedback" style="font-size:12px; font-weight:bold; height:14px; margin-top:4px;"></div>
+        <div id="feedback" class="feedback"></div>
     </div>
+</div>
+
+<div class="mode-tabs">
+    <div id="tab-learning" class="tab active" onclick="switchMode('learning')">PRACTICE</div>
+    <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
 </div>
 
 <div class="map-section">
@@ -103,29 +166,28 @@
 <script>
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = localStorage.getItem('pl_current_level_idx') || "0";
-    let phrasesData = [], activePool = [], currentTarget = null, currentGender = 'both';
+    let phrasesData = [], activePool = [], currentTarget = null;
+    let currentGender = 'both', isSwapped = false, hardMode = false;
+    let hfActive = false, hfIndex = 0, hfTimer = null;
     const THRESHOLD = 3;
 
     async function init() {
-        await populateLevelDropdown();
+        await populateLevels();
         await loadLevel(currentLevel);
     }
 
-    async function populateLevelDropdown() {
+    async function populateLevels() {
         const select = document.getElementById('lvl-select');
         select.innerHTML = '';
-        const levels = ["0","1","2","2.1","3","4","5","5.1","6","7","8","9","10","10.1","11","12","12.1","13","13.1","13.2","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"];
-        
-        for (const l of levels) {
+        const lvls = ["0","1","2","2.1","3","4","5","5.1","6","7","8","9","10","10.1","11","12","12.1","13","13.1","13.2","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"];
+        for (const l of lvls) {
             try {
                 const r = await fetch(`phrases_${l}.json`);
                 if (r.ok) {
                     const d = await r.json();
-                    let opt = document.createElement('option');
-                    opt.value = l;
-                    opt.innerText = `${l}: ${d.description || 'Level '+l}`;
+                    let opt = new Option(`${l}: ${d.description || 'Level '+l}`, l);
                     if(l === currentLevel) opt.selected = true;
-                    select.appendChild(opt);
+                    select.add(opt);
                 }
             } catch(e){}
         }
@@ -141,46 +203,29 @@
             refreshPool();
             updateMap();
             startRound();
-        } catch(e) { console.error("Load failed", e); }
+        } catch(e) { console.error(e); }
     }
 
     function selectLevel(l) { loadLevel(l); }
 
-    function toggleGenderMenu(e) { 
-        e.stopPropagation(); 
-        document.getElementById('gender-menu').classList.toggle('show'); 
-    }
-
     function setGender(g) {
         currentGender = g;
-        const labels = {'both': 'Both', 'm': 'Male', 'f': 'Female'};
-        document.getElementById('gender-label').innerText = "Gender: " + labels[g];
+        document.getElementById('gender-label').innerText = "Gender: " + g.charAt(0).toUpperCase() + g.slice(1);
         document.getElementById('gender-menu').classList.remove('show');
-        
-        // Force refresh pool and UI
-        refreshPool();
-        updateMap();
-        startRound();
+        refreshPool(); updateMap(); startRound();
     }
 
     function refreshPool() {
-        if (!phrasesData) return;
         activePool = phrasesData.filter(p => {
-            const isMastered = (stats[p.pl] || 0) >= THRESHOLD;
-            // Filter by gender: show if 'both', if neutral (null), or if exact match
-            const matchesGender = (currentGender === 'both') || 
-                                  (!p.gender) || 
-                                  (p.gender === 'both') || 
-                                  (p.gender === currentGender);
-            return !isMastered && matchesGender;
+            const m = (stats[p.pl] || 0) >= THRESHOLD;
+            const g = (currentGender === 'both') || (!p.gender) || (p.gender === 'both') || (p.gender === currentGender);
+            return !m && g;
         }).slice(0, 12);
     }
 
-    function getPhraseDisplay(p) {
-        // Handle adjectives and variants specifically for the current gender
+    function getDisplay(p) {
         if (p.gender === 'both' && p.variants) {
-            if (currentGender === 'm') return p.variants.m;
-            if (currentGender === 'f') return p.variants.f;
+            return (currentGender === 'f') ? p.variants.f : p.variants.m;
         }
         return p.pl;
     }
@@ -188,104 +233,138 @@
     function updateMap() {
         const area = document.getElementById('mastery-map');
         area.innerHTML = '';
+        area.className = currentLevel === "0" ? "grid lvl0" : "grid";
+        const isLearning = document.getElementById('tab-learning').classList.contains('active');
         const query = document.getElementById('search-bar').value.toLowerCase();
 
-        const filtered = phrasesData.filter(p => {
-            const matchesGender = (currentGender === 'both') || (!p.gender) || (p.gender === 'both') || (p.gender === currentGender);
-            const matchesSearch = !query || p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query);
-            return matchesGender && matchesSearch;
-        });
+        const list = (isLearning ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD))
+            .filter(p => !query || p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query));
 
-        filtered.forEach(p => {
+        list.forEach(p => {
             const tile = document.createElement('div');
             tile.className = 'tile';
             const score = stats[p.pl] || 0;
             if (score >= THRESHOLD) tile.classList.add('mastered');
-            
-            tile.innerText = getPhraseDisplay(p);
-            
-            if (score > 0 && score < THRESHOLD) {
-                tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
-            }
-
+            tile.innerText = isSwapped ? p.en : getDisplay(p);
+            if (score > 0 && score < THRESHOLD) tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`;
             tile.onclick = () => checkAnswer(p, tile);
             area.appendChild(tile);
         });
-        updateProgressBar();
+        updateBar();
     }
 
     function startRound() {
-        if (!activePool.length) {
-            document.getElementById('q-text').innerText = "Level Mastered! 🎉";
-            return;
-        }
+        if (!activePool.length) { document.getElementById('q-text').innerText = "Level Mastered! 🎉"; return; }
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
-        document.getElementById('q-text').innerText = currentTarget.en;
+        document.getElementById('q-text').innerText = hardMode ? "Listen..." : (isSwapped ? getDisplay(currentTarget) : currentTarget.en);
         document.getElementById('feedback').innerText = "";
-        speak(getPhraseDisplay(currentTarget));
+        speak(getDisplay(currentTarget));
     }
 
     function checkAnswer(p, el) {
         if (p.pl === currentTarget.pl) {
             stats[p.pl] = (stats[p.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Correct! 🌟";
-            document.getElementById('feedback').style.color = "green";
+            document.getElementById('feedback').innerText = "Dobrze! 🌟";
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             setTimeout(() => { refreshPool(); updateMap(); startRound(); }, 600);
         } else {
             el.classList.add('wrong');
-            document.getElementById('feedback').innerText = "Try again!";
-            document.getElementById('feedback').style.color = "red";
+            document.getElementById('feedback').innerText = "Błąd!";
             setTimeout(() => { el.classList.remove('wrong'); }, 1000);
         }
     }
 
-    function speak(txt) {
+    // HANDS-FREE LOGIC
+    async function toggleHF() {
+        hfActive = !hfActive;
+        const o = document.getElementById('hf-overlay');
+        o.style.display = hfActive ? 'flex' : 'none';
+        if (hfActive) {
+            hfIndex = parseInt(localStorage.getItem('hf_mem_' + currentLevel)) || 0;
+            if(hfIndex >= phrasesData.length) hfIndex = 0;
+            document.getElementById('hf-level-title').innerText = document.getElementById('lvl-select').options[document.getElementById('lvl-select').selectedIndex].text;
+            runHF();
+        } else { clearTimeout(hfTimer); window.speechSynthesis.cancel(); }
+    }
+
+    async function runHF() {
+        if (!hfActive || hfIndex >= phrasesData.length) { if(hfIndex >= phrasesData.length) hfIndex = 0; return; }
+        const p = phrasesData[hfIndex];
+        localStorage.setItem('hf_mem_' + currentLevel, hfIndex);
+        
+        document.getElementById('hf-counter').innerText = `Phrase ${hfIndex + 1} of ${phrasesData.length}`;
+        document.getElementById('hf-primary').innerText = getDisplay(p);
+        document.getElementById('hf-secondary').innerText = p.en;
+
+        await speakAsync(getDisplay(p), 1);
+        await sleep(2000);
+        await speakAsync(p.en, 1, 'en-US');
+        await sleep(2000);
+        
+        hfIndex++;
+        hfTimer = setTimeout(runHF, 1000);
+    }
+
+    function speak(txt, rate = 1, lang = 'pl-PL') {
         window.speechSynthesis.cancel();
         const u = new SpeechSynthesisUtterance(txt);
-        u.lang = 'pl-PL';
+        u.lang = lang; u.rate = rate;
         window.speechSynthesis.speak(u);
     }
 
-    function handleSpeaker() { if(currentTarget) speak(getPhraseDisplay(currentTarget)); }
-    
-    function toggleHelp() { 
-        const o = document.getElementById('help-overlay'); 
-        o.style.display = (o.style.display==='flex') ? 'none' : 'flex'; 
+    function speakAsync(txt, rate, lang = 'pl-PL') {
+        return new Promise(resolve => {
+            const u = new SpeechSynthesisUtterance(txt);
+            u.lang = lang; u.rate = rate;
+            u.onend = () => resolve();
+            window.speechSynthesis.speak(u);
+        });
     }
 
-    function updateProgressBar() {
-        if (!phrasesData.length) return;
-        const mastered = phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).length;
-        document.getElementById('progress-bar').style.width = (mastered / phrasesData.length * 100) + "%";
+    function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+    function toggleHelp() { const o = document.getElementById('help-overlay'); o.style.display = (o.style.display==='flex') ? 'none' : 'flex'; }
+    function toggleGenderMenu(e) { e.stopPropagation(); document.getElementById('gender-menu').classList.toggle('show'); }
+    function toggleSwap() { isSwapped = !isSwapped; updateMap(); startRound(); }
+    function toggleHardMode() { hardMode = !hardMode; document.getElementById('hard-btn').classList.toggle('primary-btn'); startRound(); }
+    function switchMode(m) { 
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + m).classList.add('active');
+        updateMap(); 
+    }
+    
+    let lastTap = 0;
+    function handleSpeakerTap() {
+        const now = Date.now();
+        speak(getDisplay(currentTarget), now - lastTap < 300 ? 0.5 : 1);
+        lastTap = now;
+    }
+
+    function updateBar() {
+        const m = phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD).length;
+        document.getElementById('progress-bar').style.width = (m / phrasesData.length * 100) + "%";
     }
 
     function downloadProgress() {
         const blob = new Blob([JSON.stringify(stats)], {type: "text/plain"});
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
-        a.download = "polish_progress.txt";
+        a.download = "polish_master_save.txt";
         a.click();
     }
 
     function importProgress(e) {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            try {
-                stats = JSON.parse(event.target.result);
-                localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
-                location.reload();
-            } catch(e) { alert("Invalid backup file."); }
+        const r = new FileReader();
+        r.onload = (event) => {
+            stats = JSON.parse(event.target.result);
+            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+            location.reload();
         };
-        reader.readAsText(e.target.files[0]);
+        r.readAsText(e.target.files[0]);
     }
 
-    function resetAll() { if(confirm("Reset everything?")) { localStorage.clear(); location.reload(); } }
+    function resetAll() { if(confirm("Reset all data?")) { localStorage.clear(); location.reload(); } }
 
-    window.onclick = () => {
-        document.getElementById('gender-menu').classList.remove('show');
-    };
-
+    window.onclick = () => document.getElementById('gender-menu').classList.remove('show');
     window.onload = init;
 </script>
 </body>
