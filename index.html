@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master v4.6</title>
+    <title>Polish Phrase Master v4.9</title>
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; --gold: #ffd700; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -12,74 +12,61 @@
         body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
         
         .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .controls-row { width: 95%; max-width: 450px; margin: 0 auto; padding: 10px 0; display: flex; flex-direction: column; gap: 8px; }
+        .controls-row { width: 95%; max-width: 450px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 4px; }
         
         .lvl-dropdown-row { width: 100%; }
-        .custom-select { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 0 10px; border-radius: 4px; font-size: 14px; color: var(--text); cursor: pointer; box-sizing: border-box; height: 38px; }
+        .custom-select { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 0 10px; border-radius: 4px; font-size: 14px; color: var(--text); cursor: pointer; height: 34px; box-sizing: border-box; }
 
-        .search-row { display: flex; gap: 6px; width: 100%; }
-        .search-box { flex: 1; background: var(--bg); border: 1px solid #ccc; color: var(--text); padding: 0 10px; border-radius: 4px; font-size: 14px; outline: none; height: 38px; box-sizing: border-box; }
+        .search-row { display: flex; gap: 4px; width: 100%; }
+        .search-box { flex: 1; background: var(--bg); border: 1px solid #ccc; color: var(--text); padding: 0 10px; border-radius: 4px; font-size: 14px; outline: none; height: 34px; box-sizing: border-box; }
         
-        .feature-buttons-row { display: flex; gap: 6px; width: 100%; position: relative; height: 38px; }
+        .feature-buttons-row { display: flex; gap: 4px; width: 100%; position: relative; height: 34px; }
         .gender-dropdown { position: relative; flex: 1.2; }
-        .gender-trigger { width: 100%; background: var(--bg); border: 1px solid #ccc; padding: 0; border-radius: 6px; font-size: 11px; font-weight: bold; cursor: pointer; text-align: center; white-space: nowrap; overflow: hidden; height: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
-        .gender-menu { position: absolute; bottom: 105%; left: 0; right: 0; background: var(--card); border: 1px solid #ccc; border-radius: 6px; z-index: 1000; display: none; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); }
+        .gender-trigger { width: 100%; background: var(--bg); border: 1px solid #ccc; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer; text-align: center; height: 100%; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+        .gender-menu { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border: 1px solid #ccc; border-radius: 4px; z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .gender-menu.show { display: block; }
-        .gender-item { padding: 12px; font-size: 13px; border-bottom: 1px solid #eee; cursor: pointer; text-align: center; color: var(--text); }
+        .gender-item { padding: 8px; font-size: 13px; border-bottom: 1px solid #eee; cursor: pointer; text-align: center; }
 
-        .progress-container { width: 100%; height: 4px; background: #ddd; }
+        .progress-container { width: 100%; height: 3px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.3s; }
 
-        .quiz-ui { background: var(--card); padding: 15px; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
-        .speaker-btn { width: 50px; height: 50px; background: var(--bg); border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; user-select: none; }
+        .quiz-ui { background: var(--card); padding: 8px 15px; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+        .speaker-btn { width: 44px; height: 44px; background: var(--bg); border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; }
         .q-content { flex: 1; overflow: hidden; }
-        .q-text { font-size: 18px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .feedback { height: 16px; font-size: 12px; font-weight: bold; margin-top: 4px; }
+        .q-text { font-size: 16px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .feedback { height: 14px; font-size: 11px; font-weight: bold; }
 
-        /* TABS: Reduced vertical padding */
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
-        .tab { flex: 1; padding: 8px; text-align: center; font-size: 12px; font-weight: bold; cursor: pointer; opacity: 0.4; border-bottom: 3px solid transparent; }
+        .tab { flex: 1; padding: 6px; text-align: center; font-size: 11px; font-weight: bold; cursor: pointer; opacity: 0.4; border-bottom: 2px solid transparent; }
         .tab.active { opacity: 1; border-bottom-color: var(--pol-red); color: var(--pol-red); }
 
-        .map-section { flex-grow: 1; overflow-y: auto; padding: 10px; width: 100%; box-sizing: border-box; display: flex; justify-content: center; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 400px; height: fit-content; }
-        .tile { background: var(--tile-bg); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; font-size: 13px; font-weight: 700; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 2px solid transparent; cursor: pointer; word-wrap: break-word; color: var(--text); transition: all 0.2s; box-sizing: border-box; min-height: 85px; }
+        .map-section { flex-grow: 1; padding: 6px; width: 100%; box-sizing: border-box; display: flex; justify-content: center; overflow: hidden; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 400px; height: 100%; }
+        
+        .tile { background: var(--tile-bg); border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4px; font-size: 12px; font-weight: 700; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 2px solid transparent; cursor: pointer; color: var(--text); box-sizing: border-box; height: 100%; }
         .tile.mastered { border-color: var(--gold); }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
 
-        .grid.lvl0 { grid-template-columns: repeat(5, 1fr); grid-template-rows: auto; max-width: 450px; }
-        .grid.lvl0 .tile { aspect-ratio: 1/1; min-height: auto; }
+        .grid.lvl0 { grid-template-columns: repeat(5, 1fr); grid-template-rows: auto; height: auto; overflow-y: auto; }
 
-        #help-overlay, #hf-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; display: none; align-items: center; justify-content: center; }
-        .modal { background: var(--card); padding: 25px; border-radius: 12px; width: 90%; max-width: 420px; color: var(--text); max-height: 85vh; overflow-y: auto; position: relative; }
-        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; background: none; border: none; color: var(--text); }
+        #hf-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; display: none; align-items: center; justify-content: center; }
+        .modal { background: var(--card); padding: 20px; border-radius: 12px; width: 90%; max-width: 400px; position: relative; }
 
-        .footer { padding: 10px; display: flex; gap: 8px; background: var(--card); border-top: 1px solid #ddd; flex-shrink: 0; }
-        .footer-btn { flex: 1; padding: 0 10px; border: 1px solid #ccc; border-radius: 6px; background: var(--bg); font-size: 11px; font-weight: bold; cursor: pointer; color: var(--text); text-align: center; display: flex; align-items: center; justify-content: center; height: 38px; }
+        .footer { padding: 6px; display: flex; gap: 6px; background: var(--card); border-top: 1px solid #ddd; flex-shrink: 0; }
+        .footer-btn { flex: 1; padding: 0 6px; border: 1px solid #ccc; border-radius: 4px; background: var(--bg); font-size: 11px; font-weight: bold; cursor: pointer; color: var(--text); height: 32px; display: flex; align-items: center; justify-content: center; }
         .primary-btn { background: var(--pol-red); color: white; border: none; }
     </style>
 </head>
 <body>
 
-<div id="help-overlay">
-    <div class="modal">
-        <button class="close-btn" onclick="toggleHelp()">×</button>
-        <h2 style="color:var(--pol-red)">Mastery Guide</h2>
-        <p>🎯 <b>Mastery:</b> 3 hits turn a tile Gold.</p>
-        <p>🔄 <b>Swap:</b> Changes whether tiles show Polish or English.</p>
-        <p>👫 <b>Gender:</b> Toggles adjective variants.</p>
-        <p>🎧 <b>Hands-Free:</b> Auto-loop mode with memory bookmark.</p>
-    </div>
-</div>
-
 <div id="hf-overlay">
     <div class="modal" style="text-align:center;">
-        <button class="close-btn" onclick="toggleHF()">×</button>
-        <h2 id="hf-level-title" style="color:var(--pol-red); margin-bottom:5px;">Level</h2>
-        <p id="hf-counter" style="font-size:12px; color:#888;">Phrase 1 of ...</p>
-        <div style="margin: 40px 0;">
-            <div id="hf-primary" style="font-size:26px; font-weight:800;">...</div>
-            <div id="hf-secondary" style="font-size:18px; color:#666; margin-top:10px;">...</div>
+        <button onclick="toggleHF()" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:24px; color:var(--text);">×</button>
+        <h2 id="hf-level-title" style="color:var(--pol-red); margin-bottom:5px; font-size: 18px;">Level</h2>
+        <p id="hf-counter" style="font-size:11px; color:#888;">Phrase 1 of ...</p>
+        <div style="margin: 30px 0;">
+            <div id="hf-primary" style="font-size:24px; font-weight:800;">...</div>
+            <div id="hf-secondary" style="font-size:16px; color:#666; margin-top:8px;">...</div>
         </div>
         <button id="hf-play-btn" class="footer-btn primary-btn" onclick="toggleHFPlayback()" style="width: 100%;">Pause</button>
     </div>
@@ -88,15 +75,14 @@
 <div class="header">
     <div class="controls-row">
         <div class="lvl-dropdown-row">
-            <select id="lvl-select" class="custom-select" onchange="selectLevel(this.value)">
-                <option value="0">Loading...</option>
-            </select>
+            <select id="lvl-select" class="custom-select" onchange="selectLevel(this.value)"><option value="0">Loading...</option></select>
         </div>
         <div class="search-row">
-            <input type="text" id="search-bar" class="search-box" placeholder="Search phrases..." oninput="updateMap()">
-            <button class="footer-btn" style="flex:0; width: 44px; padding: 0;" onclick="toggleHelp()">?</button>
+            <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="updateMap()">
+            <button class="footer-btn" style="flex:0; width: 34px; padding: 0;" onclick="toggleHelp()">?</button>
         </div>
         <div class="feature-buttons-row">
+            <button id="ui-lang-btn" class="footer-btn" onclick="toggleUILang()"><b>EN</b>/PL</button>
             <button class="footer-btn" onclick="toggleSwap()">Swap</button>
             <div class="gender-dropdown">
                 <div class="gender-trigger" id="gender-label" onclick="toggleGenderMenu(event)">Both Sexes</div>
@@ -107,7 +93,7 @@
                 </div>
             </div>
             <button class="footer-btn" id="hard-btn" onclick="toggleHardMode()">🧠 Hard</button>
-            <button class="footer-btn primary-btn" onclick="toggleHF()">🎧 Hands-Free</button>
+            <button class="footer-btn primary-btn" onclick="toggleHF()">🎧 HF</button>
         </div>
     </div>
     <div class="progress-container"><div id="progress-bar"></div></div>
@@ -126,9 +112,7 @@
     <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">BANKED</div>
 </div>
 
-<div class="map-section">
-    <div id="mastery-map" class="grid"></div>
-</div>
+<div class="map-section"><div id="mastery-map" class="grid"></div></div>
 
 <div class="footer">
     <button class="footer-btn" onclick="downloadProgress()">Save</button>
@@ -142,13 +126,13 @@
     let currentLevel = localStorage.getItem('pl_current_level_idx') || "0";
     let phrasesData = [], activePool = [], currentTarget = null;
     let currentGender = localStorage.getItem('pl_gender_pref') || 'both';
+    let uiLang = localStorage.getItem('pl_ui_lang') || 'en';
     let isSwapped = false, hardMode = false;
     let hfActive = false, hfIndex = 0, hfTimer = null, hfPaused = false;
     const THRESHOLD = 3;
 
     async function init() {
-        const labels = {'both': 'Both Sexes', 'm': 'Male', 'f': 'Female'};
-        document.getElementById('gender-label').innerText = labels[currentGender];
+        updateUILabels();
         await populateLevels();
         await loadLevel(currentLevel);
     }
@@ -189,13 +173,29 @@
     function setGender(g) {
         currentGender = g;
         localStorage.setItem('pl_gender_pref', g);
-        const labels = {'both': 'Both Sexes', 'm': 'Male', 'f': 'Female'};
-        document.getElementById('gender-label').innerText = labels[g];
+        updateUILabels();
         document.getElementById('gender-menu').classList.remove('show');
         refreshPool(); updateMap(); startRound();
     }
 
+    function toggleUILang() {
+        uiLang = (uiLang === 'en') ? 'pl' : 'en';
+        localStorage.setItem('pl_ui_lang', uiLang);
+        updateUILabels();
+    }
+
+    function updateUILabels() {
+        const labels = {
+            'm': { en: 'Male', pl: 'Mężczyzna' },
+            'f': { en: 'Female', pl: 'Kobieta' },
+            'both': { en: 'Both Sexes', pl: 'Obie Płcie' }
+        };
+        document.getElementById('gender-label').innerText = labels[currentGender][uiLang];
+        document.getElementById('ui-lang-btn').innerHTML = uiLang === 'en' ? '<b>EN</b>/PL' : 'EN/<b>PL</b>';
+    }
+
     function refreshPool() {
+        if(!phrasesData) return;
         activePool = phrasesData.filter(p => {
             const m = (stats[p.pl] || 0) >= THRESHOLD;
             const g = (currentGender === 'both') || (!p.gender) || (p.gender === 'both') || (p.gender === currentGender);
@@ -234,7 +234,7 @@
     }
 
     function startRound() {
-        if (!activePool.length) { document.getElementById('q-text').innerText = "Level Mastered! 🎉"; return; }
+        if (!activePool.length) { document.getElementById('q-text').innerText = "Done! 🎉"; return; }
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = hardMode ? "👂 Listen..." : (isSwapped ? getDisplay(currentTarget) : currentTarget.en);
         document.getElementById('feedback').innerText = "";
@@ -310,7 +310,7 @@
     }
 
     function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-    function toggleHelp() { const o = document.getElementById('help-overlay'); o.style.display = (o.style.display==='flex') ? 'none' : 'flex'; }
+    function toggleHelp() { alert("Goals: 3 Hits = Gold. Swap = Prompt Flip. Gender = Adjectives (Lvl 2)."); }
     function toggleSwap() { isSwapped = !isSwapped; updateMap(); startRound(); }
     function toggleHardMode() { hardMode = !hardMode; document.getElementById('hard-btn').classList.toggle('primary-btn'); startRound(); }
     function switchMode(m) { 
@@ -336,7 +336,7 @@
         const blob = new Blob([JSON.stringify(stats)], {type: "text/plain"});
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
-        a.download = "polish_master_save.txt";
+        a.download = "polish_save.txt";
         a.click();
     }
 
@@ -347,12 +347,12 @@
                 stats = JSON.parse(event.target.result);
                 localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
                 location.reload();
-            } catch(e) { alert("Invalid backup file."); }
+            } catch(e) { alert("Invalid file"); }
         };
         r.readAsText(e.target.files[0]);
     }
 
-    function resetAll() { if(confirm("Reset all data?")) { localStorage.clear(); location.reload(); } }
+    function resetAll() { if(confirm("Reset all?")) { localStorage.clear(); location.reload(); } }
     window.onclick = () => document.getElementById('gender-menu').classList.remove('show');
     window.onload = init;
 </script>
