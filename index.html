@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master v5.10</title>
+    <title>Polish Phrase Master v5.11</title>
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; --gold: #ffd700; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -20,7 +20,6 @@
         
         .controls-row { width: 90%; max-width: 400px; margin: 0 auto; padding: 6px 0; display: flex; flex-direction: column; gap: 6px; }
         
-        /* NEW SEARCH ROW LAYOUT */
         .search-row { display: flex; gap: 6px; width: 100%; }
         
         .search-box { 
@@ -37,9 +36,7 @@
             flex-shrink: 0;
         }
 
-        /* GENDER DROPDOWN - Label Removed */
         .gender-dropdown-wrapper { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 80px; }
-        /* Label style removed from here */
         .gender-dropdown { position: relative; flex: 1; }
         .gender-dropdown-trigger { 
             width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
@@ -95,9 +92,8 @@
             margin: 0 auto;
         }
         
-        /* TALLER TILES (approx 20% taller) */
         .tile { 
-            min-height: 70px; /* Increased from 55px */
+            min-height: 70px;
             display: flex; align-items: center; justify-content: center; 
             background: var(--tile-bg); border-radius: 6px; cursor: pointer; padding: 4px; 
             text-align: center; 
@@ -131,10 +127,9 @@
         }
         .tile.gold-pop { animation: gold-pop-anim 0.6s ease-out; z-index: 10; }
 
-        /* SEARCH RESULTS LIST STYLING */
         #search-results-list {
             width: 100%; max-width: 400px;
-            display: none; /* Hidden by default */
+            display: none;
             flex-direction: column;
             gap: 8px;
             padding-bottom: 20px;
@@ -148,6 +143,11 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .global-result-item:active { transform: scale(0.98); }
+        .copy-btn-search {
+            background: #eee; border: 1px solid #ccc; border-radius: 4px;
+            padding: 4px 8px; font-size: 0.7rem; cursor: pointer; margin-left: 8px;
+        }
+        .copy-btn-search:active { background: #ddd; }
 
         .lvl0-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
         .lvl0-big { font-size: 1.2rem; font-weight: 800; color: var(--pol-red); }
@@ -184,7 +184,6 @@
         .pause-option { padding: 4px 10px; border: 1px solid #333; background: #111; border-radius: 4px; cursor: pointer; }
         .pause-option.active { background: #dc143c; color: white; border-color: #dc143c; }
 
-        /* HELP OVERLAY CSS */
         #help-overlay { 
             position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 4000; 
             display: none; align-items: center; justify-content: center; 
@@ -236,7 +235,7 @@
             <div style="font-weight:bold; margin-bottom:5px;">💾 Saving</div>
             Your progress saves automatically to this device. Use the <b>Save</b> button below to download a backup file.
         </div>
-        <div style="text-align:center; font-size:0.75rem; color:#888;">Polish Phrase Master v1.3</div>
+        <div style="text-align:center; font-size:0.75rem; color:#888;">Polish Phrase Master v5.11</div>
     </div>
 </div>
 
@@ -400,7 +399,6 @@
         } catch(e) {}
     }
 
-    // --- DRAMATIC WRONG TONE (Slide Down) ---
     function playWrongSlide() {
         try {
             const now = audioCtx.currentTime;
@@ -422,7 +420,6 @@
     }
 
     function playBanked() {
-        // Subtle/Glassy Sine Wave
         setTimeout(() => playNote(523.25, 0.1, 'sine'), 0);
         setTimeout(() => playNote(659.25, 0.1, 'sine'), 80);
         setTimeout(() => playNote(783.99, 0.2, 'sine'), 160);
@@ -463,7 +460,6 @@
         else btn.innerHTML = "EN/<b>PL</b>";
         document.querySelector('.title').innerText = t('title');
         document.getElementById('search-bar').placeholder = t('search');
-        // Label was removed so we don't update it
         document.getElementById('hard-mode-btn').innerText = t('hardMode');
         document.getElementById('hf-btn').innerText = t('handsFree');
         
@@ -564,7 +560,11 @@
             for (const res of results) {
                 if (res.exists) {
                     foundInThisMajor = true;
-                    const isDone = res.data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length === res.data.phrases.length;
+                    // Count progress
+                    const totalCount = res.data.phrases.length;
+                    const masteredCount = res.data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+                    
+                    const isDone = masteredCount === totalCount;
                     let displayLabel = res.data.description || `Level ${res.id}`;
                     if (!displayLabel.startsWith(res.id)) displayLabel = `Lvl ${res.id}: ${displayLabel}`;
                     const levelObj = { id: res.id, description: displayLabel, isDone: isDone };
@@ -572,7 +572,8 @@
                     
                     const item = document.createElement('div');
                     item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
-                    item.innerHTML = `<span>${displayLabel}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
+                    // Add Progress Fraction
+                    item.innerHTML = `<span>${displayLabel} <b>(${masteredCount}/${totalCount})</b></span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(levelObj.id); };
                     menu.appendChild(item);
                     if(res.id == currentLevel) document.getElementById('lvl-current').innerText = displayLabel;
@@ -588,8 +589,7 @@
         document.getElementById('lvl-menu').classList.remove('show');
         document.getElementById('search-bar').value = '';
         
-        // Reset Search View on Level Change
-        document.getElementById('mastery-map').style.display = (currentLevel === "0") ? 'grid' : 'grid'; // Maintain correct view
+        document.getElementById('mastery-map').style.display = 'grid';
         document.getElementById('search-results-list').style.display = 'none';
         
         saveStats(); 
@@ -606,17 +606,13 @@
             if (!label.startsWith(currentLevel)) label = `Lvl ${currentLevel}: ${label}`;
             document.getElementById('lvl-current').innerText = label;
             refreshActivePool(); updateStats(); updateTabCounts(); updateMap(); startNewRound(); populateDropdown();
-            // Cache all phrases now that we know we have data
             cacheAllPhrases();
         } catch (err) { document.getElementById('q-text').innerText = "File not found"; }
     }
 
-    // --- UPDATED SEARCH LOGIC: INDEPENDENT GLOBAL CACHE ---
     async function cacheAllPhrases() {
-        if (allPhrasesCache.length > 0) return; // Optimization: Only load once
+        if (allPhrasesCache.length > 0) return;
         allPhrasesCache = [];
-        
-        // We load levels 0 to 30 automatically to populate the search bar
         const possibleLevels = [];
         for(let i=0; i<=30; i++) possibleLevels.push(i.toString()); 
         
@@ -630,45 +626,48 @@
         results.forEach(r => allPhrasesCache.push(...r));
     }
 
+    function copyToClipboard(text, event) {
+        if(event) event.stopPropagation();
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Copied: " + text);
+        });
+    }
+
     function handleSmartSearch() {
         const query = document.getElementById('search-bar').value.toLowerCase();
         const mapArea = document.getElementById('mastery-map');
         const listArea = document.getElementById('search-results-list');
         
-        listArea.innerHTML = ''; // Clear previous results
+        listArea.innerHTML = ''; 
 
         if (!query) { 
-            // If empty, show grid, hide list
-            mapArea.style.display = (currentLevel === "0") ? 'grid' : 'grid'; // Ensure correct display type
+            mapArea.style.display = (currentLevel === "0") ? 'grid' : 'grid'; 
             listArea.style.display = 'none';
             updateMap(); 
             return; 
         }
 
-        // If typing, hide grid, show list
         mapArea.style.display = 'none';
         listArea.style.display = 'flex';
 
-        // Filter from GLOBAL Cache (all loaded levels)
-        const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query))).slice(0, 15); // Limit to 15 to keep it fast
+        const matches = allPhrasesCache.filter(p => (p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query))).slice(0, 15);
 
         if (matches.length > 0) {
             matches.forEach(p => {
                 const item = document.createElement('div'); 
                 item.className = 'global-result-item';
+                // Add Copy Button
                 item.innerHTML = `
-                    <div>
+                    <div style="flex:1;">
                         <div style="font-weight:bold; font-size:0.9rem;">${p.pl}</div>
                         <div style="color:#666; font-size:0.8rem;">${p.en}</div>
                     </div>
-                    <div style="text-align:right;">
+                    <div style="text-align:right; display:flex; align-items:center; gap:8px;">
                         <span style="font-size:0.7rem; font-weight:bold; color:var(--pol-red); border:1px solid var(--pol-red); padding:2px 4px; border-radius:4px;">LVL ${p.lvl}</span>
+                        <button class="copy-btn-search" onclick="copyToClipboard('${p.pl.replace(/'/g, "\\'")}', event)">📋</button>
                     </div>
                 `;
-                // When clicking a result, go to that level
-                item.onclick = () => {
-                    selectLevel(p.lvl);
-                };
+                item.onclick = () => { selectLevel(p.lvl); };
                 listArea.appendChild(item);
             });
         } else {
@@ -711,11 +710,10 @@
         }, 300);
     }
 
-    // --- FLASH PROGRESS BAR ANIMATION ---
     function triggerProgressFlash() {
         const bar = document.getElementById('progress-bar');
         bar.classList.remove('progress-pulse');
-        void bar.offsetWidth; // Trigger reflow
+        void bar.offsetWidth; 
         bar.classList.add('progress-pulse');
     }
 
@@ -726,11 +724,11 @@
             correctStreak++;
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
             
-            triggerProgressFlash(); // Visual Pulse
+            triggerProgressFlash(); 
 
             if (stats[phrase.pl] >= THRESHOLD) {
                 playBanked();
-                el.classList.add('gold-pop'); // Golden Flash!
+                el.classList.add('gold-pop'); 
             } else {
                 playCorrect();
             }
@@ -752,7 +750,7 @@
             }, 1000); 
         } else {
             correctStreak = 0; 
-            playWrongSlide(); // DRAMATIC SLIDE
+            playWrongSlide(); 
             
             let currentScore = stats[currentTarget.pl] || 0; stats[currentTarget.pl] = Math.max(MIN_SCORE, currentScore - 1);
             el.classList.add('wrong'); document.getElementById('feedback').innerText = t('mistake'); saveStats(); 
@@ -800,7 +798,6 @@
                 tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
                 if (opacity > 0.6) tile.style.color = "white";
                 
-                // --- NEW VISUAL: GOLD BORDER FOR MASTERED ITEMS ---
                 if (score >= THRESHOLD) {
                     tile.classList.add('mastered-border');
                 }
@@ -849,7 +846,6 @@
     function importProgress(event) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(event.target.files[0]); }
     function resetEverything() { if(confirm("Clear all?")) { localStorage.clear(); location.reload(); } }
     
-    // Help overlay logic
     function toggleHelp() {
         const el = document.getElementById('help-overlay');
         el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
@@ -882,7 +878,7 @@
 
     async function openHandsFree() {
         hfActive = true; hfAbort = false; hfIsPaused = false;
-        initAudioContext(); enableAudioKeepAlive(); // Ensure audio is ready
+        initAudioContext(); enableAudioKeepAlive(); 
 
         if (!phrasesData || phrasesData.length === 0) await loadLevelData();
         hfPhrases = phrasesData;
@@ -1024,7 +1020,7 @@
     function speakAsync(text, rate = 1.0, lang = 'pl-PL') {
         return new Promise(resolve => {
             if (hfAbort || hfIsPaused) { resolve(); return; }
-            initAudioContext(); enableAudioKeepAlive(); // Ensure active
+            initAudioContext(); enableAudioKeepAlive(); 
             const u = new SpeechSynthesisUtterance(text);
             u.lang = lang; u.rate = rate; 
             u.onend = () => resolve(); 
@@ -1039,7 +1035,6 @@
         const masteredCount = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
         const practiceCount = phrasesData.length - masteredCount;
         
-        // Use updated UI Lang logic to rewrite labels
         const pNum = `(${practiceCount})`;
         const bNum = `(${masteredCount})`;
         
@@ -1052,7 +1047,7 @@
         const now = Date.now();
         initAudioContext(); enableAudioKeepAlive();
 
-        if (!currentTarget) return; // Safety check
+        if (!currentTarget) return; 
         
         const textToSpeak = currentLevel === "0" ? (currentTarget.pl + " jak " + currentTarget.word) : currentTarget.pl;
         
