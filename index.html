@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Polish Phrase Master v5.11</title>
+    <title>Polish Phrase Master v5.12</title>
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; --gold: #ffd700; }
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
@@ -235,7 +235,7 @@
             <div style="font-weight:bold; margin-bottom:5px;">💾 Saving</div>
             Your progress saves automatically to this device. Use the <b>Save</b> button below to download a backup file.
         </div>
-        <div style="text-align:center; font-size:0.75rem; color:#888;">Polish Phrase Master v5.11</div>
+        <div style="text-align:center; font-size:0.75rem; color:#888;">Polish Phrase Master v5.12</div>
     </div>
 </div>
 
@@ -794,12 +794,16 @@
             if (score === -1) { tile.style.backgroundColor = "#ADD8E6"; tile.style.color = "#333"; }
             else if (score <= -2) { tile.style.backgroundColor = "#00008B"; tile.style.color = "white"; }
             else if (score > 0) {
-                const opacity = score / THRESHOLD;
-                tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
-                if (opacity > 0.6) tile.style.color = "white";
-                
                 if (score >= THRESHOLD) {
+                    // Mastered: Softer look (White background + Dark Text + Gold Border)
+                    tile.style.backgroundColor = "var(--card)"; 
+                    tile.style.color = "var(--text)";
                     tile.classList.add('mastered-border');
+                } else {
+                    // In Progress: Red Gradient
+                    const opacity = score / THRESHOLD;
+                    tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
+                    if (opacity > 0.6) tile.style.color = "white";
                 }
             }
             
@@ -846,6 +850,7 @@
     function importProgress(event) { const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats; currentLevel = d.currentLevel; saveStats(); location.reload(); }; r.readAsText(event.target.files[0]); }
     function resetEverything() { if(confirm("Clear all?")) { localStorage.clear(); location.reload(); } }
     
+    // Help overlay logic
     function toggleHelp() {
         const el = document.getElementById('help-overlay');
         el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
