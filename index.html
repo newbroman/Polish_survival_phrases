@@ -68,38 +68,7 @@
     let phrasesData = [], activePool = [], currentTarget = null, currentGender = 'both';
     const THRESHOLD = 3;
 
-    function selectGender(g) {
-        currentGender = g;
-        const labelMap = { 'm': 'Male', 'f': 'Female', 'both': 'Both' };
-        document.getElementById('gender-current').innerText = `Gender: ${labelMap[g]}`;
-        document.getElementById('gender-menu').classList.remove('show');
-        
-        // REFRESH LOGIC
-        refreshActivePool();
-        updateMap();
-        startNewRound();
-    }
-
-    function getGenderText(p) {
-        // Specifically check for 'both' flag in Level 2 adjectives
-        if (p.gender === 'both' && p.variants) {
-            if (currentGender === 'm') return p.variants.m;
-            if (currentGender === 'f') return p.variants.f;
-        }
-        return p.pl;
-    }
-
-    function refreshActivePool() {
-        activePool = phrasesData.filter(p => {
-            const isMastered = (stats[p.pl] || 0) >= THRESHOLD;
-            // Filter: show if matches selection OR if phrase is gender-neutral (null)
-            const matchesGender = (currentGender === 'both') || 
-                                  (!p.gender) || 
-                                  (p.gender === 'both') || 
-                                  (p.gender === currentGender);
-            return !isMastered && matchesGender;
-        }).slice(0, 12);
-    }
+ function selectGender(g) {
 
     function updateMap() {
         const area = document.getElementById('mastery-map'); area.innerHTML = '';
