@@ -1,61 +1,30 @@
-const CACHE_NAME = 'polish-phrase-master-v2000';
-const urlsToCache = [
-  './',
-  './index.html',
-  './manifest.json',
-  './service-worker.js',
-  './icon-192.png',
-  './icon-512.png',
-  './phrases_0.json',
-  './phrases_1.json',
-  './phrases_2.json',
-  './phrases_3.json',
-  './phrases_4.json',
-  './phrases_5.json',
-  './phrases_6.json',
-  './phrases_7.json',
-  './phrases_8.json',
-  './phrases_9.json',
-  './phrases_10.json',
-  './phrases_11.json',
-  './phrases_12.json',
-  './phrases_13.json',
-  './phrases_14.json',
-  './phrases_15.json',
-  './phrases_16.json',
-  './phrases_17.json',
-  './phrases_18.json',
-  './phrases_19.json',
-  './phrases_20.json',
-  './phrases_21.json',
-  './phrases_22.json',
-  './phrases_23.json',
-  './phrases_24.json',
-  './phrases_25.json',
-  './phrases_26.json',
-  './phrases_27.json',
-  './phrases_28.json',
-  './phrases_29.json'
+const CACHE_NAME = 'polish-master-v11';
+const CORE_ASSETS = [
+    './',
+    './index.html',
+    './manifest.json',
+    './icon-192.png',
+    './icon-512.png',
+    'https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js'
 ];
 
-/ 1. Install Service Worker
-self.addEventListener('install', (event) => {
-    self.skipWaiting();
+// 1. Install & Cache Core Assets
+self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(ASSETS_TO_CACHE);
-        })
+        caches.open(CACHE_NAME)
+            .then(cache => cache.addAll(CORE_ASSETS))
+            .then(() => self.skipWaiting())
     );
 });
 
-// 2. Activate & Clean up old caches
-self.addEventListener('activate', (event) => {
+// 2. Clean Up Old Caches on Activation
+self.addEventListener('activate', event => {
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
+        caches.keys().then(cacheNames => {
             return Promise.all(
-                cacheNames.map((cache) => {
-                    if (cache !== CACHE_NAME) {
-                        return caches.delete(cache);
+                cacheNames.map(cacheName => {
+                    if (cacheName !== CACHE_NAME) {
+                        return caches.delete(cacheName);
                     }
                 })
             );
@@ -63,28 +32,43 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// 3. Fetch Strategy: Stale-While-Revalidate for JSON, Cache-First for others
-self.addEventListener('fetch', (event) => {
-    const url = new URL(event.request.url);
+// 3. Smart Fetching Strategy
+self.addEventListener('fetch', event => {
+    if (event.request.method !== 'GET') return;
 
-    // Dynamic Caching for JSON Level files
-    if (url.pathname.endsWith('.json')) {
+    // STRATEGY A: Network-First for JSON phrase files (so new files appear instantly)
+    if (event.request.url.includes('phrases_') && event.request.url.includes('.json')) {
         event.respondWith(
-            caches.open(CACHE_NAME).then((cache) => {
-                return fetch(event.request).then((networkResponse) => {
-                    cache.put(event.request, networkResponse.clone());
-                    return networkResponse;
-                }).catch(() => {
-                    return cache.match(event.request);
-                });
+            fetch(event.request).then(response => {
+                // Only cache successful 200 OK responses (ignore 404s from the scanner)
+                if (response.ok) {
+                    const clone = response.clone();
+                    caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+                }
+                return response;
+            }).catch(() => {
+                // Offline fallback
+                return caches.match(event.request);
             })
         );
-    } else {
-        // Cache-First for app shell (HTML, Images, JS)
-        event.respondWith(
-            caches.match(event.request).then((response) => {
-                return response || fetch(event.request);
-            })
-        );
+        return;
     }
+
+    // STRATEGY B: Cache-First for the UI and Confetti
+    event.respondWith(
+        caches.match(event.request).then(cachedResponse => {
+            if (cachedResponse) return cachedResponse;
+            
+            return fetch(event.request).then(networkResponse => {
+                if (networkResponse && networkResponse.ok && networkResponse.type === 'basic') {
+                    const clone = networkResponse.clone();
+                    caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+                }
+                return networkResponse;
+            }).catch(() => {
+                // Failsafe for offline without cached asset
+                return null; 
+            });
+        })
+    );
 });
