@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v6.0</title>
+    <title>Polish Phrase Master v6.5 - Sandbox Edition</title>
 
     <meta name="theme-color" content="#dc143c">
     <link rel="apple-touch-icon" href="icon-192.png">
@@ -15,15 +15,9 @@
         @media (prefers-color-scheme: dark) { :root { --bg: #1a1a1a; --card: #2d2d2d; --text: #f0f0f0; --tile-bg: #404040; } }
         
         html, body { 
-            height: 100dvh; /* Dynamic viewport handles mobile address bars */
-            margin: 0; 
-            overflow: hidden; 
-            position: fixed; 
-            width: 100%; 
-            padding-top: env(safe-area-inset-top);
-            padding-bottom: env(safe-area-inset-bottom);
-            padding-left: env(safe-area-inset-left);
-            padding-right: env(safe-area-inset-right);
+            height: 100dvh; margin: 0; overflow: hidden; position: fixed; width: 100%; 
+            padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom);
+            padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);
             box-sizing: border-box;
         }
         
@@ -49,7 +43,7 @@
         .dropdown-menu.show { display: block; }
         .dropdown-item { padding: 8px 10px; font-size: 10px; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); display: flex; justify-content: space-between; align-items: center; }
         .dropdown-item.mastered { color: var(--text); }
-        .check-icon { font-size: 12px; margin-left: 5px; }
+        .dropdown-item.sandbox { color: var(--pol-red); font-weight: bold; background: #fff0f0; }
 
         .progress-wrapper { position: relative; width: 100%; }
         .progress-container { width: 100%; height: 4px; background: #ddd; }
@@ -66,16 +60,11 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        /* EXACT 3x3 GRID */
         .map-section { flex-grow: 1; padding: 10px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; }
+        
         .grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            grid-template-rows: repeat(3, 1fr); 
-            gap: 8px; 
-            width: 100%; 
-            max-width: 360px; 
-            margin: auto 0;
+            display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); 
+            gap: 8px; width: 100%; max-width: 360px; margin: auto 0;
         }
         
         .tile { 
@@ -90,16 +79,21 @@
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
         .tile.mastered-border { border-color: var(--gold); box-shadow: 0 0 5px rgba(255, 215, 0, 0.4); }
 
+        /* Search Results Area */
+        #search-results-list { width: 100%; max-width: 360px; display: none; flex-direction: column; gap: 8px; padding-bottom: 20px; }
+        .global-result-item { background: var(--card); border: 1px solid #ccc; border-left: 4px solid var(--pol-red); border-radius: 6px; padding: 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .translate-prompt { background: var(--card); border: 2px dashed #ccc; border-radius: 6px; padding: 15px; text-align: center; }
+        .btn-translate { background: var(--pol-red); color: white; border: none; padding: 10px 15px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 10px; }
+        .btn-translate:disabled { background: #ccc; cursor: not-allowed; }
+
         .footer { padding: 8px 8px 12px 8px; display: flex; justify-content: center; gap: 6px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; }
         .footer-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 6px; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1; text-align: center; display: flex; align-items: center; justify-content: center;}
         .swap-btn { background: var(--bg); border: 1px solid #ccc; color: #666; font-size: 0.6rem; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: 800; min-width: 40px; }
 
-        /* DROPDOWN HELP MENU STYLES */
         #help-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 4000; display: none; align-items: center; justify-content: center; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
         .help-modal { background: var(--card); color: var(--text); padding: 25px; border-radius: 12px; max-width: 90%; width: 400px; max-height: 85dvh; overflow-y: auto; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.5); font-size: 0.9rem; }
         .help-close { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; border: none; background: none; color: #666; cursor: pointer; }
         .help-h2 { color: var(--pol-red); font-weight: 800; margin-top: 0; margin-bottom: 15px; text-align: center; }
-        
         details { background: var(--bg); border: 1px solid #ddd; border-radius: 6px; margin-bottom: 8px; padding: 10px; }
         summary { font-weight: 800; cursor: pointer; color: var(--pol-red); outline: none; }
         details p, details ul { margin-top: 10px; margin-bottom: 0; font-size: 0.85rem; line-height: 1.4; }
@@ -135,30 +129,18 @@
         </details>
 
         <details>
-            <summary>🎯 Scoring System & Streaks</summary>
+            <summary>🎯 Scoring System</summary>
             <p><b>Points:</b> +10 for correct answers. -5 for mistakes. -4 penalty if you take longer than 4 seconds to answer!<br>
             <b>Daily Goal:</b> Try to hit 100 points every day. <br>
             <b>Streaks:</b> Answer correctly in a row to raise the pitch. Hit streaks of 5, 25, 50, and 70 for confetti explosions!</p>
         </details>
 
         <details>
-            <summary>🔊 Sound Not Working?</summary>
-            <ul>
-                <li><b>iPhone (Safari/Chrome):</b> Ensure your phone is not on "Silent/Vibrate" mode (flip the physical switch on the side). Tap the screen once to "wake up" the audio.</li>
-                <li><b>Android:</b> Check media volume.</li>
-                <li><b>Recommended:</b> Safari on iOS, Chrome on Android.</li>
-            </ul>
+            <summary>🌐 Custom Translation Level</summary>
+            <p>If you search for an English word that isn't in the app, you can translate it live. The word will automatically save to <b>"Lvl C: Custom Phrases"</b> so you can practice it. You can even export Lvl C as a real `.json` file from the footer!</p>
         </details>
 
-        <details>
-            <summary>🎮 App Controls</summary>
-            <ul>
-                <li><b>SWAP:</b> Switch between seeing Polish or English text.</li>
-                <li><b>Load/Save:</b> Your progress saves automatically to this device, but you can download it to transfer devices!</li>
-            </ul>
-        </details>
-
-        <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:15px;">Polish Phrase Master v6.0</div>
+        <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:15px;">Polish Phrase Master v6.5</div>
     </div>
 </div>
 
@@ -173,7 +155,7 @@
         </div>
         
         <div class="search-row">
-            <input type="text" id="search-bar" class="search-box" placeholder="Search..." oninput="handleSearch()">
+            <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary..." oninput="handleSearch()">
             <button class="help-btn-inline" onclick="toggleHelp()">?</button>
         </div>
     </div>
@@ -201,11 +183,12 @@
 
 <div class="map-section" id="game-area">
     <div id="mastery-map" class="grid"></div>
+    <div id="search-results-list"></div>
 </div>
 
 <div class="footer">
-    <button class="footer-btn" onclick="downloadProgress()">Save Data</button>
-    <button class="footer-btn" onclick="document.getElementById('file-input').click()">Load Data</button>
+    <button id="btn-save" class="footer-btn" onclick="downloadProgress()">Save Data</button>
+    <button id="btn-load" class="footer-btn" onclick="document.getElementById('file-input').click()">Load Data</button>
     <button class="footer-btn" onclick="resetEverything()" style="color: #e74c3c;">Reset App</button>
     <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
 </div>
@@ -214,25 +197,21 @@
     const THRESHOLD = 3;
     const MIN_SCORE = -2;
 
-    // --- State & Storage ---
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = localStorage.getItem('pl_current_level_idx') || "0"; 
     
     let userData = JSON.parse(localStorage.getItem('pl_user_data')) || {
-        totalPoints: 0,
-        dailyPoints: 0,
-        lastPlayDate: new Date().toDateString(),
-        bestStreak: 0,
-        badges: []
+        totalPoints: 0, dailyPoints: 0, lastPlayDate: new Date().toDateString(), bestStreak: 0, badges: []
     };
 
-    let phrasesData = [], activePool = [], levelList = [], currentTarget = null;
+    // --- Sandbox State ---
+    let customPhrases = JSON.parse(localStorage.getItem('pl_custom_level')) || { 
+        level: "C", description: "My Custom Phrases", phrases: [] 
+    };
+
+    let phrasesData = [], activePool = [], levelList = [], allPhrasesCache = [], currentTarget = null;
     let isSwapped = false, correctStreak = 0;
-    
-    // --- Audio State ---
-    let plVoice = null, audioCtx = null;
-    let basePitch = 220;
-    let questionStartTime = 0;
+    let plVoice = null, audioCtx = null, basePitch = 220, questionStartTime = 0;
 
     function initAudioContext() {
         if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -246,8 +225,7 @@
             const osc = audioCtx.createOscillator();
             const g = audioCtx.createGain();
             osc.type = type; osc.frequency.setValueAtTime(freq, now);
-            g.gain.setValueAtTime(0.1, now); 
-            g.gain.exponentialRampToValueAtTime(0.01, now + dur);
+            g.gain.setValueAtTime(0.1, now); g.gain.exponentialRampToValueAtTime(0.01, now + dur);
             osc.connect(g); g.connect(audioCtx.destination);
             osc.start(); osc.stop(now + dur);
         } catch(e) {}
@@ -259,67 +237,52 @@
             const now = audioCtx.currentTime;
             const osc = audioCtx.createOscillator();
             const g = audioCtx.createGain();
-            osc.type = 'sawtooth'; 
-            osc.frequency.setValueAtTime(150, now);
-            osc.frequency.exponentialRampToValueAtTime(40, now + 0.4);
-            g.gain.setValueAtTime(0.2, now);
-            g.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
-            osc.connect(g); g.connect(audioCtx.destination);
-            osc.start(); osc.stop(now + 0.4);
+            osc.type = 'sawtooth'; osc.frequency.setValueAtTime(150, now); osc.frequency.exponentialRampToValueAtTime(40, now + 0.4);
+            g.gain.setValueAtTime(0.2, now); g.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+            osc.connect(g); g.connect(audioCtx.destination); osc.start(); osc.stop(now + 0.4);
         } catch(e) {}
     }
 
-    function playSuccess() { 
-        playNote(523, 0.2, 'triangle'); 
-        setTimeout(() => playNote(659, 0.2, 'triangle'), 100); 
-        setTimeout(() => playNote(783, 0.4, 'triangle'), 200); 
-    }
-
+    function playSuccess() { playNote(523, 0.2, 'triangle'); setTimeout(() => playNote(659, 0.2, 'triangle'), 100); setTimeout(() => playNote(783, 0.4, 'triangle'), 200); }
     function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
-    
-    function speak(t, rate = 1.0) {
-        initAudioContext();
-        window.speechSynthesis.cancel(); 
-        const m = new SpeechSynthesisUtterance(t); 
-        if(plVoice) m.voice = plVoice; 
-        m.lang = 'pl-PL'; m.rate = rate; 
-        window.speechSynthesis.speak(m); 
-    }
+    function speak(t, rate = 1.0) { initAudioContext(); window.speechSynthesis.cancel(); const m = new SpeechSynthesisUtterance(t); if(plVoice) m.voice = plVoice; m.lang = 'pl-PL'; m.rate = rate; window.speechSynthesis.speak(m); }
 
-    // --- Core Logic ---
     async function scanLibrary() {
         const menu = document.getElementById('lvl-menu'); menu.innerHTML = '';
         const probes = [0]; 
-        for (let i = 1; i <= 40; i++) {
-            probes.push(i);
-            for (let d = 1; d <= 9; d++) probes.push(parseFloat(`${i}.${d}`));
-        }
+        for (let i = 1; i <= 40; i++) { probes.push(i); for (let d = 1; d <= 9; d++) probes.push(parseFloat(`${i}.${d}`)); }
 
         const scanTasks = probes.map(async (n) => {
             try {
                 const r = await fetch(`phrases_${n}.json`);
-                if (r.ok) {
-                    const data = await r.json();
-                    return { id: n, desc: data.description || `Level ${n}`, data: data };
-                }
+                if (r.ok) return { id: n.toString(), desc: (await r.json()).description || `Level ${n}`, data: await r.json() };
             } catch(e) {}
             return null;
         });
 
         levelList = (await Promise.all(scanTasks)).filter(x => x !== null);
+        
+        // Inject Custom Sandbox Level
+        levelList.push({ id: "C", desc: customPhrases.description, data: customPhrases });
+
         levelList.forEach(lvl => {
             const masteredCount = lvl.data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-            const isDone = masteredCount === lvl.data.phrases.length;
-            
+            const isDone = masteredCount > 0 && masteredCount === lvl.data.phrases.length;
             const item = document.createElement('div');
-            item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
+            item.className = 'dropdown-item' + (isDone ? ' mastered' : '') + (lvl.id === "C" ? ' sandbox' : '');
             item.innerHTML = `<span>Lvl ${lvl.id}: ${lvl.desc}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
             item.onclick = (e) => { e.stopPropagation(); selectLevel(lvl.id); };
             menu.appendChild(item);
         });
         
+        cacheAllPhrases();
         if(!levelList.find(l => l.id == currentLevel)) currentLevel = levelList[0].id;
         selectLevel(currentLevel);
+    }
+
+    async function cacheAllPhrases() {
+        allPhrasesCache = [];
+        levelList.forEach(lvl => { if(lvl.data && lvl.data.phrases) { lvl.data.phrases.forEach(p => allPhrasesCache.push({...p, lvl: lvl.id})); } });
     }
 
     async function selectLevel(lvlId) {
@@ -327,212 +290,175 @@
         localStorage.setItem('pl_current_level_idx', currentLevel);
         document.getElementById('lvl-menu').classList.remove('show');
         
+        document.getElementById('search-results-list').style.display = 'none';
+        document.getElementById('mastery-map').style.display = 'grid';
+        document.getElementById('search-bar').value = '';
+
         const file = levelList.find(l => l.id == currentLevel);
         phrasesData = file ? file.data.phrases : [];
         document.getElementById('lvl-current').innerText = `Lvl ${currentLevel}: ${file ? file.desc : ''}`;
         
-        refreshActivePool();
-        updateMap();
-        updateTabCounts();
-        startNewRound();
-        updatePointsUI();
+        // Footer Switch for Custom Level
+        const saveBtn = document.getElementById('btn-save');
+        if (currentLevel === "C") {
+            saveBtn.innerText = "Export Level C";
+            saveBtn.onclick = exportCustomLevel;
+            saveBtn.style.background = "var(--gold)"; saveBtn.style.color = "#333";
+        } else {
+            saveBtn.innerText = "Save Data";
+            saveBtn.onclick = downloadProgress;
+            saveBtn.style.background = "var(--bg)"; saveBtn.style.color = "#666";
+        }
+
+        refreshActivePool(); updateMap(); updateTabCounts(); startNewRound(); updatePointsUI();
     }
 
-    function refreshActivePool() {
-        // EXACTLY 9 TILES FOR 3x3 GRID
-        activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 9);
+    // --- SEARCH & LIVE TRANSLATION ---
+    function handleSearch() {
+        const query = document.getElementById('search-bar').value.trim().toLowerCase();
+        const mapArea = document.getElementById('mastery-map');
+        const listArea = document.getElementById('search-results-list');
+        listArea.innerHTML = ''; 
+
+        if (!query) { mapArea.style.display = 'grid'; listArea.style.display = 'none'; return; }
+        mapArea.style.display = 'none'; listArea.style.display = 'flex';
+
+        const matches = allPhrasesCache.filter(p => p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)).slice(0, 10);
+
+        if (matches.length > 0) {
+            matches.forEach(p => {
+                const item = document.createElement('div'); item.className = 'global-result-item';
+                item.innerHTML = `<div><b>${p.pl}</b><br><small>${p.en}</small></div><div><span style="font-size:0.7rem; color:var(--pol-red); font-weight:bold;">LVL ${p.lvl}</span></div>`;
+                item.onclick = () => selectLevel(p.lvl);
+                listArea.appendChild(item);
+            });
+        } else {
+            const prompt = document.createElement('div'); prompt.className = 'translate-prompt';
+            prompt.innerHTML = `
+                <div style="font-size:0.9rem; color:#666; margin-bottom:5px;">Not found in dictionary.</div>
+                <b>"${query}"</b><br>
+                <button class="btn-translate" id="btn-trans" onclick="translateAndAdd('${query}')">🌐 Translate & Add to Custom Level</button>
+            `;
+            listArea.appendChild(prompt);
+        }
     }
 
-    function toggleContentSwap() {
-        isSwapped = !isSwapped;
-        updateMap();
-        if(currentTarget) document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
+    async function translateAndAdd(text) {
+        const btn = document.getElementById('btn-trans');
+        btn.innerText = "Translating..."; btn.disabled = true;
+        try {
+            const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|pl`);
+            const data = await res.json();
+            const translatedText = data.responseData.translatedText;
+
+            const newObj = { id: "cust_" + Date.now(), pl: translatedText, en: text, category: "Custom" };
+            customPhrases.phrases.push(newObj);
+            localStorage.setItem('pl_custom_level', JSON.stringify(customPhrases));
+            
+            // Update live caches
+            const customList = levelList.find(l => l.id === "C");
+            if (customList) customList.data = customPhrases;
+            cacheAllPhrases();
+
+            btn.innerText = "✅ Added to Lvl C!";
+            setTimeout(() => { document.getElementById('search-bar').value = ''; handleSearch(); }, 1500);
+
+            if (currentLevel === "C") { phrasesData = customPhrases.phrases; refreshActivePool(); updateMap(); updateTabCounts(); }
+        } catch (e) { btn.innerText = "❌ Network Error"; btn.disabled = false; }
     }
+
+    function exportCustomLevel() {
+        const b = new Blob([JSON.stringify(customPhrases, null, 2)], {type: "application/json"});
+        const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `phrases_C.json`; a.click();
+    }
+
+    function refreshActivePool() { activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD).slice(0, 9); }
+    function toggleContentSwap() { isSwapped = !isSwapped; updateMap(); if(currentTarget) document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en; }
 
     function startNewRound() {
-        if (!activePool.length) return;
+        if (!activePool.length) { document.getElementById('q-text').innerText = "Done!"; return; }
         currentTarget = activePool[Math.floor(Math.random() * activePool.length)];
         document.getElementById('q-text').innerText = isSwapped ? currentTarget.pl : currentTarget.en;
-        document.getElementById('feedback').innerText = "";
-        questionStartTime = Date.now(); // Start timer for slow penalty
+        document.getElementById('feedback').innerText = ""; questionStartTime = Date.now();
         setTimeout(() => speak(currentTarget.pl), 300);
     }
 
-    // --- POINTS, STREAKS, & CONFETTI ---
     function addPoints(pts) {
         let today = new Date().toDateString();
-        if (userData.lastPlayDate !== today) {
-            userData.dailyPoints = 0;
-            userData.lastPlayDate = today;
-        }
-        userData.totalPoints = Math.max(0, userData.totalPoints + pts);
-        userData.dailyPoints = Math.max(0, userData.dailyPoints + pts);
-        
-        // Badges
+        if (userData.lastPlayDate !== today) { userData.dailyPoints = 0; userData.lastPlayDate = today; }
+        userData.totalPoints = Math.max(0, userData.totalPoints + pts); userData.dailyPoints = Math.max(0, userData.dailyPoints + pts);
         if (userData.totalPoints >= 100 && !userData.badges.includes("Novice")) userData.badges.push("Novice");
         if (userData.totalPoints >= 500 && !userData.badges.includes("Pro")) userData.badges.push("Pro");
         if (userData.totalPoints >= 1000 && !userData.badges.includes("Master")) userData.badges.push("Master");
-        if (userData.totalPoints >= 2500 && !userData.badges.includes("Legend")) userData.badges.push("Legend");
-
         if (correctStreak > userData.bestStreak) userData.bestStreak = correctStreak;
-
-        localStorage.setItem('pl_user_data', JSON.stringify(userData));
-        updatePointsUI();
+        localStorage.setItem('pl_user_data', JSON.stringify(userData)); updatePointsUI();
     }
 
     function updatePointsUI() {
         const pd = document.getElementById('points-display');
         pd.innerHTML = `⭐ Points: ${userData.totalPoints} | Daily Goal: ${userData.dailyPoints} / 100`;
-        if (userData.dailyPoints >= 100) pd.classList.add('points-gold');
-        else pd.classList.remove('points-gold');
+        if (userData.dailyPoints >= 100) pd.classList.add('points-gold'); else pd.classList.remove('points-gold');
     }
 
     function fireConfetti(streak) {
         let defaults = { origin: { y: 0.7 }, zIndex: 5000 };
-        if (streak >= 70) {
-            confetti({ ...defaults, particleCount: 250, spread: 120, colors: ['#ffd700', '#ff0000', '#ffffff'] });
-        } else if (streak >= 50) {
-            confetti({ ...defaults, particleCount: 150, spread: 90 });
-        } else if (streak >= 25) {
-            confetti({ ...defaults, particleCount: 100, spread: 70 });
-        } else {
-            confetti({ ...defaults, particleCount: 50, spread: 50 });
-        }
+        if (streak >= 70) confetti({ ...defaults, particleCount: 250, spread: 120, colors: ['#ffd700', '#ff0000', '#ffffff'] });
+        else if (streak >= 50) confetti({ ...defaults, particleCount: 150, spread: 90 });
+        else if (streak >= 25) confetti({ ...defaults, particleCount: 100, spread: 70 });
+        else confetti({ ...defaults, particleCount: 50, spread: 50 });
     }
 
     function checkAnswer(phrase, el) {
         let timeTaken = Date.now() - questionStartTime;
-
         if (phrase.pl === currentTarget.pl) {
             correctStreak++;
-            
-            // Rising Pitch Logic
-            let pitchOffset = (correctStreak % 5) * 30; 
-            playNote(basePitch + pitchOffset, 0.15, 'sine');
-
-            // Streak Multipliers & Resets
-            if (correctStreak > 0 && correctStreak % 5 === 0) {
-                basePitch = Math.min(basePitch + 20, 350); // Raise base slightly, cap it
-                fireConfetti(correctStreak);
-            }
-
-            // Points
-            let pts = 10;
-            if (timeTaken > 4000) pts -= 4; // Penalty for > 4 secs
-            addPoints(pts);
+            let pitchOffset = (correctStreak % 5) * 30; playNote(basePitch + pitchOffset, 0.15, 'sine');
+            if (correctStreak > 0 && correctStreak % 5 === 0) { basePitch = Math.min(basePitch + 20, 350); fireConfetti(correctStreak); }
+            let pts = 10; if (timeTaken > 4000) pts -= 4; addPoints(pts);
 
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = "Correct! 🌟";
-            document.getElementById('feedback').style.color = "var(--success-green)";
-            
+            document.getElementById('feedback').innerText = "Correct! 🌟"; document.getElementById('feedback').style.color = "var(--success-green)";
             setTimeout(() => {
-                refreshActivePool();
-                updateMap(); updateTabCounts();
-                if (activePool.length === 0) { 
-                    document.getElementById('overlay').style.display='flex'; 
-                    playSuccess(); 
-                } else {
-                    startNewRound();
-                }
+                refreshActivePool(); updateMap(); updateTabCounts();
+                if (activePool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); } else { startNewRound(); }
             }, 600);
-
         } else {
-            // Mistake
-            correctStreak = 0;
-            basePitch = 220; // Reset pitch to bottom
-            addPoints(-5); // Penalty
-            playWrongSlide();
-
+            correctStreak = 0; basePitch = 220; addPoints(-5); playWrongSlide();
             stats[currentTarget.pl] = Math.max(MIN_SCORE, (stats[currentTarget.pl] || 0) - 1);
-            el.classList.add('wrong');
-            document.getElementById('feedback').innerText = "Mistake!";
-            document.getElementById('feedback').style.color = "var(--pol-red)";
-            
-            setTimeout(() => { 
-                el.classList.remove('wrong'); 
-                refreshActivePool(); updateMap(); 
-                startNewRound(); 
-            }, 1000);
+            el.classList.add('wrong'); document.getElementById('feedback').innerText = "Mistake!"; document.getElementById('feedback').style.color = "var(--pol-red)";
+            setTimeout(() => { el.classList.remove('wrong'); refreshActivePool(); updateMap(); startNewRound(); }, 1000);
         }
         localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
     }
 
     function updateMap() {
-        const area = document.getElementById('mastery-map');
-        area.innerHTML = '';
+        const area = document.getElementById('mastery-map'); area.innerHTML = '';
         const isPractice = document.getElementById('tab-learning').classList.contains('active');
         const list = isPractice ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
 
         list.forEach(p => {
-            const score = stats[p.pl] || 0;
-            const tile = document.createElement('div');
-            tile.className = 'tile';
-            tile.innerText = isSwapped ? p.en : p.pl;
-            
-            if (score < 0) {
-                // Opacity scales with how negative the score is
-                tile.style.backgroundColor = `rgba(52, 152, 219, ${(Math.abs(score) / 2) + 0.4})`; 
-                tile.style.color = "white"; 
-            } else if (score > 0) {
-                tile.style.backgroundColor = score >= THRESHOLD ? 'var(--card)' : `rgba(220, 20, 60, ${score/THRESHOLD})`;
-                if (score >= THRESHOLD) tile.classList.add('mastered-border');
-            }
-            
-            tile.onclick = () => isPractice ? checkAnswer(p, tile) : speak(p.pl);
-            area.appendChild(tile);
+            const score = stats[p.pl] || 0; const tile = document.createElement('div');
+            tile.className = 'tile'; tile.innerText = isSwapped ? p.en : p.pl;
+            if (score < 0) { tile.style.backgroundColor = `rgba(52, 152, 219, ${(Math.abs(score) / 2) + 0.4})`; tile.style.color = "white"; }
+            else if (score > 0) { tile.style.backgroundColor = score >= THRESHOLD ? 'var(--card)' : `rgba(220, 20, 60, ${score/THRESHOLD})`; if (score >= THRESHOLD) tile.classList.add('mastered-border'); }
+            tile.onclick = () => isPractice ? checkAnswer(p, tile) : speak(p.pl); area.appendChild(tile);
         });
 
-        // Progress bar
-        if (phrasesData.length) {
-            const m = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length; 
-            document.getElementById('progress-bar').style.width = (m/phrasesData.length)*100+"%";
-        }
+        if (phrasesData.length) document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%";
     }
 
     function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    
-    function switchMode(m) { 
-        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-        document.getElementById('tab-'+m).classList.add('active');
-        document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; 
-        updateMap();
-    }
-
-    function updateTabCounts() {
-        if (!phrasesData.length) return;
-        const m = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-        document.getElementById('learning-count').innerText = `(${phrasesData.length - m})`;
-        document.getElementById('banked-count').innerText = `(${m})`;
-    }
-
-    function advanceLevel() {
-        document.getElementById('overlay').style.display = 'none';
-        const currentIdx = levelList.findIndex(l => l.id == currentLevel);
-        if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
-            selectLevel(levelList[currentIdx + 1].id);
-        }
-    }
-
+    function switchMode(m) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; updateMap(); }
+    function updateTabCounts() { if (!phrasesData.length) return; const m = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length; document.getElementById('learning-count').innerText = `(${phrasesData.length - m})`; document.getElementById('banked-count').innerText = `(${m})`; }
+    function advanceLevel() { document.getElementById('overlay').style.display = 'none'; const currentIdx = levelList.findIndex(l => l.id == currentLevel); if (currentIdx !== -1 && currentIdx < levelList.length - 1) selectLevel(levelList[currentIdx + 1].id); }
     function handleSpeakerTap() { if(currentTarget) speak(currentTarget.pl); }
 
-    // --- HELP OVERLAY ---
     function toggleHelp() {
         const el = document.getElementById('help-overlay');
-        if (el.style.display === 'flex') {
-            el.style.display = 'none';
-        } else {
-            // Update dynamic stats before showing
-            let totalMastered = 0;
-            for (let key in stats) { if (stats[key] >= THRESHOLD) totalMastered++; }
-            document.getElementById('stat-mastered').innerText = totalMastered;
-            document.getElementById('stat-total-pts').innerText = userData.totalPoints;
-            document.getElementById('stat-best-streak').innerText = userData.bestStreak;
-            
-            const badgesDiv = document.getElementById('stat-badges');
-            if (userData.badges.length > 0) {
-                badgesDiv.innerHTML = userData.badges.map(b => `<span class="badge">${b}</span>`).join('');
-            }
-            
+        if (el.style.display === 'flex') { el.style.display = 'none'; } else {
+            let totalMastered = 0; for (let key in stats) { if (stats[key] >= THRESHOLD) totalMastered++; }
+            document.getElementById('stat-mastered').innerText = totalMastered; document.getElementById('stat-total-pts').innerText = userData.totalPoints; document.getElementById('stat-best-streak').innerText = userData.bestStreak;
+            const badgesDiv = document.getElementById('stat-badges'); if (userData.badges.length > 0) badgesDiv.innerHTML = userData.badges.map(b => `<span class="badge">${b}</span>`).join('');
             el.style.display = 'flex';
         }
     }
