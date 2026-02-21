@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v9.0</title>
+    <title>Polish Phrase Master v10.0</title>
 
     <meta name="theme-color" content="#dc143c">
     <link rel="apple-touch-icon" href="icon-192.png">
@@ -215,7 +215,7 @@
         
         .btn-translate { 
             background: var(--pol-red); color: white; border: none; padding: 10px 15px; 
-            font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 10px; 
+            font-weight: bold; border-radius: 6px; cursor: pointer; flex: 1;
         }
         
         .copy-btn-search {
@@ -334,10 +334,10 @@
         
         <details>
             <summary>🌐 Custom Translation Sandbox</summary>
-            <p>Search for a word. If not found, use <b>Translate & Add</b> to instantly build your own vocabulary list in <b>"Lvl C"</b>. You can export Lvl C from the footer.</p>
+            <p>Search for an English or Polish word. If not found, use the <b>Translate</b> buttons to instantly build your own vocabulary list in <b>"Lvl C"</b>. You can export Lvl C from the footer.</p>
         </details>
 
-        <div style="text-align:center; font-size:0.7rem; color:#888; margin-top:10px;">Polish Phrase Master v9.0</div>
+        <div style="text-align:center; font-size:0.7rem; color:#888; margin-top:10px;">Polish Phrase Master v10.0</div>
     </div>
 </div>
 
@@ -445,11 +445,11 @@
     };
 
     let phrasesData = [];
-    let activePool = [];
+    let activePool = []; // Fixed length array for grid slots
     let levelList = [];
     let allPhrasesCache = [];
     let currentTarget = null;
-    let recentPhrasesQueue = []; // RESTORED: Anti-repetition queue
+    let recentPhrasesQueue = []; 
 
     let isSwapped = false;
     let hardMode = false;
@@ -528,6 +528,8 @@
         localStorage.setItem('polishMasterGender', g); 
         updateUILanguage(); 
         document.getElementById('gender-menu').classList.remove('show'); 
+        
+        activePool = []; // Force refresh grid slots
         refreshActivePool(); 
         updateMap(); 
         startNewRound(); 
@@ -543,7 +545,6 @@
         if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         if (audioCtx.state === 'suspended') audioCtx.resume();
         
-        // Keep alive for mobile browsers
         if (!audioKeepAliveInterval) {
             audioKeepAliveInterval = setInterval(() => {
                 if(audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
@@ -672,7 +673,7 @@
         
         let match = (tClean === eClean);
         
-        // Check gender variants if applicable
+        // Check gender variants
         if (!isSwapped && currentTarget.variants) {
             if (cleanStr(currentTarget.variants.m) === tClean || cleanStr(currentTarget.variants.f) === tClean) {
                 match = true;
@@ -684,7 +685,7 @@
                 cleanStr(t.innerText) === eClean || 
                 (currentTarget.variants && (cleanStr(t.innerText) === cleanStr(currentTarget.variants.m) || cleanStr(t.innerText) === cleanStr(currentTarget.variants.f)))
             );
-            if(!targetTile) targetTile = document.createElement('div'); // Fallback if tile text differs slightly
+            if(!targetTile) targetTile = document.createElement('div'); // Fallback
             
             checkAnswer(currentTarget, targetTile);
         } else {
@@ -698,7 +699,7 @@
             
             stats[currentTarget.pl] = Math.max(MIN_SCORE, (stats[currentTarget.pl] || 0) - 1); 
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
-            updateMap(); // refresh colors
+            updateMap(); 
         }
     }
 
@@ -769,15 +770,18 @@
         document.getElementById('lvl-current').innerText = `Lvl ${currentLevel}: ${file ? file.desc : ''}`;
         
         updateUILanguage(); 
+        
+        activePool = []; // Reset grid completely on level switch
+        recentPhrasesQueue = []; 
+        
         refreshActivePool(); 
         updateMap(); 
         updateTabCounts(); 
-        recentPhrasesQueue = []; // Clear queue on level change
         startNewRound(); 
         updatePointsUI();
     }
 
-    // --- SEARCH, SANDBOX & CLIPBOARD ---
+    // --- SEARCH, REVERSE TRANSLATION & CLIPBOARD ---
     function copyToClipboard(text, event) {
         if(event) event.stopPropagation();
         navigator.clipboard.writeText(text).then(() => {
@@ -807,7 +811,6 @@
                 const item = document.createElement('div'); 
                 item.className = 'global-result-item';
                 
-                // RESTORED: Copy to clipboard button in search
                 item.innerHTML = `
                     <div style="flex:1;">
                         <b>${p.pl}</b><br><small>${p.en}</small>
@@ -826,25 +829,39 @@
             prompt.innerHTML = `
                 <div style="font-size:0.9rem; color:#666; margin-bottom:5px;">Not found.</div>
                 <b>"${query}"</b><br>
-                <button class="btn-translate" id="btn-trans" onclick="translateAndAdd('${query}')">🌐 Translate & Add to Lvl C</button>
+                <div style="display:flex; gap:10px; justify-content:center; margin-top:10px;">
+                    <button class="btn-translate" id="btn-trans-en" onclick="translateAndAdd('${query}', 'en|pl')">🌐 EN ➔ PL</button>
+                    <button class="btn-translate" id="btn-trans-pl" style="background:#3498db;" onclick="translateAndAdd('${query}', 'pl|en')">🌐 PL ➔ EN</button>
+                </div>
             `;
             listArea.appendChild(prompt);
         }
     }
 
-    async function translateAndAdd(text) {
-        const btn = document.getElementById('btn-trans'); 
-        btn.innerText = "Translating..."; 
-        btn.disabled = true;
+    async function translateAndAdd(text, langpair) {
+        const btn1 = document.getElementById('btn-trans-en');
+        const btn2 = document.getElementById('btn-trans-pl');
+        
+        if(btn1) btn1.disabled = true;
+        if(btn2) btn2.disabled = true;
+        
+        let activeBtn = langpair === 'en|pl' ? btn1 : btn2;
+        if(activeBtn) activeBtn.innerText = "Translating..."; 
         
         try {
-            const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|pl`);
+            const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${langpair}`);
             const data = await res.json();
             
+            let translated = data.responseData.translatedText;
+            
+            // Correctly map PL and EN based on translation direction
+            let plText = langpair === 'en|pl' ? translated : text;
+            let enText = langpair === 'en|pl' ? text : translated;
+
             customPhrases.phrases.push({ 
                 id: "cust_" + Date.now(), 
-                pl: data.responseData.translatedText, 
-                en: text, 
+                pl: plText, 
+                en: enText, 
                 category: "Custom" 
             });
             
@@ -854,7 +871,7 @@
             if (customList) customList.data = customPhrases;
             cacheAllPhrases();
             
-            btn.innerText = "✅ Added to Lvl C!"; 
+            if(activeBtn) activeBtn.innerText = "✅ Added to Lvl C!"; 
             
             setTimeout(() => { 
                 document.getElementById('search-bar').value = ''; 
@@ -868,8 +885,9 @@
                 updateTabCounts(); 
             }
         } catch (e) { 
-            btn.innerText = "❌ Error"; 
-            btn.disabled = false; 
+            if(activeBtn) activeBtn.innerText = "❌ Error"; 
+            if(btn1) btn1.disabled = false;
+            if(btn2) btn2.disabled = false;
         }
     }
 
@@ -881,12 +899,27 @@
         a.click(); 
     }
     
-    // --- GAMEPLAY LOGIC ---
+    // --- GAMEPLAY LOGIC (FIXED GRID) ---
     function refreshActivePool() { 
         if (currentLevel === "0") {
-            activePool = phrasesData; 
-        } else {
-            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both')).slice(0, 9); 
+            activePool = [...phrasesData]; 
+            return;
+        }
+        
+        // Ensure activePool is strictly 9 slots for the fixed grid
+        if (activePool.length !== 9) {
+            activePool = new Array(9).fill(null);
+        }
+        
+        let unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both'));
+        
+        // Fill empty slots or replace mastered phrases with new unmastered ones
+        for (let i = 0; i < 9; i++) {
+            if (!activePool[i] || (stats[activePool[i].pl] || 0) >= THRESHOLD) {
+                // Find next available unmastered phrase that isn't already somewhere else in the grid
+                let nextPhrase = unmastered.find(p => !activePool.some(ap => ap && ap.pl === p.pl));
+                activePool[i] = nextPhrase || null; 
+            }
         }
     }
     
@@ -902,20 +935,21 @@
     }
 
     function startNewRound() {
-        if (!activePool.length) { 
+        let validPool = activePool.filter(p => p !== null);
+        
+        if (!validPool.length) { 
             document.getElementById('q-text').innerText = "Done!"; 
             return; 
         }
 
-        // RESTORED: Anti-Repetition Queue Logic
-        let historyLimit = Math.min(3, activePool.length - 1);
+        let historyLimit = Math.min(3, validPool.length - 1);
         let nextTarget;
         
-        if (activePool.length === 1) {
-            nextTarget = activePool[0];
+        if (validPool.length === 1) {
+            nextTarget = validPool[0];
         } else {
             do {
-                nextTarget = activePool[Math.floor(Math.random() * activePool.length)];
+                nextTarget = validPool[Math.floor(Math.random() * validPool.length)];
             } while (historyLimit > 0 && recentPhrasesQueue.includes(nextTarget.pl));
         }
 
@@ -993,8 +1027,8 @@
                 updateMap(); 
                 updateTabCounts();
                 
-                if (activePool.length === 0) { 
-                    // Level is completed!
+                let validPool = activePool.filter(p => p !== null);
+                if (validPool.length === 0) { 
                     document.getElementById('overlay').style.display='flex'; 
                     playSuccess(); 
                 } else {
@@ -1028,6 +1062,7 @@
         if(confirm("Are you sure you want to reset this level and practice it again?")) {
             phrasesData.forEach(p => { delete stats[p.pl]; });
             saveStats();
+            activePool = [];
             refreshActivePool();
             updateMap();
             updateTabCounts();
@@ -1045,8 +1080,9 @@
         area.innerHTML = '';
         const isPractice = document.getElementById('tab-learning').classList.contains('active');
         
-        // RESTORED: Review Mode Prompt
-        if (isPractice && activePool.length === 0 && document.getElementById('search-bar').value === "") {
+        let validPool = isPractice ? activePool.filter(p => p !== null) : [];
+        
+        if (isPractice && validPool.length === 0 && document.getElementById('search-bar').value === "") {
             const notice = document.createElement('div'); 
             notice.className = 'review-notice';
             notice.innerHTML = `
@@ -1061,15 +1097,25 @@
         const list = isPractice ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
 
         list.forEach(p => {
-            const score = stats[p.pl] || 0; 
             const tile = document.createElement('div'); 
             tile.className = 'tile'; 
+            
+            // Handle empty slots in the fixed grid
+            if (!p) {
+                tile.style.background = 'transparent';
+                tile.style.boxShadow = 'none';
+                tile.style.cursor = 'default';
+                area.appendChild(tile);
+                return;
+            }
             
             if (currentLevel === "0") {
                 tile.innerHTML = `<div class="lvl0-content"><div class="lvl0-big">${p.pl}</div><div class="lvl0-sub">${p.en}</div><div class="lvl0-emoji">${p.e || ''}</div></div>`;
             } else {
                 tile.innerText = isSwapped ? p.en : getGenderText(p);
             }
+            
+            const score = stats[p.pl] || 0; 
             
             if (score < 0) { 
                 tile.style.backgroundColor = `rgba(52, 152, 219, ${(Math.abs(score) / 2) + 0.4})`; 
