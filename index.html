@@ -5,18 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Polish Phrase Master v5.12</title>
 
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000000">
-<link rel="apple-touch-icon" href="icon-192.png">
-<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js')
-                .then(reg => console.log('SW v2000 registered'))
-                .catch(err => console.log('SW failed', err));
-        });
-    }
-</script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="icon-192.png">
 
     <style>
         :root { --pol-red: #dc143c; --wrong-blue: #3498db; --bg: #f0f2f5; --card: #ffffff; --text: #333; --tile-bg: #dee2e6; --success-green: #2ecc71; --gold: #ffd700; }
@@ -218,7 +209,7 @@
         .dropdown-trigger::after { content: '▼'; font-size: 7px; color: #888; }
         .dropdown-menu { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border: 1px solid #ccc; border-radius: 4px; max-height: 250px; overflow-y: auto; z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
         .dropdown-menu.show { display: block; }
-</style>
+    </style>
 </head>
 <body>
 
@@ -345,7 +336,8 @@
 
 <div class="map-section" id="game-area">
     <div id="mastery-map" class="grid"></div>
-    <div id="search-results-list"></div> </div>
+    <div id="search-results-list"></div> 
+</div>
 
 <div class="footer">
     <button id="btn-save" class="footer-btn" onclick="downloadProgress()">Save</button>
@@ -574,7 +566,6 @@
             for (const res of results) {
                 if (res.exists) {
                     foundInThisMajor = true;
-                    // Count progress
                     const totalCount = res.data.phrases.length;
                     const masteredCount = res.data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
                     
@@ -586,7 +577,6 @@
                     
                     const item = document.createElement('div');
                     item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
-                    // Add Progress Fraction
                     item.innerHTML = `<span>${displayLabel} <b>(${masteredCount}/${totalCount})</b></span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
                     item.onclick = (e) => { e.stopPropagation(); selectLevel(levelObj.id); };
                     menu.appendChild(item);
@@ -619,7 +609,11 @@
             let label = data.description || `Level ${currentLevel}`;
             if (!label.startsWith(currentLevel)) label = `Lvl ${currentLevel}: ${label}`;
             document.getElementById('lvl-current').innerText = label;
-            refreshActivePool(); updateStats(); updateTabCounts(); updateMap(); startNewRound(); populateDropdown();
+            refreshActivePool(); updateStats(); updateTabCounts(); updateMap(); startNewRound(); 
+            // Only populate dropdown once on load to avoid network bloat
+            if (levelList.length === 0) {
+                await populateDropdown();
+            }
             cacheAllPhrases();
         } catch (err) { document.getElementById('q-text').innerText = "File not found"; }
     }
@@ -627,12 +621,9 @@
     async function cacheAllPhrases() {
         if (allPhrasesCache.length > 0) return;
         allPhrasesCache = [];
-        const possibleLevels = [];
-        for(let i=0; i<=30; i++) possibleLevels.push(i.toString()); 
-        
-        const promises = possibleLevels.map(lvl => 
-            fetch(`phrases_${lvl}.json`).then(r => r.ok ? r.json() : null).then(d => {
-                if(d) return d.phrases.map(p => ({...p, lvl: lvl}));
+        const promises = levelList.map(lvl => 
+            fetch(`phrases_${lvl.id}.json`).then(r => r.ok ? r.json() : null).then(d => {
+                if(d && d.phrases) return d.phrases.map(p => ({...p, lvl: lvl.id}));
                 return [];
             })
         );
@@ -670,7 +661,6 @@
             matches.forEach(p => {
                 const item = document.createElement('div'); 
                 item.className = 'global-result-item';
-                // Add Copy Button
                 item.innerHTML = `
                     <div style="flex:1;">
                         <div style="font-weight:bold; font-size:0.9rem;">${p.pl}</div>
@@ -766,7 +756,9 @@
             correctStreak = 0; 
             playWrongSlide(); 
             
-            let currentScore = stats[currentTarget.pl] || 0; stats[currentTarget.pl] = Math.max(MIN_SCORE, currentScore - 1);
+            let currentScore = stats[currentTarget.pl] || 0; 
+            stats[currentTarget.pl] = Math.max(MIN_SCORE, currentScore - 1);
+            
             el.classList.add('wrong'); document.getElementById('feedback').innerText = t('mistake'); saveStats(); 
             setTimeout(() => { el.classList.remove('wrong'); updateMap(); startNewRound(); }, 1200);
         }
@@ -805,16 +797,15 @@
             }
 
             const score = stats[p.pl] || 0;
-            if (score === -1) { tile.style.backgroundColor = "#ADD8E6"; tile.style.color = "#333"; }
-            else if (score <= -2) { tile.style.backgroundColor = "#00008B"; tile.style.color = "white"; }
-            else if (score > 0) {
+            if (score < 0) { 
+                tile.style.backgroundColor = `rgba(52, 152, 219, ${(Math.abs(score) / 2) + 0.3})`; 
+                tile.style.color = "white"; 
+            } else if (score > 0) {
                 if (score >= THRESHOLD) {
-                    // Mastered: Softer look (White background + Dark Text + Gold Border)
                     tile.style.backgroundColor = "var(--card)"; 
                     tile.style.color = "var(--text)";
                     tile.classList.add('mastered-border');
                 } else {
-                    // In Progress: Red Gradient
                     const opacity = score / THRESHOLD;
                     tile.style.backgroundColor = `rgba(220, 20, 60, ${opacity})`;
                     if (opacity > 0.6) tile.style.color = "white";
@@ -878,7 +869,13 @@
              document.querySelectorAll('.dropdown-menu, .gender-dropdown-menu').forEach(m => m.classList.remove('show'));
         }
     };
-    window.onload = () => { initSpeech(); updateUILanguage(); loadLevelData(); };
+
+    window.onload = async () => { 
+        initSpeech(); 
+        updateUILanguage(); 
+        await populateDropdown(); 
+        loadLevelData(); 
+    };
 
     // --- HANDS FREE LOGIC ---
     let hfActive = false;
@@ -1076,6 +1073,15 @@
             speak(textToSpeak, 1.0); 
         }
         lastSpeakerTap = now;
+    }
+
+    // Unregister aggressive Service Workers to prevent caching loops
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
     }
 </script>
 </body>
