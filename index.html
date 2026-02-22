@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master</title>
+    <title>Polish Phrase Master v17.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -990,9 +990,10 @@
             </details>
 
             <details>
-                <summary>🎯 Spaced Repetition & Level R</summary>
+                <summary>🎯 Spaced Repetition (SRS) & Level R</summary>
+                <p><b>True Spaced Repetition:</b> Words you master are now scheduled for review at optimal intervals (1 day, 3 days, 7 days, etc.) so you never forget them.</p>
+                <p><b>Level R (Daily Due):</b> This is your most important level! It automatically fills with words that you made a mistake on recently, AND any mastered words that are statistically due for a review today.</p>
                 <p><b>Mastery Counters:</b> Every time you fully master a level and choose to "Repeat" it, your completion counter (🔄x1) goes up!</p>
-                <p><b>Level R (Needs Review):</b> The app tracks words you make mistakes on (negative score). They are automatically placed in <b>"Lvl R"</b> in the dropdown. When you answer them correctly in Level R, their score heals and they disappear from the list!</p>
             </details>
 
             <details>
@@ -1041,7 +1042,7 @@
                 <p><b>Sandbox:</b> Tap the 🔍 icon to search for a word. Use <b>Translate</b> to build a list in <b>"Lvl C"</b>. Export Lvl C from the settings gear icon to permanently save your list.</p>
             </details>
 
-            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master</div>
+            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master v17.0</div>
         </div>
     </div>
 </div>
@@ -1081,7 +1082,7 @@
                     <button class="settings-btn" onclick="document.getElementById('file-input').click()">📂 Load</button>
                 </div>
                 
-                <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()" style="display:none; border-color:var(--pol-red); color:var(--pol-red); margin-top:10px;">
+                <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()" style="border-color:var(--pol-red); color:var(--pol-red); margin-top:10px;">
                     📤 Export Sandbox (Lvl C)
                 </button>
 
@@ -1231,6 +1232,50 @@
     if (userData.lastGoalDate === undefined) userData.lastGoalDate = null;
     if (!userData.levelCompletions) userData.levelCompletions = {};
     
+    // ==========================================
+    // PHASE 3: SRS MIGRATION SCRIPT
+    // ==========================================
+    // This safely converts old integer scores into the new SRS object structure
+    let statsMigrated = false;
+    for (let key in stats) {
+        if (typeof stats[key] === 'number') {
+            stats[key] = {
+                score: stats[key],
+                interval: stats[key] >= THRESHOLD ? 1 : 0,
+                // If it was already mastered, schedule it for tomorrow. If not, schedule it for now.
+                nextReview: stats[key] >= THRESHOLD ? Date.now() + 86400000 : 0
+            };
+            statsMigrated = true;
+        }
+    }
+    if (statsMigrated) {
+        localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+    }
+
+    // Helper function to calculate the next SRS interval (in days)
+    function getNextInterval(currentInterval) {
+        if (currentInterval === 0) return 1;
+        if (currentInterval === 1) return 3;
+        if (currentInterval === 3) return 7;
+        if (currentInterval === 7) return 14;
+        if (currentInterval === 14) return 30;
+        return currentInterval * 2; // Caps out organically as intervals stretch into months
+    }
+
+    // Helper function to check if a phrase should appear in Level R
+    function isDueForReview(p) {
+        let s = stats[p.pl];
+        if (!s) return false;
+        
+        // Include if they are actively struggling with it right now
+        if (s.score < 0) return true; 
+        
+        // Include if they have mastered it before, but the review date has passed
+        if (s.score >= THRESHOLD && s.nextReview <= Date.now()) return true; 
+        
+        return false;
+    }
+
     let customPhrases = JSON.parse(localStorage.getItem('pl_custom_level')) || { 
         level: "C", 
         description: "My Custom Phrases", 
@@ -1350,16 +1395,13 @@
         if (document.getElementById('lbl-ui-lang')) {
             document.getElementById('lbl-ui-lang').innerText = uiLang.toUpperCase();
         }
+        
         if (document.getElementById('lbl-hf')) {
             document.getElementById('lbl-hf').innerHTML = `🎧 Start ${t('hf')}`; 
         }
-        if (document.getElementById('btn-save')) {
-            document.getElementById('btn-save').innerText = t('save'); // Regular save button remains constant
-        }
         
-        // Show the dedicated Export Level C button only when in Sandbox
-        if (document.getElementById('btn-export-c')) {
-            document.getElementById('btn-export-c').style.display = (currentLevel === "C") ? 'block' : 'none';
+        if (document.getElementById('btn-save')) {
+            document.getElementById('btn-save').innerText = t('save');
         }
         
         // Tab Translations
@@ -1409,7 +1451,8 @@
         } else {
             let tm = 0; 
             for (let key in stats) { 
-                if (stats[key] >= THRESHOLD) tm++; 
+                // Now accessing object score safely instead of legacy integer
+                if (stats[key] && stats[key].score >= THRESHOLD) tm++; 
             }
             document.getElementById('stat-mastered').innerText = tm; 
             document.getElementById('stat-total-pts').innerText = userData.totalPoints; 
@@ -1443,13 +1486,13 @@
     // Phase 2: Grammar Hint Controls
     function showHint() {
         if (!currentTarget || !currentTarget.note) return;
-        isTimerPaused = true; // Pause the fast timer behind the scenes
+        isTimerPaused = true; 
         document.getElementById('hint-text').innerText = currentTarget.note;
         document.getElementById('hint-overlay').style.display = 'flex';
     }
 
     function closeHint() {
-        isTimerPaused = false; // Resume timer
+        isTimerPaused = false; 
         document.getElementById('hint-overlay').style.display = 'none';
     }
 
@@ -1507,12 +1550,11 @@
             return;
         }
         
-        // Wrap index around if it goes out of bounds
         if (studyIndex < 0) studyIndex = phrasesData.length - 1;
         if (studyIndex >= phrasesData.length) studyIndex = 0;
 
         let p = phrasesData[studyIndex];
-        currentTarget = p; // Keep currentTarget in sync so the footer Audio/Mic buttons work here too
+        currentTarget = p; 
         
         let plText = currentLevel === "0" ? `${p.pl} jak ${p.word}` : getGenderText(p);
         let enText = p.en;
@@ -1733,7 +1775,7 @@
             }
         }
 
-        // If in Study Mode, handle correctly without points logic
+        // Handle Mic in Study Mode without saving points
         if (document.getElementById('tab-study').classList.contains('active')) {
             if (match) {
                 document.getElementById('fc-pl').style.color = "var(--success-green)";
@@ -1767,7 +1809,17 @@
             addPoints(-5); 
             playWrongSlide();
             
-            stats[currentTarget.pl] = Math.max(MIN_SCORE, (stats[currentTarget.pl] || 0) - 1); 
+            // Phase 3: SRS Penalty logic applied manually to Voice Rec failure
+            let cStat = stats[currentTarget.pl] || { score: 0, interval: 0, nextReview: 0 };
+            if (cStat.score >= THRESHOLD) {
+                cStat.score = -1; // Heavy penalty for forgetting
+                cStat.interval = 0;
+                cStat.nextReview = 0;
+            } else {
+                cStat.score = Math.max(MIN_SCORE, cStat.score - 1);
+            }
+            stats[currentTarget.pl] = cStat; 
+            
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             updateMap(); 
         }
@@ -1826,11 +1878,11 @@
         levelList.push({ id: "C", desc: customPhrases.description, data: customPhrases });
         cacheAllPhrases();
 
-        // Calculate global Needs Review (Level R)
+        // Phase 3: Calculate global Needs Review (Level R) based on Time and Mistakes
         let reviewPhrases = [];
         let reviewSet = new Set();
         allPhrasesCache.forEach(p => {
-            if ((stats[p.pl] || 0) < 0 && !reviewSet.has(p.pl)) { 
+            if (isDueForReview(p) && !reviewSet.has(p.pl)) { 
                 reviewSet.add(p.pl); 
                 reviewPhrases.push(p); 
             }
@@ -1847,7 +1899,7 @@
             if (lvl.id === "R") {
                 isDone = lvl.data.phrases.length === 0;
             } else {
-                const masteredCount = lvl.data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+                const masteredCount = lvl.data.phrases.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) >= THRESHOLD).length;
                 isDone = masteredCount > 0 && masteredCount === lvl.data.phrases.length;
             }
             
@@ -1900,11 +1952,12 @@
         document.getElementById('search-bar').value = ''; 
         document.getElementById('search-bar').style.display = 'none'; 
         
+        // Dynamic reconstruction of Level R when clicked
         if (currentLevel === "R") {
             let reviewPhrases = []; 
             let reviewSet = new Set();
             allPhrasesCache.forEach(p => { 
-                if ((stats[p.pl] || 0) < 0 && !reviewSet.has(p.pl)) { 
+                if (isDueForReview(p) && !reviewSet.has(p.pl)) { 
                     reviewSet.add(p.pl); 
                     reviewPhrases.push(p); 
                 } 
@@ -2059,11 +2112,11 @@
     }
     
     // ==========================================
-    // GAMEPLAY LOGIC & GRIDS
+    // GAMEPLAY LOGIC & GRIDS (SRS Phase 3)
     // ==========================================
     function refreshActivePool() { 
         if (currentLevel === "0") { 
-            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD); 
+            activePool = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) < THRESHOLD); 
             return; 
         }
         
@@ -2071,10 +2124,10 @@
             if (activePool.length !== 9) {
                 activePool = new Array(9).fill(null);
             }
-            let unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < 0); 
+            let unmastered = phrasesData.filter(p => isDueForReview(p)); 
             
             for (let i = 0; i < 9; i++) {
-                if (!activePool[i] || (stats[activePool[i].pl] || 0) >= 0) {
+                if (!activePool[i] || !isDueForReview(activePool[i])) {
                     let nextPhrase = unmastered.find(p => !activePool.some(ap => ap && ap.pl === p.pl));
                     activePool[i] = nextPhrase || null; 
                 }
@@ -2085,10 +2138,11 @@
         if (activePool.length !== 9) {
             activePool = new Array(9).fill(null);
         }
-        let unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both'));
+        
+        let unmastered = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both'));
         
         for (let i = 0; i < 9; i++) {
-            if (!activePool[i] || (stats[activePool[i].pl] || 0) >= THRESHOLD) {
+            if (!activePool[i] || (stats[activePool[i].pl] ? stats[activePool[i].pl].score : 0) >= THRESHOLD) {
                 let nextPhrase = unmastered.find(p => !activePool.some(ap => ap && ap.pl === p.pl));
                 activePool[i] = nextPhrase || null; 
             }
@@ -2238,10 +2292,14 @@
         else confetti({ ...defaults, particleCount: 50, spread: 50 });
     }
 
+    // Phase 3: SRS Logic inside Check Answer
     function checkAnswer(phrase, el) {
         clearInterval(roundTimer);
         let timeTaken = Date.now() - questionStartTime;
         let isDistracted = timeTaken >= TIME_DISTRACTED;
+        
+        // Fetch or create new stat object
+        let pStat = stats[phrase.pl] || { score: 0, interval: 0, nextReview: 0 };
 
         if (phrase.pl === currentTarget.pl) {
             let pts = 10;
@@ -2267,7 +2325,19 @@
             }
             
             addPoints(pts); 
-            stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
+            
+            // Phase 3 SRS Upgrades:
+            pStat.score++;
+            if (pStat.score >= THRESHOLD) {
+                // If the word was due for review today, successfully remembering it extends its interval!
+                if (pStat.nextReview <= Date.now()) {
+                    pStat.interval = getNextInterval(pStat.interval);
+                    // Add slight random offset to review times so they don't pile up on exact milliseconds
+                    let randomHourOffset = Math.floor(Math.random() * 3600000);
+                    pStat.nextReview = Date.now() + (pStat.interval * 86400000) + randomHourOffset; 
+                }
+            }
+            stats[phrase.pl] = pStat;
             
             if (currentLevel === "0") speak(phrase.pl + " jak " + phrase.word);
             
@@ -2292,7 +2362,17 @@
             addPoints(pts); 
             playWrongSlide();
             
-            stats[currentTarget.pl] = Math.max(MIN_SCORE, (stats[currentTarget.pl] || 0) - 1);
+            // Phase 3 SRS Penalty Logic:
+            let cStat = stats[currentTarget.pl] || { score: 0, interval: 0, nextReview: 0 };
+            if (cStat.score >= THRESHOLD) {
+                // Oh no! They forgot a mastered word. Send it to the struggling pile.
+                cStat.score = -1; 
+                cStat.interval = 0;
+                cStat.nextReview = 0;
+            } else {
+                cStat.score = Math.max(MIN_SCORE, cStat.score - 1);
+            }
+            stats[currentTarget.pl] = cStat;
             
             if(el) el.classList.add('wrong'); 
             document.getElementById('feedback').innerText = t('mistake'); 
@@ -2404,7 +2484,8 @@
         if (isPractice) {
             list = activePool;
         } else {
-            list = currentLevel === "R" ? phrasesData.filter(p => (stats[p.pl]||0) >= 0) : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
+            // For Banked tab in Level R, show words that have successfully been handled 
+            list = currentLevel === "R" ? phrasesData.filter(p => !isDueForReview(p)) : phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) >= THRESHOLD);
         }
 
         list.forEach(p => {
@@ -2425,13 +2506,13 @@
                 tile.innerText = isSwapped ? p.en : getGenderText(p);
             }
             
-            const score = stats[p.pl] || 0; 
+            const score = stats[p.pl] ? stats[p.pl].score : 0; 
             
             if (score < 0) { 
                 tile.style.backgroundColor = `rgba(52, 152, 219, ${(Math.abs(score) / 2) + 0.4})`; 
                 tile.style.color = "white"; 
             } else if (score > 0) { 
-                let targetHit = currentLevel === "R" ? score >= 0 : score >= THRESHOLD;
+                let targetHit = currentLevel === "R" ? !isDueForReview(p) : score >= THRESHOLD;
                 if (targetHit) { 
                     tile.style.backgroundColor = 'var(--card)'; 
                     tile.classList.add('mastered-border'); 
@@ -2447,9 +2528,9 @@
         if (phrasesData.length) {
             let mCount = 0;
             if (currentLevel === "R") {
-                mCount = phrasesData.filter(p=>(stats[p.pl]||0)>=0).length;
+                mCount = phrasesData.filter(p => !isDueForReview(p)).length;
             } else {
-                mCount = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length;
+                mCount = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) >= THRESHOLD).length;
             }
             document.getElementById('progress-bar').style.width = (mCount/phrasesData.length)*100+"%";
         }
@@ -2460,9 +2541,9 @@
         let m = 0;
         
         if (currentLevel === "R") {
-            m = phrasesData.filter(p => (stats[p.pl] || 0) >= 0).length; 
+            m = phrasesData.filter(p => !isDueForReview(p)).length; 
         } else {
-            m = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length; 
+            m = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) >= THRESHOLD).length; 
         }
         
         if(document.getElementById('learning-count')) {
