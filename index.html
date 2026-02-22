@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v11.1</title>
+    <title>Polish Phrase Master v12.0</title>
 
-   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+    
     <link rel="apple-touch-icon" href="icon-192.png">
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -53,19 +54,19 @@
             color: var(--text); 
         }
         
-        /* HEADER & TOP CONTROLS */
+        /* HEADER */
         .header { 
             width: 100%; 
             background: var(--card); 
-            border-bottom: 1px solid #ddd; 
             border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ddd; 
             flex-shrink: 0; 
             position: relative; 
             z-index: 1500; 
         }
         
         .title-banner { 
-            background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); 
+            background: linear-gradient(to bottom, var(--card) 50%, #dc143c 50%); 
             padding: 10px 15px; 
             border-bottom: 1px solid #ccc; 
             display: flex; 
@@ -75,104 +76,80 @@
         
         .title { 
             font-weight: 800; 
-            font-size: 1rem; 
-            color: #333; 
+            font-size: 1.1rem; 
+            color: var(--text); 
             text-align: center; 
             margin: 0; 
             flex: 1; 
+            text-shadow: 0px 1px 2px rgba(255,255,255,0.5);
         }
         
         .icon-btn { 
             background: none; 
             border: none; 
-            font-size: 1.3rem; 
+            font-size: 1.4rem; 
             cursor: pointer; 
             padding: 0; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
+            color: var(--text);
         }
-        
-        /* SETTINGS DROPDOWN */
-        .settings-dropdown {
-            position: absolute; 
-            top: 45px; 
-            right: 10px; 
-            background: var(--card); 
-            border: 1px solid #ccc; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
-            width: 220px; 
-            display: none; 
-            flex-direction: column; 
-            z-index: 2000; 
-            overflow: hidden;
-        }
-        
-        .settings-dropdown.show-flex { 
-            display: flex; 
-        }
-        
-        .settings-item { 
-            padding: 12px 15px; 
-            border-bottom: 1px solid #eee; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            cursor: pointer; 
-            font-size: 0.9rem; 
-            font-weight: bold; 
-            color: var(--text); 
-        }
-        
-        .settings-item:last-child { border-bottom: none; }
-        .settings-item:active { background: var(--bg); }
-        .settings-icon { font-size: 1.1rem; }
 
         .points-banner { 
-            background: var(--card); text-align: center; padding: 6px; 
-            font-size: 0.75rem; font-weight: bold; color: #666; border-bottom: 1px solid #ddd; 
+            background: var(--card); 
+            text-align: center; 
+            padding: 6px; 
+            font-size: 0.75rem; 
+            font-weight: bold; 
+            color: #666; 
+            border-bottom: 1px solid #ddd; 
         }
-        .points-gold { color: var(--gold); text-shadow: 0 0 2px rgba(0,0,0,0.2); }
+        
+        .points-gold { 
+            color: var(--gold); 
+            text-shadow: 0 0 2px rgba(0,0,0,0.2); 
+        }
 
         .controls-row { 
-            width: 95%; max-width: 450px; margin: 0 auto; padding: 8px 0; 
-            display: flex; flex-direction: column; gap: 8px; 
+            width: 95%; 
+            max-width: 450px; 
+            margin: 0 auto; 
+            padding: 8px 0; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
         }
         
+        .main-level-indicator {
+            background: var(--bg); 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            border-radius: 8px; 
+            font-weight: 800; 
+            font-size: 0.9rem; 
+            text-align: center; 
+            color: var(--pol-red); 
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .main-level-indicator:active { transform: scale(0.98); }
+
         .search-box { 
-            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 8px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; 
-            outline: none; box-sizing: border-box; 
+            width: 100%; 
+            background: var(--bg); 
+            border: 1px solid #ccc; 
+            color: var(--text); 
+            padding: 10px 12px; 
+            border-radius: 8px; 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            outline: none; 
+            box-sizing: border-box; 
         }
-        
-        .custom-dropdown { position: relative; width: 100%; }
-        
-        .dropdown-trigger { 
-            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
-            padding: 8px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 800; 
-            display: flex; align-items: center; justify-content: space-between; 
-            cursor: pointer; box-sizing: border-box; 
-        }
-        
-        .dropdown-trigger::after { content: '▼'; font-size: 9px; color: #888; }
-        
-        .dropdown-menu { 
-            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
-            border: 1px solid #ccc; border-radius: 6px; max-height: 250px; overflow-y: auto; 
-            z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
-        }
-        
-        .dropdown-menu.show { display: block; }
-        
-        .dropdown-item { 
-            padding: 10px 12px; font-size: 0.8rem; font-weight: bold; 
-            border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); 
-            display: flex; justify-content: space-between; align-items: center; 
-        }
-        
-        .dropdown-item.mastered { color: #888; }
-        .dropdown-item.sandbox { color: var(--pol-red); background: #fff0f0; }
 
         .progress-wrapper { position: relative; width: 100%; }
         .progress-container { width: 100%; height: 4px; background: #ddd; }
@@ -180,9 +157,17 @@
         
         /* QUIZ HEADER */
         .quiz-header { 
-            background: var(--card); padding: 12px; border-bottom: 1px solid #ddd; 
-            display: flex; flex-direction: column; align-items: center; 
-            justify-content: center; text-align: center; gap: 4px; flex-shrink: 0; min-height: 60px; 
+            background: var(--card); 
+            padding: 12px; 
+            border-bottom: 1px solid #ddd; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            gap: 4px; 
+            flex-shrink: 0; 
+            min-height: 60px; 
         }
         
         .q-text { font-size: 1.3rem; font-weight: 900; }
@@ -193,25 +178,9 @@
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
         /* 3x3 GRID */
-        .map-section { 
-            flex-grow: 1; padding: 10px 8px; overflow-y: auto; display: flex; 
-            flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; 
-        }
-        
-        .grid { 
-            display: grid; grid-template-columns: repeat(3, 1fr); 
-            grid-template-rows: repeat(3, 1fr); gap: 8px; width: 100%; 
-            max-width: 380px; margin: auto 0; 
-        }
-        
-        .tile { 
-            aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
-            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 6px; 
-            text-align: center; font-size: 0.8rem; font-weight: 700; line-height: 1.2; 
-            box-shadow: 0 3px 0px rgba(0,0,0,0.15); transition: background 0.2s, transform 0.1s; 
-            border: 2px solid transparent; word-wrap: break-word; overflow: hidden; 
-        }
-        
+        .map-section { flex-grow: 1; padding: 10px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 380px; margin: auto 0; }
+        .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 6px; text-align: center; font-size: 0.8rem; font-weight: 700; line-height: 1.2; box-shadow: 0 3px 0px rgba(0,0,0,0.15); transition: background 0.2s, transform 0.1s; border: 2px solid transparent; word-wrap: break-word; overflow: hidden; }
         .tile:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0.15); }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
         .tile.mastered-border { border-color: var(--gold); box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
@@ -239,7 +208,7 @@
             background: var(--bg); border: 1px solid #ccc; color: var(--text); 
             border-radius: 12px; padding: 10px 0; flex: 1; display: flex; 
             flex-direction: column; align-items: center; justify-content: center; 
-            font-weight: 800; font-size: 0.7rem; cursor: pointer; gap: 4px;
+            font-weight: 800; font-size: 0.75rem; cursor: pointer; gap: 4px;
             box-shadow: 0 2px 0 rgba(0,0,0,0.1); transition: transform 0.1s;
         }
         
@@ -253,15 +222,65 @@
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); } 
         }
 
-        /* OVERLAYS */
-        #hf-overlay, #help-overlay, #overlay { 
-            position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 4000; display: none; 
-            align-items: center; justify-content: center; 
+        /* MODALS (Settings & Help) */
+        .modal-overlay { 
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 4000; 
+            display: none; align-items: center; justify-content: center; 
             padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 
-            flex-direction: column; 
         }
         
-        /* HF Layout */
+        .modal-container { 
+            background: var(--bg); color: var(--text); border-radius: 12px; 
+            width: 95%; max-width: 450px; max-height: 85dvh; display: flex; flex-direction: column; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); overflow: hidden;
+        }
+        
+        .modal-header { 
+            padding: 15px 20px; background: var(--card); border-bottom: 1px solid #ddd; 
+            display: flex; justify-content: space-between; align-items: center; 
+            position: sticky; top: 0; z-index: 10;
+        }
+        
+        .modal-header h2 { margin: 0; color: var(--pol-red); font-size: 1.2rem; font-weight: 900; }
+        .modal-close { background: none; border: none; font-size: 1.8rem; color: #888; cursor: pointer; padding: 0; line-height: 1;}
+        
+        .modal-body { padding: 20px; overflow-y: auto; flex: 1; }
+
+        /* Settings Specifics */
+        .settings-section { margin-bottom: 20px; background: var(--card); border: 1px solid #ddd; border-radius: 8px; padding: 15px; }
+        .settings-section h3 { margin-top: 0; margin-bottom: 12px; font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .setting-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .setting-row:last-child { border-bottom: none; padding-bottom: 0; }
+        .setting-label { font-weight: bold; font-size: 0.95rem; }
+
+        /* Segmented Control for Gender */
+        .segmented-control { display: flex; border: 1px solid var(--pol-red); border-radius: 8px; overflow: hidden; width: 100%; margin-top: 10px; }
+        .seg-btn { flex: 1; padding: 10px; background: var(--bg); border: none; border-right: 1px solid var(--pol-red); font-weight: bold; color: var(--text); cursor: pointer; }
+        .seg-btn:last-child { border-right: none; }
+        .seg-btn.active { background: var(--pol-red); color: white; }
+
+        .settings-btn { width: 100%; padding: 12px; background: var(--bg); border: 1px solid #ccc; border-radius: 8px; font-weight: bold; color: var(--text); cursor: pointer; margin-top: 10px; font-size: 0.95rem; display: flex; justify-content: center; align-items: center; gap: 8px; }
+        .settings-btn.danger { color: #e74c3c; border-color: #ffcccc; background: #fff0f0; }
+
+        .custom-dropdown { position: relative; width: 100%; margin-top: 5px; }
+        .dropdown-trigger { width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); padding: 12px; border-radius: 8px; font-size: 0.95rem; font-weight: 800; display: flex; align-items: center; justify-content: space-between; cursor: pointer; box-sizing: border-box; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border: 1px solid #ccc; border-radius: 8px; max-height: 250px; overflow-y: auto; z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .dropdown-menu.show { display: block; }
+        .dropdown-item { padding: 12px; font-size: 0.9rem; font-weight: bold; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); display: flex; justify-content: space-between; align-items: center; }
+        .dropdown-item.mastered { color: #888; }
+        .dropdown-item.sandbox { color: var(--pol-red); background: #fff0f0; }
+
+        /* Help Specifics */
+        details { background: var(--card); border: 1px solid #ddd; border-radius: 8px; margin-bottom: 10px; padding: 12px; }
+        summary { font-weight: 800; cursor: pointer; color: var(--pol-red); outline: none; font-size: 0.95rem; }
+        details p, details ul, details ol { margin-top: 10px; margin-bottom: 0; font-size: 0.9rem; line-height: 1.4; color: var(--text); }
+        .badge { background: var(--gold); color: #333; padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; margin-right: 5px; margin-top: 5px; display: inline-block; }
+
+        #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 5000; color: white; }
+
+        /* HANDS-FREE OVERLAY */
+        #hf-overlay { position: fixed; inset: 0; background: #0a0a0a; z-index: 5000; color: white; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: -apple-system, sans-serif; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
         .hf-header { position: absolute; top: 0; left: 0; width: 100%; padding: 15px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; }
         .hf-close { background: transparent; color: #888; font-size: 2rem; border: none; cursor: pointer; padding: 10px; line-height: 1; }
         .hf-progress-bar { position: absolute; top: 0; left: 0; height: 4px; background: var(--pol-red); width: 0%; transition: width 0.3s; }
@@ -273,14 +292,6 @@
         .pause-selector { display: flex; gap: 5px; align-items: center; margin-top: 10px; justify-content: center; color: #bbb; font-size: 0.8rem; }
         .pause-option { padding: 4px 10px; border: 1px solid #333; background: #111; border-radius: 4px; cursor: pointer; color: white; }
         .pause-option.active { background: var(--pol-red); border-color: var(--pol-red); }
-
-        /* Help Modal */
-        .help-modal { background: var(--card); color: var(--text); padding: 20px; border-radius: 12px; max-width: 90%; width: 400px; max-height: 85dvh; overflow-y: auto; position: relative; font-size: 0.9rem; }
-        .help-close { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; border: none; background: none; color: #666; cursor: pointer; }
-        details { background: var(--bg); border: 1px solid #ddd; border-radius: 6px; margin-bottom: 8px; padding: 10px; }
-        summary { font-weight: 800; cursor: pointer; color: var(--pol-red); outline: none; }
-        details p, details ul, details ol { margin-top: 10px; margin-bottom: 0; font-size: 0.85rem; line-height: 1.4; }
-        .badge { background: var(--gold); color: #333; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-right: 4px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -290,67 +301,122 @@
     <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold; font-size:1.1rem; cursor:pointer;" id="mastery-btn">Next Level</button>
 </div>
 
-<div id="help-overlay">
-    <div class="help-modal">
-        <button class="help-close" onclick="toggleHelp()">×</button>
-        <h2 style="color:var(--pol-red); margin-top:0; text-align:center;">Dashboard & Help</h2>
-        
-        <details open>
-            <summary>📊 Your Progress & Badges</summary>
-            <p>
-                <b>Total Mastered:</b> <span id="stat-mastered" style="color:var(--success-green); font-weight:bold;">0</span><br>
-                <b>Total Points:</b> <span id="stat-total-pts">0</span> ⭐<br>
-                <b>Best Streak:</b> <span id="stat-best-streak">0</span> 🔥
-            </p>
-            <p><b>Badges Earned:</b></p>
-            <div id="stat-badges"><span style="color:#888; font-size:0.75rem;">Play more to earn badges!</span></div>
-        </details>
+<div id="help-overlay" class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h2>Dashboard & Help</h2>
+            <button class="modal-close" onclick="toggleHelp()">×</button>
+        </div>
+        <div class="modal-body">
+            <details open>
+                <summary>📊 Your Progress & Badges</summary>
+                <p>
+                    <b>Total Mastered:</b> <span id="stat-mastered" style="color:var(--success-green); font-weight:bold;">0</span><br>
+                    <b>Total Points:</b> <span id="stat-total-pts">0</span> ⭐<br>
+                    <b>Best Streak:</b> <span id="stat-best-streak">0</span> 🔥
+                </p>
+                <p><b>Badges Earned:</b></p>
+                <div id="stat-badges"><span style="color:#888; font-size:0.75rem;">Play more to earn badges!</span></div>
+            </details>
 
-        <details>
-            <summary>🌍 Browser Compatibility</summary>
-            <ul>
-                <li><b>Apple / iOS:</b> Please use <b>Safari</b>. Other browsers (like Chrome on iOS) may block the microphone or text-to-speech features due to Apple's tight security rules.</li>
-                <li><b>Android:</b> Please use <b>Google Chrome</b>. It has the best native support for the Speech Recognition (Mic) and native Polish voices.</li>
-                <li><i>Note:</i> The Mic button requires you to accept microphone permissions when your browser prompts you.</li>
-            </ul>
-        </details>
+            <details>
+                <summary>🌍 Browser Compatibility</summary>
+                <ul>
+                    <li><b>Apple / iOS:</b> Please use <b>Safari</b>. Other browsers block the microphone and text-to-speech due to Apple's security rules.</li>
+                    <li><b>Android:</b> Please use <b>Google Chrome</b> for the best native Voice Recognition support.</li>
+                    <li><i>Note:</i> You must grant microphone permissions when prompted.</li>
+                </ul>
+            </details>
 
-        <details>
-            <summary>⚙️ Installing High-Quality Voices</summary>
-            <p>For natural sounding Polish, you must download the native voices to your device OS:</p>
-            <div style="margin-top:8px;">
-                <b>🍎 Apple (iPhone/iPad):</b>
-                <ol style="margin-top:4px; padding-left:20px;">
-                    <li>Go to <b>Settings > Accessibility > Spoken Content</b>.</li>
-                    <li>Tap <b>Voices</b>, then find <b>Polish</b>.</li>
-                    <li>Download and select <b>Zosia (Enhanced or Premium)</b> or <b>Krzysztof</b>.</li>
-                    <li><i>Crucial:</i> Make sure your phone's physical "Silent/Ring" switch is set to Ring, or you won't hear anything!</li>
-                </ol>
-                <b>🤖 Android:</b>
-                <ol style="margin-top:4px; padding-left:20px;">
-                    <li>Go to <b>Settings > General Management</b> (or System).</li>
-                    <li>Tap <b>Text-to-speech output</b>.</li>
-                    <li>Ensure <b>Speech Services by Google</b> is the preferred engine.</li>
-                    <li>Tap the gear icon ⚙️ > <b>Install voice data</b> > <b>Polish</b>.</li>
-                    <li>Download the Polish voice pack.</li>
-                </ol>
+            <details>
+                <summary>⚙️ Installing High-Quality Voices</summary>
+                <p>For natural sounding Polish, you must download the native voices to your device OS:</p>
+                <div style="margin-top:8px;">
+                    <b>🍎 Apple (iPhone/iPad):</b>
+                    <ol style="margin-top:4px; padding-left:20px;">
+                        <li>Go to <b>Settings > Accessibility > Spoken Content</b>.</li>
+                        <li>Tap <b>Voices</b>, then find <b>Polish</b>.</li>
+                        <li>Download and select <b>Zosia (Enhanced or Premium)</b> or <b>Krzysztof</b>.</li>
+                        <li><i>Crucial:</i> Make sure your phone's physical "Silent/Ring" switch is set to Ring!</li>
+                    </ol>
+                    <b>🤖 Android:</b>
+                    <ol style="margin-top:4px; padding-left:20px;">
+                        <li>Go to <b>Settings > General Management</b> (or System).</li>
+                        <li>Tap <b>Text-to-speech output</b>.</li>
+                        <li>Ensure <b>Speech Services by Google</b> is the preferred engine.</li>
+                        <li>Tap the gear icon ⚙️ > <b>Install voice data</b> > <b>Polish</b>.</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details>
+                <summary>🎤 Voice Recognition & Controls</summary>
+                <p>Tap <b>Speak (🎤)</b> in the footer to practice pronunciation! <br>
+                If the question is English, say the Polish translation. If you swapped it, say the English!</p>
+                <p><b>🧠 Hard Mode:</b> Hides the written text entirely so you rely purely on listening.</p>
+            </details>
+            
+            <details>
+                <summary>🎯 Scoring & Sandbox</summary>
+                <p><b>Points:</b> +10 for correct. -5 for mistakes. -4 penalty if you take longer than 4 seconds.<br>Win streaks trigger confetti at streaks of 5, 25, 50, and 70!</p>
+                <p><b>Sandbox:</b> Search for a word. Use <b>Translate</b> to build a list in <b>"Lvl C"</b>. Export Lvl C from the settings gear icon to permanently save your list.</p>
+            </details>
+
+            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master v12.0</div>
+        </div>
+    </div>
+</div>
+
+<div id="settings-overlay" class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h2>App Settings</h2>
+            <button class="modal-close" onclick="toggleSettings()">×</button>
+        </div>
+        <div class="modal-body">
+            
+            <div class="settings-section">
+                <h3>📚 Course Level</h3>
+                <div class="custom-dropdown">
+                    <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading levels...</div>
+                    <div class="dropdown-menu" id="lvl-menu"></div>
+                </div>
             </div>
-        </details>
 
-        <details>
-            <summary>🎤 Voice Recognition & Controls</summary>
-            <p>Tap <b>Speak (🎤)</b> in the footer to practice pronunciation! <br>
-            If the question on screen is English, say the Polish translation. If you used the <b>Swap</b> button and the question is Polish, say the English translation!</p>
-            <p><b>🧠 Hard Mode:</b> Hides the written text entirely so you rely purely on listening.</p>
-        </details>
-        
-        <details>
-            <summary>🎯 Scoring & Sandbox</summary>
-            <p><b>Points:</b> +10 for correct. -5 for mistakes. -4 penalty if you take longer than 4 seconds.<br>Win streaks raise the audio pitch and trigger confetti at streaks of 5, 25, 50, and 70!</p>
-            <p><b>Sandbox:</b> Search for an English or Polish word. Use the <b>Translate</b> buttons to instantly build a vocabulary list in <b>"Lvl C"</b>. Export Lvl C from the settings gear icon to permanently save your list.</p>
-        </details>
+            <div class="settings-section">
+                <h3>🗣️ Voice Gender</h3>
+                <div class="segmented-control">
+                    <button class="seg-btn" id="btn-gen-m" onclick="setGender('m')">Male</button>
+                    <button class="seg-btn active" id="btn-gen-both" onclick="setGender('both')">Both</button>
+                    <button class="seg-btn" id="btn-gen-f" onclick="setGender('f')">Female</button>
+                </div>
+            </div>
 
-        <div style="text-align:center; font-size:0.7rem; color:#888; margin-top:10px;">Polish Phrase Master v11.1</div>
+            <div class="settings-section">
+                <h3>⚙️ Options</h3>
+                <div class="setting-row">
+                    <span class="setting-label">UI Language</span>
+                    <button class="settings-btn" style="width:auto; margin:0; padding:6px 15px;" onclick="toggleUILang()" id="lbl-ui-lang">EN</button>
+                </div>
+                <div class="setting-row">
+                    <span class="setting-label">Hard Mode (Audio Only)</span>
+                    <button class="settings-btn" style="width:auto; margin:0; padding:6px 15px;" onclick="toggleHardMode()" id="hard-mode-indicator">OFF</button>
+                </div>
+                <button class="settings-btn" onclick="openHandsFree()" style="border-color:var(--pol-red); color:var(--pol-red);">
+                    🎧 Start Hands-Free Mode
+                </button>
+            </div>
+
+            <div class="settings-section">
+                <h3>💾 Data Management</h3>
+                <div style="display:flex; gap:10px;">
+                    <button class="settings-btn" onclick="downloadProgress()" id="btn-save">💾 Save</button>
+                    <button class="settings-btn" onclick="document.getElementById('file-input').click()">📂 Load</button>
+                </div>
+                <button class="settings-btn danger" onclick="resetEverything()">⚠️ Reset App Data</button>
+            </div>
+
+        </div>
     </div>
 </div>
 
@@ -379,40 +445,15 @@
 
 <div class="header">
     <div class="title-banner">
-        <button class="icon-btn" style="color: white; font-size: 1.5rem;" onclick="toggleHelp()">❔</button>
+        <button class="icon-btn" onclick="toggleHelp()">❔</button>
         <h1 class="title" id="app-title">Polish Phrase Master</h1>
-        <button class="icon-btn" style="color: white; font-size: 1.5rem;" onclick="toggleSettings(event)">⚙️</button>
-        
-        <div id="settings-menu" class="settings-dropdown">
-            <div class="settings-item" onclick="toggleGenderCycle()">
-                <span id="lbl-gender-text">Gender: Both</span> <span class="settings-icon">👤</span>
-            </div>
-            <div class="settings-item" onclick="toggleUILang()">
-                <span id="lbl-ui-lang">UI: EN</span> <span class="settings-icon">🌐</span>
-            </div>
-            <div class="settings-item" onclick="toggleHardMode()">
-                <span id="lbl-hard-mode">Hard Mode</span> <span class="settings-icon" id="hard-mode-indicator">❌</span>
-            </div>
-            <div class="settings-item" onclick="openHandsFree()">
-                <span id="lbl-hf">Hands-Free</span> <span class="settings-icon">🎧</span>
-            </div>
-            <div class="settings-item" onclick="downloadProgress()" id="btn-save">
-                Save Data <span class="settings-icon">💾</span>
-            </div>
-            <div class="settings-item" onclick="document.getElementById('file-input').click()">
-                Load Data <span class="settings-icon">📂</span>
-            </div>
-            <div class="settings-item" onclick="resetEverything()" style="color:var(--pol-red);">
-                Reset App <span class="settings-icon">⚠️</span>
-            </div>
-        </div>
+        <button class="icon-btn" onclick="toggleSettings()">⚙️</button>
     </div>
     <div class="points-banner" id="points-display">⭐ Points: 0 | Daily Goal: 0 / 100</div>
     
     <div class="controls-row">
-        <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading levels...</div>
-            <div class="dropdown-menu" id="lvl-menu"></div>
+        <div class="main-level-indicator" id="main-lvl-display" onclick="toggleSettings()">
+            <span>Loading...</span> <span style="font-size:1.2rem;">⚙️</span>
         </div>
         <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary..." oninput="handleSearch()">
     </div>
@@ -506,21 +547,12 @@
         en: { 
             title: "Polish Phrase Master", 
             search: "Search dictionary...", 
-            male: "Male", 
-            female: "Female", 
-            both: "Both", 
-            genderPrefix: "Gender", 
-            uiPrefix: "UI",
             correct: "Correct! 🌟", 
             mistake: "Mistake!", 
             practice: "PRACTICE", 
             banked: "BANKED", 
-            save: "Save Data", 
-            load: "Load Data", 
-            clear: "Reset App", 
+            save: "💾 Save", 
             ready: "Ready?", 
-            hard: "Hard Mode", 
-            hf: "Hands-Free",
             masteredTitle: "Level Mastered!", 
             masteredText: "You finished this set.", 
             repeatLevel: "Repeat Level",
@@ -531,21 +563,12 @@
         pl: { 
             title: "Polskie Zwroty", 
             search: "Szukaj w słowniku...", 
-            male: "Mężczyzna", 
-            female: "Kobieta", 
-            both: "Oboje", 
-            genderPrefix: "Rodzaj", 
-            uiPrefix: "Język",
             correct: "Dobrze! 🌟", 
             mistake: "Błąd!", 
             practice: "TRENING", 
             banked: "OPANOWANE", 
-            save: "Zapisz", 
-            load: "Wczytaj", 
-            clear: "Wyczyść", 
+            save: "💾 Zapisz", 
             ready: "Gotowy?", 
-            hard: "Trudny", 
-            hf: "Bez Rąk",
             masteredTitle: "Poziom opanowany!", 
             masteredText: "Ukończyłeś tę kategorię.", 
             repeatLevel: "Powtórz poziom",
@@ -560,19 +583,17 @@
     }
 
     // ==========================================
-    // UI UPDATES & SETTINGS
+    // UI UPDATES & MODALS
     // ==========================================
     function updateUILanguage() {
         document.getElementById('app-title').innerText = t('title');
         document.getElementById('search-bar').placeholder = t('search');
         
-        document.getElementById('lbl-ui-lang').innerHTML = `${t('uiPrefix')}: ${uiLang.toUpperCase()} <span class="settings-icon">🌐</span>`;
-        document.getElementById('lbl-hard-mode').innerText = t('hard'); 
-        document.getElementById('lbl-hf').innerText = t('hf');
+        document.getElementById('lbl-ui-lang').innerText = uiLang.toUpperCase();
         
-        document.getElementById('btn-save').innerHTML = (currentLevel === "C" ? "Export Level C" : t('save')) + ' <span class="settings-icon">💾</span>';
+        let saveText = currentLevel === "C" ? "Export Level C" : t('save');
+        document.getElementById('btn-save').innerText = saveText;
         
-        updateGenderLabel();
         updateTabCounts();
         
         document.getElementById('lbl-btn-swap').innerText = t('btnSwap');
@@ -586,41 +607,69 @@
         updateUILanguage(); 
     }
 
-    function toggleSettings(e) {
-        e.stopPropagation();
-        document.getElementById('settings-menu').classList.toggle('show-flex');
+    function toggleHelp() {
+        const el = document.getElementById('help-overlay');
+        if (el.style.display === 'flex') {
+            el.style.display = 'none'; 
+        } else {
+            let tm = 0; 
+            for (let key in stats) { if (stats[key] >= THRESHOLD) tm++; }
+            
+            document.getElementById('stat-mastered').innerText = tm; 
+            document.getElementById('stat-total-pts').innerText = userData.totalPoints; 
+            document.getElementById('stat-best-streak').innerText = userData.bestStreak;
+            
+            if (userData.badges.length > 0) {
+                document.getElementById('stat-badges').innerHTML = userData.badges.map(b => `<span class="badge">${b}</span>`).join('');
+            }
+            el.style.display = 'flex';
+        }
     }
 
+    function toggleSettings() {
+        const el = document.getElementById('settings-overlay');
+        el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
+        // Set Segmented Buttons
+        setGender(currentGender, false);
+    }
+
+    // Close Dropdown if clicked outside
     window.onclick = (e) => { 
-        if (!e.target.closest('.settings-dropdown') && !e.target.closest('.icon-btn')) {
-            document.getElementById('settings-menu').classList.remove('show-flex');
-        }
-        if (!e.target.matches('.dropdown-trigger')) {
+        if (!e.target.matches('.dropdown-trigger') && !e.target.matches('.dropdown-trigger *')) {
             document.getElementById('lvl-menu').classList.remove('show');
         }
     };
 
     function toggleHardMode() { 
         hardMode = !hardMode; 
-        document.getElementById('hard-mode-indicator').innerText = hardMode ? "✅" : "❌";
+        document.getElementById('hard-mode-indicator').innerText = hardMode ? "ON" : "OFF";
+        
+        if (hardMode) {
+            document.getElementById('hard-mode-indicator').style.background = 'var(--pol-red)';
+            document.getElementById('hard-mode-indicator').style.color = 'white';
+            document.getElementById('hard-mode-indicator').style.borderColor = 'var(--pol-red)';
+        } else {
+            document.getElementById('hard-mode-indicator').style.background = 'var(--bg)';
+            document.getElementById('hard-mode-indicator').style.color = 'var(--text)';
+            document.getElementById('hard-mode-indicator').style.borderColor = '#ccc';
+        }
         updateQuestionText(); 
     }
 
-    function toggleGenderCycle() {
-        const next = { 'both': 'm', 'm': 'f', 'f': 'both' };
-        currentGender = next[currentGender];
-        localStorage.setItem('polishMasterGender', currentGender); 
-        updateGenderLabel();
+    function setGender(g, updateGrid = true) {
+        currentGender = g;
+        localStorage.setItem('polishMasterGender', g);
         
-        activePool = []; 
-        refreshActivePool(); 
-        updateMap(); 
-        startNewRound(); 
-    }
-
-    function updateGenderLabel() {
-        const labelStr = currentGender === 'm' ? t('male') : currentGender === 'f' ? t('female') : t('both');
-        document.getElementById('lbl-gender-text').innerText = `${t('genderPrefix')}: ${labelStr}`;
+        // Update Segmented Control UI
+        document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('btn-gen-' + g).classList.add('active');
+        
+        if (updateGrid) {
+            activePool = []; // Force refresh grid slots
+            refreshActivePool(); 
+            updateMap(); 
+            startNewRound(); 
+        }
     }
 
     function getGenderText(p) { 
@@ -782,6 +831,7 @@
         
         let match = (tClean === eClean);
         
+        // Check variants
         if (!isSwapped && currentTarget.variants) {
             if (cleanStr(currentTarget.variants.m) === tClean || cleanStr(currentTarget.variants.f) === tClean) {
                 match = true;
@@ -822,39 +872,44 @@
         levelList = [];
         
         let consecutiveEmptyMajors = 0;
-        const MAX_CONSECUTIVE_EMPTY = 4;
+        const MAX_CONSECUTIVE_EMPTY_MAJORS = 3;
+        const MAX_CONSECUTIVE_EMPTY_MINORS = 2;
         
-        // Safe Sequential Scanning (prevents network flood 404s)
-        for (let major = 0; major <= 50; major++) {
-            let promises = [];
-            for (let minor = 0; minor <= 9; minor++) {
-                if (major === 0 && minor > 0) continue; // Only process 0, skip 0.1
-                
-                let lvlId = minor === 0 ? major.toString() : `${major}.${minor}`;
-                
-                promises.push(
-                    fetch(`phrases_${lvlId}.json`)
-                        .then(r => r.ok ? r.json().then(d => ({id: lvlId, data: d})) : null)
-                        .catch(() => null)
-                );
+        for (let major = 0; major <= 100; major++) {
+            let majorFound = false;
+            try { 
+                const r = await fetch(`phrases_${major}.json`, { cache: 'no-store' }); 
+                if (r.ok) {
+                    const data = await r.json();
+                    levelList.push({ id: major.toString(), desc: data.description || `Level ${major}`, data: data }); 
+                    majorFound = true;
+                    consecutiveEmptyMajors = 0; 
+                } else {
+                    consecutiveEmptyMajors++;
+                }
+            } catch(e) { consecutiveEmptyMajors++; } 
+
+            if (majorFound) {
+                let consecutiveEmptyMinors = 0;
+                for (let minor = 1; minor <= 20; minor++) {
+                    let minorId = `${major}.${minor}`;
+                    try {
+                        const rMinor = await fetch(`phrases_${minorId}.json`, { cache: 'no-store' });
+                        if (rMinor.ok) {
+                            const dataMinor = await rMinor.json();
+                            levelList.push({ id: minorId, desc: dataMinor.description || `Level ${minorId}`, data: dataMinor });
+                            consecutiveEmptyMinors = 0; 
+                        } else {
+                            consecutiveEmptyMinors++;
+                        }
+                    } catch(e) { consecutiveEmptyMinors++; }
+                    
+                    if (consecutiveEmptyMinors >= MAX_CONSECUTIVE_EMPTY_MINORS) break;
+                }
             }
-            
-            const results = await Promise.all(promises);
-            const validResults = results.filter(x => x !== null);
-            
-            if (validResults.length > 0) {
-                validResults.forEach(res => {
-                    levelList.push({ id: res.id, desc: res.data.description || `Level ${res.id}`, data: res.data });
-                });
-                consecutiveEmptyMajors = 0;
-            } else {
-                consecutiveEmptyMajors++;
-            }
-            
-            if (consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY) break;
+            if (consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY_MAJORS) break;
         }
 
-        // Always add Custom Sandbox at the end
         levelList.push({ id: "C", desc: customPhrases.description, data: customPhrases });
 
         levelList.forEach(lvl => {
@@ -886,22 +941,32 @@
         }); 
     }
 
+    function toggleDropdown(e) { 
+        e.stopPropagation(); 
+        document.getElementById('lvl-menu').classList.toggle('show'); 
+    }
+
     async function selectLevel(lvlId) {
         currentLevel = lvlId.toString(); 
         localStorage.setItem('pl_current_level_idx', currentLevel);
         
         document.getElementById('lvl-menu').classList.remove('show');
+        document.getElementById('settings-overlay').style.display = 'none'; // Close Settings
+        
         document.getElementById('search-results-list').style.display = 'none'; 
         document.getElementById('mastery-map').style.display = 'grid'; 
         document.getElementById('search-bar').value = '';
         
         const file = levelList.find(l => l.id == currentLevel); 
         phrasesData = file ? file.data.phrases : [];
+        
+        // Update Main Screen UI Indicator
+        document.getElementById('main-lvl-display').innerHTML = `<span>Lvl ${currentLevel}: ${file ? file.desc : ''}</span> <span>⚙️</span>`;
         document.getElementById('lvl-current').innerText = `Lvl ${currentLevel}: ${file ? file.desc : ''}`;
         
         updateUILanguage(); 
         
-        activePool = []; 
+        activePool = []; // Reset grid completely
         recentPhrasesQueue = []; 
         
         refreshActivePool(); 
@@ -1307,25 +1372,6 @@
     // ==========================================
     // MENUS, SAVING & UTILS
     // ==========================================
-    function toggleHelp() {
-        const el = document.getElementById('help-overlay');
-        if (el.style.display === 'flex') {
-            el.style.display = 'none'; 
-        } else {
-            let tm = 0; 
-            for (let key in stats) { if (stats[key] >= THRESHOLD) tm++; }
-            
-            document.getElementById('stat-mastered').innerText = tm; 
-            document.getElementById('stat-total-pts').innerText = userData.totalPoints; 
-            document.getElementById('stat-best-streak').innerText = userData.bestStreak;
-            
-            if (userData.badges.length > 0) {
-                document.getElementById('stat-badges').innerHTML = userData.badges.map(b => `<span class="badge">${b}</span>`).join('');
-            }
-            el.style.display = 'flex';
-        }
-    }
-
     function downloadProgress() { 
         if(currentLevel === "C") { 
             exportCustomLevel(); 
@@ -1370,7 +1416,7 @@
     }
     
     async function openHandsFree() {
-        document.getElementById('settings-menu').classList.remove('show-flex');
+        document.getElementById('settings-overlay').style.display = 'none'; 
         hfActive = true; 
         hfAbort = false; 
         hfIsPaused = false; 
@@ -1475,6 +1521,7 @@
         initSpeech(); 
         initSpeechRecognition(); 
         updateUILanguage(); 
+        setGender(currentGender, false); // Set initial UI for Segmented control
         scanLibrary(); 
     };
 
@@ -1485,9 +1532,6 @@
                 .catch(err => console.log('SW fail.', err));
         });
     }
-</script>
-</body>
-</html>
 </script>
 </body>
 </html>
