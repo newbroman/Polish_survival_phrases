@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v13.0</title>
+    <title>Polish Phrase Master v14.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -372,6 +372,12 @@
             </details>
 
             <details>
+                <summary>🎯 Spaced Repetition & Level R</summary>
+                <p><b>Mastery Counters:</b> Every time you fully master a level and choose to "Repeat" it, your completion counter (🔄x1) goes up!</p>
+                <p><b>Level R (Needs Review):</b> The app tracks words you make mistakes on (negative score). They are automatically placed in <b>"Lvl R"</b> in the dropdown. When you answer them correctly in Level R, their score heals and they disappear from the list!</p>
+            </details>
+
+            <details>
                 <summary>🌍 Browser Compatibility</summary>
                 <ul>
                     <li><b>Apple / iOS:</b> Please use <b>Safari</b>. Other browsers block the microphone and text-to-speech due to Apple's security rules.</li>
@@ -407,14 +413,8 @@
                 If the question is English, say the Polish translation. If you swapped it, say the English!</p>
                 <p><b>🧠 Hard Mode:</b> Hides the written text entirely so you rely purely on listening.</p>
             </details>
-            
-            <details>
-                <summary>🎯 Scoring & Sandbox</summary>
-                <p><b>Points:</b> +10 for correct. -5 for mistakes. -4 penalty if you take longer than 4 seconds.<br>Win streaks trigger confetti at streaks of 5, 25, 50, and 70!</p>
-                <p><b>Sandbox:</b> Tap the 🔍 icon to search for a word. Use <b>Translate</b> to build a list in <b>"Lvl C"</b>. Export Lvl C from the settings gear icon to permanently save your list.</p>
-            </details>
 
-            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master v13.0</div>
+            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master v14.0</div>
         </div>
     </div>
 </div>
@@ -505,7 +505,7 @@
             </div>
             <button class="search-trigger-btn" onclick="toggleSearch()">🔍</button>
         </div>
-        <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary & translate..." oninput="handleSearch()" style="display:none; margin-top:8px;">
+        <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary..." oninput="handleSearch()" style="display:none; margin-top:8px;">
     </div>
 </div>
 
@@ -561,8 +561,12 @@
         dailyPoints: 0, 
         lastPlayDate: new Date().toDateString(), 
         bestStreak: 0, 
-        badges: [] 
+        badges: [],
+        levelCompletions: {} // New: Tracks how many times a level was repeated
     };
+
+    // Failsafe for older saves
+    if (!userData.levelCompletions) userData.levelCompletions = {};
     
     let customPhrases = JSON.parse(localStorage.getItem('pl_custom_level')) || { 
         level: "C", 
@@ -606,6 +610,10 @@
             masteredTitle: "Level Mastered!", 
             masteredText: "You finished this set.", 
             repeatLevel: "Repeat Level",
+            reviewComplete: "Review Complete!",
+            reviewCompleteText: "You have successfully cleared your weak phrases.",
+            needsReview: "Needs Review",
+            backToStart: "Back to Lvl 1",
             btnSwap: "Swap", 
             btnListen: "Listen", 
             btnSpeak: "Speak",
@@ -628,6 +636,10 @@
             masteredTitle: "Poziom opanowany!", 
             masteredText: "Ukończyłeś tę kategorię.", 
             repeatLevel: "Powtórz poziom",
+            reviewComplete: "Powtórka Zakończona!",
+            reviewCompleteText: "Pomyślnie powtórzyłeś wszystkie trudne słowa.",
+            needsReview: "Do Powtórki",
+            backToStart: "Wróc do startu",
             btnSwap: "Zamień", 
             btnListen: "Słuchaj", 
             btnSpeak: "Mów",
@@ -651,7 +663,8 @@
         document.getElementById('app-title').innerText = t('title');
         document.getElementById('search-bar').placeholder = t('search');
         
-        document.getElementById('lbl-ui-lang').innerText = uiLang.toUpperCase();
+        document.getElementById('lbl-ui-lang').innerHTML = `${t('uiPrefix')}: ${uiLang.toUpperCase()} <span class="settings-icon">🌐</span>`;
+        document.getElementById('lbl-hard-mode').innerText = t('hard'); 
         
         let saveText = currentLevel === "C" ? "Export Level C" : t('save');
         document.getElementById('btn-save').innerText = saveText;
@@ -661,6 +674,15 @@
         document.getElementById('lbl-btn-swap').innerText = t('btnSwap');
         document.getElementById('lbl-btn-listen').innerText = t('btnListen');
         document.getElementById('lbl-btn-speak').innerText = t('btnSpeak');
+        
+        // Refresh Level Label
+        const file = levelList.find(l => l.id == currentLevel);
+        if (file) {
+            let desc = currentLevel === "R" ? t('needsReview') : file.desc;
+            let repeats = userData.levelCompletions[currentLevel] || 0;
+            let badge = repeats > 0 ? ` <span style="color:var(--pol-red);font-size:0.8rem;">🔄x${repeats}</span>` : '';
+            document.getElementById('lvl-current').innerHTML = `<span>Lvl ${currentLevel}: ${desc}${badge}</span>`;
+        }
     }
 
     function toggleUILang() { 
@@ -702,13 +724,15 @@
         } else {
             sb.style.display = 'none';
             sb.value = '';
-            handleSearch(); // Clears results and restores grid
+            handleSearch(); 
         }
     }
 
-    // Close Dropdown if clicked outside
     window.onclick = (e) => { 
-        if (!e.target.matches('.dropdown-trigger') && !e.target.matches('.dropdown-trigger *')) {
+        if (!e.target.closest('.settings-dropdown') && !e.target.closest('.icon-btn')) {
+            document.getElementById('settings-menu') && document.getElementById('settings-menu').classList.remove('show-flex');
+        }
+        if (!e.target.matches('.main-dropdown-trigger') && !e.target.matches('.main-dropdown-trigger *')) {
             document.getElementById('lvl-menu').classList.remove('show');
         }
     };
@@ -753,27 +777,18 @@
     // AUDIO & SYNTHESIS
     // ==========================================
     function initAudioContext() {
-        if (!audioCtx) {
-            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        
-        if (audioCtx.state === 'suspended') {
-            audioCtx.resume();
-        }
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
         
         if (!audioKeepAliveInterval) {
             audioKeepAliveInterval = setInterval(() => {
-                if(audioCtx && audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
+                if(audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
                 try { 
                     const o = audioCtx.createOscillator(); 
                     const g = audioCtx.createGain(); 
                     g.gain.value = 0.001; 
-                    o.connect(g); 
-                    g.connect(audioCtx.destination); 
-                    o.start(); 
-                    o.stop(audioCtx.currentTime + 0.01); 
+                    o.connect(g); g.connect(audioCtx.destination); 
+                    o.start(); o.stop(audioCtx.currentTime + 0.01); 
                 } catch(e){}
             }, 20000);
         }
@@ -785,14 +800,11 @@
             const now = audioCtx.currentTime; 
             const o = audioCtx.createOscillator(); 
             const g = audioCtx.createGain(); 
-            o.type = type; 
-            o.frequency.setValueAtTime(freq, now); 
+            o.type = type; o.frequency.setValueAtTime(freq, now); 
             g.gain.setValueAtTime(0.1, now); 
             g.gain.exponentialRampToValueAtTime(0.01, now + dur); 
-            o.connect(g); 
-            g.connect(audioCtx.destination); 
-            o.start(); 
-            o.stop(now + dur); 
+            o.connect(g); g.connect(audioCtx.destination); 
+            o.start(); o.stop(now + dur); 
         } catch(e) {}
     }
 
@@ -802,15 +814,12 @@
             const now = audioCtx.currentTime; 
             const o = audioCtx.createOscillator(); 
             const g = audioCtx.createGain(); 
-            o.type = 'sawtooth'; 
-            o.frequency.setValueAtTime(150, now); 
+            o.type = 'sawtooth'; o.frequency.setValueAtTime(150, now); 
             o.frequency.exponentialRampToValueAtTime(40, now + 0.4); 
             g.gain.setValueAtTime(0.2, now); 
             g.gain.exponentialRampToValueAtTime(0.01, now + 0.4); 
-            o.connect(g); 
-            g.connect(audioCtx.destination); 
-            o.start(); 
-            o.stop(now + 0.4); 
+            o.connect(g); g.connect(audioCtx.destination); 
+            o.start(); o.stop(now + 0.4); 
         } catch(e) {}
     }
 
@@ -825,12 +834,10 @@
     }
     
     function speak(t, rate = 1.0) { 
-        initAudioContext(); 
-        window.speechSynthesis.cancel(); 
+        initAudioContext(); window.speechSynthesis.cancel(); 
         const m = new SpeechSynthesisUtterance(t); 
         if(plVoice) m.voice = plVoice; 
-        m.lang = 'pl-PL'; 
-        m.rate = rate; 
+        m.lang = 'pl-PL'; m.rate = rate; 
         window.speechSynthesis.speak(m); 
     }
 
@@ -845,8 +852,7 @@
         
         if (window.SpeechRecognition) {
             recognition = new SpeechRecognition();
-            recognition.continuous = false; 
-            recognition.interimResults = false;
+            recognition.continuous = false; recognition.interimResults = false;
             
             recognition.onstart = () => { 
                 isListening = true; 
@@ -861,13 +867,9 @@
             
             recognition.onerror = () => { 
                 document.getElementById('feedback').innerText = "Mic error / nothing heard."; 
-                document.getElementById('feedback').style.color = "var(--pol-red)"; 
-                stopListening(); 
+                document.getElementById('feedback').style.color = "var(--pol-red)"; stopListening(); 
             };
-            
-            recognition.onend = () => { 
-                stopListening(); 
-            };
+            recognition.onend = () => { stopListening(); };
         }
     }
 
@@ -876,13 +878,8 @@
             alert("Voice recognition not supported in this browser. Please use Chrome or Safari over HTTPS."); 
             return; 
         }
-        
-        if (isListening) {
-            recognition.stop();
-        } else { 
-            recognition.lang = isSwapped ? 'en-US' : 'pl-PL'; 
-            recognition.start(); 
-        }
+        if (isListening) recognition.stop();
+        else { recognition.lang = isSwapped ? 'en-US' : 'pl-PL'; recognition.start(); }
     }
 
     function stopListening() { 
@@ -903,16 +900,11 @@
         
         let match = (tClean === eClean);
         
-        // Level 0 specific logic for mic (allow speaking the letter OR the word)
         if (currentLevel === "0" && cleanStr(currentTarget.word) === tClean) {
             match = true;
         }
-        
-        // Check variants
         if (!isSwapped && currentTarget.variants) {
-            if (cleanStr(currentTarget.variants.m) === tClean || cleanStr(currentTarget.variants.f) === tClean) {
-                match = true;
-            }
+            if (cleanStr(currentTarget.variants.m) === tClean || cleanStr(currentTarget.variants.f) === tClean) match = true;
         }
 
         if (match) {
@@ -921,28 +913,22 @@
                 (currentLevel === "0" && t.innerHTML.toLowerCase().includes(tClean)) ||
                 (currentTarget.variants && (cleanStr(t.innerText) === cleanStr(currentTarget.variants.m) || cleanStr(t.innerText) === cleanStr(currentTarget.variants.f)))
             );
-            
             if(!targetTile) targetTile = document.createElement('div'); // Fallback
             checkAnswer(currentTarget, targetTile);
-            
         } else {
             document.getElementById('feedback').innerText = `Heard: "${transcript}" ❌`; 
             document.getElementById('feedback').style.color = "var(--pol-red)";
             
-            correctStreak = 0; 
-            basePitch = 220; 
-            addPoints(-5); 
-            playWrongSlide();
+            correctStreak = 0; basePitch = 220; addPoints(-5); playWrongSlide();
             
             stats[currentTarget.pl] = Math.max(MIN_SCORE, (stats[currentTarget.pl] || 0) - 1); 
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
-            
             updateMap(); 
         }
     }
 
     // ==========================================
-    // LIBRARY & LEVEL MANAGEMENT (SAFE SCANNER)
+    // LIBRARY & LEVEL MANAGEMENT
     // ==========================================
     async function scanLibrary() {
         const menu = document.getElementById('lvl-menu'); 
@@ -981,30 +967,68 @@
                             consecutiveEmptyMinors++;
                         }
                     } catch(e) { consecutiveEmptyMinors++; }
-                    
                     if (consecutiveEmptyMinors >= MAX_CONSECUTIVE_EMPTY_MINORS) break;
                 }
             }
             if (consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY_MAJORS) break;
         }
 
+        // Add Sandbox
         levelList.push({ id: "C", desc: customPhrases.description, data: customPhrases });
+        
+        // Cache phrases to find weak ones
+        cacheAllPhrases();
 
+        // Calculate Level R (Needs Review)
+        let reviewPhrases = [];
+        let reviewSet = new Set();
+        allPhrasesCache.forEach(p => {
+            if ((stats[p.pl] || 0) < 0 && !reviewSet.has(p.pl)) {
+                reviewSet.add(p.pl);
+                reviewPhrases.push(p);
+            }
+        });
+
+        // Add Level R object (Virtual)
+        levelList.push({ 
+            id: "R", 
+            desc: t('needsReview'), 
+            data: { description: t('needsReview'), phrases: reviewPhrases } 
+        });
+
+        // Build Menu UI
         levelList.forEach(lvl => {
-            const masteredCount = lvl.data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
-            const isDone = masteredCount > 0 && masteredCount === lvl.data.phrases.length;
+            let isDone = false;
+            
+            if (lvl.id === "R") {
+                // For review level, check if it's empty
+                isDone = lvl.data.phrases.length === 0;
+            } else {
+                const masteredCount = lvl.data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
+                isDone = masteredCount > 0 && masteredCount === lvl.data.phrases.length;
+            }
+            
+            // Repetition Counter Badge
+            let repeats = userData.levelCompletions[lvl.id] || 0;
+            let rBadge = repeats > 0 ? `<span style="color:var(--pol-red); font-size:10px; margin-left:5px;">🔄x${repeats}</span>` : '';
             
             const item = document.createElement('div');
-            item.className = 'dropdown-item' + (isDone ? ' mastered' : '') + (lvl.id === "C" ? ' sandbox' : '');
-            item.innerHTML = `<span>Lvl ${lvl.id}: ${lvl.desc}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
+            
+            // Styling logic
+            if (lvl.id === "R") {
+                item.className = 'dropdown-item sandbox';
+                item.innerHTML = `<span>Lvl R: ${t('needsReview')} (${lvl.data.phrases.length})</span>`;
+            } else {
+                item.className = 'dropdown-item' + (isDone ? ' mastered' : '') + (lvl.id === "C" ? ' sandbox' : '');
+                item.innerHTML = `<span>Lvl ${lvl.id}: ${lvl.desc}${rBadge}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
+            }
+
             item.onclick = (e) => { 
                 e.stopPropagation(); 
                 selectLevel(lvl.id); 
             };
             menu.appendChild(item);
         });
-        
-        cacheAllPhrases();
         
         if(!levelList.find(l => l.id == currentLevel)) currentLevel = levelList[0].id;
         selectLevel(currentLevel);
@@ -1013,7 +1037,7 @@
     async function cacheAllPhrases() { 
         allPhrasesCache = []; 
         levelList.forEach(lvl => { 
-            if(lvl.data && lvl.data.phrases) {
+            if(lvl.id !== "R" && lvl.data && lvl.data.phrases) {
                 lvl.data.phrases.forEach(p => allPhrasesCache.push({...p, lvl: lvl.id})); 
             }
         }); 
@@ -1029,16 +1053,26 @@
         localStorage.setItem('pl_current_level_idx', currentLevel);
         
         document.getElementById('lvl-menu').classList.remove('show');
-        
         document.getElementById('search-results-list').style.display = 'none'; 
         document.getElementById('mastery-map').style.display = 'grid'; 
         document.getElementById('search-bar').value = '';
-        document.getElementById('search-bar').style.display = 'none'; // Ensure hidden on switch
+        document.getElementById('search-bar').style.display = 'none'; 
         
-        const file = levelList.find(l => l.id == currentLevel); 
-        phrasesData = file ? file.data.phrases : [];
-        
-        document.getElementById('lvl-current').innerText = `Lvl ${currentLevel}: ${file ? file.desc : ''}`;
+        // Dynamically rebuild Level R if selected (so it's always fresh)
+        if (currentLevel === "R") {
+            let reviewPhrases = [];
+            let reviewSet = new Set();
+            allPhrasesCache.forEach(p => {
+                if ((stats[p.pl] || 0) < 0 && !reviewSet.has(p.pl)) {
+                    reviewSet.add(p.pl);
+                    reviewPhrases.push(p);
+                }
+            });
+            phrasesData = reviewPhrases;
+        } else {
+            const file = levelList.find(l => l.id == currentLevel); 
+            phrasesData = file ? file.data.phrases : [];
+        }
         
         updateUILanguage(); 
         
@@ -1053,7 +1087,7 @@
     }
 
     // ==========================================
-    // SEARCH, TRANSLATION & CLIPBOARD
+    // SEARCH & TRANSLATION
     // ==========================================
     function copyToClipboard(text, event) {
         if(event) event.stopPropagation();
@@ -1109,7 +1143,6 @@
     async function translateAndAdd(text, langpair) {
         const btn1 = document.getElementById('btn-trans-en'); 
         const btn2 = document.getElementById('btn-trans-pl');
-        
         if(btn1) btn1.disabled = true; 
         if(btn2) btn2.disabled = true;
         
@@ -1135,26 +1168,18 @@
             
             const customList = levelList.find(l => l.id === "C"); 
             if (customList) customList.data = customPhrases;
-            
             cacheAllPhrases();
             
             if(activeBtn) activeBtn.innerText = "✅ Added to Lvl C!"; 
-            
-            setTimeout(() => { 
-                document.getElementById('search-bar').value = ''; 
-                handleSearch(); 
-            }, 1500);
+            setTimeout(() => { document.getElementById('search-bar').value = ''; handleSearch(); }, 1500);
             
             if (currentLevel === "C") { 
                 phrasesData = customPhrases.phrases; 
-                refreshActivePool(); 
-                updateMap(); 
-                updateTabCounts(); 
+                refreshActivePool(); updateMap(); updateTabCounts(); 
             }
         } catch (e) { 
             if(activeBtn) activeBtn.innerText = "❌ Error"; 
-            if(btn1) btn1.disabled = false; 
-            if(btn2) btn2.disabled = false;
+            if(btn1) btn1.disabled = false; if(btn2) btn2.disabled = false;
         }
     }
 
@@ -1166,7 +1191,7 @@
         a.click(); 
         
         setTimeout(() => {
-            if(confirm("Download started!\n\nTo make this a permanent level, move the file into your app folder and rename it to the next available number (e.g., 'phrases_41.json').\n\nDo you want to wipe your current Sandbox clean to start a new list?")) {
+            if(confirm("Download started!\n\nDo you want to wipe your current Sandbox clean to start a new list?")) {
                 customPhrases.phrases = [];
                 localStorage.setItem('pl_custom_level', JSON.stringify(customPhrases));
                 if(currentLevel === "C") selectLevel("C");
@@ -1183,10 +1208,21 @@
             return; 
         }
         
-        if (activePool.length !== 9) {
-            activePool = new Array(9).fill(null);
+        if (currentLevel === "R") {
+            // Level R fetches weak phrases dynamically
+            if (activePool.length !== 9) activePool = new Array(9).fill(null);
+            let unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < 0); // Must be strictly negative
+            
+            for (let i = 0; i < 9; i++) {
+                if (!activePool[i] || (stats[activePool[i].pl] || 0) >= 0) {
+                    let nextPhrase = unmastered.find(p => !activePool.some(ap => ap && ap.pl === p.pl));
+                    activePool[i] = nextPhrase || null; 
+                }
+            }
+            return;
         }
-        
+
+        if (activePool.length !== 9) activePool = new Array(9).fill(null);
         let unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both'));
         
         for (let i = 0; i < 9; i++) {
@@ -1228,7 +1264,6 @@
         }
 
         currentTarget = nextTarget;
-        
         recentPhrasesQueue.push(currentTarget.pl); 
         if (recentPhrasesQueue.length > 3) recentPhrasesQueue.shift();
 
@@ -1262,26 +1297,16 @@
     function updatePointsUI() { 
         const pd = document.getElementById('points-display'); 
         pd.innerHTML = `⭐ Points: ${userData.totalPoints} | Daily Goal: ${userData.dailyPoints} / 100`; 
-        
-        if (userData.dailyPoints >= 100) {
-            pd.classList.add('points-gold'); 
-        } else {
-            pd.classList.remove('points-gold'); 
-        }
+        if (userData.dailyPoints >= 100) pd.classList.add('points-gold'); 
+        else pd.classList.remove('points-gold'); 
     }
 
     function fireConfetti(streak) {
         let defaults = { origin: { y: 0.7 }, zIndex: 5000 };
-        
-        if (streak >= 70) {
-            confetti({ ...defaults, particleCount: 250, spread: 120, colors: ['#ffd700', '#ff0000', '#ffffff'] });
-        } else if (streak >= 50) {
-            confetti({ ...defaults, particleCount: 150, spread: 90 });
-        } else if (streak >= 25) {
-            confetti({ ...defaults, particleCount: 100, spread: 70 });
-        } else {
-            confetti({ ...defaults, particleCount: 50, spread: 50 });
-        }
+        if (streak >= 70) confetti({ ...defaults, particleCount: 250, spread: 120, colors: ['#ffd700', '#ff0000', '#ffffff'] });
+        else if (streak >= 50) confetti({ ...defaults, particleCount: 150, spread: 90 });
+        else if (streak >= 25) confetti({ ...defaults, particleCount: 100, spread: 70 });
+        else confetti({ ...defaults, particleCount: 50, spread: 50 });
     }
 
     function checkAnswer(phrase, el) {
@@ -1314,7 +1339,8 @@
                 
                 let validPool = activePool.filter(p => p !== null);
                 if (validPool.length === 0) { 
-                    document.getElementById('overlay').style.display='flex'; 
+                    // Do not show Mastered logic inside checkAnswer anymore, let updateMap handle the notice box
+                    // document.getElementById('overlay').style.display='flex'; 
                     playSuccess(); 
                 } else {
                     startNewRound();
@@ -1345,7 +1371,13 @@
     }
 
     function resetLevelMastery() {
-        if(confirm("Are you sure you want to reset this level and practice it again?")) {
+        if(confirm("Are you sure you want to practice this level again?")) {
+            // Track Mastery repetition (Don't track custom C or review R)
+            if (currentLevel !== "C" && currentLevel !== "R" && currentLevel !== "0") {
+                userData.levelCompletions[currentLevel] = (userData.levelCompletions[currentLevel] || 0) + 1;
+                localStorage.setItem('pl_user_data', JSON.stringify(userData));
+            }
+
             phrasesData.forEach(p => { delete stats[p.pl]; });
             saveStats(); 
             activePool = []; 
@@ -1353,6 +1385,7 @@
             updateMap(); 
             updateTabCounts(); 
             startNewRound();
+            scanLibrary(); // Re-scan to update the UI label badges
         }
     }
 
@@ -1364,25 +1397,45 @@
     function updateMap() {
         const area = document.getElementById('mastery-map'); 
         area.innerHTML = '';
-        
         area.className = (currentLevel === "0") ? 'grid lvl0' : 'grid';
         
         const isPractice = document.getElementById('tab-learning').classList.contains('active');
         let validPool = isPractice ? activePool.filter(p => p !== null) : [];
         
+        // Completion Notice Logic
         if (isPractice && validPool.length === 0 && document.getElementById('search-bar').value === "") {
             const notice = document.createElement('div'); 
             notice.className = 'review-notice';
-            notice.innerHTML = `
-                <h3>${t("masteredTitle")}</h3>
-                <p>${t("masteredText")}</p>
-                <button onclick="resetLevelMastery()" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; margin-top:10px;">${t("repeatLevel")}</button>
-            `;
+            
+            if (currentLevel === "R") {
+                notice.innerHTML = `
+                    <h3>${t("reviewComplete")}</h3>
+                    <p>${t("reviewCompleteText")}</p>
+                    <button onclick="selectLevel('1')" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; margin-top:10px;">${t("backToStart")}</button>
+                `;
+            } else {
+                notice.innerHTML = `
+                    <h3>${t("masteredTitle")}</h3>
+                    <p>${t("masteredText")}</p>
+                    <button onclick="resetLevelMastery()" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; margin-top:10px;">${t("repeatLevel")}</button>
+                `;
+            }
             area.appendChild(notice); 
             return;
         }
 
-        const list = isPractice ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
+        // Banked vs Practice Rendering
+        let list = [];
+        if (isPractice) {
+            list = activePool;
+        } else {
+            // In Banked tab, show phrases that meet the target
+            if (currentLevel === "R") {
+                list = phrasesData.filter(p => (stats[p.pl]||0) >= 0);
+            } else {
+                list = phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
+            }
+        }
 
         list.forEach(p => {
             const tile = document.createElement('div'); 
@@ -1408,16 +1461,30 @@
                 tile.style.backgroundColor = `rgba(52, 152, 219, ${(Math.abs(score) / 2) + 0.4})`; 
                 tile.style.color = "white"; 
             } else if (score > 0) { 
-                tile.style.backgroundColor = score >= THRESHOLD ? 'var(--card)' : `rgba(220, 20, 60, ${score/THRESHOLD})`; 
-                if (score >= THRESHOLD) tile.classList.add('mastered-border'); 
+                // For Level R, score of 0 or higher is considered "Mastered" visually before it vanishes
+                let targetHit = currentLevel === "R" ? score >= 0 : score >= THRESHOLD;
+                
+                if (targetHit) {
+                    tile.style.backgroundColor = 'var(--card)'; 
+                    tile.classList.add('mastered-border'); 
+                } else {
+                    tile.style.backgroundColor = `rgba(220, 20, 60, ${score/THRESHOLD})`; 
+                }
             }
             
             tile.onclick = () => isPractice ? checkAnswer(p, tile) : speak(currentLevel === "0" ? p.pl + " jak " + p.word : p.pl); 
             area.appendChild(tile);
         });
         
+        // Progress Bar update
         if (phrasesData.length) {
-            document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%";
+            let mCount = 0;
+            if (currentLevel === "R") {
+                mCount = phrasesData.filter(p=>(stats[p.pl]||0)>=0).length;
+            } else {
+                mCount = phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length;
+            }
+            document.getElementById('progress-bar').style.width = (mCount/phrasesData.length)*100+"%";
         }
     }
 
@@ -1430,36 +1497,25 @@
     
     function updateTabCounts() { 
         if (!phrasesData.length) return; 
-        const m = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length; 
+        let m = 0;
+        if (currentLevel === "R") {
+            m = phrasesData.filter(p => (stats[p.pl] || 0) >= 0).length; 
+        } else {
+            m = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length; 
+        }
         document.getElementById('learning-count').innerText = `(${phrasesData.length - m})`; 
         document.getElementById('banked-count').innerText = `(${m})`; 
-    }
-    
-    function advanceLevel() { 
-        document.getElementById('overlay').style.display = 'none'; 
-        const currentIdx = levelList.findIndex(l => l.id == currentLevel); 
-        if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
-            selectLevel(levelList[currentIdx + 1].id); 
-        }
     }
     
     function handleSpeakerTap() { 
         if(currentTarget) speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl); 
     }
 
-    // ==========================================
-    // MENUS, SAVING & UTILS
-    // ==========================================
     function downloadProgress() { 
-        if(currentLevel === "C") { 
-            exportCustomLevel(); 
-            return; 
-        } 
+        if(currentLevel === "C") { exportCustomLevel(); return; } 
         const b = new Blob([JSON.stringify({stats, userData})], {type: "text/plain"}); 
         const a = document.createElement("a"); 
-        a.href = URL.createObjectURL(b); 
-        a.download = `polish_master.txt`; 
-        a.click(); 
+        a.href = URL.createObjectURL(b); a.download = `polish_master.txt`; a.click(); 
     }
     
     function importProgress(event) { 
@@ -1468,6 +1524,7 @@
             const d = JSON.parse(ev.target.result); 
             stats = d.stats || d; 
             userData = d.userData || userData; 
+            if(!userData.levelCompletions) userData.levelCompletions = {};
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
             localStorage.setItem('pl_user_data', JSON.stringify(userData)); 
             location.reload(); 
@@ -1477,116 +1534,8 @@
     
     function resetEverything() { 
         if(confirm("Clear ALL data and restart?")) { 
-            localStorage.clear(); 
-            location.reload(); 
+            localStorage.clear(); location.reload(); 
         } 
-    }
-
-    // ==========================================
-    // HANDS FREE
-    // ==========================================
-    let hfActive = false, hfIndex = 0, hfPhrases = [], hfPauseDur = 3000, hfAbort = false, hfIsPaused = false;
-    
-    function setPauseDuration(sec) { 
-        hfPauseDur = sec * 1000; 
-        document.querySelectorAll('.pause-option').forEach(o => o.classList.remove('active')); 
-        event.target.classList.add('active'); 
-    }
-    
-    async function openHandsFree() {
-        document.getElementById('settings-overlay').style.display = 'none'; 
-        hfActive = true; 
-        hfAbort = false; 
-        hfIsPaused = false; 
-        initAudioContext();
-        
-        hfPhrases = phrasesData; 
-        hfIndex = 0;
-        
-        document.getElementById('hf-overlay').style.display = 'flex'; 
-        document.getElementById('hf-level-indicator').innerText = document.getElementById('lvl-current').innerText;
-        runHandsFreeLoop();
-    }
-    
-    function closeHandsFree() { 
-        hfActive = false; 
-        hfAbort = true; 
-        window.speechSynthesis.cancel(); 
-        document.getElementById('hf-overlay').style.display = 'none'; 
-        startNewRound(); 
-    }
-    
-    function togglePlayPauseHF() { 
-        if(hfIsPaused) { 
-            hfIsPaused = false; 
-            document.getElementById('hf-pp-btn').innerText = "⏸ Pause"; 
-            runHandsFreeLoop(); 
-        } else { 
-            hfIsPaused = true; 
-            hfAbort = true; 
-            window.speechSynthesis.cancel(); 
-            document.getElementById('hf-pp-btn').innerText = "▶ Resume"; 
-        } 
-    }
-    
-    function skipPhraseHF() { 
-        hfAbort = true; 
-        setTimeout(() => { 
-            hfAbort = false; 
-            hfIndex++; 
-            runHandsFreeLoop(); 
-        }, 100); 
-    }
-    
-    async function runHandsFreeLoop() {
-        hfAbort = false;
-        while (hfActive && !hfIsPaused && hfIndex < hfPhrases.length) {
-            const p = hfPhrases[hfIndex];
-            
-            document.getElementById('hf-pl').innerText = p.pl; 
-            document.getElementById('hf-en').innerText = p.en;
-            document.getElementById('hf-counter').innerText = `${hfIndex + 1} / ${hfPhrases.length}`;
-            document.getElementById('hf-bar').style.width = ((hfIndex / hfPhrases.length) * 100) + "%";
-            
-            let plText = currentLevel === "0" ? p.pl + " jak " + p.word : getGenderText(p);
-            
-            await speakAsync(plText, 1.0); if(hfAbort) break; 
-            await sleep(hfPauseDur); if(hfAbort) break;
-            
-            await speakAsync(p.en, 1.0, 'en-US'); if(hfAbort) break; 
-            await sleep(hfPauseDur); if(hfAbort) break;
-            
-            await speakAsync(plText, 0.5); if(hfAbort) break; 
-            await sleep(hfPauseDur); if(hfAbort) break;
-            
-            await speakAsync(plText, 1.0); if(hfAbort) break; 
-            await sleep(1000); if(hfAbort) break;
-            
-            hfIndex++;
-        }
-        
-        if (hfIndex >= hfPhrases.length && !hfIsPaused && !hfAbort) { 
-            playSuccess(); 
-            closeHandsFree(); 
-            advanceLevel(); 
-        }
-    }
-    
-    function speakAsync(text, rate = 1.0, lang = 'pl-PL') { 
-        return new Promise(resolve => { 
-            if (hfAbort || hfIsPaused) { resolve(); return; } 
-            initAudioContext(); 
-            const u = new SpeechSynthesisUtterance(text); 
-            u.lang = lang; 
-            u.rate = rate; 
-            u.onend = () => resolve(); 
-            u.onerror = () => resolve(); 
-            speechSynthesis.speak(u); 
-        }); 
-    }
-    
-    function sleep(ms) { 
-        return new Promise(resolve => setTimeout(resolve, ms)); 
     }
 
     // ==========================================
