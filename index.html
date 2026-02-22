@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v11.0</title>
+    <title>Polish Phrase Master v11.1</title>
 
     <meta name="theme-color" content="#dc143c">
     <link rel="apple-touch-icon" href="icon-192.png">
@@ -32,52 +32,143 @@
         }
         
         html, body { 
-            height: 100dvh; margin: 0; overflow: hidden; position: fixed; width: 100%; 
-            padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom);
-            padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);
+            height: 100dvh; 
+            margin: 0; 
+            overflow: hidden; 
+            position: fixed; 
+            width: 100%; 
+            padding-top: env(safe-area-inset-top); 
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-left: env(safe-area-inset-left); 
+            padding-right: env(safe-area-inset-right);
             box-sizing: border-box;
         }
         
-        body { font-family: -apple-system, sans-serif; background: var(--bg); display: flex; flex-direction: column; color: var(--text); }
+        body { 
+            font-family: -apple-system, sans-serif; 
+            background: var(--bg); 
+            display: flex; 
+            flex-direction: column; 
+            color: var(--text); 
+        }
         
         /* HEADER & TOP CONTROLS */
-        .header { width: 100%; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; position: relative; z-index: 1500; }
+        .header { 
+            width: 100%; 
+            background: var(--card); 
+            border-bottom: 1px solid #ddd; 
+            flex-shrink: 0; 
+            position: relative; 
+            z-index: 1500; 
+        }
+        
         .title-banner { 
             background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); 
-            padding: 10px 15px; border-bottom: 1px solid #ccc; 
-            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 15px; 
+            border-bottom: 1px solid #ccc; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
         }
-        .title { font-weight: 800; font-size: 1rem; color: #333; text-align: center; margin: 0; flex: 1; }
-        .icon-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center; }
+        
+        .title { 
+            font-weight: 800; 
+            font-size: 1rem; 
+            color: #333; 
+            text-align: center; 
+            margin: 0; 
+            flex: 1; 
+        }
+        
+        .icon-btn { 
+            background: none; 
+            border: none; 
+            font-size: 1.3rem; 
+            cursor: pointer; 
+            padding: 0; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
         
         /* SETTINGS DROPDOWN */
         .settings-dropdown {
-            position: absolute; top: 45px; right: 10px; background: var(--card); 
-            border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
-            width: 220px; display: none; flex-direction: column; z-index: 2000; overflow: hidden;
+            position: absolute; 
+            top: 45px; 
+            right: 10px; 
+            background: var(--card); 
+            border: 1px solid #ccc; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+            width: 220px; 
+            display: none; 
+            flex-direction: column; 
+            z-index: 2000; 
+            overflow: hidden;
         }
-        .settings-dropdown.show-flex { display: flex; }
+        
+        .settings-dropdown.show-flex { 
+            display: flex; 
+        }
+        
         .settings-item { 
-            padding: 12px 15px; border-bottom: 1px solid #eee; display: flex; 
-            justify-content: space-between; align-items: center; cursor: pointer; 
-            font-size: 0.9rem; font-weight: bold; color: var(--text); 
+            padding: 12px 15px; 
+            border-bottom: 1px solid #eee; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            cursor: pointer; 
+            font-size: 0.9rem; 
+            font-weight: bold; 
+            color: var(--text); 
         }
+        
         .settings-item:last-child { border-bottom: none; }
         .settings-item:active { background: var(--bg); }
         .settings-icon { font-size: 1.1rem; }
 
-        .points-banner { background: var(--card); text-align: center; padding: 6px; font-size: 0.75rem; font-weight: bold; color: #666; border-bottom: 1px solid #ddd; }
+        .points-banner { 
+            background: var(--card); text-align: center; padding: 6px; 
+            font-size: 0.75rem; font-weight: bold; color: #666; border-bottom: 1px solid #ddd; 
+        }
         .points-gold { color: var(--gold); text-shadow: 0 0 2px rgba(0,0,0,0.2); }
 
-        .controls-row { width: 95%; max-width: 450px; margin: 0 auto; padding: 8px 0; display: flex; flex-direction: column; gap: 8px; }
-        .search-box { width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); padding: 8px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; outline: none; box-sizing: border-box; }
+        .controls-row { 
+            width: 95%; max-width: 450px; margin: 0 auto; padding: 8px 0; 
+            display: flex; flex-direction: column; gap: 8px; 
+        }
+        
+        .search-box { 
+            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
+            padding: 8px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; 
+            outline: none; box-sizing: border-box; 
+        }
         
         .custom-dropdown { position: relative; width: 100%; }
-        .dropdown-trigger { width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); padding: 8px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 800; display: flex; align-items: center; justify-content: space-between; cursor: pointer; box-sizing: border-box; }
+        
+        .dropdown-trigger { 
+            width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); 
+            padding: 8px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 800; 
+            display: flex; align-items: center; justify-content: space-between; 
+            cursor: pointer; box-sizing: border-box; 
+        }
+        
         .dropdown-trigger::after { content: '▼'; font-size: 9px; color: #888; }
-        .dropdown-menu { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border: 1px solid #ccc; border-radius: 6px; max-height: 250px; overflow-y: auto; z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        
+        .dropdown-menu { 
+            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
+            border: 1px solid #ccc; border-radius: 6px; max-height: 250px; overflow-y: auto; 
+            z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+        }
+        
         .dropdown-menu.show { display: block; }
-        .dropdown-item { padding: 10px 12px; font-size: 0.8rem; font-weight: bold; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); display: flex; justify-content: space-between; align-items: center; }
+        
+        .dropdown-item { 
+            padding: 10px 12px; font-size: 0.8rem; font-weight: bold; 
+            border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); 
+            display: flex; justify-content: space-between; align-items: center; 
+        }
+        
         .dropdown-item.mastered { color: #888; }
         .dropdown-item.sandbox { color: var(--pol-red); background: #fff0f0; }
 
@@ -85,8 +176,13 @@
         .progress-container { width: 100%; height: 4px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.3s; }
         
-        /* QUIZ HEADER (Simplified) */
-        .quiz-header { background: var(--card); padding: 12px; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 4px; flex-shrink: 0; min-height: 60px; }
+        /* QUIZ HEADER */
+        .quiz-header { 
+            background: var(--card); padding: 12px; border-bottom: 1px solid #ddd; 
+            display: flex; flex-direction: column; align-items: center; 
+            justify-content: center; text-align: center; gap: 4px; flex-shrink: 0; min-height: 60px; 
+        }
+        
         .q-text { font-size: 1.3rem; font-weight: 900; }
         .feedback { height: 14px; font-size: 0.8rem; font-weight: bold; }
 
@@ -95,9 +191,25 @@
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
         /* 3x3 GRID */
-        .map-section { flex-grow: 1; padding: 10px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 380px; margin: auto 0; }
-        .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 6px; text-align: center; font-size: 0.8rem; font-weight: 700; line-height: 1.2; box-shadow: 0 3px 0px rgba(0,0,0,0.15); transition: background 0.2s, transform 0.1s; border: 2px solid transparent; word-wrap: break-word; overflow: hidden; }
+        .map-section { 
+            flex-grow: 1; padding: 10px 8px; overflow-y: auto; display: flex; 
+            flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; 
+        }
+        
+        .grid { 
+            display: grid; grid-template-columns: repeat(3, 1fr); 
+            grid-template-rows: repeat(3, 1fr); gap: 8px; width: 100%; 
+            max-width: 380px; margin: auto 0; 
+        }
+        
+        .tile { 
+            aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
+            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 6px; 
+            text-align: center; font-size: 0.8rem; font-weight: 700; line-height: 1.2; 
+            box-shadow: 0 3px 0px rgba(0,0,0,0.15); transition: background 0.2s, transform 0.1s; 
+            border: 2px solid transparent; word-wrap: break-word; overflow: hidden; 
+        }
+        
         .tile:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0.15); }
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
         .tile.mastered-border { border-color: var(--gold); box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
@@ -120,6 +232,7 @@
             gap: 10px; border-top: 1px solid #ddd; background: var(--card); flex-shrink: 0; 
             padding-bottom: calc(10px + env(safe-area-inset-bottom));
         }
+        
         .action-btn { 
             background: var(--bg); border: 1px solid #ccc; color: var(--text); 
             border-radius: 12px; padding: 10px 0; flex: 1; display: flex; 
@@ -127,14 +240,24 @@
             font-weight: 800; font-size: 0.7rem; cursor: pointer; gap: 4px;
             box-shadow: 0 2px 0 rgba(0,0,0,0.1); transition: transform 0.1s;
         }
+        
         .action-btn:active { transform: translateY(2px); box-shadow: none; }
         .action-icon { font-size: 1.4rem; }
         .mic-active { background: #ffcccc !important; border-color: var(--pol-red) !important; animation: pulse 1s infinite; }
         
-        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.7); } 70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(220, 20, 60, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); } }
+        @keyframes pulse { 
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.7); } 
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(220, 20, 60, 0); } 
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); } 
+        }
 
         /* OVERLAYS */
-        #hf-overlay, #help-overlay, #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 4000; display: none; align-items: center; justify-content: center; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); flex-direction: column; }
+        #hf-overlay, #help-overlay, #overlay { 
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 4000; display: none; 
+            align-items: center; justify-content: center; 
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 
+            flex-direction: column; 
+        }
         
         /* HF Layout */
         .hf-header { position: absolute; top: 0; left: 0; width: 100%; padding: 15px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; }
@@ -154,7 +277,7 @@
         .help-close { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; border: none; background: none; color: #666; cursor: pointer; }
         details { background: var(--bg); border: 1px solid #ddd; border-radius: 6px; margin-bottom: 8px; padding: 10px; }
         summary { font-weight: 800; cursor: pointer; color: var(--pol-red); outline: none; }
-        details p, details ul { margin-top: 10px; margin-bottom: 0; font-size: 0.85rem; line-height: 1.4; }
+        details p, details ul, details ol { margin-top: 10px; margin-bottom: 0; font-size: 0.85rem; line-height: 1.4; }
         .badge { background: var(--gold); color: #333; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-right: 4px; display: inline-block; }
     </style>
 </head>
@@ -169,34 +292,63 @@
     <div class="help-modal">
         <button class="help-close" onclick="toggleHelp()">×</button>
         <h2 style="color:var(--pol-red); margin-top:0; text-align:center;">Dashboard & Help</h2>
+        
         <details open>
             <summary>📊 Your Progress & Badges</summary>
-            <p><b>Total Mastered:</b> <span id="stat-mastered" style="color:var(--success-green); font-weight:bold;">0</span><br>
-               <b>Total Points:</b> <span id="stat-total-pts">0</span> ⭐<br>
-               <b>Best Streak:</b> <span id="stat-best-streak">0</span> 🔥</p>
+            <p>
+                <b>Total Mastered:</b> <span id="stat-mastered" style="color:var(--success-green); font-weight:bold;">0</span><br>
+                <b>Total Points:</b> <span id="stat-total-pts">0</span> ⭐<br>
+                <b>Best Streak:</b> <span id="stat-best-streak">0</span> 🔥
+            </p>
             <p><b>Badges Earned:</b></p>
             <div id="stat-badges"><span style="color:#888; font-size:0.75rem;">Play more to earn badges!</span></div>
         </details>
+
         <details>
-            <summary>🎤 Voice Recognition</summary>
-            <p>Tap <b>Speak (🎤)</b> in the footer. If the text is English, say the Polish translation! If you swapped it, say the English! <br><i>Requires Chrome/Safari permissions.</i></p>
-        </details>
-        <details>
-            <summary>⚙️ Installing Better Voices</summary>
+            <summary>🌍 Browser Compatibility</summary>
             <ul>
-                <li><b>iOS:</b> Settings > Accessibility > Spoken Content > Voices > Polish > Download "Zosia".</li>
-                <li><b>Android:</b> Settings > Text-to-speech > Google Engine > Install voice data > Polish.</li>
+                <li><b>Apple / iOS:</b> Please use <b>Safari</b>. Other browsers (like Chrome on iOS) may block the microphone or text-to-speech features due to Apple's tight security rules.</li>
+                <li><b>Android:</b> Please use <b>Google Chrome</b>. It has the best native support for the Speech Recognition (Mic) and native Polish voices.</li>
+                <li><i>Note:</i> The Mic button requires you to accept microphone permissions when your browser prompts you.</li>
             </ul>
         </details>
+
         <details>
-            <summary>🎯 Scoring & Streaks</summary>
-            <p>+10 for correct. -5 for mistakes. -4 penalty if >4 seconds.<br>Win streaks raise audio pitch and trigger confetti at 5, 25, 50, and 70!</p>
+            <summary>⚙️ Installing High-Quality Voices</summary>
+            <p>For natural sounding Polish, you must download the native voices to your device OS:</p>
+            <div style="margin-top:8px;">
+                <b>🍎 Apple (iPhone/iPad):</b>
+                <ol style="margin-top:4px; padding-left:20px;">
+                    <li>Go to <b>Settings > Accessibility > Spoken Content</b>.</li>
+                    <li>Tap <b>Voices</b>, then find <b>Polish</b>.</li>
+                    <li>Download and select <b>Zosia (Enhanced or Premium)</b> or <b>Krzysztof</b>.</li>
+                    <li><i>Crucial:</i> Make sure your phone's physical "Silent/Ring" switch is set to Ring, or you won't hear anything!</li>
+                </ol>
+                <b>🤖 Android:</b>
+                <ol style="margin-top:4px; padding-left:20px;">
+                    <li>Go to <b>Settings > General Management</b> (or System).</li>
+                    <li>Tap <b>Text-to-speech output</b>.</li>
+                    <li>Ensure <b>Speech Services by Google</b> is the preferred engine.</li>
+                    <li>Tap the gear icon ⚙️ > <b>Install voice data</b> > <b>Polish</b>.</li>
+                    <li>Download the Polish voice pack.</li>
+                </ol>
+            </div>
         </details>
+
         <details>
-            <summary>🌐 Custom Level (Sandbox)</summary>
-            <p>Search for a word. Use <b>Translate</b> to build a vocabulary list in <b>"Lvl C"</b>. You can export Lvl C from the settings gear icon.</p>
+            <summary>🎤 Voice Recognition & Controls</summary>
+            <p>Tap <b>Speak (🎤)</b> in the footer to practice pronunciation! <br>
+            If the question on screen is English, say the Polish translation. If you used the <b>Swap</b> button and the question is Polish, say the English translation!</p>
+            <p><b>🧠 Hard Mode:</b> Hides the written text entirely so you rely purely on listening.</p>
         </details>
-        <div style="text-align:center; font-size:0.7rem; color:#888; margin-top:10px;">Polish Phrase Master v11.0</div>
+        
+        <details>
+            <summary>🎯 Scoring & Sandbox</summary>
+            <p><b>Points:</b> +10 for correct. -5 for mistakes. -4 penalty if you take longer than 4 seconds.<br>Win streaks raise the audio pitch and trigger confetti at streaks of 5, 25, 50, and 70!</p>
+            <p><b>Sandbox:</b> Search for an English or Polish word. Use the <b>Translate</b> buttons to instantly build a vocabulary list in <b>"Lvl C"</b>. Export Lvl C from the settings gear icon to permanently save your list.</p>
+        </details>
+
+        <div style="text-align:center; font-size:0.7rem; color:#888; margin-top:10px;">Polish Phrase Master v11.1</div>
     </div>
 </div>
 
@@ -264,7 +416,11 @@
     </div>
 </div>
 
-<div class="progress-wrapper"><div class="progress-container"><div id="progress-bar"></div></div></div>
+<div class="progress-wrapper">
+    <div class="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+</div>
 
 <div class="quiz-header" id="quiz-ui">
     <div id="q-text" class="q-text">Ready?</div>
@@ -298,7 +454,9 @@
 </div>
 
 <script>
-    // --- CORE CONSTANTS & STATE ---
+    // ==========================================
+    // CORE CONSTANTS & STATE
+    // ==========================================
     const THRESHOLD = 3; 
     const MIN_SCORE = -2;
 
@@ -306,11 +464,17 @@
     let currentLevel = localStorage.getItem('pl_current_level_idx') || "0"; 
     
     let userData = JSON.parse(localStorage.getItem('pl_user_data')) || { 
-        totalPoints: 0, dailyPoints: 0, lastPlayDate: new Date().toDateString(), bestStreak: 0, badges: [] 
+        totalPoints: 0, 
+        dailyPoints: 0, 
+        lastPlayDate: new Date().toDateString(), 
+        bestStreak: 0, 
+        badges: [] 
     };
     
     let customPhrases = JSON.parse(localStorage.getItem('pl_custom_level')) || { 
-        level: "C", description: "My Custom Phrases", phrases: [] 
+        level: "C", 
+        description: "My Custom Phrases", 
+        phrases: [] 
     };
 
     let phrasesData = [];
@@ -333,33 +497,74 @@
     let uiLang = localStorage.getItem('polishMasterUILang') || 'en';
     let currentGender = localStorage.getItem('polishMasterGender') || 'both';
 
-    // --- TRANSLATIONS ---
+    // ==========================================
+    // TRANSLATIONS
+    // ==========================================
     const translations = {
         en: { 
-            title: "Polish Phrase Master", search: "Search dictionary...", male: "Male", female: "Female", both: "Both", 
-            genderPrefix: "Gender", uiPrefix: "UI",
-            correct: "Correct! 🌟", mistake: "Mistake!", practice: "PRACTICE", banked: "BANKED", 
-            save: "Save Data", load: "Load Data", clear: "Reset App", ready: "Ready?", hard: "Hard Mode", hf: "Hands-Free",
-            masteredTitle: "Level Mastered!", masteredText: "You finished this set.", repeatLevel: "Repeat Level",
-            btnSwap: "Swap", btnListen: "Listen", btnSpeak: "Speak"
+            title: "Polish Phrase Master", 
+            search: "Search dictionary...", 
+            male: "Male", 
+            female: "Female", 
+            both: "Both", 
+            genderPrefix: "Gender", 
+            uiPrefix: "UI",
+            correct: "Correct! 🌟", 
+            mistake: "Mistake!", 
+            practice: "PRACTICE", 
+            banked: "BANKED", 
+            save: "Save Data", 
+            load: "Load Data", 
+            clear: "Reset App", 
+            ready: "Ready?", 
+            hard: "Hard Mode", 
+            hf: "Hands-Free",
+            masteredTitle: "Level Mastered!", 
+            masteredText: "You finished this set.", 
+            repeatLevel: "Repeat Level",
+            btnSwap: "Swap", 
+            btnListen: "Listen", 
+            btnSpeak: "Speak"
         },
         pl: { 
-            title: "Polskie Zwroty", search: "Szukaj w słowniku...", male: "Mężczyzna", female: "Kobieta", both: "Oboje", 
-            genderPrefix: "Rodzaj", uiPrefix: "Język",
-            correct: "Dobrze! 🌟", mistake: "Błąd!", practice: "TRENING", banked: "OPANOWANE", 
-            save: "Zapisz", load: "Wczytaj", clear: "Wyczyść", ready: "Gotowy?", hard: "Trudny", hf: "Bez Rąk",
-            masteredTitle: "Poziom opanowany!", masteredText: "Ukończyłeś tę kategorię.", repeatLevel: "Powtórz poziom",
-            btnSwap: "Zamień", btnListen: "Słuchaj", btnSpeak: "Mów"
+            title: "Polskie Zwroty", 
+            search: "Szukaj w słowniku...", 
+            male: "Mężczyzna", 
+            female: "Kobieta", 
+            both: "Oboje", 
+            genderPrefix: "Rodzaj", 
+            uiPrefix: "Język",
+            correct: "Dobrze! 🌟", 
+            mistake: "Błąd!", 
+            practice: "TRENING", 
+            banked: "OPANOWANE", 
+            save: "Zapisz", 
+            load: "Wczytaj", 
+            clear: "Wyczyść", 
+            ready: "Gotowy?", 
+            hard: "Trudny", 
+            hf: "Bez Rąk",
+            masteredTitle: "Poziom opanowany!", 
+            masteredText: "Ukończyłeś tę kategorię.", 
+            repeatLevel: "Powtórz poziom",
+            btnSwap: "Zamień", 
+            btnListen: "Słuchaj", 
+            btnSpeak: "Mów"
         }
     };
-    function t(key) { return translations[uiLang][key] || key; }
 
-    // --- UI UPDATES ---
+    function t(key) { 
+        return translations[uiLang][key] || key; 
+    }
+
+    // ==========================================
+    // UI UPDATES & SETTINGS
+    // ==========================================
     function updateUILanguage() {
         document.getElementById('app-title').innerText = t('title');
         document.getElementById('search-bar').placeholder = t('search');
         
-        document.getElementById('lbl-ui-lang').innerText = `${t('uiPrefix')}: ${uiLang.toUpperCase()}`;
+        document.getElementById('lbl-ui-lang').innerHTML = `${t('uiPrefix')}: ${uiLang.toUpperCase()} <span class="settings-icon">🌐</span>`;
         document.getElementById('lbl-hard-mode').innerText = t('hard'); 
         document.getElementById('lbl-hf').innerText = t('hf');
         
@@ -379,13 +584,13 @@
         updateUILanguage(); 
     }
 
-    // Settings Dropdown Logic
     function toggleSettings(e) {
         e.stopPropagation();
         document.getElementById('settings-menu').classList.toggle('show-flex');
     }
+
     window.onclick = (e) => { 
-        if (!e.target.closest('.settings-dropdown') && !e.target.closest('.settings-btn')) {
+        if (!e.target.closest('.settings-dropdown') && !e.target.closest('.icon-btn')) {
             document.getElementById('settings-menu').classList.remove('show-flex');
         }
         if (!e.target.matches('.dropdown-trigger')) {
@@ -393,7 +598,6 @@
         }
     };
 
-    // Cycle toggles inside Settings
     function toggleHardMode() { 
         hardMode = !hardMode; 
         document.getElementById('hard-mode-indicator').innerText = hardMode ? "✅" : "❌";
@@ -406,7 +610,7 @@
         localStorage.setItem('polishMasterGender', currentGender); 
         updateGenderLabel();
         
-        activePool = []; // Force refresh grid slots
+        activePool = []; 
         refreshActivePool(); 
         updateMap(); 
         startNewRound(); 
@@ -422,19 +626,31 @@
         return currentGender === 'm' ? p.variants.m : (currentGender === 'f' ? p.variants.f : p.pl); 
     }
 
-    // --- AUDIO & SYNTHESIS ---
+    // ==========================================
+    // AUDIO & SYNTHESIS
+    // ==========================================
     function initAudioContext() {
-        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        if (audioCtx.state === 'suspended') audioCtx.resume();
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
         
         if (!audioKeepAliveInterval) {
             audioKeepAliveInterval = setInterval(() => {
-                if(audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+                if(audioCtx && audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
                 try { 
                     const o = audioCtx.createOscillator(); 
                     const g = audioCtx.createGain(); 
-                    g.gain.value = 0.001; o.connect(g); g.connect(audioCtx.destination); 
-                    o.start(); o.stop(audioCtx.currentTime + 0.01); 
+                    g.gain.value = 0.001; 
+                    o.connect(g); 
+                    g.connect(audioCtx.destination); 
+                    o.start(); 
+                    o.stop(audioCtx.currentTime + 0.01); 
                 } catch(e){}
             }, 20000);
         }
@@ -444,10 +660,16 @@
         initAudioContext();
         try { 
             const now = audioCtx.currentTime; 
-            const o = audioCtx.createOscillator(); const g = audioCtx.createGain(); 
-            o.type = type; o.frequency.setValueAtTime(freq, now); 
-            g.gain.setValueAtTime(0.1, now); g.gain.exponentialRampToValueAtTime(0.01, now + dur); 
-            o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(now + dur); 
+            const o = audioCtx.createOscillator(); 
+            const g = audioCtx.createGain(); 
+            o.type = type; 
+            o.frequency.setValueAtTime(freq, now); 
+            g.gain.setValueAtTime(0.1, now); 
+            g.gain.exponentialRampToValueAtTime(0.01, now + dur); 
+            o.connect(g); 
+            g.connect(audioCtx.destination); 
+            o.start(); 
+            o.stop(now + dur); 
         } catch(e) {}
     }
 
@@ -455,32 +677,53 @@
         initAudioContext();
         try { 
             const now = audioCtx.currentTime; 
-            const o = audioCtx.createOscillator(); const g = audioCtx.createGain(); 
-            o.type = 'sawtooth'; o.frequency.setValueAtTime(150, now); o.frequency.exponentialRampToValueAtTime(40, now + 0.4); 
-            g.gain.setValueAtTime(0.2, now); g.gain.exponentialRampToValueAtTime(0.01, now + 0.4); 
-            o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(now + 0.4); 
+            const o = audioCtx.createOscillator(); 
+            const g = audioCtx.createGain(); 
+            o.type = 'sawtooth'; 
+            o.frequency.setValueAtTime(150, now); 
+            o.frequency.exponentialRampToValueAtTime(40, now + 0.4); 
+            g.gain.setValueAtTime(0.2, now); 
+            g.gain.exponentialRampToValueAtTime(0.01, now + 0.4); 
+            o.connect(g); 
+            g.connect(audioCtx.destination); 
+            o.start(); 
+            o.stop(now + 0.4); 
         } catch(e) {}
     }
 
-    function playSuccess() { playNote(523, 0.2, 'triangle'); setTimeout(() => playNote(659, 0.2, 'triangle'), 100); setTimeout(() => playNote(783, 0.4, 'triangle'), 200); }
-    function initSpeech() { plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); }
+    function playSuccess() { 
+        playNote(523, 0.2, 'triangle'); 
+        setTimeout(() => playNote(659, 0.2, 'triangle'), 100); 
+        setTimeout(() => playNote(783, 0.4, 'triangle'), 200); 
+    }
+
+    function initSpeech() { 
+        plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl')); 
+    }
     
     function speak(t, rate = 1.0) { 
-        initAudioContext(); window.speechSynthesis.cancel(); 
+        initAudioContext(); 
+        window.speechSynthesis.cancel(); 
         const m = new SpeechSynthesisUtterance(t); 
-        if(plVoice) m.voice = plVoice; m.lang = 'pl-PL'; m.rate = rate; 
+        if(plVoice) m.voice = plVoice; 
+        m.lang = 'pl-PL'; 
+        m.rate = rate; 
         window.speechSynthesis.speak(m); 
     }
 
-    // --- VOICE RECOGNITION (MIC) ---
+    // ==========================================
+    // VOICE RECOGNITION (MIC)
+    // ==========================================
     let recognition;
     let isListening = false;
 
     function initSpeechRecognition() {
         window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        
         if (window.SpeechRecognition) {
             recognition = new SpeechRecognition();
-            recognition.continuous = false; recognition.interimResults = false;
+            recognition.continuous = false; 
+            recognition.interimResults = false;
             
             recognition.onstart = () => { 
                 isListening = true; 
@@ -495,30 +738,52 @@
             
             recognition.onerror = () => { 
                 document.getElementById('feedback').innerText = "Mic error / nothing heard."; 
-                document.getElementById('feedback').style.color = "var(--pol-red)"; stopListening(); 
+                document.getElementById('feedback').style.color = "var(--pol-red)"; 
+                stopListening(); 
             };
-            recognition.onend = () => { stopListening(); };
+            
+            recognition.onend = () => { 
+                stopListening(); 
+            };
         }
     }
 
     function toggleMic() {
-        if (!recognition) { alert("Voice recognition not supported in this browser. Please use Chrome or Safari over HTTPS."); return; }
-        if (isListening) recognition.stop();
-        else { recognition.lang = isSwapped ? 'en-US' : 'pl-PL'; recognition.start(); }
+        if (!recognition) { 
+            alert("Voice recognition not supported in this browser. Please use Chrome or Safari over HTTPS."); 
+            return; 
+        }
+        
+        if (isListening) {
+            recognition.stop();
+        } else { 
+            recognition.lang = isSwapped ? 'en-US' : 'pl-PL'; 
+            recognition.start(); 
+        }
     }
 
-    function stopListening() { isListening = false; document.getElementById('mic-btn').classList.remove('mic-active'); }
-    function cleanStr(str) { return str ? str.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").trim() : ""; }
+    function stopListening() { 
+        isListening = false; 
+        document.getElementById('mic-btn').classList.remove('mic-active'); 
+    }
+
+    function cleanStr(str) { 
+        return str ? str.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").trim() : ""; 
+    }
     
     function checkSpokenAnswer(transcript) {
         if (!currentTarget) return;
         
         const expected = isSwapped ? currentTarget.en : currentTarget.pl;
-        const eClean = cleanStr(expected); const tClean = cleanStr(transcript);
+        const eClean = cleanStr(expected); 
+        const tClean = cleanStr(transcript);
         
         let match = (tClean === eClean);
+        
         if (!isSwapped && currentTarget.variants) {
-            if (cleanStr(currentTarget.variants.m) === tClean || cleanStr(currentTarget.variants.f) === tClean) match = true;
+            if (cleanStr(currentTarget.variants.m) === tClean || cleanStr(currentTarget.variants.f) === tClean) {
+                match = true;
+            }
         }
 
         if (match) {
@@ -526,30 +791,68 @@
                 cleanStr(t.innerText) === eClean || 
                 (currentTarget.variants && (cleanStr(t.innerText) === cleanStr(currentTarget.variants.m) || cleanStr(t.innerText) === cleanStr(currentTarget.variants.f)))
             );
+            
             if(!targetTile) targetTile = document.createElement('div'); // Fallback
             checkAnswer(currentTarget, targetTile);
+            
         } else {
-            document.getElementById('feedback').innerText = `Heard: "${transcript}" ❌`; document.getElementById('feedback').style.color = "var(--pol-red)";
-            correctStreak = 0; basePitch = 220; addPoints(-5); playWrongSlide();
-            stats[currentTarget.pl] = Math.max(MIN_SCORE, (stats[currentTarget.pl] || 0) - 1); localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+            document.getElementById('feedback').innerText = `Heard: "${transcript}" ❌`; 
+            document.getElementById('feedback').style.color = "var(--pol-red)";
+            
+            correctStreak = 0; 
+            basePitch = 220; 
+            addPoints(-5); 
+            playWrongSlide();
+            
+            stats[currentTarget.pl] = Math.max(MIN_SCORE, (stats[currentTarget.pl] || 0) - 1); 
+            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+            
             updateMap(); 
         }
     }
 
-    // --- LIBRARY & LEVEL MANAGEMENT ---
+    // ==========================================
+    // LIBRARY & LEVEL MANAGEMENT (FIXED SCANNER)
+    // ==========================================
     async function scanLibrary() {
-        const menu = document.getElementById('lvl-menu'); menu.innerHTML = '';
-        const probes = [0]; 
-        for (let i = 1; i <= 40; i++) { probes.push(i); for (let d = 1; d <= 9; d++) probes.push(parseFloat(`${i}.${d}`)); }
+        const menu = document.getElementById('lvl-menu'); 
+        menu.innerHTML = '';
+        levelList = [];
         
-        const scanTasks = probes.map(async (n) => { 
-            try { 
-                const r = await fetch(`phrases_${n}.json`); 
-                if (r.ok) return { id: n.toString(), desc: (await r.json()).description || `Level ${n}`, data: await r.json() }; 
-            } catch(e) {} return null; 
-        });
+        let consecutiveEmptyMajors = 0;
+        const MAX_CONSECUTIVE_EMPTY = 4;
         
-        levelList = (await Promise.all(scanTasks)).filter(x => x !== null);
+        // Safe Sequential Scanning (prevents network flood 404s)
+        for (let major = 0; major <= 50; major++) {
+            let promises = [];
+            for (let minor = 0; minor <= 9; minor++) {
+                if (major === 0 && minor > 0) continue; // Only process 0, skip 0.1
+                
+                let lvlId = minor === 0 ? major.toString() : `${major}.${minor}`;
+                
+                promises.push(
+                    fetch(`phrases_${lvlId}.json`)
+                        .then(r => r.ok ? r.json().then(d => ({id: lvlId, data: d})) : null)
+                        .catch(() => null)
+                );
+            }
+            
+            const results = await Promise.all(promises);
+            const validResults = results.filter(x => x !== null);
+            
+            if (validResults.length > 0) {
+                validResults.forEach(res => {
+                    levelList.push({ id: res.id, desc: res.data.description || `Level ${res.id}`, data: res.data });
+                });
+                consecutiveEmptyMajors = 0;
+            } else {
+                consecutiveEmptyMajors++;
+            }
+            
+            if (consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY) break;
+        }
+
+        // Always add Custom Sandbox at the end
         levelList.push({ id: "C", desc: customPhrases.description, data: customPhrases });
 
         levelList.forEach(lvl => {
@@ -559,22 +862,31 @@
             const item = document.createElement('div');
             item.className = 'dropdown-item' + (isDone ? ' mastered' : '') + (lvl.id === "C" ? ' sandbox' : '');
             item.innerHTML = `<span>Lvl ${lvl.id}: ${lvl.desc}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
-            item.onclick = (e) => { e.stopPropagation(); selectLevel(lvl.id); };
+            item.onclick = (e) => { 
+                e.stopPropagation(); 
+                selectLevel(lvl.id); 
+            };
             menu.appendChild(item);
         });
         
         cacheAllPhrases();
+        
         if(!levelList.find(l => l.id == currentLevel)) currentLevel = levelList[0].id;
         selectLevel(currentLevel);
     }
 
     async function cacheAllPhrases() { 
         allPhrasesCache = []; 
-        levelList.forEach(lvl => { if(lvl.data && lvl.data.phrases) lvl.data.phrases.forEach(p => allPhrasesCache.push({...p, lvl: lvl.id})); }); 
+        levelList.forEach(lvl => { 
+            if(lvl.data && lvl.data.phrases) {
+                lvl.data.phrases.forEach(p => allPhrasesCache.push({...p, lvl: lvl.id})); 
+            }
+        }); 
     }
 
     async function selectLevel(lvlId) {
-        currentLevel = lvlId.toString(); localStorage.setItem('pl_current_level_idx', currentLevel);
+        currentLevel = lvlId.toString(); 
+        localStorage.setItem('pl_current_level_idx', currentLevel);
         
         document.getElementById('lvl-menu').classList.remove('show');
         document.getElementById('search-results-list').style.display = 'none'; 
@@ -587,13 +899,19 @@
         
         updateUILanguage(); 
         
-        activePool = []; // Reset grid completely
+        activePool = []; 
         recentPhrasesQueue = []; 
         
-        refreshActivePool(); updateMap(); updateTabCounts(); startNewRound(); updatePointsUI();
+        refreshActivePool(); 
+        updateMap(); 
+        updateTabCounts(); 
+        startNewRound(); 
+        updatePointsUI();
     }
 
-    // --- SEARCH, REVERSE TRANSLATION & CLIPBOARD ---
+    // ==========================================
+    // SEARCH, TRANSLATION & CLIPBOARD
+    // ==========================================
     function copyToClipboard(text, event) {
         if(event) event.stopPropagation();
         navigator.clipboard.writeText(text).then(() => alert("Copied: " + text));
@@ -601,27 +919,39 @@
 
     function handleSearch() {
         const query = document.getElementById('search-bar').value.trim().toLowerCase();
-        const mapArea = document.getElementById('mastery-map'); const listArea = document.getElementById('search-results-list');
+        const mapArea = document.getElementById('mastery-map'); 
+        const listArea = document.getElementById('search-results-list');
         listArea.innerHTML = ''; 
         
-        if (!query) { mapArea.style.display = 'grid'; listArea.style.display = 'none'; return; }
-        mapArea.style.display = 'none'; listArea.style.display = 'flex';
+        if (!query) { 
+            mapArea.style.display = 'grid'; 
+            listArea.style.display = 'none'; 
+            return; 
+        }
+        
+        mapArea.style.display = 'none'; 
+        listArea.style.display = 'flex';
 
         const matches = allPhrasesCache.filter(p => p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)).slice(0, 10);
         
         if (matches.length > 0) {
             matches.forEach(p => {
-                const item = document.createElement('div'); item.className = 'global-result-item';
+                const item = document.createElement('div'); 
+                item.className = 'global-result-item';
                 item.innerHTML = `
-                    <div style="flex:1;"><b>${p.pl}</b><br><small>${p.en}</small></div>
+                    <div style="flex:1;">
+                        <b>${p.pl}</b><br><small>${p.en}</small>
+                    </div>
                     <div style="text-align:right; display:flex; align-items:center; gap:8px;">
                         <span style="font-size:0.7rem; color:var(--pol-red); font-weight:bold;">LVL ${p.lvl}</span>
                         <button class="copy-btn-search" onclick="copyToClipboard('${p.pl.replace(/'/g, "\\'")}', event)">📋</button>
                     </div>`;
-                item.onclick = () => selectLevel(p.lvl); listArea.appendChild(item);
+                item.onclick = () => selectLevel(p.lvl); 
+                listArea.appendChild(item);
             });
         } else {
-            const prompt = document.createElement('div'); prompt.className = 'translate-prompt';
+            const prompt = document.createElement('div'); 
+            prompt.className = 'translate-prompt';
             prompt.innerHTML = `
                 <div style="font-size:0.9rem; color:#666; margin-bottom:5px;">Not found.</div>
                 <b>"${query}"</b><br>
@@ -634,8 +964,12 @@
     }
 
     async function translateAndAdd(text, langpair) {
-        const btn1 = document.getElementById('btn-trans-en'); const btn2 = document.getElementById('btn-trans-pl');
-        if(btn1) btn1.disabled = true; if(btn2) btn2.disabled = true;
+        const btn1 = document.getElementById('btn-trans-en'); 
+        const btn2 = document.getElementById('btn-trans-pl');
+        
+        if(btn1) btn1.disabled = true; 
+        if(btn2) btn2.disabled = true;
+        
         let activeBtn = langpair === 'en|pl' ? btn1 : btn2;
         if(activeBtn) activeBtn.innerText = "Translating..."; 
         
@@ -647,29 +981,49 @@
             let plText = langpair === 'en|pl' ? translated : text;
             let enText = langpair === 'en|pl' ? text : translated;
 
-            customPhrases.phrases.push({ id: "cust_" + Date.now(), pl: plText, en: enText, category: "Custom" });
+            customPhrases.phrases.push({ 
+                id: "cust_" + Date.now(), 
+                pl: plText, 
+                en: enText, 
+                category: "Custom" 
+            });
+            
             localStorage.setItem('pl_custom_level', JSON.stringify(customPhrases));
             
-            const customList = levelList.find(l => l.id === "C"); if (customList) customList.data = customPhrases;
+            const customList = levelList.find(l => l.id === "C"); 
+            if (customList) customList.data = customPhrases;
+            
             cacheAllPhrases();
             
             if(activeBtn) activeBtn.innerText = "✅ Added to Lvl C!"; 
-            setTimeout(() => { document.getElementById('search-bar').value = ''; handleSearch(); }, 1500);
             
-            if (currentLevel === "C") { phrasesData = customPhrases.phrases; refreshActivePool(); updateMap(); updateTabCounts(); }
+            setTimeout(() => { 
+                document.getElementById('search-bar').value = ''; 
+                handleSearch(); 
+            }, 1500);
+            
+            if (currentLevel === "C") { 
+                phrasesData = customPhrases.phrases; 
+                refreshActivePool(); 
+                updateMap(); 
+                updateTabCounts(); 
+            }
         } catch (e) { 
             if(activeBtn) activeBtn.innerText = "❌ Error"; 
-            if(btn1) btn1.disabled = false; if(btn2) btn2.disabled = false;
+            if(btn1) btn1.disabled = false; 
+            if(btn2) btn2.disabled = false;
         }
     }
 
     function exportCustomLevel() { 
         const b = new Blob([JSON.stringify(customPhrases, null, 2)], {type: "application/json"}); 
-        const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `phrases_C_${Date.now()}.json`; a.click(); 
+        const a = document.createElement("a"); 
+        a.href = URL.createObjectURL(b); 
+        a.download = `phrases_C_${Date.now()}.json`; 
+        a.click(); 
         
-        // Handle sandbox growth
         setTimeout(() => {
-            if(confirm("Download started!\n\nTo make this a permanent level, move the file into your app folder and rename it to 'phrases_41.json' (or next available number).\n\nDo you want to wipe your current Sandbox clean to start a new list?")) {
+            if(confirm("Download started!\n\nTo make this a permanent level, move the file into your app folder and rename it to the next available number (e.g., 'phrases_41.json').\n\nDo you want to wipe your current Sandbox clean to start a new list?")) {
                 customPhrases.phrases = [];
                 localStorage.setItem('pl_custom_level', JSON.stringify(customPhrases));
                 if(currentLevel === "C") selectLevel("C");
@@ -677,10 +1031,18 @@
         }, 500);
     }
     
-    // --- GAMEPLAY LOGIC (FIXED GRID) ---
+    // ==========================================
+    // GAMEPLAY LOGIC & FIXED GRID
+    // ==========================================
     function refreshActivePool() { 
-        if (currentLevel === "0") { activePool = [...phrasesData]; return; }
-        if (activePool.length !== 9) activePool = new Array(9).fill(null);
+        if (currentLevel === "0") { 
+            activePool = [...phrasesData]; 
+            return; 
+        }
+        
+        if (activePool.length !== 9) {
+            activePool = new Array(9).fill(null);
+        }
         
         let unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both'));
         
@@ -692,7 +1054,11 @@
         }
     }
     
-    function toggleContentSwap() { isSwapped = !isSwapped; updateMap(); updateQuestionText(); }
+    function toggleContentSwap() { 
+        isSwapped = !isSwapped; 
+        updateMap(); 
+        updateQuestionText(); 
+    }
     
     function updateQuestionText() { 
         if(!currentTarget) return; 
@@ -701,45 +1067,78 @@
 
     function startNewRound() {
         let validPool = activePool.filter(p => p !== null);
-        if (!validPool.length) { document.getElementById('q-text').innerText = "Done!"; return; }
+        
+        if (!validPool.length) { 
+            document.getElementById('q-text').innerText = "Done!"; 
+            return; 
+        }
 
         let historyLimit = Math.min(3, validPool.length - 1);
         let nextTarget;
         
-        if (validPool.length === 1) nextTarget = validPool[0];
-        else { do { nextTarget = validPool[Math.floor(Math.random() * validPool.length)]; } while (historyLimit > 0 && recentPhrasesQueue.includes(nextTarget.pl)); }
+        if (validPool.length === 1) {
+            nextTarget = validPool[0];
+        } else { 
+            do { 
+                nextTarget = validPool[Math.floor(Math.random() * validPool.length)]; 
+            } while (historyLimit > 0 && recentPhrasesQueue.includes(nextTarget.pl)); 
+        }
 
         currentTarget = nextTarget;
-        recentPhrasesQueue.push(currentTarget.pl); if (recentPhrasesQueue.length > 3) recentPhrasesQueue.shift();
+        
+        recentPhrasesQueue.push(currentTarget.pl); 
+        if (recentPhrasesQueue.length > 3) recentPhrasesQueue.shift();
 
-        updateQuestionText(); document.getElementById('feedback').innerText = ""; questionStartTime = Date.now();
+        updateQuestionText(); 
+        document.getElementById('feedback').innerText = ""; 
+        questionStartTime = Date.now();
+        
         setTimeout(() => speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl), 300);
     }
 
     function addPoints(pts) {
         let today = new Date().toDateString(); 
-        if (userData.lastPlayDate !== today) { userData.dailyPoints = 0; userData.lastPlayDate = today; }
+        if (userData.lastPlayDate !== today) { 
+            userData.dailyPoints = 0; 
+            userData.lastPlayDate = today; 
+        }
         
-        userData.totalPoints = Math.max(0, userData.totalPoints + pts); userData.dailyPoints = Math.max(0, userData.dailyPoints + pts);
+        userData.totalPoints = Math.max(0, userData.totalPoints + pts); 
+        userData.dailyPoints = Math.max(0, userData.dailyPoints + pts);
+        
         if (userData.totalPoints >= 100 && !userData.badges.includes("Novice")) userData.badges.push("Novice");
         if (userData.totalPoints >= 500 && !userData.badges.includes("Pro")) userData.badges.push("Pro");
         if (userData.totalPoints >= 1000 && !userData.badges.includes("Master")) userData.badges.push("Master");
+        
         if (correctStreak > userData.bestStreak) userData.bestStreak = correctStreak;
         
-        localStorage.setItem('pl_user_data', JSON.stringify(userData)); updatePointsUI();
+        localStorage.setItem('pl_user_data', JSON.stringify(userData)); 
+        updatePointsUI();
     }
 
     function updatePointsUI() { 
-        const pd = document.getElementById('points-display'); pd.innerHTML = `⭐ Points: ${userData.totalPoints} | Daily Goal: ${userData.dailyPoints} / 100`; 
-        if (userData.dailyPoints >= 100) pd.classList.add('points-gold'); else pd.classList.remove('points-gold'); 
+        const pd = document.getElementById('points-display'); 
+        pd.innerHTML = `⭐ Points: ${userData.totalPoints} | Daily Goal: ${userData.dailyPoints} / 100`; 
+        
+        if (userData.dailyPoints >= 100) {
+            pd.classList.add('points-gold'); 
+        } else {
+            pd.classList.remove('points-gold'); 
+        }
     }
 
     function fireConfetti(streak) {
         let defaults = { origin: { y: 0.7 }, zIndex: 5000 };
-        if (streak >= 70) confetti({ ...defaults, particleCount: 250, spread: 120, colors: ['#ffd700', '#ff0000', '#ffffff'] });
-        else if (streak >= 50) confetti({ ...defaults, particleCount: 150, spread: 90 });
-        else if (streak >= 25) confetti({ ...defaults, particleCount: 100, spread: 70 });
-        else confetti({ ...defaults, particleCount: 50, spread: 50 });
+        
+        if (streak >= 70) {
+            confetti({ ...defaults, particleCount: 250, spread: 120, colors: ['#ffd700', '#ff0000', '#ffffff'] });
+        } else if (streak >= 50) {
+            confetti({ ...defaults, particleCount: 150, spread: 90 });
+        } else if (streak >= 25) {
+            confetti({ ...defaults, particleCount: 100, spread: 70 });
+        } else {
+            confetti({ ...defaults, particleCount: 50, spread: 50 });
+        }
     }
 
     function checkAnswer(phrase, el) {
@@ -747,139 +1146,326 @@
         
         if (phrase.pl === currentTarget.pl) {
             correctStreak++; 
-            let pitchOffset = (correctStreak % 5) * 30; playNote(basePitch + pitchOffset, 0.15, 'sine');
+            let pitchOffset = (correctStreak % 5) * 30; 
+            playNote(basePitch + pitchOffset, 0.15, 'sine');
             
-            if (correctStreak > 0 && correctStreak % 5 === 0) { basePitch = Math.min(basePitch + 20, 350); fireConfetti(correctStreak); }
+            if (correctStreak > 0 && correctStreak % 5 === 0) { 
+                basePitch = Math.min(basePitch + 20, 350); 
+                fireConfetti(correctStreak); 
+            }
             
-            let pts = 10; if (timeTaken > 4000) pts -= 4; addPoints(pts);
+            let pts = 10; 
+            if (timeTaken > 4000) pts -= 4; 
+            addPoints(pts);
             
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = t('correct'); document.getElementById('feedback').style.color = "var(--success-green)";
+            document.getElementById('feedback').innerText = t('correct'); 
+            document.getElementById('feedback').style.color = "var(--success-green)";
+            
             if (currentLevel === "0") speak(phrase.pl + " jak " + phrase.word);
             
             setTimeout(() => {
-                refreshActivePool(); updateMap(); updateTabCounts();
+                refreshActivePool(); 
+                updateMap(); 
+                updateTabCounts();
+                
                 let validPool = activePool.filter(p => p !== null);
-                if (validPool.length === 0) { document.getElementById('overlay').style.display='flex'; playSuccess(); } else startNewRound();
+                if (validPool.length === 0) { 
+                    document.getElementById('overlay').style.display='flex'; 
+                    playSuccess(); 
+                } else {
+                    startNewRound();
+                }
             }, 600);
             
         } else {
-            correctStreak = 0; basePitch = 220; addPoints(-5); playWrongSlide();
-            stats[currentTarget.pl] = Math.max(MIN_SCORE, (stats[currentTarget.pl] || 0) - 1);
-            if(el) el.classList.add('wrong'); 
-            document.getElementById('feedback').innerText = t('mistake'); document.getElementById('feedback').style.color = "var(--pol-red)";
+            correctStreak = 0; 
+            basePitch = 220; 
+            addPoints(-5); 
+            playWrongSlide();
             
-            setTimeout(() => { if(el) el.classList.remove('wrong'); refreshActivePool(); updateMap(); startNewRound(); }, 1000);
+            stats[currentTarget.pl] = Math.max(MIN_SCORE, (stats[currentTarget.pl] || 0) - 1);
+            
+            if(el) el.classList.add('wrong'); 
+            document.getElementById('feedback').innerText = t('mistake'); 
+            document.getElementById('feedback').style.color = "var(--pol-red)";
+            
+            setTimeout(() => { 
+                if(el) el.classList.remove('wrong'); 
+                refreshActivePool(); 
+                updateMap(); 
+                startNewRound(); 
+            }, 1000);
         }
+        
         localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
     }
 
     function resetLevelMastery() {
         if(confirm("Are you sure you want to reset this level and practice it again?")) {
             phrasesData.forEach(p => { delete stats[p.pl]; });
-            saveStats(); activePool = []; refreshActivePool(); updateMap(); updateTabCounts(); startNewRound();
+            saveStats(); 
+            activePool = []; 
+            refreshActivePool(); 
+            updateMap(); 
+            updateTabCounts(); 
+            startNewRound();
         }
     }
 
-    function saveStats() { localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_current_level_idx', currentLevel); }
+    function saveStats() { 
+        localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
+        localStorage.setItem('pl_current_level_idx', currentLevel); 
+    }
 
     function updateMap() {
-        const area = document.getElementById('mastery-map'); area.innerHTML = '';
+        const area = document.getElementById('mastery-map'); 
+        area.innerHTML = '';
         const isPractice = document.getElementById('tab-learning').classList.contains('active');
+        
         let validPool = isPractice ? activePool.filter(p => p !== null) : [];
         
         if (isPractice && validPool.length === 0 && document.getElementById('search-bar').value === "") {
-            const notice = document.createElement('div'); notice.className = 'review-notice';
-            notice.innerHTML = `<h3>${t("masteredTitle")}</h3><p>${t("masteredText")}</p><button onclick="resetLevelMastery()" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; margin-top:10px;">${t("repeatLevel")}</button>`;
-            area.appendChild(notice); return;
+            const notice = document.createElement('div'); 
+            notice.className = 'review-notice';
+            notice.innerHTML = `
+                <h3>${t("masteredTitle")}</h3>
+                <p>${t("masteredText")}</p>
+                <button onclick="resetLevelMastery()" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; margin-top:10px;">${t("repeatLevel")}</button>
+            `;
+            area.appendChild(notice); 
+            return;
         }
 
         const list = isPractice ? activePool : phrasesData.filter(p => (stats[p.pl]||0) >= THRESHOLD);
 
         list.forEach(p => {
-            const tile = document.createElement('div'); tile.className = 'tile'; 
+            const tile = document.createElement('div'); 
+            tile.className = 'tile'; 
             
-            if (!p) { tile.style.background = 'transparent'; tile.style.boxShadow = 'none'; tile.style.cursor = 'default'; area.appendChild(tile); return; }
+            if (!p) { 
+                tile.style.background = 'transparent'; 
+                tile.style.boxShadow = 'none'; 
+                tile.style.cursor = 'default'; 
+                area.appendChild(tile); 
+                return; 
+            }
             
-            if (currentLevel === "0") tile.innerHTML = `<div class="lvl0-content"><div class="lvl0-big">${p.pl}</div><div class="lvl0-sub">${p.en}</div><div class="lvl0-emoji">${p.e || ''}</div></div>`;
-            else tile.innerText = isSwapped ? p.en : getGenderText(p);
+            if (currentLevel === "0") {
+                tile.innerHTML = `<div class="lvl0-content"><div class="lvl0-big">${p.pl}</div><div class="lvl0-sub">${p.en}</div><div class="lvl0-emoji">${p.e || ''}</div></div>`;
+            } else {
+                tile.innerText = isSwapped ? p.en : getGenderText(p);
+            }
             
             const score = stats[p.pl] || 0; 
-            if (score < 0) { tile.style.backgroundColor = `rgba(52, 152, 219, ${(Math.abs(score) / 2) + 0.4})`; tile.style.color = "white"; } 
-            else if (score > 0) { tile.style.backgroundColor = score >= THRESHOLD ? 'var(--card)' : `rgba(220, 20, 60, ${score/THRESHOLD})`; if (score >= THRESHOLD) tile.classList.add('mastered-border'); }
             
-            tile.onclick = () => isPractice ? checkAnswer(p, tile) : speak(currentLevel === "0" ? p.pl + " jak " + p.word : p.pl); area.appendChild(tile);
+            if (score < 0) { 
+                tile.style.backgroundColor = `rgba(52, 152, 219, ${(Math.abs(score) / 2) + 0.4})`; 
+                tile.style.color = "white"; 
+            } else if (score > 0) { 
+                tile.style.backgroundColor = score >= THRESHOLD ? 'var(--card)' : `rgba(220, 20, 60, ${score/THRESHOLD})`; 
+                if (score >= THRESHOLD) tile.classList.add('mastered-border'); 
+            }
+            
+            tile.onclick = () => isPractice ? checkAnswer(p, tile) : speak(currentLevel === "0" ? p.pl + " jak " + p.word : p.pl); 
+            area.appendChild(tile);
         });
         
-        if (phrasesData.length) document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%";
+        if (phrasesData.length) {
+            document.getElementById('progress-bar').style.width = (phrasesData.filter(p=>(stats[p.pl]||0)>=THRESHOLD).length/phrasesData.length)*100+"%";
+        }
     }
 
-    function toggleDropdown(e) { e.stopPropagation(); document.getElementById('lvl-menu').classList.toggle('show'); }
-    function switchMode(m) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+m).classList.add('active'); document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; updateMap(); }
-    function updateTabCounts() { if (!phrasesData.length) return; const m = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length; document.getElementById('learning-count').innerText = `(${phrasesData.length - m})`; document.getElementById('banked-count').innerText = `(${m})`; }
-    function advanceLevel() { document.getElementById('overlay').style.display = 'none'; const currentIdx = levelList.findIndex(l => l.id == currentLevel); if (currentIdx !== -1 && currentIdx < levelList.length - 1) selectLevel(levelList[currentIdx + 1].id); }
-    function handleSpeakerTap() { if(currentTarget) speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl); }
+    function switchMode(m) { 
+        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); 
+        document.getElementById('tab-'+m).classList.add('active'); 
+        document.getElementById('quiz-ui').style.display = (m==='learning')?'flex':'none'; 
+        updateMap(); 
+    }
+    
+    function updateTabCounts() { 
+        if (!phrasesData.length) return; 
+        const m = phrasesData.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length; 
+        document.getElementById('learning-count').innerText = `(${phrasesData.length - m})`; 
+        document.getElementById('banked-count').innerText = `(${m})`; 
+    }
+    
+    function advanceLevel() { 
+        document.getElementById('overlay').style.display = 'none'; 
+        const currentIdx = levelList.findIndex(l => l.id == currentLevel); 
+        if (currentIdx !== -1 && currentIdx < levelList.length - 1) {
+            selectLevel(levelList[currentIdx + 1].id); 
+        }
+    }
+    
+    function handleSpeakerTap() { 
+        if(currentTarget) speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl); 
+    }
 
+    // ==========================================
+    // MENUS, SAVING & UTILS
+    // ==========================================
     function toggleHelp() {
         const el = document.getElementById('help-overlay');
-        if (el.style.display === 'flex') el.style.display = 'none'; else {
-            let tm = 0; for (let key in stats) { if (stats[key] >= THRESHOLD) tm++; }
-            document.getElementById('stat-mastered').innerText = tm; document.getElementById('stat-total-pts').innerText = userData.totalPoints; document.getElementById('stat-best-streak').innerText = userData.bestStreak;
-            if (userData.badges.length > 0) document.getElementById('stat-badges').innerHTML = userData.badges.map(b => `<span class="badge">${b}</span>`).join('');
+        if (el.style.display === 'flex') {
+            el.style.display = 'none'; 
+        } else {
+            let tm = 0; 
+            for (let key in stats) { if (stats[key] >= THRESHOLD) tm++; }
+            
+            document.getElementById('stat-mastered').innerText = tm; 
+            document.getElementById('stat-total-pts').innerText = userData.totalPoints; 
+            document.getElementById('stat-best-streak').innerText = userData.bestStreak;
+            
+            if (userData.badges.length > 0) {
+                document.getElementById('stat-badges').innerHTML = userData.badges.map(b => `<span class="badge">${b}</span>`).join('');
+            }
             el.style.display = 'flex';
         }
     }
 
     function downloadProgress() { 
-        if(currentLevel === "C") { exportCustomLevel(); return; } 
-        const b = new Blob([JSON.stringify({stats, userData})], {type: "text/plain"}); const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = `polish_master.txt`; a.click(); 
+        if(currentLevel === "C") { 
+            exportCustomLevel(); 
+            return; 
+        } 
+        const b = new Blob([JSON.stringify({stats, userData})], {type: "text/plain"}); 
+        const a = document.createElement("a"); 
+        a.href = URL.createObjectURL(b); 
+        a.download = `polish_master.txt`; 
+        a.click(); 
     }
     
     function importProgress(event) { 
-        const r = new FileReader(); r.onload = (ev) => { const d = JSON.parse(ev.target.result); stats = d.stats || d; userData = d.userData || userData; localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); localStorage.setItem('pl_user_data', JSON.stringify(userData)); location.reload(); }; r.readAsText(event.target.files[0]); 
+        const r = new FileReader(); 
+        r.onload = (ev) => { 
+            const d = JSON.parse(ev.target.result); 
+            stats = d.stats || d; 
+            userData = d.userData || userData; 
+            localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
+            localStorage.setItem('pl_user_data', JSON.stringify(userData)); 
+            location.reload(); 
+        }; 
+        r.readAsText(event.target.files[0]); 
     }
     
-    function resetEverything() { if(confirm("Clear ALL data and restart?")) { localStorage.clear(); location.reload(); } }
+    function resetEverything() { 
+        if(confirm("Clear ALL data and restart?")) { 
+            localStorage.clear(); 
+            location.reload(); 
+        } 
+    }
 
-    // --- HANDS FREE ---
+    // ==========================================
+    // HANDS FREE
+    // ==========================================
     let hfActive = false, hfIndex = 0, hfPhrases = [], hfPauseDur = 3000, hfAbort = false, hfIsPaused = false;
-    function setPauseDuration(sec) { hfPauseDur = sec * 1000; document.querySelectorAll('.pause-option').forEach(o => o.classList.remove('active')); event.target.classList.add('active'); }
+    
+    function setPauseDuration(sec) { 
+        hfPauseDur = sec * 1000; 
+        document.querySelectorAll('.pause-option').forEach(o => o.classList.remove('active')); 
+        event.target.classList.add('active'); 
+    }
     
     async function openHandsFree() {
         document.getElementById('settings-menu').classList.remove('show-flex');
-        hfActive = true; hfAbort = false; hfIsPaused = false; initAudioContext();
-        hfPhrases = phrasesData; hfIndex = 0;
-        document.getElementById('hf-overlay').style.display = 'flex'; document.getElementById('hf-level-indicator').innerText = document.getElementById('lvl-current').innerText;
+        hfActive = true; 
+        hfAbort = false; 
+        hfIsPaused = false; 
+        initAudioContext();
+        
+        hfPhrases = phrasesData; 
+        hfIndex = 0;
+        
+        document.getElementById('hf-overlay').style.display = 'flex'; 
+        document.getElementById('hf-level-indicator').innerText = document.getElementById('lvl-current').innerText;
         runHandsFreeLoop();
     }
     
-    function closeHandsFree() { hfActive = false; hfAbort = true; window.speechSynthesis.cancel(); document.getElementById('hf-overlay').style.display = 'none'; startNewRound(); }
-    function togglePlayPauseHF() { if(hfIsPaused) { hfIsPaused = false; document.getElementById('hf-pp-btn').innerText = "⏸ Pause"; runHandsFreeLoop(); } else { hfIsPaused = true; hfAbort = true; window.speechSynthesis.cancel(); document.getElementById('hf-pp-btn').innerText = "▶ Resume"; } }
-    function skipPhraseHF() { hfAbort = true; setTimeout(() => { hfAbort = false; hfIndex++; runHandsFreeLoop(); }, 100); }
+    function closeHandsFree() { 
+        hfActive = false; 
+        hfAbort = true; 
+        window.speechSynthesis.cancel(); 
+        document.getElementById('hf-overlay').style.display = 'none'; 
+        startNewRound(); 
+    }
+    
+    function togglePlayPauseHF() { 
+        if(hfIsPaused) { 
+            hfIsPaused = false; 
+            document.getElementById('hf-pp-btn').innerText = "⏸ Pause"; 
+            runHandsFreeLoop(); 
+        } else { 
+            hfIsPaused = true; 
+            hfAbort = true; 
+            window.speechSynthesis.cancel(); 
+            document.getElementById('hf-pp-btn').innerText = "▶ Resume"; 
+        } 
+    }
+    
+    function skipPhraseHF() { 
+        hfAbort = true; 
+        setTimeout(() => { 
+            hfAbort = false; 
+            hfIndex++; 
+            runHandsFreeLoop(); 
+        }, 100); 
+    }
     
     async function runHandsFreeLoop() {
         hfAbort = false;
         while (hfActive && !hfIsPaused && hfIndex < hfPhrases.length) {
             const p = hfPhrases[hfIndex];
-            document.getElementById('hf-pl').innerText = p.pl; document.getElementById('hf-en').innerText = p.en;
+            
+            document.getElementById('hf-pl').innerText = p.pl; 
+            document.getElementById('hf-en').innerText = p.en;
             document.getElementById('hf-counter').innerText = `${hfIndex + 1} / ${hfPhrases.length}`;
             document.getElementById('hf-bar').style.width = ((hfIndex / hfPhrases.length) * 100) + "%";
             
             let plText = currentLevel === "0" ? p.pl + " jak " + p.word : getGenderText(p);
             
-            await speakAsync(plText, 1.0); if(hfAbort) break; await sleep(hfPauseDur); if(hfAbort) break;
-            await speakAsync(p.en, 1.0, 'en-US'); if(hfAbort) break; await sleep(hfPauseDur); if(hfAbort) break;
-            await speakAsync(plText, 0.5); if(hfAbort) break; await sleep(hfPauseDur); if(hfAbort) break;
-            await speakAsync(plText, 1.0); if(hfAbort) break; await sleep(1000); if(hfAbort) break;
+            await speakAsync(plText, 1.0); if(hfAbort) break; 
+            await sleep(hfPauseDur); if(hfAbort) break;
+            
+            await speakAsync(p.en, 1.0, 'en-US'); if(hfAbort) break; 
+            await sleep(hfPauseDur); if(hfAbort) break;
+            
+            await speakAsync(plText, 0.5); if(hfAbort) break; 
+            await sleep(hfPauseDur); if(hfAbort) break;
+            
+            await speakAsync(plText, 1.0); if(hfAbort) break; 
+            await sleep(1000); if(hfAbort) break;
+            
             hfIndex++;
         }
-        if (hfIndex >= hfPhrases.length && !hfIsPaused && !hfAbort) { playSuccess(); closeHandsFree(); advanceLevel(); }
+        
+        if (hfIndex >= hfPhrases.length && !hfIsPaused && !hfAbort) { 
+            playSuccess(); 
+            closeHandsFree(); 
+            advanceLevel(); 
+        }
     }
     
-    function speakAsync(text, rate = 1.0, lang = 'pl-PL') { return new Promise(resolve => { if (hfAbort || hfIsPaused) { resolve(); return; } initAudioContext(); const u = new SpeechSynthesisUtterance(text); u.lang = lang; u.rate = rate; u.onend = () => resolve(); u.onerror = () => resolve(); speechSynthesis.speak(u); }); }
-    function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+    function speakAsync(text, rate = 1.0, lang = 'pl-PL') { 
+        return new Promise(resolve => { 
+            if (hfAbort || hfIsPaused) { resolve(); return; } 
+            initAudioContext(); 
+            const u = new SpeechSynthesisUtterance(text); 
+            u.lang = lang; 
+            u.rate = rate; 
+            u.onend = () => resolve(); 
+            u.onerror = () => resolve(); 
+            speechSynthesis.speak(u); 
+        }); 
+    }
+    
+    function sleep(ms) { 
+        return new Promise(resolve => setTimeout(resolve, ms)); 
+    }
 
-    // --- INITIALIZATION ---
+    // ==========================================
+    // INITIALIZATION & SERVICE WORKER
+    // ==========================================
     document.addEventListener('click', initAudioContext, {once: true}); 
     document.addEventListener('touchstart', initAudioContext, {once: true});
     
@@ -889,6 +1475,17 @@
         updateUILanguage(); 
         scanLibrary(); 
     };
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(reg => console.log('SW ok!', reg))
+                .catch(err => console.log('SW fail.', err));
+        });
+    }
+</script>
+</body>
+</html>
 </script>
 </body>
 </html>
