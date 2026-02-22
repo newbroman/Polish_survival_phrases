@@ -639,7 +639,7 @@
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); } 
         }
 
-        /* MODALS (Settings & Help) */
+        /* MODALS (Settings, Help, Hints) */
         .modal-overlay { 
             position: fixed; 
             inset: 0; 
@@ -959,6 +959,18 @@
     <button onclick="advanceLevel()" style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold; font-size:1.1rem; cursor:pointer;" id="mastery-btn">Next Level</button>
 </div>
 
+<div id="hint-overlay" class="modal-overlay">
+    <div class="modal-container" style="max-height: 50dvh;">
+        <div class="modal-header">
+            <h2>💡 Grammar / Context</h2>
+            <button class="modal-close" onclick="closeHint()">×</button>
+        </div>
+        <div class="modal-body">
+            <p id="hint-text" style="font-size:1.1rem; line-height:1.5; color:var(--text); margin:0;"></p>
+        </div>
+    </div>
+</div>
+
 <div id="help-overlay" class="modal-overlay">
     <div class="modal-container">
         <div class="modal-header">
@@ -1068,7 +1080,12 @@
                     <button class="settings-btn" onclick="downloadProgress()" id="btn-save">💾 Save</button>
                     <button class="settings-btn" onclick="document.getElementById('file-input').click()">📂 Load</button>
                 </div>
-                <button class="settings-btn danger" onclick="resetEverything()">⚠️ Reset App Data</button>
+                
+                <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()" style="display:none; border-color:var(--pol-red); color:var(--pol-red); margin-top:10px;">
+                    📤 Export Sandbox (Lvl C)
+                </button>
+
+                <button class="settings-btn danger" onclick="resetEverything()" style="margin-top:10px;">⚠️ Reset App Data</button>
             </div>
 
         </div>
@@ -1139,7 +1156,12 @@
 </div>
 
 <div class="quiz-header" id="quiz-ui">
-    <div id="q-text" class="q-text">Ready?</div>
+    <div style="display:flex; justify-content:space-between; width:100%; max-width:380px; align-items:center;">
+        <div style="width:30px;"></div> <div id="q-text" class="q-text">Ready?</div>
+        
+        <button id="btn-hint" onclick="showHint()" style="background:none; border:none; font-size:1.5rem; cursor:pointer; display:none; padding:0; width:30px; line-height:1;">💡</button>
+    </div>
+    
     <div id="feedback" class="feedback"></div>
     <div class="timer-wrapper"><div id="timer-bar"></div></div>
 </div>
@@ -1150,6 +1172,9 @@
     
     <div id="study-view">
         <div class="flashcard" id="study-flashcard">
+            
+            <button id="fc-hint-btn" onclick="showHint()" style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; display:none; padding:0; line-height:1;">💡</button>
+            
             <div class="fc-pl" id="fc-pl">Polish</div>
             <div class="fc-en" id="fc-en">English</div>
             <button class="fc-audio-btn" onclick="playStudyAudio(event)">🔊</button>
@@ -1232,6 +1257,7 @@
     
     let questionStartTime = 0;
     let roundTimer = null;
+    let isTimerPaused = false; // Phase 2: For pausing timer when reading grammar notes
     
     let uiLang = localStorage.getItem('polishMasterUILang') || 'en';
     let currentGender = localStorage.getItem('polishMasterGender') || 'both';
@@ -1324,16 +1350,16 @@
         if (document.getElementById('lbl-ui-lang')) {
             document.getElementById('lbl-ui-lang').innerText = uiLang.toUpperCase();
         }
-        
-        // Fix for Hands-Free Translation rendering
         if (document.getElementById('lbl-hf')) {
             document.getElementById('lbl-hf').innerHTML = `🎧 Start ${t('hf')}`; 
         }
-        
-        // Fix for Export Level C UI dynamically updating the button text
         if (document.getElementById('btn-save')) {
-            let saveText = currentLevel === "C" ? "💾 Export Lvl C" : t('save');
-            document.getElementById('btn-save').innerText = saveText;
+            document.getElementById('btn-save').innerText = t('save'); // Regular save button remains constant
+        }
+        
+        // Show the dedicated Export Level C button only when in Sandbox
+        if (document.getElementById('btn-export-c')) {
+            document.getElementById('btn-export-c').style.display = (currentLevel === "C") ? 'block' : 'none';
         }
         
         // Tab Translations
@@ -1414,7 +1440,20 @@
         }
     }
 
-    // Event listener to close settings or dropdown when clicking away
+    // Phase 2: Grammar Hint Controls
+    function showHint() {
+        if (!currentTarget || !currentTarget.note) return;
+        isTimerPaused = true; // Pause the fast timer behind the scenes
+        document.getElementById('hint-text').innerText = currentTarget.note;
+        document.getElementById('hint-overlay').style.display = 'flex';
+    }
+
+    function closeHint() {
+        isTimerPaused = false; // Resume timer
+        document.getElementById('hint-overlay').style.display = 'none';
+    }
+
+    // Event listener to close settings, dropdown, or hints when clicking away
     window.onclick = (e) => { 
         if (!e.target.closest('.settings-dropdown') && !e.target.closest('.icon-btn')) {
             if (document.getElementById('settings-menu')) {
@@ -1425,6 +1464,9 @@
             if (document.getElementById('lvl-menu')) {
                 document.getElementById('lvl-menu').classList.remove('show');
             }
+        }
+        if (e.target.matches('#hint-overlay')) {
+            closeHint();
         }
     };
 
@@ -1460,6 +1502,7 @@
             document.getElementById('fc-pl').innerText = "Empty";
             document.getElementById('fc-en').innerText = "";
             document.getElementById('fc-counter').innerText = "0 / 0";
+            if (document.getElementById('fc-hint-btn')) document.getElementById('fc-hint-btn').style.display = 'none';
             currentTarget = null;
             return;
         }
@@ -1483,6 +1526,13 @@
         }
 
         document.getElementById('fc-counter').innerText = `${studyIndex + 1} / ${phrasesData.length}`;
+
+        // Phase 2: Show Hint Button on Flashcard if phrase has a 'note'
+        if (p.note && document.getElementById('fc-hint-btn')) {
+            document.getElementById('fc-hint-btn').style.display = 'block';
+        } else if (document.getElementById('fc-hint-btn')) {
+            document.getElementById('fc-hint-btn').style.display = 'none';
+        }
     }
 
     function nextStudyCard() {
@@ -1870,9 +1920,8 @@
         activePool = []; 
         recentPhrasesQueue = []; 
         
-        studyIndex = 0; // Reset flashcard index
+        studyIndex = 0; 
         
-        // If we are on the study tab, render the card directly instead of grid
         if (document.getElementById('tab-study').classList.contains('active')) {
             renderStudyCard();
         } else {
@@ -1907,7 +1956,7 @@
         }
         
         mapArea.style.display = 'none'; 
-        document.getElementById('study-view').style.display = 'none'; // Hide study if searching
+        document.getElementById('study-view').style.display = 'none'; 
         listArea.style.display = 'flex';
 
         const matches = allPhrasesCache.filter(p => p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)).slice(0, 10);
@@ -2058,6 +2107,13 @@
     function updateQuestionText() { 
         if(!currentTarget) return; 
         document.getElementById('q-text').innerText = hardMode ? "👂 Listen..." : (isSwapped ? currentTarget.pl : currentTarget.en); 
+        
+        // Phase 2: Show Hint button if the phrase has a note
+        if (currentTarget.note && document.getElementById('btn-hint')) {
+            document.getElementById('btn-hint').style.display = 'block';
+        } else if (document.getElementById('btn-hint')) {
+            document.getElementById('btn-hint').style.display = 'none';
+        }
     }
 
     function startNewRound() {
@@ -2069,6 +2125,7 @@
         
         if (!validPool.length) { 
             document.getElementById('q-text').innerText = "Done!"; 
+            if (document.getElementById('btn-hint')) document.getElementById('btn-hint').style.display = 'none';
             return; 
         }
 
@@ -2095,6 +2152,12 @@
         questionStartTime = Date.now();
         
         roundTimer = setInterval(() => {
+            // Phase 2: Freeze timer if reading a hint
+            if (isTimerPaused) {
+                questionStartTime += 50; 
+                return;
+            }
+            
             let elapsed = Date.now() - questionStartTime;
             let pct = Math.max(0, 100 - (elapsed / TIME_DISTRACTED) * 100);
             let tBar = document.getElementById('timer-bar');
@@ -2417,10 +2480,6 @@
     }
 
     function downloadProgress() { 
-        if(currentLevel === "C") { 
-            exportCustomLevel(); 
-            return; 
-        } 
         const b = new Blob([JSON.stringify({stats, userData})], {type: "text/plain"}); 
         const a = document.createElement("a"); 
         a.href = URL.createObjectURL(b); 
