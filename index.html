@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v15.0</title>
+    <title>Polish Phrase Master v16.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
     
+    <link rel="icon" href="icon-192.png">
     <link rel="apple-touch-icon" href="icon-192.png">
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -33,6 +34,7 @@
             } 
         }
         
+        /* The body padding handles the Safe Area (WiFi/Battery icons) so the header doesn't bleed into it */
         html, body { 
             height: 100dvh; 
             margin: 0; 
@@ -54,11 +56,10 @@
             color: var(--text); 
         }
         
-        /* HEADER */
+        /* HEADER - True Polish Flag Styling */
         .header { 
             width: 100%; 
-            background: var(--card); 
-            border-top: 1px solid #ccc;
+            background: var(--bg); 
             border-bottom: 1px solid #ddd; 
             flex-shrink: 0; 
             position: relative; 
@@ -66,8 +67,10 @@
         }
         
         .title-banner { 
-            background: linear-gradient(to bottom, var(--card) 50%, #dc143c 50%); 
-            padding: 10px 15px; 
+            /* White on top, Red on bottom */
+            background: linear-gradient(to bottom, #ffffff 50%, #dc143c 50%); 
+            padding: 12px 15px; 
+            border-top: 1px solid rgba(0,0,0,0.1); 
             border-bottom: 1px solid #ccc; 
             display: flex; 
             justify-content: space-between; 
@@ -77,11 +80,11 @@
         .title { 
             font-weight: 800; 
             font-size: 1.1rem; 
-            color: var(--text); 
+            color: #1a1a1a; /* Dark text to contrast white top */
             text-align: center; 
             margin: 0; 
             flex: 1; 
-            text-shadow: 0px 1px 2px rgba(255,255,255,0.5);
+            text-shadow: 0px 0px 4px #ffffff, 0px 0px 2px #ffffff; /* White glow for visibility over red bottom */
         }
         
         .icon-btn { 
@@ -93,7 +96,8 @@
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            color: var(--text);
+            color: #1a1a1a;
+            text-shadow: 0px 0px 4px #ffffff, 0px 0px 2px #ffffff;
         }
 
         .points-banner { 
@@ -104,6 +108,9 @@
             font-weight: bold; 
             color: #666; 
             border-bottom: 1px solid #ddd; 
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
         
         .points-gold { 
@@ -284,7 +291,7 @@
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); } 
         }
 
-        /* MODALS */
+        /* MODALS (Settings & Help) */
         .modal-overlay { 
             position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 4000; 
             display: none; align-items: center; justify-content: center; 
@@ -308,6 +315,7 @@
         
         .modal-body { padding: 20px; overflow-y: auto; flex: 1; }
 
+        /* Settings Specifics */
         .settings-section { margin-bottom: 20px; background: var(--card); border: 1px solid #ddd; border-radius: 8px; padding: 15px; }
         .settings-section h3 { margin-top: 0; margin-bottom: 12px; font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
         
@@ -315,6 +323,7 @@
         .setting-row:last-child { border-bottom: none; padding-bottom: 0; }
         .setting-label { font-weight: bold; font-size: 0.95rem; }
 
+        /* Segmented Control for Gender */
         .segmented-control { display: flex; border: 1px solid var(--pol-red); border-radius: 8px; overflow: hidden; width: 100%; margin-top: 10px; }
         .seg-btn { flex: 1; padding: 10px; background: var(--bg); border: none; border-right: 1px solid var(--pol-red); font-weight: bold; color: var(--text); cursor: pointer; }
         .seg-btn:last-child { border-right: none; }
@@ -323,6 +332,7 @@
         .settings-btn { width: 100%; padding: 12px; background: var(--bg); border: 1px solid #ccc; border-radius: 8px; font-weight: bold; color: var(--text); cursor: pointer; margin-top: 10px; font-size: 0.95rem; display: flex; justify-content: center; align-items: center; gap: 8px; }
         .settings-btn.danger { color: #e74c3c; border-color: #ffcccc; background: #fff0f0; }
 
+        /* Help Specifics */
         details { background: var(--card); border: 1px solid #ddd; border-radius: 8px; margin-bottom: 10px; padding: 12px; }
         summary { font-weight: 800; cursor: pointer; color: var(--pol-red); outline: none; font-size: 0.95rem; }
         details p, details ul, details ol { margin-top: 10px; margin-bottom: 0; font-size: 0.9rem; line-height: 1.4; color: var(--text); }
@@ -330,6 +340,7 @@
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 5000; color: white; }
 
+        /* HANDS-FREE OVERLAY */
         #hf-overlay { position: fixed; inset: 0; background: #0a0a0a; z-index: 5000; color: white; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: -apple-system, sans-serif; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
         .hf-header { position: absolute; top: 0; left: 0; width: 100%; padding: 15px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; }
         .hf-close { background: transparent; color: #888; font-size: 2rem; border: none; cursor: pointer; padding: 10px; line-height: 1; }
@@ -409,19 +420,19 @@
                 <summary>🎤 Voice Recognition & Controls</summary>
                 <p>Tap <b>Speak (🎤)</b> in the footer to practice pronunciation! <br>
                 If the question is English, say the Polish translation. If you swapped it, say the English!</p>
-                <p><b>🧠 Hard Mode:</b> Hides the written text entirely so you rely purely on listening.</p>
+                <p><b>🧠 Hard Mode:</b> Hides the written text entirely so you rely purely on listening. You can trigger this mode after mastering any level.</p>
             </details>
 
             <details>
                 <summary>⏱️ Scoring, Timers & Sandbox</summary>
                 <p><b>Points:</b> +10 for fast correct. +6 if over 4 seconds. -5 for mistakes.<br>
                 <b>Timer (12s):</b> If you take longer than 12 seconds to answer, the app assumes you were distracted. You will get 0 points and lose your streak!<br>
-                <b>Daily Goal:</b> Hit 1000 points daily (~15 mins of practice).<br>
-                <b>Streaks:</b> Win streaks raise the audio pitch and trigger confetti at streaks of 5, 25, 50, and 70!</p>
+                <b>Daily Goal:</b> Hit 1000 points daily (~15 mins of practice) to build your 🔥 Daily Streak! Missing a day resets it to 0.<br>
+                <b>Win Streaks:</b> Answering correctly in a row raises the audio pitch and triggers confetti at streaks of 5, 25, 50, and 70!</p>
                 <p><b>Sandbox:</b> Tap the 🔍 icon to search for a word. Use <b>Translate</b> to build a list in <b>"Lvl C"</b>. Export Lvl C from the settings gear icon to permanently save your list.</p>
             </details>
 
-            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master v15.0</div>
+            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master v16.0</div>
         </div>
     </div>
 </div>
@@ -446,14 +457,10 @@
             <div class="settings-section">
                 <h3>⚙️ Options</h3>
                 <div class="setting-row">
-                    <span class="setting-label">UI Language</span>
+                    <span class="setting-label" id="lbl-ui-lang-label">UI Language</span>
                     <button class="settings-btn" style="width:auto; margin:0; padding:6px 15px;" onclick="toggleUILang()" id="lbl-ui-lang">EN</button>
                 </div>
-                <div class="setting-row">
-                    <span class="setting-label">Hard Mode (Audio Only)</span>
-                    <button class="settings-btn" style="width:auto; margin:0; padding:6px 15px;" onclick="toggleHardMode()" id="hard-mode-indicator">OFF</button>
-                </div>
-                <button class="settings-btn" onclick="openHandsFree()" style="border-color:var(--pol-red); color:var(--pol-red);">
+                <button class="settings-btn" onclick="openHandsFree()" style="border-color:var(--pol-red); color:var(--pol-red);" id="lbl-hf">
                     🎧 Start Hands-Free Mode
                 </button>
             </div>
@@ -500,7 +507,7 @@
         <h1 class="title" id="app-title">Polish Phrase Master</h1>
         <button class="icon-btn" onclick="toggleSettings()">⚙️</button>
     </div>
-    <div class="points-banner" id="points-display">⭐ Points: 0 | Daily Goal: 0 / 1000</div>
+    <div class="points-banner" id="points-display">⭐ Points: 0 | Goal: 0 / 1000 | 🔥 Streak: 0</div>
     
     <div class="controls-row">
         <div style="display:flex; gap:8px; align-items:center;">
@@ -512,7 +519,7 @@
             </div>
             <button class="search-trigger-btn" onclick="toggleSearch()">🔍</button>
         </div>
-        <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary..." oninput="handleSearch()" style="display:none; margin-top:8px;">
+        <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary & translate..." oninput="handleSearch()" style="display:none; margin-top:8px;">
     </div>
 </div>
 
@@ -572,9 +579,14 @@
         lastPlayDate: new Date().toDateString(), 
         bestStreak: 0, 
         badges: [],
-        levelCompletions: {} 
+        levelCompletions: {},
+        dailyStreak: 0,
+        lastGoalDate: null
     };
 
+    // Failsafe for older saves
+    if (userData.dailyStreak === undefined) userData.dailyStreak = 0;
+    if (userData.lastGoalDate === undefined) userData.lastGoalDate = null;
     if (!userData.levelCompletions) userData.levelCompletions = {};
     
     let customPhrases = JSON.parse(localStorage.getItem('pl_custom_level')) || { 
@@ -622,7 +634,8 @@
             ready: "Ready?", 
             masteredTitle: "Level Mastered!", 
             masteredText: "You finished this set.", 
-            repeatLevel: "Repeat Level",
+            repeatLevel: "Repeat Normal",
+            repeatHard: "Repeat in Hard Mode 🧠",
             reviewComplete: "Review Complete!",
             reviewCompleteText: "You have successfully cleared your weak phrases.",
             needsReview: "Needs Review",
@@ -650,7 +663,8 @@
             ready: "Gotowy?", 
             masteredTitle: "Poziom opanowany!", 
             masteredText: "Ukończyłeś tę kategorię.", 
-            repeatLevel: "Powtórz poziom",
+            repeatLevel: "Powtórz (Normalny)",
+            repeatHard: "Powtórz w trybie trudnym 🧠",
             reviewComplete: "Powtórka Zakończona!",
             reviewCompleteText: "Pomyślnie powtórzyłeś wszystkie trudne słowa.",
             needsReview: "Do Powtórki",
@@ -675,27 +689,30 @@
     // UI UPDATES & MODALS
     // ==========================================
     function updateUILanguage() {
-        document.getElementById('app-title').innerText = t('title');
-        document.getElementById('search-bar').placeholder = t('search');
+        if (document.getElementById('app-title')) document.getElementById('app-title').innerText = t('title');
+        if (document.getElementById('search-bar')) document.getElementById('search-bar').placeholder = t('search');
         
-        document.getElementById('lbl-ui-lang').innerHTML = `${t('uiPrefix')}: ${uiLang.toUpperCase()} <span class="settings-icon">🌐</span>`;
-        document.getElementById('lbl-hard-mode').innerText = t('hard'); 
+        if (document.getElementById('lbl-ui-lang-label')) document.getElementById('lbl-ui-lang-label').innerText = t('uiPrefix');
+        if (document.getElementById('lbl-ui-lang')) document.getElementById('lbl-ui-lang').innerText = uiLang.toUpperCase();
+        
+        if (document.getElementById('lbl-hf')) document.getElementById('lbl-hf').innerHTML = `🎧 Start ${t('hf')}`; 
         
         let saveText = currentLevel === "C" ? "Export Level C" : t('save');
-        document.getElementById('btn-save').innerText = saveText;
+        if (document.getElementById('btn-save')) document.getElementById('btn-save').innerText = saveText;
         
         updateTabCounts();
         
-        document.getElementById('lbl-btn-swap').innerText = t('btnSwap');
-        document.getElementById('lbl-btn-listen').innerText = t('btnListen');
-        document.getElementById('lbl-btn-speak').innerText = t('btnSpeak');
+        if (document.getElementById('lbl-btn-swap')) document.getElementById('lbl-btn-swap').innerText = t('btnSwap');
+        if (document.getElementById('lbl-btn-listen')) document.getElementById('lbl-btn-listen').innerText = t('btnListen');
+        if (document.getElementById('lbl-btn-speak')) document.getElementById('lbl-btn-speak').innerText = t('btnSpeak');
         
         const file = levelList.find(l => l.id == currentLevel);
-        if (file) {
+        const lvlElement = document.getElementById('lvl-current');
+        if (file && lvlElement) {
             let desc = currentLevel === "R" ? t('needsReview') : file.desc;
             let repeats = userData.levelCompletions[currentLevel] || 0;
             let badge = repeats > 0 ? ` <span style="color:var(--pol-red);font-size:0.8rem;">🔄x${repeats}</span>` : '';
-            document.getElementById('lvl-current').innerHTML = `<span>Lvl ${currentLevel}: ${desc}${badge}</span>`;
+            lvlElement.innerHTML = `<span>Lvl ${currentLevel}: ${desc}${badge}</span>`;
         }
     }
 
@@ -750,22 +767,6 @@
             document.getElementById('lvl-menu').classList.remove('show');
         }
     };
-
-    function toggleHardMode() { 
-        hardMode = !hardMode; 
-        document.getElementById('hard-mode-indicator').innerText = hardMode ? "ON" : "OFF";
-        
-        if (hardMode) {
-            document.getElementById('hard-mode-indicator').style.background = 'var(--pol-red)';
-            document.getElementById('hard-mode-indicator').style.color = 'white';
-            document.getElementById('hard-mode-indicator').style.borderColor = 'var(--pol-red)';
-        } else {
-            document.getElementById('hard-mode-indicator').style.background = 'var(--bg)';
-            document.getElementById('hard-mode-indicator').style.color = 'var(--text)';
-            document.getElementById('hard-mode-indicator').style.borderColor = '#ccc';
-        }
-        updateQuestionText(); 
-    }
 
     function setGender(g, updateGrid = true) {
         currentGender = g;
@@ -1085,6 +1086,7 @@
         
         updateUILanguage(); 
         
+        hardMode = false; // Reset hard mode when starting a new level
         activePool = []; 
         recentPhrasesQueue = []; 
         
@@ -1309,21 +1311,41 @@
     }
 
     function addPoints(pts) {
-        let today = new Date().toDateString(); 
-        if (userData.lastPlayDate !== today) { 
+        let todayStr = new Date().toDateString(); 
+        
+        if (userData.lastPlayDate !== todayStr) { 
+            // Check if streak was broken before resetting points
+            if (userData.lastGoalDate) {
+                let todayTime = new Date(todayStr).getTime();
+                let lastGoalTime = new Date(userData.lastGoalDate).getTime();
+                let daysDiff = Math.round((todayTime - lastGoalTime) / (1000 * 3600 * 24));
+                if (daysDiff > 1) {
+                    userData.dailyStreak = 0; // Streak broken!
+                }
+            }
             userData.dailyPoints = 0; 
-            userData.lastPlayDate = today; 
+            userData.lastPlayDate = todayStr; 
         }
         
+        let previousPoints = userData.dailyPoints;
         userData.totalPoints = Math.max(0, userData.totalPoints + pts); 
         userData.dailyPoints = Math.max(0, userData.dailyPoints + pts);
         
+        // Badges
         if (userData.totalPoints >= 3000 && !userData.badges.includes("Novice")) userData.badges.push("Novice");
         if (userData.totalPoints >= 15000 && !userData.badges.includes("Pro")) userData.badges.push("Pro");
         if (userData.totalPoints >= 30000 && !userData.badges.includes("Master")) userData.badges.push("Master");
         if (userData.totalPoints >= 100000 && !userData.badges.includes("Legend")) userData.badges.push("Legend");
-        
         if (correctStreak > userData.bestStreak) userData.bestStreak = correctStreak;
+        
+        // Check Daily Goal Streak trigger
+        if (userData.dailyPoints >= 1000 && previousPoints < 1000) {
+            if (userData.lastGoalDate !== todayStr) {
+                userData.dailyStreak++;
+                userData.lastGoalDate = todayStr;
+                fireConfetti(100); // Celebration for hitting daily goal!
+            }
+        }
         
         localStorage.setItem('pl_user_data', JSON.stringify(userData)); 
         updatePointsUI();
@@ -1331,7 +1353,7 @@
 
     function updatePointsUI() { 
         const pd = document.getElementById('points-display'); 
-        pd.innerHTML = `⭐ Points: ${userData.totalPoints} | Daily Goal: ${userData.dailyPoints} / 1000`; 
+        pd.innerHTML = `⭐ Points: ${userData.totalPoints} | Goal: ${userData.dailyPoints} / 1000 | 🔥 Streak: ${userData.dailyStreak || 0}`; 
         if (userData.dailyPoints >= 1000) pd.classList.add('points-gold'); 
         else pd.classList.remove('points-gold'); 
     }
@@ -1354,7 +1376,7 @@
             
             if (isDistracted) {
                 pts = 0; 
-                correctStreak = 0; // Break streak due to distraction
+                correctStreak = 0; 
                 basePitch = 220;
                 document.getElementById('feedback').innerText = t('correctSlow'); 
                 document.getElementById('feedback').style.color = "var(--gold)";
@@ -1395,7 +1417,6 @@
             correctStreak = 0; 
             basePitch = 220; 
             
-            // Do not heavily deduct if they were distracted, they probably just misclicked when returning
             let pts = isDistracted ? 0 : -5; 
             addPoints(pts); 
             playWrongSlide();
@@ -1417,8 +1438,9 @@
         localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
     }
 
-    function resetLevelMastery() {
-        if(confirm("Are you sure you want to practice this level again?")) {
+    function resetLevelMastery(enableHardMode = false) {
+        let msg = enableHardMode ? "Reset and practice in Hard Mode (Audio Only)?" : "Are you sure you want to practice this level again?";
+        if(confirm(msg)) {
             if (currentLevel !== "C" && currentLevel !== "R" && currentLevel !== "0") {
                 userData.levelCompletions[currentLevel] = (userData.levelCompletions[currentLevel] || 0) + 1;
                 localStorage.setItem('pl_user_data', JSON.stringify(userData));
@@ -1426,6 +1448,9 @@
 
             phrasesData.forEach(p => { delete stats[p.pl]; });
             saveStats(); 
+            
+            hardMode = enableHardMode;
+            
             activePool = []; 
             refreshActivePool(); 
             updateMap(); 
@@ -1462,7 +1487,10 @@
                 notice.innerHTML = `
                     <h3>${t("masteredTitle")}</h3>
                     <p>${t("masteredText")}</p>
-                    <button onclick="resetLevelMastery()" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; margin-top:10px;">${t("repeatLevel")}</button>
+                    <div style="display:flex; flex-direction:column; gap:8px; margin-top:15px;">
+                        <button onclick="resetLevelMastery(false)" style="padding:10px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">${t("repeatLevel")}</button>
+                        <button onclick="resetLevelMastery(true)" style="padding:10px; background:#333; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">${t("repeatHard")}</button>
+                    </div>
                 `;
             }
             area.appendChild(notice); 
@@ -1565,7 +1593,11 @@
             const d = JSON.parse(ev.target.result); 
             stats = d.stats || d; 
             userData = d.userData || userData; 
-            if(!userData.levelCompletions) userData.levelCompletions = {};
+            
+            if (userData.dailyStreak === undefined) userData.dailyStreak = 0;
+            if (userData.lastGoalDate === undefined) userData.lastGoalDate = null;
+            if (!userData.levelCompletions) userData.levelCompletions = {};
+            
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats)); 
             localStorage.setItem('pl_user_data', JSON.stringify(userData)); 
             location.reload(); 
@@ -1596,7 +1628,7 @@
         hfAbort = false; 
         hfIsPaused = false; 
         initAudioContext();
-        clearInterval(roundTimer); // Ensure game timer is stopped
+        clearInterval(roundTimer); 
         
         hfPhrases = phrasesData; 
         hfIndex = 0;
@@ -1696,6 +1728,10 @@
     window.onload = () => { 
         initSpeech(); 
         initSpeechRecognition(); 
+        
+        // Auto-check streak on load to handle missed days
+        addPoints(0); 
+        
         updateUILanguage(); 
         setGender(currentGender, false); 
         scanLibrary(); 
