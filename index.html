@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v14.0</title>
+    <title>Polish Phrase Master v15.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -191,10 +191,10 @@
         .progress-container { width: 100%; height: 4px; background: #ddd; }
         #progress-bar { width: 0%; height: 100%; background: var(--pol-red); transition: width 0.3s; }
         
-        /* QUIZ HEADER */
+        /* QUIZ HEADER & TIMER */
         .quiz-header { 
             background: var(--card); 
-            padding: 12px; 
+            padding: 12px 12px 16px 12px; 
             border-bottom: 1px solid #ddd; 
             display: flex; 
             flex-direction: column; 
@@ -203,22 +203,26 @@
             text-align: center; 
             gap: 4px; 
             flex-shrink: 0; 
-            min-height: 60px; 
+            min-height: 65px; 
         }
         
         .q-text { font-size: 1.3rem; font-weight: 900; }
         .feedback { height: 14px; font-size: 0.8rem; font-weight: bold; }
 
+        .timer-wrapper { width: 100%; max-width: 380px; height: 6px; background: #eee; border-radius: 3px; margin-top: 8px; overflow: hidden; }
+        #timer-bar { width: 100%; height: 100%; background: var(--success-green); transition: width 0.05s linear, background-color 0.3s ease; }
+        #timer-bar.timer-warning { background: var(--gold); }
+        #timer-bar.timer-danger { background: var(--pol-red); }
+
         .mode-tabs { display: flex; background: var(--card); border-bottom: 1px solid #ddd; flex-shrink: 0; }
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.8rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        /* GRID SYSTEM (Standard 3x3 vs Level 0 5-Col) */
+        /* GRID SYSTEM */
         .map-section { flex-grow: 1; padding: 10px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; }
         
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 380px; margin: auto 0; }
         
-        /* LEVEL 0 SPECIFIC GRID */
         .grid.lvl0 { 
             grid-template-columns: repeat(5, 1fr); 
             grid-template-rows: auto; 
@@ -236,14 +240,12 @@
         }
 
         .grid.lvl0 .tile { padding: 4px; border-radius: 6px; box-shadow: 0 2px 0px rgba(0,0,0,0.15); }
-
         .tile:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0.15); }
         .grid.lvl0 .tile:active { transform: translateY(2px); }
 
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
         .tile.mastered-border { border-color: var(--gold); box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
 
-        /* LEVEL 0 TILE CONTENT */
         .lvl0-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; }
         .lvl0-big { font-size: 1.2rem; font-weight: 900; color: var(--pol-red); margin-bottom: 2px; }
         .lvl0-sub { font-size: 0.6rem; color: #666; font-weight: bold; }
@@ -282,7 +284,7 @@
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); } 
         }
 
-        /* MODALS (Settings & Help) */
+        /* MODALS */
         .modal-overlay { 
             position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 4000; 
             display: none; align-items: center; justify-content: center; 
@@ -306,7 +308,6 @@
         
         .modal-body { padding: 20px; overflow-y: auto; flex: 1; }
 
-        /* Settings Specifics */
         .settings-section { margin-bottom: 20px; background: var(--card); border: 1px solid #ddd; border-radius: 8px; padding: 15px; }
         .settings-section h3 { margin-top: 0; margin-bottom: 12px; font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
         
@@ -314,7 +315,6 @@
         .setting-row:last-child { border-bottom: none; padding-bottom: 0; }
         .setting-label { font-weight: bold; font-size: 0.95rem; }
 
-        /* Segmented Control for Gender */
         .segmented-control { display: flex; border: 1px solid var(--pol-red); border-radius: 8px; overflow: hidden; width: 100%; margin-top: 10px; }
         .seg-btn { flex: 1; padding: 10px; background: var(--bg); border: none; border-right: 1px solid var(--pol-red); font-weight: bold; color: var(--text); cursor: pointer; }
         .seg-btn:last-child { border-right: none; }
@@ -323,7 +323,6 @@
         .settings-btn { width: 100%; padding: 12px; background: var(--bg); border: 1px solid #ccc; border-radius: 8px; font-weight: bold; color: var(--text); cursor: pointer; margin-top: 10px; font-size: 0.95rem; display: flex; justify-content: center; align-items: center; gap: 8px; }
         .settings-btn.danger { color: #e74c3c; border-color: #ffcccc; background: #fff0f0; }
 
-        /* Help Specifics */
         details { background: var(--card); border: 1px solid #ddd; border-radius: 8px; margin-bottom: 10px; padding: 12px; }
         summary { font-weight: 800; cursor: pointer; color: var(--pol-red); outline: none; font-size: 0.95rem; }
         details p, details ul, details ol { margin-top: 10px; margin-bottom: 0; font-size: 0.9rem; line-height: 1.4; color: var(--text); }
@@ -331,7 +330,6 @@
 
         #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 5000; color: white; }
 
-        /* HANDS-FREE OVERLAY */
         #hf-overlay { position: fixed; inset: 0; background: #0a0a0a; z-index: 5000; color: white; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: -apple-system, sans-serif; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
         .hf-header { position: absolute; top: 0; left: 0; width: 100%; padding: 15px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; }
         .hf-close { background: transparent; color: #888; font-size: 2rem; border: none; cursor: pointer; padding: 10px; line-height: 1; }
@@ -414,7 +412,16 @@
                 <p><b>🧠 Hard Mode:</b> Hides the written text entirely so you rely purely on listening.</p>
             </details>
 
-            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master v14.0</div>
+            <details>
+                <summary>⏱️ Scoring, Timers & Sandbox</summary>
+                <p><b>Points:</b> +10 for fast correct. +6 if over 4 seconds. -5 for mistakes.<br>
+                <b>Timer (12s):</b> If you take longer than 12 seconds to answer, the app assumes you were distracted. You will get 0 points and lose your streak!<br>
+                <b>Daily Goal:</b> Hit 1000 points daily (~15 mins of practice).<br>
+                <b>Streaks:</b> Win streaks raise the audio pitch and trigger confetti at streaks of 5, 25, 50, and 70!</p>
+                <p><b>Sandbox:</b> Tap the 🔍 icon to search for a word. Use <b>Translate</b> to build a list in <b>"Lvl C"</b>. Export Lvl C from the settings gear icon to permanently save your list.</p>
+            </details>
+
+            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master v15.0</div>
         </div>
     </div>
 </div>
@@ -493,7 +500,7 @@
         <h1 class="title" id="app-title">Polish Phrase Master</h1>
         <button class="icon-btn" onclick="toggleSettings()">⚙️</button>
     </div>
-    <div class="points-banner" id="points-display">⭐ Points: 0 | Daily Goal: 0 / 100</div>
+    <div class="points-banner" id="points-display">⭐ Points: 0 | Daily Goal: 0 / 1000</div>
     
     <div class="controls-row">
         <div style="display:flex; gap:8px; align-items:center;">
@@ -518,6 +525,7 @@
 <div class="quiz-header" id="quiz-ui">
     <div id="q-text" class="q-text">Ready?</div>
     <div id="feedback" class="feedback"></div>
+    <div class="timer-wrapper"><div id="timer-bar"></div></div>
 </div>
 
 <div class="mode-tabs">
@@ -552,6 +560,8 @@
     // ==========================================
     const THRESHOLD = 3; 
     const MIN_SCORE = -2;
+    const TIME_SLOW = 4000;
+    const TIME_DISTRACTED = 12000;
 
     let stats = JSON.parse(localStorage.getItem('pl_mastery_final')) || {};
     let currentLevel = localStorage.getItem('pl_current_level_idx') || "0"; 
@@ -562,10 +572,9 @@
         lastPlayDate: new Date().toDateString(), 
         bestStreak: 0, 
         badges: [],
-        levelCompletions: {} // New: Tracks how many times a level was repeated
+        levelCompletions: {} 
     };
 
-    // Failsafe for older saves
     if (!userData.levelCompletions) userData.levelCompletions = {};
     
     let customPhrases = JSON.parse(localStorage.getItem('pl_custom_level')) || { 
@@ -589,7 +598,9 @@
     let audioCtx = null;
     let audioKeepAliveInterval = null;
     let basePitch = 220;
+    
     let questionStartTime = 0;
+    let roundTimer = null;
     
     let uiLang = localStorage.getItem('polishMasterUILang') || 'en';
     let currentGender = localStorage.getItem('polishMasterGender') || 'both';
@@ -601,8 +612,10 @@
         en: { 
             title: "Polish Phrase Master", 
             search: "Search dictionary...", 
-            correct: "Correct! 🌟", 
+            correct: "Correct! 🌟",
+            correctSlow: "Correct! (Too slow)", 
             mistake: "Mistake!", 
+            tooSlow: "Too slow! ⏱️",
             practice: "PRACTICE", 
             banked: "BANKED", 
             save: "💾 Save", 
@@ -628,7 +641,9 @@
             title: "Polskie Zwroty", 
             search: "Szukaj w słowniku...", 
             correct: "Dobrze! 🌟", 
+            correctSlow: "Dobrze! (Zbyt wolno)",
             mistake: "Błąd!", 
+            tooSlow: "Zbyt wolno! ⏱️",
             practice: "TRENING", 
             banked: "OPANOWANE", 
             save: "💾 Zapisz", 
@@ -675,7 +690,6 @@
         document.getElementById('lbl-btn-listen').innerText = t('btnListen');
         document.getElementById('lbl-btn-speak').innerText = t('btnSpeak');
         
-        // Refresh Level Label
         const file = levelList.find(l => l.id == currentLevel);
         if (file) {
             let desc = currentLevel === "R" ? t('needsReview') : file.desc;
@@ -777,8 +791,13 @@
     // AUDIO & SYNTHESIS
     // ==========================================
     function initAudioContext() {
-        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        if (audioCtx.state === 'suspended') audioCtx.resume();
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
         
         if (!audioKeepAliveInterval) {
             audioKeepAliveInterval = setInterval(() => {
@@ -973,13 +992,9 @@
             if (consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY_MAJORS) break;
         }
 
-        // Add Sandbox
         levelList.push({ id: "C", desc: customPhrases.description, data: customPhrases });
-        
-        // Cache phrases to find weak ones
         cacheAllPhrases();
 
-        // Calculate Level R (Needs Review)
         let reviewPhrases = [];
         let reviewSet = new Set();
         allPhrasesCache.forEach(p => {
@@ -989,32 +1004,27 @@
             }
         });
 
-        // Add Level R object (Virtual)
         levelList.push({ 
             id: "R", 
             desc: t('needsReview'), 
             data: { description: t('needsReview'), phrases: reviewPhrases } 
         });
 
-        // Build Menu UI
         levelList.forEach(lvl => {
             let isDone = false;
             
             if (lvl.id === "R") {
-                // For review level, check if it's empty
                 isDone = lvl.data.phrases.length === 0;
             } else {
                 const masteredCount = lvl.data.phrases.filter(p => (stats[p.pl] || 0) >= THRESHOLD).length;
                 isDone = masteredCount > 0 && masteredCount === lvl.data.phrases.length;
             }
             
-            // Repetition Counter Badge
             let repeats = userData.levelCompletions[lvl.id] || 0;
             let rBadge = repeats > 0 ? `<span style="color:var(--pol-red); font-size:10px; margin-left:5px;">🔄x${repeats}</span>` : '';
             
             const item = document.createElement('div');
             
-            // Styling logic
             if (lvl.id === "R") {
                 item.className = 'dropdown-item sandbox';
                 item.innerHTML = `<span>Lvl R: ${t('needsReview')} (${lvl.data.phrases.length})</span>`;
@@ -1058,7 +1068,6 @@
         document.getElementById('search-bar').value = '';
         document.getElementById('search-bar').style.display = 'none'; 
         
-        // Dynamically rebuild Level R if selected (so it's always fresh)
         if (currentLevel === "R") {
             let reviewPhrases = [];
             let reviewSet = new Set();
@@ -1200,7 +1209,7 @@
     }
     
     // ==========================================
-    // GAMEPLAY LOGIC & FIXED GRID
+    // GAMEPLAY LOGIC, TIMERS & GRID
     // ==========================================
     function refreshActivePool() { 
         if (currentLevel === "0") { 
@@ -1209,9 +1218,8 @@
         }
         
         if (currentLevel === "R") {
-            // Level R fetches weak phrases dynamically
             if (activePool.length !== 9) activePool = new Array(9).fill(null);
-            let unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < 0); // Must be strictly negative
+            let unmastered = phrasesData.filter(p => (stats[p.pl] || 0) < 0); 
             
             for (let i = 0; i < 9; i++) {
                 if (!activePool[i] || (stats[activePool[i].pl] || 0) >= 0) {
@@ -1245,6 +1253,10 @@
     }
 
     function startNewRound() {
+        clearInterval(roundTimer);
+        document.getElementById('timer-bar').style.width = "100%";
+        document.getElementById('timer-bar').className = "";
+
         let validPool = activePool.filter(p => p !== null);
         
         if (!validPool.length) { 
@@ -1271,6 +1283,28 @@
         document.getElementById('feedback').innerText = ""; 
         questionStartTime = Date.now();
         
+        // Start 12-Second Visual Timer
+        roundTimer = setInterval(() => {
+            let elapsed = Date.now() - questionStartTime;
+            let pct = Math.max(0, 100 - (elapsed / TIME_DISTRACTED) * 100);
+            let tBar = document.getElementById('timer-bar');
+            
+            if(tBar) {
+                tBar.style.width = pct + "%";
+                if (elapsed > TIME_SLOW && elapsed <= 8000) {
+                    tBar.className = "timer-warning";
+                } else if (elapsed > 8000) {
+                    tBar.className = "timer-danger";
+                }
+            }
+            
+            if (elapsed >= TIME_DISTRACTED) {
+                clearInterval(roundTimer);
+                document.getElementById('feedback').innerText = t('tooSlow'); 
+                document.getElementById('feedback').style.color = "var(--pol-red)";
+            }
+        }, 50);
+
         setTimeout(() => speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl), 300);
     }
 
@@ -1284,9 +1318,10 @@
         userData.totalPoints = Math.max(0, userData.totalPoints + pts); 
         userData.dailyPoints = Math.max(0, userData.dailyPoints + pts);
         
-        if (userData.totalPoints >= 100 && !userData.badges.includes("Novice")) userData.badges.push("Novice");
-        if (userData.totalPoints >= 500 && !userData.badges.includes("Pro")) userData.badges.push("Pro");
-        if (userData.totalPoints >= 1000 && !userData.badges.includes("Master")) userData.badges.push("Master");
+        if (userData.totalPoints >= 3000 && !userData.badges.includes("Novice")) userData.badges.push("Novice");
+        if (userData.totalPoints >= 15000 && !userData.badges.includes("Pro")) userData.badges.push("Pro");
+        if (userData.totalPoints >= 30000 && !userData.badges.includes("Master")) userData.badges.push("Master");
+        if (userData.totalPoints >= 100000 && !userData.badges.includes("Legend")) userData.badges.push("Legend");
         
         if (correctStreak > userData.bestStreak) userData.bestStreak = correctStreak;
         
@@ -1296,8 +1331,8 @@
 
     function updatePointsUI() { 
         const pd = document.getElementById('points-display'); 
-        pd.innerHTML = `⭐ Points: ${userData.totalPoints} | Daily Goal: ${userData.dailyPoints} / 100`; 
-        if (userData.dailyPoints >= 100) pd.classList.add('points-gold'); 
+        pd.innerHTML = `⭐ Points: ${userData.totalPoints} | Daily Goal: ${userData.dailyPoints} / 1000`; 
+        if (userData.dailyPoints >= 1000) pd.classList.add('points-gold'); 
         else pd.classList.remove('points-gold'); 
     }
 
@@ -1310,25 +1345,36 @@
     }
 
     function checkAnswer(phrase, el) {
+        clearInterval(roundTimer);
         let timeTaken = Date.now() - questionStartTime;
-        
+        let isDistracted = timeTaken >= TIME_DISTRACTED;
+
         if (phrase.pl === currentTarget.pl) {
-            correctStreak++; 
-            let pitchOffset = (correctStreak % 5) * 30; 
-            playNote(basePitch + pitchOffset, 0.15, 'sine');
+            let pts = 10;
             
-            if (correctStreak > 0 && correctStreak % 5 === 0) { 
-                basePitch = Math.min(basePitch + 20, 350); 
-                fireConfetti(correctStreak); 
+            if (isDistracted) {
+                pts = 0; 
+                correctStreak = 0; // Break streak due to distraction
+                basePitch = 220;
+                document.getElementById('feedback').innerText = t('correctSlow'); 
+                document.getElementById('feedback').style.color = "var(--gold)";
+            } else {
+                correctStreak++; 
+                let pitchOffset = (correctStreak % 5) * 30; 
+                playNote(basePitch + pitchOffset, 0.15, 'sine');
+                
+                if (correctStreak > 0 && correctStreak % 5 === 0) { 
+                    basePitch = Math.min(basePitch + 20, 350); 
+                    fireConfetti(correctStreak); 
+                }
+                
+                if (timeTaken > TIME_SLOW) pts -= 4; 
+                document.getElementById('feedback').innerText = t('correct'); 
+                document.getElementById('feedback').style.color = "var(--success-green)";
             }
             
-            let pts = 10; 
-            if (timeTaken > 4000) pts -= 4; 
             addPoints(pts);
-            
             stats[phrase.pl] = (stats[phrase.pl] || 0) + 1;
-            document.getElementById('feedback').innerText = t('correct'); 
-            document.getElementById('feedback').style.color = "var(--success-green)";
             
             if (currentLevel === "0") speak(phrase.pl + " jak " + phrase.word);
             
@@ -1339,8 +1385,6 @@
                 
                 let validPool = activePool.filter(p => p !== null);
                 if (validPool.length === 0) { 
-                    // Do not show Mastered logic inside checkAnswer anymore, let updateMap handle the notice box
-                    // document.getElementById('overlay').style.display='flex'; 
                     playSuccess(); 
                 } else {
                     startNewRound();
@@ -1350,7 +1394,10 @@
         } else {
             correctStreak = 0; 
             basePitch = 220; 
-            addPoints(-5); 
+            
+            // Do not heavily deduct if they were distracted, they probably just misclicked when returning
+            let pts = isDistracted ? 0 : -5; 
+            addPoints(pts); 
             playWrongSlide();
             
             stats[currentTarget.pl] = Math.max(MIN_SCORE, (stats[currentTarget.pl] || 0) - 1);
@@ -1372,7 +1419,6 @@
 
     function resetLevelMastery() {
         if(confirm("Are you sure you want to practice this level again?")) {
-            // Track Mastery repetition (Don't track custom C or review R)
             if (currentLevel !== "C" && currentLevel !== "R" && currentLevel !== "0") {
                 userData.levelCompletions[currentLevel] = (userData.levelCompletions[currentLevel] || 0) + 1;
                 localStorage.setItem('pl_user_data', JSON.stringify(userData));
@@ -1385,7 +1431,7 @@
             updateMap(); 
             updateTabCounts(); 
             startNewRound();
-            scanLibrary(); // Re-scan to update the UI label badges
+            scanLibrary(); 
         }
     }
 
@@ -1402,7 +1448,6 @@
         const isPractice = document.getElementById('tab-learning').classList.contains('active');
         let validPool = isPractice ? activePool.filter(p => p !== null) : [];
         
-        // Completion Notice Logic
         if (isPractice && validPool.length === 0 && document.getElementById('search-bar').value === "") {
             const notice = document.createElement('div'); 
             notice.className = 'review-notice';
@@ -1424,12 +1469,10 @@
             return;
         }
 
-        // Banked vs Practice Rendering
         let list = [];
         if (isPractice) {
             list = activePool;
         } else {
-            // In Banked tab, show phrases that meet the target
             if (currentLevel === "R") {
                 list = phrasesData.filter(p => (stats[p.pl]||0) >= 0);
             } else {
@@ -1461,7 +1504,6 @@
                 tile.style.backgroundColor = `rgba(52, 152, 219, ${(Math.abs(score) / 2) + 0.4})`; 
                 tile.style.color = "white"; 
             } else if (score > 0) { 
-                // For Level R, score of 0 or higher is considered "Mastered" visually before it vanishes
                 let targetHit = currentLevel === "R" ? score >= 0 : score >= THRESHOLD;
                 
                 if (targetHit) {
@@ -1476,7 +1518,6 @@
             area.appendChild(tile);
         });
         
-        // Progress Bar update
         if (phrasesData.length) {
             let mCount = 0;
             if (currentLevel === "R") {
@@ -1536,6 +1577,114 @@
         if(confirm("Clear ALL data and restart?")) { 
             localStorage.clear(); location.reload(); 
         } 
+    }
+
+    // ==========================================
+    // HANDS FREE
+    // ==========================================
+    let hfActive = false, hfIndex = 0, hfPhrases = [], hfPauseDur = 3000, hfAbort = false, hfIsPaused = false;
+    
+    function setPauseDuration(sec) { 
+        hfPauseDur = sec * 1000; 
+        document.querySelectorAll('.pause-option').forEach(o => o.classList.remove('active')); 
+        event.target.classList.add('active'); 
+    }
+    
+    async function openHandsFree() {
+        document.getElementById('settings-overlay').style.display = 'none'; 
+        hfActive = true; 
+        hfAbort = false; 
+        hfIsPaused = false; 
+        initAudioContext();
+        clearInterval(roundTimer); // Ensure game timer is stopped
+        
+        hfPhrases = phrasesData; 
+        hfIndex = 0;
+        
+        document.getElementById('hf-overlay').style.display = 'flex'; 
+        document.getElementById('hf-level-indicator').innerText = document.getElementById('lvl-current').innerText;
+        runHandsFreeLoop();
+    }
+    
+    function closeHandsFree() { 
+        hfActive = false; 
+        hfAbort = true; 
+        window.speechSynthesis.cancel(); 
+        document.getElementById('hf-overlay').style.display = 'none'; 
+        startNewRound(); 
+    }
+    
+    function togglePlayPauseHF() { 
+        if(hfIsPaused) { 
+            hfIsPaused = false; 
+            document.getElementById('hf-pp-btn').innerText = "⏸ Pause"; 
+            runHandsFreeLoop(); 
+        } else { 
+            hfIsPaused = true; 
+            hfAbort = true; 
+            window.speechSynthesis.cancel(); 
+            document.getElementById('hf-pp-btn').innerText = "▶ Resume"; 
+        } 
+    }
+    
+    function skipPhraseHF() { 
+        hfAbort = true; 
+        setTimeout(() => { 
+            hfAbort = false; 
+            hfIndex++; 
+            runHandsFreeLoop(); 
+        }, 100); 
+    }
+    
+    async function runHandsFreeLoop() {
+        hfAbort = false;
+        while (hfActive && !hfIsPaused && hfIndex < hfPhrases.length) {
+            const p = hfPhrases[hfIndex];
+            
+            document.getElementById('hf-pl').innerText = p.pl; 
+            document.getElementById('hf-en').innerText = p.en;
+            document.getElementById('hf-counter').innerText = `${hfIndex + 1} / ${hfPhrases.length}`;
+            document.getElementById('hf-bar').style.width = ((hfIndex / hfPhrases.length) * 100) + "%";
+            
+            let plText = currentLevel === "0" ? p.pl + " jak " + p.word : getGenderText(p);
+            
+            await speakAsync(plText, 1.0); if(hfAbort) break; 
+            await sleep(hfPauseDur); if(hfAbort) break;
+            
+            await speakAsync(p.en, 1.0, 'en-US'); if(hfAbort) break; 
+            await sleep(hfPauseDur); if(hfAbort) break;
+            
+            await speakAsync(plText, 0.5); if(hfAbort) break; 
+            await sleep(hfPauseDur); if(hfAbort) break;
+            
+            await speakAsync(plText, 1.0); if(hfAbort) break; 
+            await sleep(1000); if(hfAbort) break;
+            
+            hfIndex++;
+        }
+        
+        if (hfIndex >= hfPhrases.length && !hfIsPaused && !hfAbort) { 
+            playSuccess(); 
+            closeHandsFree(); 
+            advanceLevel(); 
+        }
+    }
+    
+    function speakAsync(text, rate = 1.0, lang = 'pl-PL') { 
+        return new Promise(resolve => { 
+            if (hfAbort || hfIsPaused) { resolve(); return; } 
+            initAudioContext(); 
+            const u = new SpeechSynthesisUtterance(text); 
+            u.lang = lang; 
+            u.rate = rate; 
+            u.onend = () => resolve(); 
+            u.onerror = () => resolve(); 
+            speechSynthesis.speak(u); 
+        }); 
+    }
+    
+    function sleep(ms) { 
+        return new Promise(resolve => setTimeout(resolve, ms)); 
     }
 
     // ==========================================
