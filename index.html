@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v12.0</title>
+    <title>Polish Phrase Master v13.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -115,28 +115,47 @@
             width: 95%; 
             max-width: 450px; 
             margin: 0 auto; 
-            padding: 8px 0; 
+            padding: 10px 0; 
             display: flex; 
             flex-direction: column; 
-            gap: 8px; 
         }
-        
-        .main-level-indicator {
+
+        /* DYNAMIC LEVEL SELECTOR & SEARCH TRIGGER */
+        .main-dropdown-trigger {
+            width: 100%; 
             background: var(--bg); 
             border: 1px solid #ccc; 
-            padding: 10px; 
-            border-radius: 8px; 
-            font-weight: 800; 
-            font-size: 0.9rem; 
-            text-align: center; 
             color: var(--pol-red); 
-            cursor: pointer;
+            padding: 10px 12px; 
+            border-radius: 8px; 
+            font-size: 0.95rem; 
+            font-weight: 800; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            cursor: pointer; 
+            box-sizing: border-box; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
-        .main-level-indicator:active { transform: scale(0.98); }
+        .main-dropdown-trigger::after { content: '▼'; font-size: 10px; color: #888; }
+        .main-dropdown-trigger:active { transform: scale(0.98); }
+
+        .search-trigger-btn {
+            background: var(--bg); 
+            border: 1px solid #ccc; 
+            color: var(--text);
+            border-radius: 8px; 
+            width: 42px; 
+            display: flex; 
+            align-items: center;
+            justify-content: center; 
+            cursor: pointer; 
+            font-size: 1.2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+            flex-shrink: 0;
+            transition: transform 0.1s;
+        }
+        .search-trigger-btn:active { transform: scale(0.95); }
 
         .search-box { 
             width: 100%; 
@@ -150,6 +169,23 @@
             outline: none; 
             box-sizing: border-box; 
         }
+
+        .custom-dropdown { position: relative; width: 100%; }
+        
+        .dropdown-menu { 
+            position: absolute; top: 100%; left: 0; right: 0; background: var(--card); 
+            border: 1px solid #ccc; border-radius: 8px; max-height: 350px; overflow-y: auto; 
+            z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-top: 5px;
+        }
+        .dropdown-menu.show { display: block; }
+        
+        .dropdown-item { 
+            padding: 12px; font-size: 0.9rem; font-weight: bold; 
+            border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); 
+            display: flex; justify-content: space-between; align-items: center; 
+        }
+        .dropdown-item.mastered { color: #888; }
+        .dropdown-item.sandbox { color: var(--pol-red); background: #fff0f0; }
 
         .progress-wrapper { position: relative; width: 100%; }
         .progress-container { width: 100%; height: 4px; background: #ddd; }
@@ -177,17 +213,41 @@
         .tab { flex: 1; padding: 10px; text-align: center; font-size: 0.8rem; font-weight: bold; cursor: pointer; opacity: 0.4; }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--pol-red); color: var(--pol-red); }
 
-        /* 3x3 GRID */
+        /* GRID SYSTEM (Standard 3x3 vs Level 0 5-Col) */
         .map-section { flex-grow: 1; padding: 10px 8px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; width: 100%; box-sizing: border-box; }
+        
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 380px; margin: auto 0; }
-        .tile { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 6px; text-align: center; font-size: 0.8rem; font-weight: 700; line-height: 1.2; box-shadow: 0 3px 0px rgba(0,0,0,0.15); transition: background 0.2s, transform 0.1s; border: 2px solid transparent; word-wrap: break-word; overflow: hidden; }
+        
+        /* LEVEL 0 SPECIFIC GRID */
+        .grid.lvl0 { 
+            grid-template-columns: repeat(5, 1fr); 
+            grid-template-rows: auto; 
+            gap: 6px; 
+            max-width: 400px; 
+            margin: 0 auto; 
+        }
+
+        .tile { 
+            aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; 
+            background: var(--tile-bg); border-radius: 8px; cursor: pointer; padding: 6px; 
+            text-align: center; font-size: 0.8rem; font-weight: 700; line-height: 1.2; 
+            box-shadow: 0 3px 0px rgba(0,0,0,0.15); transition: background 0.2s, transform 0.1s; 
+            border: 2px solid transparent; word-wrap: break-word; overflow: hidden; 
+        }
+
+        .grid.lvl0 .tile { padding: 4px; border-radius: 6px; box-shadow: 0 2px 0px rgba(0,0,0,0.15); }
+
         .tile:active { transform: translateY(3px); box-shadow: 0 0 0 rgba(0,0,0,0.15); }
+        .grid.lvl0 .tile:active { transform: translateY(2px); }
+
         .tile.wrong { background: var(--wrong-blue) !important; color: white !important; }
         .tile.mastered-border { border-color: var(--gold); box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
 
-        .lvl0-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
-        .lvl0-big { font-size: 1.3rem; font-weight: 800; color: var(--pol-red); }
-        .lvl0-sub { font-size: 0.7rem; color: #666; }
+        /* LEVEL 0 TILE CONTENT */
+        .lvl0-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; }
+        .lvl0-big { font-size: 1.2rem; font-weight: 900; color: var(--pol-red); margin-bottom: 2px; }
+        .lvl0-sub { font-size: 0.6rem; color: #666; font-weight: bold; }
+        .lvl0-emoji { font-size: 1rem; margin-top: 2px; }
 
         /* SEARCH RESULTS & SANDBOX */
         #search-results-list { width: 100%; max-width: 380px; display: none; flex-direction: column; gap: 8px; padding-bottom: 20px; }
@@ -262,14 +322,6 @@
 
         .settings-btn { width: 100%; padding: 12px; background: var(--bg); border: 1px solid #ccc; border-radius: 8px; font-weight: bold; color: var(--text); cursor: pointer; margin-top: 10px; font-size: 0.95rem; display: flex; justify-content: center; align-items: center; gap: 8px; }
         .settings-btn.danger { color: #e74c3c; border-color: #ffcccc; background: #fff0f0; }
-
-        .custom-dropdown { position: relative; width: 100%; margin-top: 5px; }
-        .dropdown-trigger { width: 100%; background: var(--bg); border: 1px solid #ccc; color: var(--text); padding: 12px; border-radius: 8px; font-size: 0.95rem; font-weight: 800; display: flex; align-items: center; justify-content: space-between; cursor: pointer; box-sizing: border-box; }
-        .dropdown-menu { position: absolute; top: 100%; left: 0; right: 0; background: var(--card); border: 1px solid #ccc; border-radius: 8px; max-height: 250px; overflow-y: auto; z-index: 1000; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .dropdown-menu.show { display: block; }
-        .dropdown-item { padding: 12px; font-size: 0.9rem; font-weight: bold; border-bottom: 1px solid #eee; cursor: pointer; color: var(--text); display: flex; justify-content: space-between; align-items: center; }
-        .dropdown-item.mastered { color: #888; }
-        .dropdown-item.sandbox { color: var(--pol-red); background: #fff0f0; }
 
         /* Help Specifics */
         details { background: var(--card); border: 1px solid #ddd; border-radius: 8px; margin-bottom: 10px; padding: 12px; }
@@ -359,10 +411,10 @@
             <details>
                 <summary>🎯 Scoring & Sandbox</summary>
                 <p><b>Points:</b> +10 for correct. -5 for mistakes. -4 penalty if you take longer than 4 seconds.<br>Win streaks trigger confetti at streaks of 5, 25, 50, and 70!</p>
-                <p><b>Sandbox:</b> Search for a word. Use <b>Translate</b> to build a list in <b>"Lvl C"</b>. Export Lvl C from the settings gear icon to permanently save your list.</p>
+                <p><b>Sandbox:</b> Tap the 🔍 icon to search for a word. Use <b>Translate</b> to build a list in <b>"Lvl C"</b>. Export Lvl C from the settings gear icon to permanently save your list.</p>
             </details>
 
-            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master v12.0</div>
+            <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master v13.0</div>
         </div>
     </div>
 </div>
@@ -374,14 +426,6 @@
             <button class="modal-close" onclick="toggleSettings()">×</button>
         </div>
         <div class="modal-body">
-            
-            <div class="settings-section">
-                <h3>📚 Course Level</h3>
-                <div class="custom-dropdown">
-                    <div class="dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">Loading levels...</div>
-                    <div class="dropdown-menu" id="lvl-menu"></div>
-                </div>
-            </div>
 
             <div class="settings-section">
                 <h3>🗣️ Voice Gender</h3>
@@ -452,10 +496,16 @@
     <div class="points-banner" id="points-display">⭐ Points: 0 | Daily Goal: 0 / 100</div>
     
     <div class="controls-row">
-        <div class="main-level-indicator" id="main-lvl-display" onclick="toggleSettings()">
-            <span>Loading...</span> <span style="font-size:1.2rem;">⚙️</span>
+        <div style="display:flex; gap:8px; align-items:center;">
+            <div class="custom-dropdown" style="flex:1;">
+                <div class="main-dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">
+                    Loading levels...
+                </div>
+                <div class="dropdown-menu" id="lvl-menu"></div>
+            </div>
+            <button class="search-trigger-btn" onclick="toggleSearch()">🔍</button>
         </div>
-        <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary..." oninput="handleSearch()">
+        <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary & translate..." oninput="handleSearch()" style="display:none; margin-top:8px;">
     </div>
 </div>
 
@@ -558,7 +608,13 @@
             repeatLevel: "Repeat Level",
             btnSwap: "Swap", 
             btnListen: "Listen", 
-            btnSpeak: "Speak"
+            btnSpeak: "Speak",
+            male: "Male",
+            female: "Female",
+            both: "Both",
+            genderPrefix: "Gender",
+            uiPrefix: "UI Language",
+            hard: "Hard Mode"
         },
         pl: { 
             title: "Polskie Zwroty", 
@@ -574,7 +630,13 @@
             repeatLevel: "Powtórz poziom",
             btnSwap: "Zamień", 
             btnListen: "Słuchaj", 
-            btnSpeak: "Mów"
+            btnSpeak: "Mów",
+            male: "Mężczyzna",
+            female: "Kobieta",
+            both: "Oboje",
+            genderPrefix: "Rodzaj",
+            uiPrefix: "Język",
+            hard: "Trudny"
         }
     };
 
@@ -629,8 +691,19 @@
     function toggleSettings() {
         const el = document.getElementById('settings-overlay');
         el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
-        // Set Segmented Buttons
         setGender(currentGender, false);
+    }
+
+    function toggleSearch() {
+        const sb = document.getElementById('search-bar');
+        if (sb.style.display === 'none' || sb.style.display === '') {
+            sb.style.display = 'block';
+            sb.focus();
+        } else {
+            sb.style.display = 'none';
+            sb.value = '';
+            handleSearch(); // Clears results and restores grid
+        }
     }
 
     // Close Dropdown if clicked outside
@@ -660,12 +733,11 @@
         currentGender = g;
         localStorage.setItem('polishMasterGender', g);
         
-        // Update Segmented Control UI
         document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
         document.getElementById('btn-gen-' + g).classList.add('active');
         
         if (updateGrid) {
-            activePool = []; // Force refresh grid slots
+            activePool = []; 
             refreshActivePool(); 
             updateMap(); 
             startNewRound(); 
@@ -831,6 +903,11 @@
         
         let match = (tClean === eClean);
         
+        // Level 0 specific logic for mic (allow speaking the letter OR the word)
+        if (currentLevel === "0" && cleanStr(currentTarget.word) === tClean) {
+            match = true;
+        }
+        
         // Check variants
         if (!isSwapped && currentTarget.variants) {
             if (cleanStr(currentTarget.variants.m) === tClean || cleanStr(currentTarget.variants.f) === tClean) {
@@ -841,6 +918,7 @@
         if (match) {
             let targetTile = Array.from(document.querySelectorAll('.tile')).find(t => 
                 cleanStr(t.innerText) === eClean || 
+                (currentLevel === "0" && t.innerHTML.toLowerCase().includes(tClean)) ||
                 (currentTarget.variants && (cleanStr(t.innerText) === cleanStr(currentTarget.variants.m) || cleanStr(t.innerText) === cleanStr(currentTarget.variants.f)))
             );
             
@@ -864,7 +942,7 @@
     }
 
     // ==========================================
-    // LIBRARY & LEVEL MANAGEMENT (FIXED SCANNER)
+    // LIBRARY & LEVEL MANAGEMENT (SAFE SCANNER)
     // ==========================================
     async function scanLibrary() {
         const menu = document.getElementById('lvl-menu'); 
@@ -951,22 +1029,20 @@
         localStorage.setItem('pl_current_level_idx', currentLevel);
         
         document.getElementById('lvl-menu').classList.remove('show');
-        document.getElementById('settings-overlay').style.display = 'none'; // Close Settings
         
         document.getElementById('search-results-list').style.display = 'none'; 
         document.getElementById('mastery-map').style.display = 'grid'; 
         document.getElementById('search-bar').value = '';
+        document.getElementById('search-bar').style.display = 'none'; // Ensure hidden on switch
         
         const file = levelList.find(l => l.id == currentLevel); 
         phrasesData = file ? file.data.phrases : [];
         
-        // Update Main Screen UI Indicator
-        document.getElementById('main-lvl-display').innerHTML = `<span>Lvl ${currentLevel}: ${file ? file.desc : ''}</span> <span>⚙️</span>`;
         document.getElementById('lvl-current').innerText = `Lvl ${currentLevel}: ${file ? file.desc : ''}`;
         
         updateUILanguage(); 
         
-        activePool = []; // Reset grid completely
+        activePool = []; 
         recentPhrasesQueue = []; 
         
         refreshActivePool(); 
@@ -1013,7 +1089,7 @@
                         <span style="font-size:0.7rem; color:var(--pol-red); font-weight:bold;">LVL ${p.lvl}</span>
                         <button class="copy-btn-search" onclick="copyToClipboard('${p.pl.replace(/'/g, "\\'")}', event)">📋</button>
                     </div>`;
-                item.onclick = () => selectLevel(p.lvl); 
+                item.onclick = () => { selectLevel(p.lvl); }; 
                 listArea.appendChild(item);
             });
         } else {
@@ -1103,7 +1179,7 @@
     // ==========================================
     function refreshActivePool() { 
         if (currentLevel === "0") { 
-            activePool = [...phrasesData]; 
+            activePool = phrasesData.filter(p => (stats[p.pl] || 0) < THRESHOLD); 
             return; 
         }
         
@@ -1288,8 +1364,10 @@
     function updateMap() {
         const area = document.getElementById('mastery-map'); 
         area.innerHTML = '';
-        const isPractice = document.getElementById('tab-learning').classList.contains('active');
         
+        area.className = (currentLevel === "0") ? 'grid lvl0' : 'grid';
+        
+        const isPractice = document.getElementById('tab-learning').classList.contains('active');
         let validPool = isPractice ? activePool.filter(p => p !== null) : [];
         
         if (isPractice && validPool.length === 0 && document.getElementById('search-bar').value === "") {
@@ -1521,7 +1599,7 @@
         initSpeech(); 
         initSpeechRecognition(); 
         updateUILanguage(); 
-        setGender(currentGender, false); // Set initial UI for Segmented control
+        setGender(currentGender, false); 
         scanLibrary(); 
     };
 
