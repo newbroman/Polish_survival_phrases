@@ -1090,14 +1090,15 @@
                             <li><i>Crucial:</i> Make sure your phone's physical "Silent/Ring" switch is set to Ring!
                             </li>
                         </ol>
-                        <b>🤖 Android:</b>
-                        <ol style="margin-top:4px; padding-left:20px;">
-                            <li>Go to <b>Settings > General Management</b> (or System).</li>
-                            <li>Tap <b>Text-to-speech output</b>.</li>
-                            <li>Ensure <b>Speech Services by Google</b> is the preferred engine.</li>
-                            <li>Tap the gear icon ⚙️ > <b>Install voice data</b> > <b>Polish</b>.</li>
-                        </ol>
-                    </div>
+                        <div style="margin-top: 15px;">
+                            <b>🤖 Android:</b>
+                            <ol style="margin-top:4px; padding-left:20px;">
+                                <li>Go to <b>Settings > General Management</b> (or System).</li>
+                                <li>Tap <b>Text-to-speech output</b>.</li>
+                                <li>Ensure <b>Speech Services by Google</b> is the preferred engine.</li>
+                                <li>Tap the gear icon ⚙️ > <b>Install voice data</b> > <b>Polish</b>.</li>
+                            </ol>
+                        </div>
                 </details>
 
                 <details>
@@ -1250,8 +1251,9 @@
             <div style="width:30px;"></div>
             <div id="q-text" class="q-text">Ready?</div>
 
-            <button id="btn-hint" onclick="showHint()"
-                style="background:none; border:none; font-size:1.5rem; cursor:pointer; display:none; padding:0; width:30px; line-height:1;">💡</button>
+            <button class="search-trigger-btn" onclick="toggleContentSwap()"
+                style="width:36px; height:36px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer;"
+                title="Swap Language">🔄</button>
         </div>
 
         <div id="feedback" class="feedback"></div>
@@ -1267,11 +1269,18 @@
         <div id="study-view">
             <div class="flashcard" id="study-flashcard">
 
-                <button id="fc-hint-btn" onclick="showHint()"
-                    style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; display:none; padding:0; line-height:1;">💡</button>
+                <button class="search-trigger-btn" onclick="toggleContentSwap()"
+                    style="position:absolute; top:15px; left:15px; width:36px; height:36px; border-radius:18px; background:var(--bg); border:1px solid #ddd; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer;"
+                    title="Swap Language">🔄</button>
+                <button id="fc-hint-btn" onclick="toggleStudyNotes()"
+                    style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; display:none; padding:0; line-height:1;"
+                    title="Toggle Grammar Notes">💡</button>
 
                 <div class="fc-pl" id="fc-pl">Polish</div>
                 <div class="fc-en" id="fc-en">English</div>
+                <div id="fc-notes-container"
+                    style="display:none; font-size:0.95rem; color:#666; margin-top:20px; line-height:1.4; text-align:center; padding-top:10px; border-top:1px dashed #ccc;">
+                </div>
                 <button class="fc-audio-btn" onclick="playStudyAudio(event)">🔊</button>
             </div>
             <div class="fc-controls">
@@ -1283,13 +1292,10 @@
     </div>
 
     <div class="action-footer">
-        <button class="action-btn" onclick="toggleContentSwap()">
-            <span class="action-icon">🔄</span>
-            <span id="lbl-btn-swap">Swap</span>
-        </button>
-        <button class="action-btn" onclick="handleSpeakerTap()">
+        <button class="action-btn" id="footer-listen-btn" onclick="handleSpeakerTap()"
+            style="background:var(--success-green); color:white; border-color:var(--success-green); width:66%;">
             <span class="action-icon">🔊</span>
-            <span id="lbl-btn-listen">Listen</span>
+            <span id="lbl-btn-listen">Listen (1x)</span>
         </button>
         <button class="action-btn" id="mic-btn" onclick="toggleMic()">
             <span class="action-icon">🎤</span>
@@ -1381,6 +1387,8 @@
         let levelList = [];
         let allPhrasesCache = [];
         let currentTarget = null;
+        let currentPlaybackSpeed = 1.0;
+        let studyNotesVisible = true;
         let recentPhrasesQueue = [];
 
         let isSwapped = false;
@@ -1649,26 +1657,40 @@
 
             let p = phrasesData[studyIndex];
             currentTarget = p;
+            currentPlaybackSpeed = 1.0;
+            if (document.getElementById('lbl-btn-listen')) {
+                document.getElementById('lbl-btn-listen').innerText = 'Listen (1x)';
+            }
 
-            let plText = currentLevel === "0" ? `${p.pl} jak ${p.word}` : getGenderText(p);
-            let enText = p.en;
+            if (p) {
+                updateQuestionText(); // Assuming this function is defined elsewhere or will be added.
+                document.getElementById('fc-pl').innerText = isSwapped ? p.en : p.pl;
+                document.getElementById('fc-en').innerText = isSwapped ? p.pl : p.en;
 
-            if (isSwapped) {
-                document.getElementById('fc-pl').innerText = enText;
-                document.getElementById('fc-en').innerText = plText;
+                let notesHtml = "";
+                if (p.note) notesHtml += `<div style="margin-bottom:8px;"><b>Note:</b> ${p.note}</div>`;
+                if (p.grammar_1) notesHtml += `<div style="margin-bottom:4px;"><b>G1:</b> ${p.grammar_1}</div>`;
+                if (p.grammar_2) notesHtml += `<div style="margin-bottom:4px;"><b>G2:</b> ${p.grammar_2}</div>`;
+                if (p.grammar_3) notesHtml += `<div style="margin-bottom:4px;"><b>G3:</b> ${p.grammar_3}</div>`;
+
+                let notesContainer = document.getElementById('fc-notes-container');
+                if (notesHtml) {
+                    notesContainer.innerHTML = notesHtml;
+                    notesContainer.style.display = studyNotesVisible ? 'block' : 'none';
+                    if (document.getElementById('fc-hint-btn')) document.getElementById('fc-hint-btn').style.display = 'block';
+                } else {
+                    if (notesContainer) notesContainer.style.display = 'none';
+                    if (document.getElementById('fc-hint-btn')) document.getElementById('fc-hint-btn').style.display = 'none';
+                }
             } else {
-                document.getElementById('fc-pl').innerText = plText;
-                document.getElementById('fc-en').innerText = enText;
+                document.getElementById('fc-pl').innerText = "Empty";
+                document.getElementById('fc-en').innerText = "";
+                document.getElementById('fc-counter').innerText = "0 / 0";
+                if (document.getElementById('fc-hint-btn')) document.getElementById('fc-hint-btn').style.display = 'none';
+                if (document.getElementById('fc-notes-container')) document.getElementById('fc-notes-container').style.display = 'none';
+                currentTarget = null;
             }
-
             document.getElementById('fc-counter').innerText = `${studyIndex + 1} / ${phrasesData.length}`;
-
-            // Phase 2: Show Hint Button on Flashcard if phrase has a 'note'
-            if (p.note && document.getElementById('fc-hint-btn')) {
-                document.getElementById('fc-hint-btn').style.display = 'block';
-            } else if (document.getElementById('fc-hint-btn')) {
-                document.getElementById('fc-hint-btn').style.display = 'none';
-            }
         }
 
         function nextStudyCard() {
@@ -2256,11 +2278,9 @@
             if (!currentTarget) return;
             document.getElementById('q-text').innerText = hardMode ? "👂 Listen..." : (isSwapped ? currentTarget.pl : currentTarget.en);
 
-            // Phase 2: Show Hint button if the phrase has a note
-            if (currentTarget.note && document.getElementById('btn-hint')) {
-                document.getElementById('btn-hint').style.display = 'block';
-            } else if (document.getElementById('btn-hint')) {
-                document.getElementById('btn-hint').style.display = 'none';
+            currentPlaybackSpeed = 1.0;
+            if (document.getElementById('lbl-btn-listen')) {
+                document.getElementById('lbl-btn-listen').innerText = 'Listen (1x)';
             }
         }
 
@@ -2650,7 +2670,24 @@
 
         function handleSpeakerTap() {
             if (currentTarget) {
-                speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl);
+                speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl, currentPlaybackSpeed);
+
+                if (currentPlaybackSpeed === 1.0) currentPlaybackSpeed = 0.5;
+                else if (currentPlaybackSpeed === 0.5) currentPlaybackSpeed = 0.25;
+                else currentPlaybackSpeed = 1.0;
+
+                let nextLabel = currentPlaybackSpeed === 1.0 ? '1x' : (currentPlaybackSpeed === 0.5 ? '0.5x' : '0.25x');
+                if (document.getElementById('lbl-btn-listen')) {
+                    document.getElementById('lbl-btn-listen').innerText = 'Listen (' + nextLabel + ')';
+                }
+            }
+        }
+
+        function toggleStudyNotes() {
+            studyNotesVisible = !studyNotesVisible;
+            let notesContainer = document.getElementById('fc-notes-container');
+            if (notesContainer && notesContainer.innerHTML) {
+                notesContainer.style.display = studyNotesVisible ? 'block' : 'none';
             }
         }
 
