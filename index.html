@@ -1293,11 +1293,15 @@
 
     <div class="action-footer">
         <button class="action-btn" id="footer-listen-btn" onclick="handleSpeakerTap()"
-            style="background:var(--success-green); color:white; border-color:var(--success-green); width:66%;">
+            style="background:var(--success-green); color:white; border-color:var(--success-green); flex: 2; padding: 0 5px;"
+            title="Listen / Slow Down">
             <span class="action-icon">🔊</span>
-            <span id="lbl-btn-listen">Listen (1x)</span>
+            <span id="lbl-btn-listen" style="font-size: 0.85rem;">Listen (1x) - Tap to slow</span>
         </button>
-        <button class="action-btn" id="mic-btn" onclick="toggleMic()">
+        <button class="action-btn" onclick="togglePauseAudio()" style="flex: 0.5; padding: 0;" title="Pause/Resume">
+            <span class="action-icon" id="pause-icon" style="margin:0;">⏸️</span>
+        </button>
+        <button class="action-btn" id="mic-btn" onclick="toggleMic()" style="flex: 1;">
             <span class="action-icon">🎤</span>
             <span id="lbl-btn-speak">Speak</span>
         </button>
@@ -1659,7 +1663,7 @@
             currentTarget = p;
             currentPlaybackSpeed = 1.0;
             if (document.getElementById('lbl-btn-listen')) {
-                document.getElementById('lbl-btn-listen').innerText = 'Listen (1x)';
+                document.getElementById('lbl-btn-listen').innerText = 'Listen (1x) - Tap to slow';
             }
 
             if (p) {
@@ -2280,7 +2284,7 @@
 
             currentPlaybackSpeed = 1.0;
             if (document.getElementById('lbl-btn-listen')) {
-                document.getElementById('lbl-btn-listen').innerText = 'Listen (1x)';
+                document.getElementById('lbl-btn-listen').innerText = 'Listen (1x) - Tap to slow';
             }
         }
 
@@ -2678,7 +2682,23 @@
 
                 let nextLabel = currentPlaybackSpeed === 1.0 ? '1x' : (currentPlaybackSpeed === 0.5 ? '0.5x' : '0.25x');
                 if (document.getElementById('lbl-btn-listen')) {
-                    document.getElementById('lbl-btn-listen').innerText = 'Listen (' + nextLabel + ')';
+                    document.getElementById('lbl-btn-listen').innerText = 'Listen (' + nextLabel + ') - Tap to slow';
+                }
+            }
+        }
+
+        let isAudioPaused = false;
+        function togglePauseAudio() {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.paused) {
+                let icon = document.getElementById('pause-icon');
+                if (window.speechSynthesis.paused) {
+                    window.speechSynthesis.resume();
+                    isAudioPaused = false;
+                    if (icon) icon.innerText = '⏸️';
+                } else {
+                    window.speechSynthesis.pause();
+                    isAudioPaused = true;
+                    if (icon) icon.innerText = '▶️';
                 }
             }
         }
