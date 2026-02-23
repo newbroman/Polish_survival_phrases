@@ -385,6 +385,7 @@
         .tile {
             aspect-ratio: 1/1;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             background: var(--tile-bg);
@@ -2787,23 +2788,19 @@
 
                 if (currentLevel === "0") {
                     tile.innerHTML = `<div class="lvl0-content"><div class="lvl0-big">${p.pl}</div><div class="lvl0-sub">${p.en}</div><div class="lvl0-emoji">${p.e || ''}</div></div>`;
-                } else if (!isPractice) {
+                } else {
                     const plText = getGenderText(p);
                     const enText = p.en;
                     const emoji = p.emoji || p.e || '';
+
+                    let primaryText = isSwapped && isPractice ? enText : plText;
+                    let secondaryText = isSwapped && isPractice ? plText : enText;
+
                     tile.innerHTML = `
                         ${emoji ? `<div style="font-size: 1.5rem; margin-bottom: 5px;">${emoji}</div>` : ''}
-                        <div style="font-weight: bold; margin-bottom: 4px;">${plText}</div>
-                        <div style="font-size: 0.85em; opacity: 0.7;">${enText}</div>
+                        <div style="font-weight: bold; margin-bottom: 4px; font-size: 1.1em;">${primaryText}</div>
+                        <div style="font-size: 0.8em; opacity: 0.75;">${secondaryText}</div>
                     `;
-                } else {
-                    const text = isSwapped ? p.en : getGenderText(p);
-                    const emoji = p.emoji || p.e || '';
-                    if (emoji) {
-                        tile.innerHTML = `<div style="font-size: 1.5rem; margin-bottom: 5px;">${emoji}</div><div>${text}</div>`;
-                    } else {
-                        tile.innerText = text;
-                    }
                 }
 
                 const score = stats[p.pl] ? stats[p.pl].score : 0;
