@@ -1301,6 +1301,11 @@
         <button class="action-btn" onclick="togglePauseAudio()" style="flex: 0.5; padding: 0;" title="Pause/Resume">
             <span class="action-icon" id="pause-icon" style="margin:0;">⏸️</span>
         </button>
+        <button class="action-btn" id="footer-save-btn" onclick="saveCurrentToCustom()" style="flex: 1.5; padding: 0;"
+            title="Save to Sandbox">
+            <span class="action-icon">⭐</span>
+            <span id="lbl-btn-save">Save</span>
+        </button>
         <button class="action-btn" id="mic-btn" onclick="toggleMic()" style="flex: 1;">
             <span class="action-icon">🎤</span>
             <span id="lbl-btn-speak">Speak</span>
@@ -2213,6 +2218,46 @@
                 if (btn1) btn1.disabled = false;
                 if (btn2) btn2.disabled = false;
             }
+        }
+
+        function saveCurrentToCustom() {
+            if (!currentTarget) return;
+
+            const btn = document.getElementById('footer-save-btn');
+            const lbl = document.getElementById('lbl-btn-save');
+
+            // Check if it already exists to prevent duplicate spam
+            const exists = customPhrases.phrases.some(p => p.pl === currentTarget.pl);
+
+            if (exists) {
+                lbl.innerText = "Already Saved!";
+                setTimeout(() => lbl.innerText = "Save", 2000);
+                return;
+            }
+
+            customPhrases.phrases.push({
+                id: currentTarget.id || "cust_" + Date.now(),
+                pl: currentTarget.pl,
+                en: currentTarget.en,
+                category: currentTarget.category || "Saved",
+                emoji: currentTarget.emoji || "",
+                note: currentTarget.note || ""
+            });
+
+            localStorage.setItem('pl_custom_level', JSON.stringify(customPhrases));
+
+            // Update the cache if we are currently viewing the custom level (though less likely in practice, still good)
+            const customList = levelList.find(l => l.id === "C");
+            if (customList) customList.data = customPhrases;
+            cacheAllPhrases();
+
+            lbl.innerText = "✅ Saved!";
+            btn.style.background = "#fff3cd"; // Give it a little flash color
+
+            setTimeout(() => {
+                lbl.innerText = "Save";
+                btn.style.background = "";
+            }, 2000);
         }
 
         function exportCustomLevel() {
