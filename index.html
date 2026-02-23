@@ -57,6 +57,7 @@
             display: flex;
             flex-direction: column;
             color: var(--text);
+            box-shadow: inset 0 0 20px rgba(52, 152, 219, 0.3);
         }
 
         /* HEADER & FLAG */
@@ -688,6 +689,11 @@
             pointer-events: none;
             user-select: none;
             transition: filter 0.2s;
+        }
+
+        /* INTERACTION FREEZE STATE */
+        .app-frozen {
+            pointer-events: none;
         }
 
         #pause-overlay {
@@ -1883,13 +1889,28 @@
             plVoice = window.speechSynthesis.getVoices().find(v => v.lang.startsWith('pl'));
         }
 
-        function speak(t, rate = 1.0) {
+        function speak(t, rate = 1.0, onEndCallback = null) {
             initAudioContext();
             window.speechSynthesis.cancel();
             const m = new SpeechSynthesisUtterance(t);
             if (plVoice) m.voice = plVoice;
             m.lang = 'pl-PL';
             m.rate = rate;
+
+            if (onEndCallback) {
+                let callbackFired = false;
+                const safeCallback = () => {
+                    if (!callbackFired) {
+                        callbackFired = true;
+                        onEndCallback();
+                    }
+                };
+                m.onend = safeCallback;
+                m.onerror = safeCallback;
+                // Fallback timeout in case the Web Speech API drops the ends event
+                setTimeout(safeCallback, 4000);
+            }
+
             window.speechSynthesis.speak(m);
         }
 
@@ -2422,6 +2443,8 @@
             if (!validPool.length) {
                 document.getElementById('q-text').innerText = "Done!";
                 if (document.getElementById('btn-hint')) document.getElementById('btn-hint').style.display = 'none';
+                isAppFrozen = false;
+                document.body.classList.remove('app-frozen');
                 return;
             }
 
@@ -2473,7 +2496,13 @@
                 }
             }, 50);
 
-            setTimeout(() => speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl), 300);
+            setTimeout(() => {
+                let textToSpeak = currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl;
+                speak(textToSpeak, 1.0, () => {
+                    isAppFrozen = false;
+                    document.body.classList.remove('app-frozen');
+                });
+            }, 300);
         }
 
         function addPoints(pts) {
@@ -2535,7 +2564,13 @@
         }
 
         // Phase 3: SRS Logic inside Check Answer
+        let isAppFrozen = false;
+
         function checkAnswer(phrase, el) {
+            if (isAppFrozen) return;
+            isAppFrozen = true;
+            document.body.classList.add('app-frozen');
+
             clearInterval(roundTimer);
             let timeTaken = Date.now() - questionStartTime;
             let isDistracted = timeTaken >= TIME_DISTRACTED;
@@ -2591,6 +2626,8 @@
                     let validPool = activePool.filter(p => p !== null);
                     if (validPool.length === 0) {
                         playSuccess();
+                        isAppFrozen = false;
+                        document.body.classList.remove('app-frozen');
                     } else {
                         startNewRound();
                     }
