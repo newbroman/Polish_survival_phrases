@@ -1,279 +1,565 @@
 {
   "level": 5,
-  "description": "Food & Dining - Restaurants & Ordering",
+  "description": "Food & Dining - Restaurants, Ordering & Cuisine",
   "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "s3_01",
-      "category": "Restaurant Basics",
-      "pl": "Stolik dla jednej osoby",
-      "en": "Table for one",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_02",
-      "category": "Restaurant Basics",
+      "id": "s5_01",
+      "category": "Arrival",
       "pl": "Stolik dla dwóch osób",
       "en": "Table for two",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🧑‍🤝‍🧑",
+      "note": "'Osób' is the genitive plural of 'osoba' (person). For one person, say 'dla jednej osoby'."
     },
     {
-      "id": "s3_03",
-      "category": "Restaurant Basics",
-      "pl": "Rezerwacja",
-      "en": "Reservation",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_04",
-      "category": "Restaurant Basics",
+      "id": "s5_02",
+      "category": "Arrival",
       "pl": "Mam rezerwację",
       "en": "I have a reservation",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🛎️",
+      "note": "'Mam' (I have) forces the noun into the accusative case ('-ę' ending)."
     },
     {
-      "id": "s3_05",
-      "category": "Restaurant Basics",
+      "id": "s5_03",
+      "category": "Arrival",
+      "pl": "Rezerwacja",
+      "en": "Reservation",
+      "level": 5,
+      "gender": null,
+      "emoji": "🗓️",
+      "note": "A feminine noun. Often you'll be asked 'Na jakie nazwisko?' (Under what name?)."
+    },
+    {
+      "id": "s5_04",
+      "category": "Arrival",
       "pl": "Menu, proszę",
       "en": "Menu, please",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "📜",
+      "note": "The word 'menu' is a French loanword and does not change its ending in Polish."
     },
     {
-      "id": "s3_06",
-      "category": "Restaurant Basics",
+      "id": "s5_05",
+      "category": "Arrival",
       "pl": "Rachunek, proszę",
       "en": "The bill, please",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🧾",
+      "note": "A crucial word! To ask for the check at the end of the meal."
     },
     {
-      "id": "s3_07",
-      "category": "Restaurant Basics",
-      "pl": "Czy mogę zapłacić kartą?",
-      "en": "Can I pay by card?",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_08",
-      "category": "Restaurant Basics",
-      "pl": "Razem czy osobno?",
-      "en": "Together or separate?",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_09",
-      "category": "Restaurant Basics",
-      "pl": "Razem",
-      "en": "Together",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_10",
-      "category": "Restaurant Basics",
-      "pl": "Osobno",
-      "en": "Separately",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_11",
-      "category": "Restaurant Basics",
-      "pl": "Napiwek",
-      "en": "Tip",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_12",
-      "category": "Restaurant Basics",
-      "pl": "Czy napiwek jest wliczony?",
-      "en": "Is tip included?",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_13",
-      "category": "Restaurant Basics",
-      "pl": "Paragon, proszę",
-      "en": "Receipt, please",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_14",
-      "category": "Restaurant Basics",
-      "pl": "Toaleta",
-      "en": "Restroom",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_15",
-      "category": "Restaurant Basics",
-      "pl": "Gdzie jest toaleta?",
-      "en": "Where is the restroom?",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_16",
-      "category": "Ordering",
+      "id": "s5_06",
+      "category": "Ordering Basics",
       "pl": "Poproszę...",
       "en": "I'll have... / I'd like...",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "💁",
+      "note": "The most polite and common way to order. Literally 'I will ask for...'. Follow with the accusative case."
     },
     {
-      "id": "s3_17",
-      "category": "Ordering",
+      "id": "s5_07",
+      "category": "Ordering Basics",
       "pl": "Dla mnie...",
       "en": "For me...",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🙋‍♂️",
+      "note": "'Dla' (for) takes the genitive case pronoun 'mnie' (me)."
     },
     {
-      "id": "s3_18",
-      "category": "Ordering",
+      "id": "s5_08",
+      "category": "Ordering Basics",
       "pl": "Co Pan/Pani poleca?",
       "en": "What do you recommend?",
       "level": 5,
       "gender": "both",
       "variants": {
-        "m": "Co Pan",
-        "f": "Pani poleca?"
-      }
+        "m": "Co Pan poleca?",
+        "f": "Co Pani poleca?"
+      },
+      "emoji": "🤵",
+      "note": "Very polite. Uses formal 'Pan' (Sir) or 'Pani' (Madam) + the 3rd person singular verb 'poleca'."
     },
     {
-      "id": "s3_19",
-      "category": "Ordering",
+      "id": "s5_09",
+      "category": "Ordering Basics",
       "pl": "Poproszę to samo",
       "en": "I'll have the same",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🔁",
+      "note": "A great shortcut if your friend just ordered something delicious!"
     },
     {
-      "id": "s3_20",
-      "category": "Ordering",
-      "pl": "Czy to jest pikantne?",
-      "en": "Is this spicy?",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_21",
-      "category": "Ordering",
-      "pl": "Nie za ostre",
-      "en": "Not too spicy",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_22",
-      "category": "Ordering",
-      "pl": "Bez cebuli",
-      "en": "No onions",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_23",
-      "category": "Ordering",
-      "pl": "Bez czosnku",
-      "en": "No garlic",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_24",
-      "category": "Ordering",
-      "pl": "Jeszcze jedno piwo",
-      "en": "Another beer",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_25",
-      "category": "Ordering",
-      "pl": "Jeszcze wodę",
-      "en": "More water",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_26",
-      "category": "Ordering",
-      "pl": "To wszystko",
-      "en": "That's all",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_27",
-      "category": "Ordering",
+      "id": "s5_10",
+      "category": "Ordering Basics",
       "pl": "Jeszcze nie",
       "en": "Not yet",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "⏱️",
+      "note": "Useful when the waiter asks if you are ready to order."
     },
     {
-      "id": "s3_28",
-      "category": "Ordering",
-      "pl": "Chwileczkę",
-      "en": "Just a moment",
+      "id": "s5_11",
+      "category": "Dining Culture",
+      "pl": "Smacznego",
+      "en": "Enjoy your meal / Bon appetit",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🍽️",
+      "note": "Always say this to your table before anyone starts eating! It's considered rude not to."
     },
     {
-      "id": "s3_29",
-      "category": "Ordering",
-      "pl": "Czy mogę zobaczyć menu?",
-      "en": "Can I see the menu?",
+      "id": "s5_12",
+      "category": "Dining Culture",
+      "pl": "Na zdrowie",
+      "en": "Cheers!",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🍻",
+      "note": "Literally means 'To health!'. Said when clinking glasses (and also when someone sneezes)."
     },
     {
-      "id": "s3_30",
-      "category": "Ordering",
-      "pl": "Co jest w tym daniu?",
-      "en": "What's in this dish?",
+      "id": "s5_13",
+      "category": "Dining Culture",
+      "pl": "Pyszne!",
+      "en": "Delicious!",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "😋",
+      "note": "A great compliment for the chef or waiter."
     },
     {
-      "id": "s3_31",
-      "category": "Ordering",
-      "pl": "Czy to jest mięso?",
-      "en": "Is this meat?",
+      "id": "s5_14",
+      "category": "Dining Culture",
+      "pl": "Napiwek",
+      "en": "Tip",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🪙",
+      "note": "Tipping is generally around 10% in Poland for good service in sit-down restaurants."
     },
     {
-      "id": "s3_32",
-      "category": "Ordering",
+      "id": "s5_15",
+      "category": "Dining Culture",
+      "pl": "Czy napiwek jest wliczony?",
+      "en": "Is tip included?",
+      "level": 5,
+      "gender": null,
+      "emoji": "💸",
+      "note": "Service charge isn't always included, though it often is for groups of 6 or more."
+    },
+    {
+      "id": "s5_16",
+      "category": "Meals",
+      "pl": "Śniadanie",
+      "en": "Breakfast",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍳",
+      "note": "Traditional Polish breakfasts usually feature open-faced sandwiches with cold cuts, cheese, and tomatoes."
+    },
+    {
+      "id": "s5_17",
+      "category": "Meals",
+      "pl": "Obiad",
+      "en": "Dinner (Main Meal)",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍲",
+      "note": "In Poland, the main meal of the day ('Obiad') is usually eaten in the mid-afternoon, around 2-4 PM."
+    },
+    {
+      "id": "s5_18",
+      "category": "Meals",
+      "pl": "Kolacja",
+      "en": "Supper",
+      "level": 5,
+      "gender": null,
+      "emoji": "🌆",
+      "note": "The evening meal. Typically lighter than 'Obiad', often consisting of sandwiches or salads."
+    },
+    {
+      "id": "s5_19",
+      "category": "Meals",
+      "pl": "Deser",
+      "en": "Dessert",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍰",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s5_20",
+      "category": "Meals",
+      "pl": "Zupa",
+      "en": "Soup",
+      "level": 5,
+      "gender": null,
+      "emoji": "🥣",
+      "note": "Soup is a mandatory first course for a proper Polish 'Obiad'."
+    },
+    {
+      "id": "s5_21",
+      "category": "Food Items",
+      "pl": "Mięso",
+      "en": "Meat",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍖",
+      "note": "A neuter noun. A staple in traditional Polish cuisine."
+    },
+    {
+      "id": "s5_22",
+      "category": "Food Items",
+      "pl": "Kurczak",
+      "en": "Chicken",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍗",
+      "note": "Masculine animate noun. Accusative form is 'kurczaka'."
+    },
+    {
+      "id": "s5_23",
+      "category": "Food Items",
+      "pl": "Wołowina",
+      "en": "Beef",
+      "level": 5,
+      "gender": null,
+      "emoji": "🥩",
+      "note": "Feminine noun. Derived from 'wół' (ox)."
+    },
+    {
+      "id": "s5_24",
+      "category": "Food Items",
+      "pl": "Wieprzowina",
+      "en": "Pork",
+      "level": 5,
+      "gender": null,
+      "emoji": "🥓",
+      "note": "The most common meat in traditional Polish cooking."
+    },
+    {
+      "id": "s5_25",
+      "category": "Food Items",
+      "pl": "Ryba",
+      "en": "Fish",
+      "level": 5,
+      "gender": null,
+      "emoji": "🐟",
+      "note": "Commonly eaten on Christmas Eve, or in Baltic coastal towns."
+    },
+    {
+      "id": "s5_26",
+      "category": "Food Items",
+      "pl": "Ziemniaki",
+      "en": "Potatoes",
+      "level": 5,
+      "gender": null,
+      "emoji": "🥔",
+      "note": "Extremely common side dish, often boiled and served with dill."
+    },
+    {
+      "id": "s5_27",
+      "category": "Food Items",
+      "pl": "Frytki",
+      "en": "French fries",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍟",
+      "note": "Plural noun. Very popular street food."
+    },
+    {
+      "id": "s5_28",
+      "category": "Food Items",
+      "pl": "Warzywa",
+      "en": "Vegetables",
+      "level": 5,
+      "gender": null,
+      "emoji": "🥦",
+      "note": "Plural form of 'warzywo'."
+    },
+    {
+      "id": "s5_29",
+      "category": "Food Items",
+      "pl": "Sałatka",
+      "en": "Salad",
+      "level": 5,
+      "gender": null,
+      "emoji": "🥗",
+      "note": "A diminutive of 'sałata' (lettuce/salad)."
+    },
+    {
+      "id": "s5_30",
+      "category": "Food Items",
+      "pl": "Chleb",
+      "en": "Bread",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍞",
+      "note": "Polish bread is famous and usually served alongside soups or heavy stews."
+    },
+    {
+      "id": "s5_31",
+      "category": "Tableware",
+      "pl": "Masło",
+      "en": "Butter",
+      "level": 5,
+      "gender": null,
+      "emoji": "🧈",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s5_32",
+      "category": "Tableware",
+      "pl": "Widelec",
+      "en": "Fork",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍴",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s5_33",
+      "category": "Tableware",
+      "pl": "Nóż",
+      "en": "Knife",
+      "level": 5,
+      "gender": null,
+      "emoji": "🔪",
+      "note": "Masculine noun. The 'ó' is pronounced like 'u'."
+    },
+    {
+      "id": "s5_34",
+      "category": "Tableware",
+      "pl": "Łyżka",
+      "en": "Spoon",
+      "level": 5,
+      "gender": null,
+      "emoji": "🥄",
+      "note": "Feminine noun. A smaller teaspoon is a 'łyżeczka'."
+    },
+    {
+      "id": "s5_35",
+      "category": "Tableware",
+      "pl": "Serwetki, proszę",
+      "en": "Napkins, please",
+      "level": 5,
+      "gender": null,
+      "emoji": "🧻",
+      "note": "Plural of 'serwetka'. You often have to ask for extras."
+    },
+    {
+      "id": "s5_36",
+      "category": "Drinks",
+      "pl": "Woda gazowana",
+      "en": "Sparkling water",
+      "level": 5,
+      "gender": null,
+      "emoji": "🫧",
+      "note": "Sparkling water is very common. Often just called 'gazowana'."
+    },
+    {
+      "id": "s5_37",
+      "category": "Drinks",
+      "pl": "Woda niegazowana",
+      "en": "Still water",
+      "level": 5,
+      "gender": null,
+      "emoji": "🫗",
+      "note": "If you don't specify still water, a waiter might default to sparkling!"
+    },
+    {
+      "id": "s5_38",
+      "category": "Drinks",
+      "pl": "Kawa",
+      "en": "Coffee",
+      "level": 5,
+      "gender": null,
+      "emoji": "☕",
+      "note": "To order, say 'Poproszę kawę'."
+    },
+    {
+      "id": "s5_39",
+      "category": "Drinks",
+      "pl": "Herbata",
+      "en": "Tea",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍵",
+      "note": "Poles drink a lot of tea, often with lemon ('z cytryną')."
+    },
+    {
+      "id": "s5_40",
+      "category": "Drinks",
+      "pl": "Sok",
+      "en": "Juice",
+      "level": 5,
+      "gender": null,
+      "emoji": "🧃",
+      "note": "'Sok jabłkowy' is apple juice, 'sok pomarańczowy' is orange."
+    },
+    {
+      "id": "s5_41",
+      "category": "Drinks",
+      "pl": "Piwo z nalewaka",
+      "en": "Draft beer",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍺",
+      "note": "Literally 'beer from the pourer'."
+    },
+    {
+      "id": "s5_42",
+      "category": "Drinks",
+      "pl": "Czerwone wino",
+      "en": "Red wine",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍷",
+      "note": "Adjectives match the neuter noun with an '-e' ending."
+    },
+    {
+      "id": "s5_43",
+      "category": "Drinks",
+      "pl": "Białe wino",
+      "en": "White wine",
+      "level": 5,
+      "gender": null,
+      "emoji": "🥂",
+      "note": "White wine."
+    },
+    {
+      "id": "s5_44",
+      "category": "Drinks",
+      "pl": "Kieliszek",
+      "en": "A glass (for wine/vodka)",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍷",
+      "note": "Used for stemmed glasses. 'Poproszę kieliszek wina' (A glass of wine, please)."
+    },
+    {
+      "id": "s5_45",
+      "category": "Drinks",
+      "pl": "Kufel",
+      "en": "Beer mug / Pint",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍺",
+      "note": "Used specifically for a large beer glass/mug."
+    },
+    {
+      "id": "s5_46",
+      "category": "Tastes & Adjustments",
+      "pl": "Czy to jest pikantne?",
+      "en": "Is this spicy?",
+      "level": 5,
+      "gender": null,
+      "emoji": "🌶️",
+      "note": "Polish food is traditionally quite mild, so 'pikantne' means genuinely spicy."
+    },
+    {
+      "id": "s5_47",
+      "category": "Tastes & Adjustments",
+      "pl": "Nie za ostre",
+      "en": "Not too spicy",
+      "level": 5,
+      "gender": null,
+      "emoji": "🫑",
+      "note": "'Ostre' is another word for spicy/sharp."
+    },
+    {
+      "id": "s5_48",
+      "category": "Tastes & Adjustments",
+      "pl": "Słodkie",
+      "en": "Sweet",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍩",
+      "note": "Neuter adjective."
+    },
+    {
+      "id": "s5_49",
+      "category": "Tastes & Adjustments",
+      "pl": "Słone",
+      "en": "Salty",
+      "level": 5,
+      "gender": null,
+      "emoji": "🥨",
+      "note": "Neuter adjective."
+    },
+    {
+      "id": "s5_50",
+      "category": "Tastes & Adjustments",
+      "pl": "Kwaśne",
+      "en": "Sour",
+      "level": 5,
+      "gender": null,
+      "emoji": "🍋",
+      "note": "Neuter adjective. Sour flavors (like fermented cabbage or rye) are huge in Poland!"
+    },
+    {
+      "id": "s5_51",
+      "category": "Tastes & Adjustments",
+      "pl": "Bez cebuli",
+      "en": "No onions",
+      "level": 5,
+      "gender": null,
+      "emoji": "🧅",
+      "note": "The preposition 'bez' (without) requires the genitive case ('cebula' -> 'cebuli')."
+    },
+    {
+      "id": "s5_52",
+      "category": "Tastes & Adjustments",
+      "pl": "Bez czosnku",
+      "en": "No garlic",
+      "level": 5,
+      "gender": null,
+      "emoji": "🧄",
+      "note": "Genitive case again ('czosnek' -> 'czosnku')."
+    },
+    {
+      "id": "s5_53",
+      "category": "Dietary Requirements",
       "pl": "Bez mięsa",
       "en": "Without meat",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🚫🥩",
+      "note": "'Bez' forces the genitive case: 'mięso' becomes 'mięsa'."
     },
     {
-      "id": "s3_33",
-      "category": "Ordering",
-      "pl": "Czy macie dania wegetariańskie?",
-      "en": "Do you have vegetarian dishes?",
+      "id": "s5_54",
+      "category": "Dietary Requirements",
+      "pl": "Bez glutenu",
+      "en": "Gluten-free",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🌾",
+      "note": "Takes the genitive case. Very widely understood in Polish cities."
     },
     {
-      "id": "s3_34",
-      "category": "Ordering",
+      "id": "s5_55",
+      "category": "Dietary Requirements",
+      "pl": "Dania wegetariańskie",
+      "en": "Vegetarian dishes",
+      "level": 5,
+      "gender": null,
+      "emoji": "🥗",
+      "note": "Vegetarianism is very popular in Poland, especially in big cities."
+    },
+    {
+      "id": "s5_56",
+      "category": "Dietary Requirements",
       "pl": "Jestem wegetarianinem/wegetarianką",
       "en": "I'm vegetarian",
       "level": 5,
@@ -281,295 +567,153 @@
       "variants": {
         "m": "Jestem wegetarianinem",
         "f": "Jestem wegetarianką"
-      }
+      },
+      "emoji": "🥕",
+      "note": "Takes the instrumental case. Men: '-inem'. Women: '-ianką'."
     },
     {
-      "id": "s3_35",
-      "category": "Ordering",
-      "pl": "Mam alergię na...",
-      "en": "I'm allergic to...",
+      "id": "s5_57",
+      "category": "Dietary Requirements",
+      "pl": "Jestem weganinem/weganką",
+      "en": "I'm vegan",
       "level": 5,
-      "gender": null
+      "gender": "both",
+      "variants": {
+        "m": "Jestem weganinem",
+        "f": "Jestem weganką"
+      },
+      "emoji": "🌱",
+      "note": "Warsaw is consistently ranked as one of the most vegan-friendly cities in the world!"
     },
     {
-      "id": "s3_36",
-      "category": "Drinks",
-      "pl": "Woda",
-      "en": "Water",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_37",
-      "category": "Drinks",
-      "pl": "Woda gazowana",
-      "en": "Sparkling water",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_38",
-      "category": "Drinks",
-      "pl": "Woda niegazowana",
-      "en": "Still water",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_39",
-      "category": "Drinks",
-      "pl": "Kawa",
-      "en": "Coffee",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_40",
-      "category": "Drinks",
-      "pl": "Herbata",
-      "en": "Tea",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_41",
-      "category": "Drinks",
-      "pl": "Sok",
-      "en": "Juice",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_42",
-      "category": "Drinks",
-      "pl": "Piwo",
-      "en": "Beer",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_43",
-      "category": "Drinks",
-      "pl": "Wino",
-      "en": "Wine",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_44",
-      "category": "Drinks",
-      "pl": "Czerwone wino",
-      "en": "Red wine",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_45",
-      "category": "Drinks",
-      "pl": "Białe wino",
-      "en": "White wine",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_46",
-      "category": "Food Items",
-      "pl": "Zupa",
-      "en": "Soup",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_47",
-      "category": "Food Items",
-      "pl": "Sałatka",
-      "en": "Salad",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_48",
-      "category": "Food Items",
-      "pl": "Chleb",
-      "en": "Bread",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_49",
-      "category": "Food Items",
-      "pl": "Mięso",
-      "en": "Meat",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_50",
-      "category": "Food Items",
-      "pl": "Ryba",
-      "en": "Fish",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_51",
-      "category": "Food Items",
-      "pl": "Kurczak",
-      "en": "Chicken",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_52",
-      "category": "Food Items",
-      "pl": "Ziemniaki",
-      "en": "Potatoes",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_53",
-      "category": "Food Items",
-      "pl": "Warzywa",
-      "en": "Vegetables",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_54",
-      "category": "Food Items",
-      "pl": "Deser",
-      "en": "Dessert",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_55",
-      "category": "Food Items",
-      "pl": "Śniadanie",
-      "en": "Breakfast",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_56",
-      "category": "Complaints & Requests",
+      "id": "s5_58",
+      "category": "Issues & Requests",
       "pl": "To nie jest moje zamówienie",
       "en": "This isn't my order",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🙅‍♂️",
+      "note": "'Zamówienie' means order. Neuter noun."
     },
     {
-      "id": "s3_57",
-      "category": "Complaints & Requests",
+      "id": "s5_59",
+      "category": "Issues & Requests",
       "pl": "Jest zimne",
       "en": "It's cold",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🧊",
+      "note": "Neuter adjective form 'zimne', assuming you are referring to 'danie' (dish) or 'jedzenie' (food)."
     },
     {
-      "id": "s3_58",
-      "category": "Complaints & Requests",
-      "pl": "Czekam już długo",
-      "en": "I've been waiting a long time",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_59",
-      "category": "Complaints & Requests",
+      "id": "s5_60",
+      "category": "Issues & Requests",
       "pl": "Więcej chleba, proszę",
       "en": "More bread, please",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🥖",
+      "note": "The word 'więcej' (more) forces the noun into the genitive case ('chleb' -> 'chleba')."
     },
     {
-      "id": "s3_60",
-      "category": "Complaints & Requests",
-      "pl": "Sztućce, proszę",
-      "en": "Cutlery, please",
-      "level": 5,
-      "gender": null
-    },
-    {
-      "id": "s3_61",
+      "id": "s5_61",
       "category": "Polish Dishes",
       "pl": "Pierogi",
       "en": "Dumplings",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🥟",
+      "note": "The most famous Polish dish! Filled dumplings. It's already plural; one dumpling is a 'pieróg'."
     },
     {
-      "id": "s3_62",
+      "id": "s5_62",
       "category": "Polish Dishes",
       "pl": "Bigos",
       "en": "Hunter's stew",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🍲",
+      "note": "A hearty traditional stew made of sauerkraut, fresh cabbage, and various meats."
     },
     {
-      "id": "s3_63",
+      "id": "s5_63",
       "category": "Polish Dishes",
       "pl": "Żurek",
       "en": "Sour rye soup",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🥣",
+      "note": "A unique sour rye soup, often served inside a hollowed-out loaf of bread."
     },
     {
-      "id": "s3_64",
+      "id": "s5_64",
       "category": "Polish Dishes",
       "pl": "Kotlet schabowy",
       "en": "Pork cutlet",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🥩",
+      "note": "A breaded and fried pork cutlet, very similar to Wiener Schnitzel."
     },
     {
-      "id": "s3_65",
+      "id": "s5_65",
       "category": "Polish Dishes",
       "pl": "Gołąbki",
       "en": "Cabbage rolls",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🥬",
+      "note": "Cabbage rolls stuffed with minced meat and rice. The name literally means 'little pigeons'!"
     },
     {
-      "id": "s3_66",
+      "id": "s5_66",
       "category": "Polish Dishes",
       "pl": "Rosół",
       "en": "Chicken soup",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🍜",
+      "note": "Traditional Polish chicken broth, usually served on Sundays with thin noodles."
     },
     {
-      "id": "s3_67",
+      "id": "s5_67",
       "category": "Polish Dishes",
       "pl": "Placki ziemniaczane",
       "en": "Potato pancakes",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🥞",
+      "note": "Potato pancakes, often eaten with sour cream or mushroom sauce."
     },
     {
-      "id": "s3_68",
+      "id": "s5_68",
       "category": "Polish Dishes",
       "pl": "Naleśniki",
       "en": "Pancakes / Crepes",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🥞",
+      "note": "Thin Polish crepes, often served sweet with sweet cheese or fruit preserves."
     },
     {
-      "id": "s3_69",
+      "id": "s5_69",
       "category": "Polish Dishes",
       "pl": "Kiełbasa",
       "en": "Sausage",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🌭",
+      "note": "Traditional Polish sausage. Comes in hundreds of varieties."
     },
     {
-      "id": "s3_70",
+      "id": "s5_70",
       "category": "Polish Dishes",
       "pl": "Sernik",
       "en": "Cheesecake",
       "level": 5,
-      "gender": null
+      "gender": null,
+      "emoji": "🍰",
+      "note": "Polish cheesecake, traditionally made with a specific sweet curd cheese called 'twaróg'."
     }
   ]
 }

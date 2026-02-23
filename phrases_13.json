@@ -4,564 +4,64 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p10_01",
+      "id": "s13_01",
       "category": "Weather",
       "pl": "Jaka jest pogoda?",
       "en": "What's the weather like?",
       "level": 13,
-      "gender": null
+      "gender": null,
+      "emoji": "🌤️",
+      "note": "Standard way to start a conversation about the climate."
     },
     {
-      "id": "p10_02",
-      "category": "Weather",
-      "pl": "Pogoda",
-      "en": "Weather",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_03",
-      "category": "Weather",
-      "pl": "Słonecznie",
-      "en": "Sunny",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_04",
-      "category": "Weather",
-      "pl": "Pochmurno",
-      "en": "Cloudy",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_05",
-      "category": "Weather",
-      "pl": "Pada deszcz",
-      "en": "It's raining",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_06",
-      "category": "Weather",
-      "pl": "Pada śnieg",
-      "en": "It's snowing",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_07",
-      "category": "Weather",
-      "pl": "Deszcz",
-      "en": "Rain",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_08",
-      "category": "Weather",
-      "pl": "Śnieg",
-      "en": "Snow",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_09",
-      "category": "Weather",
-      "pl": "Wiatr",
-      "en": "Wind",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_10",
-      "category": "Weather",
-      "pl": "Wietrznie",
-      "en": "Windy",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_11",
-      "category": "Weather",
-      "pl": "Burza",
-      "en": "Storm / Thunderstorm",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_12",
-      "category": "Weather",
-      "pl": "Mgła",
-      "en": "Fog",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_13",
-      "category": "Weather",
-      "pl": "Gorąco",
-      "en": "Hot",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_14",
-      "category": "Weather",
-      "pl": "Zimno",
-      "en": "Cold",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_15",
-      "category": "Weather",
-      "pl": "Ciepło",
-      "en": "Warm",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_16",
-      "category": "Weather",
-      "pl": "Chłodno",
-      "en": "Cool",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_17",
-      "category": "Weather",
-      "pl": "Jest zimno",
-      "en": "It's cold",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_18",
-      "category": "Weather",
-      "pl": "Jest gorąco",
-      "en": "It's hot",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_19",
-      "category": "Weather",
-      "pl": "Temperatura",
-      "en": "Temperature",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_20",
-      "category": "Weather",
-      "pl": "Stopnie",
-      "en": "Degrees",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_21",
-      "category": "Weather",
-      "pl": "Piękna pogoda",
-      "en": "Beautiful weather",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_22",
-      "category": "Weather",
-      "pl": "Brzydka pogoda",
-      "en": "Bad weather",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_23",
-      "category": "Weather",
-      "pl": "Prognoza pogody",
-      "en": "Weather forecast",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_24",
+      "id": "s13_02",
       "category": "Weather",
       "pl": "Będzie padać?",
       "en": "Will it rain?",
       "level": 13,
-      "gender": null
+      "gender": null,
+      "emoji": "☔",
+      "note": "Future tense. Poles often use 'padać' for both rain and snow; the context usually tells which."
     },
     {
-      "id": "p10_25",
+      "id": "s13_03",
       "category": "Weather",
-      "pl": "Parasol",
-      "en": "Umbrella",
+      "pl": "Stopnie",
+      "en": "Degrees",
       "level": 13,
-      "gender": null
+      "gender": null,
+      "emoji": "🌡️",
+      "note": "Used for temperature. Poland uses Celsius."
     },
     {
-      "id": "p10_26",
-      "category": "Seasons",
-      "pl": "Wiosna",
-      "en": "Spring",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_27",
-      "category": "Seasons",
-      "pl": "Lato",
-      "en": "Summer",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_28",
-      "category": "Seasons",
-      "pl": "Jesień",
-      "en": "Autumn / Fall",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_29",
-      "category": "Seasons",
-      "pl": "Zima",
-      "en": "Winter",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_30",
-      "category": "Seasons",
-      "pl": "Na wiosnę",
-      "en": "In spring",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_31",
-      "category": "Seasons",
-      "pl": "Latem",
-      "en": "In summer",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_32",
-      "category": "Seasons",
-      "pl": "Jesienią",
-      "en": "In autumn",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_33",
-      "category": "Seasons",
-      "pl": "Zimą",
-      "en": "In winter",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_34",
+      "id": "s13_04",
       "category": "Seasons",
       "pl": "Pora roku",
       "en": "Season",
       "level": 13,
-      "gender": null
+      "gender": null,
+      "emoji": "🍂",
+      "note": "Literally 'time of the year'."
     },
     {
-      "id": "p10_35",
-      "category": "Seasons",
-      "pl": "Jaka jest Twoja ulubiona pora roku?",
-      "en": "What's your favorite season?",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_56",
-      "category": "Clothing",
-      "pl": "Kurtka",
-      "en": "Jacket",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_57",
-      "category": "Clothing",
-      "pl": "Płaszcz",
-      "en": "Coat",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_58",
-      "category": "Clothing",
-      "pl": "Sweter",
-      "en": "Sweater",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_59",
-      "category": "Clothing",
-      "pl": "Czapka",
-      "en": "Hat / Cap",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_60",
-      "category": "Clothing",
-      "pl": "Szalik",
-      "en": "Scarf",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_61",
-      "category": "Clothing",
-      "pl": "Rękawiczki",
-      "en": "Gloves",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_62",
-      "category": "Clothing",
-      "pl": "Buty",
-      "en": "Shoes",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_63",
+      "id": "s13_05",
       "category": "Clothing",
       "pl": "Okulary przeciwsłoneczne",
       "en": "Sunglasses",
       "level": 13,
-      "gender": null
+      "gender": null,
+      "emoji": "🕶️",
+      "note": "Literally 'anti-sun glasses'."
     },
     {
-      "id": "p10_64",
+      "id": "s13_06",
       "category": "Clothing",
       "pl": "Krem przeciwsłoneczny",
       "en": "Sunscreen",
       "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_65",
-      "category": "Clothing",
-      "pl": "Jest za zimno na...",
-      "en": "It's too cold for...",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_66",
-      "category": "Clothing",
-      "pl": "Jest za gorąco na...",
-      "en": "It's too hot for...",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_67",
-      "category": "Clothing",
-      "pl": "Potrzebuję ciepłej kurtki",
-      "en": "I need a warm jacket",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_68",
-      "category": "Clothing",
-      "pl": "Potrzebuję parasola",
-      "en": "I need an umbrella",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_69",
-      "category": "Clothing",
-      "pl": "Ubranie",
-      "en": "Clothing",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_70",
-      "category": "Clothing",
-      "pl": "Co mam ubrać?",
-      "en": "What should I wear?",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_36",
-      "category": "Outdoor",
-      "pl": "Park",
-      "en": "Park",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_37",
-      "category": "Outdoor",
-      "pl": "Las",
-      "en": "Forest",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_38",
-      "category": "Outdoor",
-      "pl": "Góry",
-      "en": "Mountains",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_39",
-      "category": "Outdoor",
-      "pl": "Plaża",
-      "en": "Beach",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_40",
-      "category": "Outdoor",
-      "pl": "Morze",
-      "en": "Sea",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_41",
-      "category": "Outdoor",
-      "pl": "Jezioro",
-      "en": "Lake",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_42",
-      "category": "Outdoor",
-      "pl": "Rzeka",
-      "en": "River",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_43",
-      "category": "Outdoor",
-      "pl": "Spacer",
-      "en": "Walk",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_44",
-      "category": "Outdoor",
-      "pl": "Iść na spacer",
-      "en": "To go for a walk",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_45",
-      "category": "Outdoor",
-      "pl": "Wędrówka",
-      "en": "Hike",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_46",
-      "category": "Outdoor",
-      "pl": "Ścieżka",
-      "en": "Path / Trail",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_47",
-      "category": "Outdoor",
-      "pl": "Widok",
-      "en": "View",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_48",
-      "category": "Outdoor",
-      "pl": "Piękny widok",
-      "en": "Beautiful view",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_49",
-      "category": "Outdoor",
-      "pl": "Świeże powietrze",
-      "en": "Fresh air",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_50",
-      "category": "Outdoor",
-      "pl": "Słońce",
-      "en": "Sun",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_51",
-      "category": "Outdoor",
-      "pl": "Chmura",
-      "en": "Cloud",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_52",
-      "category": "Outdoor",
-      "pl": "Niebo",
-      "en": "Sky",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_53",
-      "category": "Outdoor",
-      "pl": "Gwiazdy",
-      "en": "Stars",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_54",
-      "category": "Outdoor",
-      "pl": "Księżyc",
-      "en": "Moon",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p10_55",
-      "category": "Outdoor",
-      "pl": "Wschód słońca",
-      "en": "Sunrise",
-      "level": 13,
-      "gender": null
+      "gender": null,
+      "emoji": "🧴",
+      "note": "Literally 'anti-sun cream'."
     }
   ]
 }

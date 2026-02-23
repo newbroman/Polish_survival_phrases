@@ -1,532 +1,757 @@
 {
   "level": 4,
-  "description": "Numbers in Practice - Prices, Time & Counting",
-  "tier": "SURVIVAL",
+  "description": "Numbers, Time, Dates & Frequencies",
+  "tier": "FOUNDATION",
   "phrases": [
     {
-      "id": "n5_01",
-      "category": "Counting",
+      "id": "n4_01",
+      "category": "Numbers 0-10",
+      "pl": "Zero",
+      "en": "Zero",
+      "level": 4,
+      "gender": null,
+      "emoji": "0️⃣",
+      "note": "Pronounced exactly as it looks: 'Ze-ro'."
+    },
+    {
+      "id": "n4_02",
+      "category": "Numbers 0-10",
       "pl": "Jeden",
       "en": "One",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "1️⃣",
+      "note": "Masculine form. Changes to 'jedna' (feminine) or 'jedno' (neuter) depending on the noun."
     },
     {
-      "id": "n5_02",
-      "category": "Counting",
+      "id": "n4_03",
+      "category": "Numbers 0-10",
       "pl": "Dwa",
       "en": "Two",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "2️⃣",
+      "note": "Used for masculine and neuter nouns. For feminine nouns, you use 'dwie'."
     },
     {
-      "id": "n5_03",
-      "category": "Counting",
+      "id": "n4_04",
+      "category": "Numbers 0-10",
       "pl": "Trzy",
       "en": "Three",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "3️⃣",
+      "note": "Pronounced 'Tshy'. The 'trz' cluster makes a voiceless 'ch' sound."
     },
     {
-      "id": "n5_04",
-      "category": "Counting",
+      "id": "n4_05",
+      "category": "Numbers 0-10",
       "pl": "Cztery",
       "en": "Four",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "4️⃣",
+      "note": "Starts with the hard 'cz' (ch) sound."
     },
     {
-      "id": "n5_05",
-      "category": "Counting",
+      "id": "n4_06",
+      "category": "Numbers 0-10",
       "pl": "Pięć",
       "en": "Five",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "5️⃣",
+      "note": "Grammar rule: Numbers 5 and above force the noun that follows into the Genitive Plural case."
     },
     {
-      "id": "n5_06",
-      "category": "Counting",
+      "id": "n4_07",
+      "category": "Numbers 0-10",
+      "pl": "Sześć",
+      "en": "Six",
+      "level": 4,
+      "gender": null,
+      "emoji": "6️⃣",
+      "note": "A mouthful of soft and hard consonants: 'sz' followed by 'e', then 'ść'."
+    },
+    {
+      "id": "n4_08",
+      "category": "Numbers 0-10",
+      "pl": "Siedem",
+      "en": "Seven",
+      "level": 4,
+      "gender": null,
+      "emoji": "7️⃣",
+      "note": "Pronounced 'Shyeh-dem'. The 'si' makes a soft 'ś' sound."
+    },
+    {
+      "id": "n4_09",
+      "category": "Numbers 0-10",
+      "pl": "Osiem",
+      "en": "Eight",
+      "level": 4,
+      "gender": null,
+      "emoji": "8️⃣",
+      "note": "Pronounced 'O-shyem'."
+    },
+    {
+      "id": "n4_10",
+      "category": "Numbers 0-10",
+      "pl": "Dziewięć",
+      "en": "Nine",
+      "level": 4,
+      "gender": null,
+      "emoji": "9️⃣",
+      "note": "Ends in the soft 'ć'. Don't confuse it with ten (dziesięć)!"
+    },
+    {
+      "id": "n4_11",
+      "category": "Numbers 0-10",
       "pl": "Dziesięć",
       "en": "Ten",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🔟",
+      "note": "Contains the soft 'dzi' sound and the nasal 'ę' sound. Pronounced 'Jyeh-shientch'."
     },
     {
-      "id": "n5_07",
-      "category": "Counting",
+      "id": "n4_12",
+      "category": "Teens & Tens",
+      "pl": "Jedenaście",
+      "en": "Eleven",
+      "level": 4,
+      "gender": null,
+      "emoji": "1️⃣1️⃣",
+      "note": "All teen numbers end in '-naście'. It literally means 'one on ten'."
+    },
+    {
+      "id": "n4_13",
+      "category": "Teens & Tens",
+      "pl": "Dwanaście",
+      "en": "Twelve",
+      "level": 4,
+      "gender": null,
+      "emoji": "1️⃣2️⃣",
+      "note": "Ends in '-naście'."
+    },
+    {
+      "id": "n4_14",
+      "category": "Teens & Tens",
+      "pl": "Piętnaście",
+      "en": "Fifteen",
+      "level": 4,
+      "gender": null,
+      "emoji": "1️⃣5️⃣",
+      "note": "Notice how 'pięć' (5) changes slightly to 'pięt-' before '-naście'."
+    },
+    {
+      "id": "n4_15",
+      "category": "Teens & Tens",
       "pl": "Dwadzieścia",
       "en": "Twenty",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "2️⃣0️⃣",
+      "note": "Literally translates to 'two tens'. Note the soft 'ścia' ending."
     },
     {
-      "id": "n5_08",
-      "category": "Counting",
+      "id": "n4_16",
+      "category": "Teens & Tens",
+      "pl": "Trzydzieści",
+      "en": "Thirty",
+      "level": 4,
+      "gender": null,
+      "emoji": "3️⃣0️⃣",
+      "note": "30 and 40 end in '-dzieści'."
+    },
+    {
+      "id": "n4_17",
+      "category": "Teens & Tens",
+      "pl": "Czterdzieści",
+      "en": "Forty",
+      "level": 4,
+      "gender": null,
+      "emoji": "4️⃣0️⃣",
+      "note": "Ends in '-dzieści'."
+    },
+    {
+      "id": "n4_18",
+      "category": "Teens & Tens",
       "pl": "Pięćdziesiąt",
       "en": "Fifty",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "5️⃣0️⃣",
+      "note": "50, 60, 70, 80, and 90 end in '-dziesiąt'."
     },
     {
-      "id": "n5_09",
-      "category": "Counting",
+      "id": "n4_19",
+      "category": "Hundreds & Large Numbers",
       "pl": "Sto",
       "en": "One hundred",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "💯",
+      "note": "Simple to say! 'Sto lat' (100 years) is also the traditional Polish birthday song."
     },
     {
-      "id": "n5_10",
-      "category": "Counting",
+      "id": "n4_20",
+      "category": "Hundreds & Large Numbers",
       "pl": "Dwieście",
       "en": "Two hundred",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "2️⃣💯",
+      "note": "Combines 'dwie' (two - feminine) and 'ście' (hundreds)."
     },
     {
-      "id": "n5_11",
-      "category": "Counting",
+      "id": "n4_21",
+      "category": "Hundreds & Large Numbers",
+      "pl": "Pięćset",
+      "en": "Five hundred",
+      "level": 4,
+      "gender": null,
+      "emoji": "5️⃣💯",
+      "note": "Hundreds from 500 to 900 end in '-set'."
+    },
+    {
+      "id": "n4_22",
+      "category": "Hundreds & Large Numbers",
       "pl": "Tysiąc",
       "en": "One thousand",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "💎",
+      "note": "Pronounced 'Tih-shonts'. Contains the nasal 'ą' sound."
     },
     {
-      "id": "n5_12",
-      "category": "Counting",
-      "pl": "Pierwszy",
-      "en": "First",
-      "level": 5.1
+      "id": "n4_23",
+      "category": "Hundreds & Large Numbers",
+      "pl": "Milion",
+      "en": "One million",
+      "level": 4,
+      "gender": null,
+      "emoji": "🏦",
+      "note": "Very similar to English, but with a short 'o'."
     },
     {
-      "id": "n5_13",
-      "category": "Counting",
-      "pl": "Drugi",
+      "id": "n4_24",
+      "category": "Measuring Time",
+      "pl": "Sekunda",
       "en": "Second",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "⏱️",
+      "note": "Feminine noun."
     },
     {
-      "id": "n5_14",
-      "category": "Counting",
-      "pl": "Trzeci",
-      "en": "Third",
-      "level": 5.1
+      "id": "n4_25",
+      "category": "Measuring Time",
+      "pl": "Minuta",
+      "en": "Minute",
+      "level": 4,
+      "gender": null,
+      "emoji": "⏲️",
+      "note": "Feminine noun. Plural: 'Minuty'."
     },
     {
-      "id": "n5_15",
-      "category": "Counting",
-      "pl": "Ostatni",
-      "en": "Last",
-      "level": 5.1
+      "id": "n4_26",
+      "category": "Measuring Time",
+      "pl": "Godzina",
+      "en": "Hour",
+      "level": 4,
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Feminine noun. Also used to mean 'O'clock'."
     },
     {
-      "id": "n5_16",
-      "category": "Prices",
-      "pl": "Ile to kosztuje?",
-      "en": "How much does it cost?",
-      "level": 5.1
+      "id": "n4_27",
+      "category": "Measuring Time",
+      "pl": "Pół godziny",
+      "en": "Half an hour",
+      "level": 4,
+      "gender": null,
+      "emoji": "🕧",
+      "note": "'Pół' means half. Forces 'godzina' into the Genitive case ('godziny')."
     },
     {
-      "id": "n5_17",
-      "category": "Prices",
-      "pl": "Dziesięć złotych",
-      "en": "Ten zloty",
-      "level": 5.1
-    },
-    {
-      "id": "n5_18",
-      "category": "Prices",
-      "pl": "Dwadzieścia złotych",
-      "en": "Twenty zloty",
-      "level": 5.1
-    },
-    {
-      "id": "n5_19",
-      "category": "Prices",
-      "pl": "Pięćdziesiąt złotych",
-      "en": "Fifty zloty",
-      "level": 5.1
-    },
-    {
-      "id": "n5_20",
-      "category": "Prices",
-      "pl": "Sto złotych",
-      "en": "One hundred zloty",
-      "level": 5.1
-    },
-    {
-      "id": "n5_21",
-      "category": "Prices",
-      "pl": "To kosztuje pięć złotych",
-      "en": "It costs five zloty",
-      "level": 5.1
-    },
-    {
-      "id": "n5_22",
-      "category": "Prices",
-      "pl": "To jest za drogie",
-      "en": "That's too expensive",
-      "level": 5.1
-    },
-    {
-      "id": "n5_23",
-      "category": "Prices",
-      "pl": "To jest tanie",
-      "en": "That's cheap",
-      "level": 5.1
-    },
-    {
-      "id": "n5_24",
-      "category": "Prices",
-      "pl": "Czy mogę zapłacić kartą?",
-      "en": "Can I pay by card?",
-      "level": 5.1
-    },
-    {
-      "id": "n5_25",
-      "category": "Prices",
-      "pl": "Płacę gotówką",
-      "en": "I'm paying cash",
-      "level": 5.1
-    },
-    {
-      "id": "n5_26",
-      "category": "Prices",
-      "pl": "Reszta",
-      "en": "Change (money)",
-      "level": 5.1
-    },
-    {
-      "id": "n5_27",
-      "category": "Prices",
-      "pl": "Paragon",
-      "en": "Receipt",
-      "level": 5.1
-    },
-    {
-      "id": "n5_28",
-      "category": "Prices",
-      "pl": "Zniżka",
-      "en": "Discount",
-      "level": 5.1
-    },
-    {
-      "id": "n5_29",
-      "category": "Prices",
-      "pl": "Promocja",
-      "en": "Sale / Promotion",
-      "level": 5.1
-    },
-    {
-      "id": "n5_30",
-      "category": "Prices",
-      "pl": "Gratis",
-      "en": "Free",
-      "level": 5.1
-    },
-    {
-      "id": "n5_31",
-      "category": "Time",
+      "id": "n4_28",
+      "category": "Telling Time",
       "pl": "Która godzina?",
       "en": "What time is it?",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "⌚",
+      "note": "Literally translates to 'Which hour?'."
     },
     {
-      "id": "n5_32",
-      "category": "Time",
+      "id": "n4_29",
+      "category": "Telling Time",
       "pl": "Jest pierwsza",
       "en": "It's one o'clock",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🕐",
+      "note": "In Polish, hours are expressed as feminine ordinal numbers. Literally 'It is the first (hour)'."
     },
     {
-      "id": "n5_33",
-      "category": "Time",
+      "id": "n4_30",
+      "category": "Telling Time",
       "pl": "Jest druga",
       "en": "It's two o'clock",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🕑",
+      "note": "Literally 'It is the second (hour)'."
     },
     {
-      "id": "n5_34",
-      "category": "Time",
-      "pl": "Jest trzecia",
-      "en": "It's three o'clock",
-      "level": 5.1
-    },
-    {
-      "id": "n5_35",
-      "category": "Time",
-      "pl": "Jest piąta",
-      "en": "It's five o'clock",
-      "level": 5.1
-    },
-    {
-      "id": "n5_36",
-      "category": "Time",
-      "pl": "Jest dziesiąta",
-      "en": "It's ten o'clock",
-      "level": 5.1
-    },
-    {
-      "id": "n5_37",
-      "category": "Time",
-      "pl": "Jest dwunasta",
-      "en": "It's twelve o'clock / noon",
-      "level": 5.1
-    },
-    {
-      "id": "n5_38",
-      "category": "Time",
+      "id": "n4_31",
+      "category": "Telling Time",
       "pl": "Wpół do drugiej",
       "en": "Half past one",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🕜",
+      "note": "Polish time logic points to the NEXT hour. So 1:30 is literally 'Half TO the second (hour)'."
     },
     {
-      "id": "n5_39",
-      "category": "Time",
-      "pl": "Kwadrans po trzeciej",
-      "en": "Quarter past three",
-      "level": 5.1
+      "id": "n4_32",
+      "category": "Telling Time",
+      "pl": "Piętnaście po trzeciej",
+      "en": "Fifteen past three",
+      "level": 4,
+      "gender": null,
+      "emoji": "🕒",
+      "note": "Uses 'po' (after) followed by the Locative case ('trzeciej')."
     },
     {
-      "id": "n5_40",
-      "category": "Time",
-      "pl": "Za kwadrans czwarta",
-      "en": "Quarter to four",
-      "level": 5.1
+      "id": "n4_33",
+      "category": "Telling Time",
+      "pl": "Za piętnaście czwarta",
+      "en": "Fifteen to four",
+      "level": 4,
+      "gender": null,
+      "emoji": "🕓",
+      "note": "Uses 'za' (in/behind) followed by the Nominative case ('czwarta')."
     },
     {
-      "id": "n5_41",
-      "category": "Time",
+      "id": "n4_34",
+      "category": "Telling Time",
       "pl": "O której?",
       "en": "At what time?",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "⏰",
+      "note": "Always asks 'At which (hour)?'."
     },
     {
-      "id": "n5_42",
-      "category": "Time",
+      "id": "n4_35",
+      "category": "Telling Time",
       "pl": "O drugiej",
       "en": "At two",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🕑",
+      "note": "The preposition 'O' (at) forces the Locative case ending ('-iej')."
     },
     {
-      "id": "n5_43",
-      "category": "Time",
-      "pl": "O piątej trzydzieści",
-      "en": "At five thirty",
-      "level": 5.1
-    },
-    {
-      "id": "n5_44",
-      "category": "Time",
+      "id": "n4_36",
+      "category": "Times of Day",
       "pl": "Rano",
       "en": "In the morning",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🌅",
+      "note": "Generally used for times roughly from 6 AM to 11 AM."
     },
     {
-      "id": "n5_45",
-      "category": "Time",
+      "id": "n4_37",
+      "category": "Times of Day",
+      "pl": "Południe",
+      "en": "Noon / Midday",
+      "level": 4,
+      "gender": null,
+      "emoji": "🕛",
+      "note": "Literally 'half-day'."
+    },
+    {
+      "id": "n4_38",
+      "category": "Times of Day",
       "pl": "Po południu",
       "en": "In the afternoon",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🌤️",
+      "note": "Literally translates to 'After half-day'."
     },
     {
-      "id": "n5_46",
-      "category": "Time",
+      "id": "n4_39",
+      "category": "Times of Day",
       "pl": "Wieczorem",
       "en": "In the evening",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🌆",
+      "note": "The Instrumental case of 'wieczór' (evening) transforms it into an adverb of time."
     },
     {
-      "id": "n5_47",
-      "category": "Time",
+      "id": "n4_40",
+      "category": "Times of Day",
       "pl": "W nocy",
       "en": "At night",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🌃",
+      "note": "Combines 'W' (in) with the Locative case of 'noc' (night)."
     },
     {
-      "id": "n5_48",
-      "category": "Time",
+      "id": "n4_41",
+      "category": "Times of Day",
+      "pl": "Północ",
+      "en": "Midnight",
+      "level": 4,
+      "gender": null,
+      "emoji": "🌙",
+      "note": "Literally 'half-night'. Also means 'North'."
+    },
+    {
+      "id": "n4_42",
+      "category": "Frequencies",
+      "pl": "Zawsze",
+      "en": "Always",
+      "level": 4,
+      "gender": null,
+      "emoji": "🔁",
+      "note": "A powerful adverb to express habits."
+    },
+    {
+      "id": "n4_43",
+      "category": "Frequencies",
+      "pl": "Nigdy",
+      "en": "Never",
+      "level": 4,
+      "gender": null,
+      "emoji": "🚫",
+      "note": "Remember, Polish uses double negatives. 'I never drink' is 'Nigdy NIE piję'."
+    },
+    {
+      "id": "n4_44",
+      "category": "Frequencies",
+      "pl": "Często",
+      "en": "Often",
+      "level": 4,
+      "gender": null,
+      "emoji": "📈",
+      "note": "Pronounced 'Chen-sto'."
+    },
+    {
+      "id": "n4_45",
+      "category": "Frequencies",
+      "pl": "Czasami",
+      "en": "Sometimes",
+      "level": 4,
+      "gender": null,
+      "emoji": "〰️",
+      "note": "Also frequently said as 'czasem'."
+    },
+    {
+      "id": "n4_46",
+      "category": "Sequence",
       "pl": "Teraz",
       "en": "Now",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "⚡",
+      "note": "A vital time marker for immediate actions."
     },
     {
-      "id": "n5_49",
-      "category": "Time",
+      "id": "n4_47",
+      "category": "Sequence",
       "pl": "Później",
       "en": "Later",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "⏭️",
+      "note": "Comparative form of the adverb 'późno' (late)."
     },
     {
-      "id": "n5_50",
-      "category": "Time",
+      "id": "n4_48",
+      "category": "Sequence",
       "pl": "Wcześniej",
       "en": "Earlier",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "⏮️",
+      "note": "Comparative form of the adverb 'wcześnie' (early)."
     },
     {
-      "id": "n5_51",
+      "id": "n4_49",
+      "category": "Days & Weeks",
+      "pl": "Dzień",
+      "en": "Day",
+      "level": 4,
+      "gender": null,
+      "emoji": "☀️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "n4_50",
+      "category": "Days & Weeks",
+      "pl": "Tydzień",
+      "en": "Week",
+      "level": 4,
+      "gender": null,
+      "emoji": "📆",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "n4_51",
+      "category": "Months & Years",
+      "pl": "Miesiąc",
+      "en": "Month",
+      "level": 4,
+      "gender": null,
+      "emoji": "📅",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "n4_52",
+      "category": "Months & Years",
+      "pl": "Rok",
+      "en": "Year",
+      "level": 4,
+      "gender": null,
+      "emoji": "🌍",
+      "note": "Masculine noun. The plural form changes entirely to 'lata' (years)."
+    },
+    {
+      "id": "n4_53",
       "category": "Dates",
-      "pl": "Dziś",
+      "pl": "Dzisiaj",
       "en": "Today",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "📍",
+      "note": "Often shortened to 'dziś'."
     },
     {
-      "id": "n5_52",
+      "id": "n4_54",
       "category": "Dates",
       "pl": "Jutro",
       "en": "Tomorrow",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "➡️",
+      "note": "A common adverb for future plans."
     },
     {
-      "id": "n5_53",
+      "id": "n4_55",
       "category": "Dates",
       "pl": "Wczoraj",
       "en": "Yesterday",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "⬅️",
+      "note": "A vital time marker to shift sentences into the past tense."
     },
     {
-      "id": "n5_54",
+      "id": "n4_56",
       "category": "Dates",
       "pl": "Pojutrze",
       "en": "Day after tomorrow",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "⏩",
+      "note": "Literally combines 'po' (after) + 'jutro' (tomorrow)."
     },
     {
-      "id": "n5_55",
+      "id": "n4_57",
       "category": "Dates",
       "pl": "Przedwczoraj",
       "en": "Day before yesterday",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "⏪",
+      "note": "Literally combines 'przed' (before) + 'wczoraj' (yesterday)."
     },
     {
-      "id": "n5_56",
-      "category": "Dates",
-      "pl": "W poniedziałek",
-      "en": "On Monday",
-      "level": 5.1
-    },
-    {
-      "id": "n5_57",
+      "id": "n4_58",
       "category": "Dates",
       "pl": "W weekend",
       "en": "On the weekend",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🏖️",
+      "note": "Borrowed directly from English! Pronounced 'vee-kend'."
     },
     {
-      "id": "n5_58",
+      "id": "n4_59",
       "category": "Dates",
       "pl": "W przyszłym tygodniu",
       "en": "Next week",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "🔜",
+      "note": "'Przyszły' means 'future' or 'coming'. Uses the Locative case."
     },
     {
-      "id": "n5_59",
-      "category": "Dates",
-      "pl": "W tym miesiącu",
-      "en": "This month",
-      "level": 5.1
-    },
-    {
-      "id": "n5_60",
-      "category": "Dates",
-      "pl": "Pierwszego stycznia",
-      "en": "January first",
-      "level": 5.1
-    },
-    {
-      "id": "n5_61",
-      "category": "Dates",
-      "pl": "Drugiego lutego",
-      "en": "February second",
-      "level": 5.1
-    },
-    {
-      "id": "n5_62",
-      "category": "Dates",
-      "pl": "Trzeciego marca",
-      "en": "March third",
-      "level": 5.1
-    },
-    {
-      "id": "n5_63",
+      "id": "n4_60",
       "category": "Dates",
       "pl": "Kiedy?",
       "en": "When?",
-      "level": 5.1
+      "level": 4,
+      "gender": null,
+      "emoji": "❓",
+      "note": "The fundamental question word for time and dates."
     },
     {
-      "id": "n5_64",
-      "category": "Dates",
-      "pl": "Który dzień?",
-      "en": "What day?",
-      "level": 5.1
+      "id": "n4_61",
+      "category": "Seasons",
+      "pl": "Wiosna",
+      "en": "Spring",
+      "level": 4,
+      "gender": null,
+      "emoji": "🌷",
+      "note": "Feminine noun."
     },
     {
-      "id": "n5_65",
-      "category": "Dates",
-      "pl": "Jaka data?",
-      "en": "What date?",
-      "level": 5.1
+      "id": "n4_62",
+      "category": "Seasons",
+      "pl": "Lato",
+      "en": "Summer",
+      "level": 4,
+      "gender": null,
+      "emoji": "🌻",
+      "note": "Neuter noun."
     },
     {
-      "id": "n5_66",
+      "id": "n4_63",
+      "category": "Seasons",
+      "pl": "Jesień",
+      "en": "Autumn / Fall",
+      "level": 4,
+      "gender": null,
+      "emoji": "🍂",
+      "note": "Feminine noun (ends in a consonant, which is rare for feminine words!)."
+    },
+    {
+      "id": "n4_64",
+      "category": "Seasons",
+      "pl": "Zima",
+      "en": "Winter",
+      "level": 4,
+      "gender": null,
+      "emoji": "❄️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "n4_65",
+      "category": "Months & Years",
+      "pl": "Styczeń",
+      "en": "January",
+      "level": 4,
+      "gender": null,
+      "emoji": "⛄",
+      "note": "Months in Polish are not capitalized unless they start a sentence."
+    },
+    {
+      "id": "n4_66",
+      "category": "Months & Years",
+      "pl": "Maj",
+      "en": "May",
+      "level": 4,
+      "gender": null,
+      "emoji": "🌸",
+      "note": "One of the easiest Polish months to remember!"
+    },
+    {
+      "id": "n4_67",
+      "category": "Months & Years",
+      "pl": "Sierpień",
+      "en": "August",
+      "level": 4,
+      "gender": null,
+      "emoji": "☀️",
+      "note": "Derived from 'sierp' (sickle), relating to the harvest season."
+    },
+    {
+      "id": "n4_68",
+      "category": "Months & Years",
+      "pl": "Grudzień",
+      "en": "December",
+      "level": 4,
+      "gender": null,
+      "emoji": "🎄",
+      "note": "Derived from 'gruda' (frozen clods of earth)."
+    },
+    {
+      "id": "n4_69",
       "category": "Positions",
-      "pl": "Pierwszy w kolejce",
-      "en": "First in line",
-      "level": 5.1
+      "pl": "Pierwszy",
+      "en": "First",
+      "level": 4,
+      "gender": null,
+      "emoji": "🥇",
+      "note": "Ordinal numbers act like adjectives, meaning they must match the gender of the noun."
     },
     {
-      "id": "n5_67",
+      "id": "n4_70",
       "category": "Positions",
-      "pl": "Drugi od lewej",
-      "en": "Second from the left",
-      "level": 5.1
+      "pl": "Drugi",
+      "en": "Second",
+      "level": 4,
+      "gender": null,
+      "emoji": "🥈",
+      "note": "Can also be used to mean 'the other one' in everyday conversation."
     },
     {
-      "id": "n5_68",
+      "id": "n4_71",
       "category": "Positions",
-      "pl": "Trzeci piętro",
-      "en": "Third floor",
-      "level": 5.1
+      "pl": "Trzeci",
+      "en": "Third",
+      "level": 4,
+      "gender": null,
+      "emoji": "🥉",
+      "note": "Pronounced 'Tshe-tsee'. Masculine form."
     },
     {
-      "id": "n5_69",
+      "id": "n4_72",
       "category": "Positions",
-      "pl": "Pokój numer dziesięć",
-      "en": "Room number ten",
-      "level": 5.1
+      "pl": "Ostatni",
+      "en": "Last",
+      "level": 4,
+      "gender": null,
+      "emoji": "🏁",
+      "note": "Masculine adjective for 'last'. The feminine form is 'ostatnia'."
     },
     {
-      "id": "n5_70",
-      "category": "Positions",
-      "pl": "Peron numer pięć",
-      "en": "Platform number five",
-      "level": 5.1
+      "id": "n4_73",
+      "category": "Amounts",
+      "pl": "Raz",
+      "en": "Once / One time",
+      "level": 4,
+      "gender": null,
+      "emoji": "1️⃣",
+      "note": "When counting repetitions, use 'raz' instead of 'jeden'."
     },
     {
-      "id": "n5_71",
-      "category": "Positions",
-      "pl": "Autobus numer trzy",
-      "en": "Bus number three",
-      "level": 5.1
+      "id": "n4_74",
+      "category": "Amounts",
+      "pl": "Dwa razy",
+      "en": "Twice / Two times",
+      "level": 4,
+      "gender": null,
+      "emoji": "2️⃣",
+      "note": "Plural of 'raz' is 'razy'."
     },
     {
-      "id": "n5_72",
-      "category": "Positions",
-      "pl": "Stół numer osiem",
-      "en": "Table number eight",
-      "level": 5.1
-    },
-    {
-      "id": "n5_73",
-      "category": "Positions",
-      "pl": "Na górze",
-      "en": "Upstairs / At the top",
-      "level": 5.1
-    },
-    {
-      "id": "n5_74",
-      "category": "Positions",
-      "pl": "Na dole",
-      "en": "Downstairs / At the bottom",
-      "level": 5.1
-    },
-    {
-      "id": "n5_75",
-      "category": "Positions",
-      "pl": "W środku",
-      "en": "In the middle",
-      "level": 5.1
+      "id": "n4_75",
+      "category": "Amounts",
+      "pl": "Wiele razy",
+      "en": "Many times",
+      "level": 4,
+      "gender": null,
+      "emoji": "♾️",
+      "note": "'Wiele' means many. Used with countable nouns."
     }
   ]
 }

@@ -1,497 +1,715 @@
 {
   "level": 2,
-  "description": "Day 1 Survival Kit - Absolute Essentials",
+  "description": "Day 1 Survival Kit - Absolute Essentials & Emergencies",
   "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "s1_01",
-      "category": "Emergency",
+      "id": "s2_01",
+      "category": "Emergencies",
       "pl": "Pomoc!",
       "en": "Help!",
-      "level": 1
+      "level": 2,
+      "gender": null,
+      "emoji": "🆘",
+      "note": "A noun meaning 'help' or 'assistance'. Yell this if you are in danger."
     },
     {
-      "id": "s1_02",
-      "category": "Emergency",
+      "id": "s2_02",
+      "category": "Emergencies",
+      "pl": "Pali się!",
+      "en": "Fire!",
+      "level": 2,
+      "gender": null,
+      "emoji": "🔥",
+      "note": "Literally translates to 'It is burning!'. Yell this to alert people of a fire."
+    },
+    {
+      "id": "s2_03",
+      "category": "Emergencies",
+      "pl": "Złodziej!",
+      "en": "Thief!",
+      "level": 2,
+      "gender": null,
+      "emoji": "🦹",
+      "note": "Yell this if someone pickpockets you. Pronounced 'Zwo-jay'."
+    },
+    {
+      "id": "s2_04",
+      "category": "Emergencies",
+      "pl": "Uwaga!",
+      "en": "Watch out! / Attention!",
+      "level": 2,
+      "gender": null,
+      "emoji": "⚠️",
+      "note": "A very common warning word. You will see this written on signs everywhere."
+    },
+    {
+      "id": "s2_05",
+      "category": "Emergencies",
+      "pl": "Ratunku!",
+      "en": "Rescue me! / Help!",
+      "level": 2,
+      "gender": null,
+      "emoji": "🛟",
+      "note": "A desperate cry for rescue. Takes the Genitive case of 'ratunek' (rescue)."
+    },
+    {
+      "id": "s2_06",
+      "category": "Emergencies",
       "pl": "Zadzwoń po policję",
       "en": "Call the police",
-      "level": 1
+      "level": 2,
+      "gender": null,
+      "emoji": "🚓",
+      "note": "In Polish, you 'call for' (zadzwoń po) emergency services."
     },
     {
-      "id": "s1_03",
-      "category": "Emergency",
-      "pl": "Potrzebuję lekarza",
-      "en": "I need a doctor",
-      "level": 1
-    },
-    {
-      "id": "s1_04",
-      "category": "Emergency",
-      "pl": "Gdzie jest szpital?",
-      "en": "Where is the hospital?",
-      "level": 1
-    },
-    {
-      "id": "s1_05",
-      "category": "Emergency",
-      "pl": "To pilne!",
-      "en": "It's urgent!",
-      "level": 1
-    },
-    {
-      "id": "s1_06",
-      "category": "Emergency",
+      "id": "s2_07",
+      "category": "Emergencies",
       "pl": "Zadzwoń po karetkę",
       "en": "Call an ambulance",
-      "level": 1
+      "level": 2,
+      "gender": null,
+      "emoji": "🚑",
+      "note": "An ambulance is called a 'karetka'. The preposition 'po' changes it to 'karetkę'."
     },
     {
-      "id": "s1_07",
-      "category": "Emergency",
-      "pl": "Jestem ranny/ranna",
-      "en": "I am injured",
-      "level": 1
+      "id": "s2_08",
+      "category": "Emergencies",
+      "pl": "Potrzebuję lekarza",
+      "en": "I need a doctor",
+      "level": 2,
+      "gender": null,
+      "emoji": "👨‍⚕️",
+      "note": "The verb 'potrzebować' (to need) forces the next word into the Genitive case ('lekarz' -> 'lekarza')."
     },
     {
-      "id": "s1_08",
-      "category": "Emergency",
+      "id": "s2_09",
+      "category": "Emergencies",
+      "pl": "Gdzie jest szpital?",
+      "en": "Where is the hospital?",
+      "level": 2,
+      "gender": null,
+      "emoji": "🏥",
+      "note": "'Gdzie jest' (Where is) is your master phrase for finding locations."
+    },
+    {
+      "id": "s2_10",
+      "category": "Emergencies",
+      "pl": "Gdzie jest apteka?",
+      "en": "Where is the pharmacy?",
+      "level": 2,
+      "gender": null,
+      "emoji": "⚕️",
+      "note": "Look for a glowing green cross to find an 'apteka'."
+    },
+    {
+      "id": "s2_11",
+      "category": "Problems & Police",
+      "pl": "To pilne!",
+      "en": "It's urgent!",
+      "level": 2,
+      "gender": null,
+      "emoji": "🚨",
+      "note": "'Pilne' is an adjective meaning urgent or pressing."
+    },
+    {
+      "id": "s2_12",
+      "category": "Problems & Police",
       "pl": "Ukradli mi portfel",
       "en": "They stole my wallet",
-      "level": 1
+      "level": 2,
+      "gender": null,
+      "emoji": "👛",
+      "note": "Literally: 'They stole to me the wallet.' 'Ukradli' is the 3rd person plural past tense."
     },
     {
-      "id": "s1_09",
-      "category": "Emergency",
+      "id": "s2_13",
+      "category": "Problems & Police",
       "pl": "Zgubiłem/Zgubiłam paszport",
       "en": "I lost my passport",
-      "level": 1
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Zgubiłem paszport",
+        "f": "Zgubiłam paszport"
+      },
+      "emoji": "🛂",
+      "note": "Men say 'Zgubiłem' (-em). Women say 'Zgubiłam' (-am)."
     },
     {
-      "id": "s1_10",
-      "category": "Emergency",
-      "pl": "Gdzie jest policja?",
-      "en": "Where is the police?",
-      "level": 1
-    },
-    {
-      "id": "s1_11",
-      "category": "Basic Communication",
-      "pl": "Tak",
-      "en": "Yes",
-      "level": 1
-    },
-    {
-      "id": "s1_12",
-      "category": "Basic Communication",
-      "pl": "Nie",
-      "en": "No",
-      "level": 1
-    },
-    {
-      "id": "s1_13",
-      "category": "Basic Communication",
-      "pl": "Proszę",
-      "en": "Please",
-      "level": 1
-    },
-    {
-      "id": "s1_14",
-      "category": "Basic Communication",
-      "pl": "Dziękuję",
-      "en": "Thank you",
-      "level": 1
-    },
-    {
-      "id": "s1_15",
-      "category": "Basic Communication",
-      "pl": "Przepraszam",
-      "en": "Sorry / Excuse me",
-      "level": 1
-    },
-    {
-      "id": "s1_16",
-      "category": "Basic Communication",
-      "pl": "Nie rozumiem",
-      "en": "I don't understand",
-      "level": 1
-    },
-    {
-      "id": "s1_17",
-      "category": "Basic Communication",
-      "pl": "Czy mówisz po angielsku?",
-      "en": "Do you speak English?",
-      "level": 1
-    },
-    {
-      "id": "s1_18",
-      "category": "Basic Communication",
-      "pl": "Proszę mówić wolniej",
-      "en": "Please speak slowly",
-      "level": 1
-    },
-    {
-      "id": "s1_19",
-      "category": "Basic Communication",
-      "pl": "Proszę powtórzyć",
-      "en": "Please repeat",
-      "level": 1
-    },
-    {
-      "id": "s1_20",
-      "category": "Basic Communication",
-      "pl": "Co to znaczy?",
-      "en": "What does this mean?",
-      "level": 1
-    },
-    {
-      "id": "s1_21",
-      "category": "Basic Communication",
-      "pl": "Jak to się nazywa?",
-      "en": "What is this called?",
-      "level": 1
-    },
-    {
-      "id": "s1_22",
-      "category": "Basic Communication",
-      "pl": "Nie mówię po polsku",
-      "en": "I don't speak Polish",
-      "level": 1
-    },
-    {
-      "id": "s1_23",
-      "category": "Basic Communication",
-      "pl": "Mówię trochę po polsku",
-      "en": "I speak a little Polish",
-      "level": 1
-    },
-    {
-      "id": "s1_24",
-      "category": "Basic Communication",
-      "pl": "Rozumiem",
-      "en": "I understand",
-      "level": 1
-    },
-    {
-      "id": "s1_25",
-      "category": "Basic Communication",
-      "pl": "Nie wiem",
-      "en": "I don't know",
-      "level": 1
-    },
-    {
-      "id": "s1_26",
-      "category": "Essential Questions",
-      "pl": "Gdzie jest...?",
-      "en": "Where is...?",
-      "level": 1
-    },
-    {
-      "id": "s1_27",
-      "category": "Essential Questions",
-      "pl": "Ile to kosztuje?",
-      "en": "How much is this?",
-      "level": 1
-    },
-    {
-      "id": "s1_28",
-      "category": "Essential Questions",
-      "pl": "Kiedy...?",
-      "en": "When...?",
-      "level": 1
-    },
-    {
-      "id": "s1_29",
-      "category": "Essential Questions",
-      "pl": "Jak...?",
-      "en": "How...?",
-      "level": 1
-    },
-    {
-      "id": "s1_30",
-      "category": "Essential Questions",
-      "pl": "Co to jest?",
-      "en": "What is this?",
-      "level": 1
-    },
-    {
-      "id": "s1_31",
-      "category": "Essential Questions",
-      "pl": "Który...?",
-      "en": "Which...?",
-      "level": 1
-    },
-    {
-      "id": "s1_32",
-      "category": "Essential Questions",
-      "pl": "Kto...?",
-      "en": "Who...?",
-      "level": 1
-    },
-    {
-      "id": "s1_33",
-      "category": "Essential Questions",
-      "pl": "Dlaczego...?",
-      "en": "Why...?",
-      "level": 1
-    },
-    {
-      "id": "s1_34",
-      "category": "Essential Questions",
-      "pl": "Ile...?",
-      "en": "How many/much...?",
-      "level": 1
-    },
-    {
-      "id": "s1_35",
-      "category": "Essential Questions",
-      "pl": "O której godzinie?",
-      "en": "At what time?",
-      "level": 1
-    },
-    {
-      "id": "s1_36",
-      "category": "Essential Questions",
-      "pl": "Czy...?",
-      "en": "Do/Does/Is...?",
-      "level": 1
-    },
-    {
-      "id": "s1_37",
-      "category": "Essential Questions",
-      "pl": "Gdzie jest toaleta?",
-      "en": "Where is the bathroom?",
-      "level": 1
-    },
-    {
-      "id": "s1_38",
-      "category": "Essential Questions",
-      "pl": "Gdzie jest bankomat?",
-      "en": "Where is the ATM?",
-      "level": 1
-    },
-    {
-      "id": "s1_39",
-      "category": "Essential Questions",
-      "pl": "Jaki jest kod WiFi?",
-      "en": "What is the WiFi password?",
-      "level": 1
-    },
-    {
-      "id": "s1_40",
-      "category": "Essential Questions",
-      "pl": "Czy mogę...?",
-      "en": "Can I...?",
-      "level": 1
-    },
-    {
-      "id": "s1_41",
-      "category": "Survival Needs",
-      "pl": "Potrzebuję...",
-      "en": "I need...",
-      "level": 1
-    },
-    {
-      "id": "s1_42",
-      "category": "Survival Needs",
-      "pl": "Woda, proszę",
-      "en": "Water, please",
-      "level": 1
-    },
-    {
-      "id": "s1_43",
-      "category": "Survival Needs",
-      "pl": "Jestem głodny/głodna",
-      "en": "I'm hungry",
-      "level": 1
-    },
-    {
-      "id": "s1_44",
-      "category": "Survival Needs",
-      "pl": "Jestem spragniony/spragniona",
-      "en": "I'm thirsty",
-      "level": 1
-    },
-    {
-      "id": "s1_45",
-      "category": "Survival Needs",
-      "pl": "Jestem zmęczony/zmęczona",
-      "en": "I'm tired",
-      "level": 1
-    },
-    {
-      "id": "s1_46",
-      "category": "Survival Needs",
-      "pl": "Potrzebuję WiFi",
-      "en": "I need WiFi",
-      "level": 1
-    },
-    {
-      "id": "s1_47",
-      "category": "Survival Needs",
-      "pl": "Mój telefon nie działa",
-      "en": "My phone doesn't work",
-      "level": 1
-    },
-    {
-      "id": "s1_48",
-      "category": "Survival Needs",
-      "pl": "Gdzie mogę naładować telefon?",
-      "en": "Where can I charge my phone?",
-      "level": 1
-    },
-    {
-      "id": "s1_49",
-      "category": "Survival Needs",
-      "pl": "Jestem chory/chora",
-      "en": "I'm sick",
-      "level": 1
-    },
-    {
-      "id": "s1_50",
-      "category": "Survival Needs",
+      "id": "s2_14",
+      "category": "Medical & Health",
       "pl": "Boli mnie głowa",
       "en": "My head hurts",
-      "level": 1
+      "level": 2,
+      "gender": null,
+      "emoji": "🤕",
+      "note": "Literally: 'The head hurts me'. 'Boli' (it hurts) + 'mnie' (me) + body part."
     },
     {
-      "id": "s1_51",
-      "category": "Survival Needs",
+      "id": "s2_15",
+      "category": "Medical & Health",
       "pl": "Boli mnie brzuch",
       "en": "My stomach hurts",
-      "level": 1
+      "level": 2,
+      "gender": null,
+      "emoji": "🤢",
+      "note": "Literally: 'The stomach hurts me'."
     },
     {
-      "id": "s1_52",
-      "category": "Survival Needs",
+      "id": "s2_16",
+      "category": "Medical & Health",
+      "pl": "Mam gorączkę",
+      "en": "I have a fever",
+      "level": 2,
+      "gender": null,
+      "emoji": "🌡️",
+      "note": "'Mam' (I have) takes the accusative case ('gorączka' -> 'gorączkę')."
+    },
+    {
+      "id": "s2_17",
+      "category": "Medical & Health",
+      "pl": "Czuję się źle",
+      "en": "I feel sick / bad",
+      "level": 2,
+      "gender": null,
+      "emoji": "🤒",
+      "note": "Reflexive verb 'czuć się' (to feel oneself). 'Źle' is the adverb for bad."
+    },
+    {
+      "id": "s2_18",
+      "category": "Medical & Health",
       "pl": "Mam alergię",
       "en": "I have an allergy",
-      "level": 1
+      "level": 2,
+      "gender": null,
+      "emoji": "🤧",
+      "note": "Takes the accusative case ('alergia' becomes 'alergię')."
     },
     {
-      "id": "s1_53",
-      "category": "Survival Needs",
-      "pl": "Toaleta",
-      "en": "Bathroom / Toilet",
-      "level": 1
+      "id": "s2_19",
+      "category": "Medical & Health",
+      "pl": "Potrzebuję leków",
+      "en": "I need medicine",
+      "level": 2,
+      "gender": null,
+      "emoji": "💊",
+      "note": "'Lek' is medicine. 'Leków' is the Genitive plural form required by 'Potrzebuję'."
     },
     {
-      "id": "s1_54",
-      "category": "Survival Needs",
-      "pl": "WC",
-      "en": "Restroom",
-      "level": 1
+      "id": "s2_20",
+      "category": "Medical & Health",
+      "pl": "Proszę wezwać pomoc",
+      "en": "Please call for help",
+      "level": 2,
+      "gender": null,
+      "emoji": "📞",
+      "note": "A very formal and urgent way to ask a bystander to call emergency services."
     },
     {
-      "id": "s1_55",
-      "category": "Survival Needs",
-      "pl": "Przepraszam, toaleta?",
-      "en": "Excuse me, bathroom?",
-      "level": 1
+      "id": "s2_21",
+      "category": "Basic Needs",
+      "pl": "Zimno mi",
+      "en": "I'm cold",
+      "level": 2,
+      "gender": null,
+      "emoji": "🥶",
+      "note": "Literally 'Cold to me'. Do not say 'Jestem zimny' (That means your personality is cold!)."
     },
     {
-      "id": "s1_56",
-      "category": "Getting Help",
-      "pl": "Czy możesz mi pomóc?",
-      "en": "Can you help me?",
-      "level": 1
+      "id": "s2_22",
+      "category": "Basic Needs",
+      "pl": "Gorąco mi",
+      "en": "I'm hot",
+      "level": 2,
+      "gender": null,
+      "emoji": "🥵",
+      "note": "Literally 'Hot to me'. Saying 'Jestem gorący' implies you think you are physically attractive."
     },
     {
-      "id": "s1_57",
-      "category": "Getting Help",
-      "pl": "Jestem zagubiony/zagubiona",
-      "en": "I'm lost",
-      "level": 1
+      "id": "s2_23",
+      "category": "Basic Needs",
+      "pl": "Chce mi się pić",
+      "en": "I'm thirsty",
+      "level": 2,
+      "gender": null,
+      "emoji": "🚰",
+      "note": "Literally 'It wants itself to drink to me'. This is the most natural way to say you are thirsty."
     },
     {
-      "id": "s1_58",
-      "category": "Getting Help",
-      "pl": "Proszę pokazać",
-      "en": "Please show me",
-      "level": 1
+      "id": "s2_24",
+      "category": "Basic Needs",
+      "pl": "Chce mi się jeść",
+      "en": "I'm hungry",
+      "level": 2,
+      "gender": null,
+      "emoji": "🍽️",
+      "note": "Literally 'It wants itself to eat to me'. Extremely common natural phrasing."
     },
     {
-      "id": "s1_59",
-      "category": "Getting Help",
-      "pl": "Czy możesz napisać to?",
-      "en": "Can you write this down?",
-      "level": 1
+      "id": "s2_25",
+      "category": "Basic Needs",
+      "pl": "Jestem zmęczony/zmęczona",
+      "en": "I'm tired",
+      "level": 2,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem zmęczony",
+        "f": "Jestem zmęczona"
+      },
+      "emoji": "🥱",
+      "note": "Men use the '-y' ending. Women use the '-a' ending."
     },
     {
-      "id": "s1_60",
-      "category": "Getting Help",
-      "pl": "Proszę o pomoc",
-      "en": "I'm asking for help",
-      "level": 1
+      "id": "s2_26",
+      "category": "Basic Needs",
+      "pl": "Gdzie jest toaleta publiczna?",
+      "en": "Where is a public restroom?",
+      "level": 2,
+      "gender": null,
+      "emoji": "🚻",
+      "note": "Essential if you are far from a restaurant or hotel."
     },
     {
-      "id": "s1_61",
-      "category": "Getting Help",
-      "pl": "Nie jestem stąd",
-      "en": "I'm not from here",
-      "level": 1
+      "id": "s2_27",
+      "category": "Basic Needs",
+      "pl": "Toaleta płatna",
+      "en": "Paid restroom",
+      "level": 2,
+      "gender": null,
+      "emoji": "🪙",
+      "note": "Many public toilets in Poland require a 2 or 5 PLN coin to enter."
     },
     {
-      "id": "s1_62",
-      "category": "Getting Help",
-      "pl": "Jestem turystą",
-      "en": "I'm a tourist",
-      "level": 1
+      "id": "s2_28",
+      "category": "Basic Needs",
+      "pl": "Szukam darmowego WiFi",
+      "en": "I'm looking for free WiFi",
+      "level": 2,
+      "gender": null,
+      "emoji": "📶",
+      "note": "'Szukam' forces the genitive case, so 'darmowe' (free) becomes 'darmowego'."
     },
     {
-      "id": "s1_63",
-      "category": "Getting Help",
+      "id": "s2_29",
+      "category": "Basic Needs",
+      "pl": "Gdzie mogę naładować telefon?",
+      "en": "Where can I charge my phone?",
+      "level": 2,
+      "gender": null,
+      "emoji": "🔋",
+      "note": "'Mogę' (I can) is followed by the infinitive 'naładować' (to charge)."
+    },
+    {
+      "id": "s2_30",
+      "category": "Basic Needs",
+      "pl": "Mój telefon padł",
+      "en": "My phone died",
+      "level": 2,
+      "gender": null,
+      "emoji": "📱",
+      "note": "A very natural, colloquial way to say your battery is dead. 'Padł' means 'it fell/collapsed'."
+    },
+    {
+      "id": "s2_31",
+      "category": "Core Communication",
+      "pl": "Tak",
+      "en": "Yes",
+      "level": 2,
+      "gender": null,
+      "emoji": "✅",
+      "note": "Often repeated twice ('tak, tak') in casual conversation to show agreement."
+    },
+    {
+      "id": "s2_32",
+      "category": "Core Communication",
+      "pl": "Nie",
+      "en": "No",
+      "level": 2,
+      "gender": null,
+      "emoji": "❌",
+      "note": "Means 'No', but is also used directly before a verb to make it negative."
+    },
+    {
+      "id": "s2_33",
+      "category": "Core Communication",
+      "pl": "Proszę",
+      "en": "Please / Here you go",
+      "level": 2,
+      "gender": null,
+      "emoji": "🙏",
+      "note": "The magic word. It means 'Please', 'Here you go', and 'Come in'."
+    },
+    {
+      "id": "s2_34",
+      "category": "Core Communication",
+      "pl": "Dziękuję",
+      "en": "Thank you",
+      "level": 2,
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Formal and polite. In casual settings, you can shorten this to 'Dzięki'."
+    },
+    {
+      "id": "s2_35",
+      "category": "Core Communication",
+      "pl": "Nie ma za co",
+      "en": "You're welcome",
+      "level": 2,
+      "gender": null,
+      "emoji": "😇",
+      "note": "Literally translates to 'There is not for what'. The standard reply to 'Thank you'."
+    },
+    {
+      "id": "s2_36",
+      "category": "Greetings",
+      "pl": "Dzień dobry",
+      "en": "Good morning / afternoon",
+      "level": 2,
+      "gender": null,
+      "emoji": "☀️",
+      "note": "The most common formal greeting. Used from morning until about 5:00 PM."
+    },
+    {
+      "id": "s2_37",
+      "category": "Greetings",
+      "pl": "Dobry wieczór",
+      "en": "Good evening",
+      "level": 2,
+      "gender": null,
+      "emoji": "🌙",
+      "note": "The formal greeting used after the sun starts to set."
+    },
+    {
+      "id": "s2_38",
+      "category": "Greetings",
+      "pl": "Do widzenia",
+      "en": "Goodbye",
+      "level": 2,
+      "gender": null,
+      "emoji": "👋",
+      "note": "Formal goodbye. Literally translates to 'Until the seeing'."
+    },
+    {
+      "id": "s2_39",
+      "category": "Greetings",
+      "pl": "Dobranoc",
+      "en": "Good night",
+      "level": 2,
+      "gender": null,
+      "emoji": "💤",
+      "note": "Only said when someone is literally going to sleep."
+    },
+    {
+      "id": "s2_40",
+      "category": "Core Communication",
+      "pl": "Przykro mi",
+      "en": "I'm sorry (sympathy)",
+      "level": 2,
+      "gender": null,
+      "emoji": "😔",
+      "note": "Use this to express sympathy or regret (e.g., if someone is hurt). Don't use it to excuse yourself in a crowd; use 'Przepraszam' for that."
+    },
+    {
+      "id": "s2_41",
+      "category": "Language Barriers",
+      "pl": "Nie mówię po polsku",
+      "en": "I don't speak Polish",
+      "level": 2,
+      "gender": null,
+      "emoji": "🤐",
+      "note": "'Po polsku' literally means 'in the Polish way'."
+    },
+    {
+      "id": "s2_42",
+      "category": "Language Barriers",
       "pl": "Czy ktoś mówi po angielsku?",
       "en": "Does anyone speak English?",
-      "level": 1
+      "level": 2,
+      "gender": null,
+      "emoji": "🇬🇧",
+      "note": "Yell this in a crowded room if you desperately need an English speaker. 'Ktoś' means 'someone'."
     },
     {
-      "id": "s1_64",
-      "category": "Getting Help",
-      "pl": "Proszę zadzwonić...",
-      "en": "Please call...",
-      "level": 1
+      "id": "s2_43",
+      "category": "Language Barriers",
+      "pl": "Mówię tylko po angielsku",
+      "en": "I only speak English",
+      "level": 2,
+      "gender": null,
+      "emoji": "🇺🇸",
+      "note": "'Tylko' means 'only'."
     },
     {
-      "id": "s1_65",
-      "category": "Getting Help",
-      "pl": "Gdzie mogę znaleźć...?",
-      "en": "Where can I find...?",
-      "level": 1
+      "id": "s2_44",
+      "category": "Language Barriers",
+      "pl": "Proszę mówić wolniej",
+      "en": "Please speak slower",
+      "level": 2,
+      "gender": null,
+      "emoji": "🐢",
+      "note": "Literally 'Please to speak slower'. A very polite and safe way to ask for help."
     },
     {
-      "id": "s1_66",
-      "category": "Getting Help",
-      "pl": "Czy to jest blisko?",
-      "en": "Is this close?",
-      "level": 1
+      "id": "s2_45",
+      "category": "Language Barriers",
+      "pl": "Proszę powtórzyć",
+      "en": "Please repeat",
+      "level": 2,
+      "gender": null,
+      "emoji": "🔁",
+      "note": "Uses the infinitive verb form 'powtórzyć'."
     },
     {
-      "id": "s1_67",
-      "category": "Getting Help",
-      "pl": "Czy to jest daleko?",
-      "en": "Is this far?",
-      "level": 1
+      "id": "s2_46",
+      "category": "Language Barriers",
+      "pl": "Proszę to napisać",
+      "en": "Please write it down",
+      "level": 2,
+      "gender": null,
+      "emoji": "✍️",
+      "note": "Extremely helpful when someone is giving you an address or a price you don't understand."
     },
     {
-      "id": "s1_68",
-      "category": "Getting Help",
-      "pl": "Jak długo to trwa?",
-      "en": "How long does it take?",
-      "level": 1
+      "id": "s2_47",
+      "category": "Language Barriers",
+      "pl": "Co to znaczy?",
+      "en": "What does this mean?",
+      "level": 2,
+      "gender": null,
+      "emoji": "📖",
+      "note": "Point at a sign or word and say this!"
     },
     {
-      "id": "s1_69",
-      "category": "Getting Help",
-      "pl": "Proszę czekać",
-      "en": "Please wait",
-      "level": 1
+      "id": "s2_48",
+      "category": "Language Barriers",
+      "pl": "Nic nie rozumiem",
+      "en": "I don't understand anything",
+      "level": 2,
+      "gender": null,
+      "emoji": "🤯",
+      "note": "Polish uses double negatives! 'Nic' (nothing) + 'nie' (not) + 'rozumiem' (I understand)."
     },
     {
-      "id": "s1_70",
-      "category": "Getting Help",
-      "pl": "Chwileczkę",
-      "en": "Just a moment",
-      "level": 1
+      "id": "s2_49",
+      "category": "Language Barriers",
+      "pl": "Rozumiem",
+      "en": "I understand",
+      "level": 2,
+      "gender": null,
+      "emoji": "💡",
+      "note": "The verb is conjugated for 'I'. You don't need to say 'Ja rozumiem'."
+    },
+    {
+      "id": "s2_50",
+      "category": "Language Barriers",
+      "pl": "Nie wiem",
+      "en": "I don't know",
+      "level": 2,
+      "gender": null,
+      "emoji": "🤷",
+      "note": "'Wiedzieć' is the verb for knowing facts or information. 'Wiem' is the 'I' form."
+    },
+    {
+      "id": "s2_51",
+      "category": "Question Words",
+      "pl": "Kto?",
+      "en": "Who?",
+      "level": 2,
+      "gender": null,
+      "emoji": "👤",
+      "note": "Question word for people."
+    },
+    {
+      "id": "s2_52",
+      "category": "Question Words",
+      "pl": "Co?",
+      "en": "What?",
+      "level": 2,
+      "gender": null,
+      "emoji": "❓",
+      "note": "Question word for things."
+    },
+    {
+      "id": "s2_53",
+      "category": "Question Words",
+      "pl": "Kiedy?",
+      "en": "When?",
+      "level": 2,
+      "gender": null,
+      "emoji": "🕒",
+      "note": "Question word for time."
+    },
+    {
+      "id": "s2_54",
+      "category": "Question Words",
+      "pl": "Dlaczego?",
+      "en": "Why?",
+      "level": 2,
+      "gender": null,
+      "emoji": "🤔",
+      "note": "The answer to 'Dlaczego' is usually 'Dlatego, że' (Because)."
+    },
+    {
+      "id": "s2_55",
+      "category": "Question Words",
+      "pl": "Jak?",
+      "en": "How?",
+      "level": 2,
+      "gender": null,
+      "emoji": "🤷‍♂️",
+      "note": "Question word for method or state."
+    },
+    {
+      "id": "s2_56",
+      "category": "Reading Signs",
+      "pl": "Wejście",
+      "en": "Entrance",
+      "level": 2,
+      "gender": null,
+      "emoji": "🚪",
+      "note": "Look for this sign above doors."
+    },
+    {
+      "id": "s2_57",
+      "category": "Reading Signs",
+      "pl": "Wyjście",
+      "en": "Exit",
+      "level": 2,
+      "gender": null,
+      "emoji": "🏃",
+      "note": "A very common sign you will see above doors everywhere."
+    },
+    {
+      "id": "s2_58",
+      "category": "Reading Signs",
+      "pl": "Wyjście ewakuacyjne",
+      "en": "Emergency exit",
+      "level": 2,
+      "gender": null,
+      "emoji": "🚨",
+      "note": "Usually lit up in green above stairwells."
+    },
+    {
+      "id": "s2_59",
+      "category": "Reading Signs",
+      "pl": "Ciągnąć",
+      "en": "Pull (Door)",
+      "level": 2,
+      "gender": null,
+      "emoji": "🔽",
+      "note": "Printed on doors. Many foreigners get stuck pushing when they should pull!"
+    },
+    {
+      "id": "s2_60",
+      "category": "Reading Signs",
+      "pl": "Pchać",
+      "en": "Push (Door)",
+      "level": 2,
+      "gender": null,
+      "emoji": "🔼",
+      "note": "Printed on doors to indicate you should push."
+    },
+    {
+      "id": "s2_61",
+      "category": "Reading Signs",
+      "pl": "Otwarte",
+      "en": "Open",
+      "level": 2,
+      "gender": null,
+      "emoji": "🔓",
+      "note": "You will see this on shop windows."
+    },
+    {
+      "id": "s2_62",
+      "category": "Reading Signs",
+      "pl": "Zamknięte",
+      "en": "Closed",
+      "level": 2,
+      "gender": null,
+      "emoji": "🔒",
+      "note": "You will see this on shop windows when they are shut."
+    },
+    {
+      "id": "s2_63",
+      "category": "Reading Signs",
+      "pl": "Zakaz wstępu",
+      "en": "No entry",
+      "level": 2,
+      "gender": null,
+      "emoji": "⛔",
+      "note": "Literally 'Ban of entry'."
+    },
+    {
+      "id": "s2_64",
+      "category": "Reading Signs",
+      "pl": "Nie dotykać",
+      "en": "Do not touch",
+      "level": 2,
+      "gender": null,
+      "emoji": "🚫",
+      "note": "Often seen in museums or galleries."
+    },
+    {
+      "id": "s2_65",
+      "category": "Reading Signs",
+      "pl": "Tylko dla personelu",
+      "en": "Staff only",
+      "level": 2,
+      "gender": null,
+      "emoji": "🤵",
+      "note": "Literally 'Only for personnel'."
+    },
+    {
+      "id": "s2_66",
+      "category": "Reading Signs",
+      "pl": "Awaria",
+      "en": "Out of order / Breakdown",
+      "level": 2,
+      "gender": null,
+      "emoji": "🛠️",
+      "note": "Seen on broken elevators, ATMs, or ticket machines."
+    },
+    {
+      "id": "s2_67",
+      "category": "Reading Signs",
+      "pl": "Wstęp wolny",
+      "en": "Free admission",
+      "level": 2,
+      "gender": null,
+      "emoji": "🆓",
+      "note": "Literally 'Free entry'. Great to look out for at museums!"
+    },
+    {
+      "id": "s2_68",
+      "category": "Reading Signs",
+      "pl": "Uwaga pies",
+      "en": "Beware of dog",
+      "level": 2,
+      "gender": null,
+      "emoji": "🐕",
+      "note": "You will see this yellow sign on residential fences all over Poland."
+    },
+    {
+      "id": "s2_69",
+      "category": "General Help",
+      "pl": "Wszystko w porządku?",
+      "en": "Is everything okay?",
+      "level": 2,
+      "gender": null,
+      "emoji": "👍",
+      "note": "Literally 'Everything in order?'. You can reply with 'Tak, w porządku'."
+    },
+    {
+      "id": "s2_70",
+      "category": "General Help",
+      "pl": "Potrzebuję tłumacza",
+      "en": "I need a translator",
+      "level": 2,
+      "gender": null,
+      "emoji": "🗣️",
+      "note": "Takes the Genitive case ('tłumacz' -> 'tłumacza')."
     }
   ]
 }

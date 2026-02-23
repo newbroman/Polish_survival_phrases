@@ -1,391 +1,619 @@
 {
   "level": 6,
-  "description": "Accommodation - Hotels & Lodging",
+  "description": "Accommodation - Hotels, Requests & Issues",
   "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "s4_01",
-      "category": "Check-in & Basics",
+      "id": "s6_01",
+      "category": "Check-in",
       "pl": "Mam rezerwację",
       "en": "I have a reservation",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🛎️",
+      "note": "From the verb 'mieć' (to have). Forces 'rezerwacja' into the accusative case ('-ę')."
     },
     {
-      "id": "s4_02",
-      "category": "Check-in & Basics",
-      "pl": "Rezerwacja na nazwisko...",
-      "en": "Reservation under the name...",
+      "id": "s6_02",
+      "category": "Check-in",
+      "pl": "Na nazwisko...",
+      "en": "Under the name...",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "📝",
+      "note": "Literally 'On surname...'. 'Nazwisko' means last name."
     },
     {
-      "id": "s4_03",
-      "category": "Check-in & Basics",
-      "pl": "Pokój dla jednej osoby",
+      "id": "s6_03",
+      "category": "Check-in",
+      "pl": "Pokój jednoosobowy",
       "en": "Single room",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🛏️",
+      "note": "An adjective describing the room. Literally 'one-person room'."
     },
     {
-      "id": "s4_04",
-      "category": "Check-in & Basics",
-      "pl": "Pokój dla dwóch osób",
+      "id": "s6_04",
+      "category": "Check-in",
+      "pl": "Pokój dwuosobowy",
       "en": "Double room",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🛌",
+      "note": "Literally 'two-person room'. Polish uses these compound adjectives constantly."
     },
     {
-      "id": "s4_05",
-      "category": "Check-in & Basics",
+      "id": "s6_05",
+      "category": "Check-in",
+      "pl": "Dwa osobne łóżka",
+      "en": "Twin beds / Two separate beds",
+      "level": 6,
+      "gender": null,
+      "emoji": "🛏️🛏️",
+      "note": "'Osobne' means separate. Crucial if you are traveling with a friend!"
+    },
+    {
+      "id": "s6_06",
+      "category": "Check-in",
+      "pl": "Łóżko małżeńskie",
+      "en": "Double bed",
+      "level": 6,
+      "gender": null,
+      "emoji": "💑",
+      "note": "Literally 'matrimonial bed'. The standard way to ask for a single large bed in Poland."
+    },
+    {
+      "id": "s6_07",
+      "category": "Check-in",
       "pl": "Na ile nocy?",
       "en": "For how many nights?",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🌙",
+      "note": "Questions about duration use 'na' (for) + accusative 'ile' (how many) + genitive 'nocy' (nights)."
     },
     {
-      "id": "s4_06",
-      "category": "Check-in & Basics",
+      "id": "s6_08",
+      "category": "Check-in",
       "pl": "Na jedną noc",
       "en": "For one night",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "1️⃣",
+      "note": "Accusative case for 'jedną noc' (one night)."
     },
     {
-      "id": "s4_07",
-      "category": "Check-in & Basics",
-      "pl": "Na trzy noce",
-      "en": "For three nights",
+      "id": "s6_09",
+      "category": "Check-in",
+      "pl": "Czy śniadanie jest w cenie?",
+      "en": "Is breakfast included in the price?",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🍳",
+      "note": "Literally 'Is breakfast in the price?'. 'Cena' takes the locative case 'cenie'."
     },
     {
-      "id": "s4_08",
-      "category": "Check-in & Basics",
-      "pl": "Ile kosztuje pokój?",
-      "en": "How much is the room?",
+      "id": "s6_10",
+      "category": "Check-in",
+      "pl": "Opłata klimatyczna",
+      "en": "Tourist tax / City tax",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🪙",
+      "note": "Many Polish tourist towns charge a tiny daily 'climate tax' that you must pay at the front desk."
     },
     {
-      "id": "s4_09",
-      "category": "Check-in & Basics",
-      "pl": "Czy śniadanie jest wliczone?",
-      "en": "Is breakfast included?",
+      "id": "s6_11",
+      "category": "Check-in",
+      "pl": "Proszę dowód tożsamości",
+      "en": "ID, please",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🪪",
+      "note": "Literally 'proof of identity'. A passport (paszport) works perfectly for this."
     },
     {
-      "id": "s4_10",
-      "category": "Check-in & Basics",
-      "pl": "O której jest śniadanie?",
-      "en": "What time is breakfast?",
+      "id": "s6_12",
+      "category": "Check-in",
+      "pl": "Karta do pokoju",
+      "en": "Room key card",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "💳",
+      "note": "Takes the genitive case 'do pokoju' (card to the room)."
     },
     {
-      "id": "s4_11",
-      "category": "Check-in & Basics",
-      "pl": "Klucz, proszę",
-      "en": "Key, please",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_12",
-      "category": "Check-in & Basics",
+      "id": "s6_13",
+      "category": "Check-in",
       "pl": "Numer pokoju",
       "en": "Room number",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🔢",
+      "note": "'Pokoju' is the genitive form of 'pokój' (Number OF the room)."
     },
     {
-      "id": "s4_13",
-      "category": "Check-in & Basics",
-      "pl": "Mój pokój to numer...",
-      "en": "My room is number...",
+      "id": "s6_14",
+      "category": "Check-in",
+      "pl": "Doba hotelowa",
+      "en": "Check-in/out times",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🕰️",
+      "note": "Literally 'The hotel day'. It defines the official hours you can occupy the room (e.g., 3 PM to 11 AM)."
     },
     {
-      "id": "s4_14",
-      "category": "Check-in & Basics",
-      "pl": "Paszport, proszę",
-      "en": "Passport, please",
+      "id": "s6_15",
+      "category": "Check-in",
+      "pl": "Gdzie jest winda?",
+      "en": "Where is the elevator?",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🛗",
+      "note": "Feminine noun. Essential for carrying heavy luggage!"
     },
     {
-      "id": "s4_15",
-      "category": "Check-in & Basics",
-      "pl": "Czy mogę zapłacić kartą?",
-      "en": "Can I pay by card?",
+      "id": "s6_16",
+      "category": "Room Preferences",
+      "pl": "Pokój z widokiem",
+      "en": "Room with a view",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🏞️",
+      "note": "'Z' (with) takes the instrumental case: 'widokiem'."
     },
     {
-      "id": "s4_16",
-      "category": "Check-in & Basics",
-      "pl": "Czy macie wolne pokoje?",
-      "en": "Do you have available rooms?",
+      "id": "s6_17",
+      "category": "Room Preferences",
+      "pl": "Pokój z balkonem",
+      "en": "Room with a balcony",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🪟",
+      "note": "Instrumental case: 'balkonem'."
     },
     {
-      "id": "s4_17",
-      "category": "Check-in & Basics",
-      "pl": "Czy mogę zobaczyć pokój?",
-      "en": "Can I see the room?",
+      "id": "s6_18",
+      "category": "Room Preferences",
+      "pl": "Pokój dla niepalących",
+      "en": "Non-smoking room",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🚭",
+      "note": "Almost all hotel rooms in Poland are strictly non-smoking by law."
     },
     {
-      "id": "s4_18",
-      "category": "Check-in & Basics",
-      "pl": "Recepcja",
-      "en": "Reception / Front desk",
+      "id": "s6_19",
+      "category": "Room Preferences",
+      "pl": "Na parterze",
+      "en": "On the ground floor",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🏢",
+      "note": "In Poland, the ground floor is 'parter'. The 1st floor is actually one flight of stairs up."
     },
     {
-      "id": "s4_19",
-      "category": "Check-in & Basics",
-      "pl": "Portier",
-      "en": "Porter / Concierge",
+      "id": "s6_20",
+      "category": "Room Preferences",
+      "pl": "Na wyższym piętrze",
+      "en": "On a higher floor",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "⬆️",
+      "note": "Locative case. 'Wyższy' is the comparative form of high."
     },
     {
-      "id": "s4_20",
-      "category": "Check-in & Basics",
-      "pl": "Bagaż",
-      "en": "Luggage / Baggage",
+      "id": "s6_21",
+      "category": "Amenities & Requests",
+      "pl": "Dodatkowe łóżko",
+      "en": "Extra bed",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🛏️",
+      "note": "Neuter adjective 'dodatkowe' to match 'łóżko'."
     },
     {
-      "id": "s4_21",
-      "category": "Room Issues",
-      "pl": "Jaki jest kod WiFi?",
-      "en": "What is the WiFi password?",
+      "id": "s6_22",
+      "category": "Amenities & Requests",
+      "pl": "Łóżeczko dla dziecka",
+      "en": "Baby cot / crib",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🍼",
+      "note": "'Łóżeczko' is a diminutive of bed (little bed)."
     },
     {
-      "id": "s4_22",
-      "category": "Room Issues",
-      "pl": "WiFi nie działa",
-      "en": "WiFi doesn't work",
+      "id": "s6_23",
+      "category": "Amenities & Requests",
+      "pl": "Dodatkowa poduszka",
+      "en": "Extra pillow",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🛋️",
+      "note": "Feminine adjective 'dodatkowa'."
     },
     {
-      "id": "s4_23",
-      "category": "Room Issues",
-      "pl": "Klimatyzacja nie działa",
-      "en": "Air conditioning doesn't work",
+      "id": "s6_24",
+      "category": "Amenities & Requests",
+      "pl": "Dodatkowy koc",
+      "en": "Extra blanket",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🛌",
+      "note": "Masculine adjective 'dodatkowy'."
     },
     {
-      "id": "s4_24",
-      "category": "Room Issues",
-      "pl": "Ogrzewanie nie działa",
-      "en": "Heating doesn't work",
+      "id": "s6_25",
+      "category": "Amenities & Requests",
+      "pl": "Czyste ręczniki",
+      "en": "Clean towels",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🧺",
+      "note": "Plural noun. Say 'Poproszę czyste ręczniki' to request them."
     },
     {
-      "id": "s4_25",
-      "category": "Room Issues",
-      "pl": "Nie ma gorącej wody",
-      "en": "There's no hot water",
+      "id": "s6_26",
+      "category": "Amenities & Requests",
+      "pl": "Suszarka do włosów",
+      "en": "Hair dryer",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "💨",
+      "note": "Literally 'dryer to hair'."
     },
     {
-      "id": "s4_26",
-      "category": "Room Issues",
-      "pl": "Prysznic nie działa",
-      "en": "The shower doesn't work",
+      "id": "s6_27",
+      "category": "Amenities & Requests",
+      "pl": "Żelazko",
+      "en": "Iron",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "👔",
+      "note": "Pronounced 'Zhe-laz-ko'."
     },
     {
-      "id": "s4_27",
-      "category": "Room Issues",
-      "pl": "Telewizor nie działa",
-      "en": "The TV doesn't work",
+      "id": "s6_28",
+      "category": "Amenities & Requests",
+      "pl": "Deska do prasowania",
+      "en": "Ironing board",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🏄‍♂️",
+      "note": "Literally 'board to ironing'."
     },
     {
-      "id": "s4_28",
-      "category": "Room Issues",
-      "pl": "Światło nie działa",
-      "en": "The light doesn't work",
+      "id": "s6_29",
+      "category": "Amenities & Requests",
+      "pl": "Przejściówka",
+      "en": "Power adapter",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🔌",
+      "note": "Poland uses Type E/C electrical outlets. Ask for this if your plug doesn't fit!"
     },
     {
-      "id": "s4_29",
-      "category": "Room Issues",
-      "pl": "Jest za głośno",
-      "en": "It's too loud",
+      "id": "s6_30",
+      "category": "Amenities & Requests",
+      "pl": "Sejf",
+      "en": "Safe",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🔐",
+      "note": "Pronounced like 'safe', but with an 'f' at the end."
     },
     {
-      "id": "s4_30",
-      "category": "Room Issues",
-      "pl": "Jest za zimno",
-      "en": "It's too cold",
+      "id": "s6_31",
+      "category": "Hotel Services",
+      "pl": "Hasło do WiFi",
+      "en": "WiFi password",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "📶",
+      "note": "The most important question upon arrival."
     },
     {
-      "id": "s4_31",
-      "category": "Room Issues",
-      "pl": "Jest za gorąco",
-      "en": "It's too hot",
+      "id": "s6_32",
+      "category": "Hotel Services",
+      "pl": "O której jest śniadanie?",
+      "en": "What time is breakfast?",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🥐",
+      "note": "Asks 'At which (hour) is breakfast?'"
     },
     {
-      "id": "s4_32",
-      "category": "Room Issues",
-      "pl": "Pokój jest brudny",
-      "en": "The room is dirty",
+      "id": "s6_33",
+      "category": "Hotel Services",
+      "pl": "Gdzie jest restauracja?",
+      "en": "Where is the restaurant?",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🍽️",
+      "note": "A simple nominative question."
     },
     {
-      "id": "s4_33",
-      "category": "Room Issues",
-      "pl": "Potrzebuję ręczników",
-      "en": "I need towels",
+      "id": "s6_34",
+      "category": "Hotel Services",
+      "pl": "Basen",
+      "en": "Swimming pool",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🏊‍♂️",
+      "note": "Masculine noun."
     },
     {
-      "id": "s4_34",
-      "category": "Room Issues",
-      "pl": "Potrzebuję mydła",
-      "en": "I need soap",
+      "id": "s6_35",
+      "category": "Hotel Services",
+      "pl": "Siłownia",
+      "en": "Gym",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🏋️",
+      "note": "Feminine noun. Derived from 'siła' (strength)."
     },
     {
-      "id": "s4_35",
-      "category": "Room Issues",
-      "pl": "Potrzebuję papieru toaletowego",
-      "en": "I need toilet paper",
+      "id": "s6_36",
+      "category": "Hotel Services",
+      "pl": "Spa",
+      "en": "Spa",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🧖‍♀️",
+      "note": "Pronounced exactly as in English."
     },
     {
-      "id": "s4_36",
-      "category": "Room Issues",
-      "pl": "Czy mogę zmienić pokój?",
-      "en": "Can I change rooms?",
+      "id": "s6_37",
+      "category": "Hotel Services",
+      "pl": "Obsługa pokoju",
+      "en": "Room service",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🛎️",
+      "note": "Literally 'service of the room'."
     },
     {
-      "id": "s4_37",
-      "category": "Room Issues",
-      "pl": "Zgubiłem/Zgubiłam klucz",
-      "en": "I lost my key",
+      "id": "s6_38",
+      "category": "Hotel Services",
+      "pl": "Pralnia",
+      "en": "Laundry",
+      "level": 6,
+      "gender": null,
+      "emoji": "👕",
+      "note": "Laundry service or laundry room."
+    },
+    {
+      "id": "s6_39",
+      "category": "Hotel Services",
+      "pl": "Czy mogę zostawić bagaż?",
+      "en": "Can I leave my luggage?",
+      "level": 6,
+      "gender": null,
+      "emoji": "🧳",
+      "note": "Most hotels in Poland will happily hold your bags for free before check-in or after check-out."
+    },
+    {
+      "id": "s6_40",
+      "category": "Hotel Services",
+      "pl": "Przechowalnia bagażu",
+      "en": "Luggage storage",
+      "level": 6,
+      "gender": null,
+      "emoji": "📦",
+      "note": "Literally 'storage of luggage'."
+    },
+    {
+      "id": "s6_41",
+      "category": "Hotel Services",
+      "pl": "Budzenie o siódmej",
+      "en": "Wake-up call at 7",
+      "level": 6,
+      "gender": null,
+      "emoji": "⏰",
+      "note": "'Budzenie' is the act of waking up."
+    },
+    {
+      "id": "s6_42",
+      "category": "Hotel Services",
+      "pl": "Nie przeszkadzać",
+      "en": "Do not disturb",
+      "level": 6,
+      "gender": null,
+      "emoji": "⛔",
+      "note": "The standard text you will see on the door hanger."
+    },
+    {
+      "id": "s6_43",
+      "category": "Hotel Services",
+      "pl": "Proszę posprzątać pokój",
+      "en": "Please clean the room",
+      "level": 6,
+      "gender": null,
+      "emoji": "🧹",
+      "note": "A polite command using 'Proszę' + infinitive."
+    },
+    {
+      "id": "s6_44",
+      "category": "Hotel Services",
+      "pl": "Ręcznik plażowy",
+      "en": "Beach towel",
+      "level": 6,
+      "gender": null,
+      "emoji": "🏖️",
+      "note": "Useful if you are staying in Sopot or Gdańsk!"
+    },
+    {
+      "id": "s6_45",
+      "category": "Hotel Services",
+      "pl": "Mapa miasta",
+      "en": "City map",
+      "level": 6,
+      "gender": null,
+      "emoji": "🗺️",
+      "note": "Front desks often have these for free. Ask: 'Czy jest darmowa mapa miasta?'."
+    },
+    {
+      "id": "s6_46",
+      "category": "Issues & Complaints",
+      "pl": "Moja karta nie działa",
+      "en": "My card doesn't work",
+      "level": 6,
+      "gender": null,
+      "emoji": "❌",
+      "note": "Used when your electronic room key flashes red."
+    },
+    {
+      "id": "s6_47",
+      "category": "Issues & Complaints",
+      "pl": "Zgubiłem/Zgubiłam kartę",
+      "en": "I lost my card",
       "level": 6,
       "gender": "both",
       "variants": {
-        "m": "Zgubiłem klucz",
-        "f": "Zgubiłam klucz"
-      }
+        "m": "Zgubiłem kartę",
+        "f": "Zgubiłam kartę"
+      },
+      "emoji": "🤷",
+      "note": "Past tense: '-em' for men, '-am' for women."
     },
     {
-      "id": "s4_38",
-      "category": "Room Issues",
-      "pl": "Klucz nie działa",
-      "en": "The key doesn't work",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_39",
-      "category": "Room Issues",
-      "pl": "Zamknąłem/Zamknęłam się",
+      "id": "s6_48",
+      "category": "Issues & Complaints",
+      "pl": "Zatrzasnąłem/Zatrzasnęłam drzwi",
       "en": "I locked myself out",
       "level": 6,
       "gender": "both",
       "variants": {
-        "m": "Zamknąłem się",
-        "f": "Zamknęłam się"
-      }
+        "m": "Zatrzasnąłem drzwi",
+        "f": "Zatrzasnęłam drzwi"
+      },
+      "emoji": "🚪",
+      "note": "Literally 'I slammed the doors shut'. Very natural Polish phrasing."
     },
     {
-      "id": "s4_40",
-      "category": "Room Issues",
-      "pl": "Proszę posprzątać pokój",
-      "en": "Please clean the room",
+      "id": "s6_49",
+      "category": "Issues & Complaints",
+      "pl": "Klimatyzacja nie działa",
+      "en": "Air conditioning doesn't work",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🥵",
+      "note": "Add 'nie' before 'działa' (works) to say something is broken."
     },
     {
-      "id": "s4_41",
-      "category": "Room Issues",
-      "pl": "Nie przeszkadzać",
-      "en": "Do not disturb",
+      "id": "s6_50",
+      "category": "Issues & Complaints",
+      "pl": "Ogrzewanie nie działa",
+      "en": "Heating doesn't work",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🥶",
+      "note": "Ogrzewanie (heating) is a neuter noun."
     },
     {
-      "id": "s4_42",
-      "category": "Room Issues",
-      "pl": "Proszę obudzić mnie o...",
-      "en": "Please wake me at...",
+      "id": "s6_51",
+      "category": "Issues & Complaints",
+      "pl": "Nie ma ciepłej wody",
+      "en": "There is no hot water",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🚿",
+      "note": "'Nie ma' (there isn't) always forces the next words into the genitive case ('ciepłej wody')."
     },
     {
-      "id": "s4_43",
-      "category": "Room Issues",
-      "pl": "Zostawiłem/Zostawiłam coś w pokoju",
-      "en": "I left something in the room",
+      "id": "s6_52",
+      "category": "Issues & Complaints",
+      "pl": "Prysznic jest zepsuty",
+      "en": "The shower is broken",
       "level": 6,
-      "gender": "both",
-      "variants": {
-        "m": "Zostawiłem coś w pokoju",
-        "f": "Zostawiłam coś w pokoju"
-      }
+      "gender": null,
+      "emoji": "🛠️",
+      "note": "'Zepsuty' means mechanically broken or out of order."
     },
     {
-      "id": "s4_44",
-      "category": "Room Issues",
-      "pl": "Czy mogę dostać dodatkowe koce?",
-      "en": "Can I get extra blankets?",
+      "id": "s6_53",
+      "category": "Issues & Complaints",
+      "pl": "Zlew jest zatkany",
+      "en": "The sink is clogged",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🚰",
+      "note": "A very useful phrase for plumbing emergencies."
     },
     {
-      "id": "s4_45",
-      "category": "Room Issues",
-      "pl": "Czy mogę dostać poduszkę?",
-      "en": "Can I get a pillow?",
+      "id": "s6_54",
+      "category": "Issues & Complaints",
+      "pl": "W pokoju jest za głośno",
+      "en": "It's too loud in the room",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🔊",
+      "note": "Uses the locative case 'W pokoju' (in the room)."
     },
     {
-      "id": "s4_46",
-      "category": "Check-out & Services",
-      "pl": "O której jest wymeldowanie?",
-      "en": "What time is check-out?",
+      "id": "s6_55",
+      "category": "Issues & Complaints",
+      "pl": "Sąsiedzi są głośno",
+      "en": "The neighbors are loud",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🗣️",
+      "note": "'Sąsiedzi' is the plural for neighbors."
     },
     {
-      "id": "s4_47",
-      "category": "Check-out & Services",
+      "id": "s6_56",
+      "category": "Issues & Complaints",
+      "pl": "Brak papieru toaletowego",
+      "en": "Out of toilet paper",
+      "level": 6,
+      "gender": null,
+      "emoji": "🧻",
+      "note": "Literally 'Lack of toilet paper'."
+    },
+    {
+      "id": "s6_57",
+      "category": "Issues & Complaints",
+      "pl": "Telewizor nie działa",
+      "en": "The TV doesn't work",
+      "level": 6,
+      "gender": null,
+      "emoji": "📺",
+      "note": "Telewizor is the physical TV set."
+    },
+    {
+      "id": "s6_58",
+      "category": "Issues & Complaints",
+      "pl": "Światło nie działa",
+      "en": "The light doesn't work",
+      "level": 6,
+      "gender": null,
+      "emoji": "💡",
+      "note": "'Światło' is a neuter noun."
+    },
+    {
+      "id": "s6_59",
+      "category": "Issues & Complaints",
+      "pl": "Czy mogę zmienić pokój?",
+      "en": "Can I change rooms?",
+      "level": 6,
+      "gender": null,
+      "emoji": "🔄",
+      "note": "'Zmienić' is the infinitive for 'to change'."
+    },
+    {
+      "id": "s6_60",
+      "category": "Issues & Complaints",
+      "pl": "Pokój jest brudny",
+      "en": "The room is dirty",
+      "level": 6,
+      "gender": null,
+      "emoji": "🧹",
+      "note": "'Brudny' is a masculine adjective, matching 'pokój'."
+    },
+    {
+      "id": "s6_61",
+      "category": "Check-out & Leaving",
       "pl": "Chciałbym/Chciałabym się wymeldować",
       "en": "I'd like to check out",
       "level": 6,
@@ -393,191 +621,99 @@
       "variants": {
         "m": "Chciałbym się wymeldować",
         "f": "Chciałabym się wymeldować"
-      }
+      },
+      "emoji": "🚶",
+      "note": "'I would like to check myself out'. '-bym' for men, '-abym' for women."
     },
     {
-      "id": "s4_48",
-      "category": "Check-out & Services",
-      "pl": "Rachunek, proszę",
-      "en": "The bill, please",
+      "id": "s6_62",
+      "category": "Check-out & Leaving",
+      "pl": "O której jest wymeldowanie?",
+      "en": "What time is check-out?",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🕰️",
+      "note": "'Wymeldowanie' is the official word for check-out."
     },
     {
-      "id": "s4_49",
-      "category": "Check-out & Services",
-      "pl": "Czy mogę zostawić bagaż?",
-      "en": "Can I leave my luggage?",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_50",
-      "category": "Check-out & Services",
+      "id": "s6_63",
+      "category": "Check-out & Leaving",
       "pl": "Czy mogę przedłużyć pobyt?",
       "en": "Can I extend my stay?",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "📅",
+      "note": "'Przedłużyć' means to extend. 'Pobyt' is your stay."
     },
     {
-      "id": "s4_51",
-      "category": "Check-out & Services",
-      "pl": "Jeszcze jedna noc",
-      "en": "One more night",
+      "id": "s6_64",
+      "category": "Check-out & Leaving",
+      "pl": "Późne wymeldowanie",
+      "en": "Late check-out",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Neuter adjective 'Późne' matching 'wymeldowanie'."
     },
     {
-      "id": "s4_52",
-      "category": "Check-out & Services",
-      "pl": "Parking",
-      "en": "Parking",
+      "id": "s6_65",
+      "category": "Check-out & Leaving",
+      "pl": "Czy mogę prosić o fakturę?",
+      "en": "Can I ask for an invoice?",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "📄",
+      "note": "Vital for business travelers in Poland! You must ask for a 'faktura' before they print the standard receipt."
     },
     {
-      "id": "s4_53",
-      "category": "Check-out & Services",
-      "pl": "Czy jest parking?",
-      "en": "Is there parking?",
+      "id": "s6_66",
+      "category": "Check-out & Leaving",
+      "pl": "Zamówić taksówkę",
+      "en": "Order a taxi",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🚕",
+      "note": "Infinitive verb form."
     },
     {
-      "id": "s4_54",
-      "category": "Check-out & Services",
-      "pl": "Ile kosztuje parking?",
-      "en": "How much is parking?",
+      "id": "s6_67",
+      "category": "Check-out & Leaving",
+      "pl": "Na lotnisko",
+      "en": "To the airport",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "✈️",
+      "note": "Combines 'na' with the accusative 'lotnisko'."
     },
     {
-      "id": "s4_55",
-      "category": "Check-out & Services",
-      "pl": "Winda",
-      "en": "Elevator / Lift",
+      "id": "s6_68",
+      "category": "Check-out & Leaving",
+      "pl": "Parking hotelowy",
+      "en": "Hotel parking",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🅿️",
+      "note": "Masculine adjective 'hotelowy'."
     },
     {
-      "id": "s4_56",
-      "category": "Check-out & Services",
-      "pl": "Schody",
-      "en": "Stairs",
+      "id": "s6_69",
+      "category": "Check-out & Leaving",
+      "pl": "Gdzie mogę zaparkować?",
+      "en": "Where can I park?",
       "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🚗",
+      "note": "City center hotels often have off-site or hidden parking."
     },
     {
-      "id": "s4_57",
-      "category": "Check-out & Services",
-      "pl": "Pralnia",
-      "en": "Laundry",
+      "id": "s6_70",
+      "category": "Check-out & Leaving",
+      "pl": "Dziękuję za pobyt",
+      "en": "Thank you for the stay",
       "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_58",
-      "category": "Check-out & Services",
-      "pl": "Czy możecie zadzwonić po taxi?",
-      "en": "Can you call a taxi?",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_59",
-      "category": "Check-out & Services",
-      "pl": "Czy jest sejf w pokoju?",
-      "en": "Is there a safe in the room?",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_60",
-      "category": "Check-out & Services",
-      "pl": "Minibar",
-      "en": "Minibar",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_61",
-      "category": "Room Amenities",
-      "pl": "Łóżko",
-      "en": "Bed",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_62",
-      "category": "Room Amenities",
-      "pl": "Łazienka",
-      "en": "Bathroom",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_63",
-      "category": "Room Amenities",
-      "pl": "Prysznic",
-      "en": "Shower",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_64",
-      "category": "Room Amenities",
-      "pl": "Wanna",
-      "en": "Bathtub",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_65",
-      "category": "Room Amenities",
-      "pl": "Ręcznik",
-      "en": "Towel",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_66",
-      "category": "Room Amenities",
-      "pl": "Szampon",
-      "en": "Shampoo",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_67",
-      "category": "Room Amenities",
-      "pl": "Mydło",
-      "en": "Soap",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_68",
-      "category": "Room Amenities",
-      "pl": "Papier toaletowy",
-      "en": "Toilet paper",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_69",
-      "category": "Room Amenities",
-      "pl": "Balkon",
-      "en": "Balcony",
-      "level": 6,
-      "gender": null
-    },
-    {
-      "id": "s4_70",
-      "category": "Room Amenities",
-      "pl": "Widok",
-      "en": "View",
-      "level": 6,
-      "gender": null
+      "gender": null,
+      "emoji": "🤝",
+      "note": "A polite way to say goodbye to the receptionist."
     }
   ]
 }

@@ -1,502 +1,707 @@
 {
   "level": 10.1,
-  "description": "Outdoor Activities - Walking, Hiking & Cycling",
+  "description": "Outdoors & Nature - Walking, Hiking, Weather & Sports",
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p10_71",
-      "category": "Walking",
+      "id": "s10.1_01",
+      "category": "Walking & Parks",
       "pl": "Spacer",
       "en": "Walk / Stroll",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🚶",
+      "note": "Masculine noun."
     },
     {
-      "id": "p10_72",
-      "category": "Walking",
+      "id": "s10.1_02",
+      "category": "Walking & Parks",
       "pl": "Iść na spacer",
       "en": "To go for a walk",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌳",
+      "note": "A very common Polish pastime! Uses the accusative case 'na spacer'."
     },
     {
-      "id": "p10_73",
-      "category": "Walking",
-      "pl": "Chodzić",
-      "en": "To walk",
-      "level": 10
-    },
-    {
-      "id": "p10_74",
-      "category": "Walking",
+      "id": "s10.1_03",
+      "category": "Walking & Parks",
       "pl": "Chodnik",
       "en": "Sidewalk / Pavement",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🛣️",
+      "note": "Derived from the verb 'chodzić' (to walk)."
     },
     {
-      "id": "p10_75",
-      "category": "Walking",
+      "id": "s10.1_04",
+      "category": "Walking & Parks",
       "pl": "Ścieżka",
       "en": "Path / Trail",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🛤️",
+      "note": "Feminine noun for a smaller, unpaved walking path."
     },
     {
-      "id": "p10_76",
-      "category": "Walking",
+      "id": "s10.1_05",
+      "category": "Walking & Parks",
       "pl": "Park",
       "en": "Park",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌲",
+      "note": "Pronounced exactly as in English, but with a rolled 'r'."
     },
     {
-      "id": "p10_77",
-      "category": "Walking",
-      "pl": "Gdzie jest park?",
-      "en": "Where is the park?",
-      "level": 10
-    },
-    {
-      "id": "p10_78",
-      "category": "Walking",
+      "id": "s10.1_06",
+      "category": "Walking & Parks",
       "pl": "Ławka",
       "en": "Bench",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🪑",
+      "note": "To say 'on the bench', use the locative: 'na ławce'."
     },
     {
-      "id": "p10_79",
-      "category": "Walking",
+      "id": "s10.1_07",
+      "category": "Walking & Parks",
       "pl": "Fontanna",
       "en": "Fountain",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "⛲",
+      "note": "Feminine noun."
     },
     {
-      "id": "p10_80",
-      "category": "Walking",
-      "pl": "Most",
-      "en": "Bridge",
-      "level": 10
-    },
-    {
-      "id": "p10_81",
-      "category": "Walking",
+      "id": "s10.1_08",
+      "category": "Walking & Parks",
       "pl": "Rzeka",
       "en": "River",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🏞️",
+      "note": "Most major Polish cities are built on a 'rzeka' (e.g., Wisła, Odra)."
     },
     {
-      "id": "p10_82",
-      "category": "Walking",
-      "pl": "Jezioro",
-      "en": "Lake",
-      "level": 10
+      "id": "s10.1_09",
+      "category": "Walking & Parks",
+      "pl": "Most",
+      "en": "Bridge",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌉",
+      "note": "Masculine noun."
     },
     {
-      "id": "p10_83",
-      "category": "Walking",
-      "pl": "Plaża",
-      "en": "Beach",
-      "level": 10
-    },
-    {
-      "id": "p10_84",
-      "category": "Walking",
+      "id": "s10.1_10",
+      "category": "Walking & Parks",
       "pl": "Bulwar",
       "en": "Boulevard / Promenade",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🚶‍♂️",
+      "note": "Riverside promenades are hugely popular in Poland (like the 'Bulwary Wiślane' in Warsaw)."
     },
     {
-      "id": "p10_85",
-      "category": "Walking",
+      "id": "s10.1_11",
+      "category": "Walking & Parks",
       "pl": "Deptak",
       "en": "Pedestrian street",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🛍️",
+      "note": "A street completely closed to cars, meant only for walking and shopping."
     },
     {
-      "id": "p10_86",
-      "category": "Hiking",
-      "pl": "Wędrówka",
-      "en": "Hiking / Trekking",
-      "level": 10
+      "id": "s10.1_12",
+      "category": "Walking & Parks",
+      "pl": "Drzewo",
+      "en": "Tree",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌳",
+      "note": "Neuter noun. Plural is 'drzewa'."
     },
     {
-      "id": "p10_87",
-      "category": "Hiking",
-      "pl": "Iść na wędrówkę",
-      "en": "To go hiking",
-      "level": 10
+      "id": "s10.1_13",
+      "category": "Walking & Parks",
+      "pl": "Kwiaty",
+      "en": "Flowers",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌷",
+      "note": "Plural noun. Singular is 'kwiat'."
     },
     {
-      "id": "p10_88",
-      "category": "Hiking",
-      "pl": "Szlak",
-      "en": "Trail / Hiking path",
-      "level": 10
-    },
-    {
-      "id": "p10_89",
-      "category": "Hiking",
-      "pl": "Szlak turystyczny",
-      "en": "Tourist trail",
-      "level": 10
-    },
-    {
-      "id": "p10_90",
-      "category": "Hiking",
-      "pl": "Góry",
-      "en": "Mountains",
-      "level": 10
-    },
-    {
-      "id": "p10_91",
-      "category": "Hiking",
-      "pl": "Szczyt",
-      "en": "Peak / Summit",
-      "level": 10
-    },
-    {
-      "id": "p10_92",
-      "category": "Hiking",
-      "pl": "Las",
-      "en": "Forest",
-      "level": 10
-    },
-    {
-      "id": "p10_93",
-      "category": "Hiking",
-      "pl": "Dolina",
-      "en": "Valley",
-      "level": 10
-    },
-    {
-      "id": "p10_94",
-      "category": "Hiking",
-      "pl": "Wodospad",
-      "en": "Waterfall",
-      "level": 10
-    },
-    {
-      "id": "p10_95",
-      "category": "Hiking",
-      "pl": "Punkt widokowy",
-      "en": "Viewpoint",
-      "level": 10
-    },
-    {
-      "id": "p10_96",
-      "category": "Hiking",
-      "pl": "Mapa szlaku",
-      "en": "Trail map",
-      "level": 10
-    },
-    {
-      "id": "p10_97",
-      "category": "Hiking",
-      "pl": "Plecak",
-      "en": "Backpack",
-      "level": 10
-    },
-    {
-      "id": "p10_98",
-      "category": "Hiking",
-      "pl": "Buty trekkingowe",
-      "en": "Hiking boots",
-      "level": 10
-    },
-    {
-      "id": "p10_99",
-      "category": "Hiking",
-      "pl": "Ile trwa ta trasa?",
-      "en": "How long is this route?",
-      "level": 10
-    },
-    {
-      "id": "p10_100",
-      "category": "Hiking",
-      "pl": "Czy szlak jest trudny?",
-      "en": "Is the trail difficult?",
-      "level": 10
-    },
-    {
-      "id": "p10_101",
-      "category": "Cycling",
+      "id": "s10.1_14",
+      "category": "Cycling & Scooters",
       "pl": "Rower",
-      "en": "Bicycle / Bike",
-      "level": 10
+      "en": "Bicycle",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🚲",
+      "note": "Masculine noun."
     },
     {
-      "id": "p10_102",
-      "category": "Cycling",
+      "id": "s10.1_15",
+      "category": "Cycling & Scooters",
       "pl": "Jeździć na rowerze",
       "en": "To ride a bike",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🚴",
+      "note": "Uses the locative case 'na rowerze'."
     },
     {
-      "id": "p10_103",
-      "category": "Cycling",
+      "id": "s10.1_16",
+      "category": "Cycling & Scooters",
       "pl": "Ścieżka rowerowa",
       "en": "Bike path / Cycle lane",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🛣️",
+      "note": "Do NOT walk in the bike lane in Poland! Cyclists will ring their bells aggressively."
     },
     {
-      "id": "p10_104",
-      "category": "Cycling",
-      "pl": "Wypożyczalnia rowerów",
-      "en": "Bike rental",
-      "level": 10
+      "id": "s10.1_17",
+      "category": "Cycling & Scooters",
+      "pl": "Rower miejski",
+      "en": "City bike",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🚲",
+      "note": "Public bike-sharing systems are available in almost every major Polish city."
     },
     {
-      "id": "p10_105",
-      "category": "Cycling",
-      "pl": "Chciałbym/Chciałabym wynająć rower",
-      "en": "I'd like to rent a bike",
-      "level": 10,
-      "gender": "both",
-      "variants": {
-        "m": "Chciałbym wynająć rower",
-        "f": "Chciałabym wynająć rower"
-      }
+      "id": "s10.1_18",
+      "category": "Cycling & Scooters",
+      "pl": "Hulajnoga elektryczna",
+      "en": "Electric scooter",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🛴",
+      "note": "E-scooters (like Lime, Bolt) are incredibly popular in Poland."
     },
     {
-      "id": "p10_106",
-      "category": "Cycling",
-      "pl": "Ile kosztuje wypożyczenie roweru?",
-      "en": "How much does bike rental cost?",
-      "level": 10
-    },
-    {
-      "id": "p10_107",
-      "category": "Cycling",
-      "pl": "Na godzinę",
-      "en": "Per hour",
-      "level": 10
-    },
-    {
-      "id": "p10_108",
-      "category": "Cycling",
-      "pl": "Na cały dzień",
-      "en": "For the whole day",
-      "level": 10
-    },
-    {
-      "id": "p10_109",
-      "category": "Cycling",
+      "id": "s10.1_19",
+      "category": "Cycling & Scooters",
       "pl": "Kask",
       "en": "Helmet",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🪖",
+      "note": "Masculine noun."
     },
     {
-      "id": "p10_110",
-      "category": "Cycling",
-      "pl": "Zamek do roweru",
+      "id": "s10.1_20",
+      "category": "Cycling & Scooters",
+      "pl": "Zapięcie do roweru",
       "en": "Bike lock",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🔒",
+      "note": "Literally 'fastener to the bike'."
     },
     {
-      "id": "p10_111",
-      "category": "Cycling",
+      "id": "s10.1_21",
+      "category": "Cycling & Scooters",
       "pl": "Pompka",
       "en": "Pump",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "💨",
+      "note": "Feminine noun."
     },
     {
-      "id": "p10_112",
-      "category": "Cycling",
+      "id": "s10.1_22",
+      "category": "Cycling & Scooters",
       "pl": "Mój rower jest zepsuty",
       "en": "My bike is broken",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🛠️",
+      "note": "Adjective 'zepsuty' matches the masculine 'rower'."
     },
     {
-      "id": "p10_113",
-      "category": "Cycling",
-      "pl": "Guma jest przebita",
-      "en": "The tire is flat",
-      "level": 10
+      "id": "s10.1_23",
+      "category": "Cycling & Scooters",
+      "pl": "Przebita opona",
+      "en": "Flat tire",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🛞",
+      "note": "Literally 'pierced tire'."
     },
     {
-      "id": "p10_114",
-      "category": "Cycling",
-      "pl": "Naprawa roweru",
-      "en": "Bike repair",
-      "level": 10
-    },
-    {
-      "id": "p10_115",
-      "category": "Cycling",
-      "pl": "Gdzie mogę naprawić rower?",
-      "en": "Where can I repair my bike?",
-      "level": 10
-    },
-    {
-      "id": "p10_71",
-      "category": "Walking",
-      "pl": "Spacer",
-      "en": "Walk / Stroll",
-      "level": 10
-    },
-    {
-      "id": "p10_72",
-      "category": "Walking",
-      "pl": "Iść na spacer",
-      "en": "To go for a walk",
-      "level": 10
-    },
-    {
-      "id": "p10_73",
-      "category": "Walking",
-      "pl": "Chodzić",
-      "en": "To walk",
-      "level": 10
-    },
-    {
-      "id": "p10_74",
-      "category": "Walking",
-      "pl": "Chodnik",
-      "en": "Sidewalk / Pavement",
-      "level": 10
-    },
-    {
-      "id": "p10_75",
-      "category": "Walking",
-      "pl": "Ścieżka",
-      "en": "Path / Trail",
-      "level": 10
-    },
-    {
-      "id": "p10_76",
-      "category": "Walking",
-      "pl": "Park",
-      "en": "Park",
-      "level": 10
-    },
-    {
-      "id": "p10_77",
-      "category": "Walking",
-      "pl": "Gdzie jest park?",
-      "en": "Where is the park?",
-      "level": 10
-    },
-    {
-      "id": "p10_78",
-      "category": "Walking",
-      "pl": "Ławka",
-      "en": "Bench",
-      "level": 10
-    },
-    {
-      "id": "p10_79",
-      "category": "Walking",
-      "pl": "Fontanna",
-      "en": "Fountain",
-      "level": 10
-    },
-    {
-      "id": "p10_80",
-      "category": "Walking",
-      "pl": "Most",
-      "en": "Bridge",
-      "level": 10
-    },
-    {
-      "id": "p10_81",
-      "category": "Walking",
-      "pl": "Rzeka",
-      "en": "River",
-      "level": 10
-    },
-    {
-      "id": "p10_82",
-      "category": "Walking",
-      "pl": "Jezioro",
-      "en": "Lake",
-      "level": 10
-    },
-    {
-      "id": "p10_83",
-      "category": "Walking",
-      "pl": "Plaża",
-      "en": "Beach",
-      "level": 10
-    },
-    {
-      "id": "p10_84",
-      "category": "Walking",
-      "pl": "Bulwar",
-      "en": "Boulevard / Promenade",
-      "level": 10
-    },
-    {
-      "id": "p10_85",
-      "category": "Walking",
-      "pl": "Deptak",
-      "en": "Pedestrian street",
-      "level": 10
-    },
-    {
-      "id": "p10_86",
-      "category": "Hiking",
+      "id": "s10.1_24",
+      "category": "Hiking & Mountains",
       "pl": "Wędrówka",
       "en": "Hiking / Trekking",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🥾",
+      "note": "Feminine noun."
     },
     {
-      "id": "p10_87",
-      "category": "Hiking",
-      "pl": "Iść na wędrówkę",
-      "en": "To go hiking",
-      "level": 10
-    },
-    {
-      "id": "p10_88",
-      "category": "Hiking",
-      "pl": "Szlak",
-      "en": "Trail / Hiking path",
-      "level": 10
-    },
-    {
-      "id": "p10_89",
-      "category": "Hiking",
-      "pl": "Szlak turystyczny",
-      "en": "Tourist trail",
-      "level": 10
-    },
-    {
-      "id": "p10_90",
-      "category": "Hiking",
+      "id": "s10.1_25",
+      "category": "Hiking & Mountains",
       "pl": "Góry",
       "en": "Mountains",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "⛰️",
+      "note": "Plural noun. 'W górach' means 'in the mountains'."
     },
     {
-      "id": "p10_91",
-      "category": "Hiking",
+      "id": "s10.1_26",
+      "category": "Hiking & Mountains",
+      "pl": "Tatry",
+      "en": "The Tatra Mountains",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🏔️",
+      "note": "The highest mountain range in Poland, located in the south near Zakopane."
+    },
+    {
+      "id": "s10.1_27",
+      "category": "Hiking & Mountains",
+      "pl": "Szlak turystyczny",
+      "en": "Hiking trail",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🪧",
+      "note": "Polish trails are beautifully marked with colored stripes on trees (red, blue, green, yellow, black)."
+    },
+    {
+      "id": "s10.1_28",
+      "category": "Hiking & Mountains",
       "pl": "Szczyt",
       "en": "Peak / Summit",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🚩",
+      "note": "Pronounced 'Sh-chit'."
     },
     {
-      "id": "p10_92",
-      "category": "Hiking",
-      "pl": "Las",
-      "en": "Forest",
-      "level": 10
-    },
-    {
-      "id": "p10_93",
-      "category": "Hiking",
+      "id": "s10.1_29",
+      "category": "Hiking & Mountains",
       "pl": "Dolina",
       "en": "Valley",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🏞️",
+      "note": "Feminine noun."
     },
     {
-      "id": "p10_94",
-      "category": "Hiking",
+      "id": "s10.1_30",
+      "category": "Hiking & Mountains",
+      "pl": "Las",
+      "en": "Forest",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌲",
+      "note": "Poland is heavily forested. 'W lesie' means 'in the forest'."
+    },
+    {
+      "id": "s10.1_31",
+      "category": "Hiking & Mountains",
       "pl": "Wodospad",
       "en": "Waterfall",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌊",
+      "note": "Literally 'water-fall'."
     },
     {
-      "id": "p10_95",
-      "category": "Hiking",
+      "id": "s10.1_32",
+      "category": "Hiking & Mountains",
+      "pl": "Schronisko",
+      "en": "Mountain shelter / Refuge",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🏡",
+      "note": "Crucial! These are large wooden chalets on Polish trails where you can rest, buy hot tea, and eat warm food."
+    },
+    {
+      "id": "s10.1_33",
+      "category": "Hiking & Mountains",
+      "pl": "Kolejka linowa",
+      "en": "Cable car",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🚠",
+      "note": "Very popular in Zakopane for getting up the high peaks without hiking."
+    },
+    {
+      "id": "s10.1_34",
+      "category": "Hiking & Mountains",
       "pl": "Punkt widokowy",
       "en": "Viewpoint",
-      "level": 10
+      "level": 10.1,
+      "gender": null,
+      "emoji": "👀",
+      "note": "Literally 'viewing point'."
+    },
+    {
+      "id": "s10.1_35",
+      "category": "Hiking & Mountains",
+      "pl": "Plecak",
+      "en": "Backpack",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🎒",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s10.1_36",
+      "category": "Hiking & Mountains",
+      "pl": "Buty trekkingowe",
+      "en": "Hiking boots",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🥾",
+      "note": "If you try to hike the Tatras in sneakers, the mountain rescue team might yell at you!"
+    },
+    {
+      "id": "s10.1_37",
+      "category": "Hiking & Mountains",
+      "pl": "Czy szlak jest trudny?",
+      "en": "Is the trail difficult?",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🧗",
+      "note": "'Trudny' is a masculine adjective matching 'szlak'."
+    },
+    {
+      "id": "s10.1_38",
+      "category": "Hiking & Mountains",
+      "pl": "Ile czasu zajmie wejście?",
+      "en": "How long does it take to go up?",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "⏱️",
+      "note": "'Wejście' means the ascent or entrance."
+    },
+    {
+      "id": "s10.1_39",
+      "category": "Hiking & Mountains",
+      "pl": "Uwaga na niedźwiedzie",
+      "en": "Beware of bears",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🐻",
+      "note": "A real sign you will see in the Bieszczady or Tatra mountains!"
+    },
+    {
+      "id": "s10.1_40",
+      "category": "Water & Beach",
+      "pl": "Morze",
+      "en": "Sea",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌊",
+      "note": "Poland's northern coast is entirely on the 'Morze Bałtyckie' (Baltic Sea)."
+    },
+    {
+      "id": "s10.1_41",
+      "category": "Water & Beach",
+      "pl": "Jezioro",
+      "en": "Lake",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🛶",
+      "note": "Poland has a massive lake district called Mazury."
+    },
+    {
+      "id": "s10.1_42",
+      "category": "Water & Beach",
+      "pl": "Plaża",
+      "en": "Beach",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🏖️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s10.1_43",
+      "category": "Water & Beach",
+      "pl": "Piasek",
+      "en": "Sand",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🏜️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s10.1_44",
+      "category": "Water & Beach",
+      "pl": "Pływać",
+      "en": "To swim",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🏊",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s10.1_45",
+      "category": "Water & Beach",
+      "pl": "Ręcznik plażowy",
+      "en": "Beach towel",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "⛱️",
+      "note": "Adjective 'plażowy' matches 'ręcznik'."
+    },
+    {
+      "id": "s10.1_46",
+      "category": "Water & Beach",
+      "pl": "Ratownik",
+      "en": "Lifeguard",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🛟",
+      "note": "Derived from 'ratować' (to rescue)."
+    },
+    {
+      "id": "s10.1_47",
+      "category": "Water & Beach",
+      "pl": "Zakaz kąpieli",
+      "en": "No swimming",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🚫",
+      "note": "Literally 'Ban on bathing'. Usually posted when the sea is too rough."
+    },
+    {
+      "id": "s10.1_48",
+      "category": "Water & Beach",
+      "pl": "Wypożyczyć kajak",
+      "en": "To rent a kayak",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🛶",
+      "note": "Kayaking is hugely popular on Polish rivers and lakes."
+    },
+    {
+      "id": "s10.1_49",
+      "category": "Water & Beach",
+      "pl": "Rower wodny",
+      "en": "Pedal boat",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🦢",
+      "note": "Literally 'water bike'."
+    },
+    {
+      "id": "s10.1_50",
+      "category": "Winter Sports",
+      "pl": "Narty",
+      "en": "Skis / Skiing",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "⛷️",
+      "note": "Plural noun."
+    },
+    {
+      "id": "s10.1_51",
+      "category": "Winter Sports",
+      "pl": "Jeździć na nartach",
+      "en": "To ski",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🎿",
+      "note": "Literally 'to ride on skis' (locative case)."
+    },
+    {
+      "id": "s10.1_52",
+      "category": "Winter Sports",
+      "pl": "Snowboard",
+      "en": "Snowboard",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🏂",
+      "note": "Pronounced just like in English."
+    },
+    {
+      "id": "s10.1_53",
+      "category": "Winter Sports",
+      "pl": "Stok narciarski",
+      "en": "Ski slope",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "⛷️",
+      "note": "'Stok' is the slope."
+    },
+    {
+      "id": "s10.1_54",
+      "category": "Winter Sports",
+      "pl": "Wyciąg narciarski",
+      "en": "Ski lift",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🚠",
+      "note": "'Wyciąg' comes from the verb meaning to pull up/extract."
+    },
+    {
+      "id": "s10.1_55",
+      "category": "Winter Sports",
+      "pl": "Wypożyczalnia sprzętu",
+      "en": "Equipment rental",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🎿",
+      "note": "'Sprzęt' is the general word for gear/equipment."
+    },
+    {
+      "id": "s10.1_56",
+      "category": "Winter Sports",
+      "pl": "Karnet",
+      "en": "Ski pass",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🎫",
+      "note": "Can also be used for a gym membership or season ticket."
+    },
+    {
+      "id": "s10.1_57",
+      "category": "Weather",
+      "pl": "Jaka jest pogoda?",
+      "en": "What's the weather like?",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌤️",
+      "note": "'Pogoda' is the feminine noun for weather."
+    },
+    {
+      "id": "s10.1_58",
+      "category": "Weather",
+      "pl": "Prognoza pogody",
+      "en": "Weather forecast",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "📱",
+      "note": "Takes the genitive case 'pogody' (forecast of weather)."
+    },
+    {
+      "id": "s10.1_59",
+      "category": "Weather",
+      "pl": "Świeci słońce",
+      "en": "The sun is shining",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "☀️",
+      "note": "Literally 'shines sun'."
+    },
+    {
+      "id": "s10.1_60",
+      "category": "Weather",
+      "pl": "Pada deszcz",
+      "en": "It's raining",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌧️",
+      "note": "Literally 'Rain falls'."
+    },
+    {
+      "id": "s10.1_61",
+      "category": "Weather",
+      "pl": "Pada śnieg",
+      "en": "It's snowing",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌨️",
+      "note": "Literally 'Snow falls'."
+    },
+    {
+      "id": "s10.1_62",
+      "category": "Weather",
+      "pl": "Jest wietrznie",
+      "en": "It's windy",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌬️",
+      "note": "Uses the adverbial form 'wietrznie'."
+    },
+    {
+      "id": "s10.1_63",
+      "category": "Weather",
+      "pl": "Jest pochmurno",
+      "en": "It's cloudy",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "☁️",
+      "note": "From the word 'chmura' (cloud)."
+    },
+    {
+      "id": "s10.1_64",
+      "category": "Weather",
+      "pl": "Burza",
+      "en": "Storm / Thunderstorm",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "⛈️",
+      "note": "Feminine noun. Summer thunderstorms are very common in Poland."
+    },
+    {
+      "id": "s10.1_65",
+      "category": "Weather",
+      "pl": "Mgła",
+      "en": "Fog",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌫️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s10.1_66",
+      "category": "Weather",
+      "pl": "Jest zimno",
+      "en": "It's cold",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🥶",
+      "note": "Use this to describe the environment. (Remember, to say YOU are cold, say 'Zimno mi')."
+    },
+    {
+      "id": "s10.1_67",
+      "category": "Weather",
+      "pl": "Jest gorąco",
+      "en": "It's hot",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🥵",
+      "note": "Use this to describe the environment."
+    },
+    {
+      "id": "s10.1_68",
+      "category": "Weather",
+      "pl": "Ciepło",
+      "en": "Warm",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌡️",
+      "note": "Pleasantly warm, but not sweltering hot."
+    },
+    {
+      "id": "s10.1_69",
+      "category": "Weather",
+      "pl": "Chłodno",
+      "en": "Chilly / Cool",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🧥",
+      "note": "Cool, but not freezing."
+    },
+    {
+      "id": "s10.1_70",
+      "category": "Weather",
+      "pl": "Temperatura",
+      "en": "Temperature",
+      "level": 10.1,
+      "gender": null,
+      "emoji": "🌡️",
+      "note": "Pronounced almost identically to English."
     }
   ]
 }

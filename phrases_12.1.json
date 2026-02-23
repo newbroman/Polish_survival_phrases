@@ -4,494 +4,104 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p12_71",
-      "category": "Cooking",
+      "id": "s12.1_01",
+      "category": "Kitchen",
       "pl": "Gotować",
       "en": "To cook",
-      "level": 12
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🍳",
+      "note": "Infinitive verb."
     },
     {
-      "id": "p12_72",
-      "category": "Cooking",
-      "pl": "Kuchnia",
-      "en": "Kitchen",
-      "level": 12
-    },
-    {
-      "id": "p12_73",
-      "category": "Cooking",
-      "pl": "Gotowanie",
-      "en": "Cooking",
-      "level": 12
-    },
-    {
-      "id": "p12_74",
-      "category": "Cooking",
+      "id": "s12.1_02",
+      "category": "Kitchen",
       "pl": "Przepis",
       "en": "Recipe",
-      "level": 12
+      "level": 12.1,
+      "gender": null,
+      "emoji": "📖",
+      "note": "Masculine noun. Also means 'regulation' in other contexts."
     },
     {
-      "id": "p12_75",
-      "category": "Cooking",
-      "pl": "Składniki",
-      "en": "Ingredients",
-      "level": 12
-    },
-    {
-      "id": "p12_76",
-      "category": "Cooking",
-      "pl": "Garnek",
-      "en": "Pot",
-      "level": 12
-    },
-    {
-      "id": "p12_77",
-      "category": "Cooking",
-      "pl": "Patelnia",
-      "en": "Frying pan",
-      "level": 12
-    },
-    {
-      "id": "p12_78",
-      "category": "Cooking",
-      "pl": "Nóż",
-      "en": "Knife",
-      "level": 12
-    },
-    {
-      "id": "p12_79",
-      "category": "Cooking",
+      "id": "s12.1_03",
+      "category": "Kitchen",
       "pl": "Deska do krojenia",
       "en": "Cutting board",
-      "level": 12
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🔪",
+      "note": "Literally 'board for cutting'."
     },
     {
-      "id": "p12_80",
-      "category": "Cooking",
-      "pl": "Piekarnik",
-      "en": "Oven",
-      "level": 12
-    },
-    {
-      "id": "p12_81",
-      "category": "Cooking",
-      "pl": "Kuchenka",
-      "en": "Stove / Cooker",
-      "level": 12
-    },
-    {
-      "id": "p12_82",
-      "category": "Cooking",
+      "id": "s12.1_04",
+      "category": "Kitchen",
       "pl": "Lodówka",
       "en": "Refrigerator / Fridge",
-      "level": 12
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🧊",
+      "note": "From 'lód' (ice)."
     },
     {
-      "id": "p12_83",
-      "category": "Cooking",
-      "pl": "Zamrażarka",
-      "en": "Freezer",
-      "level": 12
-    },
-    {
-      "id": "p12_84",
-      "category": "Cooking",
-      "pl": "Mikrofalówka",
-      "en": "Microwave",
-      "level": 12
-    },
-    {
-      "id": "p12_85",
-      "category": "Cooking",
+      "id": "s12.1_05",
+      "category": "Kitchen",
       "pl": "Zmywarka",
       "en": "Dishwasher",
-      "level": 12
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🧼",
+      "note": "From 'zmywać' (to wash dishes)."
     },
     {
-      "id": "p12_86",
-      "category": "Cooking",
-      "pl": "Talerz",
-      "en": "Plate",
-      "level": 12
-    },
-    {
-      "id": "p12_87",
-      "category": "Cooking",
-      "pl": "Kubek",
-      "en": "Mug / Cup",
-      "level": 12
-    },
-    {
-      "id": "p12_88",
-      "category": "Cooking",
-      "pl": "Szklan ka",
-      "en": "Glass",
-      "level": 12
-    },
-    {
-      "id": "p12_89",
-      "category": "Cooking",
-      "pl": "Sztućce",
-      "en": "Cutlery",
-      "level": 12
-    },
-    {
-      "id": "p12_90",
-      "category": "Cooking",
-      "pl": "Widelec / Nóż / Łyżka",
-      "en": "Fork / Knife / Spoon",
-      "level": 12
-    },
-    {
-      "id": "p12_91",
+      "id": "s12.1_06",
       "category": "Furniture",
-      "pl": "Meble",
-      "en": "Furniture",
-      "level": 12
-    },
-    {
-      "id": "p12_92",
-      "category": "Furniture",
-      "pl": "Stół",
-      "en": "Table",
-      "level": 12
-    },
-    {
-      "id": "p12_93",
-      "category": "Furniture",
-      "pl": "Krzesło",
-      "en": "Chair",
-      "level": 12
-    },
-    {
-      "id": "p12_94",
-      "category": "Furniture",
-      "pl": "Fotel",
-      "en": "Armchair",
-      "level": 12
-    },
-    {
-      "id": "p12_95",
-      "category": "Furniture",
-      "pl": "Kanapa / Sofa",
+      "pl": "Kanapa",
       "en": "Sofa / Couch",
-      "level": 12
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🛋️",
+      "note": "A feminine noun. Poles often use 'sofa' and 'kanapa' interchangeably."
     },
     {
-      "id": "p12_96",
-      "category": "Furniture",
-      "pl": "Łóżko",
-      "en": "Bed",
-      "level": 12
-    },
-    {
-      "id": "p12_97",
+      "id": "s12.1_07",
       "category": "Furniture",
       "pl": "Szafa",
       "en": "Wardrobe / Closet",
-      "level": 12
+      "level": 12.1,
+      "gender": null,
+      "emoji": "👗",
+      "note": "Crucial word for where you keep your clothes."
     },
     {
-      "id": "p12_98",
-      "category": "Furniture",
-      "pl": "Komoda",
-      "en": "Chest of drawers / Dresser",
-      "level": 12
-    },
-    {
-      "id": "p12_99",
-      "category": "Furniture",
-      "pl": "Półka",
-      "en": "Shelf",
-      "level": 12
-    },
-    {
-      "id": "p12_100",
-      "category": "Furniture",
-      "pl": "Regał",
-      "en": "Bookcase / Shelving unit",
-      "level": 12
-    },
-    {
-      "id": "p12_101",
-      "category": "Furniture",
-      "pl": "Biurko",
-      "en": "Desk",
-      "level": 12
-    },
-    {
-      "id": "p12_102",
-      "category": "Furniture",
-      "pl": "Lampa",
-      "en": "Lamp",
-      "level": 12
-    },
-    {
-      "id": "p12_103",
-      "category": "Furniture",
-      "pl": "Dywan",
-      "en": "Carpet / Rug",
-      "level": 12
-    },
-    {
-      "id": "p12_104",
-      "category": "Furniture",
-      "pl": "Zasłony",
-      "en": "Curtains",
-      "level": 12
-    },
-    {
-      "id": "p12_105",
-      "category": "Furniture",
-      "pl": "Lustro",
-      "en": "Mirror",
-      "level": 12
-    },
-    {
-      "id": "p12_106",
-      "category": "Furniture",
-      "pl": "Obraz",
-      "en": "Picture / Painting",
-      "level": 12
-    },
-    {
-      "id": "p12_107",
-      "category": "Furniture",
-      "pl": "Zegar",
-      "en": "Clock",
-      "level": 12
-    },
-    {
-      "id": "p12_108",
-      "category": "Furniture",
-      "pl": "Telewizor",
-      "en": "Television",
-      "level": 12
-    },
-    {
-      "id": "p12_109",
-      "category": "Furniture",
-      "pl": "Materac",
-      "en": "Mattress",
-      "level": 12
-    },
-    {
-      "id": "p12_110",
-      "category": "Furniture",
-      "pl": "Poduszka",
-      "en": "Pillow",
-      "level": 12
-    },
-    {
-      "id": "p12_111",
-      "category": "Decorating",
-      "pl": "Dekoracja",
-      "en": "Decoration",
-      "level": 12
-    },
-    {
-      "id": "p12_112",
-      "category": "Decorating",
-      "pl": "Malować",
-      "en": "To paint",
-      "level": 12
-    },
-    {
-      "id": "p12_113",
-      "category": "Decorating",
-      "pl": "Farba",
-      "en": "Paint",
-      "level": 12
-    },
-    {
-      "id": "p12_114",
-      "category": "Decorating",
-      "pl": "Ściana",
-      "en": "Wall",
-      "level": 12
-    },
-    {
-      "id": "p12_115",
-      "category": "Decorating",
-      "pl": "Sufit",
-      "en": "Ceiling",
-      "level": 12
-    },
-    {
-      "id": "p12_116",
-      "category": "Decorating",
-      "pl": "Podłoga",
-      "en": "Floor",
-      "level": 12
-    },
-    {
-      "id": "p12_117",
-      "category": "Decorating",
-      "pl": "Tapeta",
-      "en": "Wallpaper",
-      "level": 12
-    },
-    {
-      "id": "p12_118",
-      "category": "Decorating",
-      "pl": "Kolor",
-      "en": "Color",
-      "level": 12
-    },
-    {
-      "id": "p12_119",
-      "category": "Decorating",
-      "pl": "Jasny",
-      "en": "Light / Bright",
-      "level": 12
-    },
-    {
-      "id": "p12_120",
-      "category": "Decorating",
-      "pl": "Ciemny",
-      "en": "Dark",
-      "level": 12
-    },
-    {
-      "id": "p12_121",
-      "category": "Decorating",
-      "pl": "Kwiat",
-      "en": "Flower",
-      "level": 12
-    },
-    {
-      "id": "p12_122",
-      "category": "Decorating",
-      "pl": "Roślina",
-      "en": "Plant",
-      "level": 12
-    },
-    {
-      "id": "p12_123",
-      "category": "Decorating",
-      "pl": "Wazon",
-      "en": "Vase",
-      "level": 12
-    },
-    {
-      "id": "p12_124",
-      "category": "Decorating",
-      "pl": "Świeca",
-      "en": "Candle",
-      "level": 12
-    },
-    {
-      "id": "p12_125",
-      "category": "Decorating",
-      "pl": "Przytulny",
-      "en": "Cozy / Comfortable",
-      "level": 12
-    },
-    {
-      "id": "p12_126",
-      "category": "Gardening",
-      "pl": "Ogród",
-      "en": "Garden",
-      "level": 12
-    },
-    {
-      "id": "p12_127",
+      "id": "s12.1_08",
       "category": "Gardening",
       "pl": "Ogródek",
       "en": "Small garden",
-      "level": 12
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🏡",
+      "note": "Diminutive of 'ogród'. Often used for backyard gardens."
     },
     {
-      "id": "p12_128",
-      "category": "Gardening",
-      "pl": "Balkon",
-      "en": "Balcony",
-      "level": 12
-    },
-    {
-      "id": "p12_129",
-      "category": "Gardening",
-      "pl": "Taras",
-      "en": "Terrace / Patio",
-      "level": 12
-    },
-    {
-      "id": "p12_130",
-      "category": "Gardening",
-      "pl": "Ogrodnictwo",
-      "en": "Gardening",
-      "level": 12
-    },
-    {
-      "id": "p12_131",
-      "category": "Gardening",
-      "pl": "Sadzić",
-      "en": "To plant",
-      "level": 12
-    },
-    {
-      "id": "p12_132",
+      "id": "s12.1_09",
       "category": "Gardening",
       "pl": "Podlewać",
       "en": "To water",
-      "level": 12
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🚿",
+      "note": "E.g., 'Podlewać kwiaty' (To water the flowers)."
     },
     {
-      "id": "p12_133",
+      "id": "s12.1_10",
       "category": "Gardening",
       "pl": "Kosić trawę",
       "en": "To mow the lawn",
-      "level": 12
-    },
-    {
-      "id": "p12_134",
-      "category": "Gardening",
-      "pl": "Trawnik",
-      "en": "Lawn / Grass",
-      "level": 12
-    },
-    {
-      "id": "p12_135",
-      "category": "Gardening",
-      "pl": "Drzewo",
-      "en": "Tree",
-      "level": 12
-    },
-    {
-      "id": "p12_136",
-      "category": "Gardening",
-      "pl": "Krzew",
-      "en": "Bush / Shrub",
-      "level": 12
-    },
-    {
-      "id": "p12_137",
-      "category": "Gardening",
-      "pl": "Nasiona",
-      "en": "Seeds",
-      "level": 12
-    },
-    {
-      "id": "p12_138",
-      "category": "Gardening",
-      "pl": "Ziemia",
-      "en": "Soil / Earth",
-      "level": 12
-    },
-    {
-      "id": "p12_139",
-      "category": "Gardening",
-      "pl": "Doniczka",
-      "en": "Flower pot",
-      "level": 12
-    },
-    {
-      "id": "p12_140",
-      "category": "Gardening",
-      "pl": "Narzędzia ogrodnicze",
-      "en": "Garden tools",
-      "level": 12
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🚜",
+      "note": "'Trawę' is the accusative case of 'trawa' (grass)."
     }
   ]
 }

@@ -1,571 +1,711 @@
 {
   "level": 10,
-  "description": "Phone & Internet - Connectivity Essentials",
+  "description": "Phone & Internet - Tech, Connectivity & Apps",
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p7_01",
-      "category": "WiFi & Internet",
-      "pl": "WiFi",
-      "en": "WiFi",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_02",
-      "category": "WiFi & Internet",
+      "id": "s10_01",
+      "category": "WiFi & Network",
       "pl": "Internet",
       "en": "Internet",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🌐",
+      "note": "Masculine noun. Pronounced identically to English, but with a rolled 'r'."
     },
     {
-      "id": "p7_03",
-      "category": "WiFi & Internet",
-      "pl": "Jaki jest kod WiFi?",
-      "en": "What is the WiFi password?",
+      "id": "s10_02",
+      "category": "WiFi & Network",
+      "pl": "Czy macie darmowe WiFi?",
+      "en": "Do you have free WiFi?",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "📶",
+      "note": "Darmowe (free) is a neuter adjective matching WiFi. 'Macie' is the plural 'you have' for the café staff."
     },
     {
-      "id": "p7_04",
-      "category": "WiFi & Internet",
+      "id": "s10_03",
+      "category": "WiFi & Network",
       "pl": "Hasło do WiFi",
       "en": "WiFi password",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🔐",
+      "note": "Literally 'Password to WiFi'. Very common question in cafes."
     },
     {
-      "id": "p7_05",
-      "category": "WiFi & Internet",
-      "pl": "Czy jest WiFi?",
-      "en": "Is there WiFi?",
+      "id": "s10_04",
+      "category": "WiFi & Network",
+      "pl": "Brak zasięgu",
+      "en": "No signal / No service",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "📵",
+      "note": "Literally 'Lack of range'. You will see this on your phone screen in rural areas."
     },
     {
-      "id": "p7_06",
-      "category": "WiFi & Internet",
-      "pl": "WiFi nie działa",
-      "en": "WiFi doesn't work",
+      "id": "s10_05",
+      "category": "WiFi & Network",
+      "pl": "Dane komórkowe",
+      "en": "Cellular data / Mobile data",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🛜",
+      "note": "'Komórka' means cell (both biological and mobile phone)."
     },
     {
-      "id": "p7_07",
-      "category": "WiFi & Internet",
-      "pl": "Internet jest wolny",
-      "en": "Internet is slow",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_08",
-      "category": "WiFi & Internet",
-      "pl": "Nie mogę się połączyć",
-      "en": "I can't connect",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_09",
-      "category": "WiFi & Internet",
-      "pl": "Potrzebuję internetu",
-      "en": "I need internet",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_10",
-      "category": "WiFi & Internet",
-      "pl": "Czy WiFi jest darmowe?",
-      "en": "Is WiFi free?",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_11",
-      "category": "WiFi & Internet",
-      "pl": "Sieć",
-      "en": "Network",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_12",
-      "category": "WiFi & Internet",
-      "pl": "Nazwa sieci",
-      "en": "Network name",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_13",
-      "category": "WiFi & Internet",
-      "pl": "Sygnał jest słaby",
-      "en": "Signal is weak",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_14",
-      "category": "WiFi & Internet",
-      "pl": "Nie ma zasięgu",
-      "en": "No signal / No coverage",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_15",
-      "category": "WiFi & Internet",
-      "pl": "Dane mobilne",
-      "en": "Mobile data",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_16",
-      "category": "WiFi & Internet",
+      "id": "s10_06",
+      "category": "WiFi & Network",
       "pl": "Roaming",
       "en": "Roaming",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🌍",
+      "note": "Pronounced the English way. If you have an EU SIM, roaming is free in Poland!"
     },
     {
-      "id": "p7_17",
-      "category": "WiFi & Internet",
-      "pl": "Czy mogę użyć komputera?",
-      "en": "Can I use the computer?",
+      "id": "s10_07",
+      "category": "WiFi & Network",
+      "pl": "Tryb samolotowy",
+      "en": "Airplane mode",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "✈️",
+      "note": "From 'samolot' (airplane)."
     },
     {
-      "id": "p7_18",
-      "category": "WiFi & Internet",
-      "pl": "Drukarka",
-      "en": "Printer",
+      "id": "s10_08",
+      "category": "WiFi & Network",
+      "pl": "Hotspot",
+      "en": "Hotspot / Tethering",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "📱",
+      "note": "You can also say 'udostępnianie internetu' (sharing internet)."
     },
     {
-      "id": "p7_19",
-      "category": "WiFi & Internet",
-      "pl": "Czy mogę wydrukować?",
-      "en": "Can I print?",
+      "id": "s10_09",
+      "category": "WiFi & Network",
+      "pl": "Router",
+      "en": "Router",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "📡",
+      "note": "Pronounced 'Roo-ter'. Usually requires a restart if the internet is slow!"
     },
     {
-      "id": "p7_20",
-      "category": "WiFi & Internet",
-      "pl": "Email",
-      "en": "Email",
+      "id": "s10_10",
+      "category": "WiFi & Network",
+      "pl": "Światłowód",
+      "en": "Fiber optic internet",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "⚡",
+      "note": "Literally 'light-conductor'. High-speed internet is very common in Polish cities."
     },
     {
-      "id": "p7_21",
-      "category": "Phone",
-      "pl": "Telefon",
-      "en": "Phone",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_22",
-      "category": "Phone",
-      "pl": "Mój telefon",
-      "en": "My phone",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_23",
-      "category": "Phone",
-      "pl": "Telefon komórkowy",
-      "en": "Mobile phone",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_24",
-      "category": "Phone",
+      "id": "s10_11",
+      "category": "Hardware & Accessories",
       "pl": "Smartfon",
       "en": "Smartphone",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "📱",
+      "note": "Loanword. You can also just say 'telefon'."
     },
     {
-      "id": "p7_25",
-      "category": "Phone",
-      "pl": "Mój telefon nie działa",
-      "en": "My phone doesn't work",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_26",
-      "category": "Phone",
-      "pl": "Telefon jest rozładowany",
-      "en": "Phone is dead / out of battery",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_27",
-      "category": "Phone",
-      "pl": "Bateria",
-      "en": "Battery",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_28",
-      "category": "Phone",
+      "id": "s10_12",
+      "category": "Hardware & Accessories",
       "pl": "Ładowarka",
       "en": "Charger",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🔌",
+      "note": "Feminine noun. Essential travel item."
     },
     {
-      "id": "p7_29",
-      "category": "Phone",
-      "pl": "Gdzie mogę naładować telefon?",
-      "en": "Where can I charge my phone?",
+      "id": "s10_13",
+      "category": "Hardware & Accessories",
+      "pl": "Kabel USB",
+      "en": "USB cable",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🪢",
+      "note": "Pronounced 'Ka-bel Oo-es-be'."
     },
     {
-      "id": "p7_30",
-      "category": "Phone",
-      "pl": "Czy mogę naładować telefon?",
-      "en": "Can I charge my phone?",
+      "id": "s10_14",
+      "category": "Hardware & Accessories",
+      "pl": "Powerbank",
+      "en": "Power bank",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🔋",
+      "note": "Borrowed directly from English. Very commonly used in Poland."
     },
     {
-      "id": "p7_31",
-      "category": "Phone",
-      "pl": "Gniazdko",
-      "en": "Socket / Outlet",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_32",
-      "category": "Phone",
-      "pl": "Kabel",
-      "en": "Cable",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_33",
-      "category": "Phone",
-      "pl": "Karta SIM",
-      "en": "SIM card",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_34",
-      "category": "Phone",
-      "pl": "Gdzie mogę kupić kartę SIM?",
-      "en": "Where can I buy a SIM card?",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_35",
-      "category": "Phone",
-      "pl": "Potrzebuję karty SIM",
-      "en": "I need a SIM card",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_36",
-      "category": "Phone",
-      "pl": "Numer telefonu",
-      "en": "Phone number",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_37",
-      "category": "Phone",
-      "pl": "Mój numer to...",
-      "en": "My number is...",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_38",
-      "category": "Phone",
-      "pl": "Czy mogę zadzwonić?",
-      "en": "Can I make a call?",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_39",
-      "category": "Phone",
-      "pl": "Zadzwonię później",
-      "en": "I'll call later",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_40",
-      "category": "Phone",
-      "pl": "Proszę zadzwonić do mnie",
-      "en": "Please call me",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_41",
-      "category": "Phone",
-      "pl": "SMS",
-      "en": "Text message",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_42",
-      "category": "Phone",
-      "pl": "Wiadomość",
-      "en": "Message",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_43",
-      "category": "Phone",
-      "pl": "Zgubiłem/Zgubiłam telefon",
-      "en": "I lost my phone",
-      "level": 10,
-      "gender": "both",
-      "variants": {
-        "m": "Zgubiłem telefon",
-        "f": "Zgubiłam telefon"
-      }
-    },
-    {
-      "id": "p7_44",
-      "category": "Phone",
-      "pl": "Telefon został skradziony",
-      "en": "Phone was stolen",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_45",
-      "category": "Phone",
-      "pl": "Czy mogę użyć telefonu?",
-      "en": "Can I use the phone?",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_46",
-      "category": "Tech Issues",
-      "pl": "Nie działa",
-      "en": "Doesn't work / Not working",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_47",
-      "category": "Tech Issues",
-      "pl": "Zepsuty",
-      "en": "Broken",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_48",
-      "category": "Tech Issues",
-      "pl": "Czy możesz to naprawić?",
-      "en": "Can you fix this?",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_49",
-      "category": "Tech Issues",
-      "pl": "Potrzebuję pomocy technicznej",
-      "en": "I need technical help",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_50",
-      "category": "Tech Issues",
-      "pl": "Komputer",
-      "en": "Computer",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_51",
-      "category": "Tech Issues",
-      "pl": "Laptop",
-      "en": "Laptop",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_52",
-      "category": "Tech Issues",
-      "pl": "Tablet",
-      "en": "Tablet",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_53",
-      "category": "Tech Issues",
+      "id": "s10_15",
+      "category": "Hardware & Accessories",
       "pl": "Słuchawki",
-      "en": "Headphones",
+      "en": "Headphones / Earbuds",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🎧",
+      "note": "Plural noun. From the verb 'słuchać' (to listen)."
     },
     {
-      "id": "p7_54",
-      "category": "Tech Issues",
-      "pl": "Adapter",
-      "en": "Adapter",
+      "id": "s10_16",
+      "category": "Hardware & Accessories",
+      "pl": "Słuchawki bezprzewodowe",
+      "en": "Wireless headphones",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "📶",
+      "note": "'Bezprzewodowe' literally means 'without wire'."
     },
     {
-      "id": "p7_55",
-      "category": "Tech Issues",
-      "pl": "Potrzebuję adaptera",
-      "en": "I need an adapter",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_56",
-      "category": "Tech Issues",
-      "pl": "USB",
-      "en": "USB",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_57",
-      "category": "Tech Issues",
-      "pl": "Pendrive",
-      "en": "USB drive / Flash drive",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_58",
-      "category": "Tech Issues",
-      "pl": "Czy mogę to podłączyć?",
-      "en": "Can I plug this in?",
-      "level": 10,
-      "gender": null
-    },
-    {
-      "id": "p7_59",
-      "category": "Tech Issues",
+      "id": "s10_17",
+      "category": "Hardware & Accessories",
       "pl": "Ekran",
-      "en": "Screen",
+      "en": "Screen / Display",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🖥️",
+      "note": "Masculine noun used for phones, TVs, and computers."
     },
     {
-      "id": "p7_60",
-      "category": "Tech Issues",
+      "id": "s10_18",
+      "category": "Hardware & Accessories",
+      "pl": "Ekran dotykowy",
+      "en": "Touch screen",
+      "level": 10,
+      "gender": null,
+      "emoji": "👆",
+      "note": "From 'dotykać' (to touch)."
+    },
+    {
+      "id": "s10_19",
+      "category": "Hardware & Accessories",
       "pl": "Klawiatura",
       "en": "Keyboard",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "⌨️",
+      "note": "Feminine noun. Used for both digital and physical keyboards."
     },
     {
-      "id": "p7_61",
+      "id": "s10_20",
+      "category": "Hardware & Accessories",
+      "pl": "Bateria",
+      "en": "Battery",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔋",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s10_21",
+      "category": "Hardware & Accessories",
+      "pl": "Etui na telefon",
+      "en": "Phone case",
+      "level": 10,
+      "gender": null,
+      "emoji": "🛡️",
+      "note": "'Etui' is a French loanword. Pronounced 'E-twee'."
+    },
+    {
+      "id": "s10_22",
+      "category": "Hardware & Accessories",
+      "pl": "Głośnik",
+      "en": "Speaker",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔈",
+      "note": "From 'głośno' (loud)."
+    },
+    {
+      "id": "s10_23",
+      "category": "Hardware & Accessories",
+      "pl": "Mikrofon",
+      "en": "Microphone",
+      "level": 10,
+      "gender": null,
+      "emoji": "🎙️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s10_24",
+      "category": "Hardware & Accessories",
+      "pl": "Kamera",
+      "en": "Camera",
+      "level": 10,
+      "gender": null,
+      "emoji": "📷",
+      "note": "Used for video cameras or webcams. A photography camera is 'Aparat'."
+    },
+    {
+      "id": "s10_25",
+      "category": "SIM & Phone Service",
+      "pl": "Karta SIM",
+      "en": "SIM card",
+      "level": 10,
+      "gender": null,
+      "emoji": "📇",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s10_26",
+      "category": "SIM & Phone Service",
+      "pl": "Starter",
+      "en": "Prepaid SIM package",
+      "level": 10,
+      "gender": null,
+      "emoji": "📦",
+      "note": "Crucial vocab! If you want a prepaid SIM at a kiosk, ask for a 'Starter'. You must show your passport to register it by Polish law."
+    },
+    {
+      "id": "s10_27",
+      "category": "SIM & Phone Service",
+      "pl": "Doładować konto",
+      "en": "To top up phone credit",
+      "level": 10,
+      "gender": null,
+      "emoji": "💳",
+      "note": "Literally 'to load up the account'."
+    },
+    {
+      "id": "s10_28",
+      "category": "Software & Apps",
+      "pl": "Aplikacja",
+      "en": "App / Application",
+      "level": 10,
+      "gender": null,
+      "emoji": "📲",
+      "note": "Feminine noun. Often shortened to 'Apka' in slang."
+    },
+    {
+      "id": "s10_29",
+      "category": "Software & Apps",
+      "pl": "Pobrać aplikację",
+      "en": "To download the app",
+      "level": 10,
+      "gender": null,
+      "emoji": "⬇️",
+      "note": "'Pobrać' is the verb for downloading files or apps."
+    },
+    {
+      "id": "s10_30",
+      "category": "Software & Apps",
+      "pl": "Zainstalować",
+      "en": "To install",
+      "level": 10,
+      "gender": null,
+      "emoji": "⚙️",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s10_31",
+      "category": "Software & Apps",
+      "pl": "Odinstalować",
+      "en": "To uninstall / delete",
+      "level": 10,
+      "gender": null,
+      "emoji": "🗑️",
+      "note": "Infinitive verb. You can also use 'usunąć' (to delete)."
+    },
+    {
+      "id": "s10_32",
+      "category": "Software & Apps",
+      "pl": "Aktualizacja",
+      "en": "Update",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔄",
+      "note": "Feminine noun. Software update."
+    },
+    {
+      "id": "s10_33",
+      "category": "Software & Apps",
+      "pl": "Kod QR",
+      "en": "QR code",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔲",
+      "note": "Pronounced 'Koo-er'. Very common in Polish restaurants for menus."
+    },
+    {
+      "id": "s10_34",
+      "category": "Software & Apps",
+      "pl": "Zeskanować",
+      "en": "To scan",
+      "level": 10,
+      "gender": null,
+      "emoji": "📸",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s10_35",
+      "category": "Software & Apps",
+      "pl": "Ustawienia",
+      "en": "Settings",
+      "level": 10,
+      "gender": null,
+      "emoji": "⚙️",
+      "note": "Plural noun. Look for the gear icon."
+    },
+    {
+      "id": "s10_36",
+      "category": "Software & Apps",
+      "pl": "Powiadomienia",
+      "en": "Notifications",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔔",
+      "note": "Plural noun. From 'wiadomość' (message)."
+    },
+    {
+      "id": "s10_37",
+      "category": "Accounts & Security",
+      "pl": "Konto",
+      "en": "Account",
+      "level": 10,
+      "gender": null,
+      "emoji": "👤",
+      "note": "Neuter noun. Used for bank accounts, social media, and app profiles."
+    },
+    {
+      "id": "s10_38",
+      "category": "Accounts & Security",
+      "pl": "Zalogować się",
+      "en": "To log in",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔑",
+      "note": "Reflexive infinitive verb."
+    },
+    {
+      "id": "s10_39",
+      "category": "Accounts & Security",
+      "pl": "Wylogować się",
+      "en": "To log out",
+      "level": 10,
+      "gender": null,
+      "emoji": "🚪",
+      "note": "Reflexive infinitive verb."
+    },
+    {
+      "id": "s10_40",
+      "category": "Accounts & Security",
+      "pl": "Hasło",
+      "en": "Password",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔒",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s10_41",
+      "category": "Accounts & Security",
+      "pl": "Zapomniałem hasła",
+      "en": "I forgot my password",
+      "level": 10,
+      "gender": "both",
+      "variants": {
+        "m": "Zapomniałem hasła",
+        "f": "Zapomniałam hasła"
+      },
+      "emoji": "🤔",
+      "note": "The verb 'zapomnieć' forces the genitive case 'hasła'."
+    },
+    {
+      "id": "s10_42",
+      "category": "Accounts & Security",
+      "pl": "PIN",
+      "en": "PIN code",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔢",
+      "note": "Pronounced just like in English."
+    },
+    {
+      "id": "s10_43",
       "category": "Communication",
-      "pl": "Adres email",
+      "pl": "Adres e-mail",
       "en": "Email address",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "📧",
+      "note": "Email is pronounced exactly as in English."
     },
     {
-      "id": "p7_62",
+      "id": "s10_44",
       "category": "Communication",
-      "pl": "Mój email to...",
-      "en": "My email is...",
+      "pl": "Małpa",
+      "en": "At symbol (@)",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🐒",
+      "note": "Crucial! In Poland, the @ symbol is called a 'Małpa' (Monkey). So name@domain is 'name MAŁPA domain'."
     },
     {
-      "id": "p7_63",
+      "id": "s10_45",
       "category": "Communication",
-      "pl": "Proszę napisać email",
-      "en": "Please write an email",
+      "pl": "Kropka",
+      "en": "Dot (.)",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "⏺️",
+      "note": "Used for reading URLs and emails. E.g., domain.com is 'domain KROPKA com'."
     },
     {
-      "id": "p7_64",
+      "id": "s10_46",
       "category": "Communication",
+      "pl": "Załącznik",
+      "en": "Attachment",
+      "level": 10,
+      "gender": null,
+      "emoji": "📎",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s10_47",
+      "category": "Communication",
+      "pl": "Link",
+      "en": "Link",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔗",
+      "note": "Loanword."
+    },
+    {
+      "id": "s10_48",
+      "category": "Communication",
+      "pl": "Udostępnić",
+      "en": "To share",
+      "level": 10,
+      "gender": null,
+      "emoji": "📤",
+      "note": "Used when sharing a post, a link, or turning on your mobile hotspot."
+    },
+    {
+      "id": "s10_49",
+      "category": "Communication",
+      "pl": "Media społecznościowe",
+      "en": "Social media",
+      "level": 10,
+      "gender": null,
+      "emoji": "🌐",
+      "note": "Plural noun phrase."
+    },
+    {
+      "id": "s10_50",
+      "category": "Communication",
+      "pl": "Dodać do znajomych",
+      "en": "To add as a friend",
+      "level": 10,
+      "gender": null,
+      "emoji": "👥",
+      "note": "Used heavily on Facebook and other platforms."
+    },
+    {
+      "id": "s10_51",
+      "category": "Calls & Texts",
+      "pl": "Numer telefonu",
+      "en": "Phone number",
+      "level": 10,
+      "gender": null,
+      "emoji": "☎️",
+      "note": "Takes the genitive case 'telefonu'."
+    },
+    {
+      "id": "s10_52",
+      "category": "Calls & Texts",
+      "pl": "Numer kierunkowy",
+      "en": "Country / Area code",
+      "level": 10,
+      "gender": null,
+      "emoji": "➕",
+      "note": "Poland's country code is +48."
+    },
+    {
+      "id": "s10_53",
+      "category": "Calls & Texts",
+      "pl": "Odebrać telefon",
+      "en": "To answer the phone",
+      "level": 10,
+      "gender": null,
+      "emoji": "📲",
+      "note": "Literally 'to collect the phone'."
+    },
+    {
+      "id": "s10_54",
+      "category": "Calls & Texts",
+      "pl": "Zadzwonię później",
+      "en": "I'll call later",
+      "level": 10,
+      "gender": null,
+      "emoji": "📞",
+      "note": "Future tense of 'dzwonić'."
+    },
+    {
+      "id": "s10_55",
+      "category": "Calls & Texts",
       "pl": "Proszę wysłać SMS",
       "en": "Please send a text",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "💬",
+      "note": "'Wysłać' means to send. SMS is pronounced 'Es-em-es'."
     },
     {
-      "id": "p7_65",
-      "category": "Communication",
-      "pl": "WhatsApp",
-      "en": "WhatsApp",
+      "id": "s10_56",
+      "category": "Calls & Texts",
+      "pl": "Komunikator",
+      "en": "Messaging app",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🗨️",
+      "note": "A general term for apps like WhatsApp, Messenger, or Signal."
     },
     {
-      "id": "p7_66",
-      "category": "Communication",
-      "pl": "Messenger",
-      "en": "Messenger",
+      "id": "s10_57",
+      "category": "Tech Issues",
+      "pl": "Bateria jest rozładowana",
+      "en": "Battery is dead",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🪫",
+      "note": "Literally 'discharged'. Use this to explain why you can't show a digital ticket!"
     },
     {
-      "id": "p7_67",
-      "category": "Communication",
-      "pl": "Kontakt",
-      "en": "Contact",
+      "id": "s10_58",
+      "category": "Tech Issues",
+      "pl": "Mam pięć procent baterii",
+      "en": "I have 5 percent battery",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🔋",
+      "note": "The universal sign of tech panic."
     },
     {
-      "id": "p7_68",
-      "category": "Communication",
-      "pl": "Dane kontaktowe",
-      "en": "Contact details",
+      "id": "s10_59",
+      "category": "Tech Issues",
+      "pl": "Ekran jest pęknięty",
+      "en": "The screen is cracked",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🕸️",
+      "note": "Adjective 'pęknięty' matches masculine 'ekran'."
     },
     {
-      "id": "p7_69",
-      "category": "Communication",
-      "pl": "Proszę o kontakt",
-      "en": "Please contact me",
+      "id": "s10_60",
+      "category": "Tech Issues",
+      "pl": "Aplikacja się zawiesiła",
+      "en": "The app froze / crashed",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "❄️",
+      "note": "Literally 'hung itself up'."
     },
     {
-      "id": "p7_70",
-      "category": "Communication",
-      "pl": "Jak mogę się z Tobą skontaktować?",
-      "en": "How can I contact you?",
+      "id": "s10_61",
+      "category": "Tech Issues",
+      "pl": "Telefon się zawiesił",
+      "en": "The phone froze",
       "level": 10,
-      "gender": null
+      "gender": null,
+      "emoji": "🛑",
+      "note": "Past tense reflexive verb."
+    },
+    {
+      "id": "s10_62",
+      "category": "Tech Issues",
+      "pl": "Zresetować",
+      "en": "To restart / reboot",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔄",
+      "note": "The universal tech support advice."
+    },
+    {
+      "id": "s10_63",
+      "category": "Tech Issues",
+      "pl": "Brak pamięci",
+      "en": "Out of storage / memory",
+      "level": 10,
+      "gender": null,
+      "emoji": "💾",
+      "note": "Literally 'lack of memory'."
+    },
+    {
+      "id": "s10_64",
+      "category": "Tech Issues",
+      "pl": "Usunąć",
+      "en": "To delete",
+      "level": 10,
+      "gender": null,
+      "emoji": "❌",
+      "note": "Infinitive verb used for files, apps, or photos."
+    },
+    {
+      "id": "s10_65",
+      "category": "Tech Issues",
+      "pl": "Mikrofon nie działa",
+      "en": "The microphone doesn't work",
+      "level": 10,
+      "gender": null,
+      "emoji": "🎙️",
+      "note": "Add 'nie' before 'działa'."
+    },
+    {
+      "id": "s10_66",
+      "category": "Settings & Controls",
+      "pl": "Wyciszyć",
+      "en": "To mute",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔇",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s10_67",
+      "category": "Settings & Controls",
+      "pl": "Tryb cichy",
+      "en": "Silent mode",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔕",
+      "note": "Turn this on when visiting a Polish church or museum."
+    },
+    {
+      "id": "s10_68",
+      "category": "Settings & Controls",
+      "pl": "Głośność",
+      "en": "Volume",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔊",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s10_69",
+      "category": "Settings & Controls",
+      "pl": "Zablokowany",
+      "en": "Locked",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔒",
+      "note": "Used for locked screens, locked accounts, or blocked contacts."
+    },
+    {
+      "id": "s10_70",
+      "category": "Settings & Controls",
+      "pl": "Odblokować",
+      "en": "To unlock",
+      "level": 10,
+      "gender": null,
+      "emoji": "🔓",
+      "note": "Infinitive verb for unlocking your screen or unblocking someone."
     }
   ]
 }

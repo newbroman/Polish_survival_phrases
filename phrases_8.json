@@ -1,0 +1,769 @@
+{
+  "level": 8,
+  "description": "Car Travel & Rental - Driving in Poland",
+  "tier": "SURVIVAL",
+  "phrases": [
+    {
+      "id": "s8_01",
+      "category": "Car Rental",
+      "pl": "Wypożyczalnia samochodów",
+      "en": "Car rental",
+      "level": 8,
+      "gender": null,
+      "emoji": "🏢",
+      "note": "A long word! Pronounced 'Vi-po-zhi-chal-nya sa-mo-ho-doof'. Means 'place of renting cars'."
+    },
+    {
+      "id": "s8_02",
+      "category": "Car Rental",
+      "pl": "Chciałbym/Chciałabym wynająć samochód",
+      "en": "I'd like to rent a car",
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Chciałbym wynająć samochód",
+        "f": "Chciałabym wynająć samochód"
+      },
+      "emoji": "🚗",
+      "note": "Men use the '-bym' ending, women use the '-abym' ending."
+    },
+    {
+      "id": "s8_03",
+      "category": "Car Rental",
+      "pl": "Na ile dni?",
+      "en": "For how many days?",
+      "level": 8,
+      "gender": null,
+      "emoji": "📆",
+      "note": "'Dni' is the plural of 'dzień' (day)."
+    },
+    {
+      "id": "s8_04",
+      "category": "Car Rental",
+      "pl": "Na jeden dzień",
+      "en": "For one day",
+      "level": 8,
+      "gender": null,
+      "emoji": "1️⃣",
+      "note": "Accusative case for 'jeden dzień' (one day)."
+    },
+    {
+      "id": "s8_05",
+      "category": "Car Rental",
+      "pl": "Na tydzień",
+      "en": "For a week",
+      "level": 8,
+      "gender": null,
+      "emoji": "7️⃣",
+      "note": "Accusative case for 'tydzień' (week)."
+    },
+    {
+      "id": "s8_06",
+      "category": "Car Rental",
+      "pl": "Ile kosztuje na dzień?",
+      "en": "How much per day?",
+      "level": 8,
+      "gender": null,
+      "emoji": "💵",
+      "note": "Literally 'How much costs on day?'."
+    },
+    {
+      "id": "s8_07",
+      "category": "Car Rental",
+      "pl": "Czy ubezpieczenie jest wliczone?",
+      "en": "Is insurance included?",
+      "level": 8,
+      "gender": null,
+      "emoji": "🛡️",
+      "note": "'Ubezpieczenie' (insurance) is a neuter noun, so the adjective 'wliczone' (included) ends in '-e'."
+    },
+    {
+      "id": "s8_08",
+      "category": "Car Rental",
+      "pl": "Potrzebuję pełnego ubezpieczenia",
+      "en": "I need full insurance",
+      "level": 8,
+      "gender": null,
+      "emoji": "📑",
+      "note": "The verb 'Potrzebować' forces the noun into the genitive case ('pełnego ubezpieczenia')."
+    },
+    {
+      "id": "s8_09",
+      "category": "Car Rental",
+      "pl": "Prawo jazdy",
+      "en": "Driver's license",
+      "level": 8,
+      "gender": null,
+      "emoji": "🪪",
+      "note": "Literally 'The right of driving'."
+    },
+    {
+      "id": "s8_10",
+      "category": "Car Rental",
+      "pl": "Mam międzynarodowe prawo jazdy",
+      "en": "I have an international driver's license",
+      "level": 8,
+      "gender": null,
+      "emoji": "🌍",
+      "note": "Required in Poland if your license is from outside the EU/EEA."
+    },
+    {
+      "id": "s8_11",
+      "category": "Car Rental",
+      "pl": "Kaucja",
+      "en": "Deposit",
+      "level": 8,
+      "gender": null,
+      "emoji": "💳",
+      "note": "Rental companies will place a hold (kaucja) on your credit card."
+    },
+    {
+      "id": "s8_12",
+      "category": "Car Rental",
+      "pl": "Czy mogę zwrócić samochód w innym mieście?",
+      "en": "Can I return the car in another city?",
+      "level": 8,
+      "gender": null,
+      "emoji": "🌆",
+      "note": "'Innym mieście' is the locative case (in another city)."
+    },
+    {
+      "id": "s8_13",
+      "category": "Car Rental",
+      "pl": "Automatyczna skrzynia biegów",
+      "en": "Automatic transmission",
+      "level": 8,
+      "gender": null,
+      "emoji": "⚙️",
+      "note": "Crucial to specify! Most rental cars in Poland default to manual."
+    },
+    {
+      "id": "s8_14",
+      "category": "Car Rental",
+      "pl": "Manualna skrzynia biegów",
+      "en": "Manual transmission",
+      "level": 8,
+      "gender": null,
+      "emoji": "🕹️",
+      "note": "The standard transmission type in Poland."
+    },
+    {
+      "id": "s8_15",
+      "category": "Car Rental",
+      "pl": "Fotelik dla dziecka",
+      "en": "Child seat",
+      "level": 8,
+      "gender": null,
+      "emoji": "💺",
+      "note": "Required by law in Poland for children under 150cm tall."
+    },
+    {
+      "id": "s8_16",
+      "category": "Driving Terms",
+      "pl": "Prowadzić samochód",
+      "en": "To drive a car",
+      "level": 8,
+      "gender": null,
+      "emoji": "🚘",
+      "note": "'Prowadzić' means 'to lead' or 'to drive'."
+    },
+    {
+      "id": "s8_17",
+      "category": "Driving Terms",
+      "pl": "Kluczyki do samochodu",
+      "en": "Car keys",
+      "level": 8,
+      "gender": null,
+      "emoji": "🗝️",
+      "note": "Literally 'little keys to the car'."
+    },
+    {
+      "id": "s8_18",
+      "category": "Driving Terms",
+      "pl": "Kierownica",
+      "en": "Steering wheel",
+      "level": 8,
+      "gender": null,
+      "emoji": "🛞",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s8_19",
+      "category": "Driving Terms",
+      "pl": "Bagażnik",
+      "en": "Trunk / Boot",
+      "level": 8,
+      "gender": null,
+      "emoji": "🧳",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s8_20",
+      "category": "Driving Terms",
+      "pl": "Wycieraczki",
+      "en": "Windshield wipers",
+      "level": 8,
+      "gender": null,
+      "emoji": "🌧️",
+      "note": "Plural noun. From the verb 'wycierać' (to wipe)."
+    },
+    {
+      "id": "s8_21",
+      "category": "Parking",
+      "pl": "Parkować",
+      "en": "To park",
+      "level": 8,
+      "gender": null,
+      "emoji": "🅿️",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s8_22",
+      "category": "Parking",
+      "pl": "Parking podziemny",
+      "en": "Underground parking",
+      "level": 8,
+      "gender": null,
+      "emoji": "🏢",
+      "note": "Common under malls and modern office buildings."
+    },
+    {
+      "id": "s8_23",
+      "category": "Parking",
+      "pl": "Gdzie mogę zaparkować?",
+      "en": "Where can I park?",
+      "level": 8,
+      "gender": null,
+      "emoji": "🤷‍♂️",
+      "note": "'Mogę' (I can) + infinitive 'zaparkować' (to park)."
+    },
+    {
+      "id": "s8_24",
+      "category": "Parking",
+      "pl": "Czy parking jest płatny?",
+      "en": "Is parking paid?",
+      "level": 8,
+      "gender": null,
+      "emoji": "🪙",
+      "note": "Street parking in Polish city centers is almost always paid from 8 AM to 8 PM."
+    },
+    {
+      "id": "s8_25",
+      "category": "Parking",
+      "pl": "Parkomat",
+      "en": "Parking meter",
+      "level": 8,
+      "gender": null,
+      "emoji": "🎰",
+      "note": "You usually have to enter your license plate number into the machine before paying."
+    },
+    {
+      "id": "s8_26",
+      "category": "Parking",
+      "pl": "Bilet parkingowy",
+      "en": "Parking ticket (receipt)",
+      "level": 8,
+      "gender": null,
+      "emoji": "🎫",
+      "note": "Place this behind your windshield so the wardens can see it."
+    },
+    {
+      "id": "s8_27",
+      "category": "Parking",
+      "pl": "Strefa płatnego parkowania",
+      "en": "Paid parking zone",
+      "level": 8,
+      "gender": null,
+      "emoji": "🏙️",
+      "note": "Look for a blue sign with a large white 'P' and this text underneath."
+    },
+    {
+      "id": "s8_28",
+      "category": "Parking",
+      "pl": "Zakaz parkowania",
+      "en": "No parking",
+      "level": 8,
+      "gender": null,
+      "emoji": "🚷",
+      "note": "Usually indicated by a circular blue sign with a red border and a single red slash."
+    },
+    {
+      "id": "s8_29",
+      "category": "Parking",
+      "pl": "Mandat",
+      "en": "Fine / Ticket (Penalty)",
+      "level": 8,
+      "gender": null,
+      "emoji": "👮",
+      "note": "The terrifying piece of paper left under your wiper if you didn't pay for the parkomat."
+    },
+    {
+      "id": "s8_30",
+      "category": "Roads & Tolls",
+      "pl": "Autostrada",
+      "en": "Highway / Motorway",
+      "level": 8,
+      "gender": null,
+      "emoji": "🛣️",
+      "note": "Speed limit on Polish autostrady is generally 140 km/h."
+    },
+    {
+      "id": "s8_31",
+      "category": "Roads & Tolls",
+      "pl": "Droga ekspresowa",
+      "en": "Expressway",
+      "level": 8,
+      "gender": null,
+      "emoji": "🛣️",
+      "note": "Usually a dual carriageway. Speed limit is generally 120 km/h."
+    },
+    {
+      "id": "s8_32",
+      "category": "Roads & Tolls",
+      "pl": "Opłata za autostradę",
+      "en": "Highway toll",
+      "level": 8,
+      "gender": null,
+      "emoji": "💶",
+      "note": "Many sections of the A1, A2, and A4 highways are toll roads."
+    },
+    {
+      "id": "s8_33",
+      "category": "Roads & Tolls",
+      "pl": "Bramka na autostradzie",
+      "en": "Toll booth",
+      "level": 8,
+      "gender": null,
+      "emoji": "🚧",
+      "note": "Literally 'gate on the highway'."
+    },
+    {
+      "id": "s8_34",
+      "category": "Roads & Tolls",
+      "pl": "e-TOLL",
+      "en": "Electronic toll system",
+      "level": 8,
+      "gender": null,
+      "emoji": "📱",
+      "note": "Poland's digital toll collection system. You often need the app for state-owned roads."
+    },
+    {
+      "id": "s8_35",
+      "category": "Road Rules",
+      "pl": "Ograniczenie prędkości",
+      "en": "Speed limit",
+      "level": 8,
+      "gender": null,
+      "emoji": "🛑",
+      "note": "Literally 'limitation of speed'."
+    },
+    {
+      "id": "s8_36",
+      "category": "Road Rules",
+      "pl": "Sygnalizacja świetlna",
+      "en": "Traffic lights",
+      "level": 8,
+      "gender": null,
+      "emoji": "🚦",
+      "note": "Often simply called 'światła' (lights) in casual conversation."
+    },
+    {
+      "id": "s8_37",
+      "category": "Road Rules",
+      "pl": "Skrzyżowanie",
+      "en": "Intersection",
+      "level": 8,
+      "gender": null,
+      "emoji": "🔀",
+      "note": "Pronounced 'Sk-shi-zho-va-nyeh'."
+    },
+    {
+      "id": "s8_38",
+      "category": "Road Rules",
+      "pl": "Rondo",
+      "en": "Roundabout",
+      "level": 8,
+      "gender": null,
+      "emoji": "🔄",
+      "note": "Poland has a LOT of roundabouts!"
+    },
+    {
+      "id": "s8_39",
+      "category": "Road Rules",
+      "pl": "Przejście dla pieszych",
+      "en": "Pedestrian crossing / Crosswalk",
+      "level": 8,
+      "gender": null,
+      "emoji": "🚶",
+      "note": "In Poland, pedestrians have absolute right of way when they approach a crossing."
+    },
+    {
+      "id": "s8_40",
+      "category": "Road Rules",
+      "pl": "Zakaz wjazdu",
+      "en": "No entry",
+      "level": 8,
+      "gender": null,
+      "emoji": "⛔",
+      "note": "Usually indicated by a solid red circular sign with a white horizontal bar."
+    },
+    {
+      "id": "s8_41",
+      "category": "Road Rules",
+      "pl": "Droga jednokierunkowa",
+      "en": "One way street",
+      "level": 8,
+      "gender": null,
+      "emoji": "⬆️",
+      "note": "Literally 'one-directional road'."
+    },
+    {
+      "id": "s8_42",
+      "category": "Road Rules",
+      "pl": "Fotoradar",
+      "en": "Speed camera",
+      "level": 8,
+      "gender": null,
+      "emoji": "📸",
+      "note": "Look for bright yellow boxes on poles by the side of the road!"
+    },
+    {
+      "id": "s8_43",
+      "category": "Gas Station",
+      "pl": "Stacja benzynowa",
+      "en": "Gas station",
+      "level": 8,
+      "gender": null,
+      "emoji": "⛽",
+      "note": "A vital phrase for road trips."
+    },
+    {
+      "id": "s8_44",
+      "category": "Gas Station",
+      "pl": "Benzyna bezołowiowa",
+      "en": "Unleaded gasoline",
+      "level": 8,
+      "gender": null,
+      "emoji": "🟢",
+      "note": "Usually marked with '95' or '98' (octane rating)."
+    },
+    {
+      "id": "s8_45",
+      "category": "Gas Station",
+      "pl": "Diesel",
+      "en": "Diesel",
+      "level": 8,
+      "gender": null,
+      "emoji": "⚫",
+      "note": "Often labeled 'ON' (Olej napędowy) at Polish pumps."
+    },
+    {
+      "id": "s8_46",
+      "category": "Gas Station",
+      "pl": "LPG / Gaz",
+      "en": "LPG Gas",
+      "level": 8,
+      "gender": null,
+      "emoji": "🔵",
+      "note": "Many cars in Poland are converted to run on cheaper LPG gas."
+    },
+    {
+      "id": "s8_47",
+      "category": "Gas Station",
+      "pl": "Pełny bak",
+      "en": "Full tank",
+      "level": 8,
+      "gender": null,
+      "emoji": "💯",
+      "note": "Say this to the attendant if they offer to pump your gas."
+    },
+    {
+      "id": "s8_48",
+      "category": "Gas Station",
+      "pl": "Dystrybutor numer...",
+      "en": "Pump number...",
+      "level": 8,
+      "gender": null,
+      "emoji": "🔢",
+      "note": "Say this to the cashier inside when you go to pay."
+    },
+    {
+      "id": "s8_49",
+      "category": "Gas Station",
+      "pl": "Olej silnikowy",
+      "en": "Motor oil",
+      "level": 8,
+      "gender": null,
+      "emoji": "🛢️",
+      "note": "'Silnik' means engine."
+    },
+    {
+      "id": "s8_50",
+      "category": "Gas Station",
+      "pl": "Płyn do spryskiwaczy",
+      "en": "Windshield washer fluid",
+      "level": 8,
+      "gender": null,
+      "emoji": "💦",
+      "note": "Essential during the snowy Polish winters!"
+    },
+    {
+      "id": "s8_51",
+      "category": "Car Problems",
+      "pl": "Samochód się zepsuł",
+      "en": "The car broke down",
+      "level": 8,
+      "gender": null,
+      "emoji": "💥",
+      "note": "Reflexive verb 'zepsuł się' (it broke itself)."
+    },
+    {
+      "id": "s8_52",
+      "category": "Car Problems",
+      "pl": "Samochód nie odpala",
+      "en": "The car won't start",
+      "level": 8,
+      "gender": null,
+      "emoji": "❌",
+      "note": "'Odpalać' translates to 'to fire up'."
+    },
+    {
+      "id": "s8_53",
+      "category": "Car Problems",
+      "pl": "Potrzebuję pomocy drogowej",
+      "en": "I need roadside assistance",
+      "level": 8,
+      "gender": null,
+      "emoji": "🆘",
+      "note": "Takes the genitive case 'pomocy drogowej'."
+    },
+    {
+      "id": "s8_54",
+      "category": "Car Problems",
+      "pl": "Pomoc drogowa",
+      "en": "Roadside assistance",
+      "level": 8,
+      "gender": null,
+      "emoji": "🦺",
+      "note": "Search this phrase on Google Maps if you are stranded."
+    },
+    {
+      "id": "s8_55",
+      "category": "Car Problems",
+      "pl": "Mechanik",
+      "en": "Mechanic",
+      "level": 8,
+      "gender": null,
+      "emoji": "🔧",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s8_56",
+      "category": "Car Problems",
+      "pl": "Warsztat samochodowy",
+      "en": "Car repair shop",
+      "level": 8,
+      "gender": null,
+      "emoji": "🏗️",
+      "note": "Literally 'car workshop'."
+    },
+    {
+      "id": "s8_57",
+      "category": "Car Problems",
+      "pl": "Holowanie",
+      "en": "Towing",
+      "level": 8,
+      "gender": null,
+      "emoji": "🪝",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s8_58",
+      "category": "Car Problems",
+      "pl": "Potrzebuję lawety",
+      "en": "I need a tow truck",
+      "level": 8,
+      "gender": null,
+      "emoji": "🛻",
+      "note": "'Laweta' (tow truck) takes the genitive case 'lawety'."
+    },
+    {
+      "id": "s8_59",
+      "category": "Car Problems",
+      "pl": "Przebita opona",
+      "en": "Flat tire",
+      "level": 8,
+      "gender": null,
+      "emoji": "🛞",
+      "note": "Literally 'pierced tire'."
+    },
+    {
+      "id": "s8_60",
+      "category": "Car Problems",
+      "pl": "Złapałem/Złapałam gumę",
+      "en": "I got a flat tire (slang)",
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Złapałem gumę",
+        "f": "Złapałam gumę"
+      },
+      "emoji": "🎈",
+      "note": "Literally 'I caught a rubber'. Very common colloquial phrase."
+    },
+    {
+      "id": "s8_61",
+      "category": "Car Problems",
+      "pl": "Koło zapasowe",
+      "en": "Spare tire / wheel",
+      "level": 8,
+      "gender": null,
+      "emoji": "⚙️",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s8_62",
+      "category": "Car Problems",
+      "pl": "Rozładowany akumulator",
+      "en": "Dead battery",
+      "level": 8,
+      "gender": null,
+      "emoji": "🔋",
+      "note": "Literally 'discharged accumulator'."
+    },
+    {
+      "id": "s8_63",
+      "category": "Car Problems",
+      "pl": "Kable rozruchowe",
+      "en": "Jumper cables",
+      "level": 8,
+      "gender": null,
+      "emoji": "⚡",
+      "note": "If your battery is dead, ask another driver: 'Czy ma Pan kable rozruchowe?'."
+    },
+    {
+      "id": "s8_64",
+      "category": "Car Problems",
+      "pl": "Silnik",
+      "en": "Engine",
+      "level": 8,
+      "gender": null,
+      "emoji": "⚙️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s8_65",
+      "category": "Car Problems",
+      "pl": "Brak paliwa",
+      "en": "Out of gas/fuel",
+      "level": 8,
+      "gender": null,
+      "emoji": "🪫",
+      "note": "Literally 'lack of fuel'."
+    },
+    {
+      "id": "s8_66",
+      "category": "Navigation",
+      "pl": "Jechać prosto",
+      "en": "Go straight",
+      "level": 8,
+      "gender": null,
+      "emoji": "⬆️",
+      "note": "Use the verb 'jechać' (to drive/ride) when navigating by car."
+    },
+    {
+      "id": "s8_67",
+      "category": "Navigation",
+      "pl": "Skręcić w lewo",
+      "en": "Turn left",
+      "level": 8,
+      "gender": null,
+      "emoji": "⬅️",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s8_68",
+      "category": "Navigation",
+      "pl": "Skręcić w prawo",
+      "en": "Turn right",
+      "level": 8,
+      "gender": null,
+      "emoji": "➡️",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s8_69",
+      "category": "Navigation",
+      "pl": "Zawrócić",
+      "en": "Turn around / Make a U-turn",
+      "level": 8,
+      "gender": null,
+      "emoji": "↩️",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s8_70",
+      "category": "Navigation",
+      "pl": "Zjazd",
+      "en": "Exit (from a highway)",
+      "level": 8,
+      "gender": null,
+      "emoji": "↪️",
+      "note": "E.g., 'Zjazd numer pięć' (Exit number five)."
+    },
+    {
+      "id": "s8_71",
+      "category": "Navigation",
+      "pl": "Objazd",
+      "en": "Detour",
+      "level": 8,
+      "gender": null,
+      "emoji": "🚧",
+      "note": "Look for yellow signs indicating an 'Objazd' if the main road is closed."
+    },
+    {
+      "id": "s8_72",
+      "category": "Navigation",
+      "pl": "Znak drogowy",
+      "en": "Road sign",
+      "level": 8,
+      "gender": null,
+      "emoji": "🚸",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s8_73",
+      "category": "Navigation",
+      "pl": "Ile kilometrów do...?",
+      "en": "How many kilometers to...?",
+      "level": 8,
+      "gender": null,
+      "emoji": "📏",
+      "note": "Poland uses the metric system. 'Kilometrów' is the genitive plural."
+    },
+    {
+      "id": "s8_74",
+      "category": "Accidents",
+      "pl": "Wypadek",
+      "en": "Accident",
+      "level": 8,
+      "gender": null,
+      "emoji": "💥",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s8_75",
+      "category": "Accidents",
+      "pl": "Miałem/Miałam wypadek",
+      "en": "I had an accident",
+      "level": 8,
+      "gender": "both",
+      "variants": {
+        "m": "Miałem wypadek",
+        "f": "Miałam wypadek"
+      },
+      "emoji": "🚑",
+      "note": "Call 112 for emergency services in Poland."
+    }
+  ]
+}
