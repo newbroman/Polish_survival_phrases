@@ -4,117 +4,95 @@
   "tier": "ADVANCED",
   "phrases": [
     {
-      "id": "s25_01",
+      "id": "a18_01",
       "category": "Opinions",
       "pl": "Moim zdaniem...",
       "en": "In my opinion...",
       "level": 25,
-      "gender": null,
-      "emoji": "🗣️",
-      "note": "Takes the instrumental case ('moim zdaniem')."
+      "gender": null
     },
     {
-      "id": "s25_02",
+      "id": "a18_02",
       "category": "Opinions",
       "pl": "Myślę, że...",
       "en": "I think that...",
       "level": 25,
-      "gender": null,
-      "emoji": "💭",
-      "note": "The 'że' (that) is mandatory in Polish grammar here."
+      "gender": null
     },
     {
-      "id": "s25_03",
+      "id": "a18_03",
       "category": "Opinions",
       "pl": "Uważam, że...",
-      "en": "I believe/consider that...",
+      "en": "I believe that...",
       "level": 25,
-      "gender": null,
-      "emoji": "⚖️",
-      "note": "Slightly more formal than 'myślę'."
+      "gender": null
     },
     {
-      "id": "s25_04",
+      "id": "a18_04",
       "category": "Opinions",
       "pl": "Wydaje mi się, że...",
       "en": "It seems to me that...",
       "level": 25,
-      "gender": null,
-      "emoji": "🤔",
-      "note": "Reflexive phrase used to express a gentle opinion."
+      "gender": null
     },
     {
-      "id": "s25_05",
+      "id": "a18_05",
       "category": "Opinions",
       "pl": "Zgadzam się",
       "en": "I agree",
       "level": 25,
-      "gender": null,
-      "emoji": "👍",
-      "note": "Reflexive verb 'zgadzać się'."
+      "gender": null
     },
     {
-      "id": "s25_06",
+      "id": "a18_06",
       "category": "Opinions",
       "pl": "Nie zgadzam się",
       "en": "I disagree",
       "level": 25,
-      "gender": null,
-      "emoji": "👎",
-      "note": "Add 'nie' before the verb."
+      "gender": null
     },
     {
-      "id": "s25_07",
+      "id": "a18_07",
       "category": "Opinions",
       "pl": "Masz rację",
       "en": "You're right",
       "level": 25,
-      "gender": null,
-      "emoji": "✅",
-      "note": "Literally 'You have rightness'."
+      "gender": null
     },
     {
-      "id": "s25_08",
+      "id": "a18_08",
       "category": "Opinions",
       "pl": "Nie masz racji",
       "en": "You're wrong",
       "level": 25,
-      "gender": null,
-      "emoji": "❌",
-      "note": "Literally 'You do not have rightness'."
+      "gender": null
     },
     {
-      "id": "s25_09",
+      "id": "a18_09",
       "category": "Opinions",
       "pl": "To zależy",
       "en": "It depends",
       "level": 25,
-      "gender": null,
-      "emoji": "⚖️",
-      "note": "Very common answer in Polish debates."
+      "gender": null
     },
     {
-      "id": "s25_10",
+      "id": "a18_10",
       "category": "Opinions",
       "pl": "To zależy od sytuacji",
       "en": "It depends on the situation",
       "level": 25,
-      "gender": null,
-      "emoji": "🤷",
-      "note": "Preposition 'od' forces the genitive case 'sytuacji'."
+      "gender": null
     },
     {
-      "id": "s25_11",
+      "id": "a18_11",
       "category": "Opinions",
       "pl": "Bez wątpienia",
       "en": "Without a doubt",
       "level": 25,
-      "gender": null,
-      "emoji": "💯",
-      "note": "Preposition 'bez' forces the genitive case 'wątpienia'."
+      "gender": null
     },
     {
-      "id": "s25_12",
+      "id": "a18_12",
       "category": "Opinions",
       "pl": "Nie jestem przekonany/przekonana",
       "en": "I'm not convinced",
@@ -123,412 +101,330 @@
       "variants": {
         "m": "Nie jestem przekonany",
         "f": "Nie jestem przekonana"
-      },
-      "emoji": "🤨",
-      "note": "Passive participle acting as an adjective."
+      }
     },
     {
-      "id": "s25_13",
+      "id": "a18_13",
       "category": "Opinions",
       "pl": "To dobry pomysł",
       "en": "That's a good idea",
       "level": 25,
-      "gender": null,
-      "emoji": "💡",
-      "note": "Masculine noun phrase."
+      "gender": null
     },
     {
-      "id": "s25_14",
+      "id": "a18_14",
       "category": "Opinions",
       "pl": "To zły pomysł",
       "en": "That's a bad idea",
       "level": 25,
-      "gender": null,
-      "emoji": "🛑",
-      "note": "Masculine noun phrase."
+      "gender": null
     },
     {
-      "id": "s25_15",
+      "id": "a18_15",
       "category": "Opinions",
       "pl": "To nie ma sensu",
       "en": "That makes no sense",
       "level": 25,
-      "gender": null,
-      "emoji": "🤦",
-      "note": "Literally 'It has no sense'. Requires genitive case due to negation."
+      "gender": null
     },
     {
-      "id": "s25_16",
+      "id": "a18_16",
       "category": "Opinions",
       "pl": "To ma sens",
       "en": "That makes sense",
       "level": 25,
-      "gender": null,
-      "emoji": "🎯",
-      "note": "Literally 'It has sense' (accusative case)."
+      "gender": null
     },
     {
-      "id": "s25_17",
+      "id": "a18_17",
       "category": "Opinions",
       "pl": "Co o tym sądzisz?",
       "en": "What do you think about it?",
       "level": 25,
-      "gender": null,
-      "emoji": "🤔",
-      "note": "Uses the verb 'sądzić' (to judge/consider)."
+      "gender": null
     },
     {
-      "id": "s25_18",
+      "id": "a18_18",
       "category": "Opinions",
       "pl": "Nie mam zdania",
       "en": "I have no opinion",
       "level": 25,
-      "gender": null,
-      "emoji": "😶",
-      "note": "Takes the genitive case 'zdania' due to negation."
+      "gender": null
     },
     {
-      "id": "s25_19",
+      "id": "a18_19",
       "category": "Opinions",
       "pl": "Trudno powiedzieć",
       "en": "Hard to say",
       "level": 25,
-      "gender": null,
-      "emoji": "🤷‍♂️",
-      "note": "Adverb + infinitive."
+      "gender": null
     },
     {
-      "id": "s25_20",
+      "id": "a18_20",
       "category": "Opinions",
       "pl": "Zobaczymy",
       "en": "We'll see",
       "level": 25,
-      "gender": null,
-      "emoji": "👀",
-      "note": "Future tense, first-person plural."
+      "gender": null
     },
     {
-      "id": "s25_21",
+      "id": "a18_21",
       "category": "Opinions",
       "pl": "Może",
       "en": "Maybe",
       "level": 25,
-      "gender": null,
-      "emoji": "🤷‍♀️",
-      "note": "Adverb."
+      "gender": null
     },
     {
-      "id": "s25_22",
+      "id": "a18_22",
       "category": "Opinions",
       "pl": "Prawdopodobnie",
       "en": "Probably",
       "level": 25,
-      "gender": null,
-      "emoji": "📈",
-      "note": "Adverb."
+      "gender": null
     },
     {
-      "id": "s25_23",
+      "id": "a18_23",
       "category": "Opinions",
       "pl": "Na pewno",
       "en": "For sure / Certainly",
       "level": 25,
-      "gender": null,
-      "emoji": "🔒",
-      "note": "Adverbial phrase."
+      "gender": null
     },
     {
-      "id": "s25_24",
+      "id": "a18_24",
       "category": "Opinions",
       "pl": "Oczywiście",
       "en": "Of course / Obviously",
       "level": 25,
-      "gender": null,
-      "emoji": "✨",
-      "note": "Adverb."
+      "gender": null
     },
     {
-      "id": "s25_25",
+      "id": "a18_25",
       "category": "Opinions",
       "pl": "Dokładnie tak",
       "en": "Exactly so",
       "level": 25,
-      "gender": null,
-      "emoji": "🎯",
-      "note": "Strong agreement."
+      "gender": null
     },
     {
-      "id": "s25_26",
+      "id": "a18_26",
       "category": "Abstract",
       "pl": "Szczęście",
       "en": "Happiness / Luck",
       "level": 25,
-      "gender": null,
-      "emoji": "🍀",
-      "note": "Neuter noun. Polish uses the same word for being happy and being lucky."
+      "gender": null
     },
     {
-      "id": "s25_27",
+      "id": "a18_27",
       "category": "Abstract",
       "pl": "Miłość",
       "en": "Love",
       "level": 25,
-      "gender": null,
-      "emoji": "❤️",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_28",
+      "id": "a18_28",
       "category": "Abstract",
       "pl": "Nienawiść",
       "en": "Hate",
       "level": 25,
-      "gender": null,
-      "emoji": "🔥",
-      "note": "Feminine noun ending in a consonant."
+      "gender": null
     },
     {
-      "id": "s25_29",
+      "id": "a18_29",
       "category": "Abstract",
       "pl": "Wolność",
       "en": "Freedom",
       "level": 25,
-      "gender": null,
-      "emoji": "🕊️",
-      "note": "Feminine noun ending in '-ość'."
+      "gender": null
     },
     {
-      "id": "s25_30",
+      "id": "a18_30",
       "category": "Abstract",
       "pl": "Równość",
       "en": "Equality",
       "level": 25,
-      "gender": null,
-      "emoji": "⚖️",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_31",
+      "id": "a18_31",
       "category": "Abstract",
       "pl": "Sprawiedliwość",
       "en": "Justice",
       "level": 25,
-      "gender": null,
-      "emoji": "🧑‍⚖️",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_32",
+      "id": "a18_32",
       "category": "Abstract",
       "pl": "Prawda",
       "en": "Truth",
       "level": 25,
-      "gender": null,
-      "emoji": "📖",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_33",
+      "id": "a18_33",
       "category": "Abstract",
       "pl": "Kłamstwo",
       "en": "Lie",
       "level": 25,
-      "gender": null,
-      "emoji": "🤥",
-      "note": "Neuter noun."
+      "gender": null
     },
     {
-      "id": "s25_34",
+      "id": "a18_34",
       "category": "Abstract",
       "pl": "Zaufanie",
       "en": "Trust",
       "level": 25,
-      "gender": null,
-      "emoji": "🤝",
-      "note": "Neuter noun."
+      "gender": null
     },
     {
-      "id": "s25_35",
+      "id": "a18_35",
       "category": "Abstract",
       "pl": "Nadzieja",
       "en": "Hope",
       "level": 25,
-      "gender": null,
-      "emoji": "🌟",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_36",
+      "id": "a18_36",
       "category": "Abstract",
       "pl": "Strach",
       "en": "Fear",
       "level": 25,
-      "gender": null,
-      "emoji": "😨",
-      "note": "Masculine noun."
+      "gender": null
     },
     {
-      "id": "s25_37",
+      "id": "a18_37",
       "category": "Abstract",
       "pl": "Odwaga",
       "en": "Courage",
       "level": 25,
-      "gender": null,
-      "emoji": "🦁",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_38",
+      "id": "a18_38",
       "category": "Abstract",
       "pl": "Mądrość",
       "en": "Wisdom",
       "level": 25,
-      "gender": null,
-      "emoji": "🦉",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_39",
+      "id": "a18_39",
       "category": "Abstract",
       "pl": "Wiedza",
       "en": "Knowledge",
       "level": 25,
-      "gender": null,
-      "emoji": "📚",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_40",
+      "id": "a18_40",
       "category": "Abstract",
       "pl": "Doświadczenie",
       "en": "Experience",
       "level": 25,
-      "gender": null,
-      "emoji": "🧠",
-      "note": "Neuter noun."
+      "gender": null
     },
     {
-      "id": "s25_41",
+      "id": "a18_41",
       "category": "Abstract",
       "pl": "Pamięć",
       "en": "Memory",
       "level": 25,
-      "gender": null,
-      "emoji": "💭",
-      "note": "Feminine noun ending in a consonant."
+      "gender": null
     },
     {
-      "id": "s25_42",
+      "id": "a18_42",
       "category": "Abstract",
       "pl": "Wyobraźnia",
       "en": "Imagination",
       "level": 25,
-      "gender": null,
-      "emoji": "✨",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_43",
+      "id": "a18_43",
       "category": "Abstract",
       "pl": "Kreatywność",
       "en": "Creativity",
       "level": 25,
-      "gender": null,
-      "emoji": "🎨",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_44",
+      "id": "a18_44",
       "category": "Abstract",
       "pl": "Inteligencja",
       "en": "Intelligence",
       "level": 25,
-      "gender": null,
-      "emoji": "💡",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_45",
+      "id": "a18_45",
       "category": "Abstract",
       "pl": "Głupota",
       "en": "Stupidity",
       "level": 25,
-      "gender": null,
-      "emoji": "🤪",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_46",
+      "id": "a18_46",
       "category": "Abstract",
       "pl": "Cierpliwość",
       "en": "Patience",
       "level": 25,
-      "gender": null,
-      "emoji": "🧘",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_47",
+      "id": "a18_47",
       "category": "Abstract",
       "pl": "Spokój",
       "en": "Peace / Calm",
       "level": 25,
-      "gender": null,
-      "emoji": "😌",
-      "note": "Masculine noun."
+      "gender": null
     },
     {
-      "id": "s25_48",
+      "id": "a18_48",
       "category": "Abstract",
       "pl": "Chaos",
       "en": "Chaos",
       "level": 25,
-      "gender": null,
-      "emoji": "🌪️",
-      "note": "Masculine noun. Pronounced 'Ha-os'."
+      "gender": null
     },
     {
-      "id": "s25_49",
+      "id": "a18_49",
       "category": "Abstract",
       "pl": "Porządek",
       "en": "Order",
       "level": 25,
-      "gender": null,
-      "emoji": "📂",
-      "note": "Masculine noun."
+      "gender": null
     },
     {
-      "id": "s25_50",
+      "id": "a18_50",
       "category": "Abstract",
       "pl": "Równowaga",
       "en": "Balance",
       "level": 25,
-      "gender": null,
-      "emoji": "⚖️",
-      "note": "Feminine noun."
+      "gender": null
     },
     {
-      "id": "s25_51",
+      "id": "a18_51",
       "category": "Emotions",
       "pl": "Emocje",
       "en": "Emotions",
       "level": 25,
-      "gender": null,
-      "emoji": "🎭",
-      "note": "Plural noun."
+      "gender": null
     },
     {
-      "id": "s25_52",
+      "id": "a18_52",
       "category": "Emotions",
       "pl": "Uczucia",
       "en": "Feelings",
       "level": 25,
-      "gender": null,
-      "emoji": "💞",
-      "note": "Plural noun."
+      "gender": null
     },
     {
-      "id": "s25_53",
+      "id": "a18_53",
       "category": "Emotions",
       "pl": "Szczęśliwy/Szczęśliwa",
       "en": "Happy",
@@ -537,12 +433,10 @@
       "variants": {
         "m": "Szczęśliwy",
         "f": "Szczęśliwa"
-      },
-      "emoji": "😁",
-      "note": "Gendered adjective."
+      }
     },
     {
-      "id": "s25_54",
+      "id": "a18_54",
       "category": "Emotions",
       "pl": "Smutny/Smutna",
       "en": "Sad",
@@ -551,26 +445,22 @@
       "variants": {
         "m": "Smutny",
         "f": "Smutna"
-      },
-      "emoji": "😢",
-      "note": "Gendered adjective."
+      }
     },
     {
-      "id": "s25_55",
+      "id": "a18_55",
       "category": "Emotions",
       "pl": "Zły/Zła",
-      "en": "Angry (also means Bad)",
+      "en": "Angry",
       "level": 25,
       "gender": "both",
       "variants": {
         "m": "Zły",
         "f": "Zła"
-      },
-      "emoji": "😠",
-      "note": "Context determines if you mean angry or evil."
+      }
     },
     {
-      "id": "s25_56",
+      "id": "a18_56",
       "category": "Emotions",
       "pl": "Spokojny/Spokojna",
       "en": "Calm",
@@ -579,26 +469,22 @@
       "variants": {
         "m": "Spokojny",
         "f": "Spokojna"
-      },
-      "emoji": "😌",
-      "note": "Gendered adjective."
+      }
     },
     {
-      "id": "s25_57",
+      "id": "a18_57",
       "category": "Emotions",
       "pl": "Zdenerwowany/Zdenerwowana",
-      "en": "Nervous / Annoyed",
+      "en": "Nervous",
       "level": 25,
       "gender": "both",
       "variants": {
         "m": "Zdenerwowany",
         "f": "Zdenerwowana"
-      },
-      "emoji": "😬",
-      "note": "Passive participle."
+      }
     },
     {
-      "id": "s25_58",
+      "id": "a18_58",
       "category": "Emotions",
       "pl": "Podekscytowany/Podekscytowana",
       "en": "Excited",
@@ -607,12 +493,10 @@
       "variants": {
         "m": "Podekscytowany",
         "f": "Podekscytowana"
-      },
-      "emoji": "🤩",
-      "note": "Passive participle."
+      }
     },
     {
-      "id": "s25_59",
+      "id": "a18_59",
       "category": "Emotions",
       "pl": "Znudzony/Znudzona",
       "en": "Bored",
@@ -621,12 +505,10 @@
       "variants": {
         "m": "Znudzony",
         "f": "Znudzona"
-      },
-      "emoji": "🥱",
-      "note": "Passive participle."
+      }
     },
     {
-      "id": "s25_60",
+      "id": "a18_60",
       "category": "Emotions",
       "pl": "Zaskoczony/Zaskoczona",
       "en": "Surprised",
@@ -635,12 +517,10 @@
       "variants": {
         "m": "Zaskoczony",
         "f": "Zaskoczona"
-      },
-      "emoji": "😲",
-      "note": "Passive participle."
+      }
     },
     {
-      "id": "s25_61",
+      "id": "a18_61",
       "category": "Emotions",
       "pl": "Przestraszony/Przestraszona",
       "en": "Scared",
@@ -649,12 +529,10 @@
       "variants": {
         "m": "Przestraszony",
         "f": "Przestraszona"
-      },
-      "emoji": "😨",
-      "note": "Passive participle."
+      }
     },
     {
-      "id": "s25_62",
+      "id": "a18_62",
       "category": "Emotions",
       "pl": "Dumny/Dumna",
       "en": "Proud",
@@ -663,22 +541,18 @@
       "variants": {
         "m": "Dumny",
         "f": "Dumna"
-      },
-      "emoji": "🦚",
-      "note": "Gendered adjective."
+      }
     },
     {
-      "id": "s25_63",
+      "id": "a18_63",
       "category": "Emotions",
       "pl": "Wstyd",
       "en": "Shame",
       "level": 25,
-      "gender": null,
-      "emoji": "🫣",
-      "note": "Masculine noun."
+      "gender": null
     },
     {
-      "id": "s25_64",
+      "id": "a18_64",
       "category": "Emotions",
       "pl": "Zawstydzony/Zawstydzona",
       "en": "Ashamed",
@@ -687,12 +561,10 @@
       "variants": {
         "m": "Zawstydzony",
         "f": "Zawstydzona"
-      },
-      "emoji": "😳",
-      "note": "Passive participle."
+      }
     },
     {
-      "id": "s25_65",
+      "id": "a18_65",
       "category": "Emotions",
       "pl": "Samotny/Samotna",
       "en": "Lonely",
@@ -701,12 +573,10 @@
       "variants": {
         "m": "Samotny",
         "f": "Samotna"
-      },
-      "emoji": "🧍",
-      "note": "Gendered adjective."
+      }
     },
     {
-      "id": "s25_66",
+      "id": "a18_66",
       "category": "Emotions",
       "pl": "Zadowolony/Zadowolona",
       "en": "Satisfied / Content",
@@ -715,12 +585,10 @@
       "variants": {
         "m": "Zadowolony",
         "f": "Zadowolona"
-      },
-      "emoji": "😌",
-      "note": "Passive participle."
+      }
     },
     {
-      "id": "s25_67",
+      "id": "a18_67",
       "category": "Emotions",
       "pl": "Niezadowolony/Niezadowolona",
       "en": "Dissatisfied",
@@ -729,12 +597,10 @@
       "variants": {
         "m": "Niezadowolony",
         "f": "Niezadowolona"
-      },
-      "emoji": "😒",
-      "note": "Passive participle."
+      }
     },
     {
-      "id": "s25_68",
+      "id": "a18_68",
       "category": "Emotions",
       "pl": "Rozczarowany/Rozczarowana",
       "en": "Disappointed",
@@ -743,12 +609,10 @@
       "variants": {
         "m": "Rozczarowany",
         "f": "Rozczarowana"
-      },
-      "emoji": "😞",
-      "note": "Passive participle."
+      }
     },
     {
-      "id": "s25_69",
+      "id": "a18_69",
       "category": "Emotions",
       "pl": "Optymistyczny/Optymistyczna",
       "en": "Optimistic",
@@ -757,12 +621,10 @@
       "variants": {
         "m": "Optymistyczny",
         "f": "Optymistyczna"
-      },
-      "emoji": "📈",
-      "note": "Gendered adjective."
+      }
     },
     {
-      "id": "s25_70",
+      "id": "a18_70",
       "category": "Emotions",
       "pl": "Pesymistyczny/Pesymistyczna",
       "en": "Pessimistic",
@@ -771,59 +633,7 @@
       "variants": {
         "m": "Pesymistyczny",
         "f": "Pesymistyczna"
-      },
-      "emoji": "📉",
-      "note": "Gendered adjective."
-    },
-    {
-      "id": "s25_71",
-      "category": "Opinions",
-      "pl": "To kwestia gustu",
-      "en": "It's a matter of taste",
-      "level": 25,
-      "gender": null,
-      "emoji": "👅",
-      "note": "Feminine noun 'kwestia'."
-    },
-    {
-      "id": "s25_72",
-      "category": "Opinions",
-      "pl": "Z mojego doświadczenia",
-      "en": "From my experience",
-      "level": 25,
-      "gender": null,
-      "emoji": "🧠",
-      "note": "Takes the genitive case 'doświadczenia'."
-    },
-    {
-      "id": "s25_73",
-      "category": "Opinions",
-      "pl": "Nie mam pojęcia",
-      "en": "I have no idea",
-      "level": 25,
-      "gender": null,
-      "emoji": "🤷",
-      "note": "Very common phrase. 'Pojęcie' means concept or notion."
-    },
-    {
-      "id": "s25_74",
-      "category": "Abstract",
-      "pl": "Współczucie",
-      "en": "Compassion / Sympathy",
-      "level": 25,
-      "gender": null,
-      "emoji": "❤️‍🩹",
-      "note": "Neuter noun."
-    },
-    {
-      "id": "s25_75",
-      "category": "Abstract",
-      "pl": "Szacunek",
-      "en": "Respect",
-      "level": 25,
-      "gender": null,
-      "emoji": "🤝",
-      "note": "Masculine noun. 'Z szacunkiem' (with respect)."
+      }
     }
   ]
 }

@@ -4,564 +4,754 @@
   "tier": "ADVANCED",
   "phrases": [
     {
-      "id": "a20_01",
-      "category": "Sayings",
+      "id": "s27_01",
+      "category": "Polite Deflections",
       "pl": "Nie ma sprawy",
-      "en": "No problem",
+      "en": "No problem / Not an issue",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "👍",
+      "note": "Literally 'There is no matter'. The standard reply to 'Thank you'."
     },
     {
-      "id": "a20_02",
-      "category": "Sayings",
+      "id": "s27_02",
+      "category": "Polite Deflections",
       "pl": "Nie ma za co",
       "en": "You're welcome / Don't mention it",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "😊",
+      "note": "Literally 'There is not for what (to thank)'."
     },
     {
-      "id": "a20_03",
-      "category": "Sayings",
+      "id": "s27_03",
+      "category": "Polite Deflections",
       "pl": "Nic się nie stało",
       "en": "Nothing happened / No worries",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤷",
+      "note": "The perfect reply when someone apologizes to you."
     },
     {
-      "id": "a20_04",
-      "category": "Sayings",
+      "id": "s27_04",
+      "category": "Polite Deflections",
       "pl": "Nic nie szkodzi",
-      "en": "It doesn't matter / No harm done",
+      "en": "No harm done / It doesn't matter",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🛡️",
+      "note": "Literally 'Nothing harms'."
     },
     {
-      "id": "a20_05",
-      "category": "Sayings",
+      "id": "s27_05",
+      "category": "Reassurance",
       "pl": "Nie przejmuj się",
-      "en": "Don't worry",
+      "en": "Don't worry about it",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "😌",
+      "note": "Reflexive imperative verb."
     },
     {
-      "id": "a20_06",
-      "category": "Sayings",
+      "id": "s27_06",
+      "category": "Reassurance",
       "pl": "Spokojnie",
       "en": "Calm down / Take it easy",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "✋",
+      "note": "Adverb used to de-escalate a situation."
     },
     {
-      "id": "a20_07",
-      "category": "Sayings",
+      "id": "s27_07",
+      "category": "Reassurance",
+      "pl": "Wszystko będzie dobrze",
+      "en": "Everything will be fine",
+      "level": 27,
+      "gender": null,
+      "emoji": "✨",
+      "note": "Future tense reassurance."
+    },
+    {
+      "id": "s27_08",
+      "category": "Dismissals",
       "pl": "Daj spokój",
       "en": "Come on / Give it a rest",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🙄",
+      "note": "Literally 'Give peace'. Used to end a silly argument."
     },
     {
-      "id": "a20_08",
-      "category": "Sayings",
-      "pl": "No właśnie",
-      "en": "Exactly / That's right",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_09",
-      "category": "Sayings",
-      "pl": "No to co?",
-      "en": "So what?",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_10",
-      "category": "Sayings",
-      "pl": "Co z tego?",
-      "en": "So what? / What of it?",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_11",
-      "category": "Sayings",
+      "id": "s27_09",
+      "category": "Dismissals",
       "pl": "Mniejsza o to",
       "en": "Never mind that",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🗑️",
+      "note": "Literally 'Smaller about it'."
     },
     {
-      "id": "a20_12",
-      "category": "Sayings",
-      "pl": "Trudno",
-      "en": "Too bad / Can't be helped",
+      "id": "s27_10",
+      "category": "Dismissals",
+      "pl": "No to co?",
+      "en": "So what?",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤨",
+      "note": "Casual, slightly defensive."
     },
     {
-      "id": "a20_13",
-      "category": "Sayings",
-      "pl": "Tak czy siak",
-      "en": "Either way / Anyway",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_14",
-      "category": "Sayings",
-      "pl": "Tak czy owak",
-      "en": "One way or another",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_15",
-      "category": "Sayings",
-      "pl": "W sam raz",
-      "en": "Just right / Perfect",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_16",
-      "category": "Sayings",
-      "pl": "Jak najbardziej",
-      "en": "Absolutely / By all means",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_17",
-      "category": "Sayings",
-      "pl": "Jak najmniej",
-      "en": "As little as possible",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_18",
-      "category": "Sayings",
-      "pl": "Coś w tym jest",
-      "en": "There's something to it",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_19",
-      "category": "Sayings",
-      "pl": "Nic z tego",
-      "en": "Nothing doing / No way",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_20",
-      "category": "Sayings",
+      "id": "s27_11",
+      "category": "Dismissals",
       "pl": "Wszystko jedno",
       "en": "It's all the same / Doesn't matter",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤷‍♂️",
+      "note": "Literally 'All one'."
     },
     {
-      "id": "a20_21",
-      "category": "Sayings",
-      "pl": "Bez sensu",
-      "en": "Nonsense / Pointless",
+      "id": "s27_12",
+      "category": "Resignation",
+      "pl": "Trudno",
+      "en": "Too bad / Can't be helped",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "😕",
+      "note": "Adverb 'difficult'. Used to express resignation to fate."
     },
     {
-      "id": "a20_22",
-      "category": "Sayings",
+      "id": "s27_13",
+      "category": "Resignation",
+      "pl": "Nic z tego",
+      "en": "Nothing doing / No way",
+      "level": 27,
+      "gender": null,
+      "emoji": "❌",
+      "note": "Used when an attempt has failed."
+    },
+    {
+      "id": "s27_14",
+      "category": "Agreement & Validation",
+      "pl": "No właśnie",
+      "en": "Exactly / That's right",
+      "level": 27,
+      "gender": null,
+      "emoji": "🎯",
+      "note": "Used when someone perfectly summarizes your thoughts."
+    },
+    {
+      "id": "s27_15",
+      "category": "Agreement & Validation",
       "pl": "To ma sens",
       "en": "That makes sense",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "💡",
+      "note": "Literally 'It has sense'."
     },
     {
-      "id": "a20_23",
-      "category": "Sayings",
+      "id": "s27_16",
+      "category": "Agreement & Validation",
+      "pl": "Coś w tym jest",
+      "en": "There's something to it",
+      "level": 27,
+      "gender": null,
+      "emoji": "🤔",
+      "note": "Used when you cautiously agree with a new idea."
+    },
+    {
+      "id": "s27_17",
+      "category": "Agreement & Validation",
+      "pl": "Jak najbardziej",
+      "en": "Absolutely / By all means",
+      "level": 27,
+      "gender": null,
+      "emoji": "💯",
+      "note": "A very polite and enthusiastic way to say yes."
+    },
+    {
+      "id": "s27_18",
+      "category": "Alternatives",
+      "pl": "Tak czy siak",
+      "en": "Either way / Anyway",
+      "level": 27,
+      "gender": null,
+      "emoji": "⚖️",
+      "note": "A conversational filler."
+    },
+    {
+      "id": "s27_19",
+      "category": "Alternatives",
+      "pl": "Tak czy owak",
+      "en": "One way or another",
+      "level": 27,
+      "gender": null,
+      "emoji": "🔄",
+      "note": "Similar to 'tak czy siak'."
+    },
+    {
+      "id": "s27_20",
+      "category": "Evaluation",
+      "pl": "W sam raz",
+      "en": "Just right / Perfect",
+      "level": 27,
+      "gender": null,
+      "emoji": "👌",
+      "note": "Used for food seasoning, clothing fit, or timing."
+    },
+    {
+      "id": "s27_21",
+      "category": "Evaluation",
       "pl": "Warto spróbować",
       "en": "Worth a try",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🎲",
+      "note": "'Warto' means it has value."
     },
     {
-      "id": "a20_24",
-      "category": "Sayings",
+      "id": "s27_22",
+      "category": "Evaluation",
       "pl": "Nie warto",
       "en": "Not worth it",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "📉",
+      "note": "Used to advise someone against a bad purchase or action."
     },
     {
-      "id": "a20_25",
-      "category": "Sayings",
+      "id": "s27_23",
+      "category": "Evaluation",
+      "pl": "Bez sensu",
+      "en": "Nonsense / Pointless",
+      "level": 27,
+      "gender": null,
+      "emoji": "🤦",
+      "note": "Literally 'Without sense' (genitive)."
+    },
+    {
+      "id": "s27_24",
+      "category": "Evaluation",
       "pl": "Jak zwykle",
       "en": "As usual",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🕰️",
+      "note": "Can be said neutrally or with heavy sarcasm."
     },
     {
-      "id": "a20_26",
-      "category": "Idioms",
+      "id": "s27_25",
+      "category": "Classic Polish Idioms",
+      "pl": "Rzucać grochem o ścianę",
+      "en": "To talk to a brick wall",
+      "level": 27,
+      "gender": null,
+      "emoji": "🧱",
+      "note": "Literally 'To throw peas at a wall'. Used when someone won't listen."
+    },
+    {
+      "id": "s27_26",
+      "category": "Classic Polish Idioms",
       "pl": "Mieć muchy w nosie",
-      "en": "To be in a bad mood (lit: have flies in nose)",
+      "en": "To be in a bad mood",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🪰",
+      "note": "Literally 'To have flies in the nose'. Usually applied to someone acting grumpy or petty."
     },
     {
-      "id": "a20_27",
-      "category": "Idioms",
+      "id": "s27_27",
+      "category": "Classic Polish Idioms",
       "pl": "Wziąć się w garść",
-      "en": "To pull yourself together (lit: take yourself in fist)",
+      "en": "To pull yourself together",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "✊",
+      "note": "Literally 'To take oneself in a fist'."
     },
     {
-      "id": "a20_28",
-      "category": "Idioms",
+      "id": "s27_28",
+      "category": "Classic Polish Idioms",
       "pl": "Trzymać kciuki",
-      "en": "To keep fingers crossed (lit: hold thumbs)",
+      "en": "To keep fingers crossed",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤞",
+      "note": "Literally 'To hold thumbs'. Poles fold thumbs in, not cross fingers."
     },
     {
-      "id": "a20_29",
-      "category": "Idioms",
-      "pl": "Nie ma mowy",
-      "en": "No way / Out of the question",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_30",
-      "category": "Idioms",
-      "pl": "Bez dwóch zdań",
-      "en": "Without a doubt / Hands down",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_31",
-      "category": "Idioms",
+      "id": "s27_29",
+      "category": "Classic Polish Idioms",
       "pl": "Kropla w morzu",
       "en": "A drop in the ocean",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "💧",
+      "note": "Used to describe an insignificant amount."
     },
     {
-      "id": "a20_32",
-      "category": "Idioms",
+      "id": "s27_30",
+      "category": "Classic Polish Idioms",
       "pl": "Leje jak z cebra",
-      "en": "It's pouring (lit: pouring like from a bucket)",
+      "en": "It's pouring / Raining cats and dogs",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "☔",
+      "note": "Literally 'It is pouring like from a bucket'."
     },
     {
-      "id": "a20_33",
-      "category": "Idioms",
+      "id": "s27_31",
+      "category": "Classic Polish Idioms",
       "pl": "Wpaść jak śliwka w kompot",
-      "en": "To fall into a trap (lit: fall like plum in compote)",
+      "en": "To fall into a trap / To be in trouble",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🫐",
+      "note": "Literally 'To fall like a plum into compote'."
     },
     {
-      "id": "a20_34",
-      "category": "Idioms",
-      "pl": "Rzucać grochem o ścianę",
-      "en": "To talk to a brick wall (lit: throw peas at wall)",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_35",
-      "category": "Idioms",
+      "id": "s27_32",
+      "category": "Classic Polish Idioms",
       "pl": "Mieć dwie lewe ręce",
-      "en": "To be clumsy (lit: have two left hands)",
+      "en": "To be clumsy",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤲",
+      "note": "Literally 'To have two left hands'."
     },
     {
-      "id": "a20_36",
-      "category": "Idioms",
+      "id": "s27_33",
+      "category": "Classic Polish Idioms",
       "pl": "Nie mój cyrk, nie moje małpy",
       "en": "Not my circus, not my monkeys",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🎪",
+      "note": "A globally famous Polish proverb! Means 'Not my problem'."
     },
     {
-      "id": "a20_37",
-      "category": "Idioms",
+      "id": "s27_34",
+      "category": "Classic Polish Idioms",
       "pl": "Trafić kulą w płot",
-      "en": "To be way off (lit: hit fence with bullet)",
+      "en": "To be way off the mark",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🎯",
+      "note": "Literally 'To hit a fence with a bullet'. Used when someone makes a bad guess."
     },
     {
-      "id": "a20_38",
-      "category": "Idioms",
+      "id": "s27_35",
+      "category": "Classic Polish Idioms",
       "pl": "Mieć głowę na karku",
-      "en": "To have one's head screwed on",
+      "en": "To have a good head on one's shoulders",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🧠",
+      "note": "Literally 'To have a head on the neck'. Means someone is smart and practical."
     },
     {
-      "id": "a20_39",
-      "category": "Idioms",
+      "id": "s27_36",
+      "category": "Classic Polish Idioms",
       "pl": "Stracić głowę",
-      "en": "To lose one's head",
+      "en": "To lose one's head / Panick",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "😱",
+      "note": "Can mean to panic, or to fall madly in love ('stracić głowę dla kogoś')."
     },
     {
-      "id": "a20_40",
-      "category": "Idioms",
+      "id": "s27_37",
+      "category": "Proverbs",
       "pl": "Nie wszystko złoto, co się świeci",
       "en": "All that glitters is not gold",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "✨",
+      "note": "A direct equivalent of the English proverb."
     },
     {
-      "id": "a20_41",
-      "category": "Idioms",
+      "id": "s27_38",
+      "category": "Proverbs",
       "pl": "Lepszy wróbel w garści niż gołąb na dachu",
       "en": "A bird in hand is worth two in the bush",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🐦",
+      "note": "Literally 'A sparrow in the fist is better than a pigeon on the roof'."
     },
     {
-      "id": "a20_42",
-      "category": "Idioms",
+      "id": "s27_39",
+      "category": "Proverbs",
       "pl": "Kto rano wstaje, temu Pan Bóg daje",
       "en": "The early bird catches the worm",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🌅",
+      "note": "Literally 'Who gets up early, to him God gives'."
     },
     {
-      "id": "a20_43",
-      "category": "Idioms",
+      "id": "s27_40",
+      "category": "Proverbs",
       "pl": "Co ma wisieć, nie utonie",
       "en": "What's meant to be will be",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "⚓",
+      "note": "Literally 'What is meant to hang, will not drown'. Very fatalistic Polish proverb."
     },
     {
-      "id": "a20_44",
-      "category": "Idioms",
+      "id": "s27_41",
+      "category": "Proverbs",
       "pl": "Jak Kuba Bogu, tak Bóg Kubie",
-      "en": "Tit for tat",
+      "en": "What goes around comes around / Tit for tat",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🔄",
+      "note": "Literally 'As Kuba treats God, so God treats Kuba'."
     },
     {
-      "id": "a20_45",
-      "category": "Idioms",
+      "id": "s27_42",
+      "category": "Proverbs",
       "pl": "Gdzie kucharek sześć, tam nie ma co jeść",
       "en": "Too many cooks spoil the broth",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🍳",
+      "note": "Literally 'Where there are six cooks, there is nothing to eat'."
     },
     {
-      "id": "a20_46",
-      "category": "Idioms",
+      "id": "s27_43",
+      "category": "Proverbs",
       "pl": "Nie chwal dnia przed zachodem słońca",
       "en": "Don't count your chickens before they hatch",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🌇",
+      "note": "Literally 'Don't praise the day before the sunset'."
     },
     {
-      "id": "a20_47",
-      "category": "Idioms",
+      "id": "s27_44",
+      "category": "Proverbs",
       "pl": "Apetyt rośnie w miarę jedzenia",
       "en": "Appetite comes with eating",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🍽️",
+      "note": "Used to describe greed or ambition growing as you gain more."
     },
     {
-      "id": "a20_48",
-      "category": "Idioms",
+      "id": "s27_45",
+      "category": "Proverbs",
       "pl": "Cicha woda brzegi rwie",
       "en": "Still waters run deep",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🌊",
+      "note": "Literally 'Quiet water tears the banks'. Used for a quiet person with hidden depths (or a hidden wild side)."
     },
     {
-      "id": "a20_49",
-      "category": "Idioms",
+      "id": "s27_46",
+      "category": "Proverbs",
       "pl": "Diabeł tkwi w szczegółach",
       "en": "The devil is in the details",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "😈",
+      "note": "A direct translation of the English proverb."
     },
     {
-      "id": "a20_50",
-      "category": "Idioms",
+      "id": "s27_47",
+      "category": "Proverbs",
       "pl": "Lepiej późno niż wcale",
       "en": "Better late than never",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "⏰",
+      "note": "A direct translation."
     },
     {
-      "id": "a20_51",
-      "category": "Fillers",
-      "pl": "No",
-      "en": "Well / So (filler)",
+      "id": "s27_48",
+      "category": "Proverbs",
+      "pl": "Mądry Polak po szkodzie",
+      "en": "Hindsight is 20/20",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤕",
+      "note": "Literally 'A Pole is smart after the damage is done'."
     },
     {
-      "id": "a20_52",
-      "category": "Fillers",
+      "id": "s27_49",
+      "category": "Proverbs",
+      "pl": "Kłamstwo ma krótkie nogi",
+      "en": "Lies don't travel far",
+      "level": 27,
+      "gender": null,
+      "emoji": "🦵",
+      "note": "Literally 'A lie has short legs'. Meaning the truth will soon catch up."
+    },
+    {
+      "id": "s27_50",
+      "category": "Proverbs",
+      "pl": "Trafiła kosa na kamień",
+      "en": "To meet one's match",
+      "level": 27,
+      "gender": null,
+      "emoji": "🪨",
+      "note": "Literally 'The scythe hit a stone'. Used when a stubborn person meets someone equally stubborn."
+    },
+    {
+      "id": "s27_51",
+      "category": "Conversational Fillers",
+      "pl": "No",
+      "en": "Well / Yeah",
+      "level": 27,
+      "gender": null,
+      "emoji": "👍",
+      "note": "False friend! In Polish, 'No' means 'Yes' or 'Yeah', not 'No'."
+    },
+    {
+      "id": "s27_52",
+      "category": "Conversational Fillers",
       "pl": "No więc",
       "en": "Well then / So",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🗣️",
+      "note": "Used to start a story or an explanation."
     },
     {
-      "id": "a20_53",
-      "category": "Fillers",
+      "id": "s27_53",
+      "category": "Conversational Fillers",
       "pl": "Wiesz...",
       "en": "You know...",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤔",
+      "note": "Second-person singular of 'wiedzieć'."
     },
     {
-      "id": "a20_54",
-      "category": "Fillers",
+      "id": "s27_54",
+      "category": "Conversational Fillers",
       "pl": "Znaczy się",
       "en": "I mean / Like",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "👉",
+      "note": "A reflexive filler used to clarify a thought."
     },
     {
-      "id": "a20_55",
-      "category": "Fillers",
+      "id": "s27_55",
+      "category": "Conversational Fillers",
       "pl": "Tak jakby",
       "en": "Sort of / Kind of",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤷‍♀️",
+      "note": "Used when you aren't entirely certain."
     },
     {
-      "id": "a20_56",
-      "category": "Fillers",
+      "id": "s27_56",
+      "category": "Conversational Fillers",
       "pl": "Coś takiego",
       "en": "Something like that",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "💭",
+      "note": "Neuter phrase."
     },
     {
-      "id": "a20_57",
-      "category": "Fillers",
+      "id": "s27_57",
+      "category": "Conversational Fillers",
       "pl": "I tak dalej",
       "en": "And so on",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "⏭️",
+      "note": "Abbreviated as 'itd.' in writing."
     },
     {
-      "id": "a20_58",
-      "category": "Fillers",
-      "pl": "Itd.",
-      "en": "Etc.",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_59",
-      "category": "Fillers",
+      "id": "s27_58",
+      "category": "Interjections",
       "pl": "Aha",
       "en": "Aha / I see",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "💡",
+      "note": "Universal sound of understanding."
     },
     {
-      "id": "a20_60",
-      "category": "Fillers",
+      "id": "s27_59",
+      "category": "Interjections",
       "pl": "O!",
       "en": "Oh!",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "😲",
+      "note": "Sound of surprise."
     },
     {
-      "id": "a20_61",
-      "category": "Fillers",
+      "id": "s27_60",
+      "category": "Interjections",
       "pl": "Oj!",
       "en": "Oh! / Oops!",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "😬",
+      "note": "Often used when you make a small mistake or bump into someone."
     },
     {
-      "id": "a20_62",
-      "category": "Fillers",
+      "id": "s27_61",
+      "category": "Interjections",
       "pl": "Wow!",
       "en": "Wow!",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤩",
+      "note": "Borrowed from English, used heavily by young Poles."
     },
     {
-      "id": "a20_63",
-      "category": "Fillers",
+      "id": "s27_62",
+      "category": "Interjections",
       "pl": "Jejku!",
-      "en": "Gosh! / Wow!",
+      "en": "Gosh! / Oh my!",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🙀",
+      "note": "A mild, polite exclamation of shock."
     },
     {
-      "id": "a20_64",
-      "category": "Fillers",
+      "id": "s27_63",
+      "category": "Interjections",
       "pl": "O rany!",
-      "en": "Oh my! / Gosh!",
+      "en": "Oh man! / Gosh!",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤕",
+      "note": "Literally 'Oh wounds!'."
     },
     {
-      "id": "a20_65",
-      "category": "Fillers",
+      "id": "s27_64",
+      "category": "Interjections",
       "pl": "O matko!",
-      "en": "Oh my God!",
+      "en": "Oh my God! / Oh mother!",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤦‍♀️",
+      "note": "A very common Polish exclamation of stress or shock."
     },
     {
-      "id": "a20_66",
-      "category": "Fillers",
+      "id": "s27_65",
+      "category": "Interjections",
       "pl": "Ojej!",
       "en": "Oh dear!",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "😥",
+      "note": "Used to express sympathy or mild dismay."
     },
     {
-      "id": "a20_67",
-      "category": "Fillers",
-      "pl": "Ups!",
-      "en": "Oops!",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_68",
-      "category": "Fillers",
-      "pl": "Hmm",
-      "en": "Hmm",
-      "level": 27,
-      "gender": null
-    },
-    {
-      "id": "a20_69",
-      "category": "Fillers",
+      "id": "s27_66",
+      "category": "Interjections",
       "pl": "Eee...",
       "en": "Uhh... / Umm...",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "🤔",
+      "note": "The sound you make when trying to remember a word."
     },
     {
-      "id": "a20_70",
-      "category": "Fillers",
+      "id": "s27_67",
+      "category": "Interjections",
       "pl": "No dobra",
       "en": "Okay then / Alright",
       "level": 27,
-      "gender": null
+      "gender": null,
+      "emoji": "✅",
+      "note": "Used to concede a point or agree to a plan."
+    },
+    {
+      "id": "s27_68",
+      "category": "Intensity Idioms",
+      "pl": "Na łeb na szyję",
+      "en": "Headlong / Recklessly fast",
+      "level": 27,
+      "gender": null,
+      "emoji": "🌪️",
+      "note": "Literally 'On head on neck'. Doing something too fast."
+    },
+    {
+      "id": "s27_69",
+      "category": "Intensity Idioms",
+      "pl": "Zrobić kogoś w konia",
+      "en": "To trick/cheat someone",
+      "level": 27,
+      "gender": null,
+      "emoji": "🐴",
+      "note": "Literally 'To make someone into a horse'."
+    },
+    {
+      "id": "s27_70",
+      "category": "Intensity Idioms",
+      "pl": "Włos się jeży na głowie",
+      "en": "It makes your hair stand on end",
+      "level": 27,
+      "gender": null,
+      "emoji": "🥶",
+      "note": "Used to describe something terrifying."
+    },
+    {
+      "id": "s27_71",
+      "category": "Intensity Idioms",
+      "pl": "Czuć pismo nosem",
+      "en": "To smell a rat / To suspect something",
+      "level": 27,
+      "gender": null,
+      "emoji": "👃",
+      "note": "Literally 'To smell the writing with a nose'."
+    },
+    {
+      "id": "s27_72",
+      "category": "Intensity Idioms",
+      "pl": "Wiercić dziurę w brzuchu",
+      "en": "To nag / To pester constantly",
+      "level": 27,
+      "gender": null,
+      "emoji": "🪛",
+      "note": "Literally 'To drill a hole in the belly'."
+    },
+    {
+      "id": "s27_73",
+      "category": "Intensity Idioms",
+      "pl": "Gruba ryba",
+      "en": "A big shot / Important person",
+      "level": 27,
+      "gender": null,
+      "emoji": "🐋",
+      "note": "Literally 'Fat fish'."
+    },
+    {
+      "id": "s27_74",
+      "category": "Intensity Idioms",
+      "pl": "Bujać w obłokach",
+      "en": "To have one's head in the clouds",
+      "level": 27,
+      "gender": null,
+      "emoji": "☁️",
+      "note": "Used for daydreamers."
+    },
+    {
+      "id": "s27_75",
+      "category": "Intensity Idioms",
+      "pl": "Pasuje jak ulał",
+      "en": "Fits perfectly / Fits like a glove",
+      "level": 27,
+      "gender": null,
+      "emoji": "🧤",
+      "note": "Literally 'Fits as if poured'."
     }
   ]
 }

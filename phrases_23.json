@@ -1,571 +1,757 @@
 {
-  "level": 23,
-  "description": "Polish Culture & Traditions - Cultural Understanding",
+  "level": 24,
+  "description": "Government & Official Matters - Bureaucracy",
   "tier": "ADVANCED",
   "phrases": [
     {
-      "id": "a16_01",
-      "category": "Holidays",
-      "pl": "Święta",
-      "en": "Holidays",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_02",
-      "category": "Holidays",
-      "pl": "Boże Narodzenie",
-      "en": "Christmas",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_03",
-      "category": "Holidays",
-      "pl": "Wigilia",
-      "en": "Christmas Eve",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_04",
-      "category": "Holidays",
-      "pl": "Wielkanoc",
-      "en": "Easter",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_05",
-      "category": "Holidays",
-      "pl": "Nowy Rok",
-      "en": "New Year",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_06",
-      "category": "Holidays",
-      "pl": "Sylwester",
-      "en": "New Year's Eve",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_07",
-      "category": "Holidays",
-      "pl": "Wszystkich Świętych",
-      "en": "All Saints' Day",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_08",
-      "category": "Holidays",
-      "pl": "Święto Niepodległości",
-      "en": "Independence Day",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_09",
-      "category": "Holidays",
-      "pl": "Konstytucja 3 Maja",
-      "en": "Constitution Day (May 3rd)",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_10",
-      "category": "Holidays",
-      "pl": "Andrzejki",
-      "en": "St. Andrew's Day",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_11",
-      "category": "Holidays",
-      "pl": "Tłusty Czwartek",
-      "en": "Fat Thursday",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_12",
-      "category": "Holidays",
-      "pl": "Wielki Post",
-      "en": "Lent",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_13",
-      "category": "Holidays",
-      "pl": "Śmigus-Dyngus",
-      "en": "Wet Monday (Easter Monday)",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_14",
-      "category": "Holidays",
-      "pl": "Dzień Babci",
-      "en": "Grandmother's Day",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_15",
-      "category": "Holidays",
-      "pl": "Dzień Dziadka",
-      "en": "Grandfather's Day",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_16",
-      "category": "Traditions",
-      "pl": "Tradycja",
-      "en": "Tradition",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_17",
-      "category": "Traditions",
-      "pl": "Zwyczaj",
-      "en": "Custom",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_18",
-      "category": "Traditions",
-      "pl": "Gościnność",
-      "en": "Hospitality",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_19",
-      "category": "Traditions",
-      "pl": "Opłatek",
-      "en": "Christmas wafer",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_20",
-      "category": "Traditions",
-      "pl": "Dzielenie się opłatkiem",
-      "en": "Sharing the Christmas wafer",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_21",
-      "category": "Traditions",
-      "pl": "Kolęda",
-      "en": "Christmas carol",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_22",
-      "category": "Traditions",
-      "pl": "Choinka",
-      "en": "Christmas tree",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_23",
-      "category": "Traditions",
-      "pl": "Prezenty",
-      "en": "Gifts",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_24",
-      "category": "Traditions",
-      "pl": "Pisanki",
-      "en": "Decorated Easter eggs",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_25",
-      "category": "Traditions",
-      "pl": "Koszyczek wielkanocny",
-      "en": "Easter basket",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_26",
-      "category": "Traditions",
-      "pl": "Śledź",
-      "en": "Herring",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_27",
-      "category": "Traditions",
-      "pl": "Barszcz",
-      "en": "Beet soup",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_28",
-      "category": "Traditions",
-      "pl": "Karp",
-      "en": "Carp",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_29",
-      "category": "Traditions",
-      "pl": "Dwanaście potraw",
-      "en": "Twelve dishes (Christmas Eve)",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_30",
-      "category": "Traditions",
-      "pl": "Pączki",
-      "en": "Donuts",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_31",
-      "category": "Traditions",
-      "pl": "Faworki",
-      "en": "Angel wings (pastry)",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_32",
-      "category": "Traditions",
-      "pl": "Imieniny",
-      "en": "Name day",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_33",
-      "category": "Traditions",
-      "pl": "Wszystkiego najlepszego z okazji imienin!",
-      "en": "Happy name day!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_34",
-      "category": "Traditions",
-      "pl": "Sto lat!",
-      "en": "May you live 100 years! (birthday song)",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_35",
-      "category": "Traditions",
-      "pl": "Na zdrowie!",
-      "en": "Cheers! / Bless you!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_36",
-      "category": "Cultural",
-      "pl": "Polska",
-      "en": "Poland",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_37",
-      "category": "Cultural",
-      "pl": "Polski",
-      "en": "Polish",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_38",
-      "category": "Cultural",
-      "pl": "Polak/Polka",
-      "en": "Polish person",
-      "level": 23,
-      "gender": "both",
-      "variants": {
-        "m": "Polak",
-        "f": "Polka"
-      }
-    },
-    {
-      "id": "a16_39",
-      "category": "Cultural",
-      "pl": "Kultura",
-      "en": "Culture",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_40",
-      "category": "Cultural",
-      "pl": "Historia",
-      "en": "History",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_41",
-      "category": "Cultural",
-      "pl": "Kościół",
-      "en": "Church",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_42",
-      "category": "Cultural",
-      "pl": "Msza",
-      "en": "Mass (church service)",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_43",
-      "category": "Cultural",
-      "pl": "Religia",
-      "en": "Religion",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_44",
-      "category": "Cultural",
-      "pl": "Katolicki",
-      "en": "Catholic",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_45",
-      "category": "Cultural",
-      "pl": "Papież",
-      "en": "Pope",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_46",
-      "category": "Cultural",
-      "pl": "Jan Paweł II",
-      "en": "John Paul II",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_47",
-      "category": "Cultural",
-      "pl": "Solidarność",
-      "en": "Solidarity",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_48",
-      "category": "Cultural",
-      "pl": "Hymn narodowy",
-      "en": "National anthem",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_49",
-      "category": "Cultural",
-      "pl": "Flaga",
-      "en": "Flag",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_50",
-      "category": "Cultural",
-      "pl": "Godło",
-      "en": "Coat of arms / Emblem",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_51",
-      "category": "Cultural",
-      "pl": "Orzeł biały",
-      "en": "White eagle (Polish symbol)",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_52",
-      "category": "Cultural",
-      "pl": "Warszawa",
-      "en": "Warsaw",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_53",
-      "category": "Cultural",
-      "pl": "Kraków",
-      "en": "Krakow",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_54",
-      "category": "Cultural",
-      "pl": "Wawel",
-      "en": "Wawel (castle)",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_55",
-      "category": "Cultural",
-      "pl": "Rynek Główny",
-      "en": "Main Market Square",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_56",
-      "category": "Expressions",
-      "pl": "Sto lat!",
-      "en": "100 years! (birthday wish)",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_57",
-      "category": "Expressions",
-      "pl": "Smacznego!",
-      "en": "Enjoy your meal!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_58",
-      "category": "Expressions",
-      "pl": "Na zdrowie!",
-      "en": "Cheers! / Bless you!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_59",
-      "category": "Expressions",
-      "pl": "Powodzenia!",
-      "en": "Good luck!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_60",
-      "category": "Expressions",
-      "pl": "Gratulacje!",
-      "en": "Congratulations!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_61",
-      "category": "Expressions",
-      "pl": "Współczuję",
-      "en": "I'm sorry for your loss / My condolences",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_62",
-      "category": "Expressions",
-      "pl": "Wesołych Świąt!",
-      "en": "Merry Christmas!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_63",
-      "category": "Expressions",
-      "pl": "Szczęśliwego Nowego Roku!",
-      "en": "Happy New Year!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_64",
-      "category": "Expressions",
-      "pl": "Wesołego Alleluja!",
-      "en": "Happy Easter!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_65",
-      "category": "Expressions",
-      "pl": "Wszystkiego najlepszego!",
-      "en": "All the best!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_66",
-      "category": "Expressions",
-      "pl": "Trzymaj się!",
-      "en": "Take care!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_67",
-      "category": "Expressions",
-      "pl": "Do usłyszenia!",
-      "en": "Talk to you later!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_68",
-      "category": "Expressions",
-      "pl": "Miłego dnia!",
-      "en": "Have a nice day!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_69",
-      "category": "Expressions",
-      "pl": "Miłego weekendu!",
-      "en": "Have a nice weekend!",
-      "level": 23,
-      "gender": null
-    },
-    {
-      "id": "a16_70",
-      "category": "Expressions",
-      "pl": "Pozdrawiam serdecznie",
-      "en": "Warm regards",
-      "level": 23,
-      "gender": null
+      "id": "s24_01",
+      "category": "Documents",
+      "pl": "Dokument",
+      "en": "Document",
+      "level": 24,
+      "gender": null,
+      "emoji": "📄",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_02",
+      "category": "Documents",
+      "pl": "Dokumenty",
+      "en": "Documents",
+      "level": 24,
+      "gender": null,
+      "emoji": "📑",
+      "note": "Plural."
+    },
+    {
+      "id": "s24_03",
+      "category": "Documents",
+      "pl": "Paszport",
+      "en": "Passport",
+      "level": 24,
+      "gender": null,
+      "emoji": "🛂",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_04",
+      "category": "Documents",
+      "pl": "Dowód osobisty",
+      "en": "ID card",
+      "level": 24,
+      "gender": null,
+      "emoji": "🪪",
+      "note": "The standard identity card carried by all Polish citizens."
+    },
+    {
+      "id": "s24_05",
+      "category": "Documents",
+      "pl": "PESEL",
+      "en": "PESEL (Polish ID number)",
+      "level": 24,
+      "gender": null,
+      "emoji": "🔢",
+      "note": "An 11-digit national identification number. You need this for almost everything in Poland."
+    },
+    {
+      "id": "s24_06",
+      "category": "Documents",
+      "pl": "Karta pobytu",
+      "en": "Residence card",
+      "level": 24,
+      "gender": null,
+      "emoji": "💳",
+      "note": "Issued to non-EU foreigners legally residing in Poland."
+    },
+    {
+      "id": "s24_07",
+      "category": "Documents",
+      "pl": "Wiza",
+      "en": "Visa",
+      "level": 24,
+      "gender": null,
+      "emoji": "🛂",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s24_08",
+      "category": "Documents",
+      "pl": "Zezwolenie na pracę",
+      "en": "Work permit",
+      "level": 24,
+      "gender": null,
+      "emoji": "💼",
+      "note": "Takes the accusative case 'na pracę'."
+    },
+    {
+      "id": "s24_09",
+      "category": "Documents",
+      "pl": "Prawo jazdy",
+      "en": "Driver's license",
+      "level": 24,
+      "gender": null,
+      "emoji": "🚗",
+      "note": "Literally 'The right of driving'."
+    },
+    {
+      "id": "s24_10",
+      "category": "Documents",
+      "pl": "Akt urodzenia",
+      "en": "Birth certificate",
+      "level": 24,
+      "gender": null,
+      "emoji": "👶",
+      "note": "Masculine phrase."
+    },
+    {
+      "id": "s24_11",
+      "category": "Documents",
+      "pl": "Akt małżeństwa",
+      "en": "Marriage certificate",
+      "level": 24,
+      "gender": null,
+      "emoji": "💍",
+      "note": "Masculine phrase."
+    },
+    {
+      "id": "s24_12",
+      "category": "Documents",
+      "pl": "Świadectwo",
+      "en": "Certificate (Educational)",
+      "level": 24,
+      "gender": null,
+      "emoji": "🎓",
+      "note": "Neuter noun. Usually refers to school or academic certificates."
+    },
+    {
+      "id": "s24_13",
+      "category": "Documents",
+      "pl": "Zaświadczenie",
+      "en": "Confirmation / Official Certificate",
+      "level": 24,
+      "gender": null,
+      "emoji": "📜",
+      "note": "A document proving a specific fact (e.g., employment, income)."
+    },
+    {
+      "id": "s24_14",
+      "category": "Documents",
+      "pl": "Umowa",
+      "en": "Contract",
+      "level": 24,
+      "gender": null,
+      "emoji": "✒️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s24_15",
+      "category": "Documents",
+      "pl": "Podpis",
+      "en": "Signature",
+      "level": 24,
+      "gender": null,
+      "emoji": "✍️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_16",
+      "category": "Documents",
+      "pl": "Pieczątka",
+      "en": "Stamp",
+      "level": 24,
+      "gender": null,
+      "emoji": "🪀",
+      "note": "Polish bureaucracy loves official ink stamps!"
+    },
+    {
+      "id": "s24_17",
+      "category": "Documents",
+      "pl": "Kopia",
+      "en": "Copy",
+      "level": 24,
+      "gender": null,
+      "emoji": "📄",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s24_18",
+      "category": "Documents",
+      "pl": "Oryginał",
+      "en": "Original",
+      "level": 24,
+      "gender": null,
+      "emoji": "🥇",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_19",
+      "category": "Documents",
+      "pl": "Tłumaczenie przysięgłe",
+      "en": "Certified translation",
+      "level": 24,
+      "gender": null,
+      "emoji": "⚖️",
+      "note": "Literally 'Sworn translation'. Mandatory for foreign documents submitted to offices."
+    },
+    {
+      "id": "s24_20",
+      "category": "Documents",
+      "pl": "Apostille",
+      "en": "Apostille",
+      "level": 24,
+      "gender": null,
+      "emoji": "🔖",
+      "note": "International certification. Pronounced as in French/English."
+    },
+    {
+      "id": "s24_21",
+      "category": "Offices",
+      "pl": "Urząd",
+      "en": "Office / Bureau",
+      "level": 24,
+      "gender": null,
+      "emoji": "🏢",
+      "note": "Masculine noun. Refers specifically to government administrative buildings."
+    },
+    {
+      "id": "s24_22",
+      "category": "Offices",
+      "pl": "Urząd miasta",
+      "en": "City hall",
+      "level": 24,
+      "gender": null,
+      "emoji": "🏛️",
+      "note": "Where you go for local municipal matters."
+    },
+    {
+      "id": "s24_23",
+      "category": "Offices",
+      "pl": "Urząd skarbowy",
+      "en": "Tax office",
+      "level": 24,
+      "gender": null,
+      "emoji": "💸",
+      "note": "Where you file your annual PIT (income tax) returns."
+    },
+    {
+      "id": "s24_24",
+      "category": "Offices",
+      "pl": "Urząd pracy",
+      "en": "Employment office",
+      "level": 24,
+      "gender": null,
+      "emoji": "💼",
+      "note": "Handles unemployment benefits and job seeking."
+    },
+    {
+      "id": "s24_25",
+      "category": "Offices",
+      "pl": "Urząd wojewódzki",
+      "en": "Voivodeship office",
+      "level": 24,
+      "gender": null,
+      "emoji": "🗺️",
+      "note": "The regional government office. Foreigners go here for residence permits."
+    },
+    {
+      "id": "s24_26",
+      "category": "Offices",
+      "pl": "ZUS",
+      "en": "Social Insurance Institution",
+      "level": 24,
+      "gender": null,
+      "emoji": "🛡️",
+      "note": "Zakład Ubezpieczeń Społecznych. Handles pensions and sick pay."
+    },
+    {
+      "id": "s24_27",
+      "category": "Offices",
+      "pl": "NFZ",
+      "en": "National Health Fund",
+      "level": 24,
+      "gender": null,
+      "emoji": "🏥",
+      "note": "Narodowy Fundusz Zdrowia. Manages public healthcare."
+    },
+    {
+      "id": "s24_28",
+      "category": "Offices",
+      "pl": "Ambasada",
+      "en": "Embassy",
+      "level": 24,
+      "gender": null,
+      "emoji": "🏳️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s24_29",
+      "category": "Offices",
+      "pl": "Konsulat",
+      "en": "Consulate",
+      "level": 24,
+      "gender": null,
+      "emoji": "🏛️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_30",
+      "category": "Offices",
+      "pl": "Policja",
+      "en": "Police",
+      "level": 24,
+      "gender": null,
+      "emoji": "🚓",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s24_31",
+      "category": "Offices",
+      "pl": "Komisariat",
+      "en": "Police station",
+      "level": 24,
+      "gender": null,
+      "emoji": "👮",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_32",
+      "category": "Offices",
+      "pl": "Wniosek",
+      "en": "Application / Request",
+      "level": 24,
+      "gender": null,
+      "emoji": "📝",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_33",
+      "category": "Offices",
+      "pl": "Formularz",
+      "en": "Form",
+      "level": 24,
+      "gender": null,
+      "emoji": "📋",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_34",
+      "category": "Offices",
+      "pl": "Wypełnić formularz",
+      "en": "To fill out a form",
+      "level": 24,
+      "gender": null,
+      "emoji": "✍️",
+      "note": "Infinitive phrase."
+    },
+    {
+      "id": "s24_35",
+      "category": "Offices",
+      "pl": "Złożyć wniosek",
+      "en": "To submit an application",
+      "level": 24,
+      "gender": null,
+      "emoji": "📥",
+      "note": "Literally 'To fold an application'."
+    },
+    {
+      "id": "s24_36",
+      "category": "Offices",
+      "pl": "Rejestracja",
+      "en": "Registration",
+      "level": 24,
+      "gender": null,
+      "emoji": "🗂️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s24_37",
+      "category": "Offices",
+      "pl": "Zarejestrować się",
+      "en": "To register",
+      "level": 24,
+      "gender": null,
+      "emoji": "🖊️",
+      "note": "Reflexive perfective verb."
+    },
+    {
+      "id": "s24_38",
+      "category": "Offices",
+      "pl": "Meldunek",
+      "en": "Registration of residence",
+      "level": 24,
+      "gender": null,
+      "emoji": "🏠",
+      "note": "A mandatory administrative requirement to register your address in Poland."
+    },
+    {
+      "id": "s24_39",
+      "category": "Offices",
+      "pl": "Zameldować się",
+      "en": "To register residence",
+      "level": 24,
+      "gender": null,
+      "emoji": "📍",
+      "note": "Reflexive infinitive verb."
+    },
+    {
+      "id": "s24_40",
+      "category": "Offices",
+      "pl": "Wymeldować się",
+      "en": "To deregister residence",
+      "level": 24,
+      "gender": null,
+      "emoji": "🛫",
+      "note": "Reflexive infinitive verb."
+    },
+    {
+      "id": "s24_41",
+      "category": "Offices",
+      "pl": "Opłata skarbowa",
+      "en": "Stamp duty / Official fee",
+      "level": 24,
+      "gender": null,
+      "emoji": "🪙",
+      "note": "A mandatory fee for most government documents."
+    },
+    {
+      "id": "s24_42",
+      "category": "Offices",
+      "pl": "Podatek",
+      "en": "Tax",
+      "level": 24,
+      "gender": null,
+      "emoji": "📉",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_43",
+      "category": "Offices",
+      "pl": "Termin",
+      "en": "Deadline / Appointment",
+      "level": 24,
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_44",
+      "category": "Offices",
+      "pl": "Kolejka",
+      "en": "Queue / Line",
+      "level": 24,
+      "gender": null,
+      "emoji": "🧍‍♂️🧍‍♀️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s24_45",
+      "category": "Offices",
+      "pl": "Pobrać numerek",
+      "en": "To take a ticket number",
+      "level": 24,
+      "gender": null,
+      "emoji": "🎫",
+      "note": "Most Polish offices use a ticket machine system to manage queues."
+    },
+    {
+      "id": "s24_46",
+      "category": "Legal",
+      "pl": "Prawo",
+      "en": "Law / Right",
+      "level": 24,
+      "gender": null,
+      "emoji": "⚖️",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s24_47",
+      "category": "Legal",
+      "pl": "Prawnik",
+      "en": "Lawyer",
+      "level": 24,
+      "gender": null,
+      "emoji": "👨‍⚖️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_48",
+      "category": "Legal",
+      "pl": "Adwokat",
+      "en": "Attorney",
+      "level": 24,
+      "gender": null,
+      "emoji": "💼",
+      "note": "A specific type of lawyer licensed to represent clients in court."
+    },
+    {
+      "id": "s24_49",
+      "category": "Legal",
+      "pl": "Notariusz",
+      "en": "Notary",
+      "level": 24,
+      "gender": null,
+      "emoji": "🖋️",
+      "note": "Requires a special license in Poland; heavily involved in property purchases."
+    },
+    {
+      "id": "s24_50",
+      "category": "Legal",
+      "pl": "Akt notarialny",
+      "en": "Notarial deed",
+      "level": 24,
+      "gender": null,
+      "emoji": "📜",
+      "note": "Masculine phrase."
+    },
+    {
+      "id": "s24_51",
+      "category": "Legal",
+      "pl": "Umowa najmu",
+      "en": "Rental contract",
+      "level": 24,
+      "gender": null,
+      "emoji": "🔑",
+      "note": "Takes the genitive case 'najmu'."
+    },
+    {
+      "id": "s24_52",
+      "category": "Legal",
+      "pl": "Decyzja",
+      "en": "Decision",
+      "level": 24,
+      "gender": null,
+      "emoji": "✅",
+      "note": "The final official document issued by a government office."
+    },
+    {
+      "id": "s24_53",
+      "category": "Legal",
+      "pl": "Sąd",
+      "en": "Court",
+      "level": 24,
+      "gender": null,
+      "emoji": "🏛️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_54",
+      "category": "Legal",
+      "pl": "Sprawa sądowa",
+      "en": "Court case",
+      "level": 24,
+      "gender": null,
+      "emoji": "📁",
+      "note": "Feminine phrase."
+    },
+    {
+      "id": "s24_55",
+      "category": "Legal",
+      "pl": "Pozew",
+      "en": "Lawsuit",
+      "level": 24,
+      "gender": null,
+      "emoji": "📄",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_56",
+      "category": "Legal",
+      "pl": "Kara",
+      "en": "Penalty / Punishment",
+      "level": 24,
+      "gender": null,
+      "emoji": "❌",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s24_57",
+      "category": "Legal",
+      "pl": "Mandat",
+      "en": "Fine / Ticket",
+      "level": 24,
+      "gender": null,
+      "emoji": "💶",
+      "note": "Issued for speeding, parking violations, or drinking in public."
+    },
+    {
+      "id": "s24_58",
+      "category": "Legal",
+      "pl": "Przepisy",
+      "en": "Regulations / Rules",
+      "level": 24,
+      "gender": null,
+      "emoji": "📖",
+      "note": "Plural noun."
+    },
+    {
+      "id": "s24_59",
+      "category": "Legal",
+      "pl": "Zgodnie z prawem",
+      "en": "According to the law",
+      "level": 24,
+      "gender": null,
+      "emoji": "⚖️",
+      "note": "Preposition 'z' takes the instrumental case 'prawem'."
+    },
+    {
+      "id": "s24_60",
+      "category": "Legal",
+      "pl": "Nielegalne",
+      "en": "Illegal",
+      "level": 24,
+      "gender": null,
+      "emoji": "🚫",
+      "note": "Adjective (neuter form)."
+    },
+    {
+      "id": "s24_61",
+      "category": "Citizenship",
+      "pl": "Obywatelstwo",
+      "en": "Citizenship",
+      "level": 24,
+      "gender": null,
+      "emoji": "🦅",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s24_62",
+      "category": "Citizenship",
+      "pl": "Obywatel",
+      "en": "Citizen",
+      "level": 24,
+      "gender": null,
+      "emoji": "👤",
+      "note": "Masculine noun. Female is 'Obywatelka'."
+    },
+    {
+      "id": "s24_63",
+      "category": "Citizenship",
+      "pl": "Cudzoziemiec",
+      "en": "Foreigner",
+      "level": 24,
+      "gender": null,
+      "emoji": "🌍",
+      "note": "Literally 'Person from foreign lands'. Very formal. Casually, Poles say 'obcokrajowiec'."
+    },
+    {
+      "id": "s24_64",
+      "category": "Citizenship",
+      "pl": "Pobyt stały",
+      "en": "Permanent residence",
+      "level": 24,
+      "gender": null,
+      "emoji": "🏡",
+      "note": "Masculine phrase."
+    },
+    {
+      "id": "s24_65",
+      "category": "Citizenship",
+      "pl": "Pobyt czasowy",
+      "en": "Temporary residence",
+      "level": 24,
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Masculine phrase."
+    },
+    {
+      "id": "s24_66",
+      "category": "Citizenship",
+      "pl": "Wniosek o obywatelstwo",
+      "en": "Citizenship application",
+      "level": 24,
+      "gender": null,
+      "emoji": "📝",
+      "note": "Preposition 'o' takes the accusative case here."
+    },
+    {
+      "id": "s24_67",
+      "category": "Citizenship",
+      "pl": "Deportacja",
+      "en": "Deportation",
+      "level": 24,
+      "gender": null,
+      "emoji": "🛫",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s24_68",
+      "category": "Citizenship",
+      "pl": "Azyl",
+      "en": "Asylum",
+      "level": 24,
+      "gender": null,
+      "emoji": "🕊️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_69",
+      "category": "Citizenship",
+      "pl": "Uchodźca",
+      "en": "Refugee",
+      "level": 24,
+      "gender": null,
+      "emoji": "🚶",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s24_70",
+      "category": "Citizenship",
+      "pl": "Granica",
+      "en": "Border",
+      "level": 24,
+      "gender": null,
+      "emoji": "🚧",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s24_71",
+      "category": "Digital Administration",
+      "pl": "Profil zaufany",
+      "en": "Trusted profile",
+      "level": 24,
+      "gender": null,
+      "emoji": "💻",
+      "note": "A digital ID required to handle almost all Polish government matters online."
+    },
+    {
+      "id": "s24_72",
+      "category": "Digital Administration",
+      "pl": "ePUAP",
+      "en": "Electronic Platform of Public Admin",
+      "level": 24,
+      "gender": null,
+      "emoji": "🌐",
+      "note": "The state website where you use your 'profil zaufany' to submit documents."
+    },
+    {
+      "id": "s24_73",
+      "category": "Legal",
+      "pl": "KRS",
+      "en": "National Court Register",
+      "level": 24,
+      "gender": null,
+      "emoji": "🏢",
+      "note": "Krajowy Rejestr Sądowy. Essential registry if you are starting a business."
+    },
+    {
+      "id": "s24_74",
+      "category": "Legal",
+      "pl": "NIP",
+      "en": "Tax Identification Number",
+      "level": 24,
+      "gender": null,
+      "emoji": "🔢",
+      "note": "Numer Identyfikacji Podatkowej. Required for issuing invoices."
+    },
+    {
+      "id": "s24_75",
+      "category": "Offices",
+      "pl": "Urząd Stanu Cywilnego",
+      "en": "Civil Registry Office",
+      "level": 24,
+      "gender": null,
+      "emoji": "🏛️",
+      "note": "Often abbreviated as USC. The place for birth, marriage, and death certificates."
     }
   ]
 }

@@ -1,0 +1,257 @@
+{
+  "level": 13,
+  "description": "Weather & Seasons - Climate Talk",
+  "tier": "PRACTICAL",
+  "phrases": [
+    {
+      "id": "s13_01",
+      "category": "Weather",
+      "pl": "Jaka jest pogoda?",
+      "en": "What's the weather like?",
+      "level": 13,
+      "gender": null,
+      "emoji": "🌤️",
+      "note": "A fundamental question to start any conversation about the weather. 'Pogoda' is a feminine noun."
+    },
+    {
+      "id": "s13_02",
+      "category": "Weather",
+      "pl": "Jaka jest temperatura?",
+      "en": "What's the temperature?",
+      "level": 13,
+      "gender": null,
+      "emoji": "🌡️",
+      "note": "'Temperatura' is a feminine noun. This is the standard way to ask about it."
+    },
+    {
+      "id": "s13_03",
+      "category": "Weather",
+      "pl": "Ile jest stopni na zewnątrz?",
+      "en": "How many degrees is it outside?",
+      "level": 13,
+      "gender": null,
+      "emoji": "🔢",
+      "note": "'Stopni' is the genitive plural of 'stopień' (degree). 'Na zewnątrz' means 'outside'."
+    },
+    {
+      "id": "s13_04",
+      "category": "Weather",
+      "pl": "Jest dwadzieścia stopni Celsjusza.",
+      "en": "It's twenty degrees Celsius.",
+      "level": 13,
+      "gender": null,
+      "emoji": "2️⃣0️⃣🌡️",
+      "note": "Poland uses the Celsius scale. 'Dwadzieścia' (twenty) is a standard number."
+    },
+    {
+      "id": "s13_05",
+      "category": "Weather",
+      "pl": "Jest minus pięć stopni.",
+      "en": "It's minus five degrees.",
+      "level": 13,
+      "gender": null,
+      "emoji": "➖5️⃣🌡️",
+      "note": "'Minus' is used directly before the number. 'Pięć' (five) is a standard number."
+    },
+    {
+      "id": "s13_06",
+      "category": "Weather",
+      "pl": "Jest gorąco/zimno/ciepło/mroźno.",
+      "en": "It's hot/cold/warm/freezing.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🥵🥶☀️❄️",
+      "note": "These are impersonal adverbs. 'Mroźno' specifically means freezing cold, often below zero."
+    },
+    {
+      "id": "s13_07",
+      "category": "Weather",
+      "pl": "Jest słonecznie/pochmurno/wietrznie/mgliście.",
+      "en": "It's sunny/cloudy/windy/foggy.",
+      "level": 13,
+      "gender": null,
+      "emoji": "☀️☁️🌬️🌫️",
+      "note": "More impersonal adverbs describing general weather conditions. 'Pochmurno' implies overcast."
+    },
+    {
+      "id": "s13_08",
+      "category": "Weather",
+      "pl": "Pada deszcz/śnieg.",
+      "en": "It's raining/snowing.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🌧️🌨️",
+      "note": "'Padać' (to fall) is used with 'deszcz' (rain) and 'śnieg' (snow) in the nominative case."
+    },
+    {
+      "id": "s13_09",
+      "category": "Weather",
+      "pl": "Będzie padać?",
+      "en": "Will it rain?",
+      "level": 13,
+      "gender": null,
+      "emoji": "☔❓",
+      "note": "Future tense of 'padać'. Can also mean 'Will it snow?' depending on context."
+    },
+    {
+      "id": "s13_10",
+      "category": "Weather",
+      "pl": "Prognoza pogody na jutro.",
+      "en": "Tomorrow's weather forecast.",
+      "level": 13,
+      "gender": null,
+      "emoji": "📰🗓️",
+      "note": "'Prognoza pogody' is the weather forecast. 'Na jutro' means 'for tomorrow'."
+    },
+    {
+      "id": "s13_11",
+      "category": "Weather",
+      "pl": "Robi się coraz zimniej/cieplej.",
+      "en": "It's getting colder/warmer.",
+      "level": 13,
+      "gender": null,
+      "emoji": "📉📈🌡️",
+      "note": "'Robić się' means 'to become/to get'. 'Coraz' means 'more and more', intensifying the change."
+    },
+    {
+      "id": "s13_12",
+      "category": "Weather",
+      "pl": "Słońce świeci.",
+      "en": "The sun is shining.",
+      "level": 13,
+      "gender": null,
+      "emoji": "☀️✨",
+      "note": "'Słońce' (sun) is a neuter noun. 'Świecić' means 'to shine'."
+    },
+    {
+      "id": "s13_13",
+      "category": "Weather",
+      "pl": "Rozpogadza się.",
+      "en": "It's clearing up.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🌤️➡️☀️",
+      "note": "An impersonal verb construction, meaning the sky is becoming clear."
+    },
+    {
+      "id": "s13_14",
+      "category": "Weather",
+      "pl": "Burza z piorunami.",
+      "en": "Thunderstorm.",
+      "level": 13,
+      "gender": null,
+      "emoji": "⛈️⚡",
+      "note": "'Burza' is storm, 'piorun' is lightning/thunderbolt. 'Z piorunami' means 'with thunder/lightning'."
+    },
+    {
+      "id": "s13_15",
+      "category": "Weather",
+      "pl": "Ulewny deszcz.",
+      "en": "Heavy rain.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🌧️💧",
+      "note": "'Ulewny' means torrential or heavy. 'Deszcz' is a masculine noun."
+    },
+    {
+      "id": "s13_16",
+      "category": "Weather",
+      "pl": "Silny wiatr.",
+      "en": "Strong wind.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🌬️💨",
+      "note": "'Silny' means strong. 'Wiatr' is a masculine noun."
+    },
+    {
+      "id": "s13_17",
+      "category": "Seasons",
+      "pl": "Pora roku.",
+      "en": "Season.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🍂🌸☀️❄️",
+      "note": "'Pora roku' literally means 'time of the year'. 'Pora' is a feminine noun."
+    },
+    {
+      "id": "s13_18",
+      "category": "Seasons",
+      "pl": "Moją ulubioną porą roku jest lato.",
+      "en": "My favorite season is summer.",
+      "level": 13,
+      "gender": null,
+      "emoji": "❤️☀️",
+      "note": "'Ulubioną' (favorite) is an adjective agreeing with 'porą' (season, instrumental case). 'Lato' (summer) is a neuter noun."
+    },
+    {
+      "id": "s13_19",
+      "category": "Seasons",
+      "pl": "Wiosna, lato, jesień, zima.",
+      "en": "Spring, summer, autumn, winter.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🌷☀️🍂☃️",
+      "note": "The four seasons. 'Wiosna' (f), 'lato' (n), 'jesień' (f), 'zima' (f)."
+    },
+    {
+      "id": "s13_20",
+      "category": "Climate Talk",
+      "pl": "Klimat się zmienia.",
+      "en": "The climate is changing.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🌍🌡️",
+      "note": "'Klimat' is a masculine noun. 'Zmieniać się' is a reflexive verb meaning 'to change' (intransitive)."
+    },
+    {
+      "id": "s13_21",
+      "category": "Climate Talk",
+      "pl": "Globalne ocieplenie.",
+      "en": "Global warming.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🔥🌍",
+      "note": "'Ocieplenie' (warming) is a neuter noun. 'Globalne' (global) is an adjective agreeing with it."
+    },
+    {
+      "id": "s13_22",
+      "category": "Climate Talk",
+      "pl": "Fala upałów/mrozów.",
+      "en": "Heatwave/Cold snap.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🥵🥶",
+      "note": "'Fala' (wave) is a feminine noun. 'Upałów' (of heat) and 'mrozów' (of frost) are genitive plural."
+    },
+    {
+      "id": "s13_23",
+      "category": "Climate Talk",
+      "pl": "Susza/Powódź.",
+      "en": "Drought/Flood.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🏜️🌊",
+      "note": "'Susza' (drought) is feminine. 'Powódź' (flood) is feminine. Both are significant climate-related events."
+    },
+    {
+      "id": "s13_24",
+      "category": "Climate Talk",
+      "pl": "Zanieczyszczenie powietrza.",
+      "en": "Air pollution.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🏭😷",
+      "note": "'Zanieczyszczenie' (pollution) is a neuter noun. 'Powietrza' (of air) is genitive singular."
+    },
+    {
+      "id": "s13_25",
+      "category": "Weather",
+      "pl": "Pogoda jest zmienna.",
+      "en": "The weather is changeable/unpredictable.",
+      "level": 13,
+      "gender": null,
+      "emoji": "🔄🌦️",
+      "note": "'Zmienna' (changeable) is an adjective agreeing with 'pogoda' (feminine)."
+    }
+  ]
+}

@@ -1,0 +1,757 @@
+{
+    "level": 29,
+    "description": "Advanced Time & Dates - Precise Scheduling & Chronology",
+    "tier": "ADVANCED",
+    "phrases": [
+        {
+            "id": "s29_01",
+            "category": "Exact Times",
+            "pl": "O piętnastej trzydzieści",
+            "en": "At 3:30 PM",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕒",
+            "note": "Using the 24-hour clock is standard for official scheduling in Poland."
+        },
+        {
+            "id": "s29_02",
+            "category": "Exact Times",
+            "pl": "Wpół do czwartej",
+            "en": "Half past three",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕞",
+            "note": "Literally 'half to the fourth (hour)'. Polish anticipates the *upcoming* hour."
+        },
+        {
+            "id": "s29_03",
+            "category": "Exact Times",
+            "pl": "Trzecia piętnaście",
+            "en": "Three fifteen",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕒",
+            "note": "A very standard, clear way to say the time."
+        },
+        {
+            "id": "s29_04",
+            "category": "Exact Times",
+            "pl": "Za piętnaście czwarta",
+            "en": "A quarter to four",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕒",
+            "note": "Literally 'In fifteen (minutes) the fourth (hour)'."
+        },
+        {
+            "id": "s29_05",
+            "category": "Exact Times",
+            "pl": "Dziesięć po trzeciej",
+            "en": "Ten past three",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕒",
+            "note": "Literally 'Ten after the third'."
+        },
+        {
+            "id": "s29_06",
+            "category": "Exact Times",
+            "pl": "Za dziesięć czwarta",
+            "en": "Ten to four",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕒",
+            "note": "Literally 'In ten the fourth'."
+        },
+        {
+            "id": "s29_07",
+            "category": "Exact Times",
+            "pl": "Dokładnie o ósmej",
+            "en": "At exactly eight",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕗",
+            "note": "Adverb 'dokładnie'."
+        },
+        {
+            "id": "s29_08",
+            "category": "Exact Times",
+            "pl": "Około siódmej",
+            "en": "Around seven",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕖",
+            "note": "Preposition 'około'."
+        },
+        {
+            "id": "s29_09",
+            "category": "Exact Times",
+            "pl": "W południe",
+            "en": "At noon",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕛",
+            "note": "Locative case 'w południe'."
+        },
+        {
+            "id": "s29_10",
+            "category": "Exact Times",
+            "pl": "O północy",
+            "en": "At midnight",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕛",
+            "note": "Locative case 'o północy'."
+        },
+        {
+            "id": "s29_11",
+            "category": "Periods of Day",
+            "pl": "O świcie",
+            "en": "At dawn",
+            "level": 29,
+            "gender": null,
+            "emoji": "🌅",
+            "note": "Locative case."
+        },
+        {
+            "id": "s29_12",
+            "category": "Periods of Day",
+            "pl": "O zmierzchu",
+            "en": "At dusk",
+            "level": 29,
+            "gender": null,
+            "emoji": "🌇",
+            "note": "Locative case."
+        },
+        {
+            "id": "s29_13",
+            "category": "Periods of Day",
+            "pl": "Nad ranem",
+            "en": "In the early morning",
+            "level": 29,
+            "gender": null,
+            "emoji": "🌄",
+            "note": "Usually refers to the hours between 3 AM and 6 AM."
+        },
+        {
+            "id": "s29_14",
+            "category": "Periods of Day",
+            "pl": "Późnym wieczorem",
+            "en": "Late in the evening",
+            "level": 29,
+            "gender": null,
+            "emoji": "🌃",
+            "note": "Instrumental case."
+        },
+        {
+            "id": "s29_15",
+            "category": "Exact Dates",
+            "pl": "Którego dzisiaj mamy?",
+            "en": "What date is it today?",
+            "level": 29,
+            "gender": null,
+            "emoji": "📅",
+            "note": "Literally 'Which (day) do we have today?'."
+        },
+        {
+            "id": "s29_16",
+            "category": "Exact Dates",
+            "pl": "Dzisiaj jest pierwszy maja",
+            "en": "Today is the first of May",
+            "level": 29,
+            "gender": null,
+            "emoji": "1️⃣",
+            "note": "The day is nominative, the month is genitive."
+        },
+        {
+            "id": "s29_17",
+            "category": "Exact Dates",
+            "pl": "Spotkajmy się drugiego maja",
+            "en": "Let's meet on the second of May",
+            "level": 29,
+            "gender": null,
+            "emoji": "🤝",
+            "note": "When expressing 'ON a date', both the day and month take the genitive case."
+        },
+        {
+            "id": "s29_18",
+            "category": "Exact Dates",
+            "pl": "Na początku miesiąca",
+            "en": "At the beginning of the month",
+            "level": 29,
+            "gender": null,
+            "emoji": "⏳",
+            "note": "Locative phrase."
+        },
+        {
+            "id": "s29_19",
+            "category": "Exact Dates",
+            "pl": "W połowie miesiąca",
+            "en": "In the middle of the month",
+            "level": 29,
+            "gender": null,
+            "emoji": "🌓",
+            "note": "Locative phrase."
+        },
+        {
+            "id": "s29_20",
+            "category": "Exact Dates",
+            "pl": "Pod koniec miesiąca",
+            "en": "Towards the end of the month",
+            "level": 29,
+            "gender": null,
+            "emoji": "🏁",
+            "note": "Preposition 'pod' takes accusative here."
+        },
+        {
+            "id": "s29_21",
+            "category": "Years & Decades",
+            "pl": "W tym roku",
+            "en": "This year",
+            "level": 29,
+            "gender": null,
+            "emoji": "📆",
+            "note": "Locative case."
+        },
+        {
+            "id": "s29_22",
+            "category": "Years & Decades",
+            "pl": "W zeszłym roku",
+            "en": "Last year",
+            "level": 29,
+            "gender": null,
+            "emoji": "⏪",
+            "note": "Locative case."
+        },
+        {
+            "id": "s29_23",
+            "category": "Years & Decades",
+            "pl": "W przyszłym roku",
+            "en": "Next year",
+            "level": 29,
+            "gender": null,
+            "emoji": "⏩",
+            "note": "Locative case."
+        },
+        {
+            "id": "s29_24",
+            "category": "Years & Decades",
+            "pl": "W dwa tysiące dwudziestym szóstym",
+            "en": "In two thousand twenty-six",
+            "level": 29,
+            "gender": null,
+            "emoji": "🗓️",
+            "note": "Only the tens and units decline into the locative case for years!"
+        },
+        {
+            "id": "s29_25",
+            "category": "Years & Decades",
+            "pl": "Lata dziewięćdziesiąte",
+            "en": "The nineties",
+            "level": 29,
+            "gender": null,
+            "emoji": "📼",
+            "note": "Plural phrase."
+        },
+        {
+            "id": "s29_26",
+            "category": "Years & Decades",
+            "pl": "W latach osiemdziesiątych",
+            "en": "In the eighties",
+            "level": 29,
+            "gender": null,
+            "emoji": "🪩",
+            "note": "Locative plural."
+        },
+        {
+            "id": "s29_27",
+            "category": "Years & Decades",
+            "pl": "Dekada",
+            "en": "Decade",
+            "level": 29,
+            "gender": null,
+            "emoji": "🔟",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s29_28",
+            "category": "History",
+            "pl": "Wiek",
+            "en": "Century (also: Age)",
+            "level": 29,
+            "gender": null,
+            "emoji": "🏛️",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s29_29",
+            "category": "History",
+            "pl": "Dwadziesty wiek",
+            "en": "Twentieth century",
+            "level": 29,
+            "gender": null,
+            "emoji": "📜",
+            "note": "Masculine phrase."
+        },
+        {
+            "id": "s29_30",
+            "category": "History",
+            "pl": "W dwudziestym pierwszym wieku",
+            "en": "In the twenty-first century",
+            "level": 29,
+            "gender": null,
+            "emoji": "🚀",
+            "note": "Locative case."
+        },
+        {
+            "id": "s29_31",
+            "category": "History",
+            "pl": "Przeszłość",
+            "en": "The past",
+            "level": 29,
+            "gender": null,
+            "emoji": "🕰️",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s29_32",
+            "category": "History",
+            "pl": "Przyszłość",
+            "en": "The future",
+            "level": 29,
+            "gender": null,
+            "emoji": "🔮",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s29_33",
+            "category": "History",
+            "pl": "Teraźniejszość",
+            "en": "The present",
+            "level": 29,
+            "gender": null,
+            "emoji": "🎁",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s29_34",
+            "category": "Durations",
+            "pl": "Od jak dawna?",
+            "en": "Since when / How long?",
+            "level": 29,
+            "gender": null,
+            "emoji": "⏳",
+            "note": "A very common way to ask how long something has been happening."
+        },
+        {
+            "id": "s29_35",
+            "category": "Durations",
+            "pl": "Od poniedziałku",
+            "en": "Since Monday",
+            "level": 29,
+            "gender": null,
+            "emoji": "🗓️",
+            "note": "Preposition 'od' forces the genitive case."
+        },
+        {
+            "id": "s29_36",
+            "category": "Durations",
+            "pl": "Do piątku",
+            "en": "Until Friday",
+            "level": 29,
+            "gender": null,
+            "emoji": "🗓️",
+            "note": "Preposition 'do' forces the genitive case."
+        },
+        {
+            "id": "s29_37",
+            "category": "Durations",
+            "pl": "Od rana do wieczora",
+            "en": "From morning to evening",
+            "level": 29,
+            "gender": null,
+            "emoji": "☀️🌙",
+            "note": "Genitive cases 'rana' and 'wieczora'."
+        },
+        {
+            "id": "s29_38",
+            "category": "Durations",
+            "pl": "Przez całą noc",
+            "en": "Through the whole night",
+            "level": 29,
+            "gender": null,
+            "emoji": "🦉",
+            "note": "Preposition 'przez' takes the accusative case."
+        },
+        {
+            "id": "s29_39",
+            "category": "Durations",
+            "pl": "Tymczasowo",
+            "en": "Temporarily",
+            "level": 29,
+            "gender": null,
+            "emoji": "⏳",
+            "note": "Adverb."
+        },
+        {
+            "id": "s29_40",
+            "category": "Durations",
+            "pl": "Na stałe",
+            "en": "Permanently",
+            "level": 29,
+            "gender": null,
+            "emoji": "⚓",
+            "note": "Adverbial phrase."
+        },
+        {
+            "id": "s29_41",
+            "category": "Punctuality & Delays",
+            "pl": "Punktualnie",
+            "en": "Punctually / On time",
+            "level": 29,
+            "gender": null,
+            "emoji": "⏱️",
+            "note": "Adverb. Being on time is highly valued in Polish professional settings."
+        },
+        {
+            "id": "s29_42",
+            "category": "Punctuality & Delays",
+            "pl": "Jestem na czas",
+            "en": "I am on time",
+            "level": 29,
+            "gender": null,
+            "emoji": "✅",
+            "note": "Accusative phrase."
+        },
+        {
+            "id": "s29_43",
+            "category": "Punctuality & Delays",
+            "pl": "Będę za piętnaście minut",
+            "en": "I will be there in 15 minutes",
+            "level": 29,
+            "gender": null,
+            "emoji": "🏃",
+            "note": "Future tense."
+        },
+        {
+            "id": "s29_44",
+            "category": "Punctuality & Delays",
+            "pl": "Mam opóźnienie",
+            "en": "I have a delay",
+            "level": 29,
+            "gender": null,
+            "emoji": "🐢",
+            "note": "Neuter noun 'opóźnienie'."
+        },
+        {
+            "id": "s29_45",
+            "category": "Punctuality & Delays",
+            "pl": "Zaraz będę",
+            "en": "I'll be right there",
+            "level": 29,
+            "gender": null,
+            "emoji": "💨",
+            "note": "Literally 'I will be in a moment'."
+        },
+        {
+            "id": "s29_46",
+            "category": "Punctuality & Delays",
+            "pl": "Masz czas?",
+            "en": "Do you have time?",
+            "level": 29,
+            "gender": null,
+            "emoji": "⌚",
+            "note": "Casual phrasing using 'ty'."
+        },
+        {
+            "id": "s29_47",
+            "category": "Punctuality & Delays",
+            "pl": "Nie mam czasu",
+            "en": "I don't have time",
+            "level": 29,
+            "gender": null,
+            "emoji": "🙅",
+            "note": "Takes the genitive case 'czasu' due to negation."
+        },
+        {
+            "id": "s29_48",
+            "category": "Punctuality & Delays",
+            "pl": "Strata czasu",
+            "en": "Waste of time",
+            "level": 29,
+            "gender": null,
+            "emoji": "🗑️",
+            "note": "Feminine phrase."
+        },
+        {
+            "id": "s29_49",
+            "category": "Punctuality & Delays",
+            "pl": "Czas ucieka",
+            "en": "Time is running out",
+            "level": 29,
+            "gender": null,
+            "emoji": "🏃‍♂️",
+            "note": "Literally 'Time escapes'."
+        },
+        {
+            "id": "s29_50",
+            "category": "Frequency & Habit",
+            "pl": "Czasami",
+            "en": "Sometimes",
+            "level": 29,
+            "gender": null,
+            "emoji": "⚖️",
+            "note": "Adverb."
+        },
+        {
+            "id": "s29_51",
+            "category": "Frequency & Habit",
+            "pl": "Od czasu do czasu",
+            "en": "From time to time",
+            "level": 29,
+            "gender": null,
+            "emoji": "🗓️",
+            "note": "Idiomatic phrase."
+        },
+        {
+            "id": "s29_52",
+            "category": "Frequency & Habit",
+            "pl": "Rzadko",
+            "en": "Rarely",
+            "level": 29,
+            "gender": null,
+            "emoji": "📉",
+            "note": "Adverb."
+        },
+        {
+            "id": "s29_53",
+            "category": "Frequency & Habit",
+            "pl": "Często",
+            "en": "Often",
+            "level": 29,
+            "gender": null,
+            "emoji": "📈",
+            "note": "Adverb."
+        },
+        {
+            "id": "s29_54",
+            "category": "Frequency & Habit",
+            "pl": "Codziennie",
+            "en": "Every day",
+            "level": 29,
+            "gender": null,
+            "emoji": "🔄",
+            "note": "Adverb."
+        },
+        {
+            "id": "s29_55",
+            "category": "Frequency & Habit",
+            "pl": "Co tydzień",
+            "en": "Every week",
+            "level": 29,
+            "gender": null,
+            "emoji": "📆",
+            "note": "Phrase."
+        },
+        {
+            "id": "s29_56",
+            "category": "Frequency & Habit",
+            "pl": "Dwa razy w tygodniu",
+            "en": "Twice a week",
+            "level": 29,
+            "gender": null,
+            "emoji": "✌️",
+            "note": "Locative 'w tygodniu'."
+        },
+        {
+            "id": "s29_57",
+            "category": "Scheduling",
+            "pl": "Możemy to przełożyć?",
+            "en": "Can we postpone it?",
+            "level": 29,
+            "gender": null,
+            "emoji": "➡️",
+            "note": "Verb 'przełożyć'."
+        },
+        {
+            "id": "s29_58",
+            "category": "Scheduling",
+            "pl": "Przełóżmy to na piątek",
+            "en": "Let's postpone it to Friday",
+            "level": 29,
+            "gender": null,
+            "emoji": "📅",
+            "note": "Imperative 'przełóżmy' + accusative 'na piątek'."
+        },
+        {
+            "id": "s29_59",
+            "category": "Scheduling",
+            "pl": "Pasuje ci?",
+            "en": "Does it suit you? / Is that okay?",
+            "level": 29,
+            "gender": null,
+            "emoji": "👍",
+            "note": "Informal. 'Pasuje' is the verb used for scheduling and clothing fit."
+        },
+        {
+            "id": "s29_60",
+            "category": "Scheduling",
+            "pl": "Mi pasuje",
+            "en": "It works for me",
+            "level": 29,
+            "gender": null,
+            "emoji": "👌",
+            "note": "Dative pronoun 'mi'."
+        },
+        {
+            "id": "s29_61",
+            "category": "Scheduling",
+            "pl": "Mam napięty grafik",
+            "en": "I have a tight schedule",
+            "level": 29,
+            "gender": null,
+            "emoji": "📚",
+            "note": "Adjective 'napięty' (tense/tight)."
+        },
+        {
+            "id": "s29_62",
+            "category": "Time Phrasing",
+            "pl": "Za wcześnie",
+            "en": "Too early",
+            "level": 29,
+            "gender": null,
+            "emoji": "🌅",
+            "note": "Adverb."
+        },
+        {
+            "id": "s29_63",
+            "category": "Time Phrasing",
+            "pl": "Za późno",
+            "en": "Too late",
+            "level": 29,
+            "gender": null,
+            "emoji": "🌃",
+            "note": "Adverb."
+        },
+        {
+            "id": "s29_64",
+            "category": "Time Phrasing",
+            "pl": "Przed czasem",
+            "en": "Ahead of time / Early",
+            "level": 29,
+            "gender": null,
+            "emoji": "🥇",
+            "note": "Instrumental 'przed czasem'."
+        },
+        {
+            "id": "s29_65",
+            "category": "Time Phrasing",
+            "pl": "Po czasie",
+            "en": "After the fact / Too late",
+            "level": 29,
+            "gender": null,
+            "emoji": "📉",
+            "note": "Locative 'po czasie'."
+        },
+        {
+            "id": "s29_66",
+            "category": "Seasons & Months",
+            "pl": "W styczniu",
+            "en": "In January",
+            "level": 29,
+            "gender": null,
+            "emoji": "❄️",
+            "note": "Locative case 'styczniu'."
+        },
+        {
+            "id": "s29_67",
+            "category": "Seasons & Months",
+            "pl": "W maju",
+            "en": "In May",
+            "level": 29,
+            "gender": null,
+            "emoji": "🌷",
+            "note": "Locative case 'maju'."
+        },
+        {
+            "id": "s29_68",
+            "category": "Seasons & Months",
+            "pl": "W sierpniu",
+            "en": "In August",
+            "level": 29,
+            "gender": null,
+            "emoji": "🌻",
+            "note": "Locative case 'sierpniu'."
+        },
+        {
+            "id": "s29_69",
+            "category": "Seasons & Months",
+            "pl": "W grudniu",
+            "en": "In December",
+            "level": 29,
+            "gender": null,
+            "emoji": "🎄",
+            "note": "Locative case 'grudniu'."
+        },
+        {
+            "id": "s29_70",
+            "category": "Pacing",
+            "pl": "Natychmiast",
+            "en": "Immediately",
+            "level": 29,
+            "gender": null,
+            "emoji": "⚡",
+            "note": "Adverb."
+        },
+        {
+            "id": "s29_71",
+            "category": "Pacing",
+            "pl": "Stopniowo",
+            "en": "Gradually",
+            "level": 29,
+            "gender": null,
+            "emoji": "📈",
+            "note": "Adverb."
+        },
+        {
+            "id": "s29_72",
+            "category": "Pacing",
+            "pl": "Nagle",
+            "en": "Suddenly",
+            "level": 29,
+            "gender": null,
+            "emoji": "😲",
+            "note": "Adverb."
+        },
+        {
+            "id": "s29_73",
+            "category": "Idioms",
+            "pl": "Czas leczy rany",
+            "en": "Time heals all wounds",
+            "level": 29,
+            "gender": null,
+            "emoji": "❤️‍🩹",
+            "note": "Common Polish proverb."
+        },
+        {
+            "id": "s29_74",
+            "category": "Idioms",
+            "pl": "Kwestia czasu",
+            "en": "A matter of time",
+            "level": 29,
+            "gender": null,
+            "emoji": "⏳",
+            "note": "Feminine phrase."
+        },
+        {
+            "id": "s29_75",
+            "category": "Idioms",
+            "pl": "Czas to pieniądz",
+            "en": "Time is money",
+            "level": 29,
+            "gender": null,
+            "emoji": "💸",
+            "note": "Direct translation."
+        }
+    ]
+}

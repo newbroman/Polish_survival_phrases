@@ -1,0 +1,769 @@
+{
+    "level": 32,
+    "description": "Dating, Romance & Milestones - Love, Weddings & Breakups",
+    "tier": "FLUENCY",
+    "phrases": [
+        {
+            "id": "s32_01",
+            "category": "Flirting",
+            "pl": "Często tu bywasz?",
+            "en": "Do you come here often?",
+            "level": 32,
+            "gender": null,
+            "emoji": "😏",
+            "note": "A classic icebreaker. Uses the habitual verb 'bywać'."
+        },
+        {
+            "id": "s32_02",
+            "category": "Flirting",
+            "pl": "Świetnie wyglądasz",
+            "en": "You look great",
+            "level": 32,
+            "gender": null,
+            "emoji": "🤩",
+            "note": "Adverb 'świetnie' + verb 'wyglądać'."
+        },
+        {
+            "id": "s32_03",
+            "category": "Flirting",
+            "pl": "Masz piękny uśmiech",
+            "en": "You have a beautiful smile",
+            "level": 32,
+            "gender": null,
+            "emoji": "😁",
+            "note": "A very polite and safe compliment."
+        },
+        {
+            "id": "s32_04",
+            "category": "Flirting",
+            "pl": "Zatańczymy?",
+            "en": "Shall we dance?",
+            "level": 32,
+            "gender": null,
+            "emoji": "💃",
+            "note": "Perfective future tense, first-person plural."
+        },
+        {
+            "id": "s32_05",
+            "category": "Flirting",
+            "pl": "Mogę ci postawić drinka?",
+            "en": "Can I buy you a drink?",
+            "level": 32,
+            "gender": null,
+            "emoji": "🍸",
+            "note": "Uses the casual dative pronoun 'ci'. Literally 'Can I set up a drink for you?'."
+        },
+        {
+            "id": "s32_06",
+            "category": "Asking Out",
+            "pl": "Daj mi swój numer",
+            "en": "Give me your number",
+            "level": 32,
+            "gender": null,
+            "emoji": "📱",
+            "note": "Imperative form 'Daj'."
+        },
+        {
+            "id": "s32_07",
+            "category": "Asking Out",
+            "pl": "Masz plany na wieczór?",
+            "en": "Do you have plans for the evening?",
+            "level": 32,
+            "gender": null,
+            "emoji": "🌃",
+            "note": "Takes the accusative case 'na wieczór'."
+        },
+        {
+            "id": "s32_08",
+            "category": "Asking Out",
+            "pl": "Pójdziesz ze mną na kawę?",
+            "en": "Will you go for a coffee with me?",
+            "level": 32,
+            "gender": null,
+            "emoji": "☕",
+            "note": "Instrumental case 'ze mną' (with me)."
+        },
+        {
+            "id": "s32_09",
+            "category": "Asking Out",
+            "pl": "Chcesz gdzieś wyjść?",
+            "en": "Do you want to go out somewhere?",
+            "level": 32,
+            "gender": null,
+            "emoji": "🚪",
+            "note": "Casual and low-pressure."
+        },
+        {
+            "id": "s32_10",
+            "category": "Asking Out",
+            "pl": "Zdzwonimy się",
+            "en": "We'll call each other",
+            "level": 32,
+            "gender": null,
+            "emoji": "📞",
+            "note": "A very standard way to end a successful first interaction."
+        },
+        {
+            "id": "s32_11",
+            "category": "The Date",
+            "pl": "Randka",
+            "en": "Date (Romantic)",
+            "level": 32,
+            "gender": null,
+            "emoji": "🕯️",
+            "note": "Feminine noun. Used only for romantic dates, not calendar dates."
+        },
+        {
+            "id": "s32_12",
+            "category": "The Date",
+            "pl": "Świetnie się bawię",
+            "en": "I'm having a great time",
+            "level": 32,
+            "gender": null,
+            "emoji": "🥂",
+            "note": "Literally 'I am playing myself great'."
+        },
+        {
+            "id": "s32_13",
+            "category": "The Date",
+            "pl": "Miło spędzam czas",
+            "en": "I'm spending time nicely",
+            "level": 32,
+            "gender": null,
+            "emoji": "⏳",
+            "note": "A classy way to say you enjoy their company."
+        },
+        {
+            "id": "s32_14",
+            "category": "The Date",
+            "pl": "Odprowadzę cię",
+            "en": "I'll walk you home",
+            "level": 32,
+            "gender": null,
+            "emoji": "🚶‍♂️",
+            "note": "A traditional, polite gesture in Polish dating culture."
+        },
+        {
+            "id": "s32_15",
+            "category": "The Date",
+            "pl": "Wejdziesz na górę?",
+            "en": "Want to come upstairs?",
+            "level": 32,
+            "gender": null,
+            "emoji": "☕",
+            "note": "The Polish equivalent of 'Want to come in for coffee?'."
+        },
+        {
+            "id": "s32_16",
+            "category": "Feelings",
+            "pl": "Zależy mi na tobie",
+            "en": "I care about you",
+            "level": 32,
+            "gender": null,
+            "emoji": "❤️‍🔥",
+            "note": "Literally 'It depends to me on you'. Very important phrase!"
+        },
+        {
+            "id": "s32_17",
+            "category": "Feelings",
+            "pl": "Bardzo cię lubię",
+            "en": "I like you a lot",
+            "level": 32,
+            "gender": null,
+            "emoji": "🥰",
+            "note": "The perfect intermediate step before dropping the L-word."
+        },
+        {
+            "id": "s32_18",
+            "category": "Feelings",
+            "pl": "Myślę o tobie",
+            "en": "I'm thinking about you",
+            "level": 32,
+            "gender": null,
+            "emoji": "💭",
+            "note": "Takes the locative case 'o tobie'."
+        },
+        {
+            "id": "s32_19",
+            "category": "Feelings",
+            "pl": "Tęsknię za tobą",
+            "en": "I miss you",
+            "level": 32,
+            "gender": null,
+            "emoji": "🥺",
+            "note": "Takes the instrumental case 'za tobą'."
+        },
+        {
+            "id": "s32_20",
+            "category": "Feelings",
+            "pl": "Zakochałem/Zakochałam się w tobie",
+            "en": "I fell in love with you",
+            "level": 32,
+            "gender": "both",
+            "variants": {
+                "m": "Zakochałem się w tobie",
+                "f": "Zakochałam się w tobie"
+            },
+            "emoji": "💘",
+            "note": "Reflexive past tense verb + locative case."
+        },
+        {
+            "id": "s32_21",
+            "category": "Love",
+            "pl": "Kocham cię",
+            "en": "I love you",
+            "level": 32,
+            "gender": null,
+            "emoji": "❤️",
+            "note": "Reserved only for deep romantic love or close family, unlike in English."
+        },
+        {
+            "id": "s32_22",
+            "category": "Love",
+            "pl": "Jesteś dla mnie wszystkim",
+            "en": "You are everything to me",
+            "level": 32,
+            "gender": null,
+            "emoji": "🌍",
+            "note": "Instrumental case 'wszystkim'."
+        },
+        {
+            "id": "s32_23",
+            "category": "Love",
+            "pl": "Uwielbiam cię",
+            "en": "I adore you",
+            "level": 32,
+            "gender": null,
+            "emoji": "😍",
+            "note": "Slightly less heavy than 'kocham cię', but still very strong."
+        },
+        {
+            "id": "s32_24",
+            "category": "Love",
+            "pl": "Jesteś moją drugą połówką",
+            "en": "You are my other half",
+            "level": 32,
+            "gender": null,
+            "emoji": "🌗",
+            "note": "Instrumental case 'moją drugą połówką'."
+        },
+        {
+            "id": "s32_25",
+            "category": "Love",
+            "pl": "Nie mogę bez ciebie żyć",
+            "en": "I can't live without you",
+            "level": 32,
+            "gender": null,
+            "emoji": "🥀",
+            "note": "Preposition 'bez' takes the genitive case 'ciebie'."
+        },
+        {
+            "id": "s32_26",
+            "category": "Nicknames",
+            "pl": "Kochanie",
+            "en": "Honey / Darling",
+            "level": 32,
+            "gender": null,
+            "emoji": "🍯",
+            "note": "The most common romantic nickname in Poland."
+        },
+        {
+            "id": "s32_27",
+            "category": "Nicknames",
+            "pl": "Skarbie",
+            "en": "Treasure / Babe",
+            "level": 32,
+            "gender": null,
+            "emoji": "💎",
+            "note": "Vocative case of 'skarb' (treasure)."
+        },
+        {
+            "id": "s32_28",
+            "category": "Nicknames",
+            "pl": "Misiu",
+            "en": "Bear / Teddy",
+            "level": 32,
+            "gender": null,
+            "emoji": "🧸",
+            "note": "Vocative case. Commonly used for men, but sometimes women too."
+        },
+        {
+            "id": "s32_29",
+            "category": "Nicknames",
+            "pl": "Słoneczko",
+            "en": "Sunshine",
+            "level": 32,
+            "gender": null,
+            "emoji": "☀️",
+            "note": "Diminutive of 'słońce' (sun)."
+        },
+        {
+            "id": "s32_30",
+            "category": "Nicknames",
+            "pl": "Kotku",
+            "en": "Kitten",
+            "level": 32,
+            "gender": null,
+            "emoji": "🐈",
+            "note": "Vocative case. Can be considered a bit cheesy by some."
+        },
+        {
+            "id": "s32_31",
+            "category": "Serious Talks",
+            "pl": "Musimy porozmawiać",
+            "en": "We need to talk",
+            "level": 32,
+            "gender": null,
+            "emoji": "🗣️",
+            "note": "The universal phrase of incoming relationship doom."
+        },
+        {
+            "id": "s32_32",
+            "category": "Serious Talks",
+            "pl": "O co ci chodzi?",
+            "en": "What is your problem? / What do you mean?",
+            "level": 32,
+            "gender": null,
+            "emoji": "🤨",
+            "note": "A very direct way to ask why someone is acting strangely."
+        },
+        {
+            "id": "s32_33",
+            "category": "Serious Talks",
+            "pl": "Bądź ze mną szczery/szczera",
+            "en": "Be honest with me",
+            "level": 32,
+            "gender": "both",
+            "variants": {
+                "m": "Bądź ze mną szczery",
+                "f": "Bądź ze mną szczera"
+            },
+            "emoji": "👁️",
+            "note": "Imperative verb 'bądź' + instrumental 'ze mną'."
+        },
+        {
+            "id": "s32_34",
+            "category": "Serious Talks",
+            "pl": "Nie rozumiem cię",
+            "en": "I don't understand you",
+            "level": 32,
+            "gender": null,
+            "emoji": "🤷",
+            "note": "Takes the genitive pronoun 'cię' because of the negation."
+        },
+        {
+            "id": "s32_35",
+            "category": "Serious Talks",
+            "pl": "Co o nas myślisz?",
+            "en": "What do you think about us?",
+            "level": 32,
+            "gender": null,
+            "emoji": "💭",
+            "note": "Locative case 'o nas'."
+        },
+        {
+            "id": "s32_36",
+            "category": "Milestones",
+            "pl": "Zamieszkajmy razem",
+            "en": "Let's move in together",
+            "level": 32,
+            "gender": null,
+            "emoji": "📦",
+            "note": "Imperative 'zamieszkajmy'."
+        },
+        {
+            "id": "s32_37",
+            "category": "Milestones",
+            "pl": "Poznasz moich rodziców",
+            "en": "You will meet my parents",
+            "level": 32,
+            "gender": null,
+            "emoji": "👨‍👩‍👧",
+            "note": "A massive step in Polish dating culture!"
+        },
+        {
+            "id": "s32_38",
+            "category": "Milestones",
+            "pl": "Zaręczyny",
+            "en": "Engagement",
+            "level": 32,
+            "gender": null,
+            "emoji": "💍",
+            "note": "Plural noun."
+        },
+        {
+            "id": "s32_39",
+            "category": "Milestones",
+            "pl": "Pierścionek zaręczynowy",
+            "en": "Engagement ring",
+            "level": 32,
+            "gender": null,
+            "emoji": "💎",
+            "note": "Masculine noun phrase."
+        },
+        {
+            "id": "s32_40",
+            "category": "Milestones",
+            "pl": "Oświadczyny",
+            "en": "The proposal",
+            "level": 32,
+            "gender": null,
+            "emoji": "🧎",
+            "note": "Plural noun. The act of asking someone to marry you."
+        },
+        {
+            "id": "s32_41",
+            "category": "Proposals",
+            "pl": "Wyjdziesz za mnie?",
+            "en": "Will you marry me?",
+            "level": 32,
+            "gender": null,
+            "emoji": "💍",
+            "note": "Literally 'Will you step out for me?'. Asked by a man to a woman."
+        },
+        {
+            "id": "s32_42",
+            "category": "Proposals",
+            "pl": "Zostaniesz moją żoną?",
+            "en": "Will you be my wife?",
+            "level": 32,
+            "gender": null,
+            "emoji": "👰",
+            "note": "Uses instrumental case 'moją żoną'."
+        },
+        {
+            "id": "s32_43",
+            "category": "Proposals",
+            "pl": "Zostaniesz moim mężem?",
+            "en": "Will you be my husband?",
+            "level": 32,
+            "gender": null,
+            "emoji": "🤵",
+            "note": "Uses instrumental case 'moim mężem'."
+        },
+        {
+            "id": "s32_44",
+            "category": "Proposals",
+            "pl": "Zgodziła się!",
+            "en": "She said yes! (She agreed)",
+            "level": 32,
+            "gender": null,
+            "emoji": "🎉",
+            "note": "Reflexive past tense verb."
+        },
+        {
+            "id": "s32_45",
+            "category": "Proposals",
+            "pl": "Powiedziała tak",
+            "en": "She said yes",
+            "level": 32,
+            "gender": null,
+            "emoji": "✅",
+            "note": "Direct translation of the English phrase."
+        },
+        {
+            "id": "s32_46",
+            "category": "Weddings",
+            "pl": "Ślub",
+            "en": "Wedding ceremony",
+            "level": 32,
+            "gender": null,
+            "emoji": "⛪",
+            "note": "Refers specifically to the legal or church ceremony."
+        },
+        {
+            "id": "s32_47",
+            "category": "Weddings",
+            "pl": "Wesele",
+            "en": "Wedding reception / party",
+            "level": 32,
+            "gender": null,
+            "emoji": "🥂",
+            "note": "Polish 'wesela' are legendary, often lasting until 6 AM and involving a lot of vodka."
+        },
+        {
+            "id": "s32_48",
+            "category": "Weddings",
+            "pl": "Panna młoda",
+            "en": "Bride",
+            "level": 32,
+            "gender": null,
+            "emoji": "👰",
+            "note": "Literally 'Young maiden'."
+        },
+        {
+            "id": "s32_49",
+            "category": "Weddings",
+            "pl": "Pan młody",
+            "en": "Groom",
+            "level": 32,
+            "gender": null,
+            "emoji": "🤵",
+            "note": "Literally 'Young mister'."
+        },
+        {
+            "id": "s32_50",
+            "category": "Weddings",
+            "pl": "Miesiąc miodowy",
+            "en": "Honeymoon",
+            "level": 32,
+            "gender": null,
+            "emoji": "✈️",
+            "note": "Literally 'Honey month'."
+        },
+        {
+            "id": "s32_51",
+            "category": "Marriage",
+            "pl": "Małżeństwo",
+            "en": "Marriage",
+            "level": 32,
+            "gender": null,
+            "emoji": "🕊️",
+            "note": "Neuter noun."
+        },
+        {
+            "id": "s32_52",
+            "category": "Marriage",
+            "pl": "Rocznica",
+            "en": "Anniversary",
+            "level": 32,
+            "gender": null,
+            "emoji": "🥂",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s32_53",
+            "category": "Marriage",
+            "pl": "Świadek",
+            "en": "Best man / Witness",
+            "level": 32,
+            "gender": null,
+            "emoji": "🖋️",
+            "note": "You must have two official 'świadkowie' to sign the marriage register."
+        },
+        {
+            "id": "s32_54",
+            "category": "Marriage",
+            "pl": "Świadkowa",
+            "en": "Maid of honor",
+            "level": 32,
+            "gender": null,
+            "emoji": "💐",
+            "note": "Feminine equivalent of Świadek."
+        },
+        {
+            "id": "s32_55",
+            "category": "Marriage",
+            "pl": "Teściowie",
+            "en": "Parents-in-law",
+            "level": 32,
+            "gender": null,
+            "emoji": "👵👴",
+            "note": "Plural noun."
+        },
+        {
+            "id": "s32_56",
+            "category": "Arguments & Tension",
+            "pl": "Kłócimy się",
+            "en": "We are arguing",
+            "level": 32,
+            "gender": null,
+            "emoji": "⚡",
+            "note": "Reflexive verb 'kłócić się'."
+        },
+        {
+            "id": "s32_57",
+            "category": "Arguments & Tension",
+            "pl": "To nie ma sensu",
+            "en": "This makes no sense",
+            "level": 32,
+            "gender": null,
+            "emoji": "🤦",
+            "note": "Genitive 'sensu'."
+        },
+        {
+            "id": "s32_58",
+            "category": "Arguments & Tension",
+            "pl": "Mam tego dość",
+            "en": "I've had enough of this",
+            "level": 32,
+            "gender": null,
+            "emoji": "😤",
+            "note": "Genitive 'tego'."
+        },
+        {
+            "id": "s32_59",
+            "category": "Arguments & Tension",
+            "pl": "Potrzebuję przestrzeni",
+            "en": "I need space",
+            "level": 32,
+            "gender": null,
+            "emoji": "🪐",
+            "note": "Genitive 'przestrzeni'."
+        },
+        {
+            "id": "s32_60",
+            "category": "Arguments & Tension",
+            "pl": "Zróbmy sobie przerwę",
+            "en": "Let's take a break",
+            "level": 32,
+            "gender": null,
+            "emoji": "⏸️",
+            "note": "Accusative 'przerwę'."
+        },
+        {
+            "id": "s32_61",
+            "category": "Breakups",
+            "pl": "Zrywam z tobą",
+            "en": "I'm breaking up with you",
+            "level": 32,
+            "gender": null,
+            "emoji": "💔",
+            "note": "Literally 'I am tearing with you'."
+        },
+        {
+            "id": "s32_62",
+            "category": "Breakups",
+            "pl": "To koniec",
+            "en": "It's over",
+            "level": 32,
+            "gender": null,
+            "emoji": "🛑",
+            "note": "Literally 'This is the end'."
+        },
+        {
+            "id": "s32_63",
+            "category": "Breakups",
+            "pl": "Rozstanie",
+            "en": "Breakup / Separation",
+            "level": 32,
+            "gender": null,
+            "emoji": "👋",
+            "note": "Neuter noun."
+        },
+        {
+            "id": "s32_64",
+            "category": "Breakups",
+            "pl": "Zostańmy przyjaciółmi",
+            "en": "Let's stay friends",
+            "level": 32,
+            "gender": null,
+            "emoji": "🤝",
+            "note": "Instrumental plural 'przyjaciółmi'."
+        },
+        {
+            "id": "s32_65",
+            "category": "Breakups",
+            "pl": "To nie twoja wina, to moja",
+            "en": "It's not you, it's me",
+            "level": 32,
+            "gender": null,
+            "emoji": "🥀",
+            "note": "Literally 'It is not your fault, it is mine'."
+        },
+        {
+            "id": "s32_66",
+            "category": "Heartbreak",
+            "pl": "Mam złamane serce",
+            "en": "I have a broken heart",
+            "level": 32,
+            "gender": null,
+            "emoji": "💔",
+            "note": "Adjective 'złamane' matches neuter 'serce'."
+        },
+        {
+            "id": "s32_67",
+            "category": "Heartbreak",
+            "pl": "Jestem załamany/załamana",
+            "en": "I'm devastated",
+            "level": 32,
+            "gender": "both",
+            "variants": {
+                "m": "Jestem załamany",
+                "f": "Jestem załamana"
+            },
+            "emoji": "😔",
+            "note": "Passive participle."
+        },
+        {
+            "id": "s32_68",
+            "category": "Heartbreak",
+            "pl": "Będzie mi ciebie brakować",
+            "en": "I will miss you",
+            "level": 32,
+            "gender": null,
+            "emoji": "🌧️",
+            "note": "Uses the dative 'mi' and genitive 'ciebie'."
+        },
+        {
+            "id": "s32_69",
+            "category": "Heartbreak",
+            "pl": "Płaczę",
+            "en": "I'm crying",
+            "level": 32,
+            "gender": null,
+            "emoji": "😢",
+            "note": "From the verb 'płakać'."
+        },
+        {
+            "id": "s32_70",
+            "category": "Heartbreak",
+            "pl": "Zapomnij o mnie",
+            "en": "Forget about me",
+            "level": 32,
+            "gender": null,
+            "emoji": "🚶‍♂️",
+            "note": "Imperative 'zapomnij' + locative 'o mnie'."
+        },
+        {
+            "id": "s32_71",
+            "category": "Moving On",
+            "pl": "Idę dalej",
+            "en": "I'm moving on",
+            "level": 32,
+            "gender": null,
+            "emoji": "⏩",
+            "note": "Literally 'I am walking further'."
+        },
+        {
+            "id": "s32_72",
+            "category": "Moving On",
+            "pl": "Czas leczy rany",
+            "en": "Time heals all wounds",
+            "level": 32,
+            "gender": null,
+            "emoji": "❤️‍🩹",
+            "note": "A very common Polish proverb."
+        },
+        {
+            "id": "s32_73",
+            "category": "Moving On",
+            "pl": "Były chłopak",
+            "en": "Ex-boyfriend",
+            "level": 32,
+            "gender": null,
+            "emoji": "👤",
+            "note": "'Były' means 'former'."
+        },
+        {
+            "id": "s32_74",
+            "category": "Moving On",
+            "pl": "Była dziewczyna",
+            "en": "Ex-girlfriend",
+            "level": 32,
+            "gender": null,
+            "emoji": "👤",
+            "note": "'Była' means 'former'."
+        },
+        {
+            "id": "s32_75",
+            "category": "Moving On",
+            "pl": "Rozwód",
+            "en": "Divorce",
+            "level": 32,
+            "gender": null,
+            "emoji": "📄",
+            "note": "Masculine noun."
+        }
+    ]
+}

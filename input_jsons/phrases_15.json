@@ -1,0 +1,587 @@
+{
+  "level": 15,
+  "description": "Work & Business - Professional Situations",
+  "tier": "PRACTICAL",
+  "phrases": [
+    {
+      "id": "p11_01",
+      "category": "Work Basics",
+      "pl": "Praca",
+      "en": "Work / Job",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_02",
+      "category": "Work Basics",
+      "pl": "Pracuję w...",
+      "en": "I work in/at...",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_03",
+      "category": "Work Basics",
+      "pl": "Pracuję jako...",
+      "en": "I work as...",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_04",
+      "category": "Work Basics",
+      "pl": "Biuro",
+      "en": "Office",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_05",
+      "category": "Work Basics",
+      "pl": "Firma",
+      "en": "Company",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_06",
+      "category": "Work Basics",
+      "pl": "Szef",
+      "en": "Boss",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_07",
+      "category": "Work Basics",
+      "pl": "Kolega/Koleżanka z pracy",
+      "en": "Coworker",
+      "level": 15,
+      "gender": "both",
+      "variants": {
+        "m": "Kolega z pracy",
+        "f": "Koleżanka z pracy"
+      }
+    },
+    {
+      "id": "p11_08",
+      "category": "Work Basics",
+      "pl": "Spotkanie",
+      "en": "Meeting",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_09",
+      "category": "Work Basics",
+      "pl": "Jestem na spotkaniu",
+      "en": "I'm in a meeting",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_10",
+      "category": "Work Basics",
+      "pl": "Konferencja",
+      "en": "Conference",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_11",
+      "category": "Work Basics",
+      "pl": "Prezentacja",
+      "en": "Presentation",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_12",
+      "category": "Work Basics",
+      "pl": "Projekt",
+      "en": "Project",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_13",
+      "category": "Work Basics",
+      "pl": "Raport",
+      "en": "Report",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_14",
+      "category": "Work Basics",
+      "pl": "Dokument",
+      "en": "Document",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_15",
+      "category": "Work Basics",
+      "pl": "Umowa",
+      "en": "Contract",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_16",
+      "category": "Work Basics",
+      "pl": "Podpis",
+      "en": "Signature",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_17",
+      "category": "Work Basics",
+      "pl": "Proszę podpisać tutaj",
+      "en": "Please sign here",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_18",
+      "category": "Work Basics",
+      "pl": "Termin",
+      "en": "Deadline",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_19",
+      "category": "Work Basics",
+      "pl": "Wizytówka",
+      "en": "Business card",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_20",
+      "category": "Work Basics",
+      "pl": "Czy mogę dostać wizytówkę?",
+      "en": "Can I have your business card?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_21",
+      "category": "Communication",
+      "pl": "Zadzwonię później",
+      "en": "I'll call later",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_22",
+      "category": "Communication",
+      "pl": "Proszę o odpowiedź",
+      "en": "Please reply",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_23",
+      "category": "Communication",
+      "pl": "Dostałem/Dostałam email",
+      "en": "I received an email",
+      "level": 15,
+      "gender": "both",
+      "variants": {
+        "m": "Dostałem email",
+        "f": "Dostałam email"
+      }
+    },
+    {
+      "id": "p11_24",
+      "category": "Communication",
+      "pl": "Wyślę email",
+      "en": "I'll send an email",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_25",
+      "category": "Communication",
+      "pl": "Proszę sprawdzić email",
+      "en": "Please check email",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_26",
+      "category": "Communication",
+      "pl": "Załącznik",
+      "en": "Attachment",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_27",
+      "category": "Communication",
+      "pl": "Wyślę w załączniku",
+      "en": "I'll send it as an attachment",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_28",
+      "category": "Communication",
+      "pl": "Proszę o potwierdzenie",
+      "en": "Please confirm",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_29",
+      "category": "Communication",
+      "pl": "Potwierdzam",
+      "en": "I confirm",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_30",
+      "category": "Communication",
+      "pl": "Rozumiem",
+      "en": "I understand",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_31",
+      "category": "Communication",
+      "pl": "Zgadzam się",
+      "en": "I agree",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_32",
+      "category": "Communication",
+      "pl": "Nie zgadzam się",
+      "en": "I disagree",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_33",
+      "category": "Communication",
+      "pl": "Mam pytanie",
+      "en": "I have a question",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_34",
+      "category": "Communication",
+      "pl": "Czy mogę zadać pytanie?",
+      "en": "Can I ask a question?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_35",
+      "category": "Communication",
+      "pl": "Proszę wyjaśnić",
+      "en": "Please explain",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_36",
+      "category": "Communication",
+      "pl": "Nie jestem pewien/pewna",
+      "en": "I'm not sure",
+      "level": 15,
+      "gender": "both",
+      "variants": {
+        "m": "Nie jestem pewien",
+        "f": "Nie jestem pewna"
+      }
+    },
+    {
+      "id": "p11_37",
+      "category": "Communication",
+      "pl": "Muszę to sprawdzić",
+      "en": "I need to check this",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_38",
+      "category": "Communication",
+      "pl": "Muszę to przemyśleć",
+      "en": "I need to think about it",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_39",
+      "category": "Communication",
+      "pl": "Dam Panu/Pani znać",
+      "en": "I'll let you know",
+      "level": 15,
+      "gender": "both",
+      "variants": {
+        "m": "Dam Panu",
+        "f": "Pani znać"
+      }
+    },
+    {
+      "id": "p11_40",
+      "category": "Communication",
+      "pl": "Proszę dać mi znać",
+      "en": "Please let me know",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_41",
+      "category": "Communication",
+      "pl": "Skontaktuję się",
+      "en": "I'll get in touch",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_42",
+      "category": "Communication",
+      "pl": "Dziękuję za kontakt",
+      "en": "Thank you for contacting",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_43",
+      "category": "Communication",
+      "pl": "Proszę o informację",
+      "en": "Please inform me",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_44",
+      "category": "Communication",
+      "pl": "Informacja",
+      "en": "Information",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_45",
+      "category": "Communication",
+      "pl": "Szczegóły",
+      "en": "Details",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_46",
+      "category": "Meetings",
+      "pl": "Czy możemy się spotkać?",
+      "en": "Can we meet?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_47",
+      "category": "Meetings",
+      "pl": "Kiedy Pan/Pani ma czas?",
+      "en": "When do you have time?",
+      "level": 15,
+      "gender": "both",
+      "variants": {
+        "m": "Kiedy Pan",
+        "f": "Pani ma czas?"
+      }
+    },
+    {
+      "id": "p11_48",
+      "category": "Meetings",
+      "pl": "Jutro o dziesiątej",
+      "en": "Tomorrow at ten",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_49",
+      "category": "Meetings",
+      "pl": "Pasuje mi",
+      "en": "That works for me",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_50",
+      "category": "Meetings",
+      "pl": "Niestety nie mogę",
+      "en": "Unfortunately I can't",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_51",
+      "category": "Meetings",
+      "pl": "Muszę przełożyć",
+      "en": "I need to reschedule",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_52",
+      "category": "Meetings",
+      "pl": "Czy możemy przełożyć?",
+      "en": "Can we reschedule?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_53",
+      "category": "Meetings",
+      "pl": "Spóźnię się",
+      "en": "I'll be late",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_54",
+      "category": "Meetings",
+      "pl": "Zaraz będę",
+      "en": "I'll be there soon",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_55",
+      "category": "Meetings",
+      "pl": "Jestem w drodze",
+      "en": "I'm on my way",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_56",
+      "category": "Meetings",
+      "pl": "Agenda",
+      "en": "Agenda",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_57",
+      "category": "Meetings",
+      "pl": "Notatki",
+      "en": "Notes",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_58",
+      "category": "Meetings",
+      "pl": "Decyzja",
+      "en": "Decision",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_59",
+      "category": "Meetings",
+      "pl": "Plan",
+      "en": "Plan",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_60",
+      "category": "Meetings",
+      "pl": "Następny krok",
+      "en": "Next step",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_61",
+      "category": "Requests",
+      "pl": "Czy możesz to zrobić?",
+      "en": "Can you do this?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_62",
+      "category": "Requests",
+      "pl": "Potrzebuję tego do...",
+      "en": "I need this by...",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_63",
+      "category": "Requests",
+      "pl": "Kiedy będzie gotowe?",
+      "en": "When will it be ready?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_64",
+      "category": "Requests",
+      "pl": "To jest pilne",
+      "en": "This is urgent",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_65",
+      "category": "Requests",
+      "pl": "Nie ma pośpiechu",
+      "en": "No rush",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_66",
+      "category": "Requests",
+      "pl": "Proszę to sprawdzić",
+      "en": "Please check this",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_67",
+      "category": "Requests",
+      "pl": "Czy to jest poprawne?",
+      "en": "Is this correct?",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_68",
+      "category": "Requests",
+      "pl": "Proszę poprawić",
+      "en": "Please correct",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_69",
+      "category": "Requests",
+      "pl": "Dziękuję za pomoc",
+      "en": "Thank you for your help",
+      "level": 15,
+      "gender": null
+    },
+    {
+      "id": "p11_70",
+      "category": "Requests",
+      "pl": "Bardzo pomocne",
+      "en": "Very helpful",
+      "level": 15,
+      "gender": null
+    }
+  ]
+}

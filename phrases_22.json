@@ -4,128 +4,162 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p15_01",
-      "category": "Asking for Help",
-      "pl": "Pomóż mi",
-      "en": "Help me",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_02",
-      "category": "Asking for Help",
+      "id": "s22_01",
+      "category": "Direct Appeals",
       "pl": "Czy możesz mi pomóc?",
-      "en": "Can you help me?",
+      "en": "Can you help me? (Informal)",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🙋",
+      "note": "Uses informal 'ty' (you)."
     },
     {
-      "id": "p15_03",
-      "category": "Asking for Help",
+      "id": "s22_02",
+      "category": "Direct Appeals",
+      "pl": "Czy może mi Pan/Pani pomóc?",
+      "en": "Can you help me? (Formal)",
+      "level": 22,
+      "gender": "both",
+      "variants": {
+        "m": "Czy może mi Pan pomóc?",
+        "f": "Czy może mi Pani pomóc?"
+      },
+      "emoji": "🤵",
+      "note": "The polite way to ask a stranger or shop assistant."
+    },
+    {
+      "id": "s22_03",
+      "category": "Direct Appeals",
       "pl": "Potrzebuję pomocy",
       "en": "I need help",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🆘",
+      "note": "Takes the genitive case 'pomocy'."
     },
     {
-      "id": "p15_04",
-      "category": "Asking for Help",
-      "pl": "Czy ktoś może mi pomóc?",
-      "en": "Can someone help me?",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_05",
-      "category": "Asking for Help",
+      "id": "s22_04",
+      "category": "Direct Appeals",
       "pl": "Proszę mi pomóc",
       "en": "Please help me",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🙏",
+      "note": "Formal infinitive phrase."
     },
     {
-      "id": "p15_06",
-      "category": "Asking for Help",
+      "id": "s22_05",
+      "category": "Direct Appeals",
+      "pl": "Czy ktoś może mi pomóc?",
+      "en": "Can someone help me?",
+      "level": 22,
+      "gender": null,
+      "emoji": "👀",
+      "note": "'Ktoś' means someone/anybody."
+    },
+    {
+      "id": "s22_06",
+      "category": "Guidance & Direction",
       "pl": "Nie wiem jak to zrobić",
       "en": "I don't know how to do this",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🤷",
+      "note": "Verb 'wiedzieć' (to know a fact)."
     },
     {
-      "id": "p15_07",
-      "category": "Asking for Help",
+      "id": "s22_07",
+      "category": "Guidance & Direction",
       "pl": "Czy możesz mi pokazać?",
       "en": "Can you show me?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "👇",
+      "note": "Infinitive 'pokazać'."
     },
     {
-      "id": "p15_08",
-      "category": "Asking for Help",
+      "id": "s22_08",
+      "category": "Guidance & Direction",
       "pl": "Jak to działa?",
       "en": "How does this work?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "⚙️",
+      "note": "Used for machines, ticket barriers, or apps."
     },
     {
-      "id": "p15_09",
-      "category": "Asking for Help",
+      "id": "s22_09",
+      "category": "Guidance & Direction",
       "pl": "Co mam zrobić?",
       "en": "What should I do?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🤔",
+      "note": "Literally 'What do I have to do?'."
     },
     {
-      "id": "p15_10",
-      "category": "Asking for Help",
+      "id": "s22_10",
+      "category": "Guidance & Direction",
       "pl": "Gdzie mam iść?",
       "en": "Where should I go?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🚶",
+      "note": "Literally 'Where do I have to go?'."
     },
     {
-      "id": "p15_11",
-      "category": "Asking for Help",
-      "pl": "Kiedy mam przyjść?",
-      "en": "When should I come?",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_12",
-      "category": "Asking for Help",
+      "id": "s22_11",
+      "category": "Guidance & Direction",
       "pl": "Kto może mi pomóc?",
       "en": "Who can help me?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "👤",
+      "note": "Useful if you are talking to the wrong department."
     },
     {
-      "id": "p15_13",
-      "category": "Asking for Help",
+      "id": "s22_12",
+      "category": "Advice & Feedback",
       "pl": "Potrzebuję rady",
       "en": "I need advice",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "💡",
+      "note": "Takes the genitive case 'rady'."
     },
     {
-      "id": "p15_14",
-      "category": "Asking for Help",
+      "id": "s22_13",
+      "category": "Advice & Feedback",
       "pl": "Co polecasz?",
       "en": "What do you recommend?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "⭐",
+      "note": "Informal. Use 'Co Pan/Pani poleca?' for formal situations."
     },
     {
-      "id": "p15_15",
-      "category": "Asking for Help",
+      "id": "s22_14",
+      "category": "Advice & Feedback",
       "pl": "Czy to jest dobry pomysł?",
       "en": "Is this a good idea?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "💭",
+      "note": "Masculine noun phrase."
     },
     {
-      "id": "p15_16",
-      "category": "Asking for Help",
+      "id": "s22_15",
+      "category": "Advice & Feedback",
+      "pl": "Daj mi wskazówkę",
+      "en": "Give me a hint/tip",
+      "level": 22,
+      "gender": null,
+      "emoji": "📝",
+      "note": "Imperative 'Daj' + accusative 'wskazówkę'."
+    },
+    {
+      "id": "s22_16",
+      "category": "Confusion & Uncertainty",
       "pl": "Jestem zdezorientowany/zdezorientowana",
       "en": "I'm confused",
       "level": 22,
@@ -133,11 +167,27 @@
       "variants": {
         "m": "Jestem zdezorientowany",
         "f": "Jestem zdezorientowana"
-      }
+      },
+      "emoji": "😵‍💫",
+      "note": "A very formal way to say you are lost or confused."
     },
     {
-      "id": "p15_17",
-      "category": "Asking for Help",
+      "id": "s22_17",
+      "category": "Confusion & Uncertainty",
+      "pl": "Zgubiłem/Zgubiłam wątek",
+      "en": "I lost my train of thought",
+      "level": 22,
+      "gender": "both",
+      "variants": {
+        "m": "Zgubiłem wątek",
+        "f": "Zgubiłam wątek"
+      },
+      "emoji": "🧶",
+      "note": "Literally 'I lost the thread'. Very natural idiom."
+    },
+    {
+      "id": "s22_18",
+      "category": "Confusion & Uncertainty",
       "pl": "Nie jestem pewien/pewna",
       "en": "I'm not sure",
       "level": 22,
@@ -145,439 +195,599 @@
       "variants": {
         "m": "Nie jestem pewien",
         "f": "Nie jestem pewna"
-      }
+      },
+      "emoji": "😬",
+      "note": "Gendered adjective."
     },
     {
-      "id": "p15_18",
-      "category": "Asking for Help",
-      "pl": "Potrzebuję więcej informacji",
-      "en": "I need more information",
+      "id": "s22_19",
+      "category": "Confusion & Uncertainty",
+      "pl": "Nie pamiętam",
+      "en": "I don't remember",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🧠",
+      "note": "Verb 'pamiętać'."
     },
     {
-      "id": "p15_19",
-      "category": "Asking for Help",
-      "pl": "Czy możesz to wyjaśnić?",
-      "en": "Can you explain this?",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_20",
-      "category": "Asking for Help",
-      "pl": "Daj mi wskazówkę",
-      "en": "Give me a hint",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_21",
-      "category": "Asking for Help",
-      "pl": "Potrzebuję przykładu",
-      "en": "I need an example",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_22",
-      "category": "Asking for Help",
-      "pl": "Czy możesz to napisać?",
-      "en": "Can you write this?",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_23",
-      "category": "Asking for Help",
-      "pl": "Czy możesz to narysować?",
-      "en": "Can you draw this?",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_24",
-      "category": "Asking for Help",
-      "pl": "Potrzebuję tłumacza",
-      "en": "I need a translator",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_25",
-      "category": "Asking for Help",
-      "pl": "Czy możesz przetłumaczyć?",
-      "en": "Can you translate?",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_26",
-      "category": "Clarification",
+      "id": "s22_20",
+      "category": "Language Repair",
       "pl": "Proszę powtórzyć",
       "en": "Please repeat",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🔁",
+      "note": "Formal and polite."
     },
     {
-      "id": "p15_27",
-      "category": "Clarification",
+      "id": "s22_21",
+      "category": "Language Repair",
       "pl": "Jeszcze raz",
       "en": "One more time",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "1️⃣",
+      "note": "Slightly more casual, but universally understood."
     },
     {
-      "id": "p15_28",
-      "category": "Clarification",
+      "id": "s22_22",
+      "category": "Language Repair",
+      "pl": "Mówisz za szybko",
+      "en": "You are speaking too fast",
+      "level": 22,
+      "gender": null,
+      "emoji": "🏎️",
+      "note": "Informal. Formal: 'Mówi Pan/Pani za szybko'."
+    },
+    {
+      "id": "s22_23",
+      "category": "Language Repair",
       "pl": "Wolniej, proszę",
       "en": "Slower, please",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🐢",
+      "note": "Adverbial comparative form."
     },
     {
-      "id": "p15_29",
-      "category": "Clarification",
+      "id": "s22_24",
+      "category": "Language Repair",
       "pl": "Głośniej, proszę",
       "en": "Louder, please",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🔊",
+      "note": "Adverbial comparative form."
     },
     {
-      "id": "p15_30",
-      "category": "Clarification",
+      "id": "s22_25",
+      "category": "Language Repair",
       "pl": "Nie słyszę",
       "en": "I can't hear",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🙉",
+      "note": "Used when the environment is too loud."
     },
     {
-      "id": "p15_31",
-      "category": "Clarification",
+      "id": "s22_26",
+      "category": "Language Repair",
       "pl": "Co powiedziałeś/powiedziałaś?",
       "en": "What did you say?",
       "level": 22,
       "gender": "both",
       "variants": {
-        "m": "Co powiedziałeś",
+        "m": "Co powiedziałeś?",
         "f": "Co powiedziałaś?"
-      }
+      },
+      "emoji": "👂",
+      "note": "Informal past tense."
     },
     {
-      "id": "p15_32",
-      "category": "Clarification",
+      "id": "s22_27",
+      "category": "Vocabulary & Translation",
       "pl": "Co to znaczy?",
       "en": "What does this mean?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "📖",
+      "note": "Point at a sign or a word and ask this."
     },
     {
-      "id": "p15_33",
-      "category": "Clarification",
+      "id": "s22_28",
+      "category": "Vocabulary & Translation",
       "pl": "Jak to się wymawia?",
       "en": "How do you pronounce this?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🗣️",
+      "note": "Reflexive phrase."
     },
     {
-      "id": "p15_34",
-      "category": "Clarification",
+      "id": "s22_29",
+      "category": "Vocabulary & Translation",
       "pl": "Jak to się pisze?",
       "en": "How do you spell this?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "✍️",
+      "note": "Literally 'How does it write itself?'."
     },
     {
-      "id": "p15_35",
-      "category": "Clarification",
-      "pl": "Czy możesz przeliterować?",
-      "en": "Can you spell it?",
+      "id": "s22_30",
+      "category": "Vocabulary & Translation",
+      "pl": "Czy możesz to przeliterować?",
+      "en": "Can you spell it out?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🔤",
+      "note": "Infinitive 'przeliterować' (to letter through)."
     },
     {
-      "id": "p15_36",
-      "category": "Clarification",
+      "id": "s22_31",
+      "category": "Vocabulary & Translation",
       "pl": "Nie rozumiem tego słowa",
       "en": "I don't understand this word",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "❌",
+      "note": "Takes the genitive case 'tego słowa' because the verb is negated."
     },
     {
-      "id": "p15_37",
-      "category": "Clarification",
+      "id": "s22_32",
+      "category": "Vocabulary & Translation",
       "pl": "Co to jest po polsku?",
       "en": "What is this in Polish?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🇵🇱",
+      "note": "Hold up an object and ask this to build vocabulary."
     },
     {
-      "id": "p15_38",
-      "category": "Clarification",
-      "pl": "Co to jest po angielsku?",
-      "en": "What is this in English?",
+      "id": "s22_33",
+      "category": "Vocabulary & Translation",
+      "pl": "Jak się mówi... po polsku?",
+      "en": "How do you say... in Polish?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "💬",
+      "note": "Insert the English word in the middle."
     },
     {
-      "id": "p15_39",
-      "category": "Clarification",
+      "id": "s22_34",
+      "category": "Detailed Explanations",
       "pl": "Proszę użyć prostszych słów",
       "en": "Please use simpler words",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🧸",
+      "note": "Takes genitive plural 'prostszych słów'."
     },
     {
-      "id": "p15_40",
-      "category": "Clarification",
-      "pl": "Czy możesz to pokazać?",
-      "en": "Can you show this?",
+      "id": "s22_35",
+      "category": "Detailed Explanations",
+      "pl": "Czy możesz to wyjaśnić?",
+      "en": "Can you explain this?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "👨‍🏫",
+      "note": "Infinitive verb."
     },
     {
-      "id": "p15_41",
-      "category": "Clarification",
+      "id": "s22_36",
+      "category": "Detailed Explanations",
+      "pl": "Potrzebuję więcej informacji",
+      "en": "I need more information",
+      "level": 22,
+      "gender": null,
+      "emoji": "ℹ️",
+      "note": "Takes genitive plural 'informacji'."
+    },
+    {
+      "id": "s22_37",
+      "category": "Detailed Explanations",
       "pl": "Daj mi przykład",
       "en": "Give me an example",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "📊",
+      "note": "Imperative phrase."
     },
     {
-      "id": "p15_42",
-      "category": "Clarification",
+      "id": "s22_38",
+      "category": "Detailed Explanations",
       "pl": "Na przykład?",
       "en": "For example?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "❓",
+      "note": "Used to prompt the speaker to elaborate."
     },
     {
-      "id": "p15_43",
-      "category": "Clarification",
+      "id": "s22_39",
+      "category": "Detailed Explanations",
       "pl": "Czy to znaczy...?",
       "en": "Does this mean...?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🤔",
+      "note": "Used to confirm your assumption."
     },
     {
-      "id": "p15_44",
-      "category": "Clarification",
-      "pl": "Czy dobrze rozumiem?",
-      "en": "Do I understand correctly?",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_45",
-      "category": "Clarification",
+      "id": "s22_40",
+      "category": "Detailed Explanations",
       "pl": "Innymi słowy...",
       "en": "In other words...",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🔁",
+      "note": "Instrumental case 'Innymi słowy'."
     },
     {
-      "id": "p15_46",
-      "category": "Clarification",
-      "pl": "To znaczy...",
-      "en": "That means...",
+      "id": "s22_41",
+      "category": "Confirmation",
+      "pl": "Czy dobrze rozumiem?",
+      "en": "Do I understand correctly?",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "👍",
+      "note": "Literally 'Do I understand well?'."
     },
     {
-      "id": "p15_47",
-      "category": "Clarification",
+      "id": "s22_42",
+      "category": "Confirmation",
       "pl": "Rozumiem teraz",
       "en": "I understand now",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "✅",
+      "note": "Statement of clarity."
     },
     {
-      "id": "p15_48",
-      "category": "Clarification",
+      "id": "s22_43",
+      "category": "Confirmation",
       "pl": "Aha!",
       "en": "Aha! / I see!",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "💡",
+      "note": "Universal sound of realization."
     },
     {
-      "id": "p15_49",
-      "category": "Clarification",
+      "id": "s22_44",
+      "category": "Confirmation",
       "pl": "Jasne",
       "en": "Clear / Got it",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "👌",
+      "note": "Adjective acting as an affirmative interjection."
     },
     {
-      "id": "p15_50",
-      "category": "Clarification",
-      "pl": "Teraz rozumiem",
-      "en": "Now I understand",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_51",
-      "category": "Time Requests",
-      "pl": "Potrzebuję więcej czasu",
-      "en": "I need more time",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_52",
-      "category": "Time Requests",
-      "pl": "Daj mi chwilę",
-      "en": "Give me a moment",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_53",
-      "category": "Time Requests",
-      "pl": "Chwileczkę",
-      "en": "Just a second",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_54",
-      "category": "Time Requests",
-      "pl": "Zaraz",
-      "en": "In a moment / Soon",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_55",
-      "category": "Time Requests",
-      "pl": "Proszę poczekać",
-      "en": "Please wait",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_56",
-      "category": "Time Requests",
-      "pl": "Moment",
-      "en": "Moment",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_57",
-      "category": "Time Requests",
-      "pl": "Muszę to przemyśleć",
-      "en": "I need to think about this",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_58",
-      "category": "Time Requests",
-      "pl": "Odpowiem później",
-      "en": "I'll answer later",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_59",
-      "category": "Time Requests",
-      "pl": "Dam znać jutro",
-      "en": "I'll let you know tomorrow",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_60",
-      "category": "Time Requests",
-      "pl": "Nie teraz",
-      "en": "Not now",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_61",
-      "category": "Understanding",
-      "pl": "Rozumiesz?",
-      "en": "Do you understand?",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_62",
-      "category": "Understanding",
-      "pl": "Czy wszystko jasne?",
-      "en": "Is everything clear?",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_63",
-      "category": "Understanding",
-      "pl": "Tak, rozumiem",
-      "en": "Yes, I understand",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_64",
-      "category": "Understanding",
-      "pl": "Nie, nie rozumiem",
-      "en": "No, I don't understand",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_65",
-      "category": "Understanding",
-      "pl": "Czy mogę to powtórzyć?",
-      "en": "Can I repeat this?",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_66",
-      "category": "Understanding",
-      "pl": "Powiedz jeszcze raz",
-      "en": "Say it again",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_67",
-      "category": "Understanding",
-      "pl": "Dobrze zrozumiałem/zrozumiałam?",
-      "en": "Did I understand correctly?",
-      "level": 22,
-      "gender": "both",
-      "variants": {
-        "m": "Dobrze zrozumiałem",
-        "f": "Dobrze zrozumiałam?"
-      }
-    },
-    {
-      "id": "p15_68",
-      "category": "Understanding",
-      "pl": "Potwierdzam",
-      "en": "I confirm",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_69",
-      "category": "Understanding",
-      "pl": "Zgadza się",
-      "en": "That's right / Correct",
-      "level": 22,
-      "gender": null
-    },
-    {
-      "id": "p15_70",
-      "category": "Understanding",
+      "id": "s22_45",
+      "category": "Confirmation",
       "pl": "Dokładnie",
       "en": "Exactly",
       "level": 22,
-      "gender": null
+      "gender": null,
+      "emoji": "🎯",
+      "note": "Adverbial form."
+    },
+    {
+      "id": "s22_46",
+      "category": "Time & Delay Requests",
+      "pl": "Potrzebuję więcej czasu",
+      "en": "I need more time",
+      "level": 22,
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Takes the genitive case 'więcej czasu'."
+    },
+    {
+      "id": "s22_47",
+      "category": "Time & Delay Requests",
+      "pl": "Daj mi chwilę",
+      "en": "Give me a moment",
+      "level": 22,
+      "gender": null,
+      "emoji": "⏱️",
+      "note": "Imperative phrase."
+    },
+    {
+      "id": "s22_48",
+      "category": "Time & Delay Requests",
+      "pl": "Chwileczkę",
+      "en": "Just a second",
+      "level": 22,
+      "gender": null,
+      "emoji": "🤏",
+      "note": "Diminutive of 'chwila' (moment)."
+    },
+    {
+      "id": "s22_49",
+      "category": "Time & Delay Requests",
+      "pl": "Proszę poczekać",
+      "en": "Please wait",
+      "level": 22,
+      "gender": null,
+      "emoji": "🛑",
+      "note": "Formal infinitive command."
+    },
+    {
+      "id": "s22_50",
+      "category": "Time & Delay Requests",
+      "pl": "Moment",
+      "en": "Moment",
+      "level": 22,
+      "gender": null,
+      "emoji": "✋",
+      "note": "Often held up with an index finger to signal 'pause'."
+    },
+    {
+      "id": "s22_51",
+      "category": "Time & Delay Requests",
+      "pl": "Muszę to przemyśleć",
+      "en": "I need to think about this",
+      "level": 22,
+      "gender": null,
+      "emoji": "🧠",
+      "note": "Prefix 'prze-' + 'myśleć' implies thinking something completely through."
+    },
+    {
+      "id": "s22_52",
+      "category": "Time & Delay Requests",
+      "pl": "Odpowiem później",
+      "en": "I'll answer later",
+      "level": 22,
+      "gender": null,
+      "emoji": "↩️",
+      "note": "Future tense."
+    },
+    {
+      "id": "s22_53",
+      "category": "Time & Delay Requests",
+      "pl": "Dam znać jutro",
+      "en": "I'll let you know tomorrow",
+      "level": 22,
+      "gender": null,
+      "emoji": "📅",
+      "note": "Future tense phrase."
+    },
+    {
+      "id": "s22_54",
+      "category": "Time & Delay Requests",
+      "pl": "Nie teraz",
+      "en": "Not now",
+      "level": 22,
+      "gender": null,
+      "emoji": "❌",
+      "note": "Direct and firm."
+    },
+    {
+      "id": "s22_55",
+      "category": "Checking Others",
+      "pl": "Rozumiesz?",
+      "en": "Do you understand?",
+      "level": 22,
+      "gender": null,
+      "emoji": "🤨",
+      "note": "Informal."
+    },
+    {
+      "id": "s22_56",
+      "category": "Checking Others",
+      "pl": "Czy to ma sens?",
+      "en": "Does that make sense?",
+      "level": 22,
+      "gender": null,
+      "emoji": "🤷",
+      "note": "Literally 'Does this have sense?'."
+    },
+    {
+      "id": "s22_57",
+      "category": "Checking Others",
+      "pl": "Czy wszystko jasne?",
+      "en": "Is everything clear?",
+      "level": 22,
+      "gender": null,
+      "emoji": "✨",
+      "note": "A common check-in during instructions."
+    },
+    {
+      "id": "s22_58",
+      "category": "Checking Others",
+      "pl": "Masz jakieś pytania?",
+      "en": "Do you have any questions?",
+      "level": 22,
+      "gender": null,
+      "emoji": "❓",
+      "note": "Informal 'you' (masz)."
+    },
+    {
+      "id": "s22_59",
+      "category": "Polite Interruptions",
+      "pl": "Przepraszam, że przeszkadzam",
+      "en": "Sorry to bother you",
+      "level": 22,
+      "gender": null,
+      "emoji": "Excuse me",
+      "note": "Literally 'Sorry that I am disturbing'."
+    },
+    {
+      "id": "s22_60",
+      "category": "Polite Interruptions",
+      "pl": "Mogę ci przerwać?",
+      "en": "Can I interrupt you?",
+      "level": 22,
+      "gender": null,
+      "emoji": "✋",
+      "note": "Informal. Uses dative 'ci'."
+    },
+    {
+      "id": "s22_61",
+      "category": "Translation Services",
+      "pl": "Czy używasz tłumacza?",
+      "en": "Are you using a translator app?",
+      "level": 22,
+      "gender": null,
+      "emoji": "📱",
+      "note": "Very useful question when chatting online."
+    },
+    {
+      "id": "s22_62",
+      "category": "Translation Services",
+      "pl": "Napisz mi to w aplikacji",
+      "en": "Write it to me in the app",
+      "level": 22,
+      "gender": null,
+      "emoji": "⌨️",
+      "note": "Hand them your phone with Google Translate open!"
+    },
+    {
+      "id": "s22_63",
+      "category": "Clarification",
+      "pl": "Nie o to mi chodziło",
+      "en": "That's not what I meant",
+      "level": 22,
+      "gender": null,
+      "emoji": "🙅",
+      "note": "Crucial phrase for correcting a misunderstanding."
+    },
+    {
+      "id": "s22_64",
+      "category": "Clarification",
+      "pl": "Chodzi mi o...",
+      "en": "What I mean is... / It's about...",
+      "level": 22,
+      "gender": null,
+      "emoji": "👉",
+      "note": "A very common Polish phrasing to clarify your point."
+    },
+    {
+      "id": "s22_65",
+      "category": "Clarification",
+      "pl": "Zapomniałem słowa",
+      "en": "I forgot the word",
+      "level": 22,
+      "gender": "both",
+      "variants": {
+        "m": "Zapomniałem słowa",
+        "f": "Zapomniałam słowa"
+      },
+      "emoji": "🤐",
+      "note": "Verb 'zapomnieć' forces the genitive case 'słowa'."
+    },
+    {
+      "id": "s22_66",
+      "category": "Clarification",
+      "pl": "To jest podobne do...",
+      "en": "It is similar to...",
+      "level": 22,
+      "gender": null,
+      "emoji": "🪞",
+      "note": "Great way to describe something when you don't know the exact word."
+    },
+    {
+      "id": "s22_67",
+      "category": "Language Barriers",
+      "pl": "Mój polski nie jest idealny",
+      "en": "My Polish is not perfect",
+      "level": 22,
+      "gender": null,
+      "emoji": "📉",
+      "note": "A humble way to ask for patience."
+    },
+    {
+      "id": "s22_68",
+      "category": "Language Barriers",
+      "pl": "Uczę się polskiego",
+      "en": "I am learning Polish",
+      "level": 22,
+      "gender": null,
+      "emoji": "📚",
+      "note": "Reflexive verb 'uczyć się' takes the genitive case 'polskiego'."
+    },
+    {
+      "id": "s22_69",
+      "category": "Language Barriers",
+      "pl": "Tylko trochę",
+      "en": "Only a little",
+      "level": 22,
+      "gender": null,
+      "emoji": "🤏",
+      "note": "Usually the answer to 'Czy mówisz po polsku?'."
+    },
+    {
+      "id": "s22_70",
+      "category": "Language Barriers",
+      "pl": "Mówię lepiej po angielsku",
+      "en": "I speak better in English",
+      "level": 22,
+      "gender": null,
+      "emoji": "🇬🇧",
+      "note": "Comparative adverb 'lepiej'."
+    },
+    {
+      "id": "s22_71",
+      "category": "Language Repair",
+      "pl": "Zrobiłem błąd",
+      "en": "I made a mistake",
+      "level": 22,
+      "gender": "both",
+      "variants": {
+        "m": "Zrobiłem błąd",
+        "f": "Zrobiłam błąd"
+      },
+      "emoji": "Oops",
+      "note": "Past tense."
+    },
+    {
+      "id": "s22_72",
+      "category": "Language Repair",
+      "pl": "Moja wina",
+      "en": "My fault",
+      "level": 22,
+      "gender": null,
+      "emoji": "🙋‍♂️",
+      "note": "Feminine phrase."
+    },
+    {
+      "id": "s22_73",
+      "category": "Language Repair",
+      "pl": "Przekręciłem słowo",
+      "en": "I twisted/mangled the word",
+      "level": 22,
+      "gender": "both",
+      "variants": {
+        "m": "Przekręciłem słowo",
+        "f": "Przekręciłam słowo"
+      },
+      "emoji": "🥨",
+      "note": "A native way of saying you mispronounced something."
+    },
+    {
+      "id": "s22_74",
+      "category": "Physical Help",
+      "pl": "Pomożesz mi to podnieść?",
+      "en": "Will you help me lift this?",
+      "level": 22,
+      "gender": null,
+      "emoji": "🏋️",
+      "note": "Future perfective tense."
+    },
+    {
+      "id": "s22_75",
+      "category": "Physical Help",
+      "pl": "Jestem zgubiony",
+      "en": "I am lost (physically)",
+      "level": 22,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem zgubiony",
+        "f": "Jestem zgubiona"
+      },
+      "emoji": "🗺️",
+      "note": "Used for navigation, not mental confusion."
     }
   ]
 }

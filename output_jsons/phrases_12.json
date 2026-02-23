@@ -1,0 +1,447 @@
+{
+  "level": 12,
+  "description": "Time & Scheduling - Days, Times & Appointments",
+  "tier": "PRACTICAL",
+  "phrases": [
+    {
+      "id": "s12_01",
+      "category": "Asking & Telling Time",
+      "pl": "Która jest godzina?",
+      "en": "What time is it?",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏰",
+      "note": "The most common way to ask for the current time. Literally 'Which is hour?'"
+    },
+    {
+      "id": "s12_02",
+      "category": "Asking & Telling Time",
+      "pl": "O której?",
+      "en": "At what time?",
+      "level": 12,
+      "gender": null,
+      "emoji": "❓",
+      "note": "Always asks 'At which (hour)?'. Used to schedule meetings or check departures."
+    },
+    {
+      "id": "s12_03",
+      "category": "Asking & Telling Time",
+      "pl": "Jest godzina dziesiąta.",
+      "en": "It's ten o'clock.",
+      "level": 12,
+      "gender": null,
+      "emoji": "🔟",
+      "note": "For exact hours, use the ordinal number in the nominative case (dziesiąta for 10:00)."
+    },
+    {
+      "id": "s12_04",
+      "category": "Asking & Telling Time",
+      "pl": "O ósmej rano",
+      "en": "At 8 AM",
+      "level": 12,
+      "gender": null,
+      "emoji": "🌅",
+      "note": "The preposition 'O' forces the locative case on the ordinal number (ósma -> ósmej)."
+    },
+    {
+      "id": "s12_05",
+      "category": "Asking & Telling Time",
+      "pl": "O ósmej wieczorem",
+      "en": "At 8 PM",
+      "level": 12,
+      "gender": null,
+      "emoji": "🌆",
+      "note": "Poland often uses the 24-hour clock, so 8 PM is frequently 'o dwudziestej'."
+    },
+    {
+      "id": "s12_06",
+      "category": "Asking & Telling Time",
+      "pl": "Jest wpół do drugiej.",
+      "en": "It's half past one.",
+      "level": 12,
+      "gender": null,
+      "emoji": "🕜",
+      "note": "'Wpół do' means 'half to' the next hour. (e.g., wpół do drugiej = 1:30)."
+    },
+    {
+      "id": "s12_07",
+      "category": "Asking & Telling Time",
+      "pl": "Jest za piętnaście druga.",
+      "en": "It's a quarter to two.",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏰",
+      "note": "'Za piętnaście' means 'fifteen minutes before' the next hour. (e.g., za piętnaście druga = 1:45)."
+    },
+    {
+      "id": "s12_08",
+      "category": "Asking & Telling Time",
+      "pl": "Jest piętnaście po drugiej.",
+      "en": "It's a quarter past two.",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏰",
+      "note": "'Piętnaście po' means 'fifteen minutes after' the current hour. (e.g., piętnaście po drugiej = 2:15)."
+    },
+    {
+      "id": "s12_09",
+      "category": "Time Durations & Adverbs",
+      "pl": "Za piętnaście minut",
+      "en": "In fifteen minutes",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏱️",
+      "note": "'Za' + time duration indicates how much time is left until an event."
+    },
+    {
+      "id": "s12_10",
+      "category": "Time Durations & Adverbs",
+      "pl": "Godzinę temu",
+      "en": "An hour ago",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏮️",
+      "note": "'Temu' (ago) always comes after the time period."
+    },
+    {
+      "id": "s12_11",
+      "category": "Time Durations & Adverbs",
+      "pl": "Później",
+      "en": "Later",
+      "level": 12,
+      "gender": null,
+      "emoji": "➡️",
+      "note": "A common adverb for 'later'. Can be used alone or with 'do zobaczenia' (see you later)."
+    },
+    {
+      "id": "s12_12",
+      "category": "Time Durations & Adverbs",
+      "pl": "Wcześniej",
+      "en": "Earlier",
+      "level": 12,
+      "gender": null,
+      "emoji": "⬅️",
+      "note": "The opposite of 'później'. Used to refer to a prior time."
+    },
+    {
+      "id": "s12_13",
+      "category": "Days of the Week",
+      "pl": "Poniedziałek",
+      "en": "Monday",
+      "level": 12,
+      "gender": "m",
+      "emoji": "1️⃣",
+      "note": "Literally 'after Sunday' (po niedzieli). Masculine noun."
+    },
+    {
+      "id": "s12_14",
+      "category": "Days of the Week",
+      "pl": "Wtorek",
+      "en": "Tuesday",
+      "level": 12,
+      "gender": "m",
+      "emoji": "2️⃣",
+      "note": "Related to the word 'wtóry' (second). Masculine noun."
+    },
+    {
+      "id": "s12_15",
+      "category": "Days of the Week",
+      "pl": "Środa",
+      "en": "Wednesday",
+      "level": 12,
+      "gender": "f",
+      "emoji": "3️⃣",
+      "note": "Related to 'środek' (middle) because it is the middle of the work week. Feminine noun."
+    },
+    {
+      "id": "s12_16",
+      "category": "Days of the Week",
+      "pl": "Czwartek",
+      "en": "Thursday",
+      "level": 12,
+      "gender": "m",
+      "emoji": "4️⃣",
+      "note": "Related to 'cztery' (four). Masculine noun."
+    },
+    {
+      "id": "s12_17",
+      "category": "Days of the Week",
+      "pl": "Piątek",
+      "en": "Friday",
+      "level": 12,
+      "gender": "m",
+      "emoji": "5️⃣",
+      "note": "Related to 'pięć' (five). Masculine noun."
+    },
+    {
+      "id": "s12_18",
+      "category": "Days of the Week",
+      "pl": "Sobota",
+      "en": "Saturday",
+      "level": 12,
+      "gender": "f",
+      "emoji": "🛒",
+      "note": "In Poland, most stores close or have limited hours on Sundays, so Sobota is the main shopping day. Feminine noun."
+    },
+    {
+      "id": "s12_19",
+      "category": "Days of the Week",
+      "pl": "Niedziela",
+      "en": "Sunday",
+      "level": 12,
+      "gender": "f",
+      "emoji": "⛪",
+      "note": "Literally 'no work' (nie działać). Feminine noun."
+    },
+    {
+      "id": "s12_20",
+      "category": "General Time Periods",
+      "pl": "Dziś / Dzisiaj",
+      "en": "Today",
+      "level": 12,
+      "gender": null,
+      "emoji": "☀️",
+      "note": "Both forms are interchangeable. 'Dzisiaj' is slightly more formal or emphatic."
+    },
+    {
+      "id": "s12_21",
+      "category": "General Time Periods",
+      "pl": "Jutro",
+      "en": "Tomorrow",
+      "level": 12,
+      "gender": null,
+      "emoji": "➡️🗓️",
+      "note": "An adverb meaning 'tomorrow'. Often used with future tense verbs."
+    },
+    {
+      "id": "s12_22",
+      "category": "General Time Periods",
+      "pl": "Wczoraj",
+      "en": "Yesterday",
+      "level": 12,
+      "gender": null,
+      "emoji": "⬅️🗓️",
+      "note": "An adverb meaning 'yesterday'. Often used with past tense verbs."
+    },
+    {
+      "id": "s12_23",
+      "category": "General Time Periods",
+      "pl": "W tygodniu",
+      "en": "During the week / On weekdays",
+      "level": 12,
+      "gender": null,
+      "emoji": "🗓️",
+      "note": "'W' (in/on) + locative case. Refers to Monday-Friday."
+    },
+    {
+      "id": "s12_24",
+      "category": "General Time Periods",
+      "pl": "W weekend",
+      "en": "On the weekend",
+      "level": 12,
+      "gender": null,
+      "emoji": "🎉",
+      "note": "A common anglicism, often used instead of 'w końcu tygodnia'."
+    },
+    {
+      "id": "s12_25",
+      "category": "General Time Periods",
+      "pl": "W przyszłym tygodniu",
+      "en": "Next week",
+      "level": 12,
+      "gender": null,
+      "emoji": "📆➡️",
+      "note": "'W' (in/on) + locative case. 'Przyszły' means 'next/coming'."
+    },
+    {
+      "id": "s12_26",
+      "category": "General Time Periods",
+      "pl": "W zeszłym tygodniu",
+      "en": "Last week",
+      "level": 12,
+      "gender": null,
+      "emoji": "📆⬅️",
+      "note": "'W' (in/on) + locative case. 'Zeszły' means 'last/past'."
+    },
+    {
+      "id": "s12_27",
+      "category": "General Time Periods",
+      "pl": "Od poniedziałku do piątku",
+      "en": "From Monday to Friday",
+      "level": 12,
+      "gender": null,
+      "emoji": "🗓️➡️🗓️",
+      "note": "'Od... do...' is used for 'from... to...'. Days are in genitive case."
+    },
+    {
+      "id": "s12_28",
+      "category": "Frequency",
+      "pl": "Codziennie",
+      "en": "Every day",
+      "level": 12,
+      "gender": null,
+      "emoji": "🗓️",
+      "note": "Derived from 'co' (every/what) + 'dzień' (day)."
+    },
+    {
+      "id": "s12_29",
+      "category": "Frequency",
+      "pl": "Często",
+      "en": "Often",
+      "level": 12,
+      "gender": null,
+      "emoji": "⬆️",
+      "note": "An adverb of frequency. The opposite of 'rzadko'."
+    },
+    {
+      "id": "s12_30",
+      "category": "Frequency",
+      "pl": "Rzadko",
+      "en": "Rarely",
+      "level": 12,
+      "gender": null,
+      "emoji": "📉",
+      "note": "An adverb of frequency. The opposite of 'często'."
+    },
+    {
+      "id": "s12_31",
+      "category": "Frequency",
+      "pl": "Zawsze",
+      "en": "Always",
+      "level": 12,
+      "gender": null,
+      "emoji": "♾️",
+      "note": "An adverb of frequency. Indicates something happens all the time."
+    },
+    {
+      "id": "s12_32",
+      "category": "Frequency",
+      "pl": "Nigdy",
+      "en": "Never",
+      "level": 12,
+      "gender": null,
+      "emoji": "🚫",
+      "note": "An adverb of frequency. Requires a double negative in Polish (e.g., 'Nigdy nie jem')."
+    },
+    {
+      "id": "s12_33",
+      "category": "Scheduling & Appointments",
+      "pl": "Spotkanie",
+      "en": "Meeting / Appointment",
+      "level": 12,
+      "gender": "n",
+      "emoji": "💼",
+      "note": "A neuter noun. Used for business meetings and social hangouts."
+    },
+    {
+      "id": "s12_34",
+      "category": "Scheduling & Appointments",
+      "pl": "Chciałbym/Chciałabym umówić się na spotkanie.",
+      "en": "I'd like to make an appointment. (M/F)",
+      "level": 12,
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Formal way to request an appointment. 'Chciałbym' for male, 'Chciałabym' for female."
+    },
+    {
+      "id": "s12_35",
+      "category": "Scheduling & Appointments",
+      "pl": "Czy jest wolny termin?",
+      "en": "Is there an available slot?",
+      "level": 12,
+      "gender": null,
+      "emoji": "📅",
+      "note": "'Termin' refers to a specific date/time slot for a doctor, hairdresser, or meeting."
+    },
+    {
+      "id": "s12_36",
+      "category": "Scheduling & Appointments",
+      "pl": "Na kiedy?",
+      "en": "For when?",
+      "level": 12,
+      "gender": null,
+      "emoji": "🗓️❓",
+      "note": "A common follow-up question when scheduling. 'Na' (for) + accusative case."
+    },
+    {
+      "id": "s12_37",
+      "category": "Scheduling & Appointments",
+      "pl": "Czy pasuje Panu/Pani o trzeciej?",
+      "en": "Does 3 o'clock suit you? (M/F formal)",
+      "level": 12,
+      "gender": null,
+      "emoji": "✅",
+      "note": "Formal way to check availability. 'Panu' (to Mr.) / 'Pani' (to Mrs./Ms.) are in dative case."
+    },
+    {
+      "id": "s12_38",
+      "category": "Scheduling & Appointments",
+      "pl": "O której godzinie zaczyna się?",
+      "en": "At what time does it start?",
+      "level": 12,
+      "gender": null,
+      "emoji": "▶️",
+      "note": "Used to ask about the start time of an event, movie, or meeting."
+    },
+    {
+      "id": "s12_39",
+      "category": "Scheduling & Appointments",
+      "pl": "O której godzinie kończy się?",
+      "en": "At what time does it end?",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏹️",
+      "note": "Used to ask about the end time of an event, movie, or meeting."
+    },
+    {
+      "id": "s12_40",
+      "category": "Scheduling & Appointments",
+      "pl": "Muszę odwołać spotkanie.",
+      "en": "I need to cancel the meeting.",
+      "level": 12,
+      "gender": null,
+      "emoji": "❌",
+      "note": "'Odwołać' means to call off or cancel. The verb 'musieć' (to have to) is followed by an infinitive."
+    },
+    {
+      "id": "s12_41",
+      "category": "Scheduling & Appointments",
+      "pl": "Spóźnię się.",
+      "en": "I'll be late.",
+      "level": 12,
+      "gender": null,
+      "emoji": "🏃",
+      "note": "Future tense. 'Spóźnienie' (lateness) is generally disliked in Polish business culture."
+    },
+    {
+      "id": "s12_42",
+      "category": "Scheduling & Appointments",
+      "pl": "Jestem zajęty/zajęta.",
+      "en": "I'm busy. (M/F)",
+      "level": 12,
+      "gender": null,
+      "emoji": "⛔",
+      "note": "'Zajęty' for male, 'zajęta' for female. Adjective agrees with gender."
+    },
+    {
+      "id": "s12_43",
+      "category": "Scheduling & Appointments",
+      "pl": "Mam czas.",
+      "en": "I have time.",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Simple phrase to indicate availability. 'Czas' is masculine inanimate."
+    },
+    {
+      "id": "s12_44",
+      "category": "Scheduling & Appointments",
+      "pl": "Do zobaczenia w poniedziałek!",
+      "en": "See you on Monday!",
+      "level": 12,
+      "gender": null,
+      "emoji": "👋🗓️",
+      "note": "Common farewell when scheduling. 'W poniedziałek' uses the accusative case for days of the week."
+    }
+  ]
+}

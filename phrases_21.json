@@ -1,251 +1,323 @@
 {
   "level": 21,
-  "description": "Problems & Complaints - Resolving Issues",
+  "description": "Problems & Complaints - Resolving Consumer Issues",
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p14_01",
-      "category": "Problems",
+      "id": "s21_01",
+      "category": "General Problems",
       "pl": "Problem",
       "en": "Problem",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "⚠️",
+      "note": "Masculine noun."
     },
     {
-      "id": "p14_02",
-      "category": "Problems",
+      "id": "s21_02",
+      "category": "General Problems",
       "pl": "Mam problem",
       "en": "I have a problem",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🙋",
+      "note": "Use this to start a conversation with a service worker."
     },
     {
-      "id": "p14_03",
-      "category": "Problems",
+      "id": "s21_03",
+      "category": "General Problems",
       "pl": "Coś nie działa",
       "en": "Something doesn't work",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🛠️",
+      "note": "The safest, most universal way to explain a tech or mechanical issue."
     },
     {
-      "id": "p14_04",
-      "category": "Problems",
+      "id": "s21_04",
+      "category": "General Problems",
       "pl": "Coś poszło nie tak",
       "en": "Something went wrong",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "📉",
+      "note": "Often used for booking errors or scheduling mishaps."
     },
     {
-      "id": "p14_05",
-      "category": "Problems",
-      "pl": "To nie działa",
-      "en": "This doesn't work",
+      "id": "s21_05",
+      "category": "General Problems",
+      "pl": "To jest zepsute",
+      "en": "This is broken",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "💥",
+      "note": "Adjective 'zepsute' matches the neuter pronoun 'To'."
     },
     {
-      "id": "p14_06",
-      "category": "Problems",
-      "pl": "Jest zepsute",
-      "en": "It's broken",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_07",
-      "category": "Problems",
-      "pl": "Nie mogę...",
-      "en": "I can't...",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_08",
-      "category": "Problems",
+      "id": "s21_06",
+      "category": "General Problems",
       "pl": "To nie moja wina",
       "en": "It's not my fault",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🙅",
+      "note": "Feminine noun 'wina' (fault/guilt)."
     },
     {
-      "id": "p14_09",
-      "category": "Problems",
-      "pl": "Nie rozumiem dlaczego",
-      "en": "I don't understand why",
+      "id": "s21_07",
+      "category": "Errors & Mistakes",
+      "pl": "Jest błąd na rachunku",
+      "en": "There is a mistake on the bill",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🧾",
+      "note": "'Błąd' is masculine. 'Na rachunku' is the locative case."
     },
     {
-      "id": "p14_10",
-      "category": "Problems",
-      "pl": "To nie jest w porządku",
-      "en": "This is not okay",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_11",
-      "category": "Problems",
-      "pl": "Jest błąd",
-      "en": "There's a mistake",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_12",
-      "category": "Problems",
-      "pl": "To jest złe",
-      "en": "This is wrong",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_13",
-      "category": "Problems",
+      "id": "s21_08",
+      "category": "Errors & Mistakes",
       "pl": "Pomyłka",
-      "en": "Mistake / Error",
+      "en": "Mistake / Mix-up",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🤦",
+      "note": "Feminine noun."
     },
     {
-      "id": "p14_14",
-      "category": "Problems",
-      "pl": "Potrzebuję wyjaśnienia",
-      "en": "I need an explanation",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_15",
-      "category": "Problems",
-      "pl": "Jak to naprawić?",
-      "en": "How to fix this?",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_16",
-      "category": "Problems",
-      "pl": "Czy możesz to naprawić?",
-      "en": "Can you fix this?",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_17",
-      "category": "Problems",
-      "pl": "Kiedy to zostanie naprawione?",
-      "en": "When will this be fixed?",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_18",
-      "category": "Problems",
-      "pl": "To nie to co zamówiłem/zamówiłam",
+      "id": "s21_09",
+      "category": "Errors & Mistakes",
+      "pl": "To nie jest to, co zamówiłem/zamówiłam",
       "en": "This is not what I ordered",
       "level": 21,
       "gender": "both",
       "variants": {
-        "m": "To nie to co zamówiłem",
-        "f": "To nie to co zamówiłam"
-      }
+        "m": "To nie jest to, co zamówiłem",
+        "f": "To nie jest to, co zamówiłam"
+      },
+      "emoji": "📦",
+      "note": "Crucial phrase for restaurants or online shopping returns."
     },
     {
-      "id": "p14_19",
-      "category": "Problems",
+      "id": "s21_10",
+      "category": "Errors & Mistakes",
+      "pl": "Niekompletne zamówienie",
+      "en": "Incomplete order",
+      "level": 21,
+      "gender": null,
+      "emoji": "🧩",
+      "note": "Neuter phrase."
+    },
+    {
+      "id": "s21_11",
+      "category": "Errors & Mistakes",
       "pl": "Brakuje...",
       "en": "Missing... / There's no...",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🔍",
+      "note": "Forces the following noun into the genitive case. (e.g., 'Brakuje widelca')."
     },
     {
-      "id": "p14_20",
-      "category": "Problems",
-      "pl": "Nie ma...",
-      "en": "There is no...",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_21",
-      "category": "Problems",
-      "pl": "Zgubiłem/Zgubiłam...",
-      "en": "I lost...",
-      "level": 21,
-      "gender": "both",
-      "variants": {
-        "m": "Zgubiłem",
-        "f": "Zgubiłam..."
-      }
-    },
-    {
-      "id": "p14_22",
-      "category": "Problems",
-      "pl": "Ktoś ukradł...",
-      "en": "Someone stole...",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_23",
-      "category": "Problems",
+      "id": "s21_12",
+      "category": "Misplaced Items",
       "pl": "Nie mogę znaleźć...",
       "en": "I can't find...",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "👀",
+      "note": "Takes the accusative case for the object."
     },
     {
-      "id": "p14_24",
-      "category": "Problems",
+      "id": "s21_13",
+      "category": "Misplaced Items",
       "pl": "Gdzie to zostawiłem/zostawiłam?",
       "en": "Where did I leave this?",
       "level": 21,
       "gender": "both",
       "variants": {
-        "m": "Gdzie to zostawiłem",
+        "m": "Gdzie to zostawiłem?",
         "f": "Gdzie to zostawiłam?"
-      }
+      },
+      "emoji": "🤔",
+      "note": "Past tense verb."
     },
     {
-      "id": "p14_25",
-      "category": "Problems",
-      "pl": "Zapomniałem/Zapomniałam",
-      "en": "I forgot",
+      "id": "s21_14",
+      "category": "Misplaced Items",
+      "pl": "Zgubiłem/Zgubiłam klucze",
+      "en": "I lost the keys",
       "level": 21,
       "gender": "both",
       "variants": {
-        "m": "Zapomniałem",
-        "f": "Zapomniałam"
-      }
+        "m": "Zgubiłem klucze",
+        "f": "Zgubiłam klucze"
+      },
+      "emoji": "🗝️",
+      "note": "Uses accusative plural."
     },
     {
-      "id": "p14_26",
-      "category": "Complaints",
+      "id": "s21_15",
+      "category": "Complaints & Returns",
       "pl": "Skarga",
       "en": "Complaint",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🗣️",
+      "note": "Feminine noun."
     },
     {
-      "id": "p14_27",
-      "category": "Complaints",
-      "pl": "Chcę złożyć skargę",
-      "en": "I want to make a complaint",
+      "id": "s21_16",
+      "category": "Complaints & Returns",
+      "pl": "Reklamacja",
+      "en": "Formal complaint / Return claim",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "📄",
+      "note": "A vital Polish consumer word. It is the legal process of returning a defective good or service."
     },
     {
-      "id": "p14_28",
-      "category": "Complaints",
-      "pl": "To jest nieakceptowalne",
-      "en": "This is unacceptable",
+      "id": "s21_17",
+      "category": "Complaints & Returns",
+      "pl": "Chcę złożyć reklamację",
+      "en": "I want to file a complaint/claim",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "✍️",
+      "note": "Stores in Poland have specific forms for this."
     },
     {
-      "id": "p14_29",
-      "category": "Complaints",
+      "id": "s21_18",
+      "category": "Complaints & Returns",
+      "pl": "Gdzie jest kierownik?",
+      "en": "Where is the manager?",
+      "level": 21,
+      "gender": null,
+      "emoji": "👔",
+      "note": "'Kierownik' is a masculine noun."
+    },
+    {
+      "id": "s21_19",
+      "category": "Complaints & Returns",
+      "pl": "Chcę zwrot pieniędzy",
+      "en": "I want a refund",
+      "level": 21,
+      "gender": null,
+      "emoji": "💸",
+      "note": "Literally 'Return of money'."
+    },
+    {
+      "id": "s21_20",
+      "category": "Complaints & Returns",
+      "pl": "Chcę to wymienić",
+      "en": "I want to exchange this",
+      "level": 21,
+      "gender": null,
+      "emoji": "🔄",
+      "note": "Infinitive verb 'wymienić'."
+    },
+    {
+      "id": "s21_21",
+      "category": "Complaints & Returns",
+      "pl": "Mam paragon",
+      "en": "I have the receipt",
+      "level": 21,
+      "gender": null,
+      "emoji": "🧾",
+      "note": "You almost always need the physical 'paragon' to process a return in Poland."
+    },
+    {
+      "id": "s21_22",
+      "category": "Complaints & Returns",
+      "pl": "Gwarancja",
+      "en": "Warranty",
+      "level": 21,
+      "gender": null,
+      "emoji": "🛡️",
+      "note": "Feminine noun. EU law mandates a 2-year warranty on most goods."
+    },
+    {
+      "id": "s21_23",
+      "category": "Product Quality",
+      "pl": "Przeterminowane",
+      "en": "Expired",
+      "level": 21,
+      "gender": null,
+      "emoji": "🥛",
+      "note": "Adjective. Used for food or medicine past its date."
+    },
+    {
+      "id": "s21_24",
+      "category": "Product Quality",
+      "pl": "Jakość jest zła",
+      "en": "The quality is bad",
+      "level": 21,
+      "gender": null,
+      "emoji": "👎",
+      "note": "'Jakość' is a feminine noun."
+    },
+    {
+      "id": "s21_25",
+      "category": "Product Quality",
+      "pl": "To jest brudne",
+      "en": "This is dirty",
+      "level": 21,
+      "gender": null,
+      "emoji": "🦠",
+      "note": "Neuter adjective 'brudne'."
+    },
+    {
+      "id": "s21_26",
+      "category": "Product Quality",
+      "pl": "To jest zimne",
+      "en": "This is cold",
+      "level": 21,
+      "gender": null,
+      "emoji": "🧊",
+      "note": "Useful for complaining about food at a restaurant."
+    },
+    {
+      "id": "s21_27",
+      "category": "Product Quality",
+      "pl": "Nieświeże",
+      "en": "Stale / Not fresh",
+      "level": 21,
+      "gender": null,
+      "emoji": "🥖",
+      "note": "Usually applied to bread or produce."
+    },
+    {
+      "id": "s21_28",
+      "category": "Service Issues",
+      "pl": "Obsługa jest słaba",
+      "en": "The service is poor",
+      "level": 21,
+      "gender": null,
+      "emoji": "🐌",
+      "note": "Literally 'The service is weak'."
+    },
+    {
+      "id": "s21_29",
+      "category": "Service Issues",
+      "pl": "Czekam za długo",
+      "en": "I'm waiting too long",
+      "level": 21,
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Present tense."
+    },
+    {
+      "id": "s21_30",
+      "category": "Service Issues",
+      "pl": "To jest za drogie",
+      "en": "This is too expensive",
+      "level": 21,
+      "gender": null,
+      "emoji": "💶",
+      "note": "Useful if you notice a price discrepancy."
+    },
+    {
+      "id": "s21_31",
+      "category": "Emotions & Reactions",
       "pl": "Jestem niezadowolony/niezadowolona",
       "en": "I'm dissatisfied",
       "level": 21,
@@ -253,115 +325,13 @@
       "variants": {
         "m": "Jestem niezadowolony",
         "f": "Jestem niezadowolona"
-      }
+      },
+      "emoji": "😠",
+      "note": "Very formal and clear."
     },
     {
-      "id": "p14_30",
-      "category": "Complaints",
-      "pl": "To jest za drogie",
-      "en": "This is too expensive",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_31",
-      "category": "Complaints",
-      "pl": "Jakość jest zła",
-      "en": "Quality is bad",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_32",
-      "category": "Complaints",
-      "pl": "Obsługa jest słaba",
-      "en": "Service is poor",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_33",
-      "category": "Complaints",
-      "pl": "Czekam za długo",
-      "en": "I'm waiting too long",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_34",
-      "category": "Complaints",
-      "pl": "To jest brudne",
-      "en": "This is dirty",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_35",
-      "category": "Complaints",
-      "pl": "To jest zimne",
-      "en": "This is cold",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_36",
-      "category": "Complaints",
-      "pl": "To nie jest świeże",
-      "en": "This is not fresh",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_37",
-      "category": "Complaints",
-      "pl": "Chcę zwrot pieniędzy",
-      "en": "I want a refund",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_38",
-      "category": "Complaints",
-      "pl": "Chcę wymienić",
-      "en": "I want to exchange",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_39",
-      "category": "Complaints",
-      "pl": "Gdzie jest kierownik?",
-      "en": "Where is the manager?",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_40",
-      "category": "Complaints",
-      "pl": "Chcę rozmawiać z kierownikiem",
-      "en": "I want to speak to the manager",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_41",
-      "category": "Complaints",
-      "pl": "To nie jest fair",
-      "en": "This is not fair",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_42",
-      "category": "Complaints",
-      "pl": "Nie zgadzam się",
-      "en": "I don't agree",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_43",
-      "category": "Complaints",
+      "id": "s21_32",
+      "category": "Emotions & Reactions",
       "pl": "Rozczarowany/Rozczarowana",
       "en": "Disappointed",
       "level": 21,
@@ -369,11 +339,33 @@
       "variants": {
         "m": "Rozczarowany",
         "f": "Rozczarowana"
-      }
+      },
+      "emoji": "😞",
+      "note": "Adjective."
     },
     {
-      "id": "p14_44",
-      "category": "Complaints",
+      "id": "s21_33",
+      "category": "Emotions & Reactions",
+      "pl": "To jest nieakceptowalne",
+      "en": "This is unacceptable",
+      "level": 21,
+      "gender": null,
+      "emoji": "🛑",
+      "note": "Strong, formal phrasing."
+    },
+    {
+      "id": "s21_34",
+      "category": "Emotions & Reactions",
+      "pl": "To nie jest w porządku",
+      "en": "This is not okay",
+      "level": 21,
+      "gender": null,
+      "emoji": "❌",
+      "note": "Literally 'This is not in order'."
+    },
+    {
+      "id": "s21_35",
+      "category": "Emotions & Reactions",
       "pl": "Oczekiwałem/Oczekiwałam czegoś innego",
       "en": "I expected something different",
       "level": 21,
@@ -381,215 +373,421 @@
       "variants": {
         "m": "Oczekiwałem czegoś innego",
         "f": "Oczekiwałam czegoś innego"
-      }
+      },
+      "emoji": "🤷",
+      "note": "Past tense verb + genitive case."
     },
     {
-      "id": "p14_45",
-      "category": "Complaints",
-      "pl": "To nie jest to co obiecano",
-      "en": "This is not what was promised",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_46",
-      "category": "Solutions",
+      "id": "s21_36",
+      "category": "Resolutions",
       "pl": "Jak możemy to rozwiązać?",
       "en": "How can we solve this?",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Collaborative and polite."
     },
     {
-      "id": "p14_47",
-      "category": "Solutions",
+      "id": "s21_37",
+      "category": "Resolutions",
       "pl": "Proszę to naprawić",
       "en": "Please fix this",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🔧",
+      "note": "Infinitive phrase."
     },
     {
-      "id": "p14_48",
-      "category": "Solutions",
-      "pl": "Proszę wymienić",
-      "en": "Please replace",
+      "id": "s21_38",
+      "category": "Resolutions",
+      "pl": "Kiedy to zostanie naprawione?",
+      "en": "When will this be fixed?",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🗓️",
+      "note": "Passive voice future tense."
     },
     {
-      "id": "p14_49",
-      "category": "Solutions",
-      "pl": "Zróbmy to inaczej",
-      "en": "Let's do it differently",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_50",
-      "category": "Solutions",
+      "id": "s21_39",
+      "category": "Resolutions",
       "pl": "Czy jest inna opcja?",
       "en": "Is there another option?",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🔄",
+      "note": "Feminine noun phrase."
     },
     {
-      "id": "p14_51",
-      "category": "Solutions",
-      "pl": "Może spróbujmy...",
-      "en": "Maybe let's try...",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_52",
-      "category": "Solutions",
+      "id": "s21_40",
+      "category": "Resolutions",
       "pl": "Co proponujesz?",
       "en": "What do you suggest?",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🤔",
+      "note": "Informal 'you'. Use 'Co Pan proponuje?' for formal situations."
     },
     {
-      "id": "p14_53",
-      "category": "Solutions",
-      "pl": "Dziękuję za zrozumienie",
-      "en": "Thank you for understanding",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_54",
-      "category": "Solutions",
+      "id": "s21_41",
+      "category": "Apologies & Closures",
       "pl": "Przepraszam za kłopot",
       "en": "Sorry for the trouble",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🙏",
+      "note": "Very polite closing phrase."
     },
     {
-      "id": "p14_55",
-      "category": "Solutions",
-      "pl": "Nie ma problemu",
-      "en": "No problem",
+      "id": "s21_42",
+      "category": "Apologies & Closures",
+      "pl": "Dziękuję za zrozumienie",
+      "en": "Thank you for understanding",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "😌",
+      "note": "Standard professional sign-off."
     },
     {
-      "id": "p14_56",
-      "category": "Solutions",
-      "pl": "W porządku",
-      "en": "Okay / Alright",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_57",
-      "category": "Solutions",
-      "pl": "Zgoda",
-      "en": "Agreed / Deal",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_58",
-      "category": "Solutions",
-      "pl": "Dobrze",
-      "en": "Good / Fine",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_59",
-      "category": "Solutions",
-      "pl": "Dziękuję za pomoc",
-      "en": "Thank you for your help",
-      "level": 21,
-      "gender": null
-    },
-    {
-      "id": "p14_60",
-      "category": "Solutions",
+      "id": "s21_43",
+      "category": "Apologies & Closures",
       "pl": "Problem rozwiązany",
       "en": "Problem solved",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "✅",
+      "note": "Passive adjective 'rozwiązany' matching masculine 'problem'."
     },
     {
-      "id": "p14_61",
-      "category": "Safety",
+      "id": "s21_44",
+      "category": "Apologies & Closures",
+      "pl": "Nie ma problemu",
+      "en": "No problem",
+      "level": 21,
+      "gender": null,
+      "emoji": "👌",
+      "note": "Requires genitive 'problemu'."
+    },
+    {
+      "id": "s21_45",
+      "category": "Apologies & Closures",
+      "pl": "Zgoda",
+      "en": "Agreed / Deal",
+      "level": 21,
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Feminine noun. Used to finalize a compromise."
+    },
+    {
+      "id": "s21_46",
+      "category": "Safety Context",
       "pl": "Czy to jest bezpieczne?",
       "en": "Is this safe?",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🛡️",
+      "note": "Neuter adjective matching 'to'."
     },
     {
-      "id": "p14_62",
-      "category": "Safety",
+      "id": "s21_47",
+      "category": "Safety Context",
       "pl": "Niebezpieczne",
       "en": "Dangerous",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "⚠️",
+      "note": "Adjective."
     },
     {
-      "id": "p14_63",
-      "category": "Safety",
+      "id": "s21_48",
+      "category": "Safety Context",
       "pl": "Ostrożnie",
       "en": "Careful / Caution",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "✋",
+      "note": "Adverb. Often seen on boxes or told to children."
     },
     {
-      "id": "p14_64",
-      "category": "Safety",
-      "pl": "Uwaga!",
-      "en": "Watch out! / Attention!",
+      "id": "s21_49",
+      "category": "Housing Problems",
+      "pl": "Cieknie kran",
+      "en": "The tap is leaking",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🚰",
+      "note": "From the verb 'ciec' (to leak/flow)."
     },
     {
-      "id": "p14_65",
-      "category": "Safety",
-      "pl": "Stop!",
-      "en": "Stop!",
+      "id": "s21_50",
+      "category": "Housing Problems",
+      "pl": "Brak prądu",
+      "en": "Power outage",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🔌",
+      "note": "Literally 'Lack of current'."
     },
     {
-      "id": "p14_66",
-      "category": "Safety",
-      "pl": "Nie dotykaj",
-      "en": "Don't touch",
+      "id": "s21_51",
+      "category": "Housing Problems",
+      "pl": "Brak ciepłej wody",
+      "en": "No hot water",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🚿",
+      "note": "'Brak' forces the genitive case 'ciepłej wody'."
     },
     {
-      "id": "p14_67",
-      "category": "Safety",
-      "pl": "Zamknięte",
-      "en": "Closed",
+      "id": "s21_52",
+      "category": "Housing Problems",
+      "pl": "Ogrzewanie nie działa",
+      "en": "The heating isn't working",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🥶",
+      "note": "Crucial phrase for Polish winters!"
     },
     {
-      "id": "p14_68",
-      "category": "Safety",
-      "pl": "Otwarte",
-      "en": "Open",
+      "id": "s21_53",
+      "category": "Housing Problems",
+      "pl": "Klucz się zaciął",
+      "en": "The key got stuck",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🗝️",
+      "note": "Reflexive past tense."
     },
     {
-      "id": "p14_69",
-      "category": "Safety",
-      "pl": "Wyjście awaryjne",
-      "en": "Emergency exit",
+      "id": "s21_54",
+      "category": "Tech Returns",
+      "pl": "Nie włącza się",
+      "en": "It won't turn on",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🔌",
+      "note": "Reflexive verb 'włączać się'."
     },
     {
-      "id": "p14_70",
-      "category": "Safety",
-      "pl": "Gdzie jest wyjście?",
-      "en": "Where is the exit?",
+      "id": "s21_55",
+      "category": "Tech Returns",
+      "pl": "Bateria krótko trzyma",
+      "en": "The battery drains quickly",
       "level": 21,
-      "gender": null
+      "gender": null,
+      "emoji": "🪫",
+      "note": "Literally 'The battery holds shortly'."
+    },
+    {
+      "id": "s21_56",
+      "category": "Tech Returns",
+      "pl": "Ekran jest pęknięty",
+      "en": "The screen is cracked",
+      "level": 21,
+      "gender": null,
+      "emoji": "📱",
+      "note": "Adjective matches masculine 'ekran'."
+    },
+    {
+      "id": "s21_57",
+      "category": "Service Complaints",
+      "pl": "To jest spalone",
+      "en": "This is burnt",
+      "level": 21,
+      "gender": null,
+      "emoji": "🔥",
+      "note": "Adjective. Used for food."
+    },
+    {
+      "id": "s21_58",
+      "category": "Service Complaints",
+      "pl": "To mięso jest surowe",
+      "en": "This meat is raw",
+      "level": 21,
+      "gender": null,
+      "emoji": "🥩",
+      "note": "Neuter adjective 'surowe' matches 'mięso'."
+    },
+    {
+      "id": "s21_59",
+      "category": "Service Complaints",
+      "pl": "Prosiłem/Prosiłam o co innego",
+      "en": "I asked for something else",
+      "level": 21,
+      "gender": "both",
+      "variants": {
+        "m": "Prosiłem o co innego",
+        "f": "Prosiłam o co innego"
+      },
+      "emoji": "🔄",
+      "note": "Past tense verb."
+    },
+    {
+      "id": "s21_60",
+      "category": "Service Complaints",
+      "pl": "Konto zostało zablokowane",
+      "en": "The account was blocked",
+      "level": 21,
+      "gender": null,
+      "emoji": "🔒",
+      "note": "Passive voice."
+    },
+    {
+      "id": "s21_61",
+      "category": "Banking & Billing",
+      "pl": "Karta została odrzucona",
+      "en": "The card was declined",
+      "level": 21,
+      "gender": null,
+      "emoji": "💳",
+      "note": "Passive voice."
+    },
+    {
+      "id": "s21_62",
+      "category": "Banking & Billing",
+      "pl": "Bankomat zjadł moją kartę",
+      "en": "The ATM ate my card",
+      "level": 21,
+      "gender": null,
+      "emoji": "🏧",
+      "note": "A very literal and natural Polish phrase!"
+    },
+    {
+      "id": "s21_63",
+      "category": "Banking & Billing",
+      "pl": "Zła kwota",
+      "en": "Wrong amount",
+      "level": 21,
+      "gender": null,
+      "emoji": "🔢",
+      "note": "Feminine noun phrase."
+    },
+    {
+      "id": "s21_64",
+      "category": "Transport Issues",
+      "pl": "Zgubiłem/Zgubiłam bilet",
+      "en": "I lost my ticket",
+      "level": 21,
+      "gender": "both",
+      "variants": {
+        "m": "Zgubiłem bilet",
+        "f": "Zgubiłam bilet"
+      },
+      "emoji": "🎫",
+      "note": "Accusative case."
+    },
+    {
+      "id": "s21_65",
+      "category": "Transport Issues",
+      "pl": "Mój pociąg uciekł",
+      "en": "I missed my train",
+      "level": 21,
+      "gender": null,
+      "emoji": "🚂",
+      "note": "Literally 'My train ran away'. Very common phrasing."
+    },
+    {
+      "id": "s21_66",
+      "category": "Transport Issues",
+      "pl": "Zły peron",
+      "en": "Wrong platform",
+      "level": 21,
+      "gender": null,
+      "emoji": "🛤️",
+      "note": "Masculine noun phrase."
+    },
+    {
+      "id": "s21_67",
+      "category": "Delivery Problems",
+      "pl": "Paczka nie dotarła",
+      "en": "The package didn't arrive",
+      "level": 21,
+      "gender": null,
+      "emoji": "📦",
+      "note": "Past tense."
+    },
+    {
+      "id": "s21_68",
+      "category": "Delivery Problems",
+      "pl": "Kurier nie dzwonił",
+      "en": "The courier didn't call",
+      "level": 21,
+      "gender": null,
+      "emoji": "🚚",
+      "note": "Past tense."
+    },
+    {
+      "id": "s21_69",
+      "category": "Delivery Problems",
+      "pl": "Towar jest uszkodzony",
+      "en": "The goods are damaged",
+      "level": 21,
+      "gender": null,
+      "emoji": "🏚️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s21_70",
+      "category": "Noise & Nuisance",
+      "pl": "Jest za głośno",
+      "en": "It's too loud",
+      "level": 21,
+      "gender": null,
+      "emoji": "🔊",
+      "note": "Adverbial form."
+    },
+    {
+      "id": "s21_71",
+      "category": "Noise & Nuisance",
+      "pl": "Sąsiedzi hałasują",
+      "en": "The neighbors are making noise",
+      "level": 21,
+      "gender": null,
+      "emoji": "🗣️",
+      "note": "Verb 'hałasować' (to make noise)."
+    },
+    {
+      "id": "s21_72",
+      "category": "Noise & Nuisance",
+      "pl": "Zadzwoń na straż miejską",
+      "en": "Call the city guard",
+      "level": 21,
+      "gender": null,
+      "emoji": "🚓",
+      "note": "The 'Straż Miejska' handles noise complaints and parking issues, not the regular police."
+    },
+    {
+      "id": "s21_73",
+      "category": "Health Scares",
+      "pl": "Skaleczyłem/Skaleczyłam się",
+      "en": "I cut myself",
+      "level": 21,
+      "gender": "both",
+      "variants": {
+        "m": "Skaleczyłem się",
+        "f": "Skaleczyłam się"
+      },
+      "emoji": "🩸",
+      "note": "Reflexive past tense verb."
+    },
+    {
+      "id": "s21_74",
+      "category": "Health Scares",
+      "pl": "Potrzebuję lodu",
+      "en": "I need ice",
+      "level": 21,
+      "gender": null,
+      "emoji": "🧊",
+      "note": "Takes the genitive case 'lodu'."
+    },
+    {
+      "id": "s21_75",
+      "category": "Health Scares",
+      "pl": "Mam uczulenie",
+      "en": "I'm having an allergic reaction",
+      "level": 21,
+      "gender": null,
+      "emoji": "🤧",
+      "note": "Neuter noun."
     }
   ]
 }

@@ -1,623 +1,389 @@
 {
   "level": 16,
-  "description": "Family & Relationships - Social Connections",
+  "description": "Family & Relationships - Social Connections & Status",
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p12_01",
-      "category": "Family",
+      "id": "s16_01",
+      "category": "Core Family",
       "pl": "Rodzina",
       "en": "Family",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "👨‍👩‍👧‍👦",
+      "note": "Feminine noun."
     },
     {
-      "id": "p12_02",
-      "category": "Family",
-      "pl": "Mama",
-      "en": "Mom / Mother",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_03",
-      "category": "Family",
-      "pl": "Tata",
-      "en": "Dad / Father",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_04",
-      "category": "Family",
+      "id": "s16_02",
+      "category": "Core Family",
       "pl": "Rodzice",
       "en": "Parents",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "👫",
+      "note": "Plural noun."
     },
     {
-      "id": "p12_05",
-      "category": "Family",
-      "pl": "Brat",
-      "en": "Brother",
+      "id": "s16_03",
+      "category": "Core Family",
+      "pl": "Mama / Matka",
+      "en": "Mom / Mother",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "👩",
+      "note": "'Mama' is common and warm. 'Matka' is very formal or clinical."
     },
     {
-      "id": "p12_06",
-      "category": "Family",
-      "pl": "Siostra",
-      "en": "Sister",
+      "id": "s16_04",
+      "category": "Core Family",
+      "pl": "Tata / Ojciec",
+      "en": "Dad / Father",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "👨",
+      "note": "'Tata' is the common everyday term."
     },
     {
-      "id": "p12_07",
-      "category": "Family",
-      "pl": "Syn",
-      "en": "Son",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_08",
-      "category": "Family",
-      "pl": "Córka",
-      "en": "Daughter",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_09",
-      "category": "Family",
+      "id": "s16_05",
+      "category": "Core Family",
       "pl": "Dzieci",
       "en": "Children",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "🧒👧",
+      "note": "Plural of 'dziecko'."
     },
     {
-      "id": "p12_10",
-      "category": "Family",
+      "id": "s16_06",
+      "category": "Core Family",
+      "pl": "Syn",
+      "en": "Son",
+      "level": 16,
+      "gender": null,
+      "emoji": "👦",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s16_07",
+      "category": "Core Family",
+      "pl": "Córka",
+      "en": "Daughter",
+      "level": 16,
+      "gender": null,
+      "emoji": "👧",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s16_08",
+      "category": "Core Family",
+      "pl": "Brat",
+      "en": "Brother",
+      "level": 16,
+      "gender": null,
+      "emoji": "👦",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s16_09",
+      "category": "Core Family",
+      "pl": "Siostra",
+      "en": "Sister",
+      "level": 16,
+      "gender": null,
+      "emoji": "👧",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s16_10",
+      "category": "Extended Family",
+      "pl": "Babcia",
+      "en": "Grandma / Grandmother",
+      "level": 16,
+      "gender": null,
+      "emoji": "👵",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s16_11",
+      "category": "Extended Family",
+      "pl": "Dziadek",
+      "en": "Grandpa / Grandfather",
+      "level": 16,
+      "gender": null,
+      "emoji": "👴",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s16_12",
+      "category": "Extended Family",
+      "pl": "Wnuki",
+      "en": "Grandchildren",
+      "level": 16,
+      "gender": null,
+      "emoji": "👶",
+      "note": "Plural noun."
+    },
+    {
+      "id": "s16_13",
+      "category": "Extended Family",
+      "pl": "Teściowa",
+      "en": "Mother-in-law",
+      "level": 16,
+      "gender": null,
+      "emoji": "👩‍🦳",
+      "note": "A frequent subject of Polish jokes!"
+    },
+    {
+      "id": "s16_14",
+      "category": "Romantic Relationships",
       "pl": "Mąż",
       "en": "Husband",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "🤵",
+      "note": "Masculine noun."
     },
     {
-      "id": "p12_11",
-      "category": "Family",
+      "id": "s16_15",
+      "category": "Romantic Relationships",
       "pl": "Żona",
       "en": "Wife",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "👰",
+      "note": "Feminine noun."
     },
     {
-      "id": "p12_12",
-      "category": "Family",
-      "pl": "Partner/Partnerka",
+      "id": "s16_16",
+      "category": "Romantic Relationships",
+      "pl": "Chłopak",
+      "en": "Boyfriend (also: Boy)",
+      "level": 16,
+      "gender": null,
+      "emoji": "🧑",
+      "note": "Context determines if it means 'a boy' or 'my boyfriend'."
+    },
+    {
+      "id": "s16_17",
+      "category": "Romantic Relationships",
+      "pl": "Dziewczyna",
+      "en": "Girlfriend (also: Girl)",
+      "level": 16,
+      "gender": null,
+      "emoji": "👩",
+      "note": "Context determines if it means 'a girl' or 'my girlfriend'."
+    },
+    {
+      "id": "s16_18",
+      "category": "Romantic Relationships",
+      "pl": "Narzeczony / Narzeczona",
+      "en": "Fiancé / Fiancée",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Narzeczony",
+        "f": "Narzeczona"
+      },
+      "emoji": "💍",
+      "note": "Male ends in '-y', female in '-a'."
+    },
+    {
+      "id": "s16_19",
+      "category": "Romantic Relationships",
+      "pl": "Partner / Partnerka",
       "en": "Partner",
       "level": 16,
       "gender": "both",
       "variants": {
         "m": "Partner",
         "f": "Partnerka"
-      }
+      },
+      "emoji": "🤝",
+      "note": "Modern phrasing for long-term unwed couples."
     },
     {
-      "id": "p12_13",
-      "category": "Family",
-      "pl": "Chłopak",
-      "en": "Boyfriend",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_14",
-      "category": "Family",
-      "pl": "Dziewczyna",
-      "en": "Girlfriend",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_15",
-      "category": "Family",
-      "pl": "Narzeczony/Narzeczona",
-      "en": "Fiancé/Fiancée",
-      "level": 16,
-      "gender": "both",
-      "variants": {
-        "m": "Narzeczony",
-        "f": "Narzeczona"
-      }
-    },
-    {
-      "id": "p12_16",
+      "id": "s16_20",
       "category": "Relationship Status",
-      "pl": "Czy masz rodzinę?",
-      "en": "Do you have family?",
+      "pl": "Jestem w związku",
+      "en": "I'm in a relationship",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "💑",
+      "note": "Uses locative case 'w związku'."
     },
     {
-      "id": "p12_17",
+      "id": "s16_21",
       "category": "Relationship Status",
-      "pl": "Mam rodzinę",
-      "en": "I have family",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_18",
-      "category": "Relationship Status",
-      "pl": "Czy masz dzieci?",
-      "en": "Do you have children?",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_19",
-      "category": "Relationship Status",
-      "pl": "Mam jedno dziecko",
-      "en": "I have one child",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_20",
-      "category": "Relationship Status",
-      "pl": "Mam dwoje dzieci",
-      "en": "I have two children",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_21",
-      "category": "Relationship Status",
-      "pl": "Nie mam dzieci",
-      "en": "I don't have children",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_22",
-      "category": "Relationship Status",
-      "pl": "Jestem żonaty/zamężna",
-      "en": "I'm married",
-      "level": 16,
-      "gender": "both",
-      "variants": {
-        "m": "Jestem żonaty",
-        "f": "Jestem zamężna"
-      }
-    },
-    {
-      "id": "p12_23",
-      "category": "Relationship Status",
-      "pl": "Jestem singlem/singielką",
+      "pl": "Jestem singlem / singielką",
       "en": "I'm single",
       "level": 16,
       "gender": "both",
       "variants": {
         "m": "Jestem singlem",
         "f": "Jestem singielką"
-      }
+      },
+      "emoji": "👤",
+      "note": "Loanword. Takes the instrumental case."
     },
     {
-      "id": "p12_24",
+      "id": "s16_22",
       "category": "Relationship Status",
-      "pl": "Jestem w związku",
-      "en": "I'm in a relationship",
+      "pl": "Jestem żonaty",
+      "en": "I'm married (said by a man)",
       "level": 16,
-      "gender": null
+      "gender": "m",
+      "emoji": "🤵💍",
+      "note": "Polish uses different words for married depending on gender!"
     },
     {
-      "id": "p12_25",
+      "id": "s16_23",
       "category": "Relationship Status",
-      "pl": "Jestem rozwiedziony/rozwiedziona",
+      "pl": "Jestem zamężna",
+      "en": "I'm married (said by a woman)",
+      "level": 16,
+      "gender": "f",
+      "emoji": "👰💍",
+      "note": "Female-specific term for being married."
+    },
+    {
+      "id": "s16_24",
+      "category": "Relationship Status",
+      "pl": "Jestem rozwiedziony / rozwiedziona",
       "en": "I'm divorced",
       "level": 16,
       "gender": "both",
       "variants": {
         "m": "Jestem rozwiedziony",
         "f": "Jestem rozwiedziona"
-      }
+      },
+      "emoji": "💔",
+      "note": "Gendered adjective endings."
     },
     {
-      "id": "p12_26",
-      "category": "Relationship Status",
-      "pl": "Moja rodzina jest w...",
-      "en": "My family is in...",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_27",
-      "category": "Relationship Status",
-      "pl": "Mieszkam z rodziną",
-      "en": "I live with family",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_28",
-      "category": "Relationship Status",
-      "pl": "Mieszkam sam/sama",
-      "en": "I live alone",
-      "level": 16,
-      "gender": "both",
-      "variants": {
-        "m": "Mieszkam sam",
-        "f": "Mieszkam sama"
-      }
-    },
-    {
-      "id": "p12_29",
-      "category": "Relationship Status",
-      "pl": "Jak się miewa rodzina?",
-      "en": "How is your family?",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_30",
-      "category": "Relationship Status",
-      "pl": "Pozdrowienia dla rodziny",
-      "en": "Regards to your family",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_31",
-      "category": "Friends",
-      "pl": "Przyjaciel/Przyjaciółka",
-      "en": "Friend",
+      "id": "s16_25",
+      "category": "Friends & Social",
+      "pl": "Przyjaciel / Przyjaciółka",
+      "en": "Close Friend",
       "level": 16,
       "gender": "both",
       "variants": {
         "m": "Przyjaciel",
         "f": "Przyjaciółka"
-      }
+      },
+      "emoji": "🫂",
+      "note": "In Poland, this word is reserved only for your absolute closest, lifelong friends."
     },
     {
-      "id": "p12_32",
-      "category": "Friends",
-      "pl": "Przyjaciele",
-      "en": "Friends",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_33",
-      "category": "Friends",
-      "pl": "Mój przyjaciel",
-      "en": "My friend",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_34",
-      "category": "Friends",
-      "pl": "To jest mój przyjaciel",
-      "en": "This is my friend",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_35",
-      "category": "Friends",
-      "pl": "To jest moja przyjaciółka",
-      "en": "This is my friend (female)",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_36",
-      "category": "Friends",
-      "pl": "Kolega/Koleżanka",
-      "en": "Colleague / Friend",
+      "id": "s16_26",
+      "category": "Friends & Social",
+      "pl": "Kolega / Koleżanka",
+      "en": "Friend / Buddy / Colleague",
       "level": 16,
       "gender": "both",
       "variants": {
         "m": "Kolega",
         "f": "Koleżanka"
-      }
+      },
+      "emoji": "👋",
+      "note": "This is the equivalent of the English 'friend' for everyday social circle hangouts."
     },
     {
-      "id": "p12_37",
-      "category": "Friends",
-      "pl": "Znajomy/Znajoma",
+      "id": "s16_27",
+      "category": "Friends & Social",
+      "pl": "Znajomy / Znajoma",
       "en": "Acquaintance",
       "level": 16,
       "gender": "both",
       "variants": {
         "m": "Znajomy",
         "f": "Znajoma"
-      }
+      },
+      "emoji": "🤝",
+      "note": "Someone you know, but wouldn't necessarily invite to your house."
     },
     {
-      "id": "p12_38",
-      "category": "Friends",
-      "pl": "Sąsiad/Sąsiadka",
-      "en": "Neighbor",
-      "level": 16,
-      "gender": "both",
-      "variants": {
-        "m": "Sąsiad",
-        "f": "Sąsiadka"
-      }
-    },
-    {
-      "id": "p12_39",
-      "category": "Friends",
-      "pl": "Czy masz przyjaciół tutaj?",
-      "en": "Do you have friends here?",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_40",
-      "category": "Friends",
-      "pl": "Poznałem/Poznałam kogoś",
+      "id": "s16_28",
+      "category": "Friends & Social",
+      "pl": "Poznałem kogoś",
       "en": "I met someone",
       "level": 16,
       "gender": "both",
       "variants": {
         "m": "Poznałem kogoś",
         "f": "Poznałam kogoś"
-      }
+      },
+      "emoji": "💞",
+      "note": "Often implies romantic interest."
     },
     {
-      "id": "p12_41",
-      "category": "Friends",
-      "pl": "Ludzie",
-      "en": "People",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_42",
-      "category": "Friends",
-      "pl": "Osoba",
-      "en": "Person",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_43",
-      "category": "Friends",
-      "pl": "Ktoś",
-      "en": "Someone",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_44",
-      "category": "Friends",
-      "pl": "Nikt",
-      "en": "Nobody",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_45",
-      "category": "Friends",
-      "pl": "Wszyscy",
-      "en": "Everyone / Everybody",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_46",
-      "category": "Friends",
-      "pl": "Razem",
-      "en": "Together",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_47",
-      "category": "Friends",
-      "pl": "Sam/Sama",
-      "en": "Alone",
-      "level": 16,
-      "gender": "both",
-      "variants": {
-        "m": "Sam",
-        "f": "Sama"
-      }
-    },
-    {
-      "id": "p12_48",
-      "category": "Friends",
+      "id": "s16_29",
+      "category": "Friends & Social",
       "pl": "Z przyjaciółmi",
       "en": "With friends",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "🍻",
+      "note": "Instrumental plural."
     },
     {
-      "id": "p12_49",
-      "category": "Friends",
-      "pl": "Grupa",
-      "en": "Group",
+      "id": "s16_30",
+      "category": "Small Talk",
+      "pl": "Jak leci?",
+      "en": "How's it going?",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "🤷",
+      "note": "Very casual. Literally 'How is it flying?'"
     },
     {
-      "id": "p12_50",
-      "category": "Friends",
-      "pl": "Jesteśmy grupą",
-      "en": "We're a group",
+      "id": "s16_31",
+      "category": "Small Talk",
+      "pl": "Co słychać?",
+      "en": "What's up? / How are things?",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "👂",
+      "note": "Literally 'What is to be heard?'"
     },
     {
-      "id": "p12_51",
-      "category": "Friends",
-      "pl": "Czy możemy dołączyć?",
-      "en": "Can we join?",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_52",
-      "category": "Friends",
-      "pl": "Oczywiście",
-      "en": "Of course",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_53",
-      "category": "Friends",
-      "pl": "Zapraszam",
-      "en": "You're welcome / Come in",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_54",
-      "category": "Friends",
-      "pl": "Dziękuję za zaproszenie",
-      "en": "Thank you for the invitation",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_55",
-      "category": "Friends",
-      "pl": "Miło spędzony czas",
-      "en": "Nice time spent",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_56",
-      "category": "Personal",
+      "id": "s16_32",
+      "category": "Life Facts",
       "pl": "Ile masz lat?",
       "en": "How old are you?",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "🎂",
+      "note": "Literally 'How many years do you have?'"
     },
     {
-      "id": "p12_57",
-      "category": "Personal",
-      "pl": "Mam ... lat",
-      "en": "I'm ... years old",
+      "id": "s16_33",
+      "category": "Life Facts",
+      "pl": "Mam trzydzieści lat",
+      "en": "I am thirty years old",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Literally 'I have 30 years'."
     },
     {
-      "id": "p12_58",
-      "category": "Personal",
-      "pl": "Młody/Młoda",
-      "en": "Young",
-      "level": 16,
-      "gender": "both",
-      "variants": {
-        "m": "Młody",
-        "f": "Młoda"
-      }
-    },
-    {
-      "id": "p12_59",
-      "category": "Personal",
-      "pl": "Stary/Stara",
-      "en": "Old",
-      "level": 16,
-      "gender": "both",
-      "variants": {
-        "m": "Stary",
-        "f": "Stara"
-      }
-    },
-    {
-      "id": "p12_60",
-      "category": "Personal",
+      "id": "s16_34",
+      "category": "Life Facts",
       "pl": "Urodziny",
       "en": "Birthday",
       "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "🎁",
+      "note": "Plural noun."
     },
     {
-      "id": "p12_61",
-      "category": "Personal",
+      "id": "s16_35",
+      "category": "Life Facts",
       "pl": "Wszystkiego najlepszego!",
-      "en": "Happy birthday!",
+      "en": "Happy birthday! / All the best!",
       "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_62",
-      "category": "Personal",
-      "pl": "Kiedy masz urodziny?",
-      "en": "When is your birthday?",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_63",
-      "category": "Personal",
-      "pl": "Imię",
-      "en": "First name",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_64",
-      "category": "Personal",
-      "pl": "Nazwisko",
-      "en": "Last name / Surname",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_65",
-      "category": "Personal",
-      "pl": "Jak się pisze Twoje nazwisko?",
-      "en": "How do you spell your last name?",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_66",
-      "category": "Personal",
-      "pl": "Mężczyzna",
-      "en": "Man",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_67",
-      "category": "Personal",
-      "pl": "Kobieta",
-      "en": "Woman",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_68",
-      "category": "Personal",
-      "pl": "Chłopiec",
-      "en": "Boy",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_69",
-      "category": "Personal",
-      "pl": "Dziewczyna",
-      "en": "Girl",
-      "level": 16,
-      "gender": null
-    },
-    {
-      "id": "p12_70",
-      "category": "Personal",
-      "pl": "Dziecko",
-      "en": "Child",
-      "level": 16,
-      "gender": null
+      "gender": null,
+      "emoji": "🎉",
+      "note": "The standard greeting for birthdays and namedays."
     }
   ]
 }

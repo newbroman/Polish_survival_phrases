@@ -1,0 +1,711 @@
+{
+  "level": 14,
+  "description": "Music & Pop Culture - Songs, Artists & Lyrics",
+  "tier": "PRACTICAL",
+  "phrases": [
+    {
+      "id": "s14_01",
+      "category": "Music Basics",
+      "pl": "Słuchać muzyki",
+      "en": "To listen to music",
+      "emoji": "🎧",
+      "note": "The verb 'słuchać' (to listen) takes the genitive case, so 'muzyki' (music) is in genitive."
+    },
+    {
+      "id": "s14_02",
+      "category": "Music Basics",
+      "pl": "Zespół",
+      "en": "Band / Group",
+      "emoji": "🎸",
+      "note": "A common word for a music group. Plural is 'zespoły'."
+    },
+    {
+      "id": "s14_03",
+      "category": "Music Basics",
+      "pl": "Piosenkarz / Piosenkarka",
+      "en": "Singer (male/female)",
+      "emoji": "🎤",
+      "note": "Use 'piosenkarz' for male, 'piosenkarka' for female. The root 'piosenka' means 'song'."
+    },
+    {
+      "id": "s14_04",
+      "category": "Music Basics",
+      "pl": "Muzyk",
+      "en": "Musician",
+      "emoji": "🎻",
+      "note": "A general term for someone who plays music. Plural is 'muzycy'."
+    },
+    {
+      "id": "s14_05",
+      "category": "Music Basics",
+      "pl": "Album",
+      "en": "Album",
+      "emoji": "💿",
+      "note": "Pronounced similarly to English. It's a masculine noun."
+    },
+    {
+      "id": "s14_06",
+      "category": "Music Basics",
+      "pl": "Płyta",
+      "en": "Record / CD",
+      "emoji": "📀",
+      "note": "Can refer to a vinyl record ('płyta winylowa') or a CD ('płyta CD')."
+    },
+    {
+      "id": "s14_07",
+      "category": "Music Basics",
+      "pl": "Melodia",
+      "en": "Melody / Tune",
+      "emoji": "🎶",
+      "note": "A feminine noun. 'Chwytliwa melodia' means 'catchy tune'."
+    },
+    {
+      "id": "s14_08",
+      "category": "Music Basics",
+      "pl": "Rytm",
+      "en": "Rhythm",
+      "emoji": "🥁",
+      "note": "A masculine noun. Pronounced 'ritm'."
+    },
+    {
+      "id": "s14_09",
+      "category": "Discussing Music",
+      "pl": "Jaka muzyka ci się podoba?",
+      "en": "What music do you like?",
+      "emoji": "🤔",
+      "note": "Literally 'What music pleases you?'. 'Ci' is the dative form of 'ty' (you)."
+    },
+    {
+      "id": "s14_10",
+      "category": "Music Genres",
+      "pl": "Rock",
+      "en": "Rock",
+      "emoji": "🤘",
+      "note": "Pronounced as in English. It's an indeclinable noun."
+    },
+    {
+      "id": "s14_11",
+      "category": "Music Genres",
+      "pl": "Pop",
+      "en": "Pop",
+      "emoji": "✨",
+      "note": "Pronounced as in English. Also indeclinable."
+    },
+    {
+      "id": "s14_12",
+      "category": "Music Genres",
+      "pl": "Jazz",
+      "en": "Jazz",
+      "emoji": "🎷",
+      "note": "Pronounced as in English. Indeclinable."
+    },
+    {
+      "id": "s14_13",
+      "category": "Music Genres",
+      "pl": "Klasyczna",
+      "en": "Classical",
+      "emoji": "🎻",
+      "note": "Short for 'muzyka klasyczna' (classical music). 'Klasyczna' is the feminine adjective."
+    },
+    {
+      "id": "s14_14",
+      "category": "Music Genres",
+      "pl": "Hip-hop / Rap",
+      "en": "Hip-hop / Rap",
+      "emoji": "🎤",
+      "note": "Both terms are commonly used and understood."
+    },
+    {
+      "id": "s14_15",
+      "category": "Music Genres",
+      "pl": "Elektroniczna",
+      "en": "Electronic",
+      "emoji": " synthesiser",
+      "note": "Short for 'muzyka elektroniczna' (electronic music). 'Elektroniczna' is the feminine adjective."
+    },
+    {
+      "id": "s14_16",
+      "category": "Music Genres",
+      "pl": "Reggae",
+      "en": "Reggae",
+      "emoji": "🇯🇲",
+      "note": "Pronounced as in English. Indeclinable."
+    },
+    {
+      "id": "s14_17",
+      "category": "Music Genres",
+      "pl": "Metal",
+      "en": "Metal",
+      "emoji": "🤘",
+      "note": "Pronounced as in English. Indeclinable."
+    },
+    {
+      "id": "s14_18",
+      "category": "Music Genres",
+      "pl": "Folk / Ludowa",
+      "en": "Folk",
+      "emoji": "🪕",
+      "note": "'Folk' is a direct borrowing, 'ludowa' means 'folk/traditional' (from 'lud' - people)."
+    },
+    {
+      "id": "s14_19",
+      "category": "Discussing Music",
+      "pl": "Ulubiony zespół",
+      "en": "Favorite band",
+      "emoji": "❤️🎸",
+      "note": "'Ulubiony' (favorite) is an adjective that agrees in gender and number. Here, masculine singular."
+    },
+    {
+      "id": "s14_20",
+      "category": "Discussing Music",
+      "pl": "Ulubiona piosenka",
+      "en": "Favorite song",
+      "emoji": "❤️🎶",
+      "note": "'Ulubiona' (favorite) is feminine singular, agreeing with 'piosenka' (song)."
+    },
+    {
+      "id": "s14_21",
+      "category": "Discussing Music",
+      "pl": "To jest świetna piosenka!",
+      "en": "This is a great song!",
+      "emoji": "🤩",
+      "note": "'Świetna' means 'great' or 'excellent'. It's a feminine adjective."
+    },
+    {
+      "id": "s14_22",
+      "category": "Discussing Music",
+      "pl": "Znam tę piosenkę",
+      "en": "I know this song",
+      "emoji": "💡",
+      "note": "'Znam' is 'I know' (a person, a song, a place). 'Tę' is the accusative feminine form of 'ta' (this)."
+    },
+    {
+      "id": "s14_23",
+      "category": "Music Actions & Feelings",
+      "pl": "Tańcz ze mną",
+      "en": "Dance with me",
+      "emoji": "💃🕺",
+      "note": "An imperative form. 'Ze mną' means 'with me' (instrumental case)."
+    },
+    {
+      "id": "s14_24",
+      "category": "Polish Music & Culture",
+      "pl": "Czy znasz polską muzykę?",
+      "en": "Do you know Polish music?",
+      "emoji": "🇵🇱🎶",
+      "note": "'Polską' is the accusative feminine form of 'polski' (Polish), agreeing with 'muzykę'."
+    },
+    {
+      "id": "s14_25",
+      "category": "Polish Music & Culture",
+      "pl": "Dawid Podsiadło",
+      "en": "Dawid Podsiadło (popular Polish artist)",
+      "emoji": "🎤🇵🇱",
+      "note": "One of the most popular contemporary Polish pop-rock singers."
+    },
+    {
+      "id": "s14_26",
+      "category": "Polish Music & Culture",
+      "pl": "Sanah",
+      "en": "Sanah (popular Polish artist)",
+      "emoji": "🎤🇵🇱",
+      "note": "A very popular young Polish singer-songwriter known for pop and indie music."
+    },
+    {
+      "id": "s14_27",
+      "category": "Polish Music & Culture",
+      "pl": "Taco Hemingway",
+      "en": "Taco Hemingway (Polish rapper)",
+      "emoji": "🎤🇵🇱",
+      "note": "A highly influential and popular Polish rapper."
+    },
+    {
+      "id": "s14_28",
+      "category": "Polish Music & Culture",
+      "pl": "Czesław Niemen",
+      "en": "Czesław Niemen (legendary Polish artist)",
+      "emoji": "🌟🇵🇱",
+      "note": "An iconic Polish singer and composer, active from the 1960s, known for his unique style."
+    },
+    {
+      "id": "s14_29",
+      "category": "Polish Music & Culture",
+      "pl": "Disco polo",
+      "en": "Disco polo (Polish music genre)",
+      "emoji": "🕺🇵🇱",
+      "note": "A popular genre of Polish dance music, often associated with weddings and parties."
+    },
+    {
+      "id": "s14_30",
+      "category": "Music Actions & Feelings",
+      "pl": "Karaoke",
+      "en": "Karaoke",
+      "emoji": "🎤🎶",
+      "note": "Pronounced as in English. Indeclinable."
+    },
+    {
+      "id": "s14_31",
+      "category": "Music Actions & Feelings",
+      "pl": "Śpiewać karaoke",
+      "en": "To sing karaoke",
+      "emoji": "🎤🥳",
+      "note": "'Śpiewać' is the infinitive 'to sing'."
+    },
+    {
+      "id": "s14_32",
+      "category": "Discussing Music",
+      "pl": "Jaki jest twój ulubiony polski zespół?",
+      "en": "What's your favorite Polish band?",
+      "emoji": "❓🇵🇱",
+      "note": "'Polski' (Polish) is an adjective agreeing with 'zespół' (band)."
+    },
+    {
+      "id": "s14_33",
+      "category": "Discussing Music",
+      "pl": "Czy możesz polecić polską muzykę?",
+      "en": "Can you recommend Polish music?",
+      "emoji": "🙏🎶",
+      "note": "'Polecić' is a perfective verb meaning 'to recommend'. 'Polskej muzyki' would be genitive if asking for 'some' Polish music."
+    },
+    {
+      "id": "s14_34",
+      "category": "Music Basics",
+      "pl": "Tekst piosenki",
+      "en": "Lyrics / Song lyrics",
+      "emoji": "📝🎶",
+      "note": "Literally 'text of the song'. 'Piosenki' is genitive singular of 'piosenka'."
+    },
+    {
+      "id": "s14_35",
+      "category": "Music Basics",
+      "pl": "Refren",
+      "en": "Chorus",
+      "emoji": "🔁",
+      "note": "A masculine noun. Pronounced 'ref-ren'."
+    },
+    {
+      "id": "s14_36",
+      "category": "Music Basics",
+      "pl": "Zwrotka",
+      "en": "Verse",
+      "emoji": "📜",
+      "note": "A feminine noun. Pronounced 'zvrot-ka'."
+    },
+    {
+      "id": "s14_37",
+      "category": "Music Basics",
+      "pl": "Hit",
+      "en": "Hit song",
+      "emoji": "💥",
+      "note": "A direct borrowing from English, commonly used."
+    },
+    {
+      "id": "s14_38",
+      "category": "Discussing Music",
+      "pl": "To jest przebój!",
+      "en": "This is a hit!",
+      "emoji": "🚀",
+      "note": "'Przebój' is the native Polish word for 'hit song' or 'blockbuster'. It's a masculine noun."
+    },
+    {
+      "id": "s14_39",
+      "category": "Concerts & Events",
+      "pl": "Koncert",
+      "en": "Concert",
+      "emoji": "🏟️",
+      "note": "A masculine noun. 'Iść na koncert' (to go to a concert) takes the accusative case."
+    },
+    {
+      "id": "s14_40",
+      "category": "Concerts & Events",
+      "pl": "Idę na koncert.",
+      "en": "I'm going to a concert.",
+      "emoji": "🚶‍♀️🎶",
+      "note": "'Idę' is 'I go/I'm going'. 'Na koncert' means 'to a concert'."
+    },
+    {
+      "id": "s14_41",
+      "category": "Concerts & Events",
+      "pl": "Bilety na koncert",
+      "en": "Concert tickets",
+      "emoji": "🎫",
+      "note": "'Bilety' is plural for 'ticket'. 'Na koncert' specifies the purpose."
+    },
+    {
+      "id": "s14_42",
+      "category": "Concerts & Events",
+      "pl": "Festiwal muzyczny",
+      "en": "Music festival",
+      "emoji": "🎉",
+      "note": "'Muzyczny' is the masculine adjective for 'music', agreeing with 'festiwal'."
+    },
+    {
+      "id": "s14_43",
+      "category": "Concerts & Events",
+      "pl": "Scena",
+      "en": "Stage",
+      "emoji": "🎭",
+      "note": "A feminine noun. Used for a concert stage or theater stage."
+    },
+    {
+      "id": "s14_44",
+      "category": "Concerts & Events",
+      "pl": "Publiczność",
+      "en": "Audience",
+      "emoji": "👥",
+      "note": "A feminine noun. Refers to the collective group of spectators."
+    },
+    {
+      "id": "s14_45",
+      "category": "Discussing Music",
+      "pl": "Jaki jest twój ulubiony gatunek muzyki?",
+      "en": "What's your favorite music genre?",
+      "emoji": "🧐",
+      "note": "'Gatunek' (genre) is masculine. 'Muzyki' (of music) is genitive."
+    },
+    {
+      "id": "s14_46",
+      "category": "Discussing Music",
+      "pl": "Lubię ten utwór.",
+      "en": "I like this track/piece.",
+      "emoji": "👍",
+      "note": "'Utwór' is a more general term for a musical piece, composition, or track, compared to 'piosenka' (song)."
+    },
+    {
+      "id": "s14_47",
+      "category": "Artists & Industry",
+      "pl": "Ma świetny głos.",
+      "en": "He/She has a great voice.",
+      "emoji": "🗣️",
+      "note": "'Ma' means 'he/she has'. 'Głos' (voice) is masculine. 'Świetny' (great) agrees with 'głos'."
+    },
+    {
+      "id": "s14_48",
+      "category": "Discussing Music",
+      "pl": "Teksty są bardzo głębokie.",
+      "en": "The lyrics are very deep.",
+      "emoji": " profundity",
+      "note": "'Teksty' (lyrics) is plural. 'Głębokie' (deep) is the plural adjective."
+    },
+    {
+      "id": "s14_49",
+      "category": "Discussing Music",
+      "pl": "To jest chwytliwa melodia.",
+      "en": "It's a catchy tune.",
+      "emoji": "👂",
+      "note": "'Chwytliwa' (catchy) is a feminine adjective, agreeing with 'melodia'."
+    },
+    {
+      "id": "s14_50",
+      "category": "Music Actions & Feelings",
+      "pl": "Graj głośniej!",
+      "en": "Play it louder!",
+      "emoji": "🔊",
+      "note": "An imperative. 'Głośniej' is the comparative form of 'głośno' (loudly)."
+    },
+    {
+      "id": "s14_51",
+      "category": "Music Actions & Feelings",
+      "pl": "Ścisz muzykę.",
+      "en": "Turn down the music.",
+      "emoji": "🔇",
+      "note": "An imperative. 'Ściszyć' is a perfective verb meaning 'to quiet down/turn down'."
+    },
+    {
+      "id": "s14_52",
+      "category": "Music Actions & Feelings",
+      "pl": "Możesz zmienić piosenkę?",
+      "en": "Can you change the song?",
+      "emoji": "⏭️",
+      "note": "'Zmienić' is a perfective verb meaning 'to change'. 'Piosenkę' is accusative."
+    },
+    {
+      "id": "s14_53",
+      "category": "Music Actions & Feelings",
+      "pl": "Puszczam moją ulubioną playlistę.",
+      "en": "I'm putting on my favorite playlist.",
+      "emoji": "▶️",
+      "note": "'Puszczać' means 'to let go/play'. 'Playlistę' is accusative feminine."
+    },
+    {
+      "id": "s14_54",
+      "category": "Discussing Music",
+      "pl": "To jest klasyk.",
+      "en": "It's a classic.",
+      "emoji": "🏛️",
+      "note": "'Klasyk' is a masculine noun, referring to a classic piece of art, music, or literature."
+    },
+    {
+      "id": "s14_55",
+      "category": "Artists & Industry",
+      "pl": "Nowy album",
+      "en": "New album",
+      "emoji": "🆕💿",
+      "note": "'Nowy' (new) is a masculine adjective, agreeing with 'album'."
+    },
+    {
+      "id": "s14_56",
+      "category": "Artists & Industry",
+      "pl": "Premiera",
+      "en": "Premiere / Release",
+      "emoji": "🎉",
+      "note": "A feminine noun, used for the first public showing or release of something."
+    },
+    {
+      "id": "s14_57",
+      "category": "Pop Culture Terms",
+      "pl": "Gwiazda popu",
+      "en": "Pop star",
+      "emoji": "🌟",
+      "note": "Literally 'star of pop'. 'Popu' is genitive of 'pop'."
+    },
+    {
+      "id": "s14_58",
+      "category": "Pop Culture Terms",
+      "pl": "Fani",
+      "en": "Fans",
+      "emoji": "👏",
+      "note": "Plural of 'fan'. Pronounced 'fah-nee'."
+    },
+    {
+      "id": "s14_59",
+      "category": "Concerts & Events",
+      "pl": "Występ",
+      "en": "Performance",
+      "emoji": "🎤",
+      "note": "A masculine noun. Can refer to a musical, theatrical, or other type of performance."
+    },
+    {
+      "id": "s14_60",
+      "category": "Artists & Industry",
+      "pl": "Teledysk",
+      "en": "Music video",
+      "emoji": "🎬",
+      "note": "A masculine noun. A common term for a music video."
+    },
+    {
+      "id": "s14_61",
+      "category": "Pop Culture Terms",
+      "pl": "Podcast",
+      "en": "Podcast",
+      "emoji": "🎙️",
+      "note": "A direct borrowing, commonly used."
+    },
+    {
+      "id": "s14_62",
+      "category": "Pop Culture Terms",
+      "pl": "Trend",
+      "en": "Trend",
+      "emoji": "📈",
+      "note": "A direct borrowing, commonly used."
+    },
+    {
+      "id": "s14_63",
+      "category": "Discussing Music",
+      "pl": "Czy grasz na jakimś instrumencie?",
+      "en": "Do you play any instrument?",
+      "emoji": "❓🎹",
+      "note": "'Grać na' (to play an instrument) takes the locative case. 'Jakimś' means 'some/any'."
+    },
+    {
+      "id": "s14_64",
+      "category": "Discussing Music",
+      "pl": "Moja ulubiona piosenka to...",
+      "en": "My favorite song is...",
+      "emoji": "🎶❤️",
+      "note": "A complete sentence to state your favorite song. 'Moja' (my) is feminine."
+    },
+    {
+      "id": "s14_65",
+      "category": "Music Actions & Feelings",
+      "pl": "Śpiewam pod prysznicem.",
+      "en": "I sing in the shower.",
+      "emoji": "🚿🎤",
+      "note": "'Śpiewam' is 'I sing'. 'Pod prysznicem' (under the shower) uses the instrumental case."
+    },
+    {
+      "id": "s14_66",
+      "category": "Music Actions & Feelings",
+      "pl": "Mam to na końcu języka.",
+      "en": "It's on the tip of my tongue.",
+      "emoji": "🗣️💭",
+      "note": "An idiom, literally 'I have it on the end of my tongue'. Used when you almost remember something."
+    },
+    {
+      "id": "s14_67",
+      "category": "Music Actions & Feelings",
+      "pl": "To mnie wzrusza.",
+      "en": "It moves me (emotionally).",
+      "emoji": "🥺",
+      "note": "'Wzruszać' means 'to move/touch emotionally'. 'Mnie' is the accusative form of 'ja' (I)."
+    },
+    {
+      "id": "s14_68",
+      "category": "Music Actions & Feelings",
+      "pl": "To mnie rozśmiesza.",
+      "en": "It makes me laugh.",
+      "emoji": "😂",
+      "note": "'Rozśmieszać' means 'to make laugh'. 'Mnie' is the accusative form of 'ja' (I)."
+    },
+    {
+      "id": "s14_69",
+      "category": "Music Actions & Feelings",
+      "pl": "To mnie uspokaja.",
+      "en": "It calms me down.",
+      "emoji": "😌",
+      "note": "'Uspokajać' means 'to calm down'. 'Mnie' is the accusative form of 'ja' (I)."
+    },
+    {
+      "id": "s14_70",
+      "category": "Music Actions & Feelings",
+      "pl": "To mnie motywuje.",
+      "en": "It motivates me.",
+      "emoji": "💪",
+      "note": "'Motywować' means 'to motivate'. 'Mnie' is the accusative form of 'ja' (I)."
+    },
+    {
+      "id": "s14_71",
+      "category": "Discussing Music",
+      "pl": "Jaki jest twój ulubiony artysta?",
+      "en": "Who is your favorite artist?",
+      "emoji": "🎨🎤",
+      "note": "'Artysta' (artist) is masculine. 'Ulubiony' (favorite) agrees with it."
+    },
+    {
+      "id": "s14_72",
+      "category": "Music Actions & Feelings",
+      "pl": "Gdzie mogę posłuchać tej piosenki?",
+      "en": "Where can I listen to this song?",
+      "emoji": "📍🎶",
+      "note": "'Posłuchać' is the perfective form of 'słuchać'. It takes the genitive case ('tej piosenki')."
+    },
+    {
+      "id": "s14_73",
+      "category": "Music Actions & Feelings",
+      "pl": "Czy to jest na Spotify/YouTube?",
+      "en": "Is it on Spotify/YouTube?",
+      "emoji": "📱",
+      "note": "Common platforms. 'Na' (on) takes the locative case, but for proper nouns like these, they are often used as is."
+    },
+    {
+      "id": "s14_74",
+      "category": "Music Actions & Feelings",
+      "pl": "Ściągnąć piosenkę",
+      "en": "To download a song",
+      "emoji": "⬇️🎶",
+      "note": "'Ściągnąć' is a perfective verb meaning 'to download'. 'Piosenkę' is accusative."
+    },
+    {
+      "id": "s14_75",
+      "category": "Music Actions & Feelings",
+      "pl": "Strumieniować muzykę",
+      "en": "To stream music",
+      "emoji": "📡🎶",
+      "note": "'Strumieniować' is a verb meaning 'to stream'. 'Muzykę' is accusative."
+    },
+    {
+      "id": "s14_76",
+      "category": "Concerts & Events",
+      "pl": "Koncert na żywo",
+      "en": "Live concert",
+      "emoji": "🔴🎤",
+      "note": "'Na żywo' means 'live' (as in, not recorded)."
+    },
+    {
+      "id": "s14_77",
+      "category": "Concerts & Events",
+      "pl": "Bilety wyprzedane",
+      "en": "Tickets sold out",
+      "emoji": "🚫🎫",
+      "note": "'Wyprzedane' is the past participle, meaning 'sold out' (plural, agreeing with 'bilety')."
+    },
+    {
+      "id": "s14_78",
+      "category": "Artists & Industry",
+      "pl": "Autograf",
+      "en": "Autograph",
+      "emoji": "✍️",
+      "note": "A masculine noun. 'Poprosić o autograf' (to ask for an autograph)."
+    },
+    {
+      "id": "s14_79",
+      "category": "Music Basics",
+      "pl": "Płyta winylowa",
+      "en": "Vinyl record",
+      "emoji": "💿",
+      "note": "'Winylowa' is the feminine adjective for 'vinyl', agreeing with 'płyta'."
+    },
+    {
+      "id": "s14_80",
+      "category": "Music Basics",
+      "pl": "Słuchawki",
+      "en": "Headphones",
+      "emoji": "🎧",
+      "note": "A plural noun. Always used in plural form."
+    },
+    {
+      "id": "s14_81",
+      "category": "Music Basics",
+      "pl": "Głośnik",
+      "en": "Speaker",
+      "emoji": "🔊",
+      "note": "A masculine noun. Plural is 'głośniki'."
+    },
+    {
+      "id": "s14_82",
+      "category": "Music Basics",
+      "pl": "Dźwięk",
+      "en": "Sound",
+      "emoji": "👂",
+      "note": "A masculine noun. Can refer to a single sound or the general concept of sound."
+    },
+    {
+      "id": "s14_83",
+      "category": "Artists & Industry",
+      "pl": "Tekściarz",
+      "en": "Lyricist",
+      "emoji": "✍️🎶",
+      "note": "A masculine noun, referring to the person who writes lyrics."
+    },
+    {
+      "id": "s14_84",
+      "category": "Artists & Industry",
+      "pl": "Kompozytor",
+      "en": "Composer",
+      "emoji": "🎼",
+      "note": "A masculine noun. Feminine form is 'kompozytorka'."
+    },
+    {
+      "id": "s14_85",
+      "category": "Artists & Industry",
+      "pl": "Producent muzyczny",
+      "en": "Music producer",
+      "emoji": "🎛️",
+      "note": "'Muzyczny' (musical) is an adjective agreeing with 'producent'."
+    },
+    {
+      "id": "s14_86",
+      "category": "Artists & Industry",
+      "pl": "Nagrywać piosenkę",
+      "en": "To record a song",
+      "emoji": "🎙️🎶",
+      "note": "'Nagrywać' is an imperfective verb meaning 'to record'. 'Piosenkę' is accusative."
+    },
+    {
+      "id": "s14_87",
+      "category": "Artists & Industry",
+      "pl": "Studio nagrań",
+      "en": "Recording studio",
+      "emoji": "🎤🏢",
+      "note": "Literally 'studio of recordings'. 'Nagrań' is genitive plural of 'nagranie' (recording)."
+    },
+    {
+      "id": "s14_88",
+      "category": "Artists & Industry",
+      "pl": "Próba zespołu",
+      "en": "Band rehearsal",
+      "emoji": "🎸🥁",
+      "note": "Literally 'rehearsal of the band'. 'Zespołu' is genitive singular of 'zespół'."
+    }
+  ]
+}

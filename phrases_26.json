@@ -1,567 +1,829 @@
 {
-  "level": 26,
-  "description": "Advanced Grammar & Connectors - Fluent Expression",
+  "level": 25,
+  "description": "Expressing Opinions & Abstract Concepts - Advanced Expression",
   "tier": "ADVANCED",
   "phrases": [
     {
-      "id": "a19_01",
-      "category": "Connectors",
-      "pl": "I",
-      "en": "And",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_02",
-      "category": "Connectors",
-      "pl": "Ale",
-      "en": "But",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_03",
-      "category": "Connectors",
-      "pl": "Lub",
-      "en": "Or",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_04",
-      "category": "Connectors",
-      "pl": "Bo",
-      "en": "Because",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_05",
-      "category": "Connectors",
-      "pl": "Więc",
-      "en": "So / Therefore",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_06",
-      "category": "Connectors",
-      "pl": "Jeśli",
-      "en": "If",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_07",
-      "category": "Connectors",
-      "pl": "Jeżeli",
-      "en": "If",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_08",
-      "category": "Connectors",
-      "pl": "Gdy",
-      "en": "When",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_09",
-      "category": "Connectors",
-      "pl": "Kiedy",
-      "en": "When",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_10",
-      "category": "Connectors",
-      "pl": "Ponieważ",
-      "en": "Because",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_11",
-      "category": "Connectors",
-      "pl": "Dlatego",
-      "en": "That's why / Therefore",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_12",
-      "category": "Connectors",
-      "pl": "Jednak",
-      "en": "However",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_13",
-      "category": "Connectors",
-      "pl": "Mimo to",
-      "en": "Nevertheless",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_14",
-      "category": "Connectors",
-      "pl": "Chociaż",
-      "en": "Although",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_15",
-      "category": "Connectors",
-      "pl": "Pomimo",
-      "en": "Despite",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_16",
-      "category": "Connectors",
-      "pl": "Zatem",
-      "en": "Thus / So",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_17",
-      "category": "Connectors",
-      "pl": "Również",
-      "en": "Also",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_18",
-      "category": "Connectors",
-      "pl": "Także",
-      "en": "Also",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_19",
-      "category": "Connectors",
-      "pl": "Ponadto",
-      "en": "Moreover / Furthermore",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_20",
-      "category": "Connectors",
-      "pl": "Oprócz tego",
-      "en": "Besides that",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_21",
-      "category": "Connectors",
-      "pl": "Z drugiej strony",
-      "en": "On the other hand",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_22",
-      "category": "Connectors",
-      "pl": "Z jednej strony",
-      "en": "On one hand",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_23",
-      "category": "Connectors",
-      "pl": "Po pierwsze",
-      "en": "First of all / Firstly",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_24",
-      "category": "Connectors",
-      "pl": "Po drugie",
-      "en": "Secondly",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_25",
-      "category": "Connectors",
-      "pl": "Po trzecie",
-      "en": "Thirdly",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_26",
-      "category": "Connectors",
-      "pl": "W końcu",
-      "en": "Finally / Eventually",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_27",
-      "category": "Connectors",
-      "pl": "Na koniec",
-      "en": "At the end / Finally",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_28",
-      "category": "Connectors",
-      "pl": "Podsumowując",
-      "en": "To sum up / In summary",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_29",
-      "category": "Connectors",
-      "pl": "Ogólnie",
-      "en": "Generally / Overall",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_30",
-      "category": "Connectors",
-      "pl": "Szczególnie",
-      "en": "Especially / Particularly",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_31",
-      "category": "Advanced",
-      "pl": "Innymi słowy",
-      "en": "In other words",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_32",
-      "category": "Advanced",
-      "pl": "Chodzi o to, że...",
-      "en": "The point is that...",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_33",
-      "category": "Advanced",
-      "pl": "Mam na myśli...",
-      "en": "I mean...",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_34",
-      "category": "Advanced",
-      "pl": "To znaczy...",
-      "en": "That is... / I mean...",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_35",
-      "category": "Advanced",
-      "pl": "Na przykład",
-      "en": "For example",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_36",
-      "category": "Advanced",
-      "pl": "Między innymi",
-      "en": "Among others",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_37",
-      "category": "Advanced",
-      "pl": "W każdym razie",
-      "en": "In any case / Anyway",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_38",
-      "category": "Advanced",
-      "pl": "W takim razie",
-      "en": "In that case",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_39",
-      "category": "Advanced",
-      "pl": "W przeciwnym razie",
-      "en": "Otherwise",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_40",
-      "category": "Advanced",
-      "pl": "W rzeczywistości",
-      "en": "In reality / Actually",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_41",
-      "category": "Advanced",
-      "pl": "Właściwie",
-      "en": "Actually / In fact",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_42",
-      "category": "Advanced",
-      "pl": "Szczerze mówiąc",
-      "en": "To be honest / Frankly",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_43",
-      "category": "Advanced",
-      "pl": "Prawdę mówiąc",
-      "en": "To tell the truth",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_44",
-      "category": "Advanced",
-      "pl": "Jeśli chodzi o...",
-      "en": "When it comes to...",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_45",
-      "category": "Advanced",
-      "pl": "Odnośnie...",
-      "en": "Regarding...",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_46",
-      "category": "Advanced",
-      "pl": "Jeśli chodzi o mnie",
-      "en": "As for me",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_47",
-      "category": "Advanced",
-      "pl": "Z mojego punktu widzenia",
-      "en": "From my point of view",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_48",
-      "category": "Advanced",
-      "pl": "Według mnie",
-      "en": "According to me",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_49",
-      "category": "Advanced",
-      "pl": "Przede wszystkim",
-      "en": "Above all / First and foremost",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_50",
-      "category": "Advanced",
-      "pl": "Przede wszystkim",
-      "en": "Most importantly",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_51",
-      "category": "Adverbs",
-      "pl": "Bardzo",
-      "en": "Very",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_52",
-      "category": "Adverbs",
-      "pl": "Dużo",
-      "en": "A lot / Much",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_53",
-      "category": "Adverbs",
-      "pl": "Mało",
-      "en": "Little / Few",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_54",
-      "category": "Adverbs",
-      "pl": "Trochę",
-      "en": "A bit / A little",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_55",
-      "category": "Adverbs",
-      "pl": "Zbyt",
-      "en": "Too / Too much",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_56",
-      "category": "Adverbs",
-      "pl": "Wystarczająco",
-      "en": "Enough / Sufficiently",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_57",
-      "category": "Adverbs",
-      "pl": "Szybko",
-      "en": "Quickly / Fast",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_58",
-      "category": "Adverbs",
-      "pl": "Wolno",
-      "en": "Slowly",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_59",
-      "category": "Adverbs",
-      "pl": "Dobrze",
-      "en": "Well / Good",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_60",
-      "category": "Adverbs",
-      "pl": "Źle",
-      "en": "Badly / Bad",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_61",
-      "category": "Adverbs",
-      "pl": "Łatwo",
-      "en": "Easily",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_62",
-      "category": "Adverbs",
-      "pl": "Trudno",
-      "en": "Difficultly / Hard",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_63",
-      "category": "Adverbs",
-      "pl": "Naprawdę",
-      "en": "Really / Truly",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_64",
-      "category": "Adverbs",
-      "pl": "Prawie",
-      "en": "Almost / Nearly",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_65",
-      "category": "Adverbs",
-      "pl": "Całkowicie",
-      "en": "Completely / Totally",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_66",
-      "category": "Adverbs",
-      "pl": "Zupełnie",
-      "en": "Completely / Quite",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_67",
-      "category": "Adverbs",
-      "pl": "Absolutnie",
-      "en": "Absolutely",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_68",
-      "category": "Adverbs",
-      "pl": "Pewnie",
-      "en": "Probably / Surely",
-      "level": 26,
-      "gender": null
-    },
-    {
-      "id": "a19_69",
-      "category": "Adverbs",
+      "id": "s25_01",
+      "category": "Opinions",
+      "pl": "Moim zdaniem...",
+      "en": "In my opinion...",
+      "level": 25,
+      "gender": null,
+      "emoji": "🗣️",
+      "note": "Takes the instrumental case ('moim zdaniem')."
+    },
+    {
+      "id": "s25_02",
+      "category": "Opinions",
+      "pl": "Myślę, że...",
+      "en": "I think that...",
+      "level": 25,
+      "gender": null,
+      "emoji": "💭",
+      "note": "The 'że' (that) is mandatory in Polish grammar here."
+    },
+    {
+      "id": "s25_03",
+      "category": "Opinions",
+      "pl": "Uważam, że...",
+      "en": "I believe/consider that...",
+      "level": 25,
+      "gender": null,
+      "emoji": "⚖️",
+      "note": "Slightly more formal than 'myślę'."
+    },
+    {
+      "id": "s25_04",
+      "category": "Opinions",
+      "pl": "Wydaje mi się, że...",
+      "en": "It seems to me that...",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤔",
+      "note": "Reflexive phrase used to express a gentle opinion."
+    },
+    {
+      "id": "s25_05",
+      "category": "Opinions",
+      "pl": "Zgadzam się",
+      "en": "I agree",
+      "level": 25,
+      "gender": null,
+      "emoji": "👍",
+      "note": "Reflexive verb 'zgadzać się'."
+    },
+    {
+      "id": "s25_06",
+      "category": "Opinions",
+      "pl": "Nie zgadzam się",
+      "en": "I disagree",
+      "level": 25,
+      "gender": null,
+      "emoji": "👎",
+      "note": "Add 'nie' before the verb."
+    },
+    {
+      "id": "s25_07",
+      "category": "Opinions",
+      "pl": "Masz rację",
+      "en": "You're right",
+      "level": 25,
+      "gender": null,
+      "emoji": "✅",
+      "note": "Literally 'You have rightness'."
+    },
+    {
+      "id": "s25_08",
+      "category": "Opinions",
+      "pl": "Nie masz racji",
+      "en": "You're wrong",
+      "level": 25,
+      "gender": null,
+      "emoji": "❌",
+      "note": "Literally 'You do not have rightness'."
+    },
+    {
+      "id": "s25_09",
+      "category": "Opinions",
+      "pl": "To zależy",
+      "en": "It depends",
+      "level": 25,
+      "gender": null,
+      "emoji": "⚖️",
+      "note": "Very common answer in Polish debates."
+    },
+    {
+      "id": "s25_10",
+      "category": "Opinions",
+      "pl": "To zależy od sytuacji",
+      "en": "It depends on the situation",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤷",
+      "note": "Preposition 'od' forces the genitive case 'sytuacji'."
+    },
+    {
+      "id": "s25_11",
+      "category": "Opinions",
+      "pl": "Bez wątpienia",
+      "en": "Without a doubt",
+      "level": 25,
+      "gender": null,
+      "emoji": "💯",
+      "note": "Preposition 'bez' forces the genitive case 'wątpienia'."
+    },
+    {
+      "id": "s25_12",
+      "category": "Opinions",
+      "pl": "Nie jestem przekonany/przekonana",
+      "en": "I'm not convinced",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Nie jestem przekonany",
+        "f": "Nie jestem przekonana"
+      },
+      "emoji": "🤨",
+      "note": "Passive participle acting as an adjective."
+    },
+    {
+      "id": "s25_13",
+      "category": "Opinions",
+      "pl": "To dobry pomysł",
+      "en": "That's a good idea",
+      "level": 25,
+      "gender": null,
+      "emoji": "💡",
+      "note": "Masculine noun phrase."
+    },
+    {
+      "id": "s25_14",
+      "category": "Opinions",
+      "pl": "To zły pomysł",
+      "en": "That's a bad idea",
+      "level": 25,
+      "gender": null,
+      "emoji": "🛑",
+      "note": "Masculine noun phrase."
+    },
+    {
+      "id": "s25_15",
+      "category": "Opinions",
+      "pl": "To nie ma sensu",
+      "en": "That makes no sense",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤦",
+      "note": "Literally 'It has no sense'. Requires genitive case due to negation."
+    },
+    {
+      "id": "s25_16",
+      "category": "Opinions",
+      "pl": "To ma sens",
+      "en": "That makes sense",
+      "level": 25,
+      "gender": null,
+      "emoji": "🎯",
+      "note": "Literally 'It has sense' (accusative case)."
+    },
+    {
+      "id": "s25_17",
+      "category": "Opinions",
+      "pl": "Co o tym sądzisz?",
+      "en": "What do you think about it?",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤔",
+      "note": "Uses the verb 'sądzić' (to judge/consider)."
+    },
+    {
+      "id": "s25_18",
+      "category": "Opinions",
+      "pl": "Nie mam zdania",
+      "en": "I have no opinion",
+      "level": 25,
+      "gender": null,
+      "emoji": "😶",
+      "note": "Takes the genitive case 'zdania' due to negation."
+    },
+    {
+      "id": "s25_19",
+      "category": "Opinions",
+      "pl": "Trudno powiedzieć",
+      "en": "Hard to say",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤷‍♂️",
+      "note": "Adverb + infinitive."
+    },
+    {
+      "id": "s25_20",
+      "category": "Opinions",
+      "pl": "Zobaczymy",
+      "en": "We'll see",
+      "level": 25,
+      "gender": null,
+      "emoji": "👀",
+      "note": "Future tense, first-person plural."
+    },
+    {
+      "id": "s25_21",
+      "category": "Opinions",
+      "pl": "Może",
+      "en": "Maybe",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤷‍♀️",
+      "note": "Adverb."
+    },
+    {
+      "id": "s25_22",
+      "category": "Opinions",
+      "pl": "Prawdopodobnie",
+      "en": "Probably",
+      "level": 25,
+      "gender": null,
+      "emoji": "📈",
+      "note": "Adverb."
+    },
+    {
+      "id": "s25_23",
+      "category": "Opinions",
       "pl": "Na pewno",
       "en": "For sure / Certainly",
-      "level": 26,
-      "gender": null
+      "level": 25,
+      "gender": null,
+      "emoji": "🔒",
+      "note": "Adverbial phrase."
     },
     {
-      "id": "a19_70",
-      "category": "Adverbs",
+      "id": "s25_24",
+      "category": "Opinions",
       "pl": "Oczywiście",
-      "en": "Obviously / Of course",
-      "level": 26,
-      "gender": null
+      "en": "Of course / Obviously",
+      "level": 25,
+      "gender": null,
+      "emoji": "✨",
+      "note": "Adverb."
+    },
+    {
+      "id": "s25_25",
+      "category": "Opinions",
+      "pl": "Dokładnie tak",
+      "en": "Exactly so",
+      "level": 25,
+      "gender": null,
+      "emoji": "🎯",
+      "note": "Strong agreement."
+    },
+    {
+      "id": "s25_26",
+      "category": "Abstract",
+      "pl": "Szczęście",
+      "en": "Happiness / Luck",
+      "level": 25,
+      "gender": null,
+      "emoji": "🍀",
+      "note": "Neuter noun. Polish uses the same word for being happy and being lucky."
+    },
+    {
+      "id": "s25_27",
+      "category": "Abstract",
+      "pl": "Miłość",
+      "en": "Love",
+      "level": 25,
+      "gender": null,
+      "emoji": "❤️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_28",
+      "category": "Abstract",
+      "pl": "Nienawiść",
+      "en": "Hate",
+      "level": 25,
+      "gender": null,
+      "emoji": "🔥",
+      "note": "Feminine noun ending in a consonant."
+    },
+    {
+      "id": "s25_29",
+      "category": "Abstract",
+      "pl": "Wolność",
+      "en": "Freedom",
+      "level": 25,
+      "gender": null,
+      "emoji": "🕊️",
+      "note": "Feminine noun ending in '-ość'."
+    },
+    {
+      "id": "s25_30",
+      "category": "Abstract",
+      "pl": "Równość",
+      "en": "Equality",
+      "level": 25,
+      "gender": null,
+      "emoji": "⚖️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_31",
+      "category": "Abstract",
+      "pl": "Sprawiedliwość",
+      "en": "Justice",
+      "level": 25,
+      "gender": null,
+      "emoji": "🧑‍⚖️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_32",
+      "category": "Abstract",
+      "pl": "Prawda",
+      "en": "Truth",
+      "level": 25,
+      "gender": null,
+      "emoji": "📖",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_33",
+      "category": "Abstract",
+      "pl": "Kłamstwo",
+      "en": "Lie",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤥",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s25_34",
+      "category": "Abstract",
+      "pl": "Zaufanie",
+      "en": "Trust",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s25_35",
+      "category": "Abstract",
+      "pl": "Nadzieja",
+      "en": "Hope",
+      "level": 25,
+      "gender": null,
+      "emoji": "🌟",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_36",
+      "category": "Abstract",
+      "pl": "Strach",
+      "en": "Fear",
+      "level": 25,
+      "gender": null,
+      "emoji": "😨",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s25_37",
+      "category": "Abstract",
+      "pl": "Odwaga",
+      "en": "Courage",
+      "level": 25,
+      "gender": null,
+      "emoji": "🦁",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_38",
+      "category": "Abstract",
+      "pl": "Mądrość",
+      "en": "Wisdom",
+      "level": 25,
+      "gender": null,
+      "emoji": "🦉",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_39",
+      "category": "Abstract",
+      "pl": "Wiedza",
+      "en": "Knowledge",
+      "level": 25,
+      "gender": null,
+      "emoji": "📚",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_40",
+      "category": "Abstract",
+      "pl": "Doświadczenie",
+      "en": "Experience",
+      "level": 25,
+      "gender": null,
+      "emoji": "🧠",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s25_41",
+      "category": "Abstract",
+      "pl": "Pamięć",
+      "en": "Memory",
+      "level": 25,
+      "gender": null,
+      "emoji": "💭",
+      "note": "Feminine noun ending in a consonant."
+    },
+    {
+      "id": "s25_42",
+      "category": "Abstract",
+      "pl": "Wyobraźnia",
+      "en": "Imagination",
+      "level": 25,
+      "gender": null,
+      "emoji": "✨",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_43",
+      "category": "Abstract",
+      "pl": "Kreatywność",
+      "en": "Creativity",
+      "level": 25,
+      "gender": null,
+      "emoji": "🎨",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_44",
+      "category": "Abstract",
+      "pl": "Inteligencja",
+      "en": "Intelligence",
+      "level": 25,
+      "gender": null,
+      "emoji": "💡",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_45",
+      "category": "Abstract",
+      "pl": "Głupota",
+      "en": "Stupidity",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤪",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_46",
+      "category": "Abstract",
+      "pl": "Cierpliwość",
+      "en": "Patience",
+      "level": 25,
+      "gender": null,
+      "emoji": "🧘",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_47",
+      "category": "Abstract",
+      "pl": "Spokój",
+      "en": "Peace / Calm",
+      "level": 25,
+      "gender": null,
+      "emoji": "😌",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s25_48",
+      "category": "Abstract",
+      "pl": "Chaos",
+      "en": "Chaos",
+      "level": 25,
+      "gender": null,
+      "emoji": "🌪️",
+      "note": "Masculine noun. Pronounced 'Ha-os'."
+    },
+    {
+      "id": "s25_49",
+      "category": "Abstract",
+      "pl": "Porządek",
+      "en": "Order",
+      "level": 25,
+      "gender": null,
+      "emoji": "📂",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s25_50",
+      "category": "Abstract",
+      "pl": "Równowaga",
+      "en": "Balance",
+      "level": 25,
+      "gender": null,
+      "emoji": "⚖️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s25_51",
+      "category": "Emotions",
+      "pl": "Emocje",
+      "en": "Emotions",
+      "level": 25,
+      "gender": null,
+      "emoji": "🎭",
+      "note": "Plural noun."
+    },
+    {
+      "id": "s25_52",
+      "category": "Emotions",
+      "pl": "Uczucia",
+      "en": "Feelings",
+      "level": 25,
+      "gender": null,
+      "emoji": "💞",
+      "note": "Plural noun."
+    },
+    {
+      "id": "s25_53",
+      "category": "Emotions",
+      "pl": "Szczęśliwy/Szczęśliwa",
+      "en": "Happy",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Szczęśliwy",
+        "f": "Szczęśliwa"
+      },
+      "emoji": "😁",
+      "note": "Gendered adjective."
+    },
+    {
+      "id": "s25_54",
+      "category": "Emotions",
+      "pl": "Smutny/Smutna",
+      "en": "Sad",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Smutny",
+        "f": "Smutna"
+      },
+      "emoji": "😢",
+      "note": "Gendered adjective."
+    },
+    {
+      "id": "s25_55",
+      "category": "Emotions",
+      "pl": "Zły/Zła",
+      "en": "Angry (also means Bad)",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Zły",
+        "f": "Zła"
+      },
+      "emoji": "😠",
+      "note": "Context determines if you mean angry or evil."
+    },
+    {
+      "id": "s25_56",
+      "category": "Emotions",
+      "pl": "Spokojny/Spokojna",
+      "en": "Calm",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Spokojny",
+        "f": "Spokojna"
+      },
+      "emoji": "😌",
+      "note": "Gendered adjective."
+    },
+    {
+      "id": "s25_57",
+      "category": "Emotions",
+      "pl": "Zdenerwowany/Zdenerwowana",
+      "en": "Nervous / Annoyed",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Zdenerwowany",
+        "f": "Zdenerwowana"
+      },
+      "emoji": "😬",
+      "note": "Passive participle."
+    },
+    {
+      "id": "s25_58",
+      "category": "Emotions",
+      "pl": "Podekscytowany/Podekscytowana",
+      "en": "Excited",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Podekscytowany",
+        "f": "Podekscytowana"
+      },
+      "emoji": "🤩",
+      "note": "Passive participle."
+    },
+    {
+      "id": "s25_59",
+      "category": "Emotions",
+      "pl": "Znudzony/Znudzona",
+      "en": "Bored",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Znudzony",
+        "f": "Znudzona"
+      },
+      "emoji": "🥱",
+      "note": "Passive participle."
+    },
+    {
+      "id": "s25_60",
+      "category": "Emotions",
+      "pl": "Zaskoczony/Zaskoczona",
+      "en": "Surprised",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Zaskoczony",
+        "f": "Zaskoczona"
+      },
+      "emoji": "😲",
+      "note": "Passive participle."
+    },
+    {
+      "id": "s25_61",
+      "category": "Emotions",
+      "pl": "Przestraszony/Przestraszona",
+      "en": "Scared",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Przestraszony",
+        "f": "Przestraszona"
+      },
+      "emoji": "😨",
+      "note": "Passive participle."
+    },
+    {
+      "id": "s25_62",
+      "category": "Emotions",
+      "pl": "Dumny/Dumna",
+      "en": "Proud",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Dumny",
+        "f": "Dumna"
+      },
+      "emoji": "🦚",
+      "note": "Gendered adjective."
+    },
+    {
+      "id": "s25_63",
+      "category": "Emotions",
+      "pl": "Wstyd",
+      "en": "Shame",
+      "level": 25,
+      "gender": null,
+      "emoji": "🫣",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s25_64",
+      "category": "Emotions",
+      "pl": "Zawstydzony/Zawstydzona",
+      "en": "Ashamed",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Zawstydzony",
+        "f": "Zawstydzona"
+      },
+      "emoji": "😳",
+      "note": "Passive participle."
+    },
+    {
+      "id": "s25_65",
+      "category": "Emotions",
+      "pl": "Samotny/Samotna",
+      "en": "Lonely",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Samotny",
+        "f": "Samotna"
+      },
+      "emoji": "🧍",
+      "note": "Gendered adjective."
+    },
+    {
+      "id": "s25_66",
+      "category": "Emotions",
+      "pl": "Zadowolony/Zadowolona",
+      "en": "Satisfied / Content",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Zadowolony",
+        "f": "Zadowolona"
+      },
+      "emoji": "😌",
+      "note": "Passive participle."
+    },
+    {
+      "id": "s25_67",
+      "category": "Emotions",
+      "pl": "Niezadowolony/Niezadowolona",
+      "en": "Dissatisfied",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Niezadowolony",
+        "f": "Niezadowolona"
+      },
+      "emoji": "😒",
+      "note": "Passive participle."
+    },
+    {
+      "id": "s25_68",
+      "category": "Emotions",
+      "pl": "Rozczarowany/Rozczarowana",
+      "en": "Disappointed",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Rozczarowany",
+        "f": "Rozczarowana"
+      },
+      "emoji": "😞",
+      "note": "Passive participle."
+    },
+    {
+      "id": "s25_69",
+      "category": "Emotions",
+      "pl": "Optymistyczny/Optymistyczna",
+      "en": "Optimistic",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Optymistyczny",
+        "f": "Optymistyczna"
+      },
+      "emoji": "📈",
+      "note": "Gendered adjective."
+    },
+    {
+      "id": "s25_70",
+      "category": "Emotions",
+      "pl": "Pesymistyczny/Pesymistyczna",
+      "en": "Pessimistic",
+      "level": 25,
+      "gender": "both",
+      "variants": {
+        "m": "Pesymistyczny",
+        "f": "Pesymistyczna"
+      },
+      "emoji": "📉",
+      "note": "Gendered adjective."
+    },
+    {
+      "id": "s25_71",
+      "category": "Opinions",
+      "pl": "To kwestia gustu",
+      "en": "It's a matter of taste",
+      "level": 25,
+      "gender": null,
+      "emoji": "👅",
+      "note": "Feminine noun 'kwestia'."
+    },
+    {
+      "id": "s25_72",
+      "category": "Opinions",
+      "pl": "Z mojego doświadczenia",
+      "en": "From my experience",
+      "level": 25,
+      "gender": null,
+      "emoji": "🧠",
+      "note": "Takes the genitive case 'doświadczenia'."
+    },
+    {
+      "id": "s25_73",
+      "category": "Opinions",
+      "pl": "Nie mam pojęcia",
+      "en": "I have no idea",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤷",
+      "note": "Very common phrase. 'Pojęcie' means concept or notion."
+    },
+    {
+      "id": "s25_74",
+      "category": "Abstract",
+      "pl": "Współczucie",
+      "en": "Compassion / Sympathy",
+      "level": 25,
+      "gender": null,
+      "emoji": "❤️‍🩹",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s25_75",
+      "category": "Abstract",
+      "pl": "Szacunek",
+      "en": "Respect",
+      "level": 25,
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Masculine noun. 'Z szacunkiem' (with respect)."
     }
   ]
 }

@@ -1,0 +1,451 @@
+{
+  "level": 18,
+  "description": "Hobbies & Sports - Activities & Leisure",
+  "tier": "PRACTICAL",
+  "phrases": [
+    {
+      "id": "p13_01",
+      "category": "Activities",
+      "pl": "Co lubisz robić?",
+      "en": "What do you like to do?",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_02",
+      "category": "Activities",
+      "pl": "Lubię...",
+      "en": "I like...",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_03",
+      "category": "Activities",
+      "pl": "Uwielbiam...",
+      "en": "I love...",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_04",
+      "category": "Activities",
+      "pl": "Nie lubię...",
+      "en": "I don't like...",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_05",
+      "category": "Activities",
+      "pl": "Moje hobby to...",
+      "en": "My hobby is...",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_06",
+      "category": "Activities",
+      "pl": "Interesuję się...",
+      "en": "I'm interested in...",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_07",
+      "category": "Activities",
+      "pl": "Sport",
+      "en": "Sport",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_08",
+      "category": "Activities",
+      "pl": "Muzyka",
+      "en": "Music",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_09",
+      "category": "Activities",
+      "pl": "Film",
+      "en": "Movie / Film",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_10",
+      "category": "Activities",
+      "pl": "Książka",
+      "en": "Book",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_11",
+      "category": "Activities",
+      "pl": "Czytanie",
+      "en": "Reading",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_12",
+      "category": "Activities",
+      "pl": "Pisanie",
+      "en": "Writing",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_13",
+      "category": "Activities",
+      "pl": "Gotowanie",
+      "en": "Cooking",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_14",
+      "category": "Activities",
+      "pl": "Podróżowanie",
+      "en": "Traveling",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_15",
+      "category": "Activities",
+      "pl": "Fotografia",
+      "en": "Photography",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_16",
+      "category": "Activities",
+      "pl": "Sztuka",
+      "en": "Art",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_17",
+      "category": "Activities",
+      "pl": "Taniec",
+      "en": "Dancing",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_18",
+      "category": "Activities",
+      "pl": "Śpiewanie",
+      "en": "Singing",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_19",
+      "category": "Activities",
+      "pl": "Gra",
+      "en": "Game",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_20",
+      "category": "Activities",
+      "pl": "Grać w gry",
+      "en": "To play games",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_21",
+      "category": "Activities",
+      "pl": "Oglądać filmy",
+      "en": "To watch movies",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_22",
+      "category": "Activities",
+      "pl": "Słuchać muzyki",
+      "en": "To listen to music",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_23",
+      "category": "Activities",
+      "pl": "Czytać książki",
+      "en": "To read books",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_24",
+      "category": "Activities",
+      "pl": "Uprawiać sport",
+      "en": "To do sports",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_25",
+      "category": "Activities",
+      "pl": "Relaks",
+      "en": "Relaxation",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_26",
+      "category": "Sports",
+      "pl": "Piłka nożna",
+      "en": "Football / Soccer",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_27",
+      "category": "Sports",
+      "pl": "Koszykówka",
+      "en": "Basketball",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_28",
+      "category": "Sports",
+      "pl": "Siatkówka",
+      "en": "Volleyball",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_29",
+      "category": "Sports",
+      "pl": "Tenis",
+      "en": "Tennis",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_30",
+      "category": "Sports",
+      "pl": "Pływanie",
+      "en": "Swimming",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_31",
+      "category": "Sports",
+      "pl": "Bieganie",
+      "en": "Running",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_32",
+      "category": "Sports",
+      "pl": "Jazda na rowerze",
+      "en": "Cycling",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_33",
+      "category": "Sports",
+      "pl": "Siłownia",
+      "en": "Gym",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_34",
+      "category": "Sports",
+      "pl": "Joga",
+      "en": "Yoga",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_35",
+      "category": "Sports",
+      "pl": "Narty",
+      "en": "Skiing",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_36",
+      "category": "Sports",
+      "pl": "Gdzie jest siłownia?",
+      "en": "Where is the gym?",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_37",
+      "category": "Sports",
+      "pl": "Czy jest basen?",
+      "en": "Is there a pool?",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_38",
+      "category": "Sports",
+      "pl": "Chodzę na siłownię",
+      "en": "I go to the gym",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_39",
+      "category": "Sports",
+      "pl": "Gram w piłkę",
+      "en": "I play football",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_40",
+      "category": "Sports",
+      "pl": "Trening",
+      "en": "Training / Workout",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_56",
+      "category": "Going Out",
+      "pl": "Bar",
+      "en": "Bar",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_57",
+      "category": "Going Out",
+      "pl": "Pub",
+      "en": "Pub",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_58",
+      "category": "Going Out",
+      "pl": "Klub",
+      "en": "Club",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_59",
+      "category": "Going Out",
+      "pl": "Restauracja",
+      "en": "Restaurant",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_60",
+      "category": "Going Out",
+      "pl": "Kawiarnia",
+      "en": "Cafe",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_61",
+      "category": "Going Out",
+      "pl": "Idziemy na drinka?",
+      "en": "Shall we go for a drink?",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_62",
+      "category": "Going Out",
+      "pl": "Idziemy potańczyć?",
+      "en": "Shall we go dancing?",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_63",
+      "category": "Going Out",
+      "pl": "Gdzie jest dobry bar?",
+      "en": "Where is a good bar?",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_64",
+      "category": "Going Out",
+      "pl": "Czy jest tu klub?",
+      "en": "Is there a club here?",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_65",
+      "category": "Going Out",
+      "pl": "Muzyka na żywo",
+      "en": "Live music",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_66",
+      "category": "Going Out",
+      "pl": "Wstęp wolny",
+      "en": "Free entry",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_67",
+      "category": "Going Out",
+      "pl": "Ile kosztuje wstęp?",
+      "en": "How much is entry?",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_68",
+      "category": "Going Out",
+      "pl": "Impreza",
+      "en": "Party",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_69",
+      "category": "Going Out",
+      "pl": "Zabawa",
+      "en": "Fun",
+      "level": 18,
+      "gender": null
+    },
+    {
+      "id": "p13_70",
+      "category": "Going Out",
+      "pl": "Świetnie się bawiłem/bawiłam",
+      "en": "I had a great time",
+      "level": 18,
+      "gender": "both",
+      "variants": {
+        "m": "Świetnie się bawiłem",
+        "f": "Świetnie się bawiłam"
+      }
+    }
+  ]
+}

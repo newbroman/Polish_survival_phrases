@@ -1,0 +1,187 @@
+{
+  "level": 12,
+  "description": "Time & Scheduling - Days, Times & Appointments",
+  "tier": "PRACTICAL",
+  "phrases": [
+    {
+      "id": "s12_01",
+      "category": "Time Basics",
+      "pl": "O której?",
+      "en": "At what time?",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏰",
+      "note": "Always asks 'At which (hour)?'. Used to schedule meetings or check departures."
+    },
+    {
+      "id": "s12_02",
+      "category": "Time Basics",
+      "pl": "O ósmej rano",
+      "en": "At 8 AM",
+      "level": 12,
+      "gender": null,
+      "emoji": "🌅",
+      "note": "The preposition 'O' forces the locative case on the number (ośmiu -> ósmej)."
+    },
+    {
+      "id": "s12_03",
+      "category": "Time Basics",
+      "pl": "O ósmej wieczorem",
+      "en": "At 8 PM",
+      "level": 12,
+      "gender": null,
+      "emoji": "🌆",
+      "note": "Poland often uses the 24-hour clock, so 8 PM is frequently called 'o dwudziestej'."
+    },
+    {
+      "id": "s12_04",
+      "category": "Time Basics",
+      "pl": "Za piętnaście minut",
+      "en": "In fifteen minutes",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏱️",
+      "note": "'Za' + time duration indicates how much time is left until an event."
+    },
+    {
+      "id": "s12_05",
+      "category": "Time Basics",
+      "pl": "Godzinę temu",
+      "en": "An hour ago",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏮️",
+      "note": "'Temu' (ago) always comes after the time period."
+    },
+    {
+      "id": "s12_06",
+      "category": "Days of the Week",
+      "pl": "Poniedziałek",
+      "en": "Monday",
+      "level": 12,
+      "gender": null,
+      "emoji": "1️⃣",
+      "note": "Literally 'after Sunday' (po niedzieli)."
+    },
+    {
+      "id": "s12_07",
+      "category": "Days of the Week",
+      "pl": "Wtorek",
+      "en": "Tuesday",
+      "level": 12,
+      "gender": null,
+      "emoji": "2️⃣",
+      "note": "Related to the word 'wtóry' (second)."
+    },
+    {
+      "id": "s12_08",
+      "category": "Days of the Week",
+      "pl": "Środa",
+      "en": "Wednesday",
+      "level": 12,
+      "gender": null,
+      "emoji": "3️⃣",
+      "note": "Related to 'środek' (middle) because it is the middle of the work week."
+    },
+    {
+      "id": "s12_09",
+      "category": "Days of the Week",
+      "pl": "Czwartek",
+      "en": "Thursday",
+      "level": 12,
+      "gender": null,
+      "emoji": "4️⃣",
+      "note": "Related to 'cztery' (four)."
+    },
+    {
+      "id": "s12_10",
+      "category": "Days of the Week",
+      "pl": "Piątek",
+      "en": "Friday",
+      "level": 12,
+      "gender": null,
+      "emoji": "5️⃣",
+      "note": "Related to 'pięć' (five)."
+    },
+    {
+      "id": "s12_11",
+      "category": "Days of the Week",
+      "pl": "Sobota",
+      "en": "Saturday",
+      "level": 12,
+      "gender": null,
+      "emoji": "🛒",
+      "note": "In Poland, most stores close or have limited hours on Sundays, so Sobota is the main shopping day."
+    },
+    {
+      "id": "s12_12",
+      "category": "Days of the Week",
+      "pl": "Niedziela",
+      "en": "Sunday",
+      "level": 12,
+      "gender": null,
+      "emoji": "⛪",
+      "note": "Literally 'no work' (nie działać)."
+    },
+    {
+      "id": "s12_13",
+      "category": "Scheduling",
+      "pl": "Spotkanie",
+      "en": "Meeting / Appointment",
+      "level": 12,
+      "gender": null,
+      "emoji": "💼",
+      "note": "A neuter noun. Used for business meetings and social hangouts."
+    },
+    {
+      "id": "s12_14",
+      "category": "Scheduling",
+      "pl": "Czy jest wolny termin?",
+      "en": "Is there an available slot?",
+      "level": 12,
+      "gender": null,
+      "emoji": "📅",
+      "note": "'Termin' refers to a specific date/time slot for a doctor, hairdresser, or meeting."
+    },
+    {
+      "id": "s12_15",
+      "category": "Scheduling",
+      "pl": "Muszę odwołać spotkanie",
+      "en": "I need to cancel the meeting",
+      "level": 12,
+      "gender": null,
+      "emoji": "❌",
+      "note": "'Odwołać' means to call off or cancel."
+    },
+    {
+      "id": "s12_16",
+      "category": "Scheduling",
+      "pl": "Spóźnię się",
+      "en": "I'll be late",
+      "level": 12,
+      "gender": null,
+      "emoji": "🏃",
+      "note": "Future tense. 'Spóźnienie' (lateness) is generally disliked in Polish business culture."
+    },
+    {
+      "id": "s12_17",
+      "category": "Frequency",
+      "pl": "Rzadko",
+      "en": "Rarely",
+      "level": 12,
+      "gender": null,
+      "emoji": "📉",
+      "note": "The opposite of 'często' (often)."
+    },
+    {
+      "id": "s12_18",
+      "category": "Frequency",
+      "pl": "Codziennie",
+      "en": "Every day",
+      "level": 12,
+      "gender": null,
+      "emoji": "🗓️",
+      "note": "Derived from 'co' (every/what) + 'dzień' (day)."
+    }
+  ]
+}

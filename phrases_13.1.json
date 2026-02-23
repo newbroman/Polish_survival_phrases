@@ -1,517 +1,757 @@
 {
   "level": 13.1,
-  "description": "Culture & Entertainment - Museums, Theatre & Cinema",
+  "description": "Culture & Entertainment - Museums, Theater & Cinema",
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p13_41",
-      "category": "Entertainment",
-      "pl": "Kino",
-      "en": "Cinema / Movie theater",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_42",
-      "category": "Entertainment",
-      "pl": "Teatr",
-      "en": "Theater",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_43",
-      "category": "Entertainment",
-      "pl": "Koncert",
-      "en": "Concert",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_44",
-      "category": "Entertainment",
+      "id": "s13.1_01",
+      "category": "Museums & Arts",
       "pl": "Muzeum",
       "en": "Museum",
-      "level": 13,
-      "gender": null
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🏛️",
+      "note": "Neuter noun. Plural is 'muzea'."
     },
     {
-      "id": "p13_45",
-      "category": "Entertainment",
-      "pl": "Galeria",
-      "en": "Gallery",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_46",
-      "category": "Entertainment",
-      "pl": "Wystawa",
-      "en": "Exhibition",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_47",
-      "category": "Entertainment",
-      "pl": "Bilet",
-      "en": "Ticket",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_48",
-      "category": "Entertainment",
-      "pl": "Ile kosztuje bilet?",
-      "en": "How much is the ticket?",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_49",
-      "category": "Entertainment",
-      "pl": "Dwa bilety, proszę",
-      "en": "Two tickets, please",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_50",
-      "category": "Entertainment",
-      "pl": "Kiedy zaczyna się film?",
-      "en": "When does the movie start?",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_51",
-      "category": "Entertainment",
-      "pl": "O której kończy się spektakl?",
-      "en": "What time does the show end?",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_52",
-      "category": "Entertainment",
-      "pl": "Czy są jeszcze bilety?",
-      "en": "Are there still tickets?",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_53",
-      "category": "Entertainment",
-      "pl": "Wyprzedane",
-      "en": "Sold out",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_54",
-      "category": "Entertainment",
-      "pl": "Rezerwacja online",
-      "en": "Online booking",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_55",
-      "category": "Entertainment",
-      "pl": "Polecam",
-      "en": "I recommend",
-      "level": 13,
-      "gender": null
-    },
-    {
-      "id": "p13_71",
-      "category": "Museums",
-      "pl": "Muzeum",
-      "en": "Museum",
-      "level": 13
-    },
-    {
-      "id": "p13_72",
-      "category": "Museums",
-      "pl": "Gdzie jest muzeum?",
-      "en": "Where is the museum?",
-      "level": 13
-    },
-    {
-      "id": "p13_73",
-      "category": "Museums",
-      "pl": "Ile kosztuje bilet do muzeum?",
-      "en": "How much is a museum ticket?",
-      "level": 13
-    },
-    {
-      "id": "p13_74",
-      "category": "Museums",
-      "pl": "O której otwiera się muzeum?",
-      "en": "What time does the museum open?",
-      "level": 13
-    },
-    {
-      "id": "p13_75",
-      "category": "Museums",
-      "pl": "O której zamyka się muzeum?",
-      "en": "What time does the museum close?",
-      "level": 13
-    },
-    {
-      "id": "p13_76",
-      "category": "Museums",
-      "pl": "Czy jest zniżka dla studentów?",
-      "en": "Is there a student discount?",
-      "level": 13
-    },
-    {
-      "id": "p13_77",
-      "category": "Museums",
-      "pl": "Bilet ulgowy",
-      "en": "Reduced ticket / Concession",
-      "level": 13
-    },
-    {
-      "id": "p13_78",
-      "category": "Museums",
-      "pl": "Bilet normalny",
-      "en": "Full price ticket",
-      "level": 13
-    },
-    {
-      "id": "p13_79",
-      "category": "Museums",
-      "pl": "Czy mogę robić zdjęcia?",
-      "en": "Can I take photos?",
-      "level": 13
-    },
-    {
-      "id": "p13_80",
-      "category": "Museums",
-      "pl": "Zakaz fotografowania",
-      "en": "No photography",
-      "level": 13
-    },
-    {
-      "id": "p13_81",
-      "category": "Museums",
-      "pl": "Wystawa",
-      "en": "Exhibition",
-      "level": 13
-    },
-    {
-      "id": "p13_82",
-      "category": "Museums",
-      "pl": "Wystawa czasowa",
-      "en": "Temporary exhibition",
-      "level": 13
-    },
-    {
-      "id": "p13_83",
-      "category": "Museums",
-      "pl": "Wystawa stała",
-      "en": "Permanent exhibition",
-      "level": 13
-    },
-    {
-      "id": "p13_84",
-      "category": "Museums",
-      "pl": "Galeria",
-      "en": "Gallery",
-      "level": 13
-    },
-    {
-      "id": "p13_85",
-      "category": "Museums",
+      "id": "s13.1_02",
+      "category": "Museums & Arts",
       "pl": "Galeria sztuki",
       "en": "Art gallery",
-      "level": 13
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎨",
+      "note": "Feminine noun phrase."
     },
     {
-      "id": "p13_86",
-      "category": "Museums",
+      "id": "s13.1_03",
+      "category": "Museums & Arts",
+      "pl": "Wystawa",
+      "en": "Exhibition",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🖼️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_04",
+      "category": "Museums & Arts",
+      "pl": "Wystawa stała",
+      "en": "Permanent exhibition",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🏺",
+      "note": "Usually included in the basic ticket price."
+    },
+    {
+      "id": "s13.1_05",
+      "category": "Museums & Arts",
+      "pl": "Wystawa czasowa",
+      "en": "Temporary exhibition",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Often requires a separate ticket or additional fee."
+    },
+    {
+      "id": "s13.1_06",
+      "category": "Museums & Arts",
+      "pl": "Obraz",
+      "en": "Painting / Picture",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🖼️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s13.1_07",
+      "category": "Museums & Arts",
+      "pl": "Rzeźba",
+      "en": "Sculpture",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🗿",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_08",
+      "category": "Museums & Arts",
+      "pl": "Arcydzieło",
+      "en": "Masterpiece",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "✨",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s13.1_09",
+      "category": "Museums & Arts",
+      "pl": "Malarz",
+      "en": "Painter",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "👨‍🎨",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s13.1_10",
+      "category": "Museums & Arts",
+      "pl": "Artysta",
+      "en": "Artist",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🧑‍🎨",
+      "note": "Masculine noun (despite ending in 'a'). Female is 'Artystka'."
+    },
+    {
+      "id": "s13.1_11",
+      "category": "Museums & Arts",
+      "pl": "Sztuka",
+      "en": "Art",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎭",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_12",
+      "category": "Museums & Arts",
+      "pl": "Bilet ulgowy",
+      "en": "Reduced ticket / Concession",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🆔",
+      "note": "For students, seniors, or children. You must show a valid ID."
+    },
+    {
+      "id": "s13.1_13",
+      "category": "Museums & Arts",
       "pl": "Przewodnik",
-      "en": "Guide / Guidebook",
-      "level": 13
+      "en": "Guide (Person or Book)",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🗺️",
+      "note": "Masculine noun."
     },
     {
-      "id": "p13_87",
-      "category": "Museums",
-      "pl": "Czy jest przewodnik po angielsku?",
-      "en": "Is there an English guide?",
-      "level": 13
-    },
-    {
-      "id": "p13_88",
-      "category": "Museums",
-      "pl": "Audioguide",
-      "en": "Audio guide",
-      "level": 13
-    },
-    {
-      "id": "p13_89",
-      "category": "Museums",
+      "id": "s13.1_14",
+      "category": "Museums & Arts",
       "pl": "Szatnia",
-      "en": "Cloakroom / Coat check",
-      "level": 13
+      "en": "Cloakroom",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🧥",
+      "note": "Culturally mandatory in Polish museums and theaters. You must leave your coat here."
     },
     {
-      "id": "p13_90",
-      "category": "Museums",
-      "pl": "Sklep muzealny",
-      "en": "Museum shop",
-      "level": 13
+      "id": "s13.1_15",
+      "category": "Museums & Arts",
+      "pl": "Zwiedzać",
+      "en": "To sightsee / to visit",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "👀",
+      "note": "Infinitive verb used for visiting places, not people."
     },
     {
-      "id": "p13_91",
-      "category": "Theatre",
+      "id": "s13.1_16",
+      "category": "Theater & Stage",
       "pl": "Teatr",
-      "en": "Theatre",
-      "level": 13
+      "en": "Theater",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🏛️",
+      "note": "Masculine noun."
     },
     {
-      "id": "p13_92",
-      "category": "Theatre",
-      "pl": "Opera",
-      "en": "Opera",
-      "level": 13
-    },
-    {
-      "id": "p13_93",
-      "category": "Theatre",
-      "pl": "Balet",
-      "en": "Ballet",
-      "level": 13
-    },
-    {
-      "id": "p13_94",
-      "category": "Theatre",
-      "pl": "Koncert",
-      "en": "Concert",
-      "level": 13
-    },
-    {
-      "id": "p13_95",
-      "category": "Theatre",
+      "id": "s13.1_17",
+      "category": "Theater & Stage",
       "pl": "Spektakl",
       "en": "Performance / Show",
-      "level": 13
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🩰",
+      "note": "Used specifically for theatrical plays or ballet."
     },
     {
-      "id": "p13_96",
-      "category": "Theatre",
+      "id": "s13.1_18",
+      "category": "Theater & Stage",
       "pl": "Przedstawienie",
-      "en": "Performance / Play",
-      "level": 13
+      "en": "Play / Performance",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎭",
+      "note": "Neuter noun. Interchangeable with 'spektakl'."
     },
     {
-      "id": "p13_97",
-      "category": "Theatre",
-      "pl": "Kiedy zaczyna się spektakl?",
-      "en": "When does the show start?",
-      "level": 13
+      "id": "s13.1_19",
+      "category": "Theater & Stage",
+      "pl": "Aktor",
+      "en": "Actor",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "👨‍🎭",
+      "note": "Masculine noun."
     },
     {
-      "id": "p13_98",
-      "category": "Theatre",
-      "pl": "O której kończy się spektakl?",
-      "en": "What time does the show end?",
-      "level": 13
+      "id": "s13.1_20",
+      "category": "Theater & Stage",
+      "pl": "Aktorka",
+      "en": "Actress",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "👩‍🎭",
+      "note": "Feminine noun."
     },
     {
-      "id": "p13_99",
-      "category": "Theatre",
-      "pl": "Ile trwa spektakl?",
-      "en": "How long is the show?",
-      "level": 13
-    },
-    {
-      "id": "p13_100",
-      "category": "Theatre",
-      "pl": "Czy są jeszcze bilety?",
-      "en": "Are there still tickets?",
-      "level": 13
-    },
-    {
-      "id": "p13_101",
-      "category": "Theatre",
-      "pl": "Wyprzedane",
-      "en": "Sold out",
-      "level": 13
-    },
-    {
-      "id": "p13_102",
-      "category": "Theatre",
-      "pl": "Rezerwacja",
-      "en": "Reservation / Booking",
-      "level": 13
-    },
-    {
-      "id": "p13_103",
-      "category": "Theatre",
-      "pl": "Chciałbym/Chciałabym zarezerwować bilety",
-      "en": "I'd like to book tickets",
-      "level": 13,
-      "gender": "both",
-      "variants": {
-        "m": "Chciałbym zarezerwować bilety",
-        "f": "Chciałabym zarezerwować bilety"
-      }
-    },
-    {
-      "id": "p13_104",
-      "category": "Theatre",
-      "pl": "Dwa bilety, proszę",
-      "en": "Two tickets, please",
-      "level": 13
-    },
-    {
-      "id": "p13_105",
-      "category": "Theatre",
-      "pl": "Miejsce",
-      "en": "Seat",
-      "level": 13
-    },
-    {
-      "id": "p13_106",
-      "category": "Theatre",
-      "pl": "Rząd",
-      "en": "Row",
-      "level": 13
-    },
-    {
-      "id": "p13_107",
-      "category": "Theatre",
-      "pl": "Balkon",
-      "en": "Balcony",
-      "level": 13
-    },
-    {
-      "id": "p13_108",
-      "category": "Theatre",
-      "pl": "Parter",
-      "en": "Ground floor / Stalls",
-      "level": 13
-    },
-    {
-      "id": "p13_109",
-      "category": "Theatre",
-      "pl": "Loża",
-      "en": "Box (theatre)",
-      "level": 13
-    },
-    {
-      "id": "p13_110",
-      "category": "Theatre",
+      "id": "s13.1_21",
+      "category": "Theater & Stage",
       "pl": "Scena",
       "en": "Stage",
-      "level": 13
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎤",
+      "note": "Feminine noun."
     },
     {
-      "id": "p13_111",
-      "category": "Theatre",
+      "id": "s13.1_22",
+      "category": "Theater & Stage",
+      "pl": "Kurtyna",
+      "en": "Curtain",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎪",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_23",
+      "category": "Theater & Stage",
       "pl": "Przerwa",
-      "en": "Intermission / Interval",
-      "level": 13
+      "en": "Intermission / Break",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🥂",
+      "note": "The time to get coffee or a snack at the theater buffet."
     },
     {
-      "id": "p13_112",
-      "category": "Theatre",
-      "pl": "Garderoba",
-      "en": "Cloakroom",
-      "level": 13
+      "id": "s13.1_24",
+      "category": "Theater & Stage",
+      "pl": "Oklaski",
+      "en": "Applause",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "👏",
+      "note": "Plural noun."
     },
     {
-      "id": "p13_113",
-      "category": "Theatre",
-      "pl": "Program",
-      "en": "Program / Programme",
-      "level": 13
+      "id": "s13.1_25",
+      "category": "Theater & Stage",
+      "pl": "Rząd",
+      "en": "Row",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🪑",
+      "note": "Masculine noun. 'W rzędzie' means 'in the row'."
     },
     {
-      "id": "p13_114",
-      "category": "Theatre",
-      "pl": "Czy są napisy?",
-      "en": "Are there subtitles?",
-      "level": 13
+      "id": "s13.1_26",
+      "category": "Theater & Stage",
+      "pl": "Miejsce siedzące",
+      "en": "Seat",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "💺",
+      "note": "Literally 'sitting place'."
     },
     {
-      "id": "p13_115",
-      "category": "Theatre",
-      "pl": "Napisy po angielsku",
-      "en": "English subtitles",
-      "level": 13
+      "id": "s13.1_27",
+      "category": "Theater & Stage",
+      "pl": "Balkon",
+      "en": "Balcony",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🏗️",
+      "note": "Masculine noun."
     },
     {
-      "id": "p13_116",
-      "category": "Cinema",
+      "id": "s13.1_28",
+      "category": "Theater & Stage",
+      "pl": "Loża",
+      "en": "Box seat",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🛋️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_29",
+      "category": "Theater & Stage",
+      "pl": "Reżyser",
+      "en": "Director",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎬",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s13.1_30",
+      "category": "Theater & Stage",
+      "pl": "Premiera",
+      "en": "Premiere",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🌟",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_31",
+      "category": "Cinema & Film",
       "pl": "Kino",
       "en": "Cinema / Movie theater",
-      "level": 13
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🍿",
+      "note": "Neuter noun."
     },
     {
-      "id": "p13_117",
-      "category": "Cinema",
+      "id": "s13.1_32",
+      "category": "Cinema & Film",
       "pl": "Film",
       "en": "Movie / Film",
-      "level": 13
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎞️",
+      "note": "Masculine noun."
     },
     {
-      "id": "p13_118",
-      "category": "Cinema",
+      "id": "s13.1_33",
+      "category": "Cinema & Film",
       "pl": "Seans",
       "en": "Screening / Showing",
-      "level": 13
+      "level": 13.1,
+      "gender": null,
+      "emoji": "📽️",
+      "note": "Refers to a specific movie time slot."
     },
     {
-      "id": "p13_119",
-      "category": "Cinema",
-      "pl": "Kiedy zaczyna się film?",
-      "en": "When does the movie start?",
-      "level": 13
-    },
-    {
-      "id": "p13_120",
-      "category": "Cinema",
-      "pl": "Jaki film polecasz?",
-      "en": "What movie do you recommend?",
-      "level": 13
-    },
-    {
-      "id": "p13_121",
-      "category": "Cinema",
-      "pl": "Wersja oryginalna",
-      "en": "Original version",
-      "level": 13
-    },
-    {
-      "id": "p13_122",
-      "category": "Cinema",
-      "pl": "Z lektorem",
-      "en": "With voice-over",
-      "level": 13
-    },
-    {
-      "id": "p13_123",
-      "category": "Cinema",
-      "pl": "Dubbing",
-      "en": "Dubbed",
-      "level": 13
-    },
-    {
-      "id": "p13_124",
-      "category": "Cinema",
+      "id": "s13.1_34",
+      "category": "Cinema & Film",
       "pl": "Napisy",
       "en": "Subtitles",
-      "level": 13
+      "level": 13.1,
+      "gender": null,
+      "emoji": "💬",
+      "note": "In Poland, non-animated adult films in theaters are usually shown with subtitles."
     },
     {
-      "id": "p13_125",
-      "category": "Cinema",
+      "id": "s13.1_35",
+      "category": "Cinema & Film",
+      "pl": "Dubbing",
+      "en": "Dubbed version",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🗣️",
+      "note": "Standard for children's movies and big Hollywood blockbusters."
+    },
+    {
+      "id": "s13.1_36",
+      "category": "Cinema & Film",
+      "pl": "Lektor",
+      "en": "Voiceover",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎙️",
+      "note": "A unique Polish TV tradition! One male voice reads all the translated dialogue over the original audio."
+    },
+    {
+      "id": "s13.1_37",
+      "category": "Cinema & Film",
+      "pl": "Rezerwacja biletów",
+      "en": "Ticket reservation",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎟️",
+      "note": "Takes the genitive case 'biletów'."
+    },
+    {
+      "id": "s13.1_38",
+      "category": "Cinema & Film",
       "pl": "Popcorn",
       "en": "Popcorn",
-      "level": 13
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🍿",
+      "note": "Pronounced exactly like in English."
+    },
+    {
+      "id": "s13.1_39",
+      "category": "Cinema & Film",
+      "pl": "Ekran",
+      "en": "Screen",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🖥️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s13.1_40",
+      "category": "Cinema & Film",
+      "pl": "Zwiastun",
+      "en": "Trailer",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "⏭️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s13.1_41",
+      "category": "Cinema & Film",
+      "pl": "Komedia",
+      "en": "Comedy",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "😂",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_42",
+      "category": "Cinema & Film",
+      "pl": "Dramat",
+      "en": "Drama",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎭",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s13.1_43",
+      "category": "Cinema & Film",
+      "pl": "Horror",
+      "en": "Horror movie",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🧟",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s13.1_44",
+      "category": "Cinema & Film",
+      "pl": "Film dokumentalny",
+      "en": "Documentary",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎥",
+      "note": "Masculine noun phrase."
+    },
+    {
+      "id": "s13.1_45",
+      "category": "Cinema & Film",
+      "pl": "Reżyseria",
+      "en": "Direction (of a film)",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎬",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_46",
+      "category": "Music & Concerts",
+      "pl": "Koncert",
+      "en": "Concert",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎸",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s13.1_47",
+      "category": "Music & Concerts",
+      "pl": "Zespół muzyczny",
+      "en": "Music band",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🥁",
+      "note": "Often just called 'zespół'."
+    },
+    {
+      "id": "s13.1_48",
+      "category": "Music & Concerts",
+      "pl": "Piosenkarz",
+      "en": "Singer (Male)",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "👨‍🎤",
+      "note": "A female singer is 'Piosenkarka'."
+    },
+    {
+      "id": "s13.1_49",
+      "category": "Music & Concerts",
+      "pl": "Piosenka",
+      "en": "Song",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎵",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_50",
+      "category": "Music & Concerts",
+      "pl": "Muzyka na żywo",
+      "en": "Live music",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎤",
+      "note": "Literally 'music on live'."
+    },
+    {
+      "id": "s13.1_51",
+      "category": "Music & Concerts",
+      "pl": "Instrument",
+      "en": "Instrument",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎻",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s13.1_52",
+      "category": "Music & Concerts",
+      "pl": "Grać na gitarze",
+      "en": "To play the guitar",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎸",
+      "note": "When playing an instrument, use 'na' + locative case."
+    },
+    {
+      "id": "s13.1_53",
+      "category": "Music & Concerts",
+      "pl": "Grać na pianinie",
+      "en": "To play the piano",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎹",
+      "note": "Locative case 'na pianinie'."
+    },
+    {
+      "id": "s13.1_54",
+      "category": "Music & Concerts",
+      "pl": "Festiwal muzyczny",
+      "en": "Music festival",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎪",
+      "note": "Masculine noun phrase."
+    },
+    {
+      "id": "s13.1_55",
+      "category": "Music & Concerts",
+      "pl": "Scena plenerowa",
+      "en": "Outdoor stage",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🌳",
+      "note": "Feminine noun phrase."
+    },
+    {
+      "id": "s13.1_56",
+      "category": "Music & Concerts",
+      "pl": "Słuchać muzyki",
+      "en": "To listen to music",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎧",
+      "note": "The verb 'słuchać' forces the genitive case 'muzyki'."
+    },
+    {
+      "id": "s13.1_57",
+      "category": "Music & Concerts",
+      "pl": "Bilet wstępu",
+      "en": "Admission ticket",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎫",
+      "note": "Literally 'ticket of entry'."
+    },
+    {
+      "id": "s13.1_58",
+      "category": "Music & Concerts",
+      "pl": "Wyprzedane",
+      "en": "Sold out",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🚫",
+      "note": "Adjective. You will see this written across posters for popular events."
+    },
+    {
+      "id": "s13.1_59",
+      "category": "Music & Concerts",
+      "pl": "Akustyka",
+      "en": "Acoustics",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🔈",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_60",
+      "category": "Music & Concerts",
+      "pl": "Publiczność",
+      "en": "Audience",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "👥",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_61",
+      "category": "Reading & Hobbies",
+      "pl": "Czytać książkę",
+      "en": "To read a book",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "📖",
+      "note": "Accusative case 'książkę'."
+    },
+    {
+      "id": "s13.1_62",
+      "category": "Reading & Hobbies",
+      "pl": "Biblioteka",
+      "en": "Library",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "📚",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_63",
+      "category": "Reading & Hobbies",
+      "pl": "Księgarnia",
+      "en": "Bookstore",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🏬",
+      "note": "Feminine noun. Do not confuse with biblioteka!"
+    },
+    {
+      "id": "s13.1_64",
+      "category": "Reading & Hobbies",
+      "pl": "Powieść",
+      "en": "Novel",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "📘",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_65",
+      "category": "Reading & Hobbies",
+      "pl": "Poezja",
+      "en": "Poetry",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🖋️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_66",
+      "category": "Reading & Hobbies",
+      "pl": "Wydawnictwo",
+      "en": "Publishing house",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🖨️",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s13.1_67",
+      "category": "Reading & Hobbies",
+      "pl": "Fotografia",
+      "en": "Photography",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "📷",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s13.1_68",
+      "category": "Reading & Hobbies",
+      "pl": "Robić zdjęcia",
+      "en": "To take photos",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "📸",
+      "note": "Literally 'to make photos'."
+    },
+    {
+      "id": "s13.1_69",
+      "category": "Reading & Hobbies",
+      "pl": "Zakaz fotografowania",
+      "en": "No photography",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "📵",
+      "note": "Literally 'Ban of photographing'."
+    },
+    {
+      "id": "s13.1_70",
+      "category": "Reading & Hobbies",
+      "pl": "Grać w gry planszowe",
+      "en": "To play board games",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎲",
+      "note": "Board games are extremely popular in Poland."
+    },
+    {
+      "id": "s13.1_71",
+      "category": "Reading & Hobbies",
+      "pl": "Czas wolny",
+      "en": "Free time",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Masculine noun phrase."
+    },
+    {
+      "id": "s13.1_72",
+      "category": "Reading & Hobbies",
+      "pl": "Relaks",
+      "en": "Relaxation",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "😌",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s13.1_73",
+      "category": "Reading & Hobbies",
+      "pl": "Hobby",
+      "en": "Hobby",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🧩",
+      "note": "Neuter loanword. It does not decline in Polish!"
+    },
+    {
+      "id": "s13.1_74",
+      "category": "Reading & Hobbies",
+      "pl": "Interesować się",
+      "en": "To be interested in",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🤔",
+      "note": "Reflexive verb. Takes the instrumental case (e.g., 'Interesuję się sztuką')."
+    },
+    {
+      "id": "s13.1_75",
+      "category": "Reading & Hobbies",
+      "pl": "Rozrywka",
+      "en": "Entertainment",
+      "level": 13.1,
+      "gender": null,
+      "emoji": "🎉",
+      "note": "Feminine noun."
     }
   ]
 }

@@ -1,0 +1,773 @@
+{
+    "level": 31,
+    "description": "Education & Academic Life - School, University & Studying",
+    "tier": "ADVANCED",
+    "phrases": [
+        {
+            "id": "s31_01",
+            "category": "School System",
+            "pl": "Edukacja",
+            "en": "Education",
+            "level": 31,
+            "gender": null,
+            "emoji": "📚",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s31_02",
+            "category": "School System",
+            "pl": "Żłobek",
+            "en": "Nursery / Creche",
+            "level": 31,
+            "gender": null,
+            "emoji": "🍼",
+            "note": "For children up to 3 years old."
+        },
+        {
+            "id": "s31_03",
+            "category": "School System",
+            "pl": "Przedszkole",
+            "en": "Kindergarten / Preschool",
+            "level": 31,
+            "gender": null,
+            "emoji": "🧸",
+            "note": "For children aged 3 to 6."
+        },
+        {
+            "id": "s31_04",
+            "category": "School System",
+            "pl": "Szkoła podstawowa",
+            "en": "Primary school",
+            "level": 31,
+            "gender": null,
+            "emoji": "🎒",
+            "note": "Grades 1 through 8. Often shortened to 'podstawówka'."
+        },
+        {
+            "id": "s31_05",
+            "category": "School System",
+            "pl": "Liceum",
+            "en": "High school",
+            "level": 31,
+            "gender": null,
+            "emoji": "🏫",
+            "note": "A 4-year secondary school preparing students for university."
+        },
+        {
+            "id": "s31_06",
+            "category": "School System",
+            "pl": "Technikum",
+            "en": "Technical high school",
+            "level": 31,
+            "gender": null,
+            "emoji": "🔧",
+            "note": "A 5-year school offering both a vocational diploma and university prep."
+        },
+        {
+            "id": "s31_07",
+            "category": "School System",
+            "pl": "Uczeń / Uczennica",
+            "en": "Pupil / Student (up to high school)",
+            "level": 31,
+            "gender": "both",
+            "variants": {
+                "m": "Uczeń",
+                "f": "Uczennica"
+            },
+            "emoji": "👦",
+            "note": "Reserved for kids in primary or high school. University students are 'studenci'."
+        },
+        {
+            "id": "s31_08",
+            "category": "School System",
+            "pl": "Nauczyciel / Nauczycielka",
+            "en": "Teacher",
+            "level": 31,
+            "gender": "both",
+            "variants": {
+                "m": "Nauczyciel",
+                "f": "Nauczycielka"
+            },
+            "emoji": "👩‍🏫",
+            "note": "Used for school teachers, not university professors."
+        },
+        {
+            "id": "s31_09",
+            "category": "School System",
+            "pl": "Klasa",
+            "en": "Class / Grade level",
+            "level": 31,
+            "gender": null,
+            "emoji": "🪑",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s31_10",
+            "category": "School System",
+            "pl": "Lekcja",
+            "en": "Lesson",
+            "level": 31,
+            "gender": null,
+            "emoji": "📝",
+            "note": "Feminine noun. Lasts 45 minutes in Polish schools."
+        },
+        {
+            "id": "s31_11",
+            "category": "School System",
+            "pl": "Przerwa",
+            "en": "Break / Recess",
+            "level": 31,
+            "gender": null,
+            "emoji": "🥪",
+            "note": "Usually 5 to 15 minutes between lessons."
+        },
+        {
+            "id": "s31_12",
+            "category": "School System",
+            "pl": "Matura",
+            "en": "Matura / High school exit exam",
+            "level": 31,
+            "gender": null,
+            "emoji": "📜",
+            "note": "The most important exam in a Polish teenager's life. Required to enter university."
+        },
+        {
+            "id": "s31_13",
+            "category": "School System",
+            "pl": "Studniówka",
+            "en": "Prom / 100-days ball",
+            "level": 31,
+            "gender": null,
+            "emoji": "💃",
+            "note": "A formal ball held approximately 100 days before the Matura exams."
+        },
+        {
+            "id": "s31_14",
+            "category": "University Life",
+            "pl": "Uniwersytet",
+            "en": "University",
+            "level": 31,
+            "gender": null,
+            "emoji": "🎓",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s31_15",
+            "category": "University Life",
+            "pl": "Studia",
+            "en": "University studies",
+            "level": 31,
+            "gender": null,
+            "emoji": "📚",
+            "note": "Plural noun. 'Idę na studia' = I am going to university."
+        },
+        {
+            "id": "s31_16",
+            "category": "University Life",
+            "pl": "Student / Studentka",
+            "en": "University student",
+            "level": 31,
+            "gender": "both",
+            "variants": {
+                "m": "Student",
+                "f": "Studentka"
+            },
+            "emoji": "🧑‍🎓",
+            "note": "Never call a university student an 'uczeń'!"
+        },
+        {
+            "id": "s31_17",
+            "category": "University Life",
+            "pl": "Wykładowca",
+            "en": "Lecturer",
+            "level": 31,
+            "gender": null,
+            "emoji": "👨‍🏫",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s31_18",
+            "category": "University Life",
+            "pl": "Profesor",
+            "en": "Professor",
+            "level": 31,
+            "gender": null,
+            "emoji": "🔬",
+            "note": "A very high academic title in Poland, not just a job description."
+        },
+        {
+            "id": "s31_19",
+            "category": "University Life",
+            "pl": "Wykład",
+            "en": "Lecture",
+            "level": 31,
+            "gender": null,
+            "emoji": "🗣️",
+            "note": "Masculine noun. 'Jestem na wykładzie' = I am at a lecture."
+        },
+        {
+            "id": "s31_20",
+            "category": "University Life",
+            "pl": "Ćwiczenia",
+            "en": "Practical classes / Seminars",
+            "level": 31,
+            "gender": null,
+            "emoji": "✍️",
+            "note": "Plural noun. Mandatory small-group classes at university."
+        },
+        {
+            "id": "s31_21",
+            "category": "University Life",
+            "pl": "Dziekanat",
+            "en": "Dean's office",
+            "level": 31,
+            "gender": null,
+            "emoji": "🏢",
+            "note": "The administrative heart of any university department. Infamous for long lines."
+        },
+        {
+            "id": "s31_22",
+            "category": "University Life",
+            "pl": "Indeks",
+            "en": "Student record book",
+            "level": 31,
+            "gender": null,
+            "emoji": "📓",
+            "note": "Historically a green book containing all grades. Mostly digital now."
+        },
+        {
+            "id": "s31_23",
+            "category": "University Life",
+            "pl": "Legitymacja studencka",
+            "en": "Student ID card",
+            "level": 31,
+            "gender": null,
+            "emoji": "🪪",
+            "note": "Gives you a 51% discount on national trains!"
+        },
+        {
+            "id": "s31_24",
+            "category": "University Life",
+            "pl": "Akademik",
+            "en": "Dormitory / Student housing",
+            "level": 31,
+            "gender": null,
+            "emoji": "🛏️",
+            "note": "Masculine noun. 'Mieszkam w akademiku' = I live in a dorm."
+        },
+        {
+            "id": "s31_25",
+            "category": "University Life",
+            "pl": "Stypendium",
+            "en": "Scholarship",
+            "level": 31,
+            "gender": null,
+            "emoji": "💶",
+            "note": "Neuter noun."
+        },
+        {
+            "id": "s31_26",
+            "category": "University Life",
+            "pl": "Kierunek studiów",
+            "en": "Field of study / Major",
+            "level": 31,
+            "gender": null,
+            "emoji": "🧭",
+            "note": "Literally 'direction of studies'."
+        },
+        {
+            "id": "s31_27",
+            "category": "Degrees & Graduation",
+            "pl": "Licencjat",
+            "en": "Bachelor's degree",
+            "level": 31,
+            "gender": null,
+            "emoji": "🎓",
+            "note": "Usually takes 3 years in Poland."
+        },
+        {
+            "id": "s31_28",
+            "category": "Degrees & Graduation",
+            "pl": "Magister",
+            "en": "Master's degree",
+            "level": 31,
+            "gender": null,
+            "emoji": "📜",
+            "note": "Usually takes 2 years after a Licencjat."
+        },
+        {
+            "id": "s31_29",
+            "category": "Degrees & Graduation",
+            "pl": "Doktorat",
+            "en": "PhD / Doctorate",
+            "level": 31,
+            "gender": null,
+            "emoji": "🔬",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s31_30",
+            "category": "Degrees & Graduation",
+            "pl": "Praca licencjacka",
+            "en": "Bachelor's thesis",
+            "level": 31,
+            "gender": null,
+            "emoji": "📑",
+            "note": "You must write and defend this to graduate."
+        },
+        {
+            "id": "s31_31",
+            "category": "Degrees & Graduation",
+            "pl": "Praca magisterska",
+            "en": "Master's thesis",
+            "level": 31,
+            "gender": null,
+            "emoji": "📘",
+            "note": "Often shortened in slang to 'magisterka'."
+        },
+        {
+            "id": "s31_32",
+            "category": "Degrees & Graduation",
+            "pl": "Obrona",
+            "en": "Thesis defense",
+            "level": 31,
+            "gender": null,
+            "emoji": "🗣️",
+            "note": "Feminine noun. The final oral exam before graduating."
+        },
+        {
+            "id": "s31_33",
+            "category": "Degrees & Graduation",
+            "pl": "Dyplom",
+            "en": "Diploma",
+            "level": 31,
+            "gender": null,
+            "emoji": "🏅",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s31_34",
+            "category": "Degrees & Graduation",
+            "pl": "Absolwent / Absolwentka",
+            "en": "Graduate / Alumni",
+            "level": 31,
+            "gender": "both",
+            "variants": {
+                "m": "Absolwent",
+                "f": "Absolwentka"
+            },
+            "emoji": "🎓",
+            "note": "Noun."
+        },
+        {
+            "id": "s31_35",
+            "category": "Exams & Grades",
+            "pl": "Egzamin",
+            "en": "Exam",
+            "level": 31,
+            "gender": null,
+            "emoji": "📝",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s31_36",
+            "category": "Exams & Grades",
+            "pl": "Sesja",
+            "en": "Exam period",
+            "level": 31,
+            "gender": null,
+            "emoji": "😰",
+            "note": "A highly stressful multi-week period at the end of every semester."
+        },
+        {
+            "id": "s31_37",
+            "category": "Exams & Grades",
+            "pl": "Kolokwium",
+            "en": "Midterm / Test",
+            "level": 31,
+            "gender": null,
+            "emoji": "📄",
+            "note": "Often shortened to 'kolos' in student slang."
+        },
+        {
+            "id": "s31_38",
+            "category": "Exams & Grades",
+            "pl": "Zdać egzamin",
+            "en": "To pass an exam",
+            "level": 31,
+            "gender": null,
+            "emoji": "✅",
+            "note": "Perfective verb 'zdać'."
+        },
+        {
+            "id": "s31_39",
+            "category": "Exams & Grades",
+            "pl": "Oblać egzamin",
+            "en": "To fail an exam",
+            "level": 31,
+            "gender": null,
+            "emoji": "❌",
+            "note": "Literally 'to pour over'. Slang for failing."
+        },
+        {
+            "id": "s31_40",
+            "category": "Exams & Grades",
+            "pl": "Poprawka",
+            "en": "Retake (Exam)",
+            "level": 31,
+            "gender": null,
+            "emoji": "🔁",
+            "note": "If you fail an exam during the 'sesja', you get one free 'poprawka'."
+        },
+        {
+            "id": "s31_41",
+            "category": "Exams & Grades",
+            "pl": "Ocena",
+            "en": "Grade / Mark",
+            "level": 31,
+            "gender": null,
+            "emoji": "💯",
+            "note": "Feminine noun. In Poland, university grades range from 2.0 (fail) to 5.0 (excellent)."
+        },
+        {
+            "id": "s31_42",
+            "category": "Exams & Grades",
+            "pl": "Zaliczenie",
+            "en": "Course credit / Pass",
+            "level": 31,
+            "gender": null,
+            "emoji": "👍",
+            "note": "Sometimes classes don't have a final exam, just a pass/fail 'zaliczenie'."
+        },
+        {
+            "id": "s31_43",
+            "category": "Exams & Grades",
+            "pl": "Ściąga",
+            "en": "Cheat sheet",
+            "level": 31,
+            "gender": null,
+            "emoji": "🫣",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s31_44",
+            "category": "Subjects",
+            "pl": "Matematyka",
+            "en": "Mathematics",
+            "level": 31,
+            "gender": null,
+            "emoji": "📐",
+            "note": "Often shortened to 'Matma'."
+        },
+        {
+            "id": "s31_45",
+            "category": "Subjects",
+            "pl": "Historia",
+            "en": "History",
+            "level": 31,
+            "gender": null,
+            "emoji": "📚",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s31_46",
+            "category": "Subjects",
+            "pl": "Chemia",
+            "en": "Chemistry",
+            "level": 31,
+            "gender": null,
+            "emoji": "🧪",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s31_47",
+            "category": "Subjects",
+            "pl": "Fizyka",
+            "en": "Physics",
+            "level": 31,
+            "gender": null,
+            "emoji": "⚛️",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s31_48",
+            "category": "Subjects",
+            "pl": "Biologia",
+            "en": "Biology",
+            "level": 31,
+            "gender": null,
+            "emoji": "🧬",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s31_49",
+            "category": "Subjects",
+            "pl": "Informatyka",
+            "en": "Computer Science / IT",
+            "level": 31,
+            "gender": null,
+            "emoji": "💻",
+            "note": "A very popular and lucrative field of study in Poland."
+        },
+        {
+            "id": "s31_50",
+            "category": "Subjects",
+            "pl": "Język obcy",
+            "en": "Foreign language",
+            "level": 31,
+            "gender": null,
+            "emoji": "🗣️",
+            "note": "Masculine noun phrase."
+        },
+        {
+            "id": "s31_51",
+            "category": "Learning Actions",
+            "pl": "Uczyć się",
+            "en": "To study / To learn",
+            "level": 31,
+            "gender": null,
+            "emoji": "📖",
+            "note": "Reflexive verb. Takes the genitive case (e.g., 'Uczę się polskiego')."
+        },
+        {
+            "id": "s31_52",
+            "category": "Learning Actions",
+            "pl": "Kuweć",
+            "en": "To cram / Study intensely",
+            "level": 31,
+            "gender": null,
+            "emoji": "🤯",
+            "note": "Student slang ('kuć'). E.g., 'Kuję do egzaminu'."
+        },
+        {
+            "id": "s31_53",
+            "category": "Learning Actions",
+            "pl": "Czytać",
+            "en": "To read",
+            "level": 31,
+            "gender": null,
+            "emoji": "📘",
+            "note": "Infinitive verb."
+        },
+        {
+            "id": "s31_54",
+            "category": "Learning Actions",
+            "pl": "Pisać",
+            "en": "To write",
+            "level": 31,
+            "gender": null,
+            "emoji": "✍️",
+            "note": "Infinitive verb."
+        },
+        {
+            "id": "s31_55",
+            "category": "Learning Actions",
+            "pl": "Notować",
+            "en": "To take notes",
+            "level": 31,
+            "gender": null,
+            "emoji": "📝",
+            "note": "Infinitive verb."
+        },
+        {
+            "id": "s31_56",
+            "category": "Learning Actions",
+            "pl": "Zrozumieć",
+            "en": "To understand",
+            "level": 31,
+            "gender": null,
+            "emoji": "💡",
+            "note": "Perfective verb."
+        },
+        {
+            "id": "s31_57",
+            "category": "Learning Actions",
+            "pl": "Pamiętać",
+            "en": "To remember",
+            "level": 31,
+            "gender": null,
+            "emoji": "🧠",
+            "note": "Infinitive verb."
+        },
+        {
+            "id": "s31_58",
+            "category": "Learning Actions",
+            "pl": "Zapomnieć",
+            "en": "To forget",
+            "level": 31,
+            "gender": null,
+            "emoji": "🤷",
+            "note": "Perfective verb. Takes the genitive case."
+        },
+        {
+            "id": "s31_59",
+            "category": "Academic Equipment",
+            "pl": "Książka",
+            "en": "Book",
+            "level": 31,
+            "gender": null,
+            "emoji": "📕",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s31_60",
+            "category": "Academic Equipment",
+            "pl": "Podręcznik",
+            "en": "Textbook",
+            "level": 31,
+            "gender": null,
+            "emoji": "📚",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s31_61",
+            "category": "Academic Equipment",
+            "pl": "Zeszyt",
+            "en": "Notebook",
+            "level": 31,
+            "gender": null,
+            "emoji": "📓",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s31_62",
+            "category": "Academic Equipment",
+            "pl": "Długopis",
+            "en": "Pen",
+            "level": 31,
+            "gender": null,
+            "emoji": "🖊️",
+            "note": "Literally 'long-writer'."
+        },
+        {
+            "id": "s31_63",
+            "category": "Academic Equipment",
+            "pl": "Ołówek",
+            "en": "Pencil",
+            "level": 31,
+            "gender": null,
+            "emoji": "✏️",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s31_64",
+            "category": "Academic Equipment",
+            "pl": "Kalkulator",
+            "en": "Calculator",
+            "level": 31,
+            "gender": null,
+            "emoji": "🧮",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s31_65",
+            "category": "Conversations",
+            "pl": "Co studiujesz?",
+            "en": "What are you studying?",
+            "level": 31,
+            "gender": null,
+            "emoji": "🤔",
+            "note": "A very common question for young adults in Poland."
+        },
+        {
+            "id": "s31_66",
+            "category": "Conversations",
+            "pl": "Studiuję prawo",
+            "en": "I study law",
+            "level": 31,
+            "gender": null,
+            "emoji": "⚖️",
+            "note": "Accusative case 'prawo'."
+        },
+        {
+            "id": "s31_67",
+            "category": "Conversations",
+            "pl": "Studiuję medycynę",
+            "en": "I study medicine",
+            "level": 31,
+            "gender": null,
+            "emoji": "🩺",
+            "note": "Accusative case 'medycynę'."
+        },
+        {
+            "id": "s31_68",
+            "category": "Conversations",
+            "pl": "Na którym jesteś roku?",
+            "en": "What year are you in?",
+            "level": 31,
+            "gender": null,
+            "emoji": "📅",
+            "note": "Uses the locative case 'Na którym roku'."
+        },
+        {
+            "id": "s31_69",
+            "category": "Conversations",
+            "pl": "Jestem na pierwszym roku",
+            "en": "I am in my first year",
+            "level": 31,
+            "gender": null,
+            "emoji": "1️⃣",
+            "note": "Locative phrase."
+        },
+        {
+            "id": "s31_70",
+            "category": "Conversations",
+            "pl": "Jestem na ostatnim roku",
+            "en": "I am in my last year",
+            "level": 31,
+            "gender": null,
+            "emoji": "🎓",
+            "note": "Locative phrase."
+        },
+        {
+            "id": "s31_71",
+            "category": "Conversations",
+            "pl": "Mam dużo nauki",
+            "en": "I have a lot of studying",
+            "level": 31,
+            "gender": null,
+            "emoji": "😩",
+            "note": "Takes the genitive case 'nauki'."
+        },
+        {
+            "id": "s31_72",
+            "category": "Conversations",
+            "pl": "Idę do biblioteki",
+            "en": "I'm going to the library",
+            "level": 31,
+            "gender": null,
+            "emoji": "🚶",
+            "note": "Preposition 'do' + genitive 'biblioteki'."
+        },
+        {
+            "id": "s31_73",
+            "category": "Conversations",
+            "pl": "Wagarować",
+            "en": "To skip school / play truant",
+            "level": 31,
+            "gender": null,
+            "emoji": "🏃‍♂️",
+            "note": "Slang verb."
+        },
+        {
+            "id": "s31_74",
+            "category": "Conversations",
+            "pl": "Korepetycje",
+            "en": "Private tutoring",
+            "level": 31,
+            "gender": null,
+            "emoji": "👩‍🏫",
+            "note": "Plural noun. Very common in Poland to prep for the Matura."
+        },
+        {
+            "id": "s31_75",
+            "category": "Conversations",
+            "pl": "Semestr",
+            "en": "Semester",
+            "level": 31,
+            "gender": null,
+            "emoji": "📆",
+            "note": "Masculine noun."
+        }
+    ]
+}

@@ -1,0 +1,765 @@
+{
+    "level": 33,
+    "description": "Persuasion & Debate - Arguing, Negotiating & Compromise",
+    "tier": "FLUENCY",
+    "phrases": [
+        {
+            "id": "s33_01",
+            "category": "Opening Arguments",
+            "pl": "Zacznijmy od tego, że...",
+            "en": "Let's start with the fact that...",
+            "level": 33,
+            "gender": null,
+            "emoji": "🏁",
+            "note": "A very strong, structured way to begin a debate."
+        },
+        {
+            "id": "s33_02",
+            "category": "Opening Arguments",
+            "pl": "Przede wszystkim",
+            "en": "First and foremost / Above all",
+            "level": 33,
+            "gender": null,
+            "emoji": "🥇",
+            "note": "Instrumental phrase."
+        },
+        {
+            "id": "s33_03",
+            "category": "Opening Arguments",
+            "pl": "Moim głównym argumentem jest...",
+            "en": "My main argument is...",
+            "level": 33,
+            "gender": null,
+            "emoji": "📌",
+            "note": "Instrumental 'moim głównym argumentem'."
+        },
+        {
+            "id": "s33_04",
+            "category": "Opening Arguments",
+            "pl": "Chcę podkreślić, że...",
+            "en": "I want to emphasize that...",
+            "level": 33,
+            "gender": null,
+            "emoji": "🖍️",
+            "note": "Verb 'podkreślić' literally means to underline."
+        },
+        {
+            "id": "s33_05",
+            "category": "Opening Arguments",
+            "pl": "Należy pamiętać, że...",
+            "en": "It should be remembered that...",
+            "level": 33,
+            "gender": null,
+            "emoji": "🧠",
+            "note": "A formal, impersonal construction."
+        },
+        {
+            "id": "s33_06",
+            "category": "Stating Facts",
+            "pl": "Fakty są takie",
+            "en": "The facts are these",
+            "level": 33,
+            "gender": null,
+            "emoji": "📊",
+            "note": "A blunt way to pivot away from opinions."
+        },
+        {
+            "id": "s33_07",
+            "category": "Stating Facts",
+            "pl": "Badania pokazują",
+            "en": "Studies show",
+            "level": 33,
+            "gender": null,
+            "emoji": "🔬",
+            "note": "Plural noun 'badania' (research/studies)."
+        },
+        {
+            "id": "s33_08",
+            "category": "Stating Facts",
+            "pl": "Dowody wskazują na to, że...",
+            "en": "Evidence points to the fact that...",
+            "level": 33,
+            "gender": null,
+            "emoji": "🔎",
+            "note": "Verb 'wskazywać na' (to point at)."
+        },
+        {
+            "id": "s33_09",
+            "category": "Stating Facts",
+            "pl": "To jest udowodnione",
+            "en": "This is proven",
+            "level": 33,
+            "gender": null,
+            "emoji": "✅",
+            "note": "Passive participle 'udowodnione'."
+        },
+        {
+            "id": "s33_10",
+            "category": "Stating Facts",
+            "pl": "Bez dwóch zdań",
+            "en": "Without a doubt / Hands down",
+            "level": 33,
+            "gender": null,
+            "emoji": "💯",
+            "note": "Literally 'Without two sentences'."
+        },
+        {
+            "id": "s33_11",
+            "category": "Persuading",
+            "pl": "Musisz przyznać, że...",
+            "en": "You have to admit that...",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤷",
+            "note": "Casual phrasing using 'ty'."
+        },
+        {
+            "id": "s33_12",
+            "category": "Persuading",
+            "pl": "Zastanów się nad tym",
+            "en": "Think about it",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤔",
+            "note": "Imperative 'Zastanów się' + instrumental 'nad tym'."
+        },
+        {
+            "id": "s33_13",
+            "category": "Persuading",
+            "pl": "Spójrz na to z innej strony",
+            "en": "Look at it from another angle/side",
+            "level": 33,
+            "gender": null,
+            "emoji": "🔄",
+            "note": "Imperative 'Spójrz'."
+        },
+        {
+            "id": "s33_14",
+            "category": "Persuading",
+            "pl": "Daj się przekonać",
+            "en": "Let yourself be convinced",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤝",
+            "note": "A friendly nudge during an argument."
+        },
+        {
+            "id": "s33_15",
+            "category": "Persuading",
+            "pl": "Uwierz mi",
+            "en": "Believe me / Trust me",
+            "level": 33,
+            "gender": null,
+            "emoji": "🙏",
+            "note": "Imperative 'Uwierz' + dative 'mi'."
+        },
+        {
+            "id": "s33_16",
+            "category": "Challenging",
+            "pl": "Nie masz racji",
+            "en": "You are wrong",
+            "level": 33,
+            "gender": null,
+            "emoji": "❌",
+            "note": "Literally 'You do not have rightness'."
+        },
+        {
+            "id": "s33_17",
+            "category": "Challenging",
+            "pl": "To nie jest prawda",
+            "en": "That's not true",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤥",
+            "note": "Direct and clear."
+        },
+        {
+            "id": "s33_18",
+            "category": "Challenging",
+            "pl": "Mylisz się",
+            "en": "You are mistaken",
+            "level": 33,
+            "gender": null,
+            "emoji": "🙅",
+            "note": "Reflexive verb 'mylić się'."
+        },
+        {
+            "id": "s33_19",
+            "category": "Challenging",
+            "pl": "Gdzie masz dowody?",
+            "en": "Where is your evidence?",
+            "level": 33,
+            "gender": null,
+            "emoji": "📑",
+            "note": "Plural noun 'dowody'."
+        },
+        {
+            "id": "s33_20",
+            "category": "Challenging",
+            "pl": "To są bzdury",
+            "en": "That is nonsense / bullshit",
+            "level": 33,
+            "gender": null,
+            "emoji": "🗑️",
+            "note": "A somewhat aggressive, slangy dismissal."
+        },
+        {
+            "id": "s33_21",
+            "category": "Polite Disagreement",
+            "pl": "Rozumiem twój punkt widzenia, ale...",
+            "en": "I understand your point of view, but...",
+            "level": 33,
+            "gender": null,
+            "emoji": "👁️",
+            "note": "The classic debate pivot."
+        },
+        {
+            "id": "s33_22",
+            "category": "Polite Disagreement",
+            "pl": "Mam inne zdanie",
+            "en": "I have a different opinion",
+            "level": 33,
+            "gender": null,
+            "emoji": "⚖️",
+            "note": "Accusative neuter 'inne zdanie'."
+        },
+        {
+            "id": "s33_23",
+            "category": "Polite Disagreement",
+            "pl": "Pozwolę sobie się nie zgodzić",
+            "en": "I beg to differ",
+            "level": 33,
+            "gender": null,
+            "emoji": "✋",
+            "note": "Highly formal. Literally 'I will allow myself to not agree'."
+        },
+        {
+            "id": "s33_24",
+            "category": "Polite Disagreement",
+            "pl": "Z całym szacunkiem",
+            "en": "With all due respect",
+            "level": 33,
+            "gender": null,
+            "emoji": "🙇",
+            "note": "Usually precedes a strong disagreement."
+        },
+        {
+            "id": "s33_25",
+            "category": "Polite Disagreement",
+            "pl": "Nie byłbym taki pewien / Nie byłabym taka pewna",
+            "en": "I wouldn't be so sure",
+            "level": 33,
+            "gender": "both",
+            "variants": {
+                "m": "Nie byłbym taki pewien",
+                "f": "Nie byłabym taka pewna"
+            },
+            "emoji": "🤨",
+            "note": "Conditional tense."
+        },
+        {
+            "id": "s33_26",
+            "category": "Interrupting",
+            "pl": "Przepraszam, że ci przerwę",
+            "en": "Sorry to interrupt you",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤚",
+            "note": "Uses dative 'ci'."
+        },
+        {
+            "id": "s33_27",
+            "category": "Interrupting",
+            "pl": "Pozwól mi dokończyć",
+            "en": "Let me finish",
+            "level": 33,
+            "gender": null,
+            "emoji": "🛑",
+            "note": "Imperative 'Pozwól'."
+        },
+        {
+            "id": "s33_28",
+            "category": "Interrupting",
+            "pl": "Daj mi dojść do słowa",
+            "en": "Let me get a word in",
+            "level": 33,
+            "gender": null,
+            "emoji": "🗣️",
+            "note": "Literally 'Give me to arrive at a word'."
+        },
+        {
+            "id": "s33_29",
+            "category": "Interrupting",
+            "pl": "Wracając do tematu",
+            "en": "Getting back to the topic",
+            "level": 33,
+            "gender": null,
+            "emoji": "🔙",
+            "note": "Gerund 'Wracając'."
+        },
+        {
+            "id": "s33_30",
+            "category": "Interrupting",
+            "pl": "Nie zmieniaj tematu",
+            "en": "Don't change the subject",
+            "level": 33,
+            "gender": null,
+            "emoji": "🎯",
+            "note": "Takes the genitive case 'tematu' due to negation."
+        },
+        {
+            "id": "s33_31",
+            "category": "Conceding",
+            "pl": "Masz w tym rację",
+            "en": "You are right about that",
+            "level": 33,
+            "gender": null,
+            "emoji": "✅",
+            "note": "Locative 'w tym'."
+        },
+        {
+            "id": "s33_32",
+            "category": "Conceding",
+            "pl": "Zgadzam się z tobą w tej kwestii",
+            "en": "I agree with you on this issue",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤝",
+            "note": "Instrumental 'z tobą' + locative 'w tej kwestii'."
+        },
+        {
+            "id": "s33_33",
+            "category": "Conceding",
+            "pl": "Przekonałeś/Przekonałaś mnie",
+            "en": "You convinced me",
+            "level": 33,
+            "gender": "both",
+            "variants": {
+                "m": "Przekonałeś mnie",
+                "f": "Przekonałaś mnie"
+            },
+            "emoji": "🏳️",
+            "note": "Past tense verb."
+        },
+        {
+            "id": "s33_34",
+            "category": "Conceding",
+            "pl": "To dobry argument",
+            "en": "That's a good argument",
+            "level": 33,
+            "gender": null,
+            "emoji": "👏",
+            "note": "Masculine noun phrase."
+        },
+        {
+            "id": "s33_35",
+            "category": "Conceding",
+            "pl": "Muszę ci przyznać rację",
+            "en": "I have to admit you're right",
+            "level": 33,
+            "gender": null,
+            "emoji": "🙌",
+            "note": "Literally 'I must admit rightness to you'."
+        },
+        {
+            "id": "s33_36",
+            "category": "Negotiating",
+            "pl": "Przejdźmy do negocjacji",
+            "en": "Let's move on to negotiations",
+            "level": 33,
+            "gender": null,
+            "emoji": "💼",
+            "note": "Imperative 'Przejdźmy'."
+        },
+        {
+            "id": "s33_37",
+            "category": "Negotiating",
+            "pl": "Jaka jest twoja propozycja?",
+            "en": "What is your proposal?",
+            "level": 33,
+            "gender": null,
+            "emoji": "📝",
+            "note": "Feminine noun phrase."
+        },
+        {
+            "id": "s33_38",
+            "category": "Negotiating",
+            "pl": "Co proponujesz?",
+            "en": "What do you suggest/propose?",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤔",
+            "note": "Verb 'proponować'."
+        },
+        {
+            "id": "s33_39",
+            "category": "Negotiating",
+            "pl": "Czy możemy się dogadać?",
+            "en": "Can we make a deal? / Can we get along?",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤝",
+            "note": "Reflexive verb 'dogadać się'."
+        },
+        {
+            "id": "s33_40",
+            "category": "Negotiating",
+            "pl": "Jaka jest ostateczna cena?",
+            "en": "What is the final price?",
+            "level": 33,
+            "gender": null,
+            "emoji": "💶",
+            "note": "Feminine adjective 'ostateczna'."
+        },
+        {
+            "id": "s33_41",
+            "category": "Bargaining",
+            "pl": "To za dużo",
+            "en": "That's too much",
+            "level": 33,
+            "gender": null,
+            "emoji": "🛑",
+            "note": "Standard pushback on a price."
+        },
+        {
+            "id": "s33_42",
+            "category": "Bargaining",
+            "pl": "Mogę zaoferować...",
+            "en": "I can offer...",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤲",
+            "note": "Follow with the amount or term."
+        },
+        {
+            "id": "s33_43",
+            "category": "Bargaining",
+            "pl": "Spotkajmy się pośrodku",
+            "en": "Let's meet in the middle",
+            "level": 33,
+            "gender": null,
+            "emoji": "⚖️",
+            "note": "A direct translation of the English bargaining idiom."
+        },
+        {
+            "id": "s33_44",
+            "category": "Bargaining",
+            "pl": "Zejdź z ceny",
+            "en": "Lower the price",
+            "level": 33,
+            "gender": null,
+            "emoji": "📉",
+            "note": "Literally 'Step down from the price'."
+        },
+        {
+            "id": "s33_45",
+            "category": "Bargaining",
+            "pl": "To moja ostateczna oferta",
+            "en": "This is my final offer",
+            "level": 33,
+            "gender": null,
+            "emoji": "💼",
+            "note": "Feminine noun phrase."
+        },
+        {
+            "id": "s33_46",
+            "category": "Deal Making",
+            "pl": "Umowa stoi",
+            "en": "It's a deal",
+            "level": 33,
+            "gender": null,
+            "emoji": "✅",
+            "note": "Literally 'The contract stands'."
+        },
+        {
+            "id": "s33_47",
+            "category": "Deal Making",
+            "pl": "Mamy umowę",
+            "en": "We have an agreement",
+            "level": 33,
+            "gender": null,
+            "emoji": "📜",
+            "note": "Accusative 'umowę'."
+        },
+        {
+            "id": "s33_48",
+            "category": "Deal Making",
+            "pl": "Zgoda",
+            "en": "Agreed",
+            "level": 33,
+            "gender": null,
+            "emoji": "👍",
+            "note": "Used as a standalone exclamation of agreement."
+        },
+        {
+            "id": "s33_49",
+            "category": "Deal Making",
+            "pl": "Podajmy sobie ręce",
+            "en": "Let's shake hands",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤝",
+            "note": "Literally 'Let's pass hands to each other'."
+        },
+        {
+            "id": "s33_50",
+            "category": "Deal Making",
+            "pl": "Ubiliśmy interes",
+            "en": "We struck a deal",
+            "level": 33,
+            "gender": null,
+            "emoji": "🥂",
+            "note": "Literally 'We slaughtered a business'. Old trading slang."
+        },
+        {
+            "id": "s33_51",
+            "category": "Compromise",
+            "pl": "Kompromis",
+            "en": "Compromise",
+            "level": 33,
+            "gender": null,
+            "emoji": "⚖️",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s33_52",
+            "category": "Compromise",
+            "pl": "Musimy znaleźć kompromis",
+            "en": "We must find a compromise",
+            "level": 33,
+            "gender": null,
+            "emoji": "🔍",
+            "note": "Takes accusative case."
+        },
+        {
+            "id": "s33_53",
+            "category": "Compromise",
+            "pl": "Idę na ustępstwa",
+            "en": "I'm making concessions",
+            "level": 33,
+            "gender": null,
+            "emoji": "🏳️",
+            "note": "Literally 'I am going on concessions'."
+        },
+        {
+            "id": "s33_54",
+            "category": "Compromise",
+            "pl": "Obie strony muszą coś zyskać",
+            "en": "Both sides must gain something",
+            "level": 33,
+            "gender": null,
+            "emoji": "🏆",
+            "note": "A win-win philosophy."
+        },
+        {
+            "id": "s33_55",
+            "category": "Compromise",
+            "pl": "To uczciwy układ",
+            "en": "It's a fair deal",
+            "level": 33,
+            "gender": null,
+            "emoji": "⚖️",
+            "note": "Masculine phrase 'uczciwy układ'."
+        },
+        {
+            "id": "s33_56",
+            "category": "Standing Firm",
+            "pl": "Nie ma mowy",
+            "en": "No way / Out of the question",
+            "level": 33,
+            "gender": null,
+            "emoji": "🙅‍♂️",
+            "note": "Literally 'There is no speech'."
+        },
+        {
+            "id": "s33_57",
+            "category": "Standing Firm",
+            "pl": "Nie zgadzam się na to",
+            "en": "I don't agree to this",
+            "level": 33,
+            "gender": null,
+            "emoji": "🛑",
+            "note": "Takes 'na' + accusative 'to'."
+        },
+        {
+            "id": "s33_58",
+            "category": "Standing Firm",
+            "pl": "To nie wchodzi w grę",
+            "en": "That's out of the question",
+            "level": 33,
+            "gender": null,
+            "emoji": "🎮",
+            "note": "Literally 'That doesn't enter into the game'."
+        },
+        {
+            "id": "s33_59",
+            "category": "Standing Firm",
+            "pl": "Moja odpowiedź brzmi nie",
+            "en": "My answer is no",
+            "level": 33,
+            "gender": null,
+            "emoji": "❌",
+            "note": "Literally 'My answer sounds no'."
+        },
+        {
+            "id": "s33_60",
+            "category": "Standing Firm",
+            "pl": "Nie zmienię zdania",
+            "en": "I won't change my mind",
+            "level": 33,
+            "gender": null,
+            "emoji": "🧱",
+            "note": "Verb 'zmienić' takes the genitive 'zdania' due to negation."
+        },
+        {
+            "id": "s33_61",
+            "category": "Emphasizing",
+            "pl": "Zwróć uwagę na...",
+            "en": "Pay attention to...",
+            "level": 33,
+            "gender": null,
+            "emoji": "👀",
+            "note": "Imperative phrase taking 'na' + accusative."
+        },
+        {
+            "id": "s33_62",
+            "category": "Emphasizing",
+            "pl": "Najważniejsze jest to, że...",
+            "en": "The most important thing is that...",
+            "level": 33,
+            "gender": null,
+            "emoji": "⭐",
+            "note": "Superlative adjective 'Najważniejsze'."
+        },
+        {
+            "id": "s33_63",
+            "category": "Emphasizing",
+            "pl": "Kluczową kwestią jest...",
+            "en": "The key issue is...",
+            "level": 33,
+            "gender": null,
+            "emoji": "🔑",
+            "note": "Instrumental case 'Kluczową kwestią'."
+        },
+        {
+            "id": "s33_64",
+            "category": "Emphasizing",
+            "pl": "Nie zapominajmy o...",
+            "en": "Let's not forget about...",
+            "level": 33,
+            "gender": null,
+            "emoji": "🧠",
+            "note": "Imperative 'zapominajmy' + locative case."
+        },
+        {
+            "id": "s33_65",
+            "category": "Emphasizing",
+            "pl": "Sedno sprawy",
+            "en": "The heart of the matter / The core issue",
+            "level": 33,
+            "gender": null,
+            "emoji": "🎯",
+            "note": "Genitive 'sprawy'."
+        },
+        {
+            "id": "s33_66",
+            "category": "Advanced Connectors",
+            "pl": "Zważywszy na to...",
+            "en": "Considering that...",
+            "level": 33,
+            "gender": null,
+            "emoji": "⚖️",
+            "note": "A highly formal, literary connector."
+        },
+        {
+            "id": "s33_67",
+            "category": "Advanced Connectors",
+            "pl": "Biorąc pod uwagę...",
+            "en": "Taking into account...",
+            "level": 33,
+            "gender": null,
+            "emoji": "💭",
+            "note": "Gerund phrase."
+        },
+        {
+            "id": "s33_68",
+            "category": "Advanced Connectors",
+            "pl": "Mianowicie",
+            "en": "Namely / Specifically",
+            "level": 33,
+            "gender": null,
+            "emoji": "👉",
+            "note": "Used to introduce a specific clarification."
+        },
+        {
+            "id": "s33_69",
+            "category": "Advanced Connectors",
+            "pl": "Mówiąc wprost",
+            "en": "Speaking frankly / Bluntly",
+            "level": 33,
+            "gender": null,
+            "emoji": "🗣️",
+            "note": "Used before delivering harsh truths."
+        },
+        {
+            "id": "s33_70",
+            "category": "Advanced Connectors",
+            "pl": "Szczerze mówiąc",
+            "en": "To be honest / Honestly speaking",
+            "level": 33,
+            "gender": null,
+            "emoji": "😇",
+            "note": "One of the most common conversational pivots in Polish."
+        },
+        {
+            "id": "s33_71",
+            "category": "Closing Debate",
+            "pl": "Podsumowując...",
+            "en": "To sum up...",
+            "level": 33,
+            "gender": null,
+            "emoji": "📝",
+            "note": "Gerund used to close an argument."
+        },
+        {
+            "id": "s33_72",
+            "category": "Closing Debate",
+            "pl": "Zmierzając do brzegu",
+            "en": "Getting to the point / Wrapping up",
+            "level": 33,
+            "gender": null,
+            "emoji": "🛶",
+            "note": "Literally 'Heading to the shore'. Very common idiomatic way to conclude."
+        },
+        {
+            "id": "s33_73",
+            "category": "Closing Debate",
+            "pl": "Zakończmy tę dyskusję",
+            "en": "Let's end this discussion",
+            "level": 33,
+            "gender": null,
+            "emoji": "🛑",
+            "note": "Accusative 'tę dyskusję'."
+        },
+        {
+            "id": "s33_74",
+            "category": "Closing Debate",
+            "pl": "Koniec tematu",
+            "en": "End of topic / End of story",
+            "level": 33,
+            "gender": null,
+            "emoji": "🤐",
+            "note": "Firm and final."
+        },
+        {
+            "id": "s33_75",
+            "category": "Closing Debate",
+            "pl": "Kropka",
+            "en": "Period / Full stop.",
+            "level": 33,
+            "gender": null,
+            "emoji": "⏺️",
+            "note": "Said at the end of a sentence to mean 'and that's final'."
+        }
+    ]
+}

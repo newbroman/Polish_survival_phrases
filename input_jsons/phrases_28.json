@@ -1,0 +1,457 @@
+{
+  "level": 28,
+  "description": "The Shopping Marathon (75 Phrases)",
+  "phrases": [
+    {
+      "id": 1,
+      "en": "The total is thirty złoty.",
+      "pl": "Razem trzydzieści złotych.",
+      "level": 28
+    },
+    {
+      "id": 2,
+      "en": "The total is forty złoty.",
+      "pl": "Razem czterdzieści złotych.",
+      "level": 28
+    },
+    {
+      "id": 3,
+      "en": "It costs thirty-one złoty.",
+      "pl": "To kosztuje trzydzieści jeden złotych.",
+      "level": 28
+    },
+    {
+      "id": 4,
+      "en": "It costs forty-one złoty.",
+      "pl": "To kosztuje czterdzieści jeden złotych.",
+      "level": 28
+    },
+    {
+      "id": 5,
+      "en": "That will be thirty-two złoty.",
+      "pl": "To będzie trzydzieści dwa złote.",
+      "level": 28
+    },
+    {
+      "id": 6,
+      "en": "That will be forty-two złoty.",
+      "pl": "To będzie czterdzieści dwa złote.",
+      "level": 28
+    },
+    {
+      "id": 7,
+      "en": "Thirty-three złoty, please.",
+      "pl": "Trzydzieści trzy złote, poproszę.",
+      "level": 28
+    },
+    {
+      "id": 8,
+      "en": "Forty-three złoty, please.",
+      "pl": "Czterdzieści trzy złote, poproszę.",
+      "level": 28
+    },
+    {
+      "id": 9,
+      "en": "It comes to thirty-four złoty.",
+      "pl": "To wynosi trzydzieści cztery złote.",
+      "level": 28
+    },
+    {
+      "id": 10,
+      "en": "It comes to forty-four złoty.",
+      "pl": "To wynosi czterdzieści cztery złote.",
+      "level": 28
+    },
+    {
+      "id": 11,
+      "en": "Total is thirty-five złoty.",
+      "pl": "Razem trzydzieści pięć złotych.",
+      "level": 28
+    },
+    {
+      "id": 12,
+      "en": "Total is forty-five złoty.",
+      "pl": "Razem czterdzieści pięć złotych.",
+      "level": 28
+    },
+    {
+      "id": 13,
+      "en": "Thirty-six złoty and fifty cents.",
+      "pl": "Trzydzieści sześć złotych pięćdziesiąt.",
+      "level": 28
+    },
+    {
+      "id": 14,
+      "en": "Forty-six złoty and fifty cents.",
+      "pl": "Czterdzieści sześć złotych pięćdziesiąt.",
+      "level": 28
+    },
+    {
+      "id": 15,
+      "en": "Thirty-seven złoty total.",
+      "pl": "Razem trzydzieści siedem złotych.",
+      "level": 28
+    },
+    {
+      "id": 16,
+      "en": "Forty-seven złoty total.",
+      "pl": "Razem czterdzieści siedem złotych.",
+      "level": 28
+    },
+    {
+      "id": 17,
+      "en": "It's thirty-eight złoty.",
+      "pl": "To trzydzieści osiem złotych.",
+      "level": 28
+    },
+    {
+      "id": 18,
+      "en": "It's forty-eight złoty.",
+      "pl": "To czterdzieści osiem złotych.",
+      "level": 28
+    },
+    {
+      "id": 19,
+      "en": "Exactly thirty-nine złoty.",
+      "pl": "Dokładnie trzydzieści dziewięć złotych.",
+      "level": 28
+    },
+    {
+      "id": 20,
+      "en": "Exactly forty-nine złoty.",
+      "pl": "Dokładnie czterdzieści dziewięć złotych.",
+      "level": 28
+    },
+    {
+      "id": 21,
+      "en": "Thirty złoty for the bread.",
+      "pl": "Trzydzieści złotych za chleb.",
+      "level": 28
+    },
+    {
+      "id": 22,
+      "en": "Forty złoty for the coffee.",
+      "pl": "Czterdzieści złotych za kawę.",
+      "level": 28
+    },
+    {
+      "id": 23,
+      "en": "Wait, is it thirty or forty?",
+      "pl": "Chwila, czy to trzydzieści czy czterdzieści?",
+      "level": 28
+    },
+    {
+      "id": 24,
+      "en": "It costs thirty-two fifty.",
+      "pl": "To kosztuje trzydzieści dwa pięćdziesiąt.",
+      "level": 28
+    },
+    {
+      "id": 25,
+      "en": "It costs forty-two fifty.",
+      "pl": "To kosztuje czterdzieści dwa pięćdziesiąt.",
+      "level": 28
+    },
+    {
+      "id": 26,
+      "en": "Thirty-four złoty with the discount.",
+      "pl": "Trzydzieści cztery złote ze zniżką.",
+      "level": 28
+    },
+    {
+      "id": 27,
+      "en": "Forty-four złoty with the discount.",
+      "pl": "Czterdzieści cztery złote ze zniżką.",
+      "level": 28
+    },
+    {
+      "id": 28,
+      "en": "The milk is three złoty.",
+      "pl": "Mleko kosztuje trzy złote.",
+      "level": 28
+    },
+    {
+      "id": 29,
+      "en": "The butter is eight złoty.",
+      "pl": "Masło kosztuje osiem złotych.",
+      "level": 28
+    },
+    {
+      "id": 30,
+      "en": "The eggs are ten złoty.",
+      "pl": "Jajka kosztują dziesięć złotych.",
+      "level": 28
+    },
+    {
+      "id": 31,
+      "en": "Total for everything: thirty-six.",
+      "pl": "Razem za wszystko: trzydzieści sześć.",
+      "level": 28
+    },
+    {
+      "id": 32,
+      "en": "Total for everything: forty-six.",
+      "pl": "Razem za wszystko: czterdzieści sześć.",
+      "level": 28
+    },
+    {
+      "id": 33,
+      "en": "I only have thirty złoty.",
+      "pl": "Mam tylko trzydzieści złotych.",
+      "level": 28
+    },
+    {
+      "id": 34,
+      "en": "I only have forty złoty.",
+      "pl": "Mam tylko czterdzieści złotych.",
+      "level": 28
+    },
+    {
+      "id": 35,
+      "en": "Is thirty enough?",
+      "pl": "Czy trzydzieści wystarczy?",
+      "level": 28
+    },
+    {
+      "id": 36,
+      "en": "Is forty enough?",
+      "pl": "Czy czterdzieści wystarczy?",
+      "level": 28
+    },
+    {
+      "id": 37,
+      "en": "It's more than thirty.",
+      "pl": "To więcej niż trzydzieści.",
+      "level": 28
+    },
+    {
+      "id": 38,
+      "en": "It's more than forty.",
+      "pl": "To więcej niż czterdzieści.",
+      "level": 28
+    },
+    {
+      "id": 39,
+      "en": "It's less than thirty-five.",
+      "pl": "To mniej niż trzydzieści pięć.",
+      "level": 28
+    },
+    {
+      "id": 40,
+      "en": "It's less than forty-five.",
+      "pl": "To mniej niż czterdzieści pięć.",
+      "level": 28
+    },
+    {
+      "id": 41,
+      "en": "Exactly thirty-three.",
+      "pl": "Dokładnie trzydzieści trzy.",
+      "level": 28
+    },
+    {
+      "id": 42,
+      "en": "Exactly forty-three.",
+      "pl": "Dokładnie czterdzieści trzy.",
+      "level": 28
+    },
+    {
+      "id": 43,
+      "en": "Thirty-seven fifty-five.",
+      "pl": "Trzydzieści siedem pięćdziesiąt pięć.",
+      "level": 28
+    },
+    {
+      "id": 44,
+      "en": "Forty-seven fifty-five.",
+      "pl": "Czterdzieści siedem pięćdziesiąt pięć.",
+      "level": 28
+    },
+    {
+      "id": 45,
+      "en": "Thirty-eight or thirty-nine?",
+      "pl": "Trzydzieści osiem czy trzydzieści dziewięć?",
+      "level": 28
+    },
+    {
+      "id": 46,
+      "en": "Forty-eight or forty-nine?",
+      "pl": "Czterdzieści osiem czy czterdzieści dziewięć?",
+      "level": 28
+    },
+    {
+      "id": 47,
+      "en": "The cheese costs thirty złoty.",
+      "pl": "Ser kosztuje trzydzieści złotych.",
+      "level": 28
+    },
+    {
+      "id": 48,
+      "en": "The meat costs forty złoty.",
+      "pl": "Mięso kosztuje czterdzieści złotych.",
+      "level": 28
+    },
+    {
+      "id": 49,
+      "en": "The bill is thirty-two.",
+      "pl": "Rachunek wynosi trzydzieści dwa.",
+      "level": 28
+    },
+    {
+      "id": 50,
+      "en": "The bill is forty-two.",
+      "pl": "Rachunek wynosi czterdzieści dwa.",
+      "level": 28
+    },
+    {
+      "id": 51,
+      "en": "Thirty-one, thirty-two, thirty-three.",
+      "pl": "Trzydzieści jeden, trzydzieści dwa, trzydzieści trzy.",
+      "level": 28
+    },
+    {
+      "id": 52,
+      "en": "Forty-one, forty-two, forty-three.",
+      "pl": "Czterdzieści jeden, czterdzieści dwa, czterdzieści trzy.",
+      "level": 28
+    },
+    {
+      "id": 53,
+      "en": "Almost thirty złoty.",
+      "pl": "Prawie trzydzieści złotych.",
+      "level": 28
+    },
+    {
+      "id": 54,
+      "en": "Almost forty złoty.",
+      "pl": "Prawie czterdzieści złotych.",
+      "level": 28
+    },
+    {
+      "id": 55,
+      "en": "Plus thirty złoty tax.",
+      "pl": "Plus trzydzieści złotych podatku.",
+      "level": 28
+    },
+    {
+      "id": 56,
+      "en": "Plus forty złoty tax.",
+      "pl": "Plus czterdzieści złotych podatku.",
+      "level": 28
+    },
+    {
+      "id": 57,
+      "en": "Minus thirty złoty discount.",
+      "pl": "Minus trzydzieści złotych zniżki.",
+      "level": 28
+    },
+    {
+      "id": 58,
+      "en": "Minus forty złoty discount.",
+      "pl": "Minus czterdzieści złotych zniżki.",
+      "level": 28
+    },
+    {
+      "id": 59,
+      "en": "Thirty-four is not forty-four.",
+      "pl": "Trzydzieści cztery to nie czterdzieści cztery.",
+      "level": 28
+    },
+    {
+      "id": 60,
+      "en": "Four hundred thirty złoty.",
+      "pl": "Czterysta trzydzieści złotych.",
+      "level": 28
+    },
+    {
+      "id": 61,
+      "en": "Four hundred forty złoty.",
+      "pl": "Czterysta czterdzieści złotych.",
+      "level": 28
+    },
+    {
+      "id": 62,
+      "en": "Thirty-six and change.",
+      "pl": "Trzydzieści sześć i reszta.",
+      "level": 28
+    },
+    {
+      "id": 63,
+      "en": "Forty-six and change.",
+      "pl": "Czterdzieści sześć i reszta.",
+      "level": 28
+    },
+    {
+      "id": 64,
+      "en": "I paid thirty.",
+      "pl": "Zapłaciłem trzydzieści.",
+      "level": 28
+    },
+    {
+      "id": 65,
+      "en": "I paid forty.",
+      "pl": "Zapłaciłem czterdzieści.",
+      "level": 28
+    },
+    {
+      "id": 66,
+      "en": "You owe thirty-two.",
+      "pl": "Jesteś winien trzydzieści dwa.",
+      "level": 28
+    },
+    {
+      "id": 67,
+      "en": "You owe forty-two.",
+      "pl": "Jesteś winien czterdzieści dwa.",
+      "level": 28
+    },
+    {
+      "id": 68,
+      "en": "Thirty-eight eighty-eight.",
+      "pl": "Trzydzieści osiem osiemdziesiąt osiem.",
+      "level": 28
+    },
+    {
+      "id": 69,
+      "en": "Forty-eight eighty-eight.",
+      "pl": "Czterdzieści osiem osiemdziesiąt osiem.",
+      "level": 28
+    },
+    {
+      "id": 70,
+      "en": "Thirty-five cents.",
+      "pl": "Trzydzieści pięć groszy.",
+      "level": 28
+    },
+    {
+      "id": 71,
+      "en": "Forty-five cents.",
+      "pl": "Czterdzieści pięć groszy.",
+      "level": 28
+    },
+    {
+      "id": 72,
+      "en": "It's exactly thirty.",
+      "pl": "To dokładnie trzydzieści.",
+      "level": 28
+    },
+    {
+      "id": 73,
+      "en": "It's exactly forty.",
+      "pl": "To dokładnie czterdzieści.",
+      "level": 28
+    },
+    {
+      "id": 74,
+      "en": "Thirty-three plus forty-three.",
+      "pl": "Trzydzieści trzy plus czterdzieści trzy.",
+      "level": 28
+    },
+    {
+      "id": 75,
+      "en": "Finally, the total is seventy.",
+      "pl": "W końcu, razem siedemdziesiąt.",
+      "level": 28
+    }
+  ],
+  "tier": "ADVANCED"
+}

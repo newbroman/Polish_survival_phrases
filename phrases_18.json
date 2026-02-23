@@ -1,451 +1,457 @@
 {
-  "level": 18,
-  "description": "Hobbies & Sports - Activities & Leisure",
+  "level": 17,
+  "description": "Public Signs & Notices - Reading the Environment",
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p13_01",
-      "category": "Activities",
-      "pl": "Co lubisz robić?",
-      "en": "What do you like to do?",
-      "level": 18,
-      "gender": null
+      "id": "s17_01",
+      "category": "Transport Hubs",
+      "pl": "Kasa biletowa",
+      "en": "Ticket office",
+      "level": 17,
+      "gender": null,
+      "emoji": "🎫",
+      "note": "Feminine noun phrase. Often just called 'Kasa'."
     },
     {
-      "id": "p13_02",
-      "category": "Activities",
-      "pl": "Lubię...",
-      "en": "I like...",
-      "level": 18,
-      "gender": null
+      "id": "s17_02",
+      "category": "Transport Hubs",
+      "pl": "Informacja",
+      "en": "Information desk",
+      "level": 17,
+      "gender": null,
+      "emoji": "ℹ️",
+      "note": "Look for the large 'I' sign at stations."
     },
     {
-      "id": "p13_03",
-      "category": "Activities",
-      "pl": "Uwielbiam...",
-      "en": "I love...",
-      "level": 18,
-      "gender": null
+      "id": "s17_03",
+      "category": "Transport Hubs",
+      "pl": "Rozkład jazdy",
+      "en": "Timetable / Schedule",
+      "level": 17,
+      "gender": null,
+      "emoji": "🕒",
+      "note": "Usually printed on yellow (departures) and white (arrivals) posters."
     },
     {
-      "id": "p13_04",
-      "category": "Activities",
-      "pl": "Nie lubię...",
-      "en": "I don't like...",
-      "level": 18,
-      "gender": null
+      "id": "s17_04",
+      "category": "Transport Hubs",
+      "pl": "Odjazdy",
+      "en": "Departures (Trains/Buses)",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚆",
+      "note": "Plural noun. Always printed on the yellow timetables."
     },
     {
-      "id": "p13_05",
-      "category": "Activities",
-      "pl": "Moje hobby to...",
-      "en": "My hobby is...",
-      "level": 18,
-      "gender": null
+      "id": "s17_05",
+      "category": "Transport Hubs",
+      "pl": "Przyjazdy",
+      "en": "Arrivals (Trains/Buses)",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚉",
+      "note": "Plural noun. Always printed on the white timetables."
     },
     {
-      "id": "p13_06",
-      "category": "Activities",
-      "pl": "Interesuję się...",
-      "en": "I'm interested in...",
-      "level": 18,
-      "gender": null
+      "id": "s17_06",
+      "category": "Transport Hubs",
+      "pl": "Peron",
+      "en": "Platform",
+      "level": 17,
+      "gender": null,
+      "emoji": "🛤️",
+      "note": "Masculine noun."
     },
     {
-      "id": "p13_07",
-      "category": "Activities",
-      "pl": "Sport",
-      "en": "Sport",
-      "level": 18,
-      "gender": null
+      "id": "s17_07",
+      "category": "Transport Hubs",
+      "pl": "Tor",
+      "en": "Track",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚆",
+      "note": "Important! Polish tickets tell you both the Platform (Peron) AND the Track (Tor)."
     },
     {
-      "id": "p13_08",
-      "category": "Activities",
-      "pl": "Muzyka",
-      "en": "Music",
-      "level": 18,
-      "gender": null
+      "id": "s17_08",
+      "category": "Transport Hubs",
+      "pl": "Pociąg opóźniony",
+      "en": "Train delayed",
+      "level": 17,
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Adjective 'opóźniony' matches 'pociąg'."
     },
     {
-      "id": "p13_09",
-      "category": "Activities",
-      "pl": "Film",
-      "en": "Movie / Film",
-      "level": 18,
-      "gender": null
+      "id": "s17_09",
+      "category": "Transport Hubs",
+      "pl": "Pociąg odwołany",
+      "en": "Train cancelled",
+      "level": 17,
+      "gender": null,
+      "emoji": "❌",
+      "note": "Adjective 'odwołany'."
     },
     {
-      "id": "p13_10",
-      "category": "Activities",
-      "pl": "Książka",
-      "en": "Book",
-      "level": 18,
-      "gender": null
+      "id": "s17_10",
+      "category": "Transport Hubs",
+      "pl": "Przechowalnia bagażu",
+      "en": "Left luggage / Luggage storage",
+      "level": 17,
+      "gender": null,
+      "emoji": "🛅",
+      "note": "Feminine noun phrase."
     },
     {
-      "id": "p13_11",
-      "category": "Activities",
-      "pl": "Czytanie",
-      "en": "Reading",
-      "level": 18,
-      "gender": null
+      "id": "s17_11",
+      "category": "Airports",
+      "pl": "Odloty",
+      "en": "Departures (Flights)",
+      "level": 17,
+      "gender": null,
+      "emoji": "🛫",
+      "note": "Used exclusively for airplanes (from 'latać' - to fly)."
     },
     {
-      "id": "p13_12",
-      "category": "Activities",
-      "pl": "Pisanie",
-      "en": "Writing",
-      "level": 18,
-      "gender": null
+      "id": "s17_12",
+      "category": "Airports",
+      "pl": "Przyloty",
+      "en": "Arrivals (Flights)",
+      "level": 17,
+      "gender": null,
+      "emoji": "🛬",
+      "note": "Used exclusively for airplanes."
     },
     {
-      "id": "p13_13",
-      "category": "Activities",
-      "pl": "Gotowanie",
-      "en": "Cooking",
-      "level": 18,
-      "gender": null
+      "id": "s17_13",
+      "category": "Airports",
+      "pl": "Odprawa",
+      "en": "Check-in",
+      "level": 17,
+      "gender": null,
+      "emoji": "🛂",
+      "note": "Feminine noun."
     },
     {
-      "id": "p13_14",
-      "category": "Activities",
-      "pl": "Podróżowanie",
-      "en": "Traveling",
-      "level": 18,
-      "gender": null
+      "id": "s17_14",
+      "category": "Airports",
+      "pl": "Kontrola bezpieczeństwa",
+      "en": "Security check",
+      "level": 17,
+      "gender": null,
+      "emoji": "🧳",
+      "note": "Feminine noun phrase."
     },
     {
-      "id": "p13_15",
-      "category": "Activities",
-      "pl": "Fotografia",
-      "en": "Photography",
-      "level": 18,
-      "gender": null
+      "id": "s17_15",
+      "category": "Airports",
+      "pl": "Odbiór bagażu",
+      "en": "Baggage reclaim",
+      "level": 17,
+      "gender": null,
+      "emoji": "🛄",
+      "note": "Literally 'collection of baggage'."
     },
     {
-      "id": "p13_16",
-      "category": "Activities",
-      "pl": "Sztuka",
-      "en": "Art",
-      "level": 18,
-      "gender": null
+      "id": "s17_16",
+      "category": "Airports",
+      "pl": "Odprawa celna",
+      "en": "Customs",
+      "level": 17,
+      "gender": null,
+      "emoji": "🛃",
+      "note": "Feminine noun phrase."
     },
     {
-      "id": "p13_17",
-      "category": "Activities",
-      "pl": "Taniec",
-      "en": "Dancing",
-      "level": 18,
-      "gender": null
+      "id": "s17_17",
+      "category": "Airports",
+      "pl": "Strefa wolnocłowa",
+      "en": "Duty-free zone",
+      "level": 17,
+      "gender": null,
+      "emoji": "🛍️",
+      "note": "Literally 'zone free of customs'."
     },
     {
-      "id": "p13_18",
-      "category": "Activities",
-      "pl": "Śpiewanie",
-      "en": "Singing",
-      "level": 18,
-      "gender": null
+      "id": "s17_18",
+      "category": "Airports",
+      "pl": "Bramka",
+      "en": "Gate",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚪",
+      "note": "Diminutive of 'brama' (large gate)."
     },
     {
-      "id": "p13_19",
-      "category": "Activities",
-      "pl": "Gra",
-      "en": "Game",
-      "level": 18,
-      "gender": null
+      "id": "s17_19",
+      "category": "Shopping & Services",
+      "pl": "Promocja",
+      "en": "Sale / Special offer",
+      "level": 17,
+      "gender": null,
+      "emoji": "🏷️",
+      "note": "Often marked with a % sign or written in red."
     },
     {
-      "id": "p13_20",
-      "category": "Activities",
-      "pl": "Grać w gry",
-      "en": "To play games",
-      "level": 18,
-      "gender": null
+      "id": "s17_20",
+      "category": "Shopping & Services",
+      "pl": "Wyprzedaż",
+      "en": "Clearance sale",
+      "level": 17,
+      "gender": null,
+      "emoji": "🔥",
+      "note": "Literally 'selling out'. Used for end-of-season sales."
     },
     {
-      "id": "p13_21",
-      "category": "Activities",
-      "pl": "Oglądać filmy",
-      "en": "To watch movies",
-      "level": 18,
-      "gender": null
+      "id": "s17_21",
+      "category": "Shopping & Services",
+      "pl": "Płatność tylko kartą",
+      "en": "Card payment only",
+      "level": 17,
+      "gender": null,
+      "emoji": "💳",
+      "note": "Very common on self-checkout machines in Poland."
     },
     {
-      "id": "p13_22",
-      "category": "Activities",
-      "pl": "Słuchać muzyki",
-      "en": "To listen to music",
-      "level": 18,
-      "gender": null
+      "id": "s17_22",
+      "category": "Shopping & Services",
+      "pl": "Tylko gotówka",
+      "en": "Cash only",
+      "level": 17,
+      "gender": null,
+      "emoji": "💵",
+      "note": "Look for this sign at small bakeries or kiosks."
     },
     {
-      "id": "p13_23",
-      "category": "Activities",
-      "pl": "Czytać książki",
-      "en": "To read books",
-      "level": 18,
-      "gender": null
+      "id": "s17_23",
+      "category": "Shopping & Services",
+      "pl": "Kasa pierwszeństwa",
+      "en": "Priority checkout",
+      "level": 17,
+      "gender": null,
+      "emoji": "🤰",
+      "note": "Reserved for pregnant women, disabled individuals, and the elderly."
     },
     {
-      "id": "p13_24",
-      "category": "Activities",
-      "pl": "Uprawiać sport",
-      "en": "To do sports",
-      "level": 18,
-      "gender": null
+      "id": "s17_24",
+      "category": "Shopping & Services",
+      "pl": "Przymierzalnia",
+      "en": "Fitting room",
+      "level": 17,
+      "gender": null,
+      "emoji": "👗",
+      "note": "Derived from 'przymierzać' (to try on)."
     },
     {
-      "id": "p13_25",
-      "category": "Activities",
-      "pl": "Relaks",
-      "en": "Relaxation",
-      "level": 18,
-      "gender": null
+      "id": "s17_25",
+      "category": "Shopping & Services",
+      "pl": "Darmowa dostawa",
+      "en": "Free delivery",
+      "level": 17,
+      "gender": null,
+      "emoji": "📦",
+      "note": "Feminine noun phrase."
     },
     {
-      "id": "p13_26",
-      "category": "Sports",
-      "pl": "Piłka nożna",
-      "en": "Football / Soccer",
-      "level": 18,
-      "gender": null
+      "id": "s17_26",
+      "category": "Warnings & Safety",
+      "pl": "Obiekt monitorowany",
+      "en": "CCTV in operation",
+      "level": 17,
+      "gender": null,
+      "emoji": "📹",
+      "note": "Literally 'Monitored object/building'."
     },
     {
-      "id": "p13_27",
-      "category": "Sports",
-      "pl": "Koszykówka",
-      "en": "Basketball",
-      "level": 18,
-      "gender": null
+      "id": "s17_27",
+      "category": "Warnings & Safety",
+      "pl": "Nie dotykać",
+      "en": "Do not touch",
+      "level": 17,
+      "gender": null,
+      "emoji": "✋",
+      "note": "Infinitive verb negated by 'Nie'. Common in museums."
     },
     {
-      "id": "p13_28",
-      "category": "Sports",
-      "pl": "Siatkówka",
-      "en": "Volleyball",
-      "level": 18,
-      "gender": null
+      "id": "s17_28",
+      "category": "Warnings & Safety",
+      "pl": "Zakaz palenia",
+      "en": "No smoking",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚭",
+      "note": "'Zakaz' means ban. Takes the genitive case 'palenia'."
     },
     {
-      "id": "p13_29",
-      "category": "Sports",
-      "pl": "Tenis",
-      "en": "Tennis",
-      "level": 18,
-      "gender": null
+      "id": "s17_29",
+      "category": "Warnings & Safety",
+      "pl": "Świeżo malowane",
+      "en": "Wet paint",
+      "level": 17,
+      "gender": null,
+      "emoji": "🎨",
+      "note": "Literally 'Freshly painted'."
     },
     {
-      "id": "p13_30",
-      "category": "Sports",
-      "pl": "Pływanie",
-      "en": "Swimming",
-      "level": 18,
-      "gender": null
+      "id": "s17_30",
+      "category": "Warnings & Safety",
+      "pl": "Wysokie napięcie",
+      "en": "High voltage",
+      "level": 17,
+      "gender": null,
+      "emoji": "⚡",
+      "note": "Often accompanied by a yellow lightning bolt sign."
     },
     {
-      "id": "p13_31",
-      "category": "Sports",
-      "pl": "Bieganie",
-      "en": "Running",
-      "level": 18,
-      "gender": null
+      "id": "s17_31",
+      "category": "Warnings & Safety",
+      "pl": "Uwaga stopień",
+      "en": "Mind the step",
+      "level": 17,
+      "gender": null,
+      "emoji": "⚠️",
+      "note": "Literally 'Attention step'."
     },
     {
-      "id": "p13_32",
-      "category": "Sports",
-      "pl": "Jazda na rowerze",
-      "en": "Cycling",
-      "level": 18,
-      "gender": null
+      "id": "s17_32",
+      "category": "Warnings & Safety",
+      "pl": "Uwaga na głowę",
+      "en": "Mind your head",
+      "level": 17,
+      "gender": null,
+      "emoji": "🤕",
+      "note": "Common in older cellars, castles, or low doorways."
     },
     {
-      "id": "p13_33",
-      "category": "Sports",
-      "pl": "Siłownia",
-      "en": "Gym",
-      "level": 18,
-      "gender": null
+      "id": "s17_33",
+      "category": "Warnings & Safety",
+      "pl": "Teren prywatny",
+      "en": "Private property",
+      "level": 17,
+      "gender": null,
+      "emoji": "⛔",
+      "note": "Masculine noun phrase."
     },
     {
-      "id": "p13_34",
-      "category": "Sports",
-      "pl": "Joga",
-      "en": "Yoga",
-      "level": 18,
-      "gender": null
+      "id": "s17_34",
+      "category": "Warnings & Safety",
+      "pl": "Brak przejścia",
+      "en": "No thoroughfare / No passage",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚧",
+      "note": "Literally 'Lack of crossing'."
     },
     {
-      "id": "p13_35",
-      "category": "Sports",
-      "pl": "Narty",
-      "en": "Skiing",
-      "level": 18,
-      "gender": null
+      "id": "s17_35",
+      "category": "Warnings & Safety",
+      "pl": "Zakaz fotografowania",
+      "en": "No photography",
+      "level": 17,
+      "gender": null,
+      "emoji": "📵",
+      "note": "Commonly seen in churches or museums."
     },
     {
-      "id": "p13_36",
-      "category": "Sports",
-      "pl": "Gdzie jest siłownia?",
-      "en": "Where is the gym?",
-      "level": 18,
-      "gender": null
+      "id": "s17_36",
+      "category": "Facilities & Buildings",
+      "pl": "Wyjście ewakuacyjne",
+      "en": "Emergency exit",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚪",
+      "note": "Usually marked with a green running man sign."
     },
     {
-      "id": "p13_37",
-      "category": "Sports",
-      "pl": "Czy jest basen?",
-      "en": "Is there a pool?",
-      "level": 18,
-      "gender": null
+      "id": "s17_37",
+      "category": "Facilities & Buildings",
+      "pl": "Droga pożarowa",
+      "en": "Fire lane / Fire road",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚒",
+      "note": "Do not park here! You will be towed."
     },
     {
-      "id": "p13_38",
-      "category": "Sports",
-      "pl": "Chodzę na siłownię",
-      "en": "I go to the gym",
-      "level": 18,
-      "gender": null
+      "id": "s17_38",
+      "category": "Facilities & Buildings",
+      "pl": "Miejsce zbiórki",
+      "en": "Assembly point / Muster point",
+      "level": 17,
+      "gender": null,
+      "emoji": "📍",
+      "note": "For fire evacuations."
     },
     {
-      "id": "p13_39",
-      "category": "Sports",
-      "pl": "Gram w piłkę",
-      "en": "I play football",
-      "level": 18,
-      "gender": null
+      "id": "s17_39",
+      "category": "Facilities & Buildings",
+      "pl": "Toaleta płatna",
+      "en": "Paid toilet",
+      "level": 17,
+      "gender": null,
+      "emoji": "🪙",
+      "note": "Very common in bus stations. Usually costs 2-5 PLN."
     },
     {
-      "id": "p13_40",
-      "category": "Sports",
-      "pl": "Trening",
-      "en": "Training / Workout",
-      "level": 18,
-      "gender": null
+      "id": "s17_40",
+      "category": "Facilities & Buildings",
+      "pl": "Przewijak",
+      "en": "Baby changing facility",
+      "level": 17,
+      "gender": null,
+      "emoji": "👶",
+      "note": "Masculine noun."
     },
     {
-      "id": "p13_56",
-      "category": "Going Out",
-      "pl": "Bar",
-      "en": "Bar",
-      "level": 18,
-      "gender": null
+      "id": "s17_41",
+      "category": "Facilities & Buildings",
+      "pl": "Dla niepełnosprawnych",
+      "en": "For disabled persons",
+      "level": 17,
+      "gender": null,
+      "emoji": "♿",
+      "note": "Often seen on specific toilets or parking spots."
     },
     {
-      "id": "p13_57",
-      "category": "Going Out",
-      "pl": "Pub",
-      "en": "Pub",
-      "level": 18,
-      "gender": null
+      "id": "s17_42",
+      "category": "Facilities & Buildings",
+      "pl": "Tylko dla personelu",
+      "en": "Staff only",
+      "level": 17,
+      "gender": null,
+      "emoji": "🛑",
+      "note": "Literally 'Only for personnel'."
     },
     {
-      "id": "p13_58",
-      "category": "Going Out",
-      "pl": "Klub",
-      "en": "Club",
-      "level": 18,
-      "gender": null
+      "id": "s17_43",
+      "category": "General Notices",
+      "pl": "Zaraz wracam",
+      "en": "Be right back",
+      "level": 17,
+      "gender": null,
+      "emoji": "⏱️",
+      "note": "Often hung on shop doors when the clerk steps out."
     },
     {
-      "id": "p13_59",
-      "category": "Going Out",
-      "pl": "Restauracja",
-      "en": "Restaurant",
-      "level": 18,
-      "gender": null
+      "id": "s17_44",
+      "category": "General Notices",
+      "pl": "Klimatyzowane",
+      "en": "Air-conditioned",
+      "level": 17,
+      "gender": null,
+      "emoji": "❄️",
+      "note": "Adjective. Often put in windows of restaurants to lure in summer tourists."
     },
     {
-      "id": "p13_60",
-      "category": "Going Out",
-      "pl": "Kawiarnia",
-      "en": "Cafe",
-      "level": 18,
-      "gender": null
-    },
-    {
-      "id": "p13_61",
-      "category": "Going Out",
-      "pl": "Idziemy na drinka?",
-      "en": "Shall we go for a drink?",
-      "level": 18,
-      "gender": null
-    },
-    {
-      "id": "p13_62",
-      "category": "Going Out",
-      "pl": "Idziemy potańczyć?",
-      "en": "Shall we go dancing?",
-      "level": 18,
-      "gender": null
-    },
-    {
-      "id": "p13_63",
-      "category": "Going Out",
-      "pl": "Gdzie jest dobry bar?",
-      "en": "Where is a good bar?",
-      "level": 18,
-      "gender": null
-    },
-    {
-      "id": "p13_64",
-      "category": "Going Out",
-      "pl": "Czy jest tu klub?",
-      "en": "Is there a club here?",
-      "level": 18,
-      "gender": null
-    },
-    {
-      "id": "p13_65",
-      "category": "Going Out",
-      "pl": "Muzyka na żywo",
-      "en": "Live music",
-      "level": 18,
-      "gender": null
-    },
-    {
-      "id": "p13_66",
-      "category": "Going Out",
-      "pl": "Wstęp wolny",
-      "en": "Free entry",
-      "level": 18,
-      "gender": null
-    },
-    {
-      "id": "p13_67",
-      "category": "Going Out",
-      "pl": "Ile kosztuje wstęp?",
-      "en": "How much is entry?",
-      "level": 18,
-      "gender": null
-    },
-    {
-      "id": "p13_68",
-      "category": "Going Out",
-      "pl": "Impreza",
-      "en": "Party",
-      "level": 18,
-      "gender": null
-    },
-    {
-      "id": "p13_69",
-      "category": "Going Out",
-      "pl": "Zabawa",
-      "en": "Fun",
-      "level": 18,
-      "gender": null
-    },
-    {
-      "id": "p13_70",
-      "category": "Going Out",
-      "pl": "Świetnie się bawiłem/bawiłam",
-      "en": "I had a great time",
-      "level": 18,
-      "gender": "both",
-      "variants": {
-        "m": "Świetnie się bawiłem",
-        "f": "Świetnie się bawiłam"
-      }
+      "id": "s17_45",
+      "category": "General Notices",
+      "pl": "Strefa ciszy",
+      "en": "Quiet zone",
+      "level": 17,
+      "gender": null,
+      "emoji": "🤫",
+      "note": "Found on specific train carriages (e.g., in Pendolino trains)."
     }
   ]
 }

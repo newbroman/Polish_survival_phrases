@@ -1,0 +1,901 @@
+{
+    "level": 20,
+    "description": "People & Personalities - Appearance & Character Traits",
+    "tier": "ADVANCED",
+    "phrases": [
+        {
+            "id": "s20_01",
+            "category": "Physical Appearance",
+            "pl": "Wygląd zewnętrzny",
+            "en": "Physical appearance",
+            "level": 20,
+            "gender": null,
+            "emoji": "🪞",
+            "note": "Masculine noun phrase."
+        },
+        {
+            "id": "s20_02",
+            "category": "Physical Appearance",
+            "pl": "Jak on wygląda?",
+            "en": "What does he look like?",
+            "level": 20,
+            "gender": null,
+            "emoji": "🤔",
+            "note": "Verb 'wyglądać' (to look/appear)."
+        },
+        {
+            "id": "s20_03",
+            "category": "Physical Appearance",
+            "pl": "Jest wysoki",
+            "en": "He is tall",
+            "level": 20,
+            "gender": null,
+            "emoji": "🧍‍♂️",
+            "note": "Adjective. Feminine is 'wysoka'."
+        },
+        {
+            "id": "s20_04",
+            "category": "Physical Appearance",
+            "pl": "Jest niska",
+            "en": "She is short",
+            "level": 20,
+            "gender": null,
+            "emoji": "🧍‍♀️",
+            "note": "Adjective. Masculine is 'niski'."
+        },
+        {
+            "id": "s20_05",
+            "category": "Physical Appearance",
+            "pl": "Szczupły / Szczupła",
+            "en": "Slim / Thin",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Szczupły",
+                "f": "Szczupła"
+            },
+            "emoji": "📏",
+            "note": "A polite way to say someone is thin."
+        },
+        {
+            "id": "s20_06",
+            "category": "Physical Appearance",
+            "pl": "Gruby / Gruba",
+            "en": "Fat",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Gruby",
+                "f": "Gruba"
+            },
+            "emoji": "🍔",
+            "note": "Considered impolite. A nicer alternative is 'przy kości' (chubby)."
+        },
+        {
+            "id": "s20_07",
+            "category": "Physical Appearance",
+            "pl": "Przystojny",
+            "en": "Handsome",
+            "level": 20,
+            "gender": "m",
+            "emoji": "😎",
+            "note": "Used almost exclusively for men."
+        },
+        {
+            "id": "s20_08",
+            "category": "Physical Appearance",
+            "pl": "Piękna",
+            "en": "Beautiful",
+            "level": 20,
+            "gender": "f",
+            "emoji": "✨",
+            "note": "Used almost exclusively for women or objects."
+        },
+        {
+            "id": "s20_09",
+            "category": "Hair",
+            "pl": "Włosy",
+            "en": "Hair",
+            "level": 20,
+            "gender": null,
+            "emoji": "💇",
+            "note": "Always plural in Polish when referring to the hair on your head."
+        },
+        {
+            "id": "s20_10",
+            "category": "Hair",
+            "pl": "Blondyn / Blondynka",
+            "en": "Blonde (Person)",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Blondyn",
+                "f": "Blondynka"
+            },
+            "emoji": "👱",
+            "note": "Noun for a person with blonde hair."
+        },
+        {
+            "id": "s20_11",
+            "category": "Hair",
+            "pl": "Brunet / Brunetka",
+            "en": "Brunette (Person)",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Brunet",
+                "f": "Brunetka"
+            },
+            "emoji": "🧑",
+            "note": "Noun for a person with dark brown hair."
+        },
+        {
+            "id": "s20_12",
+            "category": "Hair",
+            "pl": "Rude włosy",
+            "en": "Red hair",
+            "level": 20,
+            "gender": null,
+            "emoji": "👩‍🦰",
+            "note": "A person with red hair is a 'rudy' or 'ruda'."
+        },
+        {
+            "id": "s20_13",
+            "category": "Hair",
+            "pl": "Siwe włosy",
+            "en": "Gray hair",
+            "level": 20,
+            "gender": null,
+            "emoji": "👵",
+            "note": "Adjective 'siwe' matches plural 'włosy'."
+        },
+        {
+            "id": "s20_14",
+            "category": "Hair",
+            "pl": "Kręcone włosy",
+            "en": "Curly hair",
+            "level": 20,
+            "gender": null,
+            "emoji": "👩‍🦱",
+            "note": "From the verb 'kręcić' (to twist/curl)."
+        },
+        {
+            "id": "s20_15",
+            "category": "Hair",
+            "pl": "Proste włosy",
+            "en": "Straight hair",
+            "level": 20,
+            "gender": null,
+            "emoji": "📏",
+            "note": "Adjective 'proste' matches plural 'włosy'."
+        },
+        {
+            "id": "s20_16",
+            "category": "Hair",
+            "pl": "Łysy",
+            "en": "Bald",
+            "level": 20,
+            "gender": null,
+            "emoji": "👨‍🦲",
+            "note": "Adjective. 'On jest łysy' (He is bald)."
+        },
+        {
+            "id": "s20_17",
+            "category": "Face & Features",
+            "pl": "Oczy",
+            "en": "Eyes",
+            "level": 20,
+            "gender": null,
+            "emoji": "👀",
+            "note": "Plural of 'oko'."
+        },
+        {
+            "id": "s20_18",
+            "category": "Face & Features",
+            "pl": "Ma niebieskie oczy",
+            "en": "He/She has blue eyes",
+            "level": 20,
+            "gender": null,
+            "emoji": "👁️",
+            "note": "Accusative plural 'niebieskie oczy'."
+        },
+        {
+            "id": "s20_19",
+            "category": "Face & Features",
+            "pl": "Brązowe oczy",
+            "en": "Brown eyes",
+            "level": 20,
+            "gender": null,
+            "emoji": "👁️",
+            "note": "Accusative plural."
+        },
+        {
+            "id": "s20_20",
+            "category": "Face & Features",
+            "pl": "Zielone oczy",
+            "en": "Green eyes",
+            "level": 20,
+            "gender": null,
+            "emoji": "👁️",
+            "note": "Accusative plural."
+        },
+        {
+            "id": "s20_21",
+            "category": "Face & Features",
+            "pl": "Okulary",
+            "en": "Glasses",
+            "level": 20,
+            "gender": null,
+            "emoji": "👓",
+            "note": "Always plural. 'Nosi okulary' = He/She wears glasses."
+        },
+        {
+            "id": "s20_22",
+            "category": "Face & Features",
+            "pl": "Broda",
+            "en": "Beard (also: Chin)",
+            "level": 20,
+            "gender": null,
+            "emoji": "🧔",
+            "note": "Feminine noun."
+        },
+        {
+            "id": "s20_23",
+            "category": "Face & Features",
+            "pl": "Wąsy",
+            "en": "Mustache",
+            "level": 20,
+            "gender": null,
+            "emoji": "🥸",
+            "note": "Always plural in Polish."
+        },
+        {
+            "id": "s20_24",
+            "category": "Face & Features",
+            "pl": "Piegi",
+            "en": "Freckles",
+            "level": 20,
+            "gender": null,
+            "emoji": "👧",
+            "note": "Plural noun."
+        },
+        {
+            "id": "s20_25",
+            "category": "Face & Features",
+            "pl": "Uśmiech",
+            "en": "Smile",
+            "level": 20,
+            "gender": null,
+            "emoji": "😊",
+            "note": "Masculine noun."
+        },
+        {
+            "id": "s20_26",
+            "category": "Character Traits (Positive)",
+            "pl": "Cechy charakteru",
+            "en": "Character traits",
+            "level": 20,
+            "gender": null,
+            "emoji": "🧠",
+            "note": "Takes the genitive case 'charakteru'."
+        },
+        {
+            "id": "s20_27",
+            "category": "Character Traits (Positive)",
+            "pl": "Miły / Miła",
+            "en": "Nice / Kind",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Miły",
+                "f": "Miła"
+            },
+            "emoji": "🥰",
+            "note": "A very common compliment."
+        },
+        {
+            "id": "s20_28",
+            "category": "Character Traits (Positive)",
+            "pl": "Sympatyczny / Sympatyczna",
+            "en": "Likable / Friendly",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Sympatyczny",
+                "f": "Sympatyczna"
+            },
+            "emoji": "🤝",
+            "note": "Often used to describe someone with good energy."
+        },
+        {
+            "id": "s20_29",
+            "category": "Character Traits (Positive)",
+            "pl": "Zabawny / Zabawna",
+            "en": "Funny",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Zabawny",
+                "f": "Zabawna"
+            },
+            "emoji": "😂",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_30",
+            "category": "Character Traits (Positive)",
+            "pl": "Mądry / Mądra",
+            "en": "Smart / Wise",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Mądry",
+                "f": "Mądra"
+            },
+            "emoji": "🦉",
+            "note": "Implies both intelligence and life wisdom."
+        },
+        {
+            "id": "s20_31",
+            "category": "Character Traits (Positive)",
+            "pl": "Inteligentny / Inteligentna",
+            "en": "Intelligent",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Inteligentny",
+                "f": "Inteligentna"
+            },
+            "emoji": "🧠",
+            "note": "Loanword."
+        },
+        {
+            "id": "s20_32",
+            "category": "Character Traits (Positive)",
+            "pl": "Szczery / Szczera",
+            "en": "Honest / Sincere",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Szczery",
+                "f": "Szczera"
+            },
+            "emoji": "🗣️",
+            "note": "Poles highly value 'szczerość' (honesty) in friendships."
+        },
+        {
+            "id": "s20_33",
+            "category": "Character Traits (Positive)",
+            "pl": "Pewny siebie",
+            "en": "Confident",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Pewny siebie",
+                "f": "Pewna siebie"
+            },
+            "emoji": "😎",
+            "note": "Literally 'Sure of oneself'."
+        },
+        {
+            "id": "s20_34",
+            "category": "Character Traits (Positive)",
+            "pl": "Otwardy / Otwarta",
+            "en": "Open / Outgoing",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Otwarty",
+                "f": "Otwarta"
+            },
+            "emoji": "👐",
+            "note": "Also used for doors ('otwarte')."
+        },
+        {
+            "id": "s20_35",
+            "category": "Character Traits (Positive)",
+            "pl": "Odważny / Odważna",
+            "en": "Brave",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Odważny",
+                "f": "Odważna"
+            },
+            "emoji": "🦁",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_36",
+            "category": "Character Traits (Positive)",
+            "pl": "Pracowity / Pracowita",
+            "en": "Hardworking",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Pracowity",
+                "f": "Pracowita"
+            },
+            "emoji": "🐝",
+            "note": "Derived from 'praca' (work)."
+        },
+        {
+            "id": "s20_37",
+            "category": "Character Traits (Positive)",
+            "pl": "Spokojny / Spokojna",
+            "en": "Calm / Peaceful",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Spokojny",
+                "f": "Spokojna"
+            },
+            "emoji": "😌",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_38",
+            "category": "Character Traits (Negative)",
+            "pl": "Złośliwy / Złośliwa",
+            "en": "Mean / Malicious",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Złośliwy",
+                "f": "Złośliwa"
+            },
+            "emoji": "😈",
+            "note": "Derived from 'złość' (anger)."
+        },
+        {
+            "id": "s20_39",
+            "category": "Character Traits (Negative)",
+            "pl": "Leniwy / Leniwa",
+            "en": "Lazy",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Leniwy",
+                "f": "Leniwa"
+            },
+            "emoji": "🦥",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_40",
+            "category": "Character Traits (Negative)",
+            "pl": "Uparty / Uparta",
+            "en": "Stubborn",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Uparty",
+                "f": "Uparta"
+            },
+            "emoji": "🐴",
+            "note": "A very common Polish trait!"
+        },
+        {
+            "id": "s20_41",
+            "category": "Character Traits (Negative)",
+            "pl": "Nieśmiały / Nieśmiała",
+            "en": "Shy",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Nieśmiały",
+                "f": "Nieśmiała"
+            },
+            "emoji": "🫣",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_42",
+            "category": "Character Traits (Negative)",
+            "pl": "Samolubny / Samolubna",
+            "en": "Selfish",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Samolubny",
+                "f": "Samolubna"
+            },
+            "emoji": "😤",
+            "note": "Literally 'self-loving'."
+        },
+        {
+            "id": "s20_43",
+            "category": "Character Traits (Negative)",
+            "pl": "Nudny / Nudna",
+            "en": "Boring",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Nudny",
+                "f": "Nudna"
+            },
+            "emoji": "🥱",
+            "note": "Can be used for people or movies."
+        },
+        {
+            "id": "s20_44",
+            "category": "Character Traits (Negative)",
+            "pl": "Głupi / Głupa",
+            "en": "Stupid / Silly",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Głupi",
+                "f": "Głupia"
+            },
+            "emoji": "🤪",
+            "note": "Can be highly offensive or playfully teasing depending on tone."
+        },
+        {
+            "id": "s20_45",
+            "category": "Character Traits (Negative)",
+            "pl": "Zazdrosny / Zazdrosna",
+            "en": "Jealous",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Zazdrosny",
+                "f": "Zazdrosna"
+            },
+            "emoji": "😒",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_46",
+            "category": "Character Traits (Negative)",
+            "pl": "Skąpy / Skąpa",
+            "en": "Stingy / Cheap",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Skąpy",
+                "f": "Skąpa"
+            },
+            "emoji": "🪙",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_47",
+            "category": "Describing Others",
+            "pl": "Jaki on jest?",
+            "en": "What is he like?",
+            "level": 20,
+            "gender": "m",
+            "emoji": "🤔",
+            "note": "Asks about personality, not appearance."
+        },
+        {
+            "id": "s20_48",
+            "category": "Describing Others",
+            "pl": "Jaka ona jest?",
+            "en": "What is she like?",
+            "level": 20,
+            "gender": "f",
+            "emoji": "🤔",
+            "note": "Asks about personality."
+        },
+        {
+            "id": "s20_49",
+            "category": "Describing Others",
+            "pl": "On ma dobre poczucie humoru",
+            "en": "He has a good sense of humor",
+            "level": 20,
+            "gender": null,
+            "emoji": "🤣",
+            "note": "Takes accusative 'poczucie humoru'."
+        },
+        {
+            "id": "s20_50",
+            "category": "Describing Others",
+            "pl": "Ona jest bardzo energiczna",
+            "en": "She is very energetic",
+            "level": 20,
+            "gender": null,
+            "emoji": "⚡",
+            "note": "Adverb 'bardzo' amplifies the adjective."
+        },
+        {
+            "id": "s20_51",
+            "category": "Describing Others",
+            "pl": "Można na nim polegać",
+            "en": "He is reliable",
+            "level": 20,
+            "gender": null,
+            "emoji": "🤝",
+            "note": "Literally 'One can rely on him'."
+        },
+        {
+            "id": "s20_52",
+            "category": "Describing Others",
+            "pl": "Zawsze się spóźnia",
+            "en": "He/She is always late",
+            "level": 20,
+            "gender": null,
+            "emoji": "🐌",
+            "note": "Reflexive verb 'spóźniać się'."
+        },
+        {
+            "id": "s20_53",
+            "category": "Describing Others",
+            "pl": "Dużo mówi",
+            "en": "Talks a lot / Chatty",
+            "level": 20,
+            "gender": null,
+            "emoji": "🗣️",
+            "note": "Verb 'mówić'."
+        },
+        {
+            "id": "s20_54",
+            "category": "Describing Others",
+            "pl": "Jest cichy / cicha",
+            "en": "Is quiet",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Jest cichy",
+                "f": "Jest cicha"
+            },
+            "emoji": "🤫",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_55",
+            "category": "Age & Stages",
+            "pl": "Niemowlę",
+            "en": "Baby / Infant",
+            "level": 20,
+            "gender": null,
+            "emoji": "🍼",
+            "note": "Neuter noun."
+        },
+        {
+            "id": "s20_56",
+            "category": "Age & Stages",
+            "pl": "Dziecko",
+            "en": "Child",
+            "level": 20,
+            "gender": null,
+            "emoji": "🧒",
+            "note": "Neuter noun."
+        },
+        {
+            "id": "s20_57",
+            "category": "Age & Stages",
+            "pl": "Nastolatek / Nastolatka",
+            "en": "Teenager",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Nastolatek",
+                "f": "Nastolatka"
+            },
+            "emoji": "🛹",
+            "note": "Derived from the '-naście' suffix in Polish numbers (11-19)."
+        },
+        {
+            "id": "s20_58",
+            "category": "Age & Stages",
+            "pl": "Dorosły",
+            "en": "Adult",
+            "level": 20,
+            "gender": null,
+            "emoji": "👔",
+            "note": "Masculine adjective acting as a noun."
+        },
+        {
+            "id": "s20_59",
+            "category": "Age & Stages",
+            "pl": "Młodzież",
+            "en": "Youth / Young people",
+            "level": 20,
+            "gender": null,
+            "emoji": "🧑‍🤝‍🧑",
+            "note": "Feminine collective noun."
+        },
+        {
+            "id": "s20_60",
+            "category": "Age & Stages",
+            "pl": "Senior",
+            "en": "Senior / Elderly person",
+            "level": 20,
+            "gender": null,
+            "emoji": "👵",
+            "note": "Often used in the context of discounts ('bilet dla seniora')."
+        },
+        {
+            "id": "s20_61",
+            "category": "Age & Stages",
+            "pl": "Młody / Młoda",
+            "en": "Young",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Młody",
+                "f": "Młoda"
+            },
+            "emoji": "🌱",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_62",
+            "category": "Age & Stages",
+            "pl": "Stary / Stara",
+            "en": "Old",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Stary",
+                "f": "Stara"
+            },
+            "emoji": "🍂",
+            "note": "Considered blunt. 'Starszy' (older) is more polite."
+        },
+        {
+            "id": "s20_63",
+            "category": "Age & Stages",
+            "pl": "W moim wieku",
+            "en": "My age",
+            "level": 20,
+            "gender": null,
+            "emoji": "⏳",
+            "note": "Literally 'In my age' (locative case)."
+        },
+        {
+            "id": "s20_64",
+            "category": "Compliments",
+            "pl": "Świetnie wyglądasz!",
+            "en": "You look great!",
+            "level": 20,
+            "gender": null,
+            "emoji": "🤩",
+            "note": "Casual phrasing using informal 'ty'."
+        },
+        {
+            "id": "s20_65",
+            "category": "Compliments",
+            "pl": "Masz piękny uśmiech",
+            "en": "You have a beautiful smile",
+            "level": 20,
+            "gender": null,
+            "emoji": "😁",
+            "note": "Takes the accusative case 'piękny uśmiech'."
+        },
+        {
+            "id": "s20_66",
+            "category": "Compliments",
+            "pl": "Jesteś super",
+            "en": "You are awesome",
+            "level": 20,
+            "gender": null,
+            "emoji": "🤘",
+            "note": "Casual phrasing."
+        },
+        {
+            "id": "s20_67",
+            "category": "Compliments",
+            "pl": "Podoba mi się twój styl",
+            "en": "I like your style",
+            "level": 20,
+            "gender": null,
+            "emoji": "👗",
+            "note": "Literally 'Your style is pleasing to me'."
+        },
+        {
+            "id": "s20_68",
+            "category": "States of Being",
+            "pl": "Zmęczony / Zmęczona",
+            "en": "Tired",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Zmęczony",
+                "f": "Zmęczona"
+            },
+            "emoji": "🥱",
+            "note": "Passive participle."
+        },
+        {
+            "id": "s20_69",
+            "category": "States of Being",
+            "pl": "Głodny / Głodna",
+            "en": "Hungry",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Głodny",
+                "f": "Głodna"
+            },
+            "emoji": "🍽️",
+            "note": "It is more natural to say 'Chce mi się jeść', but this is also common."
+        },
+        {
+            "id": "s20_70",
+            "category": "States of Being",
+            "pl": "Spragniony / Spragniona",
+            "en": "Thirsty",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Spragniony",
+                "f": "Spragniona"
+            },
+            "emoji": "🚰",
+            "note": "Very formal. Usually Poles just say 'Chce mi się pić'."
+        },
+        {
+            "id": "s20_71",
+            "category": "States of Being",
+            "pl": "Pijany / Pijana",
+            "en": "Drunk",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Pijany",
+                "f": "Pijana"
+            },
+            "emoji": "🥴",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_72",
+            "category": "States of Being",
+            "pl": "Trzeźwy / Trzeźwa",
+            "en": "Sober",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Trzeźwy",
+                "f": "Trzeźwa"
+            },
+            "emoji": "💧",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_73",
+            "category": "States of Being",
+            "pl": "Zdrowy / Zdrowa",
+            "en": "Healthy",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Zdrowy",
+                "f": "Zdrowa"
+            },
+            "emoji": "🍎",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_74",
+            "category": "States of Being",
+            "pl": "Chory / Chora",
+            "en": "Sick",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Chory",
+                "f": "Chora"
+            },
+            "emoji": "🤒",
+            "note": "Adjective."
+        },
+        {
+            "id": "s20_75",
+            "category": "States of Being",
+            "pl": "Zakochany / Zakochana",
+            "en": "In love",
+            "level": 20,
+            "gender": "both",
+            "variants": {
+                "m": "Zakochany",
+                "f": "Zakochana"
+            },
+            "emoji": "😍",
+            "note": "Often followed by 'w' + locative case (e.g., 'Zakochany w niej' = In love with her)."
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+  "level": 13,
+  "description": "Weather & Seasons - Climate Talk",
+  "tier": "PRACTICAL",
+  "phrases": [
+    {
+      "id": "s13_01",
+      "category": "Weather",
+      "pl": "Jaka jest pogoda?",
+      "en": "What's the weather like?",
+      "level": 13,
+      "gender": null,
+      "emoji": "🌤️",
+      "note": "Standard way to start a conversation about the climate."
+    },
+    {
+      "id": "s13_02",
+      "category": "Weather",
+      "pl": "Będzie padać?",
+      "en": "Will it rain?",
+      "level": 13,
+      "gender": null,
+      "emoji": "☔",
+      "note": "Future tense. Poles often use 'padać' for both rain and snow; the context usually tells which."
+    },
+    {
+      "id": "s13_03",
+      "category": "Weather",
+      "pl": "Stopnie",
+      "en": "Degrees",
+      "level": 13,
+      "gender": null,
+      "emoji": "🌡️",
+      "note": "Used for temperature. Poland uses Celsius."
+    },
+    {
+      "id": "s13_04",
+      "category": "Seasons",
+      "pl": "Pora roku",
+      "en": "Season",
+      "level": 13,
+      "gender": null,
+      "emoji": "🍂",
+      "note": "Literally 'time of the year'."
+    },
+    {
+      "id": "s13_05",
+      "category": "Clothing",
+      "pl": "Okulary przeciwsłoneczne",
+      "en": "Sunglasses",
+      "level": 13,
+      "gender": null,
+      "emoji": "🕶️",
+      "note": "Literally 'anti-sun glasses'."
+    },
+    {
+      "id": "s13_06",
+      "category": "Clothing",
+      "pl": "Krem przeciwsłoneczny",
+      "en": "Sunscreen",
+      "level": 13,
+      "gender": null,
+      "emoji": "🧴",
+      "note": "Literally 'anti-sun cream'."
+    }
+  ]
+}

@@ -1,187 +1,757 @@
 {
   "level": 12,
-  "description": "Time & Scheduling - Days, Times & Appointments",
+  "description": "Home Life - Daily Routine, Chores & Property",
   "tier": "PRACTICAL",
   "phrases": [
     {
       "id": "s12_01",
-      "category": "Time Basics",
-      "pl": "O której?",
-      "en": "At what time?",
+      "category": "Daily Routine",
+      "pl": "Budzić się",
+      "en": "To wake up",
       "level": 12,
       "gender": null,
-      "emoji": "⏰",
-      "note": "Always asks 'At which (hour)?'. Used to schedule meetings or check departures."
+      "emoji": "🥱",
+      "note": "Reflexive infinitive verb. 'Budzę się' means 'I wake up'."
     },
     {
       "id": "s12_02",
-      "category": "Time Basics",
-      "pl": "O ósmej rano",
-      "en": "At 8 AM",
+      "category": "Daily Routine",
+      "pl": "Wstawać",
+      "en": "To get up",
       "level": 12,
       "gender": null,
-      "emoji": "🌅",
-      "note": "The preposition 'O' forces the locative case on the number (ośmiu -> ósmej)."
+      "emoji": "🛌",
+      "note": "Refers to physically getting out of bed."
     },
     {
       "id": "s12_03",
-      "category": "Time Basics",
-      "pl": "O ósmej wieczorem",
-      "en": "At 8 PM",
+      "category": "Daily Routine",
+      "pl": "Brać prysznic",
+      "en": "To take a shower",
       "level": 12,
       "gender": null,
-      "emoji": "🌆",
-      "note": "Poland often uses the 24-hour clock, so 8 PM is frequently called 'o dwudziestej'."
+      "emoji": "🚿",
+      "note": "Literally 'to take a shower'."
     },
     {
       "id": "s12_04",
-      "category": "Time Basics",
-      "pl": "Za piętnaście minut",
-      "en": "In fifteen minutes",
+      "category": "Daily Routine",
+      "pl": "Myć zęby",
+      "en": "To brush teeth",
       "level": 12,
       "gender": null,
-      "emoji": "⏱️",
-      "note": "'Za' + time duration indicates how much time is left until an event."
+      "emoji": "🪥",
+      "note": "Literally 'to wash teeth'. 'Zęby' is the plural of 'ząb'."
     },
     {
       "id": "s12_05",
-      "category": "Time Basics",
-      "pl": "Godzinę temu",
-      "en": "An hour ago",
+      "category": "Daily Routine",
+      "pl": "Ubierać się",
+      "en": "To get dressed",
       "level": 12,
       "gender": null,
-      "emoji": "⏮️",
-      "note": "'Temu' (ago) always comes after the time period."
+      "emoji": "👕",
+      "note": "Reflexive verb 'to dress oneself'."
     },
     {
       "id": "s12_06",
-      "category": "Days of the Week",
-      "pl": "Poniedziałek",
-      "en": "Monday",
+      "category": "Daily Routine",
+      "pl": "Wychodzić z domu",
+      "en": "To leave the house",
       "level": 12,
       "gender": null,
-      "emoji": "1️⃣",
-      "note": "Literally 'after Sunday' (po niedzieli)."
+      "emoji": "🚪",
+      "note": "Takes the genitive case 'z domu'."
     },
     {
       "id": "s12_07",
-      "category": "Days of the Week",
-      "pl": "Wtorek",
-      "en": "Tuesday",
+      "category": "Daily Routine",
+      "pl": "Wrócić do domu",
+      "en": "To return home",
       "level": 12,
       "gender": null,
-      "emoji": "2️⃣",
-      "note": "Related to the word 'wtóry' (second)."
+      "emoji": "🏡",
+      "note": "Perfective verb for completing the action of coming back."
     },
     {
       "id": "s12_08",
-      "category": "Days of the Week",
-      "pl": "Środa",
-      "en": "Wednesday",
+      "category": "Daily Routine",
+      "pl": "Iść spać",
+      "en": "To go to sleep",
       "level": 12,
       "gender": null,
-      "emoji": "3️⃣",
-      "note": "Related to 'środek' (middle) because it is the middle of the work week."
+      "emoji": "💤",
+      "note": "Combines the verb of motion 'iść' with the infinitive 'spać'."
     },
     {
       "id": "s12_09",
-      "category": "Days of the Week",
-      "pl": "Czwartek",
-      "en": "Thursday",
-      "level": 12,
-      "gender": null,
-      "emoji": "4️⃣",
-      "note": "Related to 'cztery' (four)."
-    },
-    {
-      "id": "s12_10",
-      "category": "Days of the Week",
-      "pl": "Piątek",
-      "en": "Friday",
-      "level": 12,
-      "gender": null,
-      "emoji": "5️⃣",
-      "note": "Related to 'pięć' (five)."
-    },
-    {
-      "id": "s12_11",
-      "category": "Days of the Week",
-      "pl": "Sobota",
-      "en": "Saturday",
-      "level": 12,
-      "gender": null,
-      "emoji": "🛒",
-      "note": "In Poland, most stores close or have limited hours on Sundays, so Sobota is the main shopping day."
-    },
-    {
-      "id": "s12_12",
-      "category": "Days of the Week",
-      "pl": "Niedziela",
-      "en": "Sunday",
-      "level": 12,
-      "gender": null,
-      "emoji": "⛪",
-      "note": "Literally 'no work' (nie działać)."
-    },
-    {
-      "id": "s12_13",
       "category": "Scheduling",
       "pl": "Spotkanie",
       "en": "Meeting / Appointment",
       "level": 12,
       "gender": null,
       "emoji": "💼",
-      "note": "A neuter noun. Used for business meetings and social hangouts."
+      "note": "Neuter noun. Used for formal business and casual hangouts."
     },
     {
-      "id": "s12_14",
+      "id": "s12_10",
       "category": "Scheduling",
       "pl": "Czy jest wolny termin?",
       "en": "Is there an available slot?",
       "level": 12,
       "gender": null,
       "emoji": "📅",
-      "note": "'Termin' refers to a specific date/time slot for a doctor, hairdresser, or meeting."
+      "note": "'Termin' refers to a specific date/time slot for a professional."
     },
     {
-      "id": "s12_15",
+      "id": "s12_11",
       "category": "Scheduling",
-      "pl": "Muszę odwołać spotkanie",
-      "en": "I need to cancel the meeting",
+      "pl": "Muszę odwołać wizytę",
+      "en": "I need to cancel the appointment",
       "level": 12,
       "gender": null,
       "emoji": "❌",
-      "note": "'Odwołać' means to call off or cancel."
+      "note": "'Wizyta' is usually used for doctors or hair salons."
     },
     {
-      "id": "s12_16",
+      "id": "s12_12",
       "category": "Scheduling",
-      "pl": "Spóźnię się",
-      "en": "I'll be late",
+      "pl": "Przełożyć na jutro",
+      "en": "To postpone until tomorrow",
+      "level": 12,
+      "gender": null,
+      "emoji": "➡️",
+      "note": "'Przełożyć' literally means to put over or transfer."
+    },
+    {
+      "id": "s12_13",
+      "category": "Scheduling",
+      "pl": "Spóźnię się dziesięć minut",
+      "en": "I'll be ten minutes late",
       "level": 12,
       "gender": null,
       "emoji": "🏃",
-      "note": "Future tense. 'Spóźnienie' (lateness) is generally disliked in Polish business culture."
+      "note": "Future tense. Essential if stuck in city traffic!"
+    },
+    {
+      "id": "s12_14",
+      "category": "Scheduling",
+      "pl": "Zajęty",
+      "en": "Busy",
+      "level": 12,
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Masculine adjective. 'Jestem zajęty' means I am busy."
+    },
+    {
+      "id": "s12_15",
+      "category": "Rooms & Property",
+      "pl": "Mieszkanie",
+      "en": "Apartment / Flat",
+      "level": 12,
+      "gender": null,
+      "emoji": "🏢",
+      "note": "Most Poles in cities live in a 'mieszkanie'."
+    },
+    {
+      "id": "s12_16",
+      "category": "Rooms & Property",
+      "pl": "Dom",
+      "en": "House",
+      "level": 12,
+      "gender": null,
+      "emoji": "🏠",
+      "note": "A detached or semi-detached residential building."
     },
     {
       "id": "s12_17",
-      "category": "Frequency",
-      "pl": "Rzadko",
-      "en": "Rarely",
+      "category": "Rooms & Property",
+      "pl": "Wynajmować",
+      "en": "To rent",
       "level": 12,
       "gender": null,
-      "emoji": "📉",
-      "note": "The opposite of 'często' (often)."
+      "emoji": "🔑",
+      "note": "Used when you are the tenant paying the landlord."
     },
     {
       "id": "s12_18",
-      "category": "Frequency",
-      "pl": "Codziennie",
-      "en": "Every day",
+      "category": "Rooms & Property",
+      "pl": "Pokój",
+      "en": "Room",
       "level": 12,
       "gender": null,
-      "emoji": "🗓️",
-      "note": "Derived from 'co' (every/what) + 'dzień' (day)."
+      "emoji": "🚪",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s12_19",
+      "category": "Rooms & Property",
+      "pl": "Sypialnia",
+      "en": "Bedroom",
+      "level": 12,
+      "gender": null,
+      "emoji": "🛏️",
+      "note": "Feminine noun derived from 'spać' (to sleep)."
+    },
+    {
+      "id": "s12_20",
+      "category": "Rooms & Property",
+      "pl": "Salon",
+      "en": "Living room",
+      "level": 12,
+      "gender": null,
+      "emoji": "🛋️",
+      "note": "Loanword. The main reception or family room."
+    },
+    {
+      "id": "s12_21",
+      "category": "Rooms & Property",
+      "pl": "Kuchnia",
+      "en": "Kitchen",
+      "level": 12,
+      "gender": null,
+      "emoji": "🍳",
+      "note": "Feminine noun. Also the word for 'cuisine'."
+    },
+    {
+      "id": "s12_22",
+      "category": "Rooms & Property",
+      "pl": "Łazienka",
+      "en": "Bathroom",
+      "level": 12,
+      "gender": null,
+      "emoji": "🛁",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s12_23",
+      "category": "Rooms & Property",
+      "pl": "Korytarz",
+      "en": "Hallway / Corridor",
+      "level": 12,
+      "gender": null,
+      "emoji": "🚶",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s12_24",
+      "category": "Rooms & Property",
+      "pl": "Piwnica",
+      "en": "Basement / Cellar",
+      "level": 12,
+      "gender": null,
+      "emoji": "📦",
+      "note": "Many Polish apartments come with a small 'piwnica' storage unit."
+    },
+    {
+      "id": "s12_25",
+      "category": "Rooms & Property",
+      "pl": "Balkon",
+      "en": "Balcony",
+      "level": 12,
+      "gender": null,
+      "emoji": "🪟",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s12_26",
+      "category": "Furniture",
+      "pl": "Kanapa",
+      "en": "Sofa / Couch",
+      "level": 12,
+      "gender": null,
+      "emoji": "🛋️",
+      "note": "Poles also use the word 'sofa' interchangeably."
+    },
+    {
+      "id": "s12_27",
+      "category": "Furniture",
+      "pl": "Szafa",
+      "en": "Wardrobe / Closet",
+      "level": 12,
+      "gender": null,
+      "emoji": "👗",
+      "note": "Used for large standalone clothes closets."
+    },
+    {
+      "id": "s12_28",
+      "category": "Furniture",
+      "pl": "Półka",
+      "en": "Shelf",
+      "level": 12,
+      "gender": null,
+      "emoji": "📚",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s12_29",
+      "category": "Furniture",
+      "pl": "Stół",
+      "en": "Table",
+      "level": 12,
+      "gender": null,
+      "emoji": "🪑",
+      "note": "Masculine noun. 'Na stole' means on the table."
+    },
+    {
+      "id": "s12_30",
+      "category": "Furniture",
+      "pl": "Krzesło",
+      "en": "Chair",
+      "level": 12,
+      "gender": null,
+      "emoji": "🪑",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s12_31",
+      "category": "Furniture",
+      "pl": "Biurko",
+      "en": "Desk",
+      "level": 12,
+      "gender": null,
+      "emoji": "💻",
+      "note": "Neuter noun. From the French word 'bureau'."
+    },
+    {
+      "id": "s12_32",
+      "category": "Furniture",
+      "pl": "Dywan",
+      "en": "Carpet / Rug",
+      "level": 12,
+      "gender": null,
+      "emoji": "🧶",
+      "note": "False friend! Does NOT mean divan (sofa)."
+    },
+    {
+      "id": "s12_33",
+      "category": "Furniture",
+      "pl": "Lampa",
+      "en": "Lamp",
+      "level": 12,
+      "gender": null,
+      "emoji": "💡",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s12_34",
+      "category": "Appliances",
+      "pl": "Lodówka",
+      "en": "Refrigerator",
+      "level": 12,
+      "gender": null,
+      "emoji": "🧊",
+      "note": "From 'lód' (ice)."
+    },
+    {
+      "id": "s12_35",
+      "category": "Appliances",
+      "pl": "Zamrażarka",
+      "en": "Freezer",
+      "level": 12,
+      "gender": null,
+      "emoji": "❄️",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s12_36",
+      "category": "Appliances",
+      "pl": "Zmywarka",
+      "en": "Dishwasher",
+      "level": 12,
+      "gender": null,
+      "emoji": "🧼",
+      "note": "From 'zmywać' (to wash dishes)."
+    },
+    {
+      "id": "s12_37",
+      "category": "Appliances",
+      "pl": "Piekarnik",
+      "en": "Oven",
+      "level": 12,
+      "gender": null,
+      "emoji": "🥧",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s12_38",
+      "category": "Appliances",
+      "pl": "Pralka",
+      "en": "Washing machine",
+      "level": 12,
+      "gender": null,
+      "emoji": "🫧",
+      "note": "From the verb 'prać' (to wash clothes)."
+    },
+    {
+      "id": "s12_39",
+      "category": "Appliances",
+      "pl": "Odkurzacz",
+      "en": "Vacuum cleaner",
+      "level": 12,
+      "gender": null,
+      "emoji": "💨",
+      "note": "Literally 'dust remover'."
+    },
+    {
+      "id": "s12_40",
+      "category": "Appliances",
+      "pl": "Żelazko",
+      "en": "Iron",
+      "level": 12,
+      "gender": null,
+      "emoji": "👔",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s12_41",
+      "category": "Appliances",
+      "pl": "Klimatyzacja",
+      "en": "Air conditioning",
+      "level": 12,
+      "gender": null,
+      "emoji": "❄️",
+      "note": "Often shortened to 'klima' in everyday speech."
+    },
+    {
+      "id": "s12_42",
+      "category": "Chores",
+      "pl": "Sprzątać",
+      "en": "To clean / Tidy up",
+      "level": 12,
+      "gender": null,
+      "emoji": "🧹",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s12_43",
+      "category": "Chores",
+      "pl": "Odkurzać",
+      "en": "To vacuum",
+      "level": 12,
+      "gender": null,
+      "emoji": "🌪️",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s12_44",
+      "category": "Chores",
+      "pl": "Robić pranie",
+      "en": "To do the laundry",
+      "level": 12,
+      "gender": null,
+      "emoji": "🧺",
+      "note": "Literally 'to make the wash'."
+    },
+    {
+      "id": "s12_45",
+      "category": "Chores",
+      "pl": "Zmywać naczynia",
+      "en": "To wash the dishes",
+      "level": 12,
+      "gender": null,
+      "emoji": "🍽️",
+      "note": "Infinitive phrase."
+    },
+    {
+      "id": "s12_46",
+      "category": "Chores",
+      "pl": "Prasować",
+      "en": "To iron",
+      "level": 12,
+      "gender": null,
+      "emoji": "👔",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s12_47",
+      "category": "Chores",
+      "pl": "Wynieść śmieci",
+      "en": "To take out the trash",
+      "level": 12,
+      "gender": null,
+      "emoji": "🗑️",
+      "note": "'Śmieci' is a plural noun for garbage."
+    },
+    {
+      "id": "s12_48",
+      "category": "Cooking",
+      "pl": "Gotować",
+      "en": "To cook",
+      "level": 12,
+      "gender": null,
+      "emoji": "🥘",
+      "note": "Can refer specifically to boiling, or cooking in general."
+    },
+    {
+      "id": "s12_49",
+      "category": "Cooking",
+      "pl": "Smażyć",
+      "en": "To fry",
+      "level": 12,
+      "gender": null,
+      "emoji": "🍳",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s12_50",
+      "category": "Cooking",
+      "pl": "Piec",
+      "en": "To bake",
+      "level": 12,
+      "gender": null,
+      "emoji": "🥖",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s12_51",
+      "category": "Cooking",
+      "pl": "Składniki",
+      "en": "Ingredients",
+      "level": 12,
+      "gender": null,
+      "emoji": "🧅",
+      "note": "Plural noun."
+    },
+    {
+      "id": "s12_52",
+      "category": "Cooking",
+      "pl": "Garnek",
+      "en": "Pot",
+      "level": 12,
+      "gender": null,
+      "emoji": "🍲",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s12_53",
+      "category": "Cooking",
+      "pl": "Patelnia",
+      "en": "Frying pan",
+      "level": 12,
+      "gender": null,
+      "emoji": "🍳",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s12_54",
+      "category": "Cooking",
+      "pl": "Talerz",
+      "en": "Plate",
+      "level": 12,
+      "gender": null,
+      "emoji": "🍽️",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s12_55",
+      "category": "Cooking",
+      "pl": "Kubek",
+      "en": "Mug",
+      "level": 12,
+      "gender": null,
+      "emoji": "☕",
+      "note": "Masculine noun used for hot drinks with a handle."
+    },
+    {
+      "id": "s12_56",
+      "category": "Cooking",
+      "pl": "Szklanka",
+      "en": "Glass",
+      "level": 12,
+      "gender": null,
+      "emoji": "🥛",
+      "note": "Feminine noun used for cold drinks or traditional tea glasses."
+    },
+    {
+      "id": "s12_57",
+      "category": "Gardening",
+      "pl": "Ogród",
+      "en": "Garden",
+      "level": 12,
+      "gender": null,
+      "emoji": "🌳",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s12_58",
+      "category": "Gardening",
+      "pl": "Ogródek",
+      "en": "Small garden / Yard",
+      "level": 12,
+      "gender": null,
+      "emoji": "🏡",
+      "note": "Diminutive form, commonly used for the bit of land behind a house."
+    },
+    {
+      "id": "s12_59",
+      "category": "Gardening",
+      "pl": "Podlewać kwiaty",
+      "en": "To water the flowers",
+      "level": 12,
+      "gender": null,
+      "emoji": "🪴",
+      "note": "Infinitive phrase."
+    },
+    {
+      "id": "s12_60",
+      "category": "Gardening",
+      "pl": "Kosić trawę",
+      "en": "To mow the lawn",
+      "level": 12,
+      "gender": null,
+      "emoji": "🚜",
+      "note": "'Trawę' is the accusative of 'trawa' (grass)."
+    },
+    {
+      "id": "s12_61",
+      "category": "Gardening",
+      "pl": "Sadzić",
+      "en": "To plant",
+      "level": 12,
+      "gender": null,
+      "emoji": "🌱",
+      "note": "Infinitive verb."
+    },
+    {
+      "id": "s12_62",
+      "category": "Gardening",
+      "pl": "Trawnik",
+      "en": "Lawn",
+      "level": 12,
+      "gender": null,
+      "emoji": "🟩",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s12_63",
+      "category": "Gardening",
+      "pl": "Roślina",
+      "en": "Plant",
+      "level": 12,
+      "gender": null,
+      "emoji": "🌿",
+      "note": "Feminine noun for any plant."
+    },
+    {
+      "id": "s12_64",
+      "category": "Gardening",
+      "pl": "Płot",
+      "en": "Fence",
+      "level": 12,
+      "gender": null,
+      "emoji": "🚧",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s12_65",
+      "category": "Home Security",
+      "pl": "Klucze",
+      "en": "Keys",
+      "level": 12,
+      "gender": null,
+      "emoji": "🗝️",
+      "note": "Plural noun. Singular is 'klucz'."
+    },
+    {
+      "id": "s12_66",
+      "category": "Home Security",
+      "pl": "Zamek",
+      "en": "Lock (also: Castle)",
+      "level": 12,
+      "gender": null,
+      "emoji": "🔒",
+      "note": "Masculine noun. Context determines if it's a door lock or a medieval castle."
+    },
+    {
+      "id": "s12_67",
+      "category": "Home Security",
+      "pl": "Zamykać drzwi",
+      "en": "To close/lock the door",
+      "level": 12,
+      "gender": null,
+      "emoji": "🚪",
+      "note": "Infinitive phrase."
+    },
+    {
+      "id": "s12_68",
+      "category": "Home Security",
+      "pl": "Otwierać drzwi",
+      "en": "To open the door",
+      "level": 12,
+      "gender": null,
+      "emoji": "👐",
+      "note": "Infinitive phrase."
+    },
+    {
+      "id": "s12_69",
+      "category": "Home Security",
+      "pl": "Dzwonek do drzwi",
+      "en": "Doorbell",
+      "level": 12,
+      "gender": null,
+      "emoji": "🔔",
+      "note": "Literally 'little bell to the door'."
+    },
+    {
+      "id": "s12_70",
+      "category": "Home Life",
+      "pl": "Sąsiad",
+      "en": "Neighbor",
+      "level": 12,
+      "gender": null,
+      "emoji": "👋",
+      "note": "Masculine noun. A female neighbor is 'Sąsiadka'."
+    },
+    {
+      "id": "s12_71",
+      "category": "Home Life",
+      "pl": "Współlokator",
+      "en": "Roommate / Flatmate",
+      "level": 12,
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Masculine noun."
+    },
+    {
+      "id": "s12_72",
+      "category": "Home Life",
+      "pl": "Rachunki",
+      "en": "Bills",
+      "level": 12,
+      "gender": null,
+      "emoji": "🧾",
+      "note": "Plural noun. Used for utility bills like water and electricity."
+    },
+    {
+      "id": "s12_73",
+      "category": "Home Life",
+      "pl": "Czynsz",
+      "en": "Rent (payment) / HOA fee",
+      "level": 12,
+      "gender": null,
+      "emoji": "💶",
+      "note": "Can refer to the rent paid to a landlord, or the administrative fee paid to a building co-op."
+    },
+    {
+      "id": "s12_74",
+      "category": "Home Life",
+      "pl": "Skrzynka pocztowa",
+      "en": "Mailbox",
+      "level": 12,
+      "gender": null,
+      "emoji": "📬",
+      "note": "Literally 'postal box'."
+    },
+    {
+      "id": "s12_75",
+      "category": "Home Life",
+      "pl": "Przesyłka",
+      "en": "Parcel / Package",
+      "level": 12,
+      "gender": null,
+      "emoji": "📦",
+      "note": "Feminine noun."
     }
   ]
 }
