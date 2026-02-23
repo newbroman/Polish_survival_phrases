@@ -628,7 +628,8 @@
             border: 1px solid #ccc;
             color: var(--text);
             border-radius: 12px;
-            padding: 10px 0;
+            padding: 0;
+            height: 60px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -1248,7 +1249,9 @@
 
     <div class="quiz-header" id="quiz-ui">
         <div style="display:flex; justify-content:space-between; width:100%; max-width:380px; align-items:center;">
-            <div style="width:30px;"></div>
+            <button class="search-trigger-btn" id="header-save-btn" onclick="saveCurrentToCustom()"
+                style="width:36px; height:36px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer; background:transparent; border:none;"
+                title="Save to Sandbox">⭐</button>
             <div id="q-text" class="q-text">Ready?</div>
 
             <button class="search-trigger-btn" onclick="toggleContentSwap()"
@@ -1270,11 +1273,14 @@
             <div class="flashcard" id="study-flashcard">
 
                 <button class="search-trigger-btn" onclick="toggleContentSwap()"
-                    style="position:absolute; top:15px; left:15px; width:36px; height:36px; border-radius:18px; background:var(--bg); border:1px solid #ddd; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer;"
+                    style="position:absolute; top:15px; right:15px; width:36px; height:36px; border-radius:18px; background:var(--bg); border:1px solid #ddd; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer;"
                     title="Swap Language">🔄</button>
                 <button id="fc-hint-btn" onclick="toggleStudyNotes()"
-                    style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; display:none; padding:0; line-height:1;"
+                    style="position:absolute; top:60px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; display:none; padding:0; line-height:1;"
                     title="Toggle Grammar Notes">💡</button>
+                <button id="study-save-btn" onclick="saveCurrentToCustom()"
+                    style="position:absolute; top:15px; left:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:0; line-height:1;"
+                    title="Save to Sandbox">⭐</button>
 
                 <div class="fc-pl" id="fc-pl">Polish</div>
                 <div class="fc-en" id="fc-en">English</div>
@@ -1296,15 +1302,10 @@
             style="background:var(--success-green); color:white; border-color:var(--success-green); flex: 2; padding: 0 5px;"
             title="Listen / Slow Down">
             <span class="action-icon">🔊</span>
-            <span id="lbl-btn-listen" style="font-size: 0.85rem;">Listen (1x) - Tap to slow</span>
+            <span id="lbl-btn-listen" style="font-size: 0.85rem;">Listen (1x) - Double tap to slow</span>
         </button>
         <button class="action-btn" onclick="togglePauseAudio()" style="flex: 0.5; padding: 0;" title="Pause/Resume">
             <span class="action-icon" id="pause-icon" style="margin:0;">⏸️</span>
-        </button>
-        <button class="action-btn" id="footer-save-btn" onclick="saveCurrentToCustom()" style="flex: 1.5; padding: 0;"
-            title="Save to Sandbox">
-            <span class="action-icon">⭐</span>
-            <span id="lbl-btn-save">Save</span>
         </button>
         <button class="action-btn" id="mic-btn" onclick="toggleMic()" style="flex: 1;">
             <span class="action-icon">🎤</span>
@@ -2223,15 +2224,22 @@
         function saveCurrentToCustom() {
             if (!currentTarget) return;
 
-            const btn = document.getElementById('footer-save-btn');
-            const lbl = document.getElementById('lbl-btn-save');
+            const btn1 = document.getElementById('header-save-btn');
+            const btn2 = document.getElementById('study-save-btn');
 
             // Check if it already exists to prevent duplicate spam
             const exists = customPhrases.phrases.some(p => p.pl === currentTarget.pl);
 
             if (exists) {
-                lbl.innerText = "Already Saved!";
-                setTimeout(() => lbl.innerText = "Save", 2000);
+                if (btn1) {
+                    const original = btn1.innerText;
+                    btn1.innerText = "✅";
+                    setTimeout(() => btn1.innerText = "⭐", 1500);
+                }
+                if (btn2) {
+                    btn2.innerText = "✅";
+                    setTimeout(() => btn2.innerText = "⭐", 1500);
+                }
                 return;
             }
 
@@ -2251,13 +2259,14 @@
             if (customList) customList.data = customPhrases;
             cacheAllPhrases();
 
-            lbl.innerText = "✅ Saved!";
-            btn.style.background = "#fff3cd"; // Give it a little flash color
-
-            setTimeout(() => {
-                lbl.innerText = "Save";
-                btn.style.background = "";
-            }, 2000);
+            if (btn1) {
+                btn1.innerText = "✅";
+                setTimeout(() => btn1.innerText = "⭐", 1500);
+            }
+            if (btn2) {
+                btn2.innerText = "✅";
+                setTimeout(() => btn2.innerText = "⭐", 1500);
+            }
         }
 
         function exportCustomLevel() {
@@ -2329,7 +2338,7 @@
 
             currentPlaybackSpeed = 1.0;
             if (document.getElementById('lbl-btn-listen')) {
-                document.getElementById('lbl-btn-listen').innerText = 'Listen (1x) - Tap to slow';
+                document.getElementById('lbl-btn-listen').innerText = 'Listen (1x) - Double tap to slow';
             }
         }
 
