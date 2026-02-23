@@ -1,4 +1,4 @@
-const CACHE_NAME = 'polish-master-v19.1';
+const CACHE_NAME = 'polish-master-v21';
 const CORE_ASSETS = [
     './',
     './index.html',
@@ -58,7 +58,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request).then(cachedResponse => {
             if (cachedResponse) return cachedResponse;
-            
+
             return fetch(event.request).then(networkResponse => {
                 if (networkResponse && networkResponse.ok && networkResponse.type === 'basic') {
                     const clone = networkResponse.clone();
@@ -67,7 +67,7 @@ self.addEventListener('fetch', event => {
                 return networkResponse;
             }).catch(() => {
                 // Failsafe for offline without cached asset
-                return null; 
+                return null;
             });
         })
     );

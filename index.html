@@ -652,6 +652,60 @@
             font-size: 1.4rem;
         }
 
+        .action-icon {
+            font-size: 1.4rem;
+        }
+
+        /* MOBILE OPTIMIZATIONS */
+        @media (max-width: 600px) {
+
+            body.practice-mode-active .header .title-banner,
+            body.practice-mode-active .header .controls-row {
+                max-height: 0;
+                overflow: hidden;
+                padding-top: 0;
+                padding-bottom: 0;
+                margin: 0;
+                border: none;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+            }
+
+            body.practice-mode-active .header.show-mobile .title-banner {
+                max-height: 100px;
+                padding: 12px 15px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            body.practice-mode-active .header.show-mobile .controls-row {
+                max-height: 100px;
+                padding: 8px 10px;
+            }
+        }
+
+        /* ANTI-CHEAT PAUSE STATE */
+        .game-paused {
+            filter: blur(10px);
+            pointer-events: none;
+            user-select: none;
+            transition: filter 0.2s;
+        }
+
+        #pause-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--pol-red);
+            text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
+            z-index: 1000;
+            display: none;
+            pointer-events: none;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .mic-active {
             background: #ffcccc !important;
             border-color: var(--pol-red) !important;
@@ -1207,16 +1261,17 @@
 
     <div class="header">
         <div class="title-banner">
-            <button class="icon-btn pulse-glow" onclick="toggleHelp()"
-                style="border: 2px solid var(--pol-red); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--pol-red); box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);">❓</button>
+            <button class="icon-btn pulse-glow" id="main-help-btn" onclick="toggleHelp()"
+                style="border: 2px solid var(--pol-red); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--pol-red); box-shadow: 0 0 0 2px rgba(255,255,255,0.8), 0 0 10px rgba(220, 20, 60, 0.5);">❓</button>
             <h1 class="title" id="app-title">Polish Phrase Master</h1>
-            <button class="icon-btn" onclick="toggleSettings()">⚙️</button>
+            <button class="icon-btn" onclick="toggleSettings()"
+                style="border: 2px solid var(--pol-red); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--pol-red); box-shadow: 0 0 0 2px rgba(255,255,255,0.8);">⚙️</button>
         </div>
         <div class="points-banner" id="points-display">⭐ Points: 0 | Goal: 0 / 1000 | 🔥 Streak: 0</div>
 
         <div class="controls-row">
             <div style="display:flex; gap:8px; align-items:center;">
-                <div class="custom-dropdown" style="flex:1;">
+                <div class="custom-dropdown" id="level-display-container" style="flex:1;">
                     <div class="main-dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">
                         Loading levels...
                     </div>
@@ -1265,7 +1320,11 @@
         </div>
     </div>
 
-    <div class="map-section" id="game-area">
+    <div class="map-section" id="game-area" style="position: relative;">
+        <div id="pause-overlay">
+            <div>⏸️</div>
+            <div style="font-size: 1.5rem; letter-spacing: 2px;">PAUSED</div>
+        </div>
         <div id="mastery-map" class="grid"></div>
         <div id="search-results-list"></div>
 
@@ -1558,6 +1617,10 @@
 
         function toggleHelp() {
             const el = document.getElementById('help-overlay');
+            const btn = document.getElementById('main-help-btn');
+
+            if (btn) btn.classList.remove('pulse-glow');
+
             if (el.style.display === 'flex') {
                 el.style.display = 'none';
             } else {
@@ -1673,8 +1736,15 @@
             }
 
             if (p) {
-                updateQuestionText(); // Assuming this function is defined elsewhere or will be added.
-                document.getElementById('fc-pl').innerText = isSwapped ? p.en : p.pl;
+                updateQuestionText();
+
+                const emoji = p.emoji || p.e || '';
+                const emojiHtml = emoji ? `<div style="font-size: 2.5rem; margin-bottom: 10px;">${emoji}</div>` : '';
+
+                document.getElementById('fc-pl').innerHTML = `
+                    ${emojiHtml}
+                    ${isSwapped ? p.en : p.pl}
+                `;
                 document.getElementById('fc-en').innerText = isSwapped ? p.pl : p.en;
 
                 let notesHtml = "";
@@ -2202,11 +2272,11 @@
 
                 cacheAllPhrases();
 
-                if (activeBtn) activeBtn.innerText = "✅ Added to Lvl C!";
+                if (activeBtn) activeBtn.innerText = `✅ Added: ${translated}`;
                 setTimeout(() => {
                     document.getElementById('search-bar').value = '';
                     handleSearch();
-                }, 1500);
+                }, 3000);
 
                 if (currentLevel === "C") {
                     phrasesData = customPhrases.phrases;
@@ -2378,8 +2448,8 @@
             questionStartTime = Date.now();
 
             roundTimer = setInterval(() => {
-                // Phase 2: Freeze timer if reading a hint
-                if (isTimerPaused) {
+                // Phase 2: Freeze timer if reading a hint or globally paused
+                if (isTimerPaused || isGamePaused) {
                     questionStartTime += 50;
                     return;
                 }
@@ -2591,6 +2661,12 @@
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             document.getElementById('tab-' + m).classList.add('active');
 
+            if (m === 'learning') {
+                document.body.classList.add('practice-mode-active');
+            } else {
+                document.body.classList.remove('practice-mode-active');
+            }
+
             const quizUi = document.getElementById('quiz-ui');
             const map = document.getElementById('mastery-map');
             const studyView = document.getElementById('study-view');
@@ -2675,7 +2751,13 @@
                 if (currentLevel === "0") {
                     tile.innerHTML = `<div class="lvl0-content"><div class="lvl0-big">${p.pl}</div><div class="lvl0-sub">${p.en}</div><div class="lvl0-emoji">${p.e || ''}</div></div>`;
                 } else {
-                    tile.innerText = isSwapped ? p.en : getGenderText(p);
+                    const text = isSwapped ? p.en : getGenderText(p);
+                    const emoji = p.emoji || p.e || '';
+                    if (emoji) {
+                        tile.innerHTML = `<div style="font-size: 1.5rem; margin-bottom: 5px;">${emoji}</div><div>${text}</div>`;
+                    } else {
+                        tile.innerText = text;
+                    }
                 }
 
                 const score = stats[p.pl] ? stats[p.pl].score : 0;
@@ -2742,18 +2824,33 @@
         }
 
         let isAudioPaused = false;
+        let isGamePaused = false;
+
         function togglePauseAudio() {
-            if (window.speechSynthesis.speaking || window.speechSynthesis.paused) {
-                let icon = document.getElementById('pause-icon');
+            let icon = document.getElementById('pause-icon');
+            let gameArea = document.getElementById('game-area');
+            let pauseOverlay = document.getElementById('pause-overlay');
+
+            if (isGamePaused) {
+                // UNPAUSE
+                isGamePaused = false;
                 if (window.speechSynthesis.paused) {
                     window.speechSynthesis.resume();
                     isAudioPaused = false;
-                    if (icon) icon.innerText = '⏸️';
-                } else {
+                }
+                if (icon) icon.innerText = '⏸️';
+                if (gameArea) gameArea.classList.remove('game-paused');
+                if (pauseOverlay) pauseOverlay.style.display = 'none';
+            } else {
+                // PAUSE
+                isGamePaused = true;
+                if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
                     window.speechSynthesis.pause();
                     isAudioPaused = true;
-                    if (icon) icon.innerText = '▶️';
                 }
+                if (icon) icon.innerText = '▶️';
+                if (gameArea) gameArea.classList.add('game-paused');
+                if (pauseOverlay) pauseOverlay.style.display = 'flex';
             }
         }
 
@@ -2933,6 +3030,27 @@
             setGender(currentGender, false);
             scanLibrary();
         };
+
+        // --- Mobile Swipe-to-Reveal Header Logic ---
+        let mobileTouchStartY = 0;
+        window.addEventListener('touchstart', e => {
+            mobileTouchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        window.addEventListener('touchend', e => {
+            if (!document.body.classList.contains('practice-mode-active')) return;
+            if (window.innerWidth > 600) return;
+
+            let touchEndY = e.changedTouches[0].clientY;
+            let swipeDistance = touchEndY - mobileTouchStartY;
+            const header = document.querySelector('.header');
+
+            if (swipeDistance > 50) {
+                header.classList.add('show-mobile');
+            } else if (swipeDistance < -50) {
+                header.classList.remove('show-mobile');
+            }
+        });
 
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
