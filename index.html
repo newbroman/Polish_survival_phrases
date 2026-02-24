@@ -686,10 +686,10 @@
 
         /* ANTI-CHEAT PAUSE STATE */
         .game-paused {
-            filter: blur(10px);
+            opacity: 0;
             pointer-events: none;
             user-select: none;
-            transition: filter 0.2s;
+            transition: opacity 0.2s;
         }
 
         /* INTERACTION FREEZE STATE */
@@ -1292,10 +1292,10 @@
     </div>
 
     <div class="mode-tabs">
-        <div id="tab-study" class="tab" onclick="switchMode('study')">
+        <div id="tab-study" class="tab active" onclick="switchMode('study')">
             <span id="lbl-tab-study">STUDY</span>
         </div>
-        <div id="tab-learning" class="tab active" onclick="switchMode('learning')">
+        <div id="tab-learning" class="tab" onclick="switchMode('learning')">
             <span id="lbl-tab-practice">PRACTICE</span> <span id="learning-count"></span>
         </div>
         <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">
@@ -1332,8 +1332,8 @@
             <div>⏸️</div>
             <div style="font-size: 1.5rem; letter-spacing: 2px;">PAUSED</div>
         </div>
-        <div id="mastery-map" class="grid"></div>
-        <div id="search-results-list"></div>
+        <div id="mastery-map" class="grid" style="display: none;"></div>
+        <div id="search-results-list" style="display: none;"></div>
 
         <div id="study-view">
             <div class="flashcard" id="study-flashcard">
@@ -2510,13 +2510,17 @@
             let todayStr = new Date().toDateString();
 
             if (userData.lastPlayDate !== todayStr) {
-                if (userData.lastGoalDate) {
+                if (userData.lastPlayDate) {
                     let todayTime = new Date(todayStr).getTime();
-                    let lastGoalTime = new Date(userData.lastGoalDate).getTime();
-                    let daysDiff = Math.round((todayTime - lastGoalTime) / (1000 * 3600 * 24));
-                    if (daysDiff > 1) {
-                        userData.dailyStreak = 0;
+                    let lastPlayTime = new Date(userData.lastPlayDate).getTime();
+                    let daysDiff = Math.round((todayTime - lastPlayTime) / (1000 * 3600 * 24));
+                    if (daysDiff === 1) {
+                        userData.dailyStreak = (userData.dailyStreak || 0) + 1;
+                    } else if (daysDiff > 1) {
+                        userData.dailyStreak = 1;
                     }
+                } else {
+                    userData.dailyStreak = 1;
                 }
                 userData.dailyPoints = 0;
                 userData.lastPlayDate = todayStr;
@@ -2643,16 +2647,23 @@
                 playWrongSlide();
 
                 // Phase 3 SRS Penalty Logic:
-                let cStat = stats[currentTarget.pl] || { score: 0, interval: 0, nextReview: 0 };
-                if (cStat.score >= THRESHOLD) {
-                    // Oh no! They forgot a mastered word. Send it to the struggling pile.
-                    cStat.score = -1;
-                    cStat.interval = 0;
-                    cStat.nextReview = 0;
-                } else {
-                    cStat.score = Math.max(MIN_SCORE, cStat.score - 1);
+                let penalizeWord = (wordPl) => {
+                    let s = stats[wordPl] || { score: 0, interval: 0, nextReview: 0 };
+                    if (s.score >= THRESHOLD) {
+                        s.score = -1;
+                        s.interval = 0;
+                        s.nextReview = 0;
+                    } else {
+                        s.score = Math.max(MIN_SCORE, s.score - 1);
+                    }
+                    stats[wordPl] = s;
+                };
+
+                penalizeWord(currentTarget.pl);
+                // Also penalize the wrongly guessed phrase so its tile turns blue immediately
+                if (phrase && phrase.pl !== currentTarget.pl) {
+                    penalizeWord(phrase.pl);
                 }
-                stats[currentTarget.pl] = cStat;
 
                 if (el) el.classList.add('wrong');
                 document.getElementById('feedback').innerText = t('mistake');
@@ -2788,25 +2799,31 @@
 
                 if (currentLevel === "0") {
                     tile.innerHTML = `<div class="lvl0-content"><div class="lvl0-big">${p.pl}</div><div class="lvl0-sub">${p.en}</div><div class="lvl0-emoji">${p.e || ''}</div></div>`;
-                } else {
+                } else if (!isPractice) {
                     const plText = getGenderText(p);
                     const enText = p.en;
                     const emoji = p.emoji || p.e || '';
 
-                    let primaryText = isSwapped && isPractice ? enText : plText;
-                    let secondaryText = isSwapped && isPractice ? plText : enText;
+                    tile.innerHTML = `
+                        ${emoji ? `<div style="font-size: 1.5rem; margin-bottom: 5px;">${emoji}</div>` : ''}
+                        <div style="font-weight: bold; margin-bottom: 4px; font-size: 1.1em;">${plText}</div>
+                        <div style="font-size: 0.8em; opacity: 0.75;">${enText}</div>
+                    `;
+                } else {
+                    const targetText = isSwapped ? p.en : getGenderText(p);
+                    const emoji = p.emoji || p.e || '';
 
                     tile.innerHTML = `
                         ${emoji ? `<div style="font-size: 1.5rem; margin-bottom: 5px;">${emoji}</div>` : ''}
-                        <div style="font-weight: bold; margin-bottom: 4px; font-size: 1.1em;">${primaryText}</div>
-                        <div style="font-size: 0.8em; opacity: 0.75;">${secondaryText}</div>
+                        <div style="font-weight: bold; margin-bottom: 4px; font-size: 1.1em;">${targetText}</div>
                     `;
                 }
 
                 const score = stats[p.pl] ? stats[p.pl].score : 0;
 
                 if (score < 0) {
-                    tile.style.backgroundColor = `rgba(52, 152, 219, ${(Math.abs(score) / 2) + 0.4})`;
+                    let intensity = score === -1 ? 0.6 : 0.95;
+                    tile.style.backgroundColor = `rgba(52, 152, 219, ${intensity})`;
                     tile.style.color = "white";
                 } else if (score > 0) {
                     let targetHit = currentLevel === "R" ? !isDueForReview(p) : score >= THRESHOLD;
@@ -3072,6 +3089,7 @@
             updateUILanguage();
             setGender(currentGender, false);
             scanLibrary();
+            document.body.className = 'study-mode-active';
         };
 
         // --- Mobile Swipe-to-Reveal Header Logic ---
