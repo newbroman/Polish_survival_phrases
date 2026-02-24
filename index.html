@@ -1259,6 +1259,8 @@
         </div>
         <div class="hf-content-area" id="hf-active-view">
             <div style="color:#888; font-weight:bold; margin-bottom:10px;" id="hf-counter">1 / X</div>
+            <div id="hf-emoji" style="font-size: 3.5rem; margin-bottom: 15px; display: flex; justify-content: center;">⏳
+            </div>
             <div class="hf-big-text" id="hf-pl">Ready...</div>
             <div class="hf-sub-text" id="hf-en">Get set...</div>
             <div class="pause-selector">
@@ -2825,7 +2827,8 @@
                 }
 
                 if (currentLevel === "0") {
-                    tile.innerHTML = `<div class="lvl0-content"><div class="lvl0-big">${p.pl}</div><div class="lvl0-sub">${p.en}</div><div class="lvl0-emoji">${p.e || ''}</div></div>`;
+                    const fallbackEmoji = p.emoji || p.e || '';
+                    tile.innerHTML = `<div class="lvl0-content"><div class="lvl0-big">${p.pl}</div><div class="lvl0-sub">${p.en}</div><div class="lvl0-emoji">${fallbackEmoji}</div></div>`;
                 } else if (!isPractice) {
                     const plText = getGenderText(p);
                     const enText = p.en;
@@ -3047,6 +3050,7 @@
             hfAbort = false;
             while (hfActive && !hfIsPaused && hfIndex < hfPhrases.length) {
                 const p = hfPhrases[hfIndex];
+                document.getElementById('hf-emoji').innerText = p.emoji || p.e || '';
                 document.getElementById('hf-pl').innerText = p.pl;
                 document.getElementById('hf-en').innerText = p.en;
                 document.getElementById('hf-counter').innerText = `${hfIndex + 1} / ${hfPhrases.length}`;
