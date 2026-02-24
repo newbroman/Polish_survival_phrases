@@ -366,7 +366,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 8px;
             width: 100%;
@@ -380,6 +380,24 @@
             gap: 6px;
             max-width: 400px;
             margin: 0 auto;
+        }
+
+        .phrase-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        .phrase-list .tile {
+            aspect-ratio: auto;
+            align-items: flex-start;
+            text-align: left;
+            padding: 12px 15px;
+            position: relative;
         }
 
         .tile {
@@ -407,6 +425,14 @@
             padding: 4px;
             border-radius: 6px;
             box-shadow: 0 2px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        .phrase-list .tile {
+            aspect-ratio: auto;
+            align-items: flex-start;
+            text-align: left;
+            padding: 12px 15px;
+            position: relative;
         }
 
         .tile:active {
@@ -1208,6 +1234,20 @@
             </div>
             <div class="modal-body">
 
+                <div class="controls-row" style="width: 100%; max-width: 100%; margin-bottom: 20px;">
+                    <div style="display:flex; gap:8px; align-items:center;">
+                        <div class="custom-dropdown" id="level-display-container" style="flex:1;">
+                            <div class="main-dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">
+                                Loading levels...
+                            </div>
+                            <div class="dropdown-menu" id="lvl-menu"></div>
+                        </div>
+                        <button class="search-trigger-btn" onclick="toggleSearch()">🔍</button>
+                    </div>
+                    <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary & translate..."
+                        oninput="handleSearch()" style="display:none; margin-top:8px;">
+                </div>
+
                 <div class="settings-section">
                     <h3>🗣️ Voice Gender</h3>
                     <div class="segmented-control">
@@ -1275,42 +1315,29 @@
             <button class="hf-control-btn" onclick="skipPhraseHF()">Next ⏭</button>
         </div>
     </div>
-
     <div class="header">
-        <div class="title-banner">
-            <button class="icon-btn pulse-glow" id="main-help-btn" onclick="toggleHelp()"
-                style="border: 2px solid var(--pol-red); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--pol-red); box-shadow: 0 0 0 2px rgba(255,255,255,0.8), 0 0 10px rgba(220, 20, 60, 0.5);">❓</button>
-            <h1 class="title" id="app-title">Polish Phrase Master</h1>
-            <button class="icon-btn" onclick="toggleSettings()"
-                style="border: 2px solid var(--pol-red); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--pol-red); box-shadow: 0 0 0 2px rgba(255,255,255,0.8);">⚙️</button>
-        </div>
         <div class="points-banner" id="points-display">⭐ Points: 0 | Goal: 0 / 1000 | 🔥 Streak: 0</div>
-
-        <div class="controls-row">
-            <div style="display:flex; gap:8px; align-items:center;">
-                <div class="custom-dropdown" id="level-display-container" style="flex:1;">
-                    <div class="main-dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">
-                        Loading levels...
-                    </div>
-                    <div class="dropdown-menu" id="lvl-menu"></div>
-                </div>
-                <button class="search-trigger-btn" onclick="toggleSearch()">🔍</button>
-            </div>
-            <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary & translate..."
-                oninput="handleSearch()" style="display:none; margin-top:8px;">
-        </div>
     </div>
 
-    <div class="mode-tabs">
-        <div id="tab-study" class="tab" onclick="switchMode('study')">
-            <span id="lbl-tab-study">STUDY</span>
+    <div class="navigation-row"
+        style="display: flex; align-items: stretch; justify-content: center; width: 100%; border-bottom: 2px solid #ddd; background: var(--card);">
+        <button class="nav-icon-btn" id="main-help-btn" onclick="toggleHelp()"
+            style="width: 45px; flex-shrink: 0; background: none; border: none; border-right: 1px solid #ddd; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">❓</button>
+
+        <div class="mode-tabs" style="border-bottom: none; flex: 1; display: flex;">
+            <div id="tab-study" class="tab" onclick="switchMode('study')" style="flex: 1;">
+                <span id="lbl-tab-study">STUDY</span>
+            </div>
+            <div id="tab-learning" class="tab" onclick="switchMode('learning')" style="flex: 1;">
+                <span id="lbl-tab-practice">PRACTICE</span> <span id="learning-count"></span>
+            </div>
+            <div id="tab-mastered" class="tab" onclick="switchMode('mastered')" style="flex: 1;">
+                <span id="lbl-tab-banked">PHRASES</span> <span id="banked-count"></span>
+            </div>
         </div>
-        <div id="tab-learning" class="tab" onclick="switchMode('learning')">
-            <span id="lbl-tab-practice">PRACTICE</span> <span id="learning-count"></span>
-        </div>
-        <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">
-            <span id="lbl-tab-banked">BANKED</span> <span id="banked-count"></span>
-        </div>
+
+        <button class="nav-icon-btn" onclick="toggleSettings()"
+            style="width: 45px; flex-shrink: 0; background: none; border: none; border-left: 1px solid #ddd; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">⚙️</button>
     </div>
 
     <div class="progress-wrapper" id="prog-wrapper">
@@ -1508,7 +1535,7 @@
                 tooSlow: "Too slow! ⏱️",
                 study: "STUDY",
                 practice: "PRACTICE",
-                banked: "BANKED",
+                banked: "PHRASES",
                 save: "💾 Save",
                 ready: "Ready?",
                 masteredTitle: "Level Mastered!",
@@ -1539,7 +1566,7 @@
                 tooSlow: "Zbyt wolno! ⏱️",
                 study: "NAUKA",
                 practice: "TRENING",
-                banked: "OPANOWANE",
+                banked: "FRAZY",
                 save: "💾 Zapisz",
                 ready: "Gotowy?",
                 masteredTitle: "Poziom opanowany!",
@@ -2398,12 +2425,12 @@
             }
 
             if (currentLevel === "R") {
-                if (activePool.length !== 9) {
-                    activePool = new Array(9).fill(null);
+                if (activePool.length !== 6) {
+                    activePool = new Array(6).fill(null);
                 }
                 let unmastered = phrasesData.filter(p => isDueForReview(p));
 
-                for (let i = 0; i < 9; i++) {
+                for (let i = 0; i < 6; i++) {
                     if (!activePool[i] || !isDueForReview(activePool[i])) {
                         let nextPhrase = unmastered.find(p => !activePool.some(ap => ap && ap.pl === p.pl));
                         activePool[i] = nextPhrase || null;
@@ -2412,13 +2439,13 @@
                 return;
             }
 
-            if (activePool.length !== 9) {
-                activePool = new Array(9).fill(null);
+            if (activePool.length !== 6) {
+                activePool = new Array(6).fill(null);
             }
 
             let unmastered = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both'));
 
-            for (let i = 0; i < 9; i++) {
+            for (let i = 0; i < 6; i++) {
                 if (!activePool[i] || (stats[activePool[i].pl] ? stats[activePool[i].pl].score : 0) >= THRESHOLD) {
                     let nextPhrase = unmastered.find(p => !activePool.some(ap => ap && ap.pl === p.pl));
                     activePool[i] = nextPhrase || null;
@@ -2671,10 +2698,6 @@
                 };
 
                 penalizeWord(currentTarget.pl);
-                // Also penalize the wrongly guessed phrase so its tile turns blue immediately
-                if (phrase && phrase.pl !== currentTarget.pl) {
-                    penalizeWord(phrase.pl);
-                }
 
                 if (el) el.classList.add('wrong');
                 document.getElementById('feedback').innerText = t('mistake');
@@ -2719,20 +2742,7 @@
 
         let headerHideTimeout = null;
         function showMobileHeaderTemp() {
-            if (window.innerWidth > 600) return;
-            const header = document.querySelector('.header');
-            if (header) {
-                header.classList.add('show-mobile');
-                if (headerHideTimeout) clearTimeout(headerHideTimeout);
-                headerHideTimeout = setTimeout(() => {
-                    const menu = document.getElementById('lvl-menu');
-                    if (menu && menu.classList.contains('show')) {
-                        showMobileHeaderTemp();
-                        return;
-                    }
-                    header.classList.remove('show-mobile');
-                }, 5000);
-            }
+            // Deprecated: Brand Header and Auto-hide removed in V17 UI Redesign
         }
 
         function switchMode(m) {
@@ -2783,9 +2793,14 @@
         function updateMap() {
             const area = document.getElementById('mastery-map');
             area.innerHTML = '';
-            area.className = (currentLevel === "0") ? 'grid lvl0' : 'grid';
 
             const isPractice = document.getElementById('tab-learning').classList.contains('active');
+
+            if (!isPractice && currentLevel !== "0") {
+                area.className = 'phrase-list';
+            } else {
+                area.className = (currentLevel === "0") ? 'grid lvl0' : 'grid';
+            }
             let validPool = isPractice ? activePool.filter(p => p !== null) : [];
 
             if (isPractice && validPool.length === 0 && document.getElementById('search-bar').value === "") {
@@ -2815,8 +2830,8 @@
             if (isPractice) {
                 list = activePool;
             } else {
-                // For Banked tab in Level R, show words that have successfully been handled 
-                list = currentLevel === "R" ? phrasesData.filter(p => !isDueForReview(p)) : phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) >= THRESHOLD);
+                // Phrases Tab: Show ALL phrases for the level, not just mastered ones
+                list = phrasesData;
             }
 
             list.forEach(p => {
@@ -2856,17 +2871,33 @@
 
                 const score = stats[p.pl] ? stats[p.pl].score : 0;
 
-                if (score < 0) {
-                    let intensity = score === -1 ? 0.6 : 0.95;
-                    tile.style.backgroundColor = `rgba(52, 152, 219, ${intensity})`;
-                    tile.style.color = "white";
-                } else if (score > 0) {
-                    let targetHit = currentLevel === "R" ? !isDueForReview(p) : score >= THRESHOLD;
-                    if (targetHit) {
-                        tile.style.backgroundColor = 'var(--card)';
+                if (isPractice) {
+                    if (score < 0) {
+                        let intensity = score === -1 ? 0.6 : 0.95;
+                        tile.style.backgroundColor = `rgba(52, 152, 219, ${intensity})`;
+                        tile.style.color = "white";
+                    } else if (score > 0) {
+                        let targetHit = currentLevel === "R" ? !isDueForReview(p) : score >= THRESHOLD;
+                        if (targetHit) {
+                            tile.style.backgroundColor = 'var(--card)';
+                            tile.classList.add('mastered-border');
+                        } else {
+                            tile.style.backgroundColor = `rgba(220, 20, 60, ${score / THRESHOLD})`;
+                        }
+                    }
+                } else {
+                    // Phrases List Mode: Show borders and badges for tracked words
+                    if (score >= THRESHOLD) {
                         tile.classList.add('mastered-border');
-                    } else {
-                        tile.style.backgroundColor = `rgba(220, 20, 60, ${score / THRESHOLD})`;
+                        tile.style.border = '2px solid var(--gold)';
+                    }
+                    if (score > 0) {
+                        tile.innerHTML += `<div style="position: absolute; top: -8px; right: -8px; background: var(--pol-red); color: white; border-radius: 12px; padding: 2px 8px; font-size: 0.75rem; font-weight: bold; border: 2px solid var(--bg); z-index: 10;">${score}</div>`;
+                    } else if (score < 0) {
+                        tile.innerHTML += `<div style="position: absolute; top: -8px; right: -8px; background: #3498db; color: white; border-radius: 12px; padding: 2px 8px; font-size: 0.75rem; font-weight: bold; border: 2px solid var(--bg); z-index: 10;">Needs Work</div>`;
+                    }
+                    if (currentLevel !== "R" && isDueForReview(p)) {
+                        tile.innerHTML += `<div style="position: absolute; top: -8px; left: -8px; background: var(--gold); color: black; border-radius: 12px; padding: 2px 8px; font-size: 0.75rem; font-weight: bold; border: 2px solid var(--bg); z-index: 10;">Due</div>`;
                     }
                 }
 
