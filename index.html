@@ -2551,14 +2551,15 @@
                 if (userData.lastPlayDate) {
                     let todayTime = new Date(todayStr).getTime();
                     let lastPlayTime = new Date(userData.lastPlayDate).getTime();
-                    let daysDiff = Math.round((todayTime - lastPlayTime) / (1000 * 3600 * 24));
+                    let daysDiff = Math.abs(Math.round((todayTime - lastPlayTime) / (1000 * 3600 * 24)));
+
                     if (daysDiff === 1) {
                         userData.dailyStreak = (userData.dailyStreak || 0) + 1;
                     } else if (daysDiff > 1) {
-                        userData.dailyStreak = 1;
+                        userData.dailyStreak = 1; // Reset streak if missed more than 1 day
                     }
                 } else {
-                    userData.dailyStreak = 1;
+                    userData.dailyStreak = 1; // First time playing
                 }
                 userData.dailyPoints = 0;
                 userData.lastPlayDate = todayStr;
@@ -2575,9 +2576,10 @@
 
             if (correctStreak > userData.bestStreak) userData.bestStreak = correctStreak;
 
+            // Optionally fire confetti if they hit their daily 1000 point goal.
             if (userData.dailyPoints >= 1000 && previousPoints < 1000) {
                 if (userData.lastGoalDate !== todayStr) {
-                    userData.dailyStreak++;
+                    // (Removed the arbitrary streak++ here as it's now handled by the consecutive day login)
                     userData.lastGoalDate = todayStr;
                     fireConfetti(100);
                 }
