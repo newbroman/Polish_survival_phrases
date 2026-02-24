@@ -1119,6 +1119,14 @@
                 </details>
 
                 <details>
+                    <summary>📱 Mobile Navigation & UI</summary>
+                    <p>When practicing on a small screen, the top header and level selector automatically hide to give
+                        you more answering space.</p>
+                    <p><b>To change levels or access settings:</b> Simply tap any of the top tabs (STUDY, PRACTICE, or
+                        BANKED). The header will slide back into view for 5 seconds before auto-hiding again.</p>
+                </details>
+
+                <details>
                     <summary>🎯 Spaced Repetition (SRS) & Level R</summary>
                     <p><b>True Spaced Repetition:</b> Words you master are now scheduled for review at optimal intervals
                         (1 day, 3 days, 7 days, etc.) so you never forget them.</p>
@@ -2193,14 +2201,15 @@
 
             studyIndex = 0;
 
+            refreshActivePool();
+
             if (document.getElementById('tab-study').classList.contains('active')) {
                 renderStudyCard();
             } else {
-                refreshActivePool();
                 updateMap();
-                updateTabCounts();
                 startNewRound();
             }
+            updateTabCounts();
             updatePointsUI();
         }
 
@@ -2706,9 +2715,27 @@
             localStorage.setItem('pl_current_level_idx', currentLevel);
         }
 
+        let headerHideTimeout = null;
+        function showMobileHeaderTemp() {
+            if (window.innerWidth > 600) return;
+            const header = document.querySelector('.header');
+            if (header) {
+                header.classList.add('show-mobile');
+                if (headerHideTimeout) clearTimeout(headerHideTimeout);
+                headerHideTimeout = setTimeout(() => {
+                    header.classList.remove('show-mobile');
+                }, 5000);
+            }
+        }
+
         function switchMode(m) {
+            showMobileHeaderTemp();
+
+            let tabEl = document.getElementById('tab-' + m);
+            if (tabEl && tabEl.classList.contains('active')) return;
+
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.getElementById('tab-' + m).classList.add('active');
+            if (tabEl) tabEl.classList.add('active');
 
             if (m === 'learning') {
                 document.body.classList.add('practice-mode-active');
@@ -3091,27 +3118,6 @@
             scanLibrary();
             document.body.className = 'study-mode-active';
         };
-
-        // --- Mobile Swipe-to-Reveal Header Logic ---
-        let mobileTouchStartY = 0;
-        window.addEventListener('touchstart', e => {
-            mobileTouchStartY = e.touches[0].clientY;
-        }, { passive: true });
-
-        window.addEventListener('touchend', e => {
-            if (!document.body.classList.contains('practice-mode-active')) return;
-            if (window.innerWidth > 600) return;
-
-            let touchEndY = e.changedTouches[0].clientY;
-            let swipeDistance = touchEndY - mobileTouchStartY;
-            const header = document.querySelector('.header');
-
-            if (swipeDistance > 50) {
-                header.classList.add('show-mobile');
-            } else if (swipeDistance < -50) {
-                header.classList.remove('show-mobile');
-            }
-        });
 
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
