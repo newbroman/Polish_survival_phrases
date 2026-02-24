@@ -1302,7 +1302,7 @@
     </div>
 
     <div class="mode-tabs">
-        <div id="tab-study" class="tab active" onclick="switchMode('study')">
+        <div id="tab-study" class="tab" onclick="switchMode('study')">
             <span id="lbl-tab-study">STUDY</span>
         </div>
         <div id="tab-learning" class="tab" onclick="switchMode('learning')">
@@ -2725,6 +2725,11 @@
                 header.classList.add('show-mobile');
                 if (headerHideTimeout) clearTimeout(headerHideTimeout);
                 headerHideTimeout = setTimeout(() => {
+                    const menu = document.getElementById('lvl-menu');
+                    if (menu && menu.classList.contains('show')) {
+                        showMobileHeaderTemp();
+                        return;
+                    }
                     header.classList.remove('show-mobile');
                 }, 5000);
             }
@@ -3120,7 +3125,7 @@
             updateUILanguage();
             setGender(currentGender, false);
             scanLibrary();
-            document.body.className = 'study-mode-active';
+            switchMode('study');
         };
 
         if ('serviceWorker' in navigator) {
