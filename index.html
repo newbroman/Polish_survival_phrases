@@ -396,7 +396,7 @@
             aspect-ratio: auto;
             align-items: flex-start;
             text-align: left;
-            padding: 12px 15px;
+            padding: 10px 12px;
             position: relative;
         }
 
@@ -409,7 +409,7 @@
             background: var(--tile-bg);
             border-radius: 8px;
             cursor: pointer;
-            padding: 6px;
+            padding: 4px;
             text-align: center;
             font-size: 0.8rem;
             font-weight: 700;
@@ -1145,14 +1145,6 @@
                 </details>
 
                 <details>
-                    <summary>📱 Mobile Navigation & UI</summary>
-                    <p>When practicing on a small screen, the top header and level selector automatically hide to give
-                        you more answering space.</p>
-                    <p><b>To change levels or access settings:</b> Simply tap any of the top tabs (STUDY, PRACTICE, or
-                        BANKED). The header will slide back into view for 5 seconds before auto-hiding again.</p>
-                </details>
-
-                <details>
                     <summary>🎯 Spaced Repetition (SRS) & Level R</summary>
                     <p><b>True Spaced Repetition:</b> Words you master are now scheduled for review at optimal intervals
                         (1 day, 3 days, 7 days, etc.) so you never forget them.</p>
@@ -1234,27 +1226,26 @@
             </div>
             <div class="modal-body">
 
-                <div class="controls-row" style="width: 100%; max-width: 100%; margin-bottom: 20px;">
-                    <div style="display:flex; gap:8px; align-items:center;">
-                        <div class="custom-dropdown" id="level-display-container" style="flex:1;">
+                <div class="controls-row" style="width: 100%; max-width: 100%; margin-bottom: 5px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span class="setting-label">Level / Category:</span>
+                        <div class="custom-dropdown" id="lvl-dropdown" style="flex:1; max-width:200px;">
                             <div class="main-dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">
                                 Loading levels...
                             </div>
                             <div class="dropdown-menu" id="lvl-menu"></div>
                         </div>
-                        <button class="search-trigger-btn" onclick="toggleSearch()">🔍</button>
                     </div>
-                    <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary & translate..."
-                        oninput="handleSearch()" style="display:none; margin-top:8px;">
-                </div>
 
-                <div class="settings-section">
-                    <h3>🗣️ Voice Gender</h3>
-                    <div class="segmented-control">
-                        <button class="seg-btn" id="btn-gen-m" onclick="setGender('m')">Male</button>
-                        <button class="seg-btn active" id="btn-gen-both" onclick="setGender('both')">Both</button>
-                        <button class="seg-btn" id="btn-gen-f" onclick="setGender('f')">Female</button>
-                    </div>
+                    <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary & translate..."
+                        oninput="handleSearch()"
+                        style="display:block; margin-top:15px; margin-bottom:10px; width:100%; box-sizing:border-box;">
+
+                    <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
+                        style="border-color:var(--pol-red); color:var(--pol-red); margin-top:5px; margin-bottom:15px;">
+                        📤 Export Sandbox (Lvl C)
+                    </button>
+
                 </div>
 
                 <div class="settings-section">
@@ -1277,11 +1268,6 @@
                         <button class="settings-btn" onclick="document.getElementById('file-input').click()">📂
                             Load</button>
                     </div>
-
-                    <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
-                        style="border-color:var(--pol-red); color:var(--pol-red); margin-top:10px;">
-                        📤 Export Sandbox (Lvl C)
-                    </button>
 
                     <button class="settings-btn danger" onclick="resetEverything()" style="margin-top:10px;">⚠️ Reset
                         App Data</button>
@@ -1520,7 +1506,6 @@
         let isTimerPaused = false; // Phase 2: For pausing timer when reading grammar notes
 
         let uiLang = localStorage.getItem('polishMasterUILang') || 'en';
-        let currentGender = localStorage.getItem('polishMasterGender') || 'both';
 
         // ==========================================
         // TRANSLATIONS
@@ -1687,19 +1672,6 @@
         function toggleSettings() {
             const el = document.getElementById('settings-overlay');
             el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
-            setGender(currentGender, false);
-        }
-
-        function toggleSearch() {
-            const sb = document.getElementById('search-bar');
-            if (sb.style.display === 'none' || sb.style.display === '') {
-                sb.style.display = 'block';
-                sb.focus();
-            } else {
-                sb.style.display = 'none';
-                sb.value = '';
-                handleSearch();
-            }
         }
 
         // Phase 2: Grammar Hint Controls
@@ -1732,28 +1704,8 @@
             }
         };
 
-        function setGender(g, updateGrid = true) {
-            currentGender = g;
-            localStorage.setItem('polishMasterGender', g);
-
-            document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById('btn-gen-' + g).classList.add('active');
-
-            if (updateGrid) {
-                activePool = [];
-                refreshActivePool();
-                updateMap();
-                if (document.getElementById('tab-study').classList.contains('active')) {
-                    renderStudyCard();
-                } else {
-                    startNewRound();
-                }
-            }
-        }
-
         function getGenderText(p) {
-            if (!p.gender || p.gender !== 'both' || !p.variants) return p.pl;
-            return currentGender === 'm' ? p.variants.m : (currentGender === 'f' ? p.variants.f : p.pl);
+            return p.pl;
         }
 
         // ==========================================
@@ -2205,7 +2157,6 @@
             document.getElementById('mastery-map').style.display = 'grid';
 
             document.getElementById('search-bar').value = '';
-            document.getElementById('search-bar').style.display = 'none';
 
             // Dynamic reconstruction of Level R when clicked
             if (currentLevel === "R") {
@@ -2443,7 +2394,7 @@
                 activePool = new Array(6).fill(null);
             }
 
-            let unmastered = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) < THRESHOLD && (!p.gender || p.gender === currentGender || p.gender === 'both'));
+            let unmastered = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) < THRESHOLD);
 
             for (let i = 0; i < 6; i++) {
                 if (!activePool[i] || (stats[activePool[i].pl] ? stats[activePool[i].pl].score : 0) >= THRESHOLD) {
@@ -3156,7 +3107,6 @@
             initSpeechRecognition();
             addPoints(0);
             updateUILanguage();
-            setGender(currentGender, false);
             scanLibrary();
             switchMode('study');
         };
