@@ -35,7 +35,11 @@ export const translations = {
         genderPrefix: "Gender",
         uiPrefix: "UI Language",
         hard: "Hard Mode",
-        hf: "Hands-Free Mode"
+        hf: "Hands-Free Mode",
+        btnLoad: "📂 Load",
+        btnReset: "⚠️ Reset App Data",
+        btnExportC: "📤 Export Sandbox (Lvl C)",
+        btnSave: "💾 Save"
     },
     pl: {
         title: "Polskie Zwroty",
@@ -64,9 +68,13 @@ export const translations = {
         female: "Kobieta",
         both: "Oboje",
         genderPrefix: "Rodzaj",
-        uiPrefix: "Język",
-        hard: "Trudny",
-        hf: "Tryb Bez Rąk"
+        uiPrefix: "Język Aplikacji",
+        hard: "Tryb Trudny",
+        hf: "Tryb Wolne Ręce",
+        btnLoad: "📂 Wczytaj",
+        btnReset: "⚠️ Resetuj Dane",
+        btnExportC: "📤 Eksportuj (Poz. C)",
+        btnSave: "💾 Zapisz"
     }
 };
 
@@ -81,8 +89,8 @@ export function updateUILanguage() {
     if (document.getElementById('app-title')) {
         document.getElementById('app-title').innerText = t('title');
     }
-    if (document.getElementById('search-bar')) {
-        document.getElementById('search-bar').placeholder = t('search');
+    if (document.getElementById('banked-search')) {
+        document.getElementById('banked-search').placeholder = t('search');
     }
     if (document.getElementById('lbl-ui-lang-label')) {
         document.getElementById('lbl-ui-lang-label').innerText = t('uiPrefix');
@@ -92,12 +100,13 @@ export function updateUILanguage() {
     }
 
     if (document.getElementById('lbl-hf')) {
-        document.getElementById('lbl-hf').innerHTML = `🎧 Start ${t('hf')}`;
+        document.getElementById('lbl-hf').innerText = state.uiLang === 'pl' ? '🎧 Tryb Wolne Ręce' : '🎧 Start Hands-Free Mode';
     }
 
-    if (document.getElementById('btn-save')) {
-        document.getElementById('btn-save').innerText = t('save');
-    }
+    if (document.getElementById('btn-save')) document.getElementById('btn-save').innerText = t('btnSave');
+    if (document.getElementById('btn-load')) document.getElementById('btn-load').innerText = t('btnLoad');
+    if (document.getElementById('btn-reset')) document.getElementById('btn-reset').innerText = t('btnReset');
+    if (document.getElementById('btn-export-c')) document.getElementById('btn-export-c').innerText = t('btnExportC');
 
     // Tab Translations
     if (document.getElementById('lbl-tab-study')) {
@@ -323,7 +332,7 @@ export async function selectLevel(lvlId) {
         document.getElementById('mastery-map').style.display = (state.currentLevel === "0") ? 'grid' : 'flex';
     }
 
-    document.getElementById('search-bar').value = '';
+    document.getElementById('banked-search').value = '';
 
     // Dynamic reconstruction of Level R when clicked
     if (state.currentLevel === "R") {
@@ -369,7 +378,8 @@ export function copyToClipboard(text, event) {
 }
 
 export function handleSearch(queryStr, source = 'settings') {
-    const query = typeof queryStr === 'string' ? queryStr.toLowerCase() : document.getElementById('search-bar').value.trim().toLowerCase();
+    const query = typeof queryStr === 'string' ? queryStr.toLowerCase() : document.getElementById('banked-search').value.trim().toLowerCase();
+    console.log(`[DEBUG] handleSearch() triggered -> query: '${query}', source: ${source}`);
     const mapArea = document.getElementById('mastery-map');
     const listArea = document.getElementById('search-results-list');
     listArea.innerHTML = '';
@@ -455,7 +465,7 @@ export async function translateAndAdd(text, langpair) {
 
         if (activeBtn) activeBtn.innerText = `✅ Added: ${translated}`;
         setTimeout(() => {
-            const searchBar = document.getElementById('search-bar');
+            const searchBar = document.getElementById('banked-search');
             if (searchBar) searchBar.value = '';
 
             const bankedSearch = document.getElementById('banked-search');
@@ -600,8 +610,8 @@ export function switchMode(m) {
     const progWrapper = document.getElementById('prog-wrapper');
 
     searchList.style.display = 'none';
-    const bankedSearch = document.getElementById('banked-search');
-    if (bankedSearch) bankedSearch.style.display = (m === 'mastered') ? 'block' : 'none';
+    const phrasesHeader = document.getElementById('phrases-header');
+    if (phrasesHeader) phrasesHeader.style.display = (m === 'mastered') ? 'flex' : 'none';
 
     if (m === 'study') {
         quizUi.style.display = 'none';
@@ -644,7 +654,7 @@ export function updateMap() {
     }
     let validPool = isPractice ? state.activePool.filter(p => p !== null) : [];
 
-    if (isPractice && validPool.length === 0 && document.getElementById('search-bar').value === "") {
+    if (isPractice && validPool.length === 0 && document.getElementById('banked-search').value === "") {
         const notice = document.createElement('div');
         notice.className = 'review-notice';
         if (state.currentLevel === "R") {
@@ -681,7 +691,7 @@ export function updateMap() {
         }
     }
 
-    console.log(`[DEBUG] updateMap() - isPractice: ${isPractice}, list.length: ${list ? list.length : 'undefined'}`);
+    console.log(`[DEBUG] updateMap() execution -> isPractice: ${isPractice}, list.length: ${list ? list.length : 'undefined'}, area.style.display: ${area.style.display}, area.className: ${area.className}`);
 
     list.forEach(p => {
         const tile = document.createElement('div');

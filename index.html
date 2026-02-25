@@ -128,7 +128,7 @@
                 </details>
 
                 <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master
-                    v17.0</div>
+                    v30.0</div>
             </div>
         </div>
     </div>
@@ -141,26 +141,7 @@
             </div>
             <div class="modal-body">
 
-                <div class="controls-row" style="width: 100%; max-width: 100%; margin-bottom: 5px;">
-                    <div style="display:flex; justify-content:center; align-items:center;">
-                        <div class="custom-dropdown" id="lvl-dropdown" style="width:100%;">
-                            <div class="main-dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">
-                                Loading levels...
-                            </div>
-                            <div class="dropdown-menu" id="lvl-menu"></div>
-                        </div>
-                    </div>
-
-                    <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary & translate..."
-                        oninput="handleSearch()"
-                        style="display:block; margin-top:15px; margin-bottom:10px; width:100%; box-sizing:border-box;">
-
-                    <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
-                        style="border-color:var(--pol-red); color:var(--pol-red); margin-top:5px; margin-bottom:15px;">
-                        📤 Export Sandbox (Lvl C)
-                    </button>
-
-                </div>
+                <!-- Settings now focuses exclusively on options and data management -->
 
                 <div class="settings-section">
                     <h3>⚙️ Options</h3>
@@ -179,11 +160,13 @@
                     <h3>💾 Data Management</h3>
                     <div style="display:flex; gap:10px;">
                         <button class="settings-btn" onclick="downloadProgress()" id="btn-save">💾 Save</button>
-                        <button class="settings-btn" onclick="document.getElementById('file-input').click()">📂
+                        <button class="settings-btn" id="btn-load"
+                            onclick="document.getElementById('file-input').click()">📂
                             Load</button>
                     </div>
 
-                    <button class="settings-btn danger" onclick="resetEverything()" style="margin-top:10px;">⚠️ Reset
+                    <button class="settings-btn danger" id="btn-reset" onclick="resetEverything()"
+                        style="margin-top:10px;">⚠️ Reset
                         App Data</button>
                 </div>
 
@@ -269,9 +252,27 @@
             <div>⏸️</div>
             <div style="font-size: 1.5rem; letter-spacing: 2px;">PAUSED</div>
         </div>
-        <input type="text" id="banked-search" class="search-box" placeholder="Search dictionary & translate..."
-            style="display: none; margin-bottom: 15px; width: 100%; max-width: 380px; box-sizing: border-box;"
-            oninput="handleSearch(this.value, 'banked')">
+        <div id="phrases-header"
+            style="display: none; width: 100%; max-width: 380px; margin-bottom: 15px; flex-direction: column; gap: 10px;">
+            <div class="controls-row" style="width: 100%; max-width: 100%; margin: 0;">
+                <div style="display:flex; justify-content:center; align-items:center;">
+                    <div class="custom-dropdown" id="lvl-dropdown" style="width:100%;">
+                        <div class="main-dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">
+                            Loading levels...
+                        </div>
+                        <div class="dropdown-menu" id="lvl-menu"></div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="text" id="banked-search" class="search-box" placeholder="Search dictionary & translate..."
+                style="width: 100%; box-sizing: border-box;" oninput="handleSearch(this.value, 'banked')">
+
+            <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
+                style="border-color:var(--pol-red); color:var(--pol-red); margin:0;">
+                📤 Export Sandbox (Lvl C)
+            </button>
+        </div>
         <div id="mastery-map" class="grid" style="display: none;"></div>
         <div id="search-results-list" style="display: none;"></div>
 
