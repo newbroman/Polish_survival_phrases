@@ -998,6 +998,7 @@ window.onload = async () => {
     addPoints(0);
     updateUILanguage();
     await scanLibrary();
+    await selectLevel(state.currentLevel);
     switchMode('study');
 };
 
