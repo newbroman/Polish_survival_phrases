@@ -13,7 +13,7 @@ export async function scanLibrary() {
     for (let major = 0; major <= 100; major++) {
         let majorFound = false;
         try {
-            const r = await fetch(`phrases_${major}.json`, { cache: 'no-store' });
+            const r = await fetch(`${import.meta.env.BASE_URL}phrases_${major}.json`, { cache: 'no-store' });
             if (r.ok) {
                 const data = await r.json();
                 state.levelList.push({ id: major.toString(), desc: data.description || `Level ${major}`, data: data });
@@ -31,7 +31,7 @@ export async function scanLibrary() {
             for (let minor = 1; minor <= 20; minor++) {
                 let minorId = `${major}.${minor}`;
                 try {
-                    const rMinor = await fetch(`phrases_${minorId}.json`, { cache: 'no-store' });
+                    const rMinor = await fetch(`${import.meta.env.BASE_URL}phrases_${minorId}.json`, { cache: 'no-store' });
                     if (rMinor.ok) {
                         const dataMinor = await rMinor.json();
                         state.levelList.push({ id: minorId, desc: dataMinor.description || `Level ${minorId}`, data: dataMinor });
