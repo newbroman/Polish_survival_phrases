@@ -135,6 +135,8 @@ export function addPoints(pts) {
         }
         state.userData.dailyPoints = 0;
         state.userData.lastPlayDate = todayStr;
+    } else if (state.userData.dailyStreak === 0) {
+        state.userData.dailyStreak = 1;
     }
 
     let previousPoints = state.userData.dailyPoints;

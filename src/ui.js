@@ -542,7 +542,7 @@ export function updateQuestionText() {
 
 export function updatePointsUI() {
     const pd = document.getElementById('points-display');
-    pd.innerHTML = `⭐ Points: ${state.userData.totalPoints} | Goal: ${state.userData.dailyPoints} / 1000 | 🔥 Streak: ${state.userData.dailyStreak || 0}`;
+    pd.innerHTML = `⭐ Points: ${state.userData.totalPoints} | Goal: ${state.userData.dailyPoints} / 1000 | 🔥 Daily: ${state.userData.dailyStreak || 0} | 🎯 Correct: ${state.correctStreak}`;
 
     if (state.userData.dailyPoints >= 1000) {
         pd.classList.add('points-gold');
