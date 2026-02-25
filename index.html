@@ -128,7 +128,7 @@
                 </details>
 
                 <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master
-                    v30.0</div>
+                    v31.0</div>
             </div>
         </div>
     </div>
@@ -164,6 +164,11 @@
                             onclick="document.getElementById('file-input').click()">📂
                             Load</button>
                     </div>
+
+                    <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
+                        style="border-color:var(--pol-red); color:var(--pol-red); margin-top:10px;">
+                        📤 Export Sandbox (Lvl C)
+                    </button>
 
                     <button class="settings-btn danger" id="btn-reset" onclick="resetEverything()"
                         style="margin-top:10px;">⚠️ Reset
@@ -267,11 +272,6 @@
 
             <input type="text" id="banked-search" class="search-box" placeholder="Search dictionary & translate..."
                 style="width: 100%; box-sizing: border-box;" oninput="handleSearch(this.value, 'banked')">
-
-            <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
-                style="border-color:var(--pol-red); color:var(--pol-red); margin:0;">
-                📤 Export Sandbox (Lvl C)
-            </button>
         </div>
         <div id="mastery-map" class="grid" style="display: none;"></div>
         <div id="search-results-list" style="display: none;"></div>

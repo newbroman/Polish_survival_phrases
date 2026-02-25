@@ -326,7 +326,9 @@ export async function selectLevel(lvlId) {
     document.getElementById('lvl-menu').classList.remove('show');
     document.getElementById('search-results-list').style.display = 'none';
 
-    if (document.getElementById('tab-learning').classList.contains('active')) {
+    if (document.getElementById('tab-study').classList.contains('active')) {
+        document.getElementById('mastery-map').style.display = 'none';
+    } else if (document.getElementById('tab-learning').classList.contains('active')) {
         document.getElementById('mastery-map').style.display = 'grid';
     } else {
         document.getElementById('mastery-map').style.display = (state.currentLevel === "0") ? 'grid' : 'flex';
@@ -990,12 +992,12 @@ export function sleep(ms) {
 document.addEventListener('click', initAudioContext, { once: true });
 document.addEventListener('touchstart', initAudioContext, { once: true });
 
-window.onload = () => {
+window.onload = async () => {
     initSpeech();
     initSpeechRecognition();
     addPoints(0);
     updateUILanguage();
-    scanLibrary();
+    await scanLibrary();
     switchMode('study');
 };
 

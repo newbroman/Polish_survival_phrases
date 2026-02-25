@@ -97,7 +97,6 @@ export async function scanLibrary() {
     });
 
     if (!state.levelList.find(l => l.id == state.currentLevel)) state.currentLevel = state.levelList[0].id;
-    selectLevel(state.currentLevel);
 }
 
 export async function cacheAllPhrases() {
