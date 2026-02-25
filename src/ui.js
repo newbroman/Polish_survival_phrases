@@ -363,14 +363,17 @@ export function copyToClipboard(text, event) {
     navigator.clipboard.writeText(text).then(() => alert("Copied: " + text));
 }
 
-export function handleSearch() {
-    const query = document.getElementById('search-bar').value.trim().toLowerCase();
+export function handleSearch(queryStr, source = 'settings') {
+    const query = typeof queryStr === 'string' ? queryStr.toLowerCase() : document.getElementById('search-bar').value.trim().toLowerCase();
     const mapArea = document.getElementById('mastery-map');
     const listArea = document.getElementById('search-results-list');
     listArea.innerHTML = '';
 
     if (!query) {
-        if (document.getElementById('tab-learning').classList.contains('active')) {
+        if (source === 'banked') {
+            mapArea.style.display = (state.currentLevel === "0") ? 'grid lvl0' : 'grid';
+            updateMap(); // Restore all tiles if Banked search is cleared
+        } else if (document.getElementById('tab-learning').classList.contains('active')) {
             mapArea.style.display = 'grid';
         }
         listArea.style.display = 'none';
@@ -447,8 +450,13 @@ export async function translateAndAdd(text, langpair) {
 
         if (activeBtn) activeBtn.innerText = `✅ Added: ${translated}`;
         setTimeout(() => {
-            document.getElementById('search-bar').value = '';
-            handleSearch();
+            const searchBar = document.getElementById('search-bar');
+            if (searchBar) searchBar.value = '';
+
+            const bankedSearch = document.getElementById('banked-search');
+            if (bankedSearch) bankedSearch.value = '';
+
+            handleSearch('', 'settings');
         }, 3000);
 
         if (state.currentLevel === "C") {
