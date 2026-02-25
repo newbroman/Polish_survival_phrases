@@ -587,6 +587,8 @@ export function switchMode(m) {
     const progWrapper = document.getElementById('prog-wrapper');
 
     searchList.style.display = 'none';
+    const bankedSearch = document.getElementById('banked-search');
+    if (bankedSearch) bankedSearch.style.display = (m === 'mastered') ? 'block' : 'none';
 
     if (m === 'study') {
         quizUi.style.display = 'none';
@@ -652,6 +654,12 @@ export function updateMap() {
     } else {
         // Phrases Tab: Show ALL phrases for the level, not just mastered ones
         list = state.phrasesData;
+
+        // Apply Phrasebook search filter
+        const query = document.getElementById('banked-search') ? document.getElementById('banked-search').value.trim().toLowerCase() : "";
+        if (query) {
+            list = list.filter(p => !p || p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query));
+        }
     }
 
     list.forEach(p => {
@@ -673,11 +681,13 @@ export function updateMap() {
             const plText = getGenderText(p);
             const enText = p.en;
             const emoji = p.emoji || p.e || '';
+            const notesText = p.notes ? `<div style="font-size: 0.75em; color: var(--pol-red); margin-top: 4px;">${p.notes}</div>` : '';
 
             tile.innerHTML = `
                         ${emoji ? `<div style="font-size: 1.5rem; margin-bottom: 5px;">${emoji}</div>` : ''}
                         <div style="font-weight: bold; margin-bottom: 4px; font-size: 1.1em;">${plText}</div>
                         <div style="font-size: 0.8em; opacity: 0.75;">${enText}</div>
+                        ${notesText}
                     `;
         } else {
             const targetText = state.isSwapped ? p.en : getGenderText(p);
