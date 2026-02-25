@@ -1,0 +1,25 @@
+{
+  "name": "geminipro",
+  "version": "1.0.0",
+  "description": "An interactive Polish language learning quiz with audio pronunciation, designed as a Progressive Web App.",
+  "main": "service-worker.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newbroman/Polish_survival_phrases.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/newbroman/Polish_survival_phrases/issues"
+  },
+  "homepage": "https://github.com/newbroman/Polish_survival_phrases#readme",
+  "devDependencies": {
+    "vite": "^5.4.21"
+  }
+}
