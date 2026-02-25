@@ -687,6 +687,17 @@
         /* MOBILE OPTIMIZATIONS */
         @media (max-width: 600px) {
 
+            .grid {
+                gap: 4px;
+            }
+
+            .grid .tile {
+                aspect-ratio: auto;
+                min-height: 70px;
+                max-height: 85px;
+                font-size: 0.75rem;
+            }
+
             body.practice-mode-active .header .title-banner,
             body.practice-mode-active .header .controls-row {
                 max-height: 0;
