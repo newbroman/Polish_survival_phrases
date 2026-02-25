@@ -43,6 +43,8 @@ export const state = {
     questionStartTime: 0,
     roundTimer: null,
     isTimerPaused: false,
+    isGamePaused: false,
+    isAudioPaused: false,
     uiLang: localStorage.getItem('polishMasterUILang') || 'en'
 };
 
