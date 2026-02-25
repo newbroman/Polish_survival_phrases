@@ -1401,7 +1401,8 @@
             style="background:var(--success-green); color:white; border-color:var(--success-green); flex: 2; padding: 0 5px;"
             title="Listen / Slow Down">
             <span class="action-icon">🔊</span>
-            <span id="lbl-btn-listen" style="font-size: 0.85rem;">Listen (1x) - Double tap to slow</span>
+            <span id="lbl-btn-listen" style="font-size: 0.75rem;">Listen: Tap (1x) | 2 Taps (0.5x) | 3 Taps
+                (0.25x)</span>
         </button>
         <button class="action-btn" onclick="togglePauseAudio()" style="flex: 0.5; padding: 0;" title="Pause/Resume">
             <span class="action-icon" id="pause-icon" style="margin:0;">⏸️</span>
@@ -1542,7 +1543,7 @@
                 needsReview: "Needs Review",
                 backToStart: "Back to Lvl 1",
                 btnSwap: "Swap",
-                btnListen: "Listen",
+                btnListen: "Listen: Tap (1x) | 2 Taps (0.5x) | 3 Taps (0.25x)",
                 btnSpeak: "Speak",
                 male: "Male",
                 female: "Female",
@@ -1573,7 +1574,7 @@
                 needsReview: "Do Powtórki",
                 backToStart: "Wróc do startu",
                 btnSwap: "Zamień",
-                btnListen: "Słuchaj",
+                btnListen: "Słuchaj: 1 Klik (1x) | 2 Kliki (0.5x) | 3 Kliki (0.25x)",
                 btnSpeak: "Mów",
                 male: "Mężczyzna",
                 female: "Kobieta",
@@ -1737,9 +1738,7 @@
             let p = phrasesData[studyIndex];
             currentTarget = p;
             currentPlaybackSpeed = 1.0;
-            if (document.getElementById('lbl-btn-listen')) {
-                document.getElementById('lbl-btn-listen').innerText = 'Listen (1x) - Tap to slow';
-            }
+            // lbl-btn-listen holds static translated string
 
             if (p) {
                 updateQuestionText();
@@ -2428,9 +2427,7 @@
             document.getElementById('q-text').innerText = hardMode ? "👂 Listen..." : (isSwapped ? currentTarget.pl : currentTarget.en);
 
             currentPlaybackSpeed = 1.0;
-            if (document.getElementById('lbl-btn-listen')) {
-                document.getElementById('lbl-btn-listen').innerText = 'Listen (1x) - Double tap to slow';
-            }
+            // lbl-btn-listen automatically handled via static translated string
         }
 
         function startNewRound() {
@@ -2897,18 +2894,23 @@
             }
         }
 
+        let listenTapCount = 0;
+        let listenTapTimeout = null;
+
         function handleSpeakerTap() {
             if (currentTarget) {
-                speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl, currentPlaybackSpeed);
+                listenTapCount++;
 
-                if (currentPlaybackSpeed === 1.0) currentPlaybackSpeed = 0.5;
-                else if (currentPlaybackSpeed === 0.5) currentPlaybackSpeed = 0.25;
-                else currentPlaybackSpeed = 1.0;
+                let speed = 1.0;
+                if (listenTapCount === 2) speed = 0.5;
+                if (listenTapCount >= 3) speed = 0.25;
 
-                let nextLabel = currentPlaybackSpeed === 1.0 ? '1x' : (currentPlaybackSpeed === 0.5 ? '0.5x' : '0.25x');
-                if (document.getElementById('lbl-btn-listen')) {
-                    document.getElementById('lbl-btn-listen').innerText = 'Listen (' + nextLabel + ') - Tap to slow';
-                }
+                speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl, speed);
+
+                clearTimeout(listenTapTimeout);
+                listenTapTimeout = setTimeout(() => {
+                    listenTapCount = 0;
+                }, 400); // 400ms window to register consecutive taps
             }
         }
 
