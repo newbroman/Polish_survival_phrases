@@ -681,6 +681,8 @@ export function updateMap() {
         }
     }
 
+    console.log(`[DEBUG] updateMap() - isPractice: ${isPractice}, list.length: ${list ? list.length : 'undefined'}`);
+
     list.forEach(p => {
         const tile = document.createElement('div');
         tile.className = 'tile';
@@ -753,6 +755,8 @@ export function updateMap() {
         tile.onclick = () => isPractice ? checkAnswer(p, tile) : speak(state.currentLevel === "0" ? p.pl + " jak " + p.word : p.pl);
         area.appendChild(tile);
     });
+
+    console.log(`[DEBUG] updateMap() finished. area.children.length is now: ${area.children.length}`);
 
     if (state.phrasesData.length) {
         let mCount = 0;
@@ -987,8 +991,11 @@ window.onload = () => {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-            .catch(err => console.log('SW fail.', err));
+        navigator.serviceWorker.getRegistrations().then(function (registrations) {
+            for (let registration of registrations) {
+                registration.unregister();
+            }
+        });
     });
 }
 
