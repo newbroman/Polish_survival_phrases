@@ -316,7 +316,7 @@ export async function selectLevel(lvlId) {
 
     document.getElementById('lvl-menu').classList.remove('show');
     document.getElementById('search-results-list').style.display = 'none';
-    document.getElementById('mastery-map').style.display = 'grid';
+    document.getElementById('mastery-map').style.display = '';
 
     document.getElementById('search-bar').value = '';
 
@@ -371,10 +371,10 @@ export function handleSearch(queryStr, source = 'settings') {
 
     if (!query) {
         if (source === 'banked') {
-            mapArea.style.display = (state.currentLevel === "0") ? 'grid lvl0' : 'grid';
+            mapArea.style.display = '';
             updateMap(); // Restore all tiles if Banked search is cleared
         } else if (document.getElementById('tab-learning').classList.contains('active')) {
-            mapArea.style.display = 'grid';
+            mapArea.style.display = '';
         }
         listArea.style.display = 'none';
         return;
@@ -609,7 +609,7 @@ export function switchMode(m) {
         studyView.style.display = 'none';
         progWrapper.style.display = 'block';
         quizUi.style.display = (m === 'learning') ? 'flex' : 'none';
-        map.style.display = (state.currentLevel === "0") ? 'grid lvl0' : 'grid';
+        map.style.display = '';
         updateMap();
 
         if (m === 'learning') {
