@@ -4,584 +4,778 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "p6_01",
+      "id": "s09_01",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie...",
       "en": "It hurts... / My ... hurts",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🤕",
+      "note": "A crucial Polish structure! Literally '... hurts me'. Takes the nominative case for the body part."
     },
     {
-      "id": "p6_02",
+      "id": "s09_02",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie głowa",
       "en": "My head hurts / I have a headache",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🤯",
+      "note": "Literally 'The head hurts me'."
     },
     {
-      "id": "p6_03",
+      "id": "s09_03",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie brzuch",
       "en": "My stomach hurts",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🤢",
+      "note": "Masculine noun 'brzuch'."
     },
     {
-      "id": "p6_04",
+      "id": "s09_04",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie gardło",
       "en": "My throat hurts",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🧣",
+      "note": "Neuter noun 'gardło'."
     },
     {
-      "id": "p6_05",
+      "id": "s09_05",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie ząb",
       "en": "My tooth hurts",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🦷",
+      "note": "Masculine noun 'ząb'."
     },
     {
-      "id": "p6_06",
+      "id": "s09_06",
       "category": "Symptoms & Pain",
-      "pl": "Boli mnie plecy",
+      "pl": "Bolą mnie plecy",
       "en": "My back hurts",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "⚡",
+      "note": "'Plecy' (back) is always plural in Polish, so the verb changes to 'bolą' (they hurt)."
     },
     {
-      "id": "p6_07",
+      "id": "s09_07",
       "category": "Symptoms & Pain",
-      "pl": "Jestem chory/chora",
+      "pl": "Jestem chory / chora",
       "en": "I'm sick",
       "level": 9,
       "gender": "both",
       "variants": {
         "m": "Jestem chory",
         "f": "Jestem chora"
-      }
+      },
+      "emoji": "🤒",
+      "note": "Gendered adjective."
     },
     {
-      "id": "p6_08",
+      "id": "s09_08",
       "category": "Symptoms & Pain",
       "pl": "Mam gorączkę",
       "en": "I have a fever",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🌡️",
+      "note": "Uses the verb 'mieć' (to have) + accusative case 'gorączkę'."
     },
     {
-      "id": "p6_09",
+      "id": "s09_09",
       "category": "Symptoms & Pain",
       "pl": "Mam kaszel",
       "en": "I have a cough",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "😮‍💨",
+      "note": "Masculine noun in the accusative case."
     },
     {
-      "id": "p6_10",
+      "id": "s09_10",
       "category": "Symptoms & Pain",
       "pl": "Mam katar",
       "en": "I have a runny nose",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🤧",
+      "note": "Masculine noun. Very common winter phrase in Poland!"
     },
     {
-      "id": "p6_11",
+      "id": "s09_11",
       "category": "Symptoms & Pain",
       "pl": "Wymiotuję",
       "en": "I'm vomiting",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🤮",
+      "note": "Present tense verb 'wymiotować'."
     },
     {
-      "id": "p6_12",
+      "id": "s09_12",
       "category": "Symptoms & Pain",
       "pl": "Mam biegunkę",
       "en": "I have diarrhea",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🚽",
+      "note": "Takes the accusative case 'biegunkę'."
     },
     {
-      "id": "p6_13",
+      "id": "s09_13",
       "category": "Symptoms & Pain",
       "pl": "Mam zawroty głowy",
       "en": "I'm dizzy",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "💫",
+      "note": "Literally 'I have turns of the head'."
     },
     {
-      "id": "p6_14",
+      "id": "s09_14",
       "category": "Symptoms & Pain",
       "pl": "Nie mogę spać",
       "en": "I can't sleep",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "👁️",
+      "note": "Infinitive verb 'spać'."
     },
     {
-      "id": "p6_15",
+      "id": "s09_15",
       "category": "Symptoms & Pain",
-      "pl": "Jestem zmęczony/zmęczona",
+      "pl": "Jestem zmęczony / zmęczona",
       "en": "I'm tired",
       "level": 9,
       "gender": "both",
       "variants": {
         "m": "Jestem zmęczony",
         "f": "Jestem zmęczona"
-      }
+      },
+      "emoji": "🥱",
+      "note": "Passive participle acting as an adjective."
     },
     {
-      "id": "p6_16",
+      "id": "s09_16",
       "category": "Symptoms & Pain",
       "pl": "Czuję się źle",
       "en": "I feel bad / unwell",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "📉",
+      "note": "Reflexive verb 'czuć się'."
     },
     {
-      "id": "p6_17",
+      "id": "s09_17",
       "category": "Symptoms & Pain",
       "pl": "Czuję się lepiej",
       "en": "I feel better",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "📈",
+      "note": "Comparative adverb 'lepiej'."
     },
     {
-      "id": "p6_18",
+      "id": "s09_18",
       "category": "Symptoms & Pain",
-      "pl": "Jestem chory/chora od wczoraj",
+      "pl": "Jestem chory od wczoraj",
       "en": "I've been sick since yesterday",
       "level": 9,
       "gender": "both",
       "variants": {
-        "m": "Jestem chory",
-        "f": "chora od wczoraj"
-      }
+        "m": "Jestem chory od wczoraj",
+        "f": "Jestem chora od wczoraj"
+      },
+      "emoji": "🗓️",
+      "note": "Preposition 'od' (since/from)."
     },
     {
-      "id": "p6_19",
+      "id": "s09_19",
       "category": "Symptoms & Pain",
-      "pl": "To boli bardzo",
+      "pl": "To bardzo boli",
       "en": "It hurts a lot",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "💥",
+      "note": "Adverb 'bardzo' amplifies the verb 'boli'."
     },
     {
-      "id": "p6_20",
+      "id": "s09_20",
       "category": "Symptoms & Pain",
       "pl": "Nie mogę oddychać",
       "en": "I can't breathe",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🫁",
+      "note": "Infinitive verb 'oddychać'."
     },
     {
-      "id": "p6_21",
+      "id": "s09_21",
       "category": "Doctor & Pharmacy",
       "pl": "Potrzebuję lekarza",
       "en": "I need a doctor",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "👨‍⚕️",
+      "note": "The verb 'potrzebować' requires the genitive case ('lekarza')."
     },
     {
-      "id": "p6_22",
+      "id": "s09_22",
       "category": "Doctor & Pharmacy",
       "pl": "Gdzie jest lekarz?",
       "en": "Where is the doctor?",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🩺",
+      "note": "Nominative case."
     },
     {
-      "id": "p6_23",
+      "id": "s09_23",
       "category": "Doctor & Pharmacy",
       "pl": "Gdzie jest apteka?",
       "en": "Where is the pharmacy?",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "⚕️",
+      "note": "Feminine noun."
     },
     {
-      "id": "p6_24",
+      "id": "s09_24",
       "category": "Doctor & Pharmacy",
       "pl": "Apteka",
       "en": "Pharmacy",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "💊",
+      "note": "Look for the green cross sign on the street."
     },
     {
-      "id": "p6_25",
+      "id": "s09_25",
       "category": "Doctor & Pharmacy",
       "pl": "Szpital",
       "en": "Hospital",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🏥",
+      "note": "Masculine noun."
     },
     {
-      "id": "p6_26",
+      "id": "s09_26",
       "category": "Doctor & Pharmacy",
       "pl": "Przychodnia",
-      "en": "Clinic",
+      "en": "Clinic / Health center",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🏢",
+      "note": "Where you go for standard, non-emergency doctor visits."
     },
     {
-      "id": "p6_27",
+      "id": "s09_27",
       "category": "Doctor & Pharmacy",
       "pl": "Dentysta",
       "en": "Dentist",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🪥",
+      "note": "Masculine noun (despite the 'a' ending)."
     },
     {
-      "id": "p6_28",
+      "id": "s09_28",
       "category": "Doctor & Pharmacy",
       "pl": "Recepta",
       "en": "Prescription",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "📄",
+      "note": "Feminine noun. In Poland, many are now 'e-recepty' (digital)."
     },
     {
-      "id": "p6_29",
+      "id": "s09_29",
       "category": "Doctor & Pharmacy",
       "pl": "Mam receptę",
       "en": "I have a prescription",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "📲",
+      "note": "Accusative case 'receptę'. Hand the pharmacist your 4-digit code and PESEL number."
     },
     {
-      "id": "p6_30",
+      "id": "s09_30",
       "category": "Doctor & Pharmacy",
       "pl": "Potrzebuję leku na...",
       "en": "I need medicine for...",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🧴",
+      "note": "Takes the genitive case 'leku', followed by 'na' + accusative."
     },
     {
-      "id": "p6_31",
+      "id": "s09_31",
       "category": "Doctor & Pharmacy",
       "pl": "Lek przeciwbólowy",
       "en": "Painkiller",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "💊",
+      "note": "Literally 'Anti-pain medicine'."
     },
     {
-      "id": "p6_32",
+      "id": "s09_32",
       "category": "Doctor & Pharmacy",
-      "pl": "Aspiryna",
-      "en": "Aspirin",
+      "pl": "Tabletki",
+      "en": "Pills / Tablets",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "💊",
+      "note": "Plural noun. Singular is 'tabletka'."
     },
     {
-      "id": "p6_33",
+      "id": "s09_33",
       "category": "Doctor & Pharmacy",
       "pl": "Antybiotyk",
       "en": "Antibiotic",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🦠",
+      "note": "Strictly prescription-only in Poland."
     },
     {
-      "id": "p6_34",
+      "id": "s09_34",
       "category": "Doctor & Pharmacy",
       "pl": "Witaminy",
       "en": "Vitamins",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🍊",
+      "note": "Plural noun."
     },
     {
-      "id": "p6_35",
+      "id": "s09_35",
       "category": "Doctor & Pharmacy",
       "pl": "Plaster",
-      "en": "Band-aid",
+      "en": "Band-aid / Plaster",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🩹",
+      "note": "Masculine noun."
     },
     {
-      "id": "p6_36",
+      "id": "s09_36",
       "category": "Doctor & Pharmacy",
       "pl": "Termometr",
       "en": "Thermometer",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🌡️",
+      "note": "Masculine noun."
     },
     {
-      "id": "p6_37",
+      "id": "s09_37",
       "category": "Doctor & Pharmacy",
       "pl": "Mam alergię na...",
       "en": "I'm allergic to...",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🥜",
+      "note": "Takes 'na' + accusative case."
     },
     {
-      "id": "p6_38",
+      "id": "s09_38",
       "category": "Doctor & Pharmacy",
-      "pl": "Alergia",
-      "en": "Allergy",
+      "pl": "Uczulenie",
+      "en": "Allergy / Rash",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🔴",
+      "note": "Neuter noun. Often refers specifically to a skin reaction."
     },
     {
-      "id": "p6_39",
+      "id": "s09_39",
       "category": "Doctor & Pharmacy",
       "pl": "Ubezpieczenie",
       "en": "Insurance",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🛡️",
+      "note": "Neuter noun."
     },
     {
-      "id": "p6_40",
+      "id": "s09_40",
       "category": "Doctor & Pharmacy",
       "pl": "Mam ubezpieczenie",
       "en": "I have insurance",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "📋",
+      "note": "Accusative case."
     },
     {
-      "id": "p6_41",
+      "id": "s09_41",
       "category": "Doctor & Pharmacy",
-      "pl": "Karta ubezpieczenia",
-      "en": "Insurance card",
+      "pl": "Karta EKUZ",
+      "en": "EHIC Card",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🇪🇺",
+      "note": "European Health Insurance Card. Valid in Polish public hospitals."
     },
     {
-      "id": "p6_42",
+      "id": "s09_42",
       "category": "Doctor & Pharmacy",
       "pl": "Ile to kosztuje?",
       "en": "How much is this?",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "💶",
+      "note": "Essential if buying private medicine."
     },
     {
-      "id": "p6_43",
+      "id": "s09_43",
       "category": "Doctor & Pharmacy",
       "pl": "Czy potrzebuję recepty?",
       "en": "Do I need a prescription?",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "📝",
+      "note": "Takes the genitive case 'recepty'."
     },
     {
-      "id": "p6_44",
+      "id": "s09_44",
       "category": "Doctor & Pharmacy",
       "pl": "Jak często to brać?",
-      "en": "How often to take this?",
+      "en": "How often should I take this?",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "⏱️",
+      "note": "Infinitive phrase."
     },
     {
-      "id": "p6_45",
+      "id": "s09_45",
       "category": "Doctor & Pharmacy",
       "pl": "Przed jedzeniem czy po?",
       "en": "Before or after eating?",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🍽️",
+      "note": "Instrumental case 'jedzeniem' or locative case 'po'."
     },
     {
-      "id": "p6_46",
+      "id": "s09_46",
       "category": "Medical Situations",
-      "pl": "Zadzwoń po karetkę",
-      "en": "Call an ambulance",
+      "pl": "Zadzwoń po karetkę!",
+      "en": "Call an ambulance!",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🚑",
+      "note": "Imperative verb. The emergency number in Poland is 112."
     },
     {
-      "id": "p6_47",
+      "id": "s09_47",
       "category": "Medical Situations",
-      "pl": "To nagły wypadek",
-      "en": "It's an emergency",
+      "pl": "To nagły wypadek!",
+      "en": "It's an emergency!",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🚨",
+      "note": "Masculine noun phrase."
     },
     {
-      "id": "p6_48",
+      "id": "s09_48",
       "category": "Medical Situations",
       "pl": "Jestem w ciąży",
       "en": "I'm pregnant",
       "level": 9,
-      "gender": null
+      "gender": "f",
+      "emoji": "🤰",
+      "note": "Locative case 'w ciąży'."
     },
     {
-      "id": "p6_49",
+      "id": "s09_49",
       "category": "Medical Situations",
       "pl": "Mam cukrzycę",
       "en": "I have diabetes",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🩸",
+      "note": "Accusative case 'cukrzycę'."
     },
     {
-      "id": "p6_50",
+      "id": "s09_50",
       "category": "Medical Situations",
       "pl": "Mam astmę",
       "en": "I have asthma",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🫁",
+      "note": "Accusative case 'astmę'."
     },
     {
-      "id": "p6_51",
+      "id": "s09_51",
       "category": "Medical Situations",
       "pl": "Biorę leki na...",
       "en": "I take medication for...",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "💊",
+      "note": "Present tense verb 'brać' (to take)."
     },
     {
-      "id": "p6_52",
+      "id": "s09_52",
       "category": "Medical Situations",
-      "pl": "Upadłem/Upadłam",
+      "pl": "Upadłem / Upadłam",
       "en": "I fell",
       "level": 9,
       "gender": "both",
       "variants": {
         "m": "Upadłem",
         "f": "Upadłam"
-      }
+      },
+      "emoji": "💥",
+      "note": "Past tense verb."
     },
     {
-      "id": "p6_53",
+      "id": "s09_53",
       "category": "Medical Situations",
-      "pl": "Skaleczyłem/Skaleczyłam się",
+      "pl": "Skaleczyłem / Skaleczyłam się",
       "en": "I cut myself",
       "level": 9,
       "gender": "both",
       "variants": {
         "m": "Skaleczyłem się",
         "f": "Skaleczyłam się"
-      }
+      },
+      "emoji": "🩸",
+      "note": "Reflexive past tense verb."
     },
     {
-      "id": "p6_54",
+      "id": "s09_54",
       "category": "Medical Situations",
-      "pl": "Sparzenie",
-      "en": "Burn",
+      "pl": "Oparzenie",
+      "en": "Burn (injury)",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🔥",
+      "note": "Neuter noun."
     },
     {
-      "id": "p6_55",
+      "id": "s09_55",
       "category": "Medical Situations",
       "pl": "Złamanie",
       "en": "Fracture / Broken bone",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🦴",
+      "note": "Neuter noun."
     },
     {
-      "id": "p6_56",
+      "id": "s09_56",
       "category": "Medical Situations",
       "pl": "Krwawienie",
       "en": "Bleeding",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🩸",
+      "note": "Neuter noun (gerund)."
     },
     {
-      "id": "p6_57",
+      "id": "s09_57",
       "category": "Medical Situations",
       "pl": "Grupa krwi",
       "en": "Blood type",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🅰️",
+      "note": "Feminine phrase."
     },
     {
-      "id": "p6_58",
+      "id": "s09_58",
       "category": "Medical Situations",
       "pl": "Moja grupa krwi to...",
       "en": "My blood type is...",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🩸",
+      "note": "Important for emergency situations."
     },
     {
-      "id": "p6_59",
+      "id": "s09_59",
       "category": "Medical Situations",
-      "pl": "Potrzebuję tłumacza",
-      "en": "I need a translator",
+      "pl": "Potrzebuję pomocy medycznej",
+      "en": "I need medical help",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🆘",
+      "note": "Genitive case 'pomocy medycznej'."
     },
     {
-      "id": "p6_60",
+      "id": "s09_60",
       "category": "Medical Situations",
       "pl": "Czy ktoś mówi po angielsku?",
       "en": "Does anyone speak English?",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🇬🇧",
+      "note": "Crucial phrase in a hospital setting."
     },
     {
-      "id": "p6_61",
+      "id": "s09_61",
       "category": "Body Parts",
       "pl": "Głowa",
       "en": "Head",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "👤",
+      "note": "Feminine noun."
     },
     {
-      "id": "p6_62",
+      "id": "s09_62",
       "category": "Body Parts",
       "pl": "Brzuch",
       "en": "Stomach",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🤰",
+      "note": "Masculine noun."
     },
     {
-      "id": "p6_63",
+      "id": "s09_63",
       "category": "Body Parts",
       "pl": "Ręka",
       "en": "Hand / Arm",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🤚",
+      "note": "Feminine noun. Polish often uses one word for both hand and arm."
     },
     {
-      "id": "p6_64",
+      "id": "s09_64",
       "category": "Body Parts",
       "pl": "Noga",
       "en": "Leg / Foot",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🦵",
+      "note": "Feminine noun. Can mean both leg and foot."
     },
     {
-      "id": "p6_65",
+      "id": "s09_65",
       "category": "Body Parts",
       "pl": "Plecy",
       "en": "Back",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🔙",
+      "note": "Plural noun."
     },
     {
-      "id": "p6_66",
+      "id": "s09_66",
       "category": "Body Parts",
       "pl": "Oko",
       "en": "Eye",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "👁️",
+      "note": "Neuter noun. Plural is 'oczy'."
     },
     {
-      "id": "p6_67",
+      "id": "s09_67",
       "category": "Body Parts",
       "pl": "Ucho",
       "en": "Ear",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "👂",
+      "note": "Neuter noun. Plural is 'uszy'."
     },
     {
-      "id": "p6_68",
+      "id": "s09_68",
       "category": "Body Parts",
       "pl": "Gardło",
       "en": "Throat",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🧣",
+      "note": "Neuter noun."
     },
     {
-      "id": "p6_69",
+      "id": "s09_69",
       "category": "Body Parts",
       "pl": "Ząb",
       "en": "Tooth",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🦷",
+      "note": "Masculine noun. Plural is 'zęby'."
     },
     {
-      "id": "p6_70",
+      "id": "s09_70",
       "category": "Body Parts",
       "pl": "Szyja",
       "en": "Neck",
       "level": 9,
-      "gender": null
+      "gender": null,
+      "emoji": "🦒",
+      "note": "Feminine noun."
+    },
+    {
+      "id": "s09_71",
+      "category": "Medical Situations",
+      "pl": "Mam ubezpieczenie podróżne",
+      "en": "I have travel insurance",
+      "level": 9,
+      "gender": null,
+      "emoji": "✈️",
+      "note": "Accusative case."
+    },
+    {
+      "id": "s09_72",
+      "category": "Symptoms & Pain",
+      "pl": "Jestem przeziębiony / przeziębiona",
+      "en": "I have a cold",
+      "level": 9,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem przeziębiony",
+        "f": "Jestem przeziębiona"
+      },
+      "emoji": "🤧",
+      "note": "Passive participle acting as an adjective."
+    },
+    {
+      "id": "s09_73",
+      "category": "Symptoms & Pain",
+      "pl": "Mdli mnie",
+      "en": "I feel nauseous",
+      "level": 9,
+      "gender": null,
+      "emoji": "🤢",
+      "note": "Literally 'It nauseates me'."
+    },
+    {
+      "id": "s09_74",
+      "category": "Body Parts",
+      "pl": "Serce",
+      "en": "Heart",
+      "level": 9,
+      "gender": null,
+      "emoji": "🫀",
+      "note": "Neuter noun."
+    },
+    {
+      "id": "s09_75",
+      "category": "Doctor & Pharmacy",
+      "pl": "Gabinet lekarski",
+      "en": "Doctor's office",
+      "level": 9,
+      "gender": null,
+      "emoji": "🚪",
+      "note": "Masculine noun phrase."
     }
   ]
 }
