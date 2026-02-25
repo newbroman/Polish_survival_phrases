@@ -16,12 +16,12 @@ export function refreshActivePool() {
     }
 
     if (state.currentLevel === "R") {
-        if (state.activePool.length !== 6) {
-            state.activePool = new Array(6).fill(null);
+        if (state.activePool.length !== 8) {
+            state.activePool = new Array(8).fill(null);
         }
         let unmastered = state.phrasesData.filter(p => isDueForReview(p));
 
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 8; i++) {
             if (!state.activePool[i] || !isDueForReview(state.activePool[i])) {
                 let nextPhrase = unmastered.find(p => !state.activePool.some(ap => ap && ap.pl === p.pl));
                 state.activePool[i] = nextPhrase || null;
@@ -30,13 +30,13 @@ export function refreshActivePool() {
         return;
     }
 
-    if (state.activePool.length !== 6) {
-        state.activePool = new Array(6).fill(null);
+    if (state.activePool.length !== 8) {
+        state.activePool = new Array(8).fill(null);
     }
 
     let unmastered = state.phrasesData.filter(p => (state.stats[p.pl] ? state.stats[p.pl].score : 0) < THRESHOLD);
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 8; i++) {
         if (!state.activePool[i] || (state.stats[state.activePool[i].pl] ? state.stats[state.activePool[i].pl].score : 0) >= THRESHOLD) {
             let nextPhrase = unmastered.find(p => !state.activePool.some(ap => ap && ap.pl === p.pl));
             state.activePool[i] = nextPhrase || null;
