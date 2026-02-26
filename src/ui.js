@@ -1,4 +1,4 @@
-import { state, THRESHOLD } from './state.js';
+import { state, THRESHOLD, isDueForReview } from './state.js';
 import { initAudioContext, speak, stopListening, toggleMic, isListening, checkSpokenAnswer } from './audio.js';
 import { startNewRound, addPoints } from './game.js';
 import { scanLibrary, exportCustomLevel } from './storage.js';
