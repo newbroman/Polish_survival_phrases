@@ -2,7 +2,7 @@ import * as UI from './ui.js';
 import { state } from './state.js';
 import { isListening, initAudioContext, playNote, playSuccess, playWrongSlide, initSpeech, speak, initSpeechRecognition, toggleMic, stopListening, cleanStr, checkSpokenAnswer } from './audio.js';
 import { refreshActivePool, startNewRound, addPoints, checkAnswer, resetLevelMastery, saveStats } from './game.js';
-import { scanLibrary, cacheAllPhrases, exportCustomLevel, downloadProgress, importProgress, resetEverything } from './storage.js';
+import { scanLibrary, cacheAllPhrases, exportCustomLevel, downloadProgress, importProgress, resetEverything, importCustomLevel, exportLevelR, deleteCustomLevel } from './storage.js';
 
 // --- MODULE TO GLOBAL BRIDGE ---
 
@@ -58,6 +58,7 @@ window.selectLevel = UI.selectLevel;
 window.copyToClipboard = UI.copyToClipboard;
 window.getGenderText = UI.getGenderText;
 window.prevStudyCard = UI.prevStudyCard;
+window.renderSettingsCustomLevels = UI.renderSettingsCustomLevels;
 window.closeHandsFree = UI.closeHandsFree;
 window.translateAndAdd = UI.translateAndAdd;
 window.saveStats = saveStats;
@@ -75,6 +76,9 @@ window.exportCustomLevel = exportCustomLevel;
 window.importProgress = importProgress;
 window.downloadProgress = downloadProgress;
 window.resetEverything = resetEverything;
+window.importCustomLevel = importCustomLevel;
+window.exportLevelR = exportLevelR;
+window.deleteCustomLevel = deleteCustomLevel;
 
 // Game Module Bridge
 window.refreshActivePool = refreshActivePool;

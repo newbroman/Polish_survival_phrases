@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v39.0</title>
+    <title>Polish Phrase Master v40.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -144,7 +144,7 @@
                 </details>
 
                 <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master
-                    v39.0</div>
+                    v40.0</div>
             </div>
         </div>
     </div>
@@ -174,20 +174,37 @@
 
                 <div class="settings-section">
                     <h3>💾 Data Management</h3>
-                    <div style="display:flex; gap:10px;">
-                        <button class="settings-btn" onclick="downloadProgress()" id="btn-save">💾 Save</button>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <button class="settings-btn" onclick="downloadProgress()" id="btn-save">💾 Save
+                            Progress</button>
                         <button class="settings-btn" id="btn-load"
-                            onclick="document.getElementById('file-input').click()">📂
-                            Load</button>
+                            onclick="document.getElementById('file-input').click()">📂 Load Progress</button>
                     </div>
 
-                    <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
-                        style="border-color:var(--pol-red); color:var(--pol-red); margin-top:10px;">
-                        📤 Export Sandbox (Lvl C)
-                    </button>
+                    <h4 style="margin: 15px 0 5px 0;">📦 Levels</h4>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
+                            style="border-color:var(--pol-red); color:var(--pol-red);">
+                            📤 Export Sandbox (Lvl C)
+                        </button>
+                        <button class="settings-btn" onclick="exportLevelR()"
+                            style="border-color:var(--pol-red); color:var(--pol-red);">
+                            📤 Export Needs Review (Lvl R)
+                        </button>
+                        <button class="settings-btn" onclick="document.getElementById('custom-level-input').click()"
+                            style="border-color:var(--pol-blue); color:var(--pol-blue);">
+                            📥 Import Custom Level
+                        </button>
+                        <input type="file" id="custom-level-input" style="display:none;" accept=".json"
+                            onchange="importCustomLevel(event)">
+                    </div>
+
+                    <div id="settings-custom-levels" style="margin-top: 15px; font-size: 0.9em;">
+                        <!-- Custom levels list rendered here by JS -->
+                    </div>
 
                     <button class="settings-btn danger" id="btn-reset" onclick="resetEverything()"
-                        style="margin-top:10px;">⚠️ Reset
+                        style="margin-top:20px;">⚠️ Reset
                         App Data</button>
                 </div>
 

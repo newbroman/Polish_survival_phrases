@@ -175,7 +175,44 @@ export function toggleHelp() {
 
 export function toggleSettings() {
     const el = document.getElementById('settings-overlay');
-    el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
+
+    if (el.style.display === 'flex') {
+        el.style.display = 'none';
+    } else {
+        renderSettingsCustomLevels();
+        el.style.display = 'flex';
+    }
+}
+
+export function renderSettingsCustomLevels() {
+    const container = document.getElementById('settings-custom-levels');
+    if (!container) return;
+
+    if (!state.customLevels || state.customLevels.length === 0) {
+        container.innerHTML = `<div style="color: #666; font-style: italic;">No custom levels imported yet.</div>`;
+        return;
+    }
+
+    let html = `<div style="font-weight:bold; margin-bottom: 8px;">Your Imported Levels:</div>`;
+
+    state.customLevels.forEach(cl => {
+        const title = cl.data.description || cl.id;
+        const phraseCount = cl.data.phrases ? cl.data.phrases.length : 0;
+
+        html += `
+            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.1); padding: 8px 12px; border-radius: 6px; margin-bottom: 6px; border: 1px solid rgba(255,255,255,0.1);">
+                <div>
+                    <strong style="color: var(--pol-blue);">${title}</strong>
+                    <div style="font-size: 0.8em; color: #888;">${phraseCount} phrases</div>
+                </div>
+                <button onclick="window.deleteCustomLevel('${cl.id}')" style="background: transparent; border: 1px solid var(--pol-red); color: var(--pol-red); border-radius: 4px; padding: 4px 8px; cursor: pointer;">
+                    🗑️ Delete
+                </button>
+            </div>
+        `;
+    });
+
+    container.innerHTML = html;
 }
 
 // Phase 2: Grammar Hint Controls

@@ -24,6 +24,7 @@ export const state = {
         description: "My Custom Phrases",
         phrases: []
     },
+    customLevels: JSON.parse(localStorage.getItem('pl_custom_levels')) || [],
     phrasesData: [],
     activePool: [],
     levelList: [],

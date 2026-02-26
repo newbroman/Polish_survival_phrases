@@ -53,6 +53,12 @@ export async function scanLibrary() {
         }
 
         state.levelList.push({ id: "C", desc: state.customPhrases.description, data: state.customPhrases });
+
+        // Inject custom imported levels
+        state.customLevels.forEach(cl => {
+            state.levelList.push({ id: cl.id, desc: cl.data.description || `Custom: ${cl.id}`, data: cl.data, isCustomImport: true });
+        });
+
         cacheAllPhrases();
 
         // Phase 3: Calculate global Needs Review (Level R) based on Time and Mistakes
@@ -73,11 +79,12 @@ export async function scanLibrary() {
 
         if (!state.levelList.find(l => l.id == state.currentLevel)) state.currentLevel = state.levelList[0].id;
 
-        // Render dropdown: R and C pinned to the top, then numeric levels
+        // Render dropdown: R and C pinned to the top, then custom imports, then numeric levels
         const renderOrder = [
             ...state.levelList.filter(l => l.id === 'R'),
             ...state.levelList.filter(l => l.id === 'C'),
-            ...state.levelList.filter(l => l.id !== 'R' && l.id !== 'C').sort((a, b) => parseFloat(a.id) - parseFloat(b.id)),
+            ...state.levelList.filter(l => l.isCustomImport),
+            ...state.levelList.filter(l => l.id !== 'R' && l.id !== 'C' && !l.isCustomImport).sort((a, b) => parseFloat(a.id) - parseFloat(b.id)),
         ];
 
         menu.innerHTML = '';
@@ -97,8 +104,14 @@ export async function scanLibrary() {
             if (lvl.id === "R") {
                 item.className = 'dropdown-item sandbox';
                 item.innerHTML = `<span>Lvl R: ${t('needsReview')} (${lvl.data.phrases.length})</span>`;
+            } else if (lvl.id === "C") {
+                item.className = 'dropdown-item sandbox';
+                item.innerHTML = `<span>Lvl C: ${lvl.desc}${rBadge}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
+            } else if (lvl.isCustomImport) {
+                item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
+                item.innerHTML = `<span>⭐ ${lvl.desc}${rBadge}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
             } else {
-                item.className = 'dropdown-item' + (isDone ? ' mastered' : '') + (lvl.id === "C" ? ' sandbox' : '');
+                item.className = 'dropdown-item' + (isDone ? ' mastered' : '');
                 item.innerHTML = `<span>Lvl ${lvl.id}: ${lvl.desc}${rBadge}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
             }
             item.onclick = (e) => { e.stopPropagation(); selectLevel(lvl.id); };
@@ -158,6 +171,85 @@ export function importProgress(event) {
         location.reload();
     };
     r.readAsText(event.target.files[0]);
+}
+
+export function exportLevelR() {
+    const lvlR = state.levelList.find(l => l.id === "R");
+    if (!lvlR || !lvlR.data || lvlR.data.phrases.length === 0) {
+        alert("Level R is currently empty. Nothing to export.");
+        return;
+    }
+
+    // Create a standard phrase file object
+    const exportData = {
+        level: "R_Export",
+        description: `Exported Review Phrases (${new Date().toLocaleDateString()})`,
+        tier: "CUSTOM",
+        phrases: lvlR.data.phrases
+    };
+
+    const b = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(b);
+    a.download = `phrases_R_${Date.now()}.json`;
+    a.click();
+}
+
+export function importCustomLevel(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const r = new FileReader();
+    r.onload = (ev) => {
+        try {
+            const data = JSON.parse(ev.target.result);
+            if (!data.phrases || !Array.isArray(data.phrases)) {
+                alert("Invalid file format. Ensure it contains a 'phrases' array.");
+                return;
+            }
+
+            // Generate a unique ID for this level
+            const newId = `U_${Date.now()}`;
+            if (!data.description) data.description = file.name;
+
+            state.customLevels.push({
+                id: newId,
+                data: data
+            });
+
+            localStorage.setItem('pl_custom_levels', JSON.stringify(state.customLevels));
+            alert(`Level "${data.description}" imported successfully!`);
+
+            // Clear input so the same file can be selected again if needed
+            event.target.value = '';
+
+            scanLibrary().then(() => {
+                selectLevel(newId);
+                // Also trigger a UI refresh to show the new list of custom levels in settings
+                if (window.renderSettingsCustomLevels) window.renderSettingsCustomLevels();
+            });
+        } catch (e) {
+            alert("Error parsing JSON file. Is it valid JSON?");
+        }
+    };
+    r.readAsText(file);
+}
+
+export function deleteCustomLevel(id) {
+    if (!confirm("Are you sure you want to delete this custom level?")) return;
+
+    state.customLevels = state.customLevels.filter(cl => cl.id !== id);
+    localStorage.setItem('pl_custom_levels', JSON.stringify(state.customLevels));
+
+    if (state.currentLevel === id) {
+        state.currentLevel = "0";
+        localStorage.setItem('pl_current_level_idx', "0");
+    }
+
+    scanLibrary().then(() => {
+        selectLevel(state.currentLevel);
+        if (window.renderSettingsCustomLevels) window.renderSettingsCustomLevels();
+    });
 }
 
 export function resetEverything() {
