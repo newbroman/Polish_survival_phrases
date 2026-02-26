@@ -716,13 +716,20 @@ export function updateMap() {
             const plText = getGenderText(p);
             const enText = p.en;
             const emoji = p.emoji || p.e || '';
-            const notesText = p.notes ? `<div style="font-size: 0.75em; color: var(--pol-red); margin-top: 4px;">${p.notes}</div>` : '';
+            const grammarNotes = [p.note, p.grammar_1, p.grammar_2, p.grammar_3].filter(Boolean);
+            const notesHtml = grammarNotes.length
+                ? `<div style="display:flex; flex-direction:column; gap:3px; font-size:0.7em; color:var(--pol-red); text-align:right; max-width:90px; flex-shrink:0;">${grammarNotes.map(n => `<span>${n}</span>`).join('')}</div>`
+                : '';
 
             tile.innerHTML = `
-                        ${emoji ? `<div style="font-size: 1.5rem; margin-bottom: 5px;">${emoji}</div>` : ''}
-                        <div style="font-weight: bold; margin-bottom: 4px; font-size: 1.1em;">${plText}</div>
-                        <div style="font-size: 0.8em; opacity: 0.75;">${enText}</div>
-                        ${notesText}
+                        <div style="display:flex; align-items:center; gap:8px; width:100%;">
+                            <div style="flex:1; min-width:0;">
+                                ${emoji ? `<div style="font-size:1.4rem; margin-bottom:4px;">${emoji}</div>` : ''}
+                                <div style="font-weight:bold; margin-bottom:3px; font-size:1.05em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${plText}</div>
+                                <div style="font-size:0.8em; opacity:0.75; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${enText}</div>
+                            </div>
+                            ${notesHtml}
+                        </div>
                     `;
         } else {
             const targetText = state.isSwapped ? p.en : getGenderText(p);
