@@ -9,7 +9,10 @@
       "pl": "Ile to kosztuje?",
       "en": "How much is this?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💰",
+      "note": "Interrogative: Ile = How much",
+      "grammar_1": "kosztuje = costs (3rd person sing. present)"
     },
     {
       "id": "s5_02",
@@ -17,7 +20,10 @@
       "pl": "Za drogie",
       "en": "Too expensive",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "😬",
+      "note": "Za + adjective = Too + adjective",
+      "grammar_1": "drogie = expensive (neuter/plural adj.)"
     },
     {
       "id": "s5_03",
@@ -25,7 +31,10 @@
       "pl": "Za dużo",
       "en": "Too much",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "😤",
+      "note": "Za dużo = too much (quantity)",
+      "grammar_1": "dużo = a lot (quantity adverb)"
     },
     {
       "id": "s5_04",
@@ -33,7 +42,11 @@
       "pl": "Czy mogę zapłacić kartą?",
       "en": "Can I pay by card?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💳",
+      "note": "Czy mogę = May I / Can I",
+      "grammar_1": "zapłacić = to pay (perfective inf.)",
+      "grammar_2": "kartą = by card (instrumental case)"
     },
     {
       "id": "s5_05",
@@ -41,7 +54,10 @@
       "pl": "Gotówka",
       "en": "Cash",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💵",
+      "note": "Noun: feminine",
+      "grammar_1": "gotówką (inst.) = with/in cash"
     },
     {
       "id": "s5_06",
@@ -49,7 +65,10 @@
       "pl": "Karta",
       "en": "Card",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💳",
+      "note": "Noun: feminine",
+      "grammar_1": "kartą (inst.) = by card"
     },
     {
       "id": "s5_07",
@@ -57,7 +76,9 @@
       "pl": "Bankomat",
       "en": "ATM",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🏧",
+      "note": "Masculine noun (inanimate)"
     },
     {
       "id": "s5_08",
@@ -65,7 +86,9 @@
       "pl": "Gdzie jest bankomat?",
       "en": "Where is the ATM?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🏧",
+      "note": "Gdzie jest = Where is"
     },
     {
       "id": "s5_09",
@@ -73,7 +96,10 @@
       "pl": "Reszta",
       "en": "Change (money back)",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🪙",
+      "note": "Feminine noun",
+      "grammar_1": "resztę (acc.) = the change"
     },
     {
       "id": "s5_10",
@@ -81,7 +107,10 @@
       "pl": "Proszę resztę",
       "en": "Change, please",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🪙",
+      "note": "Proszę + accusative = Please give me...",
+      "grammar_1": "resztę (accusative of reszta)"
     },
     {
       "id": "s5_11",
@@ -93,7 +122,10 @@
       "variants": {
         "m": "Reszta dla Pana",
         "f": "Reszta dla Pani"
-      }
+      },
+      "emoji": "��",
+      "note": "dla + genitive = for + person",
+      "grammar_1": "Pana (gen. m), Pani (gen. f) = formal address"
     },
     {
       "id": "s5_12",
@@ -101,7 +133,10 @@
       "pl": "Paragon",
       "en": "Receipt",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🧾",
+      "note": "Masculine noun",
+      "grammar_1": "paragon, paragonu (gen.)"
     },
     {
       "id": "s5_13",
@@ -109,7 +144,9 @@
       "pl": "Paragon, proszę",
       "en": "Receipt, please",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🧾",
+      "note": "Proszę = please / I'd like"
     },
     {
       "id": "s5_14",
@@ -117,7 +154,9 @@
       "pl": "Ile płacę?",
       "en": "How much do I pay?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💰",
+      "note": "płacę = I pay (1st person sing. present)"
     },
     {
       "id": "s5_15",
@@ -125,7 +164,9 @@
       "pl": "Razem",
       "en": "Total / Together",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "➕",
+      "note": "Used on receipts: Razem = Total"
     },
     {
       "id": "s5_16",
@@ -133,7 +174,9 @@
       "pl": "To wszystko",
       "en": "That's all",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "✅",
+      "note": "to wszystko = that is everything"
     },
     {
       "id": "s5_17",
@@ -141,7 +184,10 @@
       "pl": "Wezmę to",
       "en": "I'll take it",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🛍️",
+      "note": "wezmę = I will take (perfective future)",
+      "grammar_1": "wziąć → wezmę (irregular)"
     },
     {
       "id": "s5_18",
@@ -149,7 +195,9 @@
       "pl": "Nie, dziękuję",
       "en": "No, thank you",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "��",
+      "note": "Polite refusal"
     },
     {
       "id": "s5_19",
@@ -157,7 +205,9 @@
       "pl": "Tylko patrzę",
       "en": "Just looking",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👀",
+      "note": "Tylko = only; patrzę = I look (1st sing.)"
     },
     {
       "id": "s5_20",
@@ -165,7 +215,9 @@
       "pl": "Czy jest zniżka?",
       "en": "Is there a discount?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🏷️",
+      "note": "zniżka = discount (feminine noun)"
     },
     {
       "id": "s5_21",
@@ -173,7 +225,10 @@
       "pl": "Gdzie mogę kupić...?",
       "en": "Where can I buy...?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🛒",
+      "note": "kupić = to buy (perfective infinitive)",
+      "grammar_1": "mogę = I can (modal verb)"
     },
     {
       "id": "s5_22",
@@ -181,7 +236,10 @@
       "pl": "Szukam...",
       "en": "I'm looking for...",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔍",
+      "note": "Szukam + genitive = I'm looking for...",
+      "grammar_1": "szukać governs the genitive case"
     },
     {
       "id": "s5_23",
@@ -189,7 +247,9 @@
       "pl": "Czy macie...?",
       "en": "Do you have...?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🤔",
+      "note": "macie = you have (2nd person plural/polite)"
     },
     {
       "id": "s5_24",
@@ -197,7 +257,10 @@
       "pl": "W jakim rozmiarze?",
       "en": "What size?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "📏",
+      "note": "rozmiar = size (masculine noun)",
+      "grammar_1": "jakim (loc. m) = what (used with w)"
     },
     {
       "id": "s5_25",
@@ -205,7 +268,9 @@
       "pl": "Mały",
       "en": "Small",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔹",
+      "note": "Adjective: mały (m), mała (f), małe (n)"
     },
     {
       "id": "s5_26",
@@ -213,7 +278,9 @@
       "pl": "Średni",
       "en": "Medium",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔷",
+      "note": "Adjective: średni (m), średnia (f)"
     },
     {
       "id": "s5_27",
@@ -221,7 +288,9 @@
       "pl": "Duży",
       "en": "Large",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔶",
+      "note": "Adjective: duży (m), duża (f), duże (n)"
     },
     {
       "id": "s5_28",
@@ -229,7 +298,9 @@
       "pl": "Za mały",
       "en": "Too small",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "😕",
+      "note": "Za + adjective = Too + adj"
     },
     {
       "id": "s5_29",
@@ -237,7 +308,9 @@
       "pl": "Za duży",
       "en": "Too big",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "😕",
+      "note": "Agreement: duży(m)/duża(f)/duże(n)"
     },
     {
       "id": "s5_30",
@@ -245,7 +318,9 @@
       "pl": "Czy mogę przymierzyć?",
       "en": "Can I try it on?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👗",
+      "note": "przymierzyć = to try on (perfective inf.)"
     },
     {
       "id": "s5_31",
@@ -253,7 +328,9 @@
       "pl": "Gdzie jest przymierzalnia?",
       "en": "Where is the fitting room?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🚪",
+      "note": "przymierzalnia = fitting room (feminine)"
     },
     {
       "id": "s5_32",
@@ -261,7 +338,10 @@
       "pl": "Czy macie to w innym kolorze?",
       "en": "Do you have this in another color?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🎨",
+      "note": "inny = another/different (adjective)",
+      "grammar_1": "kolorze = colour (locative of kolor)"
     },
     {
       "id": "s5_33",
@@ -269,7 +349,9 @@
       "pl": "Czy macie to w innym rozmiarze?",
       "en": "Do you have this in another size?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "📐",
+      "note": "rozmiarze = size (locative of rozmiar)"
     },
     {
       "id": "s5_34",
@@ -277,7 +359,9 @@
       "pl": "To pasuje",
       "en": "This fits",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "✅",
+      "note": "pasuje = it fits (3rd sing. present)"
     },
     {
       "id": "s5_35",
@@ -285,7 +369,9 @@
       "pl": "To nie pasuje",
       "en": "This doesn't fit",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "❌",
+      "note": "nie = not (negation before verb)"
     },
     {
       "id": "s5_36",
@@ -293,7 +379,9 @@
       "pl": "Czy mogę to zwrócić?",
       "en": "Can I return this?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "↩️",
+      "note": "zwrócić = to return (perfective inf.)"
     },
     {
       "id": "s5_37",
@@ -301,7 +389,9 @@
       "pl": "Torba, proszę",
       "en": "Bag, please",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🛍️",
+      "note": "torba = bag (feminine noun)"
     },
     {
       "id": "s5_38",
@@ -309,7 +399,9 @@
       "pl": "Sklep",
       "en": "Shop / Store",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🏪",
+      "note": "Masculine noun: sklep, sklepu (gen.)"
     },
     {
       "id": "s5_39",
@@ -317,7 +409,9 @@
       "pl": "Supermarket",
       "en": "Supermarket",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🛒",
+      "note": "Loanword, masculine"
     },
     {
       "id": "s5_40",
@@ -325,7 +419,9 @@
       "pl": "Apteka",
       "en": "Pharmacy",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💊",
+      "note": "Feminine noun: apteka, apteki (gen.)"
     },
     {
       "id": "s5_41",
@@ -333,7 +429,10 @@
       "pl": "Złoty",
       "en": "Zloty (Polish currency)",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🇵🇱",
+      "note": "Złoty = golden; Polish currency unit",
+      "grammar_1": "5+ use: złotych (genitive plural)"
     },
     {
       "id": "s5_42",
@@ -341,7 +440,10 @@
       "pl": "Grosz",
       "en": "Grosz (Polish cent)",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🪙",
+      "note": "1/100 of a złoty",
+      "grammar_1": "5+ use: groszy (genitive plural)"
     },
     {
       "id": "s5_43",
@@ -349,7 +451,9 @@
       "pl": "Pięć złotych",
       "en": "Five zloty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💴",
+      "note": "5+ triggers genitive plural: złotych"
     },
     {
       "id": "s5_44",
@@ -357,7 +461,9 @@
       "pl": "Dziesięć złotych",
       "en": "Ten zloty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💵",
+      "note": "Genitive plural after numbers 5+"
     },
     {
       "id": "s5_45",
@@ -365,7 +471,9 @@
       "pl": "Dwadzieścia złotych",
       "en": "Twenty zloty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💶",
+      "note": "Genitive plural after 5+"
     },
     {
       "id": "s5_46",
@@ -373,7 +481,9 @@
       "pl": "Pięćdziesiąt złotych",
       "en": "Fifty zloty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💷",
+      "note": "Genitive plural after 5+"
     },
     {
       "id": "s5_47",
@@ -381,7 +491,9 @@
       "pl": "Sto złotych",
       "en": "One hundred zloty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💰",
+      "note": "sto = 100; złotych (gen. pl.)"
     },
     {
       "id": "s5_48",
@@ -389,7 +501,10 @@
       "pl": "Jeden",
       "en": "One",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "1️⃣",
+      "note": "jeden (m), jedna (f), jedno (n)",
+      "grammar_1": "Agrees with noun gender"
     },
     {
       "id": "s5_49",
@@ -397,7 +512,10 @@
       "pl": "Dwa",
       "en": "Two",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "2️⃣",
+      "note": "dwa (m/n), dwie (f)",
+      "grammar_1": "2 uses nominative plural"
     },
     {
       "id": "s5_50",
@@ -405,7 +523,9 @@
       "pl": "Trzy",
       "en": "Three",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "3️⃣",
+      "note": "3-4: nominative plural noun"
     },
     {
       "id": "s5_51",
@@ -413,7 +533,9 @@
       "pl": "Cztery",
       "en": "Four",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "4️⃣",
+      "note": "3-4: nominative plural noun"
     },
     {
       "id": "s5_52",
@@ -421,7 +543,9 @@
       "pl": "Pięć",
       "en": "Five",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "5️⃣",
+      "note": "5+: genitive plural noun"
     },
     {
       "id": "s5_53",
@@ -429,7 +553,9 @@
       "pl": "Dziesięć",
       "en": "Ten",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔟",
+      "note": "5+: genitive plural noun"
     },
     {
       "id": "s5_54",
@@ -437,7 +563,9 @@
       "pl": "Dwadzieścia",
       "en": "Twenty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "2️⃣0️⃣",
+      "note": "5+: genitive plural noun"
     },
     {
       "id": "s5_55",
@@ -445,7 +573,9 @@
       "pl": "Sto",
       "en": "One hundred",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💯",
+      "note": "sto = 100; gen. pl. nouns follow"
     },
     {
       "id": "s5_56",
@@ -453,7 +583,10 @@
       "pl": "Jaki kolor?",
       "en": "What color?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🎨",
+      "note": "Jaki = what (m adj question word)",
+      "grammar_1": "kolor = colour (masculine noun)"
     },
     {
       "id": "s5_57",
@@ -461,7 +594,9 @@
       "pl": "Biały",
       "en": "White",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "⬜",
+      "note": "biały(m), biała(f), białe(n)"
     },
     {
       "id": "s5_58",
@@ -469,7 +604,9 @@
       "pl": "Czarny",
       "en": "Black",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "⬛",
+      "note": "czarny(m), czarna(f), czarne(n)"
     },
     {
       "id": "s5_59",
@@ -477,7 +614,9 @@
       "pl": "Czerwony",
       "en": "Red",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔴",
+      "note": "czerwony(m), czerwona(f), czerwone(n)"
     },
     {
       "id": "s5_60",
@@ -485,7 +624,9 @@
       "pl": "Niebieski",
       "en": "Blue",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔵",
+      "note": "niebieski(m), niebieska(f), niebieskie(n)"
     },
     {
       "id": "s5_61",
@@ -493,7 +634,9 @@
       "pl": "Zielony",
       "en": "Green",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🟢",
+      "note": "zielony(m), zielona(f), zielone(n)"
     },
     {
       "id": "s5_62",
@@ -501,7 +644,9 @@
       "pl": "Żółty",
       "en": "Yellow",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🟡",
+      "note": "żółty(m), żółta(f), żółte(n)"
     },
     {
       "id": "s5_63",
@@ -509,7 +654,9 @@
       "pl": "Szary",
       "en": "Gray",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🩶",
+      "note": "szary(m), szara(f), szare(n)"
     },
     {
       "id": "s5_64",
@@ -517,7 +664,9 @@
       "pl": "Nowy",
       "en": "New",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "✨",
+      "note": "nowy(m), nowa(f), nowe(n)"
     },
     {
       "id": "s5_65",
@@ -525,7 +674,9 @@
       "pl": "Stary",
       "en": "Old",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🏚️",
+      "note": "stary(m), stara(f), stare(n)"
     },
     {
       "id": "s5_66",
@@ -533,7 +684,9 @@
       "pl": "Dobry",
       "en": "Good",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👍",
+      "note": "dobry(m), dobra(f), dobre(n)"
     },
     {
       "id": "s5_67",
@@ -541,7 +694,9 @@
       "pl": "Zły",
       "en": "Bad",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👎",
+      "note": "zły(m), zła(f), złe(n)"
     },
     {
       "id": "s5_68",
@@ -549,7 +704,9 @@
       "pl": "Tani",
       "en": "Cheap",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🏷️",
+      "note": "tani(m), tania(f), tanie(n)"
     },
     {
       "id": "s5_69",
@@ -557,7 +714,9 @@
       "pl": "Drogi",
       "en": "Expensive",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💸",
+      "note": "drogi(m), droga(f), drogie(n)"
     },
     {
       "id": "s5_70",
@@ -565,7 +724,9 @@
       "pl": "Ładny",
       "en": "Nice / Pretty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "😍",
+      "note": "ładny(m), ładna(f), ładne(n)"
     }
   ]
 }

@@ -8,455 +8,615 @@
       "category": "Music",
       "pl": "Muzyka",
       "en": "Music",
-      "level": 13
+      "level": 13,
+      "emoji": "��",
+      "note": "Feminine noun: muzyka",
+      "grammar_1": "muzyki (gen.), muzykę (acc.)"
     },
     {
       "id": "p13_137",
       "category": "Music",
       "pl": "Piosenka",
       "en": "Song",
-      "level": 13
+      "level": 13,
+      "emoji": "🎶",
+      "note": "Feminine noun: piosenka",
+      "grammar_1": "piosenki (gen.), piosenkę (acc.)"
     },
     {
       "id": "p13_138",
       "category": "Music",
       "pl": "Słuchać muzyki",
       "en": "To listen to music",
-      "level": 13
+      "level": 13,
+      "emoji": "🎧",
+      "note": "słuchać + genitive = to listen to",
+      "grammar_1": "muzyki = genitive of muzyka"
     },
     {
       "id": "p13_139",
       "category": "Music",
       "pl": "Śpiewać",
       "en": "To sing",
-      "level": 13
+      "level": 13,
+      "emoji": "🎤",
+      "note": "Imperfective infinitive",
+      "grammar_1": "śpiewam, śpiewasz, śpiewa..."
     },
     {
       "id": "p13_140",
       "category": "Music",
       "pl": "Tańczyć",
       "en": "To dance",
-      "level": 13
+      "level": 13,
+      "emoji": "💃",
+      "note": "Imperfective infinitive",
+      "grammar_1": "tańczę, tańczysz, tańczy..."
     },
     {
       "id": "p13_141",
       "category": "Music",
       "pl": "Zespół",
       "en": "Band / Group",
-      "level": 13
+      "level": 13,
+      "emoji": "🎸",
+      "note": "Masculine noun: zespół (nom.), zespołu (gen.)",
+      "grammar_1": "Also means 'team' in other contexts"
     },
     {
       "id": "p13_142",
       "category": "Music",
       "pl": "Piosenkarz / Piosenkarka",
       "en": "Singer (male/female)",
-      "level": 13
+      "level": 13,
+      "emoji": "🎙️",
+      "note": "Gender-differentiated noun",
+      "grammar_1": "Piosenkarz (m), Piosenkarka (f)"
     },
     {
       "id": "p13_143",
       "category": "Music",
       "pl": "Muzyk",
       "en": "Musician",
-      "level": 13
+      "level": 13,
+      "emoji": "🎻",
+      "note": "Masculine noun (refers to either gender)",
+      "grammar_1": "muzyka ≠ muzyk (musician vs. music)"
     },
     {
       "id": "p13_144",
       "category": "Music",
       "pl": "Album",
       "en": "Album",
-      "level": 13
+      "level": 13,
+      "emoji": "💿",
+      "note": "Neuter loanword: album, albumu (gen.)"
     },
     {
       "id": "p13_145",
       "category": "Music",
       "pl": "Płyta",
       "en": "Record / CD",
-      "level": 13
+      "level": 13,
+      "emoji": "📀",
+      "note": "Feminine noun: płyta, płyty (gen.)"
     },
     {
       "id": "p13_146",
       "category": "Music",
       "pl": "Gitara",
       "en": "Guitar",
-      "level": 13
+      "level": 13,
+      "emoji": "🎸",
+      "note": "Feminine noun: gitara, gitary (gen.)"
     },
     {
       "id": "p13_147",
       "category": "Music",
       "pl": "Fortepian / Piano",
       "en": "Piano",
-      "level": 13
+      "level": 13,
+      "emoji": "🎹",
+      "note": "Fortepian = grand piano; piano = upright",
+      "grammar_1": "Both masculine nouns"
     },
     {
       "id": "p13_148",
       "category": "Music",
       "pl": "Perkusja",
       "en": "Drums",
-      "level": 13
+      "level": 13,
+      "emoji": "🥁",
+      "note": "Feminine noun: perkusja (the drum kit as a whole)"
     },
     {
       "id": "p13_149",
       "category": "Music",
       "pl": "Melodia",
       "en": "Melody / Tune",
-      "level": 13
+      "level": 13,
+      "emoji": "🎼",
+      "note": "Feminine noun: melodia, melodii (gen.)"
     },
     {
       "id": "p13_150",
       "category": "Music",
       "pl": "Rytm",
       "en": "Rhythm",
-      "level": 13
+      "level": 13,
+      "emoji": "🥁",
+      "note": "Masculine noun: rytm, rytmu (gen.)"
     },
     {
       "id": "p13_151",
       "category": "Music Genres",
       "pl": "Jaka muzyka ci się podoba?",
       "en": "What music do you like?",
-      "level": 13
+      "level": 13,
+      "emoji": "🎵",
+      "note": "Lit. 'What music pleases you?'",
+      "grammar_1": "podoba się + dative = pleases (someone)",
+      "grammar_2": "ci = to you (dative of ty)"
     },
     {
       "id": "p13_152",
       "category": "Music Genres",
       "pl": "Lubię...",
       "en": "I like...",
-      "level": 13
+      "level": 13,
+      "emoji": "❤️",
+      "note": "lubię + accusative = I like..."
     },
     {
       "id": "p13_153",
       "category": "Music Genres",
       "pl": "Rock",
       "en": "Rock",
-      "level": 13
+      "level": 13,
+      "emoji": "🎸",
+      "note": "Loanword; mostly indeclinable in Polish"
     },
     {
       "id": "p13_154",
       "category": "Music Genres",
       "pl": "Pop",
       "en": "Pop",
-      "level": 13
+      "level": 13,
+      "emoji": "🌟",
+      "note": "Loanword; indeclinable"
     },
     {
       "id": "p13_155",
       "category": "Music Genres",
       "pl": "Jazz",
       "en": "Jazz",
-      "level": 13
+      "level": 13,
+      "emoji": "🎺",
+      "note": "Loanword; masculine in Polish"
     },
     {
       "id": "p13_156",
       "category": "Music Genres",
       "pl": "Klasyczna",
       "en": "Classical",
-      "level": 13
+      "level": 13,
+      "emoji": "🎻",
+      "note": "Short for muzyka klasyczna",
+      "grammar_1": "klasyczna = classical (feminine adj.)"
     },
     {
       "id": "p13_157",
       "category": "Music Genres",
       "pl": "Hip-hop / Rap",
       "en": "Hip-hop / Rap",
-      "level": 13
+      "level": 13,
+      "emoji": "🎤",
+      "note": "Loanwords; widely used in Polish"
     },
     {
       "id": "p13_158",
       "category": "Music Genres",
       "pl": "Elektroniczna",
       "en": "Electronic",
-      "level": 13
+      "level": 13,
+      "emoji": "🎛️",
+      "note": "Short for muzyka elektroniczna",
+      "grammar_1": "elektroniczna = electronic (feminine adj.)"
     },
     {
       "id": "p13_159",
       "category": "Music Genres",
       "pl": "Reggae",
       "en": "Reggae",
-      "level": 13
+      "level": 13,
+      "emoji": "🇯🇲",
+      "note": "Loanword; indeclinable"
     },
     {
       "id": "p13_160",
       "category": "Music Genres",
       "pl": "Metal",
       "en": "Metal",
-      "level": 13
+      "level": 13,
+      "emoji": "��",
+      "note": "Masculine loanword"
     },
     {
       "id": "p13_161",
       "category": "Music Genres",
       "pl": "Folk / Ludowa",
       "en": "Folk",
-      "level": 13
+      "level": 13,
+      "emoji": "🪗",
+      "note": "Ludowa = folk/people's (feminine adj.)",
+      "grammar_1": "muzyka ludowa = folk music"
     },
     {
       "id": "p13_162",
       "category": "Music Genres",
       "pl": "Ulubiony zespół",
       "en": "Favorite band",
-      "level": 13
+      "level": 13,
+      "emoji": "🏆",
+      "note": "Ulubiony = favourite (masculine adj.)",
+      "grammar_1": "ulubiony(m), ulubiona(f), ulubione(n)"
     },
     {
       "id": "p13_163",
       "category": "Music Genres",
       "pl": "Ulubiona piosenka",
       "en": "Favorite song",
-      "level": 13
+      "level": 13,
+      "emoji": "🎵",
+      "note": "Ulubiona = favourite (feminine, agrees with piosenka)"
     },
     {
       "id": "p13_164",
       "category": "Music Genres",
       "pl": "To jest świetna piosenka!",
       "en": "This is a great song!",
-      "level": 13
+      "level": 13,
+      "emoji": "🌟",
+      "note": "świetna = great (feminine adj., agrees with piosenka)"
     },
     {
       "id": "p13_165",
       "category": "Music Genres",
       "pl": "Znam tę piosenkę",
       "en": "I know this song",
-      "level": 13
+      "level": 13,
+      "emoji": "🎵",
+      "note": "tę = this (accusative feminine of ten)",
+      "grammar_1": "piosenkę = accusative of piosenka"
     },
     {
       "id": "p13_166",
       "category": "Pop Song Phrases",
       "pl": "Kocham cię",
       "en": "I love you",
-      "level": 13
+      "level": 13,
+      "emoji": "❤️",
+      "note": "kocham = I love (1st sing. of kochać)",
+      "grammar_1": "cię = you (accusative short form of ty)"
     },
     {
       "id": "p13_167",
       "category": "Pop Song Phrases",
       "pl": "Tęsknię za tobą",
       "en": "I miss you",
-      "level": 13
+      "level": 13,
+      "emoji": "💔",
+      "note": "tęsknić za + instrumental = to miss",
+      "grammar_1": "tobą = you (instrumental of ty)"
     },
     {
       "id": "p13_168",
       "category": "Pop Song Phrases",
       "pl": "Jesteś moim światem",
       "en": "You are my world",
-      "level": 13
+      "level": 13,
+      "emoji": "🌍",
+      "note": "moim = my (instrumental masculine)",
+      "grammar_1": "światem = world (instrumental of świat)"
     },
     {
       "id": "p13_169",
       "category": "Pop Song Phrases",
       "pl": "Serce",
       "en": "Heart",
-      "level": 13
+      "level": 13,
+      "emoji": "❤️",
+      "note": "Neuter noun: serce, serca (gen.)"
     },
     {
       "id": "p13_170",
       "category": "Pop Song Phrases",
       "pl": "Moje serce",
       "en": "My heart",
-      "level": 13
+      "level": 13,
+      "emoji": "💗",
+      "note": "Moje = my (neuter adj., agrees with serce)"
     },
     {
       "id": "p13_171",
       "category": "Pop Song Phrases",
       "pl": "Miłość",
       "en": "Love",
-      "level": 13
+      "level": 13,
+      "emoji": "💕",
+      "note": "Feminine noun: miłość, miłości (gen.)"
     },
     {
       "id": "p13_172",
       "category": "Pop Song Phrases",
       "pl": "Noc",
       "en": "Night",
-      "level": 13
+      "level": 13,
+      "emoji": "🌙",
+      "note": "Feminine noun: noc, nocy (gen.)"
     },
     {
       "id": "p13_173",
       "category": "Pop Song Phrases",
       "pl": "Dzień",
       "en": "Day",
-      "level": 13
+      "level": 13,
+      "emoji": "☀️",
+      "note": "Masculine noun: dzień, dnia (gen.)"
     },
     {
       "id": "p13_174",
       "category": "Pop Song Phrases",
       "pl": "Niebo",
       "en": "Sky / Heaven",
-      "level": 13
+      "level": 13,
+      "emoji": "🌌",
+      "note": "Neuter noun: niebo, nieba (gen.)"
     },
     {
       "id": "p13_175",
       "category": "Pop Song Phrases",
       "pl": "Gwiazdy",
       "en": "Stars",
-      "level": 13
+      "level": 13,
+      "emoji": "⭐",
+      "note": "Plural of gwiazda (feminine)",
+      "grammar_1": "gwiazda = star (sing.), gwiazdy (nom.pl.)"
     },
     {
       "id": "p13_176",
       "category": "Pop Song Phrases",
       "pl": "Księżyc",
       "en": "Moon",
-      "level": 13
+      "level": 13,
+      "emoji": "🌕",
+      "note": "Masculine noun: księżyc, księżyca (gen.)"
     },
     {
       "id": "p13_177",
       "category": "Pop Song Phrases",
       "pl": "Słońce",
       "en": "Sun",
-      "level": 13
+      "level": 13,
+      "emoji": "☀️",
+      "note": "Neuter noun: słońce, słońca (gen.)"
     },
     {
       "id": "p13_178",
       "category": "Pop Song Phrases",
       "pl": "Marzenie / Sen",
       "en": "Dream",
-      "level": 13
+      "level": 13,
+      "emoji": "💭",
+      "note": "Marzenie = daydream; sen = sleep/dream",
+      "grammar_1": "Both neuter nouns"
     },
     {
       "id": "p13_179",
       "category": "Pop Song Phrases",
       "pl": "Zawsze",
       "en": "Always / Forever",
-      "level": 13
+      "level": 13,
+      "emoji": "♾️",
+      "note": "Adverb — does not change form"
     },
     {
       "id": "p13_180",
       "category": "Pop Song Phrases",
       "pl": "Nigdy",
       "en": "Never",
-      "level": 13
+      "level": 13,
+      "emoji": "🚫",
+      "note": "Adverb — Polish double negation required",
+      "grammar_1": "Nigdy nie + verb = Never (not)..."
     },
     {
       "id": "p13_181",
       "category": "Pop Song Phrases",
       "pl": "Na zawsze",
       "en": "Forever",
-      "level": 13
+      "level": 13,
+      "emoji": "💍",
+      "note": "na zawsze = for always (fixed prepositional phrase)"
     },
     {
       "id": "p13_182",
       "category": "Pop Song Phrases",
       "pl": "Razem",
       "en": "Together",
-      "level": 13
+      "level": 13,
+      "emoji": "🤝",
+      "note": "Adverb — does not change form"
     },
     {
       "id": "p13_183",
       "category": "Pop Song Phrases",
       "pl": "Sama / Sam",
       "en": "Alone",
-      "level": 13
+      "level": 13,
+      "emoji": "🧍",
+      "note": "sama (f), sam (m) — short-form adjective",
+      "grammar_1": "predicative: Jestem sam/sama"
     },
     {
       "id": "p13_184",
       "category": "Pop Song Phrases",
       "pl": "Tańcz ze mną",
       "en": "Dance with me",
-      "level": 13
+      "level": 13,
+      "emoji": "💃",
+      "note": "Tańcz = imperative of tańczyć",
+      "grammar_1": "ze mną = with me (instrumental of ja)"
     },
     {
       "id": "p13_185",
       "category": "Pop Song Phrases",
       "pl": "Chodź ze mną",
       "en": "Come with me",
-      "level": 13
+      "level": 13,
+      "emoji": "🚶",
+      "note": "Chodź = imperative of iść (informal)",
+      "grammar_1": "ze mną = with me (instrumental)"
     },
     {
       "id": "p13_186",
       "category": "Polish Music Culture",
       "pl": "Czy znasz polską muzykę?",
       "en": "Do you know Polish music?",
-      "level": 13
+      "level": 13,
+      "emoji": "🇵🇱",
+      "note": "znasz = you know (2nd sing. of znać)",
+      "grammar_1": "polską muzykę = Polish music (accusative feminine)"
     },
     {
       "id": "p13_187",
       "category": "Polish Music Culture",
       "pl": "Dawid Podsiadło",
       "en": "Dawid Podsiadło (popular Polish artist)",
-      "level": 13
+      "level": 13,
+      "emoji": "🎤",
+      "note": "One of Poland's biggest contemporary pop artists"
     },
     {
       "id": "p13_188",
       "category": "Polish Music Culture",
       "pl": "Sanah",
       "en": "Sanah (popular Polish artist)",
-      "level": 13
+      "level": 13,
+      "emoji": "🎹",
+      "note": "Singer-songwriter, known for Polish pop/jazz fusion"
     },
     {
       "id": "p13_189",
       "category": "Polish Music Culture",
       "pl": "Taco Hemingway",
       "en": "Taco Hemingway (Polish rapper)",
-      "level": 13
+      "level": 13,
+      "emoji": "🎙️",
+      "note": "Leading Polish rapper; known for literate lyrics"
     },
     {
       "id": "p13_190",
       "category": "Polish Music Culture",
       "pl": "Czesław Niemen",
       "en": "Czesław Niemen (legendary Polish artist)",
-      "level": 13
+      "level": 13,
+      "emoji": "🌟",
+      "note": "Legendary Polish rock/prog artist (1939–2004)"
     },
     {
       "id": "p13_191",
       "category": "Polish Music Culture",
       "pl": "Disco polo",
       "en": "Disco polo (Polish music genre)",
-      "level": 13
+      "level": 13,
+      "emoji": "🕺",
+      "note": "Uniquely Polish pop genre; upbeat & catchy"
     },
     {
       "id": "p13_192",
       "category": "Polish Music Culture",
       "pl": "Karaoke",
       "en": "Karaoke",
-      "level": 13
+      "level": 13,
+      "emoji": "🎤",
+      "note": "Loanword from Japanese; widely used in Polish"
     },
     {
       "id": "p13_193",
       "category": "Polish Music Culture",
       "pl": "Śpiewać karaoke",
       "en": "To sing karaoke",
-      "level": 13
+      "level": 13,
+      "emoji": "🎶",
+      "note": "śpiewać = to sing (imperfective)",
+      "grammar_1": "karaoke is indeclinable"
     },
     {
       "id": "p13_194",
       "category": "Polish Music Culture",
       "pl": "Jaki jest twój ulubiony polski zespół?",
       "en": "What's your favorite Polish band?",
-      "level": 13
+      "level": 13,
+      "emoji": "🏆",
+      "note": "twój = your (masculine possessive)",
+      "grammar_1": "ulubiony = favourite (m. adj.)"
     },
     {
       "id": "p13_195",
       "category": "Polish Music Culture",
       "pl": "Czy możesz polecić polską muzykę?",
       "en": "Can you recommend Polish music?",
-      "level": 13
+      "level": 13,
+      "emoji": "👂",
+      "note": "możesz = you can (modal)",
+      "grammar_1": "polecić + accusative = to recommend"
     },
     {
       "id": "p13_196",
       "category": "Polish Music Culture",
       "pl": "Tekst piosenki",
       "en": "Lyrics / Song lyrics",
-      "level": 13
+      "level": 13,
+      "emoji": "📝",
+      "note": "tekst = text/lyrics; piosenki = of song (genitive)"
     },
     {
       "id": "p13_197",
       "category": "Polish Music Culture",
       "pl": "Refren",
       "en": "Chorus",
-      "level": 13
+      "level": 13,
+      "emoji": "🔁",
+      "note": "Masculine noun: refren, refrenu (gen.)"
     },
     {
       "id": "p13_198",
       "category": "Polish Music Culture",
       "pl": "Zwrotka",
       "en": "Verse",
-      "level": 13
+      "level": 13,
+      "emoji": "📖",
+      "note": "Feminine noun: zwrotka, zwrotki (gen.)"
     },
     {
       "id": "p13_199",
       "category": "Polish Music Culture",
       "pl": "Hit",
       "en": "Hit song",
-      "level": 13
+      "level": 13,
+      "emoji": "💥",
+      "note": "Loanword, masculine: hit, hitu (gen.)"
     },
     {
       "id": "p13_200",
       "category": "Polish Music Culture",
       "pl": "To jest przebój!",
       "en": "This is a hit!",
-      "level": 13
+      "level": 13,
+      "emoji": "🎉",
+      "note": "przebój = smash hit (masculine noun)",
+      "grammar_1": "przebój, przeboju (gen.)"
     }
   ]
 }

@@ -9,7 +9,10 @@
       "pl": "Cześć",
       "en": "Hi / Hello (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "👋",
+      "note": "Informal; use only with friends/peers",
+      "grammar_1": "Also used for 'Bye' informally"
     },
     {
       "id": "p8_02",
@@ -17,7 +20,10 @@
       "pl": "Dzień dobry",
       "en": "Good morning / Good day (formal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "☀️",
+      "note": "Formal daytime greeting",
+      "grammar_1": "dzień = day (masc.), dobry = good (masc. adj.)"
     },
     {
       "id": "p8_03",
@@ -25,7 +31,10 @@
       "pl": "Dobry wieczór",
       "en": "Good evening",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌆",
+      "note": "Formal evening greeting",
+      "grammar_1": "wieczór = evening (masculine noun)"
     },
     {
       "id": "p8_04",
@@ -33,7 +42,9 @@
       "pl": "Dobranoc",
       "en": "Good night",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌙",
+      "note": "One word; said before sleeping"
     },
     {
       "id": "p8_05",
@@ -41,7 +52,10 @@
       "pl": "Do widzenia",
       "en": "Goodbye (formal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🫡",
+      "note": "Formal farewell",
+      "grammar_1": "do + genitive: widzenia = of seeing"
     },
     {
       "id": "p8_06",
@@ -49,7 +63,9 @@
       "pl": "Cześć (goodbye)",
       "en": "Bye (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "✌️",
+      "note": "Same word as 'hi' — context makes it farewell"
     },
     {
       "id": "p8_07",
@@ -57,7 +73,9 @@
       "pl": "Do zobaczenia",
       "en": "See you",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "👁️",
+      "note": "do + genitive: zobaczenia = of seeing (again)"
     },
     {
       "id": "p8_08",
@@ -65,7 +83,10 @@
       "pl": "Jak się masz?",
       "en": "How are you? (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Reflexive: się masz = you have yourself",
+      "grammar_1": "Informal — use with friends"
     },
     {
       "id": "p8_09",
@@ -77,7 +98,10 @@
       "variants": {
         "m": "Jak się Pan",
         "f": "Pani miewa?"
-      }
+      },
+      "emoji": "🤝",
+      "note": "Formal version: Pan (sir), Pani (ma'am)",
+      "grammar_1": "miewa = fares (formal 3rd-person habitual form)"
     },
     {
       "id": "p8_10",
@@ -85,7 +109,9 @@
       "pl": "Dobrze, dziękuję",
       "en": "Good, thank you",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "😊",
+      "note": "Standard polite response"
     },
     {
       "id": "p8_11",
@@ -97,7 +123,10 @@
       "variants": {
         "m": "A Pan",
         "f": "A Pani?"
-      }
+      },
+      "emoji": "🔄",
+      "note": "A = And; Pan/Pani = formal 'you'",
+      "grammar_1": "Pan (male), Pani (female) — never use ty in formal settings"
     },
     {
       "id": "p8_12",
@@ -105,7 +134,9 @@
       "pl": "A Ty?",
       "en": "And you? (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🔄",
+      "note": "Ty = informal 'you'"
     },
     {
       "id": "p8_13",
@@ -113,7 +144,10 @@
       "pl": "Miło cię poznać",
       "en": "Nice to meet you (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "😄",
+      "note": "cię = you (accusative of ty)",
+      "grammar_1": "poznać = to meet/get to know (perfective)"
     },
     {
       "id": "p8_14",
@@ -125,7 +159,9 @@
       "variants": {
         "m": "Miło Pana",
         "f": "Panią poznać"
-      }
+      },
+      "emoji": "🤵",
+      "note": "Pana (acc. m), Panią (acc. f) = formal 'you'"
     },
     {
       "id": "p8_15",
@@ -133,7 +169,10 @@
       "pl": "Jak się nazywasz?",
       "en": "What's your name? (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🏷️",
+      "note": "Reflexive: się nazywasz = you call yourself",
+      "grammar_1": "nazywać się = to be called"
     },
     {
       "id": "p8_16",
@@ -145,7 +184,10 @@
       "variants": {
         "m": "Jak Pan",
         "f": "Pani ma na imię?"
-      }
+      },
+      "emoji": "🏷️",
+      "note": "na imię = first name (lit. 'for first name')",
+      "grammar_1": "imię = first name (neuter noun)"
     },
     {
       "id": "p8_17",
@@ -153,7 +195,10 @@
       "pl": "Nazywam się...",
       "en": "My name is...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🪪",
+      "note": "Reflexive: nazywam się = I am called",
+      "grammar_1": "Full name; for first name: Mam na imię..."
     },
     {
       "id": "p8_18",
@@ -161,7 +206,9 @@
       "pl": "Jestem...",
       "en": "I am...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🙋",
+      "note": "jestem = I am (być, 1st sing. present)"
     },
     {
       "id": "p8_19",
@@ -169,7 +216,9 @@
       "pl": "To jest...",
       "en": "This is...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "👉",
+      "note": "to jest = this is (introducing someone)"
     },
     {
       "id": "p8_20",
@@ -177,7 +226,10 @@
       "pl": "Poznaj...",
       "en": "Meet...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤜",
+      "note": "Imperative: Poznaj = Meet (informal command)",
+      "grammar_1": "poznać = to get to know"
     },
     {
       "id": "p8_21",
@@ -185,7 +237,10 @@
       "pl": "Skąd jesteś?",
       "en": "Where are you from?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌍",
+      "note": "Skąd = from where",
+      "grammar_1": "jesteś = you are (2nd sing. of być)"
     },
     {
       "id": "p8_22",
@@ -193,7 +248,10 @@
       "pl": "Jestem z...",
       "en": "I'm from...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌐",
+      "note": "z + genitive = from (a place)",
+      "grammar_1": "z Anglii, z Polski, z Kanady..."
     },
     {
       "id": "p8_23",
@@ -205,7 +263,10 @@
       "variants": {
         "m": "Jestem Amerykaninem",
         "f": "Jestem Amerykanką"
-      }
+      },
+      "emoji": "🇺🇸",
+      "note": "Nationality nouns have gender forms",
+      "grammar_1": "Instrumental case after jestem"
     },
     {
       "id": "p8_24",
@@ -217,7 +278,10 @@
       "variants": {
         "m": "Jestem Anglikiem",
         "f": "Jestem Angielką"
-      }
+      },
+      "emoji": "🇬🇧",
+      "note": "Nationality nouns change by gender",
+      "grammar_1": "Instrumental case after jestem"
     },
     {
       "id": "p8_25",
@@ -225,7 +289,9 @@
       "pl": "Jestem z Kanady",
       "en": "I'm from Canada",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🇨🇦",
+      "note": "z Kanady = from Canada (genitive)"
     },
     {
       "id": "p8_26",
@@ -233,7 +299,9 @@
       "pl": "Jestem z Australii",
       "en": "I'm from Australia",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🇦🇺",
+      "note": "z Australii (genitive of Australia)"
     },
     {
       "id": "p8_27",
@@ -241,7 +309,10 @@
       "pl": "Mieszkam w...",
       "en": "I live in...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🏠",
+      "note": "w + locative = in (a place)",
+      "grammar_1": "mieszkać = to live/reside (imperfective)"
     },
     {
       "id": "p8_28",
@@ -253,7 +324,10 @@
       "variants": {
         "m": "Przyjechałem z...",
         "f": "Przyjechałam z..."
-      }
+      },
+      "emoji": "🚆",
+      "note": "Past tense: -łem (m), -łam (f)",
+      "grammar_1": "przyjechać = to arrive (by vehicle, perfective)"
     },
     {
       "id": "p8_29",
@@ -265,7 +339,9 @@
       "variants": {
         "m": "Jestem turystą",
         "f": "Jestem turystką"
-      }
+      },
+      "emoji": "🧳",
+      "note": "Instrumental case: turystą (m), turystką (f)"
     },
     {
       "id": "p8_30",
@@ -273,7 +349,9 @@
       "pl": "Jestem tu na wakacjach",
       "en": "I'm here on vacation",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🏖️",
+      "note": "na wakacjach = on holiday (locative plural)"
     },
     {
       "id": "p8_31",
@@ -281,7 +359,9 @@
       "pl": "Jestem tu w interesach",
       "en": "I'm here on business",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "💼",
+      "note": "w interesach = on business (locative plural)"
     },
     {
       "id": "p8_32",
@@ -289,7 +369,10 @@
       "pl": "Pierwszy raz w Polsce",
       "en": "First time in Poland",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🇵🇱",
+      "note": "w Polsce = in Poland (locative)",
+      "grammar_1": "raz = time/occasion"
     },
     {
       "id": "p8_33",
@@ -297,7 +380,10 @@
       "pl": "Jak długo tu jesteś?",
       "en": "How long have you been here?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Jak długo = How long",
+      "grammar_1": "tu = here"
     },
     {
       "id": "p8_34",
@@ -305,7 +391,9 @@
       "pl": "Jestem tu od...",
       "en": "I've been here since...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "��",
+      "note": "od + genitive = since/from (time)"
     },
     {
       "id": "p8_35",
@@ -313,7 +401,10 @@
       "pl": "Zostanę tu...",
       "en": "I'll stay here...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🏨",
+      "note": "Zostanę = I will stay (perfective future)",
+      "grammar_1": "zostać → zostanę (irregular future)"
     },
     {
       "id": "p8_36",
@@ -321,7 +412,10 @@
       "pl": "Co słychać?",
       "en": "What's up? / How's it going?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "👂",
+      "note": "Lit. 'What is heard?' — very common casual phrase",
+      "grammar_1": "słychać = one hears (impersonal)"
     },
     {
       "id": "p8_37",
@@ -329,7 +423,9 @@
       "pl": "Wszystko w porządku?",
       "en": "Everything okay?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "��",
+      "note": "w porządku = in order"
     },
     {
       "id": "p8_38",
@@ -337,7 +433,9 @@
       "pl": "Świetnie!",
       "en": "Great!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌟",
+      "note": "Exclamation; świetny = great (adj. base)"
     },
     {
       "id": "p8_39",
@@ -345,7 +443,9 @@
       "pl": "Nieźle",
       "en": "Not bad",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "😌",
+      "note": "Nie + źle = not badly; colloquial positivity"
     },
     {
       "id": "p8_40",
@@ -353,7 +453,9 @@
       "pl": "Tak sobie",
       "en": "So-so",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤷",
+      "note": "Lit. 'Like that to myself' — casual neutral reply"
     },
     {
       "id": "p8_41",
@@ -361,7 +463,10 @@
       "pl": "Co robisz?",
       "en": "What do you do?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤔",
+      "note": "robisz = you do (2nd sing. present)",
+      "grammar_1": "Also can mean 'What are you doing?'"
     },
     {
       "id": "p8_42",
@@ -369,7 +474,10 @@
       "pl": "Pracuję jako...",
       "en": "I work as...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "💼",
+      "note": "jako + nominative = as (a profession)",
+      "grammar_1": "pracuję = I work (1st sing. present)"
     },
     {
       "id": "p8_43",
@@ -381,7 +489,9 @@
       "variants": {
         "m": "Jestem studentem",
         "f": "Jestem studentką"
-      }
+      },
+      "emoji": "🎓",
+      "note": "Instrumental after jestem: studentem(m), studentką(f)"
     },
     {
       "id": "p8_44",
@@ -389,7 +499,10 @@
       "pl": "Lubię...",
       "en": "I like...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "❤️",
+      "note": "Lubić + accusative = to like something",
+      "grammar_1": "lubię = I like (1st sing. present)"
     },
     {
       "id": "p8_45",
@@ -397,7 +510,9 @@
       "pl": "Nie lubię...",
       "en": "I don't like...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "💔",
+      "note": "Nie + lubię = I don't like"
     },
     {
       "id": "p8_46",
@@ -405,7 +520,10 @@
       "pl": "Interesuję się...",
       "en": "I'm interested in...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🧐",
+      "note": "Reflexive: interesuję się + instrumental",
+      "grammar_1": "interesować się = to be interested in"
     },
     {
       "id": "p8_47",
@@ -413,7 +531,9 @@
       "pl": "Moje hobby to...",
       "en": "My hobby is...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🎯",
+      "note": "hobby = neuter noun (loanword)"
     },
     {
       "id": "p8_48",
@@ -421,7 +541,9 @@
       "pl": "Czy lubisz...?",
       "en": "Do you like...?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤩",
+      "note": "Czy = question particle"
     },
     {
       "id": "p8_49",
@@ -429,7 +551,10 @@
       "pl": "Co lubisz robić?",
       "en": "What do you like to do?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "😁",
+      "note": "lubisz robić = you like to do",
+      "grammar_1": "robić = to do/make (imperfective inf.)"
     },
     {
       "id": "p8_50",
@@ -437,7 +562,10 @@
       "pl": "Jakie masz plany?",
       "en": "What are your plans?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "📋",
+      "note": "Jakie (pl. neut.) = what kind of",
+      "grammar_1": "plany = plans (nominative plural)"
     },
     {
       "id": "p8_51",
@@ -445,7 +573,9 @@
       "pl": "Nic specjalnego",
       "en": "Nothing special",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "😶",
+      "note": "Nic = nothing + specjalnego (genitive adj.)"
     },
     {
       "id": "p8_52",
@@ -453,7 +583,10 @@
       "pl": "Zobaczmy się później",
       "en": "See you later",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "⏰",
+      "note": "Zobaczmy się = Let's see each other",
+      "grammar_1": "się = reflexive particle"
     },
     {
       "id": "p8_53",
@@ -461,7 +594,10 @@
       "pl": "Miłego dnia!",
       "en": "Have a nice day!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌞",
+      "note": "Genitive after Miłego: dnia = of day",
+      "grammar_1": "Wishing phrase uses genitive"
     },
     {
       "id": "p8_54",
@@ -469,7 +605,9 @@
       "pl": "Miłego wieczoru!",
       "en": "Have a nice evening!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌇",
+      "note": "Genitive: wieczoru = of evening"
     },
     {
       "id": "p8_55",
@@ -477,7 +615,10 @@
       "pl": "Powodzenia!",
       "en": "Good luck!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🍀",
+      "note": "Genitive: powodzenia = of success",
+      "grammar_1": "Lit. 'of success!' — fixed phrase"
     },
     {
       "id": "p8_56",
@@ -485,7 +626,9 @@
       "pl": "Czy chcesz...?",
       "en": "Do you want to...?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "��",
+      "note": "chcesz = you want (2nd sing. of chcieć)"
     },
     {
       "id": "p8_57",
@@ -493,7 +636,9 @@
       "pl": "Chodźmy...",
       "en": "Let's go...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🚶",
+      "note": "Chodźmy = Let's go (inclusive imperative plural)"
     },
     {
       "id": "p8_58",
@@ -501,7 +646,10 @@
       "pl": "Może pójdziemy na kawę?",
       "en": "Shall we go for coffee?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "☕",
+      "note": "Może = Maybe/Shall we (suggestion)",
+      "grammar_1": "pójdziemy = we will go (perfective future)"
     },
     {
       "id": "p8_59",
@@ -509,7 +657,9 @@
       "pl": "Może pójdziemy na piwo?",
       "en": "Shall we go for a beer?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🍺",
+      "note": "na piwo = for a beer (accusative)"
     },
     {
       "id": "p8_60",
@@ -517,7 +667,9 @@
       "pl": "Tak, chętnie",
       "en": "Yes, I'd love to",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "😀",
+      "note": "chętnie = willingly/gladly (adverb)"
     },
     {
       "id": "p8_61",
@@ -525,7 +677,9 @@
       "pl": "Nie, dziękuję",
       "en": "No, thank you",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🙅",
+      "note": "Polite refusal"
     },
     {
       "id": "p8_62",
@@ -533,7 +687,9 @@
       "pl": "Może innym razem",
       "en": "Maybe another time",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🔜",
+      "note": "innym razem = another time (instrumental)"
     },
     {
       "id": "p8_63",
@@ -545,7 +701,10 @@
       "variants": {
         "m": "Jestem zajęty",
         "f": "Jestem zajęta"
-      }
+      },
+      "emoji": "📵",
+      "note": "Short-form adj: zajęty(m), zajęta(f)",
+      "grammar_1": "Predicative adjective after jestem"
     },
     {
       "id": "p8_64",
@@ -553,7 +712,9 @@
       "pl": "Mam czas",
       "en": "I have time",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🕐",
+      "note": "Mam = I have; czas = time (accusative)"
     },
     {
       "id": "p8_65",
@@ -561,7 +722,10 @@
       "pl": "O której?",
       "en": "At what time?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🕰️",
+      "note": "O + locative = at (time)",
+      "grammar_1": "której = which (genitive f. adj.; godzina implied)"
     },
     {
       "id": "p8_66",
@@ -569,7 +733,9 @@
       "pl": "Gdzie?",
       "en": "Where?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "📍",
+      "note": "Question word: gdzie = where"
     },
     {
       "id": "p8_67",
@@ -577,7 +743,10 @@
       "pl": "Spotkajmy się...",
       "en": "Let's meet...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Spotkajmy się = Let's meet (inclusive imperative)",
+      "grammar_1": "się = reflexive; spotkać = to meet"
     },
     {
       "id": "p8_68",
@@ -585,7 +754,9 @@
       "pl": "Do zobaczenia!",
       "en": "See you!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "👋",
+      "note": "Standard farewell"
     },
     {
       "id": "p8_69",
@@ -593,7 +764,10 @@
       "pl": "Trzymaj się!",
       "en": "Take care!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "💪",
+      "note": "Imperative: trzymaj się = hold on/take care of yourself",
+      "grammar_1": "Reflexive imperative"
     },
     {
       "id": "p8_70",
@@ -601,7 +775,10 @@
       "pl": "Pozdrawiam",
       "en": "Regards / Best wishes",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "✉️",
+      "note": "Formal closing: pozdrawiam = I send regards",
+      "grammar_1": "1st person sing. present of pozdrawiać"
     }
   ]
 }
