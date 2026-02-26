@@ -113,22 +113,28 @@
                 </details>
 
                 <details>
-                    <summary>⏱️ Scoring, Timers & Sandbox</summary>
-                    <p><b>Points:</b> +10 for fast correct. +6 if over 4 seconds. -5 for mistakes.<br>
-                        <b>Timer (12s):</b> If you take longer than 12 seconds to answer, the app assumes you were
-                        distracted. You will get 0 points and lose your streak!<br>
-                        <b>Daily Goal:</b> Hit 1000 points daily (~15 mins of practice) to build your 🔥 Daily Streak!
-                        Missing a day resets it to 0.<br>
-                        <b>Win Streaks:</b> Answering correctly in a row raises the audio pitch and triggers confetti at
-                        streaks of 5, 25, 50, and 70!
-                    </p>
-                    <p><b>Sandbox:</b> Tap the 🔍 icon to search for a word. Use <b>Translate</b> to build a list in
-                        <b>"Lvl C"</b>. Export Lvl C from the settings gear icon to permanently save your list.
+                    <summary>🎮 How to Play &amp; Scoring</summary>
+                    <p><b>Phrases tab:</b> Browse all phrases for the selected level. Tap any phrase card to hear it spoken aloud.</p>
+                    <p><b>Study tab:</b> Flip through flashcards at your own pace. Swipe left/right or use the arrows. Tap �� to hear the phrase.</p>
+                    <p><b>Training tab:</b> Answer questions by tapping the correct tile or speaking your answer. The game tracks your accuracy using Spaced Repetition (SRS).</p>
+                    <p>
+                        <b>Points:</b> +10 for fast correct. +6 if over 4 seconds. -5 for mistakes.<br>
+                        <b>Timer (12s):</b> Taking longer than 12 seconds counts as distracted — 0 points and streak lost!<br>
+                        <b>Daily Goal:</b> Hit 1000 points (~15 mins) to grow your 🔥 streak. Missing a day resets it.<br>
+                        <b>Win Streaks:</b> Correct answers in a row raise the audio pitch and trigger confetti at 5, 25, 50 and 70!
                     </p>
                 </details>
 
+                <details>
+                    <summary>📖 Phrase Book</summary>
+                    <p>The <b>Phrases tab</b> is your personal phrasebook. Use the <b>search bar</b> to look up any Polish or English word across all levels instantly.</p>
+                    <p>If a phrase isn't found, you'll be offered a <b>Translate</b> button. Tap it to automatically translate the word and add it to <b>Level C</b> — your personal custom list.</p>
+                    <p><b>Level C</b> works like any other level: practice it in Training, study it as flashcards, and export it from ⚙️ Settings to save it permanently as a file.</p>
+                    <p>You can also tap the ⭐ star icon on any flashcard or training card to instantly save a phrase to Level C.</p>
+                </details>
+
                 <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master
-                    v36.0</div>
+                    v37.0</div>
             </div>
         </div>
     </div>
@@ -213,14 +219,14 @@
             style="width: 45px; flex-shrink: 0; background: none; border: none; border-right: 1px solid #ddd; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">❓</button>
 
         <div class="mode-tabs" style="border-bottom: none; flex: 1; display: flex;">
+            <div id="tab-mastered" class="tab" onclick="switchMode('mastered')" style="flex: 1;">
+                <span id="lbl-tab-banked">PHRASES</span> <span id="banked-count"></span>
+            </div>
             <div id="tab-study" class="tab" onclick="switchMode('study')" style="flex: 1;">
                 <span id="lbl-tab-study">STUDY</span>
             </div>
             <div id="tab-learning" class="tab" onclick="switchMode('learning')" style="flex: 1;">
-                <span id="lbl-tab-practice">PRACTICE</span> <span id="learning-count"></span>
-            </div>
-            <div id="tab-mastered" class="tab" onclick="switchMode('mastered')" style="flex: 1;">
-                <span id="lbl-tab-banked">PHRASES</span> <span id="banked-count"></span>
+                <span id="lbl-tab-practice">TRAINING</span> <span id="learning-count"></span>
             </div>
         </div>
 

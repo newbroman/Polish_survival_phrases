@@ -67,7 +67,17 @@ export async function scanLibrary() {
         data: { description: t('needsReview'), phrases: reviewPhrases }
     });
 
-    state.levelList.forEach(lvl => {
+    if (!state.levelList.find(l => l.id == state.currentLevel)) state.currentLevel = state.levelList[0].id;
+
+    // Render dropdown: R and C pinned to the top, then numeric levels
+    const renderOrder = [
+        ...state.levelList.filter(l => l.id === 'R'),
+        ...state.levelList.filter(l => l.id === 'C'),
+        ...state.levelList.filter(l => l.id !== 'R' && l.id !== 'C'),
+    ];
+
+    menu.innerHTML = '';
+    renderOrder.forEach(lvl => {
         let isDone = false;
         if (lvl.id === "R") {
             isDone = lvl.data.phrases.length === 0;
@@ -80,7 +90,6 @@ export async function scanLibrary() {
         let rBadge = repeats > 0 ? `<span style="color:var(--pol-red); font-size:10px; margin-left:5px;">🔄x${repeats}</span>` : '';
 
         const item = document.createElement('div');
-
         if (lvl.id === "R") {
             item.className = 'dropdown-item sandbox';
             item.innerHTML = `<span>Lvl R: ${t('needsReview')} (${lvl.data.phrases.length})</span>`;
@@ -88,15 +97,9 @@ export async function scanLibrary() {
             item.className = 'dropdown-item' + (isDone ? ' mastered' : '') + (lvl.id === "C" ? ' sandbox' : '');
             item.innerHTML = `<span>Lvl ${lvl.id}: ${lvl.desc}${rBadge}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
         }
-
-        item.onclick = (e) => {
-            e.stopPropagation();
-            selectLevel(lvl.id);
-        };
+        item.onclick = (e) => { e.stopPropagation(); selectLevel(lvl.id); };
         menu.appendChild(item);
     });
-
-    if (!state.levelList.find(l => l.id == state.currentLevel)) state.currentLevel = state.levelList[0].id;
 }
 
 export async function cacheAllPhrases() {
