@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v41.0</title>
+    <title>Polish Phrase Master v42.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -147,6 +147,11 @@
                     <summary>📦 Custom Levels &amp; AI Generator</summary>
                     <p><b>🪄 AI Generator:</b> Tap the magic wand icon in the navigation bar to instantly generate
                         playable phrase levels using AI! (Requires an OpenAI API Key saved in Settings).</p>
+                    <p><b>🔑 Getting an API Key:</b> You can create an account and get an API key at
+                        <b>platform.openai.com</b>.
+                    </p>
+                    <p><b>💸 Expected Cost:</b> The cost of generating phrases is extremely low. Generating 30 phrases
+                        typically costs less than <b>$0.01</b> (one cent).</p>
                     <p><b>Importing Levels:</b> You can create your own Polish phrase lists by importing custom JSON
                         files in <b>⚙️ Settings</b>. They will appear with a ⭐ in your level dropdown.</p>
                     <p><b>Exporting:</b> You can always export your saved "Level C" phrases or your "Level R" (Needs
@@ -154,7 +159,7 @@
                 </details>
 
                 <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master
-                    v41.0</div>
+                    v42.0</div>
             </div>
         </div>
     </div>
@@ -194,6 +199,10 @@
                     </div>
                     <div id="openai-key-status" style="font-size: 0.8rem; margin-top: -10px; margin-bottom: 15px;">
                     </div>
+                    <button class="settings-btn" onclick="openAIGenerator(); toggleSettings();"
+                        style="border-color:var(--pol-blue); color:var(--pol-blue); margin-bottom: 15px;">
+                        🪄 Open AI Generator
+                    </button>
 
                     <div style="display:flex; gap:10px; flex-wrap:wrap;">
                         <button class="settings-btn" onclick="downloadProgress()" id="btn-save">💾 Save
