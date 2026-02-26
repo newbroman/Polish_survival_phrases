@@ -148,7 +148,7 @@ export function exportCustomLevel() {
 }
 
 export function downloadProgress() {
-    const b = new Blob([JSON.stringify({ stats: state.stats, userData: state.userData })], { type: "text/plain" });
+    const b = new Blob([JSON.stringify({ stats: state.stats, userData: state.userData, customLevels: state.customLevels })], { type: "text/plain" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(b);
     a.download = `polish_master.txt`;
@@ -161,6 +161,11 @@ export function importProgress(event) {
         const d = JSON.parse(ev.target.result);
         state.stats = d.stats || d;
         state.userData = d.userData || state.userData;
+
+        if (d.customLevels) {
+            state.customLevels = d.customLevels;
+            localStorage.setItem('pl_custom_levels', JSON.stringify(state.customLevels));
+        }
 
         if (state.userData.dailyStreak === undefined) state.userData.dailyStreak = 0;
         if (state.userData.lastGoalDate === undefined) state.userData.lastGoalDate = null;

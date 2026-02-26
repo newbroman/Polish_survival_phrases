@@ -1,6 +1,6 @@
 {
   "name": "geminipro",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An interactive Polish language learning quiz with audio pronunciation, designed as a Progressive Web App.",
   "main": "service-worker.js",
   "scripts": {
