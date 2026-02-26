@@ -3,6 +3,7 @@ import { state } from './state.js';
 import { isListening, initAudioContext, playNote, playSuccess, playWrongSlide, initSpeech, speak, initSpeechRecognition, toggleMic, stopListening, cleanStr, checkSpokenAnswer } from './audio.js';
 import { refreshActivePool, startNewRound, addPoints, checkAnswer, resetLevelMastery, saveStats } from './game.js';
 import { scanLibrary, cacheAllPhrases, exportCustomLevel, downloadProgress, importProgress, resetEverything, importCustomLevel, exportLevelR, deleteCustomLevel } from './storage.js';
+import { saveOpenAIKey, openAIGenerator, closeAIGenerator, generateCustomLevel } from './ai.js';
 
 // --- MODULE TO GLOBAL BRIDGE ---
 
@@ -79,6 +80,12 @@ window.resetEverything = resetEverything;
 window.importCustomLevel = importCustomLevel;
 window.exportLevelR = exportLevelR;
 window.deleteCustomLevel = deleteCustomLevel;
+
+// AI Module Bridge
+window.saveOpenAIKey = saveOpenAIKey;
+window.openAIGenerator = openAIGenerator;
+window.closeAIGenerator = closeAIGenerator;
+window.generateCustomLevel = generateCustomLevel;
 
 // Game Module Bridge
 window.refreshActivePool = refreshActivePool;

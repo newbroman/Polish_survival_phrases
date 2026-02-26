@@ -25,6 +25,7 @@ export const state = {
         phrases: []
     },
     customLevels: JSON.parse(localStorage.getItem('pl_custom_levels')) || [],
+    openAIKey: localStorage.getItem('pl_openai_key') || "",
     phrasesData: [],
     activePool: [],
     levelList: [],
