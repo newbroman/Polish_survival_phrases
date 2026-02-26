@@ -693,6 +693,8 @@ export function updateMap() {
         }
     }
 
+    console.log('FRAZY Data Length:', phrasesData.length);
+
     console.log(`[DEBUG] updateMap() execution -> isPractice: ${isPractice}, list.length: ${list ? list.length : 'undefined'}, area.style.display: ${area.style.display}, area.className: ${area.className}`);
 
     list.forEach(p => {
