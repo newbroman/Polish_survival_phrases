@@ -1,6 +1,6 @@
 import { checkAnswer, addPoints } from './game.js';
 import { state, THRESHOLD, MIN_SCORE } from './state.js';
-import { nextStudyCard, updateMap } from './ui.js';
+import { nextStudyCard, updateMap, hfActive, handleHandsFreeCommand } from './ui.js';
 
 export function initAudioContext() {
     if (!state.audioCtx) {
@@ -109,42 +109,71 @@ export function initSpeechRecognition() {
 
     if (window.SpeechRecognition) {
         recognition = new SpeechRecognition();
-        recognition.continuous = false;
+
+        // Use continuous listening when HandsFree is active
+        recognition.continuous = false; // dynamically set later in start process
         recognition.interimResults = false;
 
         recognition.onstart = () => {
             isListening = true;
             document.getElementById('mic-btn').classList.add('mic-active');
-            document.getElementById('feedback').innerText = "Listening... 🎤";
+            if (!hfActive) {
+                document.getElementById('feedback').innerText = "Listening... 🎤";
+            }
         };
 
         recognition.onresult = (event) => {
-            const transcript = event.results[0][0].transcript.toLowerCase().trim();
-            checkSpokenAnswer(transcript);
+            const transcript = event.results[event.results.length - 1][0].transcript.toLowerCase().trim();
+
+            if (hfActive) {
+                handleHandsFreeCommand(transcript);
+            } else {
+                checkSpokenAnswer(transcript);
+            }
         };
 
-        recognition.onerror = () => {
-            document.getElementById('feedback').innerText = "Mic error / nothing heard.";
-            document.getElementById('feedback').style.color = "var(--pol-red)";
-            stopListening();
+        recognition.onerror = (e) => {
+            if (!hfActive) {
+                document.getElementById('feedback').innerText = "Mic error / nothing heard.";
+                document.getElementById('feedback').style.color = "var(--pol-red)";
+                stopListening();
+            }
         };
 
         recognition.onend = () => {
-            stopListening();
+            isListening = false;
+            // auto-restart listening if hands-free is still active and we haven't aborted entirely
+            if (hfActive) {
+                try {
+                    recognition.start();
+                } catch (e) { }
+            } else {
+                stopListening();
+            }
         };
     }
 }
 
-export function toggleMic() {
+export function toggleMic(forceStartForHF = false) {
     if (!recognition) {
         alert("Voice recognition not supported in this browser. Please use Chrome or Safari over HTTPS.");
         return;
     }
-    if (isListening) {
+    if (isListening && !forceStartForHF) {
         recognition.stop();
-    } else {
-        recognition.lang = state.isSwapped ? 'en-US' : 'pl-PL';
-        recognition.start();
+    } else if (!isListening || forceStartForHF) {
+        try {
+            recognition.stop();
+        } catch (e) { }
+
+        recognition.continuous = hfActive; // Use continuous mode for HF
+
+        // Listen to Polish by default for HF commands to catch "dalej", "powtórz" etc., but it often figures it out anyway
+        recognition.lang = state.isSwapped && !hfActive ? 'en-US' : 'pl-PL';
+
+        try {
+            recognition.start();
+        } catch (e) { }
     }
 }
 

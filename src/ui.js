@@ -935,6 +935,9 @@ export async function openHandsFree() {
     document.getElementById('hf-overlay').style.display = 'flex';
     document.getElementById('hf-level-indicator').innerText = document.getElementById('lvl-current').innerText;
 
+    // Start background microphone listening
+    toggleMic(true);
+
     runHandsFreeLoop();
 }
 
@@ -944,8 +947,34 @@ export function closeHandsFree() {
     window.speechSynthesis.cancel();
     document.getElementById('hf-overlay').style.display = 'none';
 
+    // Stop microphone
+    if (isListening) toggleMic();
+
     if (document.getElementById('tab-learning').classList.contains('active')) {
         startNewRound();
+    }
+}
+
+export function handleHandsFreeCommand(transcript) {
+    if (!hfActive) return;
+    console.log("HF COMMAND HEARD: ", transcript);
+
+    if (transcript.includes("stop") || transcript.includes("pauza") || transcript.includes("zatrzymaj")) {
+        if (!hfIsPaused) togglePlayPauseHF();
+    } else if (transcript.includes("play") || transcript.includes("graj") || transcript.includes("start") || transcript.includes("resume")) {
+        if (hfIsPaused) togglePlayPauseHF();
+    } else if (transcript.includes("next") || transcript.includes("dalej") || transcript.includes("następny")) {
+        skipPhraseHF(1);
+    } else if (transcript.includes("back") || transcript.includes("wstecz") || transcript.includes("poprzedni")) {
+        skipPhraseHF(-1);
+    } else if (transcript.includes("repeat") || transcript.includes("powtórz") || transcript.includes("jeszcze raz")) {
+        // If we are at the end-of-level prompt, handle this specially. Otherwise, repeat current.
+        if (hfIndex >= hfPhrases.length) {
+            hfIndex = 0;
+            runHandsFreeLoop();
+        } else {
+            skipPhraseHF(0);
+        }
     }
 }
 
@@ -962,15 +991,26 @@ export function togglePlayPauseHF() {
     }
 }
 
-export function skipPhraseHF() {
+export function skipPhraseHF(offset = 1) {
     hfAbort = true;
     setTimeout(() => {
         hfAbort = false;
-        hfIndex++;
-        runHandsFreeLoop();
+        hfIndex += offset;
+        if (hfIndex < 0) hfIndex = 0;
+
+        // Check if we skipped out of bounds
+        if (hfIndex >= hfPhrases.length) {
+            runHandsFreeLoop();
+        } else if (!hfIsPaused) {
+            runHandsFreeLoop();
+        } else {
+            // Unpause and run
+            togglePlayPauseHF();
+        }
     }, 100);
 }
 
+export let hfAwaitingResponse = false;
 export async function runHandsFreeLoop() {
     hfAbort = false;
     while (hfActive && !hfIsPaused && hfIndex < hfPhrases.length) {
@@ -1006,9 +1046,56 @@ export async function runHandsFreeLoop() {
         hfIndex++;
     }
 
-    if (hfIndex >= hfPhrases.length && !hfIsPaused && !hfAbort) {
+    if (hfIndex >= hfPhrases.length && !hfIsPaused && !hfAbort && !hfAwaitingResponse) {
+        hfAwaitingResponse = true;
         playSuccess();
-        closeHandsFree();
+
+        // Wait briefly for sound to play
+        await sleep(1000);
+
+        const lang = state.uiLang === 'pl' ? 'pl-PL' : 'en-US';
+        const msg = state.uiLang === 'pl'
+            ? "Poziom ukończony. Powtórzyć, czy następny poziom? Masz 5 sekund."
+            : "Level complete. Repeat or next level? You have 5 seconds.";
+
+        await speakAsync(msg, 1.0, lang);
+
+        // Wait for max 5 seconds for handleHandsFreeCommand to intercept a "repeat"
+        let waited = 0;
+        while (waited < 50 && hfAwaitingResponse && hfActive && !hfIsPaused) {
+            // If handlingCommand reset hfIndex to 0 (repeat case), break wait
+            if (hfIndex === 0) {
+                hfAwaitingResponse = false;
+                return;
+            }
+            await sleep(100);
+            waited++;
+        }
+
+        // If still waiting after 5s without pausing/aborting, auto-advance
+        if (hfAwaitingResponse && hfActive && !hfIsPaused && !hfAbort) {
+            hfAwaitingResponse = false;
+
+            // Move to next logical level (excluding custom/R for simplicity out of box, just find next numeric)
+            const currentIndex = state.levelList.findIndex(l => l.id === state.currentLevel);
+            let nextValidLevel = null;
+
+            if (currentIndex >= 0 && currentIndex < state.levelList.length - 1) {
+                nextValidLevel = state.levelList[currentIndex + 1].id;
+            }
+
+            if (nextValidLevel && nextValidLevel !== "R" && nextValidLevel !== "C") {
+                let loadingMsg = state.uiLang === 'pl' ? "Wczytuję następny poziom." : "Loading next level.";
+                await speakAsync(loadingMsg, 1.0, lang);
+                await selectLevel(nextValidLevel);
+                // Handled safely by openHandsFree which resets everything
+                openHandsFree();
+            } else {
+                let doneMsg = state.uiLang === 'pl' ? "Koniec poziomów." : "End of levels.";
+                await speakAsync(doneMsg, 1.0, lang);
+                closeHandsFree();
+            }
+        }
     }
 }
 
