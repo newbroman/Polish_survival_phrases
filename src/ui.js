@@ -935,9 +935,6 @@ export async function openHandsFree() {
     document.getElementById('hf-overlay').style.display = 'flex';
     document.getElementById('hf-level-indicator').innerText = document.getElementById('lvl-current').innerText;
 
-    // Start background microphone listening
-    toggleMic(true);
-
     runHandsFreeLoop();
 }
 
@@ -947,7 +944,7 @@ export function closeHandsFree() {
     window.speechSynthesis.cancel();
     document.getElementById('hf-overlay').style.display = 'none';
 
-    // Stop microphone
+    // Stop microphone if it was listening at the end of level
     if (isListening) toggleMic();
 
     if (document.getElementById('tab-learning').classList.contains('active')) {
@@ -956,25 +953,26 @@ export function closeHandsFree() {
 }
 
 export function handleHandsFreeCommand(transcript) {
-    if (!hfActive) return;
+    if (!hfActive || !hfAwaitingResponse) return;
     console.log("HF COMMAND HEARD: ", transcript);
 
-    if (transcript.includes("stop") || transcript.includes("pauza") || transcript.includes("zatrzymaj")) {
-        if (!hfIsPaused) togglePlayPauseHF();
-    } else if (transcript.includes("play") || transcript.includes("graj") || transcript.includes("start") || transcript.includes("resume")) {
-        if (hfIsPaused) togglePlayPauseHF();
+    if (transcript.includes("stop") || transcript.includes("koniec") || transcript.includes("zatrzymaj")) {
+        // Stop playing
+        hfAwaitingResponse = false;
+        closeHandsFree();
+    } else if (transcript.includes("level 1") || transcript.includes("start") || transcript.includes("początek") || transcript.includes("poziom 1") || transcript.includes("jeden")) {
+        // Back to level 1
+        hfAwaitingResponse = false;
+        selectLevel("1");
+        openHandsFree();
     } else if (transcript.includes("next") || transcript.includes("dalej") || transcript.includes("następny")) {
-        skipPhraseHF(1);
-    } else if (transcript.includes("back") || transcript.includes("wstecz") || transcript.includes("poprzedni")) {
-        skipPhraseHF(-1);
+        // Advance to next phrase instantly (handled in the loop implicitly by breaking the wait if we set an index state, but here we can just set a flag to break wait)
+        hfAwaitingResponse = false;
     } else if (transcript.includes("repeat") || transcript.includes("powtórz") || transcript.includes("jeszcze raz")) {
-        // If we are at the end-of-level prompt, handle this specially. Otherwise, repeat current.
-        if (hfIndex >= hfPhrases.length) {
-            hfIndex = 0;
-            runHandsFreeLoop();
-        } else {
-            skipPhraseHF(0);
-        }
+        // Repeat current
+        hfAwaitingResponse = false;
+        hfIndex = 0;
+        runHandsFreeLoop();
     }
 }
 
@@ -1055,24 +1053,25 @@ export async function runHandsFreeLoop() {
 
         const lang = state.uiLang === 'pl' ? 'pl-PL' : 'en-US';
         const msg = state.uiLang === 'pl'
-            ? "Poziom ukończony. Powtórzyć, czy następny poziom? Masz 5 sekund."
-            : "Level complete. Repeat or next level? You have 5 seconds.";
+            ? "Poziom ukończony. Powtórzyć, następny, poziom pierwszy, czy stop?"
+            : "Level complete. Repeat, next, level 1, or stop?";
 
         await speakAsync(msg, 1.0, lang);
 
-        // Wait for max 5 seconds for handleHandsFreeCommand to intercept a "repeat"
+        // START listening for the answer
+        toggleMic(true);
+
+        // Wait for max 7 seconds for handleHandsFreeCommand to intercept a choice
         let waited = 0;
-        while (waited < 50 && hfAwaitingResponse && hfActive && !hfIsPaused) {
-            // If handlingCommand reset hfIndex to 0 (repeat case), break wait
-            if (hfIndex === 0) {
-                hfAwaitingResponse = false;
-                return;
-            }
+        while (waited < 70 && hfAwaitingResponse && hfActive && !hfIsPaused) {
             await sleep(100);
             waited++;
         }
 
-        // If still waiting after 5s without pausing/aborting, auto-advance
+        // Stop listening for answers
+        if (isListening) toggleMic();
+
+        // If still waiting after 7s without pausing/aborting, auto-advance
         if (hfAwaitingResponse && hfActive && !hfIsPaused && !hfAbort) {
             hfAwaitingResponse = false;
 
