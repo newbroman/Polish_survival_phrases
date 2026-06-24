@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v28.0</title>
+    <title>Polish Phrase Master v29.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -371,11 +371,12 @@
 
         .grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
             gap: 8px;
             width: 100%;
             max-width: 380px;
-            margin: 0 auto;
+            margin: auto 0;
         }
 
         .grid.lvl0 {
@@ -3955,6 +3956,10 @@
                 tile.className = 'tile';
 
                 if (!p) {
+                    tile.style.background = 'transparent';
+                    tile.style.boxShadow = 'none';
+                    tile.style.cursor = 'default';
+                    area.appendChild(tile);
                     return;
                 }
 
