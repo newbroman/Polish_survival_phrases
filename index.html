@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v35.0</title>
+    <title>Polish Phrase Master v36.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -2904,11 +2904,24 @@
         function fb() { return document.getElementById('feedback'); }
 
         // Returns the text the learner is expected to SAY (for the recording prompt)
+        // True when the user is expected to SPEAK Polish (pronunciation practice on
+        // Study/Phrases, or a quiz whose answer tiles are Polish). Only the swapped
+        // quiz (English tiles) expects English.
+        function sayingPolish() {
+            if (voicePracticeMode) return true;
+            const studyEl = document.getElementById('tab-study');
+            if (studyEl && studyEl.classList.contains('active')) return true;
+            return !isSwapped;
+        }
+
         function expectedSpoken() {
             if (!currentTarget) return '';
-            if (isSwapped) return currentTarget.en || '';
-            if (currentLevel === "0") return currentTarget.word || currentTarget.pl || '';
-            return (typeof getGenderText === 'function' ? getGenderText(currentTarget) : currentTarget.pl) || '';
+            if (sayingPolish()) {
+                return currentLevel === "0"
+                    ? (currentTarget.word || currentTarget.pl || '')
+                    : ((typeof getGenderText === 'function' ? getGenderText(currentTarget) : currentTarget.pl) || '');
+            }
+            return currentTarget.en || '';
         }
 
         function showSayPrompt() {
@@ -2975,7 +2988,7 @@
             const form = new FormData();
             form.append('file', blob, 'speech.webm');
             form.append('model', getOpenAIModel());
-            form.append('language', isSwapped ? 'en' : 'pl');
+            form.append('language', sayingPolish() ? 'pl' : 'en');
             form.append('response_format', 'json');
             try {
                 const res = await fetch('https://api.openai.com/v1/audio/transcriptions', {
@@ -3221,7 +3234,7 @@
         function startBrowserListen() {
             if (isListening) return;
             lastVoiceBlob = null; // Web Speech gives no audio to replay
-            recognition.lang = isSwapped ? 'en-US' : 'pl-PL';
+            recognition.lang = sayingPolish() ? 'pl-PL' : 'en-US';
             try { recognition.start(); } catch (err) { }
             showSayPrompt();
         }
@@ -3332,7 +3345,7 @@
                 match = true;
             }
 
-            if (!isSwapped && currentTarget.variants) {
+            if (sayingPolish() && currentTarget.variants) {
                 if (fuzzyEqual(transcript, currentTarget.variants.m) || fuzzyEqual(transcript, currentTarget.variants.f)) {
                     match = true;
                 }
@@ -3345,7 +3358,7 @@
             if (sc.percent >= 80) match = true;
 
             // Optional AI pronunciation coaching (only when using OpenAI + enabled)
-            if (getOpenAIKey() && tipsEnabled() && !isSwapped) {
+            if (getOpenAIKey() && tipsEnabled() && sayingPolish()) {
                 maybeGivePronTip(transcript, expectedSpoken(), match);
             }
 
