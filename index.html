@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v30.0</title>
+    <title>Polish Phrase Master v31.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -2458,6 +2458,19 @@
             return p.pl;
         }
 
+        // Put spaces around "/" in joined gender variants (e.g. "Chciałbym/Chciałabym"
+        // → "Chciałbym / Chciałabym") so they display and speak as separate words.
+        function spaceSlash(t) {
+            return (typeof t === 'string') ? t.replace(/\s*\/\s*/g, ' / ') : t;
+        }
+
+        function normalizePhrases(data) {
+            if (data && Array.isArray(data.phrases)) {
+                data.phrases.forEach(p => { if (p && typeof p.pl === 'string') p.pl = spaceSlash(p.pl); });
+            }
+            return data;
+        }
+
         // ==========================================
         // STUDY MODE (FLASHCARDS)
         // ==========================================
@@ -2628,6 +2641,7 @@
         function speak(t, rate = 1.0, onEndCallback = null) {
             initAudioContext();
             window.speechSynthesis.cancel();
+            t = (typeof t === 'string') ? t.replace(/\s*\/\s*/g, ', ') : t;
             const m = new SpeechSynthesisUtterance(t);
             if (plVoice) m.voice = plVoice;
             m.lang = 'pl-PL';
@@ -2921,7 +2935,35 @@
             return cleanStr(s).split(' ').filter(Boolean);
         }
 
+        // "Chciałbym / Chciałabym zapłacić" → ["Chciałbym zapłacić", "Chciałabym zapłacić"]
+        function targetAlternatives(target) {
+            const toks = (target || '').trim().split(/\s+/);
+            let alts = [''];
+            for (let i = 0; i < toks.length; i++) {
+                if (toks[i] === '/') continue;
+                if (toks[i + 1] === '/' && toks[i + 2]) {
+                    const left = toks[i], right = toks[i + 2];
+                    const next = [];
+                    for (const a of alts) { next.push((a + ' ' + left).trim()); next.push((a + ' ' + right).trim()); }
+                    alts = next.slice(0, 16);
+                    i += 2;
+                } else {
+                    alts = alts.map(a => (a + ' ' + toks[i]).trim());
+                }
+            }
+            return alts.filter(Boolean).length ? alts.filter(Boolean) : [target];
+        }
+
         function scorePronunciation(heard, target) {
+            // Accept either gender form when the phrase offers a choice
+            if (target && target.includes('/')) {
+                let best = null;
+                for (const alt of targetAlternatives(target)) {
+                    const r = scorePronunciation(heard, alt);
+                    if (!best || r.percent > best.percent) best = r;
+                }
+                if (best) return best;
+            }
             const rawT = (target || '').trim().split(/\s+/);
             const dispT = [], normT = [];
             rawT.forEach(w => { const c = cleanStr(w); if (c) { dispT.push(w); normT.push(c); } });
@@ -3263,6 +3305,7 @@
                     const r = await fetch(`phrases_${major}.json`, { cache: 'no-store' });
                     if (r.ok) {
                         const data = await r.json();
+                        normalizePhrases(data);
                         levelList.push({ id: major.toString(), desc: data.description || `Level ${major}`, data: data });
                         majorFound = true;
                         consecutiveEmptyMajors = 0;
@@ -3281,6 +3324,7 @@
                             const rMinor = await fetch(`phrases_${minorId}.json`, { cache: 'no-store' });
                             if (rMinor.ok) {
                                 const dataMinor = await rMinor.json();
+                                normalizePhrases(dataMinor);
                                 levelList.push({ id: minorId, desc: dataMinor.description || `Level ${minorId}`, data: dataMinor });
                                 consecutiveEmptyMinors = 0;
                             } else {
@@ -3295,6 +3339,7 @@
                 if (consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY_MAJORS) break;
             }
 
+            normalizePhrases(customPhrases);
             levelList.push({ id: "C", desc: customPhrases.description, data: customPhrases });
             cacheAllPhrases();
 
@@ -4342,7 +4387,7 @@
                     return;
                 }
                 initAudioContext();
-                const u = new SpeechSynthesisUtterance(text);
+                const u = new SpeechSynthesisUtterance((typeof text === 'string') ? text.replace(/\s*\/\s*/g, ', ') : text);
                 u.lang = lang;
                 u.rate = rate;
                 u.onend = () => resolve();
