@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v34.0</title>
+    <title>Polish Phrase Master v35.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -356,6 +356,55 @@
             color: var(--pol-red);
             background: rgba(220, 20, 60, 0.07);
         }
+
+        /* ===== Redesigned header: menu · level · mode ===== */
+        .hdr-btn {
+            width: 48px; flex-shrink: 0; background: none; border: none; border-right: 1px solid #ddd;
+            font-size: 1.35rem; display: flex; align-items: center; justify-content: center; gap: 2px;
+            cursor: pointer; color: var(--text); position: relative;
+        }
+        .hdr-btn .vb-dot { position: static; width: 8px; height: 8px; margin-left: 1px; }
+
+        .hdr-level {
+            flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px;
+            background: none; border: none; padding: 8px 10px; font-size: 0.95rem; font-weight: bold;
+            color: var(--text); cursor: pointer; overflow: hidden;
+        }
+        #hdr-level-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+        .hdr-caret { color: #999; font-size: 0.75rem; flex-shrink: 0; }
+        .hdr-level .hdr-caret { margin-left: auto; }
+
+        .hdr-mode {
+            flex-shrink: 0; display: flex; align-items: center; gap: 4px; background: none;
+            border: none; border-left: 1px solid #ddd; padding: 8px 12px; font-size: 0.9rem;
+            font-weight: bold; color: var(--text); cursor: pointer;
+        }
+
+        .hdr-dropdown {
+            position: absolute; top: 100%; z-index: 4000; background: var(--card);
+            border: 1px solid #ccc; border-radius: 0 0 12px 12px; box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+            overflow: hidden; min-width: 160px; margin-top: -1px;
+        }
+        #mode-dropdown { right: 4px; }
+        #app-menu { left: 4px; min-width: 210px; }
+
+        .hdr-dropdown .tab, .menu-row {
+            display: flex; align-items: center; gap: 10px; padding: 13px 16px; cursor: pointer;
+            border-bottom: 1px solid #eee; white-space: nowrap; flex: none; text-align: left;
+            opacity: 1; font-size: 0.95rem;
+        }
+        .hdr-dropdown .tab { font-weight: bold; }
+        .hdr-dropdown .tab:last-child, .app-menu .menu-row:last-child { border-bottom: none; }
+        .hdr-dropdown .tab.active {
+            background: var(--pol-red); color: #fff; opacity: 1; font-size: 0.95rem;
+            border-bottom: 1px solid #eee;
+        }
+        .hdr-dropdown .tab .mr-ic, .menu-row .mn-ic { font-size: 1.1rem; width: 22px; text-align: center; flex-shrink: 0; }
+        .menu-row-txt { display: flex; flex-direction: column; line-height: 1.25; }
+        .menu-row-txt b { font-weight: bold; font-size: 0.95rem; }
+        .menu-row-txt span { font-size: 0.76rem; color: #888; }
+
+        #hdr-scrim { position: fixed; inset: 0; z-index: 3900; background: transparent; }
 
         /* MAIN CONTENT AREA & GRIDS */
         .map-section {
@@ -1701,18 +1750,16 @@
             <!-- 1: The header -->
             <div class="ob-step" data-step="1">
                 <h2>The top bar</h2>
-                <p>These sit at the top on every page:</p>
-                <div class="ob-feature"><span class="ic">🎤</span><span class="tx"><b>Voice badge</b> — shows if speech is on; tap to open voice settings.</span></div>
-                <div class="ob-feature"><span class="ic">❓</span><span class="tx"><b>Help</b> — quick reference for scoring, timers and modes.</span></div>
-                <div class="ob-feature"><span class="ic">📚</span><span class="tx"><b>Levels</b> — choose what to study &amp; search/translate (next page).</span></div>
-                <div class="ob-feature"><span class="ic">⚙️</span><span class="tx"><b>Settings</b> — voice engine, language toggle, backup &amp; this tour.</span></div>
-                <div class="ob-feature"><span class="ic">🗂️</span><span class="tx"><b>STUDY · PRACTICE · PHRASES</b> tabs switch the three pages.</span></div>
+                <p>Three controls sit at the top on every page:</p>
+                <div class="ob-feature"><span class="ic">☰</span><span class="tx"><b>Menu</b> — Help, Settings and Voice setup. The little dot shows voice status (green = ready).</span></div>
+                <div class="ob-feature"><span class="ic">📚</span><span class="tx"><b>Level</b> (centre) — shows your current level; tap to change it, search &amp; translate (next page).</span></div>
+                <div class="ob-feature"><span class="ic">📖</span><span class="tx"><b>Mode</b> (right) — tap to switch between <b>Study</b>, <b>Practice</b> and <b>Phrases</b>.</span></div>
             </div>
 
             <!-- 2: Levels button -->
             <div class="ob-step" data-step="2">
                 <h2>📚 Levels &amp; Dictionary</h2>
-                <p>Tap <b>📚</b> (top-right) to open this panel — the heart of the app:</p>
+                <p>Tap the <b>level name</b> in the middle of the top bar to open this panel — the heart of the app:</p>
                 <div class="ob-feature"><span class="ic">🎚️</span><span class="tx"><b>Choose a level</b> from the dropdown. Start at <b>Level 0</b> (the alphabet) and climb.</span></div>
                 <div class="ob-feature"><span class="ic">🔢</span><span class="tx">Levels run 0, 1, 2… each a themed set. <b>Level C</b> is your personal Sandbox.</span></div>
                 <div class="ob-feature"><span class="ic">🔍</span><span class="tx"><b>Search</b> (English or Polish) finds any phrase — or translates a new one into your Sandbox.</span></div>
@@ -2045,29 +2092,49 @@
     </div>
 
     <div class="navigation-row"
-        style="display: flex; align-items: stretch; justify-content: center; width: 100%; border-bottom: 2px solid #ddd; background: var(--card);">
-        <button class="nav-icon-btn voice-badge" id="voice-badge" onclick="toggleSettings()" title="Voice setup"
-            style="width: 40px; flex-shrink: 0; background: none; border: none; border-right: 1px solid #ddd; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">🎤<span class="vb-dot off" id="vb-dot"></span></button>
-        <button class="nav-icon-btn" id="main-help-btn" onclick="toggleHelp()"
-            style="width: 40px; flex-shrink: 0; background: none; border: none; border-right: 1px solid #ddd; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">❓</button>
+        style="position: relative; display: flex; align-items: stretch; justify-content: center; width: 100%; border-bottom: 2px solid #ddd; background: var(--card);">
 
-        <div class="mode-tabs" style="border-bottom: none; flex: 1; display: flex;">
-            <div id="tab-study" class="tab" onclick="switchMode('study')" style="flex: 1;">
-                <span id="lbl-tab-study">STUDY</span>
+        <button class="hdr-btn" id="menu-btn" onclick="toggleAppMenu(event)" title="Menu" aria-label="Menu">
+            ☰<span class="vb-dot off" id="vb-dot"></span>
+        </button>
+
+        <button class="hdr-level" id="hdr-level" onclick="toggleLearn()" title="Level · search · dictionary">
+            📚 <span id="hdr-level-name">Level 0</span> <span class="hdr-caret">▾</span>
+        </button>
+
+        <button class="hdr-mode" id="mode-pill" onclick="toggleModeDropdown(event)" title="Switch mode" aria-haspopup="true">
+            <span id="mode-pill-icon">📖</span> <span id="mode-pill-label">Study</span> <span class="hdr-caret">▾</span>
+        </button>
+
+        <div id="mode-dropdown" class="hdr-dropdown" style="display: none;">
+            <div id="tab-study" class="tab" onclick="switchMode('study')">
+                <span class="mr-ic">📖</span> <span id="lbl-tab-study">STUDY</span>
             </div>
-            <div id="tab-learning" class="tab" onclick="switchMode('learning')" style="flex: 1;">
-                <span id="lbl-tab-practice">PRACTICE</span> <span id="learning-count"></span>
+            <div id="tab-learning" class="tab" onclick="switchMode('learning')">
+                <span class="mr-ic">⚡</span> <span id="lbl-tab-practice">PRACTICE</span> <span id="learning-count"></span>
             </div>
-            <div id="tab-mastered" class="tab" onclick="switchMode('mastered')" style="flex: 1;">
-                <span id="lbl-tab-banked">PHRASES</span> <span id="banked-count"></span>
+            <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">
+                <span class="mr-ic">🗂️</span> <span id="lbl-tab-banked">PHRASES</span> <span id="banked-count"></span>
             </div>
         </div>
 
-        <button class="nav-icon-btn" id="btn-learn" onclick="toggleLearn()" title="Levels & dictionary"
-            style="width: 40px; flex-shrink: 0; background: none; border: none; border-left: 1px solid #ddd; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">📚</button>
-        <button class="nav-icon-btn" onclick="toggleSettings()"
-            style="width: 40px; flex-shrink: 0; background: none; border: none; border-left: 1px solid #ddd; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">⚙️</button>
+        <div id="app-menu" class="hdr-dropdown app-menu" style="display: none;">
+            <div class="menu-row" onclick="closeHeaderMenus(); toggleSettings();">
+                <span class="mn-ic">🎤</span>
+                <div class="menu-row-txt"><b>Voice</b><span id="menu-voice-status">—</span></div>
+            </div>
+            <div class="menu-row" onclick="closeHeaderMenus(); toggleHelp();">
+                <span class="mn-ic">❓</span>
+                <div class="menu-row-txt"><b>Help &amp; guide</b></div>
+            </div>
+            <div class="menu-row" onclick="closeHeaderMenus(); toggleSettings();">
+                <span class="mn-ic">⚙️</span>
+                <div class="menu-row-txt"><b>Settings</b></div>
+            </div>
+        </div>
     </div>
+
+    <div id="hdr-scrim" onclick="closeHeaderMenus()" style="display: none;"></div>
 
     <div id="tour-banner" onclick="restartOnboarding(0)">
         <span style="font-size:1.1rem;">👋</span>
@@ -2388,6 +2455,8 @@
                 let repeats = userData.levelCompletions[currentLevel] || 0;
                 let badge = repeats > 0 ? ` <span style="color:var(--pol-red);font-size:0.8rem;">🔄x${repeats}</span>` : '';
                 lvlElement.innerHTML = `<span>Lvl ${currentLevel}: ${desc}${badge}</span>`;
+                const hdrLvl = document.getElementById('hdr-level-name');
+                if (hdrLvl) hdrLvl.innerText = currentLevel === "C" ? 'Sandbox' : `Lvl ${currentLevel}: ${desc}`;
             }
         }
 
@@ -2726,12 +2795,16 @@
 
             const sel = document.getElementById('set-model'); if (sel) sel.value = getOpenAIModel();
             const ki = document.getElementById('set-key-input'); if (ki && hasKey) ki.placeholder = 'Key saved (hidden) — paste to replace';
-            // Header voice badge dot + title
+            // Header mic-status dot (on the ☰ menu button) + menu voice label
             const dot = document.getElementById('vb-dot');
-            const badge = document.getElementById('voice-badge');
+            const badge = document.getElementById('menu-btn');
             if (dot) {
                 dot.className = 'vb-dot ' + (usingOpenAI ? 'ai' : (recognition ? 'basic' : 'off'));
-                if (badge) badge.title = usingOpenAI ? 'Voice: OpenAI (accurate)' : (recognition ? 'Voice: browser (fast) — tap for settings' : 'Voice off — tap to set up');
+                if (badge) badge.title = usingOpenAI ? 'Menu · Voice: OpenAI (accurate)' : (recognition ? 'Menu · Voice: browser (fast)' : 'Menu · Voice off');
+            }
+            const mvs = document.getElementById('menu-voice-status');
+            if (mvs) {
+                mvs.innerText = usingOpenAI ? 'OpenAI · ready' : (recognition ? 'Browser · ready' : 'Off — tap to set up');
             }
             // Tips toggle reflects stored pref
             const tipBtn = document.getElementById('lbl-pron-tips');
@@ -4029,10 +4102,44 @@
             // Deprecated: Brand Header and Auto-hide removed in V17 UI Redesign
         }
 
+        const MODE_META = { study: ['📖', 'Study'], learning: ['⚡', 'Practice'], mastered: ['🗂️', 'Phrases'] };
+        function updateModePill(m) {
+            let mode = m;
+            if (!mode) {
+                if (document.getElementById('tab-learning').classList.contains('active')) mode = 'learning';
+                else if (document.getElementById('tab-mastered').classList.contains('active')) mode = 'mastered';
+                else mode = 'study';
+            }
+            const meta = MODE_META[mode] || MODE_META.study;
+            const ic = document.getElementById('mode-pill-icon'); if (ic) ic.innerText = meta[0];
+            const lb = document.getElementById('mode-pill-label'); if (lb) lb.innerText = meta[1];
+        }
+        function closeHeaderMenus() {
+            const md = document.getElementById('mode-dropdown'); if (md) md.style.display = 'none';
+            const am = document.getElementById('app-menu'); if (am) am.style.display = 'none';
+            const sc = document.getElementById('hdr-scrim'); if (sc) sc.style.display = 'none';
+        }
+        function toggleModeDropdown(e) {
+            if (e) e.stopPropagation();
+            const d = document.getElementById('mode-dropdown');
+            const isOpen = d.style.display === 'block';
+            closeHeaderMenus();
+            if (!isOpen) { d.style.display = 'block'; document.getElementById('hdr-scrim').style.display = 'block'; }
+        }
+        function toggleAppMenu(e) {
+            if (e) e.stopPropagation();
+            const d = document.getElementById('app-menu');
+            const isOpen = d.style.display === 'block';
+            closeHeaderMenus();
+            if (!isOpen) { d.style.display = 'block'; document.getElementById('hdr-scrim').style.display = 'block'; }
+        }
+
         function switchMode(m) {
             showMobileHeaderTemp();
 
             let tabEl = document.getElementById('tab-' + m);
+            closeHeaderMenus();
+            updateModePill(m);
             if (tabEl && tabEl.classList.contains('active')) return;
 
             hidePronScore();
