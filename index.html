@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v37.0</title>
+    <title>Polish Phrase Master v38.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -1952,7 +1952,7 @@
                 </details>
 
                 <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master
-                    v17.0</div>
+                    <span id="app-version">v38.0</span></div>
             </div>
         </div>
     </div>
@@ -4595,7 +4595,16 @@
         function isVoiceStep() { return obStep === voiceStepIndex(); }
 
         function maybeShowOnboarding() {
-            if (!localStorage.getItem('pl_onboarded')) restartOnboarding(0);
+            // Reflect the real version in the help footer (single source: the title)
+            const av = document.getElementById('app-version');
+            if (av) { const m = (document.title || '').match(/v[\d.]+/); if (m) av.innerText = m[0]; }
+
+            // Show the tour on first-ever use, AND on the first launch as an installed app
+            const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+            const firstEver = !localStorage.getItem('pl_onboarded');
+            const firstInApp = standalone && !localStorage.getItem('pl_onboarded_pwa');
+            if (standalone) localStorage.setItem('pl_onboarded_pwa', '1');
+            if (firstEver || firstInApp) restartOnboarding(0);
         }
 
         function obBuildDots() {
