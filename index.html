@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v31.0</title>
+    <title>Polish Phrase Master v34.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -500,7 +500,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 20px;
+            padding: 14px 16px 150px;
             box-sizing: border-box;
             flex-grow: 1;
         }
@@ -511,7 +511,7 @@
             border-radius: 16px;
             width: 100%;
             max-width: 350px;
-            padding: 40px 20px;
+            padding: 22px 18px;
             text-align: center;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -523,7 +523,7 @@
             font-size: 2rem;
             font-weight: 900;
             color: var(--pol-red);
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             word-wrap: break-word;
             line-height: 1.1;
         }
@@ -531,7 +531,7 @@
         .fc-en {
             font-size: 1.2rem;
             color: #888;
-            margin-bottom: 30px;
+            margin-bottom: 16px;
             font-weight: bold;
         }
 
@@ -561,7 +561,7 @@
             justify-content: space-between;
             width: 100%;
             max-width: 350px;
-            margin-top: 25px;
+            margin-top: 14px;
         }
 
         .fc-btn {
@@ -1593,7 +1593,7 @@
 
         /* Study card: star | speaker+mic | bulb */
         .study-hf-btn {
-            margin-top: 18px;
+            margin-top: 12px;
             padding: 9px 20px;
             border: 2px solid var(--pol-red);
             background: var(--card);
@@ -1602,6 +1602,12 @@
             font-weight: 800;
             font-size: 0.9rem;
             cursor: pointer;
+        }
+
+        .fc-main-audio .fc-audio-btn {
+            width: 52px;
+            height: 52px;
+            font-size: 1.5rem;
         }
 
         .study-hf-btn:active { transform: translateY(1px); }
@@ -1985,6 +1991,10 @@
                     <div class="setting-row">
                         <span class="setting-label" style="font-size:0.9rem;">🎓 AI pronunciation tips</span>
                         <button class="settings-btn" style="width:auto;margin:0;padding:6px 15px;" onclick="togglePronTips()" id="lbl-pron-tips">ON</button>
+                    </div>
+                    <div class="setting-row">
+                        <span class="setting-label" style="font-size:0.9rem;">🔁 Replay my voice, then the phrase</span>
+                        <button class="settings-btn" style="width:auto;margin:0;padding:6px 15px;" onclick="toggleVoiceEcho()" id="lbl-voice-echo">ON</button>
                     </div>
                     <a class="ob-link" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener" style="font-size:0.82rem;margin-top:6px;">🔗 Get / manage your key</a>
                     <button class="settings-btn" onclick="restartOnboarding()" style="margin-top:10px;">👋 Replay intro &amp; setup</button>
@@ -2531,12 +2541,14 @@
         }
 
         function nextStudyCard() {
+            hidePronScore();
             studyIndex++;
             renderStudyCard();
             playStudyAudio();
         }
 
         function prevStudyCard() {
+            hidePronScore();
             studyIndex--;
             renderStudyCard();
             playStudyAudio();
@@ -2728,6 +2740,12 @@
                 tipBtn.innerText = on ? 'ON' : 'OFF';
                 tipBtn.style.color = on ? 'var(--success-green)' : '#888';
             }
+            const echoBtn = document.getElementById('lbl-voice-echo');
+            if (echoBtn) {
+                const on = voiceEchoEnabled();
+                echoBtn.innerText = on ? 'ON' : 'OFF';
+                echoBtn.style.color = on ? 'var(--success-green)' : '#888';
+            }
             const lbl = document.getElementById('lbl-btn-speak');
             if (lbl && !isRecording) lbl.innerText = 'Hold to speak';
         }
@@ -2735,6 +2753,12 @@
         function tipsEnabled() { return localStorage.getItem('pl_pron_tips') !== '0'; }
         function togglePronTips() {
             localStorage.setItem('pl_pron_tips', tipsEnabled() ? '0' : '1');
+            refreshVoiceStatusUI();
+        }
+
+        function voiceEchoEnabled() { return localStorage.getItem('pl_voice_echo') !== '0'; }
+        function toggleVoiceEcho() {
+            localStorage.setItem('pl_voice_echo', voiceEchoEnabled() ? '0' : '1');
             refreshVoiceStatusUI();
         }
 
@@ -2782,6 +2806,8 @@
         // ----- Whisper / OpenAI recording path -----
         let mediaRecorder = null;
         let audioChunks = [];
+        let lastVoiceBlob = null;
+        let lastVoiceUrl = null;
         let isRecording = false;
         let whisperStream = null;
         let whisperAutoStop = null;
@@ -2846,6 +2872,7 @@
                     return;
                 }
                 const blob = new Blob(audioChunks, { type: 'audio/webm' });
+                lastVoiceBlob = blob;
                 await transcribeWithOpenAI(blob);
             };
             mediaRecorder.start();
@@ -3120,16 +3147,35 @@
 
         function startBrowserListen() {
             if (isListening) return;
+            lastVoiceBlob = null; // Web Speech gives no audio to replay
             recognition.lang = isSwapped ? 'en-US' : 'pl-PL';
             try { recognition.start(); } catch (err) { }
             showSayPrompt();
+        }
+
+        // Replay the user's own recording, then the native phrase, for comparison.
+        function echoCompare(done) {
+            done = typeof done === 'function' ? done : function () { };
+            const phrase = currentTarget ? phraseSpeakText(currentTarget) : '';
+            const playPhrase = () => { phrase ? speak(phrase, 1.0, done) : done(); };
+            if (!voiceEchoEnabled()) { done(); return; }
+            if (!lastVoiceBlob) { playPhrase(); return; } // no user audio (browser engine) → just the model
+            try {
+                if (lastVoiceUrl) URL.revokeObjectURL(lastVoiceUrl);
+                lastVoiceUrl = URL.createObjectURL(lastVoiceBlob);
+                const a = new Audio(lastVoiceUrl);
+                a.onended = () => setTimeout(playPhrase, 250);
+                a.onerror = () => playPhrase();
+                a.play().catch(() => playPhrase());
+            } catch (e) { playPhrase(); }
         }
 
         function micPress(e) {
             if (e) { e.preventDefault(); }
             if (e && e.currentTarget && e.currentTarget.tagName === 'BUTTON') activeMicEl = e.currentTarget;
             hidePronTip();
-            hidePronScore();
+            // Keep the previous scorecard (notes + phonetic) visible during the next attempt;
+            // it is replaced when the new result arrives, and cleared on phrase change.
             micPressTime = Date.now();
 
             const engine = getVoiceEngine();
@@ -3234,20 +3280,29 @@
             const vpMode = voicePracticeMode; voicePracticeMode = false;
             if (vpMode) {
                 if (match) playSuccess(); else playWrongSlide();
+                if (voiceEchoEnabled()) setTimeout(() => echoCompare(), 400);
                 return;
             }
 
             // Handle Mic in Study Mode without saving points
             if (document.getElementById('tab-study').classList.contains('active')) {
-                if (match) {
+                const isMatch = match;
+                if (isMatch) {
                     document.getElementById('fc-pl').style.color = "var(--success-green)";
                     playSuccess();
-                    setTimeout(() => {
-                        document.getElementById('fc-pl').style.color = "var(--pol-red)";
-                        nextStudyCard();
-                    }, 1500);
                 } else {
                     playWrongSlide();
+                }
+                const after = () => {
+                    if (isMatch) {
+                        document.getElementById('fc-pl').style.color = "var(--pol-red)";
+                        nextStudyCard();
+                    }
+                };
+                if (voiceEchoEnabled()) {
+                    setTimeout(() => echoCompare(after), 400);
+                } else if (isMatch) {
+                    setTimeout(after, 1500);
                 }
                 return;
             }
@@ -3700,6 +3755,7 @@
 
         function startNewRound() {
             clearInterval(roundTimer);
+            hidePronScore();
             document.getElementById('timer-bar').style.width = "100%";
             document.getElementById('timer-bar').className = "";
 
@@ -3979,6 +4035,7 @@
             let tabEl = document.getElementById('tab-' + m);
             if (tabEl && tabEl.classList.contains('active')) return;
 
+            hidePronScore();
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             if (tabEl) tabEl.classList.add('active');
 
