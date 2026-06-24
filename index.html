@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v23.0</title>
+    <title>Polish Phrase Master v26.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -1284,19 +1284,35 @@
         .ob-dots {
             display: flex;
             justify-content: center;
-            gap: 7px;
+            gap: 8px;
             margin-bottom: 4px;
         }
 
         .ob-dot {
-            width: 8px;
-            height: 8px;
+            width: 9px;
+            height: 9px;
             border-radius: 50%;
             background: #ccc;
+            cursor: pointer;
             transition: background 0.2s, width 0.2s;
         }
 
         .ob-dot.active { background: var(--pol-red); width: 22px; border-radius: 5px; }
+
+        .ob-swipe-cue {
+            color: var(--pol-red);
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-top: 18px !important;
+            opacity: 0.85;
+        }
+
+        .ob-swipe-hint {
+            text-align: center;
+            font-size: 0.78rem;
+            color: #999;
+            font-weight: bold;
+        }
 
         .ob-btn {
             width: 100%;
@@ -1321,9 +1337,17 @@
 
         .ob-btn:active { opacity: 0.85; }
 
-        .ob-row { display: flex; gap: 10px; align-items: stretch; }
-        .ob-row .ob-btn { flex: 1; width: auto; min-width: 0; }
-        .ob-row .ob-btn.secondary { flex: 0 0 auto; }
+        .ob-linkrow { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+        .ob-link-btn {
+            background: none;
+            border: none;
+            color: #888;
+            font-weight: bold;
+            font-size: 0.88rem;
+            padding: 6px 4px;
+            cursor: pointer;
+        }
+        .ob-link-btn:active { opacity: 0.7; }
 
         /* Mic recording pulse (Whisper) */
         @keyframes micPulse {
@@ -1364,7 +1388,7 @@
             position: fixed;
             left: 50%;
             transform: translateX(-50%);
-            bottom: calc(78px + env(safe-area-inset-bottom));
+            bottom: calc(16px + env(safe-area-inset-bottom));
             z-index: 3500;
             max-width: 360px;
             width: calc(100% - 32px);
@@ -1389,7 +1413,7 @@
             position: fixed;
             left: 50%;
             transform: translateX(-50%);
-            bottom: calc(78px + env(safe-area-inset-bottom));
+            bottom: calc(16px + env(safe-area-inset-bottom));
             z-index: 3600;
             max-width: 380px;
             width: calc(100% - 28px);
@@ -1500,6 +1524,58 @@
             -webkit-overflow-scrolling: touch;
         }
 
+        /* Highlighted language toggle */
+        .swap-toggle {
+            background: var(--gold) !important;
+            border: 2px solid var(--pol-red) !important;
+            color: #000 !important;
+            border-radius: 16px !important;
+            font-weight: 800;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            animation: swapPulse 2.4s ease-in-out 3;
+        }
+
+        .swap-toggle .swap-dir { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.3px; }
+
+        @keyframes swapPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.45); }
+            50% { box-shadow: 0 0 0 7px rgba(220, 20, 60, 0); }
+        }
+
+        /* Per-phrase Listen/Speak buttons (Phrases tab) */
+        .ph-btns {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .ph-btn {
+            background: var(--bg);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 48px;
+            height: 38px;
+            font-size: 1.15rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            touch-action: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .ph-btn:active { transform: translateY(1px); }
+
+        /* Study card: speaker + mic side by side */
+        .fc-audio-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+        }
+
         /* Persistent tour / walk-through banner */
         #tour-banner {
             display: none;
@@ -1545,97 +1621,104 @@
 
     <!-- ===== ONBOARDING / SETUP WIZARD ===== -->
     <div id="onboarding">
-        <div class="ob-scroll">
+        <div class="ob-scroll" id="ob-scroll">
 
-            <!-- Step 1: Welcome -->
+            <!-- 0: Welcome -->
             <div class="ob-step active" data-step="0">
                 <div class="ob-flag"><div class="top"></div><div class="bot"></div></div>
                 <h1>Witaj! 🇵🇱</h1>
                 <p>Welcome to <b>Polish Phrase Master</b> — learn survival Polish through
-                    bite-sized levels, listen to native-style pronunciation, and practise speaking out loud.</p>
-                <div class="ob-feature"><span class="ic">📚</span><span class="tx"><b>Study &amp; Practice</b> — flip flashcards, then test yourself with tile quizzes.</span></div>
-                <div class="ob-feature"><span class="ic">🔊</span><span class="tx"><b>Listen</b> — tap any phrase to hear it; slow it down to catch the sounds.</span></div>
-                <div class="ob-feature"><span class="ic">🎤</span><span class="tx"><b>Speak</b> — say the phrase and get instant feedback on whether you nailed it.</span></div>
-                <div class="ob-feature"><span class="ic">🎧</span><span class="tx"><b>Hands-Free</b> — passive listening mode for the commute or the kitchen.</span></div>
+                    bite-sized levels, listen to native pronunciation, and practise speaking.</p>
+                <p class="ob-swipe-cue">👈 swipe to explore 👉</p>
             </div>
 
-            <!-- Step 2: How it works -->
+            <!-- 1: The header -->
             <div class="ob-step" data-step="1">
-                <h2>How practice works</h2>
-                <p>The app remembers what you know using spaced repetition, so phrases you find
-                    hard come back more often, and ones you've mastered fade away.</p>
-                <div class="ob-feature"><span class="ic">1️⃣</span><span class="tx"><b>STUDY</b> tab: meet new phrases as flashcards.</span></div>
-                <div class="ob-feature"><span class="ic">2️⃣</span><span class="tx"><b>PRACTICE</b> tab: answer quizzes. Three correct = mastered.</span></div>
-                <div class="ob-feature"><span class="ic">3️⃣</span><span class="tx"><b>PHRASES</b> tab: review everything you've banked.</span></div>
-                <p style="font-size:0.88rem;color:#888;">Everything is stored on your device. Nothing is uploaded except, optionally, your voice clips for transcription.</p>
+                <h2>The top bar</h2>
+                <p>These sit at the top on every page:</p>
+                <div class="ob-feature"><span class="ic">🎤</span><span class="tx"><b>Voice badge</b> — shows if speech is on; tap to open voice settings.</span></div>
+                <div class="ob-feature"><span class="ic">❓</span><span class="tx"><b>Help</b> — quick reference for scoring, timers and modes.</span></div>
+                <div class="ob-feature"><span class="ic">📚</span><span class="tx"><b>Levels</b> — choose what to study &amp; search/translate (next page).</span></div>
+                <div class="ob-feature"><span class="ic">⚙️</span><span class="tx"><b>Settings</b> — voice engine, language toggle, backup &amp; this tour.</span></div>
+                <div class="ob-feature"><span class="ic">🗂️</span><span class="tx"><b>STUDY · PRACTICE · PHRASES</b> tabs switch the three pages.</span></div>
             </div>
 
-            <!-- Step 3: Where to find levels & phrases -->
+            <!-- 2: Levels button -->
             <div class="ob-step" data-step="2">
-                <h2>📚 Where your levels &amp; phrases live</h2>
-                <p>The key thing to know: <b>tap the 📚 button in the top-right</b> to open
-                    <b>Levels &amp; Dictionary</b> — that's where you choose which level to study,
-                    and search or translate words.</p>
-                <div class="ob-feature"><span class="ic">📚</span><span class="tx"><b>📚 (top-right)</b> → pick a level from the dropdown. Start at <b>Level 0</b> (the alphabet) and work up.</span></div>
-                <div class="ob-feature"><span class="ic">🔢</span><span class="tx">Levels run 0, 1, 2… each a themed set of phrases. <b>Level C</b> is your own Sandbox of saved &amp; translated words.</span></div>
-                <div class="ob-feature"><span class="ic">🔍</span><span class="tx">The search box there finds any phrase — or translates a new one straight into your Sandbox.</span></div>
-                <div class="ob-feature"><span class="ic">⭐</span><span class="tx">Tap the ⭐ on a phrase to save it to your Sandbox for later.</span></div>
+                <h2>📚 Levels &amp; Dictionary</h2>
+                <p>Tap <b>📚</b> (top-right) to open this panel — the heart of the app:</p>
+                <div class="ob-feature"><span class="ic">🎚️</span><span class="tx"><b>Choose a level</b> from the dropdown. Start at <b>Level 0</b> (the alphabet) and climb.</span></div>
+                <div class="ob-feature"><span class="ic">🔢</span><span class="tx">Levels run 0, 1, 2… each a themed set. <b>Level C</b> is your personal Sandbox.</span></div>
+                <div class="ob-feature"><span class="ic">🔍</span><span class="tx"><b>Search</b> (English or Polish) finds any phrase — or translates a new one into your Sandbox.</span></div>
+                <div class="ob-feature"><span class="ic">📤</span><span class="tx"><b>Export Sandbox</b> saves your custom list as a file.</span></div>
             </div>
 
-            <!-- Step 4: Voice setup (OpenAI) -->
+            <!-- 3: STUDY page -->
             <div class="ob-step" data-step="3">
+                <h2>🗂️ STUDY page</h2>
+                <p>Flashcards to meet new phrases. On each card:</p>
+                <div class="ob-feature"><span class="ic">🔊</span><span class="tx"><b>Listen</b> — tap to hear it; tap again (2× / 3×) to slow it right down.</span></div>
+                <div class="ob-feature"><span class="ic">🎤</span><span class="tx"><b>Speak</b> — hold and say it; you'll get a pronunciation score.</span></div>
+                <div class="ob-feature"><span class="ic">🔄</span><span class="tx"><b>PL→EN toggle</b> (highlighted gold) flips which language shows on top.</span></div>
+                <div class="ob-feature"><span class="ic">⭐</span><span class="tx"><b>⭐ Save</b> to Sandbox &nbsp;·&nbsp; <b>💡 Hint</b> reveals grammar notes.</span></div>
+                <div class="ob-feature"><span class="ic">👈</span><span class="tx">Swipe the card (or tap ◀ ▶) to move through the deck.</span></div>
+            </div>
+
+            <!-- 4: PRACTICE page -->
+            <div class="ob-step" data-step="4">
+                <h2>🗂️ PRACTICE page</h2>
+                <p>Quiz yourself — the phrase plays, you tap the matching tile.</p>
+                <div class="ob-feature"><span class="ic">🔄</span><span class="tx"><b>PL→EN toggle</b> (highlighted): by default the prompt is <b>Polish</b> and the tiles are <b>English</b> — tap to reverse.</span></div>
+                <div class="ob-feature"><span class="ic">🔊</span><span class="tx"><b>Replay</b> the phrase (tap again to slow it).</span></div>
+                <div class="ob-feature"><span class="ic">⏸️</span><span class="tx"><b>Pause</b> the round timer when you need a break.</span></div>
+                <div class="ob-feature"><span class="ic">⭐</span><span class="tx"><b>Save</b> the current phrase to your Sandbox.</span></div>
+                <div class="ob-feature"><span class="ic">🏆</span><span class="tx">Three correct = mastered. Fast answers score more!</span></div>
+            </div>
+
+            <!-- 5: PHRASES page -->
+            <div class="ob-step" data-step="5">
+                <h2>🗂️ PHRASES page</h2>
+                <p>Browse every phrase in the level and track progress.</p>
+                <div class="ob-feature"><span class="ic">🔊</span><span class="tx">Each phrase has its own <b>Listen</b> button (tap again to slow).</span></div>
+                <div class="ob-feature"><span class="ic">🎤</span><span class="tx"><b>Hold the mic</b> on a phrase to practise it and see a score — nothing is marked.</span></div>
+                <div class="ob-feature"><span class="ic">🔢</span><span class="tx">Badges show your score; <b>Due</b> / <b>Needs Work</b> flag what to revisit.</span></div>
+            </div>
+
+            <!-- 6: Voice setup -->
+            <div class="ob-step" data-step="6">
                 <h2>🎤 Set up speaking practice</h2>
-                <p>To grade your spoken Polish reliably (in any browser), the app uses
-                    <b>OpenAI</b>'s speech-to-text. It's optional — but it's far more accurate
-                    for Polish than your browser's built-in recogniser.</p>
-
+                <p>For reliable Polish speech scoring the app can use <b>OpenAI</b>. Optional, but far more accurate than the browser for Polish.</p>
+                <div class="ob-feature"><span class="ic">🎯</span><span class="tx"><b>OpenAI</b> — best for longer/complex phrases; most accurate but a little slower.</span></div>
+                <div class="ob-feature"><span class="ic">⚡</span><span class="tx"><b>Browser</b> — faster for everyday practice. Switch in <b>Settings → Voice</b>.</span></div>
                 <div class="ob-card">
-                    <b>Get a free API key (2 minutes):</b>
+                    <b>Get a free API key (2 min):</b>
                     <ol>
-                        <li>Open the OpenAI keys page and sign in (or create a free account).</li>
-                        <li>Click <b>“Create new secret key”</b>, give it a name, and copy it.</li>
-                        <li>Paste it below. New accounts include free credit — plenty for practice.</li>
+                        <li>Open the keys page, sign in (or make a free account).</li>
+                        <li>Click <b>“Create new secret key”</b> and copy it.</li>
+                        <li>Paste below — new accounts include free credit.</li>
                     </ol>
-                    <a class="ob-link" id="ob-key-link" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">
-                        🔗 Open platform.openai.com/api-keys
-                    </a>
+                    <a class="ob-link" id="ob-key-link" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">🔗 Open platform.openai.com/api-keys</a>
                 </div>
-
                 <input type="password" class="ob-input" id="ob-key-input" placeholder="sk-..." autocomplete="off" spellcheck="false">
                 <div class="ob-status" id="ob-key-status"></div>
-
-                <div class="ob-note">
-                    🔒 Your key is stored only in this browser (localStorage) and sent directly to
-                    OpenAI when you speak — never to anyone else. Cost is roughly a fraction of a
-                    penny per phrase. You can change or remove it anytime in Settings.
-                </div>
+                <div class="ob-note">🔒 Stored only on this device, sent only to OpenAI when you speak. A fraction of a penny per phrase. Change it anytime in Settings.</div>
             </div>
 
-            <!-- Step 5: Done -->
-            <div class="ob-step" data-step="4">
+            <!-- 7: Done -->
+            <div class="ob-step" data-step="7">
                 <div style="font-size:3.5rem;margin-bottom:10px;">🎉</div>
                 <h2>You're all set</h2>
-                <p id="ob-done-msg">Tap a phrase to listen, hit <b>🎤 Speak</b> to practise, and
-                    watch your mastery grow. Powodzenia! (Good luck!)</p>
-                <div class="ob-feature"><span class="ic">📚</span><span class="tx">Remember: <b>📚 top-right</b> = choose your level. <b>⚙️</b> = settings &amp; backup.</span></div>
-                <div class="ob-feature"><span class="ic">👋</span><span class="tx">Need this tour again? Use the <b>👋 Tour</b> button on the main screen (or turn it off there).</span></div>
+                <p id="ob-done-msg">Pick a level with 📚, then study, practise and speak. Powodzenia!</p>
+                <div class="ob-feature"><span class="ic">👋</span><span class="tx">Replay this tour anytime from the <b>👋 Tour</b> bar (or turn it off there / in Settings).</span></div>
             </div>
 
         </div>
 
         <div class="ob-footer">
-            <div class="ob-dots">
-                <div class="ob-dot active"></div>
-                <div class="ob-dot"></div>
-                <div class="ob-dot"></div>
-                <div class="ob-dot"></div>
-                <div class="ob-dot"></div>
-            </div>
-            <div class="ob-row">
-                <button class="ob-btn secondary" id="ob-back" onclick="obPrev()" style="flex:0 0 auto;">Back</button>
-                <button class="ob-btn" id="ob-next" onclick="obNext()">Continue</button>
-            </div>
-            <button class="ob-btn secondary" id="ob-skip" onclick="obSkip()">Skip — set up voice later</button>
+            <div class="ob-swipe-hint" id="ob-hint">👈 swipe, or tap the dots 👉</div>
+            <div class="ob-dots" id="ob-dots"></div>
+            <button class="ob-btn" id="ob-start" onclick="finishOnboarding()" style="display:none;">Start learning →</button>
+            <button class="ob-link-btn" id="ob-skip" onclick="obSkip()" style="align-self:center;">Skip tour</button>
         </div>
     </div>
 
@@ -1817,6 +1900,10 @@
                         <span class="setting-label">Speech recognition</span>
                         <span id="set-voice-status" style="font-size:0.85rem;font-weight:bold;color:#888;">—</span>
                     </div>
+                    <div class="segmented-control" style="margin-bottom:12px;">
+                        <button class="seg-btn" id="eng-browser" onclick="setVoiceEngine('browser')">⚡ Browser<br><span style="font-weight:normal;font-size:0.72rem;">fast</span></button>
+                        <button class="seg-btn" id="eng-openai" onclick="setVoiceEngine('openai')">🎯 OpenAI<br><span style="font-weight:normal;font-size:0.72rem;">accurate</span></button>
+                    </div>
                     <input type="password" class="ob-input" id="set-key-input" placeholder="OpenAI key (sk-...)" autocomplete="off" spellcheck="false" style="font-size:0.85rem;">
                     <div style="display:flex;gap:10px;">
                         <button class="settings-btn" onclick="saveKeyFromSettings()">💾 Save Key</button>
@@ -1927,9 +2014,17 @@
                 title="Save to Sandbox">⭐</button>
             <div id="q-text" class="q-text">Ready?</div>
 
-            <button class="search-trigger-btn" onclick="toggleContentSwap()"
-                style="width:36px; height:36px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer;"
-                title="Swap Language">🔄</button>
+            <div style="display:flex; align-items:center; gap:2px;">
+                <button class="search-trigger-btn" onclick="handleSpeakerTap()"
+                    style="width:34px; height:36px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.15rem; cursor:pointer; background:transparent; border:none;"
+                    title="Listen — tap again to slow down">🔊</button>
+                <button class="search-trigger-btn" onclick="togglePauseAudio()"
+                    style="width:34px; height:36px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.15rem; cursor:pointer; background:transparent; border:none;"
+                    title="Pause / Resume"><span id="pause-icon">⏸️</span></button>
+                <button class="search-trigger-btn swap-toggle" id="swap-practice" onclick="toggleContentSwap()"
+                    style="height:36px; padding:0 8px; display:flex; align-items:center; justify-content:center; gap:3px; cursor:pointer;"
+                    title="Swap question / answer language">🔄<span class="swap-dir">PL→EN</span></button>
+            </div>
         </div>
 
         <div id="feedback" class="feedback"></div>
@@ -1949,9 +2044,9 @@
         <div id="study-view">
             <div class="flashcard" id="study-flashcard">
 
-                <button class="search-trigger-btn" onclick="toggleContentSwap()"
-                    style="position:absolute; top:15px; right:15px; width:36px; height:36px; border-radius:18px; background:var(--bg); border:1px solid #ddd; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer;"
-                    title="Swap Language">🔄</button>
+                <button class="search-trigger-btn swap-toggle" id="swap-study" onclick="toggleContentSwap()"
+                    style="position:absolute; top:15px; right:15px; height:34px; padding:0 10px; display:flex; align-items:center; justify-content:center; gap:3px; cursor:pointer;"
+                    title="Swap Language">🔄<span class="swap-dir">PL→EN</span></button>
                 <button id="fc-hint-btn" onclick="toggleStudyNotes()"
                     style="position:absolute; top:60px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; display:none; padding:0; line-height:1;"
                     title="Toggle Grammar Notes">💡</button>
@@ -1964,7 +2059,13 @@
                 <div id="fc-notes-container"
                     style="display:none; font-size:0.95rem; color:#666; margin-top:20px; line-height:1.4; text-align:center; padding-top:10px; border-top:1px dashed #ccc;">
                 </div>
-                <button class="fc-audio-btn" onclick="playStudyAudio(event)">🔊</button>
+                <div class="fc-audio-row">
+                    <button class="fc-audio-btn" type="button" onclick="playStudyAudio(event)" title="Listen — tap again to slow down">🔊</button>
+                    <button class="fc-audio-btn fc-mic-btn" type="button" title="Hold to speak"
+                        style="touch-action:none; user-select:none; -webkit-user-select:none;"
+                        onpointerdown="micPress(event)" onpointerup="micRelease(event)"
+                        onpointerleave="micRelease(event)" onpointercancel="micRelease(event)">🎤</button>
+                </div>
             </div>
             <div class="fc-controls">
                 <button class="fc-btn" onclick="prevStudyCard()">◀</button>
@@ -1977,26 +2078,7 @@
     <div id="pron-tip"></div>
     <div id="pron-score"></div>
 
-    <div class="action-footer">
-        <button class="action-btn" id="footer-listen-btn" onclick="handleSpeakerTap()"
-            style="background:var(--success-green); color:white; border-color:var(--success-green); flex: 2; padding: 0 5px;"
-            title="Listen / Slow Down">
-            <span class="action-icon">🔊</span>
-            <span id="lbl-btn-listen" style="font-size: 0.75rem;">Listen: Tap (1x) | 2 Taps (0.5x) | 3 Taps
-                (0.25x)</span>
-        </button>
-        <button class="action-btn" onclick="togglePauseAudio()" style="flex: 0.5; padding: 0;" title="Pause/Resume">
-            <span class="action-icon" id="pause-icon" style="margin:0;">⏸️</span>
-        </button>
-        <button class="action-btn" id="mic-btn"
-            style="flex: 1; touch-action: none; user-select: none; -webkit-user-select: none;"
-            onpointerdown="micPress(event)" onpointerup="micRelease(event)"
-            onpointerleave="micRelease(event)" onpointercancel="micRelease(event)">
-            <span class="action-icon">🎤</span>
-            <span id="lbl-btn-speak">Hold to speak</span>
-        </button>
-        <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
-    </div>
+    <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
 
     <script>
         // ==========================================
@@ -2085,7 +2167,7 @@
         let studyNotesVisible = true;
         let recentPhrasesQueue = [];
 
-        let isSwapped = false;
+        let isSwapped = (localStorage.getItem('pl_swapped') || '1') === '1';
         let hardMode = false;
         let correctStreak = 0;
 
@@ -2383,9 +2465,7 @@
 
         function playStudyAudio(e) {
             if (e) e.stopPropagation();
-            if (currentTarget) {
-                speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl);
-            }
+            if (currentTarget) multiTapSpeak(phraseSpeakText(currentTarget), 'study');
         }
 
         // Mobile Swipe logic for Flashcards
@@ -2521,21 +2601,45 @@
         function getOpenAIModel() { return localStorage.getItem('pl_openai_model') || 'gpt-4o-mini-transcribe'; }
         function saveOpenAIModel(m) { localStorage.setItem('pl_openai_model', m); }
 
-        function refreshVoiceStatusUI() {
-            const el = document.getElementById('set-voice-status');
-            const hasKey = !!getOpenAIKey();
-            if (el) {
-                el.innerText = hasKey ? 'OpenAI (accurate) ✓' : (recognition ? 'Browser (basic)' : 'Unavailable');
-                el.style.color = hasKey ? 'var(--success-green)' : '#888';
+        function getVoiceEngine() {
+            const stored = localStorage.getItem('pl_voice_engine');
+            if (stored === 'browser' || stored === 'openai') return stored;
+            // Default: fast browser engine when available, else OpenAI
+            return recognition ? 'browser' : 'openai';
+        }
+        function setVoiceEngine(e) {
+            localStorage.setItem('pl_voice_engine', e);
+            if (e === 'openai' && !getOpenAIKey()) {
+                const st = document.getElementById('set-voice-status');
+                if (st) { st.innerText = 'Add a key below ↓'; st.style.color = 'var(--pol-red)'; }
             }
+            refreshVoiceStatusUI();
+        }
+
+        function refreshVoiceStatusUI() {
+            const hasKey = !!getOpenAIKey();
+            const engine = getVoiceEngine();
+            const usingOpenAI = (engine === 'openai' && hasKey);
+            const el = document.getElementById('set-voice-status');
+            if (el) {
+                if (usingOpenAI) { el.innerText = 'OpenAI · accurate ✓'; el.style.color = 'var(--success-green)'; }
+                else if (engine === 'browser' && recognition) { el.innerText = 'Browser · fast ✓'; el.style.color = 'var(--success-green)'; }
+                else if (engine === 'openai' && !hasKey) { el.innerText = 'Add a key below ↓'; el.style.color = 'var(--pol-red)'; }
+                else { el.innerText = recognition ? 'Browser · fast' : 'Unavailable'; el.style.color = '#888'; }
+            }
+            // Engine segmented control active state
+            const eb = document.getElementById('eng-browser'), eo = document.getElementById('eng-openai');
+            if (eb) eb.classList.toggle('active', engine === 'browser');
+            if (eo) eo.classList.toggle('active', engine === 'openai');
+
             const sel = document.getElementById('set-model'); if (sel) sel.value = getOpenAIModel();
             const ki = document.getElementById('set-key-input'); if (ki && hasKey) ki.placeholder = 'Key saved (hidden) — paste to replace';
             // Header voice badge dot + title
             const dot = document.getElementById('vb-dot');
             const badge = document.getElementById('voice-badge');
             if (dot) {
-                dot.className = 'vb-dot ' + (hasKey ? 'ai' : (recognition ? 'basic' : 'off'));
-                if (badge) badge.title = hasKey ? 'Voice: OpenAI (accurate)' : (recognition ? 'Voice: browser (basic) — tap to upgrade' : 'Voice off — tap to set up');
+                dot.className = 'vb-dot ' + (usingOpenAI ? 'ai' : (recognition ? 'basic' : 'off'));
+                if (badge) badge.title = usingOpenAI ? 'Voice: OpenAI (accurate)' : (recognition ? 'Voice: browser (fast) — tap for settings' : 'Voice off — tap to set up');
             }
             // Tips toggle reflects stored pref
             const tipBtn = document.getElementById('lbl-pron-tips');
@@ -2573,7 +2677,7 @@
 
                 recognition.onstart = () => {
                     isListening = true;
-                    document.getElementById('mic-btn').classList.add('mic-active');
+                    if (activeMicEl) activeMicEl.classList.add('mic-active');
                     showSayPrompt();
                 };
 
@@ -2602,8 +2706,22 @@
         let whisperStream = null;
         let whisperAutoStop = null;
         let whisperDiscard = false;
+        let voicePracticeMode = false;
 
-        function micEl() { return document.getElementById('mic-btn'); }
+        // Per-phrase buttons (Phrases tab): speak with multi-tap slow; hold-to-speak to score
+        function phraseSpeak(e, p) {
+            if (e) e.stopPropagation();
+            multiTapSpeak(phraseSpeakText(p), 'ph_' + (p.pl || ''));
+        }
+        function phraseMicDown(e, p) {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
+            currentTarget = p;
+            voicePracticeMode = true;
+            micPress(e);
+        }
+
+        let activeMicEl = null;
+        function micEl() { return activeMicEl; }
         function fb() { return document.getElementById('feedback'); }
 
         // Returns the text the learner is expected to SAY (for the recording prompt)
@@ -2652,8 +2770,8 @@
             };
             mediaRecorder.start();
             isRecording = true;
-            micEl().classList.add('mic-recording');
-            document.getElementById('lbl-btn-speak').innerText = 'Listening…';
+            if (micEl()) micEl().classList.add('mic-recording');
+            const lblS = document.getElementById('lbl-btn-speak'); if (lblS) lblS.innerText = 'Listening…';
             showSayPrompt();
             // Safety auto-stop after 7s
             whisperAutoStop = setTimeout(() => { if (isRecording) stopWhisperRecording(false); }, 7000);
@@ -2663,8 +2781,8 @@
             if (whisperAutoStop) { clearTimeout(whisperAutoStop); whisperAutoStop = null; }
             whisperDiscard = !!discard;
             isRecording = false;
-            micEl().classList.remove('mic-recording');
-            document.getElementById('lbl-btn-speak').innerText = 'Hold to speak';
+            if (micEl()) micEl().classList.remove('mic-recording');
+            const lblE = document.getElementById('lbl-btn-speak'); if (lblE) lblE.innerText = 'Hold to speak';
             if (mediaRecorder && mediaRecorder.state !== 'inactive') {
                 if (!discard) { fb().innerText = "Transcribing… ⏳"; fb().style.color = "var(--wrong-blue)"; }
                 mediaRecorder.stop();
@@ -2673,7 +2791,7 @@
 
         async function transcribeWithOpenAI(blob) {
             const key = getOpenAIKey();
-            if (!key) { fb().innerText = "No OpenAI key set."; return; }
+            if (!key) { fb().innerText = "No OpenAI key set."; voicePracticeMode = false; return; }
             const form = new FormData();
             form.append('file', blob, 'speech.webm');
             form.append('model', getOpenAIModel());
@@ -2691,6 +2809,7 @@
                     if (res.status === 429) msg = "OpenAI rate/quota limit — check your account.";
                     fb().innerText = msg;
                     fb().style.color = "var(--pol-red)";
+                    voicePracticeMode = false;
                     return;
                 }
                 const data = await res.json();
@@ -2698,12 +2817,14 @@
                 if (!transcript) {
                     fb().innerText = "Didn't catch that — try again.";
                     fb().style.color = "var(--pol-red)";
+                    voicePracticeMode = false;
                     return;
                 }
                 checkSpokenAnswer(transcript);
             } catch (e) {
                 fb().innerText = "Network error reaching OpenAI.";
                 fb().style.color = "var(--pol-red)";
+                voicePracticeMode = false;
             }
         }
 
@@ -2849,27 +2970,34 @@
         let micPressTime = 0;
         const MIN_HOLD_MS = 350;
 
+        function startBrowserListen() {
+            if (isListening) return;
+            recognition.lang = isSwapped ? 'en-US' : 'pl-PL';
+            try { recognition.start(); } catch (err) { }
+            showSayPrompt();
+        }
+
         function micPress(e) {
             if (e) { e.preventDefault(); }
+            if (e && e.currentTarget && e.currentTarget.tagName === 'BUTTON') activeMicEl = e.currentTarget;
             hidePronTip();
             hidePronScore();
             micPressTime = Date.now();
-            // Preferred path: OpenAI (works in all browsers, great Polish)
-            if (getOpenAIKey() && navigator.mediaDevices && window.MediaRecorder) {
-                if (!isRecording) startWhisperRecording();
-                return;
-            }
-            // Fallback: browser Web Speech API
-            if (!recognition) {
-                if (confirm("For reliable Polish speech practice, set up free OpenAI voice recognition now?\n\n(Your browser's built-in recogniser isn't available here.)")) {
-                    restartOnboarding(voiceStepIndex());
-                }
-                return;
-            }
-            if (!isListening) {
-                recognition.lang = isSwapped ? 'en-US' : 'pl-PL';
-                try { recognition.start(); } catch (err) { }
-                showSayPrompt();
+
+            const engine = getVoiceEngine();
+            const canWhisper = getOpenAIKey() && navigator.mediaDevices && window.MediaRecorder;
+            const canBrowser = !!recognition;
+
+            // Fast path: browser engine selected and available
+            if (engine === 'browser' && canBrowser) { startBrowserListen(); return; }
+            // Accurate path: OpenAI Whisper
+            if (canWhisper) { if (!isRecording) startWhisperRecording(); return; }
+            // Fallbacks
+            if (canBrowser) { startBrowserListen(); return; }
+
+            // Nothing available → offer setup
+            if (confirm("For reliable Polish speech practice, set up free OpenAI voice recognition now?\n\n(Your browser's built-in recogniser isn't available here.)")) {
+                restartOnboarding(voiceStepIndex());
             }
         }
 
@@ -2889,8 +3017,8 @@
 
         function stopListening() {
             isListening = false;
-            document.getElementById('mic-btn').classList.remove('mic-active');
-            document.getElementById('mic-btn').classList.remove('mic-recording');
+            voicePracticeMode = false;
+            if (activeMicEl) { activeMicEl.classList.remove('mic-active'); activeMicEl.classList.remove('mic-recording'); }
             const lbl = document.getElementById('lbl-btn-speak');
             if (lbl) lbl.innerText = 'Hold to speak';
         }
@@ -2952,6 +3080,13 @@
             // Optional AI pronunciation coaching (only when using OpenAI + enabled)
             if (getOpenAIKey() && tipsEnabled() && !isSwapped) {
                 maybeGivePronTip(transcript, expectedSpoken(), match);
+            }
+
+            // Phrases-page voice: show the score only, never touch points/SRS/tiles
+            const vpMode = voicePracticeMode; voicePracticeMode = false;
+            if (vpMode) {
+                if (match) playSuccess(); else playWrongSlide();
+                return;
             }
 
             // Handle Mic in Study Mode without saving points
@@ -3387,8 +3522,15 @@
             }
         }
 
+        function updateSwapButtons() {
+            const label = isSwapped ? 'PL→EN' : 'EN→PL';
+            document.querySelectorAll('.swap-toggle .swap-dir').forEach(el => el.innerText = label);
+        }
+
         function toggleContentSwap() {
             isSwapped = !isSwapped;
+            localStorage.setItem('pl_swapped', isSwapped ? '1' : '0');
+            updateSwapButtons();
             updateMap();
             updateQuestionText();
             if (document.getElementById('tab-study').classList.contains('active')) {
@@ -3835,7 +3977,29 @@
                     }
                 }
 
-                tile.onclick = () => isPractice ? checkAnswer(p, tile) : speak(currentLevel === "0" ? p.pl + " jak " + p.word : p.pl);
+                tile.onclick = () => { if (isPractice) checkAnswer(p, tile); else multiTapSpeak(phraseSpeakText(p), 'tile_' + (p.pl || '')); };
+
+                // Phrases tab: explicit Listen + Speak (hold) buttons on each phrase
+                if (!isPractice && currentLevel !== "0") {
+                    const ctr = document.createElement('div');
+                    ctr.className = 'ph-btns';
+                    const sp = document.createElement('button');
+                    sp.className = 'ph-btn'; sp.type = 'button'; sp.innerHTML = '🔊';
+                    sp.title = 'Listen — tap again to slow down';
+                    sp.addEventListener('click', e => phraseSpeak(e, p));
+                    const mc = document.createElement('button');
+                    mc.className = 'ph-btn ph-mic'; mc.type = 'button'; mc.innerHTML = '🎤';
+                    mc.title = 'Hold to speak';
+                    mc.style.touchAction = 'none';
+                    mc.addEventListener('click', e => e.stopPropagation());
+                    mc.addEventListener('pointerdown', e => phraseMicDown(e, p));
+                    mc.addEventListener('pointerup', e => micRelease(e));
+                    mc.addEventListener('pointerleave', e => micRelease(e));
+                    mc.addEventListener('pointercancel', e => micRelease(e));
+                    ctr.appendChild(sp); ctr.appendChild(mc);
+                    tile.appendChild(ctr);
+                }
+
                 area.appendChild(tile);
             });
 
@@ -3871,21 +4035,23 @@
         let listenTapCount = 0;
         let listenTapTimeout = null;
 
+        // Generic multi-tap speak: 1 tap = 1x, 2 = 0.5x, 3+ = 0.25x. Works for any speaker.
+        let mtapKey = null, mtapCount = 0, mtapTimer = null;
+        function phraseSpeakText(p) {
+            if (!p) return '';
+            return currentLevel === "0" ? (p.pl + " jak " + (p.word || '')) : getGenderText(p);
+        }
+        function multiTapSpeak(text, key) {
+            if (!text) return;
+            if (key === mtapKey) mtapCount++; else { mtapKey = key; mtapCount = 1; }
+            const speed = mtapCount >= 3 ? 0.25 : (mtapCount === 2 ? 0.5 : 1.0);
+            speak(text, speed);
+            clearTimeout(mtapTimer);
+            mtapTimer = setTimeout(() => { mtapKey = null; mtapCount = 0; }, 600);
+        }
+
         function handleSpeakerTap() {
-            if (currentTarget) {
-                listenTapCount++;
-
-                let speed = 1.0;
-                if (listenTapCount === 2) speed = 0.5;
-                if (listenTapCount >= 3) speed = 0.25;
-
-                speak(currentLevel === "0" ? currentTarget.pl + " jak " + currentTarget.word : currentTarget.pl, speed);
-
-                clearTimeout(listenTapTimeout);
-                listenTapTimeout = setTimeout(() => {
-                    listenTapCount = 0;
-                }, 400); // 400ms window to register consecutive taps
-            }
+            if (currentTarget) multiTapSpeak(phraseSpeakText(currentTarget), 'main');
         }
 
         let isAudioPaused = false;
@@ -4086,97 +4252,117 @@
         // ONBOARDING / SETUP WIZARD
         // ==========================================
         let obStep = 0;
-        const OB_TOTAL = 5;
+        const OB_TOTAL = 8;
 
-        // The voice step is wherever the key input lives — find it by content,
-        // so adding/reordering steps never breaks the logic.
         function voiceStepIndex() {
             const steps = Array.from(document.querySelectorAll('.ob-step'));
             const i = steps.findIndex(s => s.querySelector('#ob-key-input'));
-            return i === -1 ? 3 : i;
+            return i === -1 ? 6 : i;
         }
         function isVoiceStep() { return obStep === voiceStepIndex(); }
 
         function maybeShowOnboarding() {
-            if (!localStorage.getItem('pl_onboarded')) {
-                restartOnboarding(0);
+            if (!localStorage.getItem('pl_onboarded')) restartOnboarding(0);
+        }
+
+        function obBuildDots() {
+            const wrap = document.getElementById('ob-dots');
+            if (!wrap || wrap.childElementCount === OB_TOTAL) return;
+            wrap.innerHTML = '';
+            for (let i = 0; i < OB_TOTAL; i++) {
+                const d = document.createElement('div');
+                d.className = 'ob-dot';
+                d.addEventListener('click', () => obGoto(i));
+                wrap.appendChild(d);
             }
         }
 
         function restartOnboarding(startAt = 0) {
+            obBuildDots();
             obStep = startAt;
-            // Prefill the key field if one already exists (shown masked via type=password)
             const ki = document.getElementById('ob-key-input');
             if (ki) ki.value = getOpenAIKey();
             document.getElementById('onboarding').classList.add('show');
             obRender();
         }
 
+        function saveKeyIfPresent() {
+            const ki = document.getElementById('ob-key-input');
+            const status = document.getElementById('ob-key-status');
+            if (!ki) return;
+            const raw = ki.value.trim();
+            if (!raw) return;
+            if (!raw.startsWith('sk-')) {
+                if (status) { status.className = 'ob-status err'; status.innerText = "That key should start with 'sk-'."; }
+                return;
+            }
+            setOpenAIKey(raw); saveOpenAIModel(getOpenAIModel());
+            if (status) { status.className = 'ob-status ok'; status.innerText = "Key saved \u2713"; }
+            refreshVoiceStatusUI();
+        }
+
         function obRender() {
             document.querySelectorAll('.ob-step').forEach(s =>
                 s.classList.toggle('active', +s.dataset.step === obStep));
-            document.querySelectorAll('.ob-dot').forEach((d, i) =>
+            document.querySelectorAll('#ob-dots .ob-dot').forEach((d, i) =>
                 d.classList.toggle('active', i === obStep));
-            document.getElementById('ob-back').style.visibility = obStep === 0 ? 'hidden' : 'visible';
-            const next = document.getElementById('ob-next');
-            const skip = document.getElementById('ob-skip');
             const isDone = (obStep === OB_TOTAL - 1);
-            if (isDone) {
-                next.innerText = "Start learning →";
-                skip.style.display = 'none';
-            } else if (isVoiceStep()) {
-                next.innerText = getOpenAIKey() ? "Save & continue" : "Continue";
-                skip.style.display = 'block';
-                skip.innerText = "Skip — set up voice later";
-            } else {
-                next.innerText = "Continue";
-                skip.style.display = obStep === 0 ? 'block' : 'none';
-                skip.innerText = "Skip intro";
-            }
-            // Done-step message reflects whether voice is active
+            const start = document.getElementById('ob-start');
+            const hint = document.getElementById('ob-hint');
+            const skip = document.getElementById('ob-skip');
+            if (start) start.style.display = isDone ? 'block' : 'none';
+            if (hint) hint.style.display = isDone ? 'none' : 'block';
+            if (skip) skip.style.display = isDone ? 'none' : 'block';
+            const sc = document.getElementById('ob-scroll'); if (sc) sc.scrollTop = 0;
             if (isDone) {
                 const dm = document.getElementById('ob-done-msg');
                 if (dm) dm.innerHTML = getOpenAIKey()
-                    ? "Voice practice is ready. Tap a phrase to listen, hit <b>🎤 Speak</b> to practise, and watch your mastery grow. Powodzenia!"
-                    : "Tap a phrase to listen and use the tile quizzes to learn. You can switch on <b>🎤 voice practice</b> anytime in Settings. Powodzenia!";
+                    ? "Voice practice is ready. Pick a level with \uD83D\uDCDA, then study, practise &amp; speak. Powodzenia!"
+                    : "Pick a level with \uD83D\uDCDA, then study and practise. Turn on \uD83C\uDFA4 voice anytime in Settings. Powodzenia!";
             }
         }
 
-        function obNext() {
-            // OpenAI key step: validate/save before advancing
-            if (isVoiceStep()) {
-                const raw = document.getElementById('ob-key-input').value.trim();
-                const status = document.getElementById('ob-key-status');
-                if (raw) {
-                    if (!raw.startsWith('sk-')) {
-                        status.className = 'ob-status err';
-                        status.innerText = "That doesn't look like an OpenAI key (should start with 'sk-').";
-                        return;
-                    }
-                    setOpenAIKey(raw);
-                    saveOpenAIModel(getOpenAIModel());
-                    status.className = 'ob-status ok';
-                    status.innerText = "Key saved ✓";
-                    refreshVoiceStatusUI();
-                }
-            }
-            if (obStep < OB_TOTAL - 1) { obStep++; obRender(); }
-            else finishOnboarding();
+        function obGoto(i) {
+            if (i === obStep) return;
+            if (isVoiceStep()) saveKeyIfPresent();
+            obStep = Math.max(0, Math.min(OB_TOTAL - 1, i));
+            obRender();
         }
-
-        function obPrev() { if (obStep > 0) { obStep--; obRender(); } }
-
-        function obSkip() {
-            if (obStep === 0) finishOnboarding();
-            else { obStep = OB_TOTAL - 1; obRender(); }
-        }
+        function obNext() { if (obStep < OB_TOTAL - 1) obGoto(obStep + 1); else finishOnboarding(); }
+        function obPrev() { if (obStep > 0) obGoto(obStep - 1); }
+        function obSkip() { saveKeyIfPresent(); finishOnboarding(); }
 
         function finishOnboarding() {
+            if (isVoiceStep()) saveKeyIfPresent();
             localStorage.setItem('pl_onboarded', '1');
             document.getElementById('onboarding').classList.remove('show');
             refreshVoiceStatusUI();
             maybeShowTourBanner();
         }
+
+        // Swipe + keyboard navigation for the tour
+        (function initObGestures() {
+            const ob = document.getElementById('onboarding');
+            if (!ob) return;
+            let sx = 0, sy = 0, tracking = false;
+            ob.addEventListener('touchstart', e => {
+                if (e.touches.length !== 1) { tracking = false; return; }
+                sx = e.touches[0].clientX; sy = e.touches[0].clientY; tracking = true;
+            }, { passive: true });
+            ob.addEventListener('touchend', e => {
+                if (!tracking) return; tracking = false;
+                const t = e.changedTouches[0];
+                const dx = t.clientX - sx, dy = t.clientY - sy;
+                if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+                    if (dx < 0) obNext(); else obPrev();
+                }
+            }, { passive: true });
+            document.addEventListener('keydown', e => {
+                if (!ob.classList.contains('show')) return;
+                if (e.key === 'ArrowRight') obNext();
+                else if (e.key === 'ArrowLeft') obPrev();
+            });
+        })();
 
         // ----- Persistent tour banner -----
         function tourBannerHidden() { return localStorage.getItem('pl_hide_tour') === '1'; }
@@ -4222,6 +4408,7 @@
             scanLibrary();
             switchMode('study');
             refreshVoiceStatusUI();
+            updateSwapButtons();
             maybeShowTourBanner();
             refreshTourToggle();
             maybeShowOnboarding();
