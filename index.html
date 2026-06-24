@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v26.0</title>
+    <title>Polish Phrase Master v27.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -440,6 +440,11 @@
             position: relative;
         }
 
+        /* Practice answer tiles ~50% taller (not letters / phrase list) */
+        .grid:not(.lvl0) .tile {
+            aspect-ratio: 1 / 1.45;
+        }
+
         .tile:active {
             transform: translateY(3px);
             box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
@@ -701,6 +706,11 @@
                 min-height: 70px;
                 max-height: 85px;
                 font-size: 0.75rem;
+            }
+
+            .grid:not(.lvl0) .tile {
+                min-height: 105px;
+                max-height: 128px;
             }
 
             body.practice-mode-active .header .title-banner,
@@ -1571,9 +1581,22 @@
         /* Study card: speaker + mic side by side */
         .fc-audio-row {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .fc-audio-row .fc-audio-btn {
+            width: 54px;
+            height: 54px;
+            font-size: 1.6rem;
+        }
+
+        .fc-audio-row .fc-row-btn {
+            width: 48px;
+            height: 48px;
+            font-size: 1.35rem;
         }
 
         /* Persistent tour / walk-through banner */
@@ -1808,8 +1831,13 @@
 
                 <details>
                     <summary>🎤 Voice Recognition & Controls</summary>
-                    <p>Tap <b>Speak (🎤)</b> in the footer to practice pronunciation! <br>
-                        If the question is English, say the Polish translation. If you swapped it, say the English!</p>
+                    <p>Tap <b>🔊</b> to listen (tap again 2× / 3× to slow it down), and <b>hold 🎤</b> to
+                        speak — you'll get a pronunciation score. These sit on the Study card, on each
+                        Phrases-tab phrase, and the 🔊 is in the Practice header.</p>
+                    <p><b>🔄 Language toggle:</b> the highlighted gold button flips the direction. It shows
+                        flags — <b>🇵🇱→🇬🇧</b> means a Polish prompt with English answers (the default),
+                        and <b>🇬🇧→🇵🇱</b> is the reverse. It's on the Study card and the Practice header,
+                        and your choice is remembered.</p>
                     <p><b>🧠 Hard Mode:</b> Hides the written text entirely so you rely purely on listening. You can
                         trigger this mode after mastering any level.</p>
                 </details>
@@ -2018,18 +2046,20 @@
                 <button class="search-trigger-btn" onclick="handleSpeakerTap()"
                     style="width:34px; height:36px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.15rem; cursor:pointer; background:transparent; border:none;"
                     title="Listen — tap again to slow down">🔊</button>
-                <button class="search-trigger-btn" onclick="togglePauseAudio()"
-                    style="width:34px; height:36px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.15rem; cursor:pointer; background:transparent; border:none;"
-                    title="Pause / Resume"><span id="pause-icon">⏸️</span></button>
                 <button class="search-trigger-btn swap-toggle" id="swap-practice" onclick="toggleContentSwap()"
                     style="height:36px; padding:0 8px; display:flex; align-items:center; justify-content:center; gap:3px; cursor:pointer;"
-                    title="Swap question / answer language">🔄<span class="swap-dir">PL→EN</span></button>
+                    title="Swap question / answer language">🔄<span class="swap-dir">🇵🇱→🇬🇧</span></button>
             </div>
         </div>
 
         <div id="feedback" class="feedback"></div>
-        <div class="timer-wrapper">
-            <div id="timer-bar"></div>
+        <div class="timer-row" style="display:flex; align-items:center; gap:8px; width:100%; max-width:380px;">
+            <div class="timer-wrapper" style="flex:1;">
+                <div id="timer-bar"></div>
+            </div>
+            <button class="search-trigger-btn" onclick="togglePauseAudio()"
+                style="width:30px; height:26px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.05rem; cursor:pointer; background:transparent; border:none; flex-shrink:0;"
+                title="Pause / Resume"><span id="pause-icon">⏸️</span></button>
         </div>
     </div>
 
@@ -2046,13 +2076,7 @@
 
                 <button class="search-trigger-btn swap-toggle" id="swap-study" onclick="toggleContentSwap()"
                     style="position:absolute; top:15px; right:15px; height:34px; padding:0 10px; display:flex; align-items:center; justify-content:center; gap:3px; cursor:pointer;"
-                    title="Swap Language">🔄<span class="swap-dir">PL→EN</span></button>
-                <button id="fc-hint-btn" onclick="toggleStudyNotes()"
-                    style="position:absolute; top:60px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; display:none; padding:0; line-height:1;"
-                    title="Toggle Grammar Notes">💡</button>
-                <button id="study-save-btn" onclick="saveCurrentToCustom()"
-                    style="position:absolute; top:15px; left:15px; background:none; border:none; font-size:1.5rem; cursor:pointer; padding:0; line-height:1;"
-                    title="Save to Sandbox">⭐</button>
+                    title="Swap Language">🔄<span class="swap-dir">🇵🇱→🇬🇧</span></button>
 
                 <div class="fc-pl" id="fc-pl">Polish</div>
                 <div class="fc-en" id="fc-en">English</div>
@@ -2060,6 +2084,8 @@
                     style="display:none; font-size:0.95rem; color:#666; margin-top:20px; line-height:1.4; text-align:center; padding-top:10px; border-top:1px dashed #ccc;">
                 </div>
                 <div class="fc-audio-row">
+                    <button id="study-save-btn" class="fc-audio-btn fc-row-btn" type="button" onclick="saveCurrentToCustom()" title="Save to Sandbox">⭐</button>
+                    <button id="fc-hint-btn" class="fc-audio-btn fc-row-btn" type="button" onclick="toggleStudyNotes()" title="Grammar notes" style="display:none;">💡</button>
                     <button class="fc-audio-btn" type="button" onclick="playStudyAudio(event)" title="Listen — tap again to slow down">🔊</button>
                     <button class="fc-audio-btn fc-mic-btn" type="button" title="Hold to speak"
                         style="touch-action:none; user-select:none; -webkit-user-select:none;"
@@ -3523,7 +3549,8 @@
         }
 
         function updateSwapButtons() {
-            const label = isSwapped ? 'PL→EN' : 'EN→PL';
+            // Flag of the prompt language → flag of the answer language
+            const label = isSwapped ? '🇵🇱→🇬🇧' : '🇬🇧→🇵🇱';
             document.querySelectorAll('.swap-toggle .swap-dir').forEach(el => el.innerText = label);
         }
 
