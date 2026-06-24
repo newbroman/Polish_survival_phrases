@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v19.0</title>
+    <title>Polish Phrase Master v21.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -1381,6 +1381,104 @@
         #pron-tip.show { display: block; animation: obFade 0.3s ease; }
         #pron-tip .coach { color: var(--wrong-blue); font-weight: bold; }
 
+        /* ===== PRONUNCIATION SCORECARD (rhymes-style) ===== */
+        #pron-score {
+            display: none;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: calc(78px + env(safe-area-inset-bottom));
+            z-index: 3600;
+            max-width: 380px;
+            width: calc(100% - 28px);
+            box-sizing: border-box;
+            padding: 12px 14px 13px;
+            border-radius: 12px;
+            background: var(--card);
+            border: 1px solid #ddd;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+            color: var(--text);
+            text-align: left;
+        }
+
+        #pron-score.show { display: block; animation: obFade 0.3s ease; }
+
+        .ps-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .ps-pct {
+            font-size: 1.5rem;
+            font-weight: 900;
+            line-height: 1;
+            padding: 6px 10px;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .ps-summary { flex: 1; font-size: 0.8rem; color: #888; line-height: 1.3; }
+        .ps-close {
+            background: none; border: none; font-size: 1.3rem; color: #999;
+            cursor: pointer; padding: 0 2px; line-height: 1;
+        }
+
+        .ps-words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 9px;
+        }
+
+        .ps-w {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4px 9px;
+            border-radius: 7px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            line-height: 1.15;
+        }
+
+        .ps-w.exact { background: rgba(46, 204, 113, 0.18); color: var(--success-green); }
+        .ps-w.close { background: rgba(241, 196, 15, 0.18); color: #c8960b; }
+        .ps-w.missed {
+            background: rgba(231, 76, 60, 0.13);
+            color: var(--pol-red);
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+        }
+
+        .ps-w .heard {
+            font-size: 0.62rem;
+            font-weight: normal;
+            opacity: 0.85;
+            margin-top: 1px;
+            text-decoration: none;
+        }
+
+        .ps-heard {
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.4;
+            border-top: 1px solid #eee;
+            padding-top: 8px;
+        }
+
+        .ps-heard b { color: var(--text); }
+
+        .ps-coach {
+            margin-top: 8px;
+            font-size: 0.82rem;
+            line-height: 1.4;
+            color: var(--text);
+        }
+
+        .ps-coach .lead { color: var(--wrong-blue); font-weight: bold; }
+
         /* In-quiz "say this" prompt while recording */
         .say-prompt {
             color: var(--wrong-blue);
@@ -1390,6 +1488,44 @@
         .say-prompt .target {
             color: var(--pol-red);
             font-size: 1.1em;
+        }
+        /* Persistent tour / walk-through banner */
+        #tour-banner {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            background: rgba(220, 20, 60, 0.07);
+            border-bottom: 1px solid #ddd;
+            flex-shrink: 0;
+            font-size: 0.82rem;
+            cursor: pointer;
+        }
+
+        #tour-banner.show { display: flex; }
+        #tour-banner .tb-text { flex: 1; line-height: 1.3; color: var(--text); }
+        #tour-banner .tb-text b { color: var(--pol-red); }
+
+        #tour-banner .tb-go {
+            background: var(--pol-red);
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.78rem;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        #tour-banner .tb-x {
+            background: none;
+            border: none;
+            color: #999;
+            font-size: 1.2rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0 2px;
         }
     </style>
 </head>
@@ -1420,11 +1556,23 @@
                 <div class="ob-feature"><span class="ic">1️⃣</span><span class="tx"><b>STUDY</b> tab: meet new phrases as flashcards.</span></div>
                 <div class="ob-feature"><span class="ic">2️⃣</span><span class="tx"><b>PRACTICE</b> tab: answer quizzes. Three correct = mastered.</span></div>
                 <div class="ob-feature"><span class="ic">3️⃣</span><span class="tx"><b>PHRASES</b> tab: review everything you've banked.</span></div>
-                <p style="font-size:0.88rem;color:#888;">Everything is stored on your device. Nothing is uploaded except, optionally, your voice clips for transcription (next step).</p>
+                <p style="font-size:0.88rem;color:#888;">Everything is stored on your device. Nothing is uploaded except, optionally, your voice clips for transcription.</p>
             </div>
 
-            <!-- Step 3: Voice setup (OpenAI) -->
+            <!-- Step 3: Where to find levels & phrases -->
             <div class="ob-step" data-step="2">
+                <h2>📚 Where your levels &amp; phrases live</h2>
+                <p>The key thing to know: <b>tap the 📚 button in the top-right</b> to open
+                    <b>Levels &amp; Dictionary</b> — that's where you choose which level to study,
+                    and search or translate words.</p>
+                <div class="ob-feature"><span class="ic">📚</span><span class="tx"><b>📚 (top-right)</b> → pick a level from the dropdown. Start at <b>Level 0</b> (the alphabet) and work up.</span></div>
+                <div class="ob-feature"><span class="ic">🔢</span><span class="tx">Levels run 0, 1, 2… each a themed set of phrases. <b>Level C</b> is your own Sandbox of saved &amp; translated words.</span></div>
+                <div class="ob-feature"><span class="ic">🔍</span><span class="tx">The search box there finds any phrase — or translates a new one straight into your Sandbox.</span></div>
+                <div class="ob-feature"><span class="ic">⭐</span><span class="tx">Tap the ⭐ on a phrase to save it to your Sandbox for later.</span></div>
+            </div>
+
+            <!-- Step 4: Voice setup (OpenAI) -->
+            <div class="ob-step" data-step="3">
                 <h2>🎤 Set up speaking practice</h2>
                 <p>To grade your spoken Polish reliably (in any browser), the app uses
                     <b>OpenAI</b>'s speech-to-text. It's optional — but it's far more accurate
@@ -1452,13 +1600,14 @@
                 </div>
             </div>
 
-            <!-- Step 4: Done -->
-            <div class="ob-step" data-step="3">
+            <!-- Step 5: Done -->
+            <div class="ob-step" data-step="4">
                 <div style="font-size:3.5rem;margin-bottom:10px;">🎉</div>
                 <h2>You're all set</h2>
                 <p id="ob-done-msg">Tap a phrase to listen, hit <b>🎤 Speak</b> to practise, and
                     watch your mastery grow. Powodzenia! (Good luck!)</p>
-                <div class="ob-feature"><span class="ic">⚙️</span><span class="tx">Find voice settings, levels, and data backup anytime under <b>Settings</b> (top-right).</span></div>
+                <div class="ob-feature"><span class="ic">📚</span><span class="tx">Remember: <b>📚 top-right</b> = choose your level. <b>⚙️</b> = settings &amp; backup.</span></div>
+                <div class="ob-feature"><span class="ic">👋</span><span class="tx">Need this tour again? Use the <b>👋 Tour</b> button on the main screen (or turn it off there).</span></div>
             </div>
 
         </div>
@@ -1466,6 +1615,7 @@
         <div class="ob-footer">
             <div class="ob-dots">
                 <div class="ob-dot active"></div>
+                <div class="ob-dot"></div>
                 <div class="ob-dot"></div>
                 <div class="ob-dot"></div>
                 <div class="ob-dot"></div>
@@ -1638,6 +1788,11 @@
                         <button class="settings-btn" style="width:auto; margin:0; padding:6px 15px;"
                             onclick="toggleUILang()" id="lbl-ui-lang">EN</button>
                     </div>
+                    <div class="setting-row">
+                        <span class="setting-label">👋 Tour button</span>
+                        <button class="settings-btn" style="width:auto; margin:0; padding:6px 15px;"
+                            onclick="setTourBanner(tourBannerHidden())" id="lbl-tour-toggle">ON</button>
+                    </div>
                     <button class="settings-btn" onclick="openHandsFree()"
                         style="border-color:var(--pol-red); color:var(--pol-red);" id="lbl-hf">
                         🎧 Start Hands-Free Mode
@@ -1740,6 +1895,13 @@
             style="width: 40px; flex-shrink: 0; background: none; border: none; border-left: 1px solid #ddd; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">⚙️</button>
     </div>
 
+    <div id="tour-banner" onclick="restartOnboarding(0)">
+        <span style="font-size:1.1rem;">👋</span>
+        <span class="tb-text">New here? Take the <b>quick tour</b> — see where levels &amp; phrases live.</span>
+        <button class="tb-go" onclick="event.stopPropagation(); restartOnboarding(0)">Tour</button>
+        <button class="tb-x" onclick="dismissTourBanner(event)" title="Hide this">&times;</button>
+    </div>
+
     <div class="progress-wrapper" id="prog-wrapper">
         <div class="progress-container">
             <div id="progress-bar"></div>
@@ -1801,6 +1963,7 @@
     </div>
 
     <div id="pron-tip"></div>
+    <div id="pron-score"></div>
 
     <div class="action-footer">
         <button class="action-btn" id="footer-listen-btn" onclick="handleSpeakerTap()"
@@ -2093,7 +2256,7 @@
             const el = document.getElementById('settings-overlay');
             const opening = el.style.display !== 'flex';
             el.style.display = opening ? 'flex' : 'none';
-            if (opening) refreshVoiceStatusUI();
+            if (opening) { refreshVoiceStatusUI(); refreshTourToggle(); }
         }
 
         function toggleLearn() {
@@ -2535,6 +2698,11 @@
         // ----- AI pronunciation coach -----
         const TIP_MODEL = 'gpt-4o-mini';
 
+        function escHtml(s) {
+            return (s == null ? '' : String(s)).replace(/[&<>"']/g, c =>
+                ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+
         function hidePronTip() {
             const el = document.getElementById('pron-tip');
             if (el) { el.style.display = 'none'; }
@@ -2549,10 +2717,98 @@
             el._t = setTimeout(hidePronTip, 9000);
         }
 
+        // ----- Word-level pronunciation scorecard (rhymes-style) -----
+        function tokenizeForScore(s) {
+            return cleanStr(s).split(' ').filter(Boolean);
+        }
+
+        function scorePronunciation(heard, target) {
+            const rawT = (target || '').trim().split(/\s+/);
+            const dispT = [], normT = [];
+            rawT.forEach(w => { const c = cleanStr(w); if (c) { dispT.push(w); normT.push(c); } });
+            const hWords = tokenizeForScore(heard);
+            const usedH = new Array(hWords.length).fill(false);
+            const words = [];
+            let exact = 0, close = 0, missed = 0;
+
+            for (let i = 0; i < normT.length; i++) {
+                const tw = normT[i];
+                let idx = -1, status = null, heardForm = null;
+                // 1) exact match among unused heard words
+                for (let j = 0; j < hWords.length; j++) {
+                    if (!usedH[j] && hWords[j] === tw) { idx = j; status = 'exact'; break; }
+                }
+                // 2) otherwise best close match
+                if (idx === -1) {
+                    let bestR = 0, bj = -1;
+                    for (let j = 0; j < hWords.length; j++) {
+                        if (usedH[j]) continue;
+                        const d = levenshtein(hWords[j], tw);
+                        const r = 1 - d / Math.max(hWords[j].length, tw.length, 1);
+                        if (r > bestR) { bestR = r; bj = j; }
+                    }
+                    if (bj !== -1 && bestR >= 0.6) { idx = bj; status = 'close'; heardForm = hWords[bj]; }
+                }
+                if (idx !== -1) {
+                    usedH[idx] = true;
+                    if (status === 'exact') { exact++; words.push({ w: dispT[i], status: 'exact' }); }
+                    else { close++; words.push({ w: dispT[i], status: 'close', heard: heardForm }); }
+                } else {
+                    missed++; words.push({ w: dispT[i], status: 'missed' });
+                }
+            }
+            const total = normT.length || 1;
+            const percent = Math.round(((exact + close * 0.5) / total) * 100);
+            return { percent, exact, close, missed, words, total };
+        }
+
+        function pctColor(p) {
+            return p >= 80 ? 'var(--success-green)' : (p >= 50 ? '#e0a800' : 'var(--pol-red)');
+        }
+
+        function hidePronScore() {
+            const el = document.getElementById('pron-score');
+            if (el) { el.style.display = 'none'; el.classList.remove('show'); }
+        }
+
+        function showPronScore(r, heardRaw) {
+            hidePronTip();
+            const el = document.getElementById('pron-score');
+            if (!el) return;
+            const chips = r.words.map(w => {
+                if (w.status === 'exact') return '<span class="ps-w exact">' + escHtml(w.w) + '</span>';
+                if (w.status === 'close') return '<span class="ps-w close">' + escHtml(w.w) + '<span class="heard">' + escHtml(w.heard) + '</span></span>';
+                return '<span class="ps-w missed">' + escHtml(w.w) + '</span>';
+            }).join('');
+            el.innerHTML =
+                '<div class="ps-head">' +
+                '<span class="ps-pct" style="background:' + pctColor(r.percent) + '">' + r.percent + '%</span>' +
+                '<span class="ps-summary">' + r.exact + ' exact · ' + r.close + ' close · ' + r.missed + ' missed</span>' +
+                '<button class="ps-close" onclick="hidePronScore()">&times;</button>' +
+                '</div>' +
+                '<div class="ps-words">' + chips + '</div>' +
+                '<div class="ps-heard">Heard: <b>' + (heardRaw ? escHtml(heardRaw) : '—') + '</b></div>' +
+                '<div class="ps-coach" id="ps-coach" style="display:none;"></div>';
+            el.classList.add('show');
+            el.style.display = 'block';
+        }
+
+        // Coach tip goes into the scorecard if it's open, else a small toast
+        function renderCoach(html) {
+            const slot = document.getElementById('ps-coach');
+            const card = document.getElementById('pron-score');
+            if (slot && card && card.style.display !== 'none') {
+                slot.style.display = 'block';
+                slot.innerHTML = '<span class="lead">🎓 </span>' + html;
+            } else {
+                showPronTip('<span class="coach">🎓 </span>' + html);
+            }
+        }
+
         async function maybeGivePronTip(heard, expected, isCorrect) {
             const key = getOpenAIKey();
             if (!key || !expected) return;
-            showPronTip('<span class="coach">🎓 Coach is listening…</span>');
+            renderCoach('<span style="color:#888;">listening…</span>');
             const sys = "You are a concise, encouraging Polish pronunciation coach. Reply in ONE sentence, max 18 words, no preamble.";
             const usr = 'Target phrase the learner should say: "' + expected + '". '
                 + 'Speech-to-text of what they actually said: "' + heard + '". '
@@ -2570,12 +2826,11 @@
                         temperature: 0.4
                     })
                 });
-                if (!res.ok) { hidePronTip(); return; }
+                if (!res.ok) { return; }
                 const data = await res.json();
                 const tip = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content || '').trim();
-                if (tip) showPronTip('<span class="coach">🎓 </span>' + tip);
-                else hidePronTip();
-            } catch (e) { hidePronTip(); }
+                if (tip) renderCoach(escHtml(tip));
+            } catch (e) { }
         }
 
         // ----- Press-and-hold control -----
@@ -2585,6 +2840,7 @@
         function micPress(e) {
             if (e) { e.preventDefault(); }
             hidePronTip();
+            hidePronScore();
             micPressTime = Date.now();
             // Preferred path: OpenAI (works in all browsers, great Polish)
             if (getOpenAIKey() && navigator.mediaDevices && window.MediaRecorder) {
@@ -2594,7 +2850,7 @@
             // Fallback: browser Web Speech API
             if (!recognition) {
                 if (confirm("For reliable Polish speech practice, set up free OpenAI voice recognition now?\n\n(Your browser's built-in recogniser isn't available here.)")) {
-                    restartOnboarding(2);
+                    restartOnboarding(voiceStepIndex());
                 }
                 return;
             }
@@ -2675,6 +2931,12 @@
                 }
             }
 
+            // Word-level pronunciation scorecard (like the rhymes app)
+            const scoreTarget = expectedSpoken() || expected;
+            const sc = scorePronunciation(transcript, scoreTarget);
+            showPronScore(sc, transcript);
+            if (sc.percent >= 80) match = true;
+
             // Optional AI pronunciation coaching (only when using OpenAI + enabled)
             if (getOpenAIKey() && tipsEnabled() && !isSwapped) {
                 maybeGivePronTip(transcript, expectedSpoken(), match);
@@ -2706,7 +2968,7 @@
 
                 checkAnswer(currentTarget, targetTile);
             } else {
-                document.getElementById('feedback').innerText = `Heard: "${transcript}" ❌`;
+                document.getElementById('feedback').innerText = `Keep practising 💪 (see score)`;
                 document.getElementById('feedback').style.color = "var(--pol-red)";
 
                 correctStreak = 0;
@@ -3806,7 +4068,16 @@
         // ONBOARDING / SETUP WIZARD
         // ==========================================
         let obStep = 0;
-        const OB_TOTAL = 4;
+        const OB_TOTAL = 5;
+
+        // The voice step is wherever the key input lives — find it by content,
+        // so adding/reordering steps never breaks the logic.
+        function voiceStepIndex() {
+            const steps = Array.from(document.querySelectorAll('.ob-step'));
+            const i = steps.findIndex(s => s.querySelector('#ob-key-input'));
+            return i === -1 ? 3 : i;
+        }
+        function isVoiceStep() { return obStep === voiceStepIndex(); }
 
         function maybeShowOnboarding() {
             if (!localStorage.getItem('pl_onboarded')) {
@@ -3831,10 +4102,11 @@
             document.getElementById('ob-back').style.visibility = obStep === 0 ? 'hidden' : 'visible';
             const next = document.getElementById('ob-next');
             const skip = document.getElementById('ob-skip');
-            if (obStep === OB_TOTAL - 1) {
+            const isDone = (obStep === OB_TOTAL - 1);
+            if (isDone) {
                 next.innerText = "Start learning →";
                 skip.style.display = 'none';
-            } else if (obStep === 2) {
+            } else if (isVoiceStep()) {
                 next.innerText = getOpenAIKey() ? "Save & continue" : "Continue";
                 skip.style.display = 'block';
                 skip.innerText = "Skip — set up voice later";
@@ -3844,17 +4116,17 @@
                 skip.innerText = "Skip intro";
             }
             // Done-step message reflects whether voice is active
-            if (obStep === 3) {
+            if (isDone) {
                 const dm = document.getElementById('ob-done-msg');
-                dm.innerHTML = getOpenAIKey()
+                if (dm) dm.innerHTML = getOpenAIKey()
                     ? "Voice practice is ready. Tap a phrase to listen, hit <b>🎤 Speak</b> to practise, and watch your mastery grow. Powodzenia!"
                     : "Tap a phrase to listen and use the tile quizzes to learn. You can switch on <b>🎤 voice practice</b> anytime in Settings. Powodzenia!";
             }
         }
 
         function obNext() {
-            // Step 2 (index 2) = OpenAI key step: validate/save before advancing
-            if (obStep === 2) {
+            // OpenAI key step: validate/save before advancing
+            if (isVoiceStep()) {
                 const raw = document.getElementById('ob-key-input').value.trim();
                 const status = document.getElementById('ob-key-status');
                 if (raw) {
@@ -3885,6 +4157,37 @@
             localStorage.setItem('pl_onboarded', '1');
             document.getElementById('onboarding').classList.remove('show');
             refreshVoiceStatusUI();
+            maybeShowTourBanner();
+        }
+
+        // ----- Persistent tour banner -----
+        function tourBannerHidden() { return localStorage.getItem('pl_hide_tour') === '1'; }
+
+        function maybeShowTourBanner() {
+            const el = document.getElementById('tour-banner');
+            if (el) el.classList.toggle('show', !tourBannerHidden());
+        }
+
+        function dismissTourBanner(e) {
+            if (e) e.stopPropagation();
+            localStorage.setItem('pl_hide_tour', '1');
+            maybeShowTourBanner();
+            refreshTourToggle();
+        }
+
+        function setTourBanner(on) {
+            localStorage.setItem('pl_hide_tour', on ? '0' : '1');
+            maybeShowTourBanner();
+            refreshTourToggle();
+        }
+
+        function refreshTourToggle() {
+            const b = document.getElementById('lbl-tour-toggle');
+            if (b) {
+                const on = !tourBannerHidden();
+                b.innerText = on ? 'ON' : 'OFF';
+                b.style.color = on ? 'var(--success-green)' : '#888';
+            }
         }
 
         // ==========================================
@@ -3901,6 +4204,8 @@
             scanLibrary();
             switchMode('study');
             refreshVoiceStatusUI();
+            maybeShowTourBanner();
+            refreshTourToggle();
             maybeShowOnboarding();
         };
 
