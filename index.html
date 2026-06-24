@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v29.0</title>
+    <title>Polish Phrase Master v30.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -376,7 +376,7 @@
             gap: 8px;
             width: 100%;
             max-width: 380px;
-            margin: auto 0;
+            margin: 0 auto;
         }
 
         .grid.lvl0 {
@@ -499,7 +499,7 @@
             width: 100%;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 20px;
             box-sizing: border-box;
             flex-grow: 1;
@@ -1506,6 +1506,17 @@
             padding-top: 8px;
         }
 
+        .ps-phon {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.4;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ps-phon-guide { color: var(--wrong-blue); font-style: italic; }
+
         .ps-heard b { color: var(--text); }
 
         .ps-coach {
@@ -1581,6 +1592,20 @@
         .ph-btn:active { transform: translateY(1px); }
 
         /* Study card: star | speaker+mic | bulb */
+        .study-hf-btn {
+            margin-top: 18px;
+            padding: 9px 20px;
+            border: 2px solid var(--pol-red);
+            background: var(--card);
+            color: var(--pol-red);
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .study-hf-btn:active { transform: translateY(1px); }
+
         .fc-audio-row {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -2112,6 +2137,7 @@
                 <span class="fc-counter" id="fc-counter">1 / 10</span>
                 <button class="fc-btn" onclick="nextStudyCard()">▶</button>
             </div>
+            <button class="study-hf-btn" onclick="openHandsFree()" title="Play this level hands-free">🎧 Hands-Free</button>
         </div>
     </div>
 
@@ -2939,6 +2965,40 @@
             return p >= 80 ? 'var(--success-green)' : (p >= 50 ? '#e0a800' : 'var(--pol-red)');
         }
 
+        // Approximate Polish → English-reader pronunciation guide
+        const PL_PHON_RULES = (() => {
+            const r = [
+                ['dzia', 'ja'], ['dzie', 'je'], ['dzio', 'jo'], ['dziu', 'ju'], ['dzię', 'jen'], ['dzią', 'jon'], ['dzi', 'jee'],
+                ['cia', 'cha'], ['cie', 'che'], ['cio', 'cho'], ['ciu', 'chu'], ['cię', 'chen'], ['cią', 'chon'], ['ci', 'chee'],
+                ['sia', 'sha'], ['sie', 'she'], ['sio', 'sho'], ['siu', 'shu'], ['się', 'shen'], ['sią', 'shon'], ['si', 'shee'],
+                ['zia', 'zha'], ['zie', 'zhe'], ['zio', 'zho'], ['ziu', 'zhu'], ['zię', 'zhen'], ['zią', 'zhon'], ['zi', 'zhee'],
+                ['nia', 'nya'], ['nie', 'nye'], ['nio', 'nyo'], ['niu', 'nyu'], ['nię', 'nyen'], ['nią', 'nyon'], ['ni', 'nee'],
+                ['dż', 'j'], ['dź', 'j'], ['dz', 'dz'],
+                ['sz', 'sh'], ['cz', 'ch'], ['rz', 'zh'], ['ch', 'h'],
+                ['ć', 'ch'], ['ś', 'sh'], ['ź', 'zh'], ['ż', 'zh'], ['ń', 'ny'],
+                ['ł', 'w'], ['w', 'v'], ['c', 'ts'], ['j', 'y'], ['ó', 'oo'], ['ą', 'on'], ['ę', 'en'],
+                ['a', 'ah'], ['e', 'eh'], ['i', 'ee'], ['o', 'oh'], ['u', 'oo'], ['y', 'i']
+            ];
+            return r.sort((a, b) => b[0].length - a[0].length);
+        })();
+
+        function polishPhonetic(text) {
+            if (!text) return '';
+            const t = text.toLowerCase();
+            let out = '', i = 0;
+            while (i < t.length) {
+                const ch = t[i];
+                if (ch === ' ' || ch === '-' || ch === '/') { out += ' '; i++; continue; }
+                if (!/[a-ząćęłńóśźż]/.test(ch)) { i++; continue; }
+                let matched = false;
+                for (const [pat, rep] of PL_PHON_RULES) {
+                    if (t.startsWith(pat, i)) { out += rep; i += pat.length; matched = true; break; }
+                }
+                if (!matched) { out += ch; i++; }
+            }
+            return out.replace(/\s+/g, ' ').trim();
+        }
+
         function hidePronScore() {
             const el = document.getElementById('pron-score');
             if (el) { el.style.display = 'none'; el.classList.remove('show'); }
@@ -2953,6 +3013,11 @@
                 if (w.status === 'close') return '<span class="ps-w close">' + escHtml(w.w) + '<span class="heard">' + escHtml(w.heard) + '</span></span>';
                 return '<span class="ps-w missed">' + escHtml(w.w) + '</span>';
             }).join('');
+            const polText = currentTarget ? phraseSpeakText(currentTarget) : '';
+            const phon = polishPhonetic(polText);
+            const phonRow = phon
+                ? '<div class="ps-phon">🗣 <b>' + escHtml(polText) + '</b> <span class="ps-phon-guide">[' + escHtml(phon) + ']</span></div>'
+                : '';
             el.innerHTML =
                 '<div class="ps-head">' +
                 '<span class="ps-pct" style="background:' + pctColor(r.percent) + '">' + r.percent + '%</span>' +
@@ -2960,6 +3025,7 @@
                 '<button class="ps-close" onclick="hidePronScore()">&times;</button>' +
                 '</div>' +
                 '<div class="ps-words">' + chips + '</div>' +
+                phonRow +
                 '<div class="ps-heard">Heard: <b>' + (heardRaw ? escHtml(heardRaw) : '—') + '</b></div>' +
                 '<div class="ps-coach" id="ps-coach" style="display:none;"></div>';
             el.classList.add('show');
