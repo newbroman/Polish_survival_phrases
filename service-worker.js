@@ -1,4 +1,4 @@
-const CACHE_NAME = 'polish-master-v54';
+const CACHE_NAME = 'polish-master-v55';
 const CORE_ASSETS = [
     './',
     './index.html',

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v27.0</title>
+    <title>Polish Phrase Master v28.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -371,12 +371,11 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: 1fr;
             gap: 8px;
             width: 100%;
             max-width: 380px;
-            margin: auto 0;
+            margin: 0 auto;
         }
 
         .grid.lvl0 {
@@ -440,9 +439,11 @@
             position: relative;
         }
 
-        /* Practice answer tiles ~50% taller (not letters / phrase list) */
+        /* Practice answer tiles: full width, comfortable height */
         .grid:not(.lvl0) .tile {
-            aspect-ratio: 1 / 1.45;
+            aspect-ratio: auto;
+            min-height: 110px;
+            max-height: 130px;
         }
 
         .tile:active {
@@ -1536,12 +1537,12 @@
 
         /* Highlighted language toggle */
         .swap-toggle {
-            background: var(--gold) !important;
+            background: var(--card) !important;
             border: 2px solid var(--pol-red) !important;
-            color: #000 !important;
+            color: var(--text) !important;
             border-radius: 16px !important;
             font-weight: 800;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
             animation: swapPulse 2.4s ease-in-out 3;
         }
 
@@ -1578,26 +1579,36 @@
 
         .ph-btn:active { transform: translateY(1px); }
 
-        /* Study card: speaker + mic side by side */
+        /* Study card: star | speaker+mic | bulb */
         .fc-audio-row {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            flex-wrap: wrap;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
         }
 
-        .fc-audio-row .fc-audio-btn {
-            width: 54px;
-            height: 54px;
-            font-size: 1.6rem;
+        .fc-main-audio {
+            display: flex;
+            gap: 28px;
+            justify-content: center;
         }
 
-        .fc-audio-row .fc-row-btn {
-            width: 48px;
-            height: 48px;
-            font-size: 1.35rem;
+        .fc-side-left { justify-self: start; }
+        .fc-side-right { justify-self: end; }
+
+        .fc-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            line-height: 1;
+            cursor: pointer;
+            font-size: 1.4rem;   /* ~70% of the main buttons */
+            opacity: 0.85;
         }
+
+        .fc-icon-btn:active { transform: translateY(1px); }
 
         /* Persistent tour / walk-through banner */
         #tour-banner {
@@ -1682,7 +1693,7 @@
                 <p>Flashcards to meet new phrases. On each card:</p>
                 <div class="ob-feature"><span class="ic">🔊</span><span class="tx"><b>Listen</b> — tap to hear it; tap again (2× / 3×) to slow it right down.</span></div>
                 <div class="ob-feature"><span class="ic">🎤</span><span class="tx"><b>Speak</b> — hold and say it; you'll get a pronunciation score.</span></div>
-                <div class="ob-feature"><span class="ic">🔄</span><span class="tx"><b>PL→EN toggle</b> (highlighted gold) flips which language shows on top.</span></div>
+                <div class="ob-feature"><span class="ic">🔄</span><span class="tx"><b>🇵🇱→🇬🇧 toggle</b> (red outline, shows flags) flips which language is on top.</span></div>
                 <div class="ob-feature"><span class="ic">⭐</span><span class="tx"><b>⭐ Save</b> to Sandbox &nbsp;·&nbsp; <b>💡 Hint</b> reveals grammar notes.</span></div>
                 <div class="ob-feature"><span class="ic">👈</span><span class="tx">Swipe the card (or tap ◀ ▶) to move through the deck.</span></div>
             </div>
@@ -1691,7 +1702,7 @@
             <div class="ob-step" data-step="4">
                 <h2>🗂️ PRACTICE page</h2>
                 <p>Quiz yourself — the phrase plays, you tap the matching tile.</p>
-                <div class="ob-feature"><span class="ic">🔄</span><span class="tx"><b>PL→EN toggle</b> (highlighted): by default the prompt is <b>Polish</b> and the tiles are <b>English</b> — tap to reverse.</span></div>
+                <div class="ob-feature"><span class="ic">🔄</span><span class="tx"><b>🇵🇱→🇬🇧 toggle</b> (red outline): by default the prompt is <b>Polish</b> and the tiles are <b>English</b> — tap to reverse.</span></div>
                 <div class="ob-feature"><span class="ic">🔊</span><span class="tx"><b>Replay</b> the phrase (tap again to slow it).</span></div>
                 <div class="ob-feature"><span class="ic">⏸️</span><span class="tx"><b>Pause</b> the round timer when you need a break.</span></div>
                 <div class="ob-feature"><span class="ic">⭐</span><span class="tx"><b>Save</b> the current phrase to your Sandbox.</span></div>
@@ -1834,7 +1845,7 @@
                     <p>Tap <b>🔊</b> to listen (tap again 2× / 3× to slow it down), and <b>hold 🎤</b> to
                         speak — you'll get a pronunciation score. These sit on the Study card, on each
                         Phrases-tab phrase, and the 🔊 is in the Practice header.</p>
-                    <p><b>🔄 Language toggle:</b> the highlighted gold button flips the direction. It shows
+                    <p><b>🔄 Language toggle:</b> the red-outlined button flips the direction. It shows
                         flags — <b>🇵🇱→🇬🇧</b> means a Polish prompt with English answers (the default),
                         and <b>🇬🇧→🇵🇱</b> is the reverse. It's on the Study card and the Practice header,
                         and your choice is remembered.</p>
@@ -2084,13 +2095,15 @@
                     style="display:none; font-size:0.95rem; color:#666; margin-top:20px; line-height:1.4; text-align:center; padding-top:10px; border-top:1px dashed #ccc;">
                 </div>
                 <div class="fc-audio-row">
-                    <button id="study-save-btn" class="fc-audio-btn fc-row-btn" type="button" onclick="saveCurrentToCustom()" title="Save to Sandbox">⭐</button>
-                    <button id="fc-hint-btn" class="fc-audio-btn fc-row-btn" type="button" onclick="toggleStudyNotes()" title="Grammar notes" style="display:none;">💡</button>
-                    <button class="fc-audio-btn" type="button" onclick="playStudyAudio(event)" title="Listen — tap again to slow down">🔊</button>
-                    <button class="fc-audio-btn fc-mic-btn" type="button" title="Hold to speak"
-                        style="touch-action:none; user-select:none; -webkit-user-select:none;"
-                        onpointerdown="micPress(event)" onpointerup="micRelease(event)"
-                        onpointerleave="micRelease(event)" onpointercancel="micRelease(event)">🎤</button>
+                    <button id="study-save-btn" class="fc-icon-btn fc-side-left" type="button" onclick="saveCurrentToCustom()" title="Save to Sandbox">⭐</button>
+                    <div class="fc-main-audio">
+                        <button class="fc-audio-btn" type="button" onclick="playStudyAudio(event)" title="Listen — tap again to slow down">🔊</button>
+                        <button class="fc-audio-btn fc-mic-btn" type="button" title="Hold to speak"
+                            style="touch-action:none; user-select:none; -webkit-user-select:none;"
+                            onpointerdown="micPress(event)" onpointerup="micRelease(event)"
+                            onpointerleave="micRelease(event)" onpointercancel="micRelease(event)">🎤</button>
+                    </div>
+                    <button id="fc-hint-btn" class="fc-icon-btn fc-side-right" type="button" onclick="toggleStudyNotes()" title="Grammar notes" style="display:none;">💡</button>
                 </div>
             </div>
             <div class="fc-controls">
@@ -3942,10 +3955,6 @@
                 tile.className = 'tile';
 
                 if (!p) {
-                    tile.style.background = 'transparent';
-                    tile.style.boxShadow = 'none';
-                    tile.style.cursor = 'default';
-                    area.appendChild(tile);
                     return;
                 }
 
