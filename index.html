@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v17.0</title>
+    <title>Polish Phrase Master v19.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -338,18 +338,23 @@
 
         .tab {
             flex: 1;
-            padding: 10px 5px;
+            padding: 11px 5px;
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: bold;
             cursor: pointer;
-            opacity: 0.4;
+            opacity: 0.45;
+            color: var(--text);
+            border-bottom: 3px solid transparent;
+            transition: opacity 0.2s, background 0.2s, font-size 0.2s;
         }
 
         .tab.active {
             opacity: 1;
+            font-size: 0.84rem;
             border-bottom: 3px solid var(--pol-red);
             color: var(--pol-red);
+            background: rgba(220, 20, 60, 0.07);
         }
 
         /* MAIN CONTENT AREA & GRIDS */
@@ -1111,10 +1116,367 @@
             background: var(--pol-red);
             border-color: var(--pol-red);
         }
+
+        /* ===== ONBOARDING / SETUP WIZARD ===== */
+        #onboarding {
+            position: fixed;
+            inset: 0;
+            z-index: 6000;
+            background: var(--bg);
+            color: var(--text);
+            display: none;
+            flex-direction: column;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        }
+
+        #onboarding.show {
+            display: flex;
+        }
+
+        .ob-scroll {
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 28px 24px;
+        }
+
+        .ob-step {
+            display: none;
+            width: 100%;
+            max-width: 460px;
+            animation: obFade 0.35s ease;
+        }
+
+        .ob-step.active {
+            display: block;
+        }
+
+        @keyframes obFade {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .ob-flag {
+            width: 96px;
+            height: 64px;
+            margin: 0 auto 18px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .ob-flag .top { height: 50%; background: #fff; }
+        .ob-flag .bot { height: 50%; background: var(--pol-red); }
+
+        .ob-step h1 {
+            color: var(--pol-red);
+            font-size: 1.7rem;
+            font-weight: 900;
+            margin: 0 0 10px;
+        }
+
+        .ob-step h2 {
+            color: var(--pol-red);
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin: 0 0 14px;
+        }
+
+        .ob-step p {
+            font-size: 1rem;
+            line-height: 1.55;
+            margin: 0 0 14px;
+            color: var(--text);
+        }
+
+        .ob-feature {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            text-align: left;
+            background: var(--card);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+        }
+
+        .ob-feature .ic { font-size: 1.5rem; line-height: 1.2; }
+        .ob-feature .tx { font-size: 0.92rem; line-height: 1.4; }
+        .ob-feature .tx b { color: var(--pol-red); }
+
+        .ob-card {
+            background: var(--card);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 14px 0;
+            text-align: left;
+        }
+
+        .ob-card ol { margin: 8px 0 0; padding-left: 22px; }
+        .ob-card li { margin-bottom: 9px; line-height: 1.45; font-size: 0.95rem; }
+
+        .ob-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #fff;
+            background: var(--wrong-blue);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 8px;
+            margin: 6px 0;
+            font-size: 0.9rem;
+        }
+
+        .ob-link:active { opacity: 0.8; }
+
+        .ob-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px 14px;
+            font-size: 0.95rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: monospace;
+            margin-top: 4px;
+        }
+
+        .ob-input:focus { outline: none; border-color: var(--pol-red); }
+
+        .ob-status {
+            font-size: 0.9rem;
+            font-weight: bold;
+            min-height: 20px;
+            margin-top: 8px;
+        }
+
+        .ob-status.ok { color: var(--success-green); }
+        .ob-status.err { color: var(--pol-red); }
+        .ob-status.busy { color: var(--wrong-blue); }
+
+        .ob-note {
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.45;
+            margin-top: 10px;
+        }
+
+        .ob-footer {
+            flex-shrink: 0;
+            padding: 14px 24px calc(14px + env(safe-area-inset-bottom));
+            border-top: 1px solid #ddd;
+            background: var(--card);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ob-dots {
+            display: flex;
+            justify-content: center;
+            gap: 7px;
+            margin-bottom: 4px;
+        }
+
+        .ob-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ccc;
+            transition: background 0.2s, width 0.2s;
+        }
+
+        .ob-dot.active { background: var(--pol-red); width: 22px; border-radius: 5px; }
+
+        .ob-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 900;
+            cursor: pointer;
+            background: var(--pol-red);
+            color: #fff;
+        }
+
+        .ob-btn.secondary {
+            background: transparent;
+            color: #888;
+            font-weight: bold;
+            font-size: 0.9rem;
+            padding: 8px;
+        }
+
+        .ob-btn:active { opacity: 0.85; }
+
+        .ob-row { display: flex; gap: 10px; }
+        .ob-row .ob-btn { flex: 1; }
+
+        /* Mic recording pulse (Whisper) */
+        @keyframes micPulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.5); }
+            70% { box-shadow: 0 0 0 14px rgba(220, 20, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); }
+        }
+
+        .mic-recording {
+            background: var(--pol-red) !important;
+            color: #fff !important;
+            animation: micPulse 1.3s infinite;
+        }
+
+        /* Header voice badge */
+        .voice-badge {
+            position: relative;
+        }
+
+        .vb-dot {
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #aaa;
+            box-shadow: 0 0 0 2px var(--card);
+        }
+
+        .vb-dot.ai { background: var(--success-green); }
+        .vb-dot.basic { background: #f1c40f; }
+        .vb-dot.off { background: #e74c3c; }
+
+        /* Pronunciation tip (AI coach) - floating toast above footer */
+        #pron-tip {
+            display: none;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: calc(78px + env(safe-area-inset-bottom));
+            z-index: 3500;
+            max-width: 360px;
+            width: calc(100% - 32px);
+            box-sizing: border-box;
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            border-radius: 10px;
+            background: var(--card);
+            border: 1px solid rgba(52, 152, 219, 0.45);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            color: var(--text);
+            text-align: center;
+        }
+
+        #pron-tip.show { display: block; animation: obFade 0.3s ease; }
+        #pron-tip .coach { color: var(--wrong-blue); font-weight: bold; }
+
+        /* In-quiz "say this" prompt while recording */
+        .say-prompt {
+            color: var(--wrong-blue);
+            font-weight: bold;
+        }
+
+        .say-prompt .target {
+            color: var(--pol-red);
+            font-size: 1.1em;
+        }
     </style>
 </head>
 
 <body class="practice-mode-active">
+
+    <!-- ===== ONBOARDING / SETUP WIZARD ===== -->
+    <div id="onboarding">
+        <div class="ob-scroll">
+
+            <!-- Step 1: Welcome -->
+            <div class="ob-step active" data-step="0">
+                <div class="ob-flag"><div class="top"></div><div class="bot"></div></div>
+                <h1>Witaj! 🇵🇱</h1>
+                <p>Welcome to <b>Polish Phrase Master</b> — learn survival Polish through
+                    bite-sized levels, listen to native-style pronunciation, and practise speaking out loud.</p>
+                <div class="ob-feature"><span class="ic">📚</span><span class="tx"><b>Study &amp; Practice</b> — flip flashcards, then test yourself with tile quizzes.</span></div>
+                <div class="ob-feature"><span class="ic">🔊</span><span class="tx"><b>Listen</b> — tap any phrase to hear it; slow it down to catch the sounds.</span></div>
+                <div class="ob-feature"><span class="ic">🎤</span><span class="tx"><b>Speak</b> — say the phrase and get instant feedback on whether you nailed it.</span></div>
+                <div class="ob-feature"><span class="ic">🎧</span><span class="tx"><b>Hands-Free</b> — passive listening mode for the commute or the kitchen.</span></div>
+            </div>
+
+            <!-- Step 2: How it works -->
+            <div class="ob-step" data-step="1">
+                <h2>How practice works</h2>
+                <p>The app remembers what you know using spaced repetition, so phrases you find
+                    hard come back more often, and ones you've mastered fade away.</p>
+                <div class="ob-feature"><span class="ic">1️⃣</span><span class="tx"><b>STUDY</b> tab: meet new phrases as flashcards.</span></div>
+                <div class="ob-feature"><span class="ic">2️⃣</span><span class="tx"><b>PRACTICE</b> tab: answer quizzes. Three correct = mastered.</span></div>
+                <div class="ob-feature"><span class="ic">3️⃣</span><span class="tx"><b>PHRASES</b> tab: review everything you've banked.</span></div>
+                <p style="font-size:0.88rem;color:#888;">Everything is stored on your device. Nothing is uploaded except, optionally, your voice clips for transcription (next step).</p>
+            </div>
+
+            <!-- Step 3: Voice setup (OpenAI) -->
+            <div class="ob-step" data-step="2">
+                <h2>🎤 Set up speaking practice</h2>
+                <p>To grade your spoken Polish reliably (in any browser), the app uses
+                    <b>OpenAI</b>'s speech-to-text. It's optional — but it's far more accurate
+                    for Polish than your browser's built-in recogniser.</p>
+
+                <div class="ob-card">
+                    <b>Get a free API key (2 minutes):</b>
+                    <ol>
+                        <li>Open the OpenAI keys page and sign in (or create a free account).</li>
+                        <li>Click <b>“Create new secret key”</b>, give it a name, and copy it.</li>
+                        <li>Paste it below. New accounts include free credit — plenty for practice.</li>
+                    </ol>
+                    <a class="ob-link" id="ob-key-link" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">
+                        🔗 Open platform.openai.com/api-keys
+                    </a>
+                </div>
+
+                <input type="password" class="ob-input" id="ob-key-input" placeholder="sk-..." autocomplete="off" spellcheck="false">
+                <div class="ob-status" id="ob-key-status"></div>
+
+                <div class="ob-note">
+                    🔒 Your key is stored only in this browser (localStorage) and sent directly to
+                    OpenAI when you speak — never to anyone else. Cost is roughly a fraction of a
+                    penny per phrase. You can change or remove it anytime in Settings.
+                </div>
+            </div>
+
+            <!-- Step 4: Done -->
+            <div class="ob-step" data-step="3">
+                <div style="font-size:3.5rem;margin-bottom:10px;">🎉</div>
+                <h2>You're all set</h2>
+                <p id="ob-done-msg">Tap a phrase to listen, hit <b>🎤 Speak</b> to practise, and
+                    watch your mastery grow. Powodzenia! (Good luck!)</p>
+                <div class="ob-feature"><span class="ic">⚙️</span><span class="tx">Find voice settings, levels, and data backup anytime under <b>Settings</b> (top-right).</span></div>
+            </div>
+
+        </div>
+
+        <div class="ob-footer">
+            <div class="ob-dots">
+                <div class="ob-dot active"></div>
+                <div class="ob-dot"></div>
+                <div class="ob-dot"></div>
+                <div class="ob-dot"></div>
+            </div>
+            <div class="ob-row">
+                <button class="ob-btn secondary" id="ob-back" onclick="obPrev()" style="flex:0 0 auto;">Back</button>
+                <button class="ob-btn" id="ob-next" onclick="obNext()">Continue</button>
+            </div>
+            <button class="ob-btn secondary" id="ob-skip" onclick="obSkip()">Skip — set up voice later</button>
+        </div>
+    </div>
 
     <div id="overlay">
         <h1 style="color:var(--gold);" id="mastery-title">LEVEL MASTERED!</h1>
@@ -1229,6 +1591,38 @@
         </div>
     </div>
 
+    <div id="learn-overlay" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>📚 Levels &amp; Dictionary</h2>
+                <button class="modal-close" onclick="toggleLearn()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h3>🎚️ Choose a level</h3>
+                    <div class="custom-dropdown" id="lvl-dropdown" style="width:100%;">
+                        <div class="main-dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">
+                            Loading levels...
+                        </div>
+                        <div class="dropdown-menu" id="lvl-menu"></div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>🔍 Search &amp; translate</h3>
+                    <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary & translate..."
+                        oninput="handleSearch()"
+                        style="display:block; width:100%; box-sizing:border-box;">
+                    <div class="ob-note" style="margin-top:8px;">Type a word to find it, or translate something new into your Sandbox (Level C).</div>
+                    <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
+                        style="border-color:var(--pol-red); color:var(--pol-red); margin-top:12px;">
+                        📤 Export Sandbox (Lvl C)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="settings-overlay" class="modal-overlay">
         <div class="modal-container">
             <div class="modal-header">
@@ -1236,27 +1630,6 @@
                 <button class="modal-close" onclick="toggleSettings()">×</button>
             </div>
             <div class="modal-body">
-
-                <div class="controls-row" style="width: 100%; max-width: 100%; margin-bottom: 5px;">
-                    <div style="display:flex; justify-content:center; align-items:center;">
-                        <div class="custom-dropdown" id="lvl-dropdown" style="width:100%;">
-                            <div class="main-dropdown-trigger" id="lvl-current" onclick="toggleDropdown(event)">
-                                Loading levels...
-                            </div>
-                            <div class="dropdown-menu" id="lvl-menu"></div>
-                        </div>
-                    </div>
-
-                    <input type="text" id="search-bar" class="search-box" placeholder="Search dictionary & translate..."
-                        oninput="handleSearch()"
-                        style="display:block; margin-top:15px; margin-bottom:10px; width:100%; box-sizing:border-box;">
-
-                    <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
-                        style="border-color:var(--pol-red); color:var(--pol-red); margin-top:5px; margin-bottom:15px;">
-                        📤 Export Sandbox (Lvl C)
-                    </button>
-
-                </div>
 
                 <div class="settings-section">
                     <h3>⚙️ Options</h3>
@@ -1269,6 +1642,33 @@
                         style="border-color:var(--pol-red); color:var(--pol-red);" id="lbl-hf">
                         🎧 Start Hands-Free Mode
                     </button>
+                </div>
+
+                <div class="settings-section">
+                    <h3>🎤 Voice &amp; AI</h3>
+                    <div class="setting-row">
+                        <span class="setting-label">Speech recognition</span>
+                        <span id="set-voice-status" style="font-size:0.85rem;font-weight:bold;color:#888;">—</span>
+                    </div>
+                    <input type="password" class="ob-input" id="set-key-input" placeholder="OpenAI key (sk-...)" autocomplete="off" spellcheck="false" style="font-size:0.85rem;">
+                    <div style="display:flex;gap:10px;">
+                        <button class="settings-btn" onclick="saveKeyFromSettings()">💾 Save Key</button>
+                        <button class="settings-btn" onclick="clearOpenAIKey()" style="border-color:#ffcccc;color:#e74c3c;">🗑 Remove</button>
+                    </div>
+                    <div class="setting-row" style="margin-top:8px;">
+                        <span class="setting-label" style="font-size:0.9rem;">Model</span>
+                        <select id="set-model" onchange="saveOpenAIModel(this.value)" style="padding:6px;border-radius:6px;background:var(--bg);color:var(--text);border:1px solid #ccc;">
+                            <option value="gpt-4o-mini-transcribe">mini (cheapest)</option>
+                            <option value="gpt-4o-transcribe">4o (most accurate)</option>
+                            <option value="whisper-1">whisper-1</option>
+                        </select>
+                    </div>
+                    <div class="setting-row">
+                        <span class="setting-label" style="font-size:0.9rem;">🎓 AI pronunciation tips</span>
+                        <button class="settings-btn" style="width:auto;margin:0;padding:6px 15px;" onclick="togglePronTips()" id="lbl-pron-tips">ON</button>
+                    </div>
+                    <a class="ob-link" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener" style="font-size:0.82rem;margin-top:6px;">🔗 Get / manage your key</a>
+                    <button class="settings-btn" onclick="restartOnboarding()" style="margin-top:10px;">👋 Replay intro &amp; setup</button>
                 </div>
 
                 <div class="settings-section">
@@ -1317,8 +1717,10 @@
 
     <div class="navigation-row"
         style="display: flex; align-items: stretch; justify-content: center; width: 100%; border-bottom: 2px solid #ddd; background: var(--card);">
+        <button class="nav-icon-btn voice-badge" id="voice-badge" onclick="toggleSettings()" title="Voice setup"
+            style="width: 40px; flex-shrink: 0; background: none; border: none; border-right: 1px solid #ddd; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">🎤<span class="vb-dot off" id="vb-dot"></span></button>
         <button class="nav-icon-btn" id="main-help-btn" onclick="toggleHelp()"
-            style="width: 45px; flex-shrink: 0; background: none; border: none; border-right: 1px solid #ddd; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">❓</button>
+            style="width: 40px; flex-shrink: 0; background: none; border: none; border-right: 1px solid #ddd; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">❓</button>
 
         <div class="mode-tabs" style="border-bottom: none; flex: 1; display: flex;">
             <div id="tab-study" class="tab" onclick="switchMode('study')" style="flex: 1;">
@@ -1332,8 +1734,10 @@
             </div>
         </div>
 
+        <button class="nav-icon-btn" id="btn-learn" onclick="toggleLearn()" title="Levels & dictionary"
+            style="width: 40px; flex-shrink: 0; background: none; border: none; border-left: 1px solid #ddd; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">📚</button>
         <button class="nav-icon-btn" onclick="toggleSettings()"
-            style="width: 45px; flex-shrink: 0; background: none; border: none; border-left: 1px solid #ddd; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">⚙️</button>
+            style="width: 40px; flex-shrink: 0; background: none; border: none; border-left: 1px solid #ddd; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text);">⚙️</button>
     </div>
 
     <div class="progress-wrapper" id="prog-wrapper">
@@ -1396,6 +1800,8 @@
         </div>
     </div>
 
+    <div id="pron-tip"></div>
+
     <div class="action-footer">
         <button class="action-btn" id="footer-listen-btn" onclick="handleSpeakerTap()"
             style="background:var(--success-green); color:white; border-color:var(--success-green); flex: 2; padding: 0 5px;"
@@ -1407,9 +1813,12 @@
         <button class="action-btn" onclick="togglePauseAudio()" style="flex: 0.5; padding: 0;" title="Pause/Resume">
             <span class="action-icon" id="pause-icon" style="margin:0;">⏸️</span>
         </button>
-        <button class="action-btn" id="mic-btn" onclick="toggleMic()" style="flex: 1;">
+        <button class="action-btn" id="mic-btn"
+            style="flex: 1; touch-action: none; user-select: none; -webkit-user-select: none;"
+            onpointerdown="micPress(event)" onpointerup="micRelease(event)"
+            onpointerleave="micRelease(event)" onpointercancel="micRelease(event)">
             <span class="action-icon">🎤</span>
-            <span id="lbl-btn-speak">Speak</span>
+            <span id="lbl-btn-speak">Hold to speak</span>
         </button>
         <input type="file" id="file-input" style="display:none" onchange="importProgress(event)">
     </div>
@@ -1682,6 +2091,13 @@
 
         function toggleSettings() {
             const el = document.getElementById('settings-overlay');
+            const opening = el.style.display !== 'flex';
+            el.style.display = opening ? 'flex' : 'none';
+            if (opening) refreshVoiceStatusUI();
+        }
+
+        function toggleLearn() {
+            const el = document.getElementById('learn-overlay');
             el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
         }
 
@@ -1919,6 +2335,59 @@
         let recognition;
         let isListening = false;
 
+        // ----- OpenAI key / model storage -----
+        function getOpenAIKey() { return localStorage.getItem('pl_openai_key') || ''; }
+        function setOpenAIKey(k) { localStorage.setItem('pl_openai_key', (k || '').trim()); }
+        function clearOpenAIKey() {
+            localStorage.removeItem('pl_openai_key');
+            refreshVoiceStatusUI();
+            const i = document.getElementById('set-key-input'); if (i) i.value = '';
+        }
+        function getOpenAIModel() { return localStorage.getItem('pl_openai_model') || 'gpt-4o-mini-transcribe'; }
+        function saveOpenAIModel(m) { localStorage.setItem('pl_openai_model', m); }
+
+        function refreshVoiceStatusUI() {
+            const el = document.getElementById('set-voice-status');
+            const hasKey = !!getOpenAIKey();
+            if (el) {
+                el.innerText = hasKey ? 'OpenAI (accurate) ✓' : (recognition ? 'Browser (basic)' : 'Unavailable');
+                el.style.color = hasKey ? 'var(--success-green)' : '#888';
+            }
+            const sel = document.getElementById('set-model'); if (sel) sel.value = getOpenAIModel();
+            const ki = document.getElementById('set-key-input'); if (ki && hasKey) ki.placeholder = 'Key saved (hidden) — paste to replace';
+            // Header voice badge dot + title
+            const dot = document.getElementById('vb-dot');
+            const badge = document.getElementById('voice-badge');
+            if (dot) {
+                dot.className = 'vb-dot ' + (hasKey ? 'ai' : (recognition ? 'basic' : 'off'));
+                if (badge) badge.title = hasKey ? 'Voice: OpenAI (accurate)' : (recognition ? 'Voice: browser (basic) — tap to upgrade' : 'Voice off — tap to set up');
+            }
+            // Tips toggle reflects stored pref
+            const tipBtn = document.getElementById('lbl-pron-tips');
+            if (tipBtn) {
+                const on = tipsEnabled();
+                tipBtn.innerText = on ? 'ON' : 'OFF';
+                tipBtn.style.color = on ? 'var(--success-green)' : '#888';
+            }
+            const lbl = document.getElementById('lbl-btn-speak');
+            if (lbl && !isRecording) lbl.innerText = 'Hold to speak';
+        }
+
+        function tipsEnabled() { return localStorage.getItem('pl_pron_tips') !== '0'; }
+        function togglePronTips() {
+            localStorage.setItem('pl_pron_tips', tipsEnabled() ? '0' : '1');
+            refreshVoiceStatusUI();
+        }
+
+        function saveKeyFromSettings() {
+            const v = document.getElementById('set-key-input').value.trim();
+            if (!v) { alert('Paste your OpenAI key first.'); return; }
+            setOpenAIKey(v);
+            document.getElementById('set-key-input').value = '';
+            refreshVoiceStatusUI();
+            alert('Key saved. Speaking practice will now use OpenAI.');
+        }
+
         function initSpeechRecognition() {
             window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -1930,7 +2399,7 @@
                 recognition.onstart = () => {
                     isListening = true;
                     document.getElementById('mic-btn').classList.add('mic-active');
-                    document.getElementById('feedback').innerText = "Listening... 🎤";
+                    showSayPrompt();
                 };
 
                 recognition.onresult = (event) => {
@@ -1948,28 +2417,243 @@
                     stopListening();
                 };
             }
+            refreshVoiceStatusUI();
         }
 
-        function toggleMic() {
-            if (!recognition) {
-                alert("Voice recognition not supported in this browser. Please use Chrome or Safari over HTTPS.");
+        // ----- Whisper / OpenAI recording path -----
+        let mediaRecorder = null;
+        let audioChunks = [];
+        let isRecording = false;
+        let whisperStream = null;
+        let whisperAutoStop = null;
+        let whisperDiscard = false;
+
+        function micEl() { return document.getElementById('mic-btn'); }
+        function fb() { return document.getElementById('feedback'); }
+
+        // Returns the text the learner is expected to SAY (for the recording prompt)
+        function expectedSpoken() {
+            if (!currentTarget) return '';
+            if (isSwapped) return currentTarget.en || '';
+            if (currentLevel === "0") return currentTarget.word || currentTarget.pl || '';
+            return (typeof getGenderText === 'function' ? getGenderText(currentTarget) : currentTarget.pl) || '';
+        }
+
+        function showSayPrompt() {
+            const want = expectedSpoken();
+            if (want) {
+                fb().innerHTML = '<span class="say-prompt">🗣 Say: <span class="target">' + want + '</span></span>';
+            } else {
+                fb().innerText = "Recording… 🎤";
+                fb().style.color = "var(--wrong-blue)";
+            }
+        }
+
+        async function startWhisperRecording() {
+            try {
+                whisperStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            } catch (e) {
+                fb().innerText = "Microphone blocked. Allow mic access and try again.";
+                fb().style.color = "var(--pol-red)";
                 return;
             }
-            if (isListening) {
-                recognition.stop();
-            } else {
+            audioChunks = [];
+            whisperDiscard = false;
+            try {
+                mediaRecorder = new MediaRecorder(whisperStream);
+            } catch (e) {
+                mediaRecorder = new MediaRecorder(whisperStream, { mimeType: 'audio/webm' });
+            }
+            mediaRecorder.ondataavailable = e => { if (e.data && e.data.size > 0) audioChunks.push(e.data); };
+            mediaRecorder.onstop = async () => {
+                if (whisperStream) { whisperStream.getTracks().forEach(t => t.stop()); whisperStream = null; }
+                if (whisperDiscard) {
+                    fb().innerText = "Hold the button while you speak.";
+                    fb().style.color = "#888";
+                    return;
+                }
+                const blob = new Blob(audioChunks, { type: 'audio/webm' });
+                await transcribeWithOpenAI(blob);
+            };
+            mediaRecorder.start();
+            isRecording = true;
+            micEl().classList.add('mic-recording');
+            document.getElementById('lbl-btn-speak').innerText = 'Listening…';
+            showSayPrompt();
+            // Safety auto-stop after 7s
+            whisperAutoStop = setTimeout(() => { if (isRecording) stopWhisperRecording(false); }, 7000);
+        }
+
+        function stopWhisperRecording(discard) {
+            if (whisperAutoStop) { clearTimeout(whisperAutoStop); whisperAutoStop = null; }
+            whisperDiscard = !!discard;
+            isRecording = false;
+            micEl().classList.remove('mic-recording');
+            document.getElementById('lbl-btn-speak').innerText = 'Hold to speak';
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                if (!discard) { fb().innerText = "Transcribing… ⏳"; fb().style.color = "var(--wrong-blue)"; }
+                mediaRecorder.stop();
+            }
+        }
+
+        async function transcribeWithOpenAI(blob) {
+            const key = getOpenAIKey();
+            if (!key) { fb().innerText = "No OpenAI key set."; return; }
+            const form = new FormData();
+            form.append('file', blob, 'speech.webm');
+            form.append('model', getOpenAIModel());
+            form.append('language', isSwapped ? 'en' : 'pl');
+            form.append('response_format', 'json');
+            try {
+                const res = await fetch('https://api.openai.com/v1/audio/transcriptions', {
+                    method: 'POST',
+                    headers: { 'Authorization': 'Bearer ' + key },
+                    body: form
+                });
+                if (!res.ok) {
+                    let msg = "Transcription failed (" + res.status + ").";
+                    if (res.status === 401) msg = "Invalid OpenAI key — check it in Settings.";
+                    if (res.status === 429) msg = "OpenAI rate/quota limit — check your account.";
+                    fb().innerText = msg;
+                    fb().style.color = "var(--pol-red)";
+                    return;
+                }
+                const data = await res.json();
+                const transcript = (data.text || '').toLowerCase().trim();
+                if (!transcript) {
+                    fb().innerText = "Didn't catch that — try again.";
+                    fb().style.color = "var(--pol-red)";
+                    return;
+                }
+                checkSpokenAnswer(transcript);
+            } catch (e) {
+                fb().innerText = "Network error reaching OpenAI.";
+                fb().style.color = "var(--pol-red)";
+            }
+        }
+
+        // ----- AI pronunciation coach -----
+        const TIP_MODEL = 'gpt-4o-mini';
+
+        function hidePronTip() {
+            const el = document.getElementById('pron-tip');
+            if (el) { el.style.display = 'none'; }
+        }
+
+        function showPronTip(html) {
+            const el = document.getElementById('pron-tip');
+            if (!el) return;
+            el.innerHTML = html;
+            el.style.display = 'block';
+            clearTimeout(el._t);
+            el._t = setTimeout(hidePronTip, 9000);
+        }
+
+        async function maybeGivePronTip(heard, expected, isCorrect) {
+            const key = getOpenAIKey();
+            if (!key || !expected) return;
+            showPronTip('<span class="coach">🎓 Coach is listening…</span>');
+            const sys = "You are a concise, encouraging Polish pronunciation coach. Reply in ONE sentence, max 18 words, no preamble.";
+            const usr = 'Target phrase the learner should say: "' + expected + '". '
+                + 'Speech-to-text of what they actually said: "' + heard + '". '
+                + (isCorrect
+                    ? "It was essentially correct — give brief praise plus one tiny refinement if useful."
+                    : "It was not correct — name the likely sound or word they got wrong and how to fix it.");
+            try {
+                const res = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: { 'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        model: TIP_MODEL,
+                        messages: [{ role: 'system', content: sys }, { role: 'user', content: usr }],
+                        max_tokens: 60,
+                        temperature: 0.4
+                    })
+                });
+                if (!res.ok) { hidePronTip(); return; }
+                const data = await res.json();
+                const tip = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content || '').trim();
+                if (tip) showPronTip('<span class="coach">🎓 </span>' + tip);
+                else hidePronTip();
+            } catch (e) { hidePronTip(); }
+        }
+
+        // ----- Press-and-hold control -----
+        let micPressTime = 0;
+        const MIN_HOLD_MS = 350;
+
+        function micPress(e) {
+            if (e) { e.preventDefault(); }
+            hidePronTip();
+            micPressTime = Date.now();
+            // Preferred path: OpenAI (works in all browsers, great Polish)
+            if (getOpenAIKey() && navigator.mediaDevices && window.MediaRecorder) {
+                if (!isRecording) startWhisperRecording();
+                return;
+            }
+            // Fallback: browser Web Speech API
+            if (!recognition) {
+                if (confirm("For reliable Polish speech practice, set up free OpenAI voice recognition now?\n\n(Your browser's built-in recogniser isn't available here.)")) {
+                    restartOnboarding(2);
+                }
+                return;
+            }
+            if (!isListening) {
                 recognition.lang = isSwapped ? 'en-US' : 'pl-PL';
-                recognition.start();
+                try { recognition.start(); } catch (err) { }
+                showSayPrompt();
+            }
+        }
+
+        function micRelease(e) {
+            if (e) { e.preventDefault(); }
+            const held = Date.now() - micPressTime;
+            // OpenAI path
+            if (isRecording) {
+                stopWhisperRecording(held < MIN_HOLD_MS);
+                return;
+            }
+            // Web Speech path: stop to finalise the result
+            if (recognition && isListening) {
+                try { recognition.stop(); } catch (err) { }
             }
         }
 
         function stopListening() {
             isListening = false;
             document.getElementById('mic-btn').classList.remove('mic-active');
+            document.getElementById('mic-btn').classList.remove('mic-recording');
+            const lbl = document.getElementById('lbl-btn-speak');
+            if (lbl) lbl.innerText = 'Hold to speak';
         }
 
         function cleanStr(str) {
-            return str ? str.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").trim() : "";
+            return str ? str.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"]/g, "").replace(/\s+/g, " ").trim() : "";
+        }
+
+        // Levenshtein-based fuzzy match: forgives minor transcription wobble
+        // (a dropped space/comma) but still requires correct words & diacritics.
+        function levenshtein(a, b) {
+            const m = a.length, n = b.length;
+            if (!m) return n; if (!n) return m;
+            const d = Array.from({ length: m + 1 }, (_, i) => [i, ...Array(n).fill(0)]);
+            for (let j = 0; j <= n; j++) d[0][j] = j;
+            for (let i = 1; i <= m; i++)
+                for (let j = 1; j <= n; j++)
+                    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1,
+                        d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+            return d[m][n];
+        }
+
+        function fuzzyEqual(heard, expected) {
+            const a = cleanStr(heard), b = cleanStr(expected);
+            if (!a || !b) return false;
+            if (a === b) return true;
+            const dist = levenshtein(a, b);
+            const ratio = 1 - dist / Math.max(a.length, b.length);
+            // Short answers must be near-exact; longer phrases allow ~1-2 char slips.
+            if (b.length <= 5) return dist === 0;
+            return ratio >= 0.85;
         }
 
         function checkSpokenAnswer(transcript) {
@@ -1979,16 +2663,21 @@
             const eClean = cleanStr(expected);
             const tClean = cleanStr(transcript);
 
-            let match = (tClean === eClean);
+            let match = fuzzyEqual(transcript, expected);
 
-            if (currentLevel === "0" && cleanStr(currentTarget.word) === tClean) {
+            if (currentLevel === "0" && fuzzyEqual(transcript, currentTarget.word)) {
                 match = true;
             }
 
             if (!isSwapped && currentTarget.variants) {
-                if (cleanStr(currentTarget.variants.m) === tClean || cleanStr(currentTarget.variants.f) === tClean) {
+                if (fuzzyEqual(transcript, currentTarget.variants.m) || fuzzyEqual(transcript, currentTarget.variants.f)) {
                     match = true;
                 }
+            }
+
+            // Optional AI pronunciation coaching (only when using OpenAI + enabled)
+            if (getOpenAIKey() && tipsEnabled() && !isSwapped) {
+                maybeGivePronTip(transcript, expectedSpoken(), match);
             }
 
             // Handle Mic in Study Mode without saving points
@@ -2161,6 +2850,9 @@
             currentLevel = lvlId.toString();
             localStorage.setItem('pl_current_level_idx', currentLevel);
 
+            const lo = document.getElementById('learn-overlay');
+            if (lo) lo.style.display = 'none';
+
             document.getElementById('lvl-menu').classList.remove('show');
             document.getElementById('search-results-list').style.display = 'none';
             document.getElementById('mastery-map').style.display = 'grid';
@@ -2227,6 +2919,8 @@
             mapArea.style.display = 'none';
             document.getElementById('study-view').style.display = 'none';
             listArea.style.display = 'flex';
+            const lo = document.getElementById('learn-overlay');
+            if (lo && lo.style.display === 'flex') lo.style.display = 'none';
 
             const matches = allPhrasesCache.filter(p => p.pl.toLowerCase().includes(query) || p.en.toLowerCase().includes(query)).slice(0, 10);
 
@@ -3109,6 +3803,91 @@
         }
 
         // ==========================================
+        // ONBOARDING / SETUP WIZARD
+        // ==========================================
+        let obStep = 0;
+        const OB_TOTAL = 4;
+
+        function maybeShowOnboarding() {
+            if (!localStorage.getItem('pl_onboarded')) {
+                restartOnboarding(0);
+            }
+        }
+
+        function restartOnboarding(startAt = 0) {
+            obStep = startAt;
+            // Prefill the key field if one already exists (shown masked via type=password)
+            const ki = document.getElementById('ob-key-input');
+            if (ki) ki.value = getOpenAIKey();
+            document.getElementById('onboarding').classList.add('show');
+            obRender();
+        }
+
+        function obRender() {
+            document.querySelectorAll('.ob-step').forEach(s =>
+                s.classList.toggle('active', +s.dataset.step === obStep));
+            document.querySelectorAll('.ob-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === obStep));
+            document.getElementById('ob-back').style.visibility = obStep === 0 ? 'hidden' : 'visible';
+            const next = document.getElementById('ob-next');
+            const skip = document.getElementById('ob-skip');
+            if (obStep === OB_TOTAL - 1) {
+                next.innerText = "Start learning →";
+                skip.style.display = 'none';
+            } else if (obStep === 2) {
+                next.innerText = getOpenAIKey() ? "Save & continue" : "Continue";
+                skip.style.display = 'block';
+                skip.innerText = "Skip — set up voice later";
+            } else {
+                next.innerText = "Continue";
+                skip.style.display = obStep === 0 ? 'block' : 'none';
+                skip.innerText = "Skip intro";
+            }
+            // Done-step message reflects whether voice is active
+            if (obStep === 3) {
+                const dm = document.getElementById('ob-done-msg');
+                dm.innerHTML = getOpenAIKey()
+                    ? "Voice practice is ready. Tap a phrase to listen, hit <b>🎤 Speak</b> to practise, and watch your mastery grow. Powodzenia!"
+                    : "Tap a phrase to listen and use the tile quizzes to learn. You can switch on <b>🎤 voice practice</b> anytime in Settings. Powodzenia!";
+            }
+        }
+
+        function obNext() {
+            // Step 2 (index 2) = OpenAI key step: validate/save before advancing
+            if (obStep === 2) {
+                const raw = document.getElementById('ob-key-input').value.trim();
+                const status = document.getElementById('ob-key-status');
+                if (raw) {
+                    if (!raw.startsWith('sk-')) {
+                        status.className = 'ob-status err';
+                        status.innerText = "That doesn't look like an OpenAI key (should start with 'sk-').";
+                        return;
+                    }
+                    setOpenAIKey(raw);
+                    saveOpenAIModel(getOpenAIModel());
+                    status.className = 'ob-status ok';
+                    status.innerText = "Key saved ✓";
+                    refreshVoiceStatusUI();
+                }
+            }
+            if (obStep < OB_TOTAL - 1) { obStep++; obRender(); }
+            else finishOnboarding();
+        }
+
+        function obPrev() { if (obStep > 0) { obStep--; obRender(); } }
+
+        function obSkip() {
+            if (obStep === 0) finishOnboarding();
+            else { obStep = OB_TOTAL - 1; obRender(); }
+        }
+
+        function finishOnboarding() {
+            localStorage.setItem('pl_onboarded', '1');
+            document.getElementById('onboarding').classList.remove('show');
+            refreshVoiceStatusUI();
+        }
+
+        // ==========================================
         // INITIALIZATION & SERVICE WORKER
         // ==========================================
         document.addEventListener('click', initAudioContext, { once: true });
@@ -3121,6 +3900,8 @@
             updateUILanguage();
             scanLibrary();
             switchMode('study');
+            refreshVoiceStatusUI();
+            maybeShowOnboarding();
         };
 
         if ('serviceWorker' in navigator) {
