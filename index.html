@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v38.0</title>
+    <title>Polish Phrase Master v42.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -557,6 +557,83 @@
             box-sizing: border-box;
             flex-grow: 1;
         }
+
+        #typing-view {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 16px 16px 150px;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+        #drills-view {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 14px 16px 150px;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+        .dr-cats { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 14px; }
+        .dr-cats button {
+            border: 1px solid var(--pol-red); background: var(--card); color: var(--pol-red);
+            border-radius: 14px; padding: 5px 11px; font-size: 0.78rem; font-weight: bold; cursor: pointer;
+        }
+        .dr-cats button.active { background: var(--pol-red); color: #fff; }
+        .dr-card {
+            background: var(--card); border: 2px solid var(--pol-red); border-radius: 16px;
+            width: 100%; max-width: 360px; padding: 18px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); text-align: center;
+        }
+        .dr-focus { font-size: 0.78rem; color: #888; font-weight: bold; margin-bottom: 10px; }
+        .dr-pl { font-size: 2rem; font-weight: 900; color: var(--pol-red); line-height: 1.15; }
+        .dr-phon { font-size: 0.95rem; color: var(--wrong-blue); font-style: italic; margin-top: 4px; }
+        .dr-en { font-size: 1.05rem; color: #888; font-weight: bold; margin-top: 6px; }
+        .dr-contrast { font-size: 0.8rem; color: #999; margin-top: 8px; min-height: 16px; }
+        .dr-audio { display: flex; justify-content: center; gap: 26px; margin-top: 16px; }
+        .dr-btn {
+            width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--pol-red);
+            background: var(--card); font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+        }
+        .dr-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 16px; }
+        .ty-card {
+            background: var(--card); border: 2px solid var(--pol-red); border-radius: 16px;
+            width: 100%; max-width: 380px; padding: 20px 18px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); text-align: center;
+        }
+        .ty-label { font-size: 0.78rem; color: #888; font-weight: bold; letter-spacing: 0.4px; text-transform: uppercase; }
+        .ty-prompt { font-size: 1.5rem; font-weight: 800; color: var(--text); margin: 8px 0 16px; line-height: 1.2; }
+        #ty-input {
+            width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 1.15rem;
+            border: 2px solid #ccc; border-radius: 10px; text-align: center; background: var(--bg); color: var(--text);
+        }
+        #ty-input:focus { border-color: var(--pol-red); outline: none; }
+        .ty-accents { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 12px; }
+        .ty-accents button {
+            width: 38px; height: 40px; font-size: 1.15rem; border: 1px solid var(--pol-red); background: var(--card);
+            color: var(--pol-red); border-radius: 8px; cursor: pointer; font-weight: bold;
+        }
+        .ty-accents button:active { background: var(--pol-red); color: #fff; }
+        .ty-feedback { min-height: 22px; margin-top: 12px; font-size: 0.95rem; font-weight: bold; line-height: 1.35; }
+        .ty-feedback .ty-correct-ans { color: var(--success-green); }
+        .ty-feedback .ty-bad { color: var(--pol-red); }
+        .ty-feedback .ty-warn { color: #d39e00; }
+        .ty-btn-row { margin-top: 14px; }
+        .ty-check, .ty-next {
+            background: var(--pol-red); color: #fff; border: none; border-radius: 22px; padding: 11px 30px;
+            font-size: 1rem; font-weight: 800; cursor: pointer;
+        }
+        .ty-controls {
+            display: flex; align-items: center; justify-content: space-between; gap: 10px;
+            width: 100%; max-width: 380px; margin-top: 16px;
+        }
+        .ty-mini {
+            background: none; border: 1px solid #ccc; border-radius: 16px; padding: 7px 14px;
+            font-size: 0.85rem; font-weight: bold; color: var(--text); cursor: pointer;
+        }
+        .ty-counter { font-size: 0.9rem; color: #888; font-weight: bold; }
 
         .flashcard {
             background: var(--card);
@@ -1696,6 +1773,40 @@
         .fc-icon-btn:active { transform: translateY(1px); }
 
         /* Persistent tour / walk-through banner */
+        /* Progress dashboard */
+        .pg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+        .pg-card { background: var(--bg); border: 1px solid #ddd; border-radius: 12px; padding: 14px 8px; text-align: center; }
+        .pg-num { font-size: 1.55rem; font-weight: 800; color: var(--pol-red); line-height: 1.1; }
+        .pg-lbl { font-size: 0.76rem; color: #888; margin-top: 3px; }
+        .pg-section { margin-bottom: 18px; }
+        .pg-sec-title { font-weight: 800; margin-bottom: 8px; font-size: 0.95rem; }
+        .pg-lvl-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; font-size: 0.82rem; }
+        .pg-lvl-name { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .pg-bar { width: 90px; height: 8px; background: #e5e5e5; border-radius: 4px; overflow: hidden; flex-shrink: 0; }
+        .pg-bar-fill { height: 100%; background: var(--success-green); border-radius: 4px; }
+        .pg-lvl-n { width: 48px; text-align: right; color: #888; flex-shrink: 0; }
+
+        #daily-banner {
+            display: none;
+            align-items: center;
+            gap: 12px;
+            padding: 9px 14px;
+            background: linear-gradient(90deg, rgba(220,20,60,0.10), rgba(255,193,7,0.12));
+            border-bottom: 1px solid rgba(220,20,60,0.25);
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+        #daily-banner .db-item { white-space: nowrap; }
+        #daily-banner b { font-size: 1.05rem; color: var(--pol-red); }
+        #daily-banner .db-review {
+            margin-left: auto; background: var(--pol-red); color: #fff; border: none;
+            border-radius: 14px; padding: 5px 14px; font-weight: 800; font-size: 0.82rem; cursor: pointer;
+        }
+        #daily-banner .db-x {
+            background: none; border: none; font-size: 1.1rem; color: #999; cursor: pointer; padding: 0 2px;
+        }
+        @media (max-width: 360px) { #daily-banner .db-lbl { display: none; } }
+
         #tour-banner {
             display: none;
             align-items: center;
@@ -1757,7 +1868,7 @@
                 <p>Three controls sit at the top on every page:</p>
                 <div class="ob-feature"><span class="ic">☰</span><span class="tx"><b>Menu</b> — Help, Settings and Voice setup. The little dot shows voice status (green = ready).</span></div>
                 <div class="ob-feature"><span class="ic">📚</span><span class="tx"><b>Level</b> (centre) — shows your current level; tap to change it, search &amp; translate (next page).</span></div>
-                <div class="ob-feature"><span class="ic">📖</span><span class="tx"><b>Mode</b> (right) — tap to switch between <b>Study</b>, <b>Practice</b> and <b>Phrases</b>.</span></div>
+                <div class="ob-feature"><span class="ic">📖</span><span class="tx"><b>Mode</b> (right) — tap to switch between <b>Study</b>, <b>Practice</b>, <b>Phrases</b>, <b>Type</b> and <b>Sounds</b>.</span></div>
             </div>
 
             <!-- 2: Levels button -->
@@ -1844,6 +1955,38 @@
         <button onclick="advanceLevel()"
             style="padding: 12px 24px; background: var(--pol-red); color: white; border: none; border-radius: 8px; font-weight: bold; font-size:1.1rem; cursor:pointer;"
             id="mastery-btn">Next Level</button>
+    </div>
+
+    <div id="progress-overlay" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>📊 Your Progress</h2>
+                <button class="modal-close" onclick="toggleProgress()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="pg-cards">
+                    <div class="pg-card"><div class="pg-num" id="pg-mastered">0</div><div class="pg-lbl">Mastered</div></div>
+                    <div class="pg-card"><div class="pg-num" id="pg-streak">0</div><div class="pg-lbl">Day streak</div></div>
+                    <div class="pg-card"><div class="pg-num" id="pg-points">0</div><div class="pg-lbl">Points ⭐</div></div>
+                    <div class="pg-card"><div class="pg-num" id="pg-due">0</div><div class="pg-lbl">Due today</div></div>
+                </div>
+
+                <div class="pg-section">
+                    <div class="pg-sec-title">🎤 Pronunciation</div>
+                    <div id="pg-pron" style="font-size:0.9rem;">No attempts yet.</div>
+                </div>
+
+                <div class="pg-section">
+                    <div class="pg-sec-title">📚 Mastery by level</div>
+                    <div id="pg-levels"></div>
+                </div>
+
+                <div class="pg-section">
+                    <div class="pg-sec-title">🏅 Badges</div>
+                    <div id="pg-badges"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="hint-overlay" class="modal-overlay">
@@ -1952,7 +2095,7 @@
                 </details>
 
                 <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master
-                    <span id="app-version">v38.0</span></div>
+                    <span id="app-version">v42.0</span></div>
             </div>
         </div>
     </div>
@@ -2120,12 +2263,22 @@
             <div id="tab-mastered" class="tab" onclick="switchMode('mastered')">
                 <span class="mr-ic">🗂️</span> <span id="lbl-tab-banked">PHRASES</span> <span id="banked-count"></span>
             </div>
+            <div id="tab-typing" class="tab" onclick="switchMode('typing')">
+                <span class="mr-ic">⌨️</span> <span>TYPE</span>
+            </div>
+            <div id="tab-drills" class="tab" onclick="switchMode('drills')">
+                <span class="mr-ic">🗣️</span> <span>SOUNDS</span>
+            </div>
         </div>
 
         <div id="app-menu" class="hdr-dropdown app-menu" style="display: none;">
             <div class="menu-row" onclick="closeHeaderMenus(); toggleSettings();">
                 <span class="mn-ic">🎤</span>
                 <div class="menu-row-txt"><b>Voice</b><span id="menu-voice-status">—</span></div>
+            </div>
+            <div class="menu-row" onclick="closeHeaderMenus(); toggleProgress();">
+                <span class="mn-ic">📊</span>
+                <div class="menu-row-txt"><b>Progress</b></div>
             </div>
             <div class="menu-row" onclick="closeHeaderMenus(); toggleHelp();">
                 <span class="mn-ic">❓</span>
@@ -2145,6 +2298,13 @@
         <span class="tb-text">New here? Take the <b>quick tour</b> — see where levels &amp; phrases live.</span>
         <button class="tb-go" onclick="event.stopPropagation(); restartOnboarding(0)">Tour</button>
         <button class="tb-x" onclick="dismissTourBanner(event)" title="Hide this">&times;</button>
+    </div>
+
+    <div id="daily-banner" style="display:none;">
+        <span class="db-item">🔥 <b id="db-streak-n">0</b><span class="db-lbl">&nbsp;day streak</span></span>
+        <span class="db-item" id="db-due-wrap">📅 <b id="db-due-n">0</b><span class="db-lbl">&nbsp;due today</span></span>
+        <button class="db-review" id="db-review" onclick="startDueReview()">Review</button>
+        <button class="db-x" onclick="hideDailyBanner()" aria-label="Dismiss">&times;</button>
     </div>
 
     <div class="progress-wrapper" id="prog-wrapper">
@@ -2219,6 +2379,49 @@
                 <button class="fc-btn" onclick="nextStudyCard()">▶</button>
             </div>
             <button class="study-hf-btn" onclick="openHandsFree()" title="Play this level hands-free">🎧 Hands-Free</button>
+        </div>
+
+        <div id="typing-view">
+            <div class="ty-card">
+                <div class="ty-label">Type it in Polish</div>
+                <div class="ty-prompt" id="ty-prompt">—</div>
+                <input id="ty-input" type="text" autocomplete="off" autocapitalize="off" autocorrect="off"
+                    spellcheck="false" placeholder="type here…" onkeydown="typingKey(event)">
+                <div class="ty-accents" id="ty-accents"></div>
+                <div class="ty-feedback" id="ty-feedback"></div>
+                <div class="ty-btn-row">
+                    <button class="ty-check" id="ty-check" onclick="typingCheck()">Check</button>
+                    <button class="ty-next" id="ty-next" onclick="typingNext()" style="display:none;">Next ▶</button>
+                </div>
+            </div>
+            <div class="ty-controls">
+                <button class="ty-mini" onclick="typingHint()">💡 Hint</button>
+                <span class="ty-counter" id="ty-counter">1 / 1</span>
+                <button class="ty-mini" onclick="typingSkip()">Skip ⏭</button>
+            </div>
+        </div>
+
+        <div id="drills-view">
+            <div class="dr-cats" id="dr-cats"></div>
+            <div class="dr-card">
+                <div class="dr-focus" id="dr-focus">—</div>
+                <div class="dr-pl" id="dr-pl">—</div>
+                <div class="dr-phon" id="dr-phon"></div>
+                <div class="dr-en" id="dr-en"></div>
+                <div class="dr-contrast" id="dr-contrast"></div>
+                <div class="dr-audio">
+                    <button class="dr-btn" onclick="drillSpeak()" title="Listen — tap again to slow">🔊</button>
+                    <button class="dr-btn dr-mic" title="Hold to speak"
+                        style="touch-action:none; user-select:none; -webkit-user-select:none;"
+                        onpointerdown="drillMicDown(event)" onpointerup="micRelease(event)"
+                        onpointerleave="micRelease(event)" onpointercancel="micRelease(event)">🎤</button>
+                </div>
+            </div>
+            <div class="dr-controls">
+                <button class="ty-mini" onclick="drillPrev()">◀</button>
+                <span class="ty-counter" id="dr-counter">1 / 1</span>
+                <button class="ty-mini" onclick="drillNext()">▶</button>
+            </div>
         </div>
     </div>
 
@@ -2626,6 +2829,265 @@
             renderStudyCard();
             playStudyAudio();
         }
+
+        // ===== Typing / spelling mode =====
+        let typingPool = [];
+        let typingIndex = 0;
+        let typingAnswered = false;
+        const PL_ACCENTS = ['ą', 'ć', 'ę', 'ł', 'ń', 'ó', 'ś', 'ź', 'ż'];
+
+        function typingPolishTarget(p) {
+            if (!p) return '';
+            if (currentLevel === '0') return p.word || p.pl || '';
+            return (typeof getGenderText === 'function' ? getGenderText(p) : p.pl) || p.pl || '';
+        }
+        function normTyping(s) {
+            return (s || '').toLowerCase().trim().replace(/[.,!?;:"„""''()]/g, '').replace(/\s+/g, ' ');
+        }
+        function stripDia(s) {
+            return (s || '').replace(/ą/g, 'a').replace(/ć/g, 'c').replace(/ę/g, 'e').replace(/ł/g, 'l')
+                .replace(/ń/g, 'n').replace(/ó/g, 'o').replace(/ś/g, 's').replace(/ź/g, 'z').replace(/ż/g, 'z');
+        }
+        function buildAccentBar() {
+            const bar = document.getElementById('ty-accents');
+            if (!bar || bar.childElementCount) return;
+            PL_ACCENTS.forEach(ch => {
+                const b = document.createElement('button');
+                b.type = 'button'; b.innerText = ch;
+                b.addEventListener('click', () => insertAccent(ch));
+                bar.appendChild(b);
+            });
+        }
+        function insertAccent(ch) {
+            const inp = document.getElementById('ty-input');
+            if (!inp) return;
+            const s = inp.selectionStart != null ? inp.selectionStart : inp.value.length;
+            const e = inp.selectionEnd != null ? inp.selectionEnd : inp.value.length;
+            inp.value = inp.value.slice(0, s) + ch + inp.value.slice(e);
+            const pos = s + ch.length;
+            inp.focus();
+            try { inp.setSelectionRange(pos, pos); } catch (_) { }
+        }
+        function startTyping() {
+            buildAccentBar();
+            typingPool = Array.isArray(phrasesData) ? phrasesData.filter(p => p && (p.pl || p.word)) : [];
+            typingIndex = 0;
+            renderTypingCard();
+        }
+        function renderTypingCard() {
+            typingAnswered = false;
+            const p = typingPool[typingIndex];
+            const promptEl = document.getElementById('ty-prompt');
+            const input = document.getElementById('ty-input');
+            const fb = document.getElementById('ty-feedback');
+            const chk = document.getElementById('ty-check');
+            const nxt = document.getElementById('ty-next');
+            const counter = document.getElementById('ty-counter');
+            if (!p) {
+                if (promptEl) promptEl.innerText = 'No phrases in this level';
+                if (input) input.value = '';
+                if (counter) counter.innerText = '0 / 0';
+                return;
+            }
+            if (promptEl) promptEl.innerText = p.en || p.pl || '';
+            if (input) { input.value = ''; input.disabled = false; }
+            if (fb) fb.innerHTML = '';
+            if (chk) chk.style.display = '';
+            if (nxt) nxt.style.display = 'none';
+            if (counter) counter.innerText = (typingIndex + 1) + ' / ' + typingPool.length;
+            if (input) setTimeout(() => input.focus(), 50);
+        }
+        function typingCheck() {
+            if (typingAnswered) return;
+            const p = typingPool[typingIndex];
+            if (!p) return;
+            const input = document.getElementById('ty-input');
+            const fb = document.getElementById('ty-feedback');
+            const got = normTyping(input ? input.value : '');
+            if (!got) { if (input) input.focus(); return; }
+            const target = typingPolishTarget(p);
+            const alts = (typeof targetAlternatives === 'function' ? targetAlternatives(target) : [target]).map(normTyping);
+            const exact = alts.includes(got);
+            const diaMatch = !exact && alts.map(stripDia).includes(stripDia(got));
+
+            typingAnswered = true;
+            document.getElementById('ty-check').style.display = 'none';
+            document.getElementById('ty-next').style.display = '';
+            if (input) input.disabled = true;
+
+            if (exact) {
+                if (fb) fb.innerHTML = '✓ <span class="ty-correct-ans">Correct!</span>';
+                playSuccess();
+                recordTypingSuccess(p);
+            } else if (diaMatch) {
+                if (fb) fb.innerHTML = '⚠ <span class="ty-warn">Almost — mind the accents:</span> <span class="ty-correct-ans">' + escHtml(target) + '</span>';
+                playWrongSlide();
+            } else {
+                if (fb) fb.innerHTML = '✗ <span class="ty-bad">Answer:</span> <span class="ty-correct-ans">' + escHtml(target) + '</span>';
+                playWrongSlide();
+            }
+            speak(target);
+        }
+        function recordTypingSuccess(p) {
+            const key = p.pl;
+            if (!key) return;
+            let st = stats[key] || { score: 0, interval: 0, nextReview: 0 };
+            st.score++;
+            if (st.score >= THRESHOLD && st.nextReview <= Date.now()) {
+                st.interval = getNextInterval(st.interval);
+                st.nextReview = Date.now() + (st.interval * 86400000) + Math.floor(Math.random() * 3600000);
+            }
+            stats[key] = st;
+            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+            addPoints(8);
+            if (typeof updateTabCounts === 'function') updateTabCounts();
+        }
+        function typingNext() {
+            typingIndex++;
+            if (typingIndex >= typingPool.length) typingIndex = 0;
+            renderTypingCard();
+        }
+        function typingSkip() {
+            const p = typingPool[typingIndex];
+            if (p && !typingAnswered) {
+                const fb = document.getElementById('ty-feedback');
+                const target = typingPolishTarget(p);
+                if (fb) fb.innerHTML = '<span class="ty-bad">Answer:</span> <span class="ty-correct-ans">' + escHtml(target) + '</span>';
+                speak(target);
+            }
+            setTimeout(typingNext, 250);
+        }
+        function typingHint() {
+            const p = typingPool[typingIndex];
+            if (!p) return;
+            const target = typingPolishTarget(p);
+            const phon = (typeof polishPhonetic === 'function') ? polishPhonetic(target) : '';
+            const firstWord = target.split(/\s+/)[0] || '';
+            const lead = firstWord.slice(0, Math.max(1, Math.ceil(firstWord.length / 2)));
+            const fb = document.getElementById('ty-feedback');
+            if (fb) fb.innerHTML = '💡 starts "<b>' + escHtml(lead) + '…</b>"' + (phon ? ' · <span class="ty-warn">[' + escHtml(phon) + ']</span>' : '');
+            const input = document.getElementById('ty-input'); if (input) input.focus();
+        }
+        function typingKey(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                if (typingAnswered) typingNext(); else typingCheck();
+            }
+        }
+
+        // ===== Pronunciation drills (tricky Polish sounds) =====
+        const DRILLS = [
+            { id: 'sz-s', label: 'sz / ś', focus: 'sz = hard "sh" · ś = soft "sh"', words: [
+                { pl: 'proszę', en: 'please' },
+                { pl: 'kasza', en: 'porridge', partner: 'vs Kasia (Katie)' },
+                { pl: 'wiesz', en: 'you know', partner: 'vs wieś (village)' },
+                { pl: 'szukać', en: 'to look for' },
+                { pl: 'śmiać się', en: 'to laugh' }
+            ] },
+            { id: 'cz-c', label: 'cz / ć', focus: 'cz = hard "ch" · ć = soft "ch"', words: [
+                { pl: 'czas', en: 'time' },
+                { pl: 'cześć', en: 'hi / bye' },
+                { pl: 'ćma', en: 'moth' },
+                { pl: 'ciocia', en: 'auntie' },
+                { pl: 'płacz', en: 'crying', partner: 'vs płać (pay!)' }
+            ] },
+            { id: 'rz-z', label: 'ż·rz / ź', focus: 'ż, rz = hard "zh" · ź = soft "zh"', words: [
+                { pl: 'żona', en: 'wife' },
+                { pl: 'rzeka', en: 'river' },
+                { pl: 'źle', en: 'badly' },
+                { pl: 'może', en: 'maybe' },
+                { pl: 'później', en: 'later' }
+            ] },
+            { id: 'nasal', label: 'ą / ę', focus: 'nasal vowels: ą ≈ "on" · ę ≈ "en"', words: [
+                { pl: 'mąż', en: 'husband' },
+                { pl: 'wąż', en: 'snake' },
+                { pl: 'ręka', en: 'hand' },
+                { pl: 'pięć', en: 'five' },
+                { pl: 'gęś', en: 'goose' },
+                { pl: 'pączek', en: 'doughnut', partner: 'vs pęczek (bunch)' }
+            ] },
+            { id: 'y-i', label: 'y / i', focus: 'y ≈ "i" in "bit" · i ≈ "ee"', words: [
+                { pl: 'być', en: 'to be', partner: 'vs bić (to hit)' },
+                { pl: 'mysz', en: 'mouse', partner: 'vs miś (teddy)' },
+                { pl: 'syn', en: 'son' },
+                { pl: 'ryba', en: 'fish' },
+                { pl: 'wino', en: 'wine' }
+            ] },
+            { id: 'l-l', label: 'ł / l', focus: 'ł = English "w" · l = English "l"', words: [
+                { pl: 'mały', en: 'small' },
+                { pl: 'stół', en: 'table' },
+                { pl: 'łapa', en: 'paw' },
+                { pl: 'lato', en: 'summer', partner: 'vs łata (patch)' },
+                { pl: 'pół', en: 'half' }
+            ] },
+            { id: 'dz', label: 'dz / dź / dż', focus: 'dz · dź (soft "j") · dż (hard "j")', words: [
+                { pl: 'dzień', en: 'day' },
+                { pl: 'dziecko', en: 'child' },
+                { pl: 'dżem', en: 'jam' },
+                { pl: 'bardzo', en: 'very' },
+                { pl: 'dziękuję', en: 'thank you' }
+            ] }
+        ];
+        let drillCat = 0;
+        let drillWords = [];
+        let drillIndex = 0;
+
+        function buildDrillCats() {
+            const wrap = document.getElementById('dr-cats');
+            if (!wrap || wrap.childElementCount) return;
+            const mk = (label, idx) => {
+                const b = document.createElement('button');
+                b.type = 'button'; b.innerText = label; b.dataset.idx = idx;
+                b.addEventListener('click', () => drillSetCat(idx));
+                wrap.appendChild(b);
+            };
+            mk('All', -1);
+            DRILLS.forEach((c, i) => mk(c.label, i));
+        }
+        function drillSetCat(idx) {
+            drillCat = idx;
+            drillWords = (idx === -1)
+                ? DRILLS.reduce((acc, c) => acc.concat(c.words.map(w => Object.assign({}, w, { focus: c.focus }))), [])
+                : DRILLS[idx].words.map(w => Object.assign({}, w, { focus: DRILLS[idx].focus }));
+            drillIndex = 0;
+            document.querySelectorAll('#dr-cats button').forEach(b => b.classList.toggle('active', +b.dataset.idx === idx));
+            renderDrillCard();
+        }
+        function startDrills() {
+            buildDrillCats();
+            if (!drillWords.length) { drillSetCat(0); }
+            else {
+                document.querySelectorAll('#dr-cats button').forEach(b => b.classList.toggle('active', +b.dataset.idx === drillCat));
+                renderDrillCard();
+            }
+        }
+        function currentDrillWord() { return drillWords[drillIndex]; }
+        function renderDrillCard() {
+            hidePronScore();
+            const w = currentDrillWord();
+            const set = (id, v) => { const e = document.getElementById(id); if (e) e.innerText = v; };
+            if (!w) { set('dr-pl', '—'); set('dr-en', ''); set('dr-phon', ''); set('dr-focus', ''); set('dr-contrast', ''); return; }
+            set('dr-focus', w.focus || '');
+            set('dr-pl', w.pl);
+            const phon = (typeof polishPhonetic === 'function') ? polishPhonetic(w.pl) : '';
+            set('dr-phon', phon ? '[' + phon + ']' : '');
+            set('dr-en', w.en || '');
+            set('dr-contrast', w.partner || '');
+            set('dr-counter', (drillIndex + 1) + ' / ' + drillWords.length);
+            currentTarget = { pl: w.pl, en: w.en || '' };
+        }
+        function drillSpeak() {
+            const w = currentDrillWord(); if (!w) return;
+            multiTapSpeak(w.pl, 'drill');
+        }
+        function drillMicDown(e) {
+            const w = currentDrillWord(); if (!w) return;
+            currentTarget = { pl: w.pl, en: w.en || '' };
+            voicePracticeMode = true;
+            micPress(e);
+        }
+        function drillNext() { if (!drillWords.length) return; drillIndex = (drillIndex + 1) % drillWords.length; renderDrillCard(); }
+        function drillPrev() { if (!drillWords.length) return; drillIndex = (drillIndex - 1 + drillWords.length) % drillWords.length; renderDrillCard(); }
 
         function playStudyAudio(e) {
             if (e) e.stopPropagation();
@@ -3358,6 +3820,7 @@
             // Word-level pronunciation scorecard (like the rhymes app)
             const scoreTarget = expectedSpoken() || expected;
             const sc = scorePronunciation(transcript, scoreTarget);
+            recordPronScore(sc.percent);
             showPronScore(sc, transcript);
             if (sc.percent >= 80) match = true;
 
@@ -3591,6 +4054,10 @@
 
             if (document.getElementById('tab-study').classList.contains('active')) {
                 renderStudyCard();
+            } else if (document.getElementById('tab-typing').classList.contains('active')) {
+                startTyping();
+            } else if (document.getElementById('tab-drills').classList.contains('active')) {
+                // Sounds drills use their own dataset, independent of level
             } else {
                 updateMap();
                 startNewRound();
@@ -4119,7 +4586,7 @@
             // Deprecated: Brand Header and Auto-hide removed in V17 UI Redesign
         }
 
-        const MODE_META = { study: ['📖', 'Study'], learning: ['⚡', 'Practice'], mastered: ['🗂️', 'Phrases'] };
+        const MODE_META = { study: ['📖', 'Study'], learning: ['⚡', 'Practice'], mastered: ['🗂️', 'Phrases'], typing: ['⌨️', 'Type'], drills: ['🗣️', 'Sounds'] };
         function updateModePill(m) {
             let mode = m;
             if (!mode) {
@@ -4176,6 +4643,10 @@
             const progWrapper = document.getElementById('prog-wrapper');
 
             searchList.style.display = 'none';
+            const typingView = document.getElementById('typing-view');
+            typingView.style.display = 'none';
+            const drillsView = document.getElementById('drills-view');
+            drillsView.style.display = 'none';
 
             if (m === 'study') {
                 quizUi.style.display = 'none';
@@ -4184,6 +4655,22 @@
                 studyView.style.display = 'flex';
                 clearInterval(roundTimer);
                 renderStudyCard();
+            } else if (m === 'typing') {
+                quizUi.style.display = 'none';
+                map.style.display = 'none';
+                progWrapper.style.display = 'none';
+                studyView.style.display = 'none';
+                clearInterval(roundTimer);
+                typingView.style.display = 'flex';
+                startTyping();
+            } else if (m === 'drills') {
+                quizUi.style.display = 'none';
+                map.style.display = 'none';
+                progWrapper.style.display = 'none';
+                studyView.style.display = 'none';
+                clearInterval(roundTimer);
+                drillsView.style.display = 'flex';
+                startDrills();
             } else {
                 studyView.style.display = 'none';
                 progWrapper.style.display = 'block';
@@ -4709,6 +5196,102 @@
         // ----- Persistent tour banner -----
         function tourBannerHidden() { return localStorage.getItem('pl_hide_tour') === '1'; }
 
+        let dailyBannerDismissed = false;
+        function getDueCount() {
+            const now = Date.now();
+            let n = 0;
+            for (const k in stats) {
+                const s = stats[k];
+                if (s && s.score >= THRESHOLD && s.nextReview && s.nextReview <= now) n++;
+            }
+            return n;
+        }
+        function updateDailyBanner() {
+            const streak = userData.dailyStreak || 0;
+            const due = getDueCount();
+            const sN = document.getElementById('db-streak-n'); if (sN) sN.innerText = streak;
+            const dN = document.getElementById('db-due-n'); if (dN) dN.innerText = due;
+            const dueWrap = document.getElementById('db-due-wrap'); if (dueWrap) dueWrap.style.display = due > 0 ? '' : 'none';
+            const rev = document.getElementById('db-review'); if (rev) rev.style.display = due > 0 ? '' : 'none';
+            return { streak, due };
+        }
+        function showDailyBannerOnLaunch() {
+            if (dailyBannerDismissed) return;
+            const { streak, due } = updateDailyBanner();
+            if (streak > 0 || due > 0) {
+                const b = document.getElementById('daily-banner'); if (b) b.style.display = 'flex';
+            }
+        }
+        function hideDailyBanner() {
+            dailyBannerDismissed = true;
+            const b = document.getElementById('daily-banner'); if (b) b.style.display = 'none';
+        }
+        function startDueReview() {
+            hideDailyBanner();
+            Promise.resolve(selectLevel('R')).then(() => switchMode('learning'));
+        }
+
+        function recordPronScore(pct) {
+            if (typeof pct !== 'number' || isNaN(pct)) return;
+            userData.pronCount = (userData.pronCount || 0) + 1;
+            userData.pronSum = (userData.pronSum || 0) + pct;
+            if (pct > (userData.pronBest || 0)) userData.pronBest = pct;
+            localStorage.setItem('pl_user_data', JSON.stringify(userData));
+        }
+
+        function toggleProgress() {
+            const el = document.getElementById('progress-overlay');
+            if (!el) return;
+            if (el.style.display === 'flex') { el.style.display = 'none'; return; }
+            populateProgress();
+            el.style.display = 'flex';
+        }
+        function populateProgress() {
+            let mastered = 0;
+            for (const k in stats) if (stats[k] && stats[k].score >= THRESHOLD) mastered++;
+            let total = 0;
+            levelList.forEach(l => { if (l.id !== 'R' && l.data && Array.isArray(l.data.phrases)) total += l.data.phrases.length; });
+            const setTxt = (id, v) => { const e = document.getElementById(id); if (e) e.innerText = v; };
+            setTxt('pg-mastered', mastered + (total ? ' / ' + total : ''));
+            setTxt('pg-streak', (userData.dailyStreak || 0) + ' 🔥');
+            setTxt('pg-points', userData.totalPoints || 0);
+            setTxt('pg-due', getDueCount());
+
+            const pc = userData.pronCount || 0;
+            const pron = document.getElementById('pg-pron');
+            if (pron) {
+                pron.innerHTML = pc > 0
+                    ? '<b>' + Math.round((userData.pronSum || 0) / pc) + '%</b> average over ' + pc + ' attempt' + (pc === 1 ? '' : 's') + ' · best <b>' + (userData.pronBest || 0) + '%</b>'
+                    : 'No voice attempts yet — hold the 🎤 on a flashcard to start.';
+            }
+
+            const lv = document.getElementById('pg-levels');
+            if (lv) {
+                lv.innerHTML = '';
+                levelList.forEach(l => {
+                    if (l.id === 'R') return;
+                    const phrases = (l.data && Array.isArray(l.data.phrases)) ? l.data.phrases : [];
+                    if (!phrases.length) return;
+                    let m = 0;
+                    phrases.forEach(p => { const s = stats[p.pl]; if (s && s.score >= THRESHOLD) m++; });
+                    const pct = Math.round(m / phrases.length * 100);
+                    const row = document.createElement('div');
+                    row.className = 'pg-lvl-row';
+                    row.innerHTML = '<div class="pg-lvl-name">Lvl ' + escHtml(String(l.id)) + ' · ' + escHtml(l.desc || '') + '</div>'
+                        + '<div class="pg-bar"><div class="pg-bar-fill" style="width:' + pct + '%"></div></div>'
+                        + '<div class="pg-lvl-n">' + m + '/' + phrases.length + '</div>';
+                    lv.appendChild(row);
+                });
+            }
+
+            const bd = document.getElementById('pg-badges');
+            if (bd) {
+                bd.innerHTML = (userData.badges && userData.badges.length)
+                    ? userData.badges.map(b => '<span class="badge">' + escHtml(b) + '</span>').join('')
+                    : '<span style="color:#888;font-size:0.8rem;">Earn badges by racking up points.</span>';
+            }
+        }
+
         function maybeShowTourBanner() {
             const el = document.getElementById('tour-banner');
             if (el) el.classList.toggle('show', !tourBannerHidden());
@@ -4753,6 +5336,7 @@
             updateSwapButtons();
             maybeShowTourBanner();
             refreshTourToggle();
+            showDailyBannerOnLaunch();
             maybeShowOnboarding();
         };
 
