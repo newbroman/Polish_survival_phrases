@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v42.0</title>
+    <title>Polish Phrase Master v43.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -1734,6 +1734,35 @@
             cursor: pointer;
         }
 
+        #study-hf-bar {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 8px 10px;
+            border: 2px solid var(--pol-red);
+            border-radius: 20px;
+            background: var(--card);
+        }
+        .shf-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid var(--pol-red);
+            background: var(--card);
+            color: var(--pol-red);
+            font-size: 1.15rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .shf-stop { border-color: #888; color: #888; }
+        .shf-pause { margin: 0; }
+
         .fc-main-audio .fc-audio-btn {
             width: 52px;
             height: 52px;
@@ -2095,7 +2124,7 @@
                 </details>
 
                 <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master
-                    <span id="app-version">v42.0</span></div>
+                    <span id="app-version">v43.0</span></div>
             </div>
         </div>
     </div>
@@ -2378,7 +2407,18 @@
                 <span class="fc-counter" id="fc-counter">1 / 10</span>
                 <button class="fc-btn" onclick="nextStudyCard()">▶</button>
             </div>
-            <button class="study-hf-btn" onclick="openHandsFree()" title="Play this level hands-free">🎧 Hands-Free</button>
+            <button class="study-hf-btn" onclick="openHandsFree(true)" title="Play this level hands-free">🎧 Hands-Free</button>
+            <div id="study-hf-bar" style="display:none;">
+                <button class="shf-btn" id="shf-pp" onclick="togglePlayPauseHF()" title="Play / pause">⏸</button>
+                <button class="shf-btn" onclick="skipPhraseHF()" title="Next phrase">⏭</button>
+                <div class="pause-selector shf-pause">
+                    <span>Pause:</span>
+                    <div class="pause-option" onclick="setPauseDuration(1)">1s</div>
+                    <div class="pause-option active" onclick="setPauseDuration(3)">3s</div>
+                    <div class="pause-option" onclick="setPauseDuration(5)">5s</div>
+                </div>
+                <button class="shf-btn shf-stop" onclick="closeHandsFree()" title="Stop">⏹</button>
+            </div>
         </div>
 
         <div id="typing-view">
@@ -4015,6 +4055,7 @@
         }
 
         async function selectLevel(lvlId) {
+            if (hfActive) closeHandsFree();
             currentLevel = lvlId.toString();
             localStorage.setItem('pl_current_level_idx', currentLevel);
 
@@ -4620,6 +4661,7 @@
 
         function switchMode(m) {
             showMobileHeaderTemp();
+            if (hfActive && hfInline) closeHandsFree();
 
             let tabEl = document.getElementById('tab-' + m);
             closeHeaderMenus();
@@ -4949,7 +4991,7 @@
         // ==========================================
         // HANDS FREE
         // ==========================================
-        let hfActive = false, hfIndex = 0, hfPhrases = [], hfPauseDur = 3000, hfAbort = false, hfIsPaused = false;
+        let hfActive = false, hfIndex = 0, hfPhrases = [], hfPauseDur = 3000, hfAbort = false, hfIsPaused = false, hfInline = false;
 
         function setPauseDuration(sec) {
             hfPauseDur = sec * 1000;
@@ -4957,19 +4999,29 @@
             event.target.classList.add('active');
         }
 
-        async function openHandsFree() {
+        async function openHandsFree(inline) {
             document.getElementById('settings-overlay').style.display = 'none';
             hfActive = true;
             hfAbort = false;
             hfIsPaused = false;
+            hfInline = !!inline;
             initAudioContext();
             clearInterval(roundTimer);
 
             hfPhrases = phrasesData;
             hfIndex = 0;
 
-            document.getElementById('hf-overlay').style.display = 'flex';
-            document.getElementById('hf-level-indicator').innerText = document.getElementById('lvl-current').innerText;
+            if (hfInline) {
+                const bar = document.getElementById('study-hf-bar');
+                const btn = document.querySelector('.study-hf-btn');
+                if (bar) bar.style.display = 'flex';
+                if (btn) btn.style.display = 'none';
+                setHFPlayPauseLabel(false);
+            } else {
+                document.getElementById('hf-overlay').style.display = 'flex';
+                const li = document.getElementById('hf-level-indicator');
+                if (li) li.innerText = document.getElementById('lvl-current').innerText;
+            }
 
             runHandsFreeLoop();
         }
@@ -4979,22 +5031,33 @@
             hfAbort = true;
             window.speechSynthesis.cancel();
             document.getElementById('hf-overlay').style.display = 'none';
+            const bar = document.getElementById('study-hf-bar');
+            const btn = document.querySelector('.study-hf-btn');
+            if (bar) bar.style.display = 'none';
+            if (btn) btn.style.display = '';
+            hfInline = false;
 
             if (document.getElementById('tab-learning').classList.contains('active')) {
                 startNewRound();
             }
         }
 
+        function setHFPlayPauseLabel(paused) {
+            const o = document.getElementById('hf-pp-btn');
+            if (o) o.innerText = paused ? "▶ Resume" : "⏸ Pause";
+            const s = document.getElementById('shf-pp');
+            if (s) s.innerText = paused ? "▶" : "⏸";
+        }
         function togglePlayPauseHF() {
             if (hfIsPaused) {
                 hfIsPaused = false;
-                document.getElementById('hf-pp-btn').innerText = "⏸ Pause";
+                setHFPlayPauseLabel(false);
                 runHandsFreeLoop();
             } else {
                 hfIsPaused = true;
                 hfAbort = true;
                 window.speechSynthesis.cancel();
-                document.getElementById('hf-pp-btn').innerText = "▶ Resume";
+                setHFPlayPauseLabel(true);
             }
         }
 
@@ -5011,11 +5074,18 @@
             hfAbort = false;
             while (hfActive && !hfIsPaused && hfIndex < hfPhrases.length) {
                 const p = hfPhrases[hfIndex];
-                document.getElementById('hf-emoji').innerText = p.emoji || p.e || '';
-                document.getElementById('hf-pl').innerText = p.pl;
-                document.getElementById('hf-en').innerText = p.en;
-                document.getElementById('hf-counter').innerText = `${hfIndex + 1} / ${hfPhrases.length}`;
-                document.getElementById('hf-bar').style.width = ((hfIndex / hfPhrases.length) * 100) + "%";
+                if (hfInline) {
+                    studyIndex = hfIndex;
+                    renderStudyCard();
+                } else {
+                    const setTxt = (id, v) => { const e = document.getElementById(id); if (e) e.innerText = v; };
+                    setTxt('hf-emoji', p.emoji || p.e || '');
+                    setTxt('hf-pl', p.pl);
+                    setTxt('hf-en', p.en);
+                    setTxt('hf-counter', `${hfIndex + 1} / ${hfPhrases.length}`);
+                    const bar = document.getElementById('hf-bar');
+                    if (bar) bar.style.width = ((hfIndex / hfPhrases.length) * 100) + "%";
+                }
 
                 let plText = currentLevel === "0" ? p.pl + " jak " + p.word : getGenderText(p);
 
