@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v43.0</title>
+    <title>Polish Phrase Master v45.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -1763,6 +1763,14 @@
         .shf-stop { border-color: #888; color: #888; }
         .shf-pause { margin: 0; }
 
+        #study-view.hf-inline-active .fc-main-audio,
+        #study-view.hf-inline-active #fc-hint-btn,
+        #study-view.hf-inline-active .fc-controls,
+        #study-view.hf-inline-active .swap-toggle {
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
         .fc-main-audio .fc-audio-btn {
             width: 52px;
             height: 52px;
@@ -2124,7 +2132,7 @@
                 </details>
 
                 <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master
-                    <span id="app-version">v43.0</span></div>
+                    <span id="app-version">v45.0</span></div>
             </div>
         </div>
     </div>
@@ -5014,8 +5022,10 @@
             if (hfInline) {
                 const bar = document.getElementById('study-hf-bar');
                 const btn = document.querySelector('.study-hf-btn');
+                const sv = document.getElementById('study-view');
                 if (bar) bar.style.display = 'flex';
                 if (btn) btn.style.display = 'none';
+                if (sv) sv.classList.add('hf-inline-active');
                 setHFPlayPauseLabel(false);
             } else {
                 document.getElementById('hf-overlay').style.display = 'flex';
@@ -5035,6 +5045,8 @@
             const btn = document.querySelector('.study-hf-btn');
             if (bar) bar.style.display = 'none';
             if (btn) btn.style.display = '';
+            const sv = document.getElementById('study-view');
+            if (sv) sv.classList.remove('hf-inline-active');
             hfInline = false;
 
             if (document.getElementById('tab-learning').classList.contains('active')) {
