@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v45.0</title>
+    <title>Polish Phrase Master v46.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -2536,9 +2536,100 @@
             return currentInterval * 2; // Caps out organically as intervals stretch into months
         }
 
+        // ==========================================
+        // PROGRESS KEYS
+        // ==========================================
+        // Progress is keyed by phrase id, so the same word in two levels has
+        // its own progress in each, resetting one level leaves the others
+        // alone, and fixing a phrase's spelling keeps its progress.
+        // Phrases without an id (very old sandbox entries) use their text.
+        // Saves from before this change were keyed by the Polish text and are
+        // converted by migrateStatsToIds() once all levels have loaded.
+        const STATS_VERSION = '2';
+        if (!localStorage.getItem('pl_mastery_final')) localStorage.setItem('pl_stats_version', STATS_VERSION);
+
+        function statKey(p) { return (p && p.id) ? String(p.id) : 'pl:' + ((p && p.pl) || ''); }
+        function getStat(p) { return stats[statKey(p)]; }
+        function getScore(p) { const s = stats[statKey(p)]; return s ? s.score : 0; }
+        function putStat(p, s) {
+            stats[statKey(p)] = s;
+            // Level R shows a due word once even when it appears in several
+            // levels, so an answer there counts for every copy that is due.
+            if (currentLevel === 'R') {
+                allPhrasesCache.forEach(q => {
+                    if (q.pl === p.pl && statKey(q) !== statKey(p) && isDueForReview(q)) stats[statKey(q)] = { ...s };
+                });
+            }
+        }
+        // Distinct Polish phrases matching a test, counted once across levels
+        function countUnique(test) {
+            const seen = new Set();
+            allPhrasesCache.forEach(p => { const s = getStat(p); if (s && test(s)) seen.add(p.pl); });
+            return seen.size;
+        }
+
+        function migrateStatsToIds() {
+            if (localStorage.getItem('pl_stats_version') === STATS_VERSION) return;
+            const legacy = stats;
+            try { localStorage.setItem('pl_mastery_legacy_backup', JSON.stringify(legacy)); } catch (e) { }
+
+            // Sandbox copies of level phrases take the level phrase's id, so they
+            // share its progress; other sandbox phrases get a unique cust_ id.
+            const byPl = new Map();
+            allPhrasesCache.forEach(p => { if (p.lvl !== 'C' && p.id && !byPl.has(p.pl)) byPl.set(p.pl, p.id); });
+            const usedCust = new Set();
+            customPhrases.phrases.forEach((p, i) => {
+                if (byPl.has(p.pl)) p.id = byPl.get(p.pl);
+                else if (!p.id || !String(p.id).startsWith('cust_') || usedCust.has(p.id)) p.id = 'cust_' + Date.now() + '_' + i;
+                usedCust.add(p.id);
+            });
+            localStorage.setItem('pl_custom_level', JSON.stringify(customPhrases));
+            cacheAllPhrases();
+
+            // Keep anything already saved under an id, then copy each old
+            // text-keyed entry to every phrase with that text.
+            const keys = new Set(allPhrasesCache.map(statKey));
+            const next = {};
+            for (const k in legacy) if (keys.has(k)) next[k] = legacy[k];
+            allPhrasesCache.forEach(p => {
+                // A phrase that gained its feminine form ("Zrobiłem błąd" → "Zrobiłem / Zrobiłam błąd")
+                // keeps the progress saved under the masculine-only text
+                const k = statKey(p);
+                const old = legacy[p.pl] || (p.pl && p.pl.includes('/') ? legacy[targetAlternatives(p.pl)[0]] : null);
+                if (!next[k] && old && typeof old === 'object') next[k] = { ...old };
+            });
+            stats = next;
+            localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
+            localStorage.setItem('pl_stats_version', STATS_VERSION);
+        }
+
+        // Levels were merged and renumbered in October 2026 (13.1 → 13,
+        // 13.2 → 14, the Home Life copy at 13 → 12, 18/19 → 17, 24 → 23,
+        // 26 → 25, 28 → 20, 30 → 29). Move completion badges and the saved
+        // level to the new numbers once.
+        (function remapRenumberedLevels() {
+            if (localStorage.getItem('pl_levels_version') === '2') return;
+            const moves = [['13', '12'], ['13.1', '13'], ['13.2', '14'], ['18', '17'], ['19', '17'],
+                ['24', '23'], ['26', '25'], ['28', '20'], ['30', '29']];
+            const old = { ...userData.levelCompletions };
+            const next = { ...old };
+            moves.forEach(([from]) => delete next[from]);
+            moves.forEach(([from, to]) => {
+                if (old[from]) next[to] = Math.max(next[to] || 0, old[from]);
+            });
+            userData.levelCompletions = next;
+            localStorage.setItem('pl_user_data', JSON.stringify(userData));
+            const cur = moves.find(([from]) => from === currentLevel);
+            if (cur) {
+                currentLevel = cur[1];
+                localStorage.setItem('pl_current_level_idx', currentLevel);
+            }
+            localStorage.setItem('pl_levels_version', '2');
+        })();
+
         // Helper function to check if a phrase should appear in Level R
         function isDueForReview(p) {
-            let s = stats[p.pl];
+            let s = getStat(p);
             if (!s) return false;
 
             // Include if they are actively struggling with it right now
@@ -2730,11 +2821,7 @@
             if (el.style.display === 'flex') {
                 el.style.display = 'none';
             } else {
-                let tm = 0;
-                for (let key in stats) {
-                    // Now accessing object score safely instead of legacy integer
-                    if (stats[key] && stats[key].score >= THRESHOLD) tm++;
-                }
+                let tm = countUnique(s => s.score >= THRESHOLD);
                 document.getElementById('stat-mastered').innerText = tm;
                 document.getElementById('stat-total-pts').innerText = userData.totalPoints;
                 document.getElementById('stat-best-streak').innerText = userData.bestStreak;
@@ -2977,15 +3064,14 @@
             speak(target);
         }
         function recordTypingSuccess(p) {
-            const key = p.pl;
-            if (!key) return;
-            let st = stats[key] || { score: 0, interval: 0, nextReview: 0 };
+            if (!p || !p.pl) return;
+            let st = getStat(p) || { score: 0, interval: 0, nextReview: 0 };
             st.score++;
             if (st.score >= THRESHOLD && st.nextReview <= Date.now()) {
                 st.interval = getNextInterval(st.interval);
                 st.nextReview = Date.now() + (st.interval * 86400000) + Math.floor(Math.random() * 3600000);
             }
-            stats[key] = st;
+            putStat(p, st);
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             addPoints(8);
             if (typeof updateTabCounts === 'function') updateTabCounts();
@@ -3928,7 +4014,7 @@
                 playWrongSlide();
 
                 // Phase 3: SRS Penalty logic applied manually to Voice Rec failure
-                let cStat = stats[currentTarget.pl] || { score: 0, interval: 0, nextReview: 0 };
+                let cStat = getStat(currentTarget) || { score: 0, interval: 0, nextReview: 0 };
                 if (cStat.score >= THRESHOLD) {
                     cStat.score = -1; // Heavy penalty for forgetting
                     cStat.interval = 0;
@@ -3936,7 +4022,7 @@
                 } else {
                     cStat.score = Math.max(MIN_SCORE, cStat.score - 1);
                 }
-                stats[currentTarget.pl] = cStat;
+                putStat(currentTarget, cStat);
 
                 localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
                 updateMap();
@@ -3946,58 +4032,72 @@
         // ==========================================
         // LIBRARY & LEVEL MANAGEMENT
         // ==========================================
-        async function scanLibrary() {
-            const menu = document.getElementById('lvl-menu');
-            menu.innerHTML = '';
-            levelList = [];
+        // Level files are listed in levels.json (written by check_levels.py)
+        // and fetched in parallel. If the index is missing, fall back to
+        // probing phrases_0.json, phrases_1.json, ... as older builds did.
+        let loadedLevels = null;
+        async function loadLevelFiles() {
+            try {
+                const r = await fetch('levels.json', { cache: 'no-store' });
+                if (r.ok) {
+                    const idx = await r.json();
+                    const entries = (idx && Array.isArray(idx.levels)) ? idx.levels : [];
+                    const results = await Promise.all(entries.map(async e => {
+                        try {
+                            const rr = await fetch(e.file, { cache: 'no-store' });
+                            if (!rr.ok) return null;
+                            const data = normalizePhrases(await rr.json());
+                            return { id: String(e.id), desc: data.description || e.title || `Level ${e.id}`, data: data };
+                        } catch (err) { return null; }
+                    }));
+                    const levels = results.filter(Boolean);
+                    if (levels.length) return { levels: levels, complete: levels.length === entries.length };
+                }
+            } catch (e) { }
+            return { levels: await scanLevelFilesLegacy(), complete: false };
+        }
 
+        async function scanLevelFilesLegacy() {
+            const found = [];
             let consecutiveEmptyMajors = 0;
             const MAX_CONSECUTIVE_EMPTY_MAJORS = 3;
             const MAX_CONSECUTIVE_EMPTY_MINORS = 2;
-
-            for (let major = 0; major <= 100; major++) {
-                let majorFound = false;
+            const tryLoad = async (id) => {
                 try {
-                    const r = await fetch(`phrases_${major}.json`, { cache: 'no-store' });
-                    if (r.ok) {
-                        const data = await r.json();
-                        normalizePhrases(data);
-                        levelList.push({ id: major.toString(), desc: data.description || `Level ${major}`, data: data });
-                        majorFound = true;
-                        consecutiveEmptyMajors = 0;
-                    } else {
-                        consecutiveEmptyMajors++;
-                    }
-                } catch (e) {
-                    consecutiveEmptyMajors++;
-                }
-
-                if (majorFound) {
+                    const r = await fetch(`phrases_${id}.json`, { cache: 'no-store' });
+                    if (!r.ok) return false;
+                    const data = normalizePhrases(await r.json());
+                    found.push({ id: id, desc: data.description || `Level ${id}`, data: data });
+                    return true;
+                } catch (e) { return false; }
+            };
+            for (let major = 0; major <= 100; major++) {
+                if (await tryLoad(major.toString())) {
+                    consecutiveEmptyMajors = 0;
                     let consecutiveEmptyMinors = 0;
                     for (let minor = 1; minor <= 20; minor++) {
-                        let minorId = `${major}.${minor}`;
-                        try {
-                            const rMinor = await fetch(`phrases_${minorId}.json`, { cache: 'no-store' });
-                            if (rMinor.ok) {
-                                const dataMinor = await rMinor.json();
-                                normalizePhrases(dataMinor);
-                                levelList.push({ id: minorId, desc: dataMinor.description || `Level ${minorId}`, data: dataMinor });
-                                consecutiveEmptyMinors = 0;
-                            } else {
-                                consecutiveEmptyMinors++;
-                            }
-                        } catch (e) {
-                            consecutiveEmptyMinors++;
-                        }
-                        if (consecutiveEmptyMinors >= MAX_CONSECUTIVE_EMPTY_MINORS) break;
+                        if (await tryLoad(`${major}.${minor}`)) consecutiveEmptyMinors = 0;
+                        else if (++consecutiveEmptyMinors >= MAX_CONSECUTIVE_EMPTY_MINORS) break;
                     }
-                }
-                if (consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY_MAJORS) break;
+                } else if (++consecutiveEmptyMajors >= MAX_CONSECUTIVE_EMPTY_MAJORS) break;
             }
+            return found;
+        }
+
+        async function scanLibrary() {
+            const menu = document.getElementById('lvl-menu');
+
+            // Level files only change with a new build, so load them once per session
+            if (!loadedLevels || !loadedLevels.levels.length) loadedLevels = await loadLevelFiles();
+            menu.innerHTML = '';
+            levelList = loadedLevels.levels.slice();
 
             normalizePhrases(customPhrases);
             levelList.push({ id: "C", desc: customPhrases.description, data: customPhrases });
             cacheAllPhrases();
+            // Convert old text-keyed progress only when every level loaded,
+            // so no phrase misses its history
+            if (loadedLevels.complete) migrateStatsToIds();
 
             // Phase 3: Calculate global Needs Review (Level R) based on Time and Mistakes
             let reviewPhrases = [];
@@ -4020,7 +4120,7 @@
                 if (lvl.id === "R") {
                     isDone = lvl.data.phrases.length === 0;
                 } else {
-                    const masteredCount = lvl.data.phrases.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) >= THRESHOLD).length;
+                    const masteredCount = lvl.data.phrases.filter(p => getScore(p) >= THRESHOLD).length;
                     isDone = masteredCount > 0 && masteredCount === lvl.data.phrases.length;
                 }
 
@@ -4301,7 +4401,7 @@
         // ==========================================
         function refreshActivePool() {
             if (currentLevel === "0") {
-                activePool = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) < THRESHOLD);
+                activePool = phrasesData.filter(p => getScore(p) < THRESHOLD);
                 return;
             }
 
@@ -4324,10 +4424,10 @@
                 activePool = new Array(6).fill(null);
             }
 
-            let unmastered = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) < THRESHOLD);
+            let unmastered = phrasesData.filter(p => getScore(p) < THRESHOLD);
 
             for (let i = 0; i < 6; i++) {
-                if (!activePool[i] || (stats[activePool[i].pl] ? stats[activePool[i].pl].score : 0) >= THRESHOLD) {
+                if (!activePool[i] || getScore(activePool[i]) >= THRESHOLD) {
                     let nextPhrase = unmastered.find(p => !activePool.some(ap => ap && ap.pl === p.pl));
                     activePool[i] = nextPhrase || null;
                 }
@@ -4509,7 +4609,7 @@
             let isDistracted = timeTaken >= TIME_DISTRACTED;
 
             // Fetch or create new stat object
-            let pStat = stats[phrase.pl] || { score: 0, interval: 0, nextReview: 0 };
+            let pStat = getStat(phrase) || { score: 0, interval: 0, nextReview: 0 };
 
             if (phrase.pl === currentTarget.pl) {
                 let pts = 10;
@@ -4547,7 +4647,7 @@
                         pStat.nextReview = Date.now() + (pStat.interval * 86400000) + randomHourOffset;
                     }
                 }
-                stats[phrase.pl] = pStat;
+                putStat(phrase, pStat);
 
                 if (currentLevel === "0") speak(phrase.pl + " jak " + phrase.word);
 
@@ -4575,8 +4675,8 @@
                 playWrongSlide();
 
                 // Phase 3 SRS Penalty Logic:
-                let penalizeWord = (wordPl) => {
-                    let s = stats[wordPl] || { score: 0, interval: 0, nextReview: 0 };
+                let penalizeWord = (word) => {
+                    let s = getStat(word) || { score: 0, interval: 0, nextReview: 0 };
                     if (s.score >= THRESHOLD) {
                         s.score = -1;
                         s.interval = 0;
@@ -4584,10 +4684,10 @@
                     } else {
                         s.score = Math.max(MIN_SCORE, s.score - 1);
                     }
-                    stats[wordPl] = s;
+                    putStat(word, s);
                 };
 
-                penalizeWord(currentTarget.pl);
+                penalizeWord(currentTarget);
 
                 if (el) el.classList.add('wrong');
                 document.getElementById('feedback').innerText = t('mistake');
@@ -4612,7 +4712,7 @@
                     localStorage.setItem('pl_user_data', JSON.stringify(userData));
                 }
 
-                phrasesData.forEach(p => { delete stats[p.pl]; });
+                phrasesData.forEach(p => { delete stats[statKey(p)]; });
                 saveStats();
 
                 hardMode = enableHardMode;
@@ -4815,7 +4915,7 @@
                     `;
                 }
 
-                const score = stats[p.pl] ? stats[p.pl].score : 0;
+                const score = getScore(p);
 
                 if (isPractice) {
                     if (score < 0) {
@@ -4878,7 +4978,7 @@
                 if (currentLevel === "R") {
                     mCount = phrasesData.filter(p => !isDueForReview(p)).length;
                 } else {
-                    mCount = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) >= THRESHOLD).length;
+                    mCount = phrasesData.filter(p => getScore(p) >= THRESHOLD).length;
                 }
                 document.getElementById('progress-bar').style.width = (mCount / phrasesData.length) * 100 + "%";
             }
@@ -4891,7 +4991,7 @@
             if (currentLevel === "R") {
                 m = phrasesData.filter(p => !isDueForReview(p)).length;
             } else {
-                m = phrasesData.filter(p => (stats[p.pl] ? stats[p.pl].score : 0) >= THRESHOLD).length;
+                m = phrasesData.filter(p => getScore(p) >= THRESHOLD).length;
             }
 
             if (document.getElementById('learning-count')) {
@@ -4964,7 +5064,7 @@
         }
 
         function downloadProgress() {
-            const b = new Blob([JSON.stringify({ stats, userData })], { type: "text/plain" });
+            const b = new Blob([JSON.stringify({ stats, userData, statsVersion: STATS_VERSION })], { type: "text/plain" });
             const a = document.createElement("a");
             a.href = URL.createObjectURL(b);
             a.download = `polish_master.txt`;
@@ -4984,6 +5084,9 @@
 
                 localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
                 localStorage.setItem('pl_user_data', JSON.stringify(userData));
+                // Backups made before progress was keyed by id are converted on reload
+                localStorage.setItem('pl_stats_version', String(d.statsVersion || '1'));
+                if (!d.statsVersion) localStorage.setItem('pl_levels_version', '1');
                 location.reload();
             };
             r.readAsText(event.target.files[0]);
@@ -5281,12 +5384,7 @@
         let dailyBannerDismissed = false;
         function getDueCount() {
             const now = Date.now();
-            let n = 0;
-            for (const k in stats) {
-                const s = stats[k];
-                if (s && s.score >= THRESHOLD && s.nextReview && s.nextReview <= now) n++;
-            }
-            return n;
+            return countUnique(s => s.score >= THRESHOLD && s.nextReview && s.nextReview <= now);
         }
         function updateDailyBanner() {
             const streak = userData.dailyStreak || 0;
@@ -5329,10 +5427,8 @@
             el.style.display = 'flex';
         }
         function populateProgress() {
-            let mastered = 0;
-            for (const k in stats) if (stats[k] && stats[k].score >= THRESHOLD) mastered++;
-            let total = 0;
-            levelList.forEach(l => { if (l.id !== 'R' && l.data && Array.isArray(l.data.phrases)) total += l.data.phrases.length; });
+            const mastered = countUnique(s => s.score >= THRESHOLD);
+            const total = new Set(allPhrasesCache.map(p => p.pl)).size;
             const setTxt = (id, v) => { const e = document.getElementById(id); if (e) e.innerText = v; };
             setTxt('pg-mastered', mastered + (total ? ' / ' + total : ''));
             setTxt('pg-streak', (userData.dailyStreak || 0) + ' 🔥');
@@ -5355,7 +5451,7 @@
                     const phrases = (l.data && Array.isArray(l.data.phrases)) ? l.data.phrases : [];
                     if (!phrases.length) return;
                     let m = 0;
-                    phrases.forEach(p => { const s = stats[p.pl]; if (s && s.score >= THRESHOLD) m++; });
+                    phrases.forEach(p => { const s = getStat(p); if (s && s.score >= THRESHOLD) m++; });
                     const pct = Math.round(m / phrases.length * 100);
                     const row = document.createElement('div');
                     row.className = 'pg-lvl-row';
