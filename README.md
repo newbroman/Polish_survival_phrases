@@ -25,7 +25,7 @@ Switch between modes from the mode pill in the top bar.
 
 ### Levels and dictionary
 
-- Level 0 is the Polish alphabet; numbered levels are themed phrase sets. Sub-levels such as 1.1, 5.1 or 13.2 are supported.
+- Level 0 is the Polish alphabet; numbered levels are themed phrase sets. Sub-levels such as 1.1, 5.1 or 12.1 are supported.
 - **Level C (Sandbox)** is your personal list: search the built-in dictionary, or translate an English or Polish word straight into it (via the MyMemory translation API), and export it to a JSON file.
 - **Level R (Review)** fills automatically with words that are due for review.
 
@@ -74,7 +74,7 @@ Without a key, the app falls back to the browser's built-in speech recognition.
 | `icon-192.png`, `icon-512.png`, `icon.svg` | Icons |
 | `nojekyll` | Empty file (see Notes) |
 
-At start-up the app looks for `phrases_0.json`, `phrases_1.json` and so on up to 100, plus sub-levels `phrases_N.1.json` to `phrases_N.20.json` after each level found, and stops after three consecutive missing major levels. Levels therefore appear in filename order, and each file's `description` is used as its menu title.
+At start-up the app looks for `phrases_0.json`, `phrases_1.json` and so on up to 100, plus sub-levels `phrases_N.1.json` to `phrases_N.20.json` after each level found, and stops after three consecutive missing major levels. Levels therefore appear in filename order, and each file's `description` is used as its menu title. Level numbers are not contiguous (there is no 18, 19, 24, 26, 28 or 30); the scan copes with up to two missing numbers in a row, so never leave a gap of three or more.
 
 Each level file looks like this:
 
