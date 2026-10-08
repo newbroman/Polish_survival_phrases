@@ -4,7 +4,7 @@ import re
 from google import genai
 from google.genai import types
 
-API_KEY = "AIzaSyC89Lbx7jzfeEoJNIm6MHS1GkvBRcoFZAg"
+API_KEY = os.environ["GEMINI_API_KEY"]  # export GEMINI_API_KEY=... before running
 client = genai.Client(api_key=API_KEY)
 
 def extract_json(text):
