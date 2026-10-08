@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Polish Phrase Master v46.0</title>
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Polish Phrase Master v47.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -29,6 +29,11 @@
             --tile-bg: #dee2e6;
             --success-green: #2ecc71;
             --gold: #ffd700;
+            /* Text-safe shades (4.5:1 or better on the card and tile backgrounds) */
+            --muted: #5c5c5c;
+            --success-text: #1e7e45;
+            --danger-text: #c0392b;
+            --red-text: #c4102f;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -37,6 +42,10 @@
                 --card: #2d2d2d;
                 --text: #f0f0f0;
                 --tile-bg: #404040;
+                --muted: #b8b8b8;
+                --success-text: #3ddc84;
+                --danger-text: #ff7b6b;
+                --red-text: #ff6b7d;
             }
         }
 
@@ -45,6 +54,8 @@
         body {
             height: 100dvh;
             margin: 0;
+            /* Pinch-zoom allowed; double-tap zoom off so quick taps on tiles don't zoom */
+            touch-action: manipulation;
             overflow: hidden;
             position: fixed;
             width: 100%;
@@ -134,7 +145,7 @@
             padding: 6px;
             font-size: 0.75rem;
             font-weight: bold;
-            color: #666;
+            color: var(--muted);
             border-bottom: 1px solid #ddd;
             display: flex;
             justify-content: center;
@@ -160,7 +171,7 @@
             width: 100%;
             background: var(--bg);
             border: 1px solid #ccc;
-            color: var(--pol-red);
+            color: var(--red-text);
             padding: 10px 12px;
             border-radius: 8px;
             font-size: 0.95rem;
@@ -176,7 +187,7 @@
         .main-dropdown-trigger::after {
             content: '▼';
             font-size: 10px;
-            color: #888;
+            color: var(--muted);
         }
 
         .main-dropdown-trigger:active {
@@ -254,12 +265,40 @@
         }
 
         .dropdown-item.mastered {
-            color: #888;
+            color: var(--muted);
         }
 
         .dropdown-item.sandbox {
-            color: var(--pol-red);
+            color: var(--red-text);
             background: #fff0f0;
+        }
+
+        .dropdown-tier {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            padding: 6px 12px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--red-text);
+            background: var(--bg);
+            border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+        .dropdown-item.next-up {
+            box-shadow: inset 4px 0 0 var(--pol-red);
+        }
+
+        .next-badge {
+            flex-shrink: 0;
+            margin-left: 8px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            color: #fff;
+            background: var(--pol-red);
         }
 
         /* PROGRESS BAR */
@@ -357,7 +396,7 @@
             opacity: 1;
             font-size: 0.84rem;
             border-bottom: 3px solid var(--pol-red);
-            color: var(--pol-red);
+            color: var(--red-text);
             background: rgba(220, 20, 60, 0.07);
         }
 
@@ -375,7 +414,7 @@
             color: var(--text); cursor: pointer; overflow: hidden;
         }
         #hdr-level-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-        .hdr-caret { color: #999; font-size: 0.75rem; flex-shrink: 0; }
+        .hdr-caret { color: var(--muted); font-size: 0.75rem; flex-shrink: 0; }
         .hdr-level .hdr-caret { margin-left: auto; }
 
         .hdr-mode {
@@ -406,7 +445,7 @@
         .hdr-dropdown .tab .mr-ic, .menu-row .mn-ic { font-size: 1.1rem; width: 22px; text-align: center; flex-shrink: 0; }
         .menu-row-txt { display: flex; flex-direction: column; line-height: 1.25; }
         .menu-row-txt b { font-weight: bold; font-size: 0.95rem; }
-        .menu-row-txt span { font-size: 0.76rem; color: #888; }
+        .menu-row-txt span { font-size: 0.76rem; color: var(--muted); }
 
         #hdr-scrim { position: fixed; inset: 0; z-index: 3900; background: transparent; }
 
@@ -531,13 +570,13 @@
         .lvl0-big {
             font-size: 1.2rem;
             font-weight: 900;
-            color: var(--pol-red);
+            color: var(--red-text);
             margin-bottom: 2px;
         }
 
         .lvl0-sub {
             font-size: 0.6rem;
-            color: #666;
+            color: var(--muted);
             font-weight: bold;
         }
 
@@ -580,7 +619,7 @@
         }
         .dr-cats { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 14px; }
         .dr-cats button {
-            border: 1px solid var(--pol-red); background: var(--card); color: var(--pol-red);
+            border: 1px solid var(--pol-red); background: var(--card); color: var(--red-text);
             border-radius: 14px; padding: 5px 11px; font-size: 0.78rem; font-weight: bold; cursor: pointer;
         }
         .dr-cats button.active { background: var(--pol-red); color: #fff; }
@@ -588,11 +627,11 @@
             background: var(--card); border: 2px solid var(--pol-red); border-radius: 16px;
             width: 100%; max-width: 360px; padding: 18px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); text-align: center;
         }
-        .dr-focus { font-size: 0.78rem; color: #888; font-weight: bold; margin-bottom: 10px; }
-        .dr-pl { font-size: 2rem; font-weight: 900; color: var(--pol-red); line-height: 1.15; }
+        .dr-focus { font-size: 0.78rem; color: var(--muted); font-weight: bold; margin-bottom: 10px; }
+        .dr-pl { font-size: 2rem; font-weight: 900; color: var(--red-text); line-height: 1.15; }
         .dr-phon { font-size: 0.95rem; color: var(--wrong-blue); font-style: italic; margin-top: 4px; }
-        .dr-en { font-size: 1.05rem; color: #888; font-weight: bold; margin-top: 6px; }
-        .dr-contrast { font-size: 0.8rem; color: #999; margin-top: 8px; min-height: 16px; }
+        .dr-en { font-size: 1.05rem; color: var(--muted); font-weight: bold; margin-top: 6px; }
+        .dr-contrast { font-size: 0.8rem; color: var(--muted); margin-top: 8px; min-height: 16px; }
         .dr-audio { display: flex; justify-content: center; gap: 26px; margin-top: 16px; }
         .dr-btn {
             width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--pol-red);
@@ -603,7 +642,7 @@
             background: var(--card); border: 2px solid var(--pol-red); border-radius: 16px;
             width: 100%; max-width: 380px; padding: 20px 18px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); text-align: center;
         }
-        .ty-label { font-size: 0.78rem; color: #888; font-weight: bold; letter-spacing: 0.4px; text-transform: uppercase; }
+        .ty-label { font-size: 0.78rem; color: var(--muted); font-weight: bold; letter-spacing: 0.4px; text-transform: uppercase; }
         .ty-prompt { font-size: 1.5rem; font-weight: 800; color: var(--text); margin: 8px 0 16px; line-height: 1.2; }
         #ty-input {
             width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 1.15rem;
@@ -613,12 +652,12 @@
         .ty-accents { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 12px; }
         .ty-accents button {
             width: 38px; height: 40px; font-size: 1.15rem; border: 1px solid var(--pol-red); background: var(--card);
-            color: var(--pol-red); border-radius: 8px; cursor: pointer; font-weight: bold;
+            color: var(--red-text); border-radius: 8px; cursor: pointer; font-weight: bold;
         }
         .ty-accents button:active { background: var(--pol-red); color: #fff; }
         .ty-feedback { min-height: 22px; margin-top: 12px; font-size: 0.95rem; font-weight: bold; line-height: 1.35; }
-        .ty-feedback .ty-correct-ans { color: var(--success-green); }
-        .ty-feedback .ty-bad { color: var(--pol-red); }
+        .ty-feedback .ty-correct-ans { color: var(--success-text); }
+        .ty-feedback .ty-bad { color: var(--red-text); }
         .ty-feedback .ty-warn { color: #d39e00; }
         .ty-btn-row { margin-top: 14px; }
         .ty-check, .ty-next {
@@ -633,7 +672,7 @@
             background: none; border: 1px solid #ccc; border-radius: 16px; padding: 7px 14px;
             font-size: 0.85rem; font-weight: bold; color: var(--text); cursor: pointer;
         }
-        .ty-counter { font-size: 0.9rem; color: #888; font-weight: bold; }
+        .ty-counter { font-size: 0.9rem; color: var(--muted); font-weight: bold; }
 
         .flashcard {
             background: var(--card);
@@ -652,7 +691,7 @@
         .fc-pl {
             font-size: 2rem;
             font-weight: 900;
-            color: var(--pol-red);
+            color: var(--red-text);
             margin-bottom: 8px;
             word-wrap: break-word;
             line-height: 1.1;
@@ -660,7 +699,7 @@
 
         .fc-en {
             font-size: 1.2rem;
-            color: #888;
+            color: var(--muted);
             margin-bottom: 16px;
             font-weight: bold;
         }
@@ -713,7 +752,7 @@
 
         .fc-counter {
             font-weight: 800;
-            color: #888;
+            color: var(--muted);
             font-size: 1.1rem;
         }
 
@@ -888,7 +927,7 @@
             transform: translate(-50%, -50%);
             font-size: 3rem;
             font-weight: 900;
-            color: var(--pol-red);
+            color: var(--red-text);
             text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
             z-index: 1000;
             display: none;
@@ -959,7 +998,7 @@
 
         .modal-header h2 {
             margin: 0;
-            color: var(--pol-red);
+            color: var(--red-text);
             font-size: 1.2rem;
             font-weight: 900;
         }
@@ -968,7 +1007,7 @@
             background: none;
             border: none;
             font-size: 1.8rem;
-            color: #888;
+            color: var(--muted);
             cursor: pointer;
             padding: 0;
             line-height: 1;
@@ -992,7 +1031,7 @@
             margin-top: 0;
             margin-bottom: 12px;
             font-size: 0.9rem;
-            color: #666;
+            color: var(--muted);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -1062,7 +1101,7 @@
         }
 
         .settings-btn.danger {
-            color: #e74c3c;
+            color: var(--danger-text);
             border-color: #ffcccc;
             background: #fff0f0;
         }
@@ -1079,7 +1118,7 @@
         summary {
             font-weight: 800;
             cursor: pointer;
-            color: var(--pol-red);
+            color: var(--red-text);
             outline: none;
             font-size: 0.95rem;
             display: flex;
@@ -1096,7 +1135,7 @@
         summary::after {
             content: "▼";
             font-size: 0.8rem;
-            color: #888;
+            color: var(--muted);
             transition: transform 0.3s ease;
         }
 
@@ -1173,7 +1212,7 @@
 
         .hf-close {
             background: transparent;
-            color: #888;
+            color: var(--muted);
             font-size: 2rem;
             border: none;
             cursor: pointer;
@@ -1205,7 +1244,7 @@
             font-size: 2rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            color: var(--pol-red);
+            color: var(--red-text);
             line-height: 1.2;
         }
 
@@ -1316,14 +1355,14 @@
         .ob-flag .bot { height: 50%; background: var(--pol-red); }
 
         .ob-step h1 {
-            color: var(--pol-red);
+            color: var(--red-text);
             font-size: 1.7rem;
             font-weight: 900;
             margin: 0 0 10px;
         }
 
         .ob-step h2 {
-            color: var(--pol-red);
+            color: var(--red-text);
             font-size: 1.3rem;
             font-weight: 900;
             margin: 0 0 14px;
@@ -1350,7 +1389,7 @@
 
         .ob-feature .ic { font-size: 1.5rem; line-height: 1.2; }
         .ob-feature .tx { font-size: 0.92rem; line-height: 1.4; }
-        .ob-feature .tx b { color: var(--pol-red); }
+        .ob-feature .tx b { color: var(--red-text); }
 
         .ob-card {
             background: var(--card);
@@ -1402,13 +1441,13 @@
             margin-top: 8px;
         }
 
-        .ob-status.ok { color: var(--success-green); }
-        .ob-status.err { color: var(--pol-red); }
+        .ob-status.ok { color: var(--success-text); }
+        .ob-status.err { color: var(--red-text); }
         .ob-status.busy { color: var(--wrong-blue); }
 
         .ob-note {
             font-size: 0.8rem;
-            color: #888;
+            color: var(--muted);
             line-height: 1.45;
             margin-top: 10px;
         }
@@ -1442,7 +1481,7 @@
         .ob-dot.active { background: var(--pol-red); width: 22px; border-radius: 5px; }
 
         .ob-swipe-cue {
-            color: var(--pol-red);
+            color: var(--red-text);
             font-weight: 800;
             font-size: 0.95rem;
             margin-top: 18px !important;
@@ -1452,7 +1491,7 @@
         .ob-swipe-hint {
             text-align: center;
             font-size: 0.78rem;
-            color: #999;
+            color: var(--muted);
             font-weight: bold;
         }
 
@@ -1471,7 +1510,7 @@
 
         .ob-btn.secondary {
             background: transparent;
-            color: #888;
+            color: var(--muted);
             font-weight: bold;
             font-size: 0.9rem;
             padding: 8px;
@@ -1483,7 +1522,7 @@
         .ob-link-btn {
             background: none;
             border: none;
-            color: #888;
+            color: var(--muted);
             font-weight: bold;
             font-size: 0.88rem;
             padding: 6px 4px;
@@ -1587,9 +1626,9 @@
             color: #fff;
         }
 
-        .ps-summary { flex: 1; font-size: 0.8rem; color: #888; line-height: 1.3; }
+        .ps-summary { flex: 1; font-size: 0.8rem; color: var(--muted); line-height: 1.3; }
         .ps-close {
-            background: none; border: none; font-size: 1.3rem; color: #999;
+            background: none; border: none; font-size: 1.3rem; color: var(--muted);
             cursor: pointer; padding: 0 2px; line-height: 1;
         }
 
@@ -1611,11 +1650,11 @@
             line-height: 1.15;
         }
 
-        .ps-w.exact { background: rgba(46, 204, 113, 0.18); color: var(--success-green); }
+        .ps-w.exact { background: rgba(46, 204, 113, 0.18); color: var(--success-text); }
         .ps-w.close { background: rgba(241, 196, 15, 0.18); color: #c8960b; }
         .ps-w.missed {
             background: rgba(231, 76, 60, 0.13);
-            color: var(--pol-red);
+            color: var(--red-text);
             text-decoration: line-through;
             text-decoration-thickness: 2px;
         }
@@ -1630,7 +1669,7 @@
 
         .ps-heard {
             font-size: 0.8rem;
-            color: #888;
+            color: var(--muted);
             line-height: 1.4;
             border-top: 1px solid #eee;
             padding-top: 8px;
@@ -1665,7 +1704,7 @@
         }
 
         .say-prompt .target {
-            color: var(--pol-red);
+            color: var(--red-text);
             font-size: 1.1em;
         }
         /* In-modal search results */
@@ -1727,7 +1766,7 @@
             padding: 9px 20px;
             border: 2px solid var(--pol-red);
             background: var(--card);
-            color: var(--pol-red);
+            color: var(--red-text);
             border-radius: 20px;
             font-weight: 800;
             font-size: 0.9rem;
@@ -1752,7 +1791,7 @@
             border-radius: 50%;
             border: 2px solid var(--pol-red);
             background: var(--card);
-            color: var(--pol-red);
+            color: var(--red-text);
             font-size: 1.15rem;
             font-weight: 800;
             cursor: pointer;
@@ -1760,7 +1799,7 @@
             align-items: center;
             justify-content: center;
         }
-        .shf-stop { border-color: #888; color: #888; }
+        .shf-stop { border-color: #888; color: var(--muted); }
         .shf-pause { margin: 0; }
 
         #study-view.hf-inline-active .fc-main-audio,
@@ -1813,15 +1852,15 @@
         /* Progress dashboard */
         .pg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
         .pg-card { background: var(--bg); border: 1px solid #ddd; border-radius: 12px; padding: 14px 8px; text-align: center; }
-        .pg-num { font-size: 1.55rem; font-weight: 800; color: var(--pol-red); line-height: 1.1; }
-        .pg-lbl { font-size: 0.76rem; color: #888; margin-top: 3px; }
+        .pg-num { font-size: 1.55rem; font-weight: 800; color: var(--red-text); line-height: 1.1; }
+        .pg-lbl { font-size: 0.76rem; color: var(--muted); margin-top: 3px; }
         .pg-section { margin-bottom: 18px; }
         .pg-sec-title { font-weight: 800; margin-bottom: 8px; font-size: 0.95rem; }
         .pg-lvl-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; font-size: 0.82rem; }
         .pg-lvl-name { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .pg-bar { width: 90px; height: 8px; background: #e5e5e5; border-radius: 4px; overflow: hidden; flex-shrink: 0; }
         .pg-bar-fill { height: 100%; background: var(--success-green); border-radius: 4px; }
-        .pg-lvl-n { width: 48px; text-align: right; color: #888; flex-shrink: 0; }
+        .pg-lvl-n { width: 48px; text-align: right; color: var(--muted); flex-shrink: 0; }
 
         #daily-banner {
             display: none;
@@ -1834,13 +1873,13 @@
             color: var(--text);
         }
         #daily-banner .db-item { white-space: nowrap; }
-        #daily-banner b { font-size: 1.05rem; color: var(--pol-red); }
+        #daily-banner b { font-size: 1.05rem; color: var(--red-text); }
         #daily-banner .db-review {
             margin-left: auto; background: var(--pol-red); color: #fff; border: none;
             border-radius: 14px; padding: 5px 14px; font-weight: 800; font-size: 0.82rem; cursor: pointer;
         }
         #daily-banner .db-x {
-            background: none; border: none; font-size: 1.1rem; color: #999; cursor: pointer; padding: 0 2px;
+            background: none; border: none; font-size: 1.1rem; color: var(--muted); cursor: pointer; padding: 0 2px;
         }
         @media (max-width: 360px) { #daily-banner .db-lbl { display: none; } }
 
@@ -1858,7 +1897,7 @@
 
         #tour-banner.show { display: flex; }
         #tour-banner .tb-text { flex: 1; line-height: 1.3; color: var(--text); }
-        #tour-banner .tb-text b { color: var(--pol-red); }
+        #tour-banner .tb-text b { color: var(--red-text); }
 
         #tour-banner .tb-go {
             background: var(--pol-red);
@@ -1875,7 +1914,7 @@
         #tour-banner .tb-x {
             background: none;
             border: none;
-            color: #999;
+            color: var(--muted);
             font-size: 1.2rem;
             line-height: 1;
             cursor: pointer;
@@ -2000,7 +2039,7 @@
                 <h2>📊 Your Progress</h2>
                 <button class="modal-close" onclick="toggleProgress()">×</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" tabindex="0">
                 <div class="pg-cards">
                     <div class="pg-card"><div class="pg-num" id="pg-mastered">0</div><div class="pg-lbl">Mastered</div></div>
                     <div class="pg-card"><div class="pg-num" id="pg-streak">0</div><div class="pg-lbl">Day streak</div></div>
@@ -2032,7 +2071,7 @@
                 <h2>💡 Grammar / Context</h2>
                 <button class="modal-close" onclick="closeHint()">×</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" tabindex="0">
                 <p id="hint-text" style="font-size:1.1rem; line-height:1.5; color:var(--text); margin:0;"></p>
             </div>
         </div>
@@ -2044,17 +2083,17 @@
                 <h2>Dashboard & Help</h2>
                 <button class="modal-close" onclick="toggleHelp()">×</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" tabindex="0">
                 <details open>
                     <summary>📊 Your Progress & Badges</summary>
                     <p>
                         <b>Total Mastered:</b> <span id="stat-mastered"
-                            style="color:var(--success-green); font-weight:bold;">0</span><br>
+                            style="color: var(--success-text); font-weight:bold;">0</span><br>
                         <b>Total Points:</b> <span id="stat-total-pts">0</span> ⭐<br>
                         <b>Best Streak:</b> <span id="stat-best-streak">0</span> 🔥
                     </p>
                     <p><b>Badges Earned:</b></p>
-                    <div id="stat-badges"><span style="color:#888; font-size:0.75rem;">Play more to earn badges!</span>
+                    <div id="stat-badges"><span style="color: var(--muted); font-size:0.75rem;">Play more to earn badges!</span>
                     </div>
                 </details>
 
@@ -2131,7 +2170,7 @@
                     </p>
                 </details>
 
-                <div style="text-align:center; font-size:0.75rem; color:#888; margin-top:20px;">Polish Phrase Master
+                <div style="text-align:center; font-size:0.75rem; color: var(--muted); margin-top:20px;">Polish Phrase Master
                     <span id="app-version">v45.0</span></div>
             </div>
         </div>
@@ -2143,7 +2182,7 @@
                 <h2>📚 Levels &amp; Dictionary</h2>
                 <button class="modal-close" onclick="toggleLearn()">×</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" tabindex="0">
                 <div class="settings-section">
                     <h3>🎚️ Choose a level</h3>
                     <div class="custom-dropdown" id="lvl-dropdown" style="width:100%;">
@@ -2162,7 +2201,7 @@
                     <div class="ob-note" style="margin-top:8px;">Type an English or Polish word to find it, or translate something new into your Sandbox (Level C).</div>
                     <div id="learn-results"></div>
                     <button class="settings-btn" id="btn-export-c" onclick="exportCustomLevel()"
-                        style="border-color:var(--pol-red); color:var(--pol-red); margin-top:12px;">
+                        style="border-color:var(--pol-red); color: var(--red-text); margin-top:12px;">
                         📤 Export Sandbox (Lvl C)
                     </button>
                 </div>
@@ -2176,7 +2215,7 @@
                 <h2>App Settings</h2>
                 <button class="modal-close" onclick="toggleSettings()">×</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" tabindex="0">
 
                 <div class="settings-section">
                     <h3>⚙️ Options</h3>
@@ -2191,7 +2230,7 @@
                             onclick="setTourBanner(tourBannerHidden())" id="lbl-tour-toggle">ON</button>
                     </div>
                     <button class="settings-btn" onclick="openHandsFree()"
-                        style="border-color:var(--pol-red); color:var(--pol-red);" id="lbl-hf">
+                        style="border-color:var(--pol-red); color: var(--red-text);" id="lbl-hf">
                         🎧 Start Hands-Free Mode
                     </button>
                 </div>
@@ -2200,7 +2239,7 @@
                     <h3>🎤 Voice &amp; AI</h3>
                     <div class="setting-row">
                         <span class="setting-label">Speech recognition</span>
-                        <span id="set-voice-status" style="font-size:0.85rem;font-weight:bold;color:#888;">—</span>
+                        <span id="set-voice-status" style="font-size:0.85rem;font-weight:bold;color: var(--muted);">—</span>
                     </div>
                     <div class="segmented-control" style="margin-bottom:12px;">
                         <button class="seg-btn" id="eng-browser" onclick="setVoiceEngine('browser')">⚡ Browser<br><span style="font-weight:normal;font-size:0.72rem;">fast</span></button>
@@ -2209,11 +2248,11 @@
                     <input type="password" class="ob-input" id="set-key-input" placeholder="OpenAI key (sk-...)" autocomplete="off" spellcheck="false" style="font-size:0.85rem;">
                     <div style="display:flex;gap:10px;">
                         <button class="settings-btn" onclick="saveKeyFromSettings()">💾 Save Key</button>
-                        <button class="settings-btn" onclick="clearOpenAIKey()" style="border-color:#ffcccc;color:#e74c3c;">🗑 Remove</button>
+                        <button class="settings-btn" onclick="clearOpenAIKey()" style="border-color:#ffcccc;color: var(--danger-text);">🗑 Remove</button>
                     </div>
                     <div class="setting-row" style="margin-top:8px;">
                         <span class="setting-label" style="font-size:0.9rem;">Model</span>
-                        <select id="set-model" onchange="saveOpenAIModel(this.value)" style="padding:6px;border-radius:6px;background:var(--bg);color:var(--text);border:1px solid #ccc;">
+                        <select id="set-model" aria-label="Transcription model" onchange="saveOpenAIModel(this.value)" style="padding:6px;border-radius:6px;background:var(--bg);color:var(--text);border:1px solid #ccc;">
                             <option value="gpt-4o-mini-transcribe">mini (cheapest)</option>
                             <option value="gpt-4o-transcribe">4o (most accurate)</option>
                             <option value="whisper-1">whisper-1</option>
@@ -2250,11 +2289,11 @@
     <div id="hf-overlay">
         <div class="hf-progress-bar" id="hf-bar"></div>
         <div class="hf-header">
-            <div style="font-size:0.8rem; color:#666;" id="hf-level-indicator">Level</div>
+            <div style="font-size:0.8rem; color: var(--muted);" id="hf-level-indicator">Level</div>
             <button class="hf-close" onclick="closeHandsFree()">×</button>
         </div>
         <div class="hf-content-area" id="hf-active-view">
-            <div style="color:#888; font-weight:bold; margin-bottom:10px;" id="hf-counter">1 / X</div>
+            <div style="color: var(--muted); font-weight:bold; margin-bottom:10px;" id="hf-counter">1 / X</div>
             <div id="hf-emoji" style="font-size: 3.5rem; margin-bottom: 15px; display: flex; justify-content: center;">⏳
             </div>
             <div class="hf-big-text" id="hf-pl">Ready...</div>
@@ -2396,7 +2435,7 @@
                 <div class="fc-pl" id="fc-pl">Polish</div>
                 <div class="fc-en" id="fc-en">English</div>
                 <div id="fc-notes-container"
-                    style="display:none; font-size:0.95rem; color:#666; margin-top:20px; line-height:1.4; text-align:center; padding-top:10px; border-top:1px dashed #ccc;">
+                    style="display:none; font-size:0.95rem; color: var(--muted); margin-top:20px; line-height:1.4; text-align:center; padding-top:10px; border-top:1px dashed #ccc;">
                 </div>
                 <div class="fc-audio-row">
                     <button id="study-save-btn" class="fc-icon-btn fc-side-left" type="button" onclick="saveCurrentToCustom()" title="Save to Sandbox">⭐</button>
@@ -2627,10 +2666,54 @@
             localStorage.setItem('pl_levels_version', '2');
         })();
 
+        // Answer bookkeeping shared by every mode.
+        // A miss on a mastered phrase no longer sends it back to the start:
+        // its interval steps back one notch and it needs one correct answer
+        // to be mastered again ("relearn"), after which it is rescheduled at
+        // the shorter interval.
+        function previousInterval(i) {
+            const ladder = [0, 1, 3, 7, 14, 30];
+            if (i > 30) return Math.max(30, Math.round(i / 2));
+            const k = ladder.indexOf(i);
+            return k > 0 ? ladder[k - 1] : 0;
+        }
+        function scheduleNext(s) {
+            s.nextReview = Date.now() + (s.interval * 86400000) + Math.floor(Math.random() * 3600000);
+        }
+        function recordHit(s) {
+            s.score++;
+            if (s.score >= THRESHOLD) {
+                if (s.relearn) {
+                    delete s.relearn;
+                    s.interval = Math.max(1, s.interval);
+                    scheduleNext(s);
+                } else if (s.nextReview <= Date.now()) {
+                    // Remembered when due: the interval grows
+                    s.interval = getNextInterval(s.interval);
+                    scheduleNext(s);
+                }
+            }
+            return s;
+        }
+        function recordMiss(s) {
+            if (s.score >= THRESHOLD) {
+                s.interval = previousInterval(s.interval);
+                s.score = THRESHOLD - 1;
+                s.relearn = true;
+                s.nextReview = 0;
+            } else {
+                s.score = Math.max(MIN_SCORE, s.score - 1);
+            }
+            return s;
+        }
+
         // Helper function to check if a phrase should appear in Level R
         function isDueForReview(p) {
             let s = getStat(p);
             if (!s) return false;
+
+            // Include if it was mastered, then missed, and is being relearnt
+            if (s.relearn) return true;
 
             // Include if they are actively struggling with it right now
             if (s.score < 0) return true;
@@ -2696,6 +2779,9 @@
                 reviewComplete: "Review Complete!",
                 reviewCompleteText: "You have successfully cleared your weak phrases.",
                 needsReview: "Needs Review",
+                tierFOUNDATION: "Foundation", tierSURVIVAL: "Survival", tierPRACTICAL: "Practical",
+                tierADVANCED: "Advanced", tierFLUENCY: "Fluency", tierOTHER: "More levels", tierYOURS: "Your lists",
+                nextUp: "Next",
                 backToStart: "Back to Lvl 1",
                 btnSwap: "Swap",
                 btnListen: "Listen: Tap (1x) | 2 Taps (0.5x) | 3 Taps (0.25x)",
@@ -2727,6 +2813,9 @@
                 reviewComplete: "Powtórka Zakończona!",
                 reviewCompleteText: "Pomyślnie powtórzyłeś wszystkie trudne słowa.",
                 needsReview: "Do Powtórki",
+                tierFOUNDATION: "Podstawy", tierSURVIVAL: "Przetrwanie", tierPRACTICAL: "Praktyka",
+                tierADVANCED: "Zaawansowany", tierFLUENCY: "Biegłość", tierOTHER: "Inne poziomy", tierYOURS: "Twoje listy",
+                nextUp: "Dalej",
                 backToStart: "Wróc do startu",
                 btnSwap: "Zamień",
                 btnListen: "Słuchaj: 1 Klik (1x) | 2 Kliki (0.5x) | 3 Kliki (0.25x)",
@@ -2799,7 +2888,7 @@
             if (file && lvlElement) {
                 let desc = currentLevel === "R" ? t('needsReview') : file.desc;
                 let repeats = userData.levelCompletions[currentLevel] || 0;
-                let badge = repeats > 0 ? ` <span style="color:var(--pol-red);font-size:0.8rem;">🔄x${repeats}</span>` : '';
+                let badge = repeats > 0 ? ` <span style="color: var(--red-text);font-size:0.8rem;">🔄x${repeats}</span>` : '';
                 lvlElement.innerHTML = `<span>Lvl ${currentLevel}: ${desc}${badge}</span>`;
                 const hdrLvl = document.getElementById('hdr-level-name');
                 if (hdrLvl) hdrLvl.innerText = currentLevel === "C" ? 'Sandbox' : `Lvl ${currentLevel}: ${desc}`;
@@ -3066,12 +3155,7 @@
         function recordTypingSuccess(p) {
             if (!p || !p.pl) return;
             let st = getStat(p) || { score: 0, interval: 0, nextReview: 0 };
-            st.score++;
-            if (st.score >= THRESHOLD && st.nextReview <= Date.now()) {
-                st.interval = getNextInterval(st.interval);
-                st.nextReview = Date.now() + (st.interval * 86400000) + Math.floor(Math.random() * 3600000);
-            }
-            putStat(p, st);
+            putStat(p, recordHit(st));
             localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
             addPoints(8);
             if (typeof updateTabCounts === 'function') updateTabCounts();
@@ -3372,7 +3456,7 @@
             localStorage.setItem('pl_voice_engine', e);
             if (e === 'openai' && !getOpenAIKey()) {
                 const st = document.getElementById('set-voice-status');
-                if (st) { st.innerText = 'Add a key below ↓'; st.style.color = 'var(--pol-red)'; }
+                if (st) { st.innerText = 'Add a key below ↓'; st.style.color = "var(--red-text)"; }
             }
             refreshVoiceStatusUI();
         }
@@ -3383,10 +3467,10 @@
             const usingOpenAI = (engine === 'openai' && hasKey);
             const el = document.getElementById('set-voice-status');
             if (el) {
-                if (usingOpenAI) { el.innerText = 'OpenAI · accurate ✓'; el.style.color = 'var(--success-green)'; }
-                else if (engine === 'browser' && recognition) { el.innerText = 'Browser · fast ✓'; el.style.color = 'var(--success-green)'; }
-                else if (engine === 'openai' && !hasKey) { el.innerText = 'Add a key below ↓'; el.style.color = 'var(--pol-red)'; }
-                else { el.innerText = recognition ? 'Browser · fast' : 'Unavailable'; el.style.color = '#888'; }
+                if (usingOpenAI) { el.innerText = 'OpenAI · accurate ✓'; el.style.color = "var(--success-text)"; }
+                else if (engine === 'browser' && recognition) { el.innerText = 'Browser · fast ✓'; el.style.color = "var(--success-text)"; }
+                else if (engine === 'openai' && !hasKey) { el.innerText = 'Add a key below ↓'; el.style.color = "var(--red-text)"; }
+                else { el.innerText = recognition ? 'Browser · fast' : 'Unavailable'; el.style.color = 'var(--muted)'; }
             }
             // Engine segmented control active state
             const eb = document.getElementById('eng-browser'), eo = document.getElementById('eng-openai');
@@ -3411,13 +3495,13 @@
             if (tipBtn) {
                 const on = tipsEnabled();
                 tipBtn.innerText = on ? 'ON' : 'OFF';
-                tipBtn.style.color = on ? 'var(--success-green)' : '#888';
+                tipBtn.style.color = on ? 'var(--success-text)' : 'var(--muted)';
             }
             const echoBtn = document.getElementById('lbl-voice-echo');
             if (echoBtn) {
                 const on = voiceEchoEnabled();
                 echoBtn.innerText = on ? 'ON' : 'OFF';
-                echoBtn.style.color = on ? 'var(--success-green)' : '#888';
+                echoBtn.style.color = on ? 'var(--success-text)' : 'var(--muted)';
             }
             const lbl = document.getElementById('lbl-btn-speak');
             if (lbl && !isRecording) lbl.innerText = 'Hold to speak';
@@ -3465,7 +3549,7 @@
 
                 recognition.onerror = () => {
                     document.getElementById('feedback').innerText = "Mic error / nothing heard.";
-                    document.getElementById('feedback').style.color = "var(--pol-red)";
+                    document.getElementById('feedback').style.color = "var(--red-text)";
                     stopListening();
                 };
 
@@ -3539,7 +3623,7 @@
                 whisperStream = await navigator.mediaDevices.getUserMedia({ audio: true });
             } catch (e) {
                 fb().innerText = "Microphone blocked. Allow mic access and try again.";
-                fb().style.color = "var(--pol-red)";
+                fb().style.color = "var(--red-text)";
                 return;
             }
             audioChunks = [];
@@ -3554,7 +3638,7 @@
                 if (whisperStream) { whisperStream.getTracks().forEach(t => t.stop()); whisperStream = null; }
                 if (whisperDiscard) {
                     fb().innerText = "Hold the button while you speak.";
-                    fb().style.color = "#888";
+                    fb().style.color = "var(--muted)";
                     return;
                 }
                 const blob = new Blob(audioChunks, { type: 'audio/webm' });
@@ -3601,7 +3685,7 @@
                     if (res.status === 401) msg = "Invalid OpenAI key — check it in Settings.";
                     if (res.status === 429) msg = "OpenAI rate/quota limit — check your account.";
                     fb().innerText = msg;
-                    fb().style.color = "var(--pol-red)";
+                    fb().style.color = "var(--red-text)";
                     voicePracticeMode = false;
                     return;
                 }
@@ -3609,14 +3693,14 @@
                 const transcript = (data.text || '').toLowerCase().trim();
                 if (!transcript) {
                     fb().innerText = "Didn't catch that — try again.";
-                    fb().style.color = "var(--pol-red)";
+                    fb().style.color = "var(--red-text)";
                     voicePracticeMode = false;
                     return;
                 }
                 checkSpokenAnswer(transcript);
             } catch (e) {
                 fb().innerText = "Network error reaching OpenAI.";
-                fb().style.color = "var(--pol-red)";
+                fb().style.color = "var(--red-text)";
                 voicePracticeMode = false;
             }
         }
@@ -3802,7 +3886,7 @@
         async function maybeGivePronTip(heard, expected, isCorrect) {
             const key = getOpenAIKey();
             if (!key || !expected) return;
-            renderCoach('<span style="color:#888;">listening…</span>');
+            renderCoach('<span style="color: var(--muted);">listening…</span>');
             const sys = "You are a concise, encouraging Polish pronunciation coach. Reply in ONE sentence, max 18 words, no preamble.";
             const usr = 'Target phrase the learner should say: "' + expected + '". '
                 + 'Speech-to-text of what they actually said: "' + heard + '". '
@@ -3975,14 +4059,14 @@
             if (document.getElementById('tab-study').classList.contains('active')) {
                 const isMatch = match;
                 if (isMatch) {
-                    document.getElementById('fc-pl').style.color = "var(--success-green)";
+                    document.getElementById('fc-pl').style.color = "var(--success-text)";
                     playSuccess();
                 } else {
                     playWrongSlide();
                 }
                 const after = () => {
                     if (isMatch) {
-                        document.getElementById('fc-pl').style.color = "var(--pol-red)";
+                        document.getElementById('fc-pl').style.color = "var(--red-text)";
                         nextStudyCard();
                     }
                 };
@@ -4006,7 +4090,7 @@
                 checkAnswer(currentTarget, targetTile);
             } else {
                 document.getElementById('feedback').innerText = `Keep practising 💪 (see score)`;
-                document.getElementById('feedback').style.color = "var(--pol-red)";
+                document.getElementById('feedback').style.color = "var(--red-text)";
 
                 correctStreak = 0;
                 basePitch = 220;
@@ -4015,14 +4099,7 @@
 
                 // Phase 3: SRS Penalty logic applied manually to Voice Rec failure
                 let cStat = getStat(currentTarget) || { score: 0, interval: 0, nextReview: 0 };
-                if (cStat.score >= THRESHOLD) {
-                    cStat.score = -1; // Heavy penalty for forgetting
-                    cStat.interval = 0;
-                    cStat.nextReview = 0;
-                } else {
-                    cStat.score = Math.max(MIN_SCORE, cStat.score - 1);
-                }
-                putStat(currentTarget, cStat);
+                putStat(currentTarget, recordMiss(cStat));
 
                 localStorage.setItem('pl_mastery_final', JSON.stringify(stats));
                 updateMap();
@@ -4032,6 +4109,28 @@
         // ==========================================
         // LIBRARY & LEVEL MANAGEMENT
         // ==========================================
+        let nextUpLevelId = null;
+        function buildLevelMenuItem(lvl, isDone, isNext) {
+            const repeats = userData.levelCompletions[lvl.id] || 0;
+            const rBadge = repeats > 0 ? `<span style="color: var(--red-text); font-size:10px; margin-left:5px;">🔄x${repeats}</span>` : '';
+            const item = document.createElement('div');
+            item.setAttribute('role', 'menuitem');
+            item.tabIndex = 0;
+            if (lvl.id === "R") {
+                item.className = 'dropdown-item sandbox';
+                item.innerHTML = `<span>Lvl R: ${t('needsReview')} (${lvl.data.phrases.length})</span>`;
+            } else {
+                item.className = 'dropdown-item' + (isDone ? ' mastered' : '') + (lvl.id === "C" ? ' sandbox' : '') + (isNext ? ' next-up' : '');
+                item.innerHTML = `<span>Lvl ${lvl.id}: ${escHtml(lvl.desc)}${rBadge}</span>` +
+                    (isDone ? '<span class="check-icon">✅</span>' : '') +
+                    (isNext ? `<span class="next-badge">${t('nextUp')}</span>` : '');
+            }
+            const choose = (e) => { e.stopPropagation(); selectLevel(lvl.id); };
+            item.onclick = choose;
+            item.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(e); } };
+            return item;
+        }
+
         // Level files are listed in levels.json (written by check_levels.py)
         // and fetched in parallel. If the index is missing, fall back to
         // probing phrases_0.json, phrases_1.json, ... as older builds did.
@@ -4115,33 +4214,36 @@
                 data: { description: t('needsReview'), phrases: reviewPhrases }
             });
 
-            levelList.forEach(lvl => {
-                let isDone = false;
-                if (lvl.id === "R") {
-                    isDone = lvl.data.phrases.length === 0;
-                } else {
-                    const masteredCount = lvl.data.phrases.filter(p => getScore(p) >= THRESHOLD).length;
-                    isDone = masteredCount > 0 && masteredCount === lvl.data.phrases.length;
-                }
+            // Menu: levels grouped by tier (in course order), each tier in level
+            // order, then the sandbox and review lists. The first unfinished
+            // level after Level 0 is marked as the suggested next one.
+            const TIER_ORDER = ['FOUNDATION', 'SURVIVAL', 'PRACTICAL', 'ADVANCED', 'FLUENCY'];
+            const numKey = id => id.split('.').map(Number);
+            const byNum = (a, b) => { const x = numKey(a.id), y = numKey(b.id); return (x[0] - y[0]) || ((x[1] || 0) - (y[1] || 0)); };
+            const isLevelDone = lvl => {
+                if (lvl.id === "R") return lvl.data.phrases.length === 0;
+                const masteredCount = lvl.data.phrases.filter(p => getScore(p) >= THRESHOLD).length;
+                return masteredCount > 0 && masteredCount === lvl.data.phrases.length;
+            };
+            const courseLevels = levelList.filter(l => l.id !== 'C' && l.id !== 'R');
+            const groups = [];
+            TIER_ORDER.forEach(tier => {
+                const items = courseLevels.filter(l => l.data.tier === tier).sort(byNum);
+                if (items.length) groups.push({ key: 'tier' + tier, items: items });
+            });
+            const others = courseLevels.filter(l => !TIER_ORDER.includes(l.data.tier)).sort(byNum);
+            if (others.length) groups.push({ key: 'tierOTHER', items: others });
+            groups.push({ key: 'tierYOURS', items: levelList.filter(l => l.id === 'C' || l.id === 'R') });
+            const nextUp = groups.flatMap(g => g.items).find(l => l.id !== '0' && l.id !== 'C' && l.id !== 'R' && !isLevelDone(l));
+            nextUpLevelId = nextUp ? nextUp.id : null;
 
-                let repeats = userData.levelCompletions[lvl.id] || 0;
-                let rBadge = repeats > 0 ? `<span style="color:var(--pol-red); font-size:10px; margin-left:5px;">🔄x${repeats}</span>` : '';
-
-                const item = document.createElement('div');
-
-                if (lvl.id === "R") {
-                    item.className = 'dropdown-item sandbox';
-                    item.innerHTML = `<span>Lvl R: ${t('needsReview')} (${lvl.data.phrases.length})</span>`;
-                } else {
-                    item.className = 'dropdown-item' + (isDone ? ' mastered' : '') + (lvl.id === "C" ? ' sandbox' : '');
-                    item.innerHTML = `<span>Lvl ${lvl.id}: ${lvl.desc}${rBadge}</span>${isDone ? '<span class="check-icon">✅</span>' : ''}`;
-                }
-
-                item.onclick = (e) => {
-                    e.stopPropagation();
-                    selectLevel(lvl.id);
-                };
-                menu.appendChild(item);
+            groups.forEach(g => {
+                const head = document.createElement('div');
+                head.className = 'dropdown-tier';
+                head.setAttribute('role', 'presentation');
+                head.textContent = t(g.key);
+                menu.appendChild(head);
+                g.items.forEach(lvl => menu.appendChild(buildLevelMenuItem(lvl, isLevelDone(lvl), lvl === nextUp)));
             });
 
             if (!levelList.find(l => l.id == currentLevel)) currentLevel = levelList[0].id;
@@ -4259,7 +4361,7 @@
                         <b>${escHtml(p.pl)}</b><br><small>${escHtml(p.en)}</small>
                     </div>
                     <div style="text-align:right; display:flex; align-items:center; gap:8px;">
-                        <span style="font-size:0.7rem; color:var(--pol-red); font-weight:bold;">LVL ${escHtml(String(p.lvl))}</span>
+                        <span style="font-size:0.7rem; color: var(--red-text); font-weight:bold;">LVL ${escHtml(String(p.lvl))}</span>
                         <button class="copy-btn-search" onclick="event.stopPropagation(); copyToClipboard('${(p.pl || '').replace(/'/g, "\\'")}', event)">📋</button>
                     </div>`;
                     item.onclick = () => { selectLevel(p.lvl); };
@@ -4270,7 +4372,7 @@
                 const prompt = document.createElement('div');
                 prompt.className = 'translate-prompt';
                 prompt.innerHTML = `
-                <div style="font-size:0.9rem; color:#666; margin-bottom:5px;">No match found.</div>
+                <div style="font-size:0.9rem; color: var(--muted); margin-bottom:5px;">No match found.</div>
                 <b>"${escHtml(query)}"</b><br>
                 <div style="display:flex; gap:10px; justify-content:center; margin-top:10px;">
                     <button class="btn-translate" id="btn-trans-en" onclick="translateAndAdd('${safeQ}', 'en|pl')">🌐 EN ➔ PL</button>
@@ -4519,7 +4621,7 @@
                 if (elapsed >= TIME_DISTRACTED) {
                     clearInterval(roundTimer);
                     document.getElementById('feedback').innerText = t('tooSlow');
-                    document.getElementById('feedback').style.color = "var(--pol-red)";
+                    document.getElementById('feedback').style.color = "var(--red-text)";
                 }
             }, 50);
 
@@ -4631,23 +4733,13 @@
 
                     if (timeTaken > TIME_SLOW) pts -= 4;
                     document.getElementById('feedback').innerText = t('correct');
-                    document.getElementById('feedback').style.color = "var(--success-green)";
+                    document.getElementById('feedback').style.color = "var(--success-text)";
                 }
 
                 addPoints(pts);
 
                 // Phase 3 SRS Upgrades:
-                pStat.score++;
-                if (pStat.score >= THRESHOLD) {
-                    // If the word was due for review today, successfully remembering it extends its interval!
-                    if (pStat.nextReview <= Date.now()) {
-                        pStat.interval = getNextInterval(pStat.interval);
-                        // Add slight random offset to review times so they don't pile up on exact milliseconds
-                        let randomHourOffset = Math.floor(Math.random() * 3600000);
-                        pStat.nextReview = Date.now() + (pStat.interval * 86400000) + randomHourOffset;
-                    }
-                }
-                putStat(phrase, pStat);
+                putStat(phrase, recordHit(pStat));
 
                 if (currentLevel === "0") speak(phrase.pl + " jak " + phrase.word);
 
@@ -4677,21 +4769,14 @@
                 // Phase 3 SRS Penalty Logic:
                 let penalizeWord = (word) => {
                     let s = getStat(word) || { score: 0, interval: 0, nextReview: 0 };
-                    if (s.score >= THRESHOLD) {
-                        s.score = -1;
-                        s.interval = 0;
-                        s.nextReview = 0;
-                    } else {
-                        s.score = Math.max(MIN_SCORE, s.score - 1);
-                    }
-                    putStat(word, s);
+                    putStat(word, recordMiss(s));
                 };
 
                 penalizeWord(currentTarget);
 
                 if (el) el.classList.add('wrong');
                 document.getElementById('feedback').innerText = t('mistake');
-                document.getElementById('feedback').style.color = "var(--pol-red)";
+                document.getElementById('feedback').style.color = "var(--red-text)";
 
                 setTimeout(() => {
                     if (el) el.classList.remove('wrong');
@@ -5466,7 +5551,7 @@
             if (bd) {
                 bd.innerHTML = (userData.badges && userData.badges.length)
                     ? userData.badges.map(b => '<span class="badge">' + escHtml(b) + '</span>').join('')
-                    : '<span style="color:#888;font-size:0.8rem;">Earn badges by racking up points.</span>';
+                    : '<span style="color: var(--muted);font-size:0.8rem;">Earn badges by racking up points.</span>';
             }
         }
 
@@ -5493,7 +5578,7 @@
             if (b) {
                 const on = !tourBannerHidden();
                 b.innerText = on ? 'ON' : 'OFF';
-                b.style.color = on ? 'var(--success-green)' : '#888';
+                b.style.color = on ? 'var(--success-text)' : 'var(--muted)';
             }
         }
 

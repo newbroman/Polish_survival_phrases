@@ -6,12 +6,12 @@
     {
       "id": "12.1-01",
       "category": "Kitchen",
-      "pl": "Gotować",
-      "en": "To cook",
+      "pl": "Ekspres do kawy",
+      "en": "Coffee machine",
       "level": 12.1,
       "gender": null,
-      "emoji": "🍳",
-      "note": "Infinitive verb."
+      "emoji": "☕",
+      "note": "'Ekspres' alone also means an express train; context makes it clear."
     },
     {
       "id": "12.1-02",
@@ -36,52 +36,52 @@
     {
       "id": "12.1-04",
       "category": "Kitchen",
-      "pl": "Lodówka",
-      "en": "Refrigerator / Fridge",
+      "pl": "Toster",
+      "en": "Toaster",
       "level": 12.1,
       "gender": null,
-      "emoji": "🧊",
-      "note": "From 'lód' (ice)."
+      "emoji": "🍞",
+      "note": "Said TOS-ter; a slice of toast is a 'tost'."
     },
     {
       "id": "12.1-05",
       "category": "Kitchen",
-      "pl": "Zmywarka",
-      "en": "Dishwasher",
+      "pl": "Płyta indukcyjna",
+      "en": "Induction hob",
       "level": 12.1,
       "gender": null,
-      "emoji": "🧼",
-      "note": "From 'zmywać' (to wash dishes)."
+      "emoji": "🔥",
+      "note": "'Płyta' is the hob; a gas hob is 'płyta gazowa'."
     },
     {
       "id": "12.1-06",
       "category": "Furniture",
-      "pl": "Kanapa",
-      "en": "Sofa / Couch",
+      "pl": "Wersalka",
+      "en": "Sofa bed",
       "level": 12.1,
       "gender": null,
       "emoji": "🛋️",
-      "note": "A feminine noun. Poles often use 'sofa' and 'kanapa' interchangeably."
+      "note": "A fold-out sofa bed, a fixture of Polish flats."
     },
     {
       "id": "12.1-07",
       "category": "Furniture",
-      "pl": "Szafa",
-      "en": "Wardrobe / Closet",
+      "pl": "Szafka na buty",
+      "en": "Shoe cabinet",
       "level": 12.1,
       "gender": null,
-      "emoji": "👗",
-      "note": "Crucial word for where you keep your clothes."
+      "emoji": "👟",
+      "note": "Poles take their shoes off at the door, so most hallways have one."
     },
     {
       "id": "12.1-08",
       "category": "Gardening",
-      "pl": "Ogródek",
-      "en": "Small garden",
+      "pl": "Działka",
+      "en": "Allotment",
       "level": 12.1,
       "gender": null,
-      "emoji": "🏡",
-      "note": "Diminutive of 'ogród'. Often used for backyard gardens."
+      "emoji": "🌻",
+      "note": "Many Poles keep a 'działka' with a small summer house, often on the edge of town."
     },
     {
       "id": "12.1-09",
@@ -96,12 +96,12 @@
     {
       "id": "12.1-10",
       "category": "Gardening",
-      "pl": "Kosić trawę",
-      "en": "To mow the lawn",
+      "pl": "Kosiarka",
+      "en": "Lawnmower",
       "level": 12.1,
       "gender": null,
-      "emoji": "🚜",
-      "note": "'Trawę' is the accusative case of 'trawa' (grass)."
+      "emoji": "🌱",
+      "note": "From 'kosić' (to mow): 'kosić trawę kosiarką'."
     },
     {
       "id": "12.1-11",
