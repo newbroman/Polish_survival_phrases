@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Polish Phrase Master v50.0</title>
+    <title>Polish Phrase Master v50.1</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -3485,7 +3485,14 @@
             let html = '';
             if (here.length) html += '<div class="dl-group">This level</div>' + here.map(card).join('');
             else html += '<div class="dl-empty" style="margin:8px 0 4px;">No dialogue for this level yet. Try one of these:</div>';
-            html += '<div class="dl-group">' + (here.length ? 'Other levels' : 'All dialogues') + '</div>' + others.map(card).join('');
+            // The rest, grouped by course tier in level order
+            const tierOf = d => { const l = levelList.find(x => x.id === d.level); return (l && l.data.tier) || 'OTHER'; };
+            const numKey = id => id.split('.').map(Number);
+            const byLevel = (a, b) => { const x = numKey(a.level), y = numKey(b.level); return (x[0] - y[0]) || ((x[1] || 0) - (y[1] || 0)); };
+            ['FOUNDATION', 'SURVIVAL', 'PRACTICAL', 'ADVANCED', 'FLUENCY', 'OTHER'].forEach(tier => {
+                const items = others.filter(d => tierOf(d) === tier).sort(byLevel);
+                if (items.length) html += '<div class="dl-group">' + escHtml(t('tier' + tier)) + '</div>' + items.map(card).join('');
+            });
             list.innerHTML = html;
         }
         function dialogueStop() {

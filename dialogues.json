@@ -9,8 +9,8 @@
       "lines": [
         { "who": "you", "pl": "Przepraszam, czy może mi Pan pomóc?", "en": "Excuse me, can you help me?" },
         { "who": "them", "pl": "Tak, oczywiście. Co się stało?", "en": "Yes, of course. What happened?" },
-        { "who": "you", "variants": { "m": "Zgubiłem paszport.", "f": "Zgubiłam paszport." }, "en": "I've lost my passport." },
-        { "who": "them", "variants": { "m": "Gdzie go Pan ostatnio widział?", "f": "Gdzie go Pani ostatnio widziała?" }, "en": "Where did you last see it?" },
+        { "who": "you", "variants": {"m": "Zgubiłem paszport.", "f": "Zgubiłam paszport."}, "en": "I've lost my passport." },
+        { "who": "them", "variants": {"m": "Gdzie go Pan ostatnio widział?", "f": "Gdzie go Pani ostatnio widziała?"}, "en": "Where did you last see it?" },
         { "who": "you", "pl": "Chyba w autobusie.", "en": "Probably on the bus." },
         { "who": "them", "pl": "Trzeba to zgłosić na policji. Komisariat jest niedaleko.", "en": "You need to report it to the police. The police station is nearby." },
         { "who": "you", "pl": "Gdzie jest komisariat?", "en": "Where is the police station?" },
@@ -56,6 +56,24 @@
       ]
     },
     {
+      "id": "4-meeting-time",
+      "level": "4",
+      "title": "Arranging to meet",
+      "setting": "📅 Chatting with a friend",
+      "lines": [
+        { "who": "them", "pl": "Cześć! Masz jutro czas?", "en": "Hi! Are you free tomorrow?" },
+        { "who": "you", "pl": "Jutro nie. Może pojutrze?", "en": "Not tomorrow. Maybe the day after?" },
+        { "who": "them", "pl": "Dobrze, pojutrze. O której?", "en": "OK, the day after tomorrow. What time?" },
+        { "who": "you", "pl": "Po południu, o drugiej?", "en": "In the afternoon, at two?" },
+        { "who": "them", "pl": "O drugiej nie mogę. Może wpół do czwartej?", "en": "I can't at two. Maybe half past three?" },
+        { "who": "you", "pl": "Dobrze, wpół do czwartej.", "en": "OK, half past three." },
+        { "who": "them", "pl": "Gdzie się spotkamy?", "en": "Where shall we meet?" },
+        { "who": "you", "pl": "Przed dworcem.", "en": "Outside the station." },
+        { "who": "them", "pl": "Super. To do zobaczenia pojutrze o wpół do czwartej!", "en": "Great. See you the day after tomorrow at half past three!" },
+        { "who": "you", "pl": "Do zobaczenia! Cześć!", "en": "See you! Bye!" }
+      ]
+    },
+    {
       "id": "5-restaurant",
       "level": "5",
       "title": "Ordering at a restaurant",
@@ -72,8 +90,28 @@
         { "who": "them", "pl": "Coś jeszcze?", "en": "Anything else?" },
         { "who": "you", "pl": "Nie, dziękuję. To wszystko.", "en": "No, thank you. That's all." },
         { "who": "you", "pl": "Poproszę rachunek.", "en": "The bill, please." },
-        { "who": "them", "variants": { "m": "Proszę. Płaci Pan gotówką czy kartą?", "f": "Proszę. Płaci Pani gotówką czy kartą?" }, "en": "Here you are. Are you paying cash or card?" },
+        { "who": "them", "variants": {"m": "Proszę. Płaci Pan gotówką czy kartą?", "f": "Proszę. Płaci Pani gotówką czy kartą?"}, "en": "Here you are. Are you paying cash or card?" },
         { "who": "you", "pl": "Kartą, proszę.", "en": "By card, please." }
+      ]
+    },
+    {
+      "id": "5.1-market-stall",
+      "level": "5.1",
+      "title": "Paying at a market stall",
+      "setting": "🍓 At a market stall",
+      "lines": [
+        { "who": "them", "pl": "Dzień dobry! Co podać?", "en": "Hello! What can I get you?" },
+        { "who": "you", "pl": "Dzień dobry. Ile kosztują truskawki?", "en": "Hello. How much are the strawberries?" },
+        { "who": "them", "pl": "Dwanaście złotych za kilogram.", "en": "Twelve złoty a kilo." },
+        { "who": "you", "pl": "Poproszę dwa kilogramy.", "en": "Two kilos, please." },
+        { "who": "them", "pl": "Coś jeszcze? Pomidory są dziś w promocji, siedem złotych za kilogram.", "en": "Anything else? The tomatoes are on offer today, seven złoty a kilo." },
+        { "who": "you", "pl": "Poproszę też kilogram pomidorów.", "en": "A kilo of tomatoes as well, please." },
+        { "who": "them", "pl": "Razem trzydzieści jeden złotych.", "en": "That's thirty-one złoty altogether." },
+        { "who": "you", "pl": "Czy mogę zapłacić kartą?", "en": "Can I pay by card?" },
+        { "who": "them", "pl": "Niestety, tylko gotówka.", "en": "Sorry, cash only." },
+        { "who": "you", "pl": "Dobrze, płacę gotówką. Proszę, pięćdziesiąt złotych.", "en": "OK, I'll pay cash. Here's fifty złoty." },
+        { "who": "them", "pl": "Dziewiętnaście złotych reszty. Potrzebny paragon?", "en": "Nineteen złoty change. Do you need a receipt?" },
+        { "who": "you", "pl": "Nie, dziękuję. Do widzenia!", "en": "No, thank you. Goodbye!" }
       ]
     },
     {
@@ -108,7 +146,7 @@
         { "who": "you", "pl": "Gdzie jest przymierzalnia?", "en": "Where is the fitting room?" },
         { "who": "them", "pl": "Tam, po lewej stronie.", "en": "Over there, on the left." },
         { "who": "you", "pl": "Wezmę ją. Ile kosztuje?", "en": "I'll take it. How much is it?" },
-        { "who": "them", "variants": { "m": "Sto dwadzieścia złotych. Potrzebuje Pan torby?", "f": "Sto dwadzieścia złotych. Potrzebuje Pani torby?" }, "en": "A hundred and twenty złoty. Do you need a bag?" },
+        { "who": "them", "variants": {"m": "Sto dwadzieścia złotych. Potrzebuje Pan torby?", "f": "Sto dwadzieścia złotych. Potrzebuje Pani torby?"}, "en": "A hundred and twenty złoty. Do you need a bag?" },
         { "who": "you", "pl": "Nie, dziękuję.", "en": "No, thank you." },
         { "who": "them", "pl": "Proszę, oto paragon. Do widzenia!", "en": "Here's your receipt. Goodbye!" }
       ]
@@ -119,7 +157,7 @@
       "title": "Renting a car",
       "setting": "🚗 At the rental desk",
       "lines": [
-        { "who": "you", "variants": { "m": "Dzień dobry. Chciałbym wynająć samochód.", "f": "Dzień dobry. Chciałabym wynająć samochód." }, "en": "Hello. I'd like to rent a car." },
+        { "who": "you", "variants": {"m": "Dzień dobry. Chciałbym wynająć samochód.", "f": "Dzień dobry. Chciałabym wynająć samochód."}, "en": "Hello. I'd like to rent a car." },
         { "who": "them", "pl": "Na ile dni?", "en": "For how many days?" },
         { "who": "you", "pl": "Na tydzień.", "en": "For a week." },
         { "who": "them", "pl": "Poproszę prawo jazdy i kartę kredytową.", "en": "Your driving licence and credit card, please." },
@@ -140,13 +178,53 @@
         { "who": "you", "pl": "Dzień dobry. Boli mnie gardło i mam katar.", "en": "Hello. I have a sore throat and a runny nose." },
         { "who": "them", "pl": "Od kiedy?", "en": "Since when?" },
         { "who": "you", "pl": "Od wczoraj.", "en": "Since yesterday." },
-        { "who": "them", "variants": { "m": "Czy ma Pan gorączkę?", "f": "Czy ma Pani gorączkę?" }, "en": "Do you have a temperature?" },
+        { "who": "them", "variants": {"m": "Czy ma Pan gorączkę?", "f": "Czy ma Pani gorączkę?"}, "en": "Do you have a temperature?" },
         { "who": "you", "pl": "Nie, nie mam gorączki.", "en": "No, I don't have a temperature." },
         { "who": "them", "pl": "Polecam te tabletki do ssania i syrop.", "en": "I recommend these lozenges and a syrup." },
         { "who": "you", "pl": "Jak często mam je brać?", "en": "How often should I take them?" },
         { "who": "them", "pl": "Tabletki co trzy godziny, syrop trzy razy dziennie.", "en": "The lozenges every three hours, the syrup three times a day." },
         { "who": "you", "pl": "Dziękuję. Ile płacę?", "en": "Thank you. How much is that?" },
         { "who": "them", "pl": "Trzydzieści dwa złote.", "en": "Thirty-two złoty." }
+      ]
+    },
+    {
+      "id": "10-sim-card",
+      "level": "10",
+      "title": "Buying a SIM card",
+      "setting": "📱 In a phone shop",
+      "lines": [
+        { "who": "them", "pl": "Dzień dobry, w czym mogę pomóc?", "en": "Hello, how can I help?" },
+        { "who": "you", "variants": {"m": "Chciałbym kupić kartę SIM.", "f": "Chciałabym kupić kartę SIM."}, "en": "I'd like to buy a SIM card." },
+        { "who": "them", "pl": "Na kartę czy abonament?", "en": "Pay-as-you-go or a contract?" },
+        { "who": "you", "pl": "Na kartę. Jestem tu tylko na miesiąc.", "en": "Pay-as-you-go. I'm only here for a month." },
+        { "who": "them", "pl": "To polecam ten starter. Kosztuje dziesięć złotych.", "en": "Then I'd recommend this starter pack. It costs ten złoty." },
+        { "who": "you", "pl": "Ile jest internetu w pakiecie?", "en": "How much data is included?" },
+        { "who": "them", "pl": "Dziesięć gigabajtów. Potem można doładować konto w aplikacji.", "en": "Ten gigabytes. After that you can top up in the app." },
+        { "who": "you", "pl": "Dobrze, biorę.", "en": "OK, I'll take it." },
+        { "who": "them", "pl": "Muszę zarejestrować kartę. Poproszę paszport.", "en": "I need to register the card. Your passport, please." },
+        { "who": "you", "pl": "Proszę. Czy może Pan włożyć kartę do telefonu?", "en": "Here you are. Could you put the card in my phone?" },
+        { "who": "them", "variants": {"m": "Oczywiście. Gotowe. Ma Pan już zasięg?", "f": "Oczywiście. Gotowe. Ma Pani już zasięg?"}, "en": "Of course. Done. Have you got a signal now?" },
+        { "who": "you", "pl": "Tak, działa. Dziękuję bardzo!", "en": "Yes, it works. Thank you very much!" }
+      ]
+    },
+    {
+      "id": "10.1-hiking-weather",
+      "level": "10.1",
+      "title": "Asking about a trail",
+      "setting": "🥾 At a mountain hut",
+      "lines": [
+        { "who": "you", "pl": "Przepraszam, którędy na punkt widokowy?", "en": "Excuse me, which way to the viewpoint?" },
+        { "who": "them", "pl": "Za schroniskiem w lewo, a potem cały czas zielonym szlakiem.", "en": "Left behind the mountain hut, then follow the green trail all the way." },
+        { "who": "you", "pl": "Czy szlak jest trudny?", "en": "Is the trail difficult?" },
+        { "who": "them", "pl": "Nie, dość łatwy. Ale po deszczu bywa ślisko.", "en": "No, fairly easy. But it can get slippery after rain." },
+        { "who": "you", "pl": "Ile czasu zajmie wejście?", "en": "How long does it take to go up?" },
+        { "who": "them", "pl": "Jakieś półtorej godziny w jedną stronę.", "en": "About an hour and a half each way." },
+        { "who": "you", "pl": "Jaka będzie pogoda po południu?", "en": "What will the weather be like this afternoon?" },
+        { "who": "them", "pl": "Teraz świeci słońce, ale po południu zapowiadają burzę.", "en": "The sun's out now, but they're forecasting a storm this afternoon." },
+        { "who": "you", "pl": "To wychodzę od razu.", "en": "Then I'll set off straight away." },
+        { "who": "them", "pl": "Dobry pomysł. Na górze jest wietrznie i chłodno, więc proszę wziąć kurtkę.", "en": "Good idea. It's windy and chilly at the top, so take a jacket." },
+        { "who": "you", "pl": "Dziękuję za radę!", "en": "Thanks for the advice!" },
+        { "who": "them", "pl": "Nie ma za co. Udanej wędrówki!", "en": "You're welcome. Enjoy the hike!" }
       ]
     },
     {
@@ -168,13 +246,169 @@
       ]
     },
     {
+      "id": "12-flatmate-chores",
+      "level": "12",
+      "title": "Chores and bills",
+      "setting": "🏠 At home with a flatmate",
+      "lines": [
+        { "who": "them", "pl": "Hej, masz chwilę? Musimy porozmawiać o sprzątaniu.", "en": "Hey, have you got a minute? We need to talk about the cleaning." },
+        { "who": "you", "pl": "Jasne. Co się stało?", "en": "Sure. What's up?" },
+        { "who": "them", "pl": "W kuchni jest bałagan, a naczynia stoją w zlewie od trzech dni.", "en": "The kitchen's a mess, and the dishes have been in the sink for three days." },
+        { "who": "you", "pl": "Przepraszam, zmyję je dziś wieczorem.", "en": "Sorry, I'll wash them up this evening." },
+        { "who": "them", "pl": "Dzięki. Może zróbmy grafik? Ty odkurzasz i wynosisz śmieci, a ja sprzątam łazienkę.", "en": "Thanks. Shall we do a rota? You vacuum and take the rubbish out, and I'll clean the bathroom." },
+        { "who": "you", "variants": {"m": "Dobrze. Ale wczoraj już wyniosłem śmieci.", "f": "Dobrze. Ale wczoraj już wyniosłam śmieci."}, "en": "OK. But I already took the rubbish out yesterday." },
+        { "who": "them", "pl": "Racja, przepraszam. I jeszcze jedno: przyszły rachunki za prąd i internet.", "en": "True, sorry. And one more thing: the electricity and internet bills have arrived." },
+        { "who": "you", "pl": "Ile mamy zapłacić?", "en": "How much do we have to pay?" },
+        { "who": "them", "pl": "Razem dwieście czterdzieści złotych, czyli po sto dwadzieścia.", "en": "Two hundred and forty złoty in total, so a hundred and twenty each." },
+        { "who": "you", "pl": "Dobrze. Przeleję ci pieniądze jutro.", "en": "OK. I'll transfer you the money tomorrow." },
+        { "who": "them", "pl": "Super, dzięki!", "en": "Great, thanks!" }
+      ]
+    },
+    {
+      "id": "12.1-cooking-together",
+      "level": "12.1",
+      "title": "Cooking with a friend",
+      "setting": "🍲 In a friend's kitchen",
+      "lines": [
+        { "who": "you", "pl": "Mogę ci pomóc w kuchni?", "en": "Can I help you in the kitchen?" },
+        { "who": "them", "pl": "Jasne! Robię zupę pomidorową. Możesz pokroić cebulę?", "en": "Sure! I'm making tomato soup. Can you chop the onion?" },
+        { "who": "you", "pl": "Gdzie jest deska do krojenia?", "en": "Where's the chopping board?" },
+        { "who": "them", "pl": "W szafce obok zlewu. Nóż jest w szufladzie.", "en": "In the cupboard next to the sink. The knife is in the drawer." },
+        { "who": "you", "pl": "Mam też obrać marchewkę?", "en": "Should I peel the carrot too?" },
+        { "who": "them", "pl": "Tak, poproszę. I zetrzyj ją na tarce.", "en": "Yes, please. And grate it." },
+        { "who": "you", "pl": "Gotowe. Co teraz?", "en": "Done. What now?" },
+        { "who": "them", "pl": "Wrzuć wszystko do garnka i zamieszaj.", "en": "Put everything in the pot and give it a stir." },
+        { "who": "you", "pl": "Dodać sól?", "en": "Shall I add salt?" },
+        { "who": "them", "pl": "Tak, szczyptę. Potem spróbuj, czy jest dobrze doprawiona.", "en": "Yes, a pinch. Then taste it to see if it's seasoned well." },
+        { "who": "you", "pl": "Mmm, pyszna! Kiedy obiad będzie gotowy?", "en": "Mmm, delicious! When will dinner be ready?" },
+        { "who": "them", "pl": "Za dwadzieścia minut. Zrobisz nam w tym czasie kawę?", "en": "In twenty minutes. Will you make us some coffee in the meantime?" },
+        { "who": "you", "pl": "Jasne, zrobię kawę.", "en": "Sure, I'll make the coffee." }
+      ]
+    },
+    {
+      "id": "13-cinema-tickets",
+      "level": "13",
+      "title": "Buying cinema tickets",
+      "setting": "🎬 At the cinema box office",
+      "lines": [
+        { "who": "them", "pl": "Dzień dobry, na jaki film?", "en": "Hello, which film?" },
+        { "who": "you", "pl": "Dzień dobry. Dwa bilety na francuski dramat, proszę.", "en": "Hello. Two tickets for the French drama, please." },
+        { "who": "them", "pl": "Na seans o osiemnastej czy o dwudziestej?", "en": "For the six o'clock or the eight o'clock showing?" },
+        { "who": "you", "pl": "O dwudziestej. Czy film jest z napisami?", "en": "Eight o'clock. Does the film have subtitles?" },
+        { "who": "them", "pl": "Tak, z polskimi napisami. Gdzie chcą Państwo usiąść?", "en": "Yes, with Polish subtitles. Where would you like to sit?" },
+        { "who": "you", "pl": "Najlepiej w środku sali.", "en": "In the middle, ideally." },
+        { "who": "them", "pl": "Mam dwa miejsca obok siebie w dziesiątym rzędzie.", "en": "I have two seats together in row ten." },
+        { "who": "you", "pl": "Świetnie. Czy jest bilet ulgowy dla studentów?", "en": "Great. Is there a student discount ticket?" },
+        { "who": "them", "pl": "Tak, za okazaniem legitymacji. Normalny kosztuje trzydzieści złotych, ulgowy dwadzieścia cztery.", "en": "Yes, if you show a student card. Standard is thirty złoty, reduced is twenty-four." },
+        { "who": "you", "pl": "To jeden normalny i jeden ulgowy, proszę.", "en": "One standard and one reduced, then, please." },
+        { "who": "them", "pl": "Razem pięćdziesiąt cztery złote. Sala numer trzy. Miłego seansu!", "en": "That's fifty-four złoty altogether. Screen three. Enjoy the film!" }
+      ]
+    },
+    {
+      "id": "14-music-concert",
+      "level": "14",
+      "title": "Talking about music",
+      "setting": "🎸 Chatting with a friend",
+      "lines": [
+        { "who": "them", "pl": "Czego słuchasz? Podgłośnij!", "en": "What are you listening to? Turn it up!" },
+        { "who": "you", "pl": "To nowy album mojego ulubionego zespołu.", "en": "It's the new album by my favourite band." },
+        { "who": "them", "pl": "Fajne! Jaka muzyka ci się podoba?", "en": "Nice! What music do you like?" },
+        { "who": "you", "pl": "Najbardziej lubię rocka i jazz.", "en": "I like rock and jazz best." },
+        { "who": "them", "pl": "A znasz polską muzykę?", "en": "And do you know any Polish music?" },
+        { "who": "you", "pl": "Trochę. Możesz mi coś polecić?", "en": "A bit. Can you recommend something?" },
+        { "who": "them", "pl": "Jasne, zrobię ci playlistę. W sobotę gra świetny zespół w klubie obok. Idziesz?", "en": "Sure, I'll make you a playlist. A great band is playing at the club nearby on Saturday. Are you coming?" },
+        { "who": "you", "pl": "Chętnie! Ile kosztuje bilet?", "en": "I'd love to! How much is a ticket?" },
+        { "who": "them", "pl": "Sześćdziesiąt złotych, ale trzeba się pospieszyć, bo bilety szybko schodzą.", "en": "Sixty złoty, but you need to hurry, because tickets are going fast." },
+        { "who": "you", "pl": "Kupię bilet jeszcze dziś.", "en": "I'll buy a ticket today." },
+        { "who": "them", "pl": "Super! Mają genialnego perkusistę, a na koniec zawsze grają coś na bis.", "en": "Great! They've got a brilliant drummer, and they always play an encore at the end." },
+        { "who": "you", "pl": "Nie mogę się doczekać!", "en": "I can't wait!" }
+      ]
+    },
+    {
+      "id": "15-job-interview",
+      "level": "15",
+      "title": "A job interview",
+      "setting": "💼 At a job interview",
+      "lines": [
+        { "who": "them", "variants": {"m": "Dzień dobry, proszę usiąść. Dziękuję, że Pan przyszedł.", "f": "Dzień dobry, proszę usiąść. Dziękuję, że Pani przyszła."}, "en": "Hello, please sit down. Thank you for coming." },
+        { "who": "you", "pl": "Dziękuję za zaproszenie na rozmowę.", "en": "Thank you for inviting me to the interview." },
+        { "who": "them", "pl": "Proszę opowiedzieć o swoim doświadczeniu.", "en": "Please tell me about your experience." },
+        { "who": "you", "pl": "Mam pięć lat doświadczenia w obsłudze klienta.", "en": "I have five years of experience in customer service." },
+        { "who": "them", "variants": {"m": "Świetnie. Czy ma Pan do nas jakieś pytania?", "f": "Świetnie. Czy ma Pani do nas jakieś pytania?"}, "en": "Excellent. Do you have any questions for us?" },
+        { "who": "you", "pl": "Jakie będą moje obowiązki?", "en": "What will my duties be?" },
+        { "who": "them", "pl": "Głównie kontakt z klientami i przygotowywanie raportów. Pracujemy od ósmej do szesnastej, a raz w tygodniu można pracować z domu.", "en": "Mainly dealing with clients and preparing reports. We work from eight to four, and once a week you can work from home." },
+        { "who": "you", "pl": "Brzmi świetnie. Kiedy mogę zacząć?", "en": "Sounds great. When can I start?" },
+        { "who": "them", "variants": {"m": "Najlepiej od pierwszego listopada. Czy ma Pan okres wypowiedzenia?", "f": "Najlepiej od pierwszego listopada. Czy ma Pani okres wypowiedzenia?"}, "en": "Ideally from the first of November. Do you have a notice period?" },
+        { "who": "you", "variants": {"m": "Nie, jestem dostępny od zaraz.", "f": "Nie, jestem dostępna od zaraz."}, "en": "No, I'm available immediately." },
+        { "who": "them", "variants": {"m": "Doskonale. Dam Panu znać do piątku. Dziękuję za rozmowę.", "f": "Doskonale. Dam Pani znać do piątku. Dziękuję za rozmowę."}, "en": "Perfect. I'll let you know by Friday. Thank you for the interview." }
+      ]
+    },
+    {
+      "id": "16-family-photo",
+      "level": "16",
+      "title": "Talking about family",
+      "setting": "👨‍👩‍👧 Looking at photos with a new friend",
+      "lines": [
+        { "who": "them", "pl": "To zdjęcie twojej rodziny?", "en": "Is that a photo of your family?" },
+        { "who": "you", "pl": "Tak, to moi rodzice i moja siostra.", "en": "Yes, that's my parents and my sister." },
+        { "who": "them", "pl": "Ładne zdjęcie! Masz jeszcze jakieś rodzeństwo?", "en": "Lovely photo! Do you have any other brothers or sisters?" },
+        { "who": "you", "pl": "Mam też brata. Jest starszy ode mnie.", "en": "I've got a brother too. He's older than me." },
+        { "who": "them", "variants": {"m": "A ty? Jesteś żonaty?", "f": "A ty? Jesteś zamężna?"}, "en": "And you? Are you married?" },
+        { "who": "you", "pl": "Nie, ale jestem w związku.", "en": "No, but I'm in a relationship." },
+        { "who": "them", "pl": "Ja mam męża i dwoje dzieci. Syn ma pięć lat, a córka trzy.", "en": "I've got a husband and two children. My son is five and my daughter is three." },
+        { "who": "you", "pl": "Jak mają na imię?", "en": "What are their names?" },
+        { "who": "them", "pl": "Kuba i Zosia. W sobotę Kuba ma urodziny. Przyjdziesz?", "en": "Kuba and Zosia. It's Kuba's birthday on Saturday. Will you come?" },
+        { "who": "you", "pl": "Chętnie! Co mu kupić?", "en": "I'd love to! What should I get him?" },
+        { "who": "them", "pl": "Najlepiej coś do rysowania. Uwielbia kredki.", "en": "Something for drawing would be best. He loves crayons." },
+        { "who": "you", "pl": "To w sobotę zaśpiewamy mu Sto lat!", "en": "Then on Saturday we'll sing him 'Sto lat'!" }
+      ]
+    },
+    {
+      "id": "17-station-diversion",
+      "level": "17",
+      "title": "A closed entrance",
+      "setting": "🚧 At the railway station",
+      "lines": [
+        { "who": "you", "pl": "Przepraszam, co znaczy ten napis „Brak przejścia”?", "en": "Excuse me, what does this “Brak przejścia” sign mean?" },
+        { "who": "them", "pl": "Że tędy nie można przejść. To wejście jest dziś zamknięte z powodu remontu.", "en": "That you can't get through this way. This entrance is closed today for repairs." },
+        { "who": "you", "pl": "Jak w takim razie dojść na peron trzeci?", "en": "So how do I get to platform three?" },
+        { "who": "them", "pl": "Proszę iść za strzałkami, przez halę główną, obok kas biletowych.", "en": "Follow the arrows, through the main hall, past the ticket offices." },
+        { "who": "you", "pl": "Czy pociąg do Gdańska jest opóźniony?", "en": "Is the train to Gdańsk delayed?" },
+        { "who": "them", "pl": "Tak, o jakieś dwadzieścia minut. Odjedzie o dziesiątej trzydzieści pięć.", "en": "Yes, by about twenty minutes. It'll leave at 10:35." },
+        { "who": "you", "pl": "Z którego toru odjeżdża?", "en": "Which track does it leave from?" },
+        { "who": "them", "pl": "Z toru piątego. Proszę patrzeć na tablicę, bo to się może zmienić.", "en": "Track five. Keep an eye on the board, as that might change." },
+        { "who": "you", "pl": "Dobrze. Dziękuję bardzo za pomoc.", "en": "Okay. Thank you very much for your help." },
+        { "who": "them", "pl": "Nie ma za co. Miłej podróży!", "en": "You're welcome. Have a nice journey!" }
+      ]
+    },
+    {
+      "id": "20-describe-cousin",
+      "level": "20",
+      "title": "What does he look like?",
+      "setting": "📞 On the phone to a friend",
+      "lines": [
+        { "who": "them", "pl": "Cześć! To o której przyjeżdża twój kuzyn?", "en": "Hi! So what time is your cousin arriving?" },
+        { "who": "you", "pl": "O szesnastej dziesięć. Dzięki, że po niego wyjdziesz.", "en": "At 16:10. Thanks for meeting him." },
+        { "who": "them", "pl": "Nie ma sprawy. Ale jak on wygląda? Nigdy go nie widziałam.", "en": "No problem. But what does he look like? I've never seen him." },
+        { "who": "you", "pl": "Jest wysoki i szczupły, ma krótkie rude włosy.", "en": "He's tall and slim, with short red hair." },
+        { "who": "them", "pl": "Rude? To łatwo go znajdę.", "en": "Red? Then I'll find him easily." },
+        { "who": "you", "pl": "Ma też brodę i nosi okulary.", "en": "He's also got a beard and wears glasses." },
+        { "who": "them", "pl": "A jaki on jest? Będę z nim jechać pół godziny tramwajem.", "en": "And what's he like? I'll be on the tram with him for half an hour." },
+        { "who": "you", "pl": "Jest bardzo miły i ma dobre poczucie humoru.", "en": "He's very nice and has a good sense of humour." },
+        { "who": "them", "pl": "To super.", "en": "Great." },
+        { "who": "you", "pl": "Tylko dużo mówi!", "en": "He does talk a lot, though!" },
+        { "who": "them", "pl": "Nic nie szkodzi, ja też! Napiszę, jak go znajdę.", "en": "No harm in that, so do I! I'll text you when I find him." },
+        { "who": "you", "pl": "Dzięki, jesteś super!", "en": "Thanks, you're awesome!" }
+      ]
+    },
+    {
       "id": "21-wrong-order",
       "level": "21",
       "title": "The wrong dish",
       "setting": "🍲 In a restaurant",
       "lines": [
-        { "who": "you", "variants": { "m": "Przepraszam, to nie jest to, co zamówiłem.", "f": "Przepraszam, to nie jest to, co zamówiłam." }, "en": "Excuse me, this isn't what I ordered." },
-        { "who": "them", "variants": { "m": "Och, bardzo przepraszam. Co Pan zamówił?", "f": "Och, bardzo przepraszam. Co Pani zamówiła?" }, "en": "Oh, I'm very sorry. What did you order?" },
+        { "who": "you", "variants": {"m": "Przepraszam, to nie jest to, co zamówiłem.", "f": "Przepraszam, to nie jest to, co zamówiłam."}, "en": "Excuse me, this isn't what I ordered." },
+        { "who": "them", "variants": {"m": "Och, bardzo przepraszam. Co Pan zamówił?", "f": "Och, bardzo przepraszam. Co Pani zamówiła?"}, "en": "Oh, I'm very sorry. What did you order?" },
         { "who": "you", "pl": "Zupę pomidorową, nie ogórkową.", "en": "Tomato soup, not cucumber soup." },
         { "who": "them", "pl": "Zaraz przyniosę właściwą zupę.", "en": "I'll bring the right soup straight away." },
         { "who": "you", "pl": "Dziękuję. Czy to długo potrwa?", "en": "Thank you. Will it take long?" },
@@ -188,7 +422,7 @@
       "title": "Could you repeat that?",
       "setting": "❓ A stranger asks you the way",
       "lines": [
-        { "who": "them", "variants": { "m": "Przepraszam, wie Pan, gdzie jest ulica Długa?", "f": "Przepraszam, wie Pani, gdzie jest ulica Długa?" }, "en": "Excuse me, do you know where Długa Street is?" },
+        { "who": "them", "variants": {"m": "Przepraszam, wie Pan, gdzie jest ulica Długa?", "f": "Przepraszam, wie Pani, gdzie jest ulica Długa?"}, "en": "Excuse me, do you know where Długa Street is?" },
         { "who": "you", "pl": "Przepraszam, nie rozumiem. Może Pan powtórzyć?", "en": "Sorry, I don't understand. Could you repeat that?" },
         { "who": "them", "pl": "Szukam ulicy Długiej.", "en": "I'm looking for Długa Street." },
         { "who": "you", "pl": "Proszę mówić wolniej.", "en": "Please speak more slowly." },
@@ -196,6 +430,143 @@
         { "who": "you", "pl": "Aha, rozumiem! Niestety nie wiem. Nie jestem stąd.", "en": "Ah, I understand! Unfortunately I don't know. I'm not from here." },
         { "who": "them", "pl": "Nic nie szkodzi. Dziękuję!", "en": "Never mind. Thank you!" },
         { "who": "you", "pl": "Powodzenia!", "en": "Good luck!" }
+      ]
+    },
+    {
+      "id": "23-register-address",
+      "level": "23",
+      "title": "Registering your address",
+      "setting": "🏛️ At the city hall",
+      "lines": [
+        { "who": "them", "pl": "Dzień dobry. W czym mogę pomóc?", "en": "Hello. How can I help?" },
+        { "who": "you", "variants": {"m": "Dzień dobry. Chciałbym się zameldować.", "f": "Dzień dobry. Chciałabym się zameldować."}, "en": "Hello. I'd like to register my address." },
+        { "who": "them", "pl": "Na pobyt stały czy czasowy?", "en": "Permanent or temporary residence?" },
+        { "who": "you", "pl": "Na pobyt czasowy, na rok.", "en": "Temporary, for a year." },
+        { "who": "them", "variants": {"m": "Czy wypełnił Pan formularz?", "f": "Czy wypełniła Pani formularz?"}, "en": "Have you filled in the form?" },
+        { "who": "you", "pl": "Tak, tutaj jest. I mój paszport.", "en": "Yes, here it is. And my passport." },
+        { "who": "them", "pl": "Potrzebuję też umowy najmu albo potwierdzenia od właściciela mieszkania.", "en": "I also need the rental contract or confirmation from the flat's owner." },
+        { "who": "you", "pl": "Mam umowę najmu. Czy potrzebna jest kopia?", "en": "I've got the rental contract. Do you need a copy?" },
+        { "who": "them", "pl": "Wystarczy oryginał do wglądu. Proszę jeszcze tutaj podpisać.", "en": "Just the original for me to look at. And please sign here." },
+        { "who": "you", "pl": "Czy jest jakaś opłata?", "en": "Is there a fee?" },
+        { "who": "them", "variants": {"m": "Nie, to jest bezpłatne. Przy okazji nadamy Panu numer PESEL.", "f": "Nie, to jest bezpłatne. Przy okazji nadamy Pani numer PESEL."}, "en": "No, it's free. We'll also give you a PESEL number while we're at it." },
+        { "who": "you", "pl": "Świetnie, dziękuję bardzo!", "en": "Great, thank you very much!" }
+      ]
+    },
+    {
+      "id": "25-film-opinion",
+      "level": "25",
+      "title": "Talking about a film",
+      "setting": "🎬 Leaving the cinema",
+      "lines": [
+        { "who": "them", "pl": "No i co o tym sądzisz? Mnie się film bardzo podobał.", "en": "So, what do you think? I really liked the film." },
+        { "who": "you", "pl": "Szczerze? Wydaje mi się, że był trochę nudny.", "en": "Honestly? It seemed a bit boring to me." },
+        { "who": "them", "pl": "Nudny? Nie zgadzam się. Aktorzy grali świetnie!", "en": "Boring? I disagree. The acting was brilliant!" },
+        { "who": "you", "pl": "Aktorzy tak, masz rację. Ale fabuła nie miała sensu.", "en": "The actors, yes, you're right. But the plot made no sense." },
+        { "who": "them", "pl": "Dlaczego? Przecież wszystko się wyjaśnia na końcu.", "en": "Why? Everything becomes clear at the end." },
+        { "who": "you", "variants": {"m": "Nie jestem przekonany. Zakończenie było zbyt przewidywalne.", "f": "Nie jestem przekonana. Zakończenie było zbyt przewidywalne."}, "en": "I'm not convinced. The ending was too predictable." },
+        { "who": "them", "pl": "Może. Ale zdjęcia były piękne, bez wątpienia.", "en": "Maybe. But the cinematography was beautiful, no doubt about it." },
+        { "who": "you", "pl": "To prawda, zgadzam się.", "en": "That's true, I agree." },
+        { "who": "them", "pl": "Czyli jednak warto było iść?", "en": "So it was worth going after all?" },
+        { "who": "you", "pl": "Moim zdaniem to kwestia gustu. Ja wolę komedie.", "en": "In my opinion it's a matter of taste. I prefer comedies." },
+        { "who": "them", "pl": "Dobra, to następnym razem ty wybierasz film.", "en": "Fine, next time you choose the film." },
+        { "who": "you", "pl": "Zgoda!", "en": "Deal!" }
+      ]
+    },
+    {
+      "id": "27-interview-nerves",
+      "level": "27",
+      "title": "Nerves before an interview",
+      "setting": "☕ Meeting a friend in a café",
+      "lines": [
+        { "who": "them", "variants": {"m": "Cześć! O matko, jesteś cały mokry!", "f": "Cześć! O matko, jesteś cała mokra!"}, "en": "Hi! Oh my God, you're soaking wet!" },
+        { "who": "you", "pl": "No, leje jak z cebra.", "en": "Yeah, it's pouring down." },
+        { "who": "them", "variants": {"m": "Siadaj. Co tam? Wyglądasz, jakbyś miał muchy w nosie.", "f": "Siadaj. Co tam? Wyglądasz, jakbyś miała muchy w nosie."}, "en": "Sit down. What's up? You look like you're in a bad mood." },
+        { "who": "you", "pl": "Trochę. Jutro mam rozmowę o pracę.", "en": "A bit. I've got a job interview tomorrow." },
+        { "who": "them", "pl": "Spokojnie! Masz głowę na karku, na pewno sobie poradzisz.", "en": "Take it easy! You've got a good head on your shoulders, you'll be fine." },
+        { "who": "you", "pl": "Nie wiem. To duża firma, same grube ryby.", "en": "I don't know. It's a big company, all big shots." },
+        { "who": "them", "pl": "No to co? Weź się w garść. Wszystko będzie dobrze.", "en": "So what? Pull yourself together. Everything will be fine." },
+        { "who": "you", "pl": "Masz rację. Warto spróbować.", "en": "You're right. It's worth a try." },
+        { "who": "them", "pl": "Jak najbardziej! A jak nie wyjdzie, trudno. Co ma wisieć, nie utonie.", "en": "Absolutely! And if it doesn't work out, too bad. What will be, will be." },
+        { "who": "you", "pl": "No dobra. Trzymaj za mnie kciuki!", "en": "Okay then. Keep your fingers crossed for me!" },
+        { "who": "them", "pl": "Trzymam! Daj znać, jak poszło.", "en": "I will! Let me know how it went." }
+      ]
+    },
+    {
+      "id": "29-reschedule",
+      "level": "29",
+      "title": "Moving an appointment",
+      "setting": "🦷 Phoning the dentist",
+      "lines": [
+        { "who": "them", "pl": "Gabinet stomatologiczny, dzień dobry. W czym mogę pomóc?", "en": "Dental surgery, good morning. How can I help?" },
+        { "who": "you", "variants": {"m": "Dzień dobry, jestem umówiony na czwartek, na wpół do czwartej.", "f": "Dzień dobry, jestem umówiona na czwartek, na wpół do czwartej."}, "en": "Hello, I have an appointment on Thursday at half past three." },
+        { "who": "them", "variants": {"m": "Tak, widzę Pana w grafiku. Coś się stało?", "f": "Tak, widzę Panią w grafiku. Coś się stało?"}, "en": "Yes, I can see you in the diary. Is something wrong?" },
+        { "who": "you", "pl": "Niestety coś mi wypadło. Możemy to przełożyć?", "en": "Unfortunately something's come up. Can we move it?" },
+        { "who": "them", "variants": {"m": "W przyszłym tygodniu mam wolny termin tylko w poniedziałek o ósmej rano. Pasuje Panu?", "f": "W przyszłym tygodniu mam wolny termin tylko w poniedziałek o ósmej rano. Pasuje Pani?"}, "en": "Next week I've only got a free slot on Monday at eight in the morning. Does that suit you?" },
+        { "who": "you", "pl": "To dla mnie za wcześnie. A pod koniec miesiąca?", "en": "That's too early for me. What about towards the end of the month?" },
+        { "who": "them", "pl": "Pod koniec miesiąca mam dwudziestego ósmego, za piętnaście czwarta.", "en": "Towards the end of the month I've got the twenty-eighth, at a quarter to four." },
+        { "who": "you", "pl": "Świetnie, to mi pasuje.", "en": "Great, that works for me." },
+        { "who": "them", "pl": "Zapisałam. Proszę przyjść punktualnie, mamy bardzo napięty grafik.", "en": "I've booked it. Please arrive on time, our schedule is very tight." },
+        { "who": "you", "pl": "Będę na pewno. Dziękuję i przepraszam za kłopot.", "en": "I'll definitely be there. Thank you, and sorry for the trouble." },
+        { "who": "them", "pl": "Nie ma problemu. Do usłyszenia!", "en": "No problem. Goodbye!" }
+      ]
+    },
+    {
+      "id": "31-polish-course",
+      "level": "31",
+      "title": "Signing up for a Polish course",
+      "setting": "🎓 At the university office",
+      "lines": [
+        { "who": "you", "variants": {"m": "Dzień dobry. Chciałbym zapisać się na kurs polskiego.", "f": "Dzień dobry. Chciałabym zapisać się na kurs polskiego."}, "en": "Hello. I'd like to sign up for a Polish course." },
+        { "who": "them", "variants": {"m": "Dobrze. Czy jest Pan studentem naszego uniwersytetu?", "f": "Dobrze. Czy jest Pani studentką naszego uniwersytetu?"}, "en": "Fine. Are you a student at our university?" },
+        { "who": "you", "pl": "Tak, jestem na pierwszym roku. Studiuję informatykę.", "en": "Yes, I'm in my first year. I study computer science." },
+        { "who": "them", "pl": "Proszę pokazać legitymację studencką.", "en": "Please show me your student ID." },
+        { "who": "you", "pl": "Proszę bardzo. Ile kosztuje kurs?", "en": "Here you are. How much is the course?" },
+        { "who": "them", "pl": "Dla studentów jest bezpłatny. Zajęcia są dwa razy w tygodniu, wieczorem.", "en": "It's free for students. Classes are twice a week, in the evening." },
+        { "who": "you", "pl": "Czy na koniec jest egzamin?", "en": "Is there an exam at the end?" },
+        { "who": "them", "pl": "Tak, pod koniec semestru. Żeby dostać zaliczenie, trzeba zdać egzamin.", "en": "Yes, at the end of the semester. To get the credit, you have to pass the exam." },
+        { "who": "you", "pl": "A jeśli obleję egzamin?", "en": "And if I fail the exam?" },
+        { "who": "them", "pl": "Wtedy jest poprawka, zwykle dwa tygodnie później.", "en": "Then there's a retake, usually two weeks later." },
+        { "who": "you", "pl": "Świetnie. Gdzie mogę kupić podręcznik?", "en": "Great. Where can I buy the textbook?" },
+        { "who": "them", "variants": {"m": "Nauczycielka da go Panu na pierwszych zajęciach. Powodzenia!", "f": "Nauczycielka da go Pani na pierwszych zajęciach. Powodzenia!"}, "en": "The teacher will give it to you in the first class. Good luck!" }
+      ]
+    },
+    {
+      "id": "32-asking-out",
+      "level": "32",
+      "title": "Asking someone out",
+      "setting": "🍸 In a bar",
+      "lines": [
+        { "who": "you", "pl": "Cześć! Często tu bywasz?", "en": "Hi! Do you come here often?" },
+        { "who": "them", "pl": "Czasami, w piątki. A ty? Chyba cię tu jeszcze nie widziałam.", "en": "Sometimes, on Fridays. And you? I don't think I've seen you here before." },
+        { "who": "you", "variants": {"m": "Jestem tu pierwszy raz. Przyszedłem z kolegą.", "f": "Jestem tu pierwszy raz. Przyszłam z koleżanką."}, "en": "It's my first time here. I came with a friend." },
+        { "who": "them", "pl": "No to witaj! Świetnie się dziś bawię, muzyka jest super.", "en": "Well, welcome! I'm having a great time tonight, the music's brilliant." },
+        { "who": "you", "pl": "Masz piękny uśmiech. Mogę ci postawić drinka?", "en": "You have a beautiful smile. Can I buy you a drink?" },
+        { "who": "them", "pl": "Dzięki, ale muszę już lecieć. Jutro rano idę do pracy.", "en": "Thanks, but I have to go now. I'm working tomorrow morning." },
+        { "who": "you", "pl": "Szkoda. Pójdziesz ze mną kiedyś na kawę?", "en": "Shame. Will you go for a coffee with me sometime?" },
+        { "who": "them", "pl": "Czemu nie? Masz plany na sobotę?", "en": "Why not? Have you got plans for Saturday?" },
+        { "who": "you", "pl": "Nie mam. Może o czwartej, na rynku?", "en": "No. Maybe at four, in the main square?" },
+        { "who": "them", "pl": "Pasuje mi. Daj mi swój numer, to napiszę.", "en": "That works for me. Give me your number and I'll text you." },
+        { "who": "you", "pl": "Jasne. To do zobaczenia w sobotę!", "en": "Sure. See you on Saturday, then!" },
+        { "who": "them", "pl": "Do soboty! Miłego wieczoru!", "en": "Until Saturday! Enjoy your evening!" }
+      ]
+    },
+    {
+      "id": "33-used-bike",
+      "level": "33",
+      "title": "Haggling over a bike",
+      "setting": "🚲 Buying a second-hand bike",
+      "lines": [
+        { "who": "them", "variants": {"m": "Cześć, przyszedłeś obejrzeć rower?", "f": "Cześć, przyszłaś obejrzeć rower?"}, "en": "Hi, have you come to look at the bike?" },
+        { "who": "you", "pl": "Tak. Ile chcesz za niego?", "en": "Yes. How much do you want for it?" },
+        { "who": "them", "pl": "Tysiąc dwieście złotych. Jest prawie nowy, bez dwóch zdań.", "en": "One thousand two hundred złoty. It's almost new, no question." },
+        { "who": "you", "pl": "Szczerze mówiąc, to za dużo. Hamulce są do wymiany.", "en": "To be honest, that's too much. The brakes need replacing." },
+        { "who": "them", "pl": "Ale musisz przyznać, że rama jest w idealnym stanie. Co proponujesz?", "en": "But you have to admit the frame is in perfect condition. What do you suggest?" },
+        { "who": "you", "pl": "Mogę zaoferować osiemset złotych.", "en": "I can offer eight hundred złoty." },
+        { "who": "them", "pl": "Nie ma mowy. Mogę zejść do tysiąca stu.", "en": "No way. I can come down to eleven hundred." },
+        { "who": "you", "pl": "Spotkajmy się w połowie drogi. Dziewięćset pięćdziesiąt?", "en": "Let's meet in the middle. Nine hundred and fifty?" },
+        { "who": "them", "pl": "Tysiąc i dorzucę ci zapięcie. To moja ostateczna oferta.", "en": "A thousand, and I'll throw in a lock. That's my final offer." },
+        { "who": "you", "pl": "Zgoda. To uczciwa propozycja.", "en": "Agreed. That's a fair offer." },
+        { "who": "them", "pl": "Umowa stoi! Podajmy sobie ręce.", "en": "It's a deal! Let's shake hands." }
       ]
     }
   ]

@@ -15,7 +15,7 @@ Switch between modes from the mode pill in the top bar.
 - **Phrases**: browse every phrase in a level, each with its own listen and hold-to-speak buttons and progress badges.
 - **Type**: type the Polish from the English prompt, or switch to **Dictation** to hear the phrase and type what you hear (tap the speaker again to slow it down), with an on-screen accent bar (ą ć ę ł ń ó ś ź ż). Either gender form is accepted, case and punctuation are ignored, and near-misses where only the diacritics are wrong are flagged.
 - **Sounds**: pronunciation drills for sounds English speakers find hardest (sz/ś, cz/ć, ż·rz/ź, the nasals ą/ę, y/i, ł/l, dz/dź/dż), using minimal pairs and the same speech scorer. The drills use their own dataset, independent of the level.
-- **Dialogues**: short real-life scenes (pharmacy, train ticket, restaurant, hotel, meeting someone and more). The app speaks the other person's lines; on your turn you see the English and say the Polish with the hold-to-speak mic (scored), or reveal it. Each dialogue belongs to a level and the current level's come first.
+- **Dialogues**: 30 short real-life scenes, at least one for every level from 2 upwards (pharmacy, train ticket, job interview, registering your address, haggling over a bike and more). The app speaks the other person's lines; on your turn you see the English and say the Polish with the hold-to-speak mic (scored), or reveal it. Each dialogue belongs to a level; the current level's come first, then the rest by tier.
 
 ### Speech recognition and pronunciation coaching
 
