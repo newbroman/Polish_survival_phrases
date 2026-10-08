@@ -11,9 +11,9 @@ A Progressive Web App for learning survival Polish, with flashcards, quizzes, ty
 Switch between modes from the mode pill in the top bar.
 
 - **Study**: flashcards to meet new phrases, with listen, speak, save and grammar-note hints.
-- **Practice**: a timed tile quiz; the phrase plays and you tap the matching answer. Faster answers score more, and three correct answers mark a phrase as mastered.
+- **Practice**: a timed tile quiz; the phrase plays and you tap the matching answer. The 👂 button hides the question text so you answer by ear alone. Faster answers score more, and three correct answers mark a phrase as mastered.
 - **Phrases**: browse every phrase in a level, each with its own listen and hold-to-speak buttons and progress badges.
-- **Type**: type the Polish from the English prompt, with an on-screen accent bar (ą ć ę ł ń ó ś ź ż). Either gender form is accepted, case and punctuation are ignored, and near-misses where only the diacritics are wrong are flagged.
+- **Type**: type the Polish from the English prompt, or switch to **Dictation** to hear the phrase and type what you hear (tap the speaker again to slow it down), with an on-screen accent bar (ą ć ę ł ń ó ś ź ż). Either gender form is accepted, case and punctuation are ignored, and near-misses where only the diacritics are wrong are flagged.
 - **Sounds**: pronunciation drills for sounds English speakers find hardest (sz/ś, cz/ć, ż·rz/ź, the nasals ą/ę, y/i, ł/l, dz/dź/dż), using minimal pairs and the same speech scorer. The drills use their own dataset, independent of the level.
 
 ### Speech recognition and pronunciation coaching

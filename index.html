@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Polish Phrase Master v47.0</title>
+    <title>Polish Phrase Master v48.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -34,6 +34,7 @@
             --success-text: #1e7e45;
             --danger-text: #c0392b;
             --red-text: #c4102f;
+            --blue-text: #1f6fae;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -46,6 +47,7 @@
                 --success-text: #3ddc84;
                 --danger-text: #ff7b6b;
                 --red-text: #ff6b7d;
+                --blue-text: #6cb6ff;
             }
         }
 
@@ -629,7 +631,7 @@
         }
         .dr-focus { font-size: 0.78rem; color: var(--muted); font-weight: bold; margin-bottom: 10px; }
         .dr-pl { font-size: 2rem; font-weight: 900; color: var(--red-text); line-height: 1.15; }
-        .dr-phon { font-size: 0.95rem; color: var(--wrong-blue); font-style: italic; margin-top: 4px; }
+        .dr-phon { font-size: 0.95rem; color: var(--blue-text); font-style: italic; margin-top: 4px; }
         .dr-en { font-size: 1.05rem; color: var(--muted); font-weight: bold; margin-top: 6px; }
         .dr-contrast { font-size: 0.8rem; color: var(--muted); margin-top: 8px; min-height: 16px; }
         .dr-audio { display: flex; justify-content: center; gap: 26px; margin-top: 16px; }
@@ -642,6 +644,22 @@
             background: var(--card); border: 2px solid var(--pol-red); border-radius: 16px;
             width: 100%; max-width: 380px; padding: 20px 18px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); text-align: center;
         }
+        .listen-toggle {
+            width: 34px; height: 36px; padding: 0; display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; cursor: pointer; background: transparent; border: none; border-radius: 8px; opacity: 0.55;
+        }
+        .listen-toggle.on { opacity: 1; background: var(--tile-bg); box-shadow: inset 0 0 0 2px var(--pol-red); }
+        .ty-modes { display: flex; gap: 6px; justify-content: center; margin-bottom: 12px; }
+        .ty-modes button {
+            flex: 1; max-width: 160px; padding: 7px 10px; font-size: 0.85rem; font-weight: bold; cursor: pointer;
+            border: 1px solid var(--pol-red); border-radius: 999px; background: var(--card); color: var(--red-text);
+        }
+        .ty-modes button[aria-pressed="true"] { background: var(--pol-red); color: #fff; }
+        .ty-play {
+            width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--pol-red); background: var(--card);
+            font-size: 1.8rem; cursor: pointer;
+        }
+        .ty-en { display: block; margin-top: 6px; color: var(--muted); font-size: 0.9rem; }
         .ty-label { font-size: 0.78rem; color: var(--muted); font-weight: bold; letter-spacing: 0.4px; text-transform: uppercase; }
         .ty-prompt { font-size: 1.5rem; font-weight: 800; color: var(--text); margin: 8px 0 16px; line-height: 1.2; }
         #ty-input {
@@ -1443,7 +1461,7 @@
 
         .ob-status.ok { color: var(--success-text); }
         .ob-status.err { color: var(--red-text); }
-        .ob-status.busy { color: var(--wrong-blue); }
+        .ob-status.busy { color: var(--blue-text); }
 
         .ob-note {
             font-size: 0.8rem;
@@ -1586,7 +1604,7 @@
         }
 
         #pron-tip.show { display: block; animation: obFade 0.3s ease; }
-        #pron-tip .coach { color: var(--wrong-blue); font-weight: bold; }
+        #pron-tip .coach { color: var(--blue-text); font-weight: bold; }
 
         /* ===== PRONUNCIATION SCORECARD (rhymes-style) ===== */
         #pron-score {
@@ -1684,7 +1702,7 @@
             border-bottom: 1px solid #eee;
         }
 
-        .ps-phon-guide { color: var(--wrong-blue); font-style: italic; }
+        .ps-phon-guide { color: var(--blue-text); font-style: italic; }
 
         .ps-heard b { color: var(--text); }
 
@@ -1695,11 +1713,11 @@
             color: var(--text);
         }
 
-        .ps-coach .lead { color: var(--wrong-blue); font-weight: bold; }
+        .ps-coach .lead { color: var(--blue-text); font-weight: bold; }
 
         /* In-quiz "say this" prompt while recording */
         .say-prompt {
-            color: var(--wrong-blue);
+            color: var(--blue-text);
             font-weight: bold;
         }
 
@@ -2406,6 +2424,9 @@
                 <button class="search-trigger-btn" onclick="handleSpeakerTap()"
                     style="width:34px; height:36px; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.15rem; cursor:pointer; background:transparent; border:none;"
                     title="Listen — tap again to slow down">🔊</button>
+                <button class="search-trigger-btn listen-toggle" id="listen-practice" onclick="toggleListenOnly()"
+                    aria-pressed="false" aria-label="Listening only: hide the question text"
+                    title="Listening only: hear the question without seeing it">👂</button>
                 <button class="search-trigger-btn swap-toggle" id="swap-practice" onclick="toggleContentSwap()"
                     style="height:36px; padding:0 8px; display:flex; align-items:center; justify-content:center; gap:3px; cursor:pointer;"
                     title="Swap question / answer language">🔄<span class="swap-dir">🇵🇱→🇬🇧</span></button>
@@ -2423,7 +2444,7 @@
         </div>
     </div>
 
-    <div class="map-section" id="game-area" style="position: relative;">
+    <div class="map-section" id="game-area" tabindex="-1" style="position: relative;">
         <div id="pause-overlay">
             <div>⏸️</div>
             <div style="font-size: 1.5rem; letter-spacing: 2px;">PAUSED</div>
@@ -2476,7 +2497,11 @@
 
         <div id="typing-view">
             <div class="ty-card">
-                <div class="ty-label">Type it in Polish</div>
+                <div class="ty-modes" role="group" aria-label="Typing mode">
+                    <button type="button" id="ty-mode-en" onclick="setTypingDictation(false)" aria-pressed="true">✍️ From English</button>
+                    <button type="button" id="ty-mode-dict" onclick="setTypingDictation(true)" aria-pressed="false">🎧 Dictation</button>
+                </div>
+                <div class="ty-label" id="ty-label">Type it in Polish</div>
                 <div class="ty-prompt" id="ty-prompt">—</div>
                 <input id="ty-input" type="text" autocomplete="off" autocapitalize="off" autocorrect="off"
                     spellcheck="false" placeholder="type here…" onkeydown="typingKey(event)">
@@ -2747,7 +2772,22 @@
         let recentPhrasesQueue = [];
 
         let isSwapped = (localStorage.getItem('pl_swapped') || '1') === '1';
-        let hardMode = false;
+        // Listening only (Practice): the question is heard, not shown
+        function listenOnlyPref() { return localStorage.getItem('pl_listen_only') === '1'; }
+        let hardMode = listenOnlyPref();
+        function toggleListenOnly() {
+            const on = !listenOnlyPref();
+            localStorage.setItem('pl_listen_only', on ? '1' : '0');
+            hardMode = on;
+            refreshListenToggle();
+            updateQuestionText();
+        }
+        function refreshListenToggle() {
+            const b = document.getElementById('listen-practice');
+            if (!b) return;
+            b.setAttribute('aria-pressed', hardMode ? 'true' : 'false');
+            b.classList.toggle('on', hardMode);
+        }
         let correctStreak = 0;
 
         let studyIndex = 0; // Tracks position in Study Mode Flashcards
@@ -3146,6 +3186,22 @@
             inp.focus();
             try { inp.setSelectionRange(pos, pos); } catch (_) { }
         }
+        // Dictation: hear the Polish and type it, with no text prompt
+        let typingDictation = localStorage.getItem('pl_typing_mode') === 'dictation';
+        let typingPlays = 0;
+        function setTypingDictation(on) {
+            typingDictation = !!on;
+            localStorage.setItem('pl_typing_mode', on ? 'dictation' : 'english');
+            renderTypingCard();
+        }
+        function typingPlay() {
+            const p = typingPool[typingIndex];
+            if (!p) return;
+            typingPlays++;
+            // Replays slow down: normal, then 0.7×, then 0.5×
+            speak(typingPolishTarget(p), typingPlays >= 3 ? 0.5 : (typingPlays === 2 ? 0.7 : 1.0));
+            const input = document.getElementById('ty-input'); if (input) input.focus();
+        }
         function startTyping() {
             buildAccentBar();
             typingPool = Array.isArray(phrasesData) ? phrasesData.filter(p => p && (p.pl || p.word)) : [];
@@ -3167,7 +3223,16 @@
                 if (counter) counter.innerText = '0 / 0';
                 return;
             }
-            if (promptEl) promptEl.innerText = p.en || p.pl || '';
+            const en = document.getElementById('ty-mode-en'), di = document.getElementById('ty-mode-dict');
+            if (en) en.setAttribute('aria-pressed', typingDictation ? 'false' : 'true');
+            if (di) di.setAttribute('aria-pressed', typingDictation ? 'true' : 'false');
+            const lbl = document.getElementById('ty-label');
+            if (lbl) lbl.innerText = typingDictation ? 'Type what you hear' : 'Type it in Polish';
+            typingPlays = 0;
+            if (typingDictation) {
+                if (promptEl) promptEl.innerHTML = '<button type="button" class="ty-play" onclick="typingPlay()" aria-label="Play the phrase (tap again to slow down)">🔊</button>';
+                setTimeout(typingPlay, 250);
+            } else if (promptEl) promptEl.innerText = p.en || p.pl || '';
             if (input) { input.value = ''; input.disabled = false; }
             if (fb) fb.innerHTML = '';
             if (chk) chk.style.display = '';
@@ -3204,6 +3269,7 @@
                 if (fb) fb.innerHTML = '✗ <span class="ty-bad">Answer:</span> <span class="ty-correct-ans">' + escHtml(target) + '</span>';
                 playWrongSlide();
             }
+            if (typingDictation && fb && p.en) fb.innerHTML += '<span class="ty-en">' + escHtml(p.en) + '</span>';
             speak(target);
         }
         function recordTypingSuccess(p) {
@@ -4359,7 +4425,8 @@
             }
 
             updateUILanguage();
-            hardMode = false;
+            hardMode = listenOnlyPref();
+            refreshListenToggle();
             activePool = [];
             recentPhrasesQueue = [];
 
@@ -4864,7 +4931,8 @@
                 phrasesData.forEach(p => { delete stats[statKey(p)]; });
                 saveStats();
 
-                hardMode = enableHardMode;
+                hardMode = enableHardMode || listenOnlyPref();
+                refreshListenToggle();
                 activePool = [];
                 refreshActivePool();
                 updateMap();
@@ -5097,6 +5165,12 @@
                 }
 
                 tile.onclick = () => { if (isPractice) checkAnswer(p, tile); else multiTapSpeak(phraseSpeakText(p), 'tile_' + (p.pl || '')); };
+                // Keyboard: tiles are buttons
+                tile.setAttribute('role', 'button');
+                tile.tabIndex = 0;
+                tile.addEventListener('keydown', e => {
+                    if (e.target === tile && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); tile.onclick(); }
+                });
 
                 // Phrases tab: explicit Listen + Speak (hold) buttons on each phrase
                 if (!isPractice && currentLevel !== "0") {
