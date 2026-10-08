@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Polish Phrase Master v48.0</title>
+    <title>Polish Phrase Master v49.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -2403,7 +2403,7 @@
     <div id="daily-banner" style="display:none;">
         <span class="db-item">🔥 <b id="db-streak-n">0</b><span class="db-lbl">&nbsp;day streak</span></span>
         <span class="db-item" id="db-due-wrap">📅 <b id="db-due-n">0</b><span class="db-lbl">&nbsp;due today</span></span>
-        <button class="db-review" id="db-review" onclick="startDueReview()">Review</button>
+        <button class="db-review" id="db-review" onclick="startToday()">▶ Today</button>
         <button class="db-x" onclick="hideDailyBanner()" aria-label="Dismiss">&times;</button>
     </div>
 
@@ -2625,7 +2625,7 @@
             stats[statKey(p)] = s;
             // Level R shows a due word once even when it appears in several
             // levels, so an answer there counts for every copy that is due.
-            if (currentLevel === 'R') {
+            if (isSessionLevel(currentLevel)) {
                 allPhrasesCache.forEach(q => {
                     if (q.pl === p.pl && statKey(q) !== statKey(p) && isDueForReview(q)) stats[statKey(q)] = { ...s };
                 });
@@ -2756,6 +2756,59 @@
             return false;
         }
 
+        // ==========================================
+        // SESSION LEVELS: R (everything due) and T (today's session)
+        // ==========================================
+        // Today's session = the most overdue reviews (up to 15, one per
+        // phrase text) plus up to 5 phrases never seen before, taken from the
+        // level you were last working on, or the suggested next level once
+        // that one has nothing new. Reviews are done when no longer due; new
+        // phrases when mastered.
+        const TODAY_REVIEWS = 15, TODAY_NEW = 5;
+        function isSessionLevel(id) { return id === 'R' || id === 'T'; }
+        function sessionDone(p) {
+            if (currentLevel === 'T' && p._today === 'new') return getScore(p) >= THRESHOLD;
+            if (isSessionLevel(currentLevel)) return !isDueForReview(p);
+            return getScore(p) >= THRESHOLD;
+        }
+        function buildTodaySession(persist) {
+            const seen = new Set();
+            const reviews = [];
+            allPhrasesCache
+                .filter(p => isDueForReview(p))
+                .sort((a, b) => ((getStat(a) || {}).nextReview || 0) - ((getStat(b) || {}).nextReview || 0))
+                .forEach(p => {
+                    if (reviews.length < TODAY_REVIEWS && !seen.has(p.pl)) { seen.add(p.pl); reviews.push({ ...p, _today: 'review' }); }
+                });
+            // The day's new phrases are picked once and kept, so reopening the
+            // session doesn't swap half-learnt phrases for different ones
+            const todayStr = new Date().toDateString();
+            let picked = null;
+            try { picked = JSON.parse(localStorage.getItem('pl_today') || 'null'); } catch (e) { }
+            let fresh;
+            if (picked && picked.date === todayStr && Array.isArray(picked.ids) && picked.ids.length) {
+                fresh = picked.ids.map(id => allPhrasesCache.find(p => p.id === id && p.lvl !== 'C')).filter(Boolean)
+                    .filter(p => !seen.has(p.pl)).map(p => ({ ...p, _today: 'new' }));
+            } else {
+                const unseen = l => (l && l.data && Array.isArray(l.data.phrases)) ? l.data.phrases.filter(p => !getStat(p) && !seen.has(p.pl)) : [];
+                const lastId = localStorage.getItem('pl_last_course_level') ||
+                    (!isSessionLevel(currentLevel) && currentLevel !== 'C' && currentLevel !== '0' ? currentLevel : null);
+                const last = levelList.find(l => l.id === lastId);
+                const src = unseen(last).length ? last : levelList.find(l => l.id === nextUpLevelId);
+                fresh = src ? unseen(src).slice(0, TODAY_NEW).map(p => ({ ...p, lvl: src.id, _today: 'new' })) : [];
+                // Fixed for the day once the session is opened
+                if (persist && fresh.length) localStorage.setItem('pl_today', JSON.stringify({ date: todayStr, ids: fresh.map(p => p.id) }));
+            }
+            return reviews.concat(fresh);
+        }
+        function todayRemaining(list) {
+            return (list || []).filter(p => p._today === 'new' ? getScore(p) < THRESHOLD : isDueForReview(p)).length;
+        }
+        function startToday() {
+            hideDailyBanner();
+            Promise.resolve(selectLevel('T')).then(() => switchMode('learning'));
+        }
+
         let customPhrases = JSON.parse(localStorage.getItem('pl_custom_level')) || {
             level: "C",
             description: "My Custom Phrases",
@@ -2826,6 +2879,9 @@
                 reviewComplete: "Review Complete!",
                 reviewCompleteText: "You have successfully cleared your weak phrases.",
                 needsReview: "Needs Review",
+                todaySession: "Today's session", todayComplete: "Today's session done! 🎉",
+                todayCompleteText: "Reviews cleared and new phrases learnt. Come back tomorrow, or keep going in any level.",
+                todayStart: "▶ Today",
                 tierFOUNDATION: "Foundation", tierSURVIVAL: "Survival", tierPRACTICAL: "Practical",
                 tierADVANCED: "Advanced", tierFLUENCY: "Fluency", tierOTHER: "More levels", tierYOURS: "Your lists",
                 nextUp: "Next",
@@ -2861,6 +2917,9 @@
                 reviewComplete: "Powtórka Zakończona!",
                 reviewCompleteText: "Pomyślnie powtórzyłeś wszystkie trudne słowa.",
                 needsReview: "Do Powtórki",
+                todaySession: "Dzisiejsza sesja", todayComplete: "Dzisiejsza sesja zakończona! 🎉",
+                todayCompleteText: "Powtórki zrobione, nowe zwroty poznane. Wróć jutro albo ćwicz dalej na dowolnym poziomie.",
+                todayStart: "▶ Dziś",
                 tierFOUNDATION: "Podstawy", tierSURVIVAL: "Przetrwanie", tierPRACTICAL: "Praktyka",
                 tierADVANCED: "Zaawansowany", tierFLUENCY: "Biegłość", tierOTHER: "Inne poziomy", tierYOURS: "Twoje listy",
                 nextUp: "Dalej",
@@ -2939,7 +2998,7 @@
             const file = levelList.find(l => l.id == currentLevel);
             const lvlElement = document.getElementById('lvl-current');
             if (file && lvlElement) {
-                let desc = currentLevel === "R" ? t('needsReview') : file.desc;
+                let desc = currentLevel === "R" ? t('needsReview') : currentLevel === "T" ? t('todaySession') : file.desc;
                 let repeats = userData.levelCompletions[currentLevel] || 0;
                 let badge = repeats > 0 ? ` <span style="color: var(--red-text);font-size:0.8rem;">🔄x${repeats}</span>` : '';
                 lvlElement.innerHTML = `<span>Lvl ${currentLevel}: ${desc}${badge}</span>`;
@@ -4238,7 +4297,11 @@
             const item = document.createElement('div');
             item.setAttribute('role', 'menuitem');
             item.tabIndex = 0;
-            if (lvl.id === "R") {
+            if (lvl.id === "T") {
+                item.className = 'dropdown-item sandbox';
+                const left = todayRemaining(lvl.data.phrases);
+                item.innerHTML = `<span>▶ ${t('todaySession')} (${left})</span>` + (left === 0 ? '<span class="check-icon">✅</span>' : '');
+            } else if (lvl.id === "R") {
                 item.className = 'dropdown-item sandbox';
                 item.innerHTML = `<span>Lvl R: ${t('needsReview')} (${lvl.data.phrases.length})</span>`;
             } else {
@@ -4343,11 +4406,12 @@
             const numKey = id => id.split('.').map(Number);
             const byNum = (a, b) => { const x = numKey(a.id), y = numKey(b.id); return (x[0] - y[0]) || ((x[1] || 0) - (y[1] || 0)); };
             const isLevelDone = lvl => {
-                if (lvl.id === "R") return lvl.data.phrases.length === 0;
+                if (lvl.id === 'T') return todayRemaining(lvl.data.phrases) === 0;
+                if (isSessionLevel(lvl.id)) return lvl.data.phrases.length === 0;
                 const masteredCount = lvl.data.phrases.filter(p => getScore(p) >= THRESHOLD).length;
                 return masteredCount > 0 && masteredCount === lvl.data.phrases.length;
             };
-            const courseLevels = levelList.filter(l => l.id !== 'C' && l.id !== 'R');
+            const courseLevels = levelList.filter(l => l.id !== 'C' && !isSessionLevel(l.id));
             const groups = [];
             TIER_ORDER.forEach(tier => {
                 const items = courseLevels.filter(l => l.data.tier === tier).sort(byNum);
@@ -4355,9 +4419,12 @@
             });
             const others = courseLevels.filter(l => !TIER_ORDER.includes(l.data.tier)).sort(byNum);
             if (others.length) groups.push({ key: 'tierOTHER', items: others });
-            groups.push({ key: 'tierYOURS', items: levelList.filter(l => l.id === 'C' || l.id === 'R') });
-            const nextUp = groups.flatMap(g => g.items).find(l => l.id !== '0' && l.id !== 'C' && l.id !== 'R' && !isLevelDone(l));
+            const nextUp = groups.flatMap(g => g.items).find(l => l.id !== '0' && !isLevelDone(l));
             nextUpLevelId = nextUp ? nextUp.id : null;
+            // Today's session needs nextUpLevelId, so it is built last
+            const today = { id: "T", desc: t('todaySession'), data: { description: t('todaySession'), phrases: buildTodaySession() } };
+            levelList.push(today);
+            groups.push({ key: 'tierYOURS', items: [today, levelList.find(l => l.id === 'R'), levelList.find(l => l.id === 'C')].filter(Boolean) });
 
             groups.forEach(g => {
                 const head = document.createElement('div');
@@ -4383,7 +4450,7 @@
                         if (p.pl.includes('/')) variantsByText.set(p.pl, v);
                     }
                 });
-                if (lvl.id !== "R" && lvl.data && lvl.data.phrases) {
+                if (!isSessionLevel(lvl.id) && lvl.data && lvl.data.phrases) {
                     lvl.data.phrases.forEach(p => allPhrasesCache.push({ ...p, lvl: lvl.id }));
                 }
             });
@@ -4408,8 +4475,14 @@
 
             document.getElementById('search-bar').value = '';
 
-            // Dynamic reconstruction of Level R when clicked
-            if (currentLevel === "R") {
+            if (!isSessionLevel(currentLevel) && currentLevel !== 'C' && currentLevel !== '0') {
+                localStorage.setItem('pl_last_course_level', currentLevel);
+            }
+
+            // Dynamic reconstruction of Level R / T when clicked
+            if (currentLevel === "T") {
+                phrasesData = buildTodaySession(true);
+            } else if (currentLevel === "R") {
                 let reviewPhrases = [];
                 let reviewSet = new Set();
                 allPhrasesCache.forEach(p => {
@@ -4638,14 +4711,14 @@
                 return;
             }
 
-            if (currentLevel === "R") {
+            if (isSessionLevel(currentLevel)) {
                 if (activePool.length !== 6) {
                     activePool = new Array(6).fill(null);
                 }
-                let unmastered = phrasesData.filter(p => isDueForReview(p));
+                let unmastered = phrasesData.filter(p => !sessionDone(p));
 
                 for (let i = 0; i < 6; i++) {
-                    if (!activePool[i] || !isDueForReview(activePool[i])) {
+                    if (!activePool[i] || sessionDone(activePool[i])) {
                         let nextPhrase = unmastered.find(p => !activePool.some(ap => ap && ap.pl === p.pl));
                         activePool[i] = nextPhrase || null;
                     }
@@ -4822,6 +4895,8 @@
         }
 
         function fireConfetti(streak) {
+            // The confetti script comes from a CDN; skip quietly if it didn't load
+            if (typeof confetti !== 'function') return;
             let defaults = { origin: { y: 0.7 }, zIndex: 5000 };
             if (streak >= 70) confetti({ ...defaults, particleCount: 250, spread: 120, colors: ['#ffd700', '#ff0000', '#ffffff'] });
             else if (streak >= 50) confetti({ ...defaults, particleCount: 150, spread: 90 });
@@ -4923,7 +4998,7 @@
             let msg = enableHardMode ? "Reset and practice in Hard Mode (Audio Only)?" : "Are you sure you want to practice this level again?";
 
             if (confirm(msg)) {
-                if (currentLevel !== "C" && currentLevel !== "R" && currentLevel !== "0") {
+                if (currentLevel !== "C" && !isSessionLevel(currentLevel) && currentLevel !== "0") {
                     userData.levelCompletions[currentLevel] = (userData.levelCompletions[currentLevel] || 0) + 1;
                     localStorage.setItem('pl_user_data', JSON.stringify(userData));
                 }
@@ -5069,11 +5144,11 @@
             if (isPractice && validPool.length === 0 && document.getElementById('search-bar').value === "") {
                 const notice = document.createElement('div');
                 notice.className = 'review-notice';
-                if (currentLevel === "R") {
+                if (isSessionLevel(currentLevel)) {
                     notice.innerHTML = `
-                    <h3>${t("reviewComplete")}</h3>
-                    <p>${t("reviewCompleteText")}</p>
-                    <button onclick="selectLevel('1')" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; margin-top:10px;">${t("backToStart")}</button>
+                    <h3>${t(currentLevel === "T" ? "todayComplete" : "reviewComplete")}</h3>
+                    <p>${t(currentLevel === "T" ? "todayCompleteText" : "reviewCompleteText")}</p>
+                    <button onclick="selectLevel(nextUpLevelId || '1')" style="padding:10px 20px; background:var(--pol-red); color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer; margin-top:10px;">${t("backToStart")}</button>
                 `;
                 } else {
                     notice.innerHTML = `
@@ -5140,7 +5215,7 @@
                         tile.style.backgroundColor = `rgba(52, 152, 219, ${intensity})`;
                         tile.style.color = "white";
                     } else if (score > 0) {
-                        let targetHit = currentLevel === "R" ? !isDueForReview(p) : score >= THRESHOLD;
+                        let targetHit = isSessionLevel(currentLevel) ? sessionDone(p) : score >= THRESHOLD;
                         if (targetHit) {
                             tile.style.backgroundColor = 'var(--card)';
                             tile.classList.add('mastered-border');
@@ -5198,8 +5273,8 @@
 
             if (phrasesData.length) {
                 let mCount = 0;
-                if (currentLevel === "R") {
-                    mCount = phrasesData.filter(p => !isDueForReview(p)).length;
+                if (isSessionLevel(currentLevel)) {
+                    mCount = phrasesData.filter(p => sessionDone(p)).length;
                 } else {
                     mCount = phrasesData.filter(p => getScore(p) >= THRESHOLD).length;
                 }
@@ -5211,8 +5286,8 @@
             if (!phrasesData.length) return;
             let m = 0;
 
-            if (currentLevel === "R") {
-                m = phrasesData.filter(p => !isDueForReview(p)).length;
+            if (isSessionLevel(currentLevel)) {
+                m = phrasesData.filter(p => sessionDone(p)).length;
             } else {
                 m = phrasesData.filter(p => getScore(p) >= THRESHOLD).length;
             }
@@ -5615,8 +5690,11 @@
             const sN = document.getElementById('db-streak-n'); if (sN) sN.innerText = streak;
             const dN = document.getElementById('db-due-n'); if (dN) dN.innerText = due;
             const dueWrap = document.getElementById('db-due-wrap'); if (dueWrap) dueWrap.style.display = due > 0 ? '' : 'none';
-            const rev = document.getElementById('db-review'); if (rev) rev.style.display = due > 0 ? '' : 'none';
-            return { streak, due };
+            // The Today button shows whenever there is something to do today
+            const todayN = todayRemaining((levelList.find(l => l.id === 'T') || { data: { phrases: [] } }).data.phrases);
+            const rev = document.getElementById('db-review');
+            if (rev) { rev.style.display = todayN > 0 ? '' : 'none'; rev.innerText = t('todayStart') + ' (' + todayN + ')'; }
+            return { streak, due: due || todayN };
         }
         function showDailyBannerOnLaunch() {
             if (dailyBannerDismissed) return;
@@ -5670,7 +5748,7 @@
             if (lv) {
                 lv.innerHTML = '';
                 levelList.forEach(l => {
-                    if (l.id === 'R') return;
+                    if (isSessionLevel(l.id)) return;
                     const phrases = (l.data && Array.isArray(l.data.phrases)) ? l.data.phrases : [];
                     if (!phrases.length) return;
                     let m = 0;
@@ -5731,13 +5809,13 @@
             initSpeechRecognition();
             addPoints(0);
             updateUILanguage();
-            scanLibrary();
+            // The welcome banner needs the levels (due counts, today's session)
+            scanLibrary().then(showDailyBannerOnLaunch);
             switchMode('study');
             refreshVoiceStatusUI();
             updateSwapButtons();
             maybeShowTourBanner();
             refreshTourToggle();
-            showDailyBannerOnLaunch();
             maybeShowOnboarding();
         };
 

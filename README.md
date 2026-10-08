@@ -32,7 +32,8 @@ Switch between modes from the mode pill in the top bar.
 ### Progress and retention
 
 - Spaced repetition: mastered words are scheduled for review at growing intervals.
-- Daily streak and a "due today" welcome banner, with one-tap access to your review queue.
+- **Today's session**: one tap (welcome banner, or the top of Your lists in the level menu) gives the most overdue reviews (up to 15) plus 5 new phrases from the level you were last working on, or the suggested next level. The day's new phrases stay fixed once you start.
+- Daily streak and a "due today" welcome banner.
 - Progress dashboard (menu): words mastered, day streak, points, due count, average and best pronunciation score, per-level mastery bars and earned badges.
 
 ### Other
