@@ -39,7 +39,7 @@ Switch between modes from the mode pill in the top bar.
 
 - Hands-free mode: sequential playback (Polish, English, slow Polish, repeat) for passive listening.
 - Tap an audio button repeatedly to slow it down (half then quarter speed).
-- Gender-aware phrases (masculine and feminine variants shown with spaces around the `/`, so both forms are spoken and accepted).
+- Gender-aware phrases: both forms are shown and accepted, or set Settings > My Polish forms to Man or Woman to see only your own form in phrases that depend on the speaker's gender.
 - Language toggle to flip prompt and answer direction; the choice is remembered.
 - Dark mode (follows system setting), an onboarding tour, and an English / Polish interface.
 
@@ -117,6 +117,8 @@ python3 check_levels.py
 ```
 
 It rewrites `levels.json` (commit it with the level file) and reports errors and warnings. Errors fail the run: missing or duplicate ids, ids not of the form `<level>-NN` (e.g. `5.1-07`), a phrase whose `level` field does not match its file, a phrase tagged `"gender": "both"` with only one form, or the same phrase twice in one level. Warnings flag missing notes or emoji and thin levels. `python3 check_levels.py --check` validates without writing and fails if `levels.json` is out of date.
+
+Phrases whose form depends on gender use `"gender": "both"`, a two-form `pl` (`"Zgubiłem / Zgubiłam paszport"`, masculine first) and `"variants": {"m": ..., "f": ...}`. Add `"genderOf"` when the form does not follow the speaker: `"listener"` (Pan / Pani, *Co powiedziałeś / powiedziałaś?*), `"group"` (*Wzięliśmy / Wzięłyśmy ślub*) or `"word"` (vocabulary such as *Kuzyn / Kuzynka*). Only speaker phrases are narrowed by the **My Polish forms** setting.
 
 Progress is stored against the phrase `id`, so keep a phrase's id when correcting its text, and never reuse an id for a different phrase. The same Polish phrase may appear in several levels; each copy has its own progress, and Level R shows a due phrase once.
 

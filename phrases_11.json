@@ -90,6 +90,7 @@
       "en": "How are you? (formal)",
       "level": 11,
       "gender": "both",
+      "genderOf": "listener",
       "variants": {
         "m": "Jak się Pan miewa?",
         "f": "Jak się Pani miewa?"
@@ -114,6 +115,7 @@
       "en": "And you? (formal)",
       "level": 11,
       "gender": "both",
+      "genderOf": "listener",
       "variants": {
         "m": "A Pan?",
         "f": "A Pani?"
@@ -148,6 +150,7 @@
       "en": "Nice to meet you (formal)",
       "level": 11,
       "gender": "both",
+      "genderOf": "listener",
       "variants": {
         "m": "Miło Pana poznać",
         "f": "Miło Panią poznać"
@@ -172,6 +175,7 @@
       "en": "What's your name? (formal)",
       "level": 11,
       "gender": "both",
+      "genderOf": "listener",
       "variants": {
         "m": "Jak Pan ma na imię?",
         "f": "Jak Pani ma na imię?"

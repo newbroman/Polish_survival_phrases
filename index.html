@@ -2225,6 +2225,12 @@
                             onclick="toggleUILang()" id="lbl-ui-lang">EN</button>
                     </div>
                     <div class="setting-row">
+                        <span class="setting-label" id="lbl-gender-label">🚻 My Polish forms</span>
+                        <button class="settings-btn" style="width:auto; margin:0; padding:6px 15px;"
+                            onclick="cycleGenderPref()" id="lbl-gender-pref"
+                            title="Phrases like 'Zgubiłem / Zgubiłam' can show only your own form">Both</button>
+                    </div>
+                    <div class="setting-row">
                         <span class="setting-label">👋 Tour button</span>
                         <button class="settings-btn" style="width:auto; margin:0; padding:6px 15px;"
                             onclick="setTourBanner(tourBannerHidden())" id="lbl-tour-toggle">ON</button>
@@ -2634,7 +2640,8 @@
                 // A phrase that gained its feminine form ("Zrobiłem błąd" → "Zrobiłem / Zrobiłam błąd")
                 // keeps the progress saved under the masculine-only text
                 const k = statKey(p);
-                const old = legacy[p.pl] || (p.pl && p.pl.includes('/') ? legacy[targetAlternatives(p.pl)[0]] : null);
+                const text = p.plBoth || p.pl;
+                const old = legacy[text] || (text && text.includes('/') ? legacy[targetAlternatives(text)[0]] : null);
                 if (!next[k] && old && typeof old === 'object') next[k] = { ...old };
             });
             stats = next;
@@ -2782,6 +2789,7 @@
                 tierFOUNDATION: "Foundation", tierSURVIVAL: "Survival", tierPRACTICAL: "Practical",
                 tierADVANCED: "Advanced", tierFLUENCY: "Fluency", tierOTHER: "More levels", tierYOURS: "Your lists",
                 nextUp: "Next",
+                genderBoth: "Both", genderMan: "♂ Man (-łem)", genderWoman: "♀ Woman (-łam)", genderLabel: "🚻 My Polish forms",
                 backToStart: "Back to Lvl 1",
                 btnSwap: "Swap",
                 btnListen: "Listen: Tap (1x) | 2 Taps (0.5x) | 3 Taps (0.25x)",
@@ -2816,6 +2824,7 @@
                 tierFOUNDATION: "Podstawy", tierSURVIVAL: "Przetrwanie", tierPRACTICAL: "Praktyka",
                 tierADVANCED: "Zaawansowany", tierFLUENCY: "Biegłość", tierOTHER: "Inne poziomy", tierYOURS: "Twoje listy",
                 nextUp: "Dalej",
+                genderBoth: "Obie", genderMan: "♂ Mężczyzna (-łem)", genderWoman: "♀ Kobieta (-łam)", genderLabel: "🚻 Moje formy",
                 backToStart: "Wróc do startu",
                 btnSwap: "Zamień",
                 btnListen: "Słuchaj: 1 Klik (1x) | 2 Kliki (0.5x) | 3 Kliki (0.25x)",
@@ -2843,6 +2852,10 @@
             }
             if (document.getElementById('search-bar')) {
                 document.getElementById('search-bar').placeholder = t('search');
+            }
+            if (document.getElementById('lbl-gender-label')) {
+                document.getElementById('lbl-gender-label').innerText = t('genderLabel');
+                refreshGenderToggle();
             }
             if (document.getElementById('lbl-ui-lang-label')) {
                 document.getElementById('lbl-ui-lang-label').innerText = t('uiPrefix');
@@ -2926,7 +2939,7 @@
             const el = document.getElementById('settings-overlay');
             const opening = el.style.display !== 'flex';
             el.style.display = opening ? 'flex' : 'none';
-            if (opening) { refreshVoiceStatusUI(); refreshTourToggle(); }
+            if (opening) { refreshVoiceStatusUI(); refreshTourToggle(); refreshGenderToggle(); }
         }
 
         function toggleLearn() {
@@ -2978,7 +2991,48 @@
             if (data && Array.isArray(data.phrases)) {
                 data.phrases.forEach(p => { if (p && typeof p.pl === 'string') p.pl = spaceSlash(p.pl); });
             }
+            return applyGenderPref(data);
+        }
+
+        // ==========================================
+        // MY POLISH FORMS (speaker gender)
+        // ==========================================
+        // Phrases whose form depends on the speaker's gender ("Zgubiłem /
+        // Zgubiłam paszport") can show just the learner's own form. Phrases
+        // whose form follows the listener (Pan / Pani), a group, or that are
+        // plain vocabulary (genderOf "listener" / "group" / "word") always
+        // show both. The two-form text is kept in plBoth.
+        function genderPref() {
+            const g = localStorage.getItem('pl_gender_pref');
+            return (g === 'm' || g === 'f') ? g : 'both';
+        }
+        function applyGenderPref(data) {
+            if (!data || !Array.isArray(data.phrases)) return data;
+            const g = genderPref();
+            data.phrases.forEach(p => {
+                if (!p || p.gender !== 'both' || !p.variants) return;
+                if (p.plBoth === undefined) p.plBoth = p.pl;
+                const own = g !== 'both' && (p.genderOf || 'speaker') === 'speaker' && p.variants[g];
+                p.pl = own ? p.variants[g] : p.plBoth;
+            });
             return data;
+        }
+        // Two-form text → its two full variants, for answer checking when the
+        // forms differ in more than one word ("Nie byłbym taki pewien / ...")
+        let variantsByText = new Map();
+        function cycleGenderPref() {
+            const next = { both: 'm', m: 'f', f: 'both' }[genderPref()];
+            localStorage.setItem('pl_gender_pref', next);
+            if (loadedLevels) loadedLevels.levels.forEach(l => applyGenderPref(l.data));
+            refreshGenderToggle();
+            scanLibrary();
+        }
+        function refreshGenderToggle() {
+            const b = document.getElementById('lbl-gender-pref');
+            if (!b) return;
+            const g = genderPref();
+            b.innerText = g === 'm' ? t('genderMan') : g === 'f' ? t('genderWoman') : t('genderBoth');
+            b.style.color = g === 'both' ? 'var(--muted)' : 'var(--success-text)';
         }
 
         // ==========================================
@@ -3734,6 +3788,8 @@
 
         // "Chciałbym / Chciałabym zapłacić" → ["Chciałbym zapłacić", "Chciałabym zapłacić"]
         function targetAlternatives(target) {
+            const full = variantsByText.get(target);
+            if (full) return full.slice();
             const toks = (target || '').trim().split(/\s+/);
             let alts = [''];
             for (let i = 0; i < toks.length; i++) {
@@ -4252,7 +4308,15 @@
 
         async function cacheAllPhrases() {
             allPhrasesCache = [];
+            variantsByText = new Map();
             levelList.forEach(lvl => {
+                if (lvl.data && lvl.data.phrases) lvl.data.phrases.forEach(p => {
+                    if (p && p.variants && p.variants.m && p.variants.f) {
+                        const v = [p.variants.m, p.variants.f];
+                        variantsByText.set(p.plBoth || p.pl, v);
+                        if (p.pl.includes('/')) variantsByText.set(p.pl, v);
+                    }
+                });
                 if (lvl.id !== "R" && lvl.data && lvl.data.phrases) {
                     lvl.data.phrases.forEach(p => allPhrasesCache.push({ ...p, lvl: lvl.id }));
                 }

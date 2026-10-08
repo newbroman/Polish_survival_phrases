@@ -534,6 +534,7 @@
       "en": "Happy",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Szczęśliwy",
         "f": "Szczęśliwa"
@@ -548,6 +549,7 @@
       "en": "Sad",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Smutny",
         "f": "Smutna"
@@ -562,6 +564,7 @@
       "en": "Angry (also means Bad)",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Zły",
         "f": "Zła"
@@ -576,6 +579,7 @@
       "en": "Calm",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Spokojny",
         "f": "Spokojna"
@@ -590,6 +594,7 @@
       "en": "Nervous / Annoyed",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Zdenerwowany",
         "f": "Zdenerwowana"
@@ -604,6 +609,7 @@
       "en": "Excited",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Podekscytowany",
         "f": "Podekscytowana"
@@ -618,6 +624,7 @@
       "en": "Bored",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Znudzony",
         "f": "Znudzona"
@@ -632,6 +639,7 @@
       "en": "Surprised",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Zaskoczony",
         "f": "Zaskoczona"
@@ -646,6 +654,7 @@
       "en": "Scared",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Przestraszony",
         "f": "Przestraszona"
@@ -660,6 +669,7 @@
       "en": "Proud",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Dumny",
         "f": "Dumna"
@@ -684,6 +694,7 @@
       "en": "Ashamed",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Zawstydzony",
         "f": "Zawstydzona"
@@ -698,6 +709,7 @@
       "en": "Lonely",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Samotny",
         "f": "Samotna"
@@ -712,6 +724,7 @@
       "en": "Satisfied / Content",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Zadowolony",
         "f": "Zadowolona"
@@ -726,6 +739,7 @@
       "en": "Dissatisfied",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Niezadowolony",
         "f": "Niezadowolona"
@@ -740,6 +754,7 @@
       "en": "Disappointed",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Rozczarowany",
         "f": "Rozczarowana"
@@ -754,6 +769,7 @@
       "en": "Optimistic",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Optymistyczny",
         "f": "Optymistyczna"
@@ -768,6 +784,7 @@
       "en": "Pessimistic",
       "level": 25,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Pesymistyczny",
         "f": "Pesymistyczna"

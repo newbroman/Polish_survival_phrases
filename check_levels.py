@@ -29,6 +29,35 @@ MIN_LEVEL_SIZE = 40
 TIER_ORDER = ["FOUNDATION", "SURVIVAL", "PRACTICAL", "ADVANCED", "FLUENCY"]
 
 
+# Whose gender picks the form of a two-form phrase. "speaker" (the default)
+# is the only kind the app narrows to the learner's own form.
+GENDER_OF = ("speaker", "listener", "group", "word")
+
+
+def spaced(text):
+    return re.sub(r"\s*/\s*", " / ", text or "").strip()
+
+
+def pl_matches_variants(pl, m, f):
+    """pl must read 'm / f' in full, or as the app's word-level shorthand
+    ('Zgubiłem / Zgubiłam paszport'), and expand to exactly the two variants."""
+    pl = spaced(pl)
+    if pl == f"{m} / {f}":
+        return True
+    toks = pl.split()
+    alts = [""]
+    i = 0
+    while i < len(toks):
+        if i + 2 < len(toks) and toks[i + 1] == "/":
+            alts = [(a + " " + w).strip() for a in alts for w in (toks[i], toks[i + 2])]
+            i += 3
+        else:
+            alts = [(a + " " + toks[i]).strip() for a in alts]
+            i += 1
+    # punctuation is ignored, as the app ignores it when checking answers
+    return sorted(norm(x) for x in alts) == sorted([norm(m), norm(f)])
+
+
 def level_key(level_id):
     return tuple(int(x) for x in level_id.split("."))
 
@@ -99,6 +128,10 @@ def main():
                     errors.append(f"{where} ({pid}): gender 'both' but only one form: {pl!r}")
                 if not v.get("m") or not v.get("f") or v.get("m") == v.get("f"):
                     errors.append(f"{where} ({pid}): gender 'both' needs distinct variants.m and variants.f")
+                elif not pl_matches_variants(pl, v["m"], v["f"]):
+                    errors.append(f"{where} ({pid}): pl {pl!r} does not match variants {v['m']!r} / {v['f']!r}")
+                if p.get("genderOf", "speaker") not in GENDER_OF:
+                    errors.append(f"{where} ({pid}): genderOf must be one of {GENDER_OF}")
             key = norm(pl)
             if key in seen_pl:
                 errors.append(f"{where} ({pid}): {pl!r} duplicates {seen_pl[key]} in the same level")

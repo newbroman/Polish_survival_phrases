@@ -180,6 +180,7 @@
       "en": "Fiancé / Fiancée",
       "level": 16,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Narzeczony",
         "f": "Narzeczona"
@@ -194,6 +195,7 @@
       "en": "Partner",
       "level": 16,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Partner",
         "f": "Partnerka"
@@ -266,6 +268,7 @@
       "en": "Close Friend",
       "level": 16,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Przyjaciel",
         "f": "Przyjaciółka"
@@ -280,6 +283,7 @@
       "en": "Friend / Buddy / Colleague",
       "level": 16,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Kolega",
         "f": "Koleżanka"
@@ -294,6 +298,7 @@
       "en": "Acquaintance",
       "level": 16,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Znajomy",
         "f": "Znajoma"
@@ -466,6 +471,7 @@
       "en": "Cousin",
       "level": 16,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Kuzyn",
         "f": "Kuzynka"
@@ -480,6 +486,7 @@
       "en": "Grandson / Granddaughter",
       "level": 16,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Wnuk",
         "f": "Wnuczka"
@@ -544,6 +551,7 @@
       "en": "Godfather / Godmother",
       "level": 16,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Ojciec chrzestny",
         "f": "Matka chrzestna"
@@ -686,6 +694,7 @@
       "en": "We got married",
       "level": 16,
       "gender": "both",
+      "genderOf": "group",
       "variants": {
         "m": "Wzięliśmy ślub",
         "f": "Wzięłyśmy ślub"
@@ -714,6 +723,7 @@
       "en": "We broke up",
       "level": 16,
       "gender": "both",
+      "genderOf": "group",
       "variants": {
         "m": "Zerwaliśmy ze sobą",
         "f": "Zerwałyśmy ze sobą"
@@ -728,6 +738,7 @@
       "en": "Are you married?",
       "level": 16,
       "gender": "both",
+      "genderOf": "listener",
       "variants": {
         "m": "Jesteś żonaty?",
         "f": "Jesteś zamężna?"

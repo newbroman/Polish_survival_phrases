@@ -334,6 +334,7 @@
             "en": "Be honest with me",
             "level": 32,
             "gender": "both",
+            "genderOf": "listener",
             "variants": {
                 "m": "Bądź ze mną szczery",
                 "f": "Bądź ze mną szczera"

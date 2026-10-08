@@ -430,6 +430,7 @@
       "en": "I'll let you know",
       "level": 15,
       "gender": "both",
+      "genderOf": "listener",
       "variants": {
         "m": "Dam Panu znać",
         "f": "Dam Pani znać"

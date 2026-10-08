@@ -50,6 +50,7 @@
             "en": "Slim / Thin",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Szczupły",
                 "f": "Szczupła"
@@ -64,6 +65,7 @@
             "en": "Fat",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Gruby",
                 "f": "Gruba"
@@ -108,6 +110,7 @@
             "en": "Blonde (Person)",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Blondyn",
                 "f": "Blondynka"
@@ -122,6 +125,7 @@
             "en": "Brunette (Person)",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Brunet",
                 "f": "Brunetka"
@@ -286,6 +290,7 @@
             "en": "Nice / Kind",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Miły",
                 "f": "Miła"
@@ -300,6 +305,7 @@
             "en": "Likable / Friendly",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Sympatyczny",
                 "f": "Sympatyczna"
@@ -314,6 +320,7 @@
             "en": "Funny",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Zabawny",
                 "f": "Zabawna"
@@ -328,6 +335,7 @@
             "en": "Smart / Wise",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Mądry",
                 "f": "Mądra"
@@ -342,6 +350,7 @@
             "en": "Intelligent",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Inteligentny",
                 "f": "Inteligentna"
@@ -356,6 +365,7 @@
             "en": "Honest / Sincere",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Szczery",
                 "f": "Szczera"
@@ -370,6 +380,7 @@
             "en": "Confident",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Pewny siebie",
                 "f": "Pewna siebie"
@@ -380,10 +391,11 @@
         {
             "id": "20-34",
             "category": "Character Traits (Positive)",
-            "pl": "Otwardy / Otwarta",
+            "pl": "Otwarty / Otwarta",
             "en": "Open / Outgoing",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Otwarty",
                 "f": "Otwarta"
@@ -398,6 +410,7 @@
             "en": "Brave",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Odważny",
                 "f": "Odważna"
@@ -412,6 +425,7 @@
             "en": "Hardworking",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Pracowity",
                 "f": "Pracowita"
@@ -426,6 +440,7 @@
             "en": "Calm / Peaceful",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Spokojny",
                 "f": "Spokojna"
@@ -440,6 +455,7 @@
             "en": "Mean / Malicious",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Złośliwy",
                 "f": "Złośliwa"
@@ -454,6 +470,7 @@
             "en": "Lazy",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Leniwy",
                 "f": "Leniwa"
@@ -468,6 +485,7 @@
             "en": "Stubborn",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Uparty",
                 "f": "Uparta"
@@ -482,6 +500,7 @@
             "en": "Shy",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Nieśmiały",
                 "f": "Nieśmiała"
@@ -496,6 +515,7 @@
             "en": "Selfish",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Samolubny",
                 "f": "Samolubna"
@@ -510,6 +530,7 @@
             "en": "Boring",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Nudny",
                 "f": "Nudna"
@@ -520,10 +541,11 @@
         {
             "id": "20-44",
             "category": "Character Traits (Negative)",
-            "pl": "Głupi / Głupa",
+            "pl": "Głupi / Głupia",
             "en": "Stupid / Silly",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Głupi",
                 "f": "Głupia"
@@ -538,6 +560,7 @@
             "en": "Jealous",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Zazdrosny",
                 "f": "Zazdrosna"
@@ -552,6 +575,7 @@
             "en": "Stingy / Cheap",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Skąpy",
                 "f": "Skąpa"
@@ -636,6 +660,7 @@
             "en": "Is quiet",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Jest cichy",
                 "f": "Jest cicha"
@@ -670,6 +695,7 @@
             "en": "Teenager",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Nastolatek",
                 "f": "Nastolatka"
@@ -714,6 +740,7 @@
             "en": "Young",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Młody",
                 "f": "Młoda"
@@ -728,6 +755,7 @@
             "en": "Old",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Stary",
                 "f": "Stara"
@@ -792,6 +820,7 @@
             "en": "Tired",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Zmęczony",
                 "f": "Zmęczona"
@@ -806,6 +835,7 @@
             "en": "Hungry",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Głodny",
                 "f": "Głodna"
@@ -820,6 +850,7 @@
             "en": "Thirsty",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Spragniony",
                 "f": "Spragniona"
@@ -834,6 +865,7 @@
             "en": "Drunk",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Pijany",
                 "f": "Pijana"
@@ -848,6 +880,7 @@
             "en": "Sober",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Trzeźwy",
                 "f": "Trzeźwa"
@@ -862,6 +895,7 @@
             "en": "Healthy",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Zdrowy",
                 "f": "Zdrowa"
@@ -876,6 +910,7 @@
             "en": "Sick",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Chory",
                 "f": "Chora"
@@ -890,6 +925,7 @@
             "en": "In love",
             "level": 20,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Zakochany",
                 "f": "Zakochana"

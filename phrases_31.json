@@ -70,6 +70,7 @@
             "en": "Pupil / Student (up to high school)",
             "level": 31,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Uczeń",
                 "f": "Uczennica"
@@ -84,6 +85,7 @@
             "en": "Teacher",
             "level": 31,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Nauczyciel",
                 "f": "Nauczycielka"
@@ -168,6 +170,7 @@
             "en": "University student",
             "level": 31,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Student",
                 "f": "Studentka"
@@ -352,6 +355,7 @@
             "en": "Graduate / Alumni",
             "level": 31,
             "gender": "both",
+            "genderOf": "word",
             "variants": {
                 "m": "Absolwent",
                 "f": "Absolwentka"

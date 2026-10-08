@@ -762,6 +762,7 @@
       "en": "Alone",
       "level": 14,
       "gender": "both",
+      "genderOf": "word",
       "variants": {
         "m": "Sam",
         "f": "Sama"

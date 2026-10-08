@@ -334,6 +334,7 @@
             "en": "You convinced me",
             "level": 33,
             "gender": "both",
+            "genderOf": "listener",
             "variants": {
                 "m": "Przekonałeś mnie",
                 "f": "Przekonałaś mnie"

@@ -80,6 +80,7 @@
       "en": "What do you recommend?",
       "level": 5,
       "gender": "both",
+      "genderOf": "listener",
       "variants": {
         "m": "Co Pan poleca?",
         "f": "Co Pani poleca?"

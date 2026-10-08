@@ -20,6 +20,7 @@
       "en": "Can you help me? (Formal)",
       "level": 22,
       "gender": "both",
+      "genderOf": "listener",
       "variants": {
         "m": "Czy może mi Pan pomóc?",
         "f": "Czy może mi Pani pomóc?"
@@ -276,6 +277,7 @@
       "en": "What did you say?",
       "level": 22,
       "gender": "both",
+      "genderOf": "listener",
       "variants": {
         "m": "Co powiedziałeś?",
         "f": "Co powiedziałaś?"
