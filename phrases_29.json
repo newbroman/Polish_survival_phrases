@@ -4,7 +4,7 @@
   "tier": "ADVANCED",
   "phrases": [
     {
-      "id": "s29_01",
+      "id": "29-01",
       "category": "Exact Times",
       "pl": "O piętnastej trzydzieści",
       "en": "At 3:30 PM",
@@ -14,7 +14,7 @@
       "note": "Using the 24-hour clock is standard for official scheduling in Poland."
     },
     {
-      "id": "s29_02",
+      "id": "29-02",
       "category": "Exact Times",
       "pl": "Wpół do czwartej",
       "en": "Half past three",
@@ -24,7 +24,7 @@
       "note": "Literally 'half to the fourth (hour)'. Polish anticipates the *upcoming* hour."
     },
     {
-      "id": "s29_03",
+      "id": "29-03",
       "category": "Exact Times",
       "pl": "Trzecia piętnaście",
       "en": "Three fifteen",
@@ -34,7 +34,7 @@
       "note": "A very standard, clear way to say the time."
     },
     {
-      "id": "s29_04",
+      "id": "29-04",
       "category": "Exact Times",
       "pl": "Za piętnaście czwarta",
       "en": "A quarter to four",
@@ -44,7 +44,7 @@
       "note": "Literally 'In fifteen (minutes) the fourth (hour)'."
     },
     {
-      "id": "s29_05",
+      "id": "29-05",
       "category": "Exact Times",
       "pl": "Dziesięć po trzeciej",
       "en": "Ten past three",
@@ -54,7 +54,7 @@
       "note": "Literally 'Ten after the third'."
     },
     {
-      "id": "s29_06",
+      "id": "29-06",
       "category": "Exact Times",
       "pl": "Za dziesięć czwarta",
       "en": "Ten to four",
@@ -64,7 +64,7 @@
       "note": "Literally 'In ten the fourth'."
     },
     {
-      "id": "s29_07",
+      "id": "29-07",
       "category": "Exact Times",
       "pl": "Dokładnie o ósmej",
       "en": "At exactly eight",
@@ -74,7 +74,7 @@
       "note": "Adverb 'dokładnie'."
     },
     {
-      "id": "s29_08",
+      "id": "29-08",
       "category": "Exact Times",
       "pl": "Około siódmej",
       "en": "Around seven",
@@ -84,7 +84,7 @@
       "note": "Preposition 'około'."
     },
     {
-      "id": "s29_09",
+      "id": "29-09",
       "category": "Exact Times",
       "pl": "W południe",
       "en": "At noon",
@@ -94,7 +94,7 @@
       "note": "Locative case 'w południe'."
     },
     {
-      "id": "s29_10",
+      "id": "29-10",
       "category": "Exact Times",
       "pl": "O północy",
       "en": "At midnight",
@@ -104,7 +104,7 @@
       "note": "Locative case 'o północy'."
     },
     {
-      "id": "s29_11",
+      "id": "29-11",
       "category": "Periods of Day",
       "pl": "O świcie",
       "en": "At dawn",
@@ -114,7 +114,7 @@
       "note": "Locative case."
     },
     {
-      "id": "s29_12",
+      "id": "29-12",
       "category": "Periods of Day",
       "pl": "O zmierzchu",
       "en": "At dusk",
@@ -124,7 +124,7 @@
       "note": "Locative case."
     },
     {
-      "id": "s29_13",
+      "id": "29-13",
       "category": "Periods of Day",
       "pl": "Nad ranem",
       "en": "In the early morning",
@@ -134,7 +134,7 @@
       "note": "Usually refers to the hours between 3 AM and 6 AM."
     },
     {
-      "id": "s29_14",
+      "id": "29-14",
       "category": "Periods of Day",
       "pl": "Późnym wieczorem",
       "en": "Late in the evening",
@@ -144,7 +144,7 @@
       "note": "Instrumental case."
     },
     {
-      "id": "s29_15",
+      "id": "29-15",
       "category": "Exact Dates",
       "pl": "Którego dzisiaj mamy?",
       "en": "What date is it today?",
@@ -154,7 +154,7 @@
       "note": "Literally 'Which (day) do we have today?'."
     },
     {
-      "id": "s29_16",
+      "id": "29-16",
       "category": "Exact Dates",
       "pl": "Dzisiaj jest pierwszy maja",
       "en": "Today is the first of May",
@@ -164,7 +164,7 @@
       "note": "The day is nominative, the month is genitive."
     },
     {
-      "id": "s29_17",
+      "id": "29-17",
       "category": "Exact Dates",
       "pl": "Spotkajmy się drugiego maja",
       "en": "Let's meet on the second of May",
@@ -174,7 +174,7 @@
       "note": "When expressing 'ON a date', both the day and month take the genitive case."
     },
     {
-      "id": "s29_18",
+      "id": "29-18",
       "category": "Exact Dates",
       "pl": "Na początku miesiąca",
       "en": "At the beginning of the month",
@@ -184,7 +184,7 @@
       "note": "Locative phrase."
     },
     {
-      "id": "s29_19",
+      "id": "29-19",
       "category": "Exact Dates",
       "pl": "W połowie miesiąca",
       "en": "In the middle of the month",
@@ -194,7 +194,7 @@
       "note": "Locative phrase."
     },
     {
-      "id": "s29_20",
+      "id": "29-20",
       "category": "Exact Dates",
       "pl": "Pod koniec miesiąca",
       "en": "Towards the end of the month",
@@ -204,7 +204,7 @@
       "note": "Preposition 'pod' takes accusative here."
     },
     {
-      "id": "s29_21",
+      "id": "29-21",
       "category": "Years & Decades",
       "pl": "W tym roku",
       "en": "This year",
@@ -214,7 +214,7 @@
       "note": "Locative case."
     },
     {
-      "id": "s29_22",
+      "id": "29-22",
       "category": "Years & Decades",
       "pl": "W zeszłym roku",
       "en": "Last year",
@@ -224,7 +224,7 @@
       "note": "Locative case."
     },
     {
-      "id": "s29_23",
+      "id": "29-23",
       "category": "Years & Decades",
       "pl": "W przyszłym roku",
       "en": "Next year",
@@ -234,7 +234,7 @@
       "note": "Locative case."
     },
     {
-      "id": "s29_24",
+      "id": "29-24",
       "category": "Years & Decades",
       "pl": "W dwa tysiące dwudziestym szóstym",
       "en": "In two thousand twenty-six",
@@ -244,7 +244,7 @@
       "note": "Only the tens and units decline into the locative case for years!"
     },
     {
-      "id": "s29_25",
+      "id": "29-25",
       "category": "Years & Decades",
       "pl": "Lata dziewięćdziesiąte",
       "en": "The nineties",
@@ -254,7 +254,7 @@
       "note": "Plural phrase."
     },
     {
-      "id": "s29_26",
+      "id": "29-26",
       "category": "Years & Decades",
       "pl": "W latach osiemdziesiątych",
       "en": "In the eighties",
@@ -264,7 +264,7 @@
       "note": "Locative plural."
     },
     {
-      "id": "s29_27",
+      "id": "29-27",
       "category": "Years & Decades",
       "pl": "Dekada",
       "en": "Decade",
@@ -274,7 +274,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s29_28",
+      "id": "29-28",
       "category": "History",
       "pl": "Wiek",
       "en": "Century (also: Age)",
@@ -284,7 +284,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s29_29",
+      "id": "29-29",
       "category": "History",
       "pl": "Dwadziesty wiek",
       "en": "Twentieth century",
@@ -294,7 +294,7 @@
       "note": "Masculine phrase."
     },
     {
-      "id": "s29_30",
+      "id": "29-30",
       "category": "History",
       "pl": "W dwudziestym pierwszym wieku",
       "en": "In the twenty-first century",
@@ -304,7 +304,7 @@
       "note": "Locative case."
     },
     {
-      "id": "s29_31",
+      "id": "29-31",
       "category": "History",
       "pl": "Przeszłość",
       "en": "The past",
@@ -314,7 +314,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s29_32",
+      "id": "29-32",
       "category": "History",
       "pl": "Przyszłość",
       "en": "The future",
@@ -324,7 +324,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s29_33",
+      "id": "29-33",
       "category": "History",
       "pl": "Teraźniejszość",
       "en": "The present",
@@ -334,7 +334,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s29_34",
+      "id": "29-34",
       "category": "Durations",
       "pl": "Od jak dawna?",
       "en": "Since when / How long?",
@@ -344,7 +344,7 @@
       "note": "A very common way to ask how long something has been happening."
     },
     {
-      "id": "s29_35",
+      "id": "29-35",
       "category": "Durations",
       "pl": "Od poniedziałku",
       "en": "Since Monday",
@@ -354,7 +354,7 @@
       "note": "Preposition 'od' forces the genitive case."
     },
     {
-      "id": "s29_36",
+      "id": "29-36",
       "category": "Durations",
       "pl": "Do piątku",
       "en": "Until Friday",
@@ -364,7 +364,7 @@
       "note": "Preposition 'do' forces the genitive case."
     },
     {
-      "id": "s29_37",
+      "id": "29-37",
       "category": "Durations",
       "pl": "Od rana do wieczora",
       "en": "From morning to evening",
@@ -374,7 +374,7 @@
       "note": "Genitive cases 'rana' and 'wieczora'."
     },
     {
-      "id": "s29_38",
+      "id": "29-38",
       "category": "Durations",
       "pl": "Przez całą noc",
       "en": "Through the whole night",
@@ -384,7 +384,7 @@
       "note": "Preposition 'przez' takes the accusative case."
     },
     {
-      "id": "s29_39",
+      "id": "29-39",
       "category": "Durations",
       "pl": "Tymczasowo",
       "en": "Temporarily",
@@ -394,7 +394,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s29_40",
+      "id": "29-40",
       "category": "Durations",
       "pl": "Na stałe",
       "en": "Permanently",
@@ -404,7 +404,7 @@
       "note": "Adverbial phrase."
     },
     {
-      "id": "s29_41",
+      "id": "29-41",
       "category": "Punctuality & Delays",
       "pl": "Punktualnie",
       "en": "Punctually / On time",
@@ -414,7 +414,7 @@
       "note": "Adverb. Being on time is highly valued in Polish professional settings."
     },
     {
-      "id": "s29_42",
+      "id": "29-42",
       "category": "Punctuality & Delays",
       "pl": "Jestem na czas",
       "en": "I am on time",
@@ -424,7 +424,7 @@
       "note": "Accusative phrase."
     },
     {
-      "id": "s29_43",
+      "id": "29-43",
       "category": "Punctuality & Delays",
       "pl": "Będę za piętnaście minut",
       "en": "I will be there in 15 minutes",
@@ -434,7 +434,7 @@
       "note": "Future tense."
     },
     {
-      "id": "s29_44",
+      "id": "29-44",
       "category": "Punctuality & Delays",
       "pl": "Mam opóźnienie",
       "en": "I have a delay",
@@ -444,7 +444,7 @@
       "note": "Neuter noun 'opóźnienie'."
     },
     {
-      "id": "s29_45",
+      "id": "29-45",
       "category": "Punctuality & Delays",
       "pl": "Zaraz będę",
       "en": "I'll be right there",
@@ -454,7 +454,7 @@
       "note": "Literally 'I will be in a moment'."
     },
     {
-      "id": "s29_46",
+      "id": "29-46",
       "category": "Punctuality & Delays",
       "pl": "Masz czas?",
       "en": "Do you have time?",
@@ -464,7 +464,7 @@
       "note": "Casual phrasing using 'ty'."
     },
     {
-      "id": "s29_47",
+      "id": "29-47",
       "category": "Punctuality & Delays",
       "pl": "Nie mam czasu",
       "en": "I don't have time",
@@ -474,7 +474,7 @@
       "note": "Takes the genitive case 'czasu' due to negation."
     },
     {
-      "id": "s29_48",
+      "id": "29-48",
       "category": "Punctuality & Delays",
       "pl": "Strata czasu",
       "en": "Waste of time",
@@ -484,7 +484,7 @@
       "note": "Feminine phrase."
     },
     {
-      "id": "s29_49",
+      "id": "29-49",
       "category": "Punctuality & Delays",
       "pl": "Czas ucieka",
       "en": "Time is running out",
@@ -494,7 +494,7 @@
       "note": "Literally 'Time escapes'."
     },
     {
-      "id": "s29_50",
+      "id": "29-50",
       "category": "Frequency & Habit",
       "pl": "Czasami",
       "en": "Sometimes",
@@ -504,7 +504,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s29_51",
+      "id": "29-51",
       "category": "Frequency & Habit",
       "pl": "Od czasu do czasu",
       "en": "From time to time",
@@ -514,7 +514,7 @@
       "note": "Idiomatic phrase."
     },
     {
-      "id": "s29_52",
+      "id": "29-52",
       "category": "Frequency & Habit",
       "pl": "Rzadko",
       "en": "Rarely",
@@ -524,7 +524,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s29_53",
+      "id": "29-53",
       "category": "Frequency & Habit",
       "pl": "Często",
       "en": "Often",
@@ -534,7 +534,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s29_54",
+      "id": "29-54",
       "category": "Frequency & Habit",
       "pl": "Codziennie",
       "en": "Every day",
@@ -544,7 +544,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s29_55",
+      "id": "29-55",
       "category": "Frequency & Habit",
       "pl": "Co tydzień",
       "en": "Every week",
@@ -554,7 +554,7 @@
       "note": "Phrase."
     },
     {
-      "id": "s29_56",
+      "id": "29-56",
       "category": "Frequency & Habit",
       "pl": "Dwa razy w tygodniu",
       "en": "Twice a week",
@@ -564,7 +564,7 @@
       "note": "Locative 'w tygodniu'."
     },
     {
-      "id": "s29_57",
+      "id": "29-57",
       "category": "Scheduling",
       "pl": "Możemy to przełożyć?",
       "en": "Can we postpone it?",
@@ -574,7 +574,7 @@
       "note": "Verb 'przełożyć'."
     },
     {
-      "id": "s29_58",
+      "id": "29-58",
       "category": "Scheduling",
       "pl": "Przełóżmy to na piątek",
       "en": "Let's postpone it to Friday",
@@ -584,7 +584,7 @@
       "note": "Imperative 'przełóżmy' + accusative 'na piątek'."
     },
     {
-      "id": "s29_59",
+      "id": "29-59",
       "category": "Scheduling",
       "pl": "Pasuje ci?",
       "en": "Does it suit you? / Is that okay?",
@@ -594,7 +594,7 @@
       "note": "Informal. 'Pasuje' is the verb used for scheduling and clothing fit."
     },
     {
-      "id": "s29_60",
+      "id": "29-60",
       "category": "Scheduling",
       "pl": "Mi pasuje",
       "en": "It works for me",
@@ -604,7 +604,7 @@
       "note": "Dative pronoun 'mi'."
     },
     {
-      "id": "s29_61",
+      "id": "29-61",
       "category": "Scheduling",
       "pl": "Mam napięty grafik",
       "en": "I have a tight schedule",
@@ -614,7 +614,7 @@
       "note": "Adjective 'napięty' (tense/tight)."
     },
     {
-      "id": "s29_62",
+      "id": "29-62",
       "category": "Time Phrasing",
       "pl": "Za wcześnie",
       "en": "Too early",
@@ -624,7 +624,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s29_63",
+      "id": "29-63",
       "category": "Time Phrasing",
       "pl": "Za późno",
       "en": "Too late",
@@ -634,7 +634,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s29_64",
+      "id": "29-64",
       "category": "Time Phrasing",
       "pl": "Przed czasem",
       "en": "Ahead of time / Early",
@@ -644,7 +644,7 @@
       "note": "Instrumental 'przed czasem'."
     },
     {
-      "id": "s29_65",
+      "id": "29-65",
       "category": "Time Phrasing",
       "pl": "Po czasie",
       "en": "After the fact / Too late",
@@ -654,7 +654,7 @@
       "note": "Locative 'po czasie'."
     },
     {
-      "id": "s29_66",
+      "id": "29-66",
       "category": "Seasons & Months",
       "pl": "W styczniu",
       "en": "In January",
@@ -664,7 +664,7 @@
       "note": "Locative case 'styczniu'."
     },
     {
-      "id": "s29_67",
+      "id": "29-67",
       "category": "Seasons & Months",
       "pl": "W maju",
       "en": "In May",
@@ -674,7 +674,7 @@
       "note": "Locative case 'maju'."
     },
     {
-      "id": "s29_68",
+      "id": "29-68",
       "category": "Seasons & Months",
       "pl": "W sierpniu",
       "en": "In August",
@@ -684,7 +684,7 @@
       "note": "Locative case 'sierpniu'."
     },
     {
-      "id": "s29_69",
+      "id": "29-69",
       "category": "Seasons & Months",
       "pl": "W grudniu",
       "en": "In December",
@@ -694,7 +694,7 @@
       "note": "Locative case 'grudniu'."
     },
     {
-      "id": "s29_70",
+      "id": "29-70",
       "category": "Pacing",
       "pl": "Natychmiast",
       "en": "Immediately",
@@ -704,7 +704,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s29_71",
+      "id": "29-71",
       "category": "Pacing",
       "pl": "Stopniowo",
       "en": "Gradually",
@@ -714,7 +714,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s29_72",
+      "id": "29-72",
       "category": "Pacing",
       "pl": "Nagle",
       "en": "Suddenly",
@@ -724,7 +724,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s29_73",
+      "id": "29-73",
       "category": "Idioms",
       "pl": "Czas leczy rany",
       "en": "Time heals all wounds",
@@ -734,7 +734,7 @@
       "note": "Common Polish proverb."
     },
     {
-      "id": "s29_74",
+      "id": "29-74",
       "category": "Idioms",
       "pl": "Kwestia czasu",
       "en": "A matter of time",
@@ -744,7 +744,7 @@
       "note": "Feminine phrase."
     },
     {
-      "id": "s29_75",
+      "id": "29-75",
       "category": "Idioms",
       "pl": "Czas to pieniądz",
       "en": "Time is money",

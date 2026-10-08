@@ -1,0 +1,228 @@
+{
+  "levels": [
+    {
+      "id": "0",
+      "file": "phrases_0.json",
+      "title": "Alphabet & Digraphs: Polish Sounds",
+      "tier": "FOUNDATION",
+      "count": 39
+    },
+    {
+      "id": "1",
+      "file": "phrases_1.json",
+      "title": "Pronunciation Foundation - Master the Alphabet",
+      "tier": "FOUNDATION",
+      "count": 70
+    },
+    {
+      "id": "1.1",
+      "file": "phrases_1.1.json",
+      "title": "Pronunciation Practice: Common Sound Combinations",
+      "tier": "FOUNDATION",
+      "count": 70
+    },
+    {
+      "id": "2",
+      "file": "phrases_2.json",
+      "title": "Day 1 Survival Kit - Absolute Essentials & Emergencies",
+      "tier": "SURVIVAL",
+      "count": 70
+    },
+    {
+      "id": "3",
+      "file": "phrases_3.json",
+      "title": "Getting Around - Public Transport & Directions",
+      "tier": "SURVIVAL",
+      "count": 70
+    },
+    {
+      "id": "4",
+      "file": "phrases_4.json",
+      "title": "Numbers, Time, Dates & Frequencies",
+      "tier": "FOUNDATION",
+      "count": 75
+    },
+    {
+      "id": "5",
+      "file": "phrases_5.json",
+      "title": "Food & Dining - Restaurants, Ordering & Cuisine",
+      "tier": "SURVIVAL",
+      "count": 70
+    },
+    {
+      "id": "5.1",
+      "file": "phrases_5.1.json",
+      "title": "Numbers in Practice - Prices, Time & Counting",
+      "tier": "SURVIVAL",
+      "count": 75
+    },
+    {
+      "id": "6",
+      "file": "phrases_6.json",
+      "title": "Accommodation - Hotels, Requests & Issues",
+      "tier": "SURVIVAL",
+      "count": 70
+    },
+    {
+      "id": "7",
+      "file": "phrases_7.json",
+      "title": "Shopping & Money - Purchases & Payment",
+      "tier": "SURVIVAL",
+      "count": 70
+    },
+    {
+      "id": "8",
+      "file": "phrases_8.json",
+      "title": "Car Travel & Rental - Driving in Poland",
+      "tier": "SURVIVAL",
+      "count": 75
+    },
+    {
+      "id": "9",
+      "file": "phrases_9.json",
+      "title": "Health & Medical - Pharmacy & Doctor Visits",
+      "tier": "PRACTICAL",
+      "count": 75
+    },
+    {
+      "id": "10",
+      "file": "phrases_10.json",
+      "title": "Phone & Internet - Tech, Connectivity & Apps",
+      "tier": "PRACTICAL",
+      "count": 70
+    },
+    {
+      "id": "10.1",
+      "file": "phrases_10.1.json",
+      "title": "Outdoors & Nature - Walking, Hiking, Weather & Sports",
+      "tier": "PRACTICAL",
+      "count": 70
+    },
+    {
+      "id": "11",
+      "file": "phrases_11.json",
+      "title": "Meeting People & Small Talk - Social Basics",
+      "tier": "PRACTICAL",
+      "count": 69
+    },
+    {
+      "id": "12",
+      "file": "phrases_12.json",
+      "title": "Home Life - Daily Routine, Chores & Property",
+      "tier": "PRACTICAL",
+      "count": 75
+    },
+    {
+      "id": "12.1",
+      "file": "phrases_12.1.json",
+      "title": "Home Life - Cooking, Furniture & Garden",
+      "tier": "PRACTICAL",
+      "count": 10
+    },
+    {
+      "id": "13",
+      "file": "phrases_13.json",
+      "title": "Culture & Entertainment - Museums, Theater & Cinema",
+      "tier": "PRACTICAL",
+      "count": 75
+    },
+    {
+      "id": "14",
+      "file": "phrases_14.json",
+      "title": "Music & Pop Culture - Songs, Artists & Lyrics",
+      "tier": "PRACTICAL",
+      "count": 85
+    },
+    {
+      "id": "15",
+      "file": "phrases_15.json",
+      "title": "Work & Business - Professional Situations & Office Life",
+      "tier": "PRACTICAL",
+      "count": 48
+    },
+    {
+      "id": "16",
+      "file": "phrases_16.json",
+      "title": "Family & Relationships - Social Connections & Status",
+      "tier": "PRACTICAL",
+      "count": 35
+    },
+    {
+      "id": "17",
+      "file": "phrases_17.json",
+      "title": "Public Signs & Notices - Reading the Environment",
+      "tier": "PRACTICAL",
+      "count": 45
+    },
+    {
+      "id": "20",
+      "file": "phrases_20.json",
+      "title": "People & Personalities - Appearance & Character Traits",
+      "tier": "ADVANCED",
+      "count": 75
+    },
+    {
+      "id": "21",
+      "file": "phrases_21.json",
+      "title": "Problems & Complaints - Resolving Consumer Issues",
+      "tier": "PRACTICAL",
+      "count": 75
+    },
+    {
+      "id": "22",
+      "file": "phrases_22.json",
+      "title": "Asking for Help & Clarification - Getting Unstuck",
+      "tier": "PRACTICAL",
+      "count": 75
+    },
+    {
+      "id": "23",
+      "file": "phrases_23.json",
+      "title": "Government & Official Matters - Bureaucracy",
+      "tier": "ADVANCED",
+      "count": 75
+    },
+    {
+      "id": "25",
+      "file": "phrases_25.json",
+      "title": "Expressing Opinions & Abstract Concepts - Advanced Expression",
+      "tier": "ADVANCED",
+      "count": 75
+    },
+    {
+      "id": "27",
+      "file": "phrases_27.json",
+      "title": "Idioms & Common Expressions - Sound Like a Native",
+      "tier": "ADVANCED",
+      "count": 75
+    },
+    {
+      "id": "29",
+      "file": "phrases_29.json",
+      "title": "Advanced Time & Dates - Precise Scheduling & Chronology",
+      "tier": "ADVANCED",
+      "count": 75
+    },
+    {
+      "id": "31",
+      "file": "phrases_31.json",
+      "title": "Education & Academic Life - School, University & Studying",
+      "tier": "ADVANCED",
+      "count": 75
+    },
+    {
+      "id": "32",
+      "file": "phrases_32.json",
+      "title": "Dating, Romance & Milestones - Love, Weddings & Breakups",
+      "tier": "FLUENCY",
+      "count": 75
+    },
+    {
+      "id": "33",
+      "file": "phrases_33.json",
+      "title": "Persuasion & Debate - Arguing, Negotiating & Compromise",
+      "tier": "FLUENCY",
+      "count": 75
+    }
+  ]
+}

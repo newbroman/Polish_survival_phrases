@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s12_01",
+      "id": "12-01",
       "category": "Daily Routine",
       "pl": "Budzić się",
       "en": "To wake up",
@@ -14,7 +14,7 @@
       "note": "Reflexive infinitive verb. 'Budzę się' means 'I wake up'."
     },
     {
-      "id": "s12_02",
+      "id": "12-02",
       "category": "Daily Routine",
       "pl": "Wstawać",
       "en": "To get up",
@@ -24,7 +24,7 @@
       "note": "Refers to physically getting out of bed."
     },
     {
-      "id": "s12_03",
+      "id": "12-03",
       "category": "Daily Routine",
       "pl": "Brać prysznic",
       "en": "To take a shower",
@@ -34,7 +34,7 @@
       "note": "Literally 'to take a shower'."
     },
     {
-      "id": "s12_04",
+      "id": "12-04",
       "category": "Daily Routine",
       "pl": "Myć zęby",
       "en": "To brush teeth",
@@ -44,7 +44,7 @@
       "note": "Literally 'to wash teeth'. 'Zęby' is the plural of 'ząb'."
     },
     {
-      "id": "s12_05",
+      "id": "12-05",
       "category": "Daily Routine",
       "pl": "Ubierać się",
       "en": "To get dressed",
@@ -54,7 +54,7 @@
       "note": "Reflexive verb 'to dress oneself'."
     },
     {
-      "id": "s12_06",
+      "id": "12-06",
       "category": "Daily Routine",
       "pl": "Wychodzić z domu",
       "en": "To leave the house",
@@ -64,7 +64,7 @@
       "note": "Takes the genitive case 'z domu'."
     },
     {
-      "id": "s12_07",
+      "id": "12-07",
       "category": "Daily Routine",
       "pl": "Wrócić do domu",
       "en": "To return home",
@@ -74,7 +74,7 @@
       "note": "Perfective verb for completing the action of coming back."
     },
     {
-      "id": "s12_08",
+      "id": "12-08",
       "category": "Daily Routine",
       "pl": "Iść spać",
       "en": "To go to sleep",
@@ -84,7 +84,7 @@
       "note": "Combines the verb of motion 'iść' with the infinitive 'spać'."
     },
     {
-      "id": "s12_09",
+      "id": "12-09",
       "category": "Scheduling",
       "pl": "Spotkanie",
       "en": "Meeting / Appointment",
@@ -94,7 +94,7 @@
       "note": "Neuter noun. Used for formal business and casual hangouts."
     },
     {
-      "id": "s12_10",
+      "id": "12-10",
       "category": "Scheduling",
       "pl": "Czy jest wolny termin?",
       "en": "Is there an available slot?",
@@ -104,7 +104,7 @@
       "note": "'Termin' refers to a specific date/time slot for a professional."
     },
     {
-      "id": "s12_11",
+      "id": "12-11",
       "category": "Scheduling",
       "pl": "Muszę odwołać wizytę",
       "en": "I need to cancel the appointment",
@@ -114,7 +114,7 @@
       "note": "'Wizyta' is usually used for doctors or hair salons."
     },
     {
-      "id": "s12_12",
+      "id": "12-12",
       "category": "Scheduling",
       "pl": "Przełożyć na jutro",
       "en": "To postpone until tomorrow",
@@ -124,7 +124,7 @@
       "note": "'Przełożyć' literally means to put over or transfer."
     },
     {
-      "id": "s12_13",
+      "id": "12-13",
       "category": "Scheduling",
       "pl": "Spóźnię się dziesięć minut",
       "en": "I'll be ten minutes late",
@@ -134,7 +134,7 @@
       "note": "Future tense. Essential if stuck in city traffic!"
     },
     {
-      "id": "s12_14",
+      "id": "12-14",
       "category": "Scheduling",
       "pl": "Zajęty",
       "en": "Busy",
@@ -144,7 +144,7 @@
       "note": "Masculine adjective. 'Jestem zajęty' means I am busy."
     },
     {
-      "id": "s12_15",
+      "id": "12-15",
       "category": "Rooms & Property",
       "pl": "Mieszkanie",
       "en": "Apartment / Flat",
@@ -154,7 +154,7 @@
       "note": "Most Poles in cities live in a 'mieszkanie'."
     },
     {
-      "id": "s12_16",
+      "id": "12-16",
       "category": "Rooms & Property",
       "pl": "Dom",
       "en": "House",
@@ -164,7 +164,7 @@
       "note": "A detached or semi-detached residential building."
     },
     {
-      "id": "s12_17",
+      "id": "12-17",
       "category": "Rooms & Property",
       "pl": "Wynajmować",
       "en": "To rent",
@@ -174,7 +174,7 @@
       "note": "Used when you are the tenant paying the landlord."
     },
     {
-      "id": "s12_18",
+      "id": "12-18",
       "category": "Rooms & Property",
       "pl": "Pokój",
       "en": "Room",
@@ -184,7 +184,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s12_19",
+      "id": "12-19",
       "category": "Rooms & Property",
       "pl": "Sypialnia",
       "en": "Bedroom",
@@ -194,7 +194,7 @@
       "note": "Feminine noun derived from 'spać' (to sleep)."
     },
     {
-      "id": "s12_20",
+      "id": "12-20",
       "category": "Rooms & Property",
       "pl": "Salon",
       "en": "Living room",
@@ -204,7 +204,7 @@
       "note": "Loanword. The main reception or family room."
     },
     {
-      "id": "s12_21",
+      "id": "12-21",
       "category": "Rooms & Property",
       "pl": "Kuchnia",
       "en": "Kitchen",
@@ -214,7 +214,7 @@
       "note": "Feminine noun. Also the word for 'cuisine'."
     },
     {
-      "id": "s12_22",
+      "id": "12-22",
       "category": "Rooms & Property",
       "pl": "Łazienka",
       "en": "Bathroom",
@@ -224,7 +224,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s12_23",
+      "id": "12-23",
       "category": "Rooms & Property",
       "pl": "Korytarz",
       "en": "Hallway / Corridor",
@@ -234,7 +234,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s12_24",
+      "id": "12-24",
       "category": "Rooms & Property",
       "pl": "Piwnica",
       "en": "Basement / Cellar",
@@ -244,7 +244,7 @@
       "note": "Many Polish apartments come with a small 'piwnica' storage unit."
     },
     {
-      "id": "s12_25",
+      "id": "12-25",
       "category": "Rooms & Property",
       "pl": "Balkon",
       "en": "Balcony",
@@ -254,7 +254,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s12_26",
+      "id": "12-26",
       "category": "Furniture",
       "pl": "Kanapa",
       "en": "Sofa / Couch",
@@ -264,7 +264,7 @@
       "note": "Poles also use the word 'sofa' interchangeably."
     },
     {
-      "id": "s12_27",
+      "id": "12-27",
       "category": "Furniture",
       "pl": "Szafa",
       "en": "Wardrobe / Closet",
@@ -274,7 +274,7 @@
       "note": "Used for large standalone clothes closets."
     },
     {
-      "id": "s12_28",
+      "id": "12-28",
       "category": "Furniture",
       "pl": "Półka",
       "en": "Shelf",
@@ -284,7 +284,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s12_29",
+      "id": "12-29",
       "category": "Furniture",
       "pl": "Stół",
       "en": "Table",
@@ -294,7 +294,7 @@
       "note": "Masculine noun. 'Na stole' means on the table."
     },
     {
-      "id": "s12_30",
+      "id": "12-30",
       "category": "Furniture",
       "pl": "Krzesło",
       "en": "Chair",
@@ -304,7 +304,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s12_31",
+      "id": "12-31",
       "category": "Furniture",
       "pl": "Biurko",
       "en": "Desk",
@@ -314,7 +314,7 @@
       "note": "Neuter noun. From the French word 'bureau'."
     },
     {
-      "id": "s12_32",
+      "id": "12-32",
       "category": "Furniture",
       "pl": "Dywan",
       "en": "Carpet / Rug",
@@ -324,7 +324,7 @@
       "note": "False friend! Does NOT mean divan (sofa)."
     },
     {
-      "id": "s12_33",
+      "id": "12-33",
       "category": "Furniture",
       "pl": "Lampa",
       "en": "Lamp",
@@ -334,7 +334,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s12_34",
+      "id": "12-34",
       "category": "Appliances",
       "pl": "Lodówka",
       "en": "Refrigerator",
@@ -344,7 +344,7 @@
       "note": "From 'lód' (ice)."
     },
     {
-      "id": "s12_35",
+      "id": "12-35",
       "category": "Appliances",
       "pl": "Zamrażarka",
       "en": "Freezer",
@@ -354,7 +354,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s12_36",
+      "id": "12-36",
       "category": "Appliances",
       "pl": "Zmywarka",
       "en": "Dishwasher",
@@ -364,7 +364,7 @@
       "note": "From 'zmywać' (to wash dishes)."
     },
     {
-      "id": "s12_37",
+      "id": "12-37",
       "category": "Appliances",
       "pl": "Piekarnik",
       "en": "Oven",
@@ -374,7 +374,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s12_38",
+      "id": "12-38",
       "category": "Appliances",
       "pl": "Pralka",
       "en": "Washing machine",
@@ -384,7 +384,7 @@
       "note": "From the verb 'prać' (to wash clothes)."
     },
     {
-      "id": "s12_39",
+      "id": "12-39",
       "category": "Appliances",
       "pl": "Odkurzacz",
       "en": "Vacuum cleaner",
@@ -394,7 +394,7 @@
       "note": "Literally 'dust remover'."
     },
     {
-      "id": "s12_40",
+      "id": "12-40",
       "category": "Appliances",
       "pl": "Żelazko",
       "en": "Iron",
@@ -404,7 +404,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s12_41",
+      "id": "12-41",
       "category": "Appliances",
       "pl": "Klimatyzacja",
       "en": "Air conditioning",
@@ -414,7 +414,7 @@
       "note": "Often shortened to 'klima' in everyday speech."
     },
     {
-      "id": "s12_42",
+      "id": "12-42",
       "category": "Chores",
       "pl": "Sprzątać",
       "en": "To clean / Tidy up",
@@ -424,7 +424,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s12_43",
+      "id": "12-43",
       "category": "Chores",
       "pl": "Odkurzać",
       "en": "To vacuum",
@@ -434,7 +434,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s12_44",
+      "id": "12-44",
       "category": "Chores",
       "pl": "Robić pranie",
       "en": "To do the laundry",
@@ -444,7 +444,7 @@
       "note": "Literally 'to make the wash'."
     },
     {
-      "id": "s12_45",
+      "id": "12-45",
       "category": "Chores",
       "pl": "Zmywać naczynia",
       "en": "To wash the dishes",
@@ -454,7 +454,7 @@
       "note": "Infinitive phrase."
     },
     {
-      "id": "s12_46",
+      "id": "12-46",
       "category": "Chores",
       "pl": "Prasować",
       "en": "To iron",
@@ -464,7 +464,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s12_47",
+      "id": "12-47",
       "category": "Chores",
       "pl": "Wynieść śmieci",
       "en": "To take out the trash",
@@ -474,7 +474,7 @@
       "note": "'Śmieci' is a plural noun for garbage."
     },
     {
-      "id": "s12_48",
+      "id": "12-48",
       "category": "Cooking",
       "pl": "Gotować",
       "en": "To cook",
@@ -484,7 +484,7 @@
       "note": "Can refer specifically to boiling, or cooking in general."
     },
     {
-      "id": "s12_49",
+      "id": "12-49",
       "category": "Cooking",
       "pl": "Smażyć",
       "en": "To fry",
@@ -494,7 +494,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s12_50",
+      "id": "12-50",
       "category": "Cooking",
       "pl": "Piec",
       "en": "To bake",
@@ -504,7 +504,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s12_51",
+      "id": "12-51",
       "category": "Cooking",
       "pl": "Składniki",
       "en": "Ingredients",
@@ -514,7 +514,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s12_52",
+      "id": "12-52",
       "category": "Cooking",
       "pl": "Garnek",
       "en": "Pot",
@@ -524,7 +524,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s12_53",
+      "id": "12-53",
       "category": "Cooking",
       "pl": "Patelnia",
       "en": "Frying pan",
@@ -534,7 +534,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s12_54",
+      "id": "12-54",
       "category": "Cooking",
       "pl": "Talerz",
       "en": "Plate",
@@ -544,7 +544,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s12_55",
+      "id": "12-55",
       "category": "Cooking",
       "pl": "Kubek",
       "en": "Mug",
@@ -554,7 +554,7 @@
       "note": "Masculine noun used for hot drinks with a handle."
     },
     {
-      "id": "s12_56",
+      "id": "12-56",
       "category": "Cooking",
       "pl": "Szklanka",
       "en": "Glass",
@@ -564,7 +564,7 @@
       "note": "Feminine noun used for cold drinks or traditional tea glasses."
     },
     {
-      "id": "s12_57",
+      "id": "12-57",
       "category": "Gardening",
       "pl": "Ogród",
       "en": "Garden",
@@ -574,7 +574,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s12_58",
+      "id": "12-58",
       "category": "Gardening",
       "pl": "Ogródek",
       "en": "Small garden / Yard",
@@ -584,7 +584,7 @@
       "note": "Diminutive form, commonly used for the bit of land behind a house."
     },
     {
-      "id": "s12_59",
+      "id": "12-59",
       "category": "Gardening",
       "pl": "Podlewać kwiaty",
       "en": "To water the flowers",
@@ -594,7 +594,7 @@
       "note": "Infinitive phrase."
     },
     {
-      "id": "s12_60",
+      "id": "12-60",
       "category": "Gardening",
       "pl": "Kosić trawę",
       "en": "To mow the lawn",
@@ -604,7 +604,7 @@
       "note": "'Trawę' is the accusative of 'trawa' (grass)."
     },
     {
-      "id": "s12_61",
+      "id": "12-61",
       "category": "Gardening",
       "pl": "Sadzić",
       "en": "To plant",
@@ -614,7 +614,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s12_62",
+      "id": "12-62",
       "category": "Gardening",
       "pl": "Trawnik",
       "en": "Lawn",
@@ -624,7 +624,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s12_63",
+      "id": "12-63",
       "category": "Gardening",
       "pl": "Roślina",
       "en": "Plant",
@@ -634,7 +634,7 @@
       "note": "Feminine noun for any plant."
     },
     {
-      "id": "s12_64",
+      "id": "12-64",
       "category": "Gardening",
       "pl": "Płot",
       "en": "Fence",
@@ -644,7 +644,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s12_65",
+      "id": "12-65",
       "category": "Home Security",
       "pl": "Klucze",
       "en": "Keys",
@@ -654,7 +654,7 @@
       "note": "Plural noun. Singular is 'klucz'."
     },
     {
-      "id": "s12_66",
+      "id": "12-66",
       "category": "Home Security",
       "pl": "Zamek",
       "en": "Lock (also: Castle)",
@@ -664,7 +664,7 @@
       "note": "Masculine noun. Context determines if it's a door lock or a medieval castle."
     },
     {
-      "id": "s12_67",
+      "id": "12-67",
       "category": "Home Security",
       "pl": "Zamykać drzwi",
       "en": "To close/lock the door",
@@ -674,7 +674,7 @@
       "note": "Infinitive phrase."
     },
     {
-      "id": "s12_68",
+      "id": "12-68",
       "category": "Home Security",
       "pl": "Otwierać drzwi",
       "en": "To open the door",
@@ -684,7 +684,7 @@
       "note": "Infinitive phrase."
     },
     {
-      "id": "s12_69",
+      "id": "12-69",
       "category": "Home Security",
       "pl": "Dzwonek do drzwi",
       "en": "Doorbell",
@@ -694,7 +694,7 @@
       "note": "Literally 'little bell to the door'."
     },
     {
-      "id": "s12_70",
+      "id": "12-70",
       "category": "Home Life",
       "pl": "Sąsiad",
       "en": "Neighbor",
@@ -704,7 +704,7 @@
       "note": "Masculine noun. A female neighbor is 'Sąsiadka'."
     },
     {
-      "id": "s12_71",
+      "id": "12-71",
       "category": "Home Life",
       "pl": "Współlokator",
       "en": "Roommate / Flatmate",
@@ -714,7 +714,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s12_72",
+      "id": "12-72",
       "category": "Home Life",
       "pl": "Rachunki",
       "en": "Bills",
@@ -724,7 +724,7 @@
       "note": "Plural noun. Used for utility bills like water and electricity."
     },
     {
-      "id": "s12_73",
+      "id": "12-73",
       "category": "Home Life",
       "pl": "Czynsz",
       "en": "Rent (payment) / HOA fee",
@@ -734,7 +734,7 @@
       "note": "Can refer to the rent paid to a landlord, or the administrative fee paid to a building co-op."
     },
     {
-      "id": "s12_74",
+      "id": "12-74",
       "category": "Home Life",
       "pl": "Skrzynka pocztowa",
       "en": "Mailbox",
@@ -744,7 +744,7 @@
       "note": "Literally 'postal box'."
     },
     {
-      "id": "s12_75",
+      "id": "12-75",
       "category": "Home Life",
       "pl": "Przesyłka",
       "en": "Parcel / Package",

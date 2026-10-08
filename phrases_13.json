@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s13.1_01",
+      "id": "13-01",
       "category": "Museums & Arts",
       "pl": "Muzeum",
       "en": "Museum",
@@ -14,7 +14,7 @@
       "note": "Neuter noun. Plural is 'muzea'."
     },
     {
-      "id": "s13.1_02",
+      "id": "13-02",
       "category": "Museums & Arts",
       "pl": "Galeria sztuki",
       "en": "Art gallery",
@@ -24,7 +24,7 @@
       "note": "Feminine noun phrase."
     },
     {
-      "id": "s13.1_03",
+      "id": "13-03",
       "category": "Museums & Arts",
       "pl": "Wystawa",
       "en": "Exhibition",
@@ -34,7 +34,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_04",
+      "id": "13-04",
       "category": "Museums & Arts",
       "pl": "Wystawa stała",
       "en": "Permanent exhibition",
@@ -44,7 +44,7 @@
       "note": "Usually included in the basic ticket price."
     },
     {
-      "id": "s13.1_05",
+      "id": "13-05",
       "category": "Museums & Arts",
       "pl": "Wystawa czasowa",
       "en": "Temporary exhibition",
@@ -54,7 +54,7 @@
       "note": "Often requires a separate ticket or additional fee."
     },
     {
-      "id": "s13.1_06",
+      "id": "13-06",
       "category": "Museums & Arts",
       "pl": "Obraz",
       "en": "Painting / Picture",
@@ -64,7 +64,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_07",
+      "id": "13-07",
       "category": "Museums & Arts",
       "pl": "Rzeźba",
       "en": "Sculpture",
@@ -74,7 +74,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_08",
+      "id": "13-08",
       "category": "Museums & Arts",
       "pl": "Arcydzieło",
       "en": "Masterpiece",
@@ -84,7 +84,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s13.1_09",
+      "id": "13-09",
       "category": "Museums & Arts",
       "pl": "Malarz",
       "en": "Painter",
@@ -94,7 +94,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_10",
+      "id": "13-10",
       "category": "Museums & Arts",
       "pl": "Artysta",
       "en": "Artist",
@@ -104,7 +104,7 @@
       "note": "Masculine noun (despite ending in 'a'). Female is 'Artystka'."
     },
     {
-      "id": "s13.1_11",
+      "id": "13-11",
       "category": "Museums & Arts",
       "pl": "Sztuka",
       "en": "Art",
@@ -114,7 +114,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_12",
+      "id": "13-12",
       "category": "Museums & Arts",
       "pl": "Bilet ulgowy",
       "en": "Reduced ticket / Concession",
@@ -124,7 +124,7 @@
       "note": "For students, seniors, or children. You must show a valid ID."
     },
     {
-      "id": "s13.1_13",
+      "id": "13-13",
       "category": "Museums & Arts",
       "pl": "Przewodnik",
       "en": "Guide (Person or Book)",
@@ -134,7 +134,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_14",
+      "id": "13-14",
       "category": "Museums & Arts",
       "pl": "Szatnia",
       "en": "Cloakroom",
@@ -144,7 +144,7 @@
       "note": "Culturally mandatory in Polish museums and theaters. You must leave your coat here."
     },
     {
-      "id": "s13.1_15",
+      "id": "13-15",
       "category": "Museums & Arts",
       "pl": "Zwiedzać",
       "en": "To sightsee / to visit",
@@ -154,7 +154,7 @@
       "note": "Infinitive verb used for visiting places, not people."
     },
     {
-      "id": "s13.1_16",
+      "id": "13-16",
       "category": "Theater & Stage",
       "pl": "Teatr",
       "en": "Theater",
@@ -164,7 +164,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_17",
+      "id": "13-17",
       "category": "Theater & Stage",
       "pl": "Spektakl",
       "en": "Performance / Show",
@@ -174,7 +174,7 @@
       "note": "Used specifically for theatrical plays or ballet."
     },
     {
-      "id": "s13.1_18",
+      "id": "13-18",
       "category": "Theater & Stage",
       "pl": "Przedstawienie",
       "en": "Play / Performance",
@@ -184,7 +184,7 @@
       "note": "Neuter noun. Interchangeable with 'spektakl'."
     },
     {
-      "id": "s13.1_19",
+      "id": "13-19",
       "category": "Theater & Stage",
       "pl": "Aktor",
       "en": "Actor",
@@ -194,7 +194,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_20",
+      "id": "13-20",
       "category": "Theater & Stage",
       "pl": "Aktorka",
       "en": "Actress",
@@ -204,7 +204,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_21",
+      "id": "13-21",
       "category": "Theater & Stage",
       "pl": "Scena",
       "en": "Stage",
@@ -214,7 +214,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_22",
+      "id": "13-22",
       "category": "Theater & Stage",
       "pl": "Kurtyna",
       "en": "Curtain",
@@ -224,7 +224,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_23",
+      "id": "13-23",
       "category": "Theater & Stage",
       "pl": "Przerwa",
       "en": "Intermission / Break",
@@ -234,7 +234,7 @@
       "note": "The time to get coffee or a snack at the theater buffet."
     },
     {
-      "id": "s13.1_24",
+      "id": "13-24",
       "category": "Theater & Stage",
       "pl": "Oklaski",
       "en": "Applause",
@@ -244,7 +244,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s13.1_25",
+      "id": "13-25",
       "category": "Theater & Stage",
       "pl": "Rząd",
       "en": "Row",
@@ -254,7 +254,7 @@
       "note": "Masculine noun. 'W rzędzie' means 'in the row'."
     },
     {
-      "id": "s13.1_26",
+      "id": "13-26",
       "category": "Theater & Stage",
       "pl": "Miejsce siedzące",
       "en": "Seat",
@@ -264,7 +264,7 @@
       "note": "Literally 'sitting place'."
     },
     {
-      "id": "s13.1_27",
+      "id": "13-27",
       "category": "Theater & Stage",
       "pl": "Balkon",
       "en": "Balcony",
@@ -274,7 +274,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_28",
+      "id": "13-28",
       "category": "Theater & Stage",
       "pl": "Loża",
       "en": "Box seat",
@@ -284,7 +284,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_29",
+      "id": "13-29",
       "category": "Theater & Stage",
       "pl": "Reżyser",
       "en": "Director",
@@ -294,7 +294,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_30",
+      "id": "13-30",
       "category": "Theater & Stage",
       "pl": "Premiera",
       "en": "Premiere",
@@ -304,7 +304,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_31",
+      "id": "13-31",
       "category": "Cinema & Film",
       "pl": "Kino",
       "en": "Cinema / Movie theater",
@@ -314,7 +314,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s13.1_32",
+      "id": "13-32",
       "category": "Cinema & Film",
       "pl": "Film",
       "en": "Movie / Film",
@@ -324,7 +324,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_33",
+      "id": "13-33",
       "category": "Cinema & Film",
       "pl": "Seans",
       "en": "Screening / Showing",
@@ -334,7 +334,7 @@
       "note": "Refers to a specific movie time slot."
     },
     {
-      "id": "s13.1_34",
+      "id": "13-34",
       "category": "Cinema & Film",
       "pl": "Napisy",
       "en": "Subtitles",
@@ -344,7 +344,7 @@
       "note": "In Poland, non-animated adult films in theaters are usually shown with subtitles."
     },
     {
-      "id": "s13.1_35",
+      "id": "13-35",
       "category": "Cinema & Film",
       "pl": "Dubbing",
       "en": "Dubbed version",
@@ -354,7 +354,7 @@
       "note": "Standard for children's movies and big Hollywood blockbusters."
     },
     {
-      "id": "s13.1_36",
+      "id": "13-36",
       "category": "Cinema & Film",
       "pl": "Lektor",
       "en": "Voiceover",
@@ -364,7 +364,7 @@
       "note": "A unique Polish TV tradition! One male voice reads all the translated dialogue over the original audio."
     },
     {
-      "id": "s13.1_37",
+      "id": "13-37",
       "category": "Cinema & Film",
       "pl": "Rezerwacja biletów",
       "en": "Ticket reservation",
@@ -374,7 +374,7 @@
       "note": "Takes the genitive case 'biletów'."
     },
     {
-      "id": "s13.1_38",
+      "id": "13-38",
       "category": "Cinema & Film",
       "pl": "Popcorn",
       "en": "Popcorn",
@@ -384,7 +384,7 @@
       "note": "Pronounced exactly like in English."
     },
     {
-      "id": "s13.1_39",
+      "id": "13-39",
       "category": "Cinema & Film",
       "pl": "Ekran",
       "en": "Screen",
@@ -394,7 +394,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_40",
+      "id": "13-40",
       "category": "Cinema & Film",
       "pl": "Zwiastun",
       "en": "Trailer",
@@ -404,7 +404,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_41",
+      "id": "13-41",
       "category": "Cinema & Film",
       "pl": "Komedia",
       "en": "Comedy",
@@ -414,7 +414,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_42",
+      "id": "13-42",
       "category": "Cinema & Film",
       "pl": "Dramat",
       "en": "Drama",
@@ -424,7 +424,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_43",
+      "id": "13-43",
       "category": "Cinema & Film",
       "pl": "Horror",
       "en": "Horror movie",
@@ -434,7 +434,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_44",
+      "id": "13-44",
       "category": "Cinema & Film",
       "pl": "Film dokumentalny",
       "en": "Documentary",
@@ -444,7 +444,7 @@
       "note": "Masculine noun phrase."
     },
     {
-      "id": "s13.1_45",
+      "id": "13-45",
       "category": "Cinema & Film",
       "pl": "Reżyseria",
       "en": "Direction (of a film)",
@@ -454,7 +454,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_46",
+      "id": "13-46",
       "category": "Music & Concerts",
       "pl": "Koncert",
       "en": "Concert",
@@ -464,7 +464,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_47",
+      "id": "13-47",
       "category": "Music & Concerts",
       "pl": "Zespół muzyczny",
       "en": "Music band",
@@ -474,7 +474,7 @@
       "note": "Often just called 'zespół'."
     },
     {
-      "id": "s13.1_48",
+      "id": "13-48",
       "category": "Music & Concerts",
       "pl": "Piosenkarz",
       "en": "Singer (Male)",
@@ -484,7 +484,7 @@
       "note": "A female singer is 'Piosenkarka'."
     },
     {
-      "id": "s13.1_49",
+      "id": "13-49",
       "category": "Music & Concerts",
       "pl": "Piosenka",
       "en": "Song",
@@ -494,7 +494,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_50",
+      "id": "13-50",
       "category": "Music & Concerts",
       "pl": "Muzyka na żywo",
       "en": "Live music",
@@ -504,7 +504,7 @@
       "note": "Literally 'music on live'."
     },
     {
-      "id": "s13.1_51",
+      "id": "13-51",
       "category": "Music & Concerts",
       "pl": "Instrument",
       "en": "Instrument",
@@ -514,7 +514,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_52",
+      "id": "13-52",
       "category": "Music & Concerts",
       "pl": "Grać na gitarze",
       "en": "To play the guitar",
@@ -524,7 +524,7 @@
       "note": "When playing an instrument, use 'na' + locative case."
     },
     {
-      "id": "s13.1_53",
+      "id": "13-53",
       "category": "Music & Concerts",
       "pl": "Grać na pianinie",
       "en": "To play the piano",
@@ -534,7 +534,7 @@
       "note": "Locative case 'na pianinie'."
     },
     {
-      "id": "s13.1_54",
+      "id": "13-54",
       "category": "Music & Concerts",
       "pl": "Festiwal muzyczny",
       "en": "Music festival",
@@ -544,7 +544,7 @@
       "note": "Masculine noun phrase."
     },
     {
-      "id": "s13.1_55",
+      "id": "13-55",
       "category": "Music & Concerts",
       "pl": "Scena plenerowa",
       "en": "Outdoor stage",
@@ -554,7 +554,7 @@
       "note": "Feminine noun phrase."
     },
     {
-      "id": "s13.1_56",
+      "id": "13-56",
       "category": "Music & Concerts",
       "pl": "Słuchać muzyki",
       "en": "To listen to music",
@@ -564,7 +564,7 @@
       "note": "The verb 'słuchać' forces the genitive case 'muzyki'."
     },
     {
-      "id": "s13.1_57",
+      "id": "13-57",
       "category": "Music & Concerts",
       "pl": "Bilet wstępu",
       "en": "Admission ticket",
@@ -574,7 +574,7 @@
       "note": "Literally 'ticket of entry'."
     },
     {
-      "id": "s13.1_58",
+      "id": "13-58",
       "category": "Music & Concerts",
       "pl": "Wyprzedane",
       "en": "Sold out",
@@ -584,7 +584,7 @@
       "note": "Adjective. You will see this written across posters for popular events."
     },
     {
-      "id": "s13.1_59",
+      "id": "13-59",
       "category": "Music & Concerts",
       "pl": "Akustyka",
       "en": "Acoustics",
@@ -594,7 +594,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_60",
+      "id": "13-60",
       "category": "Music & Concerts",
       "pl": "Publiczność",
       "en": "Audience",
@@ -604,7 +604,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_61",
+      "id": "13-61",
       "category": "Reading & Hobbies",
       "pl": "Czytać książkę",
       "en": "To read a book",
@@ -614,7 +614,7 @@
       "note": "Accusative case 'książkę'."
     },
     {
-      "id": "s13.1_62",
+      "id": "13-62",
       "category": "Reading & Hobbies",
       "pl": "Biblioteka",
       "en": "Library",
@@ -624,7 +624,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_63",
+      "id": "13-63",
       "category": "Reading & Hobbies",
       "pl": "Księgarnia",
       "en": "Bookstore",
@@ -634,7 +634,7 @@
       "note": "Feminine noun. Do not confuse with biblioteka!"
     },
     {
-      "id": "s13.1_64",
+      "id": "13-64",
       "category": "Reading & Hobbies",
       "pl": "Powieść",
       "en": "Novel",
@@ -644,7 +644,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_65",
+      "id": "13-65",
       "category": "Reading & Hobbies",
       "pl": "Poezja",
       "en": "Poetry",
@@ -654,7 +654,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_66",
+      "id": "13-66",
       "category": "Reading & Hobbies",
       "pl": "Wydawnictwo",
       "en": "Publishing house",
@@ -664,7 +664,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s13.1_67",
+      "id": "13-67",
       "category": "Reading & Hobbies",
       "pl": "Fotografia",
       "en": "Photography",
@@ -674,7 +674,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s13.1_68",
+      "id": "13-68",
       "category": "Reading & Hobbies",
       "pl": "Robić zdjęcia",
       "en": "To take photos",
@@ -684,7 +684,7 @@
       "note": "Literally 'to make photos'."
     },
     {
-      "id": "s13.1_69",
+      "id": "13-69",
       "category": "Reading & Hobbies",
       "pl": "Zakaz fotografowania",
       "en": "No photography",
@@ -694,7 +694,7 @@
       "note": "Literally 'Ban of photographing'."
     },
     {
-      "id": "s13.1_70",
+      "id": "13-70",
       "category": "Reading & Hobbies",
       "pl": "Grać w gry planszowe",
       "en": "To play board games",
@@ -704,7 +704,7 @@
       "note": "Board games are extremely popular in Poland."
     },
     {
-      "id": "s13.1_71",
+      "id": "13-71",
       "category": "Reading & Hobbies",
       "pl": "Czas wolny",
       "en": "Free time",
@@ -714,7 +714,7 @@
       "note": "Masculine noun phrase."
     },
     {
-      "id": "s13.1_72",
+      "id": "13-72",
       "category": "Reading & Hobbies",
       "pl": "Relaks",
       "en": "Relaxation",
@@ -724,7 +724,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s13.1_73",
+      "id": "13-73",
       "category": "Reading & Hobbies",
       "pl": "Hobby",
       "en": "Hobby",
@@ -734,7 +734,7 @@
       "note": "Neuter loanword. It does not decline in Polish!"
     },
     {
-      "id": "s13.1_74",
+      "id": "13-74",
       "category": "Reading & Hobbies",
       "pl": "Interesować się",
       "en": "To be interested in",
@@ -744,7 +744,7 @@
       "note": "Reflexive verb. Takes the instrumental case (e.g., 'Interesuję się sztuką')."
     },
     {
-      "id": "s13.1_75",
+      "id": "13-75",
       "category": "Reading & Hobbies",
       "pl": "Rozrywka",
       "en": "Entertainment",

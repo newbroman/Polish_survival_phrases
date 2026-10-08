@@ -4,7 +4,7 @@
   "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "s5_01",
+      "id": "5-01",
       "category": "Arrival",
       "pl": "Stolik dla dwóch osób",
       "en": "Table for two",
@@ -14,7 +14,7 @@
       "note": "'Osób' is the genitive plural of 'osoba' (person). For one person, say 'dla jednej osoby'."
     },
     {
-      "id": "s5_02",
+      "id": "5-02",
       "category": "Arrival",
       "pl": "Mam rezerwację",
       "en": "I have a reservation",
@@ -24,7 +24,7 @@
       "note": "'Mam' (I have) forces the noun into the accusative case ('-ę' ending)."
     },
     {
-      "id": "s5_03",
+      "id": "5-03",
       "category": "Arrival",
       "pl": "Rezerwacja",
       "en": "Reservation",
@@ -34,7 +34,7 @@
       "note": "A feminine noun. Often you'll be asked 'Na jakie nazwisko?' (Under what name?)."
     },
     {
-      "id": "s5_04",
+      "id": "5-04",
       "category": "Arrival",
       "pl": "Menu, proszę",
       "en": "Menu, please",
@@ -44,7 +44,7 @@
       "note": "The word 'menu' is a French loanword and does not change its ending in Polish."
     },
     {
-      "id": "s5_05",
+      "id": "5-05",
       "category": "Arrival",
       "pl": "Rachunek, proszę",
       "en": "The bill, please",
@@ -54,7 +54,7 @@
       "note": "A crucial word! To ask for the check at the end of the meal."
     },
     {
-      "id": "s5_06",
+      "id": "5-06",
       "category": "Ordering Basics",
       "pl": "Poproszę...",
       "en": "I'll have... / I'd like...",
@@ -64,7 +64,7 @@
       "note": "The most polite and common way to order. Literally 'I will ask for...'. Follow with the accusative case."
     },
     {
-      "id": "s5_07",
+      "id": "5-07",
       "category": "Ordering Basics",
       "pl": "Dla mnie...",
       "en": "For me...",
@@ -74,7 +74,7 @@
       "note": "'Dla' (for) takes the genitive case pronoun 'mnie' (me)."
     },
     {
-      "id": "s5_08",
+      "id": "5-08",
       "category": "Ordering Basics",
       "pl": "Co Pan/Pani poleca?",
       "en": "What do you recommend?",
@@ -88,7 +88,7 @@
       "note": "Very polite. Uses formal 'Pan' (Sir) or 'Pani' (Madam) + the 3rd person singular verb 'poleca'."
     },
     {
-      "id": "s5_09",
+      "id": "5-09",
       "category": "Ordering Basics",
       "pl": "Poproszę to samo",
       "en": "I'll have the same",
@@ -98,7 +98,7 @@
       "note": "A great shortcut if your friend just ordered something delicious!"
     },
     {
-      "id": "s5_10",
+      "id": "5-10",
       "category": "Ordering Basics",
       "pl": "Jeszcze nie",
       "en": "Not yet",
@@ -108,7 +108,7 @@
       "note": "Useful when the waiter asks if you are ready to order."
     },
     {
-      "id": "s5_11",
+      "id": "5-11",
       "category": "Dining Culture",
       "pl": "Smacznego",
       "en": "Enjoy your meal / Bon appetit",
@@ -118,7 +118,7 @@
       "note": "Always say this to your table before anyone starts eating! It's considered rude not to."
     },
     {
-      "id": "s5_12",
+      "id": "5-12",
       "category": "Dining Culture",
       "pl": "Na zdrowie",
       "en": "Cheers!",
@@ -128,7 +128,7 @@
       "note": "Literally means 'To health!'. Said when clinking glasses (and also when someone sneezes)."
     },
     {
-      "id": "s5_13",
+      "id": "5-13",
       "category": "Dining Culture",
       "pl": "Pyszne!",
       "en": "Delicious!",
@@ -138,7 +138,7 @@
       "note": "A great compliment for the chef or waiter."
     },
     {
-      "id": "s5_14",
+      "id": "5-14",
       "category": "Dining Culture",
       "pl": "Napiwek",
       "en": "Tip",
@@ -148,7 +148,7 @@
       "note": "Tipping is generally around 10% in Poland for good service in sit-down restaurants."
     },
     {
-      "id": "s5_15",
+      "id": "5-15",
       "category": "Dining Culture",
       "pl": "Czy napiwek jest wliczony?",
       "en": "Is tip included?",
@@ -158,7 +158,7 @@
       "note": "Service charge isn't always included, though it often is for groups of 6 or more."
     },
     {
-      "id": "s5_16",
+      "id": "5-16",
       "category": "Meals",
       "pl": "Śniadanie",
       "en": "Breakfast",
@@ -168,7 +168,7 @@
       "note": "Traditional Polish breakfasts usually feature open-faced sandwiches with cold cuts, cheese, and tomatoes."
     },
     {
-      "id": "s5_17",
+      "id": "5-17",
       "category": "Meals",
       "pl": "Obiad",
       "en": "Dinner (Main Meal)",
@@ -178,7 +178,7 @@
       "note": "In Poland, the main meal of the day ('Obiad') is usually eaten in the mid-afternoon, around 2-4 PM."
     },
     {
-      "id": "s5_18",
+      "id": "5-18",
       "category": "Meals",
       "pl": "Kolacja",
       "en": "Supper",
@@ -188,7 +188,7 @@
       "note": "The evening meal. Typically lighter than 'Obiad', often consisting of sandwiches or salads."
     },
     {
-      "id": "s5_19",
+      "id": "5-19",
       "category": "Meals",
       "pl": "Deser",
       "en": "Dessert",
@@ -198,7 +198,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s5_20",
+      "id": "5-20",
       "category": "Meals",
       "pl": "Zupa",
       "en": "Soup",
@@ -208,7 +208,7 @@
       "note": "Soup is a mandatory first course for a proper Polish 'Obiad'."
     },
     {
-      "id": "s5_21",
+      "id": "5-21",
       "category": "Food Items",
       "pl": "Mięso",
       "en": "Meat",
@@ -218,7 +218,7 @@
       "note": "A neuter noun. A staple in traditional Polish cuisine."
     },
     {
-      "id": "s5_22",
+      "id": "5-22",
       "category": "Food Items",
       "pl": "Kurczak",
       "en": "Chicken",
@@ -228,7 +228,7 @@
       "note": "Masculine animate noun. Accusative form is 'kurczaka'."
     },
     {
-      "id": "s5_23",
+      "id": "5-23",
       "category": "Food Items",
       "pl": "Wołowina",
       "en": "Beef",
@@ -238,7 +238,7 @@
       "note": "Feminine noun. Derived from 'wół' (ox)."
     },
     {
-      "id": "s5_24",
+      "id": "5-24",
       "category": "Food Items",
       "pl": "Wieprzowina",
       "en": "Pork",
@@ -248,7 +248,7 @@
       "note": "The most common meat in traditional Polish cooking."
     },
     {
-      "id": "s5_25",
+      "id": "5-25",
       "category": "Food Items",
       "pl": "Ryba",
       "en": "Fish",
@@ -258,7 +258,7 @@
       "note": "Commonly eaten on Christmas Eve, or in Baltic coastal towns."
     },
     {
-      "id": "s5_26",
+      "id": "5-26",
       "category": "Food Items",
       "pl": "Ziemniaki",
       "en": "Potatoes",
@@ -268,7 +268,7 @@
       "note": "Extremely common side dish, often boiled and served with dill."
     },
     {
-      "id": "s5_27",
+      "id": "5-27",
       "category": "Food Items",
       "pl": "Frytki",
       "en": "French fries",
@@ -278,7 +278,7 @@
       "note": "Plural noun. Very popular street food."
     },
     {
-      "id": "s5_28",
+      "id": "5-28",
       "category": "Food Items",
       "pl": "Warzywa",
       "en": "Vegetables",
@@ -288,7 +288,7 @@
       "note": "Plural form of 'warzywo'."
     },
     {
-      "id": "s5_29",
+      "id": "5-29",
       "category": "Food Items",
       "pl": "Sałatka",
       "en": "Salad",
@@ -298,7 +298,7 @@
       "note": "A diminutive of 'sałata' (lettuce/salad)."
     },
     {
-      "id": "s5_30",
+      "id": "5-30",
       "category": "Food Items",
       "pl": "Chleb",
       "en": "Bread",
@@ -308,7 +308,7 @@
       "note": "Polish bread is famous and usually served alongside soups or heavy stews."
     },
     {
-      "id": "s5_31",
+      "id": "5-31",
       "category": "Tableware",
       "pl": "Masło",
       "en": "Butter",
@@ -318,7 +318,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s5_32",
+      "id": "5-32",
       "category": "Tableware",
       "pl": "Widelec",
       "en": "Fork",
@@ -328,7 +328,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s5_33",
+      "id": "5-33",
       "category": "Tableware",
       "pl": "Nóż",
       "en": "Knife",
@@ -338,7 +338,7 @@
       "note": "Masculine noun. The 'ó' is pronounced like 'u'."
     },
     {
-      "id": "s5_34",
+      "id": "5-34",
       "category": "Tableware",
       "pl": "Łyżka",
       "en": "Spoon",
@@ -348,7 +348,7 @@
       "note": "Feminine noun. A smaller teaspoon is a 'łyżeczka'."
     },
     {
-      "id": "s5_35",
+      "id": "5-35",
       "category": "Tableware",
       "pl": "Serwetki, proszę",
       "en": "Napkins, please",
@@ -358,7 +358,7 @@
       "note": "Plural of 'serwetka'. You often have to ask for extras."
     },
     {
-      "id": "s5_36",
+      "id": "5-36",
       "category": "Drinks",
       "pl": "Woda gazowana",
       "en": "Sparkling water",
@@ -368,7 +368,7 @@
       "note": "Sparkling water is very common. Often just called 'gazowana'."
     },
     {
-      "id": "s5_37",
+      "id": "5-37",
       "category": "Drinks",
       "pl": "Woda niegazowana",
       "en": "Still water",
@@ -378,7 +378,7 @@
       "note": "If you don't specify still water, a waiter might default to sparkling!"
     },
     {
-      "id": "s5_38",
+      "id": "5-38",
       "category": "Drinks",
       "pl": "Kawa",
       "en": "Coffee",
@@ -388,7 +388,7 @@
       "note": "To order, say 'Poproszę kawę'."
     },
     {
-      "id": "s5_39",
+      "id": "5-39",
       "category": "Drinks",
       "pl": "Herbata",
       "en": "Tea",
@@ -398,7 +398,7 @@
       "note": "Poles drink a lot of tea, often with lemon ('z cytryną')."
     },
     {
-      "id": "s5_40",
+      "id": "5-40",
       "category": "Drinks",
       "pl": "Sok",
       "en": "Juice",
@@ -408,7 +408,7 @@
       "note": "'Sok jabłkowy' is apple juice, 'sok pomarańczowy' is orange."
     },
     {
-      "id": "s5_41",
+      "id": "5-41",
       "category": "Drinks",
       "pl": "Piwo z nalewaka",
       "en": "Draft beer",
@@ -418,7 +418,7 @@
       "note": "Literally 'beer from the pourer'."
     },
     {
-      "id": "s5_42",
+      "id": "5-42",
       "category": "Drinks",
       "pl": "Czerwone wino",
       "en": "Red wine",
@@ -428,7 +428,7 @@
       "note": "Adjectives match the neuter noun with an '-e' ending."
     },
     {
-      "id": "s5_43",
+      "id": "5-43",
       "category": "Drinks",
       "pl": "Białe wino",
       "en": "White wine",
@@ -438,7 +438,7 @@
       "note": "White wine."
     },
     {
-      "id": "s5_44",
+      "id": "5-44",
       "category": "Drinks",
       "pl": "Kieliszek",
       "en": "A glass (for wine/vodka)",
@@ -448,7 +448,7 @@
       "note": "Used for stemmed glasses. 'Poproszę kieliszek wina' (A glass of wine, please)."
     },
     {
-      "id": "s5_45",
+      "id": "5-45",
       "category": "Drinks",
       "pl": "Kufel",
       "en": "Beer mug / Pint",
@@ -458,7 +458,7 @@
       "note": "Used specifically for a large beer glass/mug."
     },
     {
-      "id": "s5_46",
+      "id": "5-46",
       "category": "Tastes & Adjustments",
       "pl": "Czy to jest pikantne?",
       "en": "Is this spicy?",
@@ -468,7 +468,7 @@
       "note": "Polish food is traditionally quite mild, so 'pikantne' means genuinely spicy."
     },
     {
-      "id": "s5_47",
+      "id": "5-47",
       "category": "Tastes & Adjustments",
       "pl": "Nie za ostre",
       "en": "Not too spicy",
@@ -478,7 +478,7 @@
       "note": "'Ostre' is another word for spicy/sharp."
     },
     {
-      "id": "s5_48",
+      "id": "5-48",
       "category": "Tastes & Adjustments",
       "pl": "Słodkie",
       "en": "Sweet",
@@ -488,7 +488,7 @@
       "note": "Neuter adjective."
     },
     {
-      "id": "s5_49",
+      "id": "5-49",
       "category": "Tastes & Adjustments",
       "pl": "Słone",
       "en": "Salty",
@@ -498,7 +498,7 @@
       "note": "Neuter adjective."
     },
     {
-      "id": "s5_50",
+      "id": "5-50",
       "category": "Tastes & Adjustments",
       "pl": "Kwaśne",
       "en": "Sour",
@@ -508,7 +508,7 @@
       "note": "Neuter adjective. Sour flavors (like fermented cabbage or rye) are huge in Poland!"
     },
     {
-      "id": "s5_51",
+      "id": "5-51",
       "category": "Tastes & Adjustments",
       "pl": "Bez cebuli",
       "en": "No onions",
@@ -518,7 +518,7 @@
       "note": "The preposition 'bez' (without) requires the genitive case ('cebula' -> 'cebuli')."
     },
     {
-      "id": "s5_52",
+      "id": "5-52",
       "category": "Tastes & Adjustments",
       "pl": "Bez czosnku",
       "en": "No garlic",
@@ -528,7 +528,7 @@
       "note": "Genitive case again ('czosnek' -> 'czosnku')."
     },
     {
-      "id": "s5_53",
+      "id": "5-53",
       "category": "Dietary Requirements",
       "pl": "Bez mięsa",
       "en": "Without meat",
@@ -538,7 +538,7 @@
       "note": "'Bez' forces the genitive case: 'mięso' becomes 'mięsa'."
     },
     {
-      "id": "s5_54",
+      "id": "5-54",
       "category": "Dietary Requirements",
       "pl": "Bez glutenu",
       "en": "Gluten-free",
@@ -548,7 +548,7 @@
       "note": "Takes the genitive case. Very widely understood in Polish cities."
     },
     {
-      "id": "s5_55",
+      "id": "5-55",
       "category": "Dietary Requirements",
       "pl": "Dania wegetariańskie",
       "en": "Vegetarian dishes",
@@ -558,7 +558,7 @@
       "note": "Vegetarianism is very popular in Poland, especially in big cities."
     },
     {
-      "id": "s5_56",
+      "id": "5-56",
       "category": "Dietary Requirements",
       "pl": "Jestem wegetarianinem/wegetarianką",
       "en": "I'm vegetarian",
@@ -572,7 +572,7 @@
       "note": "Takes the instrumental case. Men: '-inem'. Women: '-ianką'."
     },
     {
-      "id": "s5_57",
+      "id": "5-57",
       "category": "Dietary Requirements",
       "pl": "Jestem weganinem/weganką",
       "en": "I'm vegan",
@@ -586,7 +586,7 @@
       "note": "Warsaw is consistently ranked as one of the most vegan-friendly cities in the world!"
     },
     {
-      "id": "s5_58",
+      "id": "5-58",
       "category": "Issues & Requests",
       "pl": "To nie jest moje zamówienie",
       "en": "This isn't my order",
@@ -596,7 +596,7 @@
       "note": "'Zamówienie' means order. Neuter noun."
     },
     {
-      "id": "s5_59",
+      "id": "5-59",
       "category": "Issues & Requests",
       "pl": "Jest zimne",
       "en": "It's cold",
@@ -606,7 +606,7 @@
       "note": "Neuter adjective form 'zimne', assuming you are referring to 'danie' (dish) or 'jedzenie' (food)."
     },
     {
-      "id": "s5_60",
+      "id": "5-60",
       "category": "Issues & Requests",
       "pl": "Więcej chleba, proszę",
       "en": "More bread, please",
@@ -616,7 +616,7 @@
       "note": "The word 'więcej' (more) forces the noun into the genitive case ('chleb' -> 'chleba')."
     },
     {
-      "id": "s5_61",
+      "id": "5-61",
       "category": "Polish Dishes",
       "pl": "Pierogi",
       "en": "Dumplings",
@@ -626,7 +626,7 @@
       "note": "The most famous Polish dish! Filled dumplings. It's already plural; one dumpling is a 'pieróg'."
     },
     {
-      "id": "s5_62",
+      "id": "5-62",
       "category": "Polish Dishes",
       "pl": "Bigos",
       "en": "Hunter's stew",
@@ -636,7 +636,7 @@
       "note": "A hearty traditional stew made of sauerkraut, fresh cabbage, and various meats."
     },
     {
-      "id": "s5_63",
+      "id": "5-63",
       "category": "Polish Dishes",
       "pl": "Żurek",
       "en": "Sour rye soup",
@@ -646,7 +646,7 @@
       "note": "A unique sour rye soup, often served inside a hollowed-out loaf of bread."
     },
     {
-      "id": "s5_64",
+      "id": "5-64",
       "category": "Polish Dishes",
       "pl": "Kotlet schabowy",
       "en": "Pork cutlet",
@@ -656,7 +656,7 @@
       "note": "A breaded and fried pork cutlet, very similar to Wiener Schnitzel."
     },
     {
-      "id": "s5_65",
+      "id": "5-65",
       "category": "Polish Dishes",
       "pl": "Gołąbki",
       "en": "Cabbage rolls",
@@ -666,7 +666,7 @@
       "note": "Cabbage rolls stuffed with minced meat and rice. The name literally means 'little pigeons'!"
     },
     {
-      "id": "s5_66",
+      "id": "5-66",
       "category": "Polish Dishes",
       "pl": "Rosół",
       "en": "Chicken soup",
@@ -676,7 +676,7 @@
       "note": "Traditional Polish chicken broth, usually served on Sundays with thin noodles."
     },
     {
-      "id": "s5_67",
+      "id": "5-67",
       "category": "Polish Dishes",
       "pl": "Placki ziemniaczane",
       "en": "Potato pancakes",
@@ -686,7 +686,7 @@
       "note": "Potato pancakes, often eaten with sour cream or mushroom sauce."
     },
     {
-      "id": "s5_68",
+      "id": "5-68",
       "category": "Polish Dishes",
       "pl": "Naleśniki",
       "en": "Pancakes / Crepes",
@@ -696,7 +696,7 @@
       "note": "Thin Polish crepes, often served sweet with sweet cheese or fruit preserves."
     },
     {
-      "id": "s5_69",
+      "id": "5-69",
       "category": "Polish Dishes",
       "pl": "Kiełbasa",
       "en": "Sausage",
@@ -706,7 +706,7 @@
       "note": "Traditional Polish sausage. Comes in hundreds of varieties."
     },
     {
-      "id": "s5_70",
+      "id": "5-70",
       "category": "Polish Dishes",
       "pl": "Sernik",
       "en": "Cheesecake",

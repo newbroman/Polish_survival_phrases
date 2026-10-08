@@ -4,7 +4,7 @@
     "tier": "FLUENCY",
     "phrases": [
         {
-            "id": "s32_01",
+            "id": "32-01",
             "category": "Flirting",
             "pl": "Często tu bywasz?",
             "en": "Do you come here often?",
@@ -14,7 +14,7 @@
             "note": "A classic icebreaker. Uses the habitual verb 'bywać'."
         },
         {
-            "id": "s32_02",
+            "id": "32-02",
             "category": "Flirting",
             "pl": "Świetnie wyglądasz",
             "en": "You look great",
@@ -24,7 +24,7 @@
             "note": "Adverb 'świetnie' + verb 'wyglądać'."
         },
         {
-            "id": "s32_03",
+            "id": "32-03",
             "category": "Flirting",
             "pl": "Masz piękny uśmiech",
             "en": "You have a beautiful smile",
@@ -34,7 +34,7 @@
             "note": "A very polite and safe compliment."
         },
         {
-            "id": "s32_04",
+            "id": "32-04",
             "category": "Flirting",
             "pl": "Zatańczymy?",
             "en": "Shall we dance?",
@@ -44,7 +44,7 @@
             "note": "Perfective future tense, first-person plural."
         },
         {
-            "id": "s32_05",
+            "id": "32-05",
             "category": "Flirting",
             "pl": "Mogę ci postawić drinka?",
             "en": "Can I buy you a drink?",
@@ -54,7 +54,7 @@
             "note": "Uses the casual dative pronoun 'ci'. Literally 'Can I set up a drink for you?'."
         },
         {
-            "id": "s32_06",
+            "id": "32-06",
             "category": "Asking Out",
             "pl": "Daj mi swój numer",
             "en": "Give me your number",
@@ -64,7 +64,7 @@
             "note": "Imperative form 'Daj'."
         },
         {
-            "id": "s32_07",
+            "id": "32-07",
             "category": "Asking Out",
             "pl": "Masz plany na wieczór?",
             "en": "Do you have plans for the evening?",
@@ -74,7 +74,7 @@
             "note": "Takes the accusative case 'na wieczór'."
         },
         {
-            "id": "s32_08",
+            "id": "32-08",
             "category": "Asking Out",
             "pl": "Pójdziesz ze mną na kawę?",
             "en": "Will you go for a coffee with me?",
@@ -84,7 +84,7 @@
             "note": "Instrumental case 'ze mną' (with me)."
         },
         {
-            "id": "s32_09",
+            "id": "32-09",
             "category": "Asking Out",
             "pl": "Chcesz gdzieś wyjść?",
             "en": "Do you want to go out somewhere?",
@@ -94,7 +94,7 @@
             "note": "Casual and low-pressure."
         },
         {
-            "id": "s32_10",
+            "id": "32-10",
             "category": "Asking Out",
             "pl": "Zdzwonimy się",
             "en": "We'll call each other",
@@ -104,7 +104,7 @@
             "note": "A very standard way to end a successful first interaction."
         },
         {
-            "id": "s32_11",
+            "id": "32-11",
             "category": "The Date",
             "pl": "Randka",
             "en": "Date (Romantic)",
@@ -114,7 +114,7 @@
             "note": "Feminine noun. Used only for romantic dates, not calendar dates."
         },
         {
-            "id": "s32_12",
+            "id": "32-12",
             "category": "The Date",
             "pl": "Świetnie się bawię",
             "en": "I'm having a great time",
@@ -124,7 +124,7 @@
             "note": "Literally 'I am playing myself great'."
         },
         {
-            "id": "s32_13",
+            "id": "32-13",
             "category": "The Date",
             "pl": "Miło spędzam czas",
             "en": "I'm spending time nicely",
@@ -134,7 +134,7 @@
             "note": "A classy way to say you enjoy their company."
         },
         {
-            "id": "s32_14",
+            "id": "32-14",
             "category": "The Date",
             "pl": "Odprowadzę cię",
             "en": "I'll walk you home",
@@ -144,7 +144,7 @@
             "note": "A traditional, polite gesture in Polish dating culture."
         },
         {
-            "id": "s32_15",
+            "id": "32-15",
             "category": "The Date",
             "pl": "Wejdziesz na górę?",
             "en": "Want to come upstairs?",
@@ -154,7 +154,7 @@
             "note": "The Polish equivalent of 'Want to come in for coffee?'."
         },
         {
-            "id": "s32_16",
+            "id": "32-16",
             "category": "Feelings",
             "pl": "Zależy mi na tobie",
             "en": "I care about you",
@@ -164,7 +164,7 @@
             "note": "Literally 'It depends to me on you'. Very important phrase!"
         },
         {
-            "id": "s32_17",
+            "id": "32-17",
             "category": "Feelings",
             "pl": "Bardzo cię lubię",
             "en": "I like you a lot",
@@ -174,7 +174,7 @@
             "note": "The perfect intermediate step before dropping the L-word."
         },
         {
-            "id": "s32_18",
+            "id": "32-18",
             "category": "Feelings",
             "pl": "Myślę o tobie",
             "en": "I'm thinking about you",
@@ -184,7 +184,7 @@
             "note": "Takes the locative case 'o tobie'."
         },
         {
-            "id": "s32_19",
+            "id": "32-19",
             "category": "Feelings",
             "pl": "Tęsknię za tobą",
             "en": "I miss you",
@@ -194,7 +194,7 @@
             "note": "Takes the instrumental case 'za tobą'."
         },
         {
-            "id": "s32_20",
+            "id": "32-20",
             "category": "Feelings",
             "pl": "Zakochałem/Zakochałam się w tobie",
             "en": "I fell in love with you",
@@ -208,7 +208,7 @@
             "note": "Reflexive past tense verb + locative case."
         },
         {
-            "id": "s32_21",
+            "id": "32-21",
             "category": "Love",
             "pl": "Kocham cię",
             "en": "I love you",
@@ -218,7 +218,7 @@
             "note": "Reserved only for deep romantic love or close family, unlike in English."
         },
         {
-            "id": "s32_22",
+            "id": "32-22",
             "category": "Love",
             "pl": "Jesteś dla mnie wszystkim",
             "en": "You are everything to me",
@@ -228,7 +228,7 @@
             "note": "Instrumental case 'wszystkim'."
         },
         {
-            "id": "s32_23",
+            "id": "32-23",
             "category": "Love",
             "pl": "Uwielbiam cię",
             "en": "I adore you",
@@ -238,7 +238,7 @@
             "note": "Slightly less heavy than 'kocham cię', but still very strong."
         },
         {
-            "id": "s32_24",
+            "id": "32-24",
             "category": "Love",
             "pl": "Jesteś moją drugą połówką",
             "en": "You are my other half",
@@ -248,7 +248,7 @@
             "note": "Instrumental case 'moją drugą połówką'."
         },
         {
-            "id": "s32_25",
+            "id": "32-25",
             "category": "Love",
             "pl": "Nie mogę bez ciebie żyć",
             "en": "I can't live without you",
@@ -258,7 +258,7 @@
             "note": "Preposition 'bez' takes the genitive case 'ciebie'."
         },
         {
-            "id": "s32_26",
+            "id": "32-26",
             "category": "Nicknames",
             "pl": "Kochanie",
             "en": "Honey / Darling",
@@ -268,7 +268,7 @@
             "note": "The most common romantic nickname in Poland."
         },
         {
-            "id": "s32_27",
+            "id": "32-27",
             "category": "Nicknames",
             "pl": "Skarbie",
             "en": "Treasure / Babe",
@@ -278,7 +278,7 @@
             "note": "Vocative case of 'skarb' (treasure)."
         },
         {
-            "id": "s32_28",
+            "id": "32-28",
             "category": "Nicknames",
             "pl": "Misiu",
             "en": "Bear / Teddy",
@@ -288,7 +288,7 @@
             "note": "Vocative case. Commonly used for men, but sometimes women too."
         },
         {
-            "id": "s32_29",
+            "id": "32-29",
             "category": "Nicknames",
             "pl": "Słoneczko",
             "en": "Sunshine",
@@ -298,7 +298,7 @@
             "note": "Diminutive of 'słońce' (sun)."
         },
         {
-            "id": "s32_30",
+            "id": "32-30",
             "category": "Nicknames",
             "pl": "Kotku",
             "en": "Kitten",
@@ -308,7 +308,7 @@
             "note": "Vocative case. Can be considered a bit cheesy by some."
         },
         {
-            "id": "s32_31",
+            "id": "32-31",
             "category": "Serious Talks",
             "pl": "Musimy porozmawiać",
             "en": "We need to talk",
@@ -318,7 +318,7 @@
             "note": "The universal phrase of incoming relationship doom."
         },
         {
-            "id": "s32_32",
+            "id": "32-32",
             "category": "Serious Talks",
             "pl": "O co ci chodzi?",
             "en": "What is your problem? / What do you mean?",
@@ -328,7 +328,7 @@
             "note": "A very direct way to ask why someone is acting strangely."
         },
         {
-            "id": "s32_33",
+            "id": "32-33",
             "category": "Serious Talks",
             "pl": "Bądź ze mną szczery/szczera",
             "en": "Be honest with me",
@@ -342,7 +342,7 @@
             "note": "Imperative verb 'bądź' + instrumental 'ze mną'."
         },
         {
-            "id": "s32_34",
+            "id": "32-34",
             "category": "Serious Talks",
             "pl": "Nie rozumiem cię",
             "en": "I don't understand you",
@@ -352,7 +352,7 @@
             "note": "Takes the genitive pronoun 'cię' because of the negation."
         },
         {
-            "id": "s32_35",
+            "id": "32-35",
             "category": "Serious Talks",
             "pl": "Co o nas myślisz?",
             "en": "What do you think about us?",
@@ -362,7 +362,7 @@
             "note": "Locative case 'o nas'."
         },
         {
-            "id": "s32_36",
+            "id": "32-36",
             "category": "Milestones",
             "pl": "Zamieszkajmy razem",
             "en": "Let's move in together",
@@ -372,7 +372,7 @@
             "note": "Imperative 'zamieszkajmy'."
         },
         {
-            "id": "s32_37",
+            "id": "32-37",
             "category": "Milestones",
             "pl": "Poznasz moich rodziców",
             "en": "You will meet my parents",
@@ -382,7 +382,7 @@
             "note": "A massive step in Polish dating culture!"
         },
         {
-            "id": "s32_38",
+            "id": "32-38",
             "category": "Milestones",
             "pl": "Zaręczyny",
             "en": "Engagement",
@@ -392,7 +392,7 @@
             "note": "Plural noun."
         },
         {
-            "id": "s32_39",
+            "id": "32-39",
             "category": "Milestones",
             "pl": "Pierścionek zaręczynowy",
             "en": "Engagement ring",
@@ -402,7 +402,7 @@
             "note": "Masculine noun phrase."
         },
         {
-            "id": "s32_40",
+            "id": "32-40",
             "category": "Milestones",
             "pl": "Oświadczyny",
             "en": "The proposal",
@@ -412,7 +412,7 @@
             "note": "Plural noun. The act of asking someone to marry you."
         },
         {
-            "id": "s32_41",
+            "id": "32-41",
             "category": "Proposals",
             "pl": "Wyjdziesz za mnie?",
             "en": "Will you marry me?",
@@ -422,7 +422,7 @@
             "note": "Literally 'Will you step out for me?'. Asked by a man to a woman."
         },
         {
-            "id": "s32_42",
+            "id": "32-42",
             "category": "Proposals",
             "pl": "Zostaniesz moją żoną?",
             "en": "Will you be my wife?",
@@ -432,7 +432,7 @@
             "note": "Uses instrumental case 'moją żoną'."
         },
         {
-            "id": "s32_43",
+            "id": "32-43",
             "category": "Proposals",
             "pl": "Zostaniesz moim mężem?",
             "en": "Will you be my husband?",
@@ -442,7 +442,7 @@
             "note": "Uses instrumental case 'moim mężem'."
         },
         {
-            "id": "s32_44",
+            "id": "32-44",
             "category": "Proposals",
             "pl": "Zgodziła się!",
             "en": "She said yes! (She agreed)",
@@ -452,7 +452,7 @@
             "note": "Reflexive past tense verb."
         },
         {
-            "id": "s32_45",
+            "id": "32-45",
             "category": "Proposals",
             "pl": "Powiedziała tak",
             "en": "She said yes",
@@ -462,7 +462,7 @@
             "note": "Direct translation of the English phrase."
         },
         {
-            "id": "s32_46",
+            "id": "32-46",
             "category": "Weddings",
             "pl": "Ślub",
             "en": "Wedding ceremony",
@@ -472,7 +472,7 @@
             "note": "Refers specifically to the legal or church ceremony."
         },
         {
-            "id": "s32_47",
+            "id": "32-47",
             "category": "Weddings",
             "pl": "Wesele",
             "en": "Wedding reception / party",
@@ -482,7 +482,7 @@
             "note": "Polish 'wesela' are legendary, often lasting until 6 AM and involving a lot of vodka."
         },
         {
-            "id": "s32_48",
+            "id": "32-48",
             "category": "Weddings",
             "pl": "Panna młoda",
             "en": "Bride",
@@ -492,7 +492,7 @@
             "note": "Literally 'Young maiden'."
         },
         {
-            "id": "s32_49",
+            "id": "32-49",
             "category": "Weddings",
             "pl": "Pan młody",
             "en": "Groom",
@@ -502,7 +502,7 @@
             "note": "Literally 'Young mister'."
         },
         {
-            "id": "s32_50",
+            "id": "32-50",
             "category": "Weddings",
             "pl": "Miesiąc miodowy",
             "en": "Honeymoon",
@@ -512,7 +512,7 @@
             "note": "Literally 'Honey month'."
         },
         {
-            "id": "s32_51",
+            "id": "32-51",
             "category": "Marriage",
             "pl": "Małżeństwo",
             "en": "Marriage",
@@ -522,7 +522,7 @@
             "note": "Neuter noun."
         },
         {
-            "id": "s32_52",
+            "id": "32-52",
             "category": "Marriage",
             "pl": "Rocznica",
             "en": "Anniversary",
@@ -532,7 +532,7 @@
             "note": "Feminine noun."
         },
         {
-            "id": "s32_53",
+            "id": "32-53",
             "category": "Marriage",
             "pl": "Świadek",
             "en": "Best man / Witness",
@@ -542,7 +542,7 @@
             "note": "You must have two official 'świadkowie' to sign the marriage register."
         },
         {
-            "id": "s32_54",
+            "id": "32-54",
             "category": "Marriage",
             "pl": "Świadkowa",
             "en": "Maid of honor",
@@ -552,7 +552,7 @@
             "note": "Feminine equivalent of Świadek."
         },
         {
-            "id": "s32_55",
+            "id": "32-55",
             "category": "Marriage",
             "pl": "Teściowie",
             "en": "Parents-in-law",
@@ -562,7 +562,7 @@
             "note": "Plural noun."
         },
         {
-            "id": "s32_56",
+            "id": "32-56",
             "category": "Arguments & Tension",
             "pl": "Kłócimy się",
             "en": "We are arguing",
@@ -572,7 +572,7 @@
             "note": "Reflexive verb 'kłócić się'."
         },
         {
-            "id": "s32_57",
+            "id": "32-57",
             "category": "Arguments & Tension",
             "pl": "To nie ma sensu",
             "en": "This makes no sense",
@@ -582,7 +582,7 @@
             "note": "Genitive 'sensu'."
         },
         {
-            "id": "s32_58",
+            "id": "32-58",
             "category": "Arguments & Tension",
             "pl": "Mam tego dość",
             "en": "I've had enough of this",
@@ -592,7 +592,7 @@
             "note": "Genitive 'tego'."
         },
         {
-            "id": "s32_59",
+            "id": "32-59",
             "category": "Arguments & Tension",
             "pl": "Potrzebuję przestrzeni",
             "en": "I need space",
@@ -602,7 +602,7 @@
             "note": "Genitive 'przestrzeni'."
         },
         {
-            "id": "s32_60",
+            "id": "32-60",
             "category": "Arguments & Tension",
             "pl": "Zróbmy sobie przerwę",
             "en": "Let's take a break",
@@ -612,7 +612,7 @@
             "note": "Accusative 'przerwę'."
         },
         {
-            "id": "s32_61",
+            "id": "32-61",
             "category": "Breakups",
             "pl": "Zrywam z tobą",
             "en": "I'm breaking up with you",
@@ -622,7 +622,7 @@
             "note": "Literally 'I am tearing with you'."
         },
         {
-            "id": "s32_62",
+            "id": "32-62",
             "category": "Breakups",
             "pl": "To koniec",
             "en": "It's over",
@@ -632,7 +632,7 @@
             "note": "Literally 'This is the end'."
         },
         {
-            "id": "s32_63",
+            "id": "32-63",
             "category": "Breakups",
             "pl": "Rozstanie",
             "en": "Breakup / Separation",
@@ -642,7 +642,7 @@
             "note": "Neuter noun."
         },
         {
-            "id": "s32_64",
+            "id": "32-64",
             "category": "Breakups",
             "pl": "Zostańmy przyjaciółmi",
             "en": "Let's stay friends",
@@ -652,7 +652,7 @@
             "note": "Instrumental plural 'przyjaciółmi'."
         },
         {
-            "id": "s32_65",
+            "id": "32-65",
             "category": "Breakups",
             "pl": "To nie twoja wina, to moja",
             "en": "It's not you, it's me",
@@ -662,7 +662,7 @@
             "note": "Literally 'It is not your fault, it is mine'."
         },
         {
-            "id": "s32_66",
+            "id": "32-66",
             "category": "Heartbreak",
             "pl": "Mam złamane serce",
             "en": "I have a broken heart",
@@ -672,7 +672,7 @@
             "note": "Adjective 'złamane' matches neuter 'serce'."
         },
         {
-            "id": "s32_67",
+            "id": "32-67",
             "category": "Heartbreak",
             "pl": "Jestem załamany/załamana",
             "en": "I'm devastated",
@@ -686,7 +686,7 @@
             "note": "Passive participle."
         },
         {
-            "id": "s32_68",
+            "id": "32-68",
             "category": "Heartbreak",
             "pl": "Będzie mi ciebie brakować",
             "en": "I will miss you",
@@ -696,7 +696,7 @@
             "note": "Uses the dative 'mi' and genitive 'ciebie'."
         },
         {
-            "id": "s32_69",
+            "id": "32-69",
             "category": "Heartbreak",
             "pl": "Płaczę",
             "en": "I'm crying",
@@ -706,7 +706,7 @@
             "note": "From the verb 'płakać'."
         },
         {
-            "id": "s32_70",
+            "id": "32-70",
             "category": "Heartbreak",
             "pl": "Zapomnij o mnie",
             "en": "Forget about me",
@@ -716,7 +716,7 @@
             "note": "Imperative 'zapomnij' + locative 'o mnie'."
         },
         {
-            "id": "s32_71",
+            "id": "32-71",
             "category": "Moving On",
             "pl": "Idę dalej",
             "en": "I'm moving on",
@@ -726,7 +726,7 @@
             "note": "Literally 'I am walking further'."
         },
         {
-            "id": "s32_72",
+            "id": "32-72",
             "category": "Moving On",
             "pl": "Czas leczy rany",
             "en": "Time heals all wounds",
@@ -736,7 +736,7 @@
             "note": "A very common Polish proverb."
         },
         {
-            "id": "s32_73",
+            "id": "32-73",
             "category": "Moving On",
             "pl": "Były chłopak",
             "en": "Ex-boyfriend",
@@ -746,7 +746,7 @@
             "note": "'Były' means 'former'."
         },
         {
-            "id": "s32_74",
+            "id": "32-74",
             "category": "Moving On",
             "pl": "Była dziewczyna",
             "en": "Ex-girlfriend",
@@ -756,7 +756,7 @@
             "note": "'Była' means 'former'."
         },
         {
-            "id": "s32_75",
+            "id": "32-75",
             "category": "Moving On",
             "pl": "Rozwód",
             "en": "Divorce",

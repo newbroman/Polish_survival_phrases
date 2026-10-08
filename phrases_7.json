@@ -4,7 +4,7 @@
   "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "s5_01",
+      "id": "7-01",
       "category": "Prices & Payment",
       "pl": "Ile to kosztuje?",
       "en": "How much is this?",
@@ -12,7 +12,7 @@
       "gender": null
     },
     {
-      "id": "s5_02",
+      "id": "7-02",
       "category": "Prices & Payment",
       "pl": "Za drogie",
       "en": "Too expensive",
@@ -20,7 +20,7 @@
       "gender": null
     },
     {
-      "id": "s5_03",
+      "id": "7-03",
       "category": "Prices & Payment",
       "pl": "Za dużo",
       "en": "Too much",
@@ -28,7 +28,7 @@
       "gender": null
     },
     {
-      "id": "s5_04",
+      "id": "7-04",
       "category": "Prices & Payment",
       "pl": "Czy mogę zapłacić kartą?",
       "en": "Can I pay by card?",
@@ -36,7 +36,7 @@
       "gender": null
     },
     {
-      "id": "s5_05",
+      "id": "7-05",
       "category": "Prices & Payment",
       "pl": "Gotówka",
       "en": "Cash",
@@ -44,7 +44,7 @@
       "gender": null
     },
     {
-      "id": "s5_06",
+      "id": "7-06",
       "category": "Prices & Payment",
       "pl": "Karta",
       "en": "Card",
@@ -52,7 +52,7 @@
       "gender": null
     },
     {
-      "id": "s5_07",
+      "id": "7-07",
       "category": "Prices & Payment",
       "pl": "Bankomat",
       "en": "ATM",
@@ -60,7 +60,7 @@
       "gender": null
     },
     {
-      "id": "s5_08",
+      "id": "7-08",
       "category": "Prices & Payment",
       "pl": "Gdzie jest bankomat?",
       "en": "Where is the ATM?",
@@ -68,7 +68,7 @@
       "gender": null
     },
     {
-      "id": "s5_09",
+      "id": "7-09",
       "category": "Prices & Payment",
       "pl": "Reszta",
       "en": "Change (money back)",
@@ -76,7 +76,7 @@
       "gender": null
     },
     {
-      "id": "s5_10",
+      "id": "7-10",
       "category": "Prices & Payment",
       "pl": "Proszę resztę",
       "en": "Change, please",
@@ -84,7 +84,7 @@
       "gender": null
     },
     {
-      "id": "s5_11",
+      "id": "7-11",
       "category": "Prices & Payment",
       "pl": "Reszta dla Pana/Pani",
       "en": "Keep the change",
@@ -96,7 +96,7 @@
       }
     },
     {
-      "id": "s5_12",
+      "id": "7-12",
       "category": "Prices & Payment",
       "pl": "Paragon",
       "en": "Receipt",
@@ -104,7 +104,7 @@
       "gender": null
     },
     {
-      "id": "s5_13",
+      "id": "7-13",
       "category": "Prices & Payment",
       "pl": "Paragon, proszę",
       "en": "Receipt, please",
@@ -112,7 +112,7 @@
       "gender": null
     },
     {
-      "id": "s5_14",
+      "id": "7-14",
       "category": "Prices & Payment",
       "pl": "Ile płacę?",
       "en": "How much do I pay?",
@@ -120,7 +120,7 @@
       "gender": null
     },
     {
-      "id": "s5_15",
+      "id": "7-15",
       "category": "Prices & Payment",
       "pl": "Razem",
       "en": "Total / Together",
@@ -128,7 +128,7 @@
       "gender": null
     },
     {
-      "id": "s5_16",
+      "id": "7-16",
       "category": "Prices & Payment",
       "pl": "To wszystko",
       "en": "That's all",
@@ -136,7 +136,7 @@
       "gender": null
     },
     {
-      "id": "s5_17",
+      "id": "7-17",
       "category": "Prices & Payment",
       "pl": "Wezmę to",
       "en": "I'll take it",
@@ -144,7 +144,7 @@
       "gender": null
     },
     {
-      "id": "s5_18",
+      "id": "7-18",
       "category": "Prices & Payment",
       "pl": "Nie, dziękuję",
       "en": "No, thank you",
@@ -152,7 +152,7 @@
       "gender": null
     },
     {
-      "id": "s5_19",
+      "id": "7-19",
       "category": "Prices & Payment",
       "pl": "Tylko patrzę",
       "en": "Just looking",
@@ -160,7 +160,7 @@
       "gender": null
     },
     {
-      "id": "s5_20",
+      "id": "7-20",
       "category": "Prices & Payment",
       "pl": "Czy jest zniżka?",
       "en": "Is there a discount?",
@@ -168,7 +168,7 @@
       "gender": null
     },
     {
-      "id": "s5_21",
+      "id": "7-21",
       "category": "Shopping",
       "pl": "Gdzie mogę kupić...?",
       "en": "Where can I buy...?",
@@ -176,7 +176,7 @@
       "gender": null
     },
     {
-      "id": "s5_22",
+      "id": "7-22",
       "category": "Shopping",
       "pl": "Szukam...",
       "en": "I'm looking for...",
@@ -184,7 +184,7 @@
       "gender": null
     },
     {
-      "id": "s5_23",
+      "id": "7-23",
       "category": "Shopping",
       "pl": "Czy macie...?",
       "en": "Do you have...?",
@@ -192,7 +192,7 @@
       "gender": null
     },
     {
-      "id": "s5_24",
+      "id": "7-24",
       "category": "Shopping",
       "pl": "W jakim rozmiarze?",
       "en": "What size?",
@@ -200,7 +200,7 @@
       "gender": null
     },
     {
-      "id": "s5_25",
+      "id": "7-25",
       "category": "Shopping",
       "pl": "Mały",
       "en": "Small",
@@ -208,7 +208,7 @@
       "gender": null
     },
     {
-      "id": "s5_26",
+      "id": "7-26",
       "category": "Shopping",
       "pl": "Średni",
       "en": "Medium",
@@ -216,7 +216,7 @@
       "gender": null
     },
     {
-      "id": "s5_27",
+      "id": "7-27",
       "category": "Shopping",
       "pl": "Duży",
       "en": "Large",
@@ -224,7 +224,7 @@
       "gender": null
     },
     {
-      "id": "s5_28",
+      "id": "7-28",
       "category": "Shopping",
       "pl": "Za mały",
       "en": "Too small",
@@ -232,7 +232,7 @@
       "gender": null
     },
     {
-      "id": "s5_29",
+      "id": "7-29",
       "category": "Shopping",
       "pl": "Za duży",
       "en": "Too big",
@@ -240,7 +240,7 @@
       "gender": null
     },
     {
-      "id": "s5_30",
+      "id": "7-30",
       "category": "Shopping",
       "pl": "Czy mogę przymierzyć?",
       "en": "Can I try it on?",
@@ -248,7 +248,7 @@
       "gender": null
     },
     {
-      "id": "s5_31",
+      "id": "7-31",
       "category": "Shopping",
       "pl": "Gdzie jest przymierzalnia?",
       "en": "Where is the fitting room?",
@@ -256,7 +256,7 @@
       "gender": null
     },
     {
-      "id": "s5_32",
+      "id": "7-32",
       "category": "Shopping",
       "pl": "Czy macie to w innym kolorze?",
       "en": "Do you have this in another color?",
@@ -264,7 +264,7 @@
       "gender": null
     },
     {
-      "id": "s5_33",
+      "id": "7-33",
       "category": "Shopping",
       "pl": "Czy macie to w innym rozmiarze?",
       "en": "Do you have this in another size?",
@@ -272,7 +272,7 @@
       "gender": null
     },
     {
-      "id": "s5_34",
+      "id": "7-34",
       "category": "Shopping",
       "pl": "To pasuje",
       "en": "This fits",
@@ -280,7 +280,7 @@
       "gender": null
     },
     {
-      "id": "s5_35",
+      "id": "7-35",
       "category": "Shopping",
       "pl": "To nie pasuje",
       "en": "This doesn't fit",
@@ -288,7 +288,7 @@
       "gender": null
     },
     {
-      "id": "s5_36",
+      "id": "7-36",
       "category": "Shopping",
       "pl": "Czy mogę to zwrócić?",
       "en": "Can I return this?",
@@ -296,7 +296,7 @@
       "gender": null
     },
     {
-      "id": "s5_37",
+      "id": "7-37",
       "category": "Shopping",
       "pl": "Torba, proszę",
       "en": "Bag, please",
@@ -304,7 +304,7 @@
       "gender": null
     },
     {
-      "id": "s5_38",
+      "id": "7-38",
       "category": "Shopping",
       "pl": "Sklep",
       "en": "Shop / Store",
@@ -312,7 +312,7 @@
       "gender": null
     },
     {
-      "id": "s5_39",
+      "id": "7-39",
       "category": "Shopping",
       "pl": "Supermarket",
       "en": "Supermarket",
@@ -320,7 +320,7 @@
       "gender": null
     },
     {
-      "id": "s5_40",
+      "id": "7-40",
       "category": "Shopping",
       "pl": "Apteka",
       "en": "Pharmacy",
@@ -328,7 +328,7 @@
       "gender": null
     },
     {
-      "id": "s5_41",
+      "id": "7-41",
       "category": "Money & Numbers",
       "pl": "Złoty",
       "en": "Zloty (Polish currency)",
@@ -336,7 +336,7 @@
       "gender": null
     },
     {
-      "id": "s5_42",
+      "id": "7-42",
       "category": "Money & Numbers",
       "pl": "Grosz",
       "en": "Grosz (Polish cent)",
@@ -344,7 +344,7 @@
       "gender": null
     },
     {
-      "id": "s5_43",
+      "id": "7-43",
       "category": "Money & Numbers",
       "pl": "Pięć złotych",
       "en": "Five zloty",
@@ -352,7 +352,7 @@
       "gender": null
     },
     {
-      "id": "s5_44",
+      "id": "7-44",
       "category": "Money & Numbers",
       "pl": "Dziesięć złotych",
       "en": "Ten zloty",
@@ -360,7 +360,7 @@
       "gender": null
     },
     {
-      "id": "s5_45",
+      "id": "7-45",
       "category": "Money & Numbers",
       "pl": "Dwadzieścia złotych",
       "en": "Twenty zloty",
@@ -368,7 +368,7 @@
       "gender": null
     },
     {
-      "id": "s5_46",
+      "id": "7-46",
       "category": "Money & Numbers",
       "pl": "Pięćdziesiąt złotych",
       "en": "Fifty zloty",
@@ -376,7 +376,7 @@
       "gender": null
     },
     {
-      "id": "s5_47",
+      "id": "7-47",
       "category": "Money & Numbers",
       "pl": "Sto złotych",
       "en": "One hundred zloty",
@@ -384,7 +384,7 @@
       "gender": null
     },
     {
-      "id": "s5_48",
+      "id": "7-48",
       "category": "Money & Numbers",
       "pl": "Jeden",
       "en": "One",
@@ -392,7 +392,7 @@
       "gender": null
     },
     {
-      "id": "s5_49",
+      "id": "7-49",
       "category": "Money & Numbers",
       "pl": "Dwa",
       "en": "Two",
@@ -400,7 +400,7 @@
       "gender": null
     },
     {
-      "id": "s5_50",
+      "id": "7-50",
       "category": "Money & Numbers",
       "pl": "Trzy",
       "en": "Three",
@@ -408,7 +408,7 @@
       "gender": null
     },
     {
-      "id": "s5_51",
+      "id": "7-51",
       "category": "Money & Numbers",
       "pl": "Cztery",
       "en": "Four",
@@ -416,7 +416,7 @@
       "gender": null
     },
     {
-      "id": "s5_52",
+      "id": "7-52",
       "category": "Money & Numbers",
       "pl": "Pięć",
       "en": "Five",
@@ -424,7 +424,7 @@
       "gender": null
     },
     {
-      "id": "s5_53",
+      "id": "7-53",
       "category": "Money & Numbers",
       "pl": "Dziesięć",
       "en": "Ten",
@@ -432,7 +432,7 @@
       "gender": null
     },
     {
-      "id": "s5_54",
+      "id": "7-54",
       "category": "Money & Numbers",
       "pl": "Dwadzieścia",
       "en": "Twenty",
@@ -440,7 +440,7 @@
       "gender": null
     },
     {
-      "id": "s5_55",
+      "id": "7-55",
       "category": "Money & Numbers",
       "pl": "Sto",
       "en": "One hundred",
@@ -448,7 +448,7 @@
       "gender": null
     },
     {
-      "id": "s5_56",
+      "id": "7-56",
       "category": "Colors & Descriptions",
       "pl": "Jaki kolor?",
       "en": "What color?",
@@ -456,7 +456,7 @@
       "gender": null
     },
     {
-      "id": "s5_57",
+      "id": "7-57",
       "category": "Colors & Descriptions",
       "pl": "Biały",
       "en": "White",
@@ -464,7 +464,7 @@
       "gender": null
     },
     {
-      "id": "s5_58",
+      "id": "7-58",
       "category": "Colors & Descriptions",
       "pl": "Czarny",
       "en": "Black",
@@ -472,7 +472,7 @@
       "gender": null
     },
     {
-      "id": "s5_59",
+      "id": "7-59",
       "category": "Colors & Descriptions",
       "pl": "Czerwony",
       "en": "Red",
@@ -480,7 +480,7 @@
       "gender": null
     },
     {
-      "id": "s5_60",
+      "id": "7-60",
       "category": "Colors & Descriptions",
       "pl": "Niebieski",
       "en": "Blue",
@@ -488,7 +488,7 @@
       "gender": null
     },
     {
-      "id": "s5_61",
+      "id": "7-61",
       "category": "Colors & Descriptions",
       "pl": "Zielony",
       "en": "Green",
@@ -496,7 +496,7 @@
       "gender": null
     },
     {
-      "id": "s5_62",
+      "id": "7-62",
       "category": "Colors & Descriptions",
       "pl": "Żółty",
       "en": "Yellow",
@@ -504,7 +504,7 @@
       "gender": null
     },
     {
-      "id": "s5_63",
+      "id": "7-63",
       "category": "Colors & Descriptions",
       "pl": "Szary",
       "en": "Gray",
@@ -512,7 +512,7 @@
       "gender": null
     },
     {
-      "id": "s5_64",
+      "id": "7-64",
       "category": "Colors & Descriptions",
       "pl": "Nowy",
       "en": "New",
@@ -520,7 +520,7 @@
       "gender": null
     },
     {
-      "id": "s5_65",
+      "id": "7-65",
       "category": "Colors & Descriptions",
       "pl": "Stary",
       "en": "Old",
@@ -528,7 +528,7 @@
       "gender": null
     },
     {
-      "id": "s5_66",
+      "id": "7-66",
       "category": "Colors & Descriptions",
       "pl": "Dobry",
       "en": "Good",
@@ -536,7 +536,7 @@
       "gender": null
     },
     {
-      "id": "s5_67",
+      "id": "7-67",
       "category": "Colors & Descriptions",
       "pl": "Zły",
       "en": "Bad",
@@ -544,7 +544,7 @@
       "gender": null
     },
     {
-      "id": "s5_68",
+      "id": "7-68",
       "category": "Colors & Descriptions",
       "pl": "Tani",
       "en": "Cheap",
@@ -552,7 +552,7 @@
       "gender": null
     },
     {
-      "id": "s5_69",
+      "id": "7-69",
       "category": "Colors & Descriptions",
       "pl": "Drogi",
       "en": "Expensive",
@@ -560,7 +560,7 @@
       "gender": null
     },
     {
-      "id": "s5_70",
+      "id": "7-70",
       "category": "Colors & Descriptions",
       "pl": "Ładny",
       "en": "Nice / Pretty",

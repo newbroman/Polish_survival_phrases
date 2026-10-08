@@ -4,7 +4,7 @@
   "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "s8_01",
+      "id": "8-01",
       "category": "Car Rental",
       "pl": "Wypożyczalnia samochodów",
       "en": "Car rental",
@@ -14,7 +14,7 @@
       "note": "A long word! Pronounced 'Vi-po-zhi-chal-nya sa-mo-ho-doof'. Means 'place of renting cars'."
     },
     {
-      "id": "s8_02",
+      "id": "8-02",
       "category": "Car Rental",
       "pl": "Chciałbym/Chciałabym wynająć samochód",
       "en": "I'd like to rent a car",
@@ -28,7 +28,7 @@
       "note": "Men use the '-bym' ending, women use the '-abym' ending."
     },
     {
-      "id": "s8_03",
+      "id": "8-03",
       "category": "Car Rental",
       "pl": "Na ile dni?",
       "en": "For how many days?",
@@ -38,7 +38,7 @@
       "note": "'Dni' is the plural of 'dzień' (day)."
     },
     {
-      "id": "s8_04",
+      "id": "8-04",
       "category": "Car Rental",
       "pl": "Na jeden dzień",
       "en": "For one day",
@@ -48,7 +48,7 @@
       "note": "Accusative case for 'jeden dzień' (one day)."
     },
     {
-      "id": "s8_05",
+      "id": "8-05",
       "category": "Car Rental",
       "pl": "Na tydzień",
       "en": "For a week",
@@ -58,7 +58,7 @@
       "note": "Accusative case for 'tydzień' (week)."
     },
     {
-      "id": "s8_06",
+      "id": "8-06",
       "category": "Car Rental",
       "pl": "Ile kosztuje na dzień?",
       "en": "How much per day?",
@@ -68,7 +68,7 @@
       "note": "Literally 'How much costs on day?'."
     },
     {
-      "id": "s8_07",
+      "id": "8-07",
       "category": "Car Rental",
       "pl": "Czy ubezpieczenie jest wliczone?",
       "en": "Is insurance included?",
@@ -78,7 +78,7 @@
       "note": "'Ubezpieczenie' (insurance) is a neuter noun, so the adjective 'wliczone' (included) ends in '-e'."
     },
     {
-      "id": "s8_08",
+      "id": "8-08",
       "category": "Car Rental",
       "pl": "Potrzebuję pełnego ubezpieczenia",
       "en": "I need full insurance",
@@ -88,7 +88,7 @@
       "note": "The verb 'Potrzebować' forces the noun into the genitive case ('pełnego ubezpieczenia')."
     },
     {
-      "id": "s8_09",
+      "id": "8-09",
       "category": "Car Rental",
       "pl": "Prawo jazdy",
       "en": "Driver's license",
@@ -98,7 +98,7 @@
       "note": "Literally 'The right of driving'."
     },
     {
-      "id": "s8_10",
+      "id": "8-10",
       "category": "Car Rental",
       "pl": "Mam międzynarodowe prawo jazdy",
       "en": "I have an international driver's license",
@@ -108,7 +108,7 @@
       "note": "Required in Poland if your license is from outside the EU/EEA."
     },
     {
-      "id": "s8_11",
+      "id": "8-11",
       "category": "Car Rental",
       "pl": "Kaucja",
       "en": "Deposit",
@@ -118,7 +118,7 @@
       "note": "Rental companies will place a hold (kaucja) on your credit card."
     },
     {
-      "id": "s8_12",
+      "id": "8-12",
       "category": "Car Rental",
       "pl": "Czy mogę zwrócić samochód w innym mieście?",
       "en": "Can I return the car in another city?",
@@ -128,7 +128,7 @@
       "note": "'Innym mieście' is the locative case (in another city)."
     },
     {
-      "id": "s8_13",
+      "id": "8-13",
       "category": "Car Rental",
       "pl": "Automatyczna skrzynia biegów",
       "en": "Automatic transmission",
@@ -138,7 +138,7 @@
       "note": "Crucial to specify! Most rental cars in Poland default to manual."
     },
     {
-      "id": "s8_14",
+      "id": "8-14",
       "category": "Car Rental",
       "pl": "Manualna skrzynia biegów",
       "en": "Manual transmission",
@@ -148,7 +148,7 @@
       "note": "The standard transmission type in Poland."
     },
     {
-      "id": "s8_15",
+      "id": "8-15",
       "category": "Car Rental",
       "pl": "Fotelik dla dziecka",
       "en": "Child seat",
@@ -158,7 +158,7 @@
       "note": "Required by law in Poland for children under 150cm tall."
     },
     {
-      "id": "s8_16",
+      "id": "8-16",
       "category": "Driving Terms",
       "pl": "Prowadzić samochód",
       "en": "To drive a car",
@@ -168,7 +168,7 @@
       "note": "'Prowadzić' means 'to lead' or 'to drive'."
     },
     {
-      "id": "s8_17",
+      "id": "8-17",
       "category": "Driving Terms",
       "pl": "Kluczyki do samochodu",
       "en": "Car keys",
@@ -178,7 +178,7 @@
       "note": "Literally 'little keys to the car'."
     },
     {
-      "id": "s8_18",
+      "id": "8-18",
       "category": "Driving Terms",
       "pl": "Kierownica",
       "en": "Steering wheel",
@@ -188,7 +188,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s8_19",
+      "id": "8-19",
       "category": "Driving Terms",
       "pl": "Bagażnik",
       "en": "Trunk / Boot",
@@ -198,7 +198,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s8_20",
+      "id": "8-20",
       "category": "Driving Terms",
       "pl": "Wycieraczki",
       "en": "Windshield wipers",
@@ -208,7 +208,7 @@
       "note": "Plural noun. From the verb 'wycierać' (to wipe)."
     },
     {
-      "id": "s8_21",
+      "id": "8-21",
       "category": "Parking",
       "pl": "Parkować",
       "en": "To park",
@@ -218,7 +218,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s8_22",
+      "id": "8-22",
       "category": "Parking",
       "pl": "Parking podziemny",
       "en": "Underground parking",
@@ -228,7 +228,7 @@
       "note": "Common under malls and modern office buildings."
     },
     {
-      "id": "s8_23",
+      "id": "8-23",
       "category": "Parking",
       "pl": "Gdzie mogę zaparkować?",
       "en": "Where can I park?",
@@ -238,7 +238,7 @@
       "note": "'Mogę' (I can) + infinitive 'zaparkować' (to park)."
     },
     {
-      "id": "s8_24",
+      "id": "8-24",
       "category": "Parking",
       "pl": "Czy parking jest płatny?",
       "en": "Is parking paid?",
@@ -248,7 +248,7 @@
       "note": "Street parking in Polish city centers is almost always paid from 8 AM to 8 PM."
     },
     {
-      "id": "s8_25",
+      "id": "8-25",
       "category": "Parking",
       "pl": "Parkomat",
       "en": "Parking meter",
@@ -258,7 +258,7 @@
       "note": "You usually have to enter your license plate number into the machine before paying."
     },
     {
-      "id": "s8_26",
+      "id": "8-26",
       "category": "Parking",
       "pl": "Bilet parkingowy",
       "en": "Parking ticket (receipt)",
@@ -268,7 +268,7 @@
       "note": "Place this behind your windshield so the wardens can see it."
     },
     {
-      "id": "s8_27",
+      "id": "8-27",
       "category": "Parking",
       "pl": "Strefa płatnego parkowania",
       "en": "Paid parking zone",
@@ -278,7 +278,7 @@
       "note": "Look for a blue sign with a large white 'P' and this text underneath."
     },
     {
-      "id": "s8_28",
+      "id": "8-28",
       "category": "Parking",
       "pl": "Zakaz parkowania",
       "en": "No parking",
@@ -288,7 +288,7 @@
       "note": "Usually indicated by a circular blue sign with a red border and a single red slash."
     },
     {
-      "id": "s8_29",
+      "id": "8-29",
       "category": "Parking",
       "pl": "Mandat",
       "en": "Fine / Ticket (Penalty)",
@@ -298,7 +298,7 @@
       "note": "The terrifying piece of paper left under your wiper if you didn't pay for the parkomat."
     },
     {
-      "id": "s8_30",
+      "id": "8-30",
       "category": "Roads & Tolls",
       "pl": "Autostrada",
       "en": "Highway / Motorway",
@@ -308,7 +308,7 @@
       "note": "Speed limit on Polish autostrady is generally 140 km/h."
     },
     {
-      "id": "s8_31",
+      "id": "8-31",
       "category": "Roads & Tolls",
       "pl": "Droga ekspresowa",
       "en": "Expressway",
@@ -318,7 +318,7 @@
       "note": "Usually a dual carriageway. Speed limit is generally 120 km/h."
     },
     {
-      "id": "s8_32",
+      "id": "8-32",
       "category": "Roads & Tolls",
       "pl": "Opłata za autostradę",
       "en": "Highway toll",
@@ -328,7 +328,7 @@
       "note": "Many sections of the A1, A2, and A4 highways are toll roads."
     },
     {
-      "id": "s8_33",
+      "id": "8-33",
       "category": "Roads & Tolls",
       "pl": "Bramka na autostradzie",
       "en": "Toll booth",
@@ -338,7 +338,7 @@
       "note": "Literally 'gate on the highway'."
     },
     {
-      "id": "s8_34",
+      "id": "8-34",
       "category": "Roads & Tolls",
       "pl": "e-TOLL",
       "en": "Electronic toll system",
@@ -348,7 +348,7 @@
       "note": "Poland's digital toll collection system. You often need the app for state-owned roads."
     },
     {
-      "id": "s8_35",
+      "id": "8-35",
       "category": "Road Rules",
       "pl": "Ograniczenie prędkości",
       "en": "Speed limit",
@@ -358,7 +358,7 @@
       "note": "Literally 'limitation of speed'."
     },
     {
-      "id": "s8_36",
+      "id": "8-36",
       "category": "Road Rules",
       "pl": "Sygnalizacja świetlna",
       "en": "Traffic lights",
@@ -368,7 +368,7 @@
       "note": "Often simply called 'światła' (lights) in casual conversation."
     },
     {
-      "id": "s8_37",
+      "id": "8-37",
       "category": "Road Rules",
       "pl": "Skrzyżowanie",
       "en": "Intersection",
@@ -378,7 +378,7 @@
       "note": "Pronounced 'Sk-shi-zho-va-nyeh'."
     },
     {
-      "id": "s8_38",
+      "id": "8-38",
       "category": "Road Rules",
       "pl": "Rondo",
       "en": "Roundabout",
@@ -388,7 +388,7 @@
       "note": "Poland has a LOT of roundabouts!"
     },
     {
-      "id": "s8_39",
+      "id": "8-39",
       "category": "Road Rules",
       "pl": "Przejście dla pieszych",
       "en": "Pedestrian crossing / Crosswalk",
@@ -398,7 +398,7 @@
       "note": "In Poland, pedestrians have absolute right of way when they approach a crossing."
     },
     {
-      "id": "s8_40",
+      "id": "8-40",
       "category": "Road Rules",
       "pl": "Zakaz wjazdu",
       "en": "No entry",
@@ -408,7 +408,7 @@
       "note": "Usually indicated by a solid red circular sign with a white horizontal bar."
     },
     {
-      "id": "s8_41",
+      "id": "8-41",
       "category": "Road Rules",
       "pl": "Droga jednokierunkowa",
       "en": "One way street",
@@ -418,7 +418,7 @@
       "note": "Literally 'one-directional road'."
     },
     {
-      "id": "s8_42",
+      "id": "8-42",
       "category": "Road Rules",
       "pl": "Fotoradar",
       "en": "Speed camera",
@@ -428,7 +428,7 @@
       "note": "Look for bright yellow boxes on poles by the side of the road!"
     },
     {
-      "id": "s8_43",
+      "id": "8-43",
       "category": "Gas Station",
       "pl": "Stacja benzynowa",
       "en": "Gas station",
@@ -438,7 +438,7 @@
       "note": "A vital phrase for road trips."
     },
     {
-      "id": "s8_44",
+      "id": "8-44",
       "category": "Gas Station",
       "pl": "Benzyna bezołowiowa",
       "en": "Unleaded gasoline",
@@ -448,7 +448,7 @@
       "note": "Usually marked with '95' or '98' (octane rating)."
     },
     {
-      "id": "s8_45",
+      "id": "8-45",
       "category": "Gas Station",
       "pl": "Diesel",
       "en": "Diesel",
@@ -458,7 +458,7 @@
       "note": "Often labeled 'ON' (Olej napędowy) at Polish pumps."
     },
     {
-      "id": "s8_46",
+      "id": "8-46",
       "category": "Gas Station",
       "pl": "LPG / Gaz",
       "en": "LPG Gas",
@@ -468,7 +468,7 @@
       "note": "Many cars in Poland are converted to run on cheaper LPG gas."
     },
     {
-      "id": "s8_47",
+      "id": "8-47",
       "category": "Gas Station",
       "pl": "Pełny bak",
       "en": "Full tank",
@@ -478,7 +478,7 @@
       "note": "Say this to the attendant if they offer to pump your gas."
     },
     {
-      "id": "s8_48",
+      "id": "8-48",
       "category": "Gas Station",
       "pl": "Dystrybutor numer...",
       "en": "Pump number...",
@@ -488,7 +488,7 @@
       "note": "Say this to the cashier inside when you go to pay."
     },
     {
-      "id": "s8_49",
+      "id": "8-49",
       "category": "Gas Station",
       "pl": "Olej silnikowy",
       "en": "Motor oil",
@@ -498,7 +498,7 @@
       "note": "'Silnik' means engine."
     },
     {
-      "id": "s8_50",
+      "id": "8-50",
       "category": "Gas Station",
       "pl": "Płyn do spryskiwaczy",
       "en": "Windshield washer fluid",
@@ -508,7 +508,7 @@
       "note": "Essential during the snowy Polish winters!"
     },
     {
-      "id": "s8_51",
+      "id": "8-51",
       "category": "Car Problems",
       "pl": "Samochód się zepsuł",
       "en": "The car broke down",
@@ -518,7 +518,7 @@
       "note": "Reflexive verb 'zepsuł się' (it broke itself)."
     },
     {
-      "id": "s8_52",
+      "id": "8-52",
       "category": "Car Problems",
       "pl": "Samochód nie odpala",
       "en": "The car won't start",
@@ -528,7 +528,7 @@
       "note": "'Odpalać' translates to 'to fire up'."
     },
     {
-      "id": "s8_53",
+      "id": "8-53",
       "category": "Car Problems",
       "pl": "Potrzebuję pomocy drogowej",
       "en": "I need roadside assistance",
@@ -538,7 +538,7 @@
       "note": "Takes the genitive case 'pomocy drogowej'."
     },
     {
-      "id": "s8_54",
+      "id": "8-54",
       "category": "Car Problems",
       "pl": "Pomoc drogowa",
       "en": "Roadside assistance",
@@ -548,7 +548,7 @@
       "note": "Search this phrase on Google Maps if you are stranded."
     },
     {
-      "id": "s8_55",
+      "id": "8-55",
       "category": "Car Problems",
       "pl": "Mechanik",
       "en": "Mechanic",
@@ -558,7 +558,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s8_56",
+      "id": "8-56",
       "category": "Car Problems",
       "pl": "Warsztat samochodowy",
       "en": "Car repair shop",
@@ -568,7 +568,7 @@
       "note": "Literally 'car workshop'."
     },
     {
-      "id": "s8_57",
+      "id": "8-57",
       "category": "Car Problems",
       "pl": "Holowanie",
       "en": "Towing",
@@ -578,7 +578,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s8_58",
+      "id": "8-58",
       "category": "Car Problems",
       "pl": "Potrzebuję lawety",
       "en": "I need a tow truck",
@@ -588,7 +588,7 @@
       "note": "'Laweta' (tow truck) takes the genitive case 'lawety'."
     },
     {
-      "id": "s8_59",
+      "id": "8-59",
       "category": "Car Problems",
       "pl": "Przebita opona",
       "en": "Flat tire",
@@ -598,7 +598,7 @@
       "note": "Literally 'pierced tire'."
     },
     {
-      "id": "s8_60",
+      "id": "8-60",
       "category": "Car Problems",
       "pl": "Złapałem/Złapałam gumę",
       "en": "I got a flat tire (slang)",
@@ -612,7 +612,7 @@
       "note": "Literally 'I caught a rubber'. Very common colloquial phrase."
     },
     {
-      "id": "s8_61",
+      "id": "8-61",
       "category": "Car Problems",
       "pl": "Koło zapasowe",
       "en": "Spare tire / wheel",
@@ -622,7 +622,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s8_62",
+      "id": "8-62",
       "category": "Car Problems",
       "pl": "Rozładowany akumulator",
       "en": "Dead battery",
@@ -632,7 +632,7 @@
       "note": "Literally 'discharged accumulator'."
     },
     {
-      "id": "s8_63",
+      "id": "8-63",
       "category": "Car Problems",
       "pl": "Kable rozruchowe",
       "en": "Jumper cables",
@@ -642,7 +642,7 @@
       "note": "If your battery is dead, ask another driver: 'Czy ma Pan kable rozruchowe?'."
     },
     {
-      "id": "s8_64",
+      "id": "8-64",
       "category": "Car Problems",
       "pl": "Silnik",
       "en": "Engine",
@@ -652,7 +652,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s8_65",
+      "id": "8-65",
       "category": "Car Problems",
       "pl": "Brak paliwa",
       "en": "Out of gas/fuel",
@@ -662,7 +662,7 @@
       "note": "Literally 'lack of fuel'."
     },
     {
-      "id": "s8_66",
+      "id": "8-66",
       "category": "Navigation",
       "pl": "Jechać prosto",
       "en": "Go straight",
@@ -672,7 +672,7 @@
       "note": "Use the verb 'jechać' (to drive/ride) when navigating by car."
     },
     {
-      "id": "s8_67",
+      "id": "8-67",
       "category": "Navigation",
       "pl": "Skręcić w lewo",
       "en": "Turn left",
@@ -682,7 +682,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s8_68",
+      "id": "8-68",
       "category": "Navigation",
       "pl": "Skręcić w prawo",
       "en": "Turn right",
@@ -692,7 +692,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s8_69",
+      "id": "8-69",
       "category": "Navigation",
       "pl": "Zawrócić",
       "en": "Turn around / Make a U-turn",
@@ -702,7 +702,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s8_70",
+      "id": "8-70",
       "category": "Navigation",
       "pl": "Zjazd",
       "en": "Exit (from a highway)",
@@ -712,7 +712,7 @@
       "note": "E.g., 'Zjazd numer pięć' (Exit number five)."
     },
     {
-      "id": "s8_71",
+      "id": "8-71",
       "category": "Navigation",
       "pl": "Objazd",
       "en": "Detour",
@@ -722,7 +722,7 @@
       "note": "Look for yellow signs indicating an 'Objazd' if the main road is closed."
     },
     {
-      "id": "s8_72",
+      "id": "8-72",
       "category": "Navigation",
       "pl": "Znak drogowy",
       "en": "Road sign",
@@ -732,7 +732,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s8_73",
+      "id": "8-73",
       "category": "Navigation",
       "pl": "Ile kilometrów do...?",
       "en": "How many kilometers to...?",
@@ -742,7 +742,7 @@
       "note": "Poland uses the metric system. 'Kilometrów' is the genitive plural."
     },
     {
-      "id": "s8_74",
+      "id": "8-74",
       "category": "Accidents",
       "pl": "Wypadek",
       "en": "Accident",
@@ -752,7 +752,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s8_75",
+      "id": "8-75",
       "category": "Accidents",
       "pl": "Miałem/Miałam wypadek",
       "en": "I had an accident",

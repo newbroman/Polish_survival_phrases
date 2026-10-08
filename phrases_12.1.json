@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s12.1_01",
+      "id": "12.1-01",
       "category": "Kitchen",
       "pl": "Gotować",
       "en": "To cook",
@@ -14,7 +14,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s12.1_02",
+      "id": "12.1-02",
       "category": "Kitchen",
       "pl": "Przepis",
       "en": "Recipe",
@@ -24,7 +24,7 @@
       "note": "Masculine noun. Also means 'regulation' in other contexts."
     },
     {
-      "id": "s12.1_03",
+      "id": "12.1-03",
       "category": "Kitchen",
       "pl": "Deska do krojenia",
       "en": "Cutting board",
@@ -34,7 +34,7 @@
       "note": "Literally 'board for cutting'."
     },
     {
-      "id": "s12.1_04",
+      "id": "12.1-04",
       "category": "Kitchen",
       "pl": "Lodówka",
       "en": "Refrigerator / Fridge",
@@ -44,7 +44,7 @@
       "note": "From 'lód' (ice)."
     },
     {
-      "id": "s12.1_05",
+      "id": "12.1-05",
       "category": "Kitchen",
       "pl": "Zmywarka",
       "en": "Dishwasher",
@@ -54,7 +54,7 @@
       "note": "From 'zmywać' (to wash dishes)."
     },
     {
-      "id": "s12.1_06",
+      "id": "12.1-06",
       "category": "Furniture",
       "pl": "Kanapa",
       "en": "Sofa / Couch",
@@ -64,7 +64,7 @@
       "note": "A feminine noun. Poles often use 'sofa' and 'kanapa' interchangeably."
     },
     {
-      "id": "s12.1_07",
+      "id": "12.1-07",
       "category": "Furniture",
       "pl": "Szafa",
       "en": "Wardrobe / Closet",
@@ -74,7 +74,7 @@
       "note": "Crucial word for where you keep your clothes."
     },
     {
-      "id": "s12.1_08",
+      "id": "12.1-08",
       "category": "Gardening",
       "pl": "Ogródek",
       "en": "Small garden",
@@ -84,7 +84,7 @@
       "note": "Diminutive of 'ogród'. Often used for backyard gardens."
     },
     {
-      "id": "s12.1_09",
+      "id": "12.1-09",
       "category": "Gardening",
       "pl": "Podlewać",
       "en": "To water",
@@ -94,7 +94,7 @@
       "note": "E.g., 'Podlewać kwiaty' (To water the flowers)."
     },
     {
-      "id": "s12.1_10",
+      "id": "12.1-10",
       "category": "Gardening",
       "pl": "Kosić trawę",
       "en": "To mow the lawn",

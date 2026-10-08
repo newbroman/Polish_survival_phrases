@@ -4,7 +4,7 @@
     "tier": "FLUENCY",
     "phrases": [
         {
-            "id": "s33_01",
+            "id": "33-01",
             "category": "Opening Arguments",
             "pl": "Zacznijmy od tego, że...",
             "en": "Let's start with the fact that...",
@@ -14,7 +14,7 @@
             "note": "A very strong, structured way to begin a debate."
         },
         {
-            "id": "s33_02",
+            "id": "33-02",
             "category": "Opening Arguments",
             "pl": "Przede wszystkim",
             "en": "First and foremost / Above all",
@@ -24,7 +24,7 @@
             "note": "Instrumental phrase."
         },
         {
-            "id": "s33_03",
+            "id": "33-03",
             "category": "Opening Arguments",
             "pl": "Moim głównym argumentem jest...",
             "en": "My main argument is...",
@@ -34,7 +34,7 @@
             "note": "Instrumental 'moim głównym argumentem'."
         },
         {
-            "id": "s33_04",
+            "id": "33-04",
             "category": "Opening Arguments",
             "pl": "Chcę podkreślić, że...",
             "en": "I want to emphasize that...",
@@ -44,7 +44,7 @@
             "note": "Verb 'podkreślić' literally means to underline."
         },
         {
-            "id": "s33_05",
+            "id": "33-05",
             "category": "Opening Arguments",
             "pl": "Należy pamiętać, że...",
             "en": "It should be remembered that...",
@@ -54,7 +54,7 @@
             "note": "A formal, impersonal construction."
         },
         {
-            "id": "s33_06",
+            "id": "33-06",
             "category": "Stating Facts",
             "pl": "Fakty są takie",
             "en": "The facts are these",
@@ -64,7 +64,7 @@
             "note": "A blunt way to pivot away from opinions."
         },
         {
-            "id": "s33_07",
+            "id": "33-07",
             "category": "Stating Facts",
             "pl": "Badania pokazują",
             "en": "Studies show",
@@ -74,7 +74,7 @@
             "note": "Plural noun 'badania' (research/studies)."
         },
         {
-            "id": "s33_08",
+            "id": "33-08",
             "category": "Stating Facts",
             "pl": "Dowody wskazują na to, że...",
             "en": "Evidence points to the fact that...",
@@ -84,7 +84,7 @@
             "note": "Verb 'wskazywać na' (to point at)."
         },
         {
-            "id": "s33_09",
+            "id": "33-09",
             "category": "Stating Facts",
             "pl": "To jest udowodnione",
             "en": "This is proven",
@@ -94,7 +94,7 @@
             "note": "Passive participle 'udowodnione'."
         },
         {
-            "id": "s33_10",
+            "id": "33-10",
             "category": "Stating Facts",
             "pl": "Bez dwóch zdań",
             "en": "Without a doubt / Hands down",
@@ -104,7 +104,7 @@
             "note": "Literally 'Without two sentences'."
         },
         {
-            "id": "s33_11",
+            "id": "33-11",
             "category": "Persuading",
             "pl": "Musisz przyznać, że...",
             "en": "You have to admit that...",
@@ -114,7 +114,7 @@
             "note": "Casual phrasing using 'ty'."
         },
         {
-            "id": "s33_12",
+            "id": "33-12",
             "category": "Persuading",
             "pl": "Zastanów się nad tym",
             "en": "Think about it",
@@ -124,7 +124,7 @@
             "note": "Imperative 'Zastanów się' + instrumental 'nad tym'."
         },
         {
-            "id": "s33_13",
+            "id": "33-13",
             "category": "Persuading",
             "pl": "Spójrz na to z innej strony",
             "en": "Look at it from another angle/side",
@@ -134,7 +134,7 @@
             "note": "Imperative 'Spójrz'."
         },
         {
-            "id": "s33_14",
+            "id": "33-14",
             "category": "Persuading",
             "pl": "Daj się przekonać",
             "en": "Let yourself be convinced",
@@ -144,7 +144,7 @@
             "note": "A friendly nudge during an argument."
         },
         {
-            "id": "s33_15",
+            "id": "33-15",
             "category": "Persuading",
             "pl": "Uwierz mi",
             "en": "Believe me / Trust me",
@@ -154,7 +154,7 @@
             "note": "Imperative 'Uwierz' + dative 'mi'."
         },
         {
-            "id": "s33_16",
+            "id": "33-16",
             "category": "Challenging",
             "pl": "Nie masz racji",
             "en": "You are wrong",
@@ -164,7 +164,7 @@
             "note": "Literally 'You do not have rightness'."
         },
         {
-            "id": "s33_17",
+            "id": "33-17",
             "category": "Challenging",
             "pl": "To nie jest prawda",
             "en": "That's not true",
@@ -174,7 +174,7 @@
             "note": "Direct and clear."
         },
         {
-            "id": "s33_18",
+            "id": "33-18",
             "category": "Challenging",
             "pl": "Mylisz się",
             "en": "You are mistaken",
@@ -184,7 +184,7 @@
             "note": "Reflexive verb 'mylić się'."
         },
         {
-            "id": "s33_19",
+            "id": "33-19",
             "category": "Challenging",
             "pl": "Gdzie masz dowody?",
             "en": "Where is your evidence?",
@@ -194,7 +194,7 @@
             "note": "Plural noun 'dowody'."
         },
         {
-            "id": "s33_20",
+            "id": "33-20",
             "category": "Challenging",
             "pl": "To są bzdury",
             "en": "That is nonsense / bullshit",
@@ -204,7 +204,7 @@
             "note": "A somewhat aggressive, slangy dismissal."
         },
         {
-            "id": "s33_21",
+            "id": "33-21",
             "category": "Polite Disagreement",
             "pl": "Rozumiem twój punkt widzenia, ale...",
             "en": "I understand your point of view, but...",
@@ -214,7 +214,7 @@
             "note": "The classic debate pivot."
         },
         {
-            "id": "s33_22",
+            "id": "33-22",
             "category": "Polite Disagreement",
             "pl": "Mam inne zdanie",
             "en": "I have a different opinion",
@@ -224,7 +224,7 @@
             "note": "Accusative neuter 'inne zdanie'."
         },
         {
-            "id": "s33_23",
+            "id": "33-23",
             "category": "Polite Disagreement",
             "pl": "Pozwolę sobie się nie zgodzić",
             "en": "I beg to differ",
@@ -234,7 +234,7 @@
             "note": "Highly formal. Literally 'I will allow myself to not agree'."
         },
         {
-            "id": "s33_24",
+            "id": "33-24",
             "category": "Polite Disagreement",
             "pl": "Z całym szacunkiem",
             "en": "With all due respect",
@@ -244,7 +244,7 @@
             "note": "Usually precedes a strong disagreement."
         },
         {
-            "id": "s33_25",
+            "id": "33-25",
             "category": "Polite Disagreement",
             "pl": "Nie byłbym taki pewien / Nie byłabym taka pewna",
             "en": "I wouldn't be so sure",
@@ -258,7 +258,7 @@
             "note": "Conditional tense."
         },
         {
-            "id": "s33_26",
+            "id": "33-26",
             "category": "Interrupting",
             "pl": "Przepraszam, że ci przerwę",
             "en": "Sorry to interrupt you",
@@ -268,7 +268,7 @@
             "note": "Uses dative 'ci'."
         },
         {
-            "id": "s33_27",
+            "id": "33-27",
             "category": "Interrupting",
             "pl": "Pozwól mi dokończyć",
             "en": "Let me finish",
@@ -278,7 +278,7 @@
             "note": "Imperative 'Pozwól'."
         },
         {
-            "id": "s33_28",
+            "id": "33-28",
             "category": "Interrupting",
             "pl": "Daj mi dojść do słowa",
             "en": "Let me get a word in",
@@ -288,7 +288,7 @@
             "note": "Literally 'Give me to arrive at a word'."
         },
         {
-            "id": "s33_29",
+            "id": "33-29",
             "category": "Interrupting",
             "pl": "Wracając do tematu",
             "en": "Getting back to the topic",
@@ -298,7 +298,7 @@
             "note": "Gerund 'Wracając'."
         },
         {
-            "id": "s33_30",
+            "id": "33-30",
             "category": "Interrupting",
             "pl": "Nie zmieniaj tematu",
             "en": "Don't change the subject",
@@ -308,7 +308,7 @@
             "note": "Takes the genitive case 'tematu' due to negation."
         },
         {
-            "id": "s33_31",
+            "id": "33-31",
             "category": "Conceding",
             "pl": "Masz w tym rację",
             "en": "You are right about that",
@@ -318,7 +318,7 @@
             "note": "Locative 'w tym'."
         },
         {
-            "id": "s33_32",
+            "id": "33-32",
             "category": "Conceding",
             "pl": "Zgadzam się z tobą w tej kwestii",
             "en": "I agree with you on this issue",
@@ -328,7 +328,7 @@
             "note": "Instrumental 'z tobą' + locative 'w tej kwestii'."
         },
         {
-            "id": "s33_33",
+            "id": "33-33",
             "category": "Conceding",
             "pl": "Przekonałeś/Przekonałaś mnie",
             "en": "You convinced me",
@@ -342,7 +342,7 @@
             "note": "Past tense verb."
         },
         {
-            "id": "s33_34",
+            "id": "33-34",
             "category": "Conceding",
             "pl": "To dobry argument",
             "en": "That's a good argument",
@@ -352,7 +352,7 @@
             "note": "Masculine noun phrase."
         },
         {
-            "id": "s33_35",
+            "id": "33-35",
             "category": "Conceding",
             "pl": "Muszę ci przyznać rację",
             "en": "I have to admit you're right",
@@ -362,7 +362,7 @@
             "note": "Literally 'I must admit rightness to you'."
         },
         {
-            "id": "s33_36",
+            "id": "33-36",
             "category": "Negotiating",
             "pl": "Przejdźmy do negocjacji",
             "en": "Let's move on to negotiations",
@@ -372,7 +372,7 @@
             "note": "Imperative 'Przejdźmy'."
         },
         {
-            "id": "s33_37",
+            "id": "33-37",
             "category": "Negotiating",
             "pl": "Jaka jest twoja propozycja?",
             "en": "What is your proposal?",
@@ -382,7 +382,7 @@
             "note": "Feminine noun phrase."
         },
         {
-            "id": "s33_38",
+            "id": "33-38",
             "category": "Negotiating",
             "pl": "Co proponujesz?",
             "en": "What do you suggest/propose?",
@@ -392,7 +392,7 @@
             "note": "Verb 'proponować'."
         },
         {
-            "id": "s33_39",
+            "id": "33-39",
             "category": "Negotiating",
             "pl": "Czy możemy się dogadać?",
             "en": "Can we make a deal? / Can we get along?",
@@ -402,7 +402,7 @@
             "note": "Reflexive verb 'dogadać się'."
         },
         {
-            "id": "s33_40",
+            "id": "33-40",
             "category": "Negotiating",
             "pl": "Jaka jest ostateczna cena?",
             "en": "What is the final price?",
@@ -412,7 +412,7 @@
             "note": "Feminine adjective 'ostateczna'."
         },
         {
-            "id": "s33_41",
+            "id": "33-41",
             "category": "Bargaining",
             "pl": "To za dużo",
             "en": "That's too much",
@@ -422,7 +422,7 @@
             "note": "Standard pushback on a price."
         },
         {
-            "id": "s33_42",
+            "id": "33-42",
             "category": "Bargaining",
             "pl": "Mogę zaoferować...",
             "en": "I can offer...",
@@ -432,7 +432,7 @@
             "note": "Follow with the amount or term."
         },
         {
-            "id": "s33_43",
+            "id": "33-43",
             "category": "Bargaining",
             "pl": "Spotkajmy się pośrodku",
             "en": "Let's meet in the middle",
@@ -442,7 +442,7 @@
             "note": "A direct translation of the English bargaining idiom."
         },
         {
-            "id": "s33_44",
+            "id": "33-44",
             "category": "Bargaining",
             "pl": "Zejdź z ceny",
             "en": "Lower the price",
@@ -452,7 +452,7 @@
             "note": "Literally 'Step down from the price'."
         },
         {
-            "id": "s33_45",
+            "id": "33-45",
             "category": "Bargaining",
             "pl": "To moja ostateczna oferta",
             "en": "This is my final offer",
@@ -462,7 +462,7 @@
             "note": "Feminine noun phrase."
         },
         {
-            "id": "s33_46",
+            "id": "33-46",
             "category": "Deal Making",
             "pl": "Umowa stoi",
             "en": "It's a deal",
@@ -472,7 +472,7 @@
             "note": "Literally 'The contract stands'."
         },
         {
-            "id": "s33_47",
+            "id": "33-47",
             "category": "Deal Making",
             "pl": "Mamy umowę",
             "en": "We have an agreement",
@@ -482,7 +482,7 @@
             "note": "Accusative 'umowę'."
         },
         {
-            "id": "s33_48",
+            "id": "33-48",
             "category": "Deal Making",
             "pl": "Zgoda",
             "en": "Agreed",
@@ -492,7 +492,7 @@
             "note": "Used as a standalone exclamation of agreement."
         },
         {
-            "id": "s33_49",
+            "id": "33-49",
             "category": "Deal Making",
             "pl": "Podajmy sobie ręce",
             "en": "Let's shake hands",
@@ -502,7 +502,7 @@
             "note": "Literally 'Let's pass hands to each other'."
         },
         {
-            "id": "s33_50",
+            "id": "33-50",
             "category": "Deal Making",
             "pl": "Ubiliśmy interes",
             "en": "We struck a deal",
@@ -512,7 +512,7 @@
             "note": "Literally 'We slaughtered a business'. Old trading slang."
         },
         {
-            "id": "s33_51",
+            "id": "33-51",
             "category": "Compromise",
             "pl": "Kompromis",
             "en": "Compromise",
@@ -522,7 +522,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s33_52",
+            "id": "33-52",
             "category": "Compromise",
             "pl": "Musimy znaleźć kompromis",
             "en": "We must find a compromise",
@@ -532,7 +532,7 @@
             "note": "Takes accusative case."
         },
         {
-            "id": "s33_53",
+            "id": "33-53",
             "category": "Compromise",
             "pl": "Idę na ustępstwa",
             "en": "I'm making concessions",
@@ -542,7 +542,7 @@
             "note": "Literally 'I am going on concessions'."
         },
         {
-            "id": "s33_54",
+            "id": "33-54",
             "category": "Compromise",
             "pl": "Obie strony muszą coś zyskać",
             "en": "Both sides must gain something",
@@ -552,7 +552,7 @@
             "note": "A win-win philosophy."
         },
         {
-            "id": "s33_55",
+            "id": "33-55",
             "category": "Compromise",
             "pl": "To uczciwy układ",
             "en": "It's a fair deal",
@@ -562,7 +562,7 @@
             "note": "Masculine phrase 'uczciwy układ'."
         },
         {
-            "id": "s33_56",
+            "id": "33-56",
             "category": "Standing Firm",
             "pl": "Nie ma mowy",
             "en": "No way / Out of the question",
@@ -572,7 +572,7 @@
             "note": "Literally 'There is no speech'."
         },
         {
-            "id": "s33_57",
+            "id": "33-57",
             "category": "Standing Firm",
             "pl": "Nie zgadzam się na to",
             "en": "I don't agree to this",
@@ -582,7 +582,7 @@
             "note": "Takes 'na' + accusative 'to'."
         },
         {
-            "id": "s33_58",
+            "id": "33-58",
             "category": "Standing Firm",
             "pl": "To nie wchodzi w grę",
             "en": "That's out of the question",
@@ -592,7 +592,7 @@
             "note": "Literally 'That doesn't enter into the game'."
         },
         {
-            "id": "s33_59",
+            "id": "33-59",
             "category": "Standing Firm",
             "pl": "Moja odpowiedź brzmi nie",
             "en": "My answer is no",
@@ -602,7 +602,7 @@
             "note": "Literally 'My answer sounds no'."
         },
         {
-            "id": "s33_60",
+            "id": "33-60",
             "category": "Standing Firm",
             "pl": "Nie zmienię zdania",
             "en": "I won't change my mind",
@@ -612,7 +612,7 @@
             "note": "Verb 'zmienić' takes the genitive 'zdania' due to negation."
         },
         {
-            "id": "s33_61",
+            "id": "33-61",
             "category": "Emphasizing",
             "pl": "Zwróć uwagę na...",
             "en": "Pay attention to...",
@@ -622,7 +622,7 @@
             "note": "Imperative phrase taking 'na' + accusative."
         },
         {
-            "id": "s33_62",
+            "id": "33-62",
             "category": "Emphasizing",
             "pl": "Najważniejsze jest to, że...",
             "en": "The most important thing is that...",
@@ -632,7 +632,7 @@
             "note": "Superlative adjective 'Najważniejsze'."
         },
         {
-            "id": "s33_63",
+            "id": "33-63",
             "category": "Emphasizing",
             "pl": "Kluczową kwestią jest...",
             "en": "The key issue is...",
@@ -642,7 +642,7 @@
             "note": "Instrumental case 'Kluczową kwestią'."
         },
         {
-            "id": "s33_64",
+            "id": "33-64",
             "category": "Emphasizing",
             "pl": "Nie zapominajmy o...",
             "en": "Let's not forget about...",
@@ -652,7 +652,7 @@
             "note": "Imperative 'zapominajmy' + locative case."
         },
         {
-            "id": "s33_65",
+            "id": "33-65",
             "category": "Emphasizing",
             "pl": "Sedno sprawy",
             "en": "The heart of the matter / The core issue",
@@ -662,7 +662,7 @@
             "note": "Genitive 'sprawy'."
         },
         {
-            "id": "s33_66",
+            "id": "33-66",
             "category": "Advanced Connectors",
             "pl": "Zważywszy na to...",
             "en": "Considering that...",
@@ -672,7 +672,7 @@
             "note": "A highly formal, literary connector."
         },
         {
-            "id": "s33_67",
+            "id": "33-67",
             "category": "Advanced Connectors",
             "pl": "Biorąc pod uwagę...",
             "en": "Taking into account...",
@@ -682,7 +682,7 @@
             "note": "Gerund phrase."
         },
         {
-            "id": "s33_68",
+            "id": "33-68",
             "category": "Advanced Connectors",
             "pl": "Mianowicie",
             "en": "Namely / Specifically",
@@ -692,7 +692,7 @@
             "note": "Used to introduce a specific clarification."
         },
         {
-            "id": "s33_69",
+            "id": "33-69",
             "category": "Advanced Connectors",
             "pl": "Mówiąc wprost",
             "en": "Speaking frankly / Bluntly",
@@ -702,7 +702,7 @@
             "note": "Used before delivering harsh truths."
         },
         {
-            "id": "s33_70",
+            "id": "33-70",
             "category": "Advanced Connectors",
             "pl": "Szczerze mówiąc",
             "en": "To be honest / Honestly speaking",
@@ -712,7 +712,7 @@
             "note": "One of the most common conversational pivots in Polish."
         },
         {
-            "id": "s33_71",
+            "id": "33-71",
             "category": "Closing Debate",
             "pl": "Podsumowując...",
             "en": "To sum up...",
@@ -722,7 +722,7 @@
             "note": "Gerund used to close an argument."
         },
         {
-            "id": "s33_72",
+            "id": "33-72",
             "category": "Closing Debate",
             "pl": "Zmierzając do brzegu",
             "en": "Getting to the point / Wrapping up",
@@ -732,7 +732,7 @@
             "note": "Literally 'Heading to the shore'. Very common idiomatic way to conclude."
         },
         {
-            "id": "s33_73",
+            "id": "33-73",
             "category": "Closing Debate",
             "pl": "Zakończmy tę dyskusję",
             "en": "Let's end this discussion",
@@ -742,7 +742,7 @@
             "note": "Accusative 'tę dyskusję'."
         },
         {
-            "id": "s33_74",
+            "id": "33-74",
             "category": "Closing Debate",
             "pl": "Koniec tematu",
             "en": "End of topic / End of story",
@@ -752,7 +752,7 @@
             "note": "Firm and final."
         },
         {
-            "id": "s33_75",
+            "id": "33-75",
             "category": "Closing Debate",
             "pl": "Kropka",
             "en": "Period / Full stop.",

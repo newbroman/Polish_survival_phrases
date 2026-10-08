@@ -4,7 +4,7 @@
     "tier": "ADVANCED",
     "phrases": [
         {
-            "id": "s20_01",
+            "id": "20-01",
             "category": "Physical Appearance",
             "pl": "Wygląd zewnętrzny",
             "en": "Physical appearance",
@@ -14,7 +14,7 @@
             "note": "Masculine noun phrase."
         },
         {
-            "id": "s20_02",
+            "id": "20-02",
             "category": "Physical Appearance",
             "pl": "Jak on wygląda?",
             "en": "What does he look like?",
@@ -24,7 +24,7 @@
             "note": "Verb 'wyglądać' (to look/appear)."
         },
         {
-            "id": "s20_03",
+            "id": "20-03",
             "category": "Physical Appearance",
             "pl": "Jest wysoki",
             "en": "He is tall",
@@ -34,7 +34,7 @@
             "note": "Adjective. Feminine is 'wysoka'."
         },
         {
-            "id": "s20_04",
+            "id": "20-04",
             "category": "Physical Appearance",
             "pl": "Jest niska",
             "en": "She is short",
@@ -44,7 +44,7 @@
             "note": "Adjective. Masculine is 'niski'."
         },
         {
-            "id": "s20_05",
+            "id": "20-05",
             "category": "Physical Appearance",
             "pl": "Szczupły / Szczupła",
             "en": "Slim / Thin",
@@ -58,7 +58,7 @@
             "note": "A polite way to say someone is thin."
         },
         {
-            "id": "s20_06",
+            "id": "20-06",
             "category": "Physical Appearance",
             "pl": "Gruby / Gruba",
             "en": "Fat",
@@ -72,7 +72,7 @@
             "note": "Considered impolite. A nicer alternative is 'przy kości' (chubby)."
         },
         {
-            "id": "s20_07",
+            "id": "20-07",
             "category": "Physical Appearance",
             "pl": "Przystojny",
             "en": "Handsome",
@@ -82,7 +82,7 @@
             "note": "Used almost exclusively for men."
         },
         {
-            "id": "s20_08",
+            "id": "20-08",
             "category": "Physical Appearance",
             "pl": "Piękna",
             "en": "Beautiful",
@@ -92,7 +92,7 @@
             "note": "Used almost exclusively for women or objects."
         },
         {
-            "id": "s20_09",
+            "id": "20-09",
             "category": "Hair",
             "pl": "Włosy",
             "en": "Hair",
@@ -102,7 +102,7 @@
             "note": "Always plural in Polish when referring to the hair on your head."
         },
         {
-            "id": "s20_10",
+            "id": "20-10",
             "category": "Hair",
             "pl": "Blondyn / Blondynka",
             "en": "Blonde (Person)",
@@ -116,7 +116,7 @@
             "note": "Noun for a person with blonde hair."
         },
         {
-            "id": "s20_11",
+            "id": "20-11",
             "category": "Hair",
             "pl": "Brunet / Brunetka",
             "en": "Brunette (Person)",
@@ -130,7 +130,7 @@
             "note": "Noun for a person with dark brown hair."
         },
         {
-            "id": "s20_12",
+            "id": "20-12",
             "category": "Hair",
             "pl": "Rude włosy",
             "en": "Red hair",
@@ -140,7 +140,7 @@
             "note": "A person with red hair is a 'rudy' or 'ruda'."
         },
         {
-            "id": "s20_13",
+            "id": "20-13",
             "category": "Hair",
             "pl": "Siwe włosy",
             "en": "Gray hair",
@@ -150,7 +150,7 @@
             "note": "Adjective 'siwe' matches plural 'włosy'."
         },
         {
-            "id": "s20_14",
+            "id": "20-14",
             "category": "Hair",
             "pl": "Kręcone włosy",
             "en": "Curly hair",
@@ -160,7 +160,7 @@
             "note": "From the verb 'kręcić' (to twist/curl)."
         },
         {
-            "id": "s20_15",
+            "id": "20-15",
             "category": "Hair",
             "pl": "Proste włosy",
             "en": "Straight hair",
@@ -170,7 +170,7 @@
             "note": "Adjective 'proste' matches plural 'włosy'."
         },
         {
-            "id": "s20_16",
+            "id": "20-16",
             "category": "Hair",
             "pl": "Łysy",
             "en": "Bald",
@@ -180,7 +180,7 @@
             "note": "Adjective. 'On jest łysy' (He is bald)."
         },
         {
-            "id": "s20_17",
+            "id": "20-17",
             "category": "Face & Features",
             "pl": "Oczy",
             "en": "Eyes",
@@ -190,7 +190,7 @@
             "note": "Plural of 'oko'."
         },
         {
-            "id": "s20_18",
+            "id": "20-18",
             "category": "Face & Features",
             "pl": "Ma niebieskie oczy",
             "en": "He/She has blue eyes",
@@ -200,7 +200,7 @@
             "note": "Accusative plural 'niebieskie oczy'."
         },
         {
-            "id": "s20_19",
+            "id": "20-19",
             "category": "Face & Features",
             "pl": "Brązowe oczy",
             "en": "Brown eyes",
@@ -210,7 +210,7 @@
             "note": "Accusative plural."
         },
         {
-            "id": "s20_20",
+            "id": "20-20",
             "category": "Face & Features",
             "pl": "Zielone oczy",
             "en": "Green eyes",
@@ -220,7 +220,7 @@
             "note": "Accusative plural."
         },
         {
-            "id": "s20_21",
+            "id": "20-21",
             "category": "Face & Features",
             "pl": "Okulary",
             "en": "Glasses",
@@ -230,7 +230,7 @@
             "note": "Always plural. 'Nosi okulary' = He/She wears glasses."
         },
         {
-            "id": "s20_22",
+            "id": "20-22",
             "category": "Face & Features",
             "pl": "Broda",
             "en": "Beard (also: Chin)",
@@ -240,7 +240,7 @@
             "note": "Feminine noun."
         },
         {
-            "id": "s20_23",
+            "id": "20-23",
             "category": "Face & Features",
             "pl": "Wąsy",
             "en": "Mustache",
@@ -250,7 +250,7 @@
             "note": "Always plural in Polish."
         },
         {
-            "id": "s20_24",
+            "id": "20-24",
             "category": "Face & Features",
             "pl": "Piegi",
             "en": "Freckles",
@@ -260,7 +260,7 @@
             "note": "Plural noun."
         },
         {
-            "id": "s20_25",
+            "id": "20-25",
             "category": "Face & Features",
             "pl": "Uśmiech",
             "en": "Smile",
@@ -270,7 +270,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s20_26",
+            "id": "20-26",
             "category": "Character Traits (Positive)",
             "pl": "Cechy charakteru",
             "en": "Character traits",
@@ -280,7 +280,7 @@
             "note": "Takes the genitive case 'charakteru'."
         },
         {
-            "id": "s20_27",
+            "id": "20-27",
             "category": "Character Traits (Positive)",
             "pl": "Miły / Miła",
             "en": "Nice / Kind",
@@ -294,7 +294,7 @@
             "note": "A very common compliment."
         },
         {
-            "id": "s20_28",
+            "id": "20-28",
             "category": "Character Traits (Positive)",
             "pl": "Sympatyczny / Sympatyczna",
             "en": "Likable / Friendly",
@@ -308,7 +308,7 @@
             "note": "Often used to describe someone with good energy."
         },
         {
-            "id": "s20_29",
+            "id": "20-29",
             "category": "Character Traits (Positive)",
             "pl": "Zabawny / Zabawna",
             "en": "Funny",
@@ -322,7 +322,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_30",
+            "id": "20-30",
             "category": "Character Traits (Positive)",
             "pl": "Mądry / Mądra",
             "en": "Smart / Wise",
@@ -336,7 +336,7 @@
             "note": "Implies both intelligence and life wisdom."
         },
         {
-            "id": "s20_31",
+            "id": "20-31",
             "category": "Character Traits (Positive)",
             "pl": "Inteligentny / Inteligentna",
             "en": "Intelligent",
@@ -350,7 +350,7 @@
             "note": "Loanword."
         },
         {
-            "id": "s20_32",
+            "id": "20-32",
             "category": "Character Traits (Positive)",
             "pl": "Szczery / Szczera",
             "en": "Honest / Sincere",
@@ -364,9 +364,9 @@
             "note": "Poles highly value 'szczerość' (honesty) in friendships."
         },
         {
-            "id": "s20_33",
+            "id": "20-33",
             "category": "Character Traits (Positive)",
-            "pl": "Pewny siebie",
+            "pl": "Pewny / Pewna siebie",
             "en": "Confident",
             "level": 20,
             "gender": "both",
@@ -378,7 +378,7 @@
             "note": "Literally 'Sure of oneself'."
         },
         {
-            "id": "s20_34",
+            "id": "20-34",
             "category": "Character Traits (Positive)",
             "pl": "Otwardy / Otwarta",
             "en": "Open / Outgoing",
@@ -392,7 +392,7 @@
             "note": "Also used for doors ('otwarte')."
         },
         {
-            "id": "s20_35",
+            "id": "20-35",
             "category": "Character Traits (Positive)",
             "pl": "Odważny / Odważna",
             "en": "Brave",
@@ -406,7 +406,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_36",
+            "id": "20-36",
             "category": "Character Traits (Positive)",
             "pl": "Pracowity / Pracowita",
             "en": "Hardworking",
@@ -420,7 +420,7 @@
             "note": "Derived from 'praca' (work)."
         },
         {
-            "id": "s20_37",
+            "id": "20-37",
             "category": "Character Traits (Positive)",
             "pl": "Spokojny / Spokojna",
             "en": "Calm / Peaceful",
@@ -434,7 +434,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_38",
+            "id": "20-38",
             "category": "Character Traits (Negative)",
             "pl": "Złośliwy / Złośliwa",
             "en": "Mean / Malicious",
@@ -448,7 +448,7 @@
             "note": "Derived from 'złość' (anger)."
         },
         {
-            "id": "s20_39",
+            "id": "20-39",
             "category": "Character Traits (Negative)",
             "pl": "Leniwy / Leniwa",
             "en": "Lazy",
@@ -462,7 +462,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_40",
+            "id": "20-40",
             "category": "Character Traits (Negative)",
             "pl": "Uparty / Uparta",
             "en": "Stubborn",
@@ -476,7 +476,7 @@
             "note": "A very common Polish trait!"
         },
         {
-            "id": "s20_41",
+            "id": "20-41",
             "category": "Character Traits (Negative)",
             "pl": "Nieśmiały / Nieśmiała",
             "en": "Shy",
@@ -490,7 +490,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_42",
+            "id": "20-42",
             "category": "Character Traits (Negative)",
             "pl": "Samolubny / Samolubna",
             "en": "Selfish",
@@ -504,7 +504,7 @@
             "note": "Literally 'self-loving'."
         },
         {
-            "id": "s20_43",
+            "id": "20-43",
             "category": "Character Traits (Negative)",
             "pl": "Nudny / Nudna",
             "en": "Boring",
@@ -518,7 +518,7 @@
             "note": "Can be used for people or movies."
         },
         {
-            "id": "s20_44",
+            "id": "20-44",
             "category": "Character Traits (Negative)",
             "pl": "Głupi / Głupa",
             "en": "Stupid / Silly",
@@ -532,7 +532,7 @@
             "note": "Can be highly offensive or playfully teasing depending on tone."
         },
         {
-            "id": "s20_45",
+            "id": "20-45",
             "category": "Character Traits (Negative)",
             "pl": "Zazdrosny / Zazdrosna",
             "en": "Jealous",
@@ -546,7 +546,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_46",
+            "id": "20-46",
             "category": "Character Traits (Negative)",
             "pl": "Skąpy / Skąpa",
             "en": "Stingy / Cheap",
@@ -560,7 +560,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_47",
+            "id": "20-47",
             "category": "Describing Others",
             "pl": "Jaki on jest?",
             "en": "What is he like?",
@@ -570,7 +570,7 @@
             "note": "Asks about personality, not appearance."
         },
         {
-            "id": "s20_48",
+            "id": "20-48",
             "category": "Describing Others",
             "pl": "Jaka ona jest?",
             "en": "What is she like?",
@@ -580,7 +580,7 @@
             "note": "Asks about personality."
         },
         {
-            "id": "s20_49",
+            "id": "20-49",
             "category": "Describing Others",
             "pl": "On ma dobre poczucie humoru",
             "en": "He has a good sense of humor",
@@ -590,7 +590,7 @@
             "note": "Takes accusative 'poczucie humoru'."
         },
         {
-            "id": "s20_50",
+            "id": "20-50",
             "category": "Describing Others",
             "pl": "Ona jest bardzo energiczna",
             "en": "She is very energetic",
@@ -600,7 +600,7 @@
             "note": "Adverb 'bardzo' amplifies the adjective."
         },
         {
-            "id": "s20_51",
+            "id": "20-51",
             "category": "Describing Others",
             "pl": "Można na nim polegać",
             "en": "He is reliable",
@@ -610,7 +610,7 @@
             "note": "Literally 'One can rely on him'."
         },
         {
-            "id": "s20_52",
+            "id": "20-52",
             "category": "Describing Others",
             "pl": "Zawsze się spóźnia",
             "en": "He/She is always late",
@@ -620,7 +620,7 @@
             "note": "Reflexive verb 'spóźniać się'."
         },
         {
-            "id": "s20_53",
+            "id": "20-53",
             "category": "Describing Others",
             "pl": "Dużo mówi",
             "en": "Talks a lot / Chatty",
@@ -630,7 +630,7 @@
             "note": "Verb 'mówić'."
         },
         {
-            "id": "s20_54",
+            "id": "20-54",
             "category": "Describing Others",
             "pl": "Jest cichy / cicha",
             "en": "Is quiet",
@@ -644,7 +644,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_55",
+            "id": "20-55",
             "category": "Age & Stages",
             "pl": "Niemowlę",
             "en": "Baby / Infant",
@@ -654,7 +654,7 @@
             "note": "Neuter noun."
         },
         {
-            "id": "s20_56",
+            "id": "20-56",
             "category": "Age & Stages",
             "pl": "Dziecko",
             "en": "Child",
@@ -664,7 +664,7 @@
             "note": "Neuter noun."
         },
         {
-            "id": "s20_57",
+            "id": "20-57",
             "category": "Age & Stages",
             "pl": "Nastolatek / Nastolatka",
             "en": "Teenager",
@@ -678,7 +678,7 @@
             "note": "Derived from the '-naście' suffix in Polish numbers (11-19)."
         },
         {
-            "id": "s20_58",
+            "id": "20-58",
             "category": "Age & Stages",
             "pl": "Dorosły",
             "en": "Adult",
@@ -688,7 +688,7 @@
             "note": "Masculine adjective acting as a noun."
         },
         {
-            "id": "s20_59",
+            "id": "20-59",
             "category": "Age & Stages",
             "pl": "Młodzież",
             "en": "Youth / Young people",
@@ -698,7 +698,7 @@
             "note": "Feminine collective noun."
         },
         {
-            "id": "s20_60",
+            "id": "20-60",
             "category": "Age & Stages",
             "pl": "Senior",
             "en": "Senior / Elderly person",
@@ -708,7 +708,7 @@
             "note": "Often used in the context of discounts ('bilet dla seniora')."
         },
         {
-            "id": "s20_61",
+            "id": "20-61",
             "category": "Age & Stages",
             "pl": "Młody / Młoda",
             "en": "Young",
@@ -722,7 +722,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_62",
+            "id": "20-62",
             "category": "Age & Stages",
             "pl": "Stary / Stara",
             "en": "Old",
@@ -736,7 +736,7 @@
             "note": "Considered blunt. 'Starszy' (older) is more polite."
         },
         {
-            "id": "s20_63",
+            "id": "20-63",
             "category": "Age & Stages",
             "pl": "W moim wieku",
             "en": "My age",
@@ -746,7 +746,7 @@
             "note": "Literally 'In my age' (locative case)."
         },
         {
-            "id": "s20_64",
+            "id": "20-64",
             "category": "Compliments",
             "pl": "Świetnie wyglądasz!",
             "en": "You look great!",
@@ -756,7 +756,7 @@
             "note": "Casual phrasing using informal 'ty'."
         },
         {
-            "id": "s20_65",
+            "id": "20-65",
             "category": "Compliments",
             "pl": "Masz piękny uśmiech",
             "en": "You have a beautiful smile",
@@ -766,7 +766,7 @@
             "note": "Takes the accusative case 'piękny uśmiech'."
         },
         {
-            "id": "s20_66",
+            "id": "20-66",
             "category": "Compliments",
             "pl": "Jesteś super",
             "en": "You are awesome",
@@ -776,7 +776,7 @@
             "note": "Casual phrasing."
         },
         {
-            "id": "s20_67",
+            "id": "20-67",
             "category": "Compliments",
             "pl": "Podoba mi się twój styl",
             "en": "I like your style",
@@ -786,7 +786,7 @@
             "note": "Literally 'Your style is pleasing to me'."
         },
         {
-            "id": "s20_68",
+            "id": "20-68",
             "category": "States of Being",
             "pl": "Zmęczony / Zmęczona",
             "en": "Tired",
@@ -800,7 +800,7 @@
             "note": "Passive participle."
         },
         {
-            "id": "s20_69",
+            "id": "20-69",
             "category": "States of Being",
             "pl": "Głodny / Głodna",
             "en": "Hungry",
@@ -814,7 +814,7 @@
             "note": "It is more natural to say 'Chce mi się jeść', but this is also common."
         },
         {
-            "id": "s20_70",
+            "id": "20-70",
             "category": "States of Being",
             "pl": "Spragniony / Spragniona",
             "en": "Thirsty",
@@ -828,7 +828,7 @@
             "note": "Very formal. Usually Poles just say 'Chce mi się pić'."
         },
         {
-            "id": "s20_71",
+            "id": "20-71",
             "category": "States of Being",
             "pl": "Pijany / Pijana",
             "en": "Drunk",
@@ -842,7 +842,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_72",
+            "id": "20-72",
             "category": "States of Being",
             "pl": "Trzeźwy / Trzeźwa",
             "en": "Sober",
@@ -856,7 +856,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_73",
+            "id": "20-73",
             "category": "States of Being",
             "pl": "Zdrowy / Zdrowa",
             "en": "Healthy",
@@ -870,7 +870,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_74",
+            "id": "20-74",
             "category": "States of Being",
             "pl": "Chory / Chora",
             "en": "Sick",
@@ -884,7 +884,7 @@
             "note": "Adjective."
         },
         {
-            "id": "s20_75",
+            "id": "20-75",
             "category": "States of Being",
             "pl": "Zakochany / Zakochana",
             "en": "In love",

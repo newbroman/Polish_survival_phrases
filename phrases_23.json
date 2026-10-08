@@ -4,7 +4,7 @@
   "tier": "ADVANCED",
   "phrases": [
     {
-      "id": "s24_01",
+      "id": "23-01",
       "category": "Documents",
       "pl": "Dokument",
       "en": "Document",
@@ -14,7 +14,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_02",
+      "id": "23-02",
       "category": "Documents",
       "pl": "Dokumenty",
       "en": "Documents",
@@ -24,7 +24,7 @@
       "note": "Plural."
     },
     {
-      "id": "s24_03",
+      "id": "23-03",
       "category": "Documents",
       "pl": "Paszport",
       "en": "Passport",
@@ -34,7 +34,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_04",
+      "id": "23-04",
       "category": "Documents",
       "pl": "Dowód osobisty",
       "en": "ID card",
@@ -44,7 +44,7 @@
       "note": "The standard identity card carried by all Polish citizens."
     },
     {
-      "id": "s24_05",
+      "id": "23-05",
       "category": "Documents",
       "pl": "PESEL",
       "en": "PESEL (Polish ID number)",
@@ -54,7 +54,7 @@
       "note": "An 11-digit national identification number. You need this for almost everything in Poland."
     },
     {
-      "id": "s24_06",
+      "id": "23-06",
       "category": "Documents",
       "pl": "Karta pobytu",
       "en": "Residence card",
@@ -64,7 +64,7 @@
       "note": "Issued to non-EU foreigners legally residing in Poland."
     },
     {
-      "id": "s24_07",
+      "id": "23-07",
       "category": "Documents",
       "pl": "Wiza",
       "en": "Visa",
@@ -74,7 +74,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s24_08",
+      "id": "23-08",
       "category": "Documents",
       "pl": "Zezwolenie na pracę",
       "en": "Work permit",
@@ -84,7 +84,7 @@
       "note": "Takes the accusative case 'na pracę'."
     },
     {
-      "id": "s24_09",
+      "id": "23-09",
       "category": "Documents",
       "pl": "Prawo jazdy",
       "en": "Driver's license",
@@ -94,7 +94,7 @@
       "note": "Literally 'The right of driving'."
     },
     {
-      "id": "s24_10",
+      "id": "23-10",
       "category": "Documents",
       "pl": "Akt urodzenia",
       "en": "Birth certificate",
@@ -104,7 +104,7 @@
       "note": "Masculine phrase."
     },
     {
-      "id": "s24_11",
+      "id": "23-11",
       "category": "Documents",
       "pl": "Akt małżeństwa",
       "en": "Marriage certificate",
@@ -114,7 +114,7 @@
       "note": "Masculine phrase."
     },
     {
-      "id": "s24_12",
+      "id": "23-12",
       "category": "Documents",
       "pl": "Świadectwo",
       "en": "Certificate (Educational)",
@@ -124,7 +124,7 @@
       "note": "Neuter noun. Usually refers to school or academic certificates."
     },
     {
-      "id": "s24_13",
+      "id": "23-13",
       "category": "Documents",
       "pl": "Zaświadczenie",
       "en": "Confirmation / Official Certificate",
@@ -134,7 +134,7 @@
       "note": "A document proving a specific fact (e.g., employment, income)."
     },
     {
-      "id": "s24_14",
+      "id": "23-14",
       "category": "Documents",
       "pl": "Umowa",
       "en": "Contract",
@@ -144,7 +144,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s24_15",
+      "id": "23-15",
       "category": "Documents",
       "pl": "Podpis",
       "en": "Signature",
@@ -154,7 +154,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_16",
+      "id": "23-16",
       "category": "Documents",
       "pl": "Pieczątka",
       "en": "Stamp",
@@ -164,7 +164,7 @@
       "note": "Polish bureaucracy loves official ink stamps!"
     },
     {
-      "id": "s24_17",
+      "id": "23-17",
       "category": "Documents",
       "pl": "Kopia",
       "en": "Copy",
@@ -174,7 +174,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s24_18",
+      "id": "23-18",
       "category": "Documents",
       "pl": "Oryginał",
       "en": "Original",
@@ -184,7 +184,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_19",
+      "id": "23-19",
       "category": "Documents",
       "pl": "Tłumaczenie przysięgłe",
       "en": "Certified translation",
@@ -194,7 +194,7 @@
       "note": "Literally 'Sworn translation'. Mandatory for foreign documents submitted to offices."
     },
     {
-      "id": "s24_20",
+      "id": "23-20",
       "category": "Documents",
       "pl": "Apostille",
       "en": "Apostille",
@@ -204,7 +204,7 @@
       "note": "International certification. Pronounced as in French/English."
     },
     {
-      "id": "s24_21",
+      "id": "23-21",
       "category": "Offices",
       "pl": "Urząd",
       "en": "Office / Bureau",
@@ -214,7 +214,7 @@
       "note": "Masculine noun. Refers specifically to government administrative buildings."
     },
     {
-      "id": "s24_22",
+      "id": "23-22",
       "category": "Offices",
       "pl": "Urząd miasta",
       "en": "City hall",
@@ -224,7 +224,7 @@
       "note": "Where you go for local municipal matters."
     },
     {
-      "id": "s24_23",
+      "id": "23-23",
       "category": "Offices",
       "pl": "Urząd skarbowy",
       "en": "Tax office",
@@ -234,7 +234,7 @@
       "note": "Where you file your annual PIT (income tax) returns."
     },
     {
-      "id": "s24_24",
+      "id": "23-24",
       "category": "Offices",
       "pl": "Urząd pracy",
       "en": "Employment office",
@@ -244,7 +244,7 @@
       "note": "Handles unemployment benefits and job seeking."
     },
     {
-      "id": "s24_25",
+      "id": "23-25",
       "category": "Offices",
       "pl": "Urząd wojewódzki",
       "en": "Voivodeship office",
@@ -254,7 +254,7 @@
       "note": "The regional government office. Foreigners go here for residence permits."
     },
     {
-      "id": "s24_26",
+      "id": "23-26",
       "category": "Offices",
       "pl": "ZUS",
       "en": "Social Insurance Institution",
@@ -264,7 +264,7 @@
       "note": "Zakład Ubezpieczeń Społecznych. Handles pensions and sick pay."
     },
     {
-      "id": "s24_27",
+      "id": "23-27",
       "category": "Offices",
       "pl": "NFZ",
       "en": "National Health Fund",
@@ -274,7 +274,7 @@
       "note": "Narodowy Fundusz Zdrowia. Manages public healthcare."
     },
     {
-      "id": "s24_28",
+      "id": "23-28",
       "category": "Offices",
       "pl": "Ambasada",
       "en": "Embassy",
@@ -284,7 +284,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s24_29",
+      "id": "23-29",
       "category": "Offices",
       "pl": "Konsulat",
       "en": "Consulate",
@@ -294,7 +294,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_30",
+      "id": "23-30",
       "category": "Offices",
       "pl": "Policja",
       "en": "Police",
@@ -304,7 +304,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s24_31",
+      "id": "23-31",
       "category": "Offices",
       "pl": "Komisariat",
       "en": "Police station",
@@ -314,7 +314,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_32",
+      "id": "23-32",
       "category": "Offices",
       "pl": "Wniosek",
       "en": "Application / Request",
@@ -324,7 +324,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_33",
+      "id": "23-33",
       "category": "Offices",
       "pl": "Formularz",
       "en": "Form",
@@ -334,7 +334,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_34",
+      "id": "23-34",
       "category": "Offices",
       "pl": "Wypełnić formularz",
       "en": "To fill out a form",
@@ -344,7 +344,7 @@
       "note": "Infinitive phrase."
     },
     {
-      "id": "s24_35",
+      "id": "23-35",
       "category": "Offices",
       "pl": "Złożyć wniosek",
       "en": "To submit an application",
@@ -354,7 +354,7 @@
       "note": "Literally 'To fold an application'."
     },
     {
-      "id": "s24_36",
+      "id": "23-36",
       "category": "Offices",
       "pl": "Rejestracja",
       "en": "Registration",
@@ -364,7 +364,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s24_37",
+      "id": "23-37",
       "category": "Offices",
       "pl": "Zarejestrować się",
       "en": "To register",
@@ -374,7 +374,7 @@
       "note": "Reflexive perfective verb."
     },
     {
-      "id": "s24_38",
+      "id": "23-38",
       "category": "Offices",
       "pl": "Meldunek",
       "en": "Registration of residence",
@@ -384,7 +384,7 @@
       "note": "A mandatory administrative requirement to register your address in Poland."
     },
     {
-      "id": "s24_39",
+      "id": "23-39",
       "category": "Offices",
       "pl": "Zameldować się",
       "en": "To register residence",
@@ -394,7 +394,7 @@
       "note": "Reflexive infinitive verb."
     },
     {
-      "id": "s24_40",
+      "id": "23-40",
       "category": "Offices",
       "pl": "Wymeldować się",
       "en": "To deregister residence",
@@ -404,7 +404,7 @@
       "note": "Reflexive infinitive verb."
     },
     {
-      "id": "s24_41",
+      "id": "23-41",
       "category": "Offices",
       "pl": "Opłata skarbowa",
       "en": "Stamp duty / Official fee",
@@ -414,7 +414,7 @@
       "note": "A mandatory fee for most government documents."
     },
     {
-      "id": "s24_42",
+      "id": "23-42",
       "category": "Offices",
       "pl": "Podatek",
       "en": "Tax",
@@ -424,7 +424,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_43",
+      "id": "23-43",
       "category": "Offices",
       "pl": "Termin",
       "en": "Deadline / Appointment",
@@ -434,7 +434,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_44",
+      "id": "23-44",
       "category": "Offices",
       "pl": "Kolejka",
       "en": "Queue / Line",
@@ -444,7 +444,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s24_45",
+      "id": "23-45",
       "category": "Offices",
       "pl": "Pobrać numerek",
       "en": "To take a ticket number",
@@ -454,7 +454,7 @@
       "note": "Most Polish offices use a ticket machine system to manage queues."
     },
     {
-      "id": "s24_46",
+      "id": "23-46",
       "category": "Legal",
       "pl": "Prawo",
       "en": "Law / Right",
@@ -464,7 +464,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s24_47",
+      "id": "23-47",
       "category": "Legal",
       "pl": "Prawnik",
       "en": "Lawyer",
@@ -474,7 +474,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_48",
+      "id": "23-48",
       "category": "Legal",
       "pl": "Adwokat",
       "en": "Attorney",
@@ -484,7 +484,7 @@
       "note": "A specific type of lawyer licensed to represent clients in court."
     },
     {
-      "id": "s24_49",
+      "id": "23-49",
       "category": "Legal",
       "pl": "Notariusz",
       "en": "Notary",
@@ -494,7 +494,7 @@
       "note": "Requires a special license in Poland; heavily involved in property purchases."
     },
     {
-      "id": "s24_50",
+      "id": "23-50",
       "category": "Legal",
       "pl": "Akt notarialny",
       "en": "Notarial deed",
@@ -504,7 +504,7 @@
       "note": "Masculine phrase."
     },
     {
-      "id": "s24_51",
+      "id": "23-51",
       "category": "Legal",
       "pl": "Umowa najmu",
       "en": "Rental contract",
@@ -514,7 +514,7 @@
       "note": "Takes the genitive case 'najmu'."
     },
     {
-      "id": "s24_52",
+      "id": "23-52",
       "category": "Legal",
       "pl": "Decyzja",
       "en": "Decision",
@@ -524,7 +524,7 @@
       "note": "The final official document issued by a government office."
     },
     {
-      "id": "s24_53",
+      "id": "23-53",
       "category": "Legal",
       "pl": "Sąd",
       "en": "Court",
@@ -534,7 +534,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_54",
+      "id": "23-54",
       "category": "Legal",
       "pl": "Sprawa sądowa",
       "en": "Court case",
@@ -544,7 +544,7 @@
       "note": "Feminine phrase."
     },
     {
-      "id": "s24_55",
+      "id": "23-55",
       "category": "Legal",
       "pl": "Pozew",
       "en": "Lawsuit",
@@ -554,7 +554,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_56",
+      "id": "23-56",
       "category": "Legal",
       "pl": "Kara",
       "en": "Penalty / Punishment",
@@ -564,7 +564,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s24_57",
+      "id": "23-57",
       "category": "Legal",
       "pl": "Mandat",
       "en": "Fine / Ticket",
@@ -574,7 +574,7 @@
       "note": "Issued for speeding, parking violations, or drinking in public."
     },
     {
-      "id": "s24_58",
+      "id": "23-58",
       "category": "Legal",
       "pl": "Przepisy",
       "en": "Regulations / Rules",
@@ -584,7 +584,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s24_59",
+      "id": "23-59",
       "category": "Legal",
       "pl": "Zgodnie z prawem",
       "en": "According to the law",
@@ -594,7 +594,7 @@
       "note": "Preposition 'z' takes the instrumental case 'prawem'."
     },
     {
-      "id": "s24_60",
+      "id": "23-60",
       "category": "Legal",
       "pl": "Nielegalne",
       "en": "Illegal",
@@ -604,7 +604,7 @@
       "note": "Adjective (neuter form)."
     },
     {
-      "id": "s24_61",
+      "id": "23-61",
       "category": "Citizenship",
       "pl": "Obywatelstwo",
       "en": "Citizenship",
@@ -614,7 +614,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s24_62",
+      "id": "23-62",
       "category": "Citizenship",
       "pl": "Obywatel",
       "en": "Citizen",
@@ -624,7 +624,7 @@
       "note": "Masculine noun. Female is 'Obywatelka'."
     },
     {
-      "id": "s24_63",
+      "id": "23-63",
       "category": "Citizenship",
       "pl": "Cudzoziemiec",
       "en": "Foreigner",
@@ -634,7 +634,7 @@
       "note": "Literally 'Person from foreign lands'. Very formal. Casually, Poles say 'obcokrajowiec'."
     },
     {
-      "id": "s24_64",
+      "id": "23-64",
       "category": "Citizenship",
       "pl": "Pobyt stały",
       "en": "Permanent residence",
@@ -644,7 +644,7 @@
       "note": "Masculine phrase."
     },
     {
-      "id": "s24_65",
+      "id": "23-65",
       "category": "Citizenship",
       "pl": "Pobyt czasowy",
       "en": "Temporary residence",
@@ -654,7 +654,7 @@
       "note": "Masculine phrase."
     },
     {
-      "id": "s24_66",
+      "id": "23-66",
       "category": "Citizenship",
       "pl": "Wniosek o obywatelstwo",
       "en": "Citizenship application",
@@ -664,7 +664,7 @@
       "note": "Preposition 'o' takes the accusative case here."
     },
     {
-      "id": "s24_67",
+      "id": "23-67",
       "category": "Citizenship",
       "pl": "Deportacja",
       "en": "Deportation",
@@ -674,7 +674,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s24_68",
+      "id": "23-68",
       "category": "Citizenship",
       "pl": "Azyl",
       "en": "Asylum",
@@ -684,7 +684,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_69",
+      "id": "23-69",
       "category": "Citizenship",
       "pl": "Uchodźca",
       "en": "Refugee",
@@ -694,7 +694,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s24_70",
+      "id": "23-70",
       "category": "Citizenship",
       "pl": "Granica",
       "en": "Border",
@@ -704,7 +704,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s24_71",
+      "id": "23-71",
       "category": "Digital Administration",
       "pl": "Profil zaufany",
       "en": "Trusted profile",
@@ -714,7 +714,7 @@
       "note": "A digital ID required to handle almost all Polish government matters online."
     },
     {
-      "id": "s24_72",
+      "id": "23-72",
       "category": "Digital Administration",
       "pl": "ePUAP",
       "en": "Electronic Platform of Public Admin",
@@ -724,7 +724,7 @@
       "note": "The state website where you use your 'profil zaufany' to submit documents."
     },
     {
-      "id": "s24_73",
+      "id": "23-73",
       "category": "Legal",
       "pl": "KRS",
       "en": "National Court Register",
@@ -734,7 +734,7 @@
       "note": "Krajowy Rejestr Sądowy. Essential registry if you are starting a business."
     },
     {
-      "id": "s24_74",
+      "id": "23-74",
       "category": "Legal",
       "pl": "NIP",
       "en": "Tax Identification Number",
@@ -744,7 +744,7 @@
       "note": "Numer Identyfikacji Podatkowej. Required for issuing invoices."
     },
     {
-      "id": "s24_75",
+      "id": "23-75",
       "category": "Offices",
       "pl": "Urząd Stanu Cywilnego",
       "en": "Civil Registry Office",

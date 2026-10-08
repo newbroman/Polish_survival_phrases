@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s10_01",
+      "id": "10-01",
       "category": "WiFi & Network",
       "pl": "Internet",
       "en": "Internet",
@@ -14,7 +14,7 @@
       "note": "Masculine noun. Pronounced identically to English, but with a rolled 'r'."
     },
     {
-      "id": "s10_02",
+      "id": "10-02",
       "category": "WiFi & Network",
       "pl": "Czy macie darmowe WiFi?",
       "en": "Do you have free WiFi?",
@@ -24,7 +24,7 @@
       "note": "Darmowe (free) is a neuter adjective matching WiFi. 'Macie' is the plural 'you have' for the café staff."
     },
     {
-      "id": "s10_03",
+      "id": "10-03",
       "category": "WiFi & Network",
       "pl": "Hasło do WiFi",
       "en": "WiFi password",
@@ -34,7 +34,7 @@
       "note": "Literally 'Password to WiFi'. Very common question in cafes."
     },
     {
-      "id": "s10_04",
+      "id": "10-04",
       "category": "WiFi & Network",
       "pl": "Brak zasięgu",
       "en": "No signal / No service",
@@ -44,7 +44,7 @@
       "note": "Literally 'Lack of range'. You will see this on your phone screen in rural areas."
     },
     {
-      "id": "s10_05",
+      "id": "10-05",
       "category": "WiFi & Network",
       "pl": "Dane komórkowe",
       "en": "Cellular data / Mobile data",
@@ -54,7 +54,7 @@
       "note": "'Komórka' means cell (both biological and mobile phone)."
     },
     {
-      "id": "s10_06",
+      "id": "10-06",
       "category": "WiFi & Network",
       "pl": "Roaming",
       "en": "Roaming",
@@ -64,7 +64,7 @@
       "note": "Pronounced the English way. If you have an EU SIM, roaming is free in Poland!"
     },
     {
-      "id": "s10_07",
+      "id": "10-07",
       "category": "WiFi & Network",
       "pl": "Tryb samolotowy",
       "en": "Airplane mode",
@@ -74,7 +74,7 @@
       "note": "From 'samolot' (airplane)."
     },
     {
-      "id": "s10_08",
+      "id": "10-08",
       "category": "WiFi & Network",
       "pl": "Hotspot",
       "en": "Hotspot / Tethering",
@@ -84,7 +84,7 @@
       "note": "You can also say 'udostępnianie internetu' (sharing internet)."
     },
     {
-      "id": "s10_09",
+      "id": "10-09",
       "category": "WiFi & Network",
       "pl": "Router",
       "en": "Router",
@@ -94,7 +94,7 @@
       "note": "Pronounced 'Roo-ter'. Usually requires a restart if the internet is slow!"
     },
     {
-      "id": "s10_10",
+      "id": "10-10",
       "category": "WiFi & Network",
       "pl": "Światłowód",
       "en": "Fiber optic internet",
@@ -104,7 +104,7 @@
       "note": "Literally 'light-conductor'. High-speed internet is very common in Polish cities."
     },
     {
-      "id": "s10_11",
+      "id": "10-11",
       "category": "Hardware & Accessories",
       "pl": "Smartfon",
       "en": "Smartphone",
@@ -114,7 +114,7 @@
       "note": "Loanword. You can also just say 'telefon'."
     },
     {
-      "id": "s10_12",
+      "id": "10-12",
       "category": "Hardware & Accessories",
       "pl": "Ładowarka",
       "en": "Charger",
@@ -124,7 +124,7 @@
       "note": "Feminine noun. Essential travel item."
     },
     {
-      "id": "s10_13",
+      "id": "10-13",
       "category": "Hardware & Accessories",
       "pl": "Kabel USB",
       "en": "USB cable",
@@ -134,7 +134,7 @@
       "note": "Pronounced 'Ka-bel Oo-es-be'."
     },
     {
-      "id": "s10_14",
+      "id": "10-14",
       "category": "Hardware & Accessories",
       "pl": "Powerbank",
       "en": "Power bank",
@@ -144,7 +144,7 @@
       "note": "Borrowed directly from English. Very commonly used in Poland."
     },
     {
-      "id": "s10_15",
+      "id": "10-15",
       "category": "Hardware & Accessories",
       "pl": "Słuchawki",
       "en": "Headphones / Earbuds",
@@ -154,7 +154,7 @@
       "note": "Plural noun. From the verb 'słuchać' (to listen)."
     },
     {
-      "id": "s10_16",
+      "id": "10-16",
       "category": "Hardware & Accessories",
       "pl": "Słuchawki bezprzewodowe",
       "en": "Wireless headphones",
@@ -164,7 +164,7 @@
       "note": "'Bezprzewodowe' literally means 'without wire'."
     },
     {
-      "id": "s10_17",
+      "id": "10-17",
       "category": "Hardware & Accessories",
       "pl": "Ekran",
       "en": "Screen / Display",
@@ -174,7 +174,7 @@
       "note": "Masculine noun used for phones, TVs, and computers."
     },
     {
-      "id": "s10_18",
+      "id": "10-18",
       "category": "Hardware & Accessories",
       "pl": "Ekran dotykowy",
       "en": "Touch screen",
@@ -184,7 +184,7 @@
       "note": "From 'dotykać' (to touch)."
     },
     {
-      "id": "s10_19",
+      "id": "10-19",
       "category": "Hardware & Accessories",
       "pl": "Klawiatura",
       "en": "Keyboard",
@@ -194,7 +194,7 @@
       "note": "Feminine noun. Used for both digital and physical keyboards."
     },
     {
-      "id": "s10_20",
+      "id": "10-20",
       "category": "Hardware & Accessories",
       "pl": "Bateria",
       "en": "Battery",
@@ -204,7 +204,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s10_21",
+      "id": "10-21",
       "category": "Hardware & Accessories",
       "pl": "Etui na telefon",
       "en": "Phone case",
@@ -214,7 +214,7 @@
       "note": "'Etui' is a French loanword. Pronounced 'E-twee'."
     },
     {
-      "id": "s10_22",
+      "id": "10-22",
       "category": "Hardware & Accessories",
       "pl": "Głośnik",
       "en": "Speaker",
@@ -224,7 +224,7 @@
       "note": "From 'głośno' (loud)."
     },
     {
-      "id": "s10_23",
+      "id": "10-23",
       "category": "Hardware & Accessories",
       "pl": "Mikrofon",
       "en": "Microphone",
@@ -234,7 +234,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s10_24",
+      "id": "10-24",
       "category": "Hardware & Accessories",
       "pl": "Kamera",
       "en": "Camera",
@@ -244,7 +244,7 @@
       "note": "Used for video cameras or webcams. A photography camera is 'Aparat'."
     },
     {
-      "id": "s10_25",
+      "id": "10-25",
       "category": "SIM & Phone Service",
       "pl": "Karta SIM",
       "en": "SIM card",
@@ -254,7 +254,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s10_26",
+      "id": "10-26",
       "category": "SIM & Phone Service",
       "pl": "Starter",
       "en": "Prepaid SIM package",
@@ -264,7 +264,7 @@
       "note": "Crucial vocab! If you want a prepaid SIM at a kiosk, ask for a 'Starter'. You must show your passport to register it by Polish law."
     },
     {
-      "id": "s10_27",
+      "id": "10-27",
       "category": "SIM & Phone Service",
       "pl": "Doładować konto",
       "en": "To top up phone credit",
@@ -274,7 +274,7 @@
       "note": "Literally 'to load up the account'."
     },
     {
-      "id": "s10_28",
+      "id": "10-28",
       "category": "Software & Apps",
       "pl": "Aplikacja",
       "en": "App / Application",
@@ -284,7 +284,7 @@
       "note": "Feminine noun. Often shortened to 'Apka' in slang."
     },
     {
-      "id": "s10_29",
+      "id": "10-29",
       "category": "Software & Apps",
       "pl": "Pobrać aplikację",
       "en": "To download the app",
@@ -294,7 +294,7 @@
       "note": "'Pobrać' is the verb for downloading files or apps."
     },
     {
-      "id": "s10_30",
+      "id": "10-30",
       "category": "Software & Apps",
       "pl": "Zainstalować",
       "en": "To install",
@@ -304,7 +304,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s10_31",
+      "id": "10-31",
       "category": "Software & Apps",
       "pl": "Odinstalować",
       "en": "To uninstall / delete",
@@ -314,7 +314,7 @@
       "note": "Infinitive verb. You can also use 'usunąć' (to delete)."
     },
     {
-      "id": "s10_32",
+      "id": "10-32",
       "category": "Software & Apps",
       "pl": "Aktualizacja",
       "en": "Update",
@@ -324,7 +324,7 @@
       "note": "Feminine noun. Software update."
     },
     {
-      "id": "s10_33",
+      "id": "10-33",
       "category": "Software & Apps",
       "pl": "Kod QR",
       "en": "QR code",
@@ -334,7 +334,7 @@
       "note": "Pronounced 'Koo-er'. Very common in Polish restaurants for menus."
     },
     {
-      "id": "s10_34",
+      "id": "10-34",
       "category": "Software & Apps",
       "pl": "Zeskanować",
       "en": "To scan",
@@ -344,7 +344,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s10_35",
+      "id": "10-35",
       "category": "Software & Apps",
       "pl": "Ustawienia",
       "en": "Settings",
@@ -354,7 +354,7 @@
       "note": "Plural noun. Look for the gear icon."
     },
     {
-      "id": "s10_36",
+      "id": "10-36",
       "category": "Software & Apps",
       "pl": "Powiadomienia",
       "en": "Notifications",
@@ -364,7 +364,7 @@
       "note": "Plural noun. From 'wiadomość' (message)."
     },
     {
-      "id": "s10_37",
+      "id": "10-37",
       "category": "Accounts & Security",
       "pl": "Konto",
       "en": "Account",
@@ -374,7 +374,7 @@
       "note": "Neuter noun. Used for bank accounts, social media, and app profiles."
     },
     {
-      "id": "s10_38",
+      "id": "10-38",
       "category": "Accounts & Security",
       "pl": "Zalogować się",
       "en": "To log in",
@@ -384,7 +384,7 @@
       "note": "Reflexive infinitive verb."
     },
     {
-      "id": "s10_39",
+      "id": "10-39",
       "category": "Accounts & Security",
       "pl": "Wylogować się",
       "en": "To log out",
@@ -394,7 +394,7 @@
       "note": "Reflexive infinitive verb."
     },
     {
-      "id": "s10_40",
+      "id": "10-40",
       "category": "Accounts & Security",
       "pl": "Hasło",
       "en": "Password",
@@ -404,9 +404,9 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s10_41",
+      "id": "10-41",
       "category": "Accounts & Security",
-      "pl": "Zapomniałem hasła",
+      "pl": "Zapomniałem / Zapomniałam hasła",
       "en": "I forgot my password",
       "level": 10,
       "gender": "both",
@@ -418,7 +418,7 @@
       "note": "The verb 'zapomnieć' forces the genitive case 'hasła'."
     },
     {
-      "id": "s10_42",
+      "id": "10-42",
       "category": "Accounts & Security",
       "pl": "PIN",
       "en": "PIN code",
@@ -428,7 +428,7 @@
       "note": "Pronounced just like in English."
     },
     {
-      "id": "s10_43",
+      "id": "10-43",
       "category": "Communication",
       "pl": "Adres e-mail",
       "en": "Email address",
@@ -438,7 +438,7 @@
       "note": "Email is pronounced exactly as in English."
     },
     {
-      "id": "s10_44",
+      "id": "10-44",
       "category": "Communication",
       "pl": "Małpa",
       "en": "At symbol (@)",
@@ -448,7 +448,7 @@
       "note": "Crucial! In Poland, the @ symbol is called a 'Małpa' (Monkey). So name@domain is 'name MAŁPA domain'."
     },
     {
-      "id": "s10_45",
+      "id": "10-45",
       "category": "Communication",
       "pl": "Kropka",
       "en": "Dot (.)",
@@ -458,7 +458,7 @@
       "note": "Used for reading URLs and emails. E.g., domain.com is 'domain KROPKA com'."
     },
     {
-      "id": "s10_46",
+      "id": "10-46",
       "category": "Communication",
       "pl": "Załącznik",
       "en": "Attachment",
@@ -468,7 +468,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s10_47",
+      "id": "10-47",
       "category": "Communication",
       "pl": "Link",
       "en": "Link",
@@ -478,7 +478,7 @@
       "note": "Loanword."
     },
     {
-      "id": "s10_48",
+      "id": "10-48",
       "category": "Communication",
       "pl": "Udostępnić",
       "en": "To share",
@@ -488,7 +488,7 @@
       "note": "Used when sharing a post, a link, or turning on your mobile hotspot."
     },
     {
-      "id": "s10_49",
+      "id": "10-49",
       "category": "Communication",
       "pl": "Media społecznościowe",
       "en": "Social media",
@@ -498,7 +498,7 @@
       "note": "Plural noun phrase."
     },
     {
-      "id": "s10_50",
+      "id": "10-50",
       "category": "Communication",
       "pl": "Dodać do znajomych",
       "en": "To add as a friend",
@@ -508,7 +508,7 @@
       "note": "Used heavily on Facebook and other platforms."
     },
     {
-      "id": "s10_51",
+      "id": "10-51",
       "category": "Calls & Texts",
       "pl": "Numer telefonu",
       "en": "Phone number",
@@ -518,7 +518,7 @@
       "note": "Takes the genitive case 'telefonu'."
     },
     {
-      "id": "s10_52",
+      "id": "10-52",
       "category": "Calls & Texts",
       "pl": "Numer kierunkowy",
       "en": "Country / Area code",
@@ -528,7 +528,7 @@
       "note": "Poland's country code is +48."
     },
     {
-      "id": "s10_53",
+      "id": "10-53",
       "category": "Calls & Texts",
       "pl": "Odebrać telefon",
       "en": "To answer the phone",
@@ -538,7 +538,7 @@
       "note": "Literally 'to collect the phone'."
     },
     {
-      "id": "s10_54",
+      "id": "10-54",
       "category": "Calls & Texts",
       "pl": "Zadzwonię później",
       "en": "I'll call later",
@@ -548,7 +548,7 @@
       "note": "Future tense of 'dzwonić'."
     },
     {
-      "id": "s10_55",
+      "id": "10-55",
       "category": "Calls & Texts",
       "pl": "Proszę wysłać SMS",
       "en": "Please send a text",
@@ -558,7 +558,7 @@
       "note": "'Wysłać' means to send. SMS is pronounced 'Es-em-es'."
     },
     {
-      "id": "s10_56",
+      "id": "10-56",
       "category": "Calls & Texts",
       "pl": "Komunikator",
       "en": "Messaging app",
@@ -568,7 +568,7 @@
       "note": "A general term for apps like WhatsApp, Messenger, or Signal."
     },
     {
-      "id": "s10_57",
+      "id": "10-57",
       "category": "Tech Issues",
       "pl": "Bateria jest rozładowana",
       "en": "Battery is dead",
@@ -578,7 +578,7 @@
       "note": "Literally 'discharged'. Use this to explain why you can't show a digital ticket!"
     },
     {
-      "id": "s10_58",
+      "id": "10-58",
       "category": "Tech Issues",
       "pl": "Mam pięć procent baterii",
       "en": "I have 5 percent battery",
@@ -588,7 +588,7 @@
       "note": "The universal sign of tech panic."
     },
     {
-      "id": "s10_59",
+      "id": "10-59",
       "category": "Tech Issues",
       "pl": "Ekran jest pęknięty",
       "en": "The screen is cracked",
@@ -598,7 +598,7 @@
       "note": "Adjective 'pęknięty' matches masculine 'ekran'."
     },
     {
-      "id": "s10_60",
+      "id": "10-60",
       "category": "Tech Issues",
       "pl": "Aplikacja się zawiesiła",
       "en": "The app froze / crashed",
@@ -608,7 +608,7 @@
       "note": "Literally 'hung itself up'."
     },
     {
-      "id": "s10_61",
+      "id": "10-61",
       "category": "Tech Issues",
       "pl": "Telefon się zawiesił",
       "en": "The phone froze",
@@ -618,7 +618,7 @@
       "note": "Past tense reflexive verb."
     },
     {
-      "id": "s10_62",
+      "id": "10-62",
       "category": "Tech Issues",
       "pl": "Zresetować",
       "en": "To restart / reboot",
@@ -628,7 +628,7 @@
       "note": "The universal tech support advice."
     },
     {
-      "id": "s10_63",
+      "id": "10-63",
       "category": "Tech Issues",
       "pl": "Brak pamięci",
       "en": "Out of storage / memory",
@@ -638,7 +638,7 @@
       "note": "Literally 'lack of memory'."
     },
     {
-      "id": "s10_64",
+      "id": "10-64",
       "category": "Tech Issues",
       "pl": "Usunąć",
       "en": "To delete",
@@ -648,7 +648,7 @@
       "note": "Infinitive verb used for files, apps, or photos."
     },
     {
-      "id": "s10_65",
+      "id": "10-65",
       "category": "Tech Issues",
       "pl": "Mikrofon nie działa",
       "en": "The microphone doesn't work",
@@ -658,7 +658,7 @@
       "note": "Add 'nie' before 'działa'."
     },
     {
-      "id": "s10_66",
+      "id": "10-66",
       "category": "Settings & Controls",
       "pl": "Wyciszyć",
       "en": "To mute",
@@ -668,7 +668,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s10_67",
+      "id": "10-67",
       "category": "Settings & Controls",
       "pl": "Tryb cichy",
       "en": "Silent mode",
@@ -678,7 +678,7 @@
       "note": "Turn this on when visiting a Polish church or museum."
     },
     {
-      "id": "s10_68",
+      "id": "10-68",
       "category": "Settings & Controls",
       "pl": "Głośność",
       "en": "Volume",
@@ -688,7 +688,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s10_69",
+      "id": "10-69",
       "category": "Settings & Controls",
       "pl": "Zablokowany",
       "en": "Locked",
@@ -698,7 +698,7 @@
       "note": "Used for locked screens, locked accounts, or blocked contacts."
     },
     {
-      "id": "s10_70",
+      "id": "10-70",
       "category": "Settings & Controls",
       "pl": "Odblokować",
       "en": "To unlock",

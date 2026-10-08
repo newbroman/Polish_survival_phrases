@@ -4,7 +4,7 @@
     "tier": "ADVANCED",
     "phrases": [
         {
-            "id": "s31_01",
+            "id": "31-01",
             "category": "School System",
             "pl": "Edukacja",
             "en": "Education",
@@ -14,7 +14,7 @@
             "note": "Feminine noun."
         },
         {
-            "id": "s31_02",
+            "id": "31-02",
             "category": "School System",
             "pl": "Żłobek",
             "en": "Nursery / Creche",
@@ -24,7 +24,7 @@
             "note": "For children up to 3 years old."
         },
         {
-            "id": "s31_03",
+            "id": "31-03",
             "category": "School System",
             "pl": "Przedszkole",
             "en": "Kindergarten / Preschool",
@@ -34,7 +34,7 @@
             "note": "For children aged 3 to 6."
         },
         {
-            "id": "s31_04",
+            "id": "31-04",
             "category": "School System",
             "pl": "Szkoła podstawowa",
             "en": "Primary school",
@@ -44,7 +44,7 @@
             "note": "Grades 1 through 8. Often shortened to 'podstawówka'."
         },
         {
-            "id": "s31_05",
+            "id": "31-05",
             "category": "School System",
             "pl": "Liceum",
             "en": "High school",
@@ -54,7 +54,7 @@
             "note": "A 4-year secondary school preparing students for university."
         },
         {
-            "id": "s31_06",
+            "id": "31-06",
             "category": "School System",
             "pl": "Technikum",
             "en": "Technical high school",
@@ -64,7 +64,7 @@
             "note": "A 5-year school offering both a vocational diploma and university prep."
         },
         {
-            "id": "s31_07",
+            "id": "31-07",
             "category": "School System",
             "pl": "Uczeń / Uczennica",
             "en": "Pupil / Student (up to high school)",
@@ -78,7 +78,7 @@
             "note": "Reserved for kids in primary or high school. University students are 'studenci'."
         },
         {
-            "id": "s31_08",
+            "id": "31-08",
             "category": "School System",
             "pl": "Nauczyciel / Nauczycielka",
             "en": "Teacher",
@@ -92,7 +92,7 @@
             "note": "Used for school teachers, not university professors."
         },
         {
-            "id": "s31_09",
+            "id": "31-09",
             "category": "School System",
             "pl": "Klasa",
             "en": "Class / Grade level",
@@ -102,7 +102,7 @@
             "note": "Feminine noun."
         },
         {
-            "id": "s31_10",
+            "id": "31-10",
             "category": "School System",
             "pl": "Lekcja",
             "en": "Lesson",
@@ -112,7 +112,7 @@
             "note": "Feminine noun. Lasts 45 minutes in Polish schools."
         },
         {
-            "id": "s31_11",
+            "id": "31-11",
             "category": "School System",
             "pl": "Przerwa",
             "en": "Break / Recess",
@@ -122,7 +122,7 @@
             "note": "Usually 5 to 15 minutes between lessons."
         },
         {
-            "id": "s31_12",
+            "id": "31-12",
             "category": "School System",
             "pl": "Matura",
             "en": "Matura / High school exit exam",
@@ -132,7 +132,7 @@
             "note": "The most important exam in a Polish teenager's life. Required to enter university."
         },
         {
-            "id": "s31_13",
+            "id": "31-13",
             "category": "School System",
             "pl": "Studniówka",
             "en": "Prom / 100-days ball",
@@ -142,7 +142,7 @@
             "note": "A formal ball held approximately 100 days before the Matura exams."
         },
         {
-            "id": "s31_14",
+            "id": "31-14",
             "category": "University Life",
             "pl": "Uniwersytet",
             "en": "University",
@@ -152,7 +152,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s31_15",
+            "id": "31-15",
             "category": "University Life",
             "pl": "Studia",
             "en": "University studies",
@@ -162,7 +162,7 @@
             "note": "Plural noun. 'Idę na studia' = I am going to university."
         },
         {
-            "id": "s31_16",
+            "id": "31-16",
             "category": "University Life",
             "pl": "Student / Studentka",
             "en": "University student",
@@ -176,7 +176,7 @@
             "note": "Never call a university student an 'uczeń'!"
         },
         {
-            "id": "s31_17",
+            "id": "31-17",
             "category": "University Life",
             "pl": "Wykładowca",
             "en": "Lecturer",
@@ -186,7 +186,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s31_18",
+            "id": "31-18",
             "category": "University Life",
             "pl": "Profesor",
             "en": "Professor",
@@ -196,7 +196,7 @@
             "note": "A very high academic title in Poland, not just a job description."
         },
         {
-            "id": "s31_19",
+            "id": "31-19",
             "category": "University Life",
             "pl": "Wykład",
             "en": "Lecture",
@@ -206,7 +206,7 @@
             "note": "Masculine noun. 'Jestem na wykładzie' = I am at a lecture."
         },
         {
-            "id": "s31_20",
+            "id": "31-20",
             "category": "University Life",
             "pl": "Ćwiczenia",
             "en": "Practical classes / Seminars",
@@ -216,7 +216,7 @@
             "note": "Plural noun. Mandatory small-group classes at university."
         },
         {
-            "id": "s31_21",
+            "id": "31-21",
             "category": "University Life",
             "pl": "Dziekanat",
             "en": "Dean's office",
@@ -226,7 +226,7 @@
             "note": "The administrative heart of any university department. Infamous for long lines."
         },
         {
-            "id": "s31_22",
+            "id": "31-22",
             "category": "University Life",
             "pl": "Indeks",
             "en": "Student record book",
@@ -236,7 +236,7 @@
             "note": "Historically a green book containing all grades. Mostly digital now."
         },
         {
-            "id": "s31_23",
+            "id": "31-23",
             "category": "University Life",
             "pl": "Legitymacja studencka",
             "en": "Student ID card",
@@ -246,7 +246,7 @@
             "note": "Gives you a 51% discount on national trains!"
         },
         {
-            "id": "s31_24",
+            "id": "31-24",
             "category": "University Life",
             "pl": "Akademik",
             "en": "Dormitory / Student housing",
@@ -256,7 +256,7 @@
             "note": "Masculine noun. 'Mieszkam w akademiku' = I live in a dorm."
         },
         {
-            "id": "s31_25",
+            "id": "31-25",
             "category": "University Life",
             "pl": "Stypendium",
             "en": "Scholarship",
@@ -266,7 +266,7 @@
             "note": "Neuter noun."
         },
         {
-            "id": "s31_26",
+            "id": "31-26",
             "category": "University Life",
             "pl": "Kierunek studiów",
             "en": "Field of study / Major",
@@ -276,7 +276,7 @@
             "note": "Literally 'direction of studies'."
         },
         {
-            "id": "s31_27",
+            "id": "31-27",
             "category": "Degrees & Graduation",
             "pl": "Licencjat",
             "en": "Bachelor's degree",
@@ -286,7 +286,7 @@
             "note": "Usually takes 3 years in Poland."
         },
         {
-            "id": "s31_28",
+            "id": "31-28",
             "category": "Degrees & Graduation",
             "pl": "Magister",
             "en": "Master's degree",
@@ -296,7 +296,7 @@
             "note": "Usually takes 2 years after a Licencjat."
         },
         {
-            "id": "s31_29",
+            "id": "31-29",
             "category": "Degrees & Graduation",
             "pl": "Doktorat",
             "en": "PhD / Doctorate",
@@ -306,7 +306,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s31_30",
+            "id": "31-30",
             "category": "Degrees & Graduation",
             "pl": "Praca licencjacka",
             "en": "Bachelor's thesis",
@@ -316,7 +316,7 @@
             "note": "You must write and defend this to graduate."
         },
         {
-            "id": "s31_31",
+            "id": "31-31",
             "category": "Degrees & Graduation",
             "pl": "Praca magisterska",
             "en": "Master's thesis",
@@ -326,7 +326,7 @@
             "note": "Often shortened in slang to 'magisterka'."
         },
         {
-            "id": "s31_32",
+            "id": "31-32",
             "category": "Degrees & Graduation",
             "pl": "Obrona",
             "en": "Thesis defense",
@@ -336,7 +336,7 @@
             "note": "Feminine noun. The final oral exam before graduating."
         },
         {
-            "id": "s31_33",
+            "id": "31-33",
             "category": "Degrees & Graduation",
             "pl": "Dyplom",
             "en": "Diploma",
@@ -346,7 +346,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s31_34",
+            "id": "31-34",
             "category": "Degrees & Graduation",
             "pl": "Absolwent / Absolwentka",
             "en": "Graduate / Alumni",
@@ -360,7 +360,7 @@
             "note": "Noun."
         },
         {
-            "id": "s31_35",
+            "id": "31-35",
             "category": "Exams & Grades",
             "pl": "Egzamin",
             "en": "Exam",
@@ -370,7 +370,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s31_36",
+            "id": "31-36",
             "category": "Exams & Grades",
             "pl": "Sesja",
             "en": "Exam period",
@@ -380,7 +380,7 @@
             "note": "A highly stressful multi-week period at the end of every semester."
         },
         {
-            "id": "s31_37",
+            "id": "31-37",
             "category": "Exams & Grades",
             "pl": "Kolokwium",
             "en": "Midterm / Test",
@@ -390,7 +390,7 @@
             "note": "Often shortened to 'kolos' in student slang."
         },
         {
-            "id": "s31_38",
+            "id": "31-38",
             "category": "Exams & Grades",
             "pl": "Zdać egzamin",
             "en": "To pass an exam",
@@ -400,7 +400,7 @@
             "note": "Perfective verb 'zdać'."
         },
         {
-            "id": "s31_39",
+            "id": "31-39",
             "category": "Exams & Grades",
             "pl": "Oblać egzamin",
             "en": "To fail an exam",
@@ -410,7 +410,7 @@
             "note": "Literally 'to pour over'. Slang for failing."
         },
         {
-            "id": "s31_40",
+            "id": "31-40",
             "category": "Exams & Grades",
             "pl": "Poprawka",
             "en": "Retake (Exam)",
@@ -420,7 +420,7 @@
             "note": "If you fail an exam during the 'sesja', you get one free 'poprawka'."
         },
         {
-            "id": "s31_41",
+            "id": "31-41",
             "category": "Exams & Grades",
             "pl": "Ocena",
             "en": "Grade / Mark",
@@ -430,7 +430,7 @@
             "note": "Feminine noun. In Poland, university grades range from 2.0 (fail) to 5.0 (excellent)."
         },
         {
-            "id": "s31_42",
+            "id": "31-42",
             "category": "Exams & Grades",
             "pl": "Zaliczenie",
             "en": "Course credit / Pass",
@@ -440,7 +440,7 @@
             "note": "Sometimes classes don't have a final exam, just a pass/fail 'zaliczenie'."
         },
         {
-            "id": "s31_43",
+            "id": "31-43",
             "category": "Exams & Grades",
             "pl": "Ściąga",
             "en": "Cheat sheet",
@@ -450,7 +450,7 @@
             "note": "Feminine noun."
         },
         {
-            "id": "s31_44",
+            "id": "31-44",
             "category": "Subjects",
             "pl": "Matematyka",
             "en": "Mathematics",
@@ -460,7 +460,7 @@
             "note": "Often shortened to 'Matma'."
         },
         {
-            "id": "s31_45",
+            "id": "31-45",
             "category": "Subjects",
             "pl": "Historia",
             "en": "History",
@@ -470,7 +470,7 @@
             "note": "Feminine noun."
         },
         {
-            "id": "s31_46",
+            "id": "31-46",
             "category": "Subjects",
             "pl": "Chemia",
             "en": "Chemistry",
@@ -480,7 +480,7 @@
             "note": "Feminine noun."
         },
         {
-            "id": "s31_47",
+            "id": "31-47",
             "category": "Subjects",
             "pl": "Fizyka",
             "en": "Physics",
@@ -490,7 +490,7 @@
             "note": "Feminine noun."
         },
         {
-            "id": "s31_48",
+            "id": "31-48",
             "category": "Subjects",
             "pl": "Biologia",
             "en": "Biology",
@@ -500,7 +500,7 @@
             "note": "Feminine noun."
         },
         {
-            "id": "s31_49",
+            "id": "31-49",
             "category": "Subjects",
             "pl": "Informatyka",
             "en": "Computer Science / IT",
@@ -510,7 +510,7 @@
             "note": "A very popular and lucrative field of study in Poland."
         },
         {
-            "id": "s31_50",
+            "id": "31-50",
             "category": "Subjects",
             "pl": "Język obcy",
             "en": "Foreign language",
@@ -520,7 +520,7 @@
             "note": "Masculine noun phrase."
         },
         {
-            "id": "s31_51",
+            "id": "31-51",
             "category": "Learning Actions",
             "pl": "Uczyć się",
             "en": "To study / To learn",
@@ -530,7 +530,7 @@
             "note": "Reflexive verb. Takes the genitive case (e.g., 'Uczę się polskiego')."
         },
         {
-            "id": "s31_52",
+            "id": "31-52",
             "category": "Learning Actions",
             "pl": "Kuweć",
             "en": "To cram / Study intensely",
@@ -540,7 +540,7 @@
             "note": "Student slang ('kuć'). E.g., 'Kuję do egzaminu'."
         },
         {
-            "id": "s31_53",
+            "id": "31-53",
             "category": "Learning Actions",
             "pl": "Czytać",
             "en": "To read",
@@ -550,7 +550,7 @@
             "note": "Infinitive verb."
         },
         {
-            "id": "s31_54",
+            "id": "31-54",
             "category": "Learning Actions",
             "pl": "Pisać",
             "en": "To write",
@@ -560,7 +560,7 @@
             "note": "Infinitive verb."
         },
         {
-            "id": "s31_55",
+            "id": "31-55",
             "category": "Learning Actions",
             "pl": "Notować",
             "en": "To take notes",
@@ -570,7 +570,7 @@
             "note": "Infinitive verb."
         },
         {
-            "id": "s31_56",
+            "id": "31-56",
             "category": "Learning Actions",
             "pl": "Zrozumieć",
             "en": "To understand",
@@ -580,7 +580,7 @@
             "note": "Perfective verb."
         },
         {
-            "id": "s31_57",
+            "id": "31-57",
             "category": "Learning Actions",
             "pl": "Pamiętać",
             "en": "To remember",
@@ -590,7 +590,7 @@
             "note": "Infinitive verb."
         },
         {
-            "id": "s31_58",
+            "id": "31-58",
             "category": "Learning Actions",
             "pl": "Zapomnieć",
             "en": "To forget",
@@ -600,7 +600,7 @@
             "note": "Perfective verb. Takes the genitive case."
         },
         {
-            "id": "s31_59",
+            "id": "31-59",
             "category": "Academic Equipment",
             "pl": "Książka",
             "en": "Book",
@@ -610,7 +610,7 @@
             "note": "Feminine noun."
         },
         {
-            "id": "s31_60",
+            "id": "31-60",
             "category": "Academic Equipment",
             "pl": "Podręcznik",
             "en": "Textbook",
@@ -620,7 +620,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s31_61",
+            "id": "31-61",
             "category": "Academic Equipment",
             "pl": "Zeszyt",
             "en": "Notebook",
@@ -630,7 +630,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s31_62",
+            "id": "31-62",
             "category": "Academic Equipment",
             "pl": "Długopis",
             "en": "Pen",
@@ -640,7 +640,7 @@
             "note": "Literally 'long-writer'."
         },
         {
-            "id": "s31_63",
+            "id": "31-63",
             "category": "Academic Equipment",
             "pl": "Ołówek",
             "en": "Pencil",
@@ -650,7 +650,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s31_64",
+            "id": "31-64",
             "category": "Academic Equipment",
             "pl": "Kalkulator",
             "en": "Calculator",
@@ -660,7 +660,7 @@
             "note": "Masculine noun."
         },
         {
-            "id": "s31_65",
+            "id": "31-65",
             "category": "Conversations",
             "pl": "Co studiujesz?",
             "en": "What are you studying?",
@@ -670,7 +670,7 @@
             "note": "A very common question for young adults in Poland."
         },
         {
-            "id": "s31_66",
+            "id": "31-66",
             "category": "Conversations",
             "pl": "Studiuję prawo",
             "en": "I study law",
@@ -680,7 +680,7 @@
             "note": "Accusative case 'prawo'."
         },
         {
-            "id": "s31_67",
+            "id": "31-67",
             "category": "Conversations",
             "pl": "Studiuję medycynę",
             "en": "I study medicine",
@@ -690,7 +690,7 @@
             "note": "Accusative case 'medycynę'."
         },
         {
-            "id": "s31_68",
+            "id": "31-68",
             "category": "Conversations",
             "pl": "Na którym jesteś roku?",
             "en": "What year are you in?",
@@ -700,7 +700,7 @@
             "note": "Uses the locative case 'Na którym roku'."
         },
         {
-            "id": "s31_69",
+            "id": "31-69",
             "category": "Conversations",
             "pl": "Jestem na pierwszym roku",
             "en": "I am in my first year",
@@ -710,7 +710,7 @@
             "note": "Locative phrase."
         },
         {
-            "id": "s31_70",
+            "id": "31-70",
             "category": "Conversations",
             "pl": "Jestem na ostatnim roku",
             "en": "I am in my last year",
@@ -720,7 +720,7 @@
             "note": "Locative phrase."
         },
         {
-            "id": "s31_71",
+            "id": "31-71",
             "category": "Conversations",
             "pl": "Mam dużo nauki",
             "en": "I have a lot of studying",
@@ -730,7 +730,7 @@
             "note": "Takes the genitive case 'nauki'."
         },
         {
-            "id": "s31_72",
+            "id": "31-72",
             "category": "Conversations",
             "pl": "Idę do biblioteki",
             "en": "I'm going to the library",
@@ -740,7 +740,7 @@
             "note": "Preposition 'do' + genitive 'biblioteki'."
         },
         {
-            "id": "s31_73",
+            "id": "31-73",
             "category": "Conversations",
             "pl": "Wagarować",
             "en": "To skip school / play truant",
@@ -750,7 +750,7 @@
             "note": "Slang verb."
         },
         {
-            "id": "s31_74",
+            "id": "31-74",
             "category": "Conversations",
             "pl": "Korepetycje",
             "en": "Private tutoring",
@@ -760,7 +760,7 @@
             "note": "Plural noun. Very common in Poland to prep for the Matura."
         },
         {
-            "id": "s31_75",
+            "id": "31-75",
             "category": "Conversations",
             "pl": "Semestr",
             "en": "Semester",

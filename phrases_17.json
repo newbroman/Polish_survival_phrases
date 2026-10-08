@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s17_01",
+      "id": "17-01",
       "category": "Transport Hubs",
       "pl": "Kasa biletowa",
       "en": "Ticket office",
@@ -14,7 +14,7 @@
       "note": "Feminine noun phrase. Often just called 'Kasa'."
     },
     {
-      "id": "s17_02",
+      "id": "17-02",
       "category": "Transport Hubs",
       "pl": "Informacja",
       "en": "Information desk",
@@ -24,7 +24,7 @@
       "note": "Look for the large 'I' sign at stations."
     },
     {
-      "id": "s17_03",
+      "id": "17-03",
       "category": "Transport Hubs",
       "pl": "Rozkład jazdy",
       "en": "Timetable / Schedule",
@@ -34,7 +34,7 @@
       "note": "Usually printed on yellow (departures) and white (arrivals) posters."
     },
     {
-      "id": "s17_04",
+      "id": "17-04",
       "category": "Transport Hubs",
       "pl": "Odjazdy",
       "en": "Departures (Trains/Buses)",
@@ -44,7 +44,7 @@
       "note": "Plural noun. Always printed on the yellow timetables."
     },
     {
-      "id": "s17_05",
+      "id": "17-05",
       "category": "Transport Hubs",
       "pl": "Przyjazdy",
       "en": "Arrivals (Trains/Buses)",
@@ -54,7 +54,7 @@
       "note": "Plural noun. Always printed on the white timetables."
     },
     {
-      "id": "s17_06",
+      "id": "17-06",
       "category": "Transport Hubs",
       "pl": "Peron",
       "en": "Platform",
@@ -64,7 +64,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s17_07",
+      "id": "17-07",
       "category": "Transport Hubs",
       "pl": "Tor",
       "en": "Track",
@@ -74,7 +74,7 @@
       "note": "Important! Polish tickets tell you both the Platform (Peron) AND the Track (Tor)."
     },
     {
-      "id": "s17_08",
+      "id": "17-08",
       "category": "Transport Hubs",
       "pl": "Pociąg opóźniony",
       "en": "Train delayed",
@@ -84,7 +84,7 @@
       "note": "Adjective 'opóźniony' matches 'pociąg'."
     },
     {
-      "id": "s17_09",
+      "id": "17-09",
       "category": "Transport Hubs",
       "pl": "Pociąg odwołany",
       "en": "Train cancelled",
@@ -94,7 +94,7 @@
       "note": "Adjective 'odwołany'."
     },
     {
-      "id": "s17_10",
+      "id": "17-10",
       "category": "Transport Hubs",
       "pl": "Przechowalnia bagażu",
       "en": "Left luggage / Luggage storage",
@@ -104,7 +104,7 @@
       "note": "Feminine noun phrase."
     },
     {
-      "id": "s17_11",
+      "id": "17-11",
       "category": "Airports",
       "pl": "Odloty",
       "en": "Departures (Flights)",
@@ -114,7 +114,7 @@
       "note": "Used exclusively for airplanes (from 'latać' - to fly)."
     },
     {
-      "id": "s17_12",
+      "id": "17-12",
       "category": "Airports",
       "pl": "Przyloty",
       "en": "Arrivals (Flights)",
@@ -124,7 +124,7 @@
       "note": "Used exclusively for airplanes."
     },
     {
-      "id": "s17_13",
+      "id": "17-13",
       "category": "Airports",
       "pl": "Odprawa",
       "en": "Check-in",
@@ -134,7 +134,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s17_14",
+      "id": "17-14",
       "category": "Airports",
       "pl": "Kontrola bezpieczeństwa",
       "en": "Security check",
@@ -144,7 +144,7 @@
       "note": "Feminine noun phrase."
     },
     {
-      "id": "s17_15",
+      "id": "17-15",
       "category": "Airports",
       "pl": "Odbiór bagażu",
       "en": "Baggage reclaim",
@@ -154,7 +154,7 @@
       "note": "Literally 'collection of baggage'."
     },
     {
-      "id": "s17_16",
+      "id": "17-16",
       "category": "Airports",
       "pl": "Odprawa celna",
       "en": "Customs",
@@ -164,7 +164,7 @@
       "note": "Feminine noun phrase."
     },
     {
-      "id": "s17_17",
+      "id": "17-17",
       "category": "Airports",
       "pl": "Strefa wolnocłowa",
       "en": "Duty-free zone",
@@ -174,7 +174,7 @@
       "note": "Literally 'zone free of customs'."
     },
     {
-      "id": "s17_18",
+      "id": "17-18",
       "category": "Airports",
       "pl": "Bramka",
       "en": "Gate",
@@ -184,7 +184,7 @@
       "note": "Diminutive of 'brama' (large gate)."
     },
     {
-      "id": "s17_19",
+      "id": "17-19",
       "category": "Shopping & Services",
       "pl": "Promocja",
       "en": "Sale / Special offer",
@@ -194,7 +194,7 @@
       "note": "Often marked with a % sign or written in red."
     },
     {
-      "id": "s17_20",
+      "id": "17-20",
       "category": "Shopping & Services",
       "pl": "Wyprzedaż",
       "en": "Clearance sale",
@@ -204,7 +204,7 @@
       "note": "Literally 'selling out'. Used for end-of-season sales."
     },
     {
-      "id": "s17_21",
+      "id": "17-21",
       "category": "Shopping & Services",
       "pl": "Płatność tylko kartą",
       "en": "Card payment only",
@@ -214,7 +214,7 @@
       "note": "Very common on self-checkout machines in Poland."
     },
     {
-      "id": "s17_22",
+      "id": "17-22",
       "category": "Shopping & Services",
       "pl": "Tylko gotówka",
       "en": "Cash only",
@@ -224,7 +224,7 @@
       "note": "Look for this sign at small bakeries or kiosks."
     },
     {
-      "id": "s17_23",
+      "id": "17-23",
       "category": "Shopping & Services",
       "pl": "Kasa pierwszeństwa",
       "en": "Priority checkout",
@@ -234,7 +234,7 @@
       "note": "Reserved for pregnant women, disabled individuals, and the elderly."
     },
     {
-      "id": "s17_24",
+      "id": "17-24",
       "category": "Shopping & Services",
       "pl": "Przymierzalnia",
       "en": "Fitting room",
@@ -244,7 +244,7 @@
       "note": "Derived from 'przymierzać' (to try on)."
     },
     {
-      "id": "s17_25",
+      "id": "17-25",
       "category": "Shopping & Services",
       "pl": "Darmowa dostawa",
       "en": "Free delivery",
@@ -254,7 +254,7 @@
       "note": "Feminine noun phrase."
     },
     {
-      "id": "s17_26",
+      "id": "17-26",
       "category": "Warnings & Safety",
       "pl": "Obiekt monitorowany",
       "en": "CCTV in operation",
@@ -264,7 +264,7 @@
       "note": "Literally 'Monitored object/building'."
     },
     {
-      "id": "s17_27",
+      "id": "17-27",
       "category": "Warnings & Safety",
       "pl": "Nie dotykać",
       "en": "Do not touch",
@@ -274,7 +274,7 @@
       "note": "Infinitive verb negated by 'Nie'. Common in museums."
     },
     {
-      "id": "s17_28",
+      "id": "17-28",
       "category": "Warnings & Safety",
       "pl": "Zakaz palenia",
       "en": "No smoking",
@@ -284,7 +284,7 @@
       "note": "'Zakaz' means ban. Takes the genitive case 'palenia'."
     },
     {
-      "id": "s17_29",
+      "id": "17-29",
       "category": "Warnings & Safety",
       "pl": "Świeżo malowane",
       "en": "Wet paint",
@@ -294,7 +294,7 @@
       "note": "Literally 'Freshly painted'."
     },
     {
-      "id": "s17_30",
+      "id": "17-30",
       "category": "Warnings & Safety",
       "pl": "Wysokie napięcie",
       "en": "High voltage",
@@ -304,7 +304,7 @@
       "note": "Often accompanied by a yellow lightning bolt sign."
     },
     {
-      "id": "s17_31",
+      "id": "17-31",
       "category": "Warnings & Safety",
       "pl": "Uwaga stopień",
       "en": "Mind the step",
@@ -314,7 +314,7 @@
       "note": "Literally 'Attention step'."
     },
     {
-      "id": "s17_32",
+      "id": "17-32",
       "category": "Warnings & Safety",
       "pl": "Uwaga na głowę",
       "en": "Mind your head",
@@ -324,7 +324,7 @@
       "note": "Common in older cellars, castles, or low doorways."
     },
     {
-      "id": "s17_33",
+      "id": "17-33",
       "category": "Warnings & Safety",
       "pl": "Teren prywatny",
       "en": "Private property",
@@ -334,7 +334,7 @@
       "note": "Masculine noun phrase."
     },
     {
-      "id": "s17_34",
+      "id": "17-34",
       "category": "Warnings & Safety",
       "pl": "Brak przejścia",
       "en": "No thoroughfare / No passage",
@@ -344,7 +344,7 @@
       "note": "Literally 'Lack of crossing'."
     },
     {
-      "id": "s17_35",
+      "id": "17-35",
       "category": "Warnings & Safety",
       "pl": "Zakaz fotografowania",
       "en": "No photography",
@@ -354,7 +354,7 @@
       "note": "Commonly seen in churches or museums."
     },
     {
-      "id": "s17_36",
+      "id": "17-36",
       "category": "Facilities & Buildings",
       "pl": "Wyjście ewakuacyjne",
       "en": "Emergency exit",
@@ -364,7 +364,7 @@
       "note": "Usually marked with a green running man sign."
     },
     {
-      "id": "s17_37",
+      "id": "17-37",
       "category": "Facilities & Buildings",
       "pl": "Droga pożarowa",
       "en": "Fire lane / Fire road",
@@ -374,7 +374,7 @@
       "note": "Do not park here! You will be towed."
     },
     {
-      "id": "s17_38",
+      "id": "17-38",
       "category": "Facilities & Buildings",
       "pl": "Miejsce zbiórki",
       "en": "Assembly point / Muster point",
@@ -384,7 +384,7 @@
       "note": "For fire evacuations."
     },
     {
-      "id": "s17_39",
+      "id": "17-39",
       "category": "Facilities & Buildings",
       "pl": "Toaleta płatna",
       "en": "Paid toilet",
@@ -394,7 +394,7 @@
       "note": "Very common in bus stations. Usually costs 2-5 PLN."
     },
     {
-      "id": "s17_40",
+      "id": "17-40",
       "category": "Facilities & Buildings",
       "pl": "Przewijak",
       "en": "Baby changing facility",
@@ -404,7 +404,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s17_41",
+      "id": "17-41",
       "category": "Facilities & Buildings",
       "pl": "Dla niepełnosprawnych",
       "en": "For disabled persons",
@@ -414,7 +414,7 @@
       "note": "Often seen on specific toilets or parking spots."
     },
     {
-      "id": "s17_42",
+      "id": "17-42",
       "category": "Facilities & Buildings",
       "pl": "Tylko dla personelu",
       "en": "Staff only",
@@ -424,7 +424,7 @@
       "note": "Literally 'Only for personnel'."
     },
     {
-      "id": "s17_43",
+      "id": "17-43",
       "category": "General Notices",
       "pl": "Zaraz wracam",
       "en": "Be right back",
@@ -434,7 +434,7 @@
       "note": "Often hung on shop doors when the clerk steps out."
     },
     {
-      "id": "s17_44",
+      "id": "17-44",
       "category": "General Notices",
       "pl": "Klimatyzowane",
       "en": "Air-conditioned",
@@ -444,7 +444,7 @@
       "note": "Adjective. Often put in windows of restaurants to lure in summer tourists."
     },
     {
-      "id": "s17_45",
+      "id": "17-45",
       "category": "General Notices",
       "pl": "Strefa ciszy",
       "en": "Quiet zone",

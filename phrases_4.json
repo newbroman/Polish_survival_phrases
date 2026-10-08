@@ -4,7 +4,7 @@
   "tier": "FOUNDATION",
   "phrases": [
     {
-      "id": "n4_01",
+      "id": "4-01",
       "category": "Numbers 0-10",
       "pl": "Zero",
       "en": "Zero",
@@ -14,7 +14,7 @@
       "note": "Pronounced exactly as it looks: 'Ze-ro'."
     },
     {
-      "id": "n4_02",
+      "id": "4-02",
       "category": "Numbers 0-10",
       "pl": "Jeden",
       "en": "One",
@@ -24,7 +24,7 @@
       "note": "Masculine form. Changes to 'jedna' (feminine) or 'jedno' (neuter) depending on the noun."
     },
     {
-      "id": "n4_03",
+      "id": "4-03",
       "category": "Numbers 0-10",
       "pl": "Dwa",
       "en": "Two",
@@ -34,7 +34,7 @@
       "note": "Used for masculine and neuter nouns. For feminine nouns, you use 'dwie'."
     },
     {
-      "id": "n4_04",
+      "id": "4-04",
       "category": "Numbers 0-10",
       "pl": "Trzy",
       "en": "Three",
@@ -44,7 +44,7 @@
       "note": "Pronounced 'Tshy'. The 'trz' cluster makes a voiceless 'ch' sound."
     },
     {
-      "id": "n4_05",
+      "id": "4-05",
       "category": "Numbers 0-10",
       "pl": "Cztery",
       "en": "Four",
@@ -54,7 +54,7 @@
       "note": "Starts with the hard 'cz' (ch) sound."
     },
     {
-      "id": "n4_06",
+      "id": "4-06",
       "category": "Numbers 0-10",
       "pl": "Pięć",
       "en": "Five",
@@ -64,7 +64,7 @@
       "note": "Grammar rule: Numbers 5 and above force the noun that follows into the Genitive Plural case."
     },
     {
-      "id": "n4_07",
+      "id": "4-07",
       "category": "Numbers 0-10",
       "pl": "Sześć",
       "en": "Six",
@@ -74,7 +74,7 @@
       "note": "A mouthful of soft and hard consonants: 'sz' followed by 'e', then 'ść'."
     },
     {
-      "id": "n4_08",
+      "id": "4-08",
       "category": "Numbers 0-10",
       "pl": "Siedem",
       "en": "Seven",
@@ -84,7 +84,7 @@
       "note": "Pronounced 'Shyeh-dem'. The 'si' makes a soft 'ś' sound."
     },
     {
-      "id": "n4_09",
+      "id": "4-09",
       "category": "Numbers 0-10",
       "pl": "Osiem",
       "en": "Eight",
@@ -94,7 +94,7 @@
       "note": "Pronounced 'O-shyem'."
     },
     {
-      "id": "n4_10",
+      "id": "4-10",
       "category": "Numbers 0-10",
       "pl": "Dziewięć",
       "en": "Nine",
@@ -104,7 +104,7 @@
       "note": "Ends in the soft 'ć'. Don't confuse it with ten (dziesięć)!"
     },
     {
-      "id": "n4_11",
+      "id": "4-11",
       "category": "Numbers 0-10",
       "pl": "Dziesięć",
       "en": "Ten",
@@ -114,7 +114,7 @@
       "note": "Contains the soft 'dzi' sound and the nasal 'ę' sound. Pronounced 'Jyeh-shientch'."
     },
     {
-      "id": "n4_12",
+      "id": "4-12",
       "category": "Teens & Tens",
       "pl": "Jedenaście",
       "en": "Eleven",
@@ -124,7 +124,7 @@
       "note": "All teen numbers end in '-naście'. It literally means 'one on ten'."
     },
     {
-      "id": "n4_13",
+      "id": "4-13",
       "category": "Teens & Tens",
       "pl": "Dwanaście",
       "en": "Twelve",
@@ -134,7 +134,7 @@
       "note": "Ends in '-naście'."
     },
     {
-      "id": "n4_14",
+      "id": "4-14",
       "category": "Teens & Tens",
       "pl": "Piętnaście",
       "en": "Fifteen",
@@ -144,7 +144,7 @@
       "note": "Notice how 'pięć' (5) changes slightly to 'pięt-' before '-naście'."
     },
     {
-      "id": "n4_15",
+      "id": "4-15",
       "category": "Teens & Tens",
       "pl": "Dwadzieścia",
       "en": "Twenty",
@@ -154,7 +154,7 @@
       "note": "Literally translates to 'two tens'. Note the soft 'ścia' ending."
     },
     {
-      "id": "n4_16",
+      "id": "4-16",
       "category": "Teens & Tens",
       "pl": "Trzydzieści",
       "en": "Thirty",
@@ -164,7 +164,7 @@
       "note": "30 and 40 end in '-dzieści'."
     },
     {
-      "id": "n4_17",
+      "id": "4-17",
       "category": "Teens & Tens",
       "pl": "Czterdzieści",
       "en": "Forty",
@@ -174,7 +174,7 @@
       "note": "Ends in '-dzieści'."
     },
     {
-      "id": "n4_18",
+      "id": "4-18",
       "category": "Teens & Tens",
       "pl": "Pięćdziesiąt",
       "en": "Fifty",
@@ -184,7 +184,7 @@
       "note": "50, 60, 70, 80, and 90 end in '-dziesiąt'."
     },
     {
-      "id": "n4_19",
+      "id": "4-19",
       "category": "Hundreds & Large Numbers",
       "pl": "Sto",
       "en": "One hundred",
@@ -194,7 +194,7 @@
       "note": "Simple to say! 'Sto lat' (100 years) is also the traditional Polish birthday song."
     },
     {
-      "id": "n4_20",
+      "id": "4-20",
       "category": "Hundreds & Large Numbers",
       "pl": "Dwieście",
       "en": "Two hundred",
@@ -204,7 +204,7 @@
       "note": "Combines 'dwie' (two - feminine) and 'ście' (hundreds)."
     },
     {
-      "id": "n4_21",
+      "id": "4-21",
       "category": "Hundreds & Large Numbers",
       "pl": "Pięćset",
       "en": "Five hundred",
@@ -214,7 +214,7 @@
       "note": "Hundreds from 500 to 900 end in '-set'."
     },
     {
-      "id": "n4_22",
+      "id": "4-22",
       "category": "Hundreds & Large Numbers",
       "pl": "Tysiąc",
       "en": "One thousand",
@@ -224,7 +224,7 @@
       "note": "Pronounced 'Tih-shonts'. Contains the nasal 'ą' sound."
     },
     {
-      "id": "n4_23",
+      "id": "4-23",
       "category": "Hundreds & Large Numbers",
       "pl": "Milion",
       "en": "One million",
@@ -234,7 +234,7 @@
       "note": "Very similar to English, but with a short 'o'."
     },
     {
-      "id": "n4_24",
+      "id": "4-24",
       "category": "Measuring Time",
       "pl": "Sekunda",
       "en": "Second",
@@ -244,7 +244,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "n4_25",
+      "id": "4-25",
       "category": "Measuring Time",
       "pl": "Minuta",
       "en": "Minute",
@@ -254,7 +254,7 @@
       "note": "Feminine noun. Plural: 'Minuty'."
     },
     {
-      "id": "n4_26",
+      "id": "4-26",
       "category": "Measuring Time",
       "pl": "Godzina",
       "en": "Hour",
@@ -264,7 +264,7 @@
       "note": "Feminine noun. Also used to mean 'O'clock'."
     },
     {
-      "id": "n4_27",
+      "id": "4-27",
       "category": "Measuring Time",
       "pl": "Pół godziny",
       "en": "Half an hour",
@@ -274,7 +274,7 @@
       "note": "'Pół' means half. Forces 'godzina' into the Genitive case ('godziny')."
     },
     {
-      "id": "n4_28",
+      "id": "4-28",
       "category": "Telling Time",
       "pl": "Która godzina?",
       "en": "What time is it?",
@@ -284,7 +284,7 @@
       "note": "Literally translates to 'Which hour?'."
     },
     {
-      "id": "n4_29",
+      "id": "4-29",
       "category": "Telling Time",
       "pl": "Jest pierwsza",
       "en": "It's one o'clock",
@@ -294,7 +294,7 @@
       "note": "In Polish, hours are expressed as feminine ordinal numbers. Literally 'It is the first (hour)'."
     },
     {
-      "id": "n4_30",
+      "id": "4-30",
       "category": "Telling Time",
       "pl": "Jest druga",
       "en": "It's two o'clock",
@@ -304,7 +304,7 @@
       "note": "Literally 'It is the second (hour)'."
     },
     {
-      "id": "n4_31",
+      "id": "4-31",
       "category": "Telling Time",
       "pl": "Wpół do drugiej",
       "en": "Half past one",
@@ -314,7 +314,7 @@
       "note": "Polish time logic points to the NEXT hour. So 1:30 is literally 'Half TO the second (hour)'."
     },
     {
-      "id": "n4_32",
+      "id": "4-32",
       "category": "Telling Time",
       "pl": "Piętnaście po trzeciej",
       "en": "Fifteen past three",
@@ -324,7 +324,7 @@
       "note": "Uses 'po' (after) followed by the Locative case ('trzeciej')."
     },
     {
-      "id": "n4_33",
+      "id": "4-33",
       "category": "Telling Time",
       "pl": "Za piętnaście czwarta",
       "en": "Fifteen to four",
@@ -334,7 +334,7 @@
       "note": "Uses 'za' (in/behind) followed by the Nominative case ('czwarta')."
     },
     {
-      "id": "n4_34",
+      "id": "4-34",
       "category": "Telling Time",
       "pl": "O której?",
       "en": "At what time?",
@@ -344,7 +344,7 @@
       "note": "Always asks 'At which (hour)?'."
     },
     {
-      "id": "n4_35",
+      "id": "4-35",
       "category": "Telling Time",
       "pl": "O drugiej",
       "en": "At two",
@@ -354,7 +354,7 @@
       "note": "The preposition 'O' (at) forces the Locative case ending ('-iej')."
     },
     {
-      "id": "n4_36",
+      "id": "4-36",
       "category": "Times of Day",
       "pl": "Rano",
       "en": "In the morning",
@@ -364,7 +364,7 @@
       "note": "Generally used for times roughly from 6 AM to 11 AM."
     },
     {
-      "id": "n4_37",
+      "id": "4-37",
       "category": "Times of Day",
       "pl": "Południe",
       "en": "Noon / Midday",
@@ -374,7 +374,7 @@
       "note": "Literally 'half-day'."
     },
     {
-      "id": "n4_38",
+      "id": "4-38",
       "category": "Times of Day",
       "pl": "Po południu",
       "en": "In the afternoon",
@@ -384,7 +384,7 @@
       "note": "Literally translates to 'After half-day'."
     },
     {
-      "id": "n4_39",
+      "id": "4-39",
       "category": "Times of Day",
       "pl": "Wieczorem",
       "en": "In the evening",
@@ -394,7 +394,7 @@
       "note": "The Instrumental case of 'wieczór' (evening) transforms it into an adverb of time."
     },
     {
-      "id": "n4_40",
+      "id": "4-40",
       "category": "Times of Day",
       "pl": "W nocy",
       "en": "At night",
@@ -404,7 +404,7 @@
       "note": "Combines 'W' (in) with the Locative case of 'noc' (night)."
     },
     {
-      "id": "n4_41",
+      "id": "4-41",
       "category": "Times of Day",
       "pl": "Północ",
       "en": "Midnight",
@@ -414,7 +414,7 @@
       "note": "Literally 'half-night'. Also means 'North'."
     },
     {
-      "id": "n4_42",
+      "id": "4-42",
       "category": "Frequencies",
       "pl": "Zawsze",
       "en": "Always",
@@ -424,7 +424,7 @@
       "note": "A powerful adverb to express habits."
     },
     {
-      "id": "n4_43",
+      "id": "4-43",
       "category": "Frequencies",
       "pl": "Nigdy",
       "en": "Never",
@@ -434,7 +434,7 @@
       "note": "Remember, Polish uses double negatives. 'I never drink' is 'Nigdy NIE piję'."
     },
     {
-      "id": "n4_44",
+      "id": "4-44",
       "category": "Frequencies",
       "pl": "Często",
       "en": "Often",
@@ -444,7 +444,7 @@
       "note": "Pronounced 'Chen-sto'."
     },
     {
-      "id": "n4_45",
+      "id": "4-45",
       "category": "Frequencies",
       "pl": "Czasami",
       "en": "Sometimes",
@@ -454,7 +454,7 @@
       "note": "Also frequently said as 'czasem'."
     },
     {
-      "id": "n4_46",
+      "id": "4-46",
       "category": "Sequence",
       "pl": "Teraz",
       "en": "Now",
@@ -464,7 +464,7 @@
       "note": "A vital time marker for immediate actions."
     },
     {
-      "id": "n4_47",
+      "id": "4-47",
       "category": "Sequence",
       "pl": "Później",
       "en": "Later",
@@ -474,7 +474,7 @@
       "note": "Comparative form of the adverb 'późno' (late)."
     },
     {
-      "id": "n4_48",
+      "id": "4-48",
       "category": "Sequence",
       "pl": "Wcześniej",
       "en": "Earlier",
@@ -484,7 +484,7 @@
       "note": "Comparative form of the adverb 'wcześnie' (early)."
     },
     {
-      "id": "n4_49",
+      "id": "4-49",
       "category": "Days & Weeks",
       "pl": "Dzień",
       "en": "Day",
@@ -494,7 +494,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "n4_50",
+      "id": "4-50",
       "category": "Days & Weeks",
       "pl": "Tydzień",
       "en": "Week",
@@ -504,7 +504,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "n4_51",
+      "id": "4-51",
       "category": "Months & Years",
       "pl": "Miesiąc",
       "en": "Month",
@@ -514,7 +514,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "n4_52",
+      "id": "4-52",
       "category": "Months & Years",
       "pl": "Rok",
       "en": "Year",
@@ -524,7 +524,7 @@
       "note": "Masculine noun. The plural form changes entirely to 'lata' (years)."
     },
     {
-      "id": "n4_53",
+      "id": "4-53",
       "category": "Dates",
       "pl": "Dzisiaj",
       "en": "Today",
@@ -534,7 +534,7 @@
       "note": "Often shortened to 'dziś'."
     },
     {
-      "id": "n4_54",
+      "id": "4-54",
       "category": "Dates",
       "pl": "Jutro",
       "en": "Tomorrow",
@@ -544,7 +544,7 @@
       "note": "A common adverb for future plans."
     },
     {
-      "id": "n4_55",
+      "id": "4-55",
       "category": "Dates",
       "pl": "Wczoraj",
       "en": "Yesterday",
@@ -554,7 +554,7 @@
       "note": "A vital time marker to shift sentences into the past tense."
     },
     {
-      "id": "n4_56",
+      "id": "4-56",
       "category": "Dates",
       "pl": "Pojutrze",
       "en": "Day after tomorrow",
@@ -564,7 +564,7 @@
       "note": "Literally combines 'po' (after) + 'jutro' (tomorrow)."
     },
     {
-      "id": "n4_57",
+      "id": "4-57",
       "category": "Dates",
       "pl": "Przedwczoraj",
       "en": "Day before yesterday",
@@ -574,7 +574,7 @@
       "note": "Literally combines 'przed' (before) + 'wczoraj' (yesterday)."
     },
     {
-      "id": "n4_58",
+      "id": "4-58",
       "category": "Dates",
       "pl": "W weekend",
       "en": "On the weekend",
@@ -584,7 +584,7 @@
       "note": "Borrowed directly from English! Pronounced 'vee-kend'."
     },
     {
-      "id": "n4_59",
+      "id": "4-59",
       "category": "Dates",
       "pl": "W przyszłym tygodniu",
       "en": "Next week",
@@ -594,7 +594,7 @@
       "note": "'Przyszły' means 'future' or 'coming'. Uses the Locative case."
     },
     {
-      "id": "n4_60",
+      "id": "4-60",
       "category": "Dates",
       "pl": "Kiedy?",
       "en": "When?",
@@ -604,7 +604,7 @@
       "note": "The fundamental question word for time and dates."
     },
     {
-      "id": "n4_61",
+      "id": "4-61",
       "category": "Seasons",
       "pl": "Wiosna",
       "en": "Spring",
@@ -614,7 +614,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "n4_62",
+      "id": "4-62",
       "category": "Seasons",
       "pl": "Lato",
       "en": "Summer",
@@ -624,7 +624,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "n4_63",
+      "id": "4-63",
       "category": "Seasons",
       "pl": "Jesień",
       "en": "Autumn / Fall",
@@ -634,7 +634,7 @@
       "note": "Feminine noun (ends in a consonant, which is rare for feminine words!)."
     },
     {
-      "id": "n4_64",
+      "id": "4-64",
       "category": "Seasons",
       "pl": "Zima",
       "en": "Winter",
@@ -644,7 +644,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "n4_65",
+      "id": "4-65",
       "category": "Months & Years",
       "pl": "Styczeń",
       "en": "January",
@@ -654,7 +654,7 @@
       "note": "Months in Polish are not capitalized unless they start a sentence."
     },
     {
-      "id": "n4_66",
+      "id": "4-66",
       "category": "Months & Years",
       "pl": "Maj",
       "en": "May",
@@ -664,7 +664,7 @@
       "note": "One of the easiest Polish months to remember!"
     },
     {
-      "id": "n4_67",
+      "id": "4-67",
       "category": "Months & Years",
       "pl": "Sierpień",
       "en": "August",
@@ -674,7 +674,7 @@
       "note": "Derived from 'sierp' (sickle), relating to the harvest season."
     },
     {
-      "id": "n4_68",
+      "id": "4-68",
       "category": "Months & Years",
       "pl": "Grudzień",
       "en": "December",
@@ -684,7 +684,7 @@
       "note": "Derived from 'gruda' (frozen clods of earth)."
     },
     {
-      "id": "n4_69",
+      "id": "4-69",
       "category": "Positions",
       "pl": "Pierwszy",
       "en": "First",
@@ -694,7 +694,7 @@
       "note": "Ordinal numbers act like adjectives, meaning they must match the gender of the noun."
     },
     {
-      "id": "n4_70",
+      "id": "4-70",
       "category": "Positions",
       "pl": "Drugi",
       "en": "Second",
@@ -704,7 +704,7 @@
       "note": "Can also be used to mean 'the other one' in everyday conversation."
     },
     {
-      "id": "n4_71",
+      "id": "4-71",
       "category": "Positions",
       "pl": "Trzeci",
       "en": "Third",
@@ -714,7 +714,7 @@
       "note": "Pronounced 'Tshe-tsee'. Masculine form."
     },
     {
-      "id": "n4_72",
+      "id": "4-72",
       "category": "Positions",
       "pl": "Ostatni",
       "en": "Last",
@@ -724,7 +724,7 @@
       "note": "Masculine adjective for 'last'. The feminine form is 'ostatnia'."
     },
     {
-      "id": "n4_73",
+      "id": "4-73",
       "category": "Amounts",
       "pl": "Raz",
       "en": "Once / One time",
@@ -734,7 +734,7 @@
       "note": "When counting repetitions, use 'raz' instead of 'jeden'."
     },
     {
-      "id": "n4_74",
+      "id": "4-74",
       "category": "Amounts",
       "pl": "Dwa razy",
       "en": "Twice / Two times",
@@ -744,7 +744,7 @@
       "note": "Plural of 'raz' is 'razy'."
     },
     {
-      "id": "n4_75",
+      "id": "4-75",
       "category": "Amounts",
       "pl": "Wiele razy",
       "en": "Many times",

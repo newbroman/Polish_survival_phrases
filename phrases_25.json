@@ -4,7 +4,7 @@
   "tier": "ADVANCED",
   "phrases": [
     {
-      "id": "s25_01",
+      "id": "25-01",
       "category": "Opinions",
       "pl": "Moim zdaniem...",
       "en": "In my opinion...",
@@ -14,7 +14,7 @@
       "note": "Takes the instrumental case ('moim zdaniem')."
     },
     {
-      "id": "s25_02",
+      "id": "25-02",
       "category": "Opinions",
       "pl": "Myślę, że...",
       "en": "I think that...",
@@ -24,7 +24,7 @@
       "note": "The 'że' (that) is mandatory in Polish grammar here."
     },
     {
-      "id": "s25_03",
+      "id": "25-03",
       "category": "Opinions",
       "pl": "Uważam, że...",
       "en": "I believe/consider that...",
@@ -34,7 +34,7 @@
       "note": "Slightly more formal than 'myślę'."
     },
     {
-      "id": "s25_04",
+      "id": "25-04",
       "category": "Opinions",
       "pl": "Wydaje mi się, że...",
       "en": "It seems to me that...",
@@ -44,7 +44,7 @@
       "note": "Reflexive phrase used to express a gentle opinion."
     },
     {
-      "id": "s25_05",
+      "id": "25-05",
       "category": "Opinions",
       "pl": "Zgadzam się",
       "en": "I agree",
@@ -54,7 +54,7 @@
       "note": "Reflexive verb 'zgadzać się'."
     },
     {
-      "id": "s25_06",
+      "id": "25-06",
       "category": "Opinions",
       "pl": "Nie zgadzam się",
       "en": "I disagree",
@@ -64,7 +64,7 @@
       "note": "Add 'nie' before the verb."
     },
     {
-      "id": "s25_07",
+      "id": "25-07",
       "category": "Opinions",
       "pl": "Masz rację",
       "en": "You're right",
@@ -74,7 +74,7 @@
       "note": "Literally 'You have rightness'."
     },
     {
-      "id": "s25_08",
+      "id": "25-08",
       "category": "Opinions",
       "pl": "Nie masz racji",
       "en": "You're wrong",
@@ -84,7 +84,7 @@
       "note": "Literally 'You do not have rightness'."
     },
     {
-      "id": "s25_09",
+      "id": "25-09",
       "category": "Opinions",
       "pl": "To zależy",
       "en": "It depends",
@@ -94,7 +94,7 @@
       "note": "Very common answer in Polish debates."
     },
     {
-      "id": "s25_10",
+      "id": "25-10",
       "category": "Opinions",
       "pl": "To zależy od sytuacji",
       "en": "It depends on the situation",
@@ -104,7 +104,7 @@
       "note": "Preposition 'od' forces the genitive case 'sytuacji'."
     },
     {
-      "id": "s25_11",
+      "id": "25-11",
       "category": "Opinions",
       "pl": "Bez wątpienia",
       "en": "Without a doubt",
@@ -114,7 +114,7 @@
       "note": "Preposition 'bez' forces the genitive case 'wątpienia'."
     },
     {
-      "id": "s25_12",
+      "id": "25-12",
       "category": "Opinions",
       "pl": "Nie jestem przekonany/przekonana",
       "en": "I'm not convinced",
@@ -128,7 +128,7 @@
       "note": "Passive participle acting as an adjective."
     },
     {
-      "id": "s25_13",
+      "id": "25-13",
       "category": "Opinions",
       "pl": "To dobry pomysł",
       "en": "That's a good idea",
@@ -138,7 +138,7 @@
       "note": "Masculine noun phrase."
     },
     {
-      "id": "s25_14",
+      "id": "25-14",
       "category": "Opinions",
       "pl": "To zły pomysł",
       "en": "That's a bad idea",
@@ -148,7 +148,7 @@
       "note": "Masculine noun phrase."
     },
     {
-      "id": "s25_15",
+      "id": "25-15",
       "category": "Opinions",
       "pl": "To nie ma sensu",
       "en": "That makes no sense",
@@ -158,7 +158,7 @@
       "note": "Literally 'It has no sense'. Requires genitive case due to negation."
     },
     {
-      "id": "s25_16",
+      "id": "25-16",
       "category": "Opinions",
       "pl": "To ma sens",
       "en": "That makes sense",
@@ -168,7 +168,7 @@
       "note": "Literally 'It has sense' (accusative case)."
     },
     {
-      "id": "s25_17",
+      "id": "25-17",
       "category": "Opinions",
       "pl": "Co o tym sądzisz?",
       "en": "What do you think about it?",
@@ -178,7 +178,7 @@
       "note": "Uses the verb 'sądzić' (to judge/consider)."
     },
     {
-      "id": "s25_18",
+      "id": "25-18",
       "category": "Opinions",
       "pl": "Nie mam zdania",
       "en": "I have no opinion",
@@ -188,7 +188,7 @@
       "note": "Takes the genitive case 'zdania' due to negation."
     },
     {
-      "id": "s25_19",
+      "id": "25-19",
       "category": "Opinions",
       "pl": "Trudno powiedzieć",
       "en": "Hard to say",
@@ -198,7 +198,7 @@
       "note": "Adverb + infinitive."
     },
     {
-      "id": "s25_20",
+      "id": "25-20",
       "category": "Opinions",
       "pl": "Zobaczymy",
       "en": "We'll see",
@@ -208,7 +208,7 @@
       "note": "Future tense, first-person plural."
     },
     {
-      "id": "s25_21",
+      "id": "25-21",
       "category": "Opinions",
       "pl": "Może",
       "en": "Maybe",
@@ -218,7 +218,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s25_22",
+      "id": "25-22",
       "category": "Opinions",
       "pl": "Prawdopodobnie",
       "en": "Probably",
@@ -228,7 +228,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s25_23",
+      "id": "25-23",
       "category": "Opinions",
       "pl": "Na pewno",
       "en": "For sure / Certainly",
@@ -238,7 +238,7 @@
       "note": "Adverbial phrase."
     },
     {
-      "id": "s25_24",
+      "id": "25-24",
       "category": "Opinions",
       "pl": "Oczywiście",
       "en": "Of course / Obviously",
@@ -248,7 +248,7 @@
       "note": "Adverb."
     },
     {
-      "id": "s25_25",
+      "id": "25-25",
       "category": "Opinions",
       "pl": "Dokładnie tak",
       "en": "Exactly so",
@@ -258,7 +258,7 @@
       "note": "Strong agreement."
     },
     {
-      "id": "s25_26",
+      "id": "25-26",
       "category": "Abstract",
       "pl": "Szczęście",
       "en": "Happiness / Luck",
@@ -268,7 +268,7 @@
       "note": "Neuter noun. Polish uses the same word for being happy and being lucky."
     },
     {
-      "id": "s25_27",
+      "id": "25-27",
       "category": "Abstract",
       "pl": "Miłość",
       "en": "Love",
@@ -278,7 +278,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_28",
+      "id": "25-28",
       "category": "Abstract",
       "pl": "Nienawiść",
       "en": "Hate",
@@ -288,7 +288,7 @@
       "note": "Feminine noun ending in a consonant."
     },
     {
-      "id": "s25_29",
+      "id": "25-29",
       "category": "Abstract",
       "pl": "Wolność",
       "en": "Freedom",
@@ -298,7 +298,7 @@
       "note": "Feminine noun ending in '-ość'."
     },
     {
-      "id": "s25_30",
+      "id": "25-30",
       "category": "Abstract",
       "pl": "Równość",
       "en": "Equality",
@@ -308,7 +308,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_31",
+      "id": "25-31",
       "category": "Abstract",
       "pl": "Sprawiedliwość",
       "en": "Justice",
@@ -318,7 +318,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_32",
+      "id": "25-32",
       "category": "Abstract",
       "pl": "Prawda",
       "en": "Truth",
@@ -328,7 +328,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_33",
+      "id": "25-33",
       "category": "Abstract",
       "pl": "Kłamstwo",
       "en": "Lie",
@@ -338,7 +338,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s25_34",
+      "id": "25-34",
       "category": "Abstract",
       "pl": "Zaufanie",
       "en": "Trust",
@@ -348,7 +348,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s25_35",
+      "id": "25-35",
       "category": "Abstract",
       "pl": "Nadzieja",
       "en": "Hope",
@@ -358,7 +358,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_36",
+      "id": "25-36",
       "category": "Abstract",
       "pl": "Strach",
       "en": "Fear",
@@ -368,7 +368,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s25_37",
+      "id": "25-37",
       "category": "Abstract",
       "pl": "Odwaga",
       "en": "Courage",
@@ -378,7 +378,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_38",
+      "id": "25-38",
       "category": "Abstract",
       "pl": "Mądrość",
       "en": "Wisdom",
@@ -388,7 +388,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_39",
+      "id": "25-39",
       "category": "Abstract",
       "pl": "Wiedza",
       "en": "Knowledge",
@@ -398,7 +398,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_40",
+      "id": "25-40",
       "category": "Abstract",
       "pl": "Doświadczenie",
       "en": "Experience",
@@ -408,7 +408,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s25_41",
+      "id": "25-41",
       "category": "Abstract",
       "pl": "Pamięć",
       "en": "Memory",
@@ -418,7 +418,7 @@
       "note": "Feminine noun ending in a consonant."
     },
     {
-      "id": "s25_42",
+      "id": "25-42",
       "category": "Abstract",
       "pl": "Wyobraźnia",
       "en": "Imagination",
@@ -428,7 +428,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_43",
+      "id": "25-43",
       "category": "Abstract",
       "pl": "Kreatywność",
       "en": "Creativity",
@@ -438,7 +438,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_44",
+      "id": "25-44",
       "category": "Abstract",
       "pl": "Inteligencja",
       "en": "Intelligence",
@@ -448,7 +448,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_45",
+      "id": "25-45",
       "category": "Abstract",
       "pl": "Głupota",
       "en": "Stupidity",
@@ -458,7 +458,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_46",
+      "id": "25-46",
       "category": "Abstract",
       "pl": "Cierpliwość",
       "en": "Patience",
@@ -468,7 +468,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_47",
+      "id": "25-47",
       "category": "Abstract",
       "pl": "Spokój",
       "en": "Peace / Calm",
@@ -478,7 +478,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s25_48",
+      "id": "25-48",
       "category": "Abstract",
       "pl": "Chaos",
       "en": "Chaos",
@@ -488,7 +488,7 @@
       "note": "Masculine noun. Pronounced 'Ha-os'."
     },
     {
-      "id": "s25_49",
+      "id": "25-49",
       "category": "Abstract",
       "pl": "Porządek",
       "en": "Order",
@@ -498,7 +498,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s25_50",
+      "id": "25-50",
       "category": "Abstract",
       "pl": "Równowaga",
       "en": "Balance",
@@ -508,7 +508,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s25_51",
+      "id": "25-51",
       "category": "Emotions",
       "pl": "Emocje",
       "en": "Emotions",
@@ -518,7 +518,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s25_52",
+      "id": "25-52",
       "category": "Emotions",
       "pl": "Uczucia",
       "en": "Feelings",
@@ -528,7 +528,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s25_53",
+      "id": "25-53",
       "category": "Emotions",
       "pl": "Szczęśliwy/Szczęśliwa",
       "en": "Happy",
@@ -542,7 +542,7 @@
       "note": "Gendered adjective."
     },
     {
-      "id": "s25_54",
+      "id": "25-54",
       "category": "Emotions",
       "pl": "Smutny/Smutna",
       "en": "Sad",
@@ -556,7 +556,7 @@
       "note": "Gendered adjective."
     },
     {
-      "id": "s25_55",
+      "id": "25-55",
       "category": "Emotions",
       "pl": "Zły/Zła",
       "en": "Angry (also means Bad)",
@@ -570,7 +570,7 @@
       "note": "Context determines if you mean angry or evil."
     },
     {
-      "id": "s25_56",
+      "id": "25-56",
       "category": "Emotions",
       "pl": "Spokojny/Spokojna",
       "en": "Calm",
@@ -584,7 +584,7 @@
       "note": "Gendered adjective."
     },
     {
-      "id": "s25_57",
+      "id": "25-57",
       "category": "Emotions",
       "pl": "Zdenerwowany/Zdenerwowana",
       "en": "Nervous / Annoyed",
@@ -598,7 +598,7 @@
       "note": "Passive participle."
     },
     {
-      "id": "s25_58",
+      "id": "25-58",
       "category": "Emotions",
       "pl": "Podekscytowany/Podekscytowana",
       "en": "Excited",
@@ -612,7 +612,7 @@
       "note": "Passive participle."
     },
     {
-      "id": "s25_59",
+      "id": "25-59",
       "category": "Emotions",
       "pl": "Znudzony/Znudzona",
       "en": "Bored",
@@ -626,7 +626,7 @@
       "note": "Passive participle."
     },
     {
-      "id": "s25_60",
+      "id": "25-60",
       "category": "Emotions",
       "pl": "Zaskoczony/Zaskoczona",
       "en": "Surprised",
@@ -640,7 +640,7 @@
       "note": "Passive participle."
     },
     {
-      "id": "s25_61",
+      "id": "25-61",
       "category": "Emotions",
       "pl": "Przestraszony/Przestraszona",
       "en": "Scared",
@@ -654,7 +654,7 @@
       "note": "Passive participle."
     },
     {
-      "id": "s25_62",
+      "id": "25-62",
       "category": "Emotions",
       "pl": "Dumny/Dumna",
       "en": "Proud",
@@ -668,7 +668,7 @@
       "note": "Gendered adjective."
     },
     {
-      "id": "s25_63",
+      "id": "25-63",
       "category": "Emotions",
       "pl": "Wstyd",
       "en": "Shame",
@@ -678,7 +678,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s25_64",
+      "id": "25-64",
       "category": "Emotions",
       "pl": "Zawstydzony/Zawstydzona",
       "en": "Ashamed",
@@ -692,7 +692,7 @@
       "note": "Passive participle."
     },
     {
-      "id": "s25_65",
+      "id": "25-65",
       "category": "Emotions",
       "pl": "Samotny/Samotna",
       "en": "Lonely",
@@ -706,7 +706,7 @@
       "note": "Gendered adjective."
     },
     {
-      "id": "s25_66",
+      "id": "25-66",
       "category": "Emotions",
       "pl": "Zadowolony/Zadowolona",
       "en": "Satisfied / Content",
@@ -720,7 +720,7 @@
       "note": "Passive participle."
     },
     {
-      "id": "s25_67",
+      "id": "25-67",
       "category": "Emotions",
       "pl": "Niezadowolony/Niezadowolona",
       "en": "Dissatisfied",
@@ -734,7 +734,7 @@
       "note": "Passive participle."
     },
     {
-      "id": "s25_68",
+      "id": "25-68",
       "category": "Emotions",
       "pl": "Rozczarowany/Rozczarowana",
       "en": "Disappointed",
@@ -748,7 +748,7 @@
       "note": "Passive participle."
     },
     {
-      "id": "s25_69",
+      "id": "25-69",
       "category": "Emotions",
       "pl": "Optymistyczny/Optymistyczna",
       "en": "Optimistic",
@@ -762,7 +762,7 @@
       "note": "Gendered adjective."
     },
     {
-      "id": "s25_70",
+      "id": "25-70",
       "category": "Emotions",
       "pl": "Pesymistyczny/Pesymistyczna",
       "en": "Pessimistic",
@@ -776,7 +776,7 @@
       "note": "Gendered adjective."
     },
     {
-      "id": "s25_71",
+      "id": "25-71",
       "category": "Opinions",
       "pl": "To kwestia gustu",
       "en": "It's a matter of taste",
@@ -786,7 +786,7 @@
       "note": "Feminine noun 'kwestia'."
     },
     {
-      "id": "s25_72",
+      "id": "25-72",
       "category": "Opinions",
       "pl": "Z mojego doświadczenia",
       "en": "From my experience",
@@ -796,7 +796,7 @@
       "note": "Takes the genitive case 'doświadczenia'."
     },
     {
-      "id": "s25_73",
+      "id": "25-73",
       "category": "Opinions",
       "pl": "Nie mam pojęcia",
       "en": "I have no idea",
@@ -806,7 +806,7 @@
       "note": "Very common phrase. 'Pojęcie' means concept or notion."
     },
     {
-      "id": "s25_74",
+      "id": "25-74",
       "category": "Abstract",
       "pl": "Współczucie",
       "en": "Compassion / Sympathy",
@@ -816,7 +816,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s25_75",
+      "id": "25-75",
       "category": "Abstract",
       "pl": "Szacunek",
       "en": "Respect",

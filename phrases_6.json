@@ -4,7 +4,7 @@
   "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "s6_01",
+      "id": "6-01",
       "category": "Check-in",
       "pl": "Mam rezerwację",
       "en": "I have a reservation",
@@ -14,7 +14,7 @@
       "note": "From the verb 'mieć' (to have). Forces 'rezerwacja' into the accusative case ('-ę')."
     },
     {
-      "id": "s6_02",
+      "id": "6-02",
       "category": "Check-in",
       "pl": "Na nazwisko...",
       "en": "Under the name...",
@@ -24,7 +24,7 @@
       "note": "Literally 'On surname...'. 'Nazwisko' means last name."
     },
     {
-      "id": "s6_03",
+      "id": "6-03",
       "category": "Check-in",
       "pl": "Pokój jednoosobowy",
       "en": "Single room",
@@ -34,7 +34,7 @@
       "note": "An adjective describing the room. Literally 'one-person room'."
     },
     {
-      "id": "s6_04",
+      "id": "6-04",
       "category": "Check-in",
       "pl": "Pokój dwuosobowy",
       "en": "Double room",
@@ -44,7 +44,7 @@
       "note": "Literally 'two-person room'. Polish uses these compound adjectives constantly."
     },
     {
-      "id": "s6_05",
+      "id": "6-05",
       "category": "Check-in",
       "pl": "Dwa osobne łóżka",
       "en": "Twin beds / Two separate beds",
@@ -54,7 +54,7 @@
       "note": "'Osobne' means separate. Crucial if you are traveling with a friend!"
     },
     {
-      "id": "s6_06",
+      "id": "6-06",
       "category": "Check-in",
       "pl": "Łóżko małżeńskie",
       "en": "Double bed",
@@ -64,7 +64,7 @@
       "note": "Literally 'matrimonial bed'. The standard way to ask for a single large bed in Poland."
     },
     {
-      "id": "s6_07",
+      "id": "6-07",
       "category": "Check-in",
       "pl": "Na ile nocy?",
       "en": "For how many nights?",
@@ -74,7 +74,7 @@
       "note": "Questions about duration use 'na' (for) + accusative 'ile' (how many) + genitive 'nocy' (nights)."
     },
     {
-      "id": "s6_08",
+      "id": "6-08",
       "category": "Check-in",
       "pl": "Na jedną noc",
       "en": "For one night",
@@ -84,7 +84,7 @@
       "note": "Accusative case for 'jedną noc' (one night)."
     },
     {
-      "id": "s6_09",
+      "id": "6-09",
       "category": "Check-in",
       "pl": "Czy śniadanie jest w cenie?",
       "en": "Is breakfast included in the price?",
@@ -94,7 +94,7 @@
       "note": "Literally 'Is breakfast in the price?'. 'Cena' takes the locative case 'cenie'."
     },
     {
-      "id": "s6_10",
+      "id": "6-10",
       "category": "Check-in",
       "pl": "Opłata klimatyczna",
       "en": "Tourist tax / City tax",
@@ -104,7 +104,7 @@
       "note": "Many Polish tourist towns charge a tiny daily 'climate tax' that you must pay at the front desk."
     },
     {
-      "id": "s6_11",
+      "id": "6-11",
       "category": "Check-in",
       "pl": "Proszę dowód tożsamości",
       "en": "ID, please",
@@ -114,7 +114,7 @@
       "note": "Literally 'proof of identity'. A passport (paszport) works perfectly for this."
     },
     {
-      "id": "s6_12",
+      "id": "6-12",
       "category": "Check-in",
       "pl": "Karta do pokoju",
       "en": "Room key card",
@@ -124,7 +124,7 @@
       "note": "Takes the genitive case 'do pokoju' (card to the room)."
     },
     {
-      "id": "s6_13",
+      "id": "6-13",
       "category": "Check-in",
       "pl": "Numer pokoju",
       "en": "Room number",
@@ -134,7 +134,7 @@
       "note": "'Pokoju' is the genitive form of 'pokój' (Number OF the room)."
     },
     {
-      "id": "s6_14",
+      "id": "6-14",
       "category": "Check-in",
       "pl": "Doba hotelowa",
       "en": "Check-in/out times",
@@ -144,7 +144,7 @@
       "note": "Literally 'The hotel day'. It defines the official hours you can occupy the room (e.g., 3 PM to 11 AM)."
     },
     {
-      "id": "s6_15",
+      "id": "6-15",
       "category": "Check-in",
       "pl": "Gdzie jest winda?",
       "en": "Where is the elevator?",
@@ -154,7 +154,7 @@
       "note": "Feminine noun. Essential for carrying heavy luggage!"
     },
     {
-      "id": "s6_16",
+      "id": "6-16",
       "category": "Room Preferences",
       "pl": "Pokój z widokiem",
       "en": "Room with a view",
@@ -164,7 +164,7 @@
       "note": "'Z' (with) takes the instrumental case: 'widokiem'."
     },
     {
-      "id": "s6_17",
+      "id": "6-17",
       "category": "Room Preferences",
       "pl": "Pokój z balkonem",
       "en": "Room with a balcony",
@@ -174,7 +174,7 @@
       "note": "Instrumental case: 'balkonem'."
     },
     {
-      "id": "s6_18",
+      "id": "6-18",
       "category": "Room Preferences",
       "pl": "Pokój dla niepalących",
       "en": "Non-smoking room",
@@ -184,7 +184,7 @@
       "note": "Almost all hotel rooms in Poland are strictly non-smoking by law."
     },
     {
-      "id": "s6_19",
+      "id": "6-19",
       "category": "Room Preferences",
       "pl": "Na parterze",
       "en": "On the ground floor",
@@ -194,7 +194,7 @@
       "note": "In Poland, the ground floor is 'parter'. The 1st floor is actually one flight of stairs up."
     },
     {
-      "id": "s6_20",
+      "id": "6-20",
       "category": "Room Preferences",
       "pl": "Na wyższym piętrze",
       "en": "On a higher floor",
@@ -204,7 +204,7 @@
       "note": "Locative case. 'Wyższy' is the comparative form of high."
     },
     {
-      "id": "s6_21",
+      "id": "6-21",
       "category": "Amenities & Requests",
       "pl": "Dodatkowe łóżko",
       "en": "Extra bed",
@@ -214,7 +214,7 @@
       "note": "Neuter adjective 'dodatkowe' to match 'łóżko'."
     },
     {
-      "id": "s6_22",
+      "id": "6-22",
       "category": "Amenities & Requests",
       "pl": "Łóżeczko dla dziecka",
       "en": "Baby cot / crib",
@@ -224,7 +224,7 @@
       "note": "'Łóżeczko' is a diminutive of bed (little bed)."
     },
     {
-      "id": "s6_23",
+      "id": "6-23",
       "category": "Amenities & Requests",
       "pl": "Dodatkowa poduszka",
       "en": "Extra pillow",
@@ -234,7 +234,7 @@
       "note": "Feminine adjective 'dodatkowa'."
     },
     {
-      "id": "s6_24",
+      "id": "6-24",
       "category": "Amenities & Requests",
       "pl": "Dodatkowy koc",
       "en": "Extra blanket",
@@ -244,7 +244,7 @@
       "note": "Masculine adjective 'dodatkowy'."
     },
     {
-      "id": "s6_25",
+      "id": "6-25",
       "category": "Amenities & Requests",
       "pl": "Czyste ręczniki",
       "en": "Clean towels",
@@ -254,7 +254,7 @@
       "note": "Plural noun. Say 'Poproszę czyste ręczniki' to request them."
     },
     {
-      "id": "s6_26",
+      "id": "6-26",
       "category": "Amenities & Requests",
       "pl": "Suszarka do włosów",
       "en": "Hair dryer",
@@ -264,7 +264,7 @@
       "note": "Literally 'dryer to hair'."
     },
     {
-      "id": "s6_27",
+      "id": "6-27",
       "category": "Amenities & Requests",
       "pl": "Żelazko",
       "en": "Iron",
@@ -274,7 +274,7 @@
       "note": "Pronounced 'Zhe-laz-ko'."
     },
     {
-      "id": "s6_28",
+      "id": "6-28",
       "category": "Amenities & Requests",
       "pl": "Deska do prasowania",
       "en": "Ironing board",
@@ -284,7 +284,7 @@
       "note": "Literally 'board to ironing'."
     },
     {
-      "id": "s6_29",
+      "id": "6-29",
       "category": "Amenities & Requests",
       "pl": "Przejściówka",
       "en": "Power adapter",
@@ -294,7 +294,7 @@
       "note": "Poland uses Type E/C electrical outlets. Ask for this if your plug doesn't fit!"
     },
     {
-      "id": "s6_30",
+      "id": "6-30",
       "category": "Amenities & Requests",
       "pl": "Sejf",
       "en": "Safe",
@@ -304,7 +304,7 @@
       "note": "Pronounced like 'safe', but with an 'f' at the end."
     },
     {
-      "id": "s6_31",
+      "id": "6-31",
       "category": "Hotel Services",
       "pl": "Hasło do WiFi",
       "en": "WiFi password",
@@ -314,7 +314,7 @@
       "note": "The most important question upon arrival."
     },
     {
-      "id": "s6_32",
+      "id": "6-32",
       "category": "Hotel Services",
       "pl": "O której jest śniadanie?",
       "en": "What time is breakfast?",
@@ -324,7 +324,7 @@
       "note": "Asks 'At which (hour) is breakfast?'"
     },
     {
-      "id": "s6_33",
+      "id": "6-33",
       "category": "Hotel Services",
       "pl": "Gdzie jest restauracja?",
       "en": "Where is the restaurant?",
@@ -334,7 +334,7 @@
       "note": "A simple nominative question."
     },
     {
-      "id": "s6_34",
+      "id": "6-34",
       "category": "Hotel Services",
       "pl": "Basen",
       "en": "Swimming pool",
@@ -344,7 +344,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s6_35",
+      "id": "6-35",
       "category": "Hotel Services",
       "pl": "Siłownia",
       "en": "Gym",
@@ -354,7 +354,7 @@
       "note": "Feminine noun. Derived from 'siła' (strength)."
     },
     {
-      "id": "s6_36",
+      "id": "6-36",
       "category": "Hotel Services",
       "pl": "Spa",
       "en": "Spa",
@@ -364,7 +364,7 @@
       "note": "Pronounced exactly as in English."
     },
     {
-      "id": "s6_37",
+      "id": "6-37",
       "category": "Hotel Services",
       "pl": "Obsługa pokoju",
       "en": "Room service",
@@ -374,7 +374,7 @@
       "note": "Literally 'service of the room'."
     },
     {
-      "id": "s6_38",
+      "id": "6-38",
       "category": "Hotel Services",
       "pl": "Pralnia",
       "en": "Laundry",
@@ -384,7 +384,7 @@
       "note": "Laundry service or laundry room."
     },
     {
-      "id": "s6_39",
+      "id": "6-39",
       "category": "Hotel Services",
       "pl": "Czy mogę zostawić bagaż?",
       "en": "Can I leave my luggage?",
@@ -394,7 +394,7 @@
       "note": "Most hotels in Poland will happily hold your bags for free before check-in or after check-out."
     },
     {
-      "id": "s6_40",
+      "id": "6-40",
       "category": "Hotel Services",
       "pl": "Przechowalnia bagażu",
       "en": "Luggage storage",
@@ -404,7 +404,7 @@
       "note": "Literally 'storage of luggage'."
     },
     {
-      "id": "s6_41",
+      "id": "6-41",
       "category": "Hotel Services",
       "pl": "Budzenie o siódmej",
       "en": "Wake-up call at 7",
@@ -414,7 +414,7 @@
       "note": "'Budzenie' is the act of waking up."
     },
     {
-      "id": "s6_42",
+      "id": "6-42",
       "category": "Hotel Services",
       "pl": "Nie przeszkadzać",
       "en": "Do not disturb",
@@ -424,7 +424,7 @@
       "note": "The standard text you will see on the door hanger."
     },
     {
-      "id": "s6_43",
+      "id": "6-43",
       "category": "Hotel Services",
       "pl": "Proszę posprzątać pokój",
       "en": "Please clean the room",
@@ -434,7 +434,7 @@
       "note": "A polite command using 'Proszę' + infinitive."
     },
     {
-      "id": "s6_44",
+      "id": "6-44",
       "category": "Hotel Services",
       "pl": "Ręcznik plażowy",
       "en": "Beach towel",
@@ -444,7 +444,7 @@
       "note": "Useful if you are staying in Sopot or Gdańsk!"
     },
     {
-      "id": "s6_45",
+      "id": "6-45",
       "category": "Hotel Services",
       "pl": "Mapa miasta",
       "en": "City map",
@@ -454,7 +454,7 @@
       "note": "Front desks often have these for free. Ask: 'Czy jest darmowa mapa miasta?'."
     },
     {
-      "id": "s6_46",
+      "id": "6-46",
       "category": "Issues & Complaints",
       "pl": "Moja karta nie działa",
       "en": "My card doesn't work",
@@ -464,7 +464,7 @@
       "note": "Used when your electronic room key flashes red."
     },
     {
-      "id": "s6_47",
+      "id": "6-47",
       "category": "Issues & Complaints",
       "pl": "Zgubiłem/Zgubiłam kartę",
       "en": "I lost my card",
@@ -478,7 +478,7 @@
       "note": "Past tense: '-em' for men, '-am' for women."
     },
     {
-      "id": "s6_48",
+      "id": "6-48",
       "category": "Issues & Complaints",
       "pl": "Zatrzasnąłem/Zatrzasnęłam drzwi",
       "en": "I locked myself out",
@@ -492,7 +492,7 @@
       "note": "Literally 'I slammed the doors shut'. Very natural Polish phrasing."
     },
     {
-      "id": "s6_49",
+      "id": "6-49",
       "category": "Issues & Complaints",
       "pl": "Klimatyzacja nie działa",
       "en": "Air conditioning doesn't work",
@@ -502,7 +502,7 @@
       "note": "Add 'nie' before 'działa' (works) to say something is broken."
     },
     {
-      "id": "s6_50",
+      "id": "6-50",
       "category": "Issues & Complaints",
       "pl": "Ogrzewanie nie działa",
       "en": "Heating doesn't work",
@@ -512,7 +512,7 @@
       "note": "Ogrzewanie (heating) is a neuter noun."
     },
     {
-      "id": "s6_51",
+      "id": "6-51",
       "category": "Issues & Complaints",
       "pl": "Nie ma ciepłej wody",
       "en": "There is no hot water",
@@ -522,7 +522,7 @@
       "note": "'Nie ma' (there isn't) always forces the next words into the genitive case ('ciepłej wody')."
     },
     {
-      "id": "s6_52",
+      "id": "6-52",
       "category": "Issues & Complaints",
       "pl": "Prysznic jest zepsuty",
       "en": "The shower is broken",
@@ -532,7 +532,7 @@
       "note": "'Zepsuty' means mechanically broken or out of order."
     },
     {
-      "id": "s6_53",
+      "id": "6-53",
       "category": "Issues & Complaints",
       "pl": "Zlew jest zatkany",
       "en": "The sink is clogged",
@@ -542,7 +542,7 @@
       "note": "A very useful phrase for plumbing emergencies."
     },
     {
-      "id": "s6_54",
+      "id": "6-54",
       "category": "Issues & Complaints",
       "pl": "W pokoju jest za głośno",
       "en": "It's too loud in the room",
@@ -552,7 +552,7 @@
       "note": "Uses the locative case 'W pokoju' (in the room)."
     },
     {
-      "id": "s6_55",
+      "id": "6-55",
       "category": "Issues & Complaints",
       "pl": "Sąsiedzi są głośno",
       "en": "The neighbors are loud",
@@ -562,7 +562,7 @@
       "note": "'Sąsiedzi' is the plural for neighbors."
     },
     {
-      "id": "s6_56",
+      "id": "6-56",
       "category": "Issues & Complaints",
       "pl": "Brak papieru toaletowego",
       "en": "Out of toilet paper",
@@ -572,7 +572,7 @@
       "note": "Literally 'Lack of toilet paper'."
     },
     {
-      "id": "s6_57",
+      "id": "6-57",
       "category": "Issues & Complaints",
       "pl": "Telewizor nie działa",
       "en": "The TV doesn't work",
@@ -582,7 +582,7 @@
       "note": "Telewizor is the physical TV set."
     },
     {
-      "id": "s6_58",
+      "id": "6-58",
       "category": "Issues & Complaints",
       "pl": "Światło nie działa",
       "en": "The light doesn't work",
@@ -592,7 +592,7 @@
       "note": "'Światło' is a neuter noun."
     },
     {
-      "id": "s6_59",
+      "id": "6-59",
       "category": "Issues & Complaints",
       "pl": "Czy mogę zmienić pokój?",
       "en": "Can I change rooms?",
@@ -602,7 +602,7 @@
       "note": "'Zmienić' is the infinitive for 'to change'."
     },
     {
-      "id": "s6_60",
+      "id": "6-60",
       "category": "Issues & Complaints",
       "pl": "Pokój jest brudny",
       "en": "The room is dirty",
@@ -612,7 +612,7 @@
       "note": "'Brudny' is a masculine adjective, matching 'pokój'."
     },
     {
-      "id": "s6_61",
+      "id": "6-61",
       "category": "Check-out & Leaving",
       "pl": "Chciałbym/Chciałabym się wymeldować",
       "en": "I'd like to check out",
@@ -626,7 +626,7 @@
       "note": "'I would like to check myself out'. '-bym' for men, '-abym' for women."
     },
     {
-      "id": "s6_62",
+      "id": "6-62",
       "category": "Check-out & Leaving",
       "pl": "O której jest wymeldowanie?",
       "en": "What time is check-out?",
@@ -636,7 +636,7 @@
       "note": "'Wymeldowanie' is the official word for check-out."
     },
     {
-      "id": "s6_63",
+      "id": "6-63",
       "category": "Check-out & Leaving",
       "pl": "Czy mogę przedłużyć pobyt?",
       "en": "Can I extend my stay?",
@@ -646,7 +646,7 @@
       "note": "'Przedłużyć' means to extend. 'Pobyt' is your stay."
     },
     {
-      "id": "s6_64",
+      "id": "6-64",
       "category": "Check-out & Leaving",
       "pl": "Późne wymeldowanie",
       "en": "Late check-out",
@@ -656,7 +656,7 @@
       "note": "Neuter adjective 'Późne' matching 'wymeldowanie'."
     },
     {
-      "id": "s6_65",
+      "id": "6-65",
       "category": "Check-out & Leaving",
       "pl": "Czy mogę prosić o fakturę?",
       "en": "Can I ask for an invoice?",
@@ -666,7 +666,7 @@
       "note": "Vital for business travelers in Poland! You must ask for a 'faktura' before they print the standard receipt."
     },
     {
-      "id": "s6_66",
+      "id": "6-66",
       "category": "Check-out & Leaving",
       "pl": "Zamówić taksówkę",
       "en": "Order a taxi",
@@ -676,7 +676,7 @@
       "note": "Infinitive verb form."
     },
     {
-      "id": "s6_67",
+      "id": "6-67",
       "category": "Check-out & Leaving",
       "pl": "Na lotnisko",
       "en": "To the airport",
@@ -686,7 +686,7 @@
       "note": "Combines 'na' with the accusative 'lotnisko'."
     },
     {
-      "id": "s6_68",
+      "id": "6-68",
       "category": "Check-out & Leaving",
       "pl": "Parking hotelowy",
       "en": "Hotel parking",
@@ -696,7 +696,7 @@
       "note": "Masculine adjective 'hotelowy'."
     },
     {
-      "id": "s6_69",
+      "id": "6-69",
       "category": "Check-out & Leaving",
       "pl": "Gdzie mogę zaparkować?",
       "en": "Where can I park?",
@@ -706,7 +706,7 @@
       "note": "City center hotels often have off-site or hidden parking."
     },
     {
-      "id": "s6_70",
+      "id": "6-70",
       "category": "Check-out & Leaving",
       "pl": "Dziękuję za pobyt",
       "en": "Thank you for the stay",

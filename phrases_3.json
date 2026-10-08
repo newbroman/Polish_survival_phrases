@@ -4,7 +4,7 @@
   "tier": "SURVIVAL",
   "phrases": [
     {
-      "id": "s3_01",
+      "id": "3-01",
       "category": "Directions",
       "pl": "W lewo",
       "en": "Left / To the left",
@@ -14,7 +14,7 @@
       "note": "Combines 'w' (in/into) with 'lewo' (left)."
     },
     {
-      "id": "s3_02",
+      "id": "3-02",
       "category": "Directions",
       "pl": "W prawo",
       "en": "Right / To the right",
@@ -24,7 +24,7 @@
       "note": "Combines 'w' (in/into) with 'prawo' (right)."
     },
     {
-      "id": "s3_03",
+      "id": "3-03",
       "category": "Directions",
       "pl": "Prosto",
       "en": "Straight ahead",
@@ -34,7 +34,7 @@
       "note": "Means 'straight', but is also used colloquially to say something is 'simple' or 'easy'."
     },
     {
-      "id": "s3_04",
+      "id": "3-04",
       "category": "Directions",
       "pl": "Zawróć",
       "en": "Turn around",
@@ -44,7 +44,7 @@
       "note": "Imperative command. Useful if your taxi driver missed a turn!"
     },
     {
-      "id": "s3_05",
+      "id": "3-05",
       "category": "Directions",
       "pl": "Na skrzyżowaniu",
       "en": "At the intersection",
@@ -54,7 +54,7 @@
       "note": "A mouthful! Pronounced 'Sk-shi-zho-va-nyu'. Uses the locative case."
     },
     {
-      "id": "s3_06",
+      "id": "3-06",
       "category": "Directions",
       "pl": "Na światłach",
       "en": "At the traffic lights",
@@ -64,7 +64,7 @@
       "note": "Literally 'at the lights'. Uses the locative plural."
     },
     {
-      "id": "s3_07",
+      "id": "3-07",
       "category": "Directions",
       "pl": "Blisko",
       "en": "Close / Near",
@@ -74,7 +74,7 @@
       "note": "An adverb. To say 'It is close', you just say 'Jest blisko'."
     },
     {
-      "id": "s3_08",
+      "id": "3-08",
       "category": "Directions",
       "pl": "Daleko",
       "en": "Far",
@@ -84,7 +84,7 @@
       "note": "The opposite of 'blisko'. To ask 'Is it far?', say 'Czy to jest daleko?'."
     },
     {
-      "id": "s3_09",
+      "id": "3-09",
       "category": "Directions",
       "pl": "Obok",
       "en": "Next to",
@@ -94,7 +94,7 @@
       "note": "Requires the Genitive case. For example, 'Obok hotelu' (Next to the hotel)."
     },
     {
-      "id": "s3_10",
+      "id": "3-10",
       "category": "Directions",
       "pl": "Naprzeciwko",
       "en": "Opposite / Across from",
@@ -104,7 +104,7 @@
       "note": "Also takes the Genitive case. 'Naprzeciwko stacji' (Across from the station)."
     },
     {
-      "id": "s3_11",
+      "id": "3-11",
       "category": "Directions",
       "pl": "Za rogiem",
       "en": "Around the corner",
@@ -114,7 +114,7 @@
       "note": "Literally 'behind the corner'. 'Róg' (corner) takes the Instrumental case here."
     },
     {
-      "id": "s3_12",
+      "id": "3-12",
       "category": "Directions",
       "pl": "Na końcu ulicy",
       "en": "At the end of the street",
@@ -124,7 +124,7 @@
       "note": "'Ulica' (street) changes to 'ulicy' in the Genitive case."
     },
     {
-      "id": "s3_13",
+      "id": "3-13",
       "category": "Directions",
       "pl": "Pierwsza ulica w lewo",
       "en": "First street on the left",
@@ -134,7 +134,7 @@
       "note": "Ordinal numbers match the feminine gender of 'ulica'."
     },
     {
-      "id": "s3_14",
+      "id": "3-14",
       "category": "Directions",
       "pl": "Druga ulica w prawo",
       "en": "Second street on the right",
@@ -144,7 +144,7 @@
       "note": "Feminine form of 'drugi' (second)."
     },
     {
-      "id": "s3_15",
+      "id": "3-15",
       "category": "Directions",
       "pl": "Przy rondzie",
       "en": "At the roundabout",
@@ -154,7 +154,7 @@
       "note": "'Rondo' (roundabout) takes the Locative case here, becoming 'rondzie'."
     },
     {
-      "id": "s3_16",
+      "id": "3-16",
       "category": "Navigation",
       "pl": "Jak dojść do...?",
       "en": "How to walk to...?",
@@ -164,7 +164,7 @@
       "note": "'Dojść' is the specific verb for navigating somewhere ON FOOT."
     },
     {
-      "id": "s3_17",
+      "id": "3-17",
       "category": "Navigation",
       "pl": "Jak dojechać do...?",
       "en": "How to get to... (by vehicle)?",
@@ -174,7 +174,7 @@
       "note": "'Dojechać' is the specific verb for navigating somewhere BY VEHICLE."
     },
     {
-      "id": "s3_18",
+      "id": "3-18",
       "category": "Navigation",
       "pl": "Czy to jest właściwa droga do...?",
       "en": "Is this the right way to...?",
@@ -184,7 +184,7 @@
       "note": "'Właściwa' means correct or proper."
     },
     {
-      "id": "s3_19",
+      "id": "3-19",
       "category": "Navigation",
       "pl": "Jak daleko stąd?",
       "en": "How far from here?",
@@ -194,7 +194,7 @@
       "note": "'Stąd' means 'from here'. Great phrase to evaluate if you need a taxi."
     },
     {
-      "id": "s3_20",
+      "id": "3-20",
       "category": "Navigation",
       "pl": "Czy mogę iść piechotą?",
       "en": "Can I walk there?",
@@ -204,7 +204,7 @@
       "note": "'Piechotą' means 'on foot' or 'by walking' (Instrumental case)."
     },
     {
-      "id": "s3_21",
+      "id": "3-21",
       "category": "Navigation",
       "pl": "Ile czasu to zajmie?",
       "en": "How long will it take?",
@@ -214,7 +214,7 @@
       "note": "Literally 'How much time will this occupy?'."
     },
     {
-      "id": "s3_22",
+      "id": "3-22",
       "category": "Navigation",
       "pl": "Proszę pokazać na mapie",
       "en": "Please show me on the map",
@@ -224,7 +224,7 @@
       "note": "'Mapa' becomes 'mapie' in the Locative case."
     },
     {
-      "id": "s3_23",
+      "id": "3-23",
       "category": "Navigation",
       "pl": "Gdzie jest informacja turystyczna?",
       "en": "Where is the tourist info?",
@@ -234,7 +234,7 @@
       "note": "Look for the large blue 'I' signs in Polish city centers."
     },
     {
-      "id": "s3_24",
+      "id": "3-24",
       "category": "Navigation",
       "pl": "Gdzie jesteśmy na mapie?",
       "en": "Where are we on the map?",
@@ -244,7 +244,7 @@
       "note": "'Jesteśmy' is the 1st person plural (we are)."
     },
     {
-      "id": "s3_25",
+      "id": "3-25",
       "category": "Navigation",
       "pl": "Jaka to ulica?",
       "en": "What street is this?",
@@ -254,7 +254,7 @@
       "note": "'Jaka' means 'what kind of' or 'which', matching the feminine 'ulica'."
     },
     {
-      "id": "s3_26",
+      "id": "3-26",
       "category": "Navigation",
       "pl": "Szukam przystanku",
       "en": "I'm looking for a bus stop",
@@ -264,7 +264,7 @@
       "note": "The verb 'szukać' forces the Genitive case ('przystanek' -> 'przystanku')."
     },
     {
-      "id": "s3_27",
+      "id": "3-27",
       "category": "Navigation",
       "pl": "Czy to jest blisko stacji?",
       "en": "Is it near the station?",
@@ -274,7 +274,7 @@
       "note": "'Blisko' takes the Genitive case ('stacja' -> 'stacji')."
     },
     {
-      "id": "s3_28",
+      "id": "3-28",
       "category": "Navigation",
       "pl": "Muszę wrócić do hotelu",
       "en": "I need to get back to my hotel",
@@ -284,7 +284,7 @@
       "note": "'Muszę' (I must) + infinitive 'wrócić' (to return)."
     },
     {
-      "id": "s3_29",
+      "id": "3-29",
       "category": "Navigation",
       "pl": "Adres to...",
       "en": "The address is...",
@@ -294,7 +294,7 @@
       "note": "Handy to say to a taxi driver before reading off a street name or showing your phone."
     },
     {
-      "id": "s3_30",
+      "id": "3-30",
       "category": "Navigation",
       "pl": "Zgubiłem/Zgubiłam się",
       "en": "I got lost",
@@ -308,7 +308,7 @@
       "note": "Literally 'I lost myself'."
     },
     {
-      "id": "s3_31",
+      "id": "3-31",
       "category": "Transit Hubs",
       "pl": "Dworzec Główny",
       "en": "Main Station",
@@ -318,7 +318,7 @@
       "note": "Almost every major Polish city has a 'Kraków Główny' or 'Warszawa Centralna'."
     },
     {
-      "id": "s3_32",
+      "id": "3-32",
       "category": "Transit Hubs",
       "pl": "Dworzec autobusowy",
       "en": "Bus station",
@@ -328,7 +328,7 @@
       "note": "Refers to a main transit hub for cross-country buses, not just a street stop."
     },
     {
-      "id": "s3_33",
+      "id": "3-33",
       "category": "Transit Hubs",
       "pl": "Przystanek tramwajowy",
       "en": "Tram stop",
@@ -338,7 +338,7 @@
       "note": "Trams are a massive part of public transit in Poland."
     },
     {
-      "id": "s3_34",
+      "id": "3-34",
       "category": "Transit Hubs",
       "pl": "Stacja metra",
       "en": "Subway station",
@@ -348,7 +348,7 @@
       "note": "Currently, Warsaw is the only Polish city with an underground Metro."
     },
     {
-      "id": "s3_35",
+      "id": "3-35",
       "category": "Transit Hubs",
       "pl": "Pociąg",
       "en": "Train",
@@ -358,7 +358,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s3_36",
+      "id": "3-36",
       "category": "Transit Hubs",
       "pl": "Tramwaj",
       "en": "Tram",
@@ -368,7 +368,7 @@
       "note": "Pronounced 'Tram-vai'."
     },
     {
-      "id": "s3_37",
+      "id": "3-37",
       "category": "Transit Hubs",
       "pl": "Autobus",
       "en": "Bus",
@@ -378,7 +378,7 @@
       "note": "Similar to English, but pronounced 'Ow-to-boos'."
     },
     {
-      "id": "s3_38",
+      "id": "3-38",
       "category": "Transit Hubs",
       "pl": "Lotnisko",
       "en": "Airport",
@@ -388,7 +388,7 @@
       "note": "Derived from the word 'lot' (flight)."
     },
     {
-      "id": "s3_39",
+      "id": "3-39",
       "category": "Transit Hubs",
       "pl": "Z jakiego peronu?",
       "en": "From which platform?",
@@ -398,7 +398,7 @@
       "note": "Crucial for train travel! 'Peron' means platform. It is taking the Genitive case here."
     },
     {
-      "id": "s3_40",
+      "id": "3-40",
       "category": "Transit Hubs",
       "pl": "Biletomat",
       "en": "Ticket machine",
@@ -408,7 +408,7 @@
       "note": "You will find these red/yellow machines at almost every major bus and tram stop."
     },
     {
-      "id": "s3_41",
+      "id": "3-41",
       "category": "Tickets & Riding",
       "pl": "Bilet normalny",
       "en": "Standard ticket",
@@ -418,7 +418,7 @@
       "note": "The standard full-fare adult ticket."
     },
     {
-      "id": "s3_42",
+      "id": "3-42",
       "category": "Tickets & Riding",
       "pl": "Bilet ulgowy",
       "en": "Reduced ticket",
@@ -428,7 +428,7 @@
       "note": "Usually for students under 26 or seniors. You MUST have valid ID to use this."
     },
     {
-      "id": "s3_43",
+      "id": "3-43",
       "category": "Tickets & Riding",
       "pl": "Bilet przesiadkowy",
       "en": "Transfer ticket",
@@ -438,7 +438,7 @@
       "note": "Allows you to switch between buses/trams within a set time limit (e.g., 20 or 50 minutes)."
     },
     {
-      "id": "s3_44",
+      "id": "3-44",
       "category": "Tickets & Riding",
       "pl": "Bilet dobowy",
       "en": "24-hour ticket",
@@ -448,7 +448,7 @@
       "note": "Unlimited travel for 24 hours from the moment you validate it."
     },
     {
-      "id": "s3_45",
+      "id": "3-45",
       "category": "Tickets & Riding",
       "pl": "Gdzie kupić bilet?",
       "en": "Where to buy a ticket?",
@@ -458,7 +458,7 @@
       "note": "You can often buy tickets at 'kiosks' (small newsstands) or ticket machines."
     },
     {
-      "id": "s3_46",
+      "id": "3-46",
       "category": "Tickets & Riding",
       "pl": "Gdzie skasować bilet?",
       "en": "Where to validate the ticket?",
@@ -468,7 +468,7 @@
       "note": "WARNING: In Poland, you must insert your paper ticket into a yellow box on the bus to stamp it! Buying it is not enough."
     },
     {
-      "id": "s3_47",
+      "id": "3-47",
       "category": "Tickets & Riding",
       "pl": "Kontrola biletów",
       "en": "Ticket inspection",
@@ -478,7 +478,7 @@
       "note": "Undercover inspectors block the validators and shout this. Have your ticket ready!"
     },
     {
-      "id": "s3_48",
+      "id": "3-48",
       "category": "Tickets & Riding",
       "pl": "O której odjeżdża pociąg?",
       "en": "What time does the train leave?",
@@ -488,7 +488,7 @@
       "note": "'Odjeżdża' is the specific verb for a vehicle departing."
     },
     {
-      "id": "s3_49",
+      "id": "3-49",
       "category": "Tickets & Riding",
       "pl": "O której przyjeżdża?",
       "en": "What time does it arrive?",
@@ -498,7 +498,7 @@
       "note": "The prefix 'przy-' indicates coming toward a destination."
     },
     {
-      "id": "s3_50",
+      "id": "3-50",
       "category": "Tickets & Riding",
       "pl": "Czy ten pociąg jedzie do...?",
       "en": "Does this train go to...?",
@@ -508,7 +508,7 @@
       "note": "'Jedzie' is the verb for going by vehicle. Don't use 'idzie', which means going on foot."
     },
     {
-      "id": "s3_51",
+      "id": "3-51",
       "category": "Tickets & Riding",
       "pl": "Przesiadka",
       "en": "Transfer / Connection",
@@ -518,7 +518,7 @@
       "note": "Noun for changing trains or buses."
     },
     {
-      "id": "s3_52",
+      "id": "3-52",
       "category": "Tickets & Riding",
       "pl": "Następny przystanek",
       "en": "Next stop",
@@ -528,7 +528,7 @@
       "note": "Listen for this phrase on the automated announcements on buses and trams!"
     },
     {
-      "id": "s3_53",
+      "id": "3-53",
       "category": "Tickets & Riding",
       "pl": "Przystanek na żądanie",
       "en": "Request stop",
@@ -538,7 +538,7 @@
       "note": "If you see 'na żądanie' on the route map, you MUST press the STOP button on the bus, or the driver will skip it."
     },
     {
-      "id": "s3_54",
+      "id": "3-54",
       "category": "Tickets & Riding",
       "pl": "Rozkład jazdy",
       "en": "Timetable / Schedule",
@@ -548,7 +548,7 @@
       "note": "Look for this heading on the signs posted at bus and tram stops."
     },
     {
-      "id": "s3_55",
+      "id": "3-55",
       "category": "Taxi & Ride Apps",
       "pl": "Postój taksówek",
       "en": "Taxi rank",
@@ -558,7 +558,7 @@
       "note": "The official designated area where taxis wait for passengers."
     },
     {
-      "id": "s3_56",
+      "id": "3-56",
       "category": "Taxi & Ride Apps",
       "pl": "Proszę zawieźć mnie pod ten adres",
       "en": "Please drive me to this address",
@@ -568,7 +568,7 @@
       "note": "A highly polite and precise way to hand a driver your phone with the map open."
     },
     {
-      "id": "s3_57",
+      "id": "3-57",
       "category": "Taxi & Ride Apps",
       "pl": "Proszę włączyć taksometr",
       "en": "Please turn on the meter",
@@ -578,7 +578,7 @@
       "note": "Crucial tourist phrase to avoid being overcharged if you hail a cab off the street."
     },
     {
-      "id": "s3_58",
+      "id": "3-58",
       "category": "Taxi & Ride Apps",
       "pl": "Można zapłacić w aplikacji?",
       "en": "Can I pay in the app?",
@@ -588,7 +588,7 @@
       "note": "Uber, Bolt, and FreeNow are very popular in Poland. It's good to confirm payment methods."
     },
     {
-      "id": "s3_59",
+      "id": "3-59",
       "category": "Taxi & Ride Apps",
       "pl": "Proszę podjechać bliżej",
       "en": "Please pull up closer",
@@ -598,7 +598,7 @@
       "note": "Useful if your Uber driver stops across the street or down the block."
     },
     {
-      "id": "s3_60",
+      "id": "3-60",
       "category": "Taxi & Ride Apps",
       "pl": "Proszę się zatrzymać",
       "en": "Please stop",
@@ -608,7 +608,7 @@
       "note": "Polite command using the reflexive infinitive 'zatrzymać się' (to stop oneself)."
     },
     {
-      "id": "s3_61",
+      "id": "3-61",
       "category": "Taxi & Ride Apps",
       "pl": "Otworzyć bagażnik?",
       "en": "Open the trunk?",
@@ -618,7 +618,7 @@
       "note": "Ask this if you have luggage and need the taxi driver to pop the trunk."
     },
     {
-      "id": "s3_62",
+      "id": "3-62",
       "category": "Airport & Travel",
       "pl": "Przyloty",
       "en": "Arrivals",
@@ -628,7 +628,7 @@
       "note": "The area of the airport where planes land. From the verb 'przylecieć'."
     },
     {
-      "id": "s3_63",
+      "id": "3-63",
       "category": "Airport & Travel",
       "pl": "Odloty",
       "en": "Departures",
@@ -638,7 +638,7 @@
       "note": "The area where you go to fly out. From the verb 'odlecieć'."
     },
     {
-      "id": "s3_64",
+      "id": "3-64",
       "category": "Airport & Travel",
       "pl": "Loty krajowe",
       "en": "Domestic flights",
@@ -648,7 +648,7 @@
       "note": "'Krajowe' means national or domestic. E.g., flights from Warsaw to Krakow."
     },
     {
-      "id": "s3_65",
+      "id": "3-65",
       "category": "Airport & Travel",
       "pl": "Bagaż podręczny",
       "en": "Hand luggage / Cabin bag",
@@ -658,7 +658,7 @@
       "note": "Literally 'under-hand baggage'. Crucial for budget airlines like Ryanair and WizzAir."
     },
     {
-      "id": "s3_66",
+      "id": "3-66",
       "category": "Airport & Travel",
       "pl": "Bagaż rejestrowany",
       "en": "Checked luggage",
@@ -668,7 +668,7 @@
       "note": "Literally 'registered baggage'."
     },
     {
-      "id": "s3_67",
+      "id": "3-67",
       "category": "Airport & Travel",
       "pl": "Odprawa",
       "en": "Check-in",
@@ -678,7 +678,7 @@
       "note": "Look for signs saying 'Odprawa' when you first enter the airport to drop bags."
     },
     {
-      "id": "s3_68",
+      "id": "3-68",
       "category": "Airport & Travel",
       "pl": "Karta pokładowa",
       "en": "Boarding pass",
@@ -688,7 +688,7 @@
       "note": "Literally 'deck card'."
     },
     {
-      "id": "s3_69",
+      "id": "3-69",
       "category": "Airport & Travel",
       "pl": "Gdzie jest odbiór bagażu?",
       "en": "Where is baggage claim?",
@@ -698,7 +698,7 @@
       "note": "Literally 'the collection of luggage'."
     },
     {
-      "id": "s3_70",
+      "id": "3-70",
       "category": "Airport & Travel",
       "pl": "Opóźniony lot",
       "en": "Delayed flight",

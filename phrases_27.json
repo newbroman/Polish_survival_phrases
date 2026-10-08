@@ -4,7 +4,7 @@
   "tier": "ADVANCED",
   "phrases": [
     {
-      "id": "s27_01",
+      "id": "27-01",
       "category": "Polite Deflections",
       "pl": "Nie ma sprawy",
       "en": "No problem / Not an issue",
@@ -14,7 +14,7 @@
       "note": "Literally 'There is no matter'. The standard reply to 'Thank you'."
     },
     {
-      "id": "s27_02",
+      "id": "27-02",
       "category": "Polite Deflections",
       "pl": "Nie ma za co",
       "en": "You're welcome / Don't mention it",
@@ -24,7 +24,7 @@
       "note": "Literally 'There is not for what (to thank)'."
     },
     {
-      "id": "s27_03",
+      "id": "27-03",
       "category": "Polite Deflections",
       "pl": "Nic się nie stało",
       "en": "Nothing happened / No worries",
@@ -34,7 +34,7 @@
       "note": "The perfect reply when someone apologizes to you."
     },
     {
-      "id": "s27_04",
+      "id": "27-04",
       "category": "Polite Deflections",
       "pl": "Nic nie szkodzi",
       "en": "No harm done / It doesn't matter",
@@ -44,7 +44,7 @@
       "note": "Literally 'Nothing harms'."
     },
     {
-      "id": "s27_05",
+      "id": "27-05",
       "category": "Reassurance",
       "pl": "Nie przejmuj się",
       "en": "Don't worry about it",
@@ -54,7 +54,7 @@
       "note": "Reflexive imperative verb."
     },
     {
-      "id": "s27_06",
+      "id": "27-06",
       "category": "Reassurance",
       "pl": "Spokojnie",
       "en": "Calm down / Take it easy",
@@ -64,7 +64,7 @@
       "note": "Adverb used to de-escalate a situation."
     },
     {
-      "id": "s27_07",
+      "id": "27-07",
       "category": "Reassurance",
       "pl": "Wszystko będzie dobrze",
       "en": "Everything will be fine",
@@ -74,7 +74,7 @@
       "note": "Future tense reassurance."
     },
     {
-      "id": "s27_08",
+      "id": "27-08",
       "category": "Dismissals",
       "pl": "Daj spokój",
       "en": "Come on / Give it a rest",
@@ -84,7 +84,7 @@
       "note": "Literally 'Give peace'. Used to end a silly argument."
     },
     {
-      "id": "s27_09",
+      "id": "27-09",
       "category": "Dismissals",
       "pl": "Mniejsza o to",
       "en": "Never mind that",
@@ -94,7 +94,7 @@
       "note": "Literally 'Smaller about it'."
     },
     {
-      "id": "s27_10",
+      "id": "27-10",
       "category": "Dismissals",
       "pl": "No to co?",
       "en": "So what?",
@@ -104,7 +104,7 @@
       "note": "Casual, slightly defensive."
     },
     {
-      "id": "s27_11",
+      "id": "27-11",
       "category": "Dismissals",
       "pl": "Wszystko jedno",
       "en": "It's all the same / Doesn't matter",
@@ -114,7 +114,7 @@
       "note": "Literally 'All one'."
     },
     {
-      "id": "s27_12",
+      "id": "27-12",
       "category": "Resignation",
       "pl": "Trudno",
       "en": "Too bad / Can't be helped",
@@ -124,7 +124,7 @@
       "note": "Adverb 'difficult'. Used to express resignation to fate."
     },
     {
-      "id": "s27_13",
+      "id": "27-13",
       "category": "Resignation",
       "pl": "Nic z tego",
       "en": "Nothing doing / No way",
@@ -134,7 +134,7 @@
       "note": "Used when an attempt has failed."
     },
     {
-      "id": "s27_14",
+      "id": "27-14",
       "category": "Agreement & Validation",
       "pl": "No właśnie",
       "en": "Exactly / That's right",
@@ -144,7 +144,7 @@
       "note": "Used when someone perfectly summarizes your thoughts."
     },
     {
-      "id": "s27_15",
+      "id": "27-15",
       "category": "Agreement & Validation",
       "pl": "To ma sens",
       "en": "That makes sense",
@@ -154,7 +154,7 @@
       "note": "Literally 'It has sense'."
     },
     {
-      "id": "s27_16",
+      "id": "27-16",
       "category": "Agreement & Validation",
       "pl": "Coś w tym jest",
       "en": "There's something to it",
@@ -164,7 +164,7 @@
       "note": "Used when you cautiously agree with a new idea."
     },
     {
-      "id": "s27_17",
+      "id": "27-17",
       "category": "Agreement & Validation",
       "pl": "Jak najbardziej",
       "en": "Absolutely / By all means",
@@ -174,7 +174,7 @@
       "note": "A very polite and enthusiastic way to say yes."
     },
     {
-      "id": "s27_18",
+      "id": "27-18",
       "category": "Alternatives",
       "pl": "Tak czy siak",
       "en": "Either way / Anyway",
@@ -184,7 +184,7 @@
       "note": "A conversational filler."
     },
     {
-      "id": "s27_19",
+      "id": "27-19",
       "category": "Alternatives",
       "pl": "Tak czy owak",
       "en": "One way or another",
@@ -194,7 +194,7 @@
       "note": "Similar to 'tak czy siak'."
     },
     {
-      "id": "s27_20",
+      "id": "27-20",
       "category": "Evaluation",
       "pl": "W sam raz",
       "en": "Just right / Perfect",
@@ -204,7 +204,7 @@
       "note": "Used for food seasoning, clothing fit, or timing."
     },
     {
-      "id": "s27_21",
+      "id": "27-21",
       "category": "Evaluation",
       "pl": "Warto spróbować",
       "en": "Worth a try",
@@ -214,7 +214,7 @@
       "note": "'Warto' means it has value."
     },
     {
-      "id": "s27_22",
+      "id": "27-22",
       "category": "Evaluation",
       "pl": "Nie warto",
       "en": "Not worth it",
@@ -224,7 +224,7 @@
       "note": "Used to advise someone against a bad purchase or action."
     },
     {
-      "id": "s27_23",
+      "id": "27-23",
       "category": "Evaluation",
       "pl": "Bez sensu",
       "en": "Nonsense / Pointless",
@@ -234,7 +234,7 @@
       "note": "Literally 'Without sense' (genitive)."
     },
     {
-      "id": "s27_24",
+      "id": "27-24",
       "category": "Evaluation",
       "pl": "Jak zwykle",
       "en": "As usual",
@@ -244,7 +244,7 @@
       "note": "Can be said neutrally or with heavy sarcasm."
     },
     {
-      "id": "s27_25",
+      "id": "27-25",
       "category": "Classic Polish Idioms",
       "pl": "Rzucać grochem o ścianę",
       "en": "To talk to a brick wall",
@@ -254,7 +254,7 @@
       "note": "Literally 'To throw peas at a wall'. Used when someone won't listen."
     },
     {
-      "id": "s27_26",
+      "id": "27-26",
       "category": "Classic Polish Idioms",
       "pl": "Mieć muchy w nosie",
       "en": "To be in a bad mood",
@@ -264,7 +264,7 @@
       "note": "Literally 'To have flies in the nose'. Usually applied to someone acting grumpy or petty."
     },
     {
-      "id": "s27_27",
+      "id": "27-27",
       "category": "Classic Polish Idioms",
       "pl": "Wziąć się w garść",
       "en": "To pull yourself together",
@@ -274,7 +274,7 @@
       "note": "Literally 'To take oneself in a fist'."
     },
     {
-      "id": "s27_28",
+      "id": "27-28",
       "category": "Classic Polish Idioms",
       "pl": "Trzymać kciuki",
       "en": "To keep fingers crossed",
@@ -284,7 +284,7 @@
       "note": "Literally 'To hold thumbs'. Poles fold thumbs in, not cross fingers."
     },
     {
-      "id": "s27_29",
+      "id": "27-29",
       "category": "Classic Polish Idioms",
       "pl": "Kropla w morzu",
       "en": "A drop in the ocean",
@@ -294,7 +294,7 @@
       "note": "Used to describe an insignificant amount."
     },
     {
-      "id": "s27_30",
+      "id": "27-30",
       "category": "Classic Polish Idioms",
       "pl": "Leje jak z cebra",
       "en": "It's pouring / Raining cats and dogs",
@@ -304,7 +304,7 @@
       "note": "Literally 'It is pouring like from a bucket'."
     },
     {
-      "id": "s27_31",
+      "id": "27-31",
       "category": "Classic Polish Idioms",
       "pl": "Wpaść jak śliwka w kompot",
       "en": "To fall into a trap / To be in trouble",
@@ -314,7 +314,7 @@
       "note": "Literally 'To fall like a plum into compote'."
     },
     {
-      "id": "s27_32",
+      "id": "27-32",
       "category": "Classic Polish Idioms",
       "pl": "Mieć dwie lewe ręce",
       "en": "To be clumsy",
@@ -324,7 +324,7 @@
       "note": "Literally 'To have two left hands'."
     },
     {
-      "id": "s27_33",
+      "id": "27-33",
       "category": "Classic Polish Idioms",
       "pl": "Nie mój cyrk, nie moje małpy",
       "en": "Not my circus, not my monkeys",
@@ -334,7 +334,7 @@
       "note": "A globally famous Polish proverb! Means 'Not my problem'."
     },
     {
-      "id": "s27_34",
+      "id": "27-34",
       "category": "Classic Polish Idioms",
       "pl": "Trafić kulą w płot",
       "en": "To be way off the mark",
@@ -344,7 +344,7 @@
       "note": "Literally 'To hit a fence with a bullet'. Used when someone makes a bad guess."
     },
     {
-      "id": "s27_35",
+      "id": "27-35",
       "category": "Classic Polish Idioms",
       "pl": "Mieć głowę na karku",
       "en": "To have a good head on one's shoulders",
@@ -354,7 +354,7 @@
       "note": "Literally 'To have a head on the neck'. Means someone is smart and practical."
     },
     {
-      "id": "s27_36",
+      "id": "27-36",
       "category": "Classic Polish Idioms",
       "pl": "Stracić głowę",
       "en": "To lose one's head / Panick",
@@ -364,7 +364,7 @@
       "note": "Can mean to panic, or to fall madly in love ('stracić głowę dla kogoś')."
     },
     {
-      "id": "s27_37",
+      "id": "27-37",
       "category": "Proverbs",
       "pl": "Nie wszystko złoto, co się świeci",
       "en": "All that glitters is not gold",
@@ -374,7 +374,7 @@
       "note": "A direct equivalent of the English proverb."
     },
     {
-      "id": "s27_38",
+      "id": "27-38",
       "category": "Proverbs",
       "pl": "Lepszy wróbel w garści niż gołąb na dachu",
       "en": "A bird in hand is worth two in the bush",
@@ -384,7 +384,7 @@
       "note": "Literally 'A sparrow in the fist is better than a pigeon on the roof'."
     },
     {
-      "id": "s27_39",
+      "id": "27-39",
       "category": "Proverbs",
       "pl": "Kto rano wstaje, temu Pan Bóg daje",
       "en": "The early bird catches the worm",
@@ -394,7 +394,7 @@
       "note": "Literally 'Who gets up early, to him God gives'."
     },
     {
-      "id": "s27_40",
+      "id": "27-40",
       "category": "Proverbs",
       "pl": "Co ma wisieć, nie utonie",
       "en": "What's meant to be will be",
@@ -404,7 +404,7 @@
       "note": "Literally 'What is meant to hang, will not drown'. Very fatalistic Polish proverb."
     },
     {
-      "id": "s27_41",
+      "id": "27-41",
       "category": "Proverbs",
       "pl": "Jak Kuba Bogu, tak Bóg Kubie",
       "en": "What goes around comes around / Tit for tat",
@@ -414,7 +414,7 @@
       "note": "Literally 'As Kuba treats God, so God treats Kuba'."
     },
     {
-      "id": "s27_42",
+      "id": "27-42",
       "category": "Proverbs",
       "pl": "Gdzie kucharek sześć, tam nie ma co jeść",
       "en": "Too many cooks spoil the broth",
@@ -424,7 +424,7 @@
       "note": "Literally 'Where there are six cooks, there is nothing to eat'."
     },
     {
-      "id": "s27_43",
+      "id": "27-43",
       "category": "Proverbs",
       "pl": "Nie chwal dnia przed zachodem słońca",
       "en": "Don't count your chickens before they hatch",
@@ -434,7 +434,7 @@
       "note": "Literally 'Don't praise the day before the sunset'."
     },
     {
-      "id": "s27_44",
+      "id": "27-44",
       "category": "Proverbs",
       "pl": "Apetyt rośnie w miarę jedzenia",
       "en": "Appetite comes with eating",
@@ -444,7 +444,7 @@
       "note": "Used to describe greed or ambition growing as you gain more."
     },
     {
-      "id": "s27_45",
+      "id": "27-45",
       "category": "Proverbs",
       "pl": "Cicha woda brzegi rwie",
       "en": "Still waters run deep",
@@ -454,7 +454,7 @@
       "note": "Literally 'Quiet water tears the banks'. Used for a quiet person with hidden depths (or a hidden wild side)."
     },
     {
-      "id": "s27_46",
+      "id": "27-46",
       "category": "Proverbs",
       "pl": "Diabeł tkwi w szczegółach",
       "en": "The devil is in the details",
@@ -464,7 +464,7 @@
       "note": "A direct translation of the English proverb."
     },
     {
-      "id": "s27_47",
+      "id": "27-47",
       "category": "Proverbs",
       "pl": "Lepiej późno niż wcale",
       "en": "Better late than never",
@@ -474,7 +474,7 @@
       "note": "A direct translation."
     },
     {
-      "id": "s27_48",
+      "id": "27-48",
       "category": "Proverbs",
       "pl": "Mądry Polak po szkodzie",
       "en": "Hindsight is 20/20",
@@ -484,7 +484,7 @@
       "note": "Literally 'A Pole is smart after the damage is done'."
     },
     {
-      "id": "s27_49",
+      "id": "27-49",
       "category": "Proverbs",
       "pl": "Kłamstwo ma krótkie nogi",
       "en": "Lies don't travel far",
@@ -494,7 +494,7 @@
       "note": "Literally 'A lie has short legs'. Meaning the truth will soon catch up."
     },
     {
-      "id": "s27_50",
+      "id": "27-50",
       "category": "Proverbs",
       "pl": "Trafiła kosa na kamień",
       "en": "To meet one's match",
@@ -504,7 +504,7 @@
       "note": "Literally 'The scythe hit a stone'. Used when a stubborn person meets someone equally stubborn."
     },
     {
-      "id": "s27_51",
+      "id": "27-51",
       "category": "Conversational Fillers",
       "pl": "No",
       "en": "Well / Yeah",
@@ -514,7 +514,7 @@
       "note": "False friend! In Polish, 'No' means 'Yes' or 'Yeah', not 'No'."
     },
     {
-      "id": "s27_52",
+      "id": "27-52",
       "category": "Conversational Fillers",
       "pl": "No więc",
       "en": "Well then / So",
@@ -524,7 +524,7 @@
       "note": "Used to start a story or an explanation."
     },
     {
-      "id": "s27_53",
+      "id": "27-53",
       "category": "Conversational Fillers",
       "pl": "Wiesz...",
       "en": "You know...",
@@ -534,7 +534,7 @@
       "note": "Second-person singular of 'wiedzieć'."
     },
     {
-      "id": "s27_54",
+      "id": "27-54",
       "category": "Conversational Fillers",
       "pl": "Znaczy się",
       "en": "I mean / Like",
@@ -544,7 +544,7 @@
       "note": "A reflexive filler used to clarify a thought."
     },
     {
-      "id": "s27_55",
+      "id": "27-55",
       "category": "Conversational Fillers",
       "pl": "Tak jakby",
       "en": "Sort of / Kind of",
@@ -554,7 +554,7 @@
       "note": "Used when you aren't entirely certain."
     },
     {
-      "id": "s27_56",
+      "id": "27-56",
       "category": "Conversational Fillers",
       "pl": "Coś takiego",
       "en": "Something like that",
@@ -564,7 +564,7 @@
       "note": "Neuter phrase."
     },
     {
-      "id": "s27_57",
+      "id": "27-57",
       "category": "Conversational Fillers",
       "pl": "I tak dalej",
       "en": "And so on",
@@ -574,7 +574,7 @@
       "note": "Abbreviated as 'itd.' in writing."
     },
     {
-      "id": "s27_58",
+      "id": "27-58",
       "category": "Interjections",
       "pl": "Aha",
       "en": "Aha / I see",
@@ -584,7 +584,7 @@
       "note": "Universal sound of understanding."
     },
     {
-      "id": "s27_59",
+      "id": "27-59",
       "category": "Interjections",
       "pl": "O!",
       "en": "Oh!",
@@ -594,7 +594,7 @@
       "note": "Sound of surprise."
     },
     {
-      "id": "s27_60",
+      "id": "27-60",
       "category": "Interjections",
       "pl": "Oj!",
       "en": "Oh! / Oops!",
@@ -604,7 +604,7 @@
       "note": "Often used when you make a small mistake or bump into someone."
     },
     {
-      "id": "s27_61",
+      "id": "27-61",
       "category": "Interjections",
       "pl": "Wow!",
       "en": "Wow!",
@@ -614,7 +614,7 @@
       "note": "Borrowed from English, used heavily by young Poles."
     },
     {
-      "id": "s27_62",
+      "id": "27-62",
       "category": "Interjections",
       "pl": "Jejku!",
       "en": "Gosh! / Oh my!",
@@ -624,7 +624,7 @@
       "note": "A mild, polite exclamation of shock."
     },
     {
-      "id": "s27_63",
+      "id": "27-63",
       "category": "Interjections",
       "pl": "O rany!",
       "en": "Oh man! / Gosh!",
@@ -634,7 +634,7 @@
       "note": "Literally 'Oh wounds!'."
     },
     {
-      "id": "s27_64",
+      "id": "27-64",
       "category": "Interjections",
       "pl": "O matko!",
       "en": "Oh my God! / Oh mother!",
@@ -644,7 +644,7 @@
       "note": "A very common Polish exclamation of stress or shock."
     },
     {
-      "id": "s27_65",
+      "id": "27-65",
       "category": "Interjections",
       "pl": "Ojej!",
       "en": "Oh dear!",
@@ -654,7 +654,7 @@
       "note": "Used to express sympathy or mild dismay."
     },
     {
-      "id": "s27_66",
+      "id": "27-66",
       "category": "Interjections",
       "pl": "Eee...",
       "en": "Uhh... / Umm...",
@@ -664,7 +664,7 @@
       "note": "The sound you make when trying to remember a word."
     },
     {
-      "id": "s27_67",
+      "id": "27-67",
       "category": "Interjections",
       "pl": "No dobra",
       "en": "Okay then / Alright",
@@ -674,7 +674,7 @@
       "note": "Used to concede a point or agree to a plan."
     },
     {
-      "id": "s27_68",
+      "id": "27-68",
       "category": "Intensity Idioms",
       "pl": "Na łeb na szyję",
       "en": "Headlong / Recklessly fast",
@@ -684,7 +684,7 @@
       "note": "Literally 'On head on neck'. Doing something too fast."
     },
     {
-      "id": "s27_69",
+      "id": "27-69",
       "category": "Intensity Idioms",
       "pl": "Zrobić kogoś w konia",
       "en": "To trick/cheat someone",
@@ -694,7 +694,7 @@
       "note": "Literally 'To make someone into a horse'."
     },
     {
-      "id": "s27_70",
+      "id": "27-70",
       "category": "Intensity Idioms",
       "pl": "Włos się jeży na głowie",
       "en": "It makes your hair stand on end",
@@ -704,7 +704,7 @@
       "note": "Used to describe something terrifying."
     },
     {
-      "id": "s27_71",
+      "id": "27-71",
       "category": "Intensity Idioms",
       "pl": "Czuć pismo nosem",
       "en": "To smell a rat / To suspect something",
@@ -714,7 +714,7 @@
       "note": "Literally 'To smell the writing with a nose'."
     },
     {
-      "id": "s27_72",
+      "id": "27-72",
       "category": "Intensity Idioms",
       "pl": "Wiercić dziurę w brzuchu",
       "en": "To nag / To pester constantly",
@@ -724,7 +724,7 @@
       "note": "Literally 'To drill a hole in the belly'."
     },
     {
-      "id": "s27_73",
+      "id": "27-73",
       "category": "Intensity Idioms",
       "pl": "Gruba ryba",
       "en": "A big shot / Important person",
@@ -734,7 +734,7 @@
       "note": "Literally 'Fat fish'."
     },
     {
-      "id": "s27_74",
+      "id": "27-74",
       "category": "Intensity Idioms",
       "pl": "Bujać w obłokach",
       "en": "To have one's head in the clouds",
@@ -744,7 +744,7 @@
       "note": "Used for daydreamers."
     },
     {
-      "id": "s27_75",
+      "id": "27-75",
       "category": "Intensity Idioms",
       "pl": "Pasuje jak ulał",
       "en": "Fits perfectly / Fits like a glove",

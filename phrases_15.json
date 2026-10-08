@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s15_01",
+      "id": "15-01",
       "category": "Work Basics",
       "pl": "Praca",
       "en": "Work / Job",
@@ -14,7 +14,7 @@
       "note": "Feminine noun. 'Idę do pracy' means 'I am going to work'."
     },
     {
-      "id": "s15_02",
+      "id": "15-02",
       "category": "Work Basics",
       "pl": "Biuro",
       "en": "Office",
@@ -24,7 +24,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s15_03",
+      "id": "15-03",
       "category": "Work Basics",
       "pl": "Firma",
       "en": "Company",
@@ -34,7 +34,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s15_04",
+      "id": "15-04",
       "category": "Work Basics",
       "pl": "Pracuję w korporacji",
       "en": "I work in a corporation",
@@ -44,7 +44,7 @@
       "note": "Often shortened in slang to 'pracuję w korpo'."
     },
     {
-      "id": "s15_05",
+      "id": "15-05",
       "category": "Work Basics",
       "pl": "Praca zdalna",
       "en": "Remote work",
@@ -54,7 +54,7 @@
       "note": "Feminine noun phrase. 'Pracuję zdalnie' = I work remotely."
     },
     {
-      "id": "s15_06",
+      "id": "15-06",
       "category": "Work Basics",
       "pl": "Pracuję z domu",
       "en": "I work from home",
@@ -64,7 +64,7 @@
       "note": "Literally 'I work from house'."
     },
     {
-      "id": "s15_07",
+      "id": "15-07",
       "category": "People",
       "pl": "Szef",
       "en": "Boss",
@@ -74,7 +74,7 @@
       "note": "A female boss is a 'Szefowa'."
     },
     {
-      "id": "s15_08",
+      "id": "15-08",
       "category": "People",
       "pl": "Menedżer",
       "en": "Manager",
@@ -84,7 +84,7 @@
       "note": "Loanword. Pronounced the English way but spelled phonetically."
     },
     {
-      "id": "s15_09",
+      "id": "15-09",
       "category": "People",
       "pl": "Kolega z pracy",
       "en": "Coworker (Male)",
@@ -94,7 +94,7 @@
       "note": "Literally 'Colleague from work'."
     },
     {
-      "id": "s15_10",
+      "id": "15-10",
       "category": "People",
       "pl": "Koleżanka z pracy",
       "en": "Coworker (Female)",
@@ -104,7 +104,7 @@
       "note": "Literally 'Female colleague from work'."
     },
     {
-      "id": "s15_11",
+      "id": "15-11",
       "category": "People",
       "pl": "Klient",
       "en": "Client",
@@ -114,7 +114,7 @@
       "note": "Masculine noun. Female is 'Klientka'."
     },
     {
-      "id": "s15_12",
+      "id": "15-12",
       "category": "Meetings & Events",
       "pl": "Spotkanie",
       "en": "Meeting",
@@ -124,7 +124,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s15_13",
+      "id": "15-13",
       "category": "Meetings & Events",
       "pl": "Konferencja",
       "en": "Conference",
@@ -134,7 +134,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s15_14",
+      "id": "15-14",
       "category": "Meetings & Events",
       "pl": "Prezentacja",
       "en": "Presentation",
@@ -144,7 +144,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s15_15",
+      "id": "15-15",
       "category": "Meetings & Events",
       "pl": "Rozmowa kwalifikacyjna",
       "en": "Job interview",
@@ -154,7 +154,7 @@
       "note": "Literally 'qualifying conversation'."
     },
     {
-      "id": "s15_16",
+      "id": "15-16",
       "category": "Meetings & Events",
       "pl": "Jestem na spotkaniu",
       "en": "I'm in a meeting",
@@ -164,7 +164,7 @@
       "note": "Uses the locative case 'na spotkaniu'."
     },
     {
-      "id": "s15_17",
+      "id": "15-17",
       "category": "Meetings & Events",
       "pl": "Agenda",
       "en": "Agenda",
@@ -174,7 +174,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s15_18",
+      "id": "15-18",
       "category": "Meetings & Events",
       "pl": "Notatki",
       "en": "Notes",
@@ -184,7 +184,7 @@
       "note": "Plural noun. Singular is 'notatka'."
     },
     {
-      "id": "s15_19",
+      "id": "15-19",
       "category": "Tasks & Output",
       "pl": "Projekt",
       "en": "Project",
@@ -194,7 +194,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s15_20",
+      "id": "15-20",
       "category": "Tasks & Output",
       "pl": "Raport",
       "en": "Report",
@@ -204,7 +204,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s15_21",
+      "id": "15-21",
       "category": "Tasks & Output",
       "pl": "Dokument",
       "en": "Document",
@@ -214,7 +214,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s15_22",
+      "id": "15-22",
       "category": "Tasks & Output",
       "pl": "Termin",
       "en": "Deadline",
@@ -224,7 +224,7 @@
       "note": "Also means a scheduled appointment."
     },
     {
-      "id": "s15_23",
+      "id": "15-23",
       "category": "Tasks & Output",
       "pl": "Zadanie",
       "en": "Task",
@@ -234,7 +234,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s15_24",
+      "id": "15-24",
       "category": "HR & Admin",
       "pl": "Umowa o pracę",
       "en": "Employment contract",
@@ -244,7 +244,7 @@
       "note": "The standard full-time Polish labor contract with maximum benefits."
     },
     {
-      "id": "s15_25",
+      "id": "15-25",
       "category": "HR & Admin",
       "pl": "Podpis",
       "en": "Signature",
@@ -254,7 +254,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s15_26",
+      "id": "15-26",
       "category": "HR & Admin",
       "pl": "Proszę podpisać tutaj",
       "en": "Please sign here",
@@ -264,7 +264,7 @@
       "note": "Infinitive phrase."
     },
     {
-      "id": "s15_27",
+      "id": "15-27",
       "category": "HR & Admin",
       "pl": "Wynagrodzenie",
       "en": "Salary / Remuneration",
@@ -274,7 +274,7 @@
       "note": "A very formal word. Casually, Poles say 'pensja' or 'wypłata'."
     },
     {
-      "id": "s15_28",
+      "id": "15-28",
       "category": "HR & Admin",
       "pl": "Awans",
       "en": "Promotion",
@@ -284,7 +284,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s15_29",
+      "id": "15-29",
       "category": "HR & Admin",
       "pl": "Urlop",
       "en": "Vacation / Paid leave",
@@ -294,7 +294,7 @@
       "note": "Full-time Polish employees legally get 20 or 26 days of 'urlop' per year."
     },
     {
-      "id": "s15_30",
+      "id": "15-30",
       "category": "HR & Admin",
       "pl": "Nadgodziny",
       "en": "Overtime",
@@ -304,7 +304,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s15_31",
+      "id": "15-31",
       "category": "Networking",
       "pl": "Wizytówka",
       "en": "Business card",
@@ -314,7 +314,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s15_32",
+      "id": "15-32",
       "category": "Networking",
       "pl": "Czy mogę dostać wizytówkę?",
       "en": "Can I have your business card?",
@@ -324,7 +324,7 @@
       "note": "Literally 'Can I get a business card?'."
     },
     {
-      "id": "s15_33",
+      "id": "15-33",
       "category": "Communication",
       "pl": "Zadzwonię później",
       "en": "I'll call later",
@@ -334,7 +334,7 @@
       "note": "Future tense."
     },
     {
-      "id": "s15_34",
+      "id": "15-34",
       "category": "Communication",
       "pl": "Wyślę email",
       "en": "I'll send an email",
@@ -344,7 +344,7 @@
       "note": "Future tense."
     },
     {
-      "id": "s15_35",
+      "id": "15-35",
       "category": "Communication",
       "pl": "Załącznik",
       "en": "Attachment",
@@ -354,7 +354,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s15_36",
+      "id": "15-36",
       "category": "Communication",
       "pl": "Wyślę w załączniku",
       "en": "I'll send it as an attachment",
@@ -364,7 +364,7 @@
       "note": "Locative case 'w załączniku'."
     },
     {
-      "id": "s15_37",
+      "id": "15-37",
       "category": "Communication",
       "pl": "Proszę o potwierdzenie",
       "en": "Please confirm",
@@ -374,7 +374,7 @@
       "note": "Literally 'I ask for confirmation'."
     },
     {
-      "id": "s15_38",
+      "id": "15-38",
       "category": "Communication",
       "pl": "Zgadzam się",
       "en": "I agree",
@@ -384,7 +384,7 @@
       "note": "Reflexive verb."
     },
     {
-      "id": "s15_39",
+      "id": "15-39",
       "category": "Communication",
       "pl": "Nie zgadzam się",
       "en": "I disagree",
@@ -394,7 +394,7 @@
       "note": "Add 'nie' before the verb."
     },
     {
-      "id": "s15_40",
+      "id": "15-40",
       "category": "Communication",
       "pl": "Proszę wyjaśnić",
       "en": "Please explain",
@@ -404,7 +404,7 @@
       "note": "Infinitive phrase."
     },
     {
-      "id": "s15_41",
+      "id": "15-41",
       "category": "Communication",
       "pl": "Muszę to sprawdzić",
       "en": "I need to check this",
@@ -414,7 +414,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s15_42",
+      "id": "15-42",
       "category": "Communication",
       "pl": "Muszę to przemyśleć",
       "en": "I need to think about it",
@@ -424,7 +424,7 @@
       "note": "Literally 'I must over-think it'."
     },
     {
-      "id": "s15_43",
+      "id": "15-43",
       "category": "Communication",
       "pl": "Dam Panu/Pani znać",
       "en": "I'll let you know",
@@ -438,7 +438,7 @@
       "note": "Formal phrase. Uses dative case 'Panu' (to Sir) or 'Pani' (to Madam)."
     },
     {
-      "id": "s15_44",
+      "id": "15-44",
       "category": "Professional Requests",
       "pl": "Czy możesz to zrobić?",
       "en": "Can you do this?",
@@ -448,7 +448,7 @@
       "note": "Casual phrasing ('możesz') suitable for a direct coworker."
     },
     {
-      "id": "s15_45",
+      "id": "15-45",
       "category": "Professional Requests",
       "pl": "Potrzebuję tego do piątku",
       "en": "I need this by Friday",
@@ -458,7 +458,7 @@
       "note": "The preposition 'do' takes the genitive case 'piątku'."
     },
     {
-      "id": "s15_46",
+      "id": "15-46",
       "category": "Professional Requests",
       "pl": "To jest pilne",
       "en": "This is urgent",
@@ -468,7 +468,7 @@
       "note": "Neuter adjective matching 'To'."
     },
     {
-      "id": "s15_47",
+      "id": "15-47",
       "category": "Professional Requests",
       "pl": "Nie ma pośpiechu",
       "en": "No rush",
@@ -478,7 +478,7 @@
       "note": "Literally 'There is no rush'."
     },
     {
-      "id": "s15_48",
+      "id": "15-48",
       "category": "Professional Requests",
       "pl": "Proszę to poprawić",
       "en": "Please correct this",

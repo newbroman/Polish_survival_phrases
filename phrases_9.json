@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s09_01",
+      "id": "9-01",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie...",
       "en": "It hurts... / My ... hurts",
@@ -14,7 +14,7 @@
       "note": "A crucial Polish structure! Literally '... hurts me'. Takes the nominative case for the body part."
     },
     {
-      "id": "s09_02",
+      "id": "9-02",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie głowa",
       "en": "My head hurts / I have a headache",
@@ -24,7 +24,7 @@
       "note": "Literally 'The head hurts me'."
     },
     {
-      "id": "s09_03",
+      "id": "9-03",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie brzuch",
       "en": "My stomach hurts",
@@ -34,7 +34,7 @@
       "note": "Masculine noun 'brzuch'."
     },
     {
-      "id": "s09_04",
+      "id": "9-04",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie gardło",
       "en": "My throat hurts",
@@ -44,7 +44,7 @@
       "note": "Neuter noun 'gardło'."
     },
     {
-      "id": "s09_05",
+      "id": "9-05",
       "category": "Symptoms & Pain",
       "pl": "Boli mnie ząb",
       "en": "My tooth hurts",
@@ -54,7 +54,7 @@
       "note": "Masculine noun 'ząb'."
     },
     {
-      "id": "s09_06",
+      "id": "9-06",
       "category": "Symptoms & Pain",
       "pl": "Bolą mnie plecy",
       "en": "My back hurts",
@@ -64,7 +64,7 @@
       "note": "'Plecy' (back) is always plural in Polish, so the verb changes to 'bolą' (they hurt)."
     },
     {
-      "id": "s09_07",
+      "id": "9-07",
       "category": "Symptoms & Pain",
       "pl": "Jestem chory / chora",
       "en": "I'm sick",
@@ -78,7 +78,7 @@
       "note": "Gendered adjective."
     },
     {
-      "id": "s09_08",
+      "id": "9-08",
       "category": "Symptoms & Pain",
       "pl": "Mam gorączkę",
       "en": "I have a fever",
@@ -88,7 +88,7 @@
       "note": "Uses the verb 'mieć' (to have) + accusative case 'gorączkę'."
     },
     {
-      "id": "s09_09",
+      "id": "9-09",
       "category": "Symptoms & Pain",
       "pl": "Mam kaszel",
       "en": "I have a cough",
@@ -98,7 +98,7 @@
       "note": "Masculine noun in the accusative case."
     },
     {
-      "id": "s09_10",
+      "id": "9-10",
       "category": "Symptoms & Pain",
       "pl": "Mam katar",
       "en": "I have a runny nose",
@@ -108,7 +108,7 @@
       "note": "Masculine noun. Very common winter phrase in Poland!"
     },
     {
-      "id": "s09_11",
+      "id": "9-11",
       "category": "Symptoms & Pain",
       "pl": "Wymiotuję",
       "en": "I'm vomiting",
@@ -118,7 +118,7 @@
       "note": "Present tense verb 'wymiotować'."
     },
     {
-      "id": "s09_12",
+      "id": "9-12",
       "category": "Symptoms & Pain",
       "pl": "Mam biegunkę",
       "en": "I have diarrhea",
@@ -128,7 +128,7 @@
       "note": "Takes the accusative case 'biegunkę'."
     },
     {
-      "id": "s09_13",
+      "id": "9-13",
       "category": "Symptoms & Pain",
       "pl": "Mam zawroty głowy",
       "en": "I'm dizzy",
@@ -138,7 +138,7 @@
       "note": "Literally 'I have turns of the head'."
     },
     {
-      "id": "s09_14",
+      "id": "9-14",
       "category": "Symptoms & Pain",
       "pl": "Nie mogę spać",
       "en": "I can't sleep",
@@ -148,7 +148,7 @@
       "note": "Infinitive verb 'spać'."
     },
     {
-      "id": "s09_15",
+      "id": "9-15",
       "category": "Symptoms & Pain",
       "pl": "Jestem zmęczony / zmęczona",
       "en": "I'm tired",
@@ -162,7 +162,7 @@
       "note": "Passive participle acting as an adjective."
     },
     {
-      "id": "s09_16",
+      "id": "9-16",
       "category": "Symptoms & Pain",
       "pl": "Czuję się źle",
       "en": "I feel bad / unwell",
@@ -172,7 +172,7 @@
       "note": "Reflexive verb 'czuć się'."
     },
     {
-      "id": "s09_17",
+      "id": "9-17",
       "category": "Symptoms & Pain",
       "pl": "Czuję się lepiej",
       "en": "I feel better",
@@ -182,9 +182,9 @@
       "note": "Comparative adverb 'lepiej'."
     },
     {
-      "id": "s09_18",
+      "id": "9-18",
       "category": "Symptoms & Pain",
-      "pl": "Jestem chory od wczoraj",
+      "pl": "Jestem chory / chora od wczoraj",
       "en": "I've been sick since yesterday",
       "level": 9,
       "gender": "both",
@@ -196,7 +196,7 @@
       "note": "Preposition 'od' (since/from)."
     },
     {
-      "id": "s09_19",
+      "id": "9-19",
       "category": "Symptoms & Pain",
       "pl": "To bardzo boli",
       "en": "It hurts a lot",
@@ -206,7 +206,7 @@
       "note": "Adverb 'bardzo' amplifies the verb 'boli'."
     },
     {
-      "id": "s09_20",
+      "id": "9-20",
       "category": "Symptoms & Pain",
       "pl": "Nie mogę oddychać",
       "en": "I can't breathe",
@@ -216,7 +216,7 @@
       "note": "Infinitive verb 'oddychać'."
     },
     {
-      "id": "s09_21",
+      "id": "9-21",
       "category": "Doctor & Pharmacy",
       "pl": "Potrzebuję lekarza",
       "en": "I need a doctor",
@@ -226,7 +226,7 @@
       "note": "The verb 'potrzebować' requires the genitive case ('lekarza')."
     },
     {
-      "id": "s09_22",
+      "id": "9-22",
       "category": "Doctor & Pharmacy",
       "pl": "Gdzie jest lekarz?",
       "en": "Where is the doctor?",
@@ -236,7 +236,7 @@
       "note": "Nominative case."
     },
     {
-      "id": "s09_23",
+      "id": "9-23",
       "category": "Doctor & Pharmacy",
       "pl": "Gdzie jest apteka?",
       "en": "Where is the pharmacy?",
@@ -246,7 +246,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s09_24",
+      "id": "9-24",
       "category": "Doctor & Pharmacy",
       "pl": "Apteka",
       "en": "Pharmacy",
@@ -256,7 +256,7 @@
       "note": "Look for the green cross sign on the street."
     },
     {
-      "id": "s09_25",
+      "id": "9-25",
       "category": "Doctor & Pharmacy",
       "pl": "Szpital",
       "en": "Hospital",
@@ -266,7 +266,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s09_26",
+      "id": "9-26",
       "category": "Doctor & Pharmacy",
       "pl": "Przychodnia",
       "en": "Clinic / Health center",
@@ -276,7 +276,7 @@
       "note": "Where you go for standard, non-emergency doctor visits."
     },
     {
-      "id": "s09_27",
+      "id": "9-27",
       "category": "Doctor & Pharmacy",
       "pl": "Dentysta",
       "en": "Dentist",
@@ -286,7 +286,7 @@
       "note": "Masculine noun (despite the 'a' ending)."
     },
     {
-      "id": "s09_28",
+      "id": "9-28",
       "category": "Doctor & Pharmacy",
       "pl": "Recepta",
       "en": "Prescription",
@@ -296,7 +296,7 @@
       "note": "Feminine noun. In Poland, many are now 'e-recepty' (digital)."
     },
     {
-      "id": "s09_29",
+      "id": "9-29",
       "category": "Doctor & Pharmacy",
       "pl": "Mam receptę",
       "en": "I have a prescription",
@@ -306,7 +306,7 @@
       "note": "Accusative case 'receptę'. Hand the pharmacist your 4-digit code and PESEL number."
     },
     {
-      "id": "s09_30",
+      "id": "9-30",
       "category": "Doctor & Pharmacy",
       "pl": "Potrzebuję leku na...",
       "en": "I need medicine for...",
@@ -316,7 +316,7 @@
       "note": "Takes the genitive case 'leku', followed by 'na' + accusative."
     },
     {
-      "id": "s09_31",
+      "id": "9-31",
       "category": "Doctor & Pharmacy",
       "pl": "Lek przeciwbólowy",
       "en": "Painkiller",
@@ -326,7 +326,7 @@
       "note": "Literally 'Anti-pain medicine'."
     },
     {
-      "id": "s09_32",
+      "id": "9-32",
       "category": "Doctor & Pharmacy",
       "pl": "Tabletki",
       "en": "Pills / Tablets",
@@ -336,7 +336,7 @@
       "note": "Plural noun. Singular is 'tabletka'."
     },
     {
-      "id": "s09_33",
+      "id": "9-33",
       "category": "Doctor & Pharmacy",
       "pl": "Antybiotyk",
       "en": "Antibiotic",
@@ -346,7 +346,7 @@
       "note": "Strictly prescription-only in Poland."
     },
     {
-      "id": "s09_34",
+      "id": "9-34",
       "category": "Doctor & Pharmacy",
       "pl": "Witaminy",
       "en": "Vitamins",
@@ -356,7 +356,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s09_35",
+      "id": "9-35",
       "category": "Doctor & Pharmacy",
       "pl": "Plaster",
       "en": "Band-aid / Plaster",
@@ -366,7 +366,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s09_36",
+      "id": "9-36",
       "category": "Doctor & Pharmacy",
       "pl": "Termometr",
       "en": "Thermometer",
@@ -376,7 +376,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s09_37",
+      "id": "9-37",
       "category": "Doctor & Pharmacy",
       "pl": "Mam alergię na...",
       "en": "I'm allergic to...",
@@ -386,7 +386,7 @@
       "note": "Takes 'na' + accusative case."
     },
     {
-      "id": "s09_38",
+      "id": "9-38",
       "category": "Doctor & Pharmacy",
       "pl": "Uczulenie",
       "en": "Allergy / Rash",
@@ -396,7 +396,7 @@
       "note": "Neuter noun. Often refers specifically to a skin reaction."
     },
     {
-      "id": "s09_39",
+      "id": "9-39",
       "category": "Doctor & Pharmacy",
       "pl": "Ubezpieczenie",
       "en": "Insurance",
@@ -406,7 +406,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s09_40",
+      "id": "9-40",
       "category": "Doctor & Pharmacy",
       "pl": "Mam ubezpieczenie",
       "en": "I have insurance",
@@ -416,7 +416,7 @@
       "note": "Accusative case."
     },
     {
-      "id": "s09_41",
+      "id": "9-41",
       "category": "Doctor & Pharmacy",
       "pl": "Karta EKUZ",
       "en": "EHIC Card",
@@ -426,7 +426,7 @@
       "note": "European Health Insurance Card. Valid in Polish public hospitals."
     },
     {
-      "id": "s09_42",
+      "id": "9-42",
       "category": "Doctor & Pharmacy",
       "pl": "Ile to kosztuje?",
       "en": "How much is this?",
@@ -436,7 +436,7 @@
       "note": "Essential if buying private medicine."
     },
     {
-      "id": "s09_43",
+      "id": "9-43",
       "category": "Doctor & Pharmacy",
       "pl": "Czy potrzebuję recepty?",
       "en": "Do I need a prescription?",
@@ -446,7 +446,7 @@
       "note": "Takes the genitive case 'recepty'."
     },
     {
-      "id": "s09_44",
+      "id": "9-44",
       "category": "Doctor & Pharmacy",
       "pl": "Jak często to brać?",
       "en": "How often should I take this?",
@@ -456,7 +456,7 @@
       "note": "Infinitive phrase."
     },
     {
-      "id": "s09_45",
+      "id": "9-45",
       "category": "Doctor & Pharmacy",
       "pl": "Przed jedzeniem czy po?",
       "en": "Before or after eating?",
@@ -466,7 +466,7 @@
       "note": "Instrumental case 'jedzeniem' or locative case 'po'."
     },
     {
-      "id": "s09_46",
+      "id": "9-46",
       "category": "Medical Situations",
       "pl": "Zadzwoń po karetkę!",
       "en": "Call an ambulance!",
@@ -476,7 +476,7 @@
       "note": "Imperative verb. The emergency number in Poland is 112."
     },
     {
-      "id": "s09_47",
+      "id": "9-47",
       "category": "Medical Situations",
       "pl": "To nagły wypadek!",
       "en": "It's an emergency!",
@@ -486,7 +486,7 @@
       "note": "Masculine noun phrase."
     },
     {
-      "id": "s09_48",
+      "id": "9-48",
       "category": "Medical Situations",
       "pl": "Jestem w ciąży",
       "en": "I'm pregnant",
@@ -496,7 +496,7 @@
       "note": "Locative case 'w ciąży'."
     },
     {
-      "id": "s09_49",
+      "id": "9-49",
       "category": "Medical Situations",
       "pl": "Mam cukrzycę",
       "en": "I have diabetes",
@@ -506,7 +506,7 @@
       "note": "Accusative case 'cukrzycę'."
     },
     {
-      "id": "s09_50",
+      "id": "9-50",
       "category": "Medical Situations",
       "pl": "Mam astmę",
       "en": "I have asthma",
@@ -516,7 +516,7 @@
       "note": "Accusative case 'astmę'."
     },
     {
-      "id": "s09_51",
+      "id": "9-51",
       "category": "Medical Situations",
       "pl": "Biorę leki na...",
       "en": "I take medication for...",
@@ -526,7 +526,7 @@
       "note": "Present tense verb 'brać' (to take)."
     },
     {
-      "id": "s09_52",
+      "id": "9-52",
       "category": "Medical Situations",
       "pl": "Upadłem / Upadłam",
       "en": "I fell",
@@ -540,7 +540,7 @@
       "note": "Past tense verb."
     },
     {
-      "id": "s09_53",
+      "id": "9-53",
       "category": "Medical Situations",
       "pl": "Skaleczyłem / Skaleczyłam się",
       "en": "I cut myself",
@@ -554,7 +554,7 @@
       "note": "Reflexive past tense verb."
     },
     {
-      "id": "s09_54",
+      "id": "9-54",
       "category": "Medical Situations",
       "pl": "Oparzenie",
       "en": "Burn (injury)",
@@ -564,7 +564,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s09_55",
+      "id": "9-55",
       "category": "Medical Situations",
       "pl": "Złamanie",
       "en": "Fracture / Broken bone",
@@ -574,7 +574,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s09_56",
+      "id": "9-56",
       "category": "Medical Situations",
       "pl": "Krwawienie",
       "en": "Bleeding",
@@ -584,7 +584,7 @@
       "note": "Neuter noun (gerund)."
     },
     {
-      "id": "s09_57",
+      "id": "9-57",
       "category": "Medical Situations",
       "pl": "Grupa krwi",
       "en": "Blood type",
@@ -594,7 +594,7 @@
       "note": "Feminine phrase."
     },
     {
-      "id": "s09_58",
+      "id": "9-58",
       "category": "Medical Situations",
       "pl": "Moja grupa krwi to...",
       "en": "My blood type is...",
@@ -604,7 +604,7 @@
       "note": "Important for emergency situations."
     },
     {
-      "id": "s09_59",
+      "id": "9-59",
       "category": "Medical Situations",
       "pl": "Potrzebuję pomocy medycznej",
       "en": "I need medical help",
@@ -614,7 +614,7 @@
       "note": "Genitive case 'pomocy medycznej'."
     },
     {
-      "id": "s09_60",
+      "id": "9-60",
       "category": "Medical Situations",
       "pl": "Czy ktoś mówi po angielsku?",
       "en": "Does anyone speak English?",
@@ -624,7 +624,7 @@
       "note": "Crucial phrase in a hospital setting."
     },
     {
-      "id": "s09_61",
+      "id": "9-61",
       "category": "Body Parts",
       "pl": "Głowa",
       "en": "Head",
@@ -634,7 +634,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s09_62",
+      "id": "9-62",
       "category": "Body Parts",
       "pl": "Brzuch",
       "en": "Stomach",
@@ -644,7 +644,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s09_63",
+      "id": "9-63",
       "category": "Body Parts",
       "pl": "Ręka",
       "en": "Hand / Arm",
@@ -654,7 +654,7 @@
       "note": "Feminine noun. Polish often uses one word for both hand and arm."
     },
     {
-      "id": "s09_64",
+      "id": "9-64",
       "category": "Body Parts",
       "pl": "Noga",
       "en": "Leg / Foot",
@@ -664,7 +664,7 @@
       "note": "Feminine noun. Can mean both leg and foot."
     },
     {
-      "id": "s09_65",
+      "id": "9-65",
       "category": "Body Parts",
       "pl": "Plecy",
       "en": "Back",
@@ -674,7 +674,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s09_66",
+      "id": "9-66",
       "category": "Body Parts",
       "pl": "Oko",
       "en": "Eye",
@@ -684,7 +684,7 @@
       "note": "Neuter noun. Plural is 'oczy'."
     },
     {
-      "id": "s09_67",
+      "id": "9-67",
       "category": "Body Parts",
       "pl": "Ucho",
       "en": "Ear",
@@ -694,7 +694,7 @@
       "note": "Neuter noun. Plural is 'uszy'."
     },
     {
-      "id": "s09_68",
+      "id": "9-68",
       "category": "Body Parts",
       "pl": "Gardło",
       "en": "Throat",
@@ -704,7 +704,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s09_69",
+      "id": "9-69",
       "category": "Body Parts",
       "pl": "Ząb",
       "en": "Tooth",
@@ -714,7 +714,7 @@
       "note": "Masculine noun. Plural is 'zęby'."
     },
     {
-      "id": "s09_70",
+      "id": "9-70",
       "category": "Body Parts",
       "pl": "Szyja",
       "en": "Neck",
@@ -724,7 +724,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s09_71",
+      "id": "9-71",
       "category": "Medical Situations",
       "pl": "Mam ubezpieczenie podróżne",
       "en": "I have travel insurance",
@@ -734,7 +734,7 @@
       "note": "Accusative case."
     },
     {
-      "id": "s09_72",
+      "id": "9-72",
       "category": "Symptoms & Pain",
       "pl": "Jestem przeziębiony / przeziębiona",
       "en": "I have a cold",
@@ -748,7 +748,7 @@
       "note": "Passive participle acting as an adjective."
     },
     {
-      "id": "s09_73",
+      "id": "9-73",
       "category": "Symptoms & Pain",
       "pl": "Mdli mnie",
       "en": "I feel nauseous",
@@ -758,7 +758,7 @@
       "note": "Literally 'It nauseates me'."
     },
     {
-      "id": "s09_74",
+      "id": "9-74",
       "category": "Body Parts",
       "pl": "Serce",
       "en": "Heart",
@@ -768,7 +768,7 @@
       "note": "Neuter noun."
     },
     {
-      "id": "s09_75",
+      "id": "9-75",
       "category": "Doctor & Pharmacy",
       "pl": "Gabinet lekarski",
       "en": "Doctor's office",

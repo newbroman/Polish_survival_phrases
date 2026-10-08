@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s10.1_01",
+      "id": "10.1-01",
       "category": "Walking & Parks",
       "pl": "Spacer",
       "en": "Walk / Stroll",
@@ -14,7 +14,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s10.1_02",
+      "id": "10.1-02",
       "category": "Walking & Parks",
       "pl": "Iść na spacer",
       "en": "To go for a walk",
@@ -24,7 +24,7 @@
       "note": "A very common Polish pastime! Uses the accusative case 'na spacer'."
     },
     {
-      "id": "s10.1_03",
+      "id": "10.1-03",
       "category": "Walking & Parks",
       "pl": "Chodnik",
       "en": "Sidewalk / Pavement",
@@ -34,7 +34,7 @@
       "note": "Derived from the verb 'chodzić' (to walk)."
     },
     {
-      "id": "s10.1_04",
+      "id": "10.1-04",
       "category": "Walking & Parks",
       "pl": "Ścieżka",
       "en": "Path / Trail",
@@ -44,7 +44,7 @@
       "note": "Feminine noun for a smaller, unpaved walking path."
     },
     {
-      "id": "s10.1_05",
+      "id": "10.1-05",
       "category": "Walking & Parks",
       "pl": "Park",
       "en": "Park",
@@ -54,7 +54,7 @@
       "note": "Pronounced exactly as in English, but with a rolled 'r'."
     },
     {
-      "id": "s10.1_06",
+      "id": "10.1-06",
       "category": "Walking & Parks",
       "pl": "Ławka",
       "en": "Bench",
@@ -64,7 +64,7 @@
       "note": "To say 'on the bench', use the locative: 'na ławce'."
     },
     {
-      "id": "s10.1_07",
+      "id": "10.1-07",
       "category": "Walking & Parks",
       "pl": "Fontanna",
       "en": "Fountain",
@@ -74,7 +74,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s10.1_08",
+      "id": "10.1-08",
       "category": "Walking & Parks",
       "pl": "Rzeka",
       "en": "River",
@@ -84,7 +84,7 @@
       "note": "Most major Polish cities are built on a 'rzeka' (e.g., Wisła, Odra)."
     },
     {
-      "id": "s10.1_09",
+      "id": "10.1-09",
       "category": "Walking & Parks",
       "pl": "Most",
       "en": "Bridge",
@@ -94,7 +94,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s10.1_10",
+      "id": "10.1-10",
       "category": "Walking & Parks",
       "pl": "Bulwar",
       "en": "Boulevard / Promenade",
@@ -104,7 +104,7 @@
       "note": "Riverside promenades are hugely popular in Poland (like the 'Bulwary Wiślane' in Warsaw)."
     },
     {
-      "id": "s10.1_11",
+      "id": "10.1-11",
       "category": "Walking & Parks",
       "pl": "Deptak",
       "en": "Pedestrian street",
@@ -114,7 +114,7 @@
       "note": "A street completely closed to cars, meant only for walking and shopping."
     },
     {
-      "id": "s10.1_12",
+      "id": "10.1-12",
       "category": "Walking & Parks",
       "pl": "Drzewo",
       "en": "Tree",
@@ -124,7 +124,7 @@
       "note": "Neuter noun. Plural is 'drzewa'."
     },
     {
-      "id": "s10.1_13",
+      "id": "10.1-13",
       "category": "Walking & Parks",
       "pl": "Kwiaty",
       "en": "Flowers",
@@ -134,7 +134,7 @@
       "note": "Plural noun. Singular is 'kwiat'."
     },
     {
-      "id": "s10.1_14",
+      "id": "10.1-14",
       "category": "Cycling & Scooters",
       "pl": "Rower",
       "en": "Bicycle",
@@ -144,7 +144,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s10.1_15",
+      "id": "10.1-15",
       "category": "Cycling & Scooters",
       "pl": "Jeździć na rowerze",
       "en": "To ride a bike",
@@ -154,7 +154,7 @@
       "note": "Uses the locative case 'na rowerze'."
     },
     {
-      "id": "s10.1_16",
+      "id": "10.1-16",
       "category": "Cycling & Scooters",
       "pl": "Ścieżka rowerowa",
       "en": "Bike path / Cycle lane",
@@ -164,7 +164,7 @@
       "note": "Do NOT walk in the bike lane in Poland! Cyclists will ring their bells aggressively."
     },
     {
-      "id": "s10.1_17",
+      "id": "10.1-17",
       "category": "Cycling & Scooters",
       "pl": "Rower miejski",
       "en": "City bike",
@@ -174,7 +174,7 @@
       "note": "Public bike-sharing systems are available in almost every major Polish city."
     },
     {
-      "id": "s10.1_18",
+      "id": "10.1-18",
       "category": "Cycling & Scooters",
       "pl": "Hulajnoga elektryczna",
       "en": "Electric scooter",
@@ -184,7 +184,7 @@
       "note": "E-scooters (like Lime, Bolt) are incredibly popular in Poland."
     },
     {
-      "id": "s10.1_19",
+      "id": "10.1-19",
       "category": "Cycling & Scooters",
       "pl": "Kask",
       "en": "Helmet",
@@ -194,7 +194,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s10.1_20",
+      "id": "10.1-20",
       "category": "Cycling & Scooters",
       "pl": "Zapięcie do roweru",
       "en": "Bike lock",
@@ -204,7 +204,7 @@
       "note": "Literally 'fastener to the bike'."
     },
     {
-      "id": "s10.1_21",
+      "id": "10.1-21",
       "category": "Cycling & Scooters",
       "pl": "Pompka",
       "en": "Pump",
@@ -214,7 +214,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s10.1_22",
+      "id": "10.1-22",
       "category": "Cycling & Scooters",
       "pl": "Mój rower jest zepsuty",
       "en": "My bike is broken",
@@ -224,7 +224,7 @@
       "note": "Adjective 'zepsuty' matches the masculine 'rower'."
     },
     {
-      "id": "s10.1_23",
+      "id": "10.1-23",
       "category": "Cycling & Scooters",
       "pl": "Przebita opona",
       "en": "Flat tire",
@@ -234,7 +234,7 @@
       "note": "Literally 'pierced tire'."
     },
     {
-      "id": "s10.1_24",
+      "id": "10.1-24",
       "category": "Hiking & Mountains",
       "pl": "Wędrówka",
       "en": "Hiking / Trekking",
@@ -244,7 +244,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s10.1_25",
+      "id": "10.1-25",
       "category": "Hiking & Mountains",
       "pl": "Góry",
       "en": "Mountains",
@@ -254,7 +254,7 @@
       "note": "Plural noun. 'W górach' means 'in the mountains'."
     },
     {
-      "id": "s10.1_26",
+      "id": "10.1-26",
       "category": "Hiking & Mountains",
       "pl": "Tatry",
       "en": "The Tatra Mountains",
@@ -264,7 +264,7 @@
       "note": "The highest mountain range in Poland, located in the south near Zakopane."
     },
     {
-      "id": "s10.1_27",
+      "id": "10.1-27",
       "category": "Hiking & Mountains",
       "pl": "Szlak turystyczny",
       "en": "Hiking trail",
@@ -274,7 +274,7 @@
       "note": "Polish trails are beautifully marked with colored stripes on trees (red, blue, green, yellow, black)."
     },
     {
-      "id": "s10.1_28",
+      "id": "10.1-28",
       "category": "Hiking & Mountains",
       "pl": "Szczyt",
       "en": "Peak / Summit",
@@ -284,7 +284,7 @@
       "note": "Pronounced 'Sh-chit'."
     },
     {
-      "id": "s10.1_29",
+      "id": "10.1-29",
       "category": "Hiking & Mountains",
       "pl": "Dolina",
       "en": "Valley",
@@ -294,7 +294,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s10.1_30",
+      "id": "10.1-30",
       "category": "Hiking & Mountains",
       "pl": "Las",
       "en": "Forest",
@@ -304,7 +304,7 @@
       "note": "Poland is heavily forested. 'W lesie' means 'in the forest'."
     },
     {
-      "id": "s10.1_31",
+      "id": "10.1-31",
       "category": "Hiking & Mountains",
       "pl": "Wodospad",
       "en": "Waterfall",
@@ -314,7 +314,7 @@
       "note": "Literally 'water-fall'."
     },
     {
-      "id": "s10.1_32",
+      "id": "10.1-32",
       "category": "Hiking & Mountains",
       "pl": "Schronisko",
       "en": "Mountain shelter / Refuge",
@@ -324,7 +324,7 @@
       "note": "Crucial! These are large wooden chalets on Polish trails where you can rest, buy hot tea, and eat warm food."
     },
     {
-      "id": "s10.1_33",
+      "id": "10.1-33",
       "category": "Hiking & Mountains",
       "pl": "Kolejka linowa",
       "en": "Cable car",
@@ -334,7 +334,7 @@
       "note": "Very popular in Zakopane for getting up the high peaks without hiking."
     },
     {
-      "id": "s10.1_34",
+      "id": "10.1-34",
       "category": "Hiking & Mountains",
       "pl": "Punkt widokowy",
       "en": "Viewpoint",
@@ -344,7 +344,7 @@
       "note": "Literally 'viewing point'."
     },
     {
-      "id": "s10.1_35",
+      "id": "10.1-35",
       "category": "Hiking & Mountains",
       "pl": "Plecak",
       "en": "Backpack",
@@ -354,7 +354,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s10.1_36",
+      "id": "10.1-36",
       "category": "Hiking & Mountains",
       "pl": "Buty trekkingowe",
       "en": "Hiking boots",
@@ -364,7 +364,7 @@
       "note": "If you try to hike the Tatras in sneakers, the mountain rescue team might yell at you!"
     },
     {
-      "id": "s10.1_37",
+      "id": "10.1-37",
       "category": "Hiking & Mountains",
       "pl": "Czy szlak jest trudny?",
       "en": "Is the trail difficult?",
@@ -374,7 +374,7 @@
       "note": "'Trudny' is a masculine adjective matching 'szlak'."
     },
     {
-      "id": "s10.1_38",
+      "id": "10.1-38",
       "category": "Hiking & Mountains",
       "pl": "Ile czasu zajmie wejście?",
       "en": "How long does it take to go up?",
@@ -384,7 +384,7 @@
       "note": "'Wejście' means the ascent or entrance."
     },
     {
-      "id": "s10.1_39",
+      "id": "10.1-39",
       "category": "Hiking & Mountains",
       "pl": "Uwaga na niedźwiedzie",
       "en": "Beware of bears",
@@ -394,7 +394,7 @@
       "note": "A real sign you will see in the Bieszczady or Tatra mountains!"
     },
     {
-      "id": "s10.1_40",
+      "id": "10.1-40",
       "category": "Water & Beach",
       "pl": "Morze",
       "en": "Sea",
@@ -404,7 +404,7 @@
       "note": "Poland's northern coast is entirely on the 'Morze Bałtyckie' (Baltic Sea)."
     },
     {
-      "id": "s10.1_41",
+      "id": "10.1-41",
       "category": "Water & Beach",
       "pl": "Jezioro",
       "en": "Lake",
@@ -414,7 +414,7 @@
       "note": "Poland has a massive lake district called Mazury."
     },
     {
-      "id": "s10.1_42",
+      "id": "10.1-42",
       "category": "Water & Beach",
       "pl": "Plaża",
       "en": "Beach",
@@ -424,7 +424,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s10.1_43",
+      "id": "10.1-43",
       "category": "Water & Beach",
       "pl": "Piasek",
       "en": "Sand",
@@ -434,7 +434,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s10.1_44",
+      "id": "10.1-44",
       "category": "Water & Beach",
       "pl": "Pływać",
       "en": "To swim",
@@ -444,7 +444,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s10.1_45",
+      "id": "10.1-45",
       "category": "Water & Beach",
       "pl": "Ręcznik plażowy",
       "en": "Beach towel",
@@ -454,7 +454,7 @@
       "note": "Adjective 'plażowy' matches 'ręcznik'."
     },
     {
-      "id": "s10.1_46",
+      "id": "10.1-46",
       "category": "Water & Beach",
       "pl": "Ratownik",
       "en": "Lifeguard",
@@ -464,7 +464,7 @@
       "note": "Derived from 'ratować' (to rescue)."
     },
     {
-      "id": "s10.1_47",
+      "id": "10.1-47",
       "category": "Water & Beach",
       "pl": "Zakaz kąpieli",
       "en": "No swimming",
@@ -474,7 +474,7 @@
       "note": "Literally 'Ban on bathing'. Usually posted when the sea is too rough."
     },
     {
-      "id": "s10.1_48",
+      "id": "10.1-48",
       "category": "Water & Beach",
       "pl": "Wypożyczyć kajak",
       "en": "To rent a kayak",
@@ -484,7 +484,7 @@
       "note": "Kayaking is hugely popular on Polish rivers and lakes."
     },
     {
-      "id": "s10.1_49",
+      "id": "10.1-49",
       "category": "Water & Beach",
       "pl": "Rower wodny",
       "en": "Pedal boat",
@@ -494,7 +494,7 @@
       "note": "Literally 'water bike'."
     },
     {
-      "id": "s10.1_50",
+      "id": "10.1-50",
       "category": "Winter Sports",
       "pl": "Narty",
       "en": "Skis / Skiing",
@@ -504,7 +504,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s10.1_51",
+      "id": "10.1-51",
       "category": "Winter Sports",
       "pl": "Jeździć na nartach",
       "en": "To ski",
@@ -514,7 +514,7 @@
       "note": "Literally 'to ride on skis' (locative case)."
     },
     {
-      "id": "s10.1_52",
+      "id": "10.1-52",
       "category": "Winter Sports",
       "pl": "Snowboard",
       "en": "Snowboard",
@@ -524,7 +524,7 @@
       "note": "Pronounced just like in English."
     },
     {
-      "id": "s10.1_53",
+      "id": "10.1-53",
       "category": "Winter Sports",
       "pl": "Stok narciarski",
       "en": "Ski slope",
@@ -534,7 +534,7 @@
       "note": "'Stok' is the slope."
     },
     {
-      "id": "s10.1_54",
+      "id": "10.1-54",
       "category": "Winter Sports",
       "pl": "Wyciąg narciarski",
       "en": "Ski lift",
@@ -544,7 +544,7 @@
       "note": "'Wyciąg' comes from the verb meaning to pull up/extract."
     },
     {
-      "id": "s10.1_55",
+      "id": "10.1-55",
       "category": "Winter Sports",
       "pl": "Wypożyczalnia sprzętu",
       "en": "Equipment rental",
@@ -554,7 +554,7 @@
       "note": "'Sprzęt' is the general word for gear/equipment."
     },
     {
-      "id": "s10.1_56",
+      "id": "10.1-56",
       "category": "Winter Sports",
       "pl": "Karnet",
       "en": "Ski pass",
@@ -564,7 +564,7 @@
       "note": "Can also be used for a gym membership or season ticket."
     },
     {
-      "id": "s10.1_57",
+      "id": "10.1-57",
       "category": "Weather",
       "pl": "Jaka jest pogoda?",
       "en": "What's the weather like?",
@@ -574,7 +574,7 @@
       "note": "'Pogoda' is the feminine noun for weather."
     },
     {
-      "id": "s10.1_58",
+      "id": "10.1-58",
       "category": "Weather",
       "pl": "Prognoza pogody",
       "en": "Weather forecast",
@@ -584,7 +584,7 @@
       "note": "Takes the genitive case 'pogody' (forecast of weather)."
     },
     {
-      "id": "s10.1_59",
+      "id": "10.1-59",
       "category": "Weather",
       "pl": "Świeci słońce",
       "en": "The sun is shining",
@@ -594,7 +594,7 @@
       "note": "Literally 'shines sun'."
     },
     {
-      "id": "s10.1_60",
+      "id": "10.1-60",
       "category": "Weather",
       "pl": "Pada deszcz",
       "en": "It's raining",
@@ -604,7 +604,7 @@
       "note": "Literally 'Rain falls'."
     },
     {
-      "id": "s10.1_61",
+      "id": "10.1-61",
       "category": "Weather",
       "pl": "Pada śnieg",
       "en": "It's snowing",
@@ -614,7 +614,7 @@
       "note": "Literally 'Snow falls'."
     },
     {
-      "id": "s10.1_62",
+      "id": "10.1-62",
       "category": "Weather",
       "pl": "Jest wietrznie",
       "en": "It's windy",
@@ -624,7 +624,7 @@
       "note": "Uses the adverbial form 'wietrznie'."
     },
     {
-      "id": "s10.1_63",
+      "id": "10.1-63",
       "category": "Weather",
       "pl": "Jest pochmurno",
       "en": "It's cloudy",
@@ -634,7 +634,7 @@
       "note": "From the word 'chmura' (cloud)."
     },
     {
-      "id": "s10.1_64",
+      "id": "10.1-64",
       "category": "Weather",
       "pl": "Burza",
       "en": "Storm / Thunderstorm",
@@ -644,7 +644,7 @@
       "note": "Feminine noun. Summer thunderstorms are very common in Poland."
     },
     {
-      "id": "s10.1_65",
+      "id": "10.1-65",
       "category": "Weather",
       "pl": "Mgła",
       "en": "Fog",
@@ -654,7 +654,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s10.1_66",
+      "id": "10.1-66",
       "category": "Weather",
       "pl": "Jest zimno",
       "en": "It's cold",
@@ -664,7 +664,7 @@
       "note": "Use this to describe the environment. (Remember, to say YOU are cold, say 'Zimno mi')."
     },
     {
-      "id": "s10.1_67",
+      "id": "10.1-67",
       "category": "Weather",
       "pl": "Jest gorąco",
       "en": "It's hot",
@@ -674,7 +674,7 @@
       "note": "Use this to describe the environment."
     },
     {
-      "id": "s10.1_68",
+      "id": "10.1-68",
       "category": "Weather",
       "pl": "Ciepło",
       "en": "Warm",
@@ -684,7 +684,7 @@
       "note": "Pleasantly warm, but not sweltering hot."
     },
     {
-      "id": "s10.1_69",
+      "id": "10.1-69",
       "category": "Weather",
       "pl": "Chłodno",
       "en": "Chilly / Cool",
@@ -694,7 +694,7 @@
       "note": "Cool, but not freezing."
     },
     {
-      "id": "s10.1_70",
+      "id": "10.1-70",
       "category": "Weather",
       "pl": "Temperatura",
       "en": "Temperature",

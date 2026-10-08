@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s21_01",
+      "id": "21-01",
       "category": "General Problems",
       "pl": "Problem",
       "en": "Problem",
@@ -14,7 +14,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s21_02",
+      "id": "21-02",
       "category": "General Problems",
       "pl": "Mam problem",
       "en": "I have a problem",
@@ -24,7 +24,7 @@
       "note": "Use this to start a conversation with a service worker."
     },
     {
-      "id": "s21_03",
+      "id": "21-03",
       "category": "General Problems",
       "pl": "Coś nie działa",
       "en": "Something doesn't work",
@@ -34,7 +34,7 @@
       "note": "The safest, most universal way to explain a tech or mechanical issue."
     },
     {
-      "id": "s21_04",
+      "id": "21-04",
       "category": "General Problems",
       "pl": "Coś poszło nie tak",
       "en": "Something went wrong",
@@ -44,7 +44,7 @@
       "note": "Often used for booking errors or scheduling mishaps."
     },
     {
-      "id": "s21_05",
+      "id": "21-05",
       "category": "General Problems",
       "pl": "To jest zepsute",
       "en": "This is broken",
@@ -54,7 +54,7 @@
       "note": "Adjective 'zepsute' matches the neuter pronoun 'To'."
     },
     {
-      "id": "s21_06",
+      "id": "21-06",
       "category": "General Problems",
       "pl": "To nie moja wina",
       "en": "It's not my fault",
@@ -64,7 +64,7 @@
       "note": "Feminine noun 'wina' (fault/guilt)."
     },
     {
-      "id": "s21_07",
+      "id": "21-07",
       "category": "Errors & Mistakes",
       "pl": "Jest błąd na rachunku",
       "en": "There is a mistake on the bill",
@@ -74,7 +74,7 @@
       "note": "'Błąd' is masculine. 'Na rachunku' is the locative case."
     },
     {
-      "id": "s21_08",
+      "id": "21-08",
       "category": "Errors & Mistakes",
       "pl": "Pomyłka",
       "en": "Mistake / Mix-up",
@@ -84,7 +84,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s21_09",
+      "id": "21-09",
       "category": "Errors & Mistakes",
       "pl": "To nie jest to, co zamówiłem/zamówiłam",
       "en": "This is not what I ordered",
@@ -98,7 +98,7 @@
       "note": "Crucial phrase for restaurants or online shopping returns."
     },
     {
-      "id": "s21_10",
+      "id": "21-10",
       "category": "Errors & Mistakes",
       "pl": "Niekompletne zamówienie",
       "en": "Incomplete order",
@@ -108,7 +108,7 @@
       "note": "Neuter phrase."
     },
     {
-      "id": "s21_11",
+      "id": "21-11",
       "category": "Errors & Mistakes",
       "pl": "Brakuje...",
       "en": "Missing... / There's no...",
@@ -118,7 +118,7 @@
       "note": "Forces the following noun into the genitive case. (e.g., 'Brakuje widelca')."
     },
     {
-      "id": "s21_12",
+      "id": "21-12",
       "category": "Misplaced Items",
       "pl": "Nie mogę znaleźć...",
       "en": "I can't find...",
@@ -128,7 +128,7 @@
       "note": "Takes the accusative case for the object."
     },
     {
-      "id": "s21_13",
+      "id": "21-13",
       "category": "Misplaced Items",
       "pl": "Gdzie to zostawiłem/zostawiłam?",
       "en": "Where did I leave this?",
@@ -142,7 +142,7 @@
       "note": "Past tense verb."
     },
     {
-      "id": "s21_14",
+      "id": "21-14",
       "category": "Misplaced Items",
       "pl": "Zgubiłem/Zgubiłam klucze",
       "en": "I lost the keys",
@@ -156,7 +156,7 @@
       "note": "Uses accusative plural."
     },
     {
-      "id": "s21_15",
+      "id": "21-15",
       "category": "Complaints & Returns",
       "pl": "Skarga",
       "en": "Complaint",
@@ -166,7 +166,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s21_16",
+      "id": "21-16",
       "category": "Complaints & Returns",
       "pl": "Reklamacja",
       "en": "Formal complaint / Return claim",
@@ -176,7 +176,7 @@
       "note": "A vital Polish consumer word. It is the legal process of returning a defective good or service."
     },
     {
-      "id": "s21_17",
+      "id": "21-17",
       "category": "Complaints & Returns",
       "pl": "Chcę złożyć reklamację",
       "en": "I want to file a complaint/claim",
@@ -186,7 +186,7 @@
       "note": "Stores in Poland have specific forms for this."
     },
     {
-      "id": "s21_18",
+      "id": "21-18",
       "category": "Complaints & Returns",
       "pl": "Gdzie jest kierownik?",
       "en": "Where is the manager?",
@@ -196,7 +196,7 @@
       "note": "'Kierownik' is a masculine noun."
     },
     {
-      "id": "s21_19",
+      "id": "21-19",
       "category": "Complaints & Returns",
       "pl": "Chcę zwrot pieniędzy",
       "en": "I want a refund",
@@ -206,7 +206,7 @@
       "note": "Literally 'Return of money'."
     },
     {
-      "id": "s21_20",
+      "id": "21-20",
       "category": "Complaints & Returns",
       "pl": "Chcę to wymienić",
       "en": "I want to exchange this",
@@ -216,7 +216,7 @@
       "note": "Infinitive verb 'wymienić'."
     },
     {
-      "id": "s21_21",
+      "id": "21-21",
       "category": "Complaints & Returns",
       "pl": "Mam paragon",
       "en": "I have the receipt",
@@ -226,7 +226,7 @@
       "note": "You almost always need the physical 'paragon' to process a return in Poland."
     },
     {
-      "id": "s21_22",
+      "id": "21-22",
       "category": "Complaints & Returns",
       "pl": "Gwarancja",
       "en": "Warranty",
@@ -236,7 +236,7 @@
       "note": "Feminine noun. EU law mandates a 2-year warranty on most goods."
     },
     {
-      "id": "s21_23",
+      "id": "21-23",
       "category": "Product Quality",
       "pl": "Przeterminowane",
       "en": "Expired",
@@ -246,7 +246,7 @@
       "note": "Adjective. Used for food or medicine past its date."
     },
     {
-      "id": "s21_24",
+      "id": "21-24",
       "category": "Product Quality",
       "pl": "Jakość jest zła",
       "en": "The quality is bad",
@@ -256,7 +256,7 @@
       "note": "'Jakość' is a feminine noun."
     },
     {
-      "id": "s21_25",
+      "id": "21-25",
       "category": "Product Quality",
       "pl": "To jest brudne",
       "en": "This is dirty",
@@ -266,7 +266,7 @@
       "note": "Neuter adjective 'brudne'."
     },
     {
-      "id": "s21_26",
+      "id": "21-26",
       "category": "Product Quality",
       "pl": "To jest zimne",
       "en": "This is cold",
@@ -276,7 +276,7 @@
       "note": "Useful for complaining about food at a restaurant."
     },
     {
-      "id": "s21_27",
+      "id": "21-27",
       "category": "Product Quality",
       "pl": "Nieświeże",
       "en": "Stale / Not fresh",
@@ -286,7 +286,7 @@
       "note": "Usually applied to bread or produce."
     },
     {
-      "id": "s21_28",
+      "id": "21-28",
       "category": "Service Issues",
       "pl": "Obsługa jest słaba",
       "en": "The service is poor",
@@ -296,7 +296,7 @@
       "note": "Literally 'The service is weak'."
     },
     {
-      "id": "s21_29",
+      "id": "21-29",
       "category": "Service Issues",
       "pl": "Czekam za długo",
       "en": "I'm waiting too long",
@@ -306,7 +306,7 @@
       "note": "Present tense."
     },
     {
-      "id": "s21_30",
+      "id": "21-30",
       "category": "Service Issues",
       "pl": "To jest za drogie",
       "en": "This is too expensive",
@@ -316,7 +316,7 @@
       "note": "Useful if you notice a price discrepancy."
     },
     {
-      "id": "s21_31",
+      "id": "21-31",
       "category": "Emotions & Reactions",
       "pl": "Jestem niezadowolony/niezadowolona",
       "en": "I'm dissatisfied",
@@ -330,7 +330,7 @@
       "note": "Very formal and clear."
     },
     {
-      "id": "s21_32",
+      "id": "21-32",
       "category": "Emotions & Reactions",
       "pl": "Rozczarowany/Rozczarowana",
       "en": "Disappointed",
@@ -344,7 +344,7 @@
       "note": "Adjective."
     },
     {
-      "id": "s21_33",
+      "id": "21-33",
       "category": "Emotions & Reactions",
       "pl": "To jest nieakceptowalne",
       "en": "This is unacceptable",
@@ -354,7 +354,7 @@
       "note": "Strong, formal phrasing."
     },
     {
-      "id": "s21_34",
+      "id": "21-34",
       "category": "Emotions & Reactions",
       "pl": "To nie jest w porządku",
       "en": "This is not okay",
@@ -364,7 +364,7 @@
       "note": "Literally 'This is not in order'."
     },
     {
-      "id": "s21_35",
+      "id": "21-35",
       "category": "Emotions & Reactions",
       "pl": "Oczekiwałem/Oczekiwałam czegoś innego",
       "en": "I expected something different",
@@ -378,7 +378,7 @@
       "note": "Past tense verb + genitive case."
     },
     {
-      "id": "s21_36",
+      "id": "21-36",
       "category": "Resolutions",
       "pl": "Jak możemy to rozwiązać?",
       "en": "How can we solve this?",
@@ -388,7 +388,7 @@
       "note": "Collaborative and polite."
     },
     {
-      "id": "s21_37",
+      "id": "21-37",
       "category": "Resolutions",
       "pl": "Proszę to naprawić",
       "en": "Please fix this",
@@ -398,7 +398,7 @@
       "note": "Infinitive phrase."
     },
     {
-      "id": "s21_38",
+      "id": "21-38",
       "category": "Resolutions",
       "pl": "Kiedy to zostanie naprawione?",
       "en": "When will this be fixed?",
@@ -408,7 +408,7 @@
       "note": "Passive voice future tense."
     },
     {
-      "id": "s21_39",
+      "id": "21-39",
       "category": "Resolutions",
       "pl": "Czy jest inna opcja?",
       "en": "Is there another option?",
@@ -418,7 +418,7 @@
       "note": "Feminine noun phrase."
     },
     {
-      "id": "s21_40",
+      "id": "21-40",
       "category": "Resolutions",
       "pl": "Co proponujesz?",
       "en": "What do you suggest?",
@@ -428,7 +428,7 @@
       "note": "Informal 'you'. Use 'Co Pan proponuje?' for formal situations."
     },
     {
-      "id": "s21_41",
+      "id": "21-41",
       "category": "Apologies & Closures",
       "pl": "Przepraszam za kłopot",
       "en": "Sorry for the trouble",
@@ -438,7 +438,7 @@
       "note": "Very polite closing phrase."
     },
     {
-      "id": "s21_42",
+      "id": "21-42",
       "category": "Apologies & Closures",
       "pl": "Dziękuję za zrozumienie",
       "en": "Thank you for understanding",
@@ -448,7 +448,7 @@
       "note": "Standard professional sign-off."
     },
     {
-      "id": "s21_43",
+      "id": "21-43",
       "category": "Apologies & Closures",
       "pl": "Problem rozwiązany",
       "en": "Problem solved",
@@ -458,7 +458,7 @@
       "note": "Passive adjective 'rozwiązany' matching masculine 'problem'."
     },
     {
-      "id": "s21_44",
+      "id": "21-44",
       "category": "Apologies & Closures",
       "pl": "Nie ma problemu",
       "en": "No problem",
@@ -468,7 +468,7 @@
       "note": "Requires genitive 'problemu'."
     },
     {
-      "id": "s21_45",
+      "id": "21-45",
       "category": "Apologies & Closures",
       "pl": "Zgoda",
       "en": "Agreed / Deal",
@@ -478,7 +478,7 @@
       "note": "Feminine noun. Used to finalize a compromise."
     },
     {
-      "id": "s21_46",
+      "id": "21-46",
       "category": "Safety Context",
       "pl": "Czy to jest bezpieczne?",
       "en": "Is this safe?",
@@ -488,7 +488,7 @@
       "note": "Neuter adjective matching 'to'."
     },
     {
-      "id": "s21_47",
+      "id": "21-47",
       "category": "Safety Context",
       "pl": "Niebezpieczne",
       "en": "Dangerous",
@@ -498,7 +498,7 @@
       "note": "Adjective."
     },
     {
-      "id": "s21_48",
+      "id": "21-48",
       "category": "Safety Context",
       "pl": "Ostrożnie",
       "en": "Careful / Caution",
@@ -508,7 +508,7 @@
       "note": "Adverb. Often seen on boxes or told to children."
     },
     {
-      "id": "s21_49",
+      "id": "21-49",
       "category": "Housing Problems",
       "pl": "Cieknie kran",
       "en": "The tap is leaking",
@@ -518,7 +518,7 @@
       "note": "From the verb 'ciec' (to leak/flow)."
     },
     {
-      "id": "s21_50",
+      "id": "21-50",
       "category": "Housing Problems",
       "pl": "Brak prądu",
       "en": "Power outage",
@@ -528,7 +528,7 @@
       "note": "Literally 'Lack of current'."
     },
     {
-      "id": "s21_51",
+      "id": "21-51",
       "category": "Housing Problems",
       "pl": "Brak ciepłej wody",
       "en": "No hot water",
@@ -538,7 +538,7 @@
       "note": "'Brak' forces the genitive case 'ciepłej wody'."
     },
     {
-      "id": "s21_52",
+      "id": "21-52",
       "category": "Housing Problems",
       "pl": "Ogrzewanie nie działa",
       "en": "The heating isn't working",
@@ -548,7 +548,7 @@
       "note": "Crucial phrase for Polish winters!"
     },
     {
-      "id": "s21_53",
+      "id": "21-53",
       "category": "Housing Problems",
       "pl": "Klucz się zaciął",
       "en": "The key got stuck",
@@ -558,7 +558,7 @@
       "note": "Reflexive past tense."
     },
     {
-      "id": "s21_54",
+      "id": "21-54",
       "category": "Tech Returns",
       "pl": "Nie włącza się",
       "en": "It won't turn on",
@@ -568,7 +568,7 @@
       "note": "Reflexive verb 'włączać się'."
     },
     {
-      "id": "s21_55",
+      "id": "21-55",
       "category": "Tech Returns",
       "pl": "Bateria krótko trzyma",
       "en": "The battery drains quickly",
@@ -578,7 +578,7 @@
       "note": "Literally 'The battery holds shortly'."
     },
     {
-      "id": "s21_56",
+      "id": "21-56",
       "category": "Tech Returns",
       "pl": "Ekran jest pęknięty",
       "en": "The screen is cracked",
@@ -588,7 +588,7 @@
       "note": "Adjective matches masculine 'ekran'."
     },
     {
-      "id": "s21_57",
+      "id": "21-57",
       "category": "Service Complaints",
       "pl": "To jest spalone",
       "en": "This is burnt",
@@ -598,7 +598,7 @@
       "note": "Adjective. Used for food."
     },
     {
-      "id": "s21_58",
+      "id": "21-58",
       "category": "Service Complaints",
       "pl": "To mięso jest surowe",
       "en": "This meat is raw",
@@ -608,7 +608,7 @@
       "note": "Neuter adjective 'surowe' matches 'mięso'."
     },
     {
-      "id": "s21_59",
+      "id": "21-59",
       "category": "Service Complaints",
       "pl": "Prosiłem/Prosiłam o co innego",
       "en": "I asked for something else",
@@ -622,7 +622,7 @@
       "note": "Past tense verb."
     },
     {
-      "id": "s21_60",
+      "id": "21-60",
       "category": "Service Complaints",
       "pl": "Konto zostało zablokowane",
       "en": "The account was blocked",
@@ -632,7 +632,7 @@
       "note": "Passive voice."
     },
     {
-      "id": "s21_61",
+      "id": "21-61",
       "category": "Banking & Billing",
       "pl": "Karta została odrzucona",
       "en": "The card was declined",
@@ -642,7 +642,7 @@
       "note": "Passive voice."
     },
     {
-      "id": "s21_62",
+      "id": "21-62",
       "category": "Banking & Billing",
       "pl": "Bankomat zjadł moją kartę",
       "en": "The ATM ate my card",
@@ -652,7 +652,7 @@
       "note": "A very literal and natural Polish phrase!"
     },
     {
-      "id": "s21_63",
+      "id": "21-63",
       "category": "Banking & Billing",
       "pl": "Zła kwota",
       "en": "Wrong amount",
@@ -662,7 +662,7 @@
       "note": "Feminine noun phrase."
     },
     {
-      "id": "s21_64",
+      "id": "21-64",
       "category": "Transport Issues",
       "pl": "Zgubiłem/Zgubiłam bilet",
       "en": "I lost my ticket",
@@ -676,7 +676,7 @@
       "note": "Accusative case."
     },
     {
-      "id": "s21_65",
+      "id": "21-65",
       "category": "Transport Issues",
       "pl": "Mój pociąg uciekł",
       "en": "I missed my train",
@@ -686,7 +686,7 @@
       "note": "Literally 'My train ran away'. Very common phrasing."
     },
     {
-      "id": "s21_66",
+      "id": "21-66",
       "category": "Transport Issues",
       "pl": "Zły peron",
       "en": "Wrong platform",
@@ -696,7 +696,7 @@
       "note": "Masculine noun phrase."
     },
     {
-      "id": "s21_67",
+      "id": "21-67",
       "category": "Delivery Problems",
       "pl": "Paczka nie dotarła",
       "en": "The package didn't arrive",
@@ -706,7 +706,7 @@
       "note": "Past tense."
     },
     {
-      "id": "s21_68",
+      "id": "21-68",
       "category": "Delivery Problems",
       "pl": "Kurier nie dzwonił",
       "en": "The courier didn't call",
@@ -716,7 +716,7 @@
       "note": "Past tense."
     },
     {
-      "id": "s21_69",
+      "id": "21-69",
       "category": "Delivery Problems",
       "pl": "Towar jest uszkodzony",
       "en": "The goods are damaged",
@@ -726,7 +726,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s21_70",
+      "id": "21-70",
       "category": "Noise & Nuisance",
       "pl": "Jest za głośno",
       "en": "It's too loud",
@@ -736,7 +736,7 @@
       "note": "Adverbial form."
     },
     {
-      "id": "s21_71",
+      "id": "21-71",
       "category": "Noise & Nuisance",
       "pl": "Sąsiedzi hałasują",
       "en": "The neighbors are making noise",
@@ -746,7 +746,7 @@
       "note": "Verb 'hałasować' (to make noise)."
     },
     {
-      "id": "s21_72",
+      "id": "21-72",
       "category": "Noise & Nuisance",
       "pl": "Zadzwoń na straż miejską",
       "en": "Call the city guard",
@@ -756,7 +756,7 @@
       "note": "The 'Straż Miejska' handles noise complaints and parking issues, not the regular police."
     },
     {
-      "id": "s21_73",
+      "id": "21-73",
       "category": "Health Scares",
       "pl": "Skaleczyłem/Skaleczyłam się",
       "en": "I cut myself",
@@ -770,7 +770,7 @@
       "note": "Reflexive past tense verb."
     },
     {
-      "id": "s21_74",
+      "id": "21-74",
       "category": "Health Scares",
       "pl": "Potrzebuję lodu",
       "en": "I need ice",
@@ -780,7 +780,7 @@
       "note": "Takes the genitive case 'lodu'."
     },
     {
-      "id": "s21_75",
+      "id": "21-75",
       "category": "Health Scares",
       "pl": "Mam uczulenie",
       "en": "I'm having an allergic reaction",

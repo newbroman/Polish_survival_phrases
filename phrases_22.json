@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s22_01",
+      "id": "22-01",
       "category": "Direct Appeals",
       "pl": "Czy możesz mi pomóc?",
       "en": "Can you help me? (Informal)",
@@ -14,7 +14,7 @@
       "note": "Uses informal 'ty' (you)."
     },
     {
-      "id": "s22_02",
+      "id": "22-02",
       "category": "Direct Appeals",
       "pl": "Czy może mi Pan/Pani pomóc?",
       "en": "Can you help me? (Formal)",
@@ -28,7 +28,7 @@
       "note": "The polite way to ask a stranger or shop assistant."
     },
     {
-      "id": "s22_03",
+      "id": "22-03",
       "category": "Direct Appeals",
       "pl": "Potrzebuję pomocy",
       "en": "I need help",
@@ -38,7 +38,7 @@
       "note": "Takes the genitive case 'pomocy'."
     },
     {
-      "id": "s22_04",
+      "id": "22-04",
       "category": "Direct Appeals",
       "pl": "Proszę mi pomóc",
       "en": "Please help me",
@@ -48,7 +48,7 @@
       "note": "Formal infinitive phrase."
     },
     {
-      "id": "s22_05",
+      "id": "22-05",
       "category": "Direct Appeals",
       "pl": "Czy ktoś może mi pomóc?",
       "en": "Can someone help me?",
@@ -58,7 +58,7 @@
       "note": "'Ktoś' means someone/anybody."
     },
     {
-      "id": "s22_06",
+      "id": "22-06",
       "category": "Guidance & Direction",
       "pl": "Nie wiem jak to zrobić",
       "en": "I don't know how to do this",
@@ -68,7 +68,7 @@
       "note": "Verb 'wiedzieć' (to know a fact)."
     },
     {
-      "id": "s22_07",
+      "id": "22-07",
       "category": "Guidance & Direction",
       "pl": "Czy możesz mi pokazać?",
       "en": "Can you show me?",
@@ -78,7 +78,7 @@
       "note": "Infinitive 'pokazać'."
     },
     {
-      "id": "s22_08",
+      "id": "22-08",
       "category": "Guidance & Direction",
       "pl": "Jak to działa?",
       "en": "How does this work?",
@@ -88,7 +88,7 @@
       "note": "Used for machines, ticket barriers, or apps."
     },
     {
-      "id": "s22_09",
+      "id": "22-09",
       "category": "Guidance & Direction",
       "pl": "Co mam zrobić?",
       "en": "What should I do?",
@@ -98,7 +98,7 @@
       "note": "Literally 'What do I have to do?'."
     },
     {
-      "id": "s22_10",
+      "id": "22-10",
       "category": "Guidance & Direction",
       "pl": "Gdzie mam iść?",
       "en": "Where should I go?",
@@ -108,7 +108,7 @@
       "note": "Literally 'Where do I have to go?'."
     },
     {
-      "id": "s22_11",
+      "id": "22-11",
       "category": "Guidance & Direction",
       "pl": "Kto może mi pomóc?",
       "en": "Who can help me?",
@@ -118,7 +118,7 @@
       "note": "Useful if you are talking to the wrong department."
     },
     {
-      "id": "s22_12",
+      "id": "22-12",
       "category": "Advice & Feedback",
       "pl": "Potrzebuję rady",
       "en": "I need advice",
@@ -128,7 +128,7 @@
       "note": "Takes the genitive case 'rady'."
     },
     {
-      "id": "s22_13",
+      "id": "22-13",
       "category": "Advice & Feedback",
       "pl": "Co polecasz?",
       "en": "What do you recommend?",
@@ -138,7 +138,7 @@
       "note": "Informal. Use 'Co Pan/Pani poleca?' for formal situations."
     },
     {
-      "id": "s22_14",
+      "id": "22-14",
       "category": "Advice & Feedback",
       "pl": "Czy to jest dobry pomysł?",
       "en": "Is this a good idea?",
@@ -148,7 +148,7 @@
       "note": "Masculine noun phrase."
     },
     {
-      "id": "s22_15",
+      "id": "22-15",
       "category": "Advice & Feedback",
       "pl": "Daj mi wskazówkę",
       "en": "Give me a hint/tip",
@@ -158,7 +158,7 @@
       "note": "Imperative 'Daj' + accusative 'wskazówkę'."
     },
     {
-      "id": "s22_16",
+      "id": "22-16",
       "category": "Confusion & Uncertainty",
       "pl": "Jestem zdezorientowany/zdezorientowana",
       "en": "I'm confused",
@@ -172,7 +172,7 @@
       "note": "A very formal way to say you are lost or confused."
     },
     {
-      "id": "s22_17",
+      "id": "22-17",
       "category": "Confusion & Uncertainty",
       "pl": "Zgubiłem/Zgubiłam wątek",
       "en": "I lost my train of thought",
@@ -186,7 +186,7 @@
       "note": "Literally 'I lost the thread'. Very natural idiom."
     },
     {
-      "id": "s22_18",
+      "id": "22-18",
       "category": "Confusion & Uncertainty",
       "pl": "Nie jestem pewien/pewna",
       "en": "I'm not sure",
@@ -200,7 +200,7 @@
       "note": "Gendered adjective."
     },
     {
-      "id": "s22_19",
+      "id": "22-19",
       "category": "Confusion & Uncertainty",
       "pl": "Nie pamiętam",
       "en": "I don't remember",
@@ -210,7 +210,7 @@
       "note": "Verb 'pamiętać'."
     },
     {
-      "id": "s22_20",
+      "id": "22-20",
       "category": "Language Repair",
       "pl": "Proszę powtórzyć",
       "en": "Please repeat",
@@ -220,7 +220,7 @@
       "note": "Formal and polite."
     },
     {
-      "id": "s22_21",
+      "id": "22-21",
       "category": "Language Repair",
       "pl": "Jeszcze raz",
       "en": "One more time",
@@ -230,7 +230,7 @@
       "note": "Slightly more casual, but universally understood."
     },
     {
-      "id": "s22_22",
+      "id": "22-22",
       "category": "Language Repair",
       "pl": "Mówisz za szybko",
       "en": "You are speaking too fast",
@@ -240,7 +240,7 @@
       "note": "Informal. Formal: 'Mówi Pan/Pani za szybko'."
     },
     {
-      "id": "s22_23",
+      "id": "22-23",
       "category": "Language Repair",
       "pl": "Wolniej, proszę",
       "en": "Slower, please",
@@ -250,7 +250,7 @@
       "note": "Adverbial comparative form."
     },
     {
-      "id": "s22_24",
+      "id": "22-24",
       "category": "Language Repair",
       "pl": "Głośniej, proszę",
       "en": "Louder, please",
@@ -260,7 +260,7 @@
       "note": "Adverbial comparative form."
     },
     {
-      "id": "s22_25",
+      "id": "22-25",
       "category": "Language Repair",
       "pl": "Nie słyszę",
       "en": "I can't hear",
@@ -270,7 +270,7 @@
       "note": "Used when the environment is too loud."
     },
     {
-      "id": "s22_26",
+      "id": "22-26",
       "category": "Language Repair",
       "pl": "Co powiedziałeś/powiedziałaś?",
       "en": "What did you say?",
@@ -284,7 +284,7 @@
       "note": "Informal past tense."
     },
     {
-      "id": "s22_27",
+      "id": "22-27",
       "category": "Vocabulary & Translation",
       "pl": "Co to znaczy?",
       "en": "What does this mean?",
@@ -294,7 +294,7 @@
       "note": "Point at a sign or a word and ask this."
     },
     {
-      "id": "s22_28",
+      "id": "22-28",
       "category": "Vocabulary & Translation",
       "pl": "Jak to się wymawia?",
       "en": "How do you pronounce this?",
@@ -304,7 +304,7 @@
       "note": "Reflexive phrase."
     },
     {
-      "id": "s22_29",
+      "id": "22-29",
       "category": "Vocabulary & Translation",
       "pl": "Jak to się pisze?",
       "en": "How do you spell this?",
@@ -314,7 +314,7 @@
       "note": "Literally 'How does it write itself?'."
     },
     {
-      "id": "s22_30",
+      "id": "22-30",
       "category": "Vocabulary & Translation",
       "pl": "Czy możesz to przeliterować?",
       "en": "Can you spell it out?",
@@ -324,7 +324,7 @@
       "note": "Infinitive 'przeliterować' (to letter through)."
     },
     {
-      "id": "s22_31",
+      "id": "22-31",
       "category": "Vocabulary & Translation",
       "pl": "Nie rozumiem tego słowa",
       "en": "I don't understand this word",
@@ -334,7 +334,7 @@
       "note": "Takes the genitive case 'tego słowa' because the verb is negated."
     },
     {
-      "id": "s22_32",
+      "id": "22-32",
       "category": "Vocabulary & Translation",
       "pl": "Co to jest po polsku?",
       "en": "What is this in Polish?",
@@ -344,7 +344,7 @@
       "note": "Hold up an object and ask this to build vocabulary."
     },
     {
-      "id": "s22_33",
+      "id": "22-33",
       "category": "Vocabulary & Translation",
       "pl": "Jak się mówi... po polsku?",
       "en": "How do you say... in Polish?",
@@ -354,7 +354,7 @@
       "note": "Insert the English word in the middle."
     },
     {
-      "id": "s22_34",
+      "id": "22-34",
       "category": "Detailed Explanations",
       "pl": "Proszę użyć prostszych słów",
       "en": "Please use simpler words",
@@ -364,7 +364,7 @@
       "note": "Takes genitive plural 'prostszych słów'."
     },
     {
-      "id": "s22_35",
+      "id": "22-35",
       "category": "Detailed Explanations",
       "pl": "Czy możesz to wyjaśnić?",
       "en": "Can you explain this?",
@@ -374,7 +374,7 @@
       "note": "Infinitive verb."
     },
     {
-      "id": "s22_36",
+      "id": "22-36",
       "category": "Detailed Explanations",
       "pl": "Potrzebuję więcej informacji",
       "en": "I need more information",
@@ -384,7 +384,7 @@
       "note": "Takes genitive plural 'informacji'."
     },
     {
-      "id": "s22_37",
+      "id": "22-37",
       "category": "Detailed Explanations",
       "pl": "Daj mi przykład",
       "en": "Give me an example",
@@ -394,7 +394,7 @@
       "note": "Imperative phrase."
     },
     {
-      "id": "s22_38",
+      "id": "22-38",
       "category": "Detailed Explanations",
       "pl": "Na przykład?",
       "en": "For example?",
@@ -404,7 +404,7 @@
       "note": "Used to prompt the speaker to elaborate."
     },
     {
-      "id": "s22_39",
+      "id": "22-39",
       "category": "Detailed Explanations",
       "pl": "Czy to znaczy...?",
       "en": "Does this mean...?",
@@ -414,7 +414,7 @@
       "note": "Used to confirm your assumption."
     },
     {
-      "id": "s22_40",
+      "id": "22-40",
       "category": "Detailed Explanations",
       "pl": "Innymi słowy...",
       "en": "In other words...",
@@ -424,7 +424,7 @@
       "note": "Instrumental case 'Innymi słowy'."
     },
     {
-      "id": "s22_41",
+      "id": "22-41",
       "category": "Confirmation",
       "pl": "Czy dobrze rozumiem?",
       "en": "Do I understand correctly?",
@@ -434,7 +434,7 @@
       "note": "Literally 'Do I understand well?'."
     },
     {
-      "id": "s22_42",
+      "id": "22-42",
       "category": "Confirmation",
       "pl": "Rozumiem teraz",
       "en": "I understand now",
@@ -444,7 +444,7 @@
       "note": "Statement of clarity."
     },
     {
-      "id": "s22_43",
+      "id": "22-43",
       "category": "Confirmation",
       "pl": "Aha!",
       "en": "Aha! / I see!",
@@ -454,7 +454,7 @@
       "note": "Universal sound of realization."
     },
     {
-      "id": "s22_44",
+      "id": "22-44",
       "category": "Confirmation",
       "pl": "Jasne",
       "en": "Clear / Got it",
@@ -464,7 +464,7 @@
       "note": "Adjective acting as an affirmative interjection."
     },
     {
-      "id": "s22_45",
+      "id": "22-45",
       "category": "Confirmation",
       "pl": "Dokładnie",
       "en": "Exactly",
@@ -474,7 +474,7 @@
       "note": "Adverbial form."
     },
     {
-      "id": "s22_46",
+      "id": "22-46",
       "category": "Time & Delay Requests",
       "pl": "Potrzebuję więcej czasu",
       "en": "I need more time",
@@ -484,7 +484,7 @@
       "note": "Takes the genitive case 'więcej czasu'."
     },
     {
-      "id": "s22_47",
+      "id": "22-47",
       "category": "Time & Delay Requests",
       "pl": "Daj mi chwilę",
       "en": "Give me a moment",
@@ -494,7 +494,7 @@
       "note": "Imperative phrase."
     },
     {
-      "id": "s22_48",
+      "id": "22-48",
       "category": "Time & Delay Requests",
       "pl": "Chwileczkę",
       "en": "Just a second",
@@ -504,7 +504,7 @@
       "note": "Diminutive of 'chwila' (moment)."
     },
     {
-      "id": "s22_49",
+      "id": "22-49",
       "category": "Time & Delay Requests",
       "pl": "Proszę poczekać",
       "en": "Please wait",
@@ -514,7 +514,7 @@
       "note": "Formal infinitive command."
     },
     {
-      "id": "s22_50",
+      "id": "22-50",
       "category": "Time & Delay Requests",
       "pl": "Moment",
       "en": "Moment",
@@ -524,7 +524,7 @@
       "note": "Often held up with an index finger to signal 'pause'."
     },
     {
-      "id": "s22_51",
+      "id": "22-51",
       "category": "Time & Delay Requests",
       "pl": "Muszę to przemyśleć",
       "en": "I need to think about this",
@@ -534,7 +534,7 @@
       "note": "Prefix 'prze-' + 'myśleć' implies thinking something completely through."
     },
     {
-      "id": "s22_52",
+      "id": "22-52",
       "category": "Time & Delay Requests",
       "pl": "Odpowiem później",
       "en": "I'll answer later",
@@ -544,7 +544,7 @@
       "note": "Future tense."
     },
     {
-      "id": "s22_53",
+      "id": "22-53",
       "category": "Time & Delay Requests",
       "pl": "Dam znać jutro",
       "en": "I'll let you know tomorrow",
@@ -554,7 +554,7 @@
       "note": "Future tense phrase."
     },
     {
-      "id": "s22_54",
+      "id": "22-54",
       "category": "Time & Delay Requests",
       "pl": "Nie teraz",
       "en": "Not now",
@@ -564,7 +564,7 @@
       "note": "Direct and firm."
     },
     {
-      "id": "s22_55",
+      "id": "22-55",
       "category": "Checking Others",
       "pl": "Rozumiesz?",
       "en": "Do you understand?",
@@ -574,7 +574,7 @@
       "note": "Informal."
     },
     {
-      "id": "s22_56",
+      "id": "22-56",
       "category": "Checking Others",
       "pl": "Czy to ma sens?",
       "en": "Does that make sense?",
@@ -584,7 +584,7 @@
       "note": "Literally 'Does this have sense?'."
     },
     {
-      "id": "s22_57",
+      "id": "22-57",
       "category": "Checking Others",
       "pl": "Czy wszystko jasne?",
       "en": "Is everything clear?",
@@ -594,7 +594,7 @@
       "note": "A common check-in during instructions."
     },
     {
-      "id": "s22_58",
+      "id": "22-58",
       "category": "Checking Others",
       "pl": "Masz jakieś pytania?",
       "en": "Do you have any questions?",
@@ -604,7 +604,7 @@
       "note": "Informal 'you' (masz)."
     },
     {
-      "id": "s22_59",
+      "id": "22-59",
       "category": "Polite Interruptions",
       "pl": "Przepraszam, że przeszkadzam",
       "en": "Sorry to bother you",
@@ -614,7 +614,7 @@
       "note": "Literally 'Sorry that I am disturbing'."
     },
     {
-      "id": "s22_60",
+      "id": "22-60",
       "category": "Polite Interruptions",
       "pl": "Mogę ci przerwać?",
       "en": "Can I interrupt you?",
@@ -624,7 +624,7 @@
       "note": "Informal. Uses dative 'ci'."
     },
     {
-      "id": "s22_61",
+      "id": "22-61",
       "category": "Translation Services",
       "pl": "Czy używasz tłumacza?",
       "en": "Are you using a translator app?",
@@ -634,7 +634,7 @@
       "note": "Very useful question when chatting online."
     },
     {
-      "id": "s22_62",
+      "id": "22-62",
       "category": "Translation Services",
       "pl": "Napisz mi to w aplikacji",
       "en": "Write it to me in the app",
@@ -644,7 +644,7 @@
       "note": "Hand them your phone with Google Translate open!"
     },
     {
-      "id": "s22_63",
+      "id": "22-63",
       "category": "Clarification",
       "pl": "Nie o to mi chodziło",
       "en": "That's not what I meant",
@@ -654,7 +654,7 @@
       "note": "Crucial phrase for correcting a misunderstanding."
     },
     {
-      "id": "s22_64",
+      "id": "22-64",
       "category": "Clarification",
       "pl": "Chodzi mi o...",
       "en": "What I mean is... / It's about...",
@@ -664,9 +664,9 @@
       "note": "A very common Polish phrasing to clarify your point."
     },
     {
-      "id": "s22_65",
+      "id": "22-65",
       "category": "Clarification",
-      "pl": "Zapomniałem słowa",
+      "pl": "Zapomniałem / Zapomniałam słowa",
       "en": "I forgot the word",
       "level": 22,
       "gender": "both",
@@ -678,7 +678,7 @@
       "note": "Verb 'zapomnieć' forces the genitive case 'słowa'."
     },
     {
-      "id": "s22_66",
+      "id": "22-66",
       "category": "Clarification",
       "pl": "To jest podobne do...",
       "en": "It is similar to...",
@@ -688,7 +688,7 @@
       "note": "Great way to describe something when you don't know the exact word."
     },
     {
-      "id": "s22_67",
+      "id": "22-67",
       "category": "Language Barriers",
       "pl": "Mój polski nie jest idealny",
       "en": "My Polish is not perfect",
@@ -698,7 +698,7 @@
       "note": "A humble way to ask for patience."
     },
     {
-      "id": "s22_68",
+      "id": "22-68",
       "category": "Language Barriers",
       "pl": "Uczę się polskiego",
       "en": "I am learning Polish",
@@ -708,7 +708,7 @@
       "note": "Reflexive verb 'uczyć się' takes the genitive case 'polskiego'."
     },
     {
-      "id": "s22_69",
+      "id": "22-69",
       "category": "Language Barriers",
       "pl": "Tylko trochę",
       "en": "Only a little",
@@ -718,7 +718,7 @@
       "note": "Usually the answer to 'Czy mówisz po polsku?'."
     },
     {
-      "id": "s22_70",
+      "id": "22-70",
       "category": "Language Barriers",
       "pl": "Mówię lepiej po angielsku",
       "en": "I speak better in English",
@@ -728,9 +728,9 @@
       "note": "Comparative adverb 'lepiej'."
     },
     {
-      "id": "s22_71",
+      "id": "22-71",
       "category": "Language Repair",
-      "pl": "Zrobiłem błąd",
+      "pl": "Zrobiłem / Zrobiłam błąd",
       "en": "I made a mistake",
       "level": 22,
       "gender": "both",
@@ -742,7 +742,7 @@
       "note": "Past tense."
     },
     {
-      "id": "s22_72",
+      "id": "22-72",
       "category": "Language Repair",
       "pl": "Moja wina",
       "en": "My fault",
@@ -752,9 +752,9 @@
       "note": "Feminine phrase."
     },
     {
-      "id": "s22_73",
+      "id": "22-73",
       "category": "Language Repair",
-      "pl": "Przekręciłem słowo",
+      "pl": "Przekręciłem / Przekręciłam słowo",
       "en": "I twisted/mangled the word",
       "level": 22,
       "gender": "both",
@@ -766,7 +766,7 @@
       "note": "A native way of saying you mispronounced something."
     },
     {
-      "id": "s22_74",
+      "id": "22-74",
       "category": "Physical Help",
       "pl": "Pomożesz mi to podnieść?",
       "en": "Will you help me lift this?",
@@ -776,9 +776,9 @@
       "note": "Future perfective tense."
     },
     {
-      "id": "s22_75",
+      "id": "22-75",
       "category": "Physical Help",
-      "pl": "Jestem zgubiony",
+      "pl": "Jestem zgubiony / zgubiona",
       "en": "I am lost (physically)",
       "level": 22,
       "gender": "both",

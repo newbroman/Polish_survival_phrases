@@ -4,7 +4,7 @@
   "tier": "PRACTICAL",
   "phrases": [
     {
-      "id": "s16_01",
+      "id": "16-01",
       "category": "Core Family",
       "pl": "Rodzina",
       "en": "Family",
@@ -14,7 +14,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s16_02",
+      "id": "16-02",
       "category": "Core Family",
       "pl": "Rodzice",
       "en": "Parents",
@@ -24,7 +24,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s16_03",
+      "id": "16-03",
       "category": "Core Family",
       "pl": "Mama / Matka",
       "en": "Mom / Mother",
@@ -34,7 +34,7 @@
       "note": "'Mama' is common and warm. 'Matka' is very formal or clinical."
     },
     {
-      "id": "s16_04",
+      "id": "16-04",
       "category": "Core Family",
       "pl": "Tata / Ojciec",
       "en": "Dad / Father",
@@ -44,7 +44,7 @@
       "note": "'Tata' is the common everyday term."
     },
     {
-      "id": "s16_05",
+      "id": "16-05",
       "category": "Core Family",
       "pl": "Dzieci",
       "en": "Children",
@@ -54,7 +54,7 @@
       "note": "Plural of 'dziecko'."
     },
     {
-      "id": "s16_06",
+      "id": "16-06",
       "category": "Core Family",
       "pl": "Syn",
       "en": "Son",
@@ -64,7 +64,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s16_07",
+      "id": "16-07",
       "category": "Core Family",
       "pl": "Córka",
       "en": "Daughter",
@@ -74,7 +74,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s16_08",
+      "id": "16-08",
       "category": "Core Family",
       "pl": "Brat",
       "en": "Brother",
@@ -84,7 +84,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s16_09",
+      "id": "16-09",
       "category": "Core Family",
       "pl": "Siostra",
       "en": "Sister",
@@ -94,7 +94,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s16_10",
+      "id": "16-10",
       "category": "Extended Family",
       "pl": "Babcia",
       "en": "Grandma / Grandmother",
@@ -104,7 +104,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s16_11",
+      "id": "16-11",
       "category": "Extended Family",
       "pl": "Dziadek",
       "en": "Grandpa / Grandfather",
@@ -114,7 +114,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s16_12",
+      "id": "16-12",
       "category": "Extended Family",
       "pl": "Wnuki",
       "en": "Grandchildren",
@@ -124,7 +124,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s16_13",
+      "id": "16-13",
       "category": "Extended Family",
       "pl": "Teściowa",
       "en": "Mother-in-law",
@@ -134,7 +134,7 @@
       "note": "A frequent subject of Polish jokes!"
     },
     {
-      "id": "s16_14",
+      "id": "16-14",
       "category": "Romantic Relationships",
       "pl": "Mąż",
       "en": "Husband",
@@ -144,7 +144,7 @@
       "note": "Masculine noun."
     },
     {
-      "id": "s16_15",
+      "id": "16-15",
       "category": "Romantic Relationships",
       "pl": "Żona",
       "en": "Wife",
@@ -154,7 +154,7 @@
       "note": "Feminine noun."
     },
     {
-      "id": "s16_16",
+      "id": "16-16",
       "category": "Romantic Relationships",
       "pl": "Chłopak",
       "en": "Boyfriend (also: Boy)",
@@ -164,7 +164,7 @@
       "note": "Context determines if it means 'a boy' or 'my boyfriend'."
     },
     {
-      "id": "s16_17",
+      "id": "16-17",
       "category": "Romantic Relationships",
       "pl": "Dziewczyna",
       "en": "Girlfriend (also: Girl)",
@@ -174,7 +174,7 @@
       "note": "Context determines if it means 'a girl' or 'my girlfriend'."
     },
     {
-      "id": "s16_18",
+      "id": "16-18",
       "category": "Romantic Relationships",
       "pl": "Narzeczony / Narzeczona",
       "en": "Fiancé / Fiancée",
@@ -188,7 +188,7 @@
       "note": "Male ends in '-y', female in '-a'."
     },
     {
-      "id": "s16_19",
+      "id": "16-19",
       "category": "Romantic Relationships",
       "pl": "Partner / Partnerka",
       "en": "Partner",
@@ -202,7 +202,7 @@
       "note": "Modern phrasing for long-term unwed couples."
     },
     {
-      "id": "s16_20",
+      "id": "16-20",
       "category": "Relationship Status",
       "pl": "Jestem w związku",
       "en": "I'm in a relationship",
@@ -212,7 +212,7 @@
       "note": "Uses locative case 'w związku'."
     },
     {
-      "id": "s16_21",
+      "id": "16-21",
       "category": "Relationship Status",
       "pl": "Jestem singlem / singielką",
       "en": "I'm single",
@@ -226,7 +226,7 @@
       "note": "Loanword. Takes the instrumental case."
     },
     {
-      "id": "s16_22",
+      "id": "16-22",
       "category": "Relationship Status",
       "pl": "Jestem żonaty",
       "en": "I'm married (said by a man)",
@@ -236,7 +236,7 @@
       "note": "Polish uses different words for married depending on gender!"
     },
     {
-      "id": "s16_23",
+      "id": "16-23",
       "category": "Relationship Status",
       "pl": "Jestem zamężna",
       "en": "I'm married (said by a woman)",
@@ -246,7 +246,7 @@
       "note": "Female-specific term for being married."
     },
     {
-      "id": "s16_24",
+      "id": "16-24",
       "category": "Relationship Status",
       "pl": "Jestem rozwiedziony / rozwiedziona",
       "en": "I'm divorced",
@@ -260,7 +260,7 @@
       "note": "Gendered adjective endings."
     },
     {
-      "id": "s16_25",
+      "id": "16-25",
       "category": "Friends & Social",
       "pl": "Przyjaciel / Przyjaciółka",
       "en": "Close Friend",
@@ -274,7 +274,7 @@
       "note": "In Poland, this word is reserved only for your absolute closest, lifelong friends."
     },
     {
-      "id": "s16_26",
+      "id": "16-26",
       "category": "Friends & Social",
       "pl": "Kolega / Koleżanka",
       "en": "Friend / Buddy / Colleague",
@@ -288,7 +288,7 @@
       "note": "This is the equivalent of the English 'friend' for everyday social circle hangouts."
     },
     {
-      "id": "s16_27",
+      "id": "16-27",
       "category": "Friends & Social",
       "pl": "Znajomy / Znajoma",
       "en": "Acquaintance",
@@ -302,9 +302,9 @@
       "note": "Someone you know, but wouldn't necessarily invite to your house."
     },
     {
-      "id": "s16_28",
+      "id": "16-28",
       "category": "Friends & Social",
-      "pl": "Poznałem kogoś",
+      "pl": "Poznałem / Poznałam kogoś",
       "en": "I met someone",
       "level": 16,
       "gender": "both",
@@ -316,7 +316,7 @@
       "note": "Often implies romantic interest."
     },
     {
-      "id": "s16_29",
+      "id": "16-29",
       "category": "Friends & Social",
       "pl": "Z przyjaciółmi",
       "en": "With friends",
@@ -326,7 +326,7 @@
       "note": "Instrumental plural."
     },
     {
-      "id": "s16_30",
+      "id": "16-30",
       "category": "Small Talk",
       "pl": "Jak leci?",
       "en": "How's it going?",
@@ -336,7 +336,7 @@
       "note": "Very casual. Literally 'How is it flying?'"
     },
     {
-      "id": "s16_31",
+      "id": "16-31",
       "category": "Small Talk",
       "pl": "Co słychać?",
       "en": "What's up? / How are things?",
@@ -346,7 +346,7 @@
       "note": "Literally 'What is to be heard?'"
     },
     {
-      "id": "s16_32",
+      "id": "16-32",
       "category": "Life Facts",
       "pl": "Ile masz lat?",
       "en": "How old are you?",
@@ -356,7 +356,7 @@
       "note": "Literally 'How many years do you have?'"
     },
     {
-      "id": "s16_33",
+      "id": "16-33",
       "category": "Life Facts",
       "pl": "Mam trzydzieści lat",
       "en": "I am thirty years old",
@@ -366,7 +366,7 @@
       "note": "Literally 'I have 30 years'."
     },
     {
-      "id": "s16_34",
+      "id": "16-34",
       "category": "Life Facts",
       "pl": "Urodziny",
       "en": "Birthday",
@@ -376,7 +376,7 @@
       "note": "Plural noun."
     },
     {
-      "id": "s16_35",
+      "id": "16-35",
       "category": "Life Facts",
       "pl": "Wszystkiego najlepszego!",
       "en": "Happy birthday! / All the best!",

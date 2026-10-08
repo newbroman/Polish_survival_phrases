@@ -4,7 +4,7 @@
   "tier": "FOUNDATION",
   "phrases": [
     {
-      "id": "p1_01",
+      "id": "1-01",
       "category": "CZ & SZ (Hard Sounds)",
       "pl": "Czas",
       "en": "Time",
@@ -14,7 +14,7 @@
       "note": "The 'cz' sound is like a hard 'ch' in 'chalk', but with the tongue curled back slightly."
     },
     {
-      "id": "p1_02",
+      "id": "1-02",
       "category": "CZ & SZ (Hard Sounds)",
       "pl": "Człowiek",
       "en": "Human / Person",
@@ -24,7 +24,7 @@
       "note": "Combines the hard 'cz' with the English 'w' sound of the Polish 'ł'."
     },
     {
-      "id": "p1_03",
+      "id": "1-03",
       "category": "CZ & SZ (Hard Sounds)",
       "pl": "Czapka",
       "en": "Cap / Hat",
@@ -34,7 +34,7 @@
       "note": "A very common word. Make sure to hit the 'cz' hard!"
     },
     {
-      "id": "p1_04",
+      "id": "1-04",
       "category": "CZ & SZ (Hard Sounds)",
       "pl": "Szafa",
       "en": "Closet / Wardrobe",
@@ -44,7 +44,7 @@
       "note": "The 'sz' is like the 'sh' in 'shoe', but harder and deeper."
     },
     {
-      "id": "p1_05",
+      "id": "1-05",
       "category": "CZ & SZ (Hard Sounds)",
       "pl": "Szkoła",
       "en": "School",
@@ -54,7 +54,7 @@
       "note": "Pronounced 'Sh-ko-wa'."
     },
     {
-      "id": "p1_06",
+      "id": "1-06",
       "category": "CZ & SZ (Hard Sounds)",
       "pl": "Mysz",
       "en": "Mouse",
@@ -64,7 +64,7 @@
       "note": "A great word to practice ending a word on a hard, rustling consonant."
     },
     {
-      "id": "p1_07",
+      "id": "1-07",
       "category": "RZ & Ż (Voiced Sounds)",
       "pl": "Rzeka",
       "en": "River",
@@ -74,7 +74,7 @@
       "note": "The 'rz' sound is exactly the same as the 'ż' sound (like the 's' in 'pleasure')."
     },
     {
-      "id": "p1_08",
+      "id": "1-08",
       "category": "RZ & Ż (Voiced Sounds)",
       "pl": "Drzewo",
       "en": "Tree",
@@ -84,7 +84,7 @@
       "note": "The 'd' blends into the 'rz'. Pronounced 'D-zhe-vo'."
     },
     {
-      "id": "p1_09",
+      "id": "1-09",
       "category": "RZ & Ż (Voiced Sounds)",
       "pl": "Grzyb",
       "en": "Mushroom",
@@ -94,7 +94,7 @@
       "note": "Mushroom foraging is a national sport in Poland. Pronounced 'G-zhip'."
     },
     {
-      "id": "p1_10",
+      "id": "1-10",
       "category": "RZ & Ż (Voiced Sounds)",
       "pl": "Żaba",
       "en": "Frog",
@@ -104,7 +104,7 @@
       "note": "Spelled with a dot over the Z, but sounds identical to 'rz'."
     },
     {
-      "id": "p1_11",
+      "id": "1-11",
       "category": "RZ & Ż (Voiced Sounds)",
       "pl": "Życie",
       "en": "Life",
@@ -114,7 +114,7 @@
       "note": "Pronounced 'Zhi-cheh'."
     },
     {
-      "id": "p1_12",
+      "id": "1-12",
       "category": "RZ & Ż (Voiced Sounds)",
       "pl": "Nóż",
       "en": "Knife",
@@ -124,7 +124,7 @@
       "note": "Grammar rule: A voiced 'ż' at the very end of a word loses its voice and sounds like a hard 'sz'."
     },
     {
-      "id": "p1_13",
+      "id": "1-13",
       "category": "Soft Sounds (Ś, Ź, Ć, DŹ)",
       "pl": "Śnieg",
       "en": "Snow",
@@ -134,7 +134,7 @@
       "note": "The 'ś' is much softer and lighter than 'sz'. Try smiling while making a 'sh' sound."
     },
     {
-      "id": "p1_14",
+      "id": "1-14",
       "category": "Soft Sounds (Ś, Ź, Ć, DŹ)",
       "pl": "Świat",
       "en": "World",
@@ -144,7 +144,7 @@
       "note": "Pronounced 'Sh-vyat'."
     },
     {
-      "id": "p1_15",
+      "id": "1-15",
       "category": "Soft Sounds (Ś, Ź, Ć, DŹ)",
       "pl": "Źródło",
       "en": "Source / Spring",
@@ -154,7 +154,7 @@
       "note": "The rarest Polish letter. A very soft, buzzing 'z' sound."
     },
     {
-      "id": "p1_16",
+      "id": "1-16",
       "category": "Soft Sounds (Ś, Ź, Ć, DŹ)",
       "pl": "Ćma",
       "en": "Moth",
@@ -164,7 +164,7 @@
       "note": "A very soft 'ch' sound, made by pressing the tongue to the back of the front teeth."
     },
     {
-      "id": "p1_17",
+      "id": "1-17",
       "category": "Soft Sounds (Ś, Ź, Ć, DŹ)",
       "pl": "Niedźwiedź",
       "en": "Bear",
@@ -174,7 +174,7 @@
       "note": "The 'dź' is a very soft 'j' sound (like in 'jeep'). This word ends with it!"
     },
     {
-      "id": "p1_18",
+      "id": "1-18",
       "category": "Soft Sounds (Ś, Ź, Ć, DŹ)",
       "pl": "Dźwięk",
       "en": "Sound",
@@ -184,7 +184,7 @@
       "note": "Contains the soft 'dź' and the nasal 'ę'."
     },
     {
-      "id": "p1_19",
+      "id": "1-19",
       "category": "Soft Vowels (NI, SI, ZI, CI)",
       "pl": "Niebo",
       "en": "Sky / Heaven",
@@ -194,7 +194,7 @@
       "note": "When 'i' follows 'n', it makes the 'n' soft (like 'nyeh' in 'canyon')."
     },
     {
-      "id": "p1_20",
+      "id": "1-20",
       "category": "Soft Vowels (NI, SI, ZI, CI)",
       "pl": "Siostra",
       "en": "Sister",
@@ -204,7 +204,7 @@
       "note": "When 'i' follows 's', it sounds exactly like 'ś' (soft sh)."
     },
     {
-      "id": "p1_21",
+      "id": "1-21",
       "category": "Soft Vowels (NI, SI, ZI, CI)",
       "pl": "Zima",
       "en": "Winter",
@@ -214,7 +214,7 @@
       "note": "When 'i' follows 'z', it sounds exactly like 'ź'."
     },
     {
-      "id": "p1_22",
+      "id": "1-22",
       "category": "Soft Vowels (NI, SI, ZI, CI)",
       "pl": "Cicho",
       "en": "Quiet",
@@ -224,7 +224,7 @@
       "note": "When 'i' follows 'c', it sounds exactly like 'ć' (soft ch)."
     },
     {
-      "id": "p1_23",
+      "id": "1-23",
       "category": "Soft Vowels (NI, SI, ZI, CI)",
       "pl": "Dziadek",
       "en": "Grandfather",
@@ -234,7 +234,7 @@
       "note": "When 'i' follows 'dz', it sounds exactly like 'dź' (soft j)."
     },
     {
-      "id": "p1_24",
+      "id": "1-24",
       "category": "Soft Vowels (NI, SI, ZI, CI)",
       "pl": "Dziecko",
       "en": "Child",
@@ -244,7 +244,7 @@
       "note": "Pronounced 'Jyeh-tsko'."
     },
     {
-      "id": "p1_25",
+      "id": "1-25",
       "category": "The Ł vs L",
       "pl": "Łódka",
       "en": "Boat",
@@ -254,7 +254,7 @@
       "note": "The Polish 'ł' is pronounced exactly like the English 'w' in 'water'."
     },
     {
-      "id": "p1_26",
+      "id": "1-26",
       "category": "The Ł vs L",
       "pl": "Głowa",
       "en": "Head",
@@ -264,7 +264,7 @@
       "note": "Pronounced 'Gwo-va'."
     },
     {
-      "id": "p1_27",
+      "id": "1-27",
       "category": "The Ł vs L",
       "pl": "Słońce",
       "en": "Sun",
@@ -274,7 +274,7 @@
       "note": "Contains the 'w' sound, followed by the soft 'ń'."
     },
     {
-      "id": "p1_28",
+      "id": "1-28",
       "category": "The Ł vs L",
       "pl": "Lalka",
       "en": "Doll",
@@ -284,7 +284,7 @@
       "note": "The normal 'L' in Polish is soft and crisp, like in 'leaf'."
     },
     {
-      "id": "p1_29",
+      "id": "1-29",
       "category": "The Ł vs L",
       "pl": "Las",
       "en": "Forest",
@@ -294,7 +294,7 @@
       "note": "Simple and crisp."
     },
     {
-      "id": "p1_30",
+      "id": "1-30",
       "category": "The Ł vs L",
       "pl": "Lato",
       "en": "Summer",
@@ -304,7 +304,7 @@
       "note": "A very straightforward phonetic word."
     },
     {
-      "id": "p1_31",
+      "id": "1-31",
       "category": "Nasal Vowels (Ą & Ę)",
       "pl": "Mąż",
       "en": "Husband",
@@ -314,7 +314,7 @@
       "note": "The 'ą' sounds like 'on'. Pronounced 'Mon-zh'."
     },
     {
-      "id": "p1_32",
+      "id": "1-32",
       "category": "Nasal Vowels (Ą & Ę)",
       "pl": "Wąż",
       "en": "Snake",
@@ -324,7 +324,7 @@
       "note": "Pronounced 'Von-zh'."
     },
     {
-      "id": "p1_33",
+      "id": "1-33",
       "category": "Nasal Vowels (Ą & Ę)",
       "pl": "Pająk",
       "en": "Spider",
@@ -334,7 +334,7 @@
       "note": "Pronounced 'Pa-yonk'."
     },
     {
-      "id": "p1_34",
+      "id": "1-34",
       "category": "Nasal Vowels (Ą & Ę)",
       "pl": "Ręka",
       "en": "Hand / Arm",
@@ -344,7 +344,7 @@
       "note": "The 'ę' sounds like 'en'. Pronounced 'Ren-ka'."
     },
     {
-      "id": "p1_35",
+      "id": "1-35",
       "category": "Nasal Vowels (Ą & Ę)",
       "pl": "Mięso",
       "en": "Meat",
@@ -354,7 +354,7 @@
       "note": "Pronounced 'Myen-so'."
     },
     {
-      "id": "p1_36",
+      "id": "1-36",
       "category": "Nasal Vowels (Ą & Ę)",
       "pl": "Ząb",
       "en": "Tooth",
@@ -364,7 +364,7 @@
       "note": "Pronounced 'Zomp' (the b devoices to a p at the end of the word)."
     },
     {
-      "id": "p1_37",
+      "id": "1-37",
       "category": "The CH and H Sounds",
       "pl": "Chleb",
       "en": "Bread",
@@ -374,7 +374,7 @@
       "note": "The digraph 'ch' sounds exactly like a strong, raspy 'h'."
     },
     {
-      "id": "p1_38",
+      "id": "1-38",
       "category": "The CH and H Sounds",
       "pl": "Chmura",
       "en": "Cloud",
@@ -384,7 +384,7 @@
       "note": "Pronounced 'H-moo-ra'."
     },
     {
-      "id": "p1_39",
+      "id": "1-39",
       "category": "The CH and H Sounds",
       "pl": "Dach",
       "en": "Roof",
@@ -394,7 +394,7 @@
       "note": "Great practice for ending a word on the raspy 'h' sound."
     },
     {
-      "id": "p1_40",
+      "id": "1-40",
       "category": "The CH and H Sounds",
       "pl": "Herbata",
       "en": "Tea",
@@ -404,7 +404,7 @@
       "note": "The standalone 'h' sounds exactly identical to 'ch'. There is no difference in modern Polish."
     },
     {
-      "id": "p1_41",
+      "id": "1-41",
       "category": "The CH and H Sounds",
       "pl": "Historia",
       "en": "History / Story",
@@ -414,7 +414,7 @@
       "note": "Pronounced 'Hee-sto-rya'."
     },
     {
-      "id": "p1_42",
+      "id": "1-42",
       "category": "Voiced vs Unvoiced",
       "pl": "Buty",
       "en": "Shoes",
@@ -424,7 +424,7 @@
       "note": "A voiced 'b' sound. Straightforward."
     },
     {
-      "id": "p1_43",
+      "id": "1-43",
       "category": "Voiced vs Unvoiced",
       "pl": "Pies",
       "en": "Dog",
@@ -434,7 +434,7 @@
       "note": "An unvoiced 'p' sound."
     },
     {
-      "id": "p1_44",
+      "id": "1-44",
       "category": "Voiced vs Unvoiced",
       "pl": "Dom",
       "en": "House",
@@ -444,7 +444,7 @@
       "note": "A voiced 'd' sound."
     },
     {
-      "id": "p1_45",
+      "id": "1-45",
       "category": "Voiced vs Unvoiced",
       "pl": "Ptak",
       "en": "Bird",
@@ -454,7 +454,7 @@
       "note": "An unvoiced 't' sound following an unvoiced 'p'."
     },
     {
-      "id": "p1_46",
+      "id": "1-46",
       "category": "Voiced vs Unvoiced",
       "pl": "Głos",
       "en": "Voice",
@@ -464,7 +464,7 @@
       "note": "A voiced 'g' sound."
     },
     {
-      "id": "p1_47",
+      "id": "1-47",
       "category": "Voiced vs Unvoiced",
       "pl": "Kot",
       "en": "Cat",
@@ -474,7 +474,7 @@
       "note": "An unvoiced 'k' sound."
     },
     {
-      "id": "p1_48",
+      "id": "1-48",
       "category": "The V & F Sounds",
       "pl": "Woda",
       "en": "Water",
@@ -484,7 +484,7 @@
       "note": "The Polish 'w' is always pronounced like an English 'v'."
     },
     {
-      "id": "p1_49",
+      "id": "1-49",
       "category": "The V & F Sounds",
       "pl": "Wiatr",
       "en": "Wind",
@@ -494,7 +494,7 @@
       "note": "Pronounced 'Vya-tr'."
     },
     {
-      "id": "p1_50",
+      "id": "1-50",
       "category": "The V & F Sounds",
       "pl": "Kwiat",
       "en": "Flower",
@@ -504,7 +504,7 @@
       "note": "Pronunciation Secret: Because 'k' is unvoiced, it steals the voice from 'w', making it sound like an 'f'. Pronounced 'K-fyat'."
     },
     {
-      "id": "p1_51",
+      "id": "1-51",
       "category": "The V & F Sounds",
       "pl": "Kawa",
       "en": "Coffee",
@@ -514,7 +514,7 @@
       "note": "Pronounced 'Ka-va'."
     },
     {
-      "id": "p1_52",
+      "id": "1-52",
       "category": "The V & F Sounds",
       "pl": "Fotel",
       "en": "Armchair",
@@ -524,7 +524,7 @@
       "note": "The 'f' is straightforward and sounds exactly like English."
     },
     {
-      "id": "p1_53",
+      "id": "1-53",
       "category": "Consonant Clusters",
       "pl": "Wszystko",
       "en": "Everything",
@@ -534,7 +534,7 @@
       "note": "Secret rule again! The voiceless 'sz' turns the 'w' into an 'f'. Pronounced 'Fshyst-ko'."
     },
     {
-      "id": "p1_54",
+      "id": "1-54",
       "category": "Consonant Clusters",
       "pl": "Przepraszam",
       "en": "Sorry / Excuse me",
@@ -544,7 +544,7 @@
       "note": "Secret rule: After 'p' or 't', the 'rz' loses its voice and sounds like 'sz'. Pronounced 'Pshe-pra-sham'."
     },
     {
-      "id": "p1_55",
+      "id": "1-55",
       "category": "Consonant Clusters",
       "pl": "Pszczoła",
       "en": "Bee",
@@ -554,7 +554,7 @@
       "note": "A heavy cluster. Pronounced 'Psh-cho-wa'."
     },
     {
-      "id": "p1_56",
+      "id": "1-56",
       "category": "Consonant Clusters",
       "pl": "Jabłko",
       "en": "Apple",
@@ -564,7 +564,7 @@
       "note": "The unvoiced 'k' turns the 'b' into a 'p'. Pronounced 'Yap-ko'."
     },
     {
-      "id": "p1_57",
+      "id": "1-57",
       "category": "Consonant Clusters",
       "pl": "Krzesło",
       "en": "Chair",
@@ -574,7 +574,7 @@
       "note": "Just like 'przepraszam', the 'k' forces 'rz' to sound like 'sz'. Pronounced 'K-she-swo'."
     },
     {
-      "id": "p1_58",
+      "id": "1-58",
       "category": "Consonant Clusters",
       "pl": "Książka",
       "en": "Book",
@@ -584,7 +584,7 @@
       "note": "Pronounced 'K-shonz-ka'."
     },
     {
-      "id": "p1_59",
+      "id": "1-59",
       "category": "Tongue Twisters",
       "pl": "Chrząszcz",
       "en": "Beetle",
@@ -594,7 +594,7 @@
       "note": "From the most famous Polish tongue twister! Starts with the raspy 'ch', followed by 'rz' (sounding like 'sz' due to the ch), the nasal 'ą', and 'szcz'."
     },
     {
-      "id": "p1_60",
+      "id": "1-60",
       "category": "Tongue Twisters",
       "pl": "Szczęście",
       "en": "Happiness / Luck",
@@ -604,7 +604,7 @@
       "note": "A masterpiece of hissing sounds. 'Sz' + 'cz' + 'ę' + 'ś' + 'ci' + 'e'. Good luck!"
     },
     {
-      "id": "p1_61",
+      "id": "1-61",
       "category": "Tongue Twisters",
       "pl": "Trzcina",
       "en": "Reed",
@@ -614,7 +614,7 @@
       "note": "The 't' forces 'rz' to sound like 'sz'. Pronounced 'T-sh-chee-na'."
     },
     {
-      "id": "p1_62",
+      "id": "1-62",
       "category": "Tongue Twisters",
       "pl": "Dżdżownica",
       "en": "Earthworm",
@@ -624,7 +624,7 @@
       "note": "Look at those 'dż's! Pronounced 'J-jo-vnee-tsa'."
     },
     {
-      "id": "p1_63",
+      "id": "1-63",
       "category": "Polish Nuances",
       "pl": "Cześć",
       "en": "Hi / Bye",
@@ -634,7 +634,7 @@
       "note": "The ultimate Polish greeting. Ends with the incredibly soft 'ść' sound."
     },
     {
-      "id": "p1_64",
+      "id": "1-64",
       "category": "Polish Nuances",
       "pl": "Oczywiście",
       "en": "Of course",
@@ -644,7 +644,7 @@
       "note": "A very common agreement word. Note the hard 'cz' contrasting with the soft 'ście'."
     },
     {
-      "id": "p1_65",
+      "id": "1-65",
       "category": "Polish Nuances",
       "pl": "Dziewczyna",
       "en": "Girl / Girlfriend",
@@ -654,7 +654,7 @@
       "note": "Starts with the soft 'dź' (from dzi) and contains the 'w' sounding like an 'f' due to the voiceless 'cz'."
     },
     {
-      "id": "p1_66",
+      "id": "1-66",
       "category": "Polish Nuances",
       "pl": "Północ",
       "en": "Midnight / North",
@@ -664,7 +664,7 @@
       "note": "The 'ó' (o with a dash) sounds exactly like 'u' (oo). Pronounced 'Poo-nots'."
     },
     {
-      "id": "p1_67",
+      "id": "1-67",
       "category": "Polish Nuances",
       "pl": "Gżegżółka",
       "en": "Cuckoo bird (rare spelling)",
@@ -674,7 +674,7 @@
       "note": "A famous spelling trap for native Poles! It uses 'ż' instead of the expected 'rz'."
     },
     {
-      "id": "p1_68",
+      "id": "1-68",
       "category": "Polish Nuances",
       "pl": "Kobieta",
       "en": "Woman",
@@ -684,7 +684,7 @@
       "note": "A core vocabulary word. The 'i' softens the 'b'."
     },
     {
-      "id": "p1_69",
+      "id": "1-69",
       "category": "Polish Nuances",
       "pl": "Mężczyzna",
       "en": "Man",
@@ -694,7 +694,7 @@
       "note": "Pronounced 'Men-sh-chiz-na'. Contains the nasal 'ę', hard 'sz', hard 'cz', and 'y'."
     },
     {
-      "id": "p1_70",
+      "id": "1-70",
       "category": "Polish Nuances",
       "pl": "Język",
       "en": "Language / Tongue",
