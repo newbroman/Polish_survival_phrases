@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Polish Phrase Master v49.0</title>
+    <title>Polish Phrase Master v50.0</title>
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f2f5">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
@@ -609,6 +609,50 @@
             box-sizing: border-box;
             flex-grow: 1;
         }
+        #dialogue-view {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            padding: 14px 16px 150px;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+        #dl-list, #dl-player { width: 100%; max-width: 420px; }
+        .dl-group { margin: 14px 0 6px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red-text); }
+        .dl-card {
+            display: flex; align-items: center; gap: 12px; width: 100%; box-sizing: border-box; text-align: left;
+            padding: 12px 14px; margin-bottom: 8px; border-radius: 12px; border: 1px solid rgba(128,128,128,0.3);
+            background: var(--card); color: var(--text); cursor: pointer; font: inherit;
+        }
+        .dl-card .dl-ic { font-size: 1.6rem; }
+        .dl-card b { display: block; font-size: 1rem; }
+        .dl-card small { color: var(--muted); }
+        .dl-card .dl-done { margin-left: auto; color: var(--success-text); font-weight: bold; font-size: 0.85rem; }
+        .dl-empty { color: var(--muted); text-align: center; margin-top: 24px; line-height: 1.5; }
+        .dl-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .dl-back { border: 1px solid var(--pol-red); color: var(--red-text); background: var(--card); border-radius: 999px; padding: 6px 12px; font-weight: bold; cursor: pointer; }
+        .dl-title { font-weight: 800; font-size: 1.05rem; }
+        .dl-setting { color: var(--muted); font-size: 0.85rem; }
+        .dl-chat { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+        .dl-msg { max-width: 82%; padding: 9px 12px; border-radius: 14px; line-height: 1.3; }
+        .dl-msg .dl-pl { font-weight: bold; }
+        .dl-msg .dl-alt { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+        .dl-msg .dl-en { font-size: 0.82rem; color: var(--muted); margin-top: 3px; }
+        .dl-msg.them { align-self: flex-start; background: var(--tile-bg); color: var(--text); border-bottom-left-radius: 4px; cursor: pointer; }
+        .dl-msg.you { align-self: flex-end; background: var(--card); border: 2px solid var(--pol-red); color: var(--text); border-bottom-right-radius: 4px; }
+        .dl-score { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; font-size: 0.75rem; color: #fff; }
+        .dl-panel { background: var(--card); border: 2px solid var(--pol-red); border-radius: 16px; padding: 14px; text-align: center; }
+        .dl-say { font-size: 0.75rem; font-weight: bold; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+        .dl-prompt { font-size: 1.15rem; font-weight: 800; margin: 6px 0 4px; }
+        .dl-hint { min-height: 1.2em; color: var(--red-text); font-weight: bold; margin-bottom: 8px; }
+        .dl-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .dl-actions button {
+            border: 1px solid var(--pol-red); background: var(--card); color: var(--red-text); border-radius: 999px;
+            padding: 8px 14px; font-weight: bold; cursor: pointer; font-size: 0.95rem;
+        }
+        .dl-actions button.dl-mic { background: var(--pol-red); color: #fff; touch-action: none; user-select: none; -webkit-user-select: none; }
+        .dl-actions button.dl-mic.mic-recording, .dl-actions button.dl-mic.mic-active { filter: brightness(1.2); box-shadow: 0 0 0 4px rgba(220,20,60,0.25); }
         #drills-view {
             display: none;
             width: 100%;
@@ -2369,6 +2413,9 @@
             <div id="tab-drills" class="tab" onclick="switchMode('drills')">
                 <span class="mr-ic">🗣️</span> <span>SOUNDS</span>
             </div>
+            <div id="tab-dialogue" class="tab" onclick="switchMode('dialogue')">
+                <span class="mr-ic">💬</span> <span>DIALOGUES</span>
+            </div>
         </div>
 
         <div id="app-menu" class="hdr-dropdown app-menu" style="display: none;">
@@ -2516,6 +2563,21 @@
                 <button class="ty-mini" onclick="typingHint()">💡 Hint</button>
                 <span class="ty-counter" id="ty-counter">1 / 1</span>
                 <button class="ty-mini" onclick="typingSkip()">Skip ⏭</button>
+            </div>
+        </div>
+
+        <div id="dialogue-view">
+            <div id="dl-list"></div>
+            <div id="dl-player" style="display:none;">
+                <div class="dl-top">
+                    <button type="button" class="dl-back" onclick="dialogueBack()" aria-label="Back to the list of dialogues">‹ All</button>
+                    <div class="dl-titles">
+                        <div class="dl-title" id="dl-title"></div>
+                        <div class="dl-setting" id="dl-setting"></div>
+                    </div>
+                </div>
+                <div class="dl-chat" id="dl-chat" aria-live="polite"></div>
+                <div class="dl-panel" id="dl-panel"></div>
             </div>
         </div>
 
@@ -3372,6 +3434,191 @@
             }
         }
 
+        // ===== Dialogues (dialogues.json) =====
+        // A short scene per level: "them" lines are spoken by the app; on
+        // "you" lines the learner sees the English, says the Polish (hold the
+        // mic; scored like the Phrases tab) or reveals it, then the scene
+        // moves on. Lines that depend on the learner's gender carry
+        // variants {m, f}; the My Polish forms setting picks one.
+        let dialoguesData = null;
+        let dlCurrent = null, dlIndex = 0, dlScores = [], dlTimer = null, dlRun = 0;
+        let dialogueAwaitingSpeech = false;
+
+        async function loadDialogues() {
+            if (dialoguesData) return dialoguesData;
+            try {
+                const r = await fetch('dialogues.json', { cache: 'no-store' });
+                dialoguesData = r.ok ? ((await r.json()).dialogues || []) : [];
+            } catch (e) { dialoguesData = []; }
+            return dialoguesData;
+        }
+        function dlText(line) {
+            if (!line.variants) return line.pl;
+            return genderPref() === 'f' ? line.variants.f : line.variants.m;
+        }
+        function dlAltText(line) {
+            return (line.variants && genderPref() === 'both') ? line.variants.f : '';
+        }
+        function dlDoneSet() {
+            try { return new Set(JSON.parse(localStorage.getItem('pl_dialogues_done') || '[]')); } catch (e) { return new Set(); }
+        }
+        async function renderDialogueList() {
+            const list = document.getElementById('dl-list');
+            const player = document.getElementById('dl-player');
+            if (!list) return;
+            dialogueStop();
+            player.style.display = 'none';
+            list.style.display = 'block';
+            const all = await loadDialogues();
+            if (!all.length) {
+                list.innerHTML = '<div class="dl-empty">No dialogues could be loaded.<br>Check your connection and try again.</div>';
+                return;
+            }
+            const done = dlDoneSet();
+            const here = all.filter(d => d.level === currentLevel);
+            const others = all.filter(d => d.level !== currentLevel);
+            const card = d => `<button type="button" class="dl-card" onclick="startDialogue('${escHtml(d.id)}')">
+                    <span class="dl-ic" aria-hidden="true">${escHtml((d.setting || '💬').split(' ')[0])}</span>
+                    <span><b>${escHtml(d.title)}</b><small>Lvl ${escHtml(d.level)} · ${escHtml((d.setting || '').split(' ').slice(1).join(' '))}</small></span>
+                    ${done.has(d.id) ? '<span class="dl-done">✓ done</span>' : ''}
+                </button>`;
+            let html = '';
+            if (here.length) html += '<div class="dl-group">This level</div>' + here.map(card).join('');
+            else html += '<div class="dl-empty" style="margin:8px 0 4px;">No dialogue for this level yet. Try one of these:</div>';
+            html += '<div class="dl-group">' + (here.length ? 'Other levels' : 'All dialogues') + '</div>' + others.map(card).join('');
+            list.innerHTML = html;
+        }
+        function dialogueStop() {
+            dlRun++;
+            clearTimeout(dlTimer);
+            dialogueAwaitingSpeech = false;
+            try { window.speechSynthesis.cancel(); } catch (e) { }
+        }
+        function dialogueBack() { renderDialogueList(); }
+        async function startDialogue(id) {
+            const all = await loadDialogues();
+            const d = all.find(x => x.id === id);
+            if (!d) return;
+            dialogueStop();
+            dlCurrent = d; dlIndex = 0; dlScores = [];
+            document.getElementById('dl-list').style.display = 'none';
+            document.getElementById('dl-player').style.display = 'block';
+            document.getElementById('dl-title').innerText = d.title;
+            document.getElementById('dl-setting').innerText = d.setting || '';
+            document.getElementById('dl-chat').innerHTML = '';
+            dialogueStep();
+        }
+        function dlBubble(line, score) {
+            const chat = document.getElementById('dl-chat');
+            const b = document.createElement('div');
+            b.className = 'dl-msg ' + line.who;
+            const alt = dlAltText(line);
+            const scoreChip = (typeof score === 'number')
+                ? `<span class="dl-score" style="background:${pctColor(score)}">${score}%</span>` : '';
+            b.innerHTML = `<div class="dl-pl">${escHtml(dlText(line))}${scoreChip}</div>` +
+                (alt ? `<div class="dl-alt">♀ ${escHtml(alt)}</div>` : '') +
+                `<div class="dl-en"${line.who === 'them' ? ' hidden' : ''}>${escHtml(line.en)}</div>`;
+            if (line.who === 'them') {
+                b.title = 'Tap to show the English and hear it again';
+                b.setAttribute('role', 'button');
+                b.tabIndex = 0;
+                const act = () => { const en = b.querySelector('.dl-en'); if (en) en.hidden = false; speak(dlText(line)); };
+                b.addEventListener('click', act);
+                b.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); act(); } });
+            }
+            chat.appendChild(b);
+            b.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+        function dialogueStep() {
+            const run = dlRun;
+            const d = dlCurrent;
+            const panel = document.getElementById('dl-panel');
+            if (!d) return;
+            if (dlIndex >= d.lines.length) { dialogueFinish(); return; }
+            const line = d.lines[dlIndex];
+            if (line.who === 'them') {
+                dialogueAwaitingSpeech = false;
+                panel.innerHTML = '<div class="dl-say">Listen…</div>';
+                dlBubble(line);
+                let advanced = false;
+                const next = () => {
+                    if (advanced || run !== dlRun) return;
+                    advanced = true; clearTimeout(dlTimer);
+                    dlIndex++; dlTimer = setTimeout(dialogueStep, 450);
+                };
+                speak(dlText(line), 1.0, next);
+                // Safety net in case the speech engine never reports the end
+                dlTimer = setTimeout(next, 1500 + dlText(line).length * 90);
+                return;
+            }
+            // Learner's turn
+            dialogueAwaitingSpeech = true;
+            currentTarget = { pl: dlText(line), en: line.en, variants: line.variants };
+            panel.innerHTML = `
+                <div class="dl-say">Your turn: say in Polish</div>
+                <div class="dl-prompt">${escHtml(line.en)}</div>
+                <div class="dl-hint" id="dl-hint"></div>
+                <div class="dl-actions">
+                    <button type="button" class="dl-mic" aria-label="Hold to say it"
+                        onpointerdown="dialogueMicDown(event)" onpointerup="micRelease(event)"
+                        onpointerleave="micRelease(event)" onpointercancel="micRelease(event)">🎤 Hold to say it</button>
+                    <button type="button" onclick="dialogueHint()" aria-label="Show and hear the Polish">👁 Show</button>
+                    <button type="button" onclick="dialogueSkip()" aria-label="Skip this line">Skip ⏭</button>
+                </div>`;
+        }
+        function dialogueMicDown(e) {
+            const line = dlCurrent && dlCurrent.lines[dlIndex];
+            if (!line || line.who !== 'you') return;
+            currentTarget = { pl: dlText(line), en: line.en, variants: line.variants };
+            voicePracticeMode = true;
+            micPress(e);
+        }
+        function dialogueHint() {
+            const line = dlCurrent && dlCurrent.lines[dlIndex];
+            if (!line) return;
+            const h = document.getElementById('dl-hint');
+            if (h) h.innerText = dlText(line);
+            speak(dlText(line));
+        }
+        function dialogueYouDone(score) {
+            const line = dlCurrent.lines[dlIndex];
+            dialogueAwaitingSpeech = false;
+            dlBubble(line, score);
+            dlIndex++;
+            const run = dlRun;
+            dlTimer = setTimeout(() => { if (run === dlRun) dialogueStep(); }, 700);
+        }
+        function dialogueSpoken(pct, match) {
+            if (!dlCurrent) return;
+            dlScores.push(pct);
+            if (match) playSuccess(); else playWrongSlide();
+            if (match || pct >= 60) { dialogueYouDone(pct); return; }
+            // Not close enough: show the line and let them try again or skip
+            const h = document.getElementById('dl-hint');
+            if (h) h.innerText = '↻ ' + dlText(dlCurrent.lines[dlIndex]);
+            speak(dlText(dlCurrent.lines[dlIndex]));
+        }
+        function dialogueSkip() {
+            if (!dlCurrent) return;
+            speak(dlText(dlCurrent.lines[dlIndex]));
+            dialogueYouDone(undefined);
+        }
+        function dialogueFinish() {
+            dialogueAwaitingSpeech = false;
+            const d = dlCurrent;
+            const done = dlDoneSet(); done.add(d.id);
+            localStorage.setItem('pl_dialogues_done', JSON.stringify([...done]));
+            addPoints(15);
+            const avg = dlScores.length ? Math.round(dlScores.reduce((a, b) => a + b, 0) / dlScores.length) : null;
+            document.getElementById('dl-panel').innerHTML = `
+                <div class="dl-prompt">Dialogue complete 🎉</div>
+                <div class="dl-say" style="margin-bottom:10px;">${avg !== null ? 'Average pronunciation ' + avg + '%' : 'Try it with the mic next time for a score'}</div>
+                <div class="dl-actions">
+                    <button type="button" onclick="startDialogue('${escHtml(d.id)}')">↻ Again</button>
+                    <button type="button" onclick="dialogueBack()">All dialogues</button>
+                </div>`;
+        }
+
         // ===== Pronunciation drills (tricky Polish sounds) =====
         const DRILLS = [
             { id: 'sz-s', label: 'sz / ś', focus: 'sz = hard "sh" · ś = soft "sh"', words: [
@@ -3982,7 +4229,8 @@
         }
 
         function pctColor(p) {
-            return p >= 80 ? 'var(--success-green)' : (p >= 50 ? '#e0a800' : 'var(--pol-red)');
+            // Badge backgrounds dark enough for white text (4.5:1+)
+            return p >= 80 ? '#1e7e45' : (p >= 50 ? '#9a6700' : '#c4102f');
         }
 
         // Approximate Polish → English-reader pronunciation guide
@@ -4230,6 +4478,7 @@
 
             // Phrases-page voice: show the score only, never touch points/SRS/tiles
             const vpMode = voicePracticeMode; voicePracticeMode = false;
+            if (dialogueAwaitingSpeech) { dialogueSpoken(sc.percent, match); return; }
             if (vpMode) {
                 if (match) playSuccess(); else playWrongSlide();
                 if (voiceEchoEnabled()) setTimeout(() => echoCompare(), 400);
@@ -4511,6 +4760,8 @@
                 renderStudyCard();
             } else if (document.getElementById('tab-typing').classList.contains('active')) {
                 startTyping();
+            } else if (document.getElementById('tab-dialogue').classList.contains('active')) {
+                renderDialogueList();
             } else if (document.getElementById('tab-drills').classList.contains('active')) {
                 // Sounds drills use their own dataset, independent of level
             } else {
@@ -5027,7 +5278,7 @@
             // Deprecated: Brand Header and Auto-hide removed in V17 UI Redesign
         }
 
-        const MODE_META = { study: ['📖', 'Study'], learning: ['⚡', 'Practice'], mastered: ['🗂️', 'Phrases'], typing: ['⌨️', 'Type'], drills: ['🗣️', 'Sounds'] };
+        const MODE_META = { study: ['📖', 'Study'], learning: ['⚡', 'Practice'], mastered: ['🗂️', 'Phrases'], typing: ['⌨️', 'Type'], drills: ['🗣️', 'Sounds'], dialogue: ['💬', 'Dialogues'] };
         function updateModePill(m) {
             let mode = m;
             if (!mode) {
@@ -5089,6 +5340,9 @@
             typingView.style.display = 'none';
             const drillsView = document.getElementById('drills-view');
             drillsView.style.display = 'none';
+            const dialogueView = document.getElementById('dialogue-view');
+            dialogueView.style.display = 'none';
+            dialogueStop();
 
             if (m === 'study') {
                 quizUi.style.display = 'none';
@@ -5105,6 +5359,14 @@
                 clearInterval(roundTimer);
                 typingView.style.display = 'flex';
                 startTyping();
+            } else if (m === 'dialogue') {
+                quizUi.style.display = 'none';
+                map.style.display = 'none';
+                progWrapper.style.display = 'none';
+                studyView.style.display = 'none';
+                clearInterval(roundTimer);
+                dialogueView.style.display = 'flex';
+                renderDialogueList();
             } else if (m === 'drills') {
                 quizUi.style.display = 'none';
                 map.style.display = 'none';

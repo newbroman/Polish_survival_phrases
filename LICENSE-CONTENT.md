@@ -1,7 +1,8 @@
 # Licence for the phrase content
 
 The phrase content of Polish Phrase Master, meaning the level files
-(`phrases_*.json`) and the level index (`levels.json`), is
+(`phrases_*.json`), the level index (`levels.json`) and the dialogues
+(`dialogues.json`), is
 © 2026 Martin Hollingham and licensed under the
 **Creative Commons Attribution 4.0 International licence (CC BY 4.0)**.
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'polish-master-v76';
+const CACHE_NAME = 'polish-master-v77';
 const CORE_ASSETS = [
     './',
     './index.html',
@@ -38,7 +38,7 @@ self.addEventListener('fetch', event => {
 
     // STRATEGY A: Network-First for the level index and phrase files (so new levels appear instantly)
     const url = event.request.url;
-    if (url.includes('.json') && (url.includes('phrases_') || url.includes('levels.json'))) {
+    if (url.includes('.json') && (url.includes('phrases_') || url.includes('levels.json') || url.includes('dialogues.json'))) {
         event.respondWith(
             fetch(event.request).then(response => {
                 // Only cache successful 200 OK responses (ignore 404s from the scanner)

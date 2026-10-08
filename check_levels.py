@@ -154,6 +154,46 @@ def main():
 
     shared = {k: v for k, v in pl_levels.items() if len(v) > 1}
 
+    # Dialogues (Dialogue mode): dialogues.json
+    level_ids = {item["id"] for item in index}
+    dpath = os.path.join(ROOT, "dialogues.json")
+    n_dialogues = 0
+    if os.path.exists(dpath):
+        try:
+            with open(dpath, encoding="utf-8") as fh:
+                dialogues = json.load(fh).get("dialogues", [])
+        except ValueError as exc:
+            errors.append(f"dialogues.json: invalid JSON ({exc})")
+            dialogues = []
+        seen_d = set()
+        for d in dialogues:
+            did = d.get("id")
+            where = f"dialogues.json {did or '?'}"
+            n_dialogues += 1
+            if not did or did in seen_d:
+                errors.append(f"{where}: missing or duplicate id")
+            seen_d.add(did)
+            if str(d.get("level")) not in level_ids:
+                errors.append(f"{where}: level {d.get('level')!r} is not a level file")
+            if not d.get("title"):
+                errors.append(f"{where}: no title")
+            lines = d.get("lines") or []
+            if len(lines) < 4:
+                errors.append(f"{where}: needs at least 4 lines")
+            if not any(ln.get("who") == "you" for ln in lines):
+                errors.append(f"{where}: has no 'you' lines to practise")
+            for i, ln in enumerate(lines, 1):
+                v = ln.get("variants")
+                if ln.get("who") not in ("you", "them"):
+                    errors.append(f"{where} line {i}: who must be 'you' or 'them'")
+                if not ln.get("en"):
+                    errors.append(f"{where} line {i}: no en")
+                if v is not None:
+                    if not v.get("m") or not v.get("f") or v["m"] == v["f"]:
+                        errors.append(f"{where} line {i}: variants need distinct m and f")
+                elif not ln.get("pl"):
+                    errors.append(f"{where} line {i}: needs pl or variants")
+
     new_index = json.dumps({"levels": index}, ensure_ascii=False, indent=2) + "\n"
     old_index = open(INDEX, encoding="utf-8").read() if os.path.exists(INDEX) else ""
     if new_index != old_index:
@@ -169,7 +209,7 @@ def main():
     for e in errors:
         print("ERROR", e)
     total = sum(item["count"] for item in index)
-    print(f"\n{len(index)} levels, {total} phrases, {len(shared)} phrases shared across levels (info), "
+    print(f"\n{len(index)} levels, {total} phrases, {n_dialogues} dialogues, {len(shared)} phrases shared across levels (info), "
           f"{len(warnings)} warning(s), {len(errors)} error(s)")
     return 1 if errors else 0
 

@@ -1,0 +1,202 @@
+{
+  "about": "Short dialogues played in the app's Dialogue mode. 'you' lines are the learner's turns; 'them' lines are spoken by the app. Lines whose wording depends on the learner's gender give 'variants' {m, f} instead of 'pl'.",
+  "dialogues": [
+    {
+      "id": "2-lost-passport",
+      "level": "2",
+      "title": "Lost passport",
+      "setting": "🛂 Asking a passer-by for help",
+      "lines": [
+        { "who": "you", "pl": "Przepraszam, czy może mi Pan pomóc?", "en": "Excuse me, can you help me?" },
+        { "who": "them", "pl": "Tak, oczywiście. Co się stało?", "en": "Yes, of course. What happened?" },
+        { "who": "you", "variants": { "m": "Zgubiłem paszport.", "f": "Zgubiłam paszport." }, "en": "I've lost my passport." },
+        { "who": "them", "variants": { "m": "Gdzie go Pan ostatnio widział?", "f": "Gdzie go Pani ostatnio widziała?" }, "en": "Where did you last see it?" },
+        { "who": "you", "pl": "Chyba w autobusie.", "en": "Probably on the bus." },
+        { "who": "them", "pl": "Trzeba to zgłosić na policji. Komisariat jest niedaleko.", "en": "You need to report it to the police. The police station is nearby." },
+        { "who": "you", "pl": "Gdzie jest komisariat?", "en": "Where is the police station?" },
+        { "who": "them", "pl": "Prosto, potem w lewo. Pięć minut stąd.", "en": "Straight on, then left. Five minutes from here." },
+        { "who": "you", "pl": "Dziękuję bardzo!", "en": "Thank you very much!" },
+        { "who": "them", "pl": "Nie ma za co. Powodzenia!", "en": "You're welcome. Good luck!" }
+      ]
+    },
+    {
+      "id": "3-train-ticket",
+      "level": "3",
+      "title": "Buying a train ticket",
+      "setting": "🚆 At the station ticket office",
+      "lines": [
+        { "who": "you", "pl": "Dzień dobry. Poproszę bilet do Krakowa.", "en": "Hello. A ticket to Kraków, please." },
+        { "who": "them", "pl": "W jedną stronę czy powrotny?", "en": "One way or return?" },
+        { "who": "you", "pl": "W jedną stronę.", "en": "One way." },
+        { "who": "them", "pl": "Normalny czy ulgowy?", "en": "Standard or reduced fare?" },
+        { "who": "you", "pl": "Normalny.", "en": "Standard." },
+        { "who": "them", "pl": "Na który pociąg?", "en": "For which train?" },
+        { "who": "you", "pl": "Na najbliższy.", "en": "The next one." },
+        { "who": "them", "pl": "Pociąg odjeżdża o czternastej dwadzieścia z peronu trzeciego.", "en": "The train leaves at 14:20 from platform three." },
+        { "who": "you", "pl": "Ile kosztuje bilet?", "en": "How much is the ticket?" },
+        { "who": "them", "pl": "Osiemdziesiąt dziewięć złotych.", "en": "Eighty-nine złoty." },
+        { "who": "you", "pl": "Czy mogę zapłacić kartą?", "en": "Can I pay by card?" },
+        { "who": "them", "pl": "Tak, proszę. Szczęśliwej podróży!", "en": "Yes, go ahead. Have a good journey!" }
+      ]
+    },
+    {
+      "id": "3-directions",
+      "level": "3",
+      "title": "Asking the way",
+      "setting": "🗺️ On the street",
+      "lines": [
+        { "who": "you", "pl": "Przepraszam, jak dojść do dworca?", "en": "Excuse me, how do I get to the station?" },
+        { "who": "them", "pl": "Proszę iść prosto, a potem skręcić w prawo przy kościele.", "en": "Go straight on, then turn right at the church." },
+        { "who": "you", "pl": "Czy to daleko?", "en": "Is it far?" },
+        { "who": "them", "pl": "Nie, jakieś dziesięć minut pieszo.", "en": "No, about ten minutes on foot." },
+        { "who": "you", "pl": "A czy jest tu przystanek autobusowy?", "en": "And is there a bus stop here?" },
+        { "who": "them", "pl": "Tak, za rogiem. Jeździ tam autobus numer piętnaście.", "en": "Yes, round the corner. The number 15 bus goes there." },
+        { "who": "you", "pl": "Dziękuję bardzo!", "en": "Thank you very much!" },
+        { "who": "them", "pl": "Proszę bardzo.", "en": "You're welcome." }
+      ]
+    },
+    {
+      "id": "5-restaurant",
+      "level": "5",
+      "title": "Ordering at a restaurant",
+      "setting": "🍽️ In a restaurant",
+      "lines": [
+        { "who": "them", "pl": "Dzień dobry. Stolik dla ilu osób?", "en": "Hello. A table for how many?" },
+        { "who": "you", "pl": "Dla dwóch osób, proszę.", "en": "For two, please." },
+        { "who": "them", "pl": "Zapraszam. Oto karta.", "en": "This way, please. Here's the menu." },
+        { "who": "you", "pl": "Co Pan poleca?", "en": "What do you recommend?" },
+        { "who": "them", "pl": "Polecam żurek i pierogi ruskie.", "en": "I recommend the żurek and the pierogi ruskie." },
+        { "who": "you", "pl": "Dobrze, poproszę żurek i pierogi.", "en": "Fine, I'll have the żurek and the pierogi." },
+        { "who": "them", "pl": "A do picia?", "en": "And to drink?" },
+        { "who": "you", "pl": "Wodę niegazowaną, proszę.", "en": "Still water, please." },
+        { "who": "them", "pl": "Coś jeszcze?", "en": "Anything else?" },
+        { "who": "you", "pl": "Nie, dziękuję. To wszystko.", "en": "No, thank you. That's all." },
+        { "who": "you", "pl": "Poproszę rachunek.", "en": "The bill, please." },
+        { "who": "them", "variants": { "m": "Proszę. Płaci Pan gotówką czy kartą?", "f": "Proszę. Płaci Pani gotówką czy kartą?" }, "en": "Here you are. Are you paying cash or card?" },
+        { "who": "you", "pl": "Kartą, proszę.", "en": "By card, please." }
+      ]
+    },
+    {
+      "id": "6-hotel",
+      "level": "6",
+      "title": "Checking in at a hotel",
+      "setting": "🏨 At reception",
+      "lines": [
+        { "who": "them", "pl": "Dzień dobry, w czym mogę pomóc?", "en": "Hello, how can I help?" },
+        { "who": "you", "pl": "Dzień dobry. Mam rezerwację na nazwisko Smith.", "en": "Hello. I have a booking under the name Smith." },
+        { "who": "them", "pl": "Tak, widzę. Pokój dwuosobowy na trzy noce, zgadza się?", "en": "Yes, I can see it. A double room for three nights, is that right?" },
+        { "who": "you", "pl": "Tak, zgadza się.", "en": "Yes, that's right." },
+        { "who": "them", "pl": "Poproszę paszport.", "en": "Your passport, please." },
+        { "who": "you", "pl": "Proszę bardzo. O której jest śniadanie?", "en": "Here you are. What time is breakfast?" },
+        { "who": "them", "pl": "Od siódmej do dziesiątej, na parterze.", "en": "From seven to ten, on the ground floor." },
+        { "who": "you", "pl": "Czy jest Wi-Fi?", "en": "Is there Wi-Fi?" },
+        { "who": "them", "pl": "Tak, hasło jest na karcie. Pokój dwieście pięć, na drugim piętrze.", "en": "Yes, the password is on the key card. Room 205, on the second floor." },
+        { "who": "you", "pl": "Dziękuję!", "en": "Thank you!" },
+        { "who": "them", "pl": "Miłego pobytu!", "en": "Enjoy your stay!" }
+      ]
+    },
+    {
+      "id": "7-clothes-shop",
+      "level": "7",
+      "title": "Buying a shirt",
+      "setting": "👕 In a clothes shop",
+      "lines": [
+        { "who": "them", "pl": "Dzień dobry. W czymś pomóc?", "en": "Hello. Can I help you with anything?" },
+        { "who": "you", "pl": "Dziękuję, tylko się rozglądam.", "en": "Thanks, I'm just looking." },
+        { "who": "you", "pl": "Przepraszam, czy jest ta koszula w rozmiarze M?", "en": "Excuse me, do you have this shirt in size M?" },
+        { "who": "them", "pl": "Chwileczkę, sprawdzę. Tak, proszę.", "en": "Just a moment, I'll check. Yes, here you are." },
+        { "who": "you", "pl": "Gdzie jest przymierzalnia?", "en": "Where is the fitting room?" },
+        { "who": "them", "pl": "Tam, po lewej stronie.", "en": "Over there, on the left." },
+        { "who": "you", "pl": "Wezmę ją. Ile kosztuje?", "en": "I'll take it. How much is it?" },
+        { "who": "them", "variants": { "m": "Sto dwadzieścia złotych. Potrzebuje Pan torby?", "f": "Sto dwadzieścia złotych. Potrzebuje Pani torby?" }, "en": "A hundred and twenty złoty. Do you need a bag?" },
+        { "who": "you", "pl": "Nie, dziękuję.", "en": "No, thank you." },
+        { "who": "them", "pl": "Proszę, oto paragon. Do widzenia!", "en": "Here's your receipt. Goodbye!" }
+      ]
+    },
+    {
+      "id": "8-car-rental",
+      "level": "8",
+      "title": "Renting a car",
+      "setting": "🚗 At the rental desk",
+      "lines": [
+        { "who": "you", "variants": { "m": "Dzień dobry. Chciałbym wynająć samochód.", "f": "Dzień dobry. Chciałabym wynająć samochód." }, "en": "Hello. I'd like to rent a car." },
+        { "who": "them", "pl": "Na ile dni?", "en": "For how many days?" },
+        { "who": "you", "pl": "Na tydzień.", "en": "For a week." },
+        { "who": "them", "pl": "Poproszę prawo jazdy i kartę kredytową.", "en": "Your driving licence and credit card, please." },
+        { "who": "you", "pl": "Proszę. Czy ubezpieczenie jest w cenie?", "en": "Here you are. Is insurance included in the price?" },
+        { "who": "them", "pl": "Podstawowe tak. Pełne ubezpieczenie kosztuje czterdzieści złotych dziennie.", "en": "Basic cover is. Full insurance costs forty złoty a day." },
+        { "who": "you", "pl": "Poproszę pełne ubezpieczenie.", "en": "I'll take full insurance, please." },
+        { "who": "them", "pl": "Samochód ma pełny bak. Proszę go oddać z pełnym bakiem.", "en": "The car has a full tank. Please bring it back full." },
+        { "who": "you", "pl": "Jasne. Dziękuję!", "en": "Sure. Thank you!" }
+      ]
+    },
+    {
+      "id": "9-pharmacy",
+      "level": "9",
+      "title": "At the pharmacy",
+      "setting": "💊 In a pharmacy",
+      "lines": [
+        { "who": "them", "pl": "Dzień dobry, słucham?", "en": "Hello, how can I help?" },
+        { "who": "you", "pl": "Dzień dobry. Boli mnie gardło i mam katar.", "en": "Hello. I have a sore throat and a runny nose." },
+        { "who": "them", "pl": "Od kiedy?", "en": "Since when?" },
+        { "who": "you", "pl": "Od wczoraj.", "en": "Since yesterday." },
+        { "who": "them", "variants": { "m": "Czy ma Pan gorączkę?", "f": "Czy ma Pani gorączkę?" }, "en": "Do you have a temperature?" },
+        { "who": "you", "pl": "Nie, nie mam gorączki.", "en": "No, I don't have a temperature." },
+        { "who": "them", "pl": "Polecam te tabletki do ssania i syrop.", "en": "I recommend these lozenges and a syrup." },
+        { "who": "you", "pl": "Jak często mam je brać?", "en": "How often should I take them?" },
+        { "who": "them", "pl": "Tabletki co trzy godziny, syrop trzy razy dziennie.", "en": "The lozenges every three hours, the syrup three times a day." },
+        { "who": "you", "pl": "Dziękuję. Ile płacę?", "en": "Thank you. How much is that?" },
+        { "who": "them", "pl": "Trzydzieści dwa złote.", "en": "Thirty-two złoty." }
+      ]
+    },
+    {
+      "id": "11-meeting",
+      "level": "11",
+      "title": "Meeting someone new",
+      "setting": "👋 At a party",
+      "lines": [
+        { "who": "them", "pl": "Cześć! Jestem Ania. A ty?", "en": "Hi! I'm Ania. And you?" },
+        { "who": "you", "pl": "Cześć, jestem Tom. Miło cię poznać.", "en": "Hi, I'm Tom. Nice to meet you." },
+        { "who": "them", "pl": "Mnie też. Skąd jesteś?", "en": "You too. Where are you from?" },
+        { "who": "you", "pl": "Jestem z Anglii.", "en": "I'm from England." },
+        { "who": "them", "pl": "Super! Długo jesteś w Polsce?", "en": "Great! Have you been in Poland long?" },
+        { "who": "you", "pl": "Od tygodnia. Jestem tu na wakacjach.", "en": "A week. I'm here on holiday." },
+        { "who": "them", "pl": "I jak ci się podoba?", "en": "And how do you like it?" },
+        { "who": "you", "pl": "Bardzo mi się podoba! Ludzie są bardzo mili.", "en": "I really like it! People are very nice." },
+        { "who": "them", "pl": "Całkiem nieźle mówisz po polsku!", "en": "You speak Polish pretty well!" },
+        { "who": "you", "pl": "Dziękuję, uczę się.", "en": "Thanks, I'm learning." }
+      ]
+    },
+    {
+      "id": "21-wrong-order",
+      "level": "21",
+      "title": "The wrong dish",
+      "setting": "🍲 In a restaurant",
+      "lines": [
+        { "who": "you", "variants": { "m": "Przepraszam, to nie jest to, co zamówiłem.", "f": "Przepraszam, to nie jest to, co zamówiłam." }, "en": "Excuse me, this isn't what I ordered." },
+        { "who": "them", "variants": { "m": "Och, bardzo przepraszam. Co Pan zamówił?", "f": "Och, bardzo przepraszam. Co Pani zamówiła?" }, "en": "Oh, I'm very sorry. What did you order?" },
+        { "who": "you", "pl": "Zupę pomidorową, nie ogórkową.", "en": "Tomato soup, not cucumber soup." },
+        { "who": "them", "pl": "Zaraz przyniosę właściwą zupę.", "en": "I'll bring the right soup straight away." },
+        { "who": "you", "pl": "Dziękuję. Czy to długo potrwa?", "en": "Thank you. Will it take long?" },
+        { "who": "them", "pl": "Najwyżej pięć minut. Jeszcze raz przepraszam.", "en": "Five minutes at most. Sorry again." },
+        { "who": "you", "pl": "Nic nie szkodzi.", "en": "No problem." }
+      ]
+    },
+    {
+      "id": "22-repeat-please",
+      "level": "22",
+      "title": "Could you repeat that?",
+      "setting": "❓ A stranger asks you the way",
+      "lines": [
+        { "who": "them", "variants": { "m": "Przepraszam, wie Pan, gdzie jest ulica Długa?", "f": "Przepraszam, wie Pani, gdzie jest ulica Długa?" }, "en": "Excuse me, do you know where Długa Street is?" },
+        { "who": "you", "pl": "Przepraszam, nie rozumiem. Może Pan powtórzyć?", "en": "Sorry, I don't understand. Could you repeat that?" },
+        { "who": "them", "pl": "Szukam ulicy Długiej.", "en": "I'm looking for Długa Street." },
+        { "who": "you", "pl": "Proszę mówić wolniej.", "en": "Please speak more slowly." },
+        { "who": "them", "pl": "Szukam... ulicy... Długiej.", "en": "I'm looking... for Długa... Street." },
+        { "who": "you", "pl": "Aha, rozumiem! Niestety nie wiem. Nie jestem stąd.", "en": "Ah, I understand! Unfortunately I don't know. I'm not from here." },
+        { "who": "them", "pl": "Nic nie szkodzi. Dziękuję!", "en": "Never mind. Thank you!" },
+        { "who": "you", "pl": "Powodzenia!", "en": "Good luck!" }
+      ]
+    }
+  ]
+}
