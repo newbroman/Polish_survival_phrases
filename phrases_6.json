@@ -555,11 +555,11 @@
       "id": "6-55",
       "category": "Issues & Complaints",
       "pl": "Sąsiedzi są głośno",
-      "en": "The neighbors are loud",
+      "en": "The neighbours are loud",
       "level": 6,
       "gender": null,
       "emoji": "🗣️",
-      "note": "'Sąsiedzi' is the plural for neighbors."
+      "note": "'Sąsiedzi' is the plural for neighbours."
     },
     {
       "id": "6-56",
@@ -703,7 +703,7 @@
       "level": 6,
       "gender": null,
       "emoji": "🚗",
-      "note": "City center hotels often have off-site or hidden parking."
+      "note": "City centre hotels often have off-site or hidden parking."
     },
     {
       "id": "6-70",

@@ -452,6 +452,256 @@
       "gender": null,
       "emoji": "🤫",
       "note": "Found on specific train carriages (e.g., in Pendolino trains)."
+    },
+    {
+      "id": "17-46",
+      "category": "General Notices",
+      "pl": "Wejście",
+      "en": "Entrance",
+      "level": 17,
+      "gender": null,
+      "emoji": "➡️",
+      "note": "Neuter noun. 'Wejście główne' is the main entrance."
+    },
+    {
+      "id": "17-47",
+      "category": "General Notices",
+      "pl": "Wyjście",
+      "en": "Exit",
+      "level": 17,
+      "gender": null,
+      "emoji": "⬅️",
+      "note": "Neuter noun. Not the same as 'wyjście ewakuacyjne' (emergency exit)."
+    },
+    {
+      "id": "17-48",
+      "category": "General Notices",
+      "pl": "Pchać",
+      "en": "Push",
+      "level": 17,
+      "gender": null,
+      "emoji": "🫸",
+      "note": "Infinitive on doors. Compare 'Ciągnąć' (pull)."
+    },
+    {
+      "id": "17-49",
+      "category": "General Notices",
+      "pl": "Ciągnąć",
+      "en": "Pull",
+      "level": 17,
+      "gender": null,
+      "emoji": "🫷",
+      "note": "Infinitive on doors. Both 'ą' are nasal vowels."
+    },
+    {
+      "id": "17-50",
+      "category": "General Notices",
+      "pl": "Otwarte",
+      "en": "Open",
+      "level": 17,
+      "gender": null,
+      "emoji": "🟢",
+      "note": "Neuter adjective. Shops also use 'Czynne' for open."
+    },
+    {
+      "id": "17-51",
+      "category": "General Notices",
+      "pl": "Zamknięte",
+      "en": "Closed",
+      "level": 17,
+      "gender": null,
+      "emoji": "🔴",
+      "note": "Neuter adjective. 'Nieczynne' also means closed or out of order."
+    },
+    {
+      "id": "17-52",
+      "category": "General Notices",
+      "pl": "Godziny otwarcia",
+      "en": "Opening hours",
+      "level": 17,
+      "gender": null,
+      "emoji": "🕘",
+      "note": "Plural noun. Usually listed as 'pon.-pt.' (Mon-Fri)."
+    },
+    {
+      "id": "17-53",
+      "category": "General Notices",
+      "pl": "Czynne całą dobę",
+      "en": "Open 24 hours",
+      "level": 17,
+      "gender": null,
+      "emoji": "🌙",
+      "note": "'Doba' is a full 24-hour day. 'Całodobowy' is also seen."
+    },
+    {
+      "id": "17-54",
+      "category": "General Notices",
+      "pl": "Niedziela niehandlowa",
+      "en": "Non-trading Sunday",
+      "level": 17,
+      "gender": null,
+      "emoji": "🛒",
+      "note": "Most shops must close on most Sundays by law. 'Handlowy' = trading."
+    },
+    {
+      "id": "17-55",
+      "category": "Shops & Services",
+      "pl": "Kasa samoobsługowa",
+      "en": "Self-service checkout",
+      "level": 17,
+      "gender": null,
+      "emoji": "🤖",
+      "note": "Feminine adjective matching 'kasa'. 'Samoobsługa' = self-service."
+    },
+    {
+      "id": "17-56",
+      "category": "Shops & Services",
+      "pl": "Kantor",
+      "en": "Currency exchange",
+      "level": 17,
+      "gender": null,
+      "emoji": "💱",
+      "note": "Check 'Kupno' (they buy from you) and 'Sprzedaż' (they sell to you)."
+    },
+    {
+      "id": "17-57",
+      "category": "Facilities & Buildings",
+      "pl": "Bankomat",
+      "en": "Cash machine / ATM",
+      "level": 17,
+      "gender": null,
+      "emoji": "🏧",
+      "note": "Masculine noun. Usually the screen offers an English option."
+    },
+    {
+      "id": "17-58",
+      "category": "Facilities & Buildings",
+      "pl": "Toaleta damska",
+      "en": "Ladies' toilet",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚺",
+      "note": "Often marked with a circle. Men's toilets use a triangle."
+    },
+    {
+      "id": "17-59",
+      "category": "Facilities & Buildings",
+      "pl": "Toaleta męska",
+      "en": "Gents' toilet",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚹",
+      "note": "Often marked with a triangle. 'Męska' comes from 'mężczyzna' (man)."
+    },
+    {
+      "id": "17-60",
+      "category": "Roads & Parking",
+      "pl": "Zakaz parkowania",
+      "en": "No parking",
+      "level": 17,
+      "gender": null,
+      "emoji": "🅿️",
+      "note": "Common on private signs. The road sign says 'Zakaz postoju'; 'Zakaz zatrzymywania się' means no stopping."
+    },
+    {
+      "id": "17-61",
+      "category": "Roads & Parking",
+      "pl": "Zakaz wjazdu",
+      "en": "No entry (for vehicles)",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚫",
+      "note": "'Wjazd' is vehicle entry. 'Wejście' is on foot."
+    },
+    {
+      "id": "17-62",
+      "category": "Roads & Parking",
+      "pl": "Roboty drogowe",
+      "en": "Roadworks",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚧",
+      "note": "Plural noun, literally 'road works'."
+    },
+    {
+      "id": "17-63",
+      "category": "Roads & Parking",
+      "pl": "Objazd",
+      "en": "Diversion",
+      "level": 17,
+      "gender": null,
+      "emoji": "↪️",
+      "note": "Masculine noun, usually shown with an arrow."
+    },
+    {
+      "id": "17-64",
+      "category": "Roads & Parking",
+      "pl": "Przejście dla pieszych",
+      "en": "Pedestrian crossing",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚶",
+      "note": "'Dla' takes the genitive plural 'pieszych'. 'Pieszy' means a person on foot."
+    },
+    {
+      "id": "17-65",
+      "category": "Roads & Parking",
+      "pl": "Strefa płatnego parkowania",
+      "en": "Paid parking zone",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚗",
+      "note": "Pay at the 'parkomat' (ticket machine) and display the ticket."
+    },
+    {
+      "id": "17-66",
+      "category": "Transport Hubs",
+      "pl": "Przystanek na żądanie",
+      "en": "Request stop",
+      "level": 17,
+      "gender": null,
+      "emoji": "🚏",
+      "note": "Press the button to tell the driver you want to get off."
+    },
+    {
+      "id": "17-67",
+      "category": "Transport Hubs",
+      "pl": "Skasuj bilet",
+      "en": "Validate your ticket",
+      "level": 17,
+      "gender": null,
+      "emoji": "🎟️",
+      "note": "Imperative. Stamp it in the 'kasownik' as soon as you board."
+    },
+    {
+      "id": "17-68",
+      "category": "Warnings & Safety",
+      "pl": "Wstęp wzbroniony",
+      "en": "No entry (unauthorised persons)",
+      "level": 17,
+      "gender": null,
+      "emoji": "⛔",
+      "note": "Formal and strict. 'Wstęp' = admission, 'wzbroniony' = forbidden."
+    },
+    {
+      "id": "17-69",
+      "category": "Warnings & Safety",
+      "pl": "Uwaga, zły pies",
+      "en": "Beware of the dog",
+      "level": 17,
+      "gender": null,
+      "emoji": "🐕",
+      "note": "'Zły' means bad or angry. Often seen on gates."
+    },
+    {
+      "id": "17-70",
+      "category": "Warnings & Safety",
+      "pl": "Śliska podłoga",
+      "en": "Slippery floor",
+      "level": 17,
+      "gender": null,
+      "emoji": "💦",
+      "note": "Feminine adjective matching 'podłoga'. Often on a yellow stand."
     }
   ]
 }

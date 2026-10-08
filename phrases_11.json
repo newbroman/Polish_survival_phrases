@@ -9,7 +9,9 @@
       "pl": "Cześć",
       "en": "Hi / Hello (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "👋",
+      "note": "Informal, to friends and peers. Also means 'bye'. Pronounced roughly 'cheshch'."
     },
     {
       "id": "11-02",
@@ -17,7 +19,9 @@
       "pl": "Dzień dobry",
       "en": "Good morning / Good day (formal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "☀️",
+      "note": "The standard formal greeting, used from morning until about early evening."
     },
     {
       "id": "11-03",
@@ -25,7 +29,9 @@
       "pl": "Dobry wieczór",
       "en": "Good evening",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌆",
+      "note": "Used from around 6 pm. Note ó is pronounced like 'oo' (VEE-choor)."
     },
     {
       "id": "11-04",
@@ -33,7 +39,9 @@
       "pl": "Dobranoc",
       "en": "Good night",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌙",
+      "note": "Said only when parting for the night or going to bed, never as a greeting."
     },
     {
       "id": "11-05",
@@ -41,7 +49,9 @@
       "pl": "Do widzenia",
       "en": "Goodbye (formal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Formal and polite; use it leaving shops, offices and with strangers."
     },
     {
       "id": "11-06",
@@ -49,7 +59,9 @@
       "pl": "Cześć (goodbye)",
       "en": "Bye (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "✌️",
+      "note": "Same word as the hello: cześć works both ways, but only with friends."
     },
     {
       "id": "11-07",
@@ -57,7 +69,9 @@
       "pl": "Do zobaczenia",
       "en": "See you",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🔜",
+      "note": "Literally 'until seeing'. Friendly and neutral, fine in most situations."
     },
     {
       "id": "11-08",
@@ -65,19 +79,23 @@
       "pl": "Jak się masz?",
       "en": "How are you? (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🙂",
+      "note": "Informal (ty). Literally 'how do you have yourself?'."
     },
     {
       "id": "11-09",
       "category": "Greetings",
-      "pl": "Jak się Pan/Pani miewa?",
+      "pl": "Jak się Pan / Pani miewa?",
       "en": "How are you? (formal)",
       "level": 11,
       "gender": "both",
       "variants": {
-        "m": "Jak się Pan",
-        "f": "Pani miewa?"
-      }
+        "m": "Jak się Pan miewa?",
+        "f": "Jak się Pani miewa?"
+      },
+      "emoji": "🎩",
+      "note": "Formal; the Pan/Pani you choose matches the listener's gender, not yours."
     },
     {
       "id": "11-10",
@@ -85,19 +103,23 @@
       "pl": "Dobrze, dziękuję",
       "en": "Good, thank you",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "👍",
+      "note": "Neutral reply to 'Jak się masz?'. The ę before k sounds like 'en'."
     },
     {
       "id": "11-11",
       "category": "Greetings",
-      "pl": "A Pan/Pani?",
+      "pl": "A Pan / Pani?",
       "en": "And you? (formal)",
       "level": 11,
       "gender": "both",
       "variants": {
-        "m": "A Pan",
+        "m": "A Pan?",
         "f": "A Pani?"
-      }
+      },
+      "emoji": "🔁",
+      "note": "Formal; Pan for a man, Pani for a woman, depending on who you ask."
     },
     {
       "id": "11-12",
@@ -105,7 +127,9 @@
       "pl": "A Ty?",
       "en": "And you? (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🔁",
+      "note": "Informal return question. Capital Ty is used in letters and messages only."
     },
     {
       "id": "11-13",
@@ -113,19 +137,23 @@
       "pl": "Miło cię poznać",
       "en": "Nice to meet you (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "😊",
+      "note": "Informal (ty); cię is the short, unstressed form of ciebie."
     },
     {
       "id": "11-14",
       "category": "Greetings",
-      "pl": "Miło Pana/Panią poznać",
+      "pl": "Miło Pana / Panią poznać",
       "en": "Nice to meet you (formal)",
       "level": 11,
       "gender": "both",
       "variants": {
-        "m": "Miło Pana",
-        "f": "Panią poznać"
-      }
+        "m": "Miło Pana poznać",
+        "f": "Miło Panią poznać"
+      },
+      "emoji": "🤝",
+      "note": "Formal; Pana for a man, Panią for a woman (accusative case)."
     },
     {
       "id": "11-15",
@@ -133,19 +161,23 @@
       "pl": "Jak się nazywasz?",
       "en": "What's your name? (informal)",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "📛",
+      "note": "Informal. Literally 'what do you call yourself?'."
     },
     {
       "id": "11-16",
       "category": "Greetings",
-      "pl": "Jak Pan/Pani ma na imię?",
+      "pl": "Jak Pan / Pani ma na imię?",
       "en": "What's your name? (formal)",
       "level": 11,
       "gender": "both",
       "variants": {
-        "m": "Jak Pan",
-        "f": "Pani ma na imię?"
-      }
+        "m": "Jak Pan ma na imię?",
+        "f": "Jak Pani ma na imię?"
+      },
+      "emoji": "📛",
+      "note": "Formal; Pan or Pani by who you ask. Literally 'what do you have as a name?'."
     },
     {
       "id": "11-17",
@@ -153,7 +185,9 @@
       "pl": "Nazywam się...",
       "en": "My name is...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🙋",
+      "note": "Literally 'I call myself...'. Add your name directly after."
     },
     {
       "id": "11-18",
@@ -161,7 +195,9 @@
       "pl": "Jestem...",
       "en": "I am...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🧑",
+      "note": "A noun after 'jestem' takes the instrumental: Jestem lekarzem."
     },
     {
       "id": "11-19",
@@ -169,7 +205,9 @@
       "pl": "To jest...",
       "en": "This is...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🫱",
+      "note": "Used for introducing anyone. It does not change with gender or number."
     },
     {
       "id": "11-20",
@@ -177,7 +215,9 @@
       "pl": "Poznaj...",
       "en": "Meet...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🫶",
+      "note": "Informal command to a friend: 'Poznaj moją siostrę' (Meet my sister)."
     },
     {
       "id": "11-21",
@@ -185,7 +225,9 @@
       "pl": "Skąd jesteś?",
       "en": "Where are you from?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌍",
+      "note": "Informal. Formally say 'Skąd Pan/Pani jest?'. Ą before d sounds like 'on'."
     },
     {
       "id": "11-22",
@@ -193,31 +235,37 @@
       "pl": "Jestem z...",
       "en": "I'm from...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "📍",
+      "note": "Z takes the genitive: z Anglii, z Francji, z Londynu."
     },
     {
       "id": "11-23",
       "category": "Nationality",
-      "pl": "Jestem Amerykaninem/Amerykanką",
+      "pl": "Jestem Amerykaninem / Amerykanką",
       "en": "I'm American",
       "level": 11,
       "gender": "both",
       "variants": {
         "m": "Jestem Amerykaninem",
         "f": "Jestem Amerykanką"
-      }
+      },
+      "emoji": "🇺🇸",
+      "note": "Both forms take the instrumental. 'Jestem z USA' works for anyone."
     },
     {
       "id": "11-24",
       "category": "Nationality",
-      "pl": "Jestem Anglikiem/Angielką",
+      "pl": "Jestem Anglikiem / Angielką",
       "en": "I'm English",
       "level": 11,
       "gender": "both",
       "variants": {
         "m": "Jestem Anglikiem",
         "f": "Jestem Angielką"
-      }
+      },
+      "emoji": "🏴",
+      "note": "Anglik means English only; for British say Brytyjczyk (m) / Brytyjka (f)."
     },
     {
       "id": "11-25",
@@ -225,7 +273,9 @@
       "pl": "Jestem z Kanady",
       "en": "I'm from Canada",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🇨🇦",
+      "note": "Kanada becomes 'Kanady' (genitive) after 'z'."
     },
     {
       "id": "11-26",
@@ -233,7 +283,9 @@
       "pl": "Jestem z Australii",
       "en": "I'm from Australia",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🇦🇺",
+      "note": "Australia becomes 'Australii' (genitive) after 'z'."
     },
     {
       "id": "11-27",
@@ -241,19 +293,23 @@
       "pl": "Mieszkam w...",
       "en": "I live in...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🏠",
+      "note": "W takes the locative: w Londynie, w Walii. Say the town name after it."
     },
     {
       "id": "11-28",
       "category": "Nationality",
-      "pl": "Przyjechałem/Przyjechałam z...",
+      "pl": "Przyjechałem / Przyjechałam z...",
       "en": "I came from...",
       "level": 11,
       "gender": "both",
       "variants": {
         "m": "Przyjechałem z...",
         "f": "Przyjechałam z..."
-      }
+      },
+      "emoji": "🧳",
+      "note": "Say the form matching your own gender. 'Z' takes the genitive: z Anglii."
     },
     {
       "id": "11-29",
@@ -265,15 +321,19 @@
       "variants": {
         "m": "Jestem turystą",
         "f": "Jestem turystką"
-      }
+      },
+      "emoji": "📸",
+      "note": "Turysta is masculine, turystka feminine; use the one matching you."
     },
     {
       "id": "11-30",
       "category": "Nationality",
       "pl": "Jestem tu na wakacjach",
-      "en": "I'm here on vacation",
+      "en": "I'm here on holiday",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🏖️",
+      "note": "Wakacje is plural, so 'na wakacjach'. Also used for school holidays."
     },
     {
       "id": "11-31",
@@ -281,7 +341,9 @@
       "pl": "Jestem tu w interesach",
       "en": "I'm here on business",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "💼",
+      "note": "W interesach means 'on business'. Polite and neutral."
     },
     {
       "id": "11-32",
@@ -289,7 +351,9 @@
       "pl": "Pierwszy raz w Polsce",
       "en": "First time in Poland",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🇵🇱",
+      "note": "Short and casual; a natural way to explain why you are asking questions."
     },
     {
       "id": "11-33",
@@ -297,7 +361,9 @@
       "pl": "Jak długo tu jesteś?",
       "en": "How long have you been here?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "⏳",
+      "note": "Informal. Formally: 'Jak długo Pan/Pani tu jest?'."
     },
     {
       "id": "11-34",
@@ -305,7 +371,9 @@
       "pl": "Jestem tu od...",
       "en": "I've been here since...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "📆",
+      "note": "Od takes the genitive: od wtorku, od tygodnia, od trzech dni."
     },
     {
       "id": "11-35",
@@ -313,7 +381,9 @@
       "pl": "Zostanę tu...",
       "en": "I'll stay here...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🛌",
+      "note": "Finish with a time: 'tydzień' (a week), 'dwa dni' (two days)."
     },
     {
       "id": "11-36",
@@ -321,7 +391,9 @@
       "pl": "Co słychać?",
       "en": "What's up? / How's it going?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "💬",
+      "note": "Informal. Literally 'what is audible?'. Answer 'Dobrze' or 'Nieźle'."
     },
     {
       "id": "11-37",
@@ -329,7 +401,9 @@
       "pl": "Wszystko w porządku?",
       "en": "Everything okay?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "❓",
+      "note": "Asked when someone seems troubled. Informal, friendly concern."
     },
     {
       "id": "11-38",
@@ -337,7 +411,9 @@
       "pl": "Świetnie!",
       "en": "Great!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🎉",
+      "note": "Enthusiastic answer. ś is a soft 'sh'; stress falls on 'świet'."
     },
     {
       "id": "11-39",
@@ -345,7 +421,9 @@
       "pl": "Nieźle",
       "en": "Not bad",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "😏",
+      "note": "Literally 'not badly'. A typically understated Polish positive reply."
     },
     {
       "id": "11-40",
@@ -353,15 +431,19 @@
       "pl": "Tak sobie",
       "en": "So-so",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "😐",
+      "note": "Neutral to lukewarm reply, fine when you are not especially well."
     },
     {
       "id": "11-41",
       "category": "Small Talk",
-      "pl": "Co robisz?",
+      "pl": "Czym się zajmujesz?",
       "en": "What do you do?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "💼",
+      "note": "Asks about your job. Informal; 'Co robisz?' means 'what are you doing now?'."
     },
     {
       "id": "11-42",
@@ -369,19 +451,23 @@
       "pl": "Pracuję jako...",
       "en": "I work as...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🛠️",
+      "note": "Jako + nominative: 'Pracuję jako nauczyciel'. Handy for a handyman: 'złota rączka'."
     },
     {
       "id": "11-43",
       "category": "Small Talk",
-      "pl": "Jestem studentem/studentką",
+      "pl": "Jestem studentem / studentką",
       "en": "I'm a student",
       "level": 11,
       "gender": "both",
       "variants": {
         "m": "Jestem studentem",
         "f": "Jestem studentką"
-      }
+      },
+      "emoji": "🎓",
+      "note": "Student is masculine, studentka feminine; both take the instrumental."
     },
     {
       "id": "11-44",
@@ -389,7 +475,9 @@
       "pl": "Lubię...",
       "en": "I like...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "❤️",
+      "note": "Followed by a verb in the infinitive or by a noun in the accusative."
     },
     {
       "id": "11-45",
@@ -397,7 +485,9 @@
       "pl": "Nie lubię...",
       "en": "I don't like...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "👎",
+      "note": "Polish negates the verb with 'nie' placed directly before it."
     },
     {
       "id": "11-46",
@@ -405,7 +495,9 @@
       "pl": "Interesuję się...",
       "en": "I'm interested in...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🔍",
+      "note": "Reflexive verb that takes the instrumental: Interesuję się historią."
     },
     {
       "id": "11-47",
@@ -413,7 +505,9 @@
       "pl": "Moje hobby to...",
       "en": "My hobby is...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🎨",
+      "note": "'Moje hobby to...' is followed by a noun: 'Moje hobby to fotografia'."
     },
     {
       "id": "11-48",
@@ -421,7 +515,9 @@
       "pl": "Czy lubisz...?",
       "en": "Do you like...?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤔",
+      "note": "Informal (ty). Formally: 'Czy Pan/Pani lubi...?'."
     },
     {
       "id": "11-49",
@@ -429,7 +525,9 @@
       "pl": "Co lubisz robić?",
       "en": "What do you like to do?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🎯",
+      "note": "Informal; lubisz is followed by an infinitive. Good icebreaker question."
     },
     {
       "id": "11-50",
@@ -437,7 +535,9 @@
       "pl": "Jakie masz plany?",
       "en": "What are your plans?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🗓️",
+      "note": "Informal. Often used on Fridays: 'Jakie masz plany na weekend?'."
     },
     {
       "id": "11-51",
@@ -445,15 +545,19 @@
       "pl": "Nic specjalnego",
       "en": "Nothing special",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤷",
+      "note": "Common casual answer to 'Jakie masz plany?' or 'Co robisz?'."
     },
     {
       "id": "11-52",
       "category": "Small Talk",
-      "pl": "Zobaczmy się później",
+      "pl": "Zobaczymy się później",
       "en": "See you later",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🕐",
+      "note": "Literally 'we will see each other later'. Informal; formal-neutral: 'Do zobaczenia'."
     },
     {
       "id": "11-53",
@@ -461,7 +565,9 @@
       "pl": "Miłego dnia!",
       "en": "Have a nice day!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌞",
+      "note": "Wish used when parting, especially in shops. Ł is pronounced like 'w'."
     },
     {
       "id": "11-54",
@@ -469,7 +575,9 @@
       "pl": "Miłego wieczoru!",
       "en": "Have a nice evening!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🌇",
+      "note": "Same pattern as 'Miłego dnia'. Genitive case, as in 'Miłego weekendu!'."
     },
     {
       "id": "11-55",
@@ -477,7 +585,9 @@
       "pl": "Powodzenia!",
       "en": "Good luck!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🍀",
+      "note": "Said before an exam, interview or trip. Stress on 'dze' (po-vo-DZEN-ya)."
     },
     {
       "id": "11-56",
@@ -485,7 +595,9 @@
       "pl": "Czy chcesz...?",
       "en": "Do you want to...?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🎈",
+      "note": "Informal invitation; formally 'Czy Pan/Pani chce...?'. Follow with infinitive."
     },
     {
       "id": "11-57",
@@ -493,7 +605,9 @@
       "pl": "Chodźmy...",
       "en": "Let's go...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🚶",
+      "note": "Let's (we) go: add a place, e.g. 'Chodźmy do kina' or 'Chodźmy na spacer'."
     },
     {
       "id": "11-58",
@@ -501,7 +615,9 @@
       "pl": "Może pójdziemy na kawę?",
       "en": "Shall we go for coffee?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "☕",
+      "note": "'Może' softens a suggestion. Coffee meetings are a very common first step."
     },
     {
       "id": "11-59",
@@ -509,7 +625,9 @@
       "pl": "Może pójdziemy na piwo?",
       "en": "Shall we go for a beer?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🍺",
+      "note": "Na piwo is a common casual invitation among friends and colleagues."
     },
     {
       "id": "11-60",
@@ -517,7 +635,9 @@
       "pl": "Tak, chętnie",
       "en": "Yes, I'd love to",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "😄",
+      "note": "Warm acceptance. Chętnie literally means 'willingly'."
     },
     {
       "id": "11-61",
@@ -525,7 +645,9 @@
       "pl": "Nie, dziękuję",
       "en": "No, thank you",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🙅",
+      "note": "Polite refusal; also what you say to decline an offer of food or drink."
     },
     {
       "id": "11-62",
@@ -533,19 +655,23 @@
       "pl": "Może innym razem",
       "en": "Maybe another time",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤞",
+      "note": "A soft, polite way to decline while staying friendly."
     },
     {
       "id": "11-63",
       "category": "Invitations",
-      "pl": "Jestem zajęty/zajęta",
+      "pl": "Jestem zajęty / zajęta",
       "en": "I'm busy",
       "level": 11,
       "gender": "both",
       "variants": {
         "m": "Jestem zajęty",
         "f": "Jestem zajęta"
-      }
+      },
+      "emoji": "⏰",
+      "note": "Zajęty is masculine, zajęta feminine; match your own gender."
     },
     {
       "id": "11-64",
@@ -553,7 +679,9 @@
       "pl": "Mam czas",
       "en": "I have time",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "✅",
+      "note": "Literally 'I have time'. Useful reply to an invitation."
     },
     {
       "id": "11-65",
@@ -561,7 +689,9 @@
       "pl": "O której?",
       "en": "At what time?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🕒",
+      "note": "Short for 'o której godzinie?'. The answer uses 'o' plus the hour."
     },
     {
       "id": "11-66",
@@ -569,7 +699,9 @@
       "pl": "Gdzie?",
       "en": "Where?",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🧭",
+      "note": "Single-word question. Dz here is a soft 'j' sound: roughly 'gjeh'."
     },
     {
       "id": "11-67",
@@ -577,7 +709,9 @@
       "pl": "Spotkajmy się...",
       "en": "Let's meet...",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🤝",
+      "note": "Add a time or place: 'Spotkajmy się jutro' (Let's meet tomorrow)."
     },
     {
       "id": "11-68",
@@ -585,7 +719,9 @@
       "pl": "Trzymaj się!",
       "en": "Take care!",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "🫂",
+      "note": "Informal, to friends or family when parting. Literally 'hold yourself'."
     },
     {
       "id": "11-69",
@@ -593,7 +729,9 @@
       "pl": "Pozdrawiam",
       "en": "Regards / Best wishes",
       "level": 11,
-      "gender": null
+      "gender": null,
+      "emoji": "✉️",
+      "note": "Neutral sign-off in emails and letters; also a casual parting 'regards'."
     }
   ]
 }

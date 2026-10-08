@@ -297,7 +297,7 @@
       "id": "14-30",
       "category": "Talking About Music",
       "pl": "Ulubiony zespół",
-      "en": "Favorite band",
+      "en": "Favourite band",
       "level": 14,
       "gender": null,
       "emoji": "⭐",
@@ -307,7 +307,7 @@
       "id": "14-31",
       "category": "Talking About Music",
       "pl": "Ulubiona piosenka",
-      "en": "Favorite song",
+      "en": "Favourite song",
       "level": 14,
       "gender": null,
       "emoji": "❤️",
@@ -598,182 +598,239 @@
       "category": "Music",
       "pl": "Piosenkarz / Piosenkarka",
       "en": "Singer (male/female)",
-      "level": 14
+      "level": 14,
+      "emoji": "🎤",
+      "note": "Male form first, then the female form ending in -ka."
     },
     {
       "id": "14-61",
       "category": "Music",
-      "pl": "Fortepian / Piano",
-      "en": "Piano",
-      "level": 14
+      "pl": "Fortepian",
+      "en": "Grand piano",
+      "level": 14,
+      "emoji": "🎹",
+      "note": "A fortepian is a grand piano; an upright is 'pianino'."
     },
     {
       "id": "14-62",
       "category": "Music Genres",
       "pl": "Lubię...",
       "en": "I like...",
-      "level": 14
+      "level": 14,
+      "emoji": "👍",
+      "note": "Takes the accusative: 'Lubię jazz', 'Lubię muzykę klasyczną'."
     },
     {
       "id": "14-63",
       "category": "Music Genres",
       "pl": "Pop",
       "en": "Pop",
-      "level": 14
+      "level": 14,
+      "emoji": "🎤",
+      "note": "Said as in English; in full it is 'muzyka pop'."
     },
     {
       "id": "14-64",
       "category": "Music Genres",
       "pl": "Klasyczna",
       "en": "Classical",
-      "level": 14
+      "level": 14,
+      "emoji": "🎻",
+      "note": "Feminine form, agreeing with 'muzyka' (muzyka klasyczna)."
     },
     {
       "id": "14-65",
       "category": "Music Genres",
       "pl": "Hip-hop / Rap",
       "en": "Hip-hop / Rap",
-      "level": 14
+      "level": 14,
+      "emoji": "🎤",
+      "note": "Both are English loanwords; Poles say 'rap' with a flat 'ah' vowel."
     },
     {
       "id": "14-66",
       "category": "Music Genres",
       "pl": "Elektroniczna",
       "en": "Electronic",
-      "level": 14
+      "level": 14,
+      "emoji": "🎛️",
+      "note": "Feminine form, agreeing with 'muzyka' (muzyka elektroniczna)."
     },
     {
       "id": "14-67",
       "category": "Music Genres",
       "pl": "Folk / Ludowa",
       "en": "Folk",
-      "level": 14
+      "level": 14,
+      "emoji": "🪗",
+      "note": "'Ludowa' means 'of the people' and describes traditional folk music."
     },
     {
       "id": "14-68",
       "category": "Pop Song Phrases",
       "pl": "Moje serce",
       "en": "My heart",
-      "level": 14
+      "level": 14,
+      "emoji": "💗",
+      "note": "'Serce' is neuter, so 'my' is 'moje'."
     },
     {
       "id": "14-69",
       "category": "Pop Song Phrases",
       "pl": "Miłość",
       "en": "Love",
-      "level": 14
+      "level": 14,
+      "emoji": "💘",
+      "note": "The ending -ość marks feminine abstract nouns."
     },
     {
       "id": "14-70",
       "category": "Pop Song Phrases",
       "pl": "Noc",
       "en": "Night",
-      "level": 14
+      "level": 14,
+      "emoji": "🌙",
+      "note": "Feminine, despite ending in a consonant. 'Dobranoc' means good night."
     },
     {
       "id": "14-71",
       "category": "Pop Song Phrases",
       "pl": "Dzień",
       "en": "Day",
-      "level": 14
+      "level": 14,
+      "emoji": "☀️",
+      "note": "Masculine noun. 'Dzień dobry' is the standard daytime greeting."
     },
     {
       "id": "14-72",
       "category": "Pop Song Phrases",
       "pl": "Niebo",
       "en": "Sky / Heaven",
-      "level": 14
+      "level": 14,
+      "emoji": "🌌",
+      "note": "One word for both sky and heaven, which suits love songs."
     },
     {
       "id": "14-73",
       "category": "Pop Song Phrases",
       "pl": "Gwiazdy",
       "en": "Stars",
-      "level": 14
+      "level": 14,
+      "emoji": "⭐",
+      "note": "Plural of 'gwiazda', which also means a celebrity."
     },
     {
       "id": "14-74",
       "category": "Pop Song Phrases",
       "pl": "Księżyc",
       "en": "Moon",
-      "level": 14
+      "level": 14,
+      "emoji": "🌕",
+      "note": "Masculine noun, said roughly 'KSHEN-zhits'."
     },
     {
       "id": "14-75",
       "category": "Pop Song Phrases",
       "pl": "Słońce",
       "en": "Sun",
-      "level": 14
+      "level": 14,
+      "emoji": "🌞",
+      "note": "Neuter noun. ł sounds like English 'w', so it starts 'sw-'."
     },
     {
       "id": "14-76",
       "category": "Pop Song Phrases",
       "pl": "Marzenie / Sen",
       "en": "Dream",
-      "level": 14
+      "level": 14,
+      "emoji": "💭",
+      "note": "'Marzenie' is a wish or ambition; 'sen' is a dream while asleep."
     },
     {
       "id": "14-77",
       "category": "Pop Song Phrases",
       "pl": "Na zawsze",
       "en": "Forever",
-      "level": 14
+      "level": 14,
+      "emoji": "♾️",
+      "note": "Literally 'on always'. 'Zawsze' alone means always."
     },
     {
       "id": "14-78",
       "category": "Pop Song Phrases",
-      "pl": "Sama / Sam",
+      "pl": "Sam / Sama",
       "en": "Alone",
-      "level": 14
+      "level": 14,
+      "gender": "both",
+      "variants": {
+        "m": "Sam",
+        "f": "Sama"
+      },
+      "emoji": "🧍",
+      "note": "Men say 'sam', women say 'sama': 'Mieszkam sam / sama' (I live alone)."
     },
     {
       "id": "14-79",
       "category": "Pop Song Phrases",
       "pl": "Tańcz ze mną",
       "en": "Dance with me",
-      "level": 14
+      "level": 14,
+      "emoji": "💃",
+      "note": "Informal command; 'ze mną' takes the instrumental case."
     },
     {
       "id": "14-80",
       "category": "Polish Music Culture",
       "pl": "Karaoke",
       "en": "Karaoke",
-      "level": 14
+      "level": 14,
+      "emoji": "🎤",
+      "note": "Said 'kah-rah-OH-keh', with every vowel sounded."
     },
     {
       "id": "14-81",
       "category": "Polish Music Culture",
       "pl": "Śpiewać karaoke",
       "en": "To sing karaoke",
-      "level": 14
+      "level": 14,
+      "emoji": "🎙️",
+      "note": "'Karaoke' is indeclinable, so it never changes its ending."
     },
     {
       "id": "14-82",
       "category": "Polish Music Culture",
       "pl": "Jaki jest twój ulubiony polski zespół?",
-      "en": "What's your favorite Polish band?",
-      "level": 14
+      "en": "What's your favourite Polish band?",
+      "level": 14,
+      "emoji": "⭐",
+      "note": "Informal 'twój'; formal is 'Pana/Pani'. 'Zespół' is masculine."
     },
     {
       "id": "14-83",
       "category": "Polish Music Culture",
       "pl": "Czy możesz polecić polską muzykę?",
       "en": "Can you recommend Polish music?",
-      "level": 14
+      "level": 14,
+      "emoji": "🎧",
+      "note": "Informal 'możesz'; formal is 'Czy może Pan/Pani polecić...'."
     },
     {
       "id": "14-84",
       "category": "Polish Music Culture",
       "pl": "Hit",
       "en": "Hit song",
-      "level": 14
+      "level": 14,
+      "emoji": "🔥",
+      "note": "Loanword; masculine noun. 'Przebój' is the native alternative."
     },
     {
       "id": "14-85",
       "category": "Polish Music Culture",
       "pl": "To jest przebój!",
       "en": "This is a hit!",
-      "level": 14
+      "level": 14,
+      "emoji": "🎉",
+      "note": "Enthusiastic and informal; 'przebój' is the native Polish word for a hit."
     }
   ]
 }

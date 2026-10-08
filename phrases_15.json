@@ -486,6 +486,230 @@
       "gender": null,
       "emoji": "✏️",
       "note": "Infinitive phrase."
+    },
+    {
+      "id": "15-49",
+      "category": "Meetings & Events",
+      "pl": "Zaczynajmy",
+      "en": "Let's get started",
+      "level": 15,
+      "gender": null,
+      "emoji": "🚦",
+      "note": "First-person plural imperative: 'let us begin'."
+    },
+    {
+      "id": "15-50",
+      "category": "Meetings & Events",
+      "pl": "Czy mogę coś dodać?",
+      "en": "Can I add something?",
+      "level": 15,
+      "gender": null,
+      "emoji": "➕",
+      "note": "A polite way to speak up in a meeting. 'Coś' = something."
+    },
+    {
+      "id": "15-51",
+      "category": "Meetings & Events",
+      "pl": "Przepraszam za spóźnienie",
+      "en": "Sorry for being late",
+      "level": 15,
+      "gender": null,
+      "emoji": "⏰",
+      "note": "Literally 'Sorry for the lateness'."
+    },
+    {
+      "id": "15-52",
+      "category": "Meetings & Events",
+      "pl": "Przełóżmy spotkanie",
+      "en": "Let's reschedule the meeting",
+      "level": 15,
+      "gender": null,
+      "emoji": "🔄",
+      "note": "From 'przełożyć' (to move). Also means to postpone."
+    },
+    {
+      "id": "15-53",
+      "category": "Communication",
+      "pl": "Piszę w sprawie zamówienia",
+      "en": "I'm writing about the order",
+      "level": 15,
+      "gender": null,
+      "emoji": "✉️",
+      "note": "Standard email opener. 'W sprawie' takes the genitive."
+    },
+    {
+      "id": "15-54",
+      "category": "Communication",
+      "pl": "Z poważaniem",
+      "en": "Yours sincerely",
+      "level": 15,
+      "gender": null,
+      "emoji": "🖋️",
+      "note": "Formal email sign-off. Literally 'with respect'."
+    },
+    {
+      "id": "15-55",
+      "category": "Communication",
+      "pl": "Pozdrawiam",
+      "en": "Kind regards",
+      "level": 15,
+      "gender": null,
+      "emoji": "👋",
+      "note": "The usual sign-off for most work emails. Literally 'I greet'."
+    },
+    {
+      "id": "15-56",
+      "category": "Job Interviews",
+      "pl": "Dziękuję za zaproszenie na rozmowę",
+      "en": "Thank you for inviting me to the interview",
+      "level": 15,
+      "gender": null,
+      "emoji": "🙏",
+      "note": "'Zaproszenie na' is followed by the accusative."
+    },
+    {
+      "id": "15-57",
+      "category": "Job Interviews",
+      "pl": "Aplikuję na to stanowisko",
+      "en": "I'm applying for this position",
+      "level": 15,
+      "gender": null,
+      "emoji": "📝",
+      "note": "Common in speech; in a formal letter write 'Ubiegam się o to stanowisko'."
+    },
+    {
+      "id": "15-58",
+      "category": "Job Interviews",
+      "pl": "Życiorys",
+      "en": "CV / Résumé",
+      "level": 15,
+      "gender": null,
+      "emoji": "📄",
+      "note": "From 'życie' (life) + 'rys' (outline). The word 'CV' is just as common."
+    },
+    {
+      "id": "15-59",
+      "category": "Job Interviews",
+      "pl": "Mam pięć lat doświadczenia",
+      "en": "I have five years of experience",
+      "level": 15,
+      "gender": null,
+      "emoji": "🎓",
+      "note": "After numbers from five up, 'rok' becomes 'lat'."
+    },
+    {
+      "id": "15-60",
+      "category": "Job Interviews",
+      "pl": "Jakie będą moje obowiązki?",
+      "en": "What will my duties be?",
+      "level": 15,
+      "gender": null,
+      "emoji": "🧾",
+      "note": "'Obowiązki' is plural, so the question uses 'jakie'."
+    },
+    {
+      "id": "15-61",
+      "category": "Job Interviews",
+      "pl": "Kiedy mogę zacząć?",
+      "en": "When can I start?",
+      "level": 15,
+      "gender": null,
+      "emoji": "🚀",
+      "note": "Neutral register, fine for interviews and with colleagues."
+    },
+    {
+      "id": "15-62",
+      "category": "Job Interviews",
+      "pl": "Jestem dostępny / dostępna od zaraz",
+      "en": "I'm available immediately",
+      "level": 15,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem dostępny od zaraz",
+        "f": "Jestem dostępna od zaraz"
+      },
+      "emoji": "🟢",
+      "note": "'Od zaraz' means 'right away'. Common in job adverts."
+    },
+    {
+      "id": "15-63",
+      "category": "Job Interviews",
+      "pl": "Okres wypowiedzenia",
+      "en": "Notice period",
+      "level": 15,
+      "gender": null,
+      "emoji": "📆",
+      "note": "Set by law at two weeks to three months, depending on length of service."
+    },
+    {
+      "id": "15-64",
+      "category": "Hours & Leave",
+      "pl": "Godziny pracy",
+      "en": "Working hours",
+      "level": 15,
+      "gender": null,
+      "emoji": "🕗",
+      "note": "Plural noun. Seen on office doors and in job adverts."
+    },
+    {
+      "id": "15-65",
+      "category": "Hours & Leave",
+      "pl": "Pracuję od ósmej do szesnastej",
+      "en": "I work from 8 to 4",
+      "level": 15,
+      "gender": null,
+      "emoji": "🕓",
+      "note": "Times use feminine ordinals ('godzina' understood). 16:00 is common."
+    },
+    {
+      "id": "15-66",
+      "category": "Hours & Leave",
+      "pl": "Chcę wziąć urlop",
+      "en": "I want to take leave",
+      "level": 15,
+      "gender": null,
+      "emoji": "🌴",
+      "note": "'Wziąć urlop' = to take leave. Ask 'Czy mogę wziąć urlop?' to be polite."
+    },
+    {
+      "id": "15-67",
+      "category": "Hours & Leave",
+      "pl": "Jestem na urlopie",
+      "en": "I'm on leave",
+      "level": 15,
+      "gender": null,
+      "emoji": "🏝️",
+      "note": "Locative case after 'na'. Often seen in email auto-replies."
+    },
+    {
+      "id": "15-68",
+      "category": "Hours & Leave",
+      "pl": "Jestem na zwolnieniu lekarskim",
+      "en": "I'm on sick leave",
+      "level": 15,
+      "gender": null,
+      "emoji": "🤒",
+      "note": "The sick note is colloquially called 'L4'."
+    },
+    {
+      "id": "15-69",
+      "category": "Hours & Leave",
+      "pl": "Dzień wolny",
+      "en": "Day off",
+      "level": 15,
+      "gender": null,
+      "emoji": "📅",
+      "note": "Literally 'free day'. 'Wolne' alone also means time off."
+    },
+    {
+      "id": "15-70",
+      "category": "Hours & Leave",
+      "pl": "Przerwa na lunch",
+      "en": "Lunch break",
+      "level": 15,
+      "gender": null,
+      "emoji": "🥪",
+      "note": "'Przerwa obiadowa' is also used. 'Na' + accusative = for."
     }
   ]
 }

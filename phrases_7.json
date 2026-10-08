@@ -9,7 +9,9 @@
       "pl": "Ile to kosztuje?",
       "en": "How much is this?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💰",
+      "note": "Say 'to' while pointing. 'Ile kosztują?' for plural items like shoes."
     },
     {
       "id": "7-02",
@@ -17,7 +19,9 @@
       "pl": "Za drogie",
       "en": "Too expensive",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "😬",
+      "note": "'Za' + adjective means 'too': za drogie, za duże. 'Drogie' agrees with the neuter 'to'."
     },
     {
       "id": "7-03",
@@ -25,7 +29,9 @@
       "pl": "Za dużo",
       "en": "Too much",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "✋",
+      "note": "'Za dużo' = too much; 'za mało' = too little. Handy for stopping a server pouring or weighing more."
     },
     {
       "id": "7-04",
@@ -33,7 +39,9 @@
       "pl": "Czy mogę zapłacić kartą?",
       "en": "Can I pay by card?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💳",
+      "note": "Instrumental case: 'kartą' (by card). Contactless and BLIK are widely accepted in Poland."
     },
     {
       "id": "7-05",
@@ -41,7 +49,9 @@
       "pl": "Gotówka",
       "en": "Cash",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💵",
+      "note": "'Gotówką' (by cash) after 'zapłacić'. Say 'Płacę gotówką' to pay cash."
     },
     {
       "id": "7-06",
@@ -49,7 +59,9 @@
       "pl": "Karta",
       "en": "Card",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💳",
+      "note": "Say 'Kartą' for 'by card'. Often asked: 'Kartą czy gotówką?'"
     },
     {
       "id": "7-07",
@@ -57,7 +69,9 @@
       "pl": "Bankomat",
       "en": "ATM",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🏧",
+      "note": "Stress falls on 'ko' (bahn-KOH-maht). Prefer ATMs attached to banks to avoid higher fees."
     },
     {
       "id": "7-08",
@@ -65,7 +79,9 @@
       "pl": "Gdzie jest bankomat?",
       "en": "Where is the ATM?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "📍",
+      "note": "'Gdzie jest...?' + nominative. Say 'bankomat' as one word, stress on 'ko'."
     },
     {
       "id": "7-09",
@@ -73,7 +89,9 @@
       "pl": "Reszta",
       "en": "Change (money back)",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🪙",
+      "note": "Also means 'the rest'. In shops, 'reszta' is the change you get back."
     },
     {
       "id": "7-10",
@@ -81,19 +99,19 @@
       "pl": "Proszę resztę",
       "en": "Change, please",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🙏",
+      "note": "Literally 'The change, please'. Staff normally hand it over without being asked."
     },
     {
       "id": "7-11",
       "category": "Prices & Payment",
-      "pl": "Reszta dla Pana/Pani",
+      "pl": "Reszty nie trzeba",
       "en": "Keep the change",
       "level": 7,
-      "gender": "both",
-      "variants": {
-        "m": "Reszta dla Pana",
-        "f": "Reszta dla Pani"
-      }
+      "gender": null,
+      "emoji": "🎁",
+      "note": "Literally 'Change not needed'. Tipping lightly (about 10%) is normal in restaurants."
     },
     {
       "id": "7-12",
@@ -101,7 +119,9 @@
       "pl": "Paragon",
       "en": "Receipt",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🧾",
+      "note": "Stress on 'ra': pa-RA-gon. Keep it for returns (zwrot). Ask for a 'faktura' if you need a VAT invoice."
     },
     {
       "id": "7-13",
@@ -109,7 +129,9 @@
       "pl": "Paragon, proszę",
       "en": "Receipt, please",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🧾",
+      "note": "'Poproszę paragon' is a very common alternative. Request a VAT invoice with 'fakturę'."
     },
     {
       "id": "7-14",
@@ -117,7 +139,9 @@
       "pl": "Ile płacę?",
       "en": "How much do I pay?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🧮",
+      "note": "Verb 'płacić' (to pay): 'płacę' is first person singular. Useful at a till or a taxi."
     },
     {
       "id": "7-15",
@@ -125,7 +149,9 @@
       "pl": "Razem",
       "en": "Total / Together",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "➕",
+      "note": "'Razem' means both 'in total' and 'together'. Also: 'Razem czy osobno?' (together or separate?)."
     },
     {
       "id": "7-16",
@@ -133,7 +159,9 @@
       "pl": "To wszystko",
       "en": "That's all",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "✅",
+      "note": "Literally 'This everything'. Say it at the till when you've finished ordering."
     },
     {
       "id": "7-17",
@@ -141,7 +169,9 @@
       "pl": "Wezmę to",
       "en": "I'll take it",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🛍️",
+      "note": "'Wezmę' is the future of 'wziąć' (to take). Perfective, so it means 'I will take it'."
     },
     {
       "id": "7-18",
@@ -149,7 +179,9 @@
       "pl": "Nie, dziękuję",
       "en": "No, thank you",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🙅",
+      "note": "Polite refusal to sales offers, e.g. when asked about a bag or loyalty card."
     },
     {
       "id": "7-19",
@@ -157,7 +189,9 @@
       "pl": "Tylko patrzę",
       "en": "Just looking",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👀",
+      "note": "Reply to 'Czy mogę w czymś pomóc?' (Can I help?). Staff will usually leave you alone."
     },
     {
       "id": "7-20",
@@ -165,7 +199,9 @@
       "pl": "Czy jest zniżka?",
       "en": "Is there a discount?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🏷️",
+      "note": "'Zniżka' is a discount; 'rabat' and 'promocja' (sale) also appear on signs. 'Przecena' = reduced price."
     },
     {
       "id": "7-21",
@@ -173,7 +209,9 @@
       "pl": "Gdzie mogę kupić...?",
       "en": "Where can I buy...?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🛒",
+      "note": "After 'kupić' (to buy), use the accusative: 'Gdzie mogę kupić chleb?'"
     },
     {
       "id": "7-22",
@@ -181,7 +219,9 @@
       "pl": "Szukam...",
       "en": "I'm looking for...",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔍",
+      "note": "Takes the genitive: 'Szukam apteki' (a pharmacy), 'Szukam bankomatu'. Feminine -a becomes -y."
     },
     {
       "id": "7-23",
@@ -189,7 +229,9 @@
       "pl": "Czy macie...?",
       "en": "Do you have...?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "❓",
+      "note": "'Macie' is plural 'you', normal for a shop. After 'mieć' use the accusative: 'Czy macie wodę?'"
     },
     {
       "id": "7-24",
@@ -197,7 +239,9 @@
       "pl": "W jakim rozmiarze?",
       "en": "What size?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "📏",
+      "note": "Locative: 'w jakim rozmiarze'. Clothing sizes are EU/continental, e.g. 38, 40, M, L."
     },
     {
       "id": "7-25",
@@ -205,7 +249,9 @@
       "pl": "Mały",
       "en": "Small",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🤏",
+      "note": "Masculine form. Feminine 'mała', neuter 'małe'. 'ł' sounds like English 'w'."
     },
     {
       "id": "7-26",
@@ -213,7 +259,9 @@
       "pl": "Średni",
       "en": "Medium",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👕",
+      "note": "Masculine form. Feminine 'średnia', neuter 'średnie'. Clothing is usually just S, M, L."
     },
     {
       "id": "7-27",
@@ -221,7 +269,9 @@
       "pl": "Duży",
       "en": "Large",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🧥",
+      "note": "Masculine form. Feminine 'duża', neuter 'duże'. Stress on the first syllable: DOO-zhee."
     },
     {
       "id": "7-28",
@@ -229,7 +279,9 @@
       "pl": "Za mały",
       "en": "Too small",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🤏",
+      "note": "'Za' + the form matching the item: za mały (masculine), za mała (feminine), za małe (neuter/plural)."
     },
     {
       "id": "7-29",
@@ -237,7 +289,9 @@
       "pl": "Za duży",
       "en": "Too big",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🧥",
+      "note": "'Za duży' for a masculine item, 'za duża' for a feminine one, 'za duże' for plural shoes."
     },
     {
       "id": "7-30",
@@ -245,7 +299,9 @@
       "pl": "Czy mogę przymierzyć?",
       "en": "Can I try it on?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👗",
+      "note": "'Przymierzyć' is perfective (to try on once). 'Mogę' + infinitive means 'may I'."
     },
     {
       "id": "7-31",
@@ -253,15 +309,19 @@
       "pl": "Gdzie jest przymierzalnia?",
       "en": "Where is the fitting room?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🚪",
+      "note": "'Przymierzalnia' is the fitting room. Some stores post a limit of items per visit."
     },
     {
       "id": "7-32",
       "category": "Shopping",
       "pl": "Czy macie to w innym kolorze?",
-      "en": "Do you have this in another color?",
+      "en": "Do you have this in another colour?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🎨",
+      "note": "'W innym kolorze' is locative (in another colour). 'Inny' = other, different."
     },
     {
       "id": "7-33",
@@ -269,7 +329,9 @@
       "pl": "Czy macie to w innym rozmiarze?",
       "en": "Do you have this in another size?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "📐",
+      "note": "'W innym rozmiarze' is locative. Staff may answer 'Sprawdzę' (I'll check)."
     },
     {
       "id": "7-34",
@@ -277,7 +339,9 @@
       "pl": "To pasuje",
       "en": "This fits",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👍",
+      "note": "'Pasować' = to fit or suit. 'To mi pasuje' means 'This suits me'."
     },
     {
       "id": "7-35",
@@ -285,7 +349,9 @@
       "pl": "To nie pasuje",
       "en": "This doesn't fit",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👎",
+      "note": "Negate with 'nie' directly before the verb. Add 'jest za ciasne' for 'too tight'."
     },
     {
       "id": "7-36",
@@ -293,7 +359,9 @@
       "pl": "Czy mogę to zwrócić?",
       "en": "Can I return this?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "↩️",
+      "note": "'Zwrócić' means to return. Online purchases have a 14-day right of return in Poland."
     },
     {
       "id": "7-37",
@@ -301,7 +369,9 @@
       "pl": "Torba, proszę",
       "en": "Bag, please",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🛍️",
+      "note": "Shops charge a small fee for plastic bags. 'Reklamówka' is a carrier bag; 'Torbę poproszę' is more natural."
     },
     {
       "id": "7-38",
@@ -309,7 +379,9 @@
       "pl": "Sklep",
       "en": "Shop / Store",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🏪",
+      "note": "Plural 'sklepy'. Most Polish shops close or restrict hours on Sundays (trading ban)."
     },
     {
       "id": "7-39",
@@ -317,7 +389,9 @@
       "pl": "Supermarket",
       "en": "Supermarket",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🛒",
+      "note": "Stress is on the second-to-last syllable: su-per-MAR-ket. Chains include Biedronka and Lidl."
     },
     {
       "id": "7-40",
@@ -325,7 +399,9 @@
       "pl": "Apteka",
       "en": "Pharmacy",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💊",
+      "note": "Look for the green cross. Open late: 'apteka całodobowa' means 24-hour pharmacy."
     },
     {
       "id": "7-41",
@@ -333,7 +409,9 @@
       "pl": "Złoty",
       "en": "Zloty (Polish currency)",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🇵🇱",
+      "note": "Abbreviated PLN or zł. Masculine noun; plural 'złote' (2-4), then 'złotych' (5+)."
     },
     {
       "id": "7-42",
@@ -341,7 +419,9 @@
       "pl": "Grosz",
       "en": "Grosz (Polish cent)",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🪙",
+      "note": "100 groszy = 1 złoty. Plural: 'grosze' (2-4), 'groszy' (5+)."
     },
     {
       "id": "7-43",
@@ -349,7 +429,9 @@
       "pl": "Pięć złotych",
       "en": "Five zloty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "5️⃣",
+      "note": "From 5 up, nouns take the genitive plural: 'złotych', not 'złote'."
     },
     {
       "id": "7-44",
@@ -357,7 +439,9 @@
       "pl": "Dziesięć złotych",
       "en": "Ten zloty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔟",
+      "note": "Genitive plural 'złotych' after 5 and up. Say 'dziesięć' as JEH-shench."
     },
     {
       "id": "7-45",
@@ -365,7 +449,9 @@
       "pl": "Dwadzieścia złotych",
       "en": "Twenty zloty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💵",
+      "note": "Hard to say: dvah-JEHSH-chah. Pattern: 'dwadzieścia jeden' (21) puts the units second."
     },
     {
       "id": "7-46",
@@ -373,7 +459,9 @@
       "pl": "Pięćdziesiąt złotych",
       "en": "Fifty zloty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💵",
+      "note": "Has two nasal vowels: 'ę' and 'ą'. Shops may prefer smaller notes for small purchases."
     },
     {
       "id": "7-47",
@@ -381,7 +469,9 @@
       "pl": "Sto złotych",
       "en": "One hundred zloty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💯",
+      "note": "After 'sto' the genitive plural 'złotych' follows. Say 'sto' as one syllable."
     },
     {
       "id": "7-48",
@@ -389,7 +479,9 @@
       "pl": "Jeden",
       "en": "One",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "1️⃣",
+      "note": "Masculine form. Feminine 'jedna', neuter 'jedno': 'jeden chleb', 'jedna kawa'."
     },
     {
       "id": "7-49",
@@ -397,7 +489,9 @@
       "pl": "Dwa",
       "en": "Two",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "2️⃣",
+      "note": "Masculine and neuter form. Feminine is 'dwie': 'dwa piwa' but 'dwie kawy'."
     },
     {
       "id": "7-50",
@@ -405,7 +499,9 @@
       "pl": "Trzy",
       "en": "Three",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "3️⃣",
+      "note": "'Trzy' starts with 'trz', said roughly 'tshy'. 'Trzy kawy', 'trzy piwa'."
     },
     {
       "id": "7-51",
@@ -413,7 +509,9 @@
       "pl": "Cztery",
       "en": "Four",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "4️⃣",
+      "note": "'Cztery' starts with 'cz' (like 'ch' in 'chair'). Takes the nominative plural: 'cztery kawy'."
     },
     {
       "id": "7-52",
@@ -421,7 +519,9 @@
       "pl": "Pięć",
       "en": "Five",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "5️⃣",
+      "note": "From 5 onwards, nouns go into the genitive plural: 'pięć kaw'. Nasal 'ę' before 'ć'."
     },
     {
       "id": "7-53",
@@ -429,7 +529,9 @@
       "pl": "Dziesięć",
       "en": "Ten",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔟",
+      "note": "Sounds like JEH-shench. Takes the genitive plural: 'dziesięć złotych'."
     },
     {
       "id": "7-54",
@@ -437,7 +539,9 @@
       "pl": "Dwadzieścia",
       "en": "Twenty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "2️⃣",
+      "note": "Pattern: 'dwadzieścia jeden' (21) puts the units second, unlike English order."
     },
     {
       "id": "7-55",
@@ -445,15 +549,19 @@
       "pl": "Sto",
       "en": "One hundred",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💯",
+      "note": "No change for gender. 200 is 'dwieście', 300 is 'trzysta'."
     },
     {
       "id": "7-56",
       "category": "Colors & Descriptions",
       "pl": "Jaki kolor?",
-      "en": "What color?",
+      "en": "What colour?",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🎨",
+      "note": "'Kolor' is masculine, so 'jaki'. 'Jaka' and 'jakie' are used for feminine and neuter nouns."
     },
     {
       "id": "7-57",
@@ -461,7 +569,9 @@
       "pl": "Biały",
       "en": "White",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "⚪",
+      "note": "Masculine form. Feminine 'biała', neuter 'białe'. Say BYAH-wy."
     },
     {
       "id": "7-58",
@@ -469,7 +579,9 @@
       "pl": "Czarny",
       "en": "Black",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "⚫",
+      "note": "Masculine form. Feminine 'czarna', neuter 'czarne'. Starts with 'cz'."
     },
     {
       "id": "7-59",
@@ -477,7 +589,9 @@
       "pl": "Czerwony",
       "en": "Red",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔴",
+      "note": "Masculine form. Feminine 'czerwona', neuter 'czerwone'. The 'rw' is sounded."
     },
     {
       "id": "7-60",
@@ -485,7 +599,9 @@
       "pl": "Niebieski",
       "en": "Blue",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🔵",
+      "note": "Masculine form. Feminine 'niebieska', neuter 'niebieskie'. Light blue is 'jasnoniebieski'."
     },
     {
       "id": "7-61",
@@ -493,7 +609,9 @@
       "pl": "Zielony",
       "en": "Green",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🟢",
+      "note": "Masculine form. Feminine 'zielona', neuter 'zielone'. 'Zielony' also means 'unripe'."
     },
     {
       "id": "7-62",
@@ -501,15 +619,19 @@
       "pl": "Żółty",
       "en": "Yellow",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🟡",
+      "note": "Masculine form. Feminine 'żółta', neuter 'żółte'. 'Ż' is like the 's' in 'measure'."
     },
     {
       "id": "7-63",
       "category": "Colors & Descriptions",
       "pl": "Szary",
-      "en": "Gray",
+      "en": "Grey",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🩶",
+      "note": "Masculine form. Feminine 'szara', neuter 'szare'. 'Sz' is like English 'sh'."
     },
     {
       "id": "7-64",
@@ -517,7 +639,9 @@
       "pl": "Nowy",
       "en": "New",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🆕",
+      "note": "Masculine form. Feminine 'nowa', neuter 'nowe'. Opposite of 'stary'."
     },
     {
       "id": "7-65",
@@ -525,7 +649,9 @@
       "pl": "Stary",
       "en": "Old",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🕰️",
+      "note": "Masculine form. Feminine 'stara', neuter 'stare'. Opposite of 'nowy'."
     },
     {
       "id": "7-66",
@@ -533,7 +659,9 @@
       "pl": "Dobry",
       "en": "Good",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👍",
+      "note": "Masculine form. Feminine 'dobra', neuter 'dobre'. 'Dobre' also works as 'OK'."
     },
     {
       "id": "7-67",
@@ -541,7 +669,9 @@
       "pl": "Zły",
       "en": "Bad",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "👎",
+      "note": "Masculine form. Feminine 'zła', neuter 'złe'. 'Zły' can also mean 'angry'."
     },
     {
       "id": "7-68",
@@ -549,7 +679,9 @@
       "pl": "Tani",
       "en": "Cheap",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🏷️",
+      "note": "Masculine form. Feminine 'tania', neuter 'tanie'. Opposite of 'drogi'."
     },
     {
       "id": "7-69",
@@ -557,7 +689,9 @@
       "pl": "Drogi",
       "en": "Expensive",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "💸",
+      "note": "Masculine form. Feminine 'droga', neuter 'drogie'. 'Droga' also means 'road'."
     },
     {
       "id": "7-70",
@@ -565,7 +699,9 @@
       "pl": "Ładny",
       "en": "Nice / Pretty",
       "level": 7,
-      "gender": null
+      "gender": null,
+      "emoji": "🌸",
+      "note": "Masculine form. Feminine 'ładna', neuter 'ładne'. Common all-purpose compliment."
     }
   ]
 }

@@ -102,6 +102,606 @@
       "gender": null,
       "emoji": "🚜",
       "note": "'Trawę' is the accusative case of 'trawa' (grass)."
+    },
+    {
+      "id": "12.1-11",
+      "category": "Kitchen",
+      "pl": "Kuchenka",
+      "en": "Cooker / Stove",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🔥",
+      "note": "'Kuchenka gazowa' is a gas cooker; 'kuchenka mikrofalowa' is a microwave."
+    },
+    {
+      "id": "12.1-12",
+      "category": "Kitchen",
+      "pl": "Czajnik",
+      "en": "Kettle",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🫖",
+      "note": "Say 'czajnik elektryczny' for an electric kettle; 'cz' sounds like English 'ch'."
+    },
+    {
+      "id": "12.1-13",
+      "category": "Kitchen",
+      "pl": "Mikrofalówka",
+      "en": "Microwave",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "♨️",
+      "note": "Everyday short form of 'kuchenka mikrofalowa'."
+    },
+    {
+      "id": "12.1-14",
+      "category": "Kitchen",
+      "pl": "Nóż",
+      "en": "Knife",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🔪",
+      "note": "'Ó' sounds like 'u'; the plural is 'noże'."
+    },
+    {
+      "id": "12.1-15",
+      "category": "Kitchen",
+      "pl": "Widelec",
+      "en": "Fork",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🍴",
+      "note": "Stress falls on 'de' (wi-DE-lec); plural 'widelce'."
+    },
+    {
+      "id": "12.1-16",
+      "category": "Kitchen",
+      "pl": "Łyżka",
+      "en": "Spoon",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🥄",
+      "note": "'Ł' sounds like English 'w'; a teaspoon is 'łyżeczka'."
+    },
+    {
+      "id": "12.1-17",
+      "category": "Kitchen",
+      "pl": "Miska",
+      "en": "Bowl",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🥣",
+      "note": "A 'miseczka' is a small bowl, such as for cereal."
+    },
+    {
+      "id": "12.1-18",
+      "category": "Kitchen",
+      "pl": "Zlew",
+      "en": "Sink",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🚰",
+      "note": "The kitchen sink; a bathroom washbasin is 'umywalka'."
+    },
+    {
+      "id": "12.1-19",
+      "category": "Kitchen",
+      "pl": "Pokrywka",
+      "en": "Lid",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🥘",
+      "note": "Say 'pokrywka do garnka' for a pot lid."
+    },
+    {
+      "id": "12.1-20",
+      "category": "Kitchen",
+      "pl": "Rondel",
+      "en": "Saucepan",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🍲",
+      "note": "Smaller and shallower than a 'garnek', with a long handle."
+    },
+    {
+      "id": "12.1-21",
+      "category": "Kitchen",
+      "pl": "Tarka",
+      "en": "Grater",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🧀",
+      "note": "'Trzeć' is 'to grate'; 'tarka' is the tool."
+    },
+    {
+      "id": "12.1-22",
+      "category": "Kitchen",
+      "pl": "Otwieracz do puszek",
+      "en": "Can opener",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🥫",
+      "note": "Literally 'opener for tins'."
+    },
+    {
+      "id": "12.1-23",
+      "category": "Kitchen",
+      "pl": "Ścierka do naczyń",
+      "en": "Tea towel",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🧺",
+      "note": "Literally 'cloth for dishes'; 'ścierka' is any cleaning cloth."
+    },
+    {
+      "id": "12.1-24",
+      "category": "Kitchen",
+      "pl": "Blender",
+      "en": "Blender",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🌀",
+      "note": "Borrowed from English and said much the same: BLEN-der, with a tapped Polish 'r'."
+    },
+    {
+      "id": "12.1-25",
+      "category": "Kitchen Talk",
+      "pl": "Co dziś na obiad?",
+      "en": "What's for lunch/dinner today?",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🍽️",
+      "note": "'Obiad' is the main midday meal; the evening meal is 'kolacja'."
+    },
+    {
+      "id": "12.1-26",
+      "category": "Kitchen Talk",
+      "pl": "Obiad jest gotowy",
+      "en": "Dinner is ready",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🛎️",
+      "note": "Say 'Kolacja jest gotowa' for the evening meal."
+    },
+    {
+      "id": "12.1-27",
+      "category": "Kitchen Talk",
+      "pl": "Mogę ci pomóc w kuchni?",
+      "en": "Can I help you in the kitchen?",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🙋",
+      "note": "'Pomóc' takes the dative ('ci'). Formal: 'Czy mogę Panu / Pani pomóc?'"
+    },
+    {
+      "id": "12.1-28",
+      "category": "Kitchen Talk",
+      "pl": "Zrobię kawę",
+      "en": "I'll make coffee",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "☕",
+      "note": "Future of the perfective 'zrobić'; 'kawę' is accusative."
+    },
+    {
+      "id": "12.1-29",
+      "category": "Cooking Verbs",
+      "pl": "Kroić",
+      "en": "To cut / chop",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🥕",
+      "note": "'Pokroić' means to cut up completely, e.g. 'pokroić cebulę'."
+    },
+    {
+      "id": "12.1-30",
+      "category": "Cooking Verbs",
+      "pl": "Obierać",
+      "en": "To peel",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🥔",
+      "note": "Perfective 'obrać'; 'obierać ziemniaki' is peeling potatoes."
+    },
+    {
+      "id": "12.1-31",
+      "category": "Cooking Verbs",
+      "pl": "Mieszać",
+      "en": "To stir / mix",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🌀",
+      "note": "Often used as 'mieszać kawę' (to stir the coffee)."
+    },
+    {
+      "id": "12.1-32",
+      "category": "Cooking Verbs",
+      "pl": "Dusić",
+      "en": "To stew / braise",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🍛",
+      "note": "Also means 'to choke', so context matters."
+    },
+    {
+      "id": "12.1-33",
+      "category": "Cooking Verbs",
+      "pl": "Zagotować wodę",
+      "en": "To boil water",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "💧",
+      "note": "Perfective: bring to the boil. 'Gotować wodę' is the ongoing action."
+    },
+    {
+      "id": "12.1-34",
+      "category": "Cooking Verbs",
+      "pl": "Ugotować makaron",
+      "en": "To cook pasta",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🍝",
+      "note": "Perfective 'ugotować' means cooked until done; 'makaron' covers pasta and noodles."
+    },
+    {
+      "id": "12.1-35",
+      "category": "Cooking Verbs",
+      "pl": "Podgrzać",
+      "en": "To heat up",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🌡️",
+      "note": "Used for reheating food: 'Podgrzej zupę' (heat up the soup)."
+    },
+    {
+      "id": "12.1-36",
+      "category": "Cooking Verbs",
+      "pl": "Rozmrozić",
+      "en": "To defrost",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "❄️",
+      "note": "From 'mróz' (frost): 'rozmrozić mięso' is to defrost meat."
+    },
+    {
+      "id": "12.1-37",
+      "category": "Cooking Verbs",
+      "pl": "Doprawić",
+      "en": "To season",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🧂",
+      "note": "Add salt, pepper and spices to taste; 'przyprawy' means spices."
+    },
+    {
+      "id": "12.1-38",
+      "category": "Cooking Verbs",
+      "pl": "Dodać sól",
+      "en": "To add salt",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🫙",
+      "note": "'Sól' is feminine even though it ends in a consonant."
+    },
+    {
+      "id": "12.1-39",
+      "category": "Cooking Verbs",
+      "pl": "Wlać do garnka",
+      "en": "To pour into the pot",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🫗",
+      "note": "'Do' takes the genitive: 'garnek' becomes 'garnka'."
+    },
+    {
+      "id": "12.1-40",
+      "category": "Cooking Verbs",
+      "pl": "Upiec ciasto",
+      "en": "To bake a cake",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🎂",
+      "note": "Perfective of 'piec'; 'ciasto' means both cake and dough."
+    },
+    {
+      "id": "12.1-41",
+      "category": "Furniture",
+      "pl": "Łóżko",
+      "en": "Bed",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🛏️",
+      "note": "'Ł' sounds like 'w' and 'ó' like 'u'. A double bed is 'łóżko małżeńskie'."
+    },
+    {
+      "id": "12.1-42",
+      "category": "Furniture",
+      "pl": "Poduszka",
+      "en": "Pillow",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🛌",
+      "note": "Also the word for a sofa cushion."
+    },
+    {
+      "id": "12.1-43",
+      "category": "Furniture",
+      "pl": "Kołdra",
+      "en": "Duvet / Quilt",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🧣",
+      "note": "'Ł' sounds like English 'w': roughly 'KOW-dra'."
+    },
+    {
+      "id": "12.1-44",
+      "category": "Furniture",
+      "pl": "Fotel",
+      "en": "Armchair",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "💺",
+      "note": "Stress falls on the first syllable: FO-tel."
+    },
+    {
+      "id": "12.1-45",
+      "category": "Furniture",
+      "pl": "Komoda",
+      "en": "Chest of drawers",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🗄️",
+      "note": "Often stands in a bedroom or hallway."
+    },
+    {
+      "id": "12.1-46",
+      "category": "Furniture",
+      "pl": "Regał",
+      "en": "Bookcase / Shelving unit",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "📚",
+      "note": "'Półka' is a single shelf; 'regał' is the whole unit."
+    },
+    {
+      "id": "12.1-47",
+      "category": "Furniture",
+      "pl": "Stolik kawowy",
+      "en": "Coffee table",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🪑",
+      "note": "'Stolik' is a little 'stół'; 'kawowy' means 'of coffee'."
+    },
+    {
+      "id": "12.1-48",
+      "category": "Furniture",
+      "pl": "Szafka nocna",
+      "en": "Bedside table",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🌙",
+      "note": "Literally 'night cupboard'; 'szafka' is a small 'szafa'."
+    },
+    {
+      "id": "12.1-49",
+      "category": "Furniture",
+      "pl": "Lustro",
+      "en": "Mirror",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🪞",
+      "note": "The everyday word; 'zwierciadło' is poetic."
+    },
+    {
+      "id": "12.1-50",
+      "category": "Furniture",
+      "pl": "Zasłony",
+      "en": "Curtains",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🪟",
+      "note": "Plural; 'firanki' are the thin net curtains."
+    },
+    {
+      "id": "12.1-51",
+      "category": "Gardening",
+      "pl": "Grabie",
+      "en": "Rake",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🍂",
+      "note": "Always plural in Polish, even for a single rake."
+    },
+    {
+      "id": "12.1-52",
+      "category": "Gardening",
+      "pl": "Łopata",
+      "en": "Spade / Shovel",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "⛏️",
+      "note": "'Ł' sounds like 'w'; stress falls on 'pa' (wo-PA-ta)."
+    },
+    {
+      "id": "12.1-53",
+      "category": "Gardening",
+      "pl": "Konewka",
+      "en": "Watering can",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🪣",
+      "note": "Say 'podlewać konewką' (instrumental) for 'to water with a can'."
+    },
+    {
+      "id": "12.1-54",
+      "category": "Gardening",
+      "pl": "Wąż ogrodowy",
+      "en": "Garden hose",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🌊",
+      "note": "'Wąż' also means 'snake'; 'ogrodowy' means 'of the garden'."
+    },
+    {
+      "id": "12.1-55",
+      "category": "Gardening",
+      "pl": "Sekator",
+      "en": "Secateurs / Pruning shears",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "✂️",
+      "note": "Used for pruning roses, bushes and fruit trees."
+    },
+    {
+      "id": "12.1-56",
+      "category": "Gardening",
+      "pl": "Chwasty",
+      "en": "Weeds",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🌿",
+      "note": "Plural; 'ch' is like the 'ch' in Scottish 'loch'."
+    },
+    {
+      "id": "12.1-57",
+      "category": "Gardening",
+      "pl": "Grządka",
+      "en": "Garden bed / Vegetable patch",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🥬",
+      "note": "A planted bed for vegetables or flowers; 'rz' sounds like 'ż'."
+    },
+    {
+      "id": "12.1-58",
+      "category": "Gardening",
+      "pl": "Doniczka",
+      "en": "Flowerpot",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🪴",
+      "note": "Typical on balconies and windowsills; 'cz' is like English 'ch'."
+    },
+    {
+      "id": "12.1-59",
+      "category": "Gardening",
+      "pl": "Nawóz",
+      "en": "Fertiliser",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🌱",
+      "note": "'Ó' sounds like 'u'; the plural is 'nawozy'."
+    },
+    {
+      "id": "12.1-60",
+      "category": "Gardening",
+      "pl": "Grabić liście",
+      "en": "To rake leaves",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🍁",
+      "note": "An autumn chore; 'liście' is the plural of 'liść'."
+    },
+    {
+      "id": "12.1-61",
+      "category": "Fixing Things at Home",
+      "pl": "Zepsuło się",
+      "en": "It's broken",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🔧",
+      "note": "Literally 'it broke itself'. For a fridge: 'Lodówka się zepsuła'."
+    },
+    {
+      "id": "12.1-62",
+      "category": "Fixing Things at Home",
+      "pl": "Nie działa",
+      "en": "It doesn't work",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🚫",
+      "note": "Add the item: 'Zmywarka nie działa' (the dishwasher isn't working)."
+    },
+    {
+      "id": "12.1-63",
+      "category": "Fixing Things at Home",
+      "pl": "Kran cieknie",
+      "en": "The tap is leaking",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "💦",
+      "note": "'Cieknie' means leaks or drips; also 'Dach cieknie' (the roof leaks)."
+    },
+    {
+      "id": "12.1-64",
+      "category": "Fixing Things at Home",
+      "pl": "Przepaliła się żarówka",
+      "en": "The bulb has blown",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "💡",
+      "note": "Literally 'burned itself through'; 'żarówka' is feminine, hence '-ła'."
+    },
+    {
+      "id": "12.1-65",
+      "category": "Fixing Things at Home",
+      "pl": "Nie ma prądu",
+      "en": "There's no electricity",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🔌",
+      "note": "'Prąd' means both 'current' and 'electricity'; 'prądu' is genitive."
+    },
+    {
+      "id": "12.1-66",
+      "category": "Fixing Things at Home",
+      "pl": "Zatkał się zlew",
+      "en": "The sink is blocked",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🪠",
+      "note": "'Zatkać się' is to get clogged; masculine 'zlew' takes '-ł'."
+    },
+    {
+      "id": "12.1-67",
+      "category": "Fixing Things at Home",
+      "pl": "Młotek",
+      "en": "Hammer",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🔨",
+      "note": "The 'mł' cluster is tricky: say it roughly 'mwo-tek'."
+    },
+    {
+      "id": "12.1-68",
+      "category": "Fixing Things at Home",
+      "pl": "Śrubokręt",
+      "en": "Screwdriver",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🪛",
+      "note": "Literally 'screw-turner'; 'śruba' is a screw or bolt."
+    },
+    {
+      "id": "12.1-69",
+      "category": "Fixing Things at Home",
+      "pl": "Wiertarka",
+      "en": "Drill",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🛠️",
+      "note": "From 'wiercić' (to drill); 'wkrętarka' is a cordless screwdriver."
+    },
+    {
+      "id": "12.1-70",
+      "category": "Fixing Things at Home",
+      "pl": "Potrzebny jest hydraulik",
+      "en": "We need a plumber",
+      "level": 12.1,
+      "gender": null,
+      "emoji": "🧑‍🔧",
+      "note": "Literally 'a plumber is needed'; an electrician is 'elektryk'."
     }
   ]
 }

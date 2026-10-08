@@ -778,16 +778,16 @@
     {
       "id": "22-75",
       "category": "Physical Help",
-      "pl": "Jestem zgubiony / zgubiona",
-      "en": "I am lost (physically)",
+      "pl": "Zgubiłem / Zgubiłam się",
+      "en": "I am lost / I got lost",
       "level": 22,
       "gender": "both",
       "variants": {
-        "m": "Jestem zgubiony",
-        "f": "Jestem zgubiona"
+        "m": "Zgubiłem się",
+        "f": "Zgubiłam się"
       },
       "emoji": "🗺️",
-      "note": "Used for navigation, not mental confusion."
+      "note": "Poles say 'I lost myself' rather than 'I am lost'. 'Jestem zgubiony' sounds odd for being lost on the way."
     }
   ]
 }

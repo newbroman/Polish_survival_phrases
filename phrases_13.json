@@ -157,7 +157,7 @@
       "id": "13-16",
       "category": "Theater & Stage",
       "pl": "Teatr",
-      "en": "Theater",
+      "en": "Theatre",
       "level": 13,
       "gender": null,
       "emoji": "🏛️",
@@ -231,7 +231,7 @@
       "level": 13,
       "gender": null,
       "emoji": "🥂",
-      "note": "The time to get coffee or a snack at the theater buffet."
+      "note": "The time to get coffee or a snack at the theatre buffet."
     },
     {
       "id": "13-24",
@@ -307,7 +307,7 @@
       "id": "13-31",
       "category": "Cinema & Film",
       "pl": "Kino",
-      "en": "Cinema / Movie theater",
+      "en": "Cinema / Movie theatre",
       "level": 13,
       "gender": null,
       "emoji": "🍿",

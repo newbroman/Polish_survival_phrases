@@ -124,7 +124,7 @@ Progress is stored against the phrase `id`, so keep a phrase's id when correctin
 
 ## Notes
 
-- MIT licence (as stated in the previous README; no licence file is in the repository).
+- MIT licence: see `LICENSE`. It covers the code and the phrase data.
 - Built with vanilla JavaScript. Pronunciation transcription uses the OpenAI API; speech synthesis and fallback recognition use the Web Speech API; confetti uses `canvas-confetti` from jsDelivr (cached by the service worker).
 
 Built by Martin Hollingham.

@@ -117,7 +117,7 @@
       "file": "phrases_12.1.json",
       "title": "Home Life - Cooking, Furniture & Garden",
       "tier": "PRACTICAL",
-      "count": 10
+      "count": 70
     },
     {
       "id": "13",
@@ -138,21 +138,21 @@
       "file": "phrases_15.json",
       "title": "Work & Business - Professional Situations & Office Life",
       "tier": "PRACTICAL",
-      "count": 48
+      "count": 70
     },
     {
       "id": "16",
       "file": "phrases_16.json",
       "title": "Family & Relationships - Social Connections & Status",
       "tier": "PRACTICAL",
-      "count": 35
+      "count": 70
     },
     {
       "id": "17",
       "file": "phrases_17.json",
       "title": "Public Signs & Notices - Reading the Environment",
       "tier": "PRACTICAL",
-      "count": 45
+      "count": 70
     },
     {
       "id": "20",

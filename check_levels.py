@@ -93,8 +93,12 @@ def main():
                 all_ids[pid] = name
             if str(p.get("level")) != lv:
                 errors.append(f"{where} ({pid}): level field {p.get('level')!r}, expected {lv}")
-            if p.get("gender") == "both" and "/" not in (pl or ""):
-                errors.append(f"{where} ({pid}): gender 'both' but only one form: {pl!r}")
+            if p.get("gender") == "both":
+                v = p.get("variants") or {}
+                if "/" not in (pl or ""):
+                    errors.append(f"{where} ({pid}): gender 'both' but only one form: {pl!r}")
+                if not v.get("m") or not v.get("f") or v.get("m") == v.get("f"):
+                    errors.append(f"{where} ({pid}): gender 'both' needs distinct variants.m and variants.f")
             key = norm(pl)
             if key in seen_pl:
                 errors.append(f"{where} ({pid}): {pl!r} duplicates {seen_pl[key]} in the same level")

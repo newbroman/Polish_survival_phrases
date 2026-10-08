@@ -8,525 +8,675 @@
       "category": "Counting",
       "pl": "Jeden",
       "en": "One",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "1️⃣",
+      "note": "Masculine form; before nouns it agrees in gender: jeden dom, jedna kawa, jedno piwo."
     },
     {
       "id": "5.1-02",
       "category": "Counting",
       "pl": "Dwa",
       "en": "Two",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "2️⃣",
+      "note": "Feminine and neuter are 'dwie' (dwie kawy); with people, 'dwaj' or 'dwóch' appear."
     },
     {
       "id": "5.1-03",
       "category": "Counting",
       "pl": "Trzy",
       "en": "Three",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "3️⃣",
+      "note": "'trz' is read t+sh: roughly 'tshih'. Takes plural nouns: trzy kawy."
     },
     {
       "id": "5.1-04",
       "category": "Counting",
       "pl": "Cztery",
       "en": "Four",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "4️⃣",
+      "note": "Say 'CHTE-rih'; 'cz' is like English 'ch'. Takes plural nouns: cztery kawy."
     },
     {
       "id": "5.1-05",
       "category": "Counting",
       "pl": "Pięć",
       "en": "Five",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "5️⃣",
+      "note": "From 5 up, the noun goes into genitive plural: pięć złotych, pięć godzin."
     },
     {
       "id": "5.1-06",
       "category": "Counting",
       "pl": "Dziesięć",
       "en": "Ten",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🔟",
+      "note": "Pronounced roughly 'dzhye-shownch'; same genitive plural rule: dziesięć euro, dziesięć minut."
     },
     {
       "id": "5.1-07",
       "category": "Counting",
       "pl": "Dwadzieścia",
       "en": "Twenty",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "2️⃣",
+      "note": "Tens up to 40 end -ścia/-ści (dwadzieścia, trzydzieści, czterdzieści); from 50 it is -dziesiąt."
     },
     {
       "id": "5.1-08",
       "category": "Counting",
       "pl": "Pięćdziesiąt",
       "en": "Fifty",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "5️⃣",
+      "note": "From 50 tens end -dziesiąt; 'ą' is a nasal sound. Takes genitive plural: pięćdziesiąt złotych."
     },
     {
       "id": "5.1-09",
       "category": "Counting",
       "pl": "Sto",
       "en": "One hundred",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "💯",
+      "note": "Sto is the same for 100 whatever the noun; it takes genitive plural: sto złotych."
     },
     {
       "id": "5.1-10",
       "category": "Counting",
       "pl": "Dwieście",
       "en": "Two hundred",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🔢",
+      "note": "Hundreds change with the number: dwieście, trzysta, czterysta, pięćset."
     },
     {
       "id": "5.1-11",
       "category": "Counting",
       "pl": "Tysiąc",
       "en": "One thousand",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🔢",
+      "note": "Tysiąc is a noun-like number; 2-4 thousand is 'tysiące', 5+ is 'tysięcy'."
     },
     {
       "id": "5.1-12",
       "category": "Counting",
       "pl": "Pierwszy",
       "en": "First",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🥇",
+      "note": "Ordinals behave like adjectives: pierwszy (m), pierwsza (f), pierwsze (n)."
     },
     {
       "id": "5.1-13",
       "category": "Counting",
       "pl": "Drugi",
       "en": "Second",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🥈",
+      "note": "Ordinal, so it changes gender: drugi, druga, drugie; also used for clock times."
     },
     {
       "id": "5.1-14",
       "category": "Counting",
       "pl": "Trzeci",
       "en": "Third",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🥉",
+      "note": "Trzeci has soft endings: trzeci (m), trzecia (f), trzecie (n)."
     },
     {
       "id": "5.1-15",
       "category": "Counting",
       "pl": "Ostatni",
       "en": "Last",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🏁",
+      "note": "Adjective-like: ostatni, ostatnia, ostatnie; common for 'last stop' = ostatni przystanek."
     },
     {
       "id": "5.1-16",
       "category": "Prices",
       "pl": "Ile to kosztuje?",
       "en": "How much does it cost?",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "💰",
+      "note": "'Ile' takes the genitive: 'Ile kosztuje ten chleb?' (How much is this bread?)."
     },
     {
       "id": "5.1-17",
       "category": "Prices",
       "pl": "Dziesięć złotych",
       "en": "Ten zloty",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "💶",
+      "note": "After 5+ use genitive plural: dziesięć złotych. 2-4 would be 'złote', 1 is 'złoty'."
     },
     {
       "id": "5.1-18",
       "category": "Prices",
       "pl": "Dwadzieścia złotych",
       "en": "Twenty zloty",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "💵",
+      "note": "Say the amount as a cardinal number plus złotych: dwadzieścia złotych."
     },
     {
       "id": "5.1-19",
       "category": "Prices",
       "pl": "Pięćdziesiąt złotych",
       "en": "Fifty zloty",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "💴",
+      "note": "Same pattern: pięćdziesiąt złotych. For grosze: pięćdziesiąt groszy."
     },
     {
       "id": "5.1-20",
       "category": "Prices",
       "pl": "Sto złotych",
       "en": "One hundred zloty",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "💸",
+      "note": "Sto złotych; for 200 it becomes 'dwieście złotych'."
     },
     {
       "id": "5.1-21",
       "category": "Prices",
       "pl": "To kosztuje pięć złotych",
       "en": "It costs five zloty",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🏷️",
+      "note": "Five takes genitive plural; 'To kosztuje dwa złote' (2-4) and 'jeden złoty' (1) differ."
     },
     {
       "id": "5.1-22",
       "category": "Prices",
       "pl": "To jest za drogie",
       "en": "That's too expensive",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "😬",
+      "note": "'Za' means 'too' before an adjective; 'drogie' is neuter to agree with 'to'."
     },
     {
       "id": "5.1-23",
       "category": "Prices",
       "pl": "To jest tanie",
       "en": "That's cheap",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "😊",
+      "note": "'Tanie' is neuter to agree with 'to'; for a masculine item: 'Ten sweter jest tani'."
     },
     {
       "id": "5.1-24",
       "category": "Prices",
       "pl": "Czy mogę zapłacić kartą?",
       "en": "Can I pay by card?",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "💳",
+      "note": "'Kartą' is instrumental (by means of); 'Czy' just makes it a yes/no question."
     },
     {
       "id": "5.1-25",
       "category": "Prices",
       "pl": "Płacę gotówką",
       "en": "I'm paying cash",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "💶",
+      "note": "Instrumental case: gotówką (by cash), kartą (by card)."
     },
     {
       "id": "5.1-26",
       "category": "Prices",
       "pl": "Reszta",
       "en": "Change (money)",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🪙",
+      "note": "Also means 'the rest'; 'Reszta dla Pani/Pana' means keep the change."
     },
     {
       "id": "5.1-27",
       "category": "Prices",
       "pl": "Paragon",
       "en": "Receipt",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🧾",
+      "note": "Say 'Poproszę paragon' to ask for one; 'faktura' is a full VAT invoice."
     },
     {
       "id": "5.1-28",
       "category": "Prices",
       "pl": "Zniżka",
       "en": "Discount",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🎟️",
+      "note": "Often asked at tourist sites: 'Czy jest zniżka dla studentów?' (student discount)."
     },
     {
       "id": "5.1-29",
       "category": "Prices",
       "pl": "Promocja",
       "en": "Sale / Promotion",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🛍️",
+      "note": "Seen on shop signs; 'w promocji' means 'on sale'."
     },
     {
       "id": "5.1-30",
       "category": "Prices",
       "pl": "Gratis",
       "en": "Free",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🎁",
+      "note": "Indeclinable Latin loan; seen on offers like 'drugi gratis'."
     },
     {
       "id": "5.1-31",
       "category": "Time",
       "pl": "Która godzina?",
       "en": "What time is it?",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕐",
+      "note": "'Godzina' means both 'hour' and 'o'clock'; the answer uses an ordinal: jest piąta."
     },
     {
       "id": "5.1-32",
       "category": "Time",
       "pl": "Jest pierwsza",
       "en": "It's one o'clock",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕐",
+      "note": "Times use feminine ordinals because they agree with the understood 'godzina'."
     },
     {
       "id": "5.1-33",
       "category": "Time",
       "pl": "Jest druga",
       "en": "It's two o'clock",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕑",
+      "note": "Feminine ordinal agreeing with 'godzina': druga. Compare 'o drugiej' for 'at two'."
     },
     {
       "id": "5.1-34",
       "category": "Time",
       "pl": "Jest trzecia",
       "en": "It's three o'clock",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕒",
+      "note": "Third hour: trzecia; 'trzy' is not used for the time of day."
     },
     {
       "id": "5.1-35",
       "category": "Time",
       "pl": "Jest piąta",
       "en": "It's five o'clock",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕔",
+      "note": "From 5 to 12 the ordinal ends -ta: piąta, szósta, siódma, ósma, dziewiąta."
     },
     {
       "id": "5.1-36",
       "category": "Time",
       "pl": "Jest dziesiąta",
       "en": "It's ten o'clock",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕙",
+      "note": "Dziesiąta has a nasal 'ą'. On 24-hour timetables 8 pm is 'dwudziesta'."
     },
     {
       "id": "5.1-37",
       "category": "Time",
       "pl": "Jest dwunasta",
       "en": "It's twelve o'clock / noon",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕛",
+      "note": "Dwunasta; 'południe' is noon and 'północ' is midnight, used instead when exact."
     },
     {
       "id": "5.1-38",
       "category": "Time",
       "pl": "Wpół do drugiej",
       "en": "Half past one",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕜",
+      "note": "Literally 'half to the second'; Poles count towards the next hour, so 1:30 is 'half to two'."
     },
     {
       "id": "5.1-39",
       "category": "Time",
       "pl": "Kwadrans po trzeciej",
       "en": "Quarter past three",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕞",
+      "note": "'Po' takes locative: po trzeciej. 'Kwadrans' = quarter of an hour."
     },
     {
       "id": "5.1-40",
       "category": "Time",
       "pl": "Za kwadrans czwarta",
       "en": "Quarter to four",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕟",
+      "note": "Literally 'in a quarter, four'; 'za' means 'in' or 'before' here."
     },
     {
       "id": "5.1-41",
       "category": "Time",
       "pl": "O której?",
       "en": "At what time?",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "⏰",
+      "note": "'O' + locative: 'której' is feminine locative of 'która' (godzina)."
     },
     {
       "id": "5.1-42",
       "category": "Time",
       "pl": "O drugiej",
       "en": "At two",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕑",
+      "note": "'O' + feminine ordinal in the locative: o pierwszej, o drugiej, o trzeciej."
     },
     {
       "id": "5.1-43",
       "category": "Time",
       "pl": "O piątej trzydzieści",
       "en": "At five thirty",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🕠",
+      "note": "Hour in locative ('piątej'), minutes as plain number. Informally: 'wpół do szóstej'."
     },
     {
       "id": "5.1-44",
       "category": "Time",
       "pl": "Rano",
       "en": "In the morning",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🌅",
+      "note": "Adverb, no case ending to learn: rano is used for early morning until about 10."
     },
     {
       "id": "5.1-45",
       "category": "Time",
       "pl": "Po południu",
       "en": "In the afternoon",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🌞",
+      "note": "'Po południu' = literally 'after noon'; used from about 12 until the evening."
     },
     {
       "id": "5.1-46",
       "category": "Time",
       "pl": "Wieczorem",
       "en": "In the evening",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🌆",
+      "note": "Instrumental case used adverbially: wieczór becomes wieczorem."
     },
     {
       "id": "5.1-47",
       "category": "Time",
       "pl": "W nocy",
       "en": "At night",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🌙",
+      "note": "'W nocy' (locative); 'o północy' = at midnight."
     },
     {
       "id": "5.1-48",
       "category": "Time",
       "pl": "Teraz",
       "en": "Now",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "⏱️",
+      "note": "Teraz is also 'now' in 'od teraz' (from now on)."
     },
     {
       "id": "5.1-49",
       "category": "Time",
       "pl": "Później",
       "en": "Later",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "⏳",
+      "note": "Comparative of 'późno' (late); also 'Do zobaczenia później' = see you later."
     },
     {
       "id": "5.1-50",
       "category": "Time",
       "pl": "Wcześniej",
       "en": "Earlier",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "⏪",
+      "note": "Comparative of 'wcześnie' (early); the opposite of 'później'."
     },
     {
       "id": "5.1-51",
       "category": "Dates",
       "pl": "Dziś",
       "en": "Today",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "📅",
+      "note": "Also written 'dzisiaj'; both mean today and are equally common."
     },
     {
       "id": "5.1-52",
       "category": "Dates",
       "pl": "Jutro",
       "en": "Tomorrow",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🌄",
+      "note": "Used for plans: 'Jutro rano' (tomorrow morning)."
     },
     {
       "id": "5.1-53",
       "category": "Dates",
       "pl": "Wczoraj",
       "en": "Yesterday",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🔙",
+      "note": "Pronounced roughly 'FCHO-rye'; 'wczoraj wieczorem' = yesterday evening."
     },
     {
       "id": "5.1-54",
       "category": "Dates",
       "pl": "Pojutrze",
       "en": "Day after tomorrow",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "📆",
+      "note": "Literally 'after tomorrow'; 'pojutrze' is one word."
     },
     {
       "id": "5.1-55",
       "category": "Dates",
       "pl": "Przedwczoraj",
       "en": "Day before yesterday",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🔙",
+      "note": "One word, longer cousin of 'wczoraj'; literally 'before yesterday'."
     },
     {
       "id": "5.1-56",
       "category": "Dates",
       "pl": "W poniedziałek",
       "en": "On Monday",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "📅",
+      "note": "'W' + accusative for weekdays: w poniedziałek, we wtorek (we before w)."
     },
     {
       "id": "5.1-57",
       "category": "Dates",
       "pl": "W weekend",
       "en": "On the weekend",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🎉",
+      "note": "'W weekend' (not 'na weekend') for 'at the weekend'; 'na weekend' means 'for the weekend'."
     },
     {
       "id": "5.1-58",
       "category": "Dates",
       "pl": "W przyszłym tygodniu",
       "en": "Next week",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "➡️",
+      "note": "Locative: 'w przyszłym tygodniu'; 'przyszły' is 'coming/future'."
     },
     {
       "id": "5.1-59",
       "category": "Dates",
       "pl": "W tym miesiącu",
       "en": "This month",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🗓️",
+      "note": "Locative of 'miesiąc' after 'w'; the ą is nasal, 'mie-SHOWNTS'."
     },
     {
       "id": "5.1-60",
       "category": "Dates",
       "pl": "Pierwszego stycznia",
       "en": "January first",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🎆",
+      "note": "Dates use ordinal in the genitive: 'pierwszego stycznia'; the month is genitive too."
     },
     {
       "id": "5.1-61",
       "category": "Dates",
       "pl": "Drugiego lutego",
       "en": "February second",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "📅",
+      "note": "Ordinal ends -ego: drugiego lutego; the month is in genitive, never nominative."
     },
     {
       "id": "5.1-62",
       "category": "Dates",
       "pl": "Trzeciego marca",
       "en": "March third",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🌸",
+      "note": "Ordinal ends -ego: trzeciego marca; note Polish dates use ordinal numbers only."
     },
     {
       "id": "5.1-63",
       "category": "Dates",
       "pl": "Kiedy?",
       "en": "When?",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "❓",
+      "note": "Question word for time or occasion: 'Kiedy jest otwarte?' (When is it open?)."
     },
     {
       "id": "5.1-64",
       "category": "Dates",
       "pl": "Który dzień?",
       "en": "What day?",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "📆",
+      "note": "Masculine 'który' because 'dzień' is masculine; 'Który dzisiaj dzień?' is the full question."
     },
     {
       "id": "5.1-65",
       "category": "Dates",
       "pl": "Jaka data?",
       "en": "What date?",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🗓️",
+      "note": "Asks which date, e.g. on a form. For today's date, Poles ask 'Którego dzisiaj mamy?'"
     },
     {
       "id": "5.1-66",
       "category": "Positions",
       "pl": "Pierwszy w kolejce",
       "en": "First in line",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🧍",
+      "note": "'W kolejce' = in the queue (locative); also 'Kto ostatni?' to join one."
     },
     {
       "id": "5.1-67",
       "category": "Positions",
       "pl": "Drugi od lewej",
       "en": "Second from the left",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "👈",
+      "note": "'Od lewej' = from the left; the ordinal agrees with the thing counted."
     },
     {
       "id": "5.1-68",
       "category": "Positions",
-      "pl": "Trzeci piętro",
+      "pl": "Trzecie piętro",
       "en": "Third floor",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🏢",
+      "note": "'piętro' is neuter. 'Na trzecim piętrze' = on the third floor."
     },
     {
       "id": "5.1-69",
       "category": "Positions",
       "pl": "Pokój numer dziesięć",
       "en": "Room number ten",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🚪",
+      "note": "Number after 'numer' stays a cardinal; 'pokój' also means 'peace'."
     },
     {
       "id": "5.1-70",
       "category": "Positions",
       "pl": "Peron numer pięć",
       "en": "Platform number five",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🚉",
+      "note": "'Numer' is followed by the plain number; on platforms you hear 'peron piąty' too."
     },
     {
       "id": "5.1-71",
       "category": "Positions",
       "pl": "Autobus numer trzy",
       "en": "Bus number three",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🚌",
+      "note": "Also 'autobus trzydzieści pięć' for 35; use plain numbers after 'numer'."
     },
     {
       "id": "5.1-72",
       "category": "Positions",
       "pl": "Stół numer osiem",
       "en": "Table number eight",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🍽️",
+      "note": "Cardinal after 'numer'; 'ósemka' is also used for 8 in spoken Polish."
     },
     {
       "id": "5.1-73",
       "category": "Positions",
       "pl": "Na górze",
       "en": "Upstairs / At the top",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "⬆️",
+      "note": "Literally 'on the top'; 'na górze' also means 'upstairs' in a building."
     },
     {
       "id": "5.1-74",
       "category": "Positions",
       "pl": "Na dole",
       "en": "Downstairs / At the bottom",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "⬇️",
+      "note": "Literally 'on the bottom'; the opposite of 'na górze'."
     },
     {
       "id": "5.1-75",
       "category": "Positions",
       "pl": "W środku",
       "en": "In the middle",
-      "level": 5.1
+      "level": 5.1,
+      "emoji": "🎯",
+      "note": "Locative: 'w środku' means in the middle and also 'inside'."
     }
   ]
 }

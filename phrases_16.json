@@ -50,7 +50,7 @@
       "en": "Children",
       "level": 16,
       "gender": null,
-      "emoji": "🧒👧",
+      "emoji": "🧒",
       "note": "Plural of 'dziecko'."
     },
     {
@@ -384,6 +384,396 @@
       "gender": null,
       "emoji": "🎉",
       "note": "The standard greeting for birthdays and namedays."
+    },
+    {
+      "id": "16-36",
+      "category": "Core Family",
+      "pl": "Rodzeństwo",
+      "en": "Siblings",
+      "level": 16,
+      "gender": null,
+      "emoji": "🧑‍🤝‍🧑",
+      "note": "A collective noun, grammatically singular: 'Moje rodzeństwo mieszka w Krakowie'."
+    },
+    {
+      "id": "16-37",
+      "category": "Core Family",
+      "pl": "Mam brata i siostrę",
+      "en": "I have a brother and a sister",
+      "level": 16,
+      "gender": null,
+      "emoji": "👫",
+      "note": "After 'mam' nouns go accusative: brat → brata, siostra → siostrę."
+    },
+    {
+      "id": "16-38",
+      "category": "Core Family",
+      "pl": "Jestem jedynakiem / jedynaczką",
+      "en": "I'm an only child",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem jedynakiem",
+        "f": "Jestem jedynaczką"
+      },
+      "emoji": "🧍",
+      "note": "Instrumental case after 'być': jedynak → jedynakiem."
+    },
+    {
+      "id": "16-39",
+      "category": "Core Family",
+      "pl": "Masz rodzeństwo?",
+      "en": "Do you have siblings?",
+      "level": 16,
+      "gender": null,
+      "emoji": "❓",
+      "note": "Informal 'you'. Formal: 'Czy ma Pan/Pani rodzeństwo?'"
+    },
+    {
+      "id": "16-40",
+      "category": "Extended Family",
+      "pl": "Dziadkowie",
+      "en": "Grandparents",
+      "level": 16,
+      "gender": null,
+      "emoji": "🧓",
+      "note": "Masculine-personal plural covering grandfather and grandmother together."
+    },
+    {
+      "id": "16-41",
+      "category": "Extended Family",
+      "pl": "Wujek",
+      "en": "Uncle",
+      "level": 16,
+      "gender": null,
+      "emoji": "👨‍🦱",
+      "note": "Warm everyday word; 'wuj' is plainer and a little old-fashioned."
+    },
+    {
+      "id": "16-42",
+      "category": "Extended Family",
+      "pl": "Ciocia",
+      "en": "Aunt",
+      "level": 16,
+      "gender": null,
+      "emoji": "👩‍🦰",
+      "note": "Affectionate everyday word; 'ciotka' is plainer and can sound dismissive."
+    },
+    {
+      "id": "16-43",
+      "category": "Extended Family",
+      "pl": "Kuzyn / Kuzynka",
+      "en": "Cousin",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Kuzyn",
+        "f": "Kuzynka"
+      },
+      "emoji": "🧑",
+      "note": "Plural: 'kuzyni' (male or mixed), 'kuzynki' (all female)."
+    },
+    {
+      "id": "16-44",
+      "category": "Extended Family",
+      "pl": "Wnuk / Wnuczka",
+      "en": "Grandson / Granddaughter",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Wnuk",
+        "f": "Wnuczka"
+      },
+      "emoji": "🧒",
+      "note": "Plural 'wnuki' or 'wnukowie' for grandchildren; 'wnuczka' is a granddaughter."
+    },
+    {
+      "id": "16-45",
+      "category": "Extended Family",
+      "pl": "Teść",
+      "en": "Father-in-law",
+      "level": 16,
+      "gender": null,
+      "emoji": "👨‍🦳",
+      "note": "Ends in a soft 'ść' (say 'sh-ch'); the mother-in-law is 'teściowa'."
+    },
+    {
+      "id": "16-46",
+      "category": "Extended Family",
+      "pl": "Teściowie",
+      "en": "Parents-in-law",
+      "level": 16,
+      "gender": null,
+      "emoji": "👥",
+      "note": "Plural covering both 'teść' and 'teściowa'."
+    },
+    {
+      "id": "16-47",
+      "category": "Extended Family",
+      "pl": "Zięć",
+      "en": "Son-in-law",
+      "level": 16,
+      "gender": null,
+      "emoji": "🤵‍♂️",
+      "note": "Only for a daughter's husband; 'ę' is a nasal vowel."
+    },
+    {
+      "id": "16-48",
+      "category": "Extended Family",
+      "pl": "Synowa",
+      "en": "Daughter-in-law",
+      "level": 16,
+      "gender": null,
+      "emoji": "👰‍♀️",
+      "note": "Only for a son's wife; stress falls on 'no' (sy-NO-wa)."
+    },
+    {
+      "id": "16-49",
+      "category": "Extended Family",
+      "pl": "Szwagier",
+      "en": "Brother-in-law",
+      "level": 16,
+      "gender": null,
+      "emoji": "🧔",
+      "note": "Your sister's husband or your spouse's brother; sister-in-law is 'szwagierka'."
+    },
+    {
+      "id": "16-50",
+      "category": "Extended Family",
+      "pl": "Ojciec chrzestny / Matka chrzestna",
+      "en": "Godfather / Godmother",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Ojciec chrzestny",
+        "f": "Matka chrzestna"
+      },
+      "emoji": "⛪",
+      "note": "Literally 'christening father / mother'; 'chrzestny' is an adjective."
+    },
+    {
+      "id": "16-51",
+      "category": "Talking About Children",
+      "pl": "Ile masz dzieci?",
+      "en": "How many children do you have?",
+      "level": 16,
+      "gender": null,
+      "emoji": "🔢",
+      "note": "'Ile' takes the genitive plural: 'dzieci'. Formal: 'Ile ma Pan/Pani dzieci?'"
+    },
+    {
+      "id": "16-52",
+      "category": "Talking About Children",
+      "pl": "Mam dwoje dzieci",
+      "en": "I have two children",
+      "level": 16,
+      "gender": null,
+      "emoji": "👧",
+      "note": "'Dwoje' is the numeral used with 'dzieci' and with mixed-gender pairs."
+    },
+    {
+      "id": "16-53",
+      "category": "Talking About Children",
+      "pl": "Mam syna i córkę",
+      "en": "I have a son and a daughter",
+      "level": 16,
+      "gender": null,
+      "emoji": "👨‍👧‍👦",
+      "note": "Accusative: syn → syna, córka → córkę."
+    },
+    {
+      "id": "16-54",
+      "category": "Talking About Children",
+      "pl": "Nie mam dzieci",
+      "en": "I don't have any children",
+      "level": 16,
+      "gender": null,
+      "emoji": "🚫",
+      "note": "After 'nie mam' the object goes genitive: 'dziecko' becomes 'dzieci'."
+    },
+    {
+      "id": "16-55",
+      "category": "Talking About Children",
+      "pl": "Czekamy na dziecko",
+      "en": "We're expecting a baby",
+      "level": 16,
+      "gender": null,
+      "emoji": "🍼",
+      "note": "Literally 'we are waiting for a child'; 'na' takes the accusative here."
+    },
+    {
+      "id": "16-56",
+      "category": "Talking About Children",
+      "pl": "Jestem w ciąży",
+      "en": "I'm pregnant (said by a woman)",
+      "level": 16,
+      "gender": "f",
+      "emoji": "🤰",
+      "note": "Literally 'I am in pregnancy'; only women say this."
+    },
+    {
+      "id": "16-57",
+      "category": "Talking About Children",
+      "pl": "Moja córka ma pięć lat",
+      "en": "My daughter is five years old",
+      "level": 16,
+      "gender": null,
+      "emoji": "🖐️",
+      "note": "From five up use 'lat': 1 rok, 2-4 lata, 5+ lat."
+    },
+    {
+      "id": "16-58",
+      "category": "Talking About Children",
+      "pl": "Bliźnięta",
+      "en": "Twins",
+      "level": 16,
+      "gender": null,
+      "emoji": "👯",
+      "note": "Neuter plural; a single twin is 'bliźniak' or 'bliźniaczka'."
+    },
+    {
+      "id": "16-59",
+      "category": "Romantic Relationships",
+      "pl": "Jesteśmy parą",
+      "en": "We're a couple",
+      "level": 16,
+      "gender": null,
+      "emoji": "👩‍❤️‍👨",
+      "note": "'Para' means both 'pair' and 'couple'; instrumental after 'być'."
+    },
+    {
+      "id": "16-60",
+      "category": "Relationship Status",
+      "pl": "Jestem zaręczony / zaręczona",
+      "en": "I'm engaged",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem zaręczony",
+        "f": "Jestem zaręczona"
+      },
+      "emoji": "💎",
+      "note": "Adjective ending: '-y' for a man, '-a' for a woman."
+    },
+    {
+      "id": "16-61",
+      "category": "Relationship Status",
+      "pl": "Jestem wdowcem / wdową",
+      "en": "I'm a widower / widow",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Jestem wdowcem",
+        "f": "Jestem wdową"
+      },
+      "emoji": "🖤",
+      "note": "Both in the instrumental; 'wdowiec' becomes 'wdowcem'."
+    },
+    {
+      "id": "16-62",
+      "category": "Relationship Status",
+      "pl": "Jestem po rozwodzie",
+      "en": "I'm divorced",
+      "level": 16,
+      "gender": null,
+      "emoji": "📄",
+      "note": "Literally 'I am after a divorce'; works for any gender."
+    },
+    {
+      "id": "16-63",
+      "category": "Relationship Status",
+      "pl": "Wzięliśmy / Wzięłyśmy ślub",
+      "en": "We got married",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Wzięliśmy ślub",
+        "f": "Wzięłyśmy ślub"
+      },
+      "emoji": "💒",
+      "note": "Literally 'we took a wedding'. Two women say 'wzięłyśmy'."
+    },
+    {
+      "id": "16-64",
+      "category": "Relationship Status",
+      "pl": "Zakochałem się / Zakochałam się",
+      "en": "I fell in love",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Zakochałem się",
+        "f": "Zakochałam się"
+      },
+      "emoji": "❤️",
+      "note": "Add 'w tobie' for 'with you': 'w' takes the locative here."
+    },
+    {
+      "id": "16-65",
+      "category": "Relationship Status",
+      "pl": "Zerwaliśmy / Zerwałyśmy ze sobą",
+      "en": "We broke up",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Zerwaliśmy ze sobą",
+        "f": "Zerwałyśmy ze sobą"
+      },
+      "emoji": "🥀",
+      "note": "'Zerwaliśmy' covers a male or mixed pair; two women say 'zerwałyśmy'."
+    },
+    {
+      "id": "16-66",
+      "category": "Small Talk",
+      "pl": "Jesteś żonaty? / Jesteś zamężna?",
+      "en": "Are you married?",
+      "level": 16,
+      "gender": "both",
+      "variants": {
+        "m": "Jesteś żonaty?",
+        "f": "Jesteś zamężna?"
+      },
+      "emoji": "💍",
+      "note": "Choose by the gender of the person you are asking."
+    },
+    {
+      "id": "16-67",
+      "category": "Small Talk",
+      "pl": "Masz chłopaka?",
+      "en": "Do you have a boyfriend?",
+      "level": 16,
+      "gender": null,
+      "emoji": "🙋",
+      "note": "Accusative: 'chłopak' becomes 'chłopaka' (animate masculine)."
+    },
+    {
+      "id": "16-68",
+      "category": "Life Facts",
+      "pl": "Kiedy masz urodziny?",
+      "en": "When is your birthday?",
+      "level": 16,
+      "gender": null,
+      "emoji": "📅",
+      "note": "'Urodziny' is plural-only, so you literally 'have' them."
+    },
+    {
+      "id": "16-69",
+      "category": "Life Facts",
+      "pl": "Sto lat!",
+      "en": "Happy birthday! / Cheers!",
+      "level": 16,
+      "gender": null,
+      "emoji": "🎶",
+      "note": "Literally 'a hundred years'; the traditional birthday song and wish."
+    },
+    {
+      "id": "16-70",
+      "category": "Life Facts",
+      "pl": "Imieniny",
+      "en": "Name day",
+      "level": 16,
+      "gender": null,
+      "emoji": "🌷",
+      "note": "Celebrated on the saint's day of your first name; plural-only."
     }
   ]
 }
