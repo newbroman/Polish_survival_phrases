@@ -1,10 +1,12 @@
-const CACHE_NAME = 'polish-master-v78';
+const CACHE_NAME = 'polish-master-v79';
 const CORE_ASSETS = [
     './',
     './index.html',
     './manifest.json',
     './icon-192.png',
     './icon-512.png',
+    './levels.json',
+    './dialogues.json',
     'https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js'
 ];
 

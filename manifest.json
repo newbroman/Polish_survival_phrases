@@ -1,24 +1,77 @@
 {
+  "id": "/Polish_survival_phrases/",
   "name": "Polish Phrase Master",
   "short_name": "Polish App",
-  "description": "Learn survival Polish phrases, practice pronunciation, and translate custom vocabulary.",
+  "description": "Learn survival Polish: phrases, dialogues, pronunciation practice and spaced-repetition review.",
+  "lang": "en-GB",
+  "dir": "ltr",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
   "background_color": "#f0f2f5",
   "theme_color": "#dc143c",
-  "orientation": "portrait-primary",
+  "orientation": "portrait",
+  "categories": [
+    "education"
+  ],
   "icons": [
     {
       "src": "icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/1-study.webp",
+      "sizes": "540x1200",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Study flashcards with audio"
+    },
+    {
+      "src": "screenshots/2-practice.webp",
+      "sizes": "540x1200",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Timed practice quiz"
+    },
+    {
+      "src": "screenshots/3-dialogue.webp",
+      "sizes": "540x1200",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Speak your part in real-life dialogues"
+    },
+    {
+      "src": "screenshots/4-type.webp",
+      "sizes": "540x1200",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Type the Polish, with an accent bar"
     }
   ]
 }
