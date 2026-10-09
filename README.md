@@ -53,6 +53,10 @@ Open the live link in a browser.
 - **Offline:** the service worker caches the app shell, so it works offline after the first load. Phrase files are fetched network-first and fall back to the cache, so new levels appear as soon as you are online.
 - **Browser requirements:** speech synthesis uses the browser's Web Speech API (a Polish voice is used if the device has one). Speech recognition needs either an OpenAI key or a browser that supports the Web Speech API (Chrome and Edge recommended). Progress is stored in `localStorage` on your device.
 
+### Android app
+
+An Android app is on the [Releases page](https://github.com/newbroman/Polish_survival_phrases/releases/latest): download `polish-phrase-master-<version>.apk` on your phone, open it and allow installing from your browser when asked ("Install unknown apps"). It is a thin wrapper (under 1 MB) that opens this site full-screen, so new phrases, dialogues and features arrive automatically, with no reinstall. A new APK is only released when the app's name, icon or Android settings change. It needs Chrome (or another browser that supports Trusted Web Activities) on the phone, and works offline after the first launch.
+
 ### Voice setup (optional but recommended)
 
 Polish speech scoring is far more reliable with OpenAI:
