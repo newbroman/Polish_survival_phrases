@@ -1983,6 +1983,34 @@
             padding: 0 2px;
         }
     </style>
+
+    <style id="compact-small-screens">
+        /* Compact layout for small phones and large text (e.g. 360-wide screens at 115% font size):
+           tighter banners and card, no 150px scroll gap, hands-free controls on one row. */
+        @media (max-width: 400px), (max-height: 760px) {
+            .points-banner { padding: 3px 6px !important; font-size: .7rem !important; }
+            #tour-banner { padding: 4px 10px !important; }
+            #tour-banner .tb-text { font-size: .76rem !important; line-height: 1.25 !important; }
+            #tour-banner .tb-go { padding: 4px 10px !important; }
+            #daily-banner { padding: 5px 12px !important; }
+            #daily-banner .db-review { padding: 4px 12px !important; }
+            #study-view, #game-area > div[id$="-view"] { padding-bottom: 36px !important; }
+            #study-view { padding-top: 8px !important; }
+            .flashcard { padding: 12px 14px !important; }
+            #fc-pl > div:first-child { font-size: 2.2rem !important; margin-bottom: 2px !important; }
+            .fc-pl { font-size: 1.75rem !important; margin-bottom: 2px !important; }
+            .fc-en { margin-bottom: 6px !important; }
+            #fc-notes-container { margin-top: 8px !important; padding-top: 6px !important; font-size: .85rem !important; }
+            #fc-notes-container > div { margin-bottom: 4px !important; }
+            .fc-main-audio button, .fc-main-audio .fc-audio-btn { width: 46px !important; height: 46px !important; }
+            .fc-controls { margin-top: 8px !important; }
+            .fc-btn { padding: 7px 20px !important; }
+            #study-hf-bar { margin-top: 8px !important; padding: 5px 8px !important; gap: 5px !important; flex-wrap: nowrap !important; }
+            .shf-btn { width: 36px !important; height: 36px !important; font-size: 1rem !important; flex: none; }
+            .shf-pause .pause-option { padding: 3px 7px !important; }
+            .shf-pause > span { display: none; }
+        }
+    </style>
 </head>
 
 <body class="practice-mode-active">
@@ -2233,7 +2261,7 @@
                 </details>
 
                 <div style="text-align:center; font-size:0.75rem; color: var(--muted); margin-top:20px;">Polish Phrase Master
-                    <span id="app-version">v45.0</span></div>
+                    <span id="app-version">v45.1</span></div>
             </div>
         </div>
     </div>
